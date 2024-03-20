@@ -7,15 +7,15 @@ const darkCodeTheme = themes.dracula;
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "Catena-X - DevSecOps",
-  tagline: "Providing Catena-X platform stack (to Catena-X members only)",
+  title: "Catena-X - Documentation Platform",
+  tagline: "Providing Catena-X Documentation",
   url: "https://catena-x.net/",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
-  organizationName: "catenax-ng", // Usually your GitHub org/user name.
-  projectName: "catenax-ng.github.io", // Usually your repo name.
+  organizationName: "catenax-eV", // Usually your GitHub org/user name.
+  projectName: "catenax-ev.github.io", // Usually your repo name.
   trailingSlash: false,
 
   presets: [
@@ -69,13 +69,12 @@ const config = {
         items: [
           {
             type: "doc",
-            docId: "getstarted/overview",
+            docId: "operating-model/overview",
             position: "left",
-            label: "Documentation",
+            label: "Operating Model",
           },
-          { to: "/blog", label: "News", position: "left" },
           {
-            href: "https://github.com/catenax-ng/catenax-ng.github.io",
+            href: "https://github.com/catenax-eV/catenax-ev.github.io",
             label: "GitHub",
             position: "right",
           },
@@ -89,15 +88,15 @@ const config = {
             items: [
               {
                 label: "Get Started",
-                to: "/docs/getstarted/overview",
+                to: "/docs/operating-model/overview",
               },
               {
-                label: "ArgoCD Guides",
-                to: "/docs/guides/ArgoCD/ArgoCDbasics",
+                label: "Get Started",
+                to: "/docs/operating-model/overview",
               },
               {
-                label: "Helm Chart Guides",
-                to: "/docs/guides/Helm/helmchart",
+                label: "Get Started",
+                to: "/docs/operating-model/overview",
               },
             ],
           },
@@ -128,7 +127,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Catena-X DevSecOps - funded by BMWK, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Catena-X - funded by BMWK, Inc. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,

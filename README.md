@@ -19,7 +19,7 @@ If there are any issues with wrong/outdated links, the github action will fail. 
 
 ## How to use the documentation repository
 
-Mini guide for proceeding with documentation on [Catena-X page](https://catenax-ng.github.io/)
+> TBD
 
 - Documentation is written as a markdown file. Contributions are done via pull request
 - We use [markdownlint](https://www.npmjs.com/package/markdownlint) in a pre-commit hook.
