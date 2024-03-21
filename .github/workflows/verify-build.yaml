@@ -1,13 +1,17 @@
-name: Test deployment
+name: Verify website build
 
 on:
   pull_request:
     branches:
       - main
 
+# This job will try to build the website to find potential issues
+# before actually merging and deploying the page.
+# There are cases, where for example broken links will break the build, but
+# checking it on the local development server (npm start) will work smoothely.
 jobs:
   test-deploy:
-    name: Test deployment
+    name: Build static website
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
