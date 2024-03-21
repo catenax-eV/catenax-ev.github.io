@@ -1,1 +1,0 @@
-(self.webpackChunkcatenax_ng=self.webpackChunkcatenax_ng||[]).push([[525],{5525:()=>{}}]);
