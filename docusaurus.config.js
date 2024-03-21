@@ -27,12 +27,12 @@ const config = {
           sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
           editUrl:
-            "https://github.com/catenax-ng/catenax-ng.github.io/edit/main/",
+            "https://github.com/catenax-eV/catenax-ev.github.io/edit/main/",
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
-          editUrl: "https://github.com/catenax-ng/catenax-ng.github.io",
+          editUrl: "https://github.com/catenax-eV/catenax-ev.github.io",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
@@ -122,7 +122,7 @@ const config = {
               },
               {
                 label: "GitHub",
-                href: "https://github.com/catenax-ng",
+                href: "https://github.com/catenax-eV",
               },
             ],
           },
