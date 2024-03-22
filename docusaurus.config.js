@@ -35,7 +35,6 @@ const config = {
       }),
     ],
   ],
-
   themes: [
     // ... Your other themes.
     [
@@ -79,6 +78,10 @@ const config = {
             sidebarId: "sidebar_working_model",
             position: "left",
             label: "Working Model",
+          },
+          {
+            type: 'docsVersionDropdown',
+            position: 'right',
           },
           {
             href: "https://github.com/catenax-eV/catenax-ev.github.io",
