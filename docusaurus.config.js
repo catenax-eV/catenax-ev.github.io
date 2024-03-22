@@ -24,7 +24,7 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          includeCurrentVersion: false,
+          // includeCurrentVersion: false,
           sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
           editUrl:
