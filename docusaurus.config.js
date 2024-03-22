@@ -29,11 +29,6 @@ const config = {
           editUrl:
             "https://github.com/catenax-eV/catenax-ev.github.io/edit/main/",
         },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          editUrl: "https://github.com/catenax-eV/catenax-ev.github.io",
-        },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
         },
@@ -68,10 +63,22 @@ const config = {
         },
         items: [
           {
-            type: "doc",
-            docId: "operating-model/overview",
+            type: "docSidebar",
+            sidebarId: "sidebar_standards",
+            position: "left",
+            label: "Standards",
+          },
+          {
+            type: "docSidebar",
+            sidebarId: "sidebar_op_model",
             position: "left",
             label: "Operating Model",
+          },
+          {
+            type: "docSidebar",
+            sidebarId: "sidebar_working_model",
+            position: "left",
+            label: "Working Model",
           },
           {
             href: "https://github.com/catenax-eV/catenax-ev.github.io",
