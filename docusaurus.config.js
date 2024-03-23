@@ -85,6 +85,20 @@ const config = {
             position: 'right',
           },
           {
+            to: 'https://catena-x.net/en/',
+            label: 'Catena-X',
+            position: 'right',
+            target: '_blank',
+            className: 'catena-x-link',
+          },
+          {
+            to: 'https://eclipse-tractusx.github.io/',
+            label: 'Tractus-X',
+            position: 'right',
+            target: '_blank',
+            className: 'tractus-x-link',
+          },
+          {
             href: "https://github.com/catenax-eV/catenax-ev.github.io",
             label: "GitHub",
             position: "right",
@@ -124,7 +138,7 @@ const config = {
             title: "More",
             items: [
               {
-                label: "Catena-X Automotive Network",
+                label: "Catena-X Automotive Network e.V.",
                 href: "https://catena-x.net/",
               },
               {
