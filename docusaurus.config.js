@@ -100,10 +100,10 @@ const config = {
           },
           {
             to: 'https://github.com/catenax-eV/catenax-ev.github.io',
-            label: 'GitHub',
             position: 'right',
+            className: 'header-github-link',
             target: '_blank',
-            className: 'github-link',
+            label: 'GitHub',
           },
         ],
       },
