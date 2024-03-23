@@ -9,3 +9,10 @@
   height: 200px;
   width: 200px;
 }
+
+.row_landing {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 calc(var(--ifm-spacing-horizontal)*-1);
+  justify-content: center;
+}
