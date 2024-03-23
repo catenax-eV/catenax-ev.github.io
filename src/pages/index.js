@@ -25,6 +25,25 @@ function HomepageHeader() {
   );
 }
 
+function HomepageTractus() {
+  const {siteConfig} = useDocusaurusContext();
+  return (
+    <header className={clsx('hero hero--primary', styles.heroBanner)}>
+      <div className="container">
+        <h1 className="hero__title">Eclipse Tractus-X Project</h1>
+        <p className="hero__subtitle">Get involved in our open-source development and the related reference implementations</p>
+        <div className={styles.buttons}>
+          <Link
+            className="button button--secondary button--lg"
+            to="https://eclipse-tractusx.github.io/docs/oss/getting-started">
+            Ready to contribute!!
+          </Link>
+        </div>
+      </div>
+    </header>
+  );
+}
+
 export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
@@ -33,7 +52,8 @@ export default function Home() {
       description="Description will go into a meta tag in <head />">
       <HomepageHeader />
       <main>
-        <HomepageFeatures />
+        <HomepageFeatures/>
+        <HomepageTractus/>
       </main>
     </Layout>
   );
