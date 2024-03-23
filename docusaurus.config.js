@@ -115,8 +115,8 @@ const config = {
             title: "Community",
             items: [
               {
-                label: "MS Teams - Support channel",
-                href: "https://teams.microsoft.com/l/channel/19%3a9a3c4a05a3514d07b973c13e7b468709%40thread.tacv2/CX%2520-%2520CoP%2520DevSecOps?groupId=17b1a2dc-67fb-4a49-a2ed-dd1344321439&tenantId=1ad22c6d-2f08-4f05-a0ba-e17f6ce88380",
+                label: "Tractus-X Page",
+                href: "https://eclipse-tractusx.github.io/",
               },
             ],
           },
