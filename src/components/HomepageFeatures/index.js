@@ -4,16 +4,6 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: 'Get Support / How to contribute',
-    Svg: require('@site/static/img/support-svgrepo-com.svg').default,
-    description: (
-      <>
-          Fededback/Information/Reuests via <b>GitHub</b> <a href="https://github.com/catenax-eV/catenax-ev.github.io/discussions">discussions</a> <br/><br/>
-          Want to support/contribute ...
-      </>
-    ),
-  },
-  {
     title: 'Standards',
     Svg: require('@site/static/img/rocket-svgrepo-com.svg').default,
     description: (
@@ -37,6 +27,16 @@ const FeatureList = [
     description: (
       <>
           Here you will find all the information about the <a href="/docs/working-model/overview">Working Model</a>.
+      </>
+    ),
+  },
+  {
+    title: 'Get Support / How to contribute',
+    Svg: require('@site/static/img/support-svgrepo-com.svg').default,
+    description: (
+      <>
+          Fededback/Information/Reuests via <b>GitHub</b> <a href="https://github.com/catenax-eV/catenax-ev.github.io/discussions">discussions</a> <br/><br/>
+          Want to support/contribute ...
       </>
     ),
   },
