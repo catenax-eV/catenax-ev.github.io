@@ -1,3 +1,7 @@
+---
+sidebar_position: 1
+---
+
 # Process from Idea to Release to Production (Ab-lauf-Orga)
 
 ## General “Timeline”

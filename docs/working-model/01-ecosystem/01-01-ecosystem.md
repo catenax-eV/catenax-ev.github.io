@@ -1,3 +1,7 @@
+---
+sidebar_position: 1
+---
+
 # Catena-X Ecosystem
 
 The Catena-X ecosystem consists of three areas
