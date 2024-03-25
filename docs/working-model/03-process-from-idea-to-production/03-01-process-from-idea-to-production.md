@@ -47,7 +47,7 @@ The software testing of reference implementations is sponsored and coordinated b
 
 - Level 1: Product Tests
 - Level 2: Release Tests
-- Level 3: Test Bed & Certification
+- Level 3: Test Beds for 3rd Party Solutions
 
 ## Level 1 – Product Tests
 
@@ -62,6 +62,35 @@ A PR must include the feature code, adapted helm chart(s), technical documentati
 At least two committer must review the PR, including the source code, test results and the compliance with the Tractus-X release guidelines (TRGs), and approve the merging of these changes. In case there are change requests or defects that a committer cannot solve, the contributor must address these changes before merging. Defects must be created as bugs in the sig-release repo.
 
 The PR and the related product tests are part of the open-source development process resulting in a new product (rc-)version.
+
+## Level 2 – Release Tests
+
+The release tests include e2e tests for the Catena-X operating system (cxOS) itself as well as for the cxOS with open-source applications (e.g., Trace-X) based on [umbrella helm charts](https://github.com/eclipse-tractusx/tractus-x-umbrella). Thereby, various product combinations of umbrella helm charts are possible.
+
+The purpose of release testing is for the feature requestor to validate the end-to-end business flow using various test executions and to confirm that the acceptance criteria have been fulfilled (business value).
+
+Before a product can participate in a release test, it must fulfill the following **Prerequisites**:
+
+For release 24.08, expert groups of the Catena-X association must ...
+
+- create new or refine existing e2e test cases, test data and documentation as .md-file in Tractus-X [sig-testing](https://github.com/eclipse-tractusx/sig-testing).
+- provide at least one tester for the execution of the e2e test cases (if not fully automated).
+
+The Catena-X association will provide a test management team including ...
+
+- a test manager that creates the test plan and report, coordinates the test execution.
+- a DevSecOps engineer for setting up test environment infrastructure (based on the hotel budapest approach).
+- a DevSecOps engineer for deploying the umbrella helm chart of release candidates (supported by Tractus-X committer, if not fully automated yet).
+
+The release tests result in a validated version of the cxOS, which is made available through quarterly Eclipse [Tractus-X releases](https://projects.eclipse.org/projects/automotive.tractusx).
+
+## Level 3 – Test Beds
+
+The purpose of test beds is to enable solution provider as well as data provider / consumer to test their data exchange infrastrucutre and(3rd party) solutions after an offical Eclipse Tractus-X release.
+
+## Defect Management
+
+Defects or unexpected behavior must be reported as bugs in the [sig-release repo](https://github.com/eclipse-tractusx/sig-release/issues/new/choose).
 
 ### Release
 

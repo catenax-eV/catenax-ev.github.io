@@ -29,4 +29,6 @@ This page is currently an MVP and is under construction. The content shown here 
 
 ## Normative
 
-> It is not a normative Document!
+:::info
+It is not a normative Document!
+:::
