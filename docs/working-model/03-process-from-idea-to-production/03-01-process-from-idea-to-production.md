@@ -2,20 +2,15 @@
 sidebar_position: 1
 ---
 
-# Process from Idea to Release to Production (Ab-lauf-Orga)
+# Process Organization - From Idea to Release
 
-## General “Timeline”
+[//]: <> (ToDo: Add Overarching Timeline, Catena-X Process)
 
-### C-X Process
+## Tractus-X Process Overview
 
-- Prozesse für Vereins-internes planning
+We use the Committees and Expert Groups of the Catena-X e.V. to align, develop and release Catena-X specifications and standards (candidates) - also with other initiatives in the future. We use the Eclipse Tractus-X Project (e.g., TRGs), the Eclipse Development Process to refine, plan, develop and release our implementation features.
 
-### T-X Process
-
-We use the Committees and Expert Groups of the Catena-X e.V. to align, develop and release Catena-X specifications and standards (candidates) - also with other initiatives in the future.
-We use the Eclipse Tractus-X Project (e.g., TRGs), the Eclipse Development Process to refine, plan, develop and release our implementation features.
-
-## Process Overview
+## Catena-X Process Overview
 
 | Tasks             | Documents (e.g. Standards) | Reference Impl. | Outcome |
 |-------------------|----------------------------|-----------------|---------|
@@ -29,23 +24,57 @@ We use the Eclipse Tractus-X Project (e.g., TRGs), the Eclipse Development Proce
 | Testing of Deliverables | Member Sounding | Testing of software, test phase, test management, etc. | Deliverables tested |
 | Release Deliverables | Quality Criteria and Style Guides | Tractus-X Release Guidelines | Deliverables released |
 
-### Refine and Plan --> Julia / Daniel
+### Refine and Plan
 
-- How will open refinement meetings being communicated and by whom?
-- Who will decide on the implementation of a feature? (former PO)
-- Who will say this feature is mature enough?
-- Who will create the implementation issues (user story)?
-- How to handle dependencies?
+**How are the open refinement meetings communicated?**
+The Catena-X association will communicate and coordiante the open refinement and open planning meetings vi the a Tractus-X [News Page](https://eclipse-tractusx.github.io/blog) and the Tractus-X [Mailing List](https://accounts.eclipse.org/mailing-list/tractusx-dev). Please make sure that you subscribe. The meetings will also be published (with meeting session and calender.ics) on the open meetings page.
 
-### Step by step contribute Guide: see Julias MD
+**Who can propose a feature?***
+Anyone can **propose a feature**, including committees, expert groups, and other initiatives. However, we require a dedicated feature owner for further refinement and the breakdown into implementation issues.
 
-- Vgl. Sig-release content
+**Who decides on the prioritization and implementation of a feature?**
+Once a feature is proposed, the committers, supported by the project leads, will make a **feature commitment** in the open planning meeting based on the stategic / technical fit, features maturity and ressource commitment, among other things.
 
-### Develop
+**Who says that a feature is mature enough (DoE)?**
+We require high quality features that make it possible to fully understand the functionality in order to translate it into implementation issues. In addition, at least one subject matters expert must be available to answer questions. To participate in open planning, the following criteria (Definition of Entry) must be met:
 
-For reference implementations please see the Eclipse Handbook.
+- Feature owner defined (e.g., subject matter expert)
+- Stategic and technical fit defined
+- Business value is defined
+- Test cases and test data is are available
+- Accpetance criteria are defined
+- Feature estimation available
+- Ressource commitment is defined*
+- Dependencies with other products / issues are mapped and adressed
+- Known rsiks are properly adressed
+- No open questions left
+- Preferred: First implementation issues are defined
 
-### Test --> Daniel / Julia
+** There are two options regarding resource commitment:
+
+1. If you have dedicated developer resources, your developer team will create the implementation issues at the user story level.
+2. If you do not have dedicated developer resources, interested developers team can create the implementation issues.
+
+Ultimately, the decision regarding maturity is made jointly by the affected products and contributers in the open refinement meetings.
+
+**Who gives access to the sig-release repository to enable planning process?**
+
+Please refer to our Tractus-X [Getting Started Guide](https://eclipse-tractusx.github.io/docs/oss/getting-started).
+
+**How to handle dependencies?**
+Dependencies can be discussed in our open refinement meetings as well as via our other communication channels (e.g. martix chat or bilateral sessions). Please refer to our Tractus-X [communication rules](https://eclipse-tractusx.github.io/community/intro).
+
+### Step by step contribute Guide
+
+:::info
+ToDo: Contribution Guide
+:::
+
+### Feature Development
+
+For open-source reference implementations please refer to the Eclipse Handbook and the Tractus-X release guidelines..
+
+### Test Management
 
 The software testing of reference implementations is sponsored and coordinated by the Catena-X association. It includes the following three levels:
 
@@ -63,7 +92,7 @@ A PR must include the feature code, adapted helm chart(s), technical documentati
 
 **Hint:** You can find the latest versions of the product helm charts in our release [changelog](https://eclipse-tractusx.github.io/CHANGELOG).
 
-At least two committer must review the PR, including the source code, test results and the compliance with the Tractus-X release guidelines (TRGs), and approve the merging of these changes. In case there are change requests or defects that a committer cannot solve, the contributor must address these changes before merging. Defects must be created as bugs in the sig-release repo.
+At least two committer must review the PR, including the source code, test results and the compliance with the Tractus-X release guidelines (TRGs), and approve the merging of these changes. In case there are change requests or defects that a committer cannot solve, the contributor must address these changes before merging.
 
 The PR and the related product tests are part of the open-source development process resulting in a new product (rc-)version.
 
@@ -73,7 +102,7 @@ The release tests include e2e tests for the Catena-X operating system (cxOS) its
 
 The purpose of release testing is for the feature requestor to validate the end-to-end business flow using various test executions and to confirm that the acceptance criteria have been fulfilled (business value).
 
-Before a product can participate in a release test, it must fulfill the following **Prerequisites**:
+Before a product can participate in a release test, it must fulfill the following **prerequisites**:
 
 For release 24.08, expert groups of the Catena-X association must ...
 
@@ -90,81 +119,46 @@ The release tests result in a validated version of the cxOS, which is made avail
 
 ## Level 3 – Test Beds
 
-The purpose of test beds is to enable solution provider as well as data provider / consumer to test their data exchange infrastrucutre and(3rd party) solutions after an offical Eclipse Tractus-X release.
+Coming soon...
 
 ## Defect Management
 
 Defects or unexpected behavior must be reported as bugs in the [sig-release repo](https://github.com/eclipse-tractusx/sig-release/issues/new/choose).
 
-### Release
+### Release Management
 
-- Standards / KITs
-- Software
-- Release Guidelines
+:::info
+ToDo: Release
+:::
 
-### Security
+### Security Mangement
 
-- Managing and Reporting Vulnerabilities
-- Communication
-
-### Methods & Guidelines
-
-- DoE, DoR, DoD
-- Software -> Eclipse Handbook
+:::info
+ToDo: Security, Managing and Reporting Vulnerabilities, Communication
+:::
 
 ### High-Level Meeting Structure
 
-- Refinement Meetings
-- Release Planning Days
-- Operativer Status Sync (Nachfolger ?) > Committee Sync
-- Sounding Meeting
-- ...
-
-### Promoting your content
-
-- Standardization Process
+:::info
+ToDo: Meeting Strucutre
+:::
 
 ### Communication
 
-- News
-- Newsletter
-- Website
-- Townhalls
-- Library, OnePager
-- Freigabeprozesse
-- ...
+:::info
+ToDo: Meeting Communication
+:::
 
 ### Branding & Trademark
 
-- Names & Trademarks
+:::info
+ToDo: Branding & Trademark
+:::
 
 ### Interfaces Catena-X e.V
 
-- Tractus-X: Contributor / Committer Role
-- EDWG
-- IDTA
-- IDSA
-- Gaia-X
-- Factory-X (???)
-- [Whitepaper on DataSpace Governance](https://catena-x.net/fileadmin/_online_media_/231006_Whitepaper_DataSpaceGovernance.pdf)
+Coming soon...
 
 ### Community
 
 - [Catena-X Community Introduction](https://eclipse-tractusx.github.io/community/intro)
-
-### Checklist
-
-- Glossary
-- Legal Documents
-- Link to Catena-X IP Regelung
-- Rahmenordnung
-
-### Topic Store
-
-- Decision Records
-- Architektur-Prozess/Architecture Decisions
-- Use Case Radar
-- Use Case Funnel
-- Testing new Use Cases
-- Inviting guests to meetings / Voting rights
-- Business Release vs. Technical Release
