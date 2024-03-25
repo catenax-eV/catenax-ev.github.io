@@ -17,7 +17,7 @@ const FeatureList = [
     Svg: require('@site/static/img/rocket-svgrepo-com.svg').default,
     description: (
       <>
-          Here you will find all the information about the <a href="/docs/operating-model/overview">Operating Model</a>.
+          Here you will find all the information about the <a href="docs/operating-model/operating-model">Operating Model</a>.
       </>
     ),
   },
