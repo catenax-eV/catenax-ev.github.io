@@ -110,20 +110,6 @@ const config = {
         links: [
           {
             title: "Docs",
-            items: [
-              {
-                label: "Get Started",
-                to: "/docs/operating-model/overview",
-              },
-              {
-                label: "Get Started",
-                to: "/docs/operating-model/overview",
-              },
-              {
-                label: "Get Started",
-                to: "/docs/operating-model/overview",
-              },
-            ],
           },
           {
             title: "Community",
