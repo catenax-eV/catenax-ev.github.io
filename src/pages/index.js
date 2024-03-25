@@ -6,6 +6,44 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './index.module.css';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 
+
+
+
+const OptionList = [
+  {
+    title: 'Catena-x Automotive Network e.V.',
+    Svg: require('@site/static/img/logo.svg').default,
+    description: (
+      <>
+          Become a member of Catena-X and shape the ecosystem in committees and expert groups.
+      </>
+    ),
+  },
+  {
+    title: 'Eclipse Tractus-X Project',
+    Svg: require('@site/static/img/logo_tractus-x.svg').default,
+    description: (
+      <>
+          Collaborate and contribute together with the experts in a great open-source environment.
+      </>
+    ),
+  },
+];
+
+function Option({Svg, title, description}) {
+  return (
+    <div className={clsx('col col--4')}>
+      <div className="text--center">
+        <Svg className={styles.featureSvg} role="img" />
+      </div>
+      <div className="text--center padding-horiz--md">
+        <h3>{title}</h3>
+        <p>{description}</p>
+      </div>
+    </div>
+  );
+}
+
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
   return (
@@ -25,22 +63,27 @@ function HomepageHeader() {
   );
 }
 
-function HomepageTractus() {
-  const {siteConfig} = useDocusaurusContext();
+function HomepageContributingOptions() {
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
-        <h1 className="hero__title">Eclipse Tractus-X Project</h1>
-        <p className="hero__subtitle">Get involved in our open-source development and the related reference implementations</p>
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="https://eclipse-tractusx.github.io/docs/oss/getting-started">
-            Ready to contribute!!
-          </Link>
-        </div>
+        <h1 className="hero__title">Are you interested? Ready to contribute?</h1>
+        <p className="hero__subtitle">There are two options</p>
+        <section className={clsx('hero hero--primary', styles.features)}>
+          <div className="container">
+            <div className={styles.row_landing}>
+              {OptionList.map((props, idx) => (
+                <Option key={idx} {...props} />
+              ))}
+            </div>
+          </div>
+    </section>
       </div>
     </header>
+
+
+
+    
   );
 }
 
@@ -53,7 +96,7 @@ export default function Home() {
       <HomepageHeader />
       <main>
         <HomepageFeatures/>
-        <HomepageTractus/>
+        <HomepageContributingOptions/>
       </main>
     </Layout>
   );
