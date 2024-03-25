@@ -1,3 +1,7 @@
+---
+sidebar_position: 1
+---
+
 # Catena-X Organizational Structure (Aufbau-Orga)
 
 ## Structural and Process Organization
