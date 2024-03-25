@@ -25,10 +25,8 @@ const config = {
       ({
         docs: {
           // includeCurrentVersion: false,
-          sidebarPath: require.resolve("./sidebars.js"),
+          sidebarPath: require.resolve("./sidebars.js")
           // Please change this to your repo.
-          editUrl:
-            "https://github.com/catenax-eV/catenax-ev.github.io/edit/main/",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
