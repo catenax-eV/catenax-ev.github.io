@@ -15,7 +15,7 @@ const OptionList = [
     Svg: require('@site/static/img/logo.svg').default,
     description: (
       <>
-          Become a member of Catena-X and shape the ecosystem in committees and expert groups.
+          <a href="https://catena-x.net/en/about-us/the-association/become-a-member">Become a member</a> of Catena-X and shape the ecosystem in committees and expert groups.
       </>
     ),
   },
@@ -24,7 +24,7 @@ const OptionList = [
     Svg: require('@site/static/img/logo_tractus-x.svg').default,
     description: (
       <>
-          Collaborate and contribute together with the experts in a great open-source environment.
+           <a href="https://eclipse-tractusx.github.io/docs/oss/getting-started">Collaborate and contribute</a> together with the experts in a great open-source environment.
       </>
     ),
   },

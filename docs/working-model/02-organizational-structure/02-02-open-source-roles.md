@@ -20,9 +20,7 @@ Each role is vital to the project's ecosystem and contributes uniquely to its gr
 
 ## Contributor Role Description
 
-:::info
-_waiting for the content - proposal added below_
-:::
+Contributor actively participating in the development process. They contribute code, documentation, bug fixes, and other resources to advance the project's objectives. Additionally, contributors engage in discussions, provide feedback, and collaborate with other members of the project community to improve the project's quality and functionality. Their efforts help drive innovation and ensure the success of the project within the Eclipse ecosystem.
 
 ### Open Source Contributor Role Description
 
@@ -51,11 +49,26 @@ It's important to recognize that the role of a contributor is not confined to th
 
 Contributors are expected to adhere to the project's code of conduct, collaborate respectfully with other community members, and provide constructive feedback. While there is no formal commitment required, consistent and quality contributions can lead to recognition within the community and may open the door to additional roles, such as becoming a committer or joining an expert group.
 
-## Committer Role Description
+**Fields of responsibility:**
+
+- `Core committer` (product committer) knows their product -> They work on their product and know the TRGs to accept PRs
+- Overarching responsibility/view (integration)
+- Cross-functional fields of expertise, like SIG DevSecOps/Security
 
 :::info
-_waiting for the content - proposal added below_
+ToDo: Has to be rewritten
+
+The work for a committer is driven/supported by the TRGs:
+
+- TRGs for every release
+- `Èvery day TRGs` used in PRs
+- Hygiene
+
 :::
+
+## Committer Role Description
+
+Committer in an Eclipse project holds the authority to directly contribute changes to the project's source code repository. They are responsible for reviewing and integrating contributions from other community members, ensuring adherence to project standards and guidelines (in our case TRGs). Additionally, committers play a key role in decision-making processes within the project, actively participating in discussions and providing leadership to drive the project forward.
 
 ### Open Source Committer Role Description
 
