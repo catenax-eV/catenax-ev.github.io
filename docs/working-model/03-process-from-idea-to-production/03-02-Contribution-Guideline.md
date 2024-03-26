@@ -26,4 +26,4 @@ By following these guidelines, you can make valuable contributions to the Tractu
 
 ### Further links
 
-> [Contribution Levels](./03-03-Contribute-to-Catena-X.md)
+> [Contribution Levels](./03-04-Issue-Process.md)

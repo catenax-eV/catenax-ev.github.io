@@ -5,7 +5,7 @@ import styles from './styles.module.css';
 const FeatureList = [
   {
     title: 'Working Model',
-    Svg: require('@site/static/img/rocket-svgrepo-com.svg').default,
+    Svg: require('@site/static/img/working-model-icon.svg').default,
     description: (
       <>
           Here you will find all the information about the <a href="/docs/working-model/overview">Working Model</a>.
@@ -14,7 +14,7 @@ const FeatureList = [
   },
   {
     title: 'Standards',
-    Svg: require('@site/static/img/rocket-svgrepo-com.svg').default,
+    Svg: require('@site/static/img/standards-icon.svg').default,
     description: (
       <>
           Here you will find all the information about the <a href="/docs/standards/overview">Standards</a>.
@@ -23,7 +23,7 @@ const FeatureList = [
   },
   {
     title: 'Operating Model',
-    Svg: require('@site/static/img/rocket-svgrepo-com.svg').default,
+    Svg: require('@site/static/img/operating-model-icon.svg').default,
     description: (
       <>
           Here you will find all the information about the <a href="docs/operating-model/operating-model">Operating Model</a>.
@@ -32,7 +32,7 @@ const FeatureList = [
   },
   {
     title: 'Get Support / How to contribute',
-    Svg: require('@site/static/img/support-svgrepo-com.svg').default,
+    Svg: require('@site/static/img/support-icon.svg').default,
     description: (
       <>
           Fededback/Information/Reuests via <b>GitHub</b> <a href="https://github.com/catenax-eV/catenax-ev.github.io/discussions">discussions</a> <br/><br/>
