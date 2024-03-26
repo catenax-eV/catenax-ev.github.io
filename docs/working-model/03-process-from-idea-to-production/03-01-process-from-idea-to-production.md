@@ -105,16 +105,16 @@ Program Increment (PI) Planning is a critical event in the Tractus-X project whe
 - **Commitment:** Teams and individuals commit to the work they will deliver, fostering accountability and setting clear expectations for the upcoming PI.
 - **Roadmap Update:** The project's roadmap is updated to reflect the decisions made during the PI Planning, providing transparency to stakeholders and the community.
 
-#### 3.5 Communication and Documentation
+### 3.5 Communication and Documentation
 
 - **Documentation of Decisions:** All decisions and commitments made during the PI Planning are documented and made accessible to the project's stakeholders.
 - **Communication Plan:** A communication plan is established to keep all parties informed about progress and any changes to the PI objectives.
 
-### 4. Feature Development
+## 4. Feature Development
 
 For open-source reference implementations please refer to the Eclipse Handbook and the Tractus-X release guidelines..
 
-### 5. Test Management
+## 5. Test Management
 
 The software testing of reference implementations is sponsored and coordinated by the Catena-X association. It includes the following three levels:
 
@@ -122,7 +122,7 @@ The software testing of reference implementations is sponsored and coordinated b
 - Level 2: Release Tests
 - Level 3: Test Beds for 3rd Party Solutions
 
-## 5.1 Product Tests
+### 5.1 Product Tests
 
 Product tests include unit, regression and integration tests based on product helm charts with individual dependencies.  
 
@@ -136,7 +136,7 @@ At least two committer must review the PR, including the source code, test resul
 
 The PR and the related product tests are part of the open-source development process resulting in a new product (rc-)version.
 
-## 5.2 Release Tests
+### 5.2 Release Tests
 
 The release tests include e2e tests for the Catena-X operating system (cxOS) itself as well as for the cxOS with open-source applications (e.g., Trace-X) based on [umbrella helm charts](https://github.com/eclipse-tractusx/tractus-x-umbrella). Thereby, various product combinations of umbrella helm charts are possible.
 
@@ -157,31 +157,31 @@ The Catena-X association will provide a test management team including ...
 
 The release tests result in a validated version of the cxOS, which is made available through quarterly Eclipse [Tractus-X releases](https://projects.eclipse.org/projects/automotive.tractusx).
 
-## 5.3 Test Beds
+### 5.3 Test Beds
 
 Coming soon...
 
-## 5.4 Defect Management
+### 5.4 Defect Management
 
 Defects or unexpected behavior must be reported as bugs in the [sig-release repo](https://github.com/eclipse-tractusx/sig-release/issues/new/choose).
 
-### 6. Release Management
+## 6. Release Management
 
 :::info
 ToDo: Release
 :::
 
-### 7. Security Mangement
+## 7. Security Mangement
 
 :::info
 ToDo: Security, Managing and Reporting Vulnerabilities, Communication
 :::
 
-### 8. Relevant Links
+## 8. Relevant Links
 
 - [Catena-X Community Introduction](https://eclipse-tractusx.github.io/community/intro)
 
-### 9. FAQs
+## 9. FAQs
 
 **How are the open meetings communicated?**
 The Catena-X association will communicate and coordiante the open refinement and open planning meetings vi the a Tractus-X [News Page](https://eclipse-tractusx.github.io/blog) and the Tractus-X [Mailing List](https://accounts.eclipse.org/mailing-list/tractusx-dev). Please make sure that you subscribe. The meetings will also be published (with meeting session and calender.ics) on the open meetings page.
