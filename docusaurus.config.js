@@ -62,6 +62,12 @@ const config = {
         items: [
           {
             type: "docSidebar",
+            sidebarId: "sidebar_working_model",
+            position: "left",
+            label: "Working Model",
+          },
+          {
+            type: "docSidebar",
             sidebarId: "sidebar_standards",
             position: "left",
             label: "Standards",
@@ -72,13 +78,7 @@ const config = {
             position: "left",
             label: "Operating Model",
           },
-          {
-            type: "docSidebar",
-            sidebarId: "sidebar_working_model",
-            position: "left",
-            label: "Working Model",
-          },
-          {
+{
             type: 'docsVersionDropdown',
             position: 'right',
           },
