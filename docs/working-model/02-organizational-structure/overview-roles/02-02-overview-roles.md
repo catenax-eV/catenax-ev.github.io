@@ -14,12 +14,12 @@ ToDo: Add second picture, bigger Catena-X
 
 Within this chapter, we will explore the responsibilities, expectations, and contributions of four key roles:
 
-1. [**Committee**](./catena-x-roles.md/#committee-association): The Committee is a governing body that provides overarching guidance and direction for the project. It is responsible for the project's governance, strategic planning, and ensuring that the project's goals and activities align with its vision and mission.
+1. [**Committee**](./catena-x-roles.md#committee-association): The Committee is a governing body that provides overarching guidance and direction for the project. It is responsible for the project's governance, strategic planning, and ensuring that the project's goals and activities align with its vision and mission.
 
-2. [**Expert Group**](./catena-x-roles.md/#expert-group-association): Expert groups consist of individuals with specialized knowledge or skills in a particular area of the project. They work collaboratively to drive the project's development, make strategic decisions, and ensure the quality and integrity of the project.
+2. [**Expert Group**](./catena-x-roles.md#expert-group-association): Expert groups consist of individuals with specialized knowledge or skills in a particular area of the project. They work collaboratively to drive the project's development, make strategic decisions, and ensure the quality and integrity of the project.
 
-3. [**Contributor**](./tractus-x-roles.md/#contributor-tractus-x): Contributors are the backbone of any open source project. They are individuals who offer their skills and time to contribute to the project in various forms, such as code, documentation, design, or community support.
+3. [**Contributor**](./tractus-x-roles.md#contributor-tractus-x): Contributors are the backbone of any open source project. They are individuals who offer their skills and time to contribute to the project in various forms, such as code, documentation, design, or community support.
 
-4. [**Committer**](./tractus-x-roles.md/#committer-tractus-x): Committers are contributors who have been granted the ability to directly access the project's code repository to make changes. They have a deeper level of commitment to the project and are responsible for reviewing and accepting contributions from others.
+4. [**Committer**](./tractus-x-roles.md#committer-tractus-x): Committers are contributors who have been granted the ability to directly access the project's code repository to make changes. They have a deeper level of commitment to the project and are responsible for reviewing and accepting contributions from others.
 
 Each role is vital to the project's ecosystem and contributes uniquely to its growth and direction. **As we delve into the specifics of each role, we invite you to consider where your skills and interests may best align with the needs of the project.** Whether you are just starting out or looking to increase your involvement, there is a place for everyone to contribute and make an impact in our open source community.
