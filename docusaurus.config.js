@@ -18,6 +18,8 @@ const config = {
   projectName: "catenax-ev.github.io", // Usually your repo name.
   trailingSlash: false,
 
+  plugins: [require.resolve("docusaurus-plugin-image-zoom")],
+
   presets: [
     [
       "classic",
@@ -49,10 +51,18 @@ const config = {
       },
     ],
   ],
-
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-    ({
+    ({zoom: {
+      selector: '.markdown :not(em) > img',
+      config: {
+        // options you can specify via https://github.com/francoischalifour/medium-zoom#usage
+        background: {
+          light: 'rgb(255, 255, 255)',
+          dark: 'rgb(50, 50, 50)'
+        }
+      }
+    },
       navbar: {
         title: "Catena-X",
         logo: {
