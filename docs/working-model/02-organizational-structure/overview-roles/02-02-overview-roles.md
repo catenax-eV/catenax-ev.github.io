@@ -6,7 +6,7 @@ sidebar_position: 1
 
 Welcome to the "Open Source Roles" section of our documentation. This chapter is dedicated to providing a comprehensive overview of the various roles that are integral to the success and sustainability of our open source project. Open source projects thrive on the collaboration and contributions of a diverse and active community. Understanding the different roles within this ecosystem is crucial for both current and prospective members who wish to engage with and contribute to the project.
 
-![Overview](./assets/structual-process-organization.png)
+![Overview](../assets/structual-process-organization.png)
 
 :::info
 ToDo: Add second picture, bigger Catena-X

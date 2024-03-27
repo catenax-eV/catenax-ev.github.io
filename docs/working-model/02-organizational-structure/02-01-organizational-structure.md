@@ -20,7 +20,7 @@ ToDo: Michael
   - Rolle der Mitarbeiter innerhalb im Verein (z.B. Expert Groups, Committees)
   - The Catena-X Automotive Network e.V. promotes, sponsors, and coordinates the overlying requirements of the Eclipse Tractus-X Project.
 
-Committees and expert groups are advertised, selected, and established on the basis of a “requirement”. The application phases are similar and the distributors are always the Catena-X members. More information can be found [here](./02-02-overview-roles.md).
+Committees and expert groups are advertised, selected, and established on the basis of a “requirement”. The application phases are similar and the distributors are always the Catena-X members. More information can be found [here](./overview-roles/02-02-overview-roles.md).
 
 To get a better overview of the given committees and expert groups, there will be a SharePoint page within the member area. Information about:
 
