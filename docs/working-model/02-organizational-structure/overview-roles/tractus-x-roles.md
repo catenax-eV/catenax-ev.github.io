@@ -91,7 +91,7 @@ The work for a committer is driven/supported by the TRGs:
 
 Even if it appears to be an organisational separation, it is important to understand that Catena-X and Tractus-X must work closely together. The Expert Groups and Committees are the ones who define the features and the roadmap. The committers are the ones who implement the features and the roadmap. The experts are the ones who provide the knowledge and the expertise to the committers.
 
-![ExpertGroup-Experts-Committers](./assets/expert-group-experts-committers.png)
+![ExpertGroup-Experts-Committers](../assets/expert-group-experts-committers.png)
 
 The committers are responsible for the prioritization of the features within the open-source boards. committers are also responsible for overarching topics like quality, security, and functionality. Committers are representatives of their own company and should also work/support within the expert groups.
 

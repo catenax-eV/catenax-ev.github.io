@@ -150,7 +150,7 @@ If applicable, the Mentor informs all review group members about the process and
 **Process Presentation and Handover**
 The Mentor presents the overall process, including reporting to the committee and the next review session with the review group. Additionally, the Mentor supports with lead selection and then hands over the leadership responsibilities to the appointed leads.
 
-![ExpertGroup process](./assets/expertgroup-process.png)
+![ExpertGroup process](../assets/expertgroup-process.png)
 
 ### Decision Making & Communication
 
