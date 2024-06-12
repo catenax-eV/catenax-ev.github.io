@@ -91,6 +91,21 @@ const config: Config = {
           label: "Operating Model",
         },
         {
+          type: 'dropdown',
+          label: 'Versions',
+          position: 'left',
+          items: [
+            {
+              to: '/release-management',
+              label: 'Release Management',
+            },
+            {
+              to: '/CHANGELOG',
+              label: 'Changelog',
+            },
+          ],
+        },
+        {
           type: 'docsVersionDropdown',
           position: 'right',
         },
