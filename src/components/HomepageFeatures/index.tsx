@@ -37,7 +37,7 @@ const FeatureList: FeatureItem[] = [
     ),
   },
   {
-    title: 'Fededback',
+    title: 'Feedback',
     Svg: require('@site/static/img/support-icon.svg').default,
     description: (
       <>
