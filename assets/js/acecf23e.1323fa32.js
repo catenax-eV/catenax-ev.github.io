@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcatenax_ev_github_io_new=self.webpackChunkcatenax_ev_github_io_new||[]).push([[1903],{1912:e=>{e.exports=JSON.parse('{"blogBasePath":"/catenax-ev.github.io.new/blog","blogTitle":"Blog"}')}}]);
