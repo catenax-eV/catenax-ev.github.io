@@ -1,0 +1,28 @@
+name: Verify website build
+
+on:
+  pull_request:
+    branches:
+      - main
+
+# This job will try to build the website to find potential issues
+# before actually merging and deploying the page.
+# There are cases, where for example broken links will break the build, but
+# checking it on the local development server (npm start) will work smoothely.
+jobs:
+  test-deploy:
+    name: Build static website
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18.x
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+      - name: Lint
+        run: npm run lint
+      - name: Test build website
+        run: npm run build
