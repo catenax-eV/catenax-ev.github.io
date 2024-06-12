@@ -37,12 +37,11 @@ const FeatureList: FeatureItem[] = [
     ),
   },
   {
-    title: 'Get Support / How to contribute',
+    title: 'Fededback',
     Svg: require('@site/static/img/support-icon.svg').default,
     description: (
       <>
-          Fededback/Information/Reuests via <b>GitHub</b> <a href="https://github.com/catenax-eV/catenax-ev.github.io/discussions">discussions</a> <br/><br/>
-          Want to support/contribute ...
+          PLease provide Fededback/Information/Reuests via <b>GitHub</b> <a href="https://github.com/catenax-eV/catenax-ev.github.io/discussions">discussions</a>
       </>
     ),
   },
