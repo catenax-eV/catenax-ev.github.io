@@ -41,7 +41,7 @@ const FeatureList: FeatureItem[] = [
     Svg: require('@site/static/img/support-icon.svg').default,
     description: (
       <>
-          Please provide fededback or requests via GitHub <a href="https://github.com/catenax-eV/catenax-ev.github.io/discussions">discussions</a>
+          Please provide feedback or requests via GitHub <a href="https://github.com/catenax-eV/catenax-ev.github.io/discussions">discussions</a>
       </>
     ),
   },
