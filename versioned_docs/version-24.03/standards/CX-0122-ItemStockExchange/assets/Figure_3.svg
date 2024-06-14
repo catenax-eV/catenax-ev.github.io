@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="298px" preserveAspectRatio="none" style="width:474px;height:298px;background:#FFFFFF;" version="1.1" viewBox="0 0 474 298" width="474px" zoomAndPan="magnify"><defs/><g><rect fill="#DDDDDD" height="286.1953" style="stroke:#181818;stroke-width:0.5;" width="103" x="10" y="6"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="97" x="13" y="19.4951">Data Consumer</text><rect fill="#DDDDDD" height="286.1953" style="stroke:#181818;stroke-width:0.5;" width="93" x="234" y="6"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="87" x="237" y="19.4951">Data Provider</text><rect fill="#FFFFFF" height="76.7031" style="stroke:#181818;stroke-width:1.0;" width="10" x="275.5" y="137.2734"/><rect fill="none" height="128.4063" style="stroke:#000000;stroke-width:1.5;" width="458.5" x="10" y="93.5703"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="61" x2="61" y1="76.5703" y2="238.9766"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="280" x2="280" y1="76.5703" y2="238.9766"/><rect fill="#E2E2F0" height="49.2188" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="83" x="20" y="26.3516"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="57" x="33" y="47.8848">Business</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="69" x="27" y="65.4941">Application</text><rect fill="#E2E2F0" height="49.2188" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="83" x="20" y="237.9766"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="57" x="33" y="259.5098">Business</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="69" x="27" y="277.1191">Application</text><rect fill="#E2E2F0" height="49.2188" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="83" x="239" y="26.3516"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="57" x="252" y="47.8848">Business</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="69" x="246" y="65.4941">Application</text><rect fill="#E2E2F0" height="49.2188" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="83" x="239" y="237.9766"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="57" x="252" y="259.5098">Business</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="69" x="246" y="277.1191">Application</text><rect fill="#FFFFFF" height="76.7031" style="stroke:#181818;stroke-width:1.0;" width="10" x="275.5" y="137.2734"/><path d="M10,93.5703 L71,93.5703 L71,101.9219 L61,111.9219 L10,111.9219 L10,93.5703 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;"/><rect fill="none" height="128.4063" style="stroke:#000000;stroke-width:1.5;" width="458.5" x="10" y="93.5703"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="16" x="25" y="108.0654">alt</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="293" x="86" y="106.9893">[OPTIONAL: Check status of an "Item Stock Request"]</text><polygon fill="#181818" points="263.5,133.2734,273.5,137.2734,263.5,141.2734,267.5,137.2734" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="61.5" x2="269.5" y1="137.2734" y2="137.2734"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="105.5" y="132.417">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="115" x="116.5" y="132.417">Get Request Status</text><path d="M290,116.9219 L290,142.9219 L456,142.9219 L456,126.9219 L446,116.9219 L290,116.9219 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><path d="M446,116.9219 L446,126.9219 L456,126.9219 L446,116.9219 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="145" x="296" y="135.417">Request Status Endpoint</text><line style="stroke:#181818;stroke-width:1.0;" x1="285.5" x2="327.5" y1="170.625" y2="170.625"/><line style="stroke:#181818;stroke-width:1.0;" x1="327.5" x2="327.5" y1="170.625" y2="183.625"/><line style="stroke:#181818;stroke-width:1.0;" x1="286.5" x2="327.5" y1="183.625" y2="183.625"/><polygon fill="#181818" points="296.5,179.625,286.5,183.625,296.5,187.625,292.5,183.625" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="292.5" y="165.7686">2</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="153" x="303.5" y="165.7686">Determine Request Status</text><polygon fill="#181818" points="72.5,209.9766,62.5,213.9766,72.5,217.9766,68.5,213.9766" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="66.5" x2="279.5" y1="213.9766" y2="213.9766"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="79.5" y="209.1201">3</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="172" x="90.5" y="209.1201">Respond with Request Status</text><!--MD5=[68467af45fc9bf7ead021833140b9bb3]
+@startuml Figure_3
+autonumber
+skinparam sequenceMessageAlign center
+
+box "Data Consumer"
+participant "Business\nApplication" as app_cons
+end box
+
+box "Data Provider"
+participant "Business\nApplication" as app_prov
+end box
+
+alt OPTIONAL: Check status of an "Item Stock Request"
+    app_cons ->  app_prov: Get Request Status
+    note right: Request Status Endpoint
+
+    activate app_prov
+    app_prov -> app_prov: Determine Request Status
+    
+    app_prov ->  app_cons: Respond with Request Status
+    deactivate app_prov
+end
+
+@enduml
+
+PlantUML version 1.2022.7(Mon Aug 22 19:01:30 CEST 2022)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Default Encoding: Cp1252
+Language: en
+Country: US
+--></g></svg>

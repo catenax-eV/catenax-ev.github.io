@@ -1,0 +1,24 @@
+@startuml Figure_3
+autonumber
+skinparam sequenceMessageAlign center
+
+box "Data Consumer"
+participant "Business\nApplication" as app_cons
+end box
+
+box "Data Provider"
+participant "Business\nApplication" as app_prov
+end box
+
+alt OPTIONAL: Check status of a "Delivery Information Request"
+    app_cons ->  app_prov: Get request status
+    note right: Request Status Endpoint
+
+    activate app_prov
+    app_prov -> app_prov: Determine request status
+    
+    app_prov ->  app_cons: Respond with request status
+    deactivate app_prov
+end
+
+@enduml

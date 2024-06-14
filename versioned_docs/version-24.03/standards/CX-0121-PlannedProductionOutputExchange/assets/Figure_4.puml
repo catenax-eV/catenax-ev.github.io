@@ -1,0 +1,20 @@
+@startuml Figure_4
+
+Received : The Provider accepted the request for processing.
+Working : The Provider is processing the request and preparing the response.
+Completed : The Provider was able to successfully process AND respond to the request.
+Error : The Provider was unable to process OR respond to the request.
+
+[*] --> Received : Consumer requested "Planned Production Output" information
+
+Received --> Working : Provider started processing the request
+Received --> Error : Provider could NOT process the request
+
+Working --> Completed : Provider processed AND responded to the request
+Working --> Error : Error occured during request processing
+
+Completed --> [*]
+
+Error --> [*]
+
+@enduml
