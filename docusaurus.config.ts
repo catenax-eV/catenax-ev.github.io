@@ -165,7 +165,7 @@ const config: Config = {
               href: "https://www.svgrepo.com/",
             },
             {
-              label: "Copyright Notice",
+              label: "Legal Notice",
               href: "/copyright",
             },
           ],
