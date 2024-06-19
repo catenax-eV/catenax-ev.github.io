@@ -1,13 +1,19 @@
 {
   "default": true,
+  "MD004": {"style": "dash"},
   "MD013": false,
-  "MD040": false,
   "MD024": {
     "siblings_only": true
   },
+  "MD028": false,
   "MD033": {
     "allowed_elements": [
-      "br"
+      "br", "table", "thead", "tbody", "tr", "td", "th", "ul", "li"
     ]
-  }
+  },
+  "MD034": false,
+  "MD036": false,
+  "MD040": false,
+  "MD048": {"style": "backtick"},
+  "MD049": {"style": "asterisk"}
 }
