@@ -1,6 +1,6 @@
 # Legal Notice
 
-# COPYRIGHT & TRADEMARKS
+## COPYRIGHT & TRADEMARKS
 
 Any and all rights to the present document or parts of it, including but not limited under copyright law, are owned by Catena-X and its licensors.
 

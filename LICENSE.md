@@ -1,4 +1,6 @@
-# COPYRIGHT & TRADEMARKS
+# Legal Notice
+
+## COPYRIGHT & TRADEMARKS
 
 Any and all rights to the present document or parts of it, including but not limited under copyright law, are owned by Catena-X and its licensors.
 
@@ -21,5 +23,3 @@ No investigation regarding the essentiality of any patents or other intellectual
 Catena-X and its members are subject to the IP Regulations of the Association Catena-X Automotive Network e.V. which govern the handling of intellectual property rights in relation to the creation, exploitation and publication of technical documentation, specifications, and standards by [Catena-X](https://catena-x.net/fileadmin/user_upload/Vereinsdokumente/Catena-X_IP_Regelwerk_IP_Regulations.pdf).
 
 Neither Catena-X nor any of its members will be liable for any errors or omissions in this document, or for any damages resulting from use of the document or its contents, or reliance on its accuracy or completeness. In no event shall Catena-X or any of its members be held liable for any indirect, incidental or consequential damages, including loss of profits. Any liability of Catena-X or any of its members, including liability for any intellectual property rights or for non-compliance with laws or regulations, relating to the use of the document or its contents, is expressly disclaimed.
-
-© Catena-X Automotive Network e.V. All rights reserved.
