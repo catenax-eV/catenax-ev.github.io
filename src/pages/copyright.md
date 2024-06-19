@@ -1,3 +1,5 @@
+# Legal Notice
+
 ## DISCLAIMER & LIABILITY
 
 The present document and its contents are provided “AS-IS” with no warranties whatsoever.
