@@ -83,7 +83,7 @@ We use the Committees and Expert Groups of the Catena-X e.V. to align, develop a
 |-----------|-----------|
 |Feature author|The feature author is going to be the primary point of contact for all questions related to a feature proposal. The feature author carries the feature proposal through the validation and refinement process.|
 |Topic Owner|The topic owner validates new feature proposals for a defined topic (product) to make sure feature proposals align with the strategy for it. The topic owner is usually going to be a Committee.|
-|Committer|_See Tractus X Committer description_|
+|Committer|*See Tractus X Committer description*|
 
 ### Minimal feature content
 
@@ -100,10 +100,10 @@ The minimal feature content is a subset of the DoE. It defines the minimal infor
 
 |Information|Description|
 |-----------|-----------|
-|Minimal feature content|_see Minimal feature content_|
+|Minimal feature content|*see Minimal feature content*|
 |Dependencies|Dependencies with other products or issues are identified and categorized via GitHub labels|
 |Risks|Known rsiks are properly adressed|
-|Enablers|Required enablers are defined (_isnt that a dependency?_)|
+|Enablers|Required enablers are defined (*isnt that a dependency?*)|
 |High level architecture (building block view)||
 |Key dates and milestones|Key dates and milestones are defined using GitHub milestone declaration|
 |Testing|Test scenarios, test cases and test data are available|
