@@ -85,10 +85,18 @@ const config: Config = {
           label: "Standards",
         },
         {
-          type: "docSidebar",
-          sidebarId: "sidebar_op_model",
-          position: "left",
-          label: "Operating Model",
+          type: 'dropdown',
+          label: 'Governance Framework',
+          sidebarId: "sidebar_governance_framework",
+          position: 'left',
+          to: '/docs/governance-framework',
+          collapsed: false,
+          items: [
+            {
+              to: '/docs/operating-model/operating-model',
+              label: 'Operating Model',
+            },
+          ],
         },
         {
           type: 'dropdown',
