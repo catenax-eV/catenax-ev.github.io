@@ -92,7 +92,7 @@ const config: Config = {
         },
         {
           type: "docSidebar",
-          sidebarId: "sidebar_operating_model",
+          sidebarId: "sidebar_op_model",
           position: "left",
           label: "Operating Model",
         },
