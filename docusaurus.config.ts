@@ -92,7 +92,7 @@ const config: Config = {
         },
         {
           type: 'dropdown',
-          label: 'Versions',
+          label: 'Releases',
           position: 'left',
           items: [
             {
