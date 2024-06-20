@@ -20,17 +20,11 @@ Based on the first experiences in live operation, the release management for the
 ## What stayed the same?
 
 | Topic                               | 101 Pager (R23.09) / Jupiter (Oct. 2024)            |
-
 | ----------------------------------- | --------------------------------------------------- |
-
 | C-X Planning Cycle                  | 4 Times / Year                                      |
-
 | T-X Planning & Release Cycle        | 4 Times / Year                                      |
-
 | Upgrade Day for CSP-A / CSP-B / OSP | Synced Upgrade Day (coordinated by C-X association) |
-
 | Grace Period                        | 1 Year                                              |
-
 | C-X & T-X Artefact Versioning       | Semantic Versioning                                 |
 
 ## What has changed?
