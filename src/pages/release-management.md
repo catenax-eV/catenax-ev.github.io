@@ -4,7 +4,7 @@ Effective management of versions and changes for Catena-X standards, KITs and op
 
 ## Support Dates
 
-![Support Dates](./../../static/img/support-dates.jpg)
+![Support Dates](/img/support-dates.jpg)
 
 ## Consistency and Compatibility
 
