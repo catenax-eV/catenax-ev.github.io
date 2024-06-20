@@ -39,6 +39,11 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
+          versions: {
+            current: {
+              label: 'Jupiter (preview)',
+            },
+          },
         },
         theme: {
           customCss: './src/css/custom.css',
