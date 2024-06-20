@@ -38,7 +38,7 @@ Based on the first experiences in live operation, the release management for the
 
 ## Rationale for Changes
 
-![Release Timeline](./../../static/img/release-timeline.jpg)
+![Release Timeline](/img/release-timeline.jpg)
 
 These changes allow all stakeholders to take advantage of quality-assured dependency and compatibility management, and better predictability for the operational deployment and certification phase.
 
