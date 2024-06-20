@@ -13,7 +13,7 @@ Our Governance Framework for data space operations is designed to follow the hig
 
 To easily grasp the layers of our Governance Framework, think of flight level as a metaphor. The 30,000ft level provides the overall framework; 20,000ft is for specific use cases, 10,000ft for individual data offerings, and 5,000ft for automated contract negotiations. Each higher-level cascades into the lower ones, and the lower levels align with those above.
 
-![Governance Framework for Data Space Operations Flight Levels](./assets/csm-flight-level.jpg)
+![Governance Framework for Data Space Operations Flight Levels](./assets/csm-flight-levels.png)
 
 ## 30,000ft - Data Space Level
 
