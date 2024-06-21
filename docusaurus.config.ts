@@ -41,7 +41,7 @@ const config: Config = {
           sidebarPath: './sidebars.ts',
           versions: {
             current: {
-              label: 'Next',
+              label: 'Jupiter (preview)',
             },
           },
         },
