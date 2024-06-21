@@ -62,4 +62,3 @@ ToDo: Michael
 - Other initiatives (such as M-X) can use our processes to propose...
   - Feature proposals
   - Standardization candidates (?)
-  
