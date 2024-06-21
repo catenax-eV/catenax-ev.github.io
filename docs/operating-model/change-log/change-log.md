@@ -1,9 +1,37 @@
 ---
 sidebar_position: 1
 ---
-# Change Log
+# Changelog
 
-## Added
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
+
+## [3.0.0]
+
+### Added
+
+- Introduction
+  - Data Space interoperability (basic technical, semantic, legal, organizational criteria for interoperability with Catena-X)
+- Roles
+  - Sandbox Provider [BETA]
+- Governance:
+  - New Labels (Qualified Advisor, Qualified Company)
+  - Data exchange contracts, ODRL-policies, Country Clearance List
+  - Enforcement of compliance with normative documents (e.g. sanctions)
+
+### Changed
+
+- Roles
+  - OSP updated and enabled
+- Overview & Service Map
+  - Industry Core and Knowledge Agent incl. updated Data Ecosystem depiction updated
+- Operations
+  - Update SSI 2.0, Identity and Trust Protocol (IATP) and Issuer Authority updated
+- Governance
+  - Update Release Management (e.g. release management process, backwards compatibility) updated
+
+## [2.1.0]
+
+### Added
 
 - Role: Catena-X Automotive Network e.V.
 - Service Map: Onboarding Service Category
@@ -20,7 +48,7 @@ sidebar_position: 1
   - Qualification Process
   - Exceptions
 
-## Changed/Updated
+### Changed
 
 - Introduction: clarity and readability improvements
 - Roles:
@@ -31,7 +59,3 @@ sidebar_position: 1
 - Certification process: reference provided to Conformity Assessment Framework that details the Catena-X certification process further
 - Labels: Removed distinguishing factors between Certified Operating Company and Certified Partner
 - Outlook: updated according to release 23.09
-
-## Unchanged
-
-- Nomination Process
