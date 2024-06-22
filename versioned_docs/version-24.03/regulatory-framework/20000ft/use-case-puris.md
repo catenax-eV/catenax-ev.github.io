@@ -88,9 +88,9 @@ Unless otherwise set out below, defined terms are those set out in the 10 Golden
 
 ---
 
+:::note
 **Unrestricted Freedom of Contract**
 
-:::note
 outside of elements 2.1 - 2.6 above
 ::::
 
