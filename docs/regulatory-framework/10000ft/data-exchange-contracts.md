@@ -10,6 +10,7 @@ pagination_next: null
 
 - 19 MARCH 2024
 - VERSION 1.1
+- PDF-Version: [How_To_Conclude_Data_Exchange_Contracts.pdf](./assets/How_To_Conclude_Data_Exchange_Contracts.pdf)
 
 ### 1. REGISTRATION, CONNECTOR TECHNOLOGY AND USE CASE FRAMEWORKS
 

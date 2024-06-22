@@ -10,6 +10,7 @@ pagination_next: null
 
 - 16 OCTOBER 2023
 - VERSION 1.0
+- PDF-Version: [231016_Catena-X_Use_Case_Framework_Traceability.pdf](./assets/231016_Catena-X_Use_Case_Framework_Traceability.pdf)
 
 ### 1. KEY PRINCIPLES FOR TRACEABILITY (“USE CASE”)
 

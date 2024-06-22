@@ -10,6 +10,7 @@ pagination_next: null
 
 - 24 MAY 2024
 - VERSION 1.0
+- PDF-Version: [231016_Catena-X_Use_Case_Framework_PURIS.pdf](./assets/231016_Catena-X_Use_Case_Framework_PURIS.pdf)
 
 ### 1. KEY PRINCIPLES FOR PURIS (“USE CASE”)
 
