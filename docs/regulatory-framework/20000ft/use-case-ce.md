@@ -90,9 +90,13 @@ Unless otherwise set out below, defined terms are those set out in the 10 Golden
 >
 > *Unless agreed otherwise individually, Data Consumer must delete data within 14 days after its usage right(s) has/have ended.*
 
-### Unrestricted Freedom of Contract
+---
 
-*outside of elements 2.1 - 2.6 above*
+**Unrestricted Freedom of Contract**
+
+:::note
+outside of elements 2.1 - 2.6 above
+::::
 
 #### 2.7 CONSEQUENCES OF MALPERFORMANCE
 

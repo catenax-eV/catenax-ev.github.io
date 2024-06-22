@@ -64,7 +64,7 @@ Unless otherwise set out below, defined terms are those set out in the 10 Golden
 >
 > *Participants are free to agree confidentiality requirements individually. However, a restriction applies that Data Consumer may provide access to data internally (and including for permitted Affiliates) on a need-to-know basis only.*
 
-#### 2.4 COMPLIANCE
+2.4 COMPLIANCE
 
 [Data Provider and Data Consumer must clarify relevant checkpoints in advance, e.g. antitrust law, export control, trade secrets, data protection, etc.].
 
@@ -86,9 +86,13 @@ Unless otherwise set out below, defined terms are those set out in the 10 Golden
 >
 > Unless agreed otherwise individually, Data Consumer must delete data within 14 days after its usage right(s) has/have ended.
 
-### Unrestricted Freedom of Contract
+---
 
-*outside of elements 2.1 - 2.6 above*
+**Unrestricted Freedom of Contract**
+
+:::note
+outside of elements 2.1 - 2.6 above
+::::
 
 #### 2.7 CONSEQUENCES OF MALPERFORMANCE
 
