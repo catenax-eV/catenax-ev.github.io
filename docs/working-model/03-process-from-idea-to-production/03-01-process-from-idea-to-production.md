@@ -22,7 +22,7 @@ We use the Committees and Expert Groups of the Catena-X e.V. to align, develop a
 ### Refine feature
 
 - Responsible: Feature Author
-- Description: After creating the feature proposal the feature author has to continously refine the feature until it contains the minimal feature content, so that it can be valited. This step might be obsolete if all information are added when creating the feature proposal.
+- Description: After creating the feature proposal the feature author has to continuously refine the feature until it contains the minimal feature content, so that it can be validated. This step might be obsolete if all information are added when creating the feature proposal.
 - Possible outcomes: Submit for validation
 
 ### Validate minimal feature content
@@ -39,14 +39,14 @@ We use the Committees and Expert Groups of the Catena-X e.V. to align, develop a
 - Description: Once the feature proposal contains at least the minimal feature content, its strategic fit is going to be evaluated by the topic owner
 - Possible outcomes:
   - Feature proposal fit strategy: If the feature proposal strategically fits it is going to be added to the Inbox.
-  - Strategic fit cant be assest: If the strategic fit cant be assest by the topic owner the feature proposal is being send back to the feature author with the request to further refine the feature proposal.
+  - Strategic fit can't be assessed: If the strategic fit can't be assessed by the topic owner the feature proposal is being send back to the feature author with the request to further refine the feature proposal.
   - Feature proposal does NOT fit: If the topic owner assess the feature proposal as not fitting the strategy, the feature proposal is going to be rejected. In this case the feature proposal is not going to be implemented.
 
 ### Refine feature to meet DoE
 
 - Responsible: Feature author
 - Description: Once the feature is validated, the feature author has to further refine the feature to meet the DoE. The refinement can be done by setting up individual refinement meetings for the feature proposal and inviting relevant people or by presenting the feature proposal in the Open Refinement. Each feature proposal has to be presented at least once in the Open Refinement so that the whole community has the chance to provide feedback.
-- Possbile outcomes: DoE complete
+- Possible outcomes: DoE complete
 
 ### Present feature proposal in Open Refinement
 
@@ -72,7 +72,7 @@ We use the Committees and Expert Groups of the Catena-X e.V. to align, develop a
 - Responsible: Committers
 - Description: The committers are deciding on the scope of the upcoming release. All feature proposals presented in the Open Planning are going to be prioritized.
 - Possible outcomes:
-  - Committed: The feature proposal gets the committment from the committers and is added to the upcoming release.
+  - Committed: The feature proposal gets the commitment from the committers and is added to the upcoming release.
   - Not committed: The feature proposal is not committed by the committers and wont be part of the upcoming release. The feature proposal is going to be presented again in the Open Planning for the following release.
 
 ## Artifacts
@@ -83,7 +83,7 @@ We use the Committees and Expert Groups of the Catena-X e.V. to align, develop a
 |-----------|-----------|
 |Feature author|The feature author is going to be the primary point of contact for all questions related to a feature proposal. The feature author carries the feature proposal through the validation and refinement process.|
 |Topic Owner|The topic owner validates new feature proposals for a defined topic (product) to make sure feature proposals align with the strategy for it. The topic owner is usually going to be a Committee.|
-|Committer|See Tractus X Committer description|
+|Committer|*See Tractus X Committer description*|
 
 ### Minimal feature content
 
@@ -91,7 +91,7 @@ The minimal feature content is a subset of the DoE. It defines the minimal infor
 
 |Information|Description|
 |-----------|-----------|
-|Feature author|Responsbile person to carry the feature proposal through the validation and refinement process|
+|Feature author|Responsible person to carry the feature proposal through the validation and refinement process|
 |Description|Description of WHAT the feature proposal is about.|
 |Business value|Description of WHY the feature proposal is relevant.|
 |Acceptance criteria|Conditions that must be satisfied for the feature proposal to be accepted|
@@ -100,10 +100,10 @@ The minimal feature content is a subset of the DoE. It defines the minimal infor
 
 |Information|Description|
 |-----------|-----------|
-|Minimal feature content|see Minimal feature content|
+|Minimal feature content|*see Minimal feature content*|
 |Dependencies|Dependencies with other products or issues are identified and categorized via GitHub labels|
-|Risks|Known rsiks are properly adressed|
-|Enablers|Required enablers are defined (isnt that a dependency?)|
+|Risks|Known risks are properly addressed|
+|Enablers|Required enablers are defined (*isn't that a dependency?*)|
 |High level architecture (building block view)||
 |Key dates and milestones|Key dates and milestones are defined using GitHub milestone declaration|
 |Testing|Test scenarios, test cases and test data are available|
@@ -113,22 +113,22 @@ The minimal feature content is a subset of the DoE. It defines the minimal infor
 
 ### Open Refinement
 
-The Open refinement is ment to...
+The Open refinement is meant to...
 
-The Catena-X association communicates and coordiantes the open refinement and open planning meetings via the a Tractus-X [News Page](https://eclipse-tractusx.github.io/blog) and the Tractus-X [Mailing List](https://accounts.eclipse.org/mailing-list/tractusx-dev). Feature authors must make sure to subscribe! The meetings are also be published (with meeting session and calender.ics) on the open meetings page.
+The Catena-X association communicates and coordinates the open refinement and open planning meetings via the a Tractus-X [News Page](https://eclipse-tractusx.github.io/blog) and the Tractus-X [Mailing List](https://accounts.eclipse.org/mailing-list/tractusx-dev). Feature authors must make sure to subscribe! The meetings are also be published (with meeting session and calender.ics) on the open meetings page.
 
 ### Open Planning
 
-During the Open Planning the items for upcoming release are planned. All feature proposals that were handed in on time are going to be presented to the audience. The Open Planning is the last chance to provide feedback about the scope of the feature proposal. After the presentation of the feature proposal by the feature author, the committers are going to prioritize the feature proposal in alignment with the topic owner. A feature proposal becomes part of the upcoming release only by receiving the commitment by the committes and not by being presented in the Open Planning!
+During the Open Planning the items for upcoming release are planned. All feature proposals that were handed in on time are going to be presented to the audience. The Open Planning is the last chance to provide feedback about the scope of the feature proposal. After the presentation of the feature proposal by the feature author, the committers are going to prioritize the feature proposal in alignment with the topic owner. A feature proposal becomes part of the upcoming release only by receiving the commitment by the committees and not by being presented in the Open Planning!
 
-To enter the Open Plannung a feature proposal must meet the DoE X days before the Open Planning (Cut-Off)! Feature proposal that meet the DoE after the Cut-Off won't be considered in the Open Planning. This means it will likely be deferred to a future release.
+To enter the Open Planning a feature proposal must meet the DoE X days before the Open Planning (Cut-Off)! Feature proposal that meet the DoE after the Cut-Off won't be considered in the Open Planning. This means it will likely be deferred to a future release.
 
 | Tasks             | Documents (e.g. Standards) | Reference Impl. | Outcome |
 |-------------------|----------------------------|-----------------|---------|
 | Feature Proposal  | Refinement Meetings        | In sig release  | Proposals by C-X e.V. Overview of all feature proposals incl. acceptance criteria. (Task break down over all affected teams / dependencies.) DOE ??? |
 | Feature Commitment | Planning Meetings         | In sig release  | Decision by committer group Committed, prioritized backlog for the next release. Coordination / refinement / prioritization of new ideas, business requirements, features (scope C-X only) |
-|                   | C-X association tooling    | Sig-release     | Priotized list of Catena-X business requirements (proposal) |
-|                   | C-X association tooling    | Sig-release: Discussions, Issues | Product Priotized list of overall business requirements |
+|                   | C-X association tooling    | Sig-release     | Prioritized list of Catena-X business requirements (proposal) |
+|                   | C-X association tooling    | Sig-release: Discussions, Issues | Product prioritized list of overall business requirements |
 |                   | Association meetings (e.g., roadmap) | Tractus-X open meetings (e.g., refinement, planning, …) | Roadmap and issues updated (?) |
 | Development of Deliverable | Create (normative) documents | Create open source software / KITs | Deliverables created (Normative Documents, KITs, Reference Implementation (complies to C-X Standards)) |
 | Review of Deliverables | Content reviews in Expert Group | Code reviews (PRs) in Tractus-X | Deliverables reviewed |
@@ -151,7 +151,7 @@ Responsible: Committee & Expert Group
 
 Once a new feature proposal has been made for the Tractus-X project, it enters a validation phase where the Committees assigns it to the relevant Expert Group.
 
-- **Validation:** The Committee assignes the feature to the matching Expert Group (at least two specific contacts). The Expert Group will review the proposal to ensure it aligns with the project's goals and standards.
+- **Validation:** The Committee assigns the feature to the matching Expert Group (at least two specific contacts). The Expert Group will review the proposal to ensure it aligns with the project's goals and standards.
 - **Request for Additional Details:** If the proposal lacks necessary details, the reviewing bodies may ask the author for additional information or clarification.
 
 ### Feature refinement
@@ -160,25 +160,25 @@ Responsible: Feature author
 
 After being validated and initially prioritized by the Expert Group, the refinement process starts. The feature author must gather their peer group (such as experts, contributors, and committers) for example by publishing a virtual meeting invite for the feature issue to be refined.
 
-The goal is to have features that fullfill the following **Definition of Entry (DoE)**:
+The goal is to have features that fulfill the following **Definition of Entry (DoE)**:
 
 - Feature author defined: The designated point of contact for any questions related to the feature during the refinement, planning and development phase (e.g., subject matter expert). Not necessarily responsible for the technical implementation of a feature.
-- Feature desciption is available
-- Required enablers are defined and aligned (e.g., architecutre, infrastructure, compliance)
+- Feature description is available
+- Required enablers are defined and aligned (e.g., architecture, infrastructure, compliance)
 - High-level architecture (building-block-view)
 - Key dates and milestones are defined using GitHub milestone declaration
 - Business value is defined
 - Test scenarios, test cases and test data are available
-- Accpetance criteria are defined
+- Acceptance criteria are defined
 - Feature estimation available (based on story points)
 - Developer team for feature implementation defined
 - Dependencies with other products or issues are identified and categorized via GitHub labels
-- Known rsiks are properly adressed
+- Known risks are properly addressed
 - No open questions left
 - First implementation issues are defined in the corresponding repository and linked to the feature (optional)
 ...
 
-Ultimately, the decision regarding maturity is made jointly by the affected products and contributers in the open refinement meetings.
+Ultimately, the decision regarding maturity is made jointly by the affected products and contributors in the open refinement meetings.
 
 **Feature author responsibility in the refinement:**
 
@@ -207,13 +207,13 @@ By following this process, authors can ensure their feature proposals are consid
 
 ## Open Release Planning Meeting
 
-Once a feature is through the propose and refinement process (2.) the feature will be presented in the open planning meeting and the committer will prioritize them based on the strategic / technical fit and ressource commitment in alignment with the Expert Groups of the Catena-X association.
+Once a feature is through the propose and refinement process (2.) the feature will be presented in the open planning meeting and the committer will prioritize them based on the strategic / technical fit and resource commitment in alignment with the Expert Groups of the Catena-X association.
 
 The open release planning meeting also called Program Increment (PI) planning is a critical event in the Tractus-X project where contributors, committers, Expert Groups, and Committees come together to define the scope for the next release. This process ensures that the project's roadmap is aligned with stakeholder expectations and the project's strategic objectives. Here's how the release Planning process typically unfolds:
 
 - **Attendees:** Contributors, committers, Expert Groups, and Committees attend the release planning meeting.
 - **Scope Definition:** The main objective of this meeting is to determine the scope of the upcoming release. This involves discussing the refined features and confirming the prioritized backlog.
-- **Priorize backlog:** The backlog will be reviewed to ensure that it aligns with the project's strategic direction and available resources. Before the open release planning meeting, Committees and Expert Groups can pre-prioritize the backlog. However, the final prioritization is done by the committers.
+- **Prioritized backlog:** The backlog will be reviewed to ensure that it aligns with the project's strategic direction and available resources. Before the open release planning meeting, Committees and Expert Groups can pre-prioritize the backlog. However, the final prioritization is done by the committers.
 
 ### Decision-Making by Committers
 
@@ -223,10 +223,10 @@ The open release planning meeting also called Program Increment (PI) planning is
 
 ### Outcome of Open Planning
 
-- **Priortized backlog:** Decision by committer group Committed, prioritized backlog for the next release.
+- **Prioritized backlog:** Decision by committer group Committed, prioritized backlog for the next release.
 - **Resource commitment:** Teams and individuals commit to the work they will deliver, fostering accountability and setting clear expectations for the upcoming release.
-- **Updated roadmap:** The project's roadmap is updated to reflect the decisions made during the release planning, providing transparency to stakeholders and the community. [TO-DO clarifiy location of the roadmap / where will this be published]
-- **Decisions are documented:** All decisions and commitments made during the planning are documented in the decision board or directly in the comment section of a feature. [TO-DO link to the architecture decsion board]
+- **Updated roadmap:** The project's roadmap is updated to reflect the decisions made during the release planning, providing transparency to stakeholders and the community. [TO-DO clarify location of the roadmap / where will this be published]
+- **Decisions are documented:** All decisions and commitments made during the planning are documented in the decision board or directly in the comment section of a feature. [TO-DO link to the architecture decision board]
 - **Communication plan:** After the planning a communication via mailing-list will be done by the project lead including the relevant links and decisions.
 
 ## Feature Development
@@ -254,8 +254,9 @@ Contributors can create pull requests (PRs) for their developed features at any 
 A PR must include the feature code, adapted helm chart(s), technical documentation as well as product tests (e.g., unit tests) and product integration tests (e.g., by using helm charts or mocks). All these tests must be passed locally before the PR can be submitted.
 
 **Hint:** You can find the latest versions of the product helm charts in our release changelog.
+
 :::info
-ToDo: Insert Link! Previous link was broken.
+Work in progress
 :::
 
 At least two committer must review the PR, including the source code, test results and the compliance with the Tractus-X release guidelines (TRGs), and approve the merging of these changes. In case there are change requests or defects that a committer cannot solve, the contributor must address these changes before merging.
@@ -295,8 +296,8 @@ Defects or unexpected behavior must be reported as bugs in the [sig-release repo
 
 There are various testing artifacts, that are either managed in Tractus-X GitHub or the Test Management Tool.
 
-- In **GitHub** we manage the different user journys and related business scenarios as .md files.
-- In the **Test Management Tool** we manage test cases, test sets (opt.), test exectuions as well as test plans and reports.
+- In **GitHub** we manage the different user journeys and related business scenarios as .md files.
+- In the **Test Management Tool** we manage test cases, test sets (opt.), test executions as well as test plans and reports.
 
 | Artifact          | Artifact Owner          | \# per Release |
 | ----------------- | ----------------------- | -------------- |
@@ -348,10 +349,10 @@ Catena-X **Release Management** is a crucial component within the broader Catena
 
 In essence, Catena-X Release Management acts as a central hub that coordinates the complex interplay between Catena-X and Tractus-X releases, ensuring smooth integration, high-quality deliverables, and customer satisfaction.
 
-## Security Mangement
+## Security Management
 
 :::info
-ToDo: Security, Managing and Reporting Vulnerabilities, Communication
+Work in progress
 :::
 
 ## Relevant Links
@@ -361,13 +362,13 @@ ToDo: Security, Managing and Reporting Vulnerabilities, Communication
 ## FAQs
 
 **How are the open meetings communicated?**
-The Catena-X association will communicate and coordiante the open refinement and open planning meetings vi the a Tractus-X [News Page](https://eclipse-tractusx.github.io/blog) and the Tractus-X [Mailing List](https://accounts.eclipse.org/mailing-list/tractusx-dev). Please make sure that you subscribe. The meetings will also be published (with meeting session and calender.ics) on the open meetings page.
+The Catena-X association will communicate and coordinate the open refinement and open planning meetings vi the a Tractus-X [News Page](https://eclipse-tractusx.github.io/blog) and the Tractus-X [Mailing List](https://accounts.eclipse.org/mailing-list/tractusx-dev). Please make sure that you subscribe. The meetings will also be published (with meeting session and calender.ics) on the open meetings page.
 
 **Who can propose a feature?**
 Anyone can **propose a feature**, including Committees, Expert Groups, and other initiatives. However, we require a dedicated feature author for further refinement and the breakdown into implementation issues.
 
 **How to handle dependencies?**
-Dependencies can be discussed in our open refinement meetings as well as via our other communication channels (e.g. martix chat or bilateral sessions). Please refer to our Tractus-X [communication rules](https://eclipse-tractusx.github.io/community/intro).
+Dependencies can be discussed in our open refinement meetings as well as via our other communication channels (e.g. matrix chat or bilateral sessions). Please refer to our Tractus-X [communication rules](https://eclipse-tractusx.github.io/community/intro).
 
 **Who gives access to the sig-release repository to enable planning process?**
 Please refer to our Tractus-X [Getting Started Guide](https://eclipse-tractusx.github.io/docs/oss/getting-started).

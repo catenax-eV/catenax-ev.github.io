@@ -25,6 +25,6 @@ title: Overview
 
 ## Non-Normative
 
-:::info
+:::warning[NOTE]
 This is not a normative Document!
 :::
