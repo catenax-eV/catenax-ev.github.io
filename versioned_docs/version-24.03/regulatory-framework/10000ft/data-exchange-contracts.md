@@ -10,6 +10,7 @@ pagination_next: null
 
 - 19 MARCH 2024
 - VERSION 1.1
+- PDF-Version: [How_To_Conclude_Data_Exchange_Contracts.pdf](./assets/How_To_Conclude_Data_Exchange_Contracts.pdf)
 
 ### 1. REGISTRATION, CONNECTOR TECHNOLOGY AND USE CASE FRAMEWORKS
 
@@ -33,7 +34,7 @@ Catena-X Automotive Network e.V. ("**Association**") has developed predefined fr
 
 Data providers & data consumer have the option of concluding bilateral contracts (supplier contract, ...) within the confines of Predefined Use Case Frameworks that clarify additional terms that the two parties want to specify. These bilateral contracts should be referenced in the policies used with the RC. Moreover, when using Catena-X to exchange data outside a given Use Case and thus Predefined Use Case Framework, bilateral contracts outside of Catena-X are strongly recommended.
 
-![RC Process](./assets/data-exchange-process-2de9e4cb18ad9602cb2ba975287579f6.png)
+![RC Process](./assets/data-exchange-process.png)
 
 Illustration 1: RC Process with the example of an Eclipse Data Space Connector (EDC). Source: [Catena-X Operating Model](/docs/operating-model/operating-model)
 

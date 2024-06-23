@@ -10,6 +10,7 @@ pagination_next: null
 
 - 17 APRIL 2024
 - VERSION 1.0
+- PDF-Version: [231016_Catena-X_Use_Case_Framework_DCM.pdf](./assets/231016_Catena-X_Use_Case_Framework_DCM.pdf)
 
 ### 1. KEY PRINCIPLES FOR DEMAND AND CAPACITY MANAGEMENT ("USE CASE")
 
@@ -62,7 +63,7 @@ Unless otherwise set out below, defined terms are those set out in the 10 Golden
 
 [Confidentiality]
 
-> *Participants are free to agree individually. However, geographical limitations may apply, as specified and updated from time to time by the Association ("[white list](/docs/regulatory-framework/30,000ft/country-clearance-list)").*
+> *Participants are free to agree individually. However, geographical limitations may apply, as specified and updated from time to time by the Association ("[white list](./../30000ft/country-clearance-list)").*
 >
 > *Participants are free to agree confidentiality requirements individually. However, a restriction applies that Data Consumer may provide access to data internally (and including for permitted Affiliates) on a need-to-know basis only.*
 
@@ -88,9 +89,13 @@ Unless otherwise set out below, defined terms are those set out in the 10 Golden
 >
 > Unless agreed otherwise individually, Data Consumer must delete data within 14 days after its usage right(s) has/have ended.
 
-### Unrestricted Freedom of Contract
+---
 
-*outside of elements 2.1 - 2.6 above*
+:::note
+**Unrestricted Freedom of Contract**
+
+outside of elements 2.1 - 2.6 above
+::::
 
 #### 2.7 CONSEQUENCES OF MALPERFORMANCE
 
