@@ -89,7 +89,7 @@ export default function Home(): JSX.Element {
   return (
     <Layout
       title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      description="Explore Catena-X <head />">
       <HomepageHeader />
       <main>
         <HomepageFeatures/>

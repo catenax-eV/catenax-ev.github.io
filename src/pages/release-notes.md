@@ -1,12 +1,12 @@
 # Release Notes
 
-## JUPITER (PREVIEW)
+## [JUPITER] (PREVIEW)
 
 ### Catena-X Standards
 
-- 12 new standards, completing the set of Catena-X' initial use cases
-- 33 updated standards to ensure quality, coherence and the implementation of our "breaking change" via SSI
-- 31 deprecated standards in the course of consolidation to achieve more user-friendliness
+- 13 new standards, completing the set of Catena-X' initial use cases
+- 34 updated standards to ensure quality, coherence and the implementation of our "breaking change" via SSI
+- 60 deprecated standards in the course of consolidation to achieve more user-friendliness
 - updated modular certification framework
 
 details to be found [here](/docs/next/standards/changelog)
