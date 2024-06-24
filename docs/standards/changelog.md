@@ -6,9 +6,9 @@ position: 1
 
 ## Summary of Release Jupiter
 
-- 12 new standards
-- 33 updated standards
-- 31 deprecated standards
+- 13 new standards
+- 34 updated standards
+- 60 deprecated standards
 
 ### A) List of new and updated standards
 
@@ -85,8 +85,10 @@ position: 1
 | CX-Nr.  | Standard Name | Version |  Management Summary |
 |-----------|-----------|:-----------:|--------------------|
 | CX-0059 | Behavioral Twin Endurance Estimator Use Case | 2.0    | This standard upgrades the triangle (previously CX-0059:1.2) to an Use Case Standard and consolidates the contents of the previously independent standards CX-0056, CX-0057 and CX-0058 within a single comprehensive standard.  |
+| CX-0105 | Asset Tracking Use Case | 1.1    | This standard upgrades the triangle (previously CX-0105:1.0) to an Use Case Standard and consolidates the contents of the previously independent standards CX-0070, CX-0083, CX-0004 and CX-0106 within a single comprehensive standard. Note: No content relevant to the certification has been changed.  |
 | CX-0123 | Quality Use Case Standard  | 2.0   | <ul><li>Update semantic models `QualityTask`, `PartsAnalyses`, `ManufacturedPartsQualityInformation`, `Fleet.DiagnosticData`, `Fleet.ClaimData`</li><li>Update model Fleet.Vehicles and integrate model `Vehicle.ProductDescription`</li><li>New semantic models Early Warning Norification and Failure Pattern</li><li>Update 2.1 Data Sharing Rules</li><li>Define Notification Process and API</li></ul>  |
 | CX-0125 | Traceability Use Case  | 2.0  | <ul><li>Redundancies to the standard CX-0127 in all relevant chapters removed: Submodel `SerialPart`, Submodel `Batch`, Submodel `SingleLevelBoMAsBuilt`</li><li>Adapted parts (introductions, examples) of the standard document contents to suit the use case specifications</li><li>Quality Alerts are set to mandatory</li><li>New paragraph &quot;Conventions for Use Case Policy in context data exchange&quot; in **Section 2.1.3**</li><li>Added notes for versioning in **Section 2.1.3**</li><li>Deleted &quot;Every certified business application relying on aspects models of this standard <strong>MUST</strong> be able to consume data conformant to the semantic models specified in this document.&quot; from **Section 3**</li><li>Deleted old references in **Section 6.1**</li></ul>  |
+| CX-0138 | Use Case Behaviour Twin Endurance Estimator | 1.0    | The 1.0 version changed from a triangle (originally CX-0089) to an Use Case Standard and consolidates the contents of the previously independent standards CX-0057, CX-0088, CX-0090 within a single comprehensive standard.  |
 | CX-0141 |  Health Indicator Use Case  | 1.0   | This standard focuses on the Health Indicator Use Case. The Health Indicator recieves dynamic input data, that has been recorded in the vehicle, through the Catena-X network. The input data, combined with additional product knowledge by the service provider, is used to calculate precise health indicator values for specific components  |
 
 #### Sustainability
@@ -119,12 +121,18 @@ position: 1
 | CX-0041            |  Aspect Model: ManufacturedPartsQualityInformation                              |  Merged by CX-0131 Circularity Core                                                 |
 | CX-0091            |  Aspect Model: Fleet.Vehicles                              |   Merged by CX-0131 Circularity Core                                                |
 | CX-0092            |   Aspect Model: QualityTaskAttachment                             |  Merged by CX-0131 Circularity Core                                                 |
+| CX-0098            |  Aspect Model: Secondary Material Content                              |  Merged by CX-0131 Circularity Core                                                 |
+| CX-0099            |  Data Model: Certificate of Decommissioning                              |  Merged by CX-0131 Circularity Core                                                 |
 | CX-0107            |  Aspect Model: Reuse Certificate                               |  Merged by CX-0131 Circularity Core                                                 |
+| CX-0108            |  Aspect Model: Waste Certificate                              |   Merged by CX-0131 Circularity Core                                                |
 | CX-0109            |  Aspect Model: Refrubishing Certificate                              |  Merged by CX-0131 Circularity Core                                                 |
 | CX-0111            |  Aspect Model: Remanufacturing Certificate                              |   Merged by CX-0131 Circularity Core                                                |
+| CX-0112            |  Aspect Model: Material Recycling Certificate                              |   Merged by CX-0131 Circularity Core                                                |
 | CX-0033            |  Data Model ReturnRequest                               |  Merged into  CX-0117 Use Case Circular Economy - Secondary Marketplace                                                |
 | CX-0035            |  Data Model Marketplaceoffer                               | Merged into  CX-0117 Use Case Circular Economy - Secondary Marketplace                                                 |
-| CX-0057            | Aspect Model for user estimated loading                                | Merged into CX-0138 Use Case Behaviour Twin Endurance Estimator Digital Product Pass                                                   |
+| CX-0057            | Aspect Model for user estimated loading                                | Merged into CX-0059 and CX-0138 Use Case Behaviour Twin Endurance Estimator |
+| CX-0056            | Semantic Model: Classified Load Spectrum                                 | Merged into CX-0059 Use Case Behaviour Twin Endurance Predictor |
+| CX-0058            | API: Endurance Predictor                                | Merged into CX-0059 Use Case Behaviour Twin Endurance Predictor |
 | CX-0088            |  Aspect Model for Remaining Useful Life data                               | Merged into CX-0138 Use Case Behaviour Twin Endurance Estimator Digital Product Pass                                                   |
 | CX-0090            |  API Endurance Estimator                               |  Merged into CX-0138 Use Case Behaviour Twin Endurance Estimator                                                  |
 | CX-0089            | Triangle Behavioral Twin Endurance Estimator Service                              | Merged into CX-0138 Use Case Behaviour Twin Endurance Estimator Digital Product Pass                                                    |
@@ -137,5 +145,23 @@ position: 1
 | CX-0016            | Company Attribute Verification                                 |  Merged into CX-0149 Verified Company Identity                                                  |
 | CX-0017            | Company Role by the Connector                                 |  Merged into CX-0149 Verified Company Identity                                                  |
 | CX-0051            | Summary Credentials                                 |  Deprecated with the introduction of IATP (see CX-0018 and CX-0149)                                                  |
+| CX-0061            | Triangle Traceability Data Provisioning Digital Twin As Planned                                 |  Merged into CX-0125 Traceability Use Case                                                  |
 | CX-0062            | Traceability Notifications Triangle                                 |  Merged into CX-0125 Verified Company Identity                                                  |
 | CX-0093            | Aspect Model Traction Battery Code                                 |  Merged into CX-0125 Verified Company Identity                                                  |
+| CX-0070            | Asset Tracking Platform API Standardization                                 |  Merged into CX-105 Asset Tracking Use Case Identity                                                  |
+| CX-0083            | Aspect Model IotSensorDeviceDefinition                                 |  Merged into CX-105 Asset Tracking Use Case Identity                                                  |
+| CX-0104            | Aspect Model AssetTrackerLinks v1.0.0                                 |  Merged into CX-105 Asset Tracking Use Case Identity                                                  |
+| CX-0106            | Aspect Model IotSensorData                                 |  Merged into CX-105 Asset Tracking Use Case Identity                                                  |
+| CX-0096            | Triangle For Digital Product Pass                                 |  Merged into CX-0143 Use Case Circular Economy - Digital Product Passport Standard                                                  |
+| CX-0034            | Data Model Battery Pass                                 |  Merged into CX-0143 Use Case Circular Economy - Digital Product Passport Standard                                                  |
+| CX-0095            | Data Model: Transmission Pass                                 |  Merged into CX-0143 Use Case Circular Economy - Digital Product Passport Standard                                                  |
+| CX-0103            | Aspect Model Digital Product Passport                                 |  Merged into CX-0143 Use Case Circular Economy - Digital Product Passport Standard                                                  |
+| CX-0068            | MP Shop Floor Information Service API                                 |  Merged into CX-0142 Shop Floor Information Service                                                  |
+| CX-0069            | Shop-Floor-Information-Service Aspect Model                                 |  Merged into CX-0142 Shop Floor Information Service                                                  |
+| CX-0075            | Shop-Floor-Information-Service Process                                 |  Merged into CX-0142 Shop Floor Information Service                                                  |
+| CX-0113            | Aspect Model ESS Incident Data Model                                 |  Merged into CX-0144 Shop Floor Information Service                                                  |
+| CX-0072            | OSim Process & Core Business Logic                                 |  Merged into CX-0133 Online Control and Simulation                                                  |
+| CX-0073            | OSim API                                 |  Merged into CX-0133 Online Control and Simulation                                                  |
+| CX-0087            | OSim Data Model: Materialflow Simulation Result                                 |  Merged into CX-0133 Online Control and Simulation                                                  |
+| CX-0085            | Product Stock Aspect Model                                 |  Merged into CX-0133 Online Control and Simulation                                                  |
+| CX-0086            | Product Stock Exchange API                                 |  Merged into CX-0133 Online Control and Simulation                                                  |

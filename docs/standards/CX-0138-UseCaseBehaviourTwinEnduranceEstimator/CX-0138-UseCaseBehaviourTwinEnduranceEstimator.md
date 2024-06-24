@@ -1,4 +1,4 @@
-# CX-0138 Use Case Behaviour Twin Endurance Estimator v1.0.0
+# CX-0138 Use Case Behaviour Twin Endurance Estimator v1.0.1
 
 ## ABSTRACT
 
@@ -483,7 +483,7 @@ The request and response are linked by the unique notificationID.
 
 #### Notification Request Payload Structure
 
-The main part of the content dictionary MUST follow the standard "CX-0088 Semantic Model: User Estimated Loading" as this is given as the main input towards the endurance estimator.
+The main part of the content dictionary MUST follow the main input towards the endurance estimator.
 
 ```json
 {
@@ -518,7 +518,7 @@ The main part of the content dictionary MUST follow the standard "CX-0088 Semant
 
 ### Notification Response Payload Structure
 
-The main part of the content dictionary MUST follow the standard "CX-0057 Semantic Model: Remaining Useful Life" as endurance estimator output MUST follow the sematics described in the corresponding model:
+The "Remaining Useful Life" as endurance estimator output MUST follow the semantics described in the corresponding model:
 
 ```json
 { 

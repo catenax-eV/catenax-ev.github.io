@@ -1,4 +1,4 @@
-# CX-0005 Item Relationship Service API 2.1.0
+# CX-0005 Item Relationship Service API 2.1.1
 
 ## FOR WHOM IS THE STANDARD DESIGNED
 
@@ -47,17 +47,16 @@ This standardization is built upon existing standards, such as
 
 - “EDC Discovery API" [CX-0001]
 - “Digital Twins in Catena-X“ [CX-0002]
-- “SAMMSemanticAspectMetaModel“ [CX-0003]
+- “SAMM Semantic Aspect Meta Model“ [CX-0003]
 - “BusinessPartnerNumber“ [CX-0010]
 - “Dataspace Connectivity v3.0.0” [CX-0018]
 - “Implementation Specification: Data Provisioning for Release 2” [CX-0024]
 - “Aspect Model: DataModelBoMAsSpecified“ [CX-0030]
 - “Aspect Model: DataModelPartAsSpecified“ [CX-0032]
-- “TraceabilityDataProvisioningBoMAs-PlannedTriangle“ [CX-0061]
 - “Aspect Model: PartSiteInformationAsPlanned" [CX-0094]
 - “TraceabilityUseCase“ [CX-0125]
-- "IndustryCorePartInstance" [CX-0127]
-- "IndustryCorePartType" [CX-0126]
+- "Industry Core: Part Instance" [CX-0127]
+- "Industry Core: Part Type" [CX-0126]
 
 further Aspects which conclude in connecting Digital Twins between each other will be added to the Semantic Hub.
 

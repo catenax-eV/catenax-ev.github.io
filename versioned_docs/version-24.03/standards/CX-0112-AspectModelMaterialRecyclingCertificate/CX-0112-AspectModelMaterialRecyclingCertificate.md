@@ -1,4 +1,4 @@
-# CX-0112 - Aspect Model MaterialRecyclingCertificate v1.0.0.md
+# CX-0112 - Aspect Model MaterialRecyclingCertificate v1.0.0
 
 ## ABSTRACT
 

@@ -1,32 +1,27 @@
-# CX-0070 Asset Tracking Platform API Standardization 1.0.0
 
-## FOR WHOM IS THE STANDARD DESIGNED
-
-Please refer to AUDIENCE & SCOPE.
-
-## COMPARISON WITH THE PREVIOUS VERSION OF THE STANDARD
-
-This is the initial version of the standard.
+# CX-0105 Asset Tracking Use Case v1.1.0
 
 ## ABSTRACT
 
 The asset tracking use case aims to design a standard solution how diverse IoT solutions, available on the free market, can be incorporated into the Catena-X network keeping the interoperability and data sovereignty requirements respected. Although the main goal was always to track company assets with the various IoT devices, based on the set of standards designed by asset tracking use case team, there is a potential to fully use these in any use case in the Catena-X environment and beyond. The model opens the door for any IoT device manufacturer and any network provider to be part of the Catena-X network.
 
-The Asset Tracking Platform aims to bring different IoT sensor networks to a standard Catena-X network and use sensor data for a variety of use cases, like:
+This standard focuses on the Asset Tracking Use Case. It includes relevant requirements for
 
-- logistics teams can track their returnable packages and assets at any time using geo data,
-- usage of automatic filling level measurements to drive efficient vendor-managed inventories,
-- users (tier suppliers, customer, carriers, insurers, etc.) are encouraged to monitor the quality of critical materials at any time during transportation.
-  
-The solution supports the exchange of IoT sensor data between different companies via Catena-X network.
+- ATP (Asset Tracking Platform) as sensor data provider
+- Application/Dashboard as data consumer - non standardized tool
+
+## FOR WHOM IS THE STANDARD DESIGNED
+
+Please refer to: AUDIENCE & SCOPE.
+
+## COMPARISON WITH THE PREVIOUS VERSION OF THE STANDARD
+
+This is the initial version of the standard.
 
 ## 1 INTRODUCTION
 
-This documentation describes the basic pre-conditions and needs for an ATP-API that aims to provide data from multiple IoT networks to the Catena-X ecosystem.
-
-ATP-API receives data from IoT networks, transforms these data to standardized Catena-X data models (IoT Sensor Data Device and IoT Sensor Data) and load the transformed data into the Catena-X network.
-
-The primary role of the ATP is to be a middleware solution between those IoT networks and the Catena-X ecosystem by using REST API technology.
+This document defines the so-called standardization triangle for the asset tracking use case.
+Standardization triangle hereby means the mandatory components, data models, and APIs that are required to enable the asset tracking use case.
 
 ### 1.1 AUDIENCE & SCOPE
 
@@ -37,78 +32,93 @@ This document is meant for the following roles:
 - Data Provider / Consumer
 - Business Application Provider
 
-The ATP is a solution for organizations to provide IoT sensor and device data in the Catena-X network. It supports also the onboarding process of an IoT Sensor Device for the registration in Catena-X network so that this feature can easily integrated into any application.
-
-This document describes the relevant API endpoints to be created by each application and their integration into the Eclipse Dataspace connector (EDC). This standard covers exclusively the definition of the specific API endpoint. The minimal process an application needs to support for such notifications will not be handled here.
-
 ### 1.2 CONTEXT AND ARCHITECTURE FIT
 
 > *This section is non-normative*
 
-As described earlier, the ATP can be used as a middleware solution between IoT networks and the Catena-X ecosystem.
+The Asset Tracking Platform aims to bring different IoT sensor networks to a standard Catena-X network and use sensor data for a variety of use cases, like:
 
-Therefor the solution relies on HTTP communication with multiple instances of IoT networks which they themselves offer any sort of HTTP API for communication.
+- Logistics teams can track their returnable packages and assets at any time using geo data
+- Use of automatic filling level measurements to drive efficient vendor-managed inventories
+- Users (Tier suppliers, customers, carriers, insurers, etc.) are encouraged to monitor the quality of critical materials at any time during transportation
 
-It is assumed that all sensor data are provided in a decoded structure and that the networks actively push their data to a certain HTTP endpoint after the onboarding in Catena-X network.
+## Asset Tracking Platform- Component Overview
 
-It is also assumed that the IoT network allows basic management of sensor devices via their own API.
+![Component Overview](./assets/ATP_Architecture_overview.png)
 
-Any assumptions made might differ from a real-world or use case, therefore the API shall be structured in a modular way and allow adjustments.
+## Asset Tracking Platform- Process Flow Diagram
 
-As stated before, the ATP shall be a middleware solution between IoT networks and the Catena-X ecosystem.
+![ATP Architecture](./assets/ATP_Architecture.png)
 
-It is positioned like in the example below.
+**Components:**
 
-![atp-middleware.png](./assets/atp-middleware.png)
+**Asset Tracking Platform (Data Provider)**
 
-Its basic architectural design is described in the following diagram.
+The Asset Tracking Platform can be understood as a Hub that accepts data from IoT Networks, standardizes it, and enables it for Catena-X Components, Services, and Applications.
 
-![atp-global-architecture](./assets/atp-global-architecture.png)
+**Dashboard/Application (Data Consumer)**
 
-IoT Network
-: This block is a reference for an IoT network which is connected to the ATP. There may be multiple networks that are
-attached to the ATP via its API.
+A Dashboard/an Application can be used in the Catena-X Network to visualize sensor data from diverse IoT sensors.
 
-Application/Dashboard
-: This references a data consumer/user of the ATP API. Notice that the application can communicate with the API when
-requesting device information data directly from the IoT network and the Iot Sensor data via the EDC.
+It enables users to search & manage assets, devices, pairs & real-time tracking of assets using geo data sensors, optimizing vendor-managed inventories through automatic filling level measurements, allowing stakeholders Tiers, customers, carriers, insurers, etc.
 
-DataConverter
-: Components of the API that translate data from the IoT network to the standardized data models before providing them to the Catena-X ecosystem.
+**Networks**:
 
-Device Registry
-: Persistence Module/Database that stores Meta-Data for an IoT Sensor Device. The persisted information contains device
-identifiers in its network, identifiers used in the Catena-X ecosystem and information regarding the device owner.
+The Asset Tracking Platform can be understood as a Hub that accepts data from IoT Networks, standardizes it, and enables it for Catena-X Components, Services, and Applications.
+
+**Business Partners**:
+
+These are external entities, possibly suppliers, manufacturers, carriers, or other stakeholders, who are a part of the Catena-X network. They interact with the system to exchange data related to assets.
+
+**EDC (Eclipse Dataspace Connector)**:
+
+It's the central communication component for Catena-X that acts as a bridge between different data providers and consumers within the Catena-X ecosystem to implement a framework agreement for sovereign, cross-organizational data exchange. It ensures secure and standardized data exchange.
+
+**dDTR (Decentralized Digital Twin registry)**:
+
+It's a decentralized registry that lists all digital twins and references including information about the underlying asset, asset manufacturer, and access options, like aspect endpoints. Moreover, the dDTR is used to register and find data related to DTs.
+
+**AAS (Asset Administration Shell) storage**:
+
+It acts as a database for storing standardized device and sensor data. Devices that are paired/active can send their data to the ATP for standardization. The standardized data will be appended as a Submodel to the AAS of the parent IoT Device. The ATP normalizes the sensor data received from various IoT networks, creates an AAS model, and stores it in the AAS Storage component. It is used to describe an asset electronically in a standardized manner.
+
+**Service discovery:**
+
+It has the ability to map an EDC connector endpoint to a BPN.
+
+**BPN Discovery Service:**
+
+BPN discovery services help to restrict the number of EDCs to be accessed & it maps certain information to a business partner number (BPN). It helps the business application provider to identify the BPN of the data asset under consideration. e.g. to discover available EDC connectors.
 
 ### 1.3 CONFORMANCE AND PROOF OF CONFORMITY
 
 > *This section is non-normative*
 
-As well as sections marked as non-normative, all authoring guidelines, diagrams,
-examples, and notes in this specification are non-normative. Everything else in
-this specification is normative.
+As well as sections marked as non-normative, all authoring guidelines, diagrams, examples, and notes
+in this specification are non-normative. Everything else in this specification is normative.
 
-The key words **MAY**, **MUST**, **MUST NOT**, **OPTIONAL**, **RECOMMENDED**,
-**REQUIRED**, **SHOULD** and **SHOULD NOT** in this document document are to be
-interpreted as described in BCP 14 [RFC2119] [RFC8174] when, and only when, they
-appear in all capitals, as shown here.
+The key words **MAY**, **MUST**, **MUST NOT**, **OPTIONAL**, **RECOMMENDED**, **REQUIRED**, **SHOULD**
+and **SHOULD NOT** in this document document are to be interpreted as described in BCP 14 [RFC2119] [RFC8174]
+when, and only when, they appear in all capitals, as shown here.
 
-All participants and their solutions will need to proof, that they conform
-with the Catena-X standards. To validate that the standards are applied
-correctly, Catena-X employs Conformity Assessment Bodies (CABs).
+All participants and their solutions will need to proof, that they conform to the Catena-X standards.
+To validate that the standards are applied correctly, Catena-X employs Conformity Assessment Bodies (CABs).
 
 #### 1.3.1 PROOF OF CONFORMITY
 
 > *This section is normative*
 
-To proof conformity with the use case Asset Tracking, the API
+To proof conformity with the use case Asset Tracking:
 
-- **MUST** be able to translate data from an IoT network to the standardized data models IotSensorDeviceDefinition and IotSensorData
-- **MUST** provide the translated/standardized data to the Catena-X ecosystem
-- **MUST** store the standardized data at a decentral submodel server (AAS) which is accessible via an EDC
-- **MUST** provide data assets, policies and contracts within an EDC to make the standardized data accessible in the Catena-X ecosystem
-- **MUST** register Digital Twins/AAS/Shell-Descriptors in a decentralized DTR to make the data discoverable in the Catena-X ecosystem (refer to 2.2 ADDITIONAL REQUIREMENTS)
-- **MUST** provide access to the IoT networks and their respective APIs
+1. An Asset Tracking Platform as a (sensor) data provider:
+
+   - **MUST** be able to convert the device and received network data in standardized semantic data models (IotSensorData and IotSensorDeviceDefinition).
+   - **MUST** register Digital Twins for IoT Sensor Devices with specific asset IDs (refer to 2.2 ADDITIONAL REQUIREMENTS)
+
+2. For an Asset Tracking Application as a data consumer:
+
+   - **MUST** be able to link the digital twins of asset with one or multiple devices.
+   - The consumption of standardized data **MUST** be done via the EDC.
 
 ### 1.4 EXAMPLES
 
@@ -117,27 +127,260 @@ To proof conformity with the use case Asset Tracking, the API
 > *This section is non-normative*
 
 **ATP:**
-Asset Tracking Platform - middleware.
+Asset Tracking Platform
+
+**EDC:**
+Eclipse Dataspace Connector
+
+**dDTR:**
+Decentral Digital Twin Registry
 
 **Business Partner Number (BPN):**
-A BPN is the unique identifier of a partner within Catena-X.
+A BPN is the unique identifier of a partner within Catena-x
 
-**Eclipse Dataspace Connector (EDC):**
-Connector component which handles access for data in the Catena-X network.
+**AAS:**
+Asset Administration Shell
 
-**Decentralized Digital Twin Registry (dDTR):**
-Registry that enables discovery services and registration of digital twins/AAS/Shell Descriptors.
+Additional terminology used in this standard can be looked up in the glossary on the association homepage.
 
-**Digital Twin (DT):**
-The digital representation of an object (also refer to AAS).
+## 2 RELEVANT PARTS OF THE STANDARD FOR SPECIFIC USE CASES
 
-**Asset Administration Shell (AAS) / Shell Descriptor:**
-The digital representation of an object (also refer to DT).
+> *This section is normative*
 
-Additional terminology used in this standard can be looked up in the glossary on
-the association homepage.
+### 2.1 "Asset Tracking: Triangle Document"
 
-## 2 "ASSET TRACKING PLATFORM" API
+#### 2.1.1 LIST OF STANDALONE STANDARDS
+
+To participate in the Asset Tracking use case, the following single standards MUST be fulfilled by all participants for which the standard is relevant:
+
+- CX-0002 Digital Twins in Catena-X v2.0.0
+- CX-0018 Eclipse Data Space Connector (EDC) v2.1.0
+
+#### 2.1.2 DATA REQUIRED
+
+#### 2.1.3 ADDITIONAL REQUIREMENTS
+
+#### 2.1.4 DIGITAL TWINS AND SPECIFIC ASSET IDs
+
+The Asset Tracking Platform as a sensor data provider MUST register the  Digital Twins for IoT Sensor Devices with the BPNL for ownerID, device serial number, device type, and name of manufacturer.
+ex:
+
+```json
+
+{
+    "description": [],
+    "globalAssetId": {
+        "value": [
+            "b77383db-b9ab-48fd-ae43-d44f356d7898"
+        ]
+    },
+    "idShort": "IoTDevice_123-0740-3434-A",
+    "identification": "b77383db-b9ab-48fd-ae43-d44f356d7898",
+    "specificAssetIds": [
+          {
+            "value": "BPNL00000003ABXD",
+            "key": "ownerID"
+        },
+        {
+            "value": "15698-0740-3434-A",
+            "key": "serialNumber"
+        },
+        {
+            "value": "TRACK01111",
+            "key": "type"
+        },
+        {
+            "value": "Company A",
+            "key": "manufacturer"
+        }
+    ],
+    "submodelDescriptors": [
+        {
+            "description": [
+                {
+                    "language": "en",
+                    "text": "The Shell for IoT Sensor Device"
+                }
+            ],
+            "idShort": "IotSensorDeviceDefinition",
+            "identification": "8c73e97a-62a9-4b29-b33a-e55cfbf5f342",
+            "semanticId": {
+                "value": [
+                    "urn:samm:io.catenax.iot_sensor_device_definition:2.0.0#IotSensorDeviceDefinition"
+                ]
+            },
+            "endpoints": [
+                {
+                    "interface": "EDC",
+                    "protocolInformation": {
+                        "endpointAddress": "https://{company_edc}/edcs/19b22764-032d-4625-a9db-cbaa695e5cfa/assets/b77383db-b9ab-48fd-ae43-d44f356d7898",
+                        "endpointProtocol": "IDS/ECLIPSE DATASPACE CONNECTOR",
+                        "endpointProtocolVersion": "0.0.1-SNAPSHOT"
+                    }
+                }
+            ]
+        }
+    ]
+}
+
+```
+
+## 3 ASPECT MODELS
+
+> *This section is normative*
+
+### 3.1 ASPECT MODEL "IotSensorDeviceDefinition v2.0.0"
+
+#### 3.1.1 INTRODUCTION
+
+This aspect model is needed for the onboarding process of an IoT Sensor Device for the registration in Catena-X network. The onboarding process is done via the Asset Tracking Platform (ATP).
+
+#### 3.1.2 SPECIFICATIONS ARTIFACTS
+
+The modeling of the semantic model specified in this document was done in accordance to the "semantic driven workflow" to create a submodel template specification [SMT](https://industrialdigitaltwin.org/wp-content/uploads/2022/12/I40-IDTA-WS-Process-How-to-write-a-SMT-FINAL-.pdf).
+The data model is described in SAMM and like all Catena-X data models, this model is available in a machine-readable format on GitHub2F2F conformant to CX-0003.
+
+#### 3.1.3 LICENSE
+
+This Catena-X data model is an outcome of Catena-X use case group Circular Economy - Asset Tracking (CAT). This Catena-X data model is made available under the terms of the Creative Commons Attribution 4.0 International (CC-BY-4.0) license, which is available at Creative Commons4F4F.
+
+#### 3.1.4 IDENTIFIER OF SEMANTIC MODEL
+
+The semantic model has the unique identifier
+
+> urn:samm:io.catenax.iot_sensor_device_definition:2.0.0
+
+#### 3.1.5 FORMATS OF SEMANTIC MODEL
+
+The data model is described in SAMM. The generated documentation can be found here:
+https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.iot_sensor_device_definition/2.0.0/gen
+
+##### 3.1.5.1 RDF TURTLE
+
+The rdf turtle file, an instance of the Semantic Aspect Meta Model, is the master for generating
+additional file formats and serializations.
+
+https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.iot_sensor_device_definition/2.0.0/IotSensorDeviceDefinition.ttl
+
+The open source command line tool of the Eclipse Semantic Modeling Framework  is used for generation
+of other file formats like for example a JSON Schema, aasx for Asset Administration Shell Submodel
+Template or a HTML documentation.
+
+##### 3.1.5.2 JSON SCHEMA
+
+A JSON Schema can be generated from the RDF Turtle file. The JSON Schema defines the Value-Only
+payload of the Asset Administration Shell for the API operation "GetSubmodel".
+
+https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.iot_sensor_device_definition/2.0.0/gen/IotSensorDeviceDefinition-schema.json
+
+##### 3.1.5.3 AASX
+
+A AASX file can be generated from the RDF Turtle file. The AASX file defines one of the requested
+artifacts for a Submodel Template Specification conformant to \[[SMT](https://industrialdigitaltwin.org/wp-content/uploads/2022/12/I40-IDTA-WS-Process-How-to-write-a-SMT-FINAL-.pdf)].
+
+### 3.2 ASPECT MODEL "IotSensorData v2.0.0"
+
+#### 3.2.1 INTRODUCTION
+
+The aspect model “IotSensorData” represents a set of data collected from IoT sensor devices. The sensor values are interpretable only in relation to the assets which they are attached to.
+
+#### 3.2.2 SPECIFICATIONS ARTIFACTS
+
+The modeling of the semantic model specified in this document was done in
+accordance to the "semantic driven workflow" to create a submodel template
+specification [SMT](https://industrialdigitaltwin.org/wp-content/uploads/2022/12/I40-IDTA-WS-Process-How-to-write-a-SMT-FINAL-.pdf).
+
+This aspect model is written SAMM as a modeling language and like all Catena-X data models, this model is available in a machine-readable format on GitHub2F2F
+conformant to CX-0003.
+
+#### 3.2.3 LICENSE
+
+This Catena-X data model is an outcome of Catena-X use case group Circular Economy - Asset Tracking (CAT).
+This Catena-X data model is made available under the terms of the Creative Commons Attribution 4.0 International (CC-BY-4.0) license, which is available at Creative Commons4F4F.
+
+#### 3.2.4 IDENTIFIER OF SEMANTIC MODEL
+
+The semantic model has the unique identifier
+
+> urn:samm:io.catenax.iot_sensor_data:2.0.0
+
+#### 3.2.5 FORMATS OF SEMANTIC MODEL
+
+The data model is described in SAMM.
+The generated documentation can be found here:
+https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.iot_sensor_data/2.0.0/gen
+
+##### 3.2.5.1 RDF TURTLE
+
+The rdf turtle file, an instance of the Semantic Aspect Meta Model, is the master for generating
+additional file formats and serializations.
+
+https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.iot_sensor_data/2.0.0/IotSensorData.ttl
+
+The open source command line tool of the Eclipse Semantic Modeling Framework  is used for generation
+of other file formats like for example a JSON Schema, aasx for Asset Administration Shell Submodel
+Template or a HTML documentation.
+
+##### 3.2.5.2 JSON SCHEMA
+
+A JSON Schema can be generated from the RDF Turtle file. The JSON Schema defines the Value-Only
+payload of the Asset Administration Shell for the API operation "GetSubmodel".
+
+https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.iot_sensor_data/2.0.0/gen/IotSensorData-schema.json
+
+##### 3.2.5.3 AASX
+
+A AASX file can be generated from the RDF Turtle file. The AASX file defines one of the requested
+artifacts for a Submodel Template Specification conformant to \[[SMT](https://industrialdigitaltwin.org/wp-content/uploads/2022/12/I40-IDTA-WS-Process-How-to-write-a-SMT-FINAL-.pdf)].
+
+### 3.3 ASPECT MODEL "AssetTrackerLinks v2.0.0"
+
+#### 3.3.1 INTRODUCTION
+
+The aspect model “AssetTrackerLinks” is used by the Asset Tracking Application to create a link between an individual asset and individual IoT sensor device.
+
+#### 3.3.2 SPECIFICATIONS ARTIFACTS
+
+The modeling of the semantic model specified in this document was done in accordance to the "semantic driven workflow" to create a submodel template specification [SMT](https://industrialdigitaltwin.org/wp-content/uploads/2022/12/I40-IDTA-WS-Process-How-to-write-a-SMT-FINAL-.pdf).
+
+This aspect model is written in SAMM as a modeling language and like all Catena-X data models, this model is available in a machine-readable format on GitHub2F2F conformant to CX-0003.
+
+#### 3.3.3 LICENSE
+
+This Catena-X data model is an outcome of Catena-X use case group Circular Economy - Asset Tracking (CAT). This Catena-X data model is made available under the terms of the Creative Commons Attribution 4.0 International (CC-BY-4.0) license, which is available at Creative Commons4F4F.
+
+#### 3.3.4 IDENTIFIER OF SEMANTIC MODEL
+
+The semantic model has the unique identifier
+
+  **urn:samm:io.catenax.asset_tracker_links:2.0.0**
+
+#### 3.3.5 FORMATS OF SEMANTIC MODEL
+
+The data model is described in SAMM. The generated documenattion can be found here: https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.asset_tracker_links/2.0.0/gen
+
+##### 3.3.5.1 RDF TURTLE
+
+The rdf turtle file, an instance of the Semantic Aspect Meta Model, is the master for generating additional file formats and serializations.
+
+https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.asset_tracker_links/2.0.0/AssetTrackerLinks.ttl
+
+The open source command line tool of the Eclipse Semantic Modeling Framework  is used for generation of other file formats like for example a JSON Schema, aasx for Asset Administration Shell Submodel Template or a HTML documentation.
+
+##### 3.3.5.2 JSON SCHEMA
+
+A JSON Schema can be generated from the RDF Turtle file. The JSON Schema defines the Value-Only payload of the Asset Administration Shell for the API operation "GetSubmodel".
+
+https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.asset_tracker_links/2.0.0/gen/AssetTrackerLinks-schema.json
+
+##### 3.3.5.3 AASX
+
+A AASX file can be generated from the RDF Turtle file. The AASX file defines one of the requested
+artifacts for a Submodel Template Specification conformant to \[[SMT](https://industrialdigitaltwin.org/wp-content/uploads/2022/12/I40-IDTA-WS-Process-How-to-write-a-SMT-FINAL-.pdf).
+
+## 4 APPLICATION PROGRAMMING INTERFACES
+
+> *This section is normative*
 
 > *This section is normative*
 
@@ -165,7 +408,7 @@ depending on the network it was sent from. It is then normalized and provided to
 Catena-X resources allow the interaction with digital twins. If an IoT device and its data shall be introduced to the
 Catena-X network, the user may request the creation of a digital twin via this resource.
 
-## 2.1 PRECONDITIONS AND DEPENDENCIES
+## 4.1 PRECONDITIONS AND DEPENDENCIES
 
 In order to persist the necessary data, a persistence module, specifically a database, is REQUIRED by the ATP. In there,
 the ATP stores the API Keys and Device Registry Entries that help with associating a devices network and Catena-X
@@ -177,9 +420,9 @@ All standardized data, including the digital representation of an IoT device (Di
 
 To make the data discoverable in the Catena-X network, a Shell Descriptor MUST be created. Therefore, a decentralized DTR instance is REQUIRED.
 
-## 2.2 API SPECIFICATION
+## 4.2 API SPECIFICATION
 
-### 2.2.1 API ENDPOINTS & RESOURCES
+### 4.2.1 API ENDPOINTS & RESOURCES
 
 **GET LIST OF IOT DEVICES FROM IOT NETWORK**
 
@@ -532,7 +775,7 @@ Balances of -1 reflect infinite balance, e.g. when the network does not require 
 | userId              | string       | Identifier of the user/entity the balance belongs to      |
 | userName             | string       | Name of the user/entity the balance belongs to            |
 
-#### 2.2.1.3 Sending and Retrieving Data
+#### 4.2.1.3 Sending and Retrieving Data
 
 **GET PAIRED STATUS OF AN IOT DEVICE**
 
@@ -810,7 +1053,7 @@ After normalization, the ATP updates the submodel at the submodel server and app
 RESPONSE: OK
 ```
 
-### 2.2.2 AVAILABLE DATA TYPES
+### 4.2.2 AVAILABLE DATA TYPES
 
 The API MUST use JSON as the payload transported via HTTP.
 
@@ -900,7 +1143,7 @@ The following Data Types/Objects can be provided by the API (refer to the endpoi
 These objects do not include the data you will receive when consuming data via the EDC. Please refer to the EDC
 documentation and the EDC Data Asset Structure!
 
-### 2.2.3 EDC DATA ASSET STRUCTURE
+### 4.2.3 EDC DATA ASSET STRUCTURE
 
 ATP provides the specific data objects as data assets via an EDC.
 
@@ -968,7 +1211,7 @@ There are two relevant data models provided as a data asset:
 | batteryLevel          |  integer          | The battery level displays how much charge of the battery has been left. |
 | transmissionMethod    | string            | The method under which the sensing data is transmitted from the source to the remote node. |
 
-### 2.2.4 ERROR HANDLING
+### 4.2.4 ERROR HANDLING
 
 The API provides specific responses for successful and unsuccessful requests.
 
@@ -997,23 +1240,32 @@ In case of an error, one of the following responses can occur:
 | Missing Submodel                | Received IoT data but could not find a submodel to attach it to                               | 500           |
 | Submodel Server Exception       | Something went wrong while requesting something from the Submodel Server                      | 500           |
 
-## 3 REFERENCES
 
-### 3.1 NORMATIVE REFERENCES
+## 5 REFERENCES
+
+### 5.1 NORMATIVE REFERENCES
 
 > *This section is normative*
 
 CX-0002 Digital Twins in Catena-X v2.0.0
-CX-0018 Eclipse Data Space Connector (EDC) v2.1.0
-CX-0083 Aspect Model IoTSensorDeviceDefinition v1.0.0
-CX-0106 Aspect Model IoTSensorData v1.0.0
-CX-0105 Asset Tracking Triangle Document v1.0.0
 
-### 3.2 NON-NORMATIVE REFERENCES
+CX-0018 Eclipse Data Space Connector (EDC) v2.1.0
+
+CX-0045 Aspect Model Data Chain Template v1.1.1
+
+CX-0083 Aspect Model IoTSensorDeviceDefinition v1.0.0
+
+CX-0106 Aspect Model IoTSensorData v1.0.0
+
+CX-0104 Aspect Model AssetTrackerLinks v1.0.0
+
+CX-0070 Asset Tracking Platform API Standardization v1.0.0
+
+### 5.2 NON-NORMATIVE REFERENCES
 
 > *This section is non-normative*
 
-### 3.3 REFERENCE IMPLEMENTATIONS
+### 5.3 REFERENCE IMPLEMENTATIONS
 
 > *This section is non-normative*
 
@@ -1022,6 +1274,18 @@ CX-0105 Asset Tracking Triangle Document v1.0.0
 ### FIGURES
 
 > *This section is non-normative*
+
+## Onboarding Process Of IoT Sensor Devices
+
+![Device Onboarding](./assets/OnboardingProcessOfIoTSensorDevice.png)
+
+## Receive IoT Sensor Data from the network in ATP
+
+![Receive IoT data from Network](./assets/ReceiveIoTSensorDataFromNetworkInAtp.png)
+
+## Pair / Unpair IoT Device from an Asset
+
+![Pair / Unpair IoT Device from an Asset ](./assets/pair_unpair_device.png)
 
 ### TABLES
 
