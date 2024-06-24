@@ -300,7 +300,7 @@ Additionally, respective usage policies MAY include the following policy rule:
 
 - Reference Contract (“ContractReference”).
 
-Details on namespaces and ODLR policy rule values to be used for the above-mentioned types are provided via the [ODRL policy repository](https://github.com/catenax-eV/cx-odrl-profile). 
+Details on namespaces and ODLR policy rule values to be used for the above-mentioned types are provided via the [ODRL policy repository](https://github.com/catenax-eV/cx-odrl-profile).
 
 An example for a policy valid for the PCF Use Case is shown in the following:
 
