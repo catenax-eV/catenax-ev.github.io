@@ -2,11 +2,11 @@
 
 ## ABSTRACT
 
-![image](https://github.com/catenax-eV/product-standardization-prod/assets/135617737/48b494f3-1b8e-4cf2-8c33-62c249f24eff)
+![image](./assets/299394830-48b494f3-1b8e-4cf2-8c33-62c249f24eff.png)
 
 - In view of the fact that Catena-X cannot manage Natural Persons it has to be secured that no Natural Person by accident may be processed or later stored in the pool.
 
-![image](https://github.com/catenax-eV/product-standardization-prod/assets/135617737/448eb834-071d-4dbb-8c1c-f36af2308f08)
+![image](./assets/299395649-448eb834-071d-4dbb-8c1c-f36af2308f08.png)
 
 - For historical reasons, companies often have no knowledge of whether the stored Business Partner master record contains a Natural Person. For example, there is a way to change this master record as Natural Person, but this has often not been done consistently in the past.
 
