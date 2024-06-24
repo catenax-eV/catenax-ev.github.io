@@ -225,7 +225,7 @@ This semantic model has the unique identifier:
 urn:samm:io.catenax.fleet.vehicles:1.0.0  
   
 This model has an external reference to  
-CX - 0037 Aspect Model Vehicle Product Description v.2.0.0  
+CX - 0037 Aspect Model Vehicle Product Description v2.0.0  
 with unique identifier urn:samm:io.catenax.vehicle.product_description:3.0.0
 
 ### 2.5 Formats of Semantic Model
@@ -272,3 +272,7 @@ CX-0092 Aspect Model: QualityTaskAttachment
 [^4]: https://creativecommons.org/licenses/by/4.0/legalcode
 
 [^5]: https://github.com/eclipse-esmf/esmf-sdk#samm-cli
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

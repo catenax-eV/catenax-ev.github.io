@@ -25,7 +25,7 @@ Members of the Association can participate in [Committees](../02-organizational-
 
 The Association is complemented by the **development environment**. The focus of the development environment is on the one hand on the creation of standardization candidates that can be submitted into the standardization process of the Association, and on the other hand, the development of open-source reference implementations and other implementations for the dataspace.
 
-![Catena-X Development environment](assets/CX-development-environment.drawio.svg)
+![Catena-X Development environment](assets/cx-development-environment.drawio.svg)
 
 ## Operating environment
 

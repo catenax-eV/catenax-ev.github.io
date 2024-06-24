@@ -1,4 +1,4 @@
-# CX - 0129 Request for Quotation Exchange v.1.0.0
+# CX-0129 Request for Quotation Exchange v1.0.0
 
 ## ABSTRACT
 
@@ -510,3 +510,7 @@ Not applicable.
 > *This section is non-normative*
 
 Not applicable.
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

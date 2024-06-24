@@ -127,3 +127,7 @@ W3C DID document properties [https://www.w3.org/TR/did-spec-registries/#did-docu
 > *This section is non-normative*
 
 Managed Identity Wallet which supports the **did:web** method: https://github.com/catenax-ng/tx-managed-identity-wallets/tree/features/java-did-web
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

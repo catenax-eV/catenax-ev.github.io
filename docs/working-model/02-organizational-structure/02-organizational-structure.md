@@ -13,8 +13,7 @@ sidebar_position: 1
 ### Catena-X Automotive Network e.V
 
 :::info
-ToDo: Michael
-Update Grafik nach dem 01.04. mit Update von Jan
+Work in progress
 :::
 
 - Catena-X is structured along Committees and Expert Groups
@@ -42,7 +41,7 @@ The sharepoint pages can only be accessed by association members.
 ### Eclipse Tractus-X Project
 
 :::info
-ToDo: Michael
+Work in progress
 :::
 
 - Tractus-X is structured along products (repos) or use cases
@@ -50,16 +49,15 @@ ToDo: Michael
 - Each contributor can propose features in sig-release
 - Committers make the decision which features will be committed in the next release
 - Outcome:
-  - Planning: Committed, periodized backlog for a release
+  - Planning: Committed, prioritized backlog for a release
   - Release: Release Train
 
 ### Other Initiatives
 
 :::info
-ToDo: Michael
+Work in progress
 :::
 
 - Other initiatives (such as M-X) can use our processes to propose...
   - Feature proposals
   - Standardization candidates (?)
-  

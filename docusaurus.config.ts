@@ -39,6 +39,11 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
+          versions: {
+            current: {
+              label: 'Jupiter (preview)',
+            },
+          },
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -86,13 +91,19 @@ const config: Config = {
         },
         {
           type: "docSidebar",
+          sidebarId: "sidebar_regulatory_framework",
+          position: "left",
+          label: "Regulatory Framework",
+        },
+        {
+          type: "docSidebar",
           sidebarId: "sidebar_op_model",
           position: "left",
           label: "Operating Model",
         },
         {
           type: 'dropdown',
-          label: 'Versions',
+          label: 'Releases',
           position: 'left',
           items: [
             {

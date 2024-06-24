@@ -9,7 +9,7 @@ Table of Contents
 2. [Release Planning](#2-release-planning)
 
 :::info
-[General Feature Contributions](#general-feature-contributions) is this still needed?
+Work in progress
 :::
 
 ## General Feature Contributions
@@ -53,7 +53,7 @@ Once a new feature proposal has been made for the Tractus-X project, it enters a
 
 - **Responding to Feedback:** The contributor is responsible for addressing any feedback provided by the Expert Group or committee. This may include providing additional details or making revisions to the proposal.
 - **Sub Task Creation:** If required, the contributor may need to create sub-tasks that break down the feature into manageable pieces. This helps in tracking progress and facilitates easier review.
-- **Timely Updates:** The contributor must update the feature details within the given timeframe. Prompt responses and updates are crucial to keep the proposal moving forward.
+- **Timely Updates:** The contributor must update the feature details within the given time frame. Prompt responses and updates are crucial to keep the proposal moving forward.
 
 ### 1.3 Feature Validation and Approval
 

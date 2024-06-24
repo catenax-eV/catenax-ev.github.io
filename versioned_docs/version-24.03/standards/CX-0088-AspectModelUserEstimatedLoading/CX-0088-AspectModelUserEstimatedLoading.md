@@ -297,3 +297,7 @@ CX–0018 ECLIPSE DATA SPACE CONNECTOR (EDC), Version 2.0.0
 ```text
     [OPTIONAL] Add Tables here if necessary
 ```
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

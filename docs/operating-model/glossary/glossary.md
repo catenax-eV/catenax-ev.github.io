@@ -35,3 +35,4 @@ sidebar_position: 1
 | OSP                   | Onboarding Service Provider                                      |
 | VC                    | Verifiable Credential                                            |
 | VP                    | Verifiable Presentation                                          |
+| STS                   | Secure Token Service                                             |

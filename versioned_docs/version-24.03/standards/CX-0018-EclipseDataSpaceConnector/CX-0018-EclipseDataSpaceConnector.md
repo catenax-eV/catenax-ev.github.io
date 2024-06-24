@@ -671,3 +671,7 @@ Jarke, M., Otto, B., & Ram, S. (2019). *Data sovereignty and data space ecosyste
 ## 6 Resources
 
 CX-0018 Sovereign Data Exchange - Architecture.drawio
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

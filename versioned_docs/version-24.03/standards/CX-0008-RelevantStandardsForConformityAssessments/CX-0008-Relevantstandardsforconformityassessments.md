@@ -1,5 +1,5 @@
 
-# CX-0008 Relevant standards for conformity assessments v.1.1.0
+# CX-0008 Relevant standards for conformity assessments v1.1.0
 
 ## ABSTRACT
 
@@ -171,3 +171,7 @@ period until the guidelines become mandatory.
 ## REVISIONS & UPDATE
 
 - v1.1.0 Added ISO 27001 and/or TISAX Level 1 as alternative to ISO 9001
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

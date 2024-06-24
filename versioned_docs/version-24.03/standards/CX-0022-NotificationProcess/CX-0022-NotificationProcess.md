@@ -1,5 +1,5 @@
 
-# CX-0022 Notification Process v.1.1.1
+# CX-0022 Notification Process v1.1.1
 
 ## ABSTRACT
 
@@ -231,3 +231,7 @@ Below, the UML sequence diagram to resolve a quality alert is depicted.
 - CX-0010 BUSINESS PARTNER NUMBER
 - CX-0002 DIGITAL TWINS IN CATENA-X
 - CX-0018 ECLIPSE DATA SPACE CONNECTOR (EDC)
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

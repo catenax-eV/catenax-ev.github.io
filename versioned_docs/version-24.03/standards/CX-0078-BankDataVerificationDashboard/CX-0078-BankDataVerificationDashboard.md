@@ -8,7 +8,7 @@ The Bank Data Verification Dashboard (BDV) has to rely on a set of clearly defin
 
 BDV has to visualize the outcome of the banking verification rules via a dashboard. There a user should be able to compare the input and output of banking data quality after the BDV verification process ended.
 
-BDV has to use the Gate API CX-0074\_V.1.1.0 or higher for synchronization of CX Member BP data records with the CX Member banking data. The CX Member banking data has to be send via the BDV API. The results of the BDV verification have to be stored in the BDV Logfile and should get pulled via the BDV API from the CX Member systems.
+BDV has to use the Gate API CX-0074\_v1.1.0 or higher for synchronization of CX Member BP data records with the CX Member banking data. The CX Member banking data has to be send via the BDV API. The results of the BDV verification have to be stored in the BDV Logfile and should get pulled via the BDV API from the CX Member systems.
 BDV has to be a client/ server cloud application which has to contain a Web Client and a Cloud Servicer Application.
 BDV has to contain a user and authorization management capability aligned with the CX Portal and Marketplace user management. BDV has to support the EDC Asset function capability and has to be available in English and German language.
 
@@ -302,3 +302,7 @@ Intentionally left blank.
 [^1]: https://catena-x.net/fileadmin/user_upload/Vereinsdokumente/Catena-X_IP_Regelwerk_IP_Regulations.pdf
 
 [^2]: https://catena-x.net/de/standardisierung/catena-x-einfuehren-umsetzen/standardisierung/standard-library
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

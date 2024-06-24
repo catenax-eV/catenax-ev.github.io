@@ -71,3 +71,11 @@
   padding: 8px;
   border-radius: 8px;
 }
+
+.separator-top{
+  border-top: 1px solid #CCC;
+}
+
+.separator-bottom{
+  border-bottom: 1px solid #CCC;
+}

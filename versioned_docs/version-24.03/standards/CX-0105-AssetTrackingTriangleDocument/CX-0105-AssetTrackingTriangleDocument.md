@@ -153,19 +153,19 @@ Additional terminology used in this standard can be looked up in the glossary on
 
 To participate in the Asset Tracking use case, the following single standards MUST be fulfilled by all participants for which the standard is relevant:
 
-CX-0002 Digital Twins in Catena-X v.2.0.0
+CX-0002 Digital Twins in Catena-X v2.0.0
 
-CX-0018 Eclipse Data Space Connector (EDC) v.2.1.0
+CX-0018 Eclipse Data Space Connector (EDC) v2.1.0
 
-CX-0045 Aspect Model Data Chain Template v.1.1.1
+CX-0045 Aspect Model Data Chain Template v1.1.1
 
-CX-0083 Aspect Model IoTSensorDeviceDefinition v.1.0.0
+CX-0083 Aspect Model IoTSensorDeviceDefinition v1.0.0
 
-CX-0106 Aspect Model IoTSensorData v.1.0.0
+CX-0106 Aspect Model IoTSensorData v1.0.0
 
-CX-0104 Aspect Model AssetTrackerLinks v.1.0.0
+CX-0104 Aspect Model AssetTrackerLinks v1.0.0
 
-CX-0070 Asset Tracking Platform API Standardization v.1.0.0
+CX-0070 Asset Tracking Platform API Standardization v1.0.0
 
 #### 2.1.2 DATA REQUIRED
 
@@ -240,7 +240,7 @@ ex:
 
 > *This section is normative*
 
-### 3.1 ASPECT MODEL "IotSensorDeviceDefinition v.2.0.0"
+### 3.1 ASPECT MODEL "IotSensorDeviceDefinition v2.0.0"
 
 #### 3.1.1 INTRODUCTION
 
@@ -288,7 +288,7 @@ https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.io
 A AASX file can be generated from the RDF Turtle file. The AASX file defines one of the requested
 artifacts for a Submodel Template Specification conformant to \[[SMT](https://industrialdigitaltwin.org/wp-content/uploads/2022/12/I40-IDTA-WS-Process-How-to-write-a-SMT-FINAL-.pdf)].
 
-### 3.2 ASPECT MODEL "IotSensorData v.2.0.0"
+### 3.2 ASPECT MODEL "IotSensorData v2.0.0"
 
 #### 3.2.1 INTRODUCTION
 
@@ -343,7 +343,7 @@ https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.io
 A AASX file can be generated from the RDF Turtle file. The AASX file defines one of the requested
 artifacts for a Submodel Template Specification conformant to \[[SMT](https://industrialdigitaltwin.org/wp-content/uploads/2022/12/I40-IDTA-WS-Process-How-to-write-a-SMT-FINAL-.pdf)].
 
-### 3.3 ASPECT MODEL "AssetTrackerLinks v.2.0.0"
+### 3.3 ASPECT MODEL "AssetTrackerLinks v2.0.0"
 
 #### 3.3.1 INTRODUCTION
 
@@ -510,19 +510,19 @@ In case of an error, one of the following responses can occur:
 
 > *This section is normative*
 
-CX-0002 Digital Twins in Catena-X v.2.0.0
+CX-0002 Digital Twins in Catena-X v2.0.0
 
-CX-0018 Eclipse Data Space Connector (EDC) v.2.1.0
+CX-0018 Eclipse Data Space Connector (EDC) v2.1.0
 
-CX-0045 Aspect Model Data Chain Template v.1.1.1
+CX-0045 Aspect Model Data Chain Template v1.1.1
 
-CX-0083 Aspect Model IoTSensorDeviceDefinition v.1.0.0
+CX-0083 Aspect Model IoTSensorDeviceDefinition v1.0.0
 
-CX-0106 Aspect Model IoTSensorData v.1.0.0
+CX-0106 Aspect Model IoTSensorData v1.0.0
 
-CX-0104 Aspect Model AssetTrackerLinks v.1.0.0
+CX-0104 Aspect Model AssetTrackerLinks v1.0.0
 
-CX-0070 Asset Tracking Platform API Standardization v.1.0.0
+CX-0070 Asset Tracking Platform API Standardization v1.0.0
 
 ### 5.2 NON-NORMATIVE REFERENCES
 
@@ -553,3 +553,7 @@ CX-0070 Asset Tracking Platform API Standardization v.1.0.0
 ### TABLES
 
 > *This section is non-normative*
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

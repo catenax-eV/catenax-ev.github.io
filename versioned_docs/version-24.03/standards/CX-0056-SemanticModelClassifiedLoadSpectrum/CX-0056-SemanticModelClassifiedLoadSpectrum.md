@@ -262,3 +262,7 @@ The data model is described in SAMM. A html documentation can be generated from 
 ### TABLES
 
 > *This section is non-normative*
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

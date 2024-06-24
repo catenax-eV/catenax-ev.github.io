@@ -1150,3 +1150,7 @@ and Day 2 to build up a safety stock.
 > *This section is non-normative*
 
 Not applicable
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

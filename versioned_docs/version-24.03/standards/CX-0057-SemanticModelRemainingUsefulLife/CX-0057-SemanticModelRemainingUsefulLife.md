@@ -208,3 +208,7 @@ The data model is described in SAMM6. A html documentation can be generated from
 ```text
     [OPTIONAL] Add Tables here if necessary
 ```
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

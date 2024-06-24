@@ -30,12 +30,12 @@ Please note that while this page captures the essence of the Committee and the E
 |  | R = Responsible; A = Accountable; S = Supportive; I = Informed; C = Consulted | Management board |  | Committee |  |  | Expert Group |  | Catena-X office |
 |---|---|---|---|---|---|---|---|---|---|
 |  |  | Member | [Sponsor](#board-sponsor) | [Lead](#lead-and-co-lead) | Member | [Mentor](#mentor-for-expert-groups-optional) | Lead | Member |  |
-| Strategy | [Develop and maintain the Association Stratgey](#association-strategy) | A | R | I |  |  | I |  | S |
+| Strategy | [Develop and maintain the Association strategy](#association-strategy) | A | R | I |  |  | I |  | S |
 |  | [Develop and maintain the business domain strategy](#business-domain-strategy) | I | A,C | R | S |  | I | I | S |
 |  | [Develop and maintain a strategy on functional level](#functional-level-strategy)  |  | I | A |  | C | R | S | S |
 | Mgmt. of association bodies | Setup Committees | R,A |  |  |  |  |  |  | S |
 |  | Close Committees | A | R | C | I |  |  |  |  |
-|  | [Setup Expert Groups](#expert-group-election) |  | C | A |  | R |  |  | S |
+|  | [Setup Expert Groups](#expert-group-initiation) |  | C | A |  | R |  |  | S |
 |  | [Close Expert Groups](#closing-of-expert-groups) |  | C | A |  | R | C,I | I | S |
 | Development | [Develop new feature requests](../../03-process-from-idea-to-production/03-01-process-from-idea-to-production.md#create-new-feature-proposal) |  |  |  |  | C | A | R |  |
 |  | [Approve features requests](../../03-process-from-idea-to-production/03-01-process-from-idea-to-production.md#check-strategic-fit) |  |  |  | R | A | S | I |  |
@@ -43,7 +43,7 @@ Please note that while this page captures the essence of the Committee and the E
 |  | Remove impediments for the features development / for Expert Group(s) |  | C |  | S | R |  |  |  |
 | Promote | [Promote the use cases of the business domain inside and outside the association](#communication) | S | C |  | R | A |  |  | S |
 
-The RASIC should provide an overview of the tasks the Association bodies are engaging in. Each individual in the mgmt. board, a Committee or an Expert Group is at least a "member". If one takes over additional roles, e.g. as "Lead", the responsibilities of that role are added to those as member.
+The RASIC should provide an overview of the tasks the Association bodies are engaging in. Each individual in the Mgmt. board, a Committee or an Expert Group is at least a "member". If one takes over additional roles, e.g. as "Lead", the responsibilities of that role are added to those as member. In detail, the responsibilities for specific individual aspects may differ slightly (but always in alignment with this overarching RASIC.
 
 ## Management board
 
@@ -168,9 +168,9 @@ The Committee prioritizes features on a cross-Expert Group level, focusing on th
 
 ## Expert Group
 
-The aim of the Expert Groups within the Catena-X Automotive Network e.V. is to develop results together with the members in line with the association's strategic direction. The Expert Groups are managed by the related Committee. The Expert Groups don't exist forever. They work on dedicated topics, present the results to the Committee and are then retired.
+The aim of the Expert Groups within the Catena-X Automotive Network e.V. is to develop results together with the members in line with the association's strategic direction. The Expert Groups are [initiated](#expert-group-initiation) and managed by the related Committee. Expert Groups don't exist forever. They work on dedicated topics, present the results to the Committee and are then [retired](#closing-of-expert-groups). If a follow up is required, a new Expert Group has to be initiated.
 
-![Expert Group Lifeline](../assets/expert-group-life-line.drawio.svg)
+![Expert Group Lifeline](../assets/expert-group-life-line-v2.drawio.svg)
 
 ### Functional level strategy
 
@@ -198,7 +198,7 @@ There is already a list of groups that have been established and are currently a
 - ...
 - ...
 
-### Expert Group Election
+### Expert Group Initiation
 
 Association members can join any Expert Groups by applying for open seats. The recommended size for Expert Groups is 5 to 15 core team members. Less core team members might indicated that the topic is not relevant enough to the assosciation and cause the Expert Group not being established. More core team members would make the Expert Group to inflexible and a split of the Expert Group might be considered.
 
@@ -239,7 +239,7 @@ Validated request are then taken over by the association which is then starting 
 
 #### Expert Group composition
 
-All applicants are going to be reviewed by the mentor. Based on predefined criteria the members for the Expert Group are going to be selected. If there are sufficient applicants, an optional review group may be created (see [Expert Group election](#expert-group-election)).
+All applicants are going to be reviewed by the mentor. Based on predefined criteria the members for the Expert Group are going to be selected. If there are sufficient applicants, an optional review group may be created (see [Expert Group election](#expert-group-initiation)).
 
 #### Expert Group approval
 
@@ -271,6 +271,12 @@ The recommended maximal number of Expert Group members is 15. If the Expert Grou
 
 ### Closing of Expert Groups
 
+Once a Expert Group delivered its dedicated topic, a regulated closing takes place. The Committee validates the results of the Expert Group as after the closure of the Expert Group, the responsibility for the topic transitions to the Committee. When the results are validated. The Expert Group is then officially discharged and closed by Committee.
+
+A final documentation of the work results on the digital collaboration platform is mandatory, and every Expert Group member is required to contribute to this. The documentation is to be made accessible to every member in coordination with the office.
+
+The closure of the Expert Committee is communicated to all members, and the results are accessible to them.
+
 ### Expert Group Decision Making & Communication
 
 ![Expert Group meeting intervals](../assets/expert-group-meeting-interval.drawio.svg)
@@ -279,7 +285,7 @@ Expert Groups are required to be transparent about their work and communicate re
 
 - The Expert Group should meet on a weekly or bi-weekly schedule to align internally
 - If the Expert Group has a review group a monthly exchange should be scheduled to present the work of the Expert Group and get feedback
-- A quartely sounding event should be organised to inform all associations members about the work of the Expert Group and forthcoming initiatives. This event should be aligned with next release planning, to allow ample time for the integration of any valuable feedback that may arise.
+- A quarterly sounding event should be organised to inform all associations members about the work of the Expert Group and forthcoming initiatives. This event should be aligned with next release planning, to allow ample time for the integration of any valuable feedback that may arise.
 
 ### Expert Group Escalation Paths
 

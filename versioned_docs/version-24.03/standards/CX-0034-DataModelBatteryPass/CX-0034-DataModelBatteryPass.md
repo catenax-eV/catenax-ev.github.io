@@ -1,5 +1,5 @@
 
-# CX-0034 Data Model Battery Pass v.2.0.0
+# CX-0034 Data Model Battery Pass v2.0.0
 
 ## FOR WHOM IS THE STANDARD DESIGNED
 
@@ -187,3 +187,7 @@ A reference implementation of an application using or providing data conformant 
 ### FIGURES
 
 ### TABLES
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

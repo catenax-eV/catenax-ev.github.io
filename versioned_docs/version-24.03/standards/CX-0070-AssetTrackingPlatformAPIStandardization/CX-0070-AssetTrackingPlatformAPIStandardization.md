@@ -1003,10 +1003,10 @@ In case of an error, one of the following responses can occur:
 
 > *This section is normative*
 
-CX-0002 Digital Twins in Catena-X v.2.0.0
-CX-0018 Eclipse Data Space Connector (EDC) v.2.1.0
-CX-0083 Aspect Model IoTSensorDeviceDefinition v.1.0.0
-CX-0106 Aspect Model IoTSensorData v.1.0.0
+CX-0002 Digital Twins in Catena-X v2.0.0
+CX-0018 Eclipse Data Space Connector (EDC) v2.1.0
+CX-0083 Aspect Model IoTSensorDeviceDefinition v1.0.0
+CX-0106 Aspect Model IoTSensorData v1.0.0
 CX-0105 Asset Tracking Triangle Document v1.0.0
 
 ### 3.2 NON-NORMATIVE REFERENCES
@@ -1026,3 +1026,7 @@ CX-0105 Asset Tracking Triangle Document v1.0.0
 ### TABLES
 
 > *This section is non-normative*
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

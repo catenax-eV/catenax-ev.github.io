@@ -255,3 +255,7 @@ represents a reference implementation that implements this standard.
 ```text
     [OPTIONAL] Add Tables here here if necessary. Please delete if no tables are provided
 ```
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

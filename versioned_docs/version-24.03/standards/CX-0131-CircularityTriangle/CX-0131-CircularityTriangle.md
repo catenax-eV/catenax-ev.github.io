@@ -1,4 +1,4 @@
-# CX-0131 Circularity Triangle v.1.0.0
+# CX-0131 Circularity Triangle v1.0.0
 
 ## ABSTRACT
 
@@ -162,17 +162,17 @@ The contract definition **MUST** follow the CX-Standard [0018](#21-overall-stand
 To participate in the EoL/Dismantling Services use-case, the following single standards are **RECOMMENDED** to be fulfilled by all participants for which the standard is relevant:
 
 - [CX-0019-AspectModelSerialPart v2.0.0](https://catena-x.net/de/standard-library)
-- [CX-0020 AspectModelSingleLevelBoMAsBuilt v.2.0.0](https://catena-x.net/de/standard-library)
-- [CX-0030-Data Model BoMAsSpecified v.2.0.0](https://catena-x.net/de/standard-library)
-- [CX-0031 Data Model MaterialForHomologation v.1.0.1](https://catena-x.net/de/standard-library)
-- [CX-0032 Data Model PartAsSpecified v.1.0.1](https://catena-x.net/de/standard-library)
-- [CX-0037 Aspect Model: VehicleProductDescription v.2.0.0](https://catena-x.net/de/standard-library)
+- [CX-0020 AspectModelSingleLevelBoMAsBuilt v2.0.0](https://catena-x.net/de/standard-library)
+- [CX-0030-Data Model BoMAsSpecified v2.0.0](https://catena-x.net/de/standard-library)
+- [CX-0031 Data Model MaterialForHomologation v1.0.1](https://catena-x.net/de/standard-library)
+- [CX-0032 Data Model PartAsSpecified v1.0.1](https://catena-x.net/de/standard-library)
+- [CX-0037 Aspect Model: VehicleProductDescription v2.0.0](https://catena-x.net/de/standard-library)
 - [CX-0036 Aspect Model: QualityTask v1.0.1](https://catena-x.net/de/standard-library)
 - [CX-0038 Aspect Model: Fleet.DiagnosticData v1.0.1](https://catena-x.net/de/standard-library)
 - [CX-0039 Aspect Model: Fleet.ClaimData v1.0.1](https://catena-x.net/de/standard-library)
 - [CX-0040-Aspect Model: PartAnalyses v2.0.0](https://catena-x.net/de/standard-library)
 - [CX-0041-Aspect Model: ManufacturedPartsQualityInformation v1.0.1](https://catena-x.net/de/standard-library)
-- [CX-0066 Aspect Model: EndofLifeofVehicleCompliance v.1.0.0](https://catena-x.net/de/standard-library)
+- [CX-0066 Aspect Model: EndofLifeofVehicleCompliance v1.0.0](https://catena-x.net/de/standard-library)
 - [CX-0091 Aspect Model: Fleet.Vehicles v1.0.0](https://catena-x.net/de/standard-library)
 - [CX-0092 Aspect Model: QualityTaskAttachment v1.0.0](https://catena-x.net/de/standard-library)
 
@@ -279,22 +279,22 @@ For the sub use case EoL/Dismantling Services the condition mentioned under [2.6
 
 To participate in the CE-Assistant use-case, the following single standards are **RECOMMENDED** to be fulfilled by all participants for which the standard is relevant:
 
-- [CX-0020-Aspect Model: SingleLevelBoMAsBuilt v.2.0.0](https://catena-x.net/de/standard-library)
-- [CX-0021-Aspect Model: Batch v.1.0.1](https://catena-x.net/de/standard-library)
-- [CX-0026-Product Carbon Footprint Data Model v.1.2.0](https://catena-x.net/de/standard-library)
-- [CX-0027-Product Carbon Footprint Aspect Model v.1.0.0](https://catena-x.net/de/standard-library)
-- [CX-0028-Product Carbon Footprint Request API v.1.1.2](https://catena-x.net/de/standard-library)
-- [CX-0029-Product Carbon Footprint Rulebook v.2.0.0](https://catena-x.net/de/standard-library)
-- [CX-0030-Data Model BoMAsSpecified v.1.0.1](https://catena-x.net/de/standard-library)
-- [CX-0031-Data Model MaterialforHomologation v.1.0.1](https://catena-x.net/de/standard-library)
+- [CX-0020-Aspect Model: SingleLevelBoMAsBuilt v2.0.0](https://catena-x.net/de/standard-library)
+- [CX-0021-Aspect Model: Batch v1.0.1](https://catena-x.net/de/standard-library)
+- [CX-0026-Product Carbon Footprint Data Model v1.2.0](https://catena-x.net/de/standard-library)
+- [CX-0027-Product Carbon Footprint Aspect Model v1.0.0](https://catena-x.net/de/standard-library)
+- [CX-0028-Product Carbon Footprint Request API v1.1.2](https://catena-x.net/de/standard-library)
+- [CX-0029-Product Carbon Footprint Rulebook v2.0.0](https://catena-x.net/de/standard-library)
+- [CX-0030-Data Model BoMAsSpecified v1.0.1](https://catena-x.net/de/standard-library)
+- [CX-0031-Data Model MaterialforHomologation v1.0.1](https://catena-x.net/de/standard-library)
 - [CX-0032-Data Model PartAsSpecified v. 1.0.1](https://catena-x.net/de/standard-library)
-- [CX-0033-Data Model Return Request v.1.0.1](https://catena-x.net/de/standard-library)
-- [CX-0034-Data Model Battery Pass v.1.0.1](https://catena-x.net/de/standard-library)
-- [CX-0035-Data Model Marketplaceoffer v.1.0.0](https://catena-x.net/de/standard-library)
-- [CX-0037-Semantic Model Vehicle Product Discription v.2.0.0](https://catena-x.net/de/standard-library)
-- [CX-0040 Parts Analyses v.2.0.0](https://catena-x.net/de/standard-library)
-- [CX-0041 Manufactured Parts Quality Information v.1.0.1](https://catena-x.net/de/standard-library)
-- [CX-0057 Semantic Model: RemainingUsefulLife v.1.0.0](https://catena-x.net/de/standard-library)
+- [CX-0033-Data Model Return Request v1.0.1](https://catena-x.net/de/standard-library)
+- [CX-0034-Data Model Battery Pass v1.0.1](https://catena-x.net/de/standard-library)
+- [CX-0035-Data Model Marketplaceoffer v1.0.0](https://catena-x.net/de/standard-library)
+- [CX-0037-Semantic Model Vehicle Product Discription v2.0.0](https://catena-x.net/de/standard-library)
+- [CX-0040 Parts Analyses v2.0.0](https://catena-x.net/de/standard-library)
+- [CX-0041 Manufactured Parts Quality Information v1.0.1](https://catena-x.net/de/standard-library)
+- [CX-0057 Semantic Model: RemainingUsefulLife v1.0.0](https://catena-x.net/de/standard-library)
 - [CX-0091 Aspect Model: Fleet Vehicles 1.0.0](https://catena-x.net/de/standard-library)
 
 #### 2.5.2 DATA REQUIRED for CE Assistant
@@ -425,3 +425,7 @@ To understand the standard, the following use case related papers can be helpful
 > *This section is non-normative*
 
 N/A
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

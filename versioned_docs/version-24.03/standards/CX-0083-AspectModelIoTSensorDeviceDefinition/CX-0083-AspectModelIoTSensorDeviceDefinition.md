@@ -1,4 +1,4 @@
-# CX-0083 Aspect Model IotSensorDeviceDefinition v.1.0.0
+# CX-0083 Aspect Model IotSensorDeviceDefinition v1.0.0
 
 ## FOR WHOM IS THE STANDARD DESIGNED
 
@@ -92,7 +92,7 @@ A BPN is the unique identifier of a partner within Catena-X
 Additional terminology used in this standard can be looked up in the glossary on
 the association homepage.
 
-## 2 ASPECT MODEL “IotSensorDeviceDefinition v.2.0.0”
+## 2 ASPECT MODEL “IotSensorDeviceDefinition v2.0.0”
 
 > *This section is normative*
 
@@ -175,3 +175,7 @@ https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.io
 ### TABLES
 
 > *This section is non-normative*
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

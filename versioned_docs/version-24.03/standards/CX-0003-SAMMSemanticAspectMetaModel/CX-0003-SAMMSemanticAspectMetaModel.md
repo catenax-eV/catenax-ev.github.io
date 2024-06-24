@@ -1,4 +1,4 @@
-# CX-0003 SAMM Aspect Meta Model v.1.1.0
+# CX-0003 SAMM Aspect Meta Model v1.1.0
 
 ## ABSTRACT
 
@@ -355,3 +355,7 @@ urn:samm:io.catenax.material_for_recycling:1.0.0#MaterialForRecycling
 - [Semantic Data Structuring](https://raw.githubusercontent.com/OpenManufacturingPlatform/openmanufacturingplatform.github.io/master/docs/sds/OMP-Semantic-Data-Structuring-Whitepaper.pdf). Whitepaper. 2021-08-16. Open Manufacturing Platform.
 - [Product Modeling with BAMM](https://github.com/OpenManufacturingPlatform/openmanufacturingplatform.github.io/raw/master/docs/sds/OMP-SDS-Product-Modeling-Whitepaper.pdf). Whitepaper. 2022-11-24. Open Manufacturing Platform.
 - [ESMF Documentation](https://eclipse-esmf.github.io/esmf-documentation/). Eclipse Semantic Modeling Framework.
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

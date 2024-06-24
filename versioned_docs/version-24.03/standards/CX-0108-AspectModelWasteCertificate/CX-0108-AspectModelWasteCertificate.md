@@ -1,4 +1,4 @@
-# CX - 0108 Waste Certificate v.1.0.0
+# CX - 0108 Waste Certificate v1.0.0
 
 ## ABSTRACT
 
@@ -152,3 +152,7 @@ GER: [End-of-life vehicle regulation - AltfahrzeugV](https://www.gesetze-im-inte
 ### ANNEXES
 
 N/A
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).
