@@ -1,5 +1,5 @@
 
-# CX-0008 Relevant standards for conformity assessments v.1.1.0
+# CX-0008 Relevant Standards for Conformity Assessments v.1.1.0
 
 ## ABSTRACT
 

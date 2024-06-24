@@ -1,4 +1,4 @@
-# CX-0074 BUSINESS PARTNER DATA GATE API v.3.0.0
+# CX-0074 Business Partner Data Gate API v.3.0.0
 
 ## TABLE OF CONTENTS
 

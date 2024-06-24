@@ -1,26 +1,31 @@
----
-title: Introduction
-sidebar_position: 1
-slug: CX-0001-v1.0-introduction
-pagination_prev: null
-pagination_next: null
----
-
-## CX-0001 EDC Discovery API v.1.0.2
+# CX-0001 EDC Discovery API v.1.0.2
 
 ## ABSTRACT
 
-The definition and introduction of a cross-industry standard for the discovering of EDC instances is crucial for the  networking of OEMs, suppliers, consumers, and industrial partners to automatically look up services and data. In a high competing eco systems data are the new oil. Even meta data on data offerings can provide business sensitive information. Hence even meta data for data offerings will be secured via an EDC endpoint.  
+The definition and introduction of a cross-industry standard for the discovering of EDC instances is crucial for the networking of OEMs, suppliers, consumers, and industrial partners to automatically look up services and data. In a high competing eco systems data are the new oil. Even meta data on data offerings can provide business sensitive information. Hence even meta data for data offerings will be secured via an EDC endpoint.
 
-As the Catena-X network expands, a sizable amount of data assets will be available via EDC connection technology. It could be difficult toefficiently identify the proper EDC endpoint within the network.  
+As the Catena-X network expands, a sizable amount of data assets will be available via EDC connection technology. It could be difficult to efficiently identify the proper EDC endpoint within the network.
 
 To be GAIA-X compliant each EDC endpoint must provide a Self Description (SD) of type ServiceOffering. Based on these SD a Data & Service Discovery Service must be provided to easily look up suitable EDC instances to query data offerings efficiently.
 
 ## 1. Introduction
 
-Participants do not want their personal information made public. As a result, these may only be searched indirectly, which necessitates knowing or establishing who the data should be obtained from. Because no one wants to examine every EDC instance (load of the net, latency becomes ever larger with increasing number of participants, procedure does not scale thus). As a result, the number of EDC instances requested must be limited by suitable filters. As a result, subscribers must first determine who may have the data depending on their specific circumstances. This is performed by utilizing the EDC discovery service. The Business Partner Number (BPN) is currently the only criterion provided for restricting the EDC instances in question.
+Participants do not want their personal information made public. As a
+result, these may only be searched indirectly, which necessitates
+knowing or establishing who the data should be obtained from. Because no
+one wants to examine every EDC instance (load of the net, latency
+becomes ever larger with increasing number of participants, procedure
+does not scale thus). As a result, the number of EDC instances requested
+must be limited by suitable filters. As a result, subscribers must first
+determine who may have the data depending on their specific
+circumstances. This is performed by utilizing the EDC discovery service.
+The Business Partner Number (BPN) is currently the only criterion
+provided for restricting the EDC instances in question.
 
-This standard has not the scope and intention to be a general solution pattern to search and discover any service and data offer. It is limited to look up the EDC instance in front of these service and data offerings.
+This standard has not the scope and intention to be a general solution
+pattern to search and discover any service and data offer. It is limited
+to look up the EDC instance in front of these service and data
+offerings.
 
 ### 1.1 Audience & Scope
 
@@ -34,13 +39,19 @@ This standard is relevant for the following roles:
 - Onboarding Service Provider
 - Enablement Service Provider
 
-For now, the EDC Discovery API is limited to filter suitable EDC instances based on BPN number providing data and service offerings. This document describes the relevant API endpoint to be created by an operating company to enable EDC discovery by supported criterions (currently on the BPN number).
+For now, the EDC Discovery API is limited to filter suitable EDC
+instances based on BPN number providing data and service offerings. This
+document describes the relevant API endpoint to be created by an
+operating company to enable EDC discovery by supported criterions
+(currently on the BPN number).
 
 ### 1.2 Context
 
 > *This section is non-normative*
 
-The EDC Discovery API is used to search and find service and data offerings. In a network of network this is the most crucial topic to build value added data services and data chains.
+The EDC Discovery API is used to search and find service and data
+offerings. In a network of network this is the most crucial topic to
+build value added data services and data chains.
 
 ### 1.3 Architecture Overview
 
@@ -50,15 +61,32 @@ The EDC Discovery API is used to search and find service and data offerings. In 
 
 Figure 2 Main Components
 
-In Figure 2 a high-level overview of the EDC Discovery Service workflow is sketched. Both connectors must be registered within an identity provider providing Verifiable Credentials (VC) to prove their identity by e.g. a Managed Identity Wallet (MIW). Any data provider can register assets and expose them to a metadata broker (Federated Catalog) for other consuming connectors to find. For registration Self Descriptions of Type LegalPerson and ServiceOffering for the providing EDC instance must be registered at the federated catalog. Via EDC Discovery Service the EDC instance can be queried via BPN number, which is part of the SD artifacts. Finally, the consumer can obtain contract offers from the provider and begin contract negotiations.
+In Figure 2 a high-level overview of the EDC Discovery Service workflow
+is sketched. Both connectors must be registered within an identity
+provider providing Verifiable Credentials (VC) to prove their identity by e.g. a Managed Identity Wallet (MIW). Any
+data provider can register assets and expose them to a metadata broker
+(Federated Catalog) for other consuming connectors to find. For
+registration Self Descriptions of Type LegalPerson and ServiceOffering
+for the providing EDC instance must be registered at the federated
+catalog. Via EDC Discovery Service the EDC instance can be queried via
+BPN number, which is part of the SD artifacts. Finally, the consumer can
+obtain contract offers from the provider and begin contract
+negotiations.
 
 The federated Catalog will be the storage of SD and the EDC Discovery Service the query API to retrieve URL of EDC instance of interest. There is no longer a central Digital Twin Registry (DTR) available from core service, but decentral instances (DDTR) hidden behind a data providing EDC. Hence any consumer has to identify the providing EDC to get access to the DDTR behind that EDC.
 
 ### 1.4 Conformance
 
-As well as sections marked as non-normative, all authoring guidelines, diagrams, examples, and notes in this specification are non-normative. Everything else in this specification is normative.
+As well as sections marked as non-normative, all authoring guidelines,
+diagrams, examples, and notes in this specification are non-normative.
+Everything else in this specification is normative.
 
-The key words MAY, MUST, MUST NOT, OPTIONAL, RECOMMENDED, REQUIRED, SHOULD and SHOULD NOT in this document are to be interpreted as described in [BCP 14](https://datatracker.ietf.org/doc/html/bcp14) \[[RFC2119](https://www.w3.org/TR/did-core/#bib-rfc2119)\] \[[RFC8174](https://www.w3.org/TR/did-core/#bib-rfc8174)\] when, and only when, they appear in all capitals, as shown here.
+The key words MAY, MUST, MUST NOT, OPTIONAL, RECOMMENDED, REQUIRED,
+SHOULD and SHOULD NOT in this document are to be interpreted as
+described in [BCP
+14](https://datatracker.ietf.org/doc/html/bcp14) \[[RFC2119](https://www.w3.org/TR/did-core/#bib-rfc2119)\]
+\[[RFC8174](https://www.w3.org/TR/did-core/#bib-rfc8174)\] when, and
+only when, they appear in all capitals, as shown here.
 
 ### 1.5 Proof of conformity
 
@@ -67,19 +95,27 @@ conform with the Catena-X standards. To validate that the standards are
 applied correctly, Catena-X employs Conformity Assessment Bodies
 (CABs).
 
-- The Service Operator **MUST** provide an onboarding process for participants and EDC instances. According to CX - 0006 Registration and initial onboarding
-- The implemented service **MUST** use an SD storage like SD-Hub or Federated Catalogue for storing the SD documents provided during the onboarding process.
-- The provided SD documents **MUST** be GAIA-X compliant, i.e. **MUST** provide a compliance credential issued from GAIA-X AIBSL.
-- The implemented service **SHOULD** use the SD storage as source of truth.
+- The Service Operator **MUST** provide an onboarding process for
+    participants and EDC instances. According to CX - 0006 Registration
+    and initial onboarding
 
-A test case could be, that an EDC instance has to be onboarded for a specific participant identified by a BPN. The SD for the EDC has to be visible in the supported SD storage (currently central hosted by the Core Service Provider).  The SD documents has to be accessible by the dataspace participants.
+- The implemented service **MUST** use an SD storage like SD-Hub or
+    Federated Catalogue for storing the SD documents provided during the
+    onboarding process.
+
+- The provided SD documents **MUST** be GAIA-X compliant, i.e. **MUST**
+    provide a compliance credential issued from GAIA-X AIBSL.
+
+- The implemented service **SHOULD** use the SD storage as source of
+    truth.
+
+A test case could be, that an EDC instance has to be onboarded for a specific participant identified by a BPN. The SD for the EDC has to be visible in the supported SD storage (currently central hosted by the Core Service Provider). The SD documents has to be accessible by the dataspace participants.
 
 ### 1.6 Examples
 
 **SD for Legal Person**
 
 ```
-
 {
 
 \"id\": <https://compliance.gaia-x.eu/.well-known/participant.json>,
@@ -336,3 +372,135 @@ description or certificates and labels.
 
 Additional terminology used in this standard can be looked up in the
 glossary on the association homepage.
+
+## 2 EDC Discovery API
+
+> *This section is normative*
+
+The EDC discovery service **MUST** be offered as central available endpoint by the Core Service Provider.
+Every EDC registered in the network **MUST** be registered in the EDC discovery service. Therefore the needed workflows/processes (as defined in CX - 0006 Registration and initial onboarding) **MUST** be followed/implemented.
+
+The EDC discovery endpoint can get triggered via technical as well as
+real users, if relevant roles are available.
+
+For technical user, a company can request the user creation with the
+technical user creation feature inside the portal.
+
+All participants and their solutions will need to proof, that they are
+conform with the Catena-X standards. To validate that the standards are
+applied correctly, Catena-X employs Conformity Assessment Bodies
+(CABs).
+
+- The Core Service Provider **MUST** offer a process/workflow to register dataspace connectors (as defined in CX - 0006 Registration and initial onboarding); Enablement Service Provider as well as Application Service Provider **MUST** run the connector registration for their service customers.
+
+- SD documents **MUST** be created for every Connector registered and stored by the Participants. The Core Service Provide make them available.
+
+- The provided SD documents **MUST** be GAIA-X compliant, i.e. MUST
+    provide a compliance credential issued from GAIA-X AIBSL.
+
+A test case will be, that an EDC instance has to be onboarded for a
+specific participant identified by a BPN. The SD for the EDC has to be
+visible in the supported SD storage. The query against this new
+registered EDC instance for the given BPN **SHOULD** provide the connector
+url as stated in the SD document.
+
+## 2.1 Preconditions and dependencies
+
+The self-description documents used as data source **MUST** be GAIA-X
+compliant, i.e. adhering to the GAIA-X Trustframework in the currently
+supported version in Catena-X (usually the latest published version and
+the version before). In addition, these SD documents **MUST** be registered
+at an SD storage like SD-Hub or Federated Catalogue.
+
+## 2.2 API Specification
+
+### 2.2.1 API Endpoints & resources
+
+The EDC Discovery API **MUST** be implemented as specified in the openAPI
+documentation as stated here: https://\....
+
+Endpoint: POST: /api/administration/connectors/discovery
+
+**Request body**
+
+the request body can be kept empty (to retrieve a complete list of registered connectors) or be filled with one or multiple BPNs to retrieve a list of registered EDC endpoints for the giving BPNs.
+
+```
+*\[*
+
+*"BPNL\...\...",*
+
+*"BPNL\...."*
+
+*\]*
+```
+
+**Response structure**
+
+```
+\[
+
+{
+
+"bpn : "BPNL\...\..."
+
+"connectorEndpoint":
+
+\[
+
+"http://some.example.url",
+
+"http://some.other-example.url"
+
+\]
+
+},
+
+{
+
+"bpn : "BPNL\...\..."
+
+"connectorEndpoint": "http://some.example.url"
+
+}
+
+\]
+```
+
+For each bpn an own response object is provided. In case of multiple EDC
+instances for one bpn an array is returned (first result set) otherwise
+a single value (second result set)
+
+### 2.2.2 Available Data Types
+
+The API MUST use JSON as the payload transported via HTTP.
+
+### 2.2.3 EDC Data Asset Structure
+
+This API do not have to be accessed via an EDC instance but can be
+queried from any authorized participant or service directly.
+
+### 2.2.4 Error Handling
+
+HTTP standard response codes that MUST be used.
+
+#### 2.2.4.1 Error Messages & Explanation
+
+|     Code    |     Description                                |
+|-------------|------------------------------------------------|
+|     200     |     Discovery request finished successfully    |
+|     400     |     Request body was malformed                 |
+|     401     |     Not authorized                             |
+|     403     |     Forbidden                                  |
+|     405     |     Method not allowed                         |
+
+## 3 REFERENCES
+
+### 3.1 Normative References
+
+Following Standards are used within this standard:
+
+- GAIA-X Trustframework:
+    https://gaia-x.eu/wp-content/uploads/2022/05/Gaia-X-Trust-Framework-22.04.pdf
+- CX - 0006 Registration and initial onboarding
+- CX - 0010 Business Partner Number

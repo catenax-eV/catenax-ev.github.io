@@ -2,7 +2,7 @@
 position: 1
 ---
 
-# CX-0002 DIGITAL TWINS IN CATENA-X v.2.2.0
+# CX-0002 Digital Twins in Catena-X v.2.2.0
 
 ## ABSTRACT
 

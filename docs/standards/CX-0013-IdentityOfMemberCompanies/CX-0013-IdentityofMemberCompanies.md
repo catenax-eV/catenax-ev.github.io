@@ -1,4 +1,4 @@
-# CX-0013 IDENTITY OF MEMBER COMPANY v.2.0.0
+# CX-0013 Identity of Member Company v.2.0.0
 
 ## ABSTRACT
 

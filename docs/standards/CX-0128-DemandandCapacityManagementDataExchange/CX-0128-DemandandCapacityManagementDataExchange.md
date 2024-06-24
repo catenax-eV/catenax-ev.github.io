@@ -1,4 +1,4 @@
-# CX-0128-DEMAND AND CAPACITY MANAGEMENT DATA EXCHANGE V.2.0.0
+# CX-0128 - Demand and Capacity Management Data Exchange v.2.0.0
 
 ## ABSTRACT
 
