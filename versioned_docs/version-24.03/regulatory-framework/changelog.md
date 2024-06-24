@@ -4,7 +4,7 @@ pagination_next: null
 sidebar_position: 5
 ---
 
-# Change Log
+# Changelog
 
 ## Added
 

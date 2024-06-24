@@ -111,8 +111,8 @@ const config: Config = {
               label: 'Release Management',
             },
             {
-              to: '/CHANGELOG',
-              label: 'Changelog',
+              to: '/release-notes',
+              label: 'Release Notes',
             },
           ],
         },
