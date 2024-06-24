@@ -1240,7 +1240,6 @@ In case of an error, one of the following responses can occur:
 | Missing Submodel                | Received IoT data but could not find a submodel to attach it to                               | 500           |
 | Submodel Server Exception       | Something went wrong while requesting something from the Submodel Server                      | 500           |
 
-
 ## 5 REFERENCES
 
 ### 5.1 NORMATIVE REFERENCES

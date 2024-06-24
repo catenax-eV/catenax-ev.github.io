@@ -8,7 +8,7 @@
   "MD028": false,
   "MD033": {
     "allowed_elements": [
-      "br", "table", "thead", "tbody", "tr", "td", "th", "ul", "li", "strong"
+      "br", "table", "thead", "tbody", "tr", "td", "th", "ul", "li"
     ]
   },
   "MD034": false,
