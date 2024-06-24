@@ -9,20 +9,20 @@
 - 31 deprecated standards in the course of consolidation to achieve more user-friendliness
 - updated modular certification framework
 
-details to be found [here](./../../docs/standards/changelog.md)
+details to be found [here](https://catenax-ev.github.io/docs/next/standards/changelog)
 
 ### Catena-X Operating Model
 
 - updated to version 3.0 enabling many new ecosystem components such as the OSP role, Catena-X Sandboxes and an overhaul to release management focused on stability and reliability
 
-details to be found [here](./../../docs/operating-model/changelog/changelog.md)
+details to be found [here](https://catenax-ev.github.io/docs/next/operating-model/changelog)
 
 ### Catena-X Regulatory Framework
 
 - introduced the official Catena-X ODRL profile including standardized Catena-X policies.
 - adding various pre-defined use case frameworks, e.g. Circular Economy, Demand and Capacity Management, etc.
 
-details to be found [here](./../../docs/regulatory-framework/changelog.md)
+details to be found [here](https://catenax-ev.github.io/docs/next/regulatory-framework/change-log)
 
 ### Tractus-X Features & KITs
 
