@@ -1,4 +1,4 @@
-# CX-0077 Data Quality Dashboard v.1.2.0
+# CX-0077 Data Quality Dashboard v1.2.0
 
 ## ABSTRACT
 
@@ -7,7 +7,7 @@ which is the basis of the Golden Record Process and secures the syntactical and 
 
 DQD has to visualize the outcome of the data quality rules via a dashboard.
 
-DQD uses the Gate API CX-0074_V.3.0.0 and the Pool API CX-0012_V.4.0.0 based on the CX-0018 Data Space Connectivity 3.0.0
+DQD uses the Gate API CX-0074_v3.0.0 and the Pool API CX-0012_v4.0.0 based on the CX-0018 Data Space Connectivity 3.0.0
 for pulling BP data records. DQD is a client/ server cloud application which contains a Web Client and a Cloud Server Application.
 
 DQD has to contain a user and authorization management capability aligned with the CX Portal and Marketplace user management. DQD intends to support the EDC Asset function capability and has to be available in English and German language.
@@ -408,3 +408,7 @@ Intentionally left blank.
 
 [^1]: https://catena-x.net/fileadmin/user_upload/Vereinsdokumente/Catena-X_IP_Regelwerk_IP_Regulations.pdf
 [^2]: https://catena-x.net/de/standardisierung/catena-x-einfuehren-umsetzen/standardisierung/standard-library
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

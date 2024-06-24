@@ -49,7 +49,7 @@ This standardization is built upon existing standards, such as
 - “Digital Twins in Catena-X“ [CX-0002]
 - “SAMMSemanticAspectMetaModel“ [CX-0003]
 - “BusinessPartnerNumber“ [CX-0010]
-- “Dataspace Connectivity v.3.0.0” [CX-0018]
+- “Dataspace Connectivity v3.0.0” [CX-0018]
 - “Implementation Specification: Data Provisioning for Release 2” [CX-0024]
 - “Aspect Model: DataModelBoMAsSpecified“ [CX-0030]
 - “Aspect Model: DataModelPartAsSpecified“ [CX-0032]
@@ -149,7 +149,7 @@ RESTful APIs.
 The IRS API and the IRS App **MUST** be connected to an EDC in order to consume data offers within the Catena-X data space. It will handle the access and usage control so that a data sovereign data space can be provided
 
 The data accessed and consolidated via the IRS **MUST** be accessible via EDC Assets by data providers;
-“Dataspace Connectivity v.3.0.0” [CX-0018] and be registered via the Registry Service (Digital Twin Registry) [CX–0002].
+“Dataspace Connectivity v3.0.0” [CX-0018] and be registered via the Registry Service (Digital Twin Registry) [CX–0002].
 
 The Aspects to traverse along data chains are built upon the data chain aspect template. Aspect models such as the SingleLevelBOMasBuilt is built upon that. The IRS API uses that information to build connected data chains.
 To find the correct assets within a data space the Digital Twin registry is beeing used. These preconditions need to be met, so that the IRS API works accordingly.
@@ -218,7 +218,7 @@ More information for each endpoint can be extracted from the IRS API documentati
 ### 3.1 NORMATIVE REFERENCES
 
 - Digital Twins in Catena-X [CX–0002]
-- Dataspace Connectivity v.3.0.0 [CX-0018]
+- Dataspace Connectivity v3.0.0 [CX-0018]
 - Implementation Specification: Data Provisioning for Release 2 [CX-0024]
 - TraceabilityDataProvisioningBoMAs-PlannedTriangle [CX-0061]
 - “TraceabilityUseCase“ [CX-0125]
@@ -251,3 +251,7 @@ represents a reference implementation that implements this standard.
 ### TABLES
 
 > *This section is non-normative*
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

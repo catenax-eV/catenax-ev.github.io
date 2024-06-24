@@ -1,4 +1,4 @@
-# CX-0139 Information as a Service - External Data Provider  V.1.0.0
+# CX-0139 Information as a Service - External Data Provider  v1.0.0
 
 ## ABSTRACT
 
@@ -31,7 +31,7 @@ Business Application Provider
 
 The Scope of this Standard is to enable Third-Party Information Provider to deliver Data from outside Catena-X inside Catena-X. This Standard is generic to every Use Case and qualifies Information aaS Provider as a potential Data Provider for a Use Case defined Business Application. The Data can be delivered only to a specific Use Case within Catena-X, realised in an certified Business Application.
 By this way the Standard enables Third-Party Information Provider to deliver Data from outside Catena-X inside Catena-X and at the same time limits Data Delivery to existing Use Cases, avoiding Violations or Bypasses of existing Standards and Regulations within Catena-X. For this reason the Business Application Provider and the Third-Party Information Party Provider have a special responsibility based on this standard. The Business Application Provider is responsible for data governance with respect to Catena-X standards for the respective Use Case and Business Application. Both Business Application Provider and Third-Party Information Provider are responsible to respect existing license agreements that may be related to the provisioned data.
-Not in Scope of this Standard is a Data Provider who deliver data from inside Catena-X to a Data Consumer inside Catena-X, this is regulated e.g., with CX-0007 Process Specification Minimal Data Provider Service Offering V.1.0.2.
+Not in Scope of this Standard is a Data Provider who deliver data from inside Catena-X to a Data Consumer inside Catena-X, this is regulated e.g., with CX-0007 Process Specification Minimal Data Provider Service Offering v1.0.2.
 Not in Scope of this Standard is a Data Provider who deliver Data from inside Catena-X to a Data Consumer outside Catena-X, this Use Case requieres separate Regulation.
 
 ### 1.2 CONTEXT AND ARCHITECTURE FIT
@@ -116,3 +116,7 @@ Not applicable
 ### TABLES
 
 > *This section is non-normative*
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

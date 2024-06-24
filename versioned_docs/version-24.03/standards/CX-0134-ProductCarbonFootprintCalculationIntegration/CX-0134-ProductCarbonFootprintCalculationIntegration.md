@@ -1,5 +1,5 @@
 
-# CX-0134 Product Carbon Footprint Calculation Integration v.1.0.0
+# CX-0134 Product Carbon Footprint Calculation Integration v1.0.0
 
 ## ABSTRACT
 
@@ -192,3 +192,7 @@ To prove conformity with the PCF calculation integration standard, the following
 ### TABLES
 
 > *This section is non-normative*
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

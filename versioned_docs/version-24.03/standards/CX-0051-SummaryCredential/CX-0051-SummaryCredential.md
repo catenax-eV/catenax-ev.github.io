@@ -190,3 +190,7 @@ This section is not applicable for this standard in this version.
 ```text
 This section is not applicable for this standard in this version.
 ```
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

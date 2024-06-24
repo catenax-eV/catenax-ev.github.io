@@ -138,7 +138,7 @@ This includes, but is not limited to the following use-cases:
 
 **Data Processing Pattern 2** (Knowledge Agents): All solutions that shall be used for data provisioning/data consumption for use-cases using Knowledge Agents MUST implement the following standards:
 
-- CX-0084 Federated Queries in Data Spaces (Knowledge Agents) v.1.0.0
+- CX-0084 Federated Queries in Data Spaces (Knowledge Agents) v1.0.0
 
 This includes, but is not limited to the following use-cases:
 
@@ -157,6 +157,10 @@ the data provider to provide the data in the correct semantic modelling language
 - CX–0018 Sovereign Data Exchange v 1.0.1
 - CX-0002 Digital Twins in Catena-X v 1.0.2
 - CX-0003 SAMM Aspect Meta Model v 1.0.2
-- CX-0084 Federated Queries in Data Spaces (Knowledge Agents) v.1.0.0
+- CX-0084 Federated Queries in Data Spaces (Knowledge Agents) v1.0.0
 
 ## ANNEXES
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

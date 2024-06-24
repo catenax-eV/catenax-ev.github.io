@@ -1,4 +1,4 @@
-# CX - 0106 Aspect Model IotSensorData v.1.0.0
+# CX - 0106 Aspect Model IotSensorData v1.0.0
 
 ## FOR WHOM IS THE STANDARD DESIGNED
 
@@ -135,7 +135,7 @@ The method under which the sensing data is transmitted from the source to the re
 Additional terminology used in this standard can be looked up in the glossary on
 the association homepage.
 
-## 2 ASPECT MODEL "IotSensorData v.2.0.0"
+## 2 ASPECT MODEL "IotSensorData v2.0.0"
 
 > *This section is normative*
 
@@ -220,3 +220,7 @@ https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.io
 ### TABLES
 
 > *This section is non-normative*
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

@@ -1,5 +1,5 @@
 
-# CX-0006 Registration and Initial Onboarding v.1.1.3
+# CX-0006 Registration and Initial Onboarding v1.1.3
 
 ## ABSTRACT
 
@@ -355,3 +355,7 @@ presents a reference implementation that implements this standard.
 - Figure 1 High-level view of a section of Catena-X
 - Figure 2: Catena-X Registration Process
 - Figure 3: Exemplary registration flow using a Onboarding Service Provider
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

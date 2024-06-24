@@ -1,4 +1,4 @@
-# CX-0012 Business Partner Data Pool API v.4.0.0
+# CX-0012 Business Partner Data Pool API v4.0.0
 
 ## FOR WHOM IS THE STANDARD DESIGNED
 
@@ -608,3 +608,7 @@ Intentionally left blank.
 [^8]: Note that further assets will most probably be introduced in one of the next versions of this standard.
 
 [^9]: Note that the definition of the data assets depends on the current implementation state of the reference implementation (Tractus-X Eclipse Dataspace Connector). Therefore the data assets represent permissions on APIs, whereas they should actually only represent APIs.
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

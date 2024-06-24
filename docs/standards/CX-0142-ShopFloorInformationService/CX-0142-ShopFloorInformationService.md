@@ -1,4 +1,4 @@
-# CX-0142 Shop Floor Information Service v.1.0.0
+# CX-0142 Shop Floor Information Service v1.0.0
 
 ## ABSTRACT
 
@@ -2374,3 +2374,7 @@ process** (i.e., data provider and/or data consumer) MUST fulfilll following req
 ```text
   n.a.
 ```
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

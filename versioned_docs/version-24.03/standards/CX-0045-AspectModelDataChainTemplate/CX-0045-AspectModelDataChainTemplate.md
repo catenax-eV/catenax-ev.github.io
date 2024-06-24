@@ -1,4 +1,4 @@
-# CX - 0045 Data Chain Template v.1.2.0
+# CX - 0045 Data Chain Template v1.2.0
 
 ## ABSTRACT
 
@@ -316,3 +316,7 @@ not applicable
 > *This section is non-normative*
 
 not applicable
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

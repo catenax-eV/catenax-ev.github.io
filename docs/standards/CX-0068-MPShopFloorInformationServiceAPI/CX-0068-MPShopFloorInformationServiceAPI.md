@@ -42,7 +42,7 @@ Namely:
 - *ProvideProductionForecastInformation* uses "ProvideProductionForecast" data model
 
 The unsubscribe call has no corresponding data model, as it is a simple HTTP DELETE.
-The JSON string is standardized in document (MP) CX - 0069 Shop-Floor-Information-Service Aspect Model v.1.0.0.
+The JSON string is standardized in document (MP) CX - 0069 Shop-Floor-Information-Service Aspect Model v1.0.0.
 The standard only describes the sending and receiving of Shop-Floor-Information-data through EDC. The object is created and handled by applications of the companies involved, but these applications are not part of the standard.
 
 ### 1.3 CONFORMANCE AND PROOF OF CONFORMITY
@@ -702,3 +702,7 @@ Every API endpoint defined in Chapter 2.2.1 MUST respond to incoming requests wi
 ### TABLES
 
 > *This section is non-normative*
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

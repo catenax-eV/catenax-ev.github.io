@@ -1,4 +1,4 @@
-# CX-0128 - Demand and Capacity Management Data Exchange v.2.0.0
+# CX-0128 - Demand and Capacity Management Data Exchange v2.0.0
 
 ## ABSTRACT
 
@@ -2241,3 +2241,7 @@ Below are illustrative figures that depict the DCM process from the viewpoints o
 ## COPYRIGHT AND TRADEMARKS
 
 > *This section and all its subsections are non-normative*
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

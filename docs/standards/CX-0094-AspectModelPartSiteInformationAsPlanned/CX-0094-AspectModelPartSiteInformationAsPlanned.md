@@ -1,4 +1,4 @@
-# CX-0094 Aspect Model: Part Site In Formation As Planned v.1.0.0
+# CX-0094 Aspect Model: Part Site In Formation As Planned v1.0.0
 
 ## ABSTRACT
 
@@ -207,3 +207,7 @@ CX-0018 ECLPISE DATA SPACE CONNECTOR (EDC)
 ```text
     [OPTIONAL] Add Tables here here if nececarry
 ```
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

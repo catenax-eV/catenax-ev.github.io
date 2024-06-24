@@ -1,4 +1,4 @@
-# CX-0076 - Golden Record End-to-End Requirements Standard v.1.1.0
+# CX-0076 - Golden Record End-to-End Requirements Standard v1.1.0
 
 ## ABSTRACT
 
@@ -440,3 +440,7 @@ Intentionally left blank.
 [^9]: Numbers (values) are to be seen as examples to make the calculation more easy to understand.
 
 [^10]: This requirement is valid, however, the data model as described in CX-0074 Business Partner Gate API v3.0.0 and CX-0012 Business Partner Pool API v4.0.0 does not provide respective fields yet. This will be probably provided with standard release 24.08. Thus, a certification to this requirement can not happen as of today until the data model got extended accordingly.
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

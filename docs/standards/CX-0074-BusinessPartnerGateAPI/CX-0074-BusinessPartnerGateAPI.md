@@ -1,4 +1,4 @@
-# CX-0074 Business Partner Data Gate API v.3.0.0
+# CX-0074 Business Partner Data Gate API v3.0.0
 
 ## TABLE OF CONTENTS
 
@@ -597,3 +597,7 @@ Intentionally left blank.
 [^6]: Note that the Sharing Member assumes the roles Data Provider on upload and Data Consumer on download of business partner data, while the Core Service Provider assumes the roles Data Consumer on upload and Data Provider on download of business partner data.
 
 [^7]: Note that the definition of the data assets depends on the current implementation state of the reference implementation (Tractus-X Eclipse Dataspace Connector). Therefore the data assets represent permissions on APIs, whereas they should actually only represent APIs.
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

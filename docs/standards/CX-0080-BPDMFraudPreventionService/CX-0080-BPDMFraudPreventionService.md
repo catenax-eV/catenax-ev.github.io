@@ -1,4 +1,4 @@
-# CX-0080 BPDM Fraud Prevention Service v.1.1.0
+# CX-0080 BPDM Fraud Prevention Service v1.1.0
 
 ## ABSTRACT
 
@@ -52,7 +52,7 @@ Fraud prevention service (FPS) is a value-added service (VAS) in the area of Bus
 
 FPS has to visualize the outcome of the fraud prevention screening results via a dashboard.
 
-FPS uses the Gate API CX-0074_V.3.0.0 and the Pool API CX-0012_V.4.0.0 based on the CX-0018 Data Space Connectivity 3.0.0
+FPS uses the Gate API CX-0074_v3.0.0 and the Pool API CX-0012_v4.0.0 based on the CX-0018 Data Space Connectivity 3.0.0
 for pulling BP data records. FPS is a client/ server cloud application which contains a Web Client and a Cloud Server Application.
 
 ### 1.3 CONFORMANCE AND PROOF OF CONFORMITY
@@ -312,3 +312,7 @@ Not applicable.
 > *This section is non-normative*
 
 Not applicable.
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

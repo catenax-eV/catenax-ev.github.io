@@ -1,4 +1,4 @@
-﻿# CX-0023 Notification API v.1.2.2
+﻿# CX-0023 Notification API v1.2.2
 
 ## ABSTRACT
 
@@ -419,3 +419,7 @@ https://github.com/eclipse-tractusx/tractusx-edc
 [^1]: https://catena-x.net/fileadmin/user_upload/Vereinsdokumente/Catena-X_IP_Regelwerk_IP_Regulations.pdf
 
 [^2]: https://catena-x.net/de/standard-library
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

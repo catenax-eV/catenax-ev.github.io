@@ -1,4 +1,4 @@
-# CX-0063 Triangle for Product Carbon Footprint Request v.2.1.0
+# CX-0063 Triangle for Product Carbon Footprint Request v2.1.0
 
 ## ABSTRACT
 
@@ -371,3 +371,7 @@ Currently the reference implementation is no FOSS application. It was implemente
 [Architectural Overview](./assets/ArchitecturalOverview.png)
 
 ### TABLES
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

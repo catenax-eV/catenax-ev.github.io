@@ -1,5 +1,5 @@
 
-# CX-0113 Aspect Model ESS Incident Data Model v.1.0.0
+# CX-0113 Aspect Model ESS Incident Data Model v1.0.0
 
 ## FOR WHOM IS THE STANDARD DESIGNED
 
@@ -300,3 +300,7 @@ file.
 ### FIGURES
 
 ### TABLES
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

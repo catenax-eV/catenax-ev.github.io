@@ -1,4 +1,4 @@
-# CX-0018 Dataspace Connectivity v.3.0.0
+# CX-0018 Dataspace Connectivity v3.0.0
 
 ## ABSTRACT
 
@@ -245,3 +245,7 @@ A Provider MUST annotate all instances `dcat:Dataset` in a `dcat:Catalog` with t
 ### FIGURES
 
 Figure 1: Framework of data exchange
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

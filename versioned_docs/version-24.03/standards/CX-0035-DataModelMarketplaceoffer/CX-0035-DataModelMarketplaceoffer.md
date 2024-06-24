@@ -164,3 +164,7 @@ R-strategy: R-strategies serve to change the companies’ business mod-els in th
 [^4]: https://openmanufacturingplatform.github.io/
 
 [^5]: https://internationaldataspaces.org/we/the-association/
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

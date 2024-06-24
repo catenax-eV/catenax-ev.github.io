@@ -1,4 +1,4 @@
-# CX-0112-AspectModelMaterialRecyclingCertificate-v1.0.0.md
+# CX-0112 - Aspect Model MaterialRecyclingCertificate v1.0.0.md
 
 ## ABSTRACT
 
@@ -149,3 +149,7 @@ GER: [End-of-life vehicle regulation - AltfahrzeugV](https://www.gesetze-im-inte
 ### ANNEXES
 
 N/A
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

@@ -1,4 +1,4 @@
-# CX-0138 Use Case Behaviour Twin Endurance Estimator v.1.0.0
+# CX-0138 Use Case Behaviour Twin Endurance Estimator v1.0.0
 
 ## ABSTRACT
 
@@ -92,7 +92,7 @@ The EDC is a reference implementation of a connector for IDSA conform sovereign 
 **Behavioral Twin**  
 Behavioural product models, based on a structured and consistent architecture of reusable and standard functional components and applied in a common ecosystem.
 
-**Notification: Notification** - as described in CX-0023 Notification API v.1.2.2, are - in contrast to classical data offers in Catena-X - a way to push data from a sender to a receiver and vice versa.
+**Notification: Notification** - as described in CX-0023 Notification API v1.2.2, are - in contrast to classical data offers in Catena-X - a way to push data from a sender to a receiver and vice versa.
 
 **Aspect Model**
 : a formal, machine-readable semantic description (expressed with RDF/turtle) of data accessible from an Aspect.  
@@ -679,3 +679,7 @@ The following http response codes MUST be defined for HTTP POST endpoint for the
 ### 5.3 REFERENCE IMPLEMENTATIONS
 
 > *This section is non-normative*
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

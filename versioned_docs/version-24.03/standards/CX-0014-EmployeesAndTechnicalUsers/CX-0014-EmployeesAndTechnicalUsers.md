@@ -118,3 +118,7 @@ Hand this documentation to the conformity assessment body
 ### 3.1 Normative References
 
 - CX-0015 IAM & ACCESS CONTROL PARADIGM
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

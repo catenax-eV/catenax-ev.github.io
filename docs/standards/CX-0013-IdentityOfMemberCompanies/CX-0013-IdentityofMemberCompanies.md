@@ -1,4 +1,4 @@
-# CX-0013 Identity of Member Company v.2.0.0
+# CX-0013 Identity of Member Company v2.0.0
 
 ## ABSTRACT
 
@@ -106,7 +106,7 @@ To manage a DID a Wallet is used.
 
 SSI will be an integral part of Catena-X. This requires a wallet for each participant to store his private keys to issue verifiable credentials and to receive Verifiable Credentials issued for him. Therefore, in the course of registration, each participant must be equipped with an instance of the Wallet to store credentials.
 
-To ensure the processes needed for data exchange the Wallet service provides the following core functionalities described in `CX-0149 VERIFIED COMPANY IDENTITY v.1.1.0`.
+To ensure the processes needed for data exchange the Wallet service provides the following core functionalities described in `CX-0149 VERIFIED COMPANY IDENTITY v1.1.0`.
 
 ### 2.3 DID METHOD
 
@@ -160,3 +160,7 @@ Not applicable.
 > *This section is non-normative*
 
 Not applicable.
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

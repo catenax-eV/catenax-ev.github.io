@@ -1313,3 +1313,7 @@ This procedure takes in consideration the following aspects:
 | **Number / Reference** | **Standard / Context** |
 | --- | --- |
 | Chapter 5.2.2 / Calculation Days of Supply | Information on SAP's Calculation of Days of Supply https://help.sap.com/saphelp_snc70/helpdata/en/c8/96cb530898214be10000000a174cb4/content.htm |
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

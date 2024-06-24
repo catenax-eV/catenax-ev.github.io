@@ -1,4 +1,4 @@
-# CX-0131 Circularity Core v.1.1.0
+# CX-0131 Circularity Core v1.1.0
 
 ## ABSTRACT
 
@@ -187,11 +187,11 @@ To participate in the EoL Services use-case, the following single standards are 
 - CX-0127:2.0 Industry Core: Part Instance with the Aspect Model "SerialPart"
 - CX-0127:2.0 Industry Core: Part Instance with the Aspect Model "SingleLevelBoMAsBuilt"
 - CX-0126:2.0 Industry Core: Part Type with the Aspect Model "SingleLevelBomAsPlanned"
-- [Aspect Model SingleLevelBoMAsSpecified v.2.0.0](#31-aspect-model-singlelevelbomasspecified)
-- [Aspect Model MaterialForHomologation v.1.0.0](#32-aspect-model-materialforhomologation)
-- [Aspect Model PartAsSpecified v.1.0.1](#33-aspect-model-partasspecified)
+- [Aspect Model SingleLevelBoMAsSpecified v2.0.0](#31-aspect-model-singlelevelbomasspecified)
+- [Aspect Model MaterialForHomologation v1.0.0](#32-aspect-model-materialforhomologation)
+- [Aspect Model PartAsSpecified v1.0.1](#33-aspect-model-partasspecified)
 - [Aspect Model QualityTask v1.0.2](#34-aspect-model-qualitytask)
-- [Aspect Model VehicleProductDescription v.2.0.0](#35-aspect-model-vehicleproductdescription)
+- [Aspect Model VehicleProductDescription v2.0.0](#35-aspect-model-vehicleproductdescription)
 - [Aspect Model FleetDiagnosticData](#36-aspect-model-fleetdiagnosticdata)
 - [Aspect Model FleetClaimData v1.0.1](#37-aspect-model-fleetclaimdata)
 - [Aspect Model PartAnalyses v2.0.0](#38-aspect-model-partanalyses)
@@ -846,3 +846,7 @@ To understand the standard, the following use case related papers can be helpful
 > *This section is non-normative*
 
 N/A
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

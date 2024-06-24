@@ -1,5 +1,5 @@
 
-# CX-0049 DID Document v.2.0.0
+# CX-0049 DID Document v2.0.0
 
 ## COMPARISON WITH THE PREVIOUS VERSION OF THE STANDARD
   
@@ -211,3 +211,7 @@ Not applicable.
 > *This section is non-normative*
 
 Not applicable.
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

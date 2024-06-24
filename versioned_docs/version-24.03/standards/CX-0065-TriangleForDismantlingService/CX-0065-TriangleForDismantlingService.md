@@ -322,3 +322,7 @@ VP<--DD: visualize dismantling information
 | R3\_ReadDisplay | The data provided in the circular economy use case as well as by and for related business applications such as Batterypass application, Marketplace, Circularity Cockpit and R-Strategy Assistant shall only be displayed to the data user and read by applications for circular economy usages such as R-Strategy logic calculations or support of buying decisions by the data user. The end-user confirms that the data is not used for analytic purposes out side the circular economy scope such as analyzing consumer behavior based on load cycles or analyzing the number of produced cars or components by a company. It also not allowed to print the data or distributed it to third parties. |
 | R3\_ExchangeOfAnonymousData | The data exchanged in the use case is focused on non-personal related data. Therefore, data provider confirm, that they only provide anonymized data to data consumers or that the data is anonymized in the data transfer. |
 | R3\_ExchangePartner | Data is only exchanged between partners, that have signed a bilateral contract to exchange the data. Therefore, data consumers are only allowed to consume data once their legal entity has signed a respective contract. |
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

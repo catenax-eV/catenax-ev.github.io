@@ -1,4 +1,4 @@
-# CX-0081 Country Risk API v.1.2.0
+# CX-0081 Country Risk API v1.2.0
 
 ## ABSTRACT
 
@@ -468,3 +468,7 @@ Reserved for future use.
 *This section is non-normative.*
 
 Reserved for future use.
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

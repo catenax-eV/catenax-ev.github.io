@@ -205,3 +205,7 @@ Unlike the Business Partner Number and the Membership Credential, the Dismantler
 - CX-0011 ISSUING AGENCY
 - CX-0013 IDENTITY OF MEMBERS COMPANIES
 - CX-0014 IDENTITY OF EMPLOYEES AND TECHNICAL USERS
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

@@ -203,3 +203,7 @@ The data model is described in BAMM 2.0.0. A html documentation can be generated
 > *This section is non-normative*
 
 ![PartAsSpecified](./assets/image.png)
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

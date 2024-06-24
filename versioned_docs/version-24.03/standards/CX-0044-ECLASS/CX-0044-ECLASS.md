@@ -270,3 +270,7 @@ be found on the respective webpage[^12].
 [^11]: https://eclass.eu
 
 [^12]: https://eclass.eu/shop/en/product/eclass-13-0-asset
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

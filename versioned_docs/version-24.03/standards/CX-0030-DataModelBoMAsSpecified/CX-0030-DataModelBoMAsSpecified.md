@@ -1,4 +1,4 @@
-# CX-0030 Aspect Model BoM As Specified v.2.0.0
+# CX-0030 Aspect Model BoM As Specified v2.0.0
 
 ## FOR WHOM IS THE STANDARD DESIGNED
 
@@ -229,3 +229,7 @@ So far no .md documentation can be generated. So it is recommended to not
 ### TABLES
 
 > *This section is non-normative*
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

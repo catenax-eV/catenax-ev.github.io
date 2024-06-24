@@ -1,4 +1,4 @@
-# CX-0079 NaturalPersonScreeningDashboard v1.2.0
+# CX-0079 Natural Person Screening Dashboard v1.2.0
 
 ## ABSTRACT
 
@@ -12,7 +12,7 @@
 
 - In addition, the companies themselves need knowledge of Natural Persons in their systems to comply with GDPR requirements.
 
-The Natural Person Screening application contains rules which secure with a high probability to identify Natural Person data records. The results of the rules can be visualized via a dashboard or consumed via logfiles as well as downloaded via an API. NPS uses the Gate API CX-0074_V.3.0.0 and the Pool API CX-0012_V.4.0.0 based on the CX-0018 Data Space Connectivity 3.0.0 for pulling BP data records.
+The Natural Person Screening application contains rules which secure with a high probability to identify Natural Person data records. The results of the rules can be visualized via a dashboard or consumed via logfiles as well as downloaded via an API. NPS uses the Gate API CX-0074_v3.0.0 and the Pool API CX-0012_v4.0.0 based on the CX-0018 Data Space Connectivity 3.0.0 for pulling BP data records.
 NPS is a client/ server cloud application which contains a Web Client and a Cloud Servicer Application.
 NPS has to contain a user and authorization management capability aligned with the CX Portal and Marketplace user management. NPS has to be available in English and German language.
 
@@ -467,3 +467,7 @@ Intentionally left blank.
 > *This section is non-normative*
 
 Intentionally left blank.
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

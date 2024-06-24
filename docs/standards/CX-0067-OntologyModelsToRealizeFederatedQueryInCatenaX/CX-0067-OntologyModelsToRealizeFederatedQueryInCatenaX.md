@@ -1,4 +1,4 @@
-# CX-0067 Ontology Models to realize federated query in Catena-X v.1.1.0
+# CX-0067 Ontology Models to realize federated query in Catena-X v1.1.0
 
 ## ABSTRACT
 
@@ -686,3 +686,7 @@ Syntactic modeling guidelines increase comprehensibility and enable unified mode
 - The [Knowledge Agents](https://eclipse-tractusx.github.io/docs-kits/category/agents-kit) presents reference implementation.
 
 - The [Ontology repository](https://github.com/eclipse-tractusx/knowledge-agents-ontology) and its redirection over https://w3id.org/catenax presents a reference implementation.
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

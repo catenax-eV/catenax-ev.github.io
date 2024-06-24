@@ -1,5 +1,5 @@
 
-# CX-0012 Business Partner Data Pool API v.3.0.0
+# CX-0012 Business Partner Data Pool API v3.0.0
 
 ## FOR WHOM IS THE STANDARD DESIGNED
 
@@ -535,3 +535,7 @@ Intentionally left blank.
 [^6]: The classification is subject to change.
 
 [^7]: Note that in case of a PUT the corresponding resources expect to receive the full updated record, including values that did not change.
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

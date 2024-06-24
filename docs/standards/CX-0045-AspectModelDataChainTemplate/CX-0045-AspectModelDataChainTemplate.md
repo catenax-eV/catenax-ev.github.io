@@ -1,4 +1,4 @@
-# CX-0045 Aspect Model Data Chain Template v.1.3.0
+# CX-0045 Aspect Model Data Chain Template v1.3.0
 
 ## ABSTRACT
 
@@ -276,9 +276,9 @@ always backward compatible, so that existing data chains do not break.
 
 ### 3.1 NORMATIVE REFERENCES
 
-- “Digital Twins in Catena-X v.2.2.0” [CX-0002]
+- “Digital Twins in Catena-X v2.2.0” [CX-0002]
 - “SAMM Aspect Meta Model v1.1.0” [CX-0003]
-- “Business Partner Number v.2.0.0” [CX-0010]
+- “Business Partner Number v2.0.0” [CX-0010]
 
 ### 3.2 NON-NORMATIVE REFERENCES
 
@@ -310,3 +310,7 @@ not applicable
 > *This section is non-normative*
 
 not applicable
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

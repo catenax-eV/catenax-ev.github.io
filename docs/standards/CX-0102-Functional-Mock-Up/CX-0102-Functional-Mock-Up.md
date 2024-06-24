@@ -1,4 +1,4 @@
-# CX-0102 Functional Mock Up v.1.0.0
+# CX-0102 Functional Mock Up v1.0.0
 
 ## ABSTRACT
 
@@ -33,7 +33,7 @@ The standard is relevant for modeling of physical assets.
 
 > *This section is non-normative*
 
-CX - 0102 FUNCTIONAL-MOCK-UP v.1.0.0
+CX - 0102 FUNCTIONAL-MOCK-UP v1.0.0
 
 The Functional Mock-up Interface (FMI) is a free standard that defines a container and an interface to exchange dynamic simulation models using a combination of XML files, binaries and C code, distributed as a ZIP file. It is supported by 170+ tools and maintained as a Modelica Association Project. The FMI implementation by a software modelling tool enables the creation of simulation models that can be interconnected. The file format of the FMI standard is called Functional Mock-up Unit (FMU) (source: https://fmi-standard.org/).
 In the context of Catena-X, simulation models can represent for example a component of a vehicle produced by a Tier-1. The Tier-1 develops the model of its component using any FMI compatible tool. The model is then exported as FMU. The model is now packed as a black box model. The person (for example from an OEM) who receives the simulation model can only see the input and output ports and the parameters and variables of the models that have been exposed by the model creator. In this way the intellectual properties of the model creator is protected.
@@ -114,3 +114,7 @@ Not relevant
 ### TABLES
 
 > *This section is non-normative*
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

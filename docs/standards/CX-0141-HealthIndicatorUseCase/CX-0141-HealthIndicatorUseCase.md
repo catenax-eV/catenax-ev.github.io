@@ -184,3 +184,7 @@ As the Health Indicator use case is using the Knowledge Agent technology, it pro
 ### 5.2 NON-NORMATIVE REFERENCES
 
 > *This section is non-normative*
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

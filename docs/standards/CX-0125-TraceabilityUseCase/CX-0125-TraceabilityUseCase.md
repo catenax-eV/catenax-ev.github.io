@@ -1,4 +1,4 @@
-# CX-0125 Traceability Use Case v.2.0.0
+# CX-0125 Traceability Use Case v2.0.0
 
 ## ABSTRACT
 
@@ -290,7 +290,7 @@ The semantic model has the unique identifier
 
 The rdf turtle file, an instance of the Semantic Aspect Meta Model, is the master for generating additional file formats and serializations.
 
-TractionBatteryCode **v.2.0.0** (optional)
+TractionBatteryCode **v2.0.0** (optional)
 
 https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.traction_battery_code/2.0.0/TractionBatteryCode.ttl
 
@@ -697,3 +697,7 @@ Below, the UML sequence diagram to update a quality alert is depicted.
 ### TABLES
 
 > *This section is non-normative*
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

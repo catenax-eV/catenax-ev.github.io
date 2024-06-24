@@ -259,3 +259,7 @@ JSON schema.
 [^4]: https://creativecommons.org/licenses/by/4.0/legalcode
 
 [^5]: https://github.com/eclipse-esmf/esmf-sdk
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

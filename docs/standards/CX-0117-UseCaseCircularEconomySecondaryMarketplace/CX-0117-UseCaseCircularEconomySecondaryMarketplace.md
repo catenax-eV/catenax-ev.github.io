@@ -10,7 +10,7 @@ In the first version the Marketplace just consume data for offered Batteries. Th
 
 ## COMPARISON WITH THE PREVIOUS VERSION OF THE STANDARD
 
-The CX-0117 Use Case Circular Economy - Secondary Marketplace v1.0.0 is a new standard which is based on the deprecated CX-0100 Triangle for Secondary Marketplace v.1.0.0 standard. The data models from:
+The CX-0117 Use Case Circular Economy - Secondary Marketplace v1.0.0 is a new standard which is based on the deprecated CX-0100 Triangle for Secondary Marketplace v1.0.0 standard. The data models from:
 
 - CX-0033 Data Model ReturnRequest (deprecated)
 - CX-0034 Data Model Battery Pass (deprecated)
@@ -342,3 +342,7 @@ Not applicable.
 > *This section is non-normative*
 
 ![architecture.png](./assets/architecture.png)
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

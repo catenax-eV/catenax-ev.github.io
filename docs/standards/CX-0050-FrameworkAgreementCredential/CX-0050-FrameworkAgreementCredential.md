@@ -1,4 +1,4 @@
-# CX-0050 Framework Agreement Credential v.2.0.0
+# CX-0050 Framework Agreement Credential v2.0.0
 
 ## REVISIONS & UPDATE
 
@@ -349,3 +349,7 @@ Not applicable.
 > *This section is non-normative*
 
 Not applicable.
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

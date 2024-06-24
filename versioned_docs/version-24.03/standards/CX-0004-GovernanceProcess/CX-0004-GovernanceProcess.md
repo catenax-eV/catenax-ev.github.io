@@ -1,4 +1,4 @@
-# CX-0004 Governance Process for Aspect models v.1.0.1
+# CX-0004 Governance Process for Aspect models v1.0.1
 
 ## ABSTRACT
 
@@ -195,3 +195,7 @@ https://github.com/eclipse-tractusx/sldt-semantic-models
 [^1]: https://catena-x.net/fileadmin/user_upload/Vereinsdokumente/Catena-X_IP_Regelwerk_IP_Regulations.pdf
 
 [^2]: https://catena-x.net/de/standard-library
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

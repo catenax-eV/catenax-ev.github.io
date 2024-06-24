@@ -1,4 +1,4 @@
-# CX-0135 - BP company certificate management v.2.0.0
+# CX-0135 - BP company certificate management v2.0.0
 
 ## ABSTRACT
 
@@ -68,7 +68,7 @@ A company has 100 customers, that provide different certificates, from different
 In this section the different parts of the data model are explained.
 
 The data model is implemented according to the API specification that is published in the Tractus-X open source repository:
-[BPDM certificate management api](https://github.com/eclipse-tractusx/bpdm-certificate-management/tree/main/doc/api)(V.1.0.0)
+[BPDM certificate management api](https://github.com/eclipse-tractusx/bpdm-certificate-management/tree/main/doc/api)(v1.0.0)
 
 #### 1.5.1 BPNL BUSINESS PARTNER NUMBER LEGAL ENTITY
 
@@ -324,3 +324,7 @@ Intentionally left blank.
 [^3] : For details on the data model and data fields please refer to the 0074 Business Partner Gate API standard.
 [^4] : https://catena-x.net/fileadmin/user_upload/Vereinsdokumente/Catena-X_IP_Regelwerk_IP_Regulations.pdf
 [^5] : https://catena-x.net/de/standardisierung/catena-x-einfuehren-umsetzen/standardisierung/standard-library
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

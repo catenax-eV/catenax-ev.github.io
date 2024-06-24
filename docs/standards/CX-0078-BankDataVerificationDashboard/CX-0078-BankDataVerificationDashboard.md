@@ -8,7 +8,7 @@ which has to be the basis to verify the syntactical and logical correctness of b
 
 BDV has to visualize the outcome of the banking verification rules via a dashboard. There a user should be able to compare the input and output of banking data quality after the BDV verification process ended.
 
-BDV uses the Gate API CX-0074_V.3.0.0 and the Pool API CX-0012_V.4.0.0 based on the CX-0018 Data Space Connectivity 3.0.0
+BDV uses the Gate API CX-0074_v3.0.0 and the Pool API CX-0012_v4.0.0 based on the CX-0018 Data Space Connectivity 3.0.0
 for pulling BP data records for synchronization of CX Member BP data records with the CX Member banking data. The CX Member banking data has to be send via the BDV API. The results of the BDV verification have to be stored in the BDV Logfile and should get pulled via the BDV API from the CX Member systems.
 BDV has to be a client/ server cloud application which has to contain a Web Client and a Cloud Servicer Application.
 BDV has to contain a user and authorization management capability aligned with the CX Portal and Marketplace user management. BDV has to support the EDC Asset function capability and has to be available in English and German language.
@@ -348,3 +348,7 @@ HTTP Status Code Registry MUST be adhered to in the implementation for the decis
 > *This section is non-normative*
 
 Intentionally left blank.
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

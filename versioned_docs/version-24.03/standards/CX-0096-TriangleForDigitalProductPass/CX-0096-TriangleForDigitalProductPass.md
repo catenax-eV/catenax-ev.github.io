@@ -122,19 +122,19 @@ To participate in the digital product passport use case, the following single st
 be fulfilled by all participants for which the standard is relevant:
 
 - [CX-0001 EDC Discovery API](https://catena-x.net/fileadmin/user_upload/Standard-Bibliothek/Update_September23/CX-0001-EDCDiscoveryAPI_v1.0.2.pdf)
-- [CX-0002 Digital Twins in Catena - X](https://catena-x.net/fileadmin/user_upload/Standard-Bibliothek/Update_September23/CX-0002-DigitalTwinsInCatenaX-v.2.0.0.pdf)
-- [CX-0003 SAMM Semantic Aspect Meta Model](https://catena-x.net/fileadmin/user_upload/Standard-Bibliothek/Archiv/Update_Juli_23_R_3.2/CX-0003-SAMMSemanticAspectMetaModel-v.1.0.2.pdf)
+- [CX-0002 Digital Twins in Catena - X](https://catena-x.net/fileadmin/user_upload/Standard-Bibliothek/Update_September23/CX-0002-DigitalTwinsInCatenaX-v2.0.0.pdf)
+- [CX-0003 SAMM Semantic Aspect Meta Model](https://catena-x.net/fileadmin/user_upload/Standard-Bibliothek/Archiv/Update_Juli_23_R_3.2/CX-0003-SAMMSemanticAspectMetaModel-v1.0.2.pdf)
 - [CX-0006 Registration and initial onboarding](https://catena-x.net/fileadmin/user_upload/Standard-Bibliothek/Update_September23/CX-0006-RegistrationAndInitialOnboarding-1.1.2.pdf)
 - [CX-0008 Relevant standards for conformity assessments](https://catena-x.net/fileadmin/user_upload/Standard-Bibliothek/Update_PDF_Maerz/6_Onboarding/CX_-_0008_Conformity_Assessment_PlatformCapabilityOnboarding_v_1.0.1.pdf)
-- [CX-0013 Identity of Member Companies](https://catena-x.net/fileadmin/user_upload/Standard-Bibliothek/Update_September23/CX-0013-IdentityofMemberCompanies-v.1.1.0.pdf)
+- [CX-0013 Identity of Member Companies](https://catena-x.net/fileadmin/user_upload/Standard-Bibliothek/Update_September23/CX-0013-IdentityofMemberCompanies-v1.1.0.pdf)
 - [CX-0014 Employees and Technical Users](https://catena-x.net/fileadmin/user_upload/Standard-Bibliothek/Update_PDF_Maerz/4_IAM/CX_-_0014_Employees_and_Technical_Users_PlatformCapabilityIAM_v_1.0.1.pdf)
 - [CX-0015 IAM & Access Control Paradigm](https://catena-x.net/fileadmin/user_upload/Standard-Bibliothek/Update_PDF_Maerz/4_IAM/CX_-_0015_IAM___Access_Control_Paradigm_PlatformCapabilityIAM_v_1.0.1.pdf)
-- [CX-0016 Company Attribute Verification](https://catena-x.net/fileadmin/user_upload/Standard-Bibliothek/Update_September23/CX-0016-CompanyAttributeVerification-v.1.1.0.pdf)
-- [CX-0017 Company Role by the Connector](https://catena-x.net/fileadmin/user_upload/Standard-Bibliothek/Update_September23/CX-0017-CompanyRoleByTheConnector-v.1.1.0.pdf)
-- [CX-0018 Eclipse Data Space Connector (EDC)](https://catena-x.net/fileadmin/user_upload/Standard-Bibliothek/Update_September23/CX-0018-EclipseDataConnector_EDC_-v.2.0.1.pdf)
-- [CX-0049 DID Document](https://catena-x.net/fileadmin/user_upload/Standard-Bibliothek/Update_September23/CX-0049-DIDDocument-v.1.0.0.pdf)
-- [CX-0050 Framework Agreement Credential](https://catena-x.net/fileadmin/user_upload/Standard-Bibliothek/Update_September23/CX-0050-FrameworkAgreementCredential-v.1.0.0.pdf)
-- [CX-0051 Summary Credential](https://catena-x.net/fileadmin/user_upload/Standard-Bibliothek/Update_September23/CX-0051-SummaryCredential-v.1.0.0.pdf)
+- [CX-0016 Company Attribute Verification](https://catena-x.net/fileadmin/user_upload/Standard-Bibliothek/Update_September23/CX-0016-CompanyAttributeVerification-v1.1.0.pdf)
+- [CX-0017 Company Role by the Connector](https://catena-x.net/fileadmin/user_upload/Standard-Bibliothek/Update_September23/CX-0017-CompanyRoleByTheConnector-v1.1.0.pdf)
+- [CX-0018 Eclipse Data Space Connector (EDC)](https://catena-x.net/fileadmin/user_upload/Standard-Bibliothek/Update_September23/CX-0018-EclipseDataConnector_EDC_-v2.0.1.pdf)
+- [CX-0049 DID Document](https://catena-x.net/fileadmin/user_upload/Standard-Bibliothek/Update_September23/CX-0049-DIDDocument-v1.0.0.pdf)
+- [CX-0050 Framework Agreement Credential](https://catena-x.net/fileadmin/user_upload/Standard-Bibliothek/Update_September23/CX-0050-FrameworkAgreementCredential-v1.0.0.pdf)
+- [CX-0051 Summary Credential](https://catena-x.net/fileadmin/user_upload/Standard-Bibliothek/Update_September23/CX-0051-SummaryCredential-v1.0.0.pdf)
 
 To participate in the digital product passport use case, the following single standards **SHOULD**
 be fulfilled by data consumers / applications providers for which the standard is relevant:
@@ -527,3 +527,7 @@ implementation that implements this standard.
 ### FIGURES
 
 > *This section is non-normative*
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

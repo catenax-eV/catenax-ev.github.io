@@ -450,3 +450,7 @@ Knowledge Agent – has been implemented in a reference environment by the conso
 | essIncidentIssuerCountrySubdivision | String | Region within a country to which an ESS incident issuer | O | IN-AP |
 | essIncidentIssuerId | UUIDv4 | System generated unique identifier of incident issuer | M | 9a47b3c8-b6d4-44f1-99ba-6bdb33916cac |
 | flagAnonymous | Bool | Flag that indicates if the ESS incident issuer wants to be anonymous | M | false |
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

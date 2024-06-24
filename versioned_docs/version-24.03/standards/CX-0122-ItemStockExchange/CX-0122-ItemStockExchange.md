@@ -21,8 +21,8 @@ for facilitating such an exchange.
 This is the first version of the CX-0122 standard. The CX-0122 standard **obsoletes** the following
 Catena-X standards:
 
-- CX-0085 ProductStock Aspect Model v.1.0.0
-- CX-0086 Product Stock Exchange API v.1.0.0
+- CX-0085 ProductStock Aspect Model v1.0.0
+- CX-0086 Product Stock Exchange API v1.0.0
 
 ## 1 INTRODUCTION
 
@@ -1223,3 +1223,7 @@ respective location with its address.
 > *This section is non-normative*
 
 Not applicable.
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

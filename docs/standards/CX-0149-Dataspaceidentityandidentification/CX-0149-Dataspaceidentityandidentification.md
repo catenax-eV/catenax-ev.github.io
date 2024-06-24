@@ -1,8 +1,8 @@
-# CX-0149 Verified Company Identity v.1.0.0
+# CX-0149 Verified Company Identity v1.0.0
 
 ## COMPARISON WITH THE PREVIOUS VERSION OF THE STANDARD
 
-- This document combines the previous standards `CX - 0016 Company Attribute Verification  v.1.1.0` and `CX - 0017 Company Role by the Connector v.1.0.1` including all needed information for the identification of a participant and the Dataspace clients acting on behalf of them
+- This document combines the previous standards `CX - 0016 Company Attribute Verification  v1.1.0` and `CX - 0017 Company Role by the Connector v1.0.1` including all needed information for the identification of a participant and the Dataspace clients acting on behalf of them
 - Introducing the *Identity and Trust Protocol (IATP)* used within the identity presentation flow
 - Introducing an API specification for the *Creation of Participants Wallet* as a foundation for the usage of multiple Wallet providers.
 
@@ -463,3 +463,7 @@ Not applicable.
 > *This section is non-normative*
 
 Not applicable.
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

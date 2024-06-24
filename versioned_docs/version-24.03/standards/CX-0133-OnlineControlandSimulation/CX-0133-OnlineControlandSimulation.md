@@ -1,4 +1,4 @@
-# CX-0133 Online Control and Simulation 1.0.0
+# CX-0133 Online Control and Simulation v1.0.0
 
 ## ABSTRACT
 
@@ -1602,3 +1602,7 @@ n.a.
 ## REVISIONS & UPDATE
 
 ## COPYRIGHT & TRADEMARKS
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

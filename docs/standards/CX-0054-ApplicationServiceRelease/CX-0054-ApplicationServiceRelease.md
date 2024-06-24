@@ -363,3 +363,7 @@ The image found below depicts an example Service Detail Input Page that implemen
 
 The json api description found in [openpi json file](./assets/swagger.json) presents a reference API
  that implements this standard.  
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

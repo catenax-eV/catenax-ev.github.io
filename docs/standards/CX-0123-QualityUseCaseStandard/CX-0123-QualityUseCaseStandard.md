@@ -1,4 +1,4 @@
-# CX-0123 Quality Use Case Standard v.2.0.0
+# CX-0123 Quality Use Case Standard v2.0.0
 
 ## ABSTRACT
 
@@ -106,37 +106,37 @@ Additional terminology used in this standard can be looked up in the glossary on
 
 To particpate in Data Provisioning for the "Quality Use Case", the following single standards **MUST** be fulfilled by all participants
 
-- CX - 0018 Data Space Connectivity v.3.0.0
+- CX - 0018 Data Space Connectivity v3.0.0
 
 #### 2.1.2 DATA REQUIRED
 
 In order to participate in the Catena-X use case "Quality" the following single standards **MUST** be fulfilled by all participants:
 
-CX - 0018 Data Space Connectivity v.3.0.0
+CX - 0018 Data Space Connectivity v3.0.0
 
 As OEM data provider for a Supplier as data consumer, if data is provided, I **MUST** provide the data conformant to the following aspect models:
 
-- Aspect Model QualityTask  v.2.0.0
-- Aspect Model FleetDiagnosticData  v.2.0.0
-- Aspect Model FleetClaimData  v.2.0.0
-- Aspect Model FleetVehicles v.2.1.0
-- Aspect Model QualityTaskAttachment v.2.0.0
-- Aspect Model FailurePattern v.1.0.0
+- Aspect Model QualityTask  v2.0.0
+- Aspect Model FleetDiagnosticData  v2.0.0
+- Aspect Model FleetClaimData  v2.0.0
+- Aspect Model FleetVehicles v2.1.0
+- Aspect Model QualityTaskAttachment v2.0.0
+- Aspect Model FailurePattern v1.0.0
 
 As Supplier data provider for an OEM as data consumer, if data is provided, I **MUST** provide the data conformant to the following aspect models:
 
-- Aspect Model QualityTask  v.2.0.0
-- Aspect Model PartAnalyses  v.3.0.0
-- Aspect Model ManufacturedPartsQualityInformation  v.2.1.0
-- Aspect Model QualityTaskAttachment v.2.0.0
-- Aspect Model FailurePattern v.1.0.0
+- Aspect Model QualityTask  v2.0.0
+- Aspect Model PartAnalyses  v3.0.0
+- Aspect Model ManufacturedPartsQualityInformation  v2.1.0
+- Aspect Model QualityTaskAttachment v2.0.0
+- Aspect Model FailurePattern v1.0.0
 
 As Supplier data provider for a Supplier (TIER N) as data consumer, if data is provided, I **MUST** provide the data conformant to the following aspect models:
 
-- Aspect Model QualityTask  v.2.0.0
-- Aspect Model PartAnalyses  v.3.0.0
-- Aspect Model ManufacturedPartsQualityInformation  v.2.1.0
-- Aspect Model QualityTaskAttachment v.2.0.0
+- Aspect Model QualityTask  v2.0.0
+- Aspect Model PartAnalyses  v3.0.0
+- Aspect Model ManufacturedPartsQualityInformation  v2.1.0
+- Aspect Model QualityTaskAttachment v2.0.0
 
 As OEM data provider or consumer or as Supplier data provider or consumer, if sending an early warning notification I **MUST** be compliant to the early warning notification API.
 
@@ -1031,10 +1031,10 @@ depicted. This is the same as updating a quality notification.
 
 > *This section is normantive*
 
-- CX - 0001 EDC Discovery API v.1.0.2
-- CX - 0003 SAMM Aspect Meta Model v.1.1.0
-- CX - 0018 Data Space Connectivity v.3.0.0
-- CX - 0125 Traceability Use Case v.2.0.0
+- CX - 0001 EDC Discovery API v1.0.2
+- CX - 0003 SAMM Aspect Meta Model v1.1.0
+- CX - 0018 Data Space Connectivity v3.0.0
+- CX - 0125 Traceability Use Case v2.0.0
 
 ### 6.2 NON-NORMATIVE REFERENCES
 
@@ -1045,3 +1045,7 @@ depicted. This is the same as updating a quality notification.
 ### FIGURES
 
 ### TABLES
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

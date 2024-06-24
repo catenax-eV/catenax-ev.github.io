@@ -1,5 +1,5 @@
 
-# CX-0027 Product Carbon Footprint Aspect Model v.1.0.0
+# CX-0027 Product Carbon Footprint Aspect Model v1.0.0
 
 ## 1. Introduction
 
@@ -435,3 +435,7 @@ In addition to the technical representation of the semantic model through the li
 The BAMM Aspect Model Editor is open source and can be downloaded via the official website: [BAMM Aspect Model Editor Landing Page](https://www.bosch-connected-industry.com/de/de/downloads/aspect-model-editor)
 
 The official documentation and installation instructions can be accessed via the open manufacturing platform: [BAMM Documentation](https://openmanufacturingplatform.github.io/sds-documentation/ame-guide/4.0.2/introduction.html).
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

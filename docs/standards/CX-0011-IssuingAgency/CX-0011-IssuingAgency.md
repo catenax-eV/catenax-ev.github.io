@@ -205,3 +205,7 @@ back.
 documentation](https://github.com/eclipse-tractusx/bpdm/blob/main/docs/arc42/architecture-documentation.adoc)
 2. [BPDM use case on Catena-X
 Website](https://catena-x.net/en/angebote/bpdm)
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

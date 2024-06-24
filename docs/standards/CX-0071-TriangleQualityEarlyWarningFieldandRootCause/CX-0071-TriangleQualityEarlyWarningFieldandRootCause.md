@@ -93,7 +93,7 @@ Additional terminology used in this standard can be looked up in the glossary on
 
 In order to participate in the Catena-X use case "Quality - Early Warning Field" and "Quality - Root Cause analysis" the following single standards **MUST** be fulfilled by all participants:
 
-CX - 0018 Eclipse Data Connector(EDC) v.2.0.0  
+CX - 0018 Eclipse Data Connector(EDC) v2.0.0  
 
 As OEM data provider I **MUST** align to the following aspect models in the corresponding data exchange:
 
@@ -149,3 +149,7 @@ CX - 0092 Aspect Model: QualityTaskAttachment
 ### TABLES
 
 > *This section is non-normative*
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

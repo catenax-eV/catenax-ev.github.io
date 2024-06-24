@@ -782,3 +782,7 @@ The following http response codes MUST be defined for HTTP POST endpoint for the
 > *This section is non-normative*
 
 - [CX_Operating_Modelv2.1_final.pdf (catena-x.net)](https://catena-x.net/fileadmin/_online_media_/CX_Operating_Modelv2.1_final.pdf)
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

@@ -1,4 +1,4 @@
-# CX - 0104 Aspect Model AssetTrackerLinks v.1.0.0
+# CX - 0104 Aspect Model AssetTrackerLinks v1.0.0
 
 ## FOR WHOM IS THE STANDARD DESIGNED
 
@@ -96,7 +96,7 @@ Asset and device are curently paired when set to true.
 
 Additional terminology used in this standard can be looked up in the glossary on the association homepage.
 
-## 2 ASPECT MODEL “AssetTrackerLinks v.2.0.0”
+## 2 ASPECT MODEL “AssetTrackerLinks v2.0.0”
 
 > *This section is normative*
 
@@ -172,3 +172,7 @@ The data model follows the Standard [CX - 0045 Aspect Model Data Chain Template]
 ### TABLES
 
 > *This section is non-normative*
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

@@ -4,7 +4,7 @@
 
 Doing business with companies (and affiliates) which are sanctioned or affected by embargos can result in fines and reputational damage. However, identification of sanctioned partners is difficult due to the vast amount of different sanction lists from several countries and authorities. Even manual checks are difficult due to a lack of high-quality data provisioned by the authorities. With Sanction and Watchlist Monitoring, data synchronized with a data mirror is monitored continuously against the latest sanction and watch lists. The Sanction Party Watchlist Dashboard (SWD) has to provide a summary on potential matches. The matching against sanction and watch lists have to be activated in the company data lookup, so data maintainers are already notified during creation or update workflows. The monitoring scope has to be extended to political exposed persons (so called PEPs). SWD has to visualize the outcome of the sanction watchlist monitoring rules via a dashboard.
 
-SWD has to use the Gate API CX-0074\_V.1.1.0 or higher for pulling BP data records. SWD has to be a client/ server cloud application which contains a Web Client and a Cloud Server Application.
+SWD has to use the Gate API CX-0074\_v1.1.0 or higher for pulling BP data records. SWD has to be a client/ server cloud application which contains a Web Client and a Cloud Server Application.
 SWD has to contain a user and authorization management capability aligned with the CX Portal and Marketplace user management. SWD has to contain an API and has to be  available in English and German language
 
 ## 1 INTRODUCTION
@@ -300,3 +300,7 @@ Intentionally left blank.
 [^1]: https://catena-x.net/fileadmin/user_upload/Vereinsdokumente/Catena-X_IP_Regelwerk_IP_Regulations.pdf
 
 [^2]: https://catena-x.net/de/standardisierung/catena-x-einfuehren-umsetzen/standardisierung/standard-library
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

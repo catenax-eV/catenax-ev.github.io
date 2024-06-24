@@ -1240,3 +1240,7 @@ The "dataAddress" part for Skill Assets consists of the following properties.
 | edc:proxyMethod | yes | must be set to “true” | true |
 | edc:proxyQueryParams | yes | must be set to "true" | true |
 | edc:proxyBody | yes | must be set to "true" | true‚ |
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).
