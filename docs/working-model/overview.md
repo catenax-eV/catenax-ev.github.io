@@ -19,7 +19,7 @@ title: Overview
 ## Scope
 
 - Plan and Build (no Run)
-  - Whereas the [Operating model](https://catenax-ev.github.io/docs/next/operating-model/operating-model) describes the model for production / live environment (=Run)
+  - Whereas the [Operating model](/docs/next/operating-model/why-introduction) describes the model for production / live environment (=Run)
 - Roles, tasks, competence, and responsibility model
 - Interfaces between Catena-X association and other initiatives such as Tractus-X Project (Eclipse Foundation Project Handbook)
 

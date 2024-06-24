@@ -32,7 +32,7 @@ const FeatureList: FeatureItem[] = [
     Svg: require('@site/static/img/operating-model-icon.svg').default,
     description: (
       <>
-          Here you will find all the information about the <a href="docs/operating-model/operating-model">Operating Model</a>.
+          Here you will find all the information about the <a href="docs/operating-model/why-introduction">Operating Model</a>.
       </>
     ),
   },
