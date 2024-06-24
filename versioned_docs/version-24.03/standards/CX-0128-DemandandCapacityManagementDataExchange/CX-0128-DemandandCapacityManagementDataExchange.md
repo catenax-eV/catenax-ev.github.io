@@ -2150,3 +2150,7 @@ Unit of Measure typically used in DCM context.
 | Zyklus | B7 | cycle | Zyklus | [empty] | cyl | unit:cycle |
 
 *Table 1: Units of measurement used in DCM*
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

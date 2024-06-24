@@ -1,4 +1,4 @@
-# CX-0001 EDC Discovery API v.1.0.2
+# CX-0001 EDC Discovery API v1.0.2
 
 ## ABSTRACT
 
@@ -448,3 +448,7 @@ HTTP standard response codes that MUST be used.
 - GAIA-X Trustframework: [https://gaia-x.eu/wp-content/uploads/2022/05/Gaia-X-Trust-Framework-22.04.pdf](https://gaia-x.eu/wp-content/uploads/2022/05/Gaia-X-Trust-Framework-22.04.pdf)
 - CX - 0006 Registration and initial onboarding
 - CX - 0010 Business Partner Number
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

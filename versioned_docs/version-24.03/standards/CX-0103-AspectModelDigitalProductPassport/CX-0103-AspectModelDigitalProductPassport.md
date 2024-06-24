@@ -1,5 +1,5 @@
 
-# CX-0103 Digital Product Passport v.1.1.0
+# CX-0103 Digital Product Passport v1.1.0
 
 ## FOR WHOM IS THE STANDARD DESIGNED
 
@@ -211,3 +211,7 @@ A reference implementation of an application using or providing data conformant 
 ### FIGURES
 
 ### TABLES
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

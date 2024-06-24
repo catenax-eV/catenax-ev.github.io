@@ -1,4 +1,4 @@
-# CX-0002 Digital Twins in Catena-X v.2.1.0
+# CX-0002 Digital Twins in Catena-X v2.1.0
 
 ## ABSTRACT
 

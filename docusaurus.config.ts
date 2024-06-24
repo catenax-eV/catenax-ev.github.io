@@ -41,7 +41,7 @@ const config: Config = {
           sidebarPath: './sidebars.ts',
           versions: {
             current: {
-              label: 'Next',
+              label: 'Jupiter (preview)',
             },
           },
         },
@@ -111,8 +111,8 @@ const config: Config = {
               label: 'Release Management',
             },
             {
-              to: '/CHANGELOG',
-              label: 'Changelog',
+              to: '/release-notes',
+              label: 'Release Notes',
             },
           ],
         },

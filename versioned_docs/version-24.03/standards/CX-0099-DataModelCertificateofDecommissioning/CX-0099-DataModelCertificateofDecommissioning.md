@@ -188,3 +188,7 @@ an update will be provided.
 ### 3.2 NON-NORMATIVE REFERENCES
 
 - [SMT- How to create submodel template specification](https://industrialdigitaltwin.org/wp-content/uploads/2022/12/I40-IDTA-WS-Process-How-to-write-a-SMT-FINAL-.pdf)
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

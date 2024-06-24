@@ -1,4 +1,4 @@
-# CX-0074 Business Partner Data GATE API v.2.0.0
+# CX-0074 Business Partner Data GATE API v2.0.0
 
 ## FOR WHOM IS THE STANDARD DESIGNED
 
@@ -464,3 +464,7 @@ Intentionally left blank.
 [^4]: The classification is subject to change.
 
 [^5]: Note that in case of a PUT the corresponding resources expect to receive the full updated record, including values that did not change.
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

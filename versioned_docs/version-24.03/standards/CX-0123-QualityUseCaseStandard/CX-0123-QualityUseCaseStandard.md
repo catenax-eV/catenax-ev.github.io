@@ -1,5 +1,5 @@
 
-# CX-0123 Quality Use Case Standard v.1.0.0
+# CX-0123 Quality Use Case Standard v1.0.0
 
 ## ABSTRACT
 
@@ -65,23 +65,23 @@ The so generated files are transferred between different Catena-X participants u
 
 In order to participate in the Catena-X use case "Quality" the following single standards **MUST** be fulfilled by all participants:
 
-CX - 0018 Eclipse Data Connector (EDC) v.2.1.0  
+CX - 0018 Eclipse Data Connector (EDC) v2.1.0  
 
 As OEM data provider I **MUST** align to the following aspect models in the corresponding data exchange:
 
-Aspect Model QualityTask  v.1.0.0
-Aspect Model VehicleProductDescription  v.3.0.0
-Aspect Model FleetDiagnosticData  v.1.0.0
-Aspect Model FleetClaimData  v.1.0.0
-Aspect Model FleetVehicles v.1.0.0
-Aspect Model QualityTaskAttachment v.1.0.0
+Aspect Model QualityTask  v1.0.0
+Aspect Model VehicleProductDescription  v3.0.0
+Aspect Model FleetDiagnosticData  v1.0.0
+Aspect Model FleetClaimData  v1.0.0
+Aspect Model FleetVehicles v1.0.0
+Aspect Model QualityTaskAttachment v1.0.0
 
 As Supplier data provider I **MUST** align to the following aspect models in the corresponding data exchange:
 
-Aspect Model QualityTask  v.1.0.0
-Aspect Model PartAnalyses  v.2.0.0
-Aspect Model ManufacturedPartsQualityInformation  v.1.0.0
-Aspect Model QualityTaskAttachment v.1.0.0
+Aspect Model QualityTask  v1.0.0
+Aspect Model PartAnalyses  v2.0.0
+Aspect Model ManufacturedPartsQualityInformation  v1.0.0
+Aspect Model QualityTaskAttachment v1.0.0
 
 - Data provisioning and consuming **MUST** be done according the standardized semantic data models.
 - The data provider defines the data content that will be provided. Provided data assets are defined in data sharing agreements and/or data usage policies.
@@ -524,7 +524,7 @@ This semantic model has the unique identifier:
 
 urn:samm:io.catenax.fleet.vehicles:1.0.0
 
-This model has an external reference to Aspect Model Vehicle Product Description v.3.0.0 with unique identifier urn:samm:io.catenax.vehicle.product_description:3.0.0
+This model has an external reference to Aspect Model Vehicle Product Description v3.0.0 with unique identifier urn:samm:io.catenax.vehicle.product_description:3.0.0
 
 #### 3.7.5 FORMATS OF SEMANTIC MODEL
 
@@ -643,7 +643,7 @@ not applicable
 > *This section is normative*
 
 ```text
-    CX - 0018 EclipseDataConnector (EDC)  v.2.1.0
+    CX - 0018 EclipseDataConnector (EDC)  v2.1.0
 ```
 
 ### 6.2 NON-NORMATIVE REFERENCES
@@ -655,3 +655,7 @@ not applicable
 ### FIGURES
 
 ### TABLES
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

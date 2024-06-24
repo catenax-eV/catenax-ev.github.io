@@ -166,3 +166,7 @@ The leading technical implementation of SSI evolves around the open standards of
 Figure 1: Overview of Open Standards for SSI
 
 Source: http://www.lifewithalacrity.com/2016/04/the-path-to-self-soverereign-identity.html
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

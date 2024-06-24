@@ -1,4 +1,4 @@
-# CX-0020 Aspect Model SingleLevelBomAsBuilt v.2.0.0
+# CX-0020 Aspect Model SingleLevelBomAsBuilt v2.0.0
 
 ## FOR WHOM IS THE STANDARD DESIGNED
 
@@ -277,3 +277,7 @@ https://industrialdigitaltwin.org/wp-content/uploads/2022/12/I40-IDTA-WS-Process
 ### TABLES
 
 > *This section is non-normative*
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

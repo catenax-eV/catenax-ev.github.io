@@ -1,5 +1,5 @@
 
-# CX-0098 Aspect Model Secondary Material Content v.2.0.0
+# CX-0098 Aspect Model Secondary Material Content v2.0.0
 
 ## FOR WHOM IS THE STANDARD DESIGNED
 
@@ -209,3 +209,7 @@ file.
 ### FIGURES
 
 ### TABLES
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

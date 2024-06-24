@@ -1350,3 +1350,7 @@ There **MUST** be arrival information, to give the supplier more transparency.
 > *This section is non-normative*
 
 Not applicable.
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

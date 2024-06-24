@@ -1,5 +1,5 @@
 
-# CX-0007 Minimal Data Provider Service Offering v.1.0.2
+# CX-0007 Minimal Data Provider Service Offering v1.0.2
 
 ## ABSTRACT
 
@@ -478,3 +478,7 @@ As long as not specified differently, the latest version of the standard MUST be
 > *This section is non-normative*
 
 Example: The code found at https://github.com/eclipse-tractusx/dft-frontend in combination with https://github.com/eclipse-tractusx/dft-backend presents a reference implementation that implements this standard.
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

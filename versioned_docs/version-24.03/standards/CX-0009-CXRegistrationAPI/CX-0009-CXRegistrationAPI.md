@@ -1,5 +1,5 @@
 
-# CX-0009 CX Registration API v.1.1.3
+# CX-0009 CX Registration API v1.1.3
 
 ## ABSTRACT
 
@@ -399,3 +399,7 @@ endpoint:
 |     403     |     Forbidden                                         |
 |     405     |     Method not allowed                                |
 |     409     |     Error                                             |
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

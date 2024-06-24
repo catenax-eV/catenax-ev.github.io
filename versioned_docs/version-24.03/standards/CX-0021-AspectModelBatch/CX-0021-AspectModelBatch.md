@@ -1,4 +1,4 @@
-# CX-0021 Aspect Model: Batch v.1.0.1
+# CX-0021 Aspect Model: Batch v1.0.1
 
 ## ABSTRACT
 
@@ -222,3 +222,7 @@ https://industrialdigitaltwin.org/wp-content/uploads/2022/12/I40-IDTA-WS-Process
 [^4]: https://creativecommons.org/licenses/by/4.0/legalcode
 
 [^5]: https://github.com/eclipse-esmf/esmf-sdk
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).
