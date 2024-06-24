@@ -1,4 +1,3 @@
-
 # CX-0105 Asset Tracking Use Case v1.1.0
 
 ## ABSTRACT

@@ -291,8 +291,18 @@ A participant mentioned under [1.1 AUDIENCE & SCOPE](#11-audience--scope) MUST s
 as well as the [PCF Framework Agreement](https://catena-x.net/fileadmin/user_upload/04_Einfuehren_und_umsetzen/Governance_Framework/231016_Catena-X_Use_Case_Framework_PCF.pdf).
 This follows the first SSI setup originally released with Catena-X Rel. 3.2. For more details see the [corresponding standards](https://github.com/catenax-eV/product-standardization-prod/tree/main/standards) which are NOT part of this document.
 
-The minimum set of **Membership**, the PCF **FrameworkAgreement** and the **UsagePurpose**
-MUST to be added to the asset:
+In the context of data usage policies (“Usage Policies”), Participants and related services MUST use the following policy rules:
+
+- Use Case Framework (“FrameworkAgreement”)
+- at least one use case purpose (“UsagePurpose”) from the above mentioned [ODRL policy repository](https://github.com/catenax-eV/cx-odrl-profile).
+
+Additionally, respective usage policies MAY include the following policy rule:
+
+- Reference Contract (“ContractReference”).
+
+Details on namespaces and ODLR policy rule values to be used for the above-mentioned types are provided via the [ODRL policy repository](https://github.com/catenax-eV/cx-odrl-profile). 
+
+An example for a policy valid for the PCF Use Case is shown in the following:
 
 ```json
 {
