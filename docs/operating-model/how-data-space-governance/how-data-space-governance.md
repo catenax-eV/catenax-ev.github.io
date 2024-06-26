@@ -268,14 +268,12 @@ The following figure shows the process of how OSPs & CABs can add the various pa
 ![Catena-X data space clearance list process](./assets/catena-x-add-solutions-and-participants-to-the-whitelist.png)  
 *Catena-X Data Space Clearance List process*
 
-| Process Step                        | Description                                                                                                                | Input                | Output             |
-|-------------------------------------|----------------------------------------------------------------------------------------------------------------------------|----------------------|--------------------|
-
-| successful onboarding/certification | The CAB or OSP is responsible for providing the mandatory data within 5 working days                                         |                      | data provided      |
-| Review data for completeness        | Review if all the mandatory data is provided and if the format is correct                                                  | data from CAB or OSP |                    |
-
-| Formal Check                        | Review of content by the dataspace operations committee if the provided data is valid                                      |                      |                    |
-| Decision                     | Final approval to add data to data space clearance list, in case of deny -   feedback is provided and CAB or OSP must crete a new request |                      | Approval or denial |
+| Process Step                        | Description                                                                                                                               | Input                | Output             |
+| ----------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- | -------------------- | ------------------ |
+| successful onboarding/certification | The CAB or OSP is responsible for providing the mandatory data within 5 working days                                                      |                      | data provided      |
+| Review data for completeness        | Review if all the mandatory data is provided and if the format is correct                                                                 | data from CAB or OSP |                    |
+| Formal Check                        | Review of content by the dataspace operations committee if the provided data is valid                                                     |                      |                    |
+| Decision                            | Final approval to add data to data space clearance list, in case of deny -   feedback is provided and CAB or OSP must crete a new request |                      | Approval or denial |
 
 In order to obtain a simple overview of the various entries as well as an overall overview of the data space, various additional attributes are added to an entry. The data that an entry receives is as follows:
 
