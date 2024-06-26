@@ -144,13 +144,13 @@ The various rights and obligations of the provider are described in the Request 
 *Catena-X Nomination Process*
 
 The process steps of the nomination process are described in detail below.
-| Process Step                                            | Description                                                                                                                                             | Input                               | Output                                                |
-|---------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------|-------------------------------------------------------|
-| Create Request for Tender (RfT)                         | The Catena-X Association is responsible for the creation of the Request   for Tender (RfT) document (e.g., for Core Services - section B)               |                                     | RfT Document(s)                                       |
-| Publish RfT on Website                                  | The Catena-X Association is responsible for the publication and   distribution of the [RfT Document on the website](https://catena-x.net/en/).                                     | RfT Document(s)                     | RfT Document(s) RfT Event incl. Timeline RfT Template |
-| Create and Submit Tender for selected   Core Service(s) | A provider can create and submit a tender for the published RfT.                                                                                        | RfT Document RfT Event RfT Template | Tender                                                |
+| Process Step                                            | Description                                                                                                                                                   | Input                               | Output                                                |
+| ------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------- | ----------------------------------------------------- |
+| Create Request for Tender (RfT)                         | The Catena-X Association is responsible for the creation of the Request   for Tender (RfT) document (e.g., for Core Services - section B)                     |                                     | RfT Document(s)                                       |
+| Publish RfT on Website                                  | The Catena-X Association is responsible for the publication and   distribution of the [RfT Document on the website](https://catena-x.net/en/).                | RfT Document(s)                     | RfT Document(s) RfT Event incl. Timeline RfT Template |
+| Create and Submit Tender for selected   Core Service(s) | A provider can create and submit a tender for the published RfT.                                                                                              | RfT Document RfT Event RfT Template | Tender                                                |
 | Receive and Review Submissions                          | The Catena-X Association compares the tender(s), regarding the fulfillment of   the nomination criteria and creates a short list of candidates for the board. | Tender(s)                           | Short List of Provider Candidates                     |
-| Select Provider                                         | The board of the Association elects a provider with an absolute majority   vote.                                                                        | Short List of Provider Candidates   | Nomination of Provider                                |
+| Select Provider                                         | The board of the Association elects a provider with an absolute majority   vote.                                                                              | Short List of Provider Candidates   | Nomination of Provider                                |
 | Inform Providers                                        | The Catena-X Association informs all provider(s) about the result of the   nomination process.                                                                |                                     |                                                       |
 
 ## Qualification Process
@@ -268,14 +268,12 @@ The following figure shows the process of how OSPs & CABs can add the various pa
 ![Catena-X data space clearance list process](./assets/catena-x-add-solutions-and-participants-to-the-whitelist.png)  
 *Catena-X Data Space Clearance List process*
 
-| Process Step                        | Description                                                                                                                | Input                | Output             |
-|-------------------------------------|----------------------------------------------------------------------------------------------------------------------------|----------------------|--------------------|
-
-| successful onboarding/certification | The CAB or OSP is responsible for providing the mandatory data within 5 working days                                         |                      | data provided      |
-| Review data for completeness        | Review if all the mandatory data is provided and if the format is correct                                                  | data from CAB or OSP |                    |
-
-| Formal Check                        | Review of content by the dataspace operations committee if the provided data is valid                                      |                      |                    |
-| Decision                     | Final approval to add data to data space clearance list, in case of deny -   feedback is provided and CAB or OSP must crete a new request |                      | Approval or denial |
+| Process Step                        | Description                                                                                                                               | Input                | Output             |
+| ----------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- | -------------------- | ------------------ |
+| successful onboarding/certification | The CAB or OSP is responsible for providing the mandatory data within 5 working days                                                      |                      | data provided      |
+| Review data for completeness        | Review if all the mandatory data is provided and if the format is correct                                                                 | data from CAB or OSP |                    |
+| Formal Check                        | Review of content by the dataspace operations committee if the provided data is valid                                                     |                      |                    |
+| Decision                            | Final approval to add data to data space clearance list, in case of deny -   feedback is provided and CAB or OSP must crete a new request |                      | Approval or denial |
 
 In order to obtain a simple overview of the various entries as well as an overall overview of the data space, various additional attributes are added to an entry. The data that an entry receives is as follows:
 
