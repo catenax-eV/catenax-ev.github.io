@@ -9,7 +9,7 @@ sidebar_class_name: separator-top
 
 - 13 new standards
 - 34 updated standards
-- 60 deprecated standards
+- 63 deprecated standards
 
 ### A) List of new and updated standards
 
@@ -166,3 +166,6 @@ sidebar_class_name: separator-top
 | CX-0087            | OSim Data Model: Materialflow Simulation Result                                 |  Merged into CX-0133 Online Control and Simulation                                                  |
 | CX-0085            | Product Stock Aspect Model                                 |  Merged into CX-0133 Online Control and Simulation                                                  |
 | CX-0086            | Product Stock Exchange API                                 |  Merged into CX-0133 Online Control and Simulation                                                  |
+| CX-0046            | Demand and Capacity Management Process and Core Business Logic |  Merged into CX-0128 Demand and Capacity Data Exchange                                                  |
+| CX-0047            | Demand and Capacity Management Data Model Material Demand and Capacity Group                                 |  Merged into CX-0128 Demand and Capacity Data Exchange                                                  |
+| CX-0048            | Demand and Capacity Management API Material Demand and Capacity Group  |  Merged into CX-0128 Demand and Capacity Data Exchange                                                  |
