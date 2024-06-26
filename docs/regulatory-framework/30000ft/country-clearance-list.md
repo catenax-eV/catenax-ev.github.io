@@ -16,6 +16,7 @@ pagination_next: null
 | Belgium | BE |
 | Bulgaria | BG |
 | Canada | CA |
+| China | CN |
 | Croatia | HR |
 | Cyprus | CY |
 | Czech | Republic | CZ |
@@ -70,7 +71,6 @@ pagination_next: null
 | Burkina | Faso | BF |
 | Cabo | Verde | CV |
 | Chile | CL |
-| China | CN |
 | Costa | Rica | CR |
 | Dominica | DM |
 | Fiji | FJ |
