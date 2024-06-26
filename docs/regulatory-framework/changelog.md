@@ -19,3 +19,5 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Foundational components for consolidated Data Exchange Governance V1.0 (valid from October 2024)
 
 ### Changed
+
+- Moved China from Yellow List to White List, allowing onboarding of Chinese companies to the Catena-X network
