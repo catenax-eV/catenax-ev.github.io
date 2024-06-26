@@ -1,5 +1,9 @@
 # CX-0135 - BP company certificate management v2.0.0
 
+:::info
+This standard is temporarily suspended for certification, as this standard does not represent the current state of advancement in Catena-X.
+:::
+
 ## ABSTRACT
 
 *This section is non-normative.*
