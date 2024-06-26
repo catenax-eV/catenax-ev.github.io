@@ -26,7 +26,7 @@ pagination_next: null
 | France | FR |
 | Germany | DE |
 | Greece | GR |
-| Hong | Kong | HK |
+| Hong Kong | HK |
 | Hungary | HU |
 | India | IN |
 | Ireland | IE |
