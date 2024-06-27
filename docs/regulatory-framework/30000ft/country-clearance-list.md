@@ -19,7 +19,7 @@ pagination_next: null
 | China | CN |
 | Croatia | HR |
 | Cyprus | CY |
-| Czech | Republic | CZ |
+| Czech Republic | CZ |
 | Denmark | DK |
 | Estonia | EE |
 | Finland | FI |
@@ -44,13 +44,13 @@ pagination_next: null
 | Singapore | SG |
 | Slovakia | SK |
 | Slovenia | SI |
-| South | Africa | ZA |
-| South | Korea | KR |
+| South Africa | ZA |
+| South Korea | KR |
 | Spain | ES |
 | Sweden | SE |
 | Switzerland | CH |
-| United | Kingdom | GB |
-| United | States | of | America | US |
+| United Kingdom | GB |
+| United States of America | US |
 | Vietnam | VN |
 
 ## Clearance List "Yellow List"
@@ -68,10 +68,10 @@ pagination_next: null
 | Benin | BJ |
 | Bhutan | BT |
 | Botswana | BW |
-| Burkina | Faso | BF |
-| Cabo | Verde | CV |
+| Burkina Faso | BF |
+| Cabo Verde | CV |
 | Chile | CL |
-| Costa | Rica | CR |
+| Costa Rica | CR |
 | Dominica | DM |
 | Fiji | FJ |
 | Georgia | GE |
@@ -89,33 +89,28 @@ pagination_next: null
 | Mexico | MX |
 | Montenegro | ME |
 | Namibia | NA |
-| New | Zealand | NZ |
-| North | Macedonia | MP |
+| New Zealand | NZ |
+| North Macedonia | MP |
 | Norway | NO |
 | Oman | OM |
 | Philippines | PH |
 | Qatar | QA |
 | Rwanda | RW |
-| Saint | Lucia | LC |
-| Saint | Vincent | and | the | Grenadines | VC |
-| Catena-X | Automotive | Network | e.V. |
-| Countries | currently | under | clearance | review | "Yellow | List" |
-| Last | updated | on | Nov. | 1st, | 2023 |
-| Onboarding | possible | after | due | diligence | check, | followed | by | seperate |
-| approval | by | the | Catena-X | association |
-| São | Tomé | and | Príncipe | ST |
-| Saudi | Arabia | SA |
+| Saint Lucia | LC |
+| Saint Vincent and the Grenadines | VC |
+| São Tomé and Príncipe | ST |
+| Saudi Arabia | SA |
 | Senegal | SN |
 | Serbia | RS |
 | Seychelles | SC |
-| Solomon | Islands | SB |
+| Solomon Islands | SB |
 | Suriname | SR |
 | Thailand | TH |
 | Timor-Leste | TL |
-| Trinidad | and | Tobago | TT |
+| Trinidad and Tobago | TT |
 | Tunisia | TN |
 | Turkey | TR |
 | Ukraine | UA |
-| United | Arab | Emirates | AE |
+| United Arab Emirates | AE |
 | Uruguay | UY |
 | Vanuatu | VU
