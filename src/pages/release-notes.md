@@ -21,6 +21,7 @@ details to be found [here](/docs/next/operating-model/changelog)
 
 - introduced the official Catena-X ODRL profile including standardized Catena-X policies.
 - adding various pre-defined use case frameworks, e.g. Circular Economy, Demand and Capacity Management, etc.
+- moving China to White List, allowing onboarding of Chinese companies to the Catena-X network
 
 details to be found [here](/docs/next/regulatory-framework/changelog)
 
