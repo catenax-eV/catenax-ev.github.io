@@ -100,6 +100,7 @@ OSPs are responsible for deploying, operating, and maintaining onboarding servic
 
 **Current Limitations:**
 
+- The OSP currently covers only part of the registration process in the Catena-X data space. The currently available process is depicted in figure [General Onboarding Process](./../how-data-space-operations/how-data-space-operations.md#general-onboarding).
 - Offboarding Processes Under Development: Comprehensive offboarding processes are currently in development to ensure that they are as robust as onboarding processes and will be included in future updates. Simple and manual offboarding processes are already available.
 
 ### Enablement Service Provider
