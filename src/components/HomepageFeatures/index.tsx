@@ -28,6 +28,15 @@ const FeatureList: FeatureItem[] = [
     ),
   },
   {
+    title: 'Regulatory Framework',
+    Svg: require('@site/static/img/regulatory-framework-icon.svg').default,
+    description: (
+      <>
+          Here you will find all the information about the <a href="/docs/regulatory-framework/governance-framework">Regulatory Framework</a>.
+      </>
+    ),
+  },
+  {
     title: 'Operating Model',
     Svg: require('@site/static/img/operating-model-icon.svg').default,
     description: (
