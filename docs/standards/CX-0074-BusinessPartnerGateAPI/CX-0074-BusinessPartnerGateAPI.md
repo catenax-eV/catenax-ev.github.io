@@ -1,3 +1,13 @@
+---
+tags:
+  - Portal
+  - Core Service Provider
+  - Sandbox Services (Beta)
+  - Sandbox Service Provider
+  - BPDM
+  - Portal
+---
+
 # CX-0074 Business Partner Data Gate API v3.0.0
 
 ## TABLE OF CONTENTS

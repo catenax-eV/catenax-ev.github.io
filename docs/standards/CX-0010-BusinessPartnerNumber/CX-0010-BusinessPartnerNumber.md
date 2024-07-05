@@ -1,3 +1,10 @@
+---
+tags:
+  - BPDM
+  - Core Service Provider
+  - Sandbox Services (Beta)
+  - Sandbox Service Provider
+---
 
 # CX-0010 Business Partner Number v2.0.0
 

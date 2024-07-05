@@ -1,3 +1,11 @@
+---
+tags:
+  - Marketplace
+  - Core Service Provider
+  - Sandbox Services (Beta)
+  - Sandbox Service Provider
+---
+
 # CX-0054 Application Service Release v1.0.1
 
 ## ABSTRACT

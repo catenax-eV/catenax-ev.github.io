@@ -1,3 +1,14 @@
+---
+tags:
+  - Wallet as a Service
+  - Enablement Service Provider
+  - MIW
+  - Core Service Provider
+  - Identity Wallet
+  - Sandbox Services (Beta)
+  - Sandbox Service Provider
+---
+
 # CX-0149 Verified Company Identity v1.0.0
 
 ## COMPARISON WITH THE PREVIOUS VERSION OF THE STANDARD

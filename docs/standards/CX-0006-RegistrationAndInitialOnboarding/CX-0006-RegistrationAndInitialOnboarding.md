@@ -1,3 +1,14 @@
+---
+tags:
+  - Portal
+  - Core Service Provider
+  - Sandbox Services (Beta)
+  - Sandbox Service Provider
+  - Onboarding Services
+  - Onboarding Service Provider
+  - Onboarding
+---
+
 # CX-0006 Registration and Initial Onboarding v2.0.0
 
 ## ABSTRACT

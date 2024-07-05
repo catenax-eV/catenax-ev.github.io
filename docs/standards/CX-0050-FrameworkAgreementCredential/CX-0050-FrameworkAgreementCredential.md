@@ -1,3 +1,14 @@
+---
+tags:
+  - Wallet as a Service
+  - Enablement Service Provider
+  - MIW
+  - Core Service Provider
+  - Identity Wallet
+  - Sandbox Services (Beta)
+  - Sandbox Service Provider
+---
+
 # CX-0050 Framework Agreement Credential v2.0.0
 
 ## REVISIONS & UPDATE

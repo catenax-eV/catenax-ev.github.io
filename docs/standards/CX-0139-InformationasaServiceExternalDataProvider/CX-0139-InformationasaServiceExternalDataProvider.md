@@ -1,3 +1,9 @@
+---
+tags:
+  - Information as a Service
+  - Third Party Information Provider
+---
+
 # CX-0139 Information as a Service - External Data Provider  v1.0.0
 
 ## ABSTRACT

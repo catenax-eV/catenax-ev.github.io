@@ -1,3 +1,7 @@
+---
+tags:
+  - Provider Base
+---
 
 # CX-0008 Relevant Standards for Conformity Assessments v1.1.0
 
