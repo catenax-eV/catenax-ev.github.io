@@ -10,7 +10,7 @@ export default function DocTagDocListPage(props) {
 
     return (
         <main class="container margin-vert--lg">
-            <h1>Documents with tags: "{tag.label}"</h1>
+            <h1>Documents tagged with: "{tag.label}"</h1>
             <p>{tag.count} documents found</p>
 
         {
