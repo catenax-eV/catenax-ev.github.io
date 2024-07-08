@@ -3,8 +3,6 @@ sidebar_position: 3
 title: Tooling
 ---
 
-This is just a short description about the different tools. The usage of these tools is described in the corresponding [sections](../03-process-from-idea-to-production/03-01-process-from-idea-to-production.md).
-
 ## Microsoft Teams
 
 Microsoft Teams is a good starting point for Expert Groups and Committees. After they are built up, they can decide to use GitHub in a private repository, or MS Team in a private channel.

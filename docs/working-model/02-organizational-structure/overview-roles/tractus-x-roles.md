@@ -14,7 +14,7 @@ It's important to recognize that the role of a contributor is not confined to th
 ### Engagement and Contributions
 
 - **Code Contributions**
-    Contributors may write and submit code patches or new features to the project's codebase. They are encouraged to participate in code reviews and discussions to improve the quality and functionality of their submissions. Make sure you follow the [code contribution guidelines](../../03-process-from-idea-to-production/03-02-Contribution-Guideline.md)
+    Contributors may write and submit code patches or new features to the project's codebase. They are encouraged to participate in code reviews and discussions to improve the quality and functionality of their submissions. Make sure you follow the [code contribution guidelines](../../03-process-structure/overview-processes/contribution-guideline.md)
 - **Documentation**
     Quality documentation is crucial for user adoption and the ongoing success of the project. Contributors can write, edit, or update documentation to ensure that it is clear, comprehensive, and accessible.
 - **Bug Reports**
