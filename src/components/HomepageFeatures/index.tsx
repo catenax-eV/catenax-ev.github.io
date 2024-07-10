@@ -13,40 +13,40 @@ const FeatureList: FeatureItem[] = [
   {
     title: 'Working Model',
     Svg: require('@site/static/img/working-model-icon.svg').default,
-    path: '/docs/next/working-model/overview',
+    path: '/docs/working-model/overview',
     description: (
       <>
-          Here you will find all the information about the <a href="/docs/next/working-model/overview">Working Model</a>.
+          Here you will find all the information about the <a href="/docs/working-model/overview">Working Model</a>.
       </>
     ),
   },
   {
     title: 'Standards',
     Svg: require('@site/static/img/standards-icon.svg').default,
-    path: '/docs/next/standards/overview',
+    path: '/docs/standards/overview',
     description: (
       <>
-          Here you will find all the information about the <a href="/docs/next/standards/overview">Standards</a>.
+          Here you will find all the information about the <a href="/docs/standards/overview">Standards</a>.
       </>
     ),
   },
   {
     title: 'Regulatory Framework',
     Svg: require('@site/static/img/regulatory-framework-icon.svg').default,
-    path: '/docs/next/regulatory-framework/governance-framework',
+    path: '/docs/regulatory-framework/governance-framework',
     description: (
       <>
-          Here you will find all the information about the <a href="/docs/next/regulatory-framework/governance-framework">Regulatory Framework</a>.
+          Here you will find all the information about the <a href="/docs/regulatory-framework/governance-framework">Regulatory Framework</a>.
       </>
     ),
   },
   {
     title: 'Operating Model',
     Svg: require('@site/static/img/operating-model-icon.svg').default,
-    path: '/docs/next/operating-model/why-introduction',
+    path: '/docs/operating-model/why-introduction',
     description: (
       <>
-          Here you will find all the information about the <a href="/docs/next/operating-model/why-introduction">Operating Model</a>.
+          Here you will find all the information about the <a href="/docs/operating-model/why-introduction">Operating Model</a>.
       </>
     ),
   },
