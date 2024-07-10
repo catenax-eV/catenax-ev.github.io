@@ -81,5 +81,5 @@
 }
 
 .col--4 { 
-  --ifm-col-width: 25% !important;
+  --ifm-col-width: 25%;
 }
