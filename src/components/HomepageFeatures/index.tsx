@@ -36,7 +36,7 @@ const FeatureList: FeatureItem[] = [
     path: '/docs/next/regulatory-framework/governance-framework',
     description: (
       <>
-          Here you will find all the information about the <a href="/docs/regulatory-framework/governance-framework">Regulatory Framework</a>.
+          Here you will find all the information about the <a href="/docs/next/regulatory-framework/governance-framework">Regulatory Framework</a>.
       </>
     ),
   },
