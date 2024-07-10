@@ -5,6 +5,7 @@ import styles from './styles.module.css';
 type FeatureItem = {
   title: string;
   Svg: React.ComponentType<React.ComponentProps<'svg'>>;
+  path: string;
   description: JSX.Element;
 };
 
@@ -12,27 +13,27 @@ const FeatureList: FeatureItem[] = [
   {
     title: 'Working Model',
     Svg: require('@site/static/img/working-model-icon.svg').default,
-    path: '/docs/working-model/overview',
+    path: '/docs/next/working-model/overview',
     description: (
       <>
-          Here you will find all the information about the <a href="/docs/working-model/overview">Working Model</a>.
+          Here you will find all the information about the <a href="/docs/next/working-model/overview">Working Model</a>.
       </>
     ),
   },
   {
     title: 'Standards',
     Svg: require('@site/static/img/standards-icon.svg').default,
-    path: '/docs/standards/overview',
+    path: '/docs/next/standards/overview',
     description: (
       <>
-          Here you will find all the information about the <a href="/docs/standards/overview">Standards</a>.
+          Here you will find all the information about the <a href="/docs/next/standards/overview">Standards</a>.
       </>
     ),
   },
   {
     title: 'Regulatory Framework',
     Svg: require('@site/static/img/regulatory-framework-icon.svg').default,
-    path: '/docs/regulatory-framework/overview',
+    path: '/docs/next/regulatory-framework/governance-framework',
     description: (
       <>
           Here you will find all the information about the <a href="/docs/regulatory-framework/governance-framework">Regulatory Framework</a>.
@@ -42,10 +43,10 @@ const FeatureList: FeatureItem[] = [
   {
     title: 'Operating Model',
     Svg: require('@site/static/img/operating-model-icon.svg').default,
-    path: '/docs/operating-model/overview',
+    path: '/docs/next/operating-model/why-introduction',
     description: (
       <>
-          Here you will find all the information about the <a href="docs/operating-model/why-introduction">Operating Model</a>.
+          Here you will find all the information about the <a href="/docs/next/operating-model/why-introduction">Operating Model</a>.
       </>
     ),
   },
@@ -61,11 +62,11 @@ const FeatureList: FeatureItem[] = [
   },
 ];
 
-function Feature({title, Svg, description}: FeatureItem) {
+function Feature({title, path, Svg, description}: FeatureItem) {
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">
-        <a href="{path}"><Svg className={styles.featureSvg} role="img" /></a>
+        <a href={path}><Svg className={styles.featureSvg} role="img" /></a>
       </div>
       <div className="text--center padding-horiz--md">
         <Heading as="h3">{title}</Heading>
