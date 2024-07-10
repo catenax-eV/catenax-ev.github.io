@@ -1,3 +1,11 @@
+---
+tags:
+  - BPDM
+  - Core Service Provider
+  - Sandbox Services (Beta)
+  - Sandbox Service Provider
+---
+
 # CX-0012 Business Partner Data Pool API v4.0.0
 
 ## FOR WHOM IS THE STANDARD DESIGNED

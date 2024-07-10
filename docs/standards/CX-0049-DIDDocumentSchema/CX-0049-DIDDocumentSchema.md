@@ -1,3 +1,10 @@
+---
+tags:
+  - MIW
+  - Core Service Provider
+  - Identity Wallet
+  - Sandbox Services (Beta)
+---
 
 # CX-0049 DID Document v2.0.0
 

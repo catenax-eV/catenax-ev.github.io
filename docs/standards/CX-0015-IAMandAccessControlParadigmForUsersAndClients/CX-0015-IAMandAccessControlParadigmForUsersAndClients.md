@@ -1,3 +1,11 @@
+---
+tags:
+  - Portal
+  - Core Service Provider
+  - Sandbox Services (Beta)
+  - Sandbox Service Provider
+---
+
 # CX-0015 IAM & Access Control Paradigm for Users and Clients v1.0.1
 
 :::info

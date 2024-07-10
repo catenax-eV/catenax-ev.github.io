@@ -1,3 +1,10 @@
+---
+tags:
+  - BPDM
+  - Core Service Provider
+  - Sandbox Services (Beta)
+  - Sandbox Service Provider
+---
 
 # CX-0010 Business Partner Number v2.0.0
 
@@ -110,9 +117,9 @@ A BPNA represents and uniquely identifies an address, which can be the legal add
 
 It is important to note that only the BPNL must be used to uniquely identify a legal entity. Even in the case that the BPNA represents the legal address of the legal entity, it shall not be used to uniquely identify the legal entity.
 
-# 2 BUSINESS PARTNER NUMBER
+## 2 BUSINESS PARTNER NUMBER
 
-## 2.1 BPN
+### 2.1 BPN
 
 The BPN is a unique, unchangeable identifier for business partners from foundation to closure, regardless of the different business relationships / structures between or within the business partners or company locations. It MUST follow the defined syntax and structure:
 
@@ -125,7 +132,7 @@ Further information:
 
 The following input or reading aid SHOULD be used for human readable representation of the BPN: BPNL 1234 5678 90ZZ
 
-## 2.2 Lifecycle
+### 2.2 Lifecycle
 
 The BPNs of a legal entity (BPNL), a site (BPNS), or an address (BPNA) have an own life cycle, depending on the respective status of the legal entity, the site, or the address in the real world.
 
@@ -136,11 +143,11 @@ They MUST follow the status definitions
 - active
 - inactive
 
-## 2.3 Relations
+### 2.3 Relations
 
 There are relations between a legal entity (BPNL), its sites (BPNS), and its addresses (BPNA). Each organization in the real world (such as an enterprise or company, university, association, etc.) is represented by one legal entity. Each legal entity MUST have at least one address which is its legal address. If a site exists it MUST be associated exactly to one legal entity. A legal entity MAY have multiple sites. Each site MUST have at least one address which is its main address. See example under 2.4 for explanation.
 
-## 2.4 Examples
+### 2.4 Examples
 
 Exemplary BPN: BPNL1234567890ZZ
 
@@ -153,7 +160,7 @@ Exemplary BPN: BPNL1234567890ZZ
 Example *ABC Inc.* with its relatedsubstructures:
 ![ABC_INC](./assets/abc-inc.png)
 
-## 2.5 Out of Scope
+### 2.5 Out of Scope
 
 For the following entities a BPN SHALL NOT be issued:
 
@@ -162,31 +169,31 @@ For the following entities a BPN SHALL NOT be issued:
 - elements of (legal) hierarchies (such as business global ultimate)
 - internal unloading points (logistically)
 
-## 2.6 Issuing Agency
+### 2.6 Issuing Agency
 
 The issuing agency is a technical mechanism that centrally assigns BPNs to ensure the highest data quality in the data sharing process. Catena-X e.V. issues a license through which an operating company MUST operate the mechanism to issue further BPNs. BPNs are issued for legal entities, sites, and addresses. The issuing agency is specified in the prefix of the BPN according to ISO/IEC 15459.
 
-### 2.6.1 Building Block View
+#### 2.6.1 Building Block View
 
 The BPDM API receives cleaned data sets from the SaaS Adapter. BPNs are issued centrally. For this purpose, the BPN is assigned on the BPDM side subsequently to the API and the SaaS adapter. The updated data objects are then mirrored back to the other services.
 
 ![Building Block View](./assets/building-block-view.png)
 
-### 2.6.2 Run Time View
+#### 2.6.2 Run Time View
 
 This runtime view illustrates the data sharing mechanism between a sharing member, the SaaS component, including the BPN issuing by the BPN Generator. An actor can be any sharing member that shares data with Catena-X. The new data object is transferred from the enterprise layer of the sharing member to the Catena-X gate. This gate interacts with the API of the SaaS component. The SaaS component fetches information about their synchronization and receives the new data objects in response. The BPN generator issues a BPN, and the data objects are changed accordingly. The SaaS adapter polls the changed data. The updated data objects are then available via standardized APIs.
 
 ![Run Time View](./assets/run-time-view.png)
 
-# 3 REFERENCES
+## 3 REFERENCES
 
-## 3.1 NON-NORMATIVE REFERENCES
+### 3.1 NON-NORMATIVE REFERENCES
 
 > *This section is non-normative*
 
 [BPDM Catena-X Website](https://catena-x.net/en/offers/bpdm)
 
-## 3.2 REFERENCE IMPLEMENTATIONS
+### 3.2 REFERENCE IMPLEMENTATIONS
 
 > *This section is non-normative*
 
@@ -194,20 +201,20 @@ This runtime view illustrates the data sharing mechanism between a sharing membe
 
 [Business Partner Gate API](https://github.com/eclipse-tractusx/bpdm/tree/main/bpdm-gate-api/src/main/kotlin/org/eclipse/tractusx/bpdm/gate/api)
 
-# ANNEXES
+## ANNEXES
 
-## FIGURES
-
-> *This section is non-normative*
-
-Intentionally left blank.
-
-## TABLES
+### FIGURES
 
 > *This section is non-normative*
 
 Intentionally left blank.
 
-## Legal
+### TABLES
+
+> *This section is non-normative*
+
+Intentionally left blank.
+
+### Legal
 
 Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

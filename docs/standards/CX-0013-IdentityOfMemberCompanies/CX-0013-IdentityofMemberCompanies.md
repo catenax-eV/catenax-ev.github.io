@@ -1,3 +1,14 @@
+---
+tags:
+  - Enablement Service Provider
+  - Wallet as a Service
+  - MIW
+  - Core Service Provider
+  - Identity Wallet
+  - Sandbox Services (Beta)
+  - Sandbox Service Provider 
+---
+
 # CX-0013 Identity of Member Company v2.0.0
 
 ## ABSTRACT

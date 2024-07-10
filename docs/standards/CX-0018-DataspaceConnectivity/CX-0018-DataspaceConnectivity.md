@@ -1,3 +1,14 @@
+---
+tags:
+  - Data Provider & Consumer 
+  - Connector
+  - Enablement Service Provider
+  - Connector as a Service
+  - Sandbox Services (Beta)
+  - Sandbox Service Provider
+  
+---
+
 # CX-0018 Dataspace Connectivity v3.0.0
 
 ## ABSTRACT
