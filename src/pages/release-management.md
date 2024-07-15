@@ -60,4 +60,4 @@ To reduce certification efforts, the grace period for switching from one major v
 
 ## Further information
 
-This page summarizes the most important points for release management. Further information can be found in the Operating Model [How: Life Cycle Management](./../../docs/operating-model/how-life-cycle-management/how-life-cycle-management.md).
+This page summarizes the most important points for release management. Further information can be found in the Operating Model [How: Life Cycle Management](/docs/operating-model/how-life-cycle-management).
