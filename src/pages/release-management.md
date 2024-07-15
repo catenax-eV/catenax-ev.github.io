@@ -57,3 +57,7 @@ We are switching from calendar versioning (CalVer) to versioning with planet nam
 The versioning of artifacts such as standards, normative documents, KITs or reference implementations is still done via semantic versioning.
 
 To reduce certification efforts, the grace period for switching from one major version to the next major version from the Jupiter version onwards is still one year - see overlap Jupiter [maintained] and Mars [current] in the timeline. The validity of certification can be up to 24 months.
+
+## Further information
+
+This page summarizes the most important points for release management. Further information can be found in the Operating Model [How: Life Cycle Management](./../../docs/operating-model/how-life-cycle-management/how-life-cycle-management.md).
