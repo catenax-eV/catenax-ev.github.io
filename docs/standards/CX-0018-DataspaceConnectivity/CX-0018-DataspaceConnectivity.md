@@ -1,11 +1,10 @@
 ---
 tags:
-  - 'UC/Data Provider & Consumer'
-  - 'CAT/Connector'
-  - Enablement Service Provider
-  - Connector as a Service
-  - Sandbox Services (Beta)
-  - Sandbox Service Provider
+  - CAT/Data Provider & Consumer
+  - CAT/Connector
+  - CAT/Enablement Service Provider
+  - CAT/Connector as a Service
+  - CAT/Sandbox Services (Beta)
   
 ---
 

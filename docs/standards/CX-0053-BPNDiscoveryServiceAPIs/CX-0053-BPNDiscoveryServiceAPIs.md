@@ -1,10 +1,9 @@
 ---
 tags:
-  - Portal
-  - Core Service Provider
-  - Sandbox Services (Beta)
-  - Sandbox Service Provider
-  - BPDM
+  - CAT/Portal
+  - CAT/Core Service Provider
+  - CAT/Sandbox Services (Beta)
+  - CAT/BPDM
 ---
 
 # CX-0053 Discovery Finder and BPN Discovery Service APIs v1.1.0

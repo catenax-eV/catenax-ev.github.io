@@ -1,11 +1,10 @@
 ---
 tags:
-  - Portal
-  - Core Service Provider
-  - Sandbox Services (Beta)
-  - Sandbox Service Provider
-  - BPDM
-  - Portal
+  - CAT/Portal
+  - CAT/Core Service Provider
+  - CAT/Sandbox Services (Beta)
+  - CAT/BPDM
+  - CAT/Portal
 ---
 
 # CX-0074 Business Partner Data Gate API v3.0.0

@@ -3,27 +3,25 @@ sidebar_position: 1
 title: Overview Standards
 sidebar_class_name: separator-bottom
 tags:
-  - BPDM
-  - Connector
-  - Connector as a Service
-  - Core Service Provider
-  - Data Provider & Consumer
-  - Digital Twin
-  - Digital Twin Registry
-  - Digital Twin Registry aaS
-  - Enablement Service Provider
-  - Identity Wallet
-  - Information as a Service
-  - Marketplace
-  - MIW
-  - Onboarding
-  - Onboarding Service Provider
-  - Onboarding Services
-  - Portal
-  - Provider Base
-  - Sandbox Service Provider
-  - Sandbox Services (Beta)
-  - Semantic
-  - Third Party Information Provider
-  - Wallet as a Service
+  - CAT/BPDM
+  - CAT/Connector
+  - CAT/Connector as a Service
+  - CAT/Core Service Provider
+  - CAT/Data Provider & Consumer
+  - CAT/Digital Twin
+  - CAT/Digital Twin Registry
+  - CAT/Enablement Service Provider
+  - CAT/Identity Wallet
+  - CAT/Information as a Service
+  - CAT/Marketplace
+  - CAT/MIW
+  - CAT/Onboarding
+  - CAT/Onboarding Service Provider
+  - CAT/Onboarding Services
+  - CAT/Portal
+  - CAT/Provider Base
+  - CAT/Sandbox Service Provider
+  - CAT/Sandbox Services (Beta)
+  - CAT/Semantic
+  - CAT/Third Party Information Provider
 ---
