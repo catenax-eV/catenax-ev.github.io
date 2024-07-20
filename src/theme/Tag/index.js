@@ -10,18 +10,15 @@ import Link from '@docusaurus/Link';
 import styles from './styles.module.css';
 
 function getTagType(str){
-  switch(str.substring(0, str.indexOf("/"))){
+  switch(str){
     case "CAT": return styles.tagCAT;
     case "UC": return styles.tagUC;
     default: return;
   }
 }
 
-function getCleanedTag(str){
-  return str.split('/').pop();
-}
+export default function Tag({permalink, label, count, description, type}) {
 
-export default function Tag({permalink, label, count, description}) {
   return (
     <Link
       href={permalink}
@@ -29,9 +26,9 @@ export default function Tag({permalink, label, count, description}) {
       className={clsx(
         styles.tag,
         count ? styles.tagWithCount : styles.tagRegular,
-        getTagType(label)
+        getTagType(type)
       )}>
-      {getCleanedTag(label)}
+      {label}
       {count && <span>{count}</span>}
     </Link>
   );
