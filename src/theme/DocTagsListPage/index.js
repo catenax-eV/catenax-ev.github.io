@@ -33,6 +33,7 @@ function DocTagsListPageMetadata({title}) {
   );
 }
 function DocTagsListPageContent({tags, title}) {
+
   return (
     <HtmlClassNameProvider
       className={clsx(ThemeClassNames.page.docsTagsListPage)}>

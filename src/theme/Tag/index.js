@@ -9,7 +9,7 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import styles from './styles.module.css';
 
-function getTagType(str){
+function getStyleTagByType(str){
   switch(str){
     case "CAT": return styles.tagCAT;
     case "UC": return styles.tagUC;
@@ -17,7 +17,19 @@ function getTagType(str){
   }
 }
 
+function getTagType(str){
+  return str.substring(0, str.indexOf("/"));
+}
+
+function getCleanedTag(str){
+  return str.split('/').pop();
+}
+
 export default function Tag({permalink, label, count, description, type}) {
+
+  // if type of tag is empty, then assign type
+  type = type ? type : getTagType(label);
+  label = getCleanedTag(label);
 
   return (
     <Link
@@ -26,7 +38,7 @@ export default function Tag({permalink, label, count, description, type}) {
       className={clsx(
         styles.tag,
         count ? styles.tagWithCount : styles.tagRegular,
-        getTagType(type)
+        getStyleTagByType(type)
       )}>
       {label}
       {count && <span>{count}</span>}
