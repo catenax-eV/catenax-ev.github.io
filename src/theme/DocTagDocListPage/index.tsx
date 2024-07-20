@@ -57,7 +57,7 @@ function usePageTitle(props: Props): string {
 
 function DocItem({doc}: {doc: Props['tag']['items'][number]}): JSX.Element {
   return (
-    <article className={styles.article}>
+    <article>
       <Link to={doc.permalink}>
         <Heading as="h2">{doc.title}</Heading>
       </Link>
@@ -107,25 +107,6 @@ function DocTagDocListPageContent({
     </HtmlClassNameProvider>
   );
 }
-
-/*
-    return (
-        <main className="container margin-vert--lg">
-            <h1>Documents tagged with: "{tag.label}"</h1>
-            <p>{tag.count} documents found</p>
-            {
-                tag.items.map((item, index) => {
-                    return (
-                        <article class={styles.result}>
-                            <a href={item.permalink}><h2>{item.title}</h2></a>
-                            <p class={styles.resDescription}>{item.description}</p>
-                        </article>
-                    )
-                })
-            }
-        </main>
-    );
-*/
 
 export default function DocTagDocListPage(props: Props): JSX.Element {
   const title = usePageTitle(props);

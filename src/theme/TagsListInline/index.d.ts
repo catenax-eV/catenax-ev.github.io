@@ -6,5 +6,5 @@
  */
 /// <reference path="../../../src/theme-classic.d.ts" />
 /// <reference types="react" />
-import type { Props } from '@theme/Tag';
-export default function Tag({ permalink, label, count, description, type, }: Props): JSX.Element;
+import type { Props } from '@theme/TagsListInline';
+export default function TagsListInline({ tags }: Props): JSX.Element;

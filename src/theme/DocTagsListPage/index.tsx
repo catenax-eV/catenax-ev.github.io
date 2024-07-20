@@ -39,7 +39,7 @@ function DocTagsListPageContent({tags, title}) {
       className={clsx(ThemeClassNames.page.docsTagsListPage)}>
       <div className="container margin-vert--lg">
         <div className="row">
-          <main className="col col--8 col--offset-2">
+          <main>
             <Heading as="h1">{title}</Heading>
             <TagsListByLetter tags={tags} />
           </main>
