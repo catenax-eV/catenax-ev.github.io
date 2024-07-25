@@ -9,6 +9,8 @@ hide_table_of_contents: true
 
 Catena-X is committed to operating in compliance with all applicable laws and regulations, and we recognize the importance of transparency and accountability in our data space operations. To that end, we continue to develop a holistic Governance Framework that outlines the requirements and responsibilities for all stakeholders involved in our activities.
 
+Maintaining and updating our Regulatory Framework for data space operations lies within the responsibility of the Catena-X Association.
+
 Our Governance Framework for data space operations is designed to follow the highest standards of legal conduct. It includes detailed information on data sovereignty, mandatory use case requirements, and other legal considerations that are relevant to our activities.
 
 To easily grasp the layers of our Governance Framework, think of flight level as a metaphor. The 30,000ft level provides the overall framework; 20,000ft is for specific use cases, 10,000ft for individual data offerings, and 5,000ft for automated contract negotiations. Each higher-level cascades into the lower ones, and the lower levels align with those above.
