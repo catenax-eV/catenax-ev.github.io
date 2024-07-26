@@ -43,6 +43,9 @@ const config: Config = {
             current: {
               label: 'Jupiter (preview)',
             },
+            '24.03': {
+              label: '24.03 (current)',
+            },
           },
         },
         theme: {
