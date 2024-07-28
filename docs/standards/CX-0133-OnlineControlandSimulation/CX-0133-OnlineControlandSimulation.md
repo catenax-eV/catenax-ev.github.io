@@ -1,4 +1,4 @@
-# CX-0133 Online Control and Simulation 1.1.0
+# CX-0133 Online Control and Simulation 2.0.0
 
 ## ABSTRACT
 
@@ -52,9 +52,9 @@ The core business logic described in this document enables companies to share da
 - Early consideration of external disturbances/events on the process
 - Validation of potential changes in advance of implementation
 
-The following picture depict the rough architecture of OSim:
+The following picture depicts the rough architecture of OSim:
 
-![image2023-8-21_16-1-19.png](./assets/image2023-8-21_16-1-19.png)
+![OSim Architecture](./assets/image2023-8-21_16-1-19.png)
 
 This standardization defines the data models MaterialFlowSimulationResult and MaterialFlowScenarioRequest for the Catena-X network. This standard ensures that information out of these models can be consumed through the Catena-X network by all OSim partners and ensures, that the data objects from different OSim partner can be handled and interpreted in an identical manner.
 
@@ -102,7 +102,7 @@ Moreover this standardization defines the APIs requestLatestSimulationResult, re
 
 The following example shows a basic exchange of simulation results in the OSim partner network of the manufacturing company Werk-76.
 
-![example.png](./assets/example.png)
+![Werk-76](./assets/example.png)
 
 A request is made from Werk-76 to the logistics company Log-07 as to whether a newer simulation result is available. The logistics company Log-07 then transmits directly its latest simulation results to the data recipient Werk-76, filtered to the records relevant to Werk-76. In case no simulation result is currently available, Log-07 sends a dedicated return value to the data consumer.
 
@@ -114,7 +114,7 @@ Now, taking into account the values received from the direct partners (including
 
 The following picture shows an example for one possible flow of OSim Scenario Management. In this example a supplier wants to verify the impact on his successors in case of potential stop of one manufacturing line for maintenance next Friday.
 
-![image-2023-11-14_11-32-9-1.png](./assets/image-2023-11-14_11-32-9-1.png)
+![Scenario Flow](./assets/image-2023-11-14_11-32-9-1.png)
 
 In scenario management, a distinction is made between 4 different types of scenarios:
 
@@ -125,7 +125,7 @@ In scenario management, a distinction is made between 4 different types of scena
 
 In this way every OSim network partner can initiate a "What-If" scenario.
 
-In the example above the request is made by a supplier, who is simulating the impact on the own production and sending a request for confirmation to the affected partner. This partner can evaluate the own impact using the simulation capabilities and send a reply to the scenario initiator. Alternatively he could also forward the scenario request to the next level in the supply chain.
+In the example above the request is made by a supplier, who is simulating the impact on the own production and sending a request for confirmation to the affected partner. This partner can evaluate the own impact using the simulation capabilities and send a reply to the scenario initiator. Alternatively, he could also forward the scenario request to the next level in the supply chain.
 
 Thus, the principle of scenario management is a sequence of requests, each of which is acknowledged with confirmation.
 
@@ -137,47 +137,59 @@ The following data set shows an example for a MaterialFlowSimulationResult which
 
 ```json
 {
-  "owner": { "id": "BPNL00000007OTZ3" },
-  "dataQuality": 1,
-  "description": "Daily standard simulation",
-  "comment": "successful simulation",
-  "expirationTimestamp": "2023-03-24T09:15:24.000Z",
-  "runId": "0fece48b-c8d1-4180-1a9caca6d67e",
-  "shipments": [
-    {
-      "handlingUnits": [
-        {
-          "name": "Palette",
-          "volume": 1,
-          "weight": 189,
-          "batches": [
-            {
-              "unitOfMeasurement": "KG",
-              "materialName": "KK1000GR-Gehäuse-Rot",
-              "quantity": 50,
-              "materialNumber": "KK1000GR",
-              "batchOrderId": "Order-0001",
-              "batchId": "Batch_1",
-              "hazardousGoods": false,
-              "batchExpirationTimestamp": "2023-08-22T16:00:00.000Z",
-              "batchNumber": "45"
-            }
-          ],
-          "handlingUnitId": "HUT_1",
-          "amount": 1
-        }
-      ],
-      "shipmentId": "DE51515151",
-      "recipientTimestampPlanned": "2023-04-19T09:00:00.000Z",
-      "destination": { "id": "BPNL00000007OTZ3" },
-      "recipient": { "id": "BPNL00000007OTZ4" },
-      "logistics": { "id": "BPNL00000007OS0H" },
-      "preceding": {},
-      "splittingAllowed": true,
-      "destinationTimestamp": "2023-03-19T09:00:00.000Z"
-    }
-  ],
-  "timestamp": "2023-03-09T14:13:42.806Z"
+  "materialFlowSimulationResult": {
+    "owner": {
+      "bpnsProperty": "BPNS0123456789ZZ"
+    },
+    "dataQuality": 0,
+    "description": "Please simulate asap",
+    "comment": "successful simulation ",
+    "expirationTimestamp": "2023-03-24T09:15:24.000Z",
+    "runId": "0fece48b-c8d1-4180-1a9caca6d67e",
+    "shipments": [
+      {
+        "handlingUnits": [
+          {
+            "name": "Palette",
+            "volume": 1,
+            "weight": 189,
+            "batches": [
+              {
+                "unitOfMeasurement": "KG",
+                "materialName": "KK1000GR-Gehäuse-Rot",
+                "quantity": 0,
+                "materialNumber": "KK1000GR",
+                "materialHazardousGoods": false,
+                "batchSerialNumber": "Batch_1",
+                "batchOrderId": "Order-0001",
+                "batchExpirationTimestamp": "2023-08-22T16:00:00.000Z",
+                "batchNumber": "45"
+              }
+            ],
+            "handlingUnitId": "HUT_1",
+            "amount": 1
+          }
+        ],
+        "shipmentId": "DE51515151",
+        "recipientTimestampPlanned": "2023-04-19T09:00:00.000Z",
+        "destination": {
+          "bpnsProperty": "BPNS0123456789ZZ"
+        },
+        "recipient": {
+          "bpnsProperty": "BPNS0123456789ZZ"
+        },
+        "logistics": {
+          "bpnsProperty": "BPNS0123456789ZZ"
+        },
+        "preceding": {
+          "bpnsProperty": "BPNS0123456789ZZ"
+        },
+        "splittingAllowed": true,
+        "destinationTimestamp": "2023-03-19T09:00:00.000Z"
+      }
+    ],
+    "timestamp": "2023-03-09T14:13:42.806Z"
+  }
 }
 ```
 
@@ -191,7 +203,9 @@ The following data set shows an example for a MaterialFlowScenarioRequest which 
     "scenarioSimResults": {
       "resultOwnId": "916b5688-8bd8-4d7e-83b9-e0d40939274e",
       "resultOwnSimRunInitial": {
-        "owner": {},
+        "owner": {
+          "bpnsProperty": "BPNS0123456789ZZ"
+        },
         "dataQuality": 0,
         "description": "Please simulate asap",
         "comment": "successful simulation ",
@@ -208,11 +222,11 @@ The following data set shows an example for a MaterialFlowScenarioRequest which 
                   {
                     "unitOfMeasurement": "KG",
                     "materialName": "KK1000GR-Gehäuse-Rot",
-                    "quantity": 50,
+                    "quantity": 0,
                     "materialNumber": "KK1000GR",
                     "materialHazardousGoods": false,
+                    "batchSerialNumber": "Batch_1",
                     "batchOrderId": "Order-0001",
-                    "batchId": "Batch_1",
                     "batchExpirationTimestamp": "2023-08-22T16:00:00.000Z",
                     "batchNumber": "45"
                   }
@@ -223,10 +237,18 @@ The following data set shows an example for a MaterialFlowScenarioRequest which 
             ],
             "shipmentId": "DE51515151",
             "recipientTimestampPlanned": "2023-04-19T09:00:00.000Z",
-            "destination": { "id": "BPNL00000SR7OTZ3" },
-            "recipient": { "id": "BPNL00000SR7OTZ1" },
-            "logistics": { "id": "BPNL00000SR7OTZ7" },
-          "preceding": {},
+            "destination": {
+              "bpnsProperty": "BPNS0123456789ZZ"
+            },
+            "recipient": {
+              "bpnsProperty": "BPNS0123456789ZZ"
+            },
+            "logistics": {
+              "bpnsProperty": "BPNS0123456789ZZ"
+            },
+            "preceding": {
+              "bpnsProperty": "BPNS0123456789ZZ"
+            },
             "splittingAllowed": true,
             "destinationTimestamp": "2023-03-19T09:00:00.000Z"
           }
@@ -234,7 +256,9 @@ The following data set shows an example for a MaterialFlowScenarioRequest which 
         "timestamp": "2023-03-09T14:13:42.806Z"
       },
       "resultOwnSimRunUpdated": {
-        "owner": {},
+        "owner": {
+          "bpnsProperty": "BPNS0123456789ZZ"
+        },
         "dataQuality": 0,
         "description": "Please simulate asap",
         "comment": "successful simulation ",
@@ -251,11 +275,11 @@ The following data set shows an example for a MaterialFlowScenarioRequest which 
                   {
                     "unitOfMeasurement": "KG",
                     "materialName": "KK1000GR-Gehäuse-Rot",
-                    "quantity": 50,
+                    "quantity": 0,
                     "materialNumber": "KK1000GR",
                     "materialHazardousGoods": false,
+                    "batchSerialNumber": "Batch_1",
                     "batchOrderId": "Order-0001",
-                    "batchId": "Batch_1",
                     "batchExpirationTimestamp": "2023-08-22T16:00:00.000Z",
                     "batchNumber": "45"
                   }
@@ -266,10 +290,18 @@ The following data set shows an example for a MaterialFlowScenarioRequest which 
             ],
             "shipmentId": "DE51515151",
             "recipientTimestampPlanned": "2023-04-19T09:00:00.000Z",
-            "destination": { "id": "BPNL00000SR7OTZ3" },
-            "recipient": { "id": "BPNL00000SR7OTZ1" },
-            "logistics": { "id": "BPNL00000SR7OTZ7" },
-          "preceding": {},
+            "destination": {
+              "bpnsProperty": "BPNS0123456789ZZ"
+            },
+            "recipient": {
+              "bpnsProperty": "BPNS0123456789ZZ"
+            },
+            "logistics": {
+              "bpnsProperty": "BPNS0123456789ZZ"
+            },
+            "preceding": {
+              "bpnsProperty": "BPNS0123456789ZZ"
+            },
             "splittingAllowed": true,
             "destinationTimestamp": "2023-03-19T09:00:00.000Z"
           }
@@ -277,24 +309,27 @@ The following data set shows an example for a MaterialFlowScenarioRequest which 
         "timestamp": "2023-03-09T14:13:42.806Z"
       }
     },
-    "scenarioParameter": {
-      "unitOfMeasurement": "KG",
-      "parameterScenario": "8d464b8b-6977-4952-8a22-0489067ca081",
-      "parameterComment": "updated Delivery Date",
-      "materialName": "KK1000GR-Gehäuse-Rot",
-      "parameterQuantityUpdated": 1,
-      "parameterId": "847c71e5-614a-468b-a3a0-674bf2af3004",
-      "materialNumber": "KK1000GR",
-      "parameterDeliveryDateUpdated": "2023-10-10T09:00:00.000Z",
-      "parameterDeliveryDateInitial": "2023-10-09T10:00:00.000Z",
-      "parameterOrderId": "OID-011123546",
-      "parameterQuantityInitial": 1
-    },
+    "scenarioParameter": [
+      {
+        "unitOfMeasurement": "KG",
+        "parameterComment": "updated Delivery Date",
+        "materialName": "KK1000GR-Gehäuse-Rot",
+        "parameterQuantityUpdated": 1,
+        "parameterId": "847c71e5-614a-468b-a3a0-674bf2af3004",
+        "materialNumber": "KK1000GR",
+        "parameterDeliveryDateUpdated": "2023-10-10T09:00:00.000Z",
+        "parameterDeliveryDateInitial": "2023-10-09T10:00:00.000Z",
+        "parameterOrderId": "OID-011123546",
+        "parameterQuantityInitial": 1
+      }
+    ],
     "scenarioHeader": {
       "scenarioOwnerRole": "Customer",
       "scenarioCreationTimestamp": "2023-10-04T09:10:00.000Z",
       "scenarioExpirationTimestamp": "2023-10-07T09:10:00.000Z",
-      "scenarioOwner": "BPNL00000007OTZ3",
+      "scenarioOwner": {
+        "bpnsProperty": "BPNS0123456789ZZ"
+      },
       "scenarioDescription": "Changes in Delivery Date",
       "scenarioId": "8d464b8b-6977-4952-8a22-0489067ca081",
       "scenarioTitle": "Delivery Modification"
@@ -313,13 +348,13 @@ The execution of the endpoint which is used as the base URL in the asset definit
 
 Example:
 
-**Base URL of endpoint**: http://\{internal-server\}/requestLatestSimulationResult
+**Base URL of endpoint**: http://\{internal-server\}/requestLatestSimulationResultg
 
 **URL executed to data plane in consumer edc**: http://\{dataplane-url\}/api/public/bpns/bbf461bf-28d5-4fc2-95fa-7697eb122f48/requestId/8d628899-3e6f-4666-91c3-74ee7ab88b2b/simulationRunId/50737df3-4237-4652-b092-1ef8649f6ca6
 
 **URL executed to endpoint at receiver of request of simulation result:** http://\{internal-server\}/requestLatestSimulationResult/bpns/bbf461bf-28d5-4fc2-95fa-7697eb122f48/requestId/8d628899-3e6f-4666-91c3-74ee7ab88b2b/simulationRunId/50737df3-4237-4652-b092-1ef8649f6ca6
 
-The *requestLatestSimulationResult* MUST be sent from the requestor of simulation results to the producer of simulation results using an HTTP GET request.
+The *requestLatestSimulationResult* API call is sent from the requestor of simulation results to the producer of simulation results using an HTTP GET request.
 
 ##### 1.4.3.2 Example for receiveLatestSimulationResult
 
@@ -335,7 +370,7 @@ Example:
 
 **URL executed to endpoint at producer of simulation result:** http://\{internal-server\}/receiveLatestSimulationResult/requestId/8d628899-3e6f-4666-91c3-74ee7ab88b2b
 
-The *receiveLatestSimulationResult* data MUST be sent from the provider of simulation results to the consumer of simulation results using an HTTP POST request.
+The *receiveLatestSimulationResult* API call is sent from the provider of simulation results to the consumer of simulation results using an HTTP POST request.
 
 ##### 1.4.3.3 Example for requestScenarioFeedback
 
@@ -351,7 +386,7 @@ Example:
 
 **URL executed to endpoint at producer of scenario feedback request:** http://\{internal-server\}/requestScenarioFeedback/requestId/8d628899-3e6f-4666-91c3-74ee7ab88b2b
 
-The *requestScenarioFeedback* data MUST be sent from the requestor of simulation results to the producer of simulation results using an HTTP POST request.
+The *requestScenarioFeedback* API call is sent from the requestor of simulation results to the producer of simulation results using an HTTP POST request.
 
 ##### 1.4.3.4 Example for receiveScenarioFeedback
 
@@ -365,7 +400,7 @@ Example:
 
 **URL executed to endpoint at producer of simulation result:** http://\{internal-server\}/receiveScenarioFeedback/requestId/8d628899-3e6f-4666-91c3-74ee7ab88b2b/bpns/bbf461bf-28d5-4fc2-95fa-7697eb122f48/scenarioId/8d464b8b-6977-4952-8a22-0489067ca081/feedback/Realizable
 
-The *receiveScenarioFeedback* data MUST be sent from the provider of simulation results to the consumer of simulation results using an HTTP GET request.
+The *receiveScenarioFeedback* API call is sent from the provider of simulation results to the consumer of simulation results using an HTTP GET request.
 
 ##### 1.4.3.5 Example for pushScenarioState
 
@@ -379,7 +414,7 @@ Example:
 
 **URL executed to endpoint at receiver of scenario state:** http://\{internal-server\}/pushScenarioState/requestId/8d628899-3e6f-4666-91c3-74ee7ab88b2b/bpns/bbf461bf-28d5-4fc2-95fa-7697eb122f48/scenarioId/8d464b8b-6977-4952-8a22-0489067ca081/state/InRealization
 
-The *pushScenarioState* data MUST be sent from the provider of scenario state to the consumer of scenario state using an HTTP GET request.
+The *pushScenarioState* API call is sent from the provider of scenario state to the consumer of scenario state using an HTTP POST request.
 
 ### 1.5 TERMINOLOGY
 
@@ -401,7 +436,7 @@ Logistician : In the context of OSim the Logistician transports the produced goo
 
 OSim-Network construction and Tier-Levels : The following picture depicts a principal construction of a OSim Network from a global perspective (not to be confused with a participant perspective, which is always a limited view to the one-up and one-down levels, logistician disregarded).
 
-![TierLevels.png](./assets/TierLevels.png)
+![Tier Levels](./assets/TierLevels.png)
 
 It consists of many tier companies (e.g. S1..S7) on different levels (e.g. Tier-1, Tier-2, Tier-n, Tier-n+1) with logistician companies in between (e.g. L1 .. L8). Depend on the complexity of the logistics between two producers it is not excluded that more than one logistician are in the chain (e.g. L1 -> L2 or L1 -> L3 -> L4)
 
@@ -424,7 +459,7 @@ MaterialFlowSimulationResult : The MaterialFlowSimulationResult is the data mode
 
 Note: Typically there is not only one own simulation result available in the single systems of suppliers or logisticians. For this it is RECOMMENDED to introduce in the single systems a state machine, allowing to identify the for publishing relevant status. For example:
 
-![MaterialFlowSimulationResult.png](./assets/MaterialFlowSimulationResult.png)
+![States](./assets/MaterialFlowSimulationResult.png)
 
 simulationRunID : The simulationRunID is the unique identifier of a simulation result
 
@@ -449,7 +484,7 @@ Additional terminology used in this standard can be looked up in the glossary on
 *The following Catena-X standards are prerequisite for the implementation of this standard and therefore MUST be considered / implemented by the relevant parties specified in each of them.*
 
 - *CX-0001 EDC Discovery API Version 1.0.2*
-- *CX-0003 SAMM Aspect Meta Model Version 1.1.0 or 1.0.2*
+- *CX-0003 SAMM Aspect Meta Model Version 1.1.0*
 - *CX-0018 Dataspace Connectivity Version 3.0.0*
 
 The here mentioned combinations of standards and versions apply to all following chapters.
@@ -502,7 +537,7 @@ The JSON Payload of data providers MUST be conformant to the JSON Schema as spec
 
 The modeling of the semantic model specified in this document was done in accordance to the "semantic driven workflow" to create a submodel template specification.
 
-This aspect model is written in SAMM 2.0.0 as a modeling language conformant to [CX-0003](#211-list-of-standalone-standards) as input for the semantic driven workflow.
+This aspect model is written in SAMM 2.1.0 as a modeling language conformant to [CX-0003](#211-list-of-standalone-standards) as input for the semantic driven workflow.
 
 Like all Catena-X data models, this model is available in a machine-readable format on GitHub conformant to [CX-0003](#211-list-of-standalone-standards).
 
@@ -515,7 +550,7 @@ This Catena-X data model is made available under the terms of the Creative Commo
 The semantic model has the unique identifier
 
 ```text
-    urn:samm.io.catenax.material_flow_simulation_result:2.0.0
+    urn:samm.io.catenax.material_flow_simulation_result:3.0.0
 ```
 
 This identifier MUST be used by the data provider to define the semantics of the data being transferred.
@@ -527,7 +562,7 @@ This identifier MUST be used by the data provider to define the semantics of the
 The rdf turtle file, an instance of the Semantic Aspect Meta Model, is the master for generating additional file formats and serializations.
 
 ```text
-<https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.material_flow_simulation_result/2.0.0/MaterialFlowSimulationResultAspect.ttl>
+<https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.material_flow_simulation_result/3.0.0/MaterialFlowSimulationResultAspect.ttl>
 ```
 
 The open source command line tool of the Eclipse Semantic Modeling Framework is used for generation of other file formats like for example a JSON Schema, aasx for Asset Administration Shell Submodel Template or a HTML documentation.
@@ -537,7 +572,7 @@ The open source command line tool of the Eclipse Semantic Modeling Framework is 
 A JSON Schema can be generated from the RDF Turtle file. The JSON Schema defines the Value-Only payload of the Asset Administration Shell for the API operation "GetSubmodel".
 
 ```text
-<https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.material_flow_simulation_result/2.0.0/gen/MaterialFlowSimulationResultAspect-schema.json>
+<https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.material_flow_simulation_result/3.0.0/gen/MaterialFlowSimulationResultAspect-schema.json>
 ```
 
 ##### 3.1.5.3 AASX
@@ -545,7 +580,7 @@ A JSON Schema can be generated from the RDF Turtle file. The JSON Schema defines
 An AASX file can be generated from the RDF Turtle file. The AASX file defines one of the requested artifacts for a Submodel Template Specification.
 
 ```text
-<https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.material_flow_simulation_result/2.0.0/gen/MaterialFlowSimulationResultAspect.aasx>
+<https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.material_flow_simulation_result/3.0.0/gen/MaterialFlowSimulationResultAspect.aasx>
 ```
 
 ### 3.2 ASPECT MODEL "MaterialFlowScenarioRequest"
@@ -580,7 +615,7 @@ The JSON Payload of data providers MUST be conformant to the JSON Schema as spec
 
 The modeling of the semantic model specified in this document was done in accordance to the "semantic driven workflow" to create a submodel template specification.
 
-This aspect model is written in SAMM 2.0.0 as a modeling language conformant to [CX-0003](#211-list-of-standalone-standards) as input for the semantic driven workflow.
+This aspect model is written in SAMM 2.1.0 as a modeling language conformant to [CX-0003](#211-list-of-standalone-standards) as input for the semantic driven workflow.
 
 Like all Catena-X data models, this model is available in a machine-readable format on GitHub conformant to [CX-0003](#211-list-of-standalone-standards).
 
@@ -593,7 +628,7 @@ This Catena-X data model is made available under the terms of the Creative Commo
 The semantic model has the unique identifier
 
 ```text
-urn:samm:io.catenax.material_flow_scenario_request:1.0.0
+urn:samm:io.catenax.material_flow_scenario_request:2.0.0
 ```
 
 This identifier MUST be used by the data provider to define the semantics of the data being transferred.
@@ -605,7 +640,7 @@ This identifier MUST be used by the data provider to define the semantics of the
 The rdf turtle file, an instance of the Semantic Aspect Meta Model, is the master for generating additional file formats and serializations.
 
 ```text
-<https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.material_flow_scenario_request/1.0.0/MaterialFlowScenarioRequestAspect.ttl>
+<https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.material_flow_scenario_request/2.0.0/MaterialFlowScenarioRequestAspect.ttl>
 ```
 
 The open source command line tool of the Eclipse Semantic Modeling Framework is used for generation of other file formats like for example a JSON Schema, aasx for Asset Administration Shell Submodel Template or a HTML documentation.
@@ -615,7 +650,7 @@ The open source command line tool of the Eclipse Semantic Modeling Framework is 
 A JSON Schema can be generated from the RDF Turtle file. The JSON Schema defines the Value-Only payload of the Asset Administration Shell for the API operation "GetSubmodel".
 
 ```text
-<https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.material_flow_scenario_request/1.0.0/gen/MaterialFlowScenarioRequestAspect-schema.json>
+<https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.material_flow_scenario_request/2.0.0/gen/MaterialFlowScenarioRequestAspect-schema.json>
 ```
 
 ##### 3.2.5.3 AASX
@@ -623,7 +658,7 @@ A JSON Schema can be generated from the RDF Turtle file. The JSON Schema defines
 An AASX file can be generated from the RDF Turtle file. The AASX file defines one of the requested artifacts for a Submodel Template Specification.
 
 ```text
-<https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.material_flow_scenario_request/1.0.0/gen/MaterialFlowScenarioRequestAspect.aasx>
+<https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.material_flow_scenario_request/2.0.0/gen/MaterialFlowScenarioRequestAspect.aasx>
 ```
 
 ## 4 APPLICATION PROGRAMMING INTERFACES
@@ -651,7 +686,7 @@ The underlying business process is described and standardized in OSim Process & 
 
 The following picture explains the general principals of the API interactions:
 
-![api-interactions.svg](./assets/api-interactions.svg)
+![API Interactions](./assets/api-interactions.svg)
 
 #### 4.1.2 Scenario flow
 
@@ -724,7 +759,7 @@ The HTTP GET endpoint introduced in chapter [4.2.2.1 API Endpoints & resources](
 
 - The asset definition MUST have a property “@id”. This property MUST be used to identify the asset when searching the assets catalog of a supplier as well as initiating a transfer process. Because the asset reflects the contractual relationship between OSim partners, only one asset with the aforementioned property MUST be visible to the customer at any time to avoid ambiguity. The value for this property can be chosen freely but must be unique.
 - The asset definition SHOULD contain a property “description” as a sub property of "properties" with a "value" for a human readable description of the asset when providing the contract offer catalog for the consumer and make it easier and readable for a human what kind of data this asset contains.
-- The asset definition MUST have a property “dataAddress”."baseUrl" with a value containing the URL of the endpoint where the function **“requestlatestsimulationresult”** is implemented.
+- The asset definition MUST have a property “dataAddress”."baseUrl" with a value containing the URL of the endpoint where the function **"requestlatestsimulationresult"** is implemented.
 - Additionally, the dataAddress property MUST contain the parameter proxyPath with a value set to TRUE to enable the possibility to use the EDC as a reverse proxy by adding parameters to the URL.
 
 The API version described in this standard document MUST be published in the property `<https://w3id.org/catenax/ontology/common#version>` as version 2.0 in the asset. The requester of an asset MUST be able to handle multiple assets for this endpoint, being differentiated only by the version. The requester SHOULD choose the asset with the highest compatible version number implemented by themselves. If the requester cannot find a compatible version with their own, the requester MUST terminate the data transfer.
@@ -733,35 +768,35 @@ Each supplier MUST ensure that only their customers have access to the asset by 
 
 An example EDC Data Asset definition with a corresponding access / usage policy and contract definition are shown below. Note: Expressions in double curly braces \{\{\}\} must be substituted with a corresponding value.
 
-**Asset definition**
+**Asset definition:**
 
 ```json
 {
- "@context": {
- "edc": "<https://w3id.org/edc/v0.0.1/ns/>",
- "cx-common": "[https://w3id.org/catenax/ontology/common#](https://w3id.org/catenax/ontology/common)",
- "cx-taxo": "[https://w3id.org/catenax/taxonomy#](https://w3id.org/catenax/taxonomy)",
- "dct": "<https://purl.org/dc/terms/>"
- },
+  "@context": {
+    "edc": "https://w3id.org/edc/v0.0.1/ns/",
+    "cx-common": "https://w3id.org/catenax/ontology/common#",
+    "cx-taxo": "https://w3id.org/catenax/taxonomy#",
+    "dct": "https://purl.org/dc/terms/"
+  },
   "@id": "osim-request-simulation-result-01",
   "properties": {
-    "description": "Request Simulation Result Asset",
-    "privateProperties": {
-    },
- "cx-common:version": "2.0"
- },
- "dataAddress": {
- "@type": "DataAddress",
- "type": "HttpData",
- "baseUrl": "{{OSIM\_REQUEST\_SIMULATION\_RESULT\_ENDPOINT}}",
- "method": "GET",
- "proxyPath": "true",
- "contentType": "application/json"
- }
+    "dct:type": {"@id": "cx-taxo:RequestSimulationResult"},
+    "description": "API to receive a Simulation Result Request in Osim context",
+    "privateProperties": {},
+    "cx-common:version": "2.0"
+  },
+  "dataAddress": {
+    "@type": "DataAddress",
+    "type": "HttpData",
+    "baseUrl": "{{OSIM_REQUEST_SIMULATION_RESULT_ENDPOINT}}",
+    "method": "GET",
+    "proxyPath": "true",
+    "contentType": "application/json"
+  }
 }
 ```
 
-**Access and Usage Policy definition**
+**Access and Usage Policy definition:**
 
 ```json
 {
@@ -886,66 +921,71 @@ Each supplier MUST ensure that only their customers have access to the asset by 
 
 An example EDC Data Asset definition with a corresponding access / usage policy and contract definition are shown below. Note: Expressions in double curly braces \{\{\}\} must be substituted with a corresponding value.
 
-**Asset definition**
+**Asset definition:**
 
 ```json
 {
- "@context": {
- "edc": "<https://w3id.org/edc/v0.0.1/ns/>",
- "cx-common": "[https://w3id.org/catenax/ontology/common#](https://w3id.org/catenax/ontology/common)",
- "cx-taxo": "[https://w3id.org/catenax/taxonomy#](https://w3id.org/catenax/taxonomy)",
- "dct": "<https://purl.org/dc/terms/>"
- },
-"@id": "osim-receive-simulation-result-01",
-"properties": {
-  "description": "Receive Simulation Result Asset",
-  "privateProperties": {
+  "@context": {
+    "edc": "https://w3id.org/edc/v0.0.1/ns/",
+    "cx-common": "https://w3id.org/catenax/ontology/common#",
+    "cx-taxo": "https://w3id.org/catenax/taxonomy#",
+    "dct": "https://purl.org/dc/terms/"
   },
- "cx-common:version": "2.0"
- },
- "dataAddress": {
- "@type": "DataAddress",
- "proxyPath": "true",
- "type": "HttpData",
- "proxyMethod": "true",
- "baseUrl": "{{OSIM\_RECEIVE\_SIMULATION\_RESULT\_ENDPOINT}}",
- "proxyBody": "true",
- "contentType": "application/json"
- }
+  "@id": "osim-receive-simulation-result-01",
+  "properties": {
+    "dct:type": {"@id": "cx-taxo:ReceiveSimulationResult"},
+    "description": "API to receive a Simulation Result in Osim context",
+    "privateProperties": {},
+    "cx-common:version": "2.0"
+  },
+  "dataAddress": {
+    "@type": "DataAddress",
+    "proxyPath": "true",
+    "type": "HttpData",
+    "proxyMethod": "true",
+    "baseUrl": "{{OSIM_RECEIVE_SIMULATION_RESULT_ENDPOINT}}",
+    "proxyBody": "true",
+    "contentType": "application/json"
+  }
 }
+```
 
+**Access and Usage Policy definition:**
 
-**Access and Usage Policy definition**
-
+```json
 {
-    "@context": {
-        "odrl": "<http://www.w3.org/ns/odrl/2/>"
-    },
-    "@type": "PolicyDefinitionRequestDto",
-    "@id": "osim-receive-simulation-result-01-policy",
-    "policy": {
-        "@type": "Policy",
-        "odrl:permission" : [{
-            "odrl:action" : "USE",
-            "odrl:constraint" : {
-                "@type": "LogicalConstraint",
-                "odrl:or" : [{
-                    "@type" : "Constraint",
-                    "odrl:leftOperand" : "BusinessPartnerNumber",
-                    "odrl:operator" : {
-                        "@id": "odrl:eq"
-                    },
-                    "odrl:rightOperand" : "{{POLICY_BPN}}"
-                }]
+  "@context": {
+    "odrl": "<http://www.w3.org/ns/odrl/2/>"
+  },
+  "@type": "PolicyDefinitionRequestDto",
+  "@id": "osim-receive-simulation-result-01-policy",
+  "policy": {
+    "@type": "Policy",
+    "odrl:permission": [
+      {
+        "odrl:action": "USE",
+        "odrl:constraint": {
+          "@type": "LogicalConstraint",
+          "odrl:or": [
+            {
+              "@type": "Constraint",
+              "odrl:leftOperand": "BusinessPartnerNumber",
+              "odrl:operator": {
+                "@id": "odrl:eq"
+              },
+              "odrl:rightOperand": "{{POLICY_BPN}}"
             }
-        }]
-    }
+          ]
+        }
+      }
+    ]
+  }
 }
 ```
 
 **Contract definition**
 
-```
+```json
 {
     "@context": {},
     "@id": "osim-receive-simulation-result-01-contract",
@@ -1058,19 +1098,20 @@ Each supplier MUST ensure that only their customers have access to the asset by 
 
 An example EDC Data Asset definition with a corresponding access / usage policy and contract definition are shown below. Note: Expressions in double curly braces \{\{\}\} must be substituted with a corresponding value.
 
-**Asset definition**
+**Asset definition:**
 
 ```json
 {
   "@context": {
-    "edc": "<https://w3id.org/edc/v0.0.1/ns/>",
-    "cx-common": "[https://w3id.org/catenax/ontology/common#](https://w3id.org/catenax/ontology/common)",
-    "cx-taxo": "[https://w3id.org/catenax/taxonomy#](https://w3id.org/catenax/taxonomy)",
-    "dct": "<https://purl.org/dc/terms/>"
+    "edc": "https://w3id.org/edc/v0.0.1/ns/",
+    "cx-common": "https://w3id.org/catenax/ontology/common#",
+    "cx-taxo": "https://w3id.org/catenax/taxonomy#",
+    "dct": "https://purl.org/dc/terms/"
   },
   "@id": "osim-request-scenario-feedback-01",
   "properties": {
-    "description": "Request Scenario Feedback Asset",
+    "dct:type": {"@id": "cx-taxo:RequestScenarioFeedback"},
+    "description": "API to receive a Scenario Feedback Request in Osim context",
     "privateProperties": {
     },
     "cx-common:version": "2.0"
@@ -1085,9 +1126,11 @@ An example EDC Data Asset definition with a corresponding access / usage policy 
     "contentType": "application/json"
   }
 }
+```
 
-**Access and Usage Policy definition**
+**Access and Usage Policy definition:**
 
+```json
 {
     "@context": {
         "odrl": "<http://www.w3.org/ns/odrl/2/>"
@@ -1213,19 +1256,20 @@ Each supplier MUST ensure that only their customers have access to the asset by 
 
 An example EDC Data Asset definition with a corresponding access / usage policy and contract definition are shown below. Note: Expressions in double curly braces \{\{\}\} must be substituted with a corresponding value.
 
-**Asset definition**
+**Asset definition:**
 
-```
+```json
 {
   "@context": {
-    "edc": "<https://w3id.org/edc/v0.0.1/ns/>",
-    "cx-common": "[https://w3id.org/catenax/ontology/common#](https://w3id.org/catenax/ontology/common)",
-    "cx-taxo": "[https://w3id.org/catenax/taxonomy#](https://w3id.org/catenax/taxonomy)",
-    "dct": "<https://purl.org/dc/terms/>"
+    "edc": "https://w3id.org/edc/v0.0.1/ns/",
+    "cx-common": "https://w3id.org/catenax/ontology/common#",
+    "cx-taxo": "https://w3id.org/catenax/taxonomy#",
+    "dct": "https://purl.org/dc/terms/"
   },
   "@id": "osim-receive-scenario-feedback-01",
   "properties": {
-    "description": "Receive Scenario Feedback Asset",
+    "dct:type": {"@id": "cx-taxo:ReceiveScenarioFeedback"},
+    "description": "API to receive a Scenario Feedback in Osim context",
     "privateProperties": {
     },
     "cx-common:version": "2.0"
@@ -1241,9 +1285,9 @@ An example EDC Data Asset definition with a corresponding access / usage policy 
 }
 ```
 
-**Access and Usage Policy definition**
+**Access and Usage Policy definition:**
 
-```
+```json
 {
     "@context": {
         "odrl": "<http://www.w3.org/ns/odrl/2/>"
@@ -1270,7 +1314,7 @@ An example EDC Data Asset definition with a corresponding access / usage policy 
 }
 ```
 
-**Contract definition**
+**Contract definition:**
 
 ```json
 {
@@ -1294,12 +1338,12 @@ Every API endpoint defined in chapter [4.5.2.1 API Endpoints & resources](#4521-
 
 | **HTTP Status Code** | **HTTP Status Message** | **Description**                                                                                                                                                                                            |
 | -------------------- | ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 200                  | OK                      | The POST has succeeded. The *receiveScenarioFeedback* has been successfully processed in the backend system.                                                                                               |
+| 200                  | OK                      | The `GET` has succeeded. The *receiveScenarioFeedback* has been successfully processed in the backend system.                                                                                              |
 | 400                  | Bad request             | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). |
 | 401                  | Authorized              | Although the HTTP standard specifies "unauthorized", semantically this response means "unauthenticated". That is, the client must authenticate itself to get the requested response.                       |
 | 402                  | Unknown BPNS            | The BPNS which is given as parameter is not registered in the data provider database as a direct partner.                                                                                                  |
 | 403                  | Forbidden               | The client does not have access rights to the content; that is, it is unauthorized, so the server is refusing to give the requested resource.                                                              |
-| 405                  | Method not allowed      | The method used to request the data was not POST.                                                                                                                                                          |
+| 405                  | Method not allowed      | The method used to request the data was not `GET`.                                                                                                                                                         |
 | 406                  | Unknown Scenario        | The scenarioID which is given as parameter is not registered.                                                                                                                                              |
 | 407                  | Unknown State           | The feedbackState value is unknown.                                                                                                                                                                        |
 | 500                  | Internal Server Error   | The server has encountered a situation it does not know how to handle.                                                                                                                                     |
@@ -1345,13 +1389,13 @@ The *pushScenarioState* API MUST be published towards the network using a Data A
 
 ##### 4.6.2.1 API Endpoints & resources
 
-To support the exchange of *pushScenarioState* data, a business application MUST define a single endpoint supporting the HTTP GET request method as described in [RFC9110](https://www.rfc-editor.org/rfc/rfc9110.html). The structure of the endpoint MAY be freely chosen. The address of the endpoint MUST be provided as part of the EDC Data Asset defined in chapter [4.6.2.4 EDC Data Asset Structure](#4624-edc-data-asset-structure).
+To support the exchange of *pushScenarioState* data, a business application MUST define a single endpoint supporting the HTTP POST request method as described in [RFC9110](https://www.rfc-editor.org/rfc/rfc9110.html). The structure of the endpoint MAY be freely chosen. The address of the endpoint MUST be provided as part of the EDC Data Asset defined in chapter [4.6.2.4 EDC Data Asset Structure](#4624-edc-data-asset-structure).
 
 ##### 4.6.2.2 Data Exchange
 
 The *pushScenarioState* endpoint MUST be implemented by all participants who participate in the Catena-X OSIM network. Receiver of scenario state MUST be able to process *pushScenarioState API*.
 
-The *pushScenarioState* data MUST be sent from the provider of scenario state to the receiver of scenario state using an HTTP GET call. The endpoint of the API MUST handle the BPNS of the requesting OSim partner, the scenario ID and the state value as a path parameter in the URL.
+The *pushScenarioState* data MUST be sent from the provider of scenario state to the receiver of scenario state using an HTTP POST call. The endpoint of the API MUST handle the BPNS of the requesting OSim partner, the scenario ID and the state value as a path parameter in the URL.
 
 Parameters:
 
@@ -1365,7 +1409,7 @@ Parameters:
 | Processed     | Organisational measures implemented                  |
 | Canceled      | All affected partners informed about the termination |
 
-The payload of *pushScenarioState* is a free text comment, which MAY be sent additionally to the new state of a scenario. No structure is needed for the payload.
+The payload of *pushScenarioState* is a free text, which MAY be sent additionally to the new state of a scenario as a comment. No structure is needed for the payload.
 
 ##### 4.6.2.3 UUID generation and handling
 
@@ -1373,7 +1417,7 @@ The UUIDv4 MUST be generated according to RFC 4122.
 
 ##### 4.6.2.4 EDC Data Asset Structure
 
-The HTTP GET endpoint introduced in chapter [4.6.2.1 API Endpoints & resources](#4621-api-endpoints--resources) MUST NOT be called from a supply chain partner directly. Rather, it MUST be called via an EDC communication. Therefore, the endpoint MUST be offered as an EDC Data Asset.
+The HTTP POST endpoint introduced in chapter [4.6.2.1 API Endpoints & resources](#4621-api-endpoints--resources) MUST NOT be called from a supply chain partner directly. Rather, it MUST be called via an EDC communication. Therefore, the endpoint MUST be offered as an EDC Data Asset.
 
 - The asset definition MUST have a property “@id”. This property MUST be used to identify the asset when searching the assets catalog of a supplier as well as initiating a transfer process. Because the asset reflects the contractual relationship between OSim partners, only one asset with the aforementioned property MUST be visible to the customer at any time to avoid ambiguity. The value for this property can be chosen freely but must be unique.
 - The asset definition SHOULD contain a property “description” as a sub property of "properties" with a "value" for a human readable description of the asset when providing the contract offer catalog for the consumer and make it easier and readable for a human what kind of data this asset contains.
@@ -1386,19 +1430,20 @@ Each supplier MUST ensure that only their customers have access to the asset by 
 
 An example EDC Data Asset definition with a corresponding access / usage policy and contract definition are shown below. Note: Expressions in double curly braces \{\{\}\} must be substituted with a corresponding value.
 
-**Asset definition**
+**Asset definition:**
 
 ```json
 {
   "@context": {
-    "edc": "<https://w3id.org/edc/v0.0.1/ns/>",
-    "cx-common": "[https://w3id.org/catenax/ontology/common#](https://w3id.org/catenax/ontology/common)",
-    "cx-taxo": "[https://w3id.org/catenax/taxonomy#](https://w3id.org/catenax/taxonomy)",
-    "dct": "<https://purl.org/dc/terms/>"
+    "edc": "https://w3id.org/edc/v0.0.1/ns/",
+    "cx-common": "https://w3id.org/catenax/ontology/common#",
+    "cx-taxo": "https://w3id.org/catenax/taxonomy#",
+    "dct": "https://purl.org/dc/terms/"
   },
   "@id": "osim-push-scenario-state-01",
   "properties": {
-    "description": "Push Scenario State Asset",
+    "dct:type": {"@id": "cx-taxo:PushScenarioState"},
+    "description": "API to receive Scenario State in OSim context",
     "privateProperties": {
     },
     "cx-common:version": "2.0"
@@ -1412,11 +1457,9 @@ An example EDC Data Asset definition with a corresponding access / usage policy 
     "contentType": "application/json"
   }
 }
-
-
 ```
 
-**Access and Usage Policy definition**
+**Access and Usage Policy definition:**
 
 ```json
 {
@@ -1443,14 +1486,11 @@ An example EDC Data Asset definition with a corresponding access / usage policy 
         }]
     }
 }
-
-
-
 ```
 
-**Contract definition**
+**Contract definition:**
 
-```
+```json
 {
     "@context": {},
     "@id": "osim-push-scenario-state-01-contract",
@@ -1483,7 +1523,7 @@ Every API endpoint defined in chapter [4.6.2.1 API Endpoints & resources](#4621-
 | 500                  | Internal Server Error   | The server has encountered a situation it does not know how to handle.                                                                                                                                     |
 | 503                  | Service Unavailable     | The server is not ready to handle the request.                                                                                                                                                             |
 
-If one *pushScenarioState* aspect is transmitted in one HTTP request, the return codes MUST be used as stated in the table above. Applications MAY choose to process valid entries from a list which also contains invalid entries. If*pushScenarioState* can be processed successfully, the status code 200 MUST be used.
+If one *pushScenarioState* aspect is transmitted in one HTTP request, the return codes MUST be used as stated in the table above. Applications MAY choose to process valid entries from a list which also contains invalid entries. If *pushScenarioState* can be processed successfully, the status code 200 MUST be used.
 
 Further status codes may be included in a later revision of this standard. The ability to send and receive one status code per sent or received list item might be included in a later revision of this standard.
 
@@ -1553,7 +1593,7 @@ see chapter [1.4.1 Process Examples](#141-process-examples)
 > *This section is* *normative*
 
 - CX-0001 EDC Discovery API Version 1.0.2
-- CX-0003 SAMM Aspect Meta Model Version 1.1.0 or 1.0.2
+- CX-0003 SAMM Aspect Meta Model Version 1.1.0
 - CX-0018 Dataspace Connectivity Version 3.0.0
 
 ### 6.2 NON-NORMATIVE REFERENCES
@@ -1577,7 +1617,3 @@ n.a.
 ### TABLES
 
 > *This section is non-normative*
-
-## Legal
-
-Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

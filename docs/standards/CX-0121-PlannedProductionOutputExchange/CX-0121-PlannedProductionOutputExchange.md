@@ -60,7 +60,7 @@ schedule-related information for a period of up to four weeks.
 
 > *This section is non-normative*
 
-This standard is relevant for the following roles defined in [[CX-OMW]](#62-non-normative-reference):
+This standard is relevant for the following roles defined in [[CX-OMW]](#62-non-normative-references):
 
 - **Data Providers**  willing to provide *Planned Production Output* data
 - **Data Consumers**  interested in requesting and receiving *Planned Production Output* data
@@ -101,7 +101,7 @@ As well as sections marked as non-normative, all authoring guidelines, diagrams,
 in this specification are non-normative. Everything else in this specification is normative. The
 keywords **MAY** , **MUST** , **MUST NOT** , **OPTIONAL** , **RECOMMENDED** , **REQUIRED** ,
 **SHOULD** and **SHOULD NOT** in this document are to be interpreted as described in [BCP 14]
-[[RFC2119]](#62-non-normative-reference) [[RFC8174]](#62-non-normative-reference) when, and only when, they appear in all capitals, as shown here.
+[[RFC2119]](#62-non-normative-references) [[RFC8174]](#62-non-normative-references) when, and only when, they appear in all capitals, as shown here.
 
 All participants and their solutions will need to prove, that they are conform with the Catena-X
 standards. To validate that the standards are applied correctly, Catena-X employs Conformity
@@ -184,8 +184,8 @@ this standardization document and to implement the required API-Endpoints descri
 | **Digital Twin** | DT | Digital representation of an asset that provides data on aspects of the represented data following [[CX-0002]](#61-normative-references). |
 | **decentralized Digital Twin Registry** | dDTR | Component providing registration and discovery API implementations following [[CX-0002]](#61-normative-references). Sometimes referred to without the "decentralized" BUT in Catena-X those are always decentralized. |
 | **Asset Administration Shell** | AAS | Technical concept for Digital Twins consisting of different standards. Application in Catena-X is described in Digital Twins in Catena-X standard ([[CX-0002]](#61-normative-references))  |
-| **Shell Descriptor** | | Technical concept of the AAS API describing metadata of an Asset Administration Shell representing a Digital Twin. It holds identification information and metadata about which submodels are available and where to get the data from (see [[CX-0002]](#61-normative-references), [[IDTA-01002-3-0]](#62-non-normative-reference)). There may exist multiple Shell Descriptor for the same represented Asset (see [[CX-0126]](#61-normative-references)). |
-| **Submodel Descriptor** | | Technical concept of the AAS API describing metadata of Submodels within a Shell Descriptor (Asset Administration Shell) (see [[CX-0002]](#61-normative-references), [[IDTA-01002-3-0]](#62-non-normative-reference)). |
+| **Shell Descriptor** | | Technical concept of the AAS API describing metadata of an Asset Administration Shell representing a Digital Twin. It holds identification information and metadata about which submodels are available and where to get the data from (see [[CX-0002]](#61-normative-references), [[IDTA-01002-3-0]](#62-non-normative-references)). There may exist multiple Shell Descriptor for the same represented Asset (see [[CX-0126]](#61-normative-references)). |
+| **Submodel Descriptor** | | Technical concept of the AAS API describing metadata of Submodels within a Shell Descriptor (Asset Administration Shell) (see [[CX-0002]](#61-normative-references), [[IDTA-01002-3-0]](#62-non-normative-references)). |
 | **Specific Asset Ids** | | Identifiers of the Shell Descriptor (Asset Administration Shell) that refer to common identification data for an asset/material at hand e.g., manufacturer part Id. Common specific asset ids used for identification are described in Industry Core Part Type Standard (see [[CX-0126]](#61-normative-references)). |
 | **Asset Administration Shell Identifier** | AAS ID | Also referred to as Shell Descriptor Id, is the technical identifier of the Shell Descriptor.  |
 | **Global Asset Id** | | Also referred to as Catena-X Id, is the Catena-X identifier for assets represented by Digital Twins (see [[CX-0126]](#61-normative-references)). |
@@ -1009,7 +1009,7 @@ In any case, the supplier must ensure that the information is consistent and pla
 | [CX-0145] | Days of Supply Exchange | 1.0.0 |
 | [CX-0146] | Supply Chain Disruption Notifications | 1.0.0 |
 
-### 6.2 NON-NORMATIVE REFERENCE
+### 6.2 NON-NORMATIVE REFERENCES
 
 > *This section is non-normative*
 

@@ -87,10 +87,21 @@ const config: Config = {
           label: "Working Model",
         },
         {
-          type: "docSidebar",
+          type: 'dropdown',
           sidebarId: "sidebar_standards",
-          position: "left",
-          label: "Standards",
+          to: '/docs/standards/overview/',
+          label: 'Releases',
+          position: 'left',
+          items: [
+            {
+              to: '/docs/standards/overview/',
+              label: 'Standards',
+            },
+            {
+              to: '/docs/non-functional/overview/',
+              label: 'Non-functional requirements',
+            },
+          ],
         },
         {
           type: "docSidebar",

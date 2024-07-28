@@ -293,13 +293,13 @@ at the data plane of the Tractus-X EDC, which forwards them to the endpoint at t
 The Unsubscribe request MUST be sent from the consumer of Shop-Floor-Information to the Modular Production using an HTTP
 DELETE request.
 
-`http://{internal-server}/relatedMessageId/00000000-0000-0000-C000-000000000042`
+`http://\{internal-server\}/relatedMessageId/00000000-0000-0000-C000-000000000042`
 
 The final id value should be copied from the GetProductionForecast. An example HTTP request is seen below:
 
 ```text
 DELETE /relatedMessageId/00000000-0000-0000-C000-000000000042  HTTP/1.1
-Host: {{internal-server}}
+Host: {\{internal-server\}}
 ```
 
 ##### 1.4.1.2 Data Models
