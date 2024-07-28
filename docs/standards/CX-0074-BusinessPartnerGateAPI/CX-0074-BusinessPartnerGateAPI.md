@@ -69,7 +69,7 @@ There is a reference implementation for the Gate API on GitHub. It is part of a 
 
 For the complete and up-to-date API setup refer to the following website: https://github.com/eclipse-tractusx/bpdm
 
-For an architecture overview refer to the ARC42 documentation: https://github.com/eclipse-tractusx/bpdm/tree/release/6.0.x/docs/arc42
+For an architecture overview refer to the ARC42 documentation: https://github.com/eclipse-tractusx/bpdm/tree/951dd4b38699caa0f50c5d756d8d0079880d2c11/docs/arc42
 
 To use the Gate API in the BPDM use case apart from this standard, the following other standards should be considered by all participants for which this standard is relevant:
 
@@ -387,11 +387,11 @@ An entry of the changelog, which is created each time a business partner is modi
 
 ## 2 BUSINESS PARTNER GATE API \[NORMATIVE\]
 
-The Business Partner Gate API allows to upload and download business partner data records to improve their quality and enrich them with additional information. The Gate API **MUST** be implemented based on the [OpenAPI 3.0.1 specification](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.1.md).
+The Business Partner Gate API allows to upload and download business partner data records to improve their quality and enrich them with additional information. The Gate API **MUST** be implemented based on the [OpenAPI 3.0.1 specification](https://github.com/OAI/OpenAPI-Specification/blob/761a0797ebf2e35e687ebef07741d1c10675e08c/versions/3.0.1.md).
 
 ### 2.1 PRECONDITIONS AND DEPENDENCIES
 
-To run the API the following **SHOULD** be set up: https://github.com/eclipse-tractusx/bpdm/blob/release/6.0.x/README.md
+To run the API the following **SHOULD** be set up: [https://github.com/eclipse-tractusx/bpdm/blob/release/6.0.x/README.md](https://github.com/eclipse-tractusx/bpdm/blob/951dd4b38699caa0f50c5d756d8d0079880d2c11/README.md)
 
 ### 2.2 API SPECIFICATION
 
@@ -568,7 +568,7 @@ Details on  namespaces and ODRL policy rule values to be used for the above-ment
 
 > *This section is non-normative*
 
-- [Business Partner Gate API 6.0.x](https://github.com/eclipse-tractusx/bpdm/tree/release/6.0.x/bpdm-gate-api/src/main/kotlin/org/eclipse/tractusx/bpdm/gate/api)
+- [Business Partner Gate API 6.0.x](https://github.com/eclipse-tractusx/bpdm/tree/951dd4b38699caa0f50c5d756d8d0079880d2c11/bpdm-gate-api/src/main/kotlin/org/eclipse/tractusx/bpdm/gate/api)
 
 ## ANNEXES
 

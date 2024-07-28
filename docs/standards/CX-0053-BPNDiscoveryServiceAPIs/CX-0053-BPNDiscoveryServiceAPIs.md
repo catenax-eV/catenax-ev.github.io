@@ -6,7 +6,7 @@ tags:
   - CAT/BPDM
 ---
 
-# CX-0053 Discovery Finder and BPN Discovery Service APIs v1.1.0
+# CX-0053 Discovery Finder and BPN Discovery Service APIs v1.1.1
 
 ## ABSTRACT
 
@@ -169,7 +169,7 @@ A Discovery Finder service is a prerequisite to find the available BPN Discovery
 The API endpoints MUST be implemented conformant to the the [openAPI specification](
 https://github.com/eclipse-tractusx/sldt-bpn-discovery/blob/main/backend/src/main/resources/static/bpn-discovery-service-openapi.yaml) for the BPN discovery service.
 
-For further information on the service see its [documentation]( https://github.com/eclipse-tractusx/sldt-bpn-discovery/blob/main/docs/documentation.md).
+For further information on the service see its [documentation](https://github.com/eclipse-tractusx/sldt-bpn-discovery/blob/0ee7074af5aa039bf68f1a1b312aa20ffc70f204/docs/documentation.md).
 
 #### 3.2.2 Available Data Types
 
