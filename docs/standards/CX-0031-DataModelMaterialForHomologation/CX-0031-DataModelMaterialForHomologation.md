@@ -139,7 +139,7 @@ This identifier MUST be used by the data provider to define the semantics of the
 #### 2.5.1 RDF Turtle
 
 The rdf turtle file, an instance of the Semantic Aspect Meta Model, is the master for generating additional file formats and serializations.
- The corresponding TTL-file for the aspect model can be accessed via the following link [MaterialforHomologation](https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.material_for_homologation/1.0.0/MaterialForHomologation.ttl)
+ The corresponding TTL-file for the aspect model can be accessed via the following link [MaterialforHomologation](https://github.com/eclipse-tractusx/sldt-semantic-models/blob/4d239fc5709f71f39c3cf13581b5bcf960905157/io.catenax.material_for_homologation/1.0.0/MaterialForHomologation.ttl)
 
 Please note that the linked version contains the semantic model’s latest version at the time of publication of this standard. However, it is possible that minor functional adjustments (noticeable by increments of the middle number of the version number: 1.0.0) or bug fixes - downward compatible - (noticeable by increments of the last number of the version number: 1.0.X) have been added in the meantime. Such updated or adjusted versions are not explicitly linked, as they do not require a new standardization document and were not available at the time of the publication of this standard. Accordingly, it is recommended to look for the updated semantic model in eclipse-tractusx/sldt-semantic-models repository and to use the updated version instead, as it brings important bug fixes or even additional functionalities.
 

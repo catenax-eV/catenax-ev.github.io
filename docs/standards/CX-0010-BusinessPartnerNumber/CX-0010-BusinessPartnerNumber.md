@@ -197,9 +197,9 @@ This runtime view illustrates the data sharing mechanism between a sharing membe
 
 > *This section is non-normative*
 
-[Business Partner Pool API](https://github.com/eclipse-tractusx/bpdm/tree/main/bpdm-pool-api/src/main/kotlin/org/eclipse/tractusx/bpdm/pool/api)
+[Business Partner Pool API](https://github.com/eclipse-tractusx/bpdm/tree/fbeeb51154743e6e6700c9c7f9f4815399bce415/bpdm-pool-api/src/main/kotlin/org/eclipse/tractusx/bpdm/pool/api)
 
-[Business Partner Gate API](https://github.com/eclipse-tractusx/bpdm/tree/main/bpdm-gate-api/src/main/kotlin/org/eclipse/tractusx/bpdm/gate/api)
+[Business Partner Gate API](https://github.com/eclipse-tractusx/bpdm/tree/fbeeb51154743e6e6700c9c7f9f4815399bce415/bpdm-gate-api/src/main/kotlin/org/eclipse/tractusx/bpdm/gate/api)
 
 ## ANNEXES
 

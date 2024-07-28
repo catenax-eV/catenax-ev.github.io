@@ -69,7 +69,7 @@ There is a reference implementation for the Pool API on GitHub. It is part of a 
 
 For the complete and up-to-date API setup refer to the following website: https://github.com/eclipse-tractusx/bpdm
 
-For an architecture overview refer to the ARC42 documentation: https://github.com/eclipse-tractusx/bpdm/tree/release/6.0.x/docs/arc42
+For an architecture overview refer to the ARC42 documentation: https://github.com/eclipse-tractusx/bpdm/tree/92963a535c3c7bc9882afc885267ada6ed04930d/docs/arc42
 
 To use the Pool API in the BPDM use case apart from this standard, the following other standards should be considered by all participants for which this standard is relevant:
 
@@ -358,11 +358,11 @@ An identifier mapping entry of a specific identifier (of a specific identifier t
 
 ## 2 BUSINESS PARTNER POOL API \[NORMATIVE\]
 
-The Business Partner Pool API enables the access to Golden Record business partner data and provides it to other Catena-X services and consumers. The Pool API **MUST** be implemented based on the [OpenAPI 3.0.1 specification](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.1.md).
+The Business Partner Pool API enables the access to Golden Record business partner data and provides it to other Catena-X services and consumers. The Pool API **MUST** be implemented based on the [OpenAPI 3.0.1 specification](https://github.com/OAI/OpenAPI-Specification/blob/465fcb3abfcfb43f7ac8cc2c47495bcb1f485b01/versions/3.0.1.md).
 
 ### 2.1 PRECONDITIONS AND DEPENDENCIES
 
-To run the API the following **SHOULD** be set up: https://github.com/eclipse-tractusx/bpdm/blob/release/6.0.x/README.md
+To run the API the following **SHOULD** be set up: https://github.com/eclipse-tractusx/bpdm/blob/92963a535c3c7bc9882afc885267ada6ed04930d/README.md
 
 ### 2.2 API SPECIFICATION
 
@@ -583,7 +583,7 @@ Details on  namespaces and ODRL policy rule values to be used for the above-ment
 
 > *This section is non-normative*
 
-- [Business Partner Pool API 6.0.x](https://github.com/eclipse-tractusx/bpdm/tree/release/6.0.x/bpdm-pool-api/src/main/kotlin/org/eclipse/tractusx/bpdm/pool/api)
+- [Business Partner Pool API 6.0.x](https://github.com/eclipse-tractusx/bpdm/tree/92963a535c3c7bc9882afc885267ada6ed04930d/bpdm-pool-api/src/main/kotlin/org/eclipse/tractusx/bpdm/pool/api)
 
 ## ANNEXES
 

@@ -328,7 +328,7 @@ This identifier **MUST** be used by the data provider to define the semantics of
 The RDF turtle file, an instance of the Semantic Aspect Meta Model, is the master for generating additional
 file formats and serializations. It can be found under the following link:
 
-> [https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.demand_and_capacity_notification/2.0.0/DemandAndCapacityNotification.ttl](https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.demand_and_capacity_notification/2.0.0/DemandAndCapacityNotification.ttl)
+> [https://github.com/eclipse-tractusx/sldt-semantic-models/blob/4d239fc5709f71f39c3cf13581b5bcf960905157/io.catenax.demand_and_capacity_notification/2.0.0/DemandAndCapacityNotification.ttl](https://github.com/eclipse-tractusx/sldt-semantic-models/blob/4d239fc5709f71f39c3cf13581b5bcf960905157/io.catenax.demand_and_capacity_notification/2.0.0/DemandAndCapacityNotification.ttl)
 
 The open source command line tool of the Eclipse Semantic Modeling Framework is used for generation of
 other file formats like for example a JSON Schema, aasx for Asset Administration Shell Submodel Template
@@ -453,7 +453,7 @@ The master reference for generating additional file formats and serializations i
 which is an instance of the Semantic Aspect Meta Model. The RDF turtle file for the `messageHeaderObject`
 is defined in a centralized shared aspect model and can be accessed at the following URL:
 
->[https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.shared.message\_header/3.0.0/MessageHeaderAspect.ttl](https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.shared.message_header/3.0.0/MessageHeaderAspect.ttl)
+> [https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.shared.message\_header/3.0.0/MessageHeaderAspect.ttl](https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.shared.message_header/3.0.0/MessageHeaderAspect.ttl)
 
 The RDF turtle file provides detailed description on how to use the message header.
 
