@@ -90,7 +90,7 @@ const config: Config = {
           type: 'dropdown',
           sidebarId: "sidebar_standards",
           to: '/docs/standards/overview/',
-          label: 'Releases',
+          label: 'Standards',
           position: 'left',
           items: [
             {
