@@ -20,16 +20,13 @@ To easily grasp the layers of our Governance Framework, think of flight level as
 ## 30,000ft - Data Space Level
 
 At this level, the governance framework is defined by the Catena-X Association and the basic principles of the data ecosystem are outlined. Compliance is mandatory for all participants in the data space.
-There are several normative documents to consider. 
+There are several normative documents to consider.
 
 The first is the operating model. The operating model lays the foundation and is the pre-requisite for further standardization, certification, implementation, and operations of software components and partners in the Catena-X data space. The operating model is continuously updated to reflect the evolution of business and regulatory requirements, as well as emerging technologies.
 
 The "10 Golden Rules" document, which outlines the basic principles of the data ecosystem, is published by the Catena-X association and provides clear guidelines for necessary specifications at lower levels. It also specifies how far a technical standard can go. The agreement between the CSPs and participants (e.g., data providers and data consumers) is established during onboarding.
 
 The third document is the Data Exchange Governance. This Data Exchange Governance sets out the key principles for data exchange that apply to each Participant when exchanging data in the Catena-X Data Space for one or more purposes as predefined by the Association ("Predefined Purpose(s)"). Each Participant must agree to this Data Exchange Governance in order to effect data exchanges through a registered connector. The process of agreeing to this Data Exchange Governance, as well as for concluding legally binding data exchange contracts is not part of this Data Exchange Governance. It does not determine or restrict how Participants need to make their contractual declarations legally binding. Rather, the Data Exchange Governance contains standardised technical parameters for data exchange and other mandatory requirements that correspond to the predefined purposes described in more detail under the following link (‘Repository’): https://github.com/catenax-eV/cx-odrl-profile.
-
-
-
 
 ## 20,000ft - Use Case Level
 
@@ -38,7 +35,6 @@ At this level, the Catena-X Association provides specific guidelines for each us
 The standardised usage policies represent a consolidation of the predefined use case frameworks. The only difference is the purpose of use.
 The Catena-X ODRL profile is used for this purpose. The primary aim of the Catena-X ODRL profile is to provide standardised contract modules such as permissions, prohibitions and obligations in a machine-readable format that can be checked automatically. The ODRL profile enables the automation of contract negotiations in the Catena-X data room, as contract negotiations are conducted electronically as standard via a registered connector.
 All standardised contract modules referenced in the Catena-X ODRL profile have a legal description, a technical term for referencing (‘leftOperand’) and in some cases a defined list of possible or permitted or standardised values (‘rightOperand’). The Catena-X ODRL profile initially focuses on providing standardised data usage guidelines (‘purposes’) for the Catena-X use cases as a common basis that all participants in the data space can rely on to ensure trust, interoperability and scalability. These guidelines represent the Catena-X value proposition of data sovereignty in its purest form.
-
 
 ## 10,000ft - Data Offering Level
 
@@ -55,4 +51,3 @@ While Data Providers and Data Consumers have the option of concluding bilateral 
 These boundary conditions, combined with the possibility to automate data exchange contract negotiations, form one of the key benefits and foundations for scaling of the Catena-X Data Space. For more information on how to conclude data exchange contracts via Catena-X, please refer to the Catena-X memorandum on how to conclude data exchange contracts.
 
 We encourage all stakeholders involved in Catena-X's activities to familiarize themselves with our Governance Framework for data space operations and understand the requirements and obligations that apply to them as we continue to publish them. By working together in a transparent and accountable manner, we can build a trusted, scalable and efficient data exchange network for the automotive industry.
-

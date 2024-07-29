@@ -185,26 +185,29 @@ Different from Catena-X Certification, Catena-X qualification is a label held by
 
 ## Regulatory Framework
 
-The [Catena-X Regulatory Framework for data space operations](https://catena-x.net/en/catena-x-introduce-implement/governance-framework-for-data-space-operations) outlines the **non-technical requirements** and responsibilities for all stakeholders involved in the Catena-X data ecosystem. It includes detailed information on data sovereignty, mandatory use case requirements, and other regulatory considerations that are relevant and mandatory to our activities. The Regulatory Framework is made up of individual components that each govern a specific layer of our data space operations. To understand the layers of our Regulatory Framework, Catena-X uses flight levels as a metaphor (see Figure [Catena-X Governance Framework flight levels](./how-data-space-governance.md#regulatory-framework)):
+The Catena-X Regulatory Framework for data space operations outlines the non-technical requirements and responsibilities for all stakeholders involved in the Catena-X data ecosystem. It includes detailed information on data sovereignty, mandatory use case requirements, and other regulatory considerations that are relevant and mandatory to our activities. The Regulatory Framework is made up of individual components that each govern a specific layer of our data space operations. To understand the layers of our Regulatory Framework, Catena-X uses flight levels as a metaphor (see Figure Catena-X Governance Framework flight levels):
 
-![Catena-X Governance Framework flight levels](./assets/catena-x-governance-framework-flight-levels.png)
-*Catena-X Governance Framework flight levels*
+The Operating Model, the 10 Golden Rules and the Data Exchange Governance fall under the 30,000-ft level (Data Space Level) and are thus mandatory for all data space participants. At this level, the basic principles of the data ecosystem are outlined.
 
-Each higher level cascades into the lower ones, and the lower levels align with those above. Each level comes with specific guidelines and resources but also responsibilities for participants in our data space. This Operating Model falls under the 30,000 ft level and is thus mandatory for all data space participants. Maintaining and updating our Regulatory Framework for data space operations lies within the responsibility of the Catena-X Association. All resources and normative documents included in the regulatory framework are listed on the [Catena-X website](https://catena-x.net/en/catena-x-introduce-implement/governance-framework-for-data-space-operations).
+The standardised usage policies are located at the 20,000-ft level (Use Case Level), where the fundamental requirements for data usage in a use case are defined.
+
+The 10,000-ft level (Data Offering Level) provides guidance for data offerings by data providers / consumers.
+
+The 5,000-ft level provides guidance for data usage by data providers / consumers including the conclusion of contracts via a registered connector.
+
+Each higher level cascades into the lower ones, and the lower levels align with those above. Each level comes with specific guidelines and resources but also responsibilities for participants in our data space. Maintaining and updating our Regulatory Framework for data space operations lies within the responsibility of the Catena-X Association. 
+All resources and normative documents included in the regulatory framework are listed on the Catena-X website.
+
+### Standardized modules for data exchange contracts
+
+The Catena-X Association aims to develop further automation and scalability of the process of concluding data exchange contracts via Catena-X. Connectors will enable Participants to choose from a range of modules when negotiating and agreeing on terms within the Data Exchange Governance (e.g. liability/dispute resolution/choice of law etc.). All official modules provided by the Catena-X Association are listed under the official Catena-X Open Digital Rights Language Repository. 
+These modules are limited to standardized data usage policies for Catena-X use cases.
 
 ### Concluding Data Exchange Contracts via Catena-X
 
 The Catena-X Data Space enables Data Providers and Data Consumers to conclude data exchange contracts via registered connectors.
-
 While Data Providers and Data Consumers have the option of concluding bilateral contracts (supplier contract, ...) outside of a registered connector to determine their contractual relationship for data exchange via Catena-X, the Catena-X Regulatory Framework sets out certain boundary conditions (10 Golden Rules, Data Exchange Governance...) that are binding for all data space participants and cannot be negated with bilateral contracts outside the confines of the Catena-X Regulatory Framework.
-
-These boundary conditions, combined with the possibility to automate data exchange contract negotiations, form one of the key benefits and foundations for scaling of the Catena-X Data Space. For more information on how to conclude data exchange contracts via Catena-X, please refer to the [Catena-X memorandum on how to conclude data exchange contracts](https://catena-x.net/fileadmin/user_upload/04_Einfuehren_und_umsetzen/How_To_Conclude_Data_Exchange_Contracts.pdf).
-
-### Standardized modules for data exchange contracts
-
-The Catena-X Association aims to develop further automation and scalability of the process of concluding data exchange contracts via Catena-X. Connectors will enable Participants to choose from a range of modules when negotiating and agreeing on terms within the Data Exchange Governance (e.g. liability/dispute resolution/choice of law etc.). All official modules provided by the Catena-X Association are listed under the official [Catena-X Open Digital Rights Language Repository](https://github.com/catenax-eV/cx-odrl-profile).
-
-As of Release 24.05., these modules are limited to standardized data usage policies for Catena-X use cases.
+These boundary conditions, combined with the possibility to automate data exchange contract negotiations, form one of the key benefits and foundations for scaling of the Catena-X Data Space. For more information on how to conclude data exchange contracts via Catena-X, please refer to the Catena-X memorandum on how to conclude data exchange contracts.
 
 ### Governance for Non-Technical Requirements
 
