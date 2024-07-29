@@ -10,7 +10,6 @@ sidebar_class_name: separator-bottom
 |:---:|:---:|
 | [![CX-NFR-PCF-Rulebook_v.3.0.png](./assets/images/CX-NFR-PCF-Rulebook_v.3.0.png)](./assets/files/CX-NFR-PCF-Rulebook_v.3.0.pdf) | [![CX-NFR-PCF_TFS-verification_v.1.0.png](./assets/images/CX-NFR-PCF_TFS-verification_v.1.0.png)](./assets/files/CX-NFR-PCF_TFS-verification_v.1.0.pdf)  |
 
-
 ## ESS Code of Conduct
 
 | ESS Code of Conduct v1.0 (German) | ESS Code of Conduct v1.0 (English) |
