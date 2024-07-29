@@ -81,13 +81,7 @@ const config: Config = {
       },
       items: [
         {
-          type: "docSidebar",
-          sidebarId: "sidebar_working_model",
-          position: "left",
-          label: "Working Model",
-        },
-        {
-          type: 'dropdown',
+          type: "dropdown",
           sidebarId: "sidebar_standards",
           to: '/docs/standards/overview/',
           label: 'Standards',

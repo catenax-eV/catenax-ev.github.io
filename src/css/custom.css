@@ -79,7 +79,3 @@
 .separator-bottom{
   border-bottom: 1px solid #CCC;
 }
-
-.col--4 { 
-  --ifm-col-width: 25%;
-}
