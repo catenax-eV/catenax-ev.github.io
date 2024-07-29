@@ -11,16 +11,6 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Working Model',
-    Svg: require('@site/static/img/working-model-icon.svg').default,
-    path: '/docs/working-model/overview',
-    description: (
-      <>
-          Here you will find all the information about the <a href="/docs/working-model/overview">Working Model</a>.
-      </>
-    ),
-  },
-  {
     title: 'Standards',
     Svg: require('@site/static/img/standards-icon.svg').default,
     path: '/docs/standards/overview',
@@ -47,6 +37,16 @@ const FeatureList: FeatureItem[] = [
     description: (
       <>
           Here you will find all the information about the <a href="/docs/operating-model/why-introduction">Operating Model</a>.
+      </>
+    ),
+  },
+  {
+    title: 'Working Model',
+    Svg: require('@site/static/img/working-model-icon.svg').default,
+    path: '/docs/working-model/overview',
+    description: (
+      <>
+          Here you will find all the information about the <a href="/docs/working-model/overview">Working Model</a>.
       </>
     ),
   },
