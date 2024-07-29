@@ -198,6 +198,9 @@ The 5,000-ft level provides guidance for data usage by data providers / consumer
 Each higher level cascades into the lower ones, and the lower levels align with those above. Each level comes with specific guidelines and resources but also responsibilities for participants in our data space. Maintaining and updating our Regulatory Framework for data space operations lies within the responsibility of the Catena-X Association.
 All resources and normative documents included in the regulatory framework are listed on the Catena-X website.
 
+![Catena-X Flightlevels](./assets/flightlevels.png)
+*Catena-X Flightlevels*
+
 ### Standardized modules for data exchange contracts
 
 The Catena-X Association aims to develop further automation and scalability of the process of concluding data exchange contracts via Catena-X. Connectors will enable Participants to choose from a range of modules when negotiating and agreeing on terms within the Data Exchange Governance (e.g. liability/dispute resolution/choice of law etc.). All official modules provided by the Catena-X Association are listed under the official Catena-X Open Digital Rights Language Repository.
