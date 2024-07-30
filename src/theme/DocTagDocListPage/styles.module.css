@@ -1,9 +1,9 @@
-article{
+article.article_tag_overview{
     border-bottom: 1px solid #dfe3e8;
     padding: 1rem 0;
 }
 
-article p{
+article.article_tag_overview p{
     color: var(--ifm-color-content-secondary);
     font-size: .8rem;
     margin: .5rem 0 0;
