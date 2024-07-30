@@ -1,7 +1,7 @@
 ---
 tags:
   - CAT/Enablement Service Provider
-  - CAT/MIW
+  - CAT/SSI
   - CAT/Core Service Provider
   - CAT/Identity Wallet
   - CAT/Sandbox Services (Beta)

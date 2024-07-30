@@ -14,7 +14,7 @@ tags:
   - CAT/Identity Wallet
   - CAT/Information as a Service
   - CAT/Marketplace
-  - CAT/MIW
+  - CAT/SSI
   - CAT/Onboarding
   - CAT/Onboarding Service Provider
   - CAT/Onboarding Services
