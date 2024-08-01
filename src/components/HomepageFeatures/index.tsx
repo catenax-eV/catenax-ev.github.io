@@ -16,7 +16,7 @@ const FeatureList: FeatureItem[] = [
     path: '/docs/standards/overview',
     description: (
       <>
-          Here you will find all the information about the <a href="/docs/standards/overview">Standards</a>.
+        Our Catena-X <a href="/docs/standards/overview">Standards</a> serve as the foundation for certification, ensuring technical compatibility and interoperability between independent implementations by providing uniform rules and requirements used for conformity assessment.
       </>
     ),
   },
@@ -26,7 +26,7 @@ const FeatureList: FeatureItem[] = [
     path: '/docs/regulatory-framework/governance-framework',
     description: (
       <>
-          Here you will find all the information about the <a href="/docs/regulatory-framework/governance-framework">Regulatory Framework</a>.
+        Our <a href="/docs/regulatory-framework/governance-framework">Regulatory Framework</a> for data space operations includes detailed information on data sovereignty, mandatory use case requirements, and other legal considerations that are relevant to all of our activities.
       </>
     ),
   },
@@ -36,7 +36,7 @@ const FeatureList: FeatureItem[] = [
     path: '/docs/operating-model/why-introduction',
     description: (
       <>
-          Here you will find all the information about the <a href="/docs/operating-model/why-introduction">Operating Model</a>.
+          Our Catena-X <a href="/docs/operating-model/why-introduction">Operating Model</a> describes the entire Catena-X ecosystem, focusing on a comprehensive definition of our operating environment and its roles, processes, and solutions, and how they interact.
       </>
     ),
   },

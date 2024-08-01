@@ -4,7 +4,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'Catena-X - Library',
-  tagline: 'Providing Catena-X Documentation',
+  tagline: 'If you are interested in joining the Catena-X ecosystem, you need to prove compliance. Right here you will find the complete normative documentation for everything you need for doing so.',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
