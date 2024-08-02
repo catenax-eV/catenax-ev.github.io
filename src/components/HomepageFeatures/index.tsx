@@ -46,7 +46,7 @@ const FeatureList: FeatureItem[] = [
     path: '/docs/working-model/overview',
     description: (
       <>
-          Here you will find all the information about the <a href="/docs/working-model/overview">Working Model</a>.
+          Our <a href="/docs/working-model/overview">Working Model</a> outlines our values and principles for the development of software and standard artefacts, defining organizational processes, and detailing their journey from idea to creation.
       </>
     ),
   },
@@ -56,7 +56,7 @@ const FeatureList: FeatureItem[] = [
     path: 'https://github.com/catenax-eV/catenax-ev.github.io/discussions',
     description: (
       <>
-          Please provide feedback or requests via GitHub <a href="https://github.com/catenax-eV/catenax-ev.github.io/discussions">discussions</a>
+          We value your feedback! Please take a moment to share your thoughts with us via GitHub <a href="https://github.com/catenax-eV/catenax-ev.github.io/discussions">discussions</a>. Your insights help us improve and provide a better experience for you. Thank you!
       </>
     ),
   },
