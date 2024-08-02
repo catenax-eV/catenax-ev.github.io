@@ -7,7 +7,7 @@ This chapter contextualizes the various phases of a Catena-X release within the 
 
 During a Catena-X release cycle, numerous roadmap items must be addressed. These items can be categorized into three primary groups:
 
-- [**Tractus-X**](process-from-idea-to-production.md): This category includes items such as Kits, Reference Implementations, API Specifications, Protocols, Sample Data, Architecture, Documentation, Deployment Scripts, and Tutorials.
+- [**Tractus-X**](tractus-x-from-idea-to-production.md): This category includes items such as Kits, Reference Implementations, API Specifications, Protocols, Sample Data, Architecture, Documentation, Deployment Scripts, and Tutorials.
 - [**Catena-X**](catena-x-from-idea-to-standard.md): This category encompasses Standards (due to adaptations in Semantic Models, Logic/Schema, API Specifications, Protocols) and Whitepapers (which may result in Kits adaptations).
 - **Organizational**: This category involves tasks such as setting up Expert Groups and promoting Use Cases.
 
