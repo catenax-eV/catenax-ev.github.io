@@ -3,7 +3,7 @@ pagination_prev: null
 pagination_next: null
 ---
 
-# Country Clearance List
+# Catena-X: Country Clearance List
 
 ## Clearance List "White List"
 
