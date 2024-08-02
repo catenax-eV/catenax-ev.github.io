@@ -1,5 +1,5 @@
 ---
-position: 1
+position: 2
 tags:
   - CAT/Enablement Service Provider
   - CAT/Digital Twin Registry aaS

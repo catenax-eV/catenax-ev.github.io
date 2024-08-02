@@ -1,3 +1,8 @@
+---
+tags:
+  - CAT/Semantic
+---
+
 # CX-0126 Industry Core: Part Type 2.0.0
 
 ## ABSTRACT

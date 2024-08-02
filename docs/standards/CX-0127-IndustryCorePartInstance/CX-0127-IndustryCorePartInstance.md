@@ -1,3 +1,8 @@
+---
+tags:
+  - CAT/Semantic
+---
+
 # CX-0127 Industry Core: Part Instance 2.0.0  
 
 ## ABSTRACT

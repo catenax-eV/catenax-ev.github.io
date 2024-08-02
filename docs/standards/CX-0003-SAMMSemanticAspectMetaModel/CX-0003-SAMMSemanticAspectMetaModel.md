@@ -1,3 +1,9 @@
+---
+position: 3
+tags:
+  - CAT/Semantic
+---
+
 # CX-0003 SAMM Aspect Meta Model v1.1.0
 
 ## ABSTRACT

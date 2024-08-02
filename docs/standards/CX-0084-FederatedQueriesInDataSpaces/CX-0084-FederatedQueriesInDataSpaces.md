@@ -1,3 +1,8 @@
+---
+tags:
+  - CAT/Semantic
+---
+
 # CX-0084 Federated Queries in Data Spaces v1.2.0
 
 ## ABSTRACT
