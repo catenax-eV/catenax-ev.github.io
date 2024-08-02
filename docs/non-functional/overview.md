@@ -2,6 +2,9 @@
 sidebar_position: 1
 title: Overview non-functional requirements
 sidebar_class_name: separator-bottom
+tags:
+  - UC/PCF
+  - UC/ESS
 ---
 
 ## Product Carbon Footprint
