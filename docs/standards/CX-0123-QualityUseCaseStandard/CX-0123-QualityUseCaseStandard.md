@@ -1,3 +1,9 @@
+---
+tags:
+  - CAT/Business Application Provider
+  - UC/Quality
+---
+
 # CX-0123 Quality Use Case Standard v2.0.0
 
 ## ABSTRACT

@@ -1,3 +1,9 @@
+---
+tags:
+  - CAT/Business Application Provider
+  - UC/Circularity
+---
+
 # CX-0131 Circularity Core v1.1.0
 
 ## ABSTRACT

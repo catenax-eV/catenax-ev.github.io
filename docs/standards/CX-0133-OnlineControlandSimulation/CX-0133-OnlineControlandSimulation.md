@@ -1,3 +1,9 @@
+---
+tags:
+  - CAT/Business Application Provider
+  - UC/OSIM
+---
+
 # CX-0133 Online Control and Simulation 2.0.0
 
 ## ABSTRACT

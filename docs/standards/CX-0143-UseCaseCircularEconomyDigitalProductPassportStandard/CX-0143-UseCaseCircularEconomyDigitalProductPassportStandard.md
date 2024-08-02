@@ -1,3 +1,9 @@
+---
+tags:
+  - CAT/Business Application Provider
+  - UC/Ecopass
+---
+
 # CX-0143 Use Case Circular Economy - Digital Product Passport Standard 1.0.0
 
 ## ABSTRACT

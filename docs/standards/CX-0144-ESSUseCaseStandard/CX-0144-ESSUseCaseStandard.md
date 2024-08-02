@@ -1,3 +1,8 @@
+---
+tags:
+  - UC/ESS
+---
+
 # CX-0144 ESS Use Case Standard 1.0.0
 
 ## ABSTRACT

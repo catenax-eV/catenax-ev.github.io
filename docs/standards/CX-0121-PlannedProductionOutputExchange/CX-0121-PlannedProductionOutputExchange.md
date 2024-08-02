@@ -1,3 +1,9 @@
+---
+tags:
+  - CAT/Business Application Provider
+  - UC/PURIS
+---
+
 # CX-0121 Planned Production Output Exchange 1.0.0
 
 ## ABSTRACT

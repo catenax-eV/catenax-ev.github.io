@@ -1,3 +1,8 @@
+---
+tags:
+  - CAT/Value Added Services
+---
+
 # CX-0076 - Golden Record End-to-End Requirements Standard v.1.2.0
 
 ## ABSTRACT

@@ -1,3 +1,8 @@
+---
+tags:
+  - CAT/Value Added Services
+---
+
 # CX-0079 Natural Person Screening Dashboard v1.2.0
 
 ## ABSTRACT

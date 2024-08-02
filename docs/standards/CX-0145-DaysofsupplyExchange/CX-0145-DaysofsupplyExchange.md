@@ -1,3 +1,9 @@
+---
+tags:
+  - CAT/Business Application Provider
+  - UC/PURIS
+---
+
 # CX-0145 Days of supply Exchange 1.0.0
 
 ## ABSTRACT

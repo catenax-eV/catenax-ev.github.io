@@ -1,3 +1,8 @@
+---
+tags:
+  - UC/PURIS
+---
+
 # CX-0122 Item Stock Exchange 2.0.0
 
 ## ABSTRACT

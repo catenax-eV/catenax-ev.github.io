@@ -1,3 +1,8 @@
+---
+tags:
+  - CAT/Value Added Services
+---
+
 # CX-0080 BPDM Fraud Prevention Service v1.1.0
 
 ## ABSTRACT

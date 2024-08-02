@@ -1,3 +1,9 @@
+---
+tags:
+  - CAT/Business Application Provider
+  - UC/MaaS
+---
+
 # CX-0115 Manufacturing Capability Exchange 1.0.0
 
 ## ABSTRACT

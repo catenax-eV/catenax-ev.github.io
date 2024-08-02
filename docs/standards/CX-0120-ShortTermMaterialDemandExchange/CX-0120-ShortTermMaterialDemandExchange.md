@@ -1,3 +1,9 @@
+---
+tags:
+  - CAT/Business Application Provider
+  - UC/PURIS
+---
+
 # CX-0120 Short-Term Material Demand Exchange 2.0.0
 
 ## ABSTRACT

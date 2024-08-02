@@ -1,3 +1,9 @@
+---
+tags:
+  - CAT/Business Application Provider
+  - UC/Circularity
+---
+
 # CX-0117 Use Case Circular Economy - Secondary Marketplace v1.0.0
 
 ## ABSTRACT

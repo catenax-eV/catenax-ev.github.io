@@ -1,3 +1,9 @@
+---
+tags:
+  - CAT/Business Application Provider
+  - UC/Traceability
+---
+
 # CX-0125 Traceability Use Case v2.0.0
 
 ## ABSTRACT

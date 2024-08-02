@@ -1,3 +1,9 @@
+---
+tags:
+  - CAT/Business Application Provider
+  - UC/Modular Production
+---
+
 # CX-0142 Shop Floor Information Service v1.0.0
 
 ## ABSTRACT

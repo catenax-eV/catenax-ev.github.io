@@ -4,9 +4,7 @@ tags:
   - CAT/Core Service Provider
   - CAT/Sandbox Services (Beta)
   - CAT/Sandbox Service Provider
-  - CAT/Onboarding Services
   - CAT/Onboarding Service Provider
-  - CAT/Onboarding
 ---
 
 # CX-0006 Registration and Initial Onboarding v2.0.0

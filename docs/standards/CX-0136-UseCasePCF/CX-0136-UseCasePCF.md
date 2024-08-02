@@ -1,3 +1,9 @@
+---
+tags:
+  - CAT/Business Application Provider
+  - UC/PCF
+---
+
 # CX-0136 Use Case PCF 2.0.0
 
 ## ABSTRACT
