@@ -24,7 +24,6 @@ Until this date/meeting, feature proposal can be submitted to the planning board
 
 - Expert Groups
 - Committees
-- Business Domain Manager (optional)
 - Tractus-X community (contributor/committer)
 
 ## Invitation

@@ -4,12 +4,12 @@ sidebar_position: 3
 
 # CX Release Roadmap Review
 
-Discuss and present the upcoming release roadmap to the Expert Groups and Committees. The goal is to get feedback and approval for the upcoming release and analyze possible dependencies between the roadmap items.
+The meeting aims to gather initial ideas for potential roadmap items for the next release. It serves as an open forum for participants to present their concepts, helping to inform other association members early on, identify key stakeholders, and solicit feedback from the broader community.
 
-## Meeting (approx 2 hours)
+## Meeting structure
 
-- Roadmap items on [board](https://github.com/orgs/catenax-eV/projects) `Release XX.XX CX+TX` are presented by the Committee or Expert Group.
-- After alignment, status is set to `ToDo` and milestone ist set to `XX.XX`(upcoming release)
+- The roadmap items are presented by the Committe or Expert Group
+- After alignment, the status of the roadmap item is set to `ToDo` and milestone for the upcoming release is set
 - Convert Roadmap items to GitHub issues (comment functionality is active after conversation).
 
 ## Outcome
@@ -20,12 +20,12 @@ Discuss and present the upcoming release roadmap to the Expert Groups and Commit
 
 ## Attendees
 
-- Expert Groups
 - Committees
-- Business Domain Manager (optional)
+- Expert Groups
+- other association members
 
 ## Invitation
 
-- Invitation sent out by the association (meeting might be forwarded by your group lead, or Business Domain Manager)
+- Invitation sent out by the association to all Committee Leads and all Expert Group Leads (can be forwarded to other members)
 - Specific access to GitHub (Roadmap needed) -> contact your Business Domain Manager
 - Only Catena-X e.V. members are allowed to get access
