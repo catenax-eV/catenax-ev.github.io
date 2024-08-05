@@ -9,7 +9,7 @@ sidebar_class_name: separator-top
 
 - 13 new standards
 - 35 updated standards
-- 63 deprecated standards
+- 67 deprecated standards
 
 ---
 
@@ -126,14 +126,17 @@ sidebar_class_name: separator-top
 | CX-0022            | Notification API                               |  Merged by CX-0125 Traceability Use Case                                                 |
 | CX-0023            | Notification Process                       |   Merged by CX-0125 Traceability Use Case                                                |
 | CX-0060            |  Tracebility BomAsBuild Triangle   |  Merged by CX-0125 Traceability Use Case                                                 |
-| CX-0036            |  Aspect Model: QualityTask                              | Merged by CX-0131 Circularity Core                                                  |
+| CX-0036            |  Aspect Model: QualityTask                              | Merged by CX-0131 Circularity Core and CX-0123 Quality Use Case Standards                                                  |
 | CX-0037            |  Aspect Model: Vehicle.ProductionData                              | Merged by CX-0131 Circularity Core                                                  |
-| CX-0038            |  Aspect Model: Fleet.DiagnosticData                              |  Merged by CX-0131 Circularity Core                                                 |
-| CX-0039            |   Aspect Model: Fleet.ClaimData                           |  Merged by CX-0131 Circularity Core                                                 |
-| CX-0040            |  Aspect Model: PartAnalyses                              |  Merged by CX-0131 Circularity Core                                                 |
+| CX-0038            |  Aspect Model: Fleet.DiagnosticData                              |  Merged by CX-0131 Circularity Core and CX-0123 Quality Use Case Standards                                                  |
+| CX-0039            |   Aspect Model: Fleet.ClaimData                           |  Merged by CX-0131 Circularity Core and CX-0123 Quality Use Case Standards                                                  |
+| CX-0040            |  Aspect Model: PartAnalyses                              |  Merged by CX-0131 Circularity Core and CX-0123 Quality Use Case Standards                                                |
 | CX-0041            |  Aspect Model: ManufacturedPartsQualityInformation                              |  Merged by CX-0131 Circularity Core                                                 |
-| CX-0091            |  Aspect Model: Fleet.Vehicles                              |   Merged by CX-0131 Circularity Core                                                |
-| CX-0092            |   Aspect Model: QualityTaskAttachment                             |  Merged by CX-0131 Circularity Core                                                 |
+| CX-0065            |  Triangle for Dismantling Service                              |  Merged by CX-0131 Circularity Core                                                 |
+| CX-0066            |  Aspect Model: End of Life of Vehicle Compliance                              |  Merged by CX-0131 Circularity Core                                                 |
+| CX-0071            |  Triangle Quality Early Warning Field and Root Cause                              |  Merged by CX-0123 Quality Use Case Standards                                                |
+| CX-0091            |  Aspect Model: Fleet.Vehicles                              |   Merged by CX-0131 Circularity Core and CX-0123 Quality Use Case Standards                                                 |
+| CX-0092            |   Aspect Model: QualityTaskAttachment                             |  Merged by CX-0131 Circularity and CX-0123 Quality Use Case Standards  Core                                                 |
 | CX-0098            |  Aspect Model: Secondary Material Content                              |  Merged by CX-0131 Circularity Core                                                 |
 | CX-0099            |  Data Model: Certificate of Decommissioning                              |  Merged by CX-0131 Circularity Core                                                 |
 | CX-0107            |  Aspect Model: Reuse Certificate                               |  Merged by CX-0131 Circularity Core                                                 |
@@ -150,6 +153,7 @@ sidebar_class_name: separator-top
 | CX-0090            |  API Endurance Estimator                               |  Merged into CX-0138 Use Case Behaviour Twin Endurance Estimator                                                  |
 | CX-0089            | Triangle Behavioral Twin Endurance Estimator Service                              | Merged into CX-0138 Use Case Behaviour Twin Endurance Estimator Digital Product Pass                                                    |
 | CX-0026            |  PCF Data Model                            |  Merged into CX-0143 Use Case PCF                                                  |
+| CX-0027            |  Product Carbon Footprint Aspect Model                            |  Merged into CX-0143 Use Case PCF                                                  |
 | CX-0028            | PCF Request API                    |   Merged into CX-0143 Use Case PCF                                               |
 | CX-0134            |  PCF Calculation Integration                               | Merged into CX-0143 Use Case PCF                                                   |
 | CX-0063            | PCF Triangle                                 |  Merged into CX-0143 Use Case PCF                                                  |

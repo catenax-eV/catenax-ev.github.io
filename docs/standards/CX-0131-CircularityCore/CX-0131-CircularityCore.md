@@ -193,17 +193,17 @@ To participate in the EoL Services use-case, the following single standards are 
 - CX-0127:2.0 Industry Core: Part Instance with the Aspect Model "SerialPart"
 - CX-0127:2.0 Industry Core: Part Instance with the Aspect Model "SingleLevelBoMAsBuilt"
 - CX-0126:2.0 Industry Core: Part Type with the Aspect Model "SingleLevelBomAsPlanned"
-- [Aspect Model SingleLevelBoMAsSpecified v2.0.0](#31-aspect-model-singlelevelbomasspecified)
-- [Aspect Model MaterialForHomologation v1.0.0](#32-aspect-model-materialforhomologation)
-- [Aspect Model PartAsSpecified v1.0.1](#33-aspect-model-partasspecified)
-- [Aspect Model QualityTask v1.0.2](#34-aspect-model-qualitytask)
-- [Aspect Model VehicleProductDescription v2.0.0](#35-aspect-model-vehicleproductdescription)
-- [Aspect Model FleetDiagnosticData](#36-aspect-model-fleetdiagnosticdata)
-- [Aspect Model FleetClaimData v1.0.1](#37-aspect-model-fleetclaimdata)
-- [Aspect Model PartAnalyses v2.0.0](#38-aspect-model-partanalyses)
-- [Aspect Model ManufacturedPartsQualityInformation v1.0.1](#39-aspect-model-manufacturedpartsqualityinformation)
-- [Aspect Model FleetVehicles v1.0.0](#310-aspect-model-fleetvehicles)
-- [Aspect Model QualityTaskAttachment v1.0.0](#311-aspect-model-qualitytaskattachment)
+- [Aspect Model SingleLevelBoMAsSpecified v2.0](#31-aspect-model-singlelevelbomasspecified)
+- [Aspect Model MaterialForHomologation v1.0](#32-aspect-model-materialforhomologation)
+- [Aspect Model PartAsSpecified v2.0](#33-aspect-model-partasspecified)
+- [Aspect Model QualityTask v2.0](#34-aspect-model-qualitytask)
+- [Aspect Model VehicleProductDescription v3.0](#35-aspect-model-vehicleproductdescription)
+- [Aspect Model FleetDiagnosticData v2.0](#36-aspect-model-fleetdiagnosticdata)
+- [Aspect Model FleetClaimData v2.0](#37-aspect-model-fleetclaimdata)
+- [Aspect Model PartAnalyses v3.0](#38-aspect-model-partanalyses)
+- [Aspect Model ManufacturedPartsQualityInformation v2.1](#39-aspect-model-manufacturedpartsqualityinformation)
+- [Aspect Model FleetVehicles v1.0](#310-aspect-model-fleetvehicles)
+- [Aspect Model QualityTaskAttachment v2.0](#311-aspect-model-qualitytaskattachment)
 
 Participants in the use case **MUST** follow Catena-X aligned [data models](https://github.com/eclipse-tractusx/sldt-semantic-models).
 
@@ -227,7 +227,7 @@ Application Provider for EoL Services **MUST** be able to handle the following c
 - [Aspect Model Refurbishing Certificate v3.0](#318-aspect-model-refurbishingcertificate)
 - [Aspect Model Remanufacturing Certificate v3.0](#319-aspect-model-remanufacturingcertificate)
 - [Aspect Model Material Recycling Certificate v1.0](#320-aspect-model-materialrecyclingcertificate)
-- [Aspect Model Repair Certificate v1.0.0](#321-aspect-model-repaircertificate)
+- [Aspect Model Repair Certificate v1.0](#321-aspect-model-repaircertificate)
 
 ##### 2.4.2.1 Registration of the Digital Twin and the Submodel in the Digital Twin Registry
 
@@ -296,17 +296,17 @@ To participate in the CE-Assistant use-case, the following single standards are 
 
 To participate in the CE-Assistant use-case, compliance to the following data models is **RECOMMENDED** by all participants for which the standard is relevant:
 
-- [Aspect Model SingleLevelBoMAsSpecified](#31-aspect-model-singlelevelbomasspecified)
-- [Aspect Model MaterialForHomologation](#32-aspect-model-materialforhomologation)
-- [Aspect Model PartAsSpecified](#33-aspect-model-partasspecified)
-- [Aspect Model ReturnRequest](#312-aspect-model-returnrequest)
-- [Aspect Model BatteryPass](#313-aspect-model-batterypass)
-- [Aspect Model Marketplaceoffer](#314-aspect-model-marketplaceoffer)
-- [Aspect Model VehicleProductDescription](#35-aspect-model-vehicleproductdescription)
-- [Aspect Model PartAnalyses](#38-aspect-model-partanalyses)
-- [Aspect Model ManufacturedPartsQualityInformation](#39-aspect-model-manufacturedpartsqualityinformation)
-- [Aspect Model RemainingUsefulLife](#315-aspect-model-remainingusefullife)
-- [Aspect Model QualityTaskAttachment](#311-aspect-model-qualitytaskattachment)
+- [Aspect Model SingleLevelBoMAsSpecified v2.0](#31-aspect-model-singlelevelbomasspecified)
+- [Aspect Model MaterialForHomologation v1.0](#32-aspect-model-materialforhomologation)
+- [Aspect Model PartAsSpecified v2.0](#33-aspect-model-partasspecified)
+- [Aspect Model ReturnRequest v2.0](#312-aspect-model-returnrequest)
+- [Aspect Model BatteryPass v5.0](#313-aspect-model-batterypass)
+- [Aspect Model Marketplaceoffer v2.0](#314-aspect-model-marketplaceoffer)
+- [Aspect Model VehicleProductDescription v3.0](#35-aspect-model-vehicleproductdescription)
+- [Aspect Model PartAnalyses v3.0](#38-aspect-model-partanalyses)
+- [Aspect Model ManufacturedPartsQualityInformation v2.1](#39-aspect-model-manufacturedpartsqualityinformation)
+- [Aspect Model RemainingUsefulLife v1.0](#315-aspect-model-remainingusefullife)
+- [Aspect Model QualityTaskAttachment v2.0](#311-aspect-model-qualitytaskattachment)
 
 To participate in the CE-Assistant use-case, compliance to the following data models / certificates is **RECOMMENDED** by all participants for which the standard is relevant:
 

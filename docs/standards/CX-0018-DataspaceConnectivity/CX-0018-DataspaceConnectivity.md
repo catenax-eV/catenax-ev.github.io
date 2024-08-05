@@ -7,7 +7,7 @@ tags:
   - CAT/Sandbox Services (Beta)
 ---
 
-# CX-0018 DATASPACE CONNECTIVITY v.3.1.0
+# CX-0018 Dataspace Connectivity v.3.1.0
 
 ## ABSTRACT
 
