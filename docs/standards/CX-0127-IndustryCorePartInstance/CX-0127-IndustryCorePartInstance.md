@@ -1018,7 +1018,7 @@ The dataspace connector **SHOULD** act as a reverse proxy towards those APIs, as
 
 ##### 4.1.2.1 API-ENDPOINTS
 
-The Unique ID Push Notification API **MUST** be implemented as specified in the openAPI documentation as stated here: [openAPI](https://github.com/catenax-eV/product-standardization-prod/tree/main/standards/CX-0127-IndustryCorePartInstance/2.0.0/src/unique-id-push-2-0-0.yaml)
+The Unique ID Push Notification API **MUST** be implemented as specified in the openAPI documentation as stated here: [openAPI](./assets/unique-id-push-2-0-0.yaml)
 
 To enable compatibility with future versions, additional, unknown attributes in the API can be ignored.
 

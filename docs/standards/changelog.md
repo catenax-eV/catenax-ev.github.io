@@ -5,7 +5,7 @@ sidebar_class_name: separator-top
 
 # Changelog
 
-## Summary of Release Jupiter
+## Summary of Release Jupiter (Preview)
 
 - 13 new standards
 - 35 updated standards

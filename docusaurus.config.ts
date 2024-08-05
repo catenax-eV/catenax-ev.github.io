@@ -87,11 +87,11 @@ const config: Config = {
           position: 'left',
           items: [
             {
-              to: '/docs/standards/overview/',
+              to: '/docs/next/standards/overview/',
               label: 'Standards',
             },
             {
-              to: '/docs/non-functional/overview/',
+              to: '/docs/next/non-functional/overview/',
               label: 'Non-functional requirements',
             },
           ],
