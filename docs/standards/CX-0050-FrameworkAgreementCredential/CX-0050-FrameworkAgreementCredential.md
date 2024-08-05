@@ -117,14 +117,14 @@ The Framework Agreement Credential Data Exchange Governance is shown and explain
 Explanation:
 
 - `id` is the uuid of the newly created credential - the uuid is defined by the issuer component
-- `context` is fix defined for the current used schema - we should already consider that the schema might get updated in future ideally we are flexible to have this scenario that the old schema is set to "INACTIVE" and a new schema is used for new created credentials
+- `context` is fix defined for the current used schema - we should already consider that the schema might get updated in future. Ideally we are flexible to have this scenario that the old schema is set to "INACTIVE" and a new schema is used for new created credentials
 - `type` is fix defined for this specific credential
 - `issuanceDate` calculated on runtime
 - `expirationDate` calculated by the issuer component based on defined credential static data expiry date => always not > 12 month
 - `issuer` holds the issuer did
 - `credentialSubject`
   - `id` holds the customer/holder did
-  - `holderidentifier` BPN number of the holder
+  - `holderIdentifier` BPN number of the holder
   - `group` groupType - fix value "UseCaseFramework"
   - `useCase` the linked useCase - in this case Data Exchange Governance Framework agreement is valid for all Catena-X use cases
   - `contractTemplate` contractTemplateDocument of the Framework
