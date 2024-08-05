@@ -52,15 +52,15 @@ What is **not** in scope is the description or the definition of the agreement i
 
 > *This section is non-normative*
 
-The Framework Agreement Credential is issued by the Core Service Provider to the Wallet of the participant and is exchanged by the Dataspace client in the course of data exchange. It is an attribute of the participants which approves to an other participant that a Framework Agreement for a specific use case is signed.
+The Framework Agreement Credential is issued by the Core Service Provider to the Wallet of the participant and is exchanged by the Dataspace client in the course of data exchange. It is an attribute of the participants which proves to another participant that a Framework Agreement for a specific use case is signed.
 
-A use case Framework Agreement defines the conditions for data exchange in a particular use case. Having signed this framework agreement is approved by a verifiable credential issued to the signing participant. This is done by the core service provider after an appropriate check of the approval of the participant to the framework agreement. The exchange of this credential allows participants to validate each other that they have agreed to the conditions defined in the framework agreement. The data provider can validate that the data consumer has signed the appropriate framework agreement.
+A use case Framework Agreement defines the conditions for data exchange in a particular use case. Having signed this framework agreement is proven by a verifiable credential issued to the signing participant. This is done by the core service provider after an appropriate check of the approval of the participant to the framework agreement. The exchange of this credential allows participants to validate each other that they have agreed to the conditions defined in the framework agreement. The data provider can validate that the data consumer has signed the appropriate framework agreement.
 
 ### 1.3 CONFORMANCE AND PROOF OF CONFORMITY
 
 > *This section is non-normative*
 
-As well as sections marked as non-normative, all authoring guidelines, diagrams, examples, and notes in this specification are non-normative. Everything else in this specification is normative.
+Sections marked as non-normative, all authoring guidelines, diagrams, examples, and notes in this specification are non-normative. Everything else in this specification is normative.
 
 The key words **MAY**, **MUST**, **MUST NOT**, **OPTIONAL**, **RECOMMENDED**, **REQUIRED**, **SHOULD** and **SHOULD NOT** in this document document are to be interpreted as described in BCP 14 [RFC2119] [RFC8174] when, and only when, they appear in all capitals, as shown here.
 
@@ -72,7 +72,7 @@ All Core Service Providers providing the issuance of Use Case Framework Agreemen
 
 To validate these criteria of conformance to the Use Case Framework Agreements the following information **MUST** be handed to the Conformity Assessment Body by the Core Service Provider:
 
-- The validation / control process of the participants signature
+- The validation / control process of the participants' signature
 - A documentation (e.g. based on Arc42) explaining the architecture, process flows and data structures of the implementation.
 
 ### 1.4 EXAMPLES
@@ -87,7 +87,7 @@ Not applicable.
 
 ## 2. FRAMEWORK AGREEMENT CREDENTIAL
 
-> *This section is normantive*
+> *This section is normative*
 
 ### 2.1 Framework Agreement Credential Content
 
@@ -124,14 +124,14 @@ The structure of the use case framework agreement credential is as follows:
 The content of the Framework Agreement Credential is as follows:
 
 - `id` is the uuid of the newly created credential - the uuid is defined by the issuer component
-- `context` is fix defined for the current used schema - we should already consider that the schema might get updated in future ideally we are flexible to have this scenario that the old schema is set to "INACTIVE" and a new schema is used for new created credentials
+- `context` is fix defined for the current used schema - we should already consider that the schema might get updated in the future. Ideally, we are flexible to have this scenario that the old schema is set to "INACTIVE" and a new schema is used for new created credentials
 - `type` is fix defined for this specific credential
 - `issuanceDate` calculated on runtime
 - `expirationDate` calculated by the issuer component based on defined credential static data expiry date => always not > 12 month
 - `issuer` holds the issuer did
 - `credentialSubject`
   - `id` holds the customer/holder did
-  - `holderidentifier` BPN number of the holder
+  - `holderIdentifier` BPN number of the holder
   - `group` groupType - fix value "UseCaseFramework"
   - `useCase` the linked useCase
   - `contractTemplate` contractTemplateDocument of the Framework
