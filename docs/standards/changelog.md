@@ -108,6 +108,7 @@ sidebar_class_name: separator-top
 | CX-0144 | ESS Use Case Standard | 1.0  | Catena-X aims to support supply chain due diligence obligations in a market environment that miss full up- and downstream transparency. This is argued to be relevant for Environmental and Social Standards (ESS) incident tracking, without compromising GAIA-X and Catena-X principles like data sovereignty, interoperability, standardization, and use of federated services.<br />In case a violation against these laws occurs, an ESS incident can be created and transmitted to the Catena-X network. The Catena-X network and the ESS use case standard support the Catena-X members in this process. <br />*Note:* The ESS incident aspect model, which was described in CX-0113, has been integrated into this document. |
 
 ### B) List of new / updated non-functional requirements
+
 | Name |  Version |  Description |
 |:--------------------|:-----------------------------------------------|:--------------------------------------------------------------------------------------------------|
 | PCF-Rulebook | v3.0 | To reduce the room for interpretation, Catena-X developed this Product Carbon Footprint Rulebook with a focus on the exchange of production carbon footprints from tier to tier with increased consistency for PCF accounting. This increased consistency will ensure comparability for the PCFs of parts and components and allow for part and supplier selection. Consequently, the Catena-X Rulebook focusses on the production stage of vehicles.  |
