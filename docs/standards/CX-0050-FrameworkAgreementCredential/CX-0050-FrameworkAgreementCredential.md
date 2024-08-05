@@ -9,7 +9,7 @@ tags:
   - Sandbox Service Provider
 ---
 
-# CX-0050 Framework Agreement Credential v2.0.0
+# CX-0050 Framework Agreement Credential v2.0.1
 
 ## REVISIONS & UPDATE
 
