@@ -48,7 +48,7 @@ At this level, participants configure specific data offerings while the Catena-X
 
 At this level, automated negotiations of data usage contracts between participants for specific data offerings (as defined at 10,000ft) occur through the Eclipse Data Space Connector (EDC). A data usage contract with the EDC (decentralized and key-signed protocol for data usage logging) can specify which partners, which data assets, and for how long data is used.
 
-## Summarising
+## Summarizing
 
 While Data Providers and Data Consumers have the option of concluding bilateral contracts (supplier contract, ...) outside of a registered connector to determine their contractual relationship for data exchange via Catena-X, the Catena-X Regulatory Framework sets out certain boundary conditions (10 Golden Rules, Data Exchange Governance...) that are binding for all data space participants and cannot be negated with bilateral contracts outside the confines of the Catena-X Regulatory Framework.
 
