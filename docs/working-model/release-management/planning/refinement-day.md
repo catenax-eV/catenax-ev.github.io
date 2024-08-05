@@ -19,7 +19,7 @@ Based on a predefined agenda (depending on the features on the board), individua
 ## Outcome
 
 - Ready refined feature proposal which fulfil the Definition of Entry Criteria.
-- Feature proposal with status `Backlog` => Ready for [Release Planning](release-planning-day-1.md).
+- Feature proposal with status `Backlog` => Ready for [Release Planning](release-planning-days.md).
 - Alignment with the community (Committees, Expert groups, Tractus-X community).
 - All dependencies are documented on the feature proposal.
 - Linked issues on product specific repositories.
