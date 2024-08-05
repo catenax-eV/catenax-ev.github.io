@@ -1,3 +1,7 @@
+---
+pagination_prev: null
+pagination_next: null
+---
 # Standardized Usage Policies
 
 The standardized usage policies represent a consolidation of the predefined use case frameworks. The only difference is the purpose of use.
