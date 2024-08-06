@@ -115,24 +115,21 @@ Data space participants and their solutions that have a valid certificate past O
 
 #### 2. Certification of business applications vs. internal systems that fall under the definition of a Catena-X business application*
 
-**A business application** provides specific logic and schemas defined in a Catena-X use case (e.g., data processing, transformation functions) that is applied to input data to produce an expected output. This includes the transformation of data from an input format into an output format using Catena-X semantic models (semantic interoperability) as well as the technical data exchange using standardized protocols and API-specifications (technical interoperability). This does not apply to internal systems of an organization, such as internal databases, data lakes, data pipelines (ETL) or source systems. To become operational on the Catena-X data space, a business application must comply with the corresponding standards.
+**A business application** provides specific logic and schemas defined in a Catena-X use case (e.g., data processing, transformation functions) that is applied to input data to produce an expected output. This includes the use of Catena-X semantic models (semantic interoperability) as well as the technical data exchange using standardized protocols and API-specifications (technical interoperability). This does not apply to internal systems of an organization, such as internal databases, data lakes, data pipelines (ETL) or source systems.
 
-Companies connected to Catena-X might want to **connect certain internal systems** including company-internal business applications to the Catena-X network. It remains, however, crucial that all participants can rely on a standardized data exchange that guarantees stable data chains built on data sovereignty and interoperability.
+Companies may want to **integrate internal systems** including company-internal business applications to the Catena-X data space. However, tt is crucial that all participants can rely on a standardized data exchange to ensure stable and consistent multi-tier data chains based on data sovereignty and interoperability. Consequently, the following principles apply:
 
-Consequently, the following two principles apply:
+- All company-internal business applications required to maintain a stable and consistent multi-tier data (see XXX) must compy with Catena-X standards and be certified by a CAB.
+- All company-internal business applications associated with the Catena-X brand and/or offered on a Catena-X marketplace must comply to Catena-X standards and be certified by a CAB.
 
-- Everything that is necessary to uphold a stable data chain is required to follow Catena-X standards and has to be certified by a CAB.
-- All business applications that are either associated with the Catena-X brand and/or are offered on a Catena-X marketplace are required to follow Catena-X standards and have to be certified by a CAB.
+If an company-internal business applications meets either of these criteria, Catena-X certification is mandatory.
 
-If an internal system fulfills one of these two criteria, a Catena-X certification is mandatory.
+#### 3. No Catena-X Business Applications without listing on a Certified Catena-X Marketplace
 
-#### 3. No Catena-X Business Applications without listing on a certified Catena-X Marketplace
+Catena-X is built on trust. All Catena-X certified business applications and services must be listed on a certified Catena-X marketplace.
+Catena-X marketplace provider (i.e. CSP-A) verify that the listed business applications and services have a valid certification issued by a CAB and therefore comply with the Catena-X standards. Catena-X does not allow the provision of a solutions without a marketplace listing.
 
-Catena-X is built on trust. Consequently, certified Catena-X marketplaces (CSP-A) are checking, whether services are certified to ensure that the listed offer is trustworthy and conform to Catena-X standards.
-
-To further anchor this trust, all Catena-X related business applications and services require a listing on a Catena-X certified marketplace. Catena-X does not permit operating a Catena-X solution outside of a certified Catena-X marketplace.
-
-As noted in Chapter [Increase Decentralization of Core Services](./../outlook/outlook.md#increase-decentralization-of-core-services), Catena-X will provide the technical possibility for multiple CSP-A providers. This will foster multiple verifiers of credentials.
+In the future, there will be multiple CSP-As that enable business applications and services to be verified and listed on various marketplaces, as mentioned in chapter [Increase Decentralization of Core Services](./../outlook/outlook.md#increase-decentralization-of-core-services).
 
 ## Nomination Process for unique Roles (e.g., CSP-B)
 
@@ -187,23 +184,25 @@ Different from Catena-X Certification, Catena-X qualification is a label held by
 
 The Catena-X Regulatory Framework for data space operations outlines the non-technical requirements and responsibilities for all stakeholders involved in the Catena-X data ecosystem. It includes detailed information on data sovereignty, mandatory use case requirements, and other regulatory considerations that are relevant and mandatory to our activities. The Regulatory Framework is made up of individual components that each govern a specific layer of our data space operations. To understand the layers of our Regulatory Framework, Catena-X uses flight levels as a metaphor (see Figure Catena-X Governance Framework flight levels):
 
-The Operating Model, the 10 Golden Rules and the Data Exchange Governance fall under the 30,000-ft level (Data Space Level) and are thus mandatory for all data space participants. At this level, the basic principles of the data ecosystem are outlined.
+![Catena-X Flightlevels](./assets/catena-x-governance-framework-flight-levels.png)
+*Catena-X Flightlevels*
 
-The standardised usage policies are located at the 20,000-ft level (Use Case Level), where the fundamental requirements for data usage in a use case are defined.
+The Operating Model, the 10 Golden Rules and the Country Clearance List fall under the 30,000-ft level (Data Space Level) and are thus mandatory for all data space participants. At this level, the basic principles of the data ecosystem are outlined.
 
-The 10,000-ft level (Data Offering Level) provides guidance for data offerings by data providers / consumers.
+The Data Exchange Governance and the standardised usage policies are located at the 20,000-ft level (Use Case Level), where the fundamental requirements for data usage in a use case are defined.
 
-The 5,000-ft level provides guidance for data usage by data providers / consumers including the conclusion of contracts via a registered connector.
+******Disclaimer: The Data Exchange Governance is only temporarily located at this level. It will soon be located at the 30,000-ft level.***
+
+The 10,000-ft level (Data Offering Level) provides guidance for data offerings by Data Providers and Consumers.
+
+The 5,000-ft level provides guidance for data usage by Data Providers and Consumers including the conclusion of contracts via a registered connector.
 
 Each higher level cascades into the lower ones, and the lower levels align with those above. Each level comes with specific guidelines and resources but also responsibilities for participants in our data space. Maintaining and updating our Regulatory Framework for data space operations lies within the responsibility of the Catena-X Association.
 All resources and normative documents included in the regulatory framework are listed on the Catena-X website.
 
-![Catena-X Flightlevels](./assets/flightlevels.png)
-*Catena-X Flightlevels*
-
 ### Standardized modules for data exchange contracts
 
-The Catena-X Association aims to develop further automation and scalability of the process of concluding data exchange contracts via Catena-X. Connectors will enable Participants to choose from a range of modules when negotiating and agreeing on terms within the Data Exchange Governance (e.g. liability/dispute resolution/choice of law etc.). All official modules provided by the Catena-X Association are listed under the official Catena-X Open Digital Rights Language Repository.
+The Catena-X Association aims to develop further automation and scalability of the process of concluding data exchange contracts via Catena-X. Connectors will enable participants to choose from a range of modules when negotiating and agreeing on terms within the Data Exchange Governance (e.g. liability/dispute resolution/choice of law etc.). All official modules provided by the Catena-X Association are listed under the official Catena-X Open Digital Rights Language Repository.
 These modules are limited to standardized data usage policies for Catena-X use cases.
 
 ### Concluding Data Exchange Contracts via Catena-X
@@ -221,7 +220,7 @@ A general overview of the process is depicted in Figure [Catena-X process for No
 ![Catena-X process for Non-Technical Requirements](./assets/Governance-for-Non-Technical-Requirements.png)
 *Catena-X process for Non-Technical Requirements*
 
-### Country clearance list
+### Country Clearance List
 
 The Catena-X association issues a [country clearance list](https://catena-x.net/fileadmin/user_upload/04_Einfuehren_und_umsetzen/Governance_Framework/Catena-X_-_Country_Clearance_list.pdf) that specifies countries, in which companies can be onboarded to the Catena-X data space. This list acts as mandatory guidance to all OSPs for registering participants in the Catena-X data space.
 
