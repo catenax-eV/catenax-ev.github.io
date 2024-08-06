@@ -122,7 +122,7 @@ Companies may want to **integrate internal systems** including company-internal 
 - All company-internal business applications required to maintain a stable and consistent multi-tier data (see XXX) must compy with Catena-X standards and be certified by a CAB.
 - All company-internal business applications associated with the Catena-X brand and/or offered on a Catena-X marketplace must comply to Catena-X standards and be certified by a CAB.
 
-If an company-internal business applications meets either of these criteria, Catena-X certification is mandatory.
+If an company-internal business application meets either of these criteria, Catena-X certification is mandatory.
 
 #### 3. No Catena-X Business Applications without listing on a Certified Catena-X Marketplace
 
