@@ -1,5 +1,6 @@
 ---
 sidebar_position: 5
+sidebar_class_name: separator-top
 ---
 # Changelog
 
@@ -16,7 +17,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Changed
 
-- Changed White List to Allow List and Yellow List to Conditional List [[#74](https://url.de.m.mimecastprotect.com/s/sobUCMZkL4hqQZ2lYuwfgsQj2J-?domain=github.com)]
+- Changed White List to Allow List and Yellow List to Conditional List [[#74](https://github.com/catenax-eV/catenax-ev.github.io/pull/74)]
 
 ### Removed
 
