@@ -88,8 +88,16 @@ The Release Governance is carried out by the Catena-X Association and ensures co
 
 The following milestones are instrumental and constitute the official funnel for deploying ecosystem releases:
 
-1. **Planning Gate** *after* planning phase: The planning gate criteria are defined by the Catena-X Association, e.g. architecture guidelines, standards, etc. Additionally, the impact of the changes has to be assessed and all network breaking changes require an explicit decision to be included in an official Catena-X development cycle. Moreover, *during* development phase, the Catena-X Association resolves to solve issues regarding compatibility and release management, i.e. communication between components.
+1. **Development Gate** *after* planning phase: The development gate criteria are defined by the Catena-X Association, e.g. architecture guidelines, standards, etc. Additionally, the impact of the changes has to be assessed and all network breaking changes require an explicit decision to be included in an official Catena-X development cycle. Moreover, *during* development phase, the Catena-X Association resolves to solve issues regarding compatibility and release management, i.e. communication between components.
 2. **Deployment Gate** *after* development phase: After the development phase has concluded, the Catena-X Association formally approves an ecosystem release comprised of a set of coherent standards, normative documents and guidance regarding complementary Tractus-X products and reference implementations. The deployment gate initiates the deployment phase.
+
+The participants of the development and deployment gate decide about acceptance or rejection of features and deployments. Participation works by representatives of specific roles.
+
+### Patches
+
+The release schedule does not cover patches. The schedule defines such long timeframes between minor and major versions that it can be problematic to fix bugs or security issues. Therefore bugs shall be fixed independently of the release schedule, i.e. if a bugfix is required, it shall be done. A bug is a problem that is not changing the behavior, i.e. the behavior according to the standard is not changed.
+
+Security patches are different, because to fix a bug, it is required to change the behavior, but the security issue makes it mandatory to patch the release. The decision, when a patch can be deployed, is with the participants of the deployment gate. Additionally, there is a dependency to the standard, because the security issue could already be initiated by the standard itself. This would not only require a patch, but at least a note in the standard.
 
 ### Introduction of the release schedule
 

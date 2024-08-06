@@ -5,6 +5,28 @@ sidebar_position: 1
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [3.0.1]
+
+### Added
+
+- Data space operations
+  - Supply Chain Visibility [BETA]
+- How life cycle management
+  - Details on patches and participants of gates
+
+### Changed
+
+- Data space operations
+  - updated onboarding process & registration
+- Data space governance
+  - detailing and updating certification of business applications & marketplace
+  - updated regulatory framework
+- Service Map
+  - "Direct collaboration" renamed to "Individual collaboration"
+  - detailing the Sandbox Provider [[#88](https://github.com/catenax-eV/catenax-ev.github.io/issues/88)]
+- Roles in the Catena-X Ecosystem
+  - detailing the Sandbox Provider [[#88](https://github.com/catenax-eV/catenax-ev.github.io/issues/88)]
+
 ## [3.0.0]
 
 ### Added

@@ -273,11 +273,11 @@ Given that the Catena-X brand derives much of its value throug trust, Catena-X S
 
 **Relationships:**
 
-- An SP can operate independently from the CSP-B as Catena-X Sandboxes remain strictly separate from the Catena-X Operating Environment.
-- An SP must only onboard trusted users, listed on the Catena-X data space clearance list.
+- An SP can operate independently from the CSP-B as Catena-X Sandboxes remain strictly separate from the Catena-X Operating Environment (e.g. no sync/mapping of BPNs).
+- An SP must only onboard users which are already onboarded on the productive Catena-X dataspace via an OSP or CSP-B.
 - An SP must advertise a clear migration path to the productive Catena-X Operating Environment to its users.
 - An SP must use the services of one of the OSPs to register and onboard itself to the data space (e.g., registration service).
-- An SP must accept and comply with the Catena-X regulatory framework during onboarding via one of the OSPs.
+- An SP must accept and comply with the Catena-X regulatory framework during onboarding via one of the OSPs or CSP-B.
 - An SP offering its Sandbox to official Catena-X conformity assessment services must be nominated by the Catena-X Association.
 
 **Prerequisites and Limitations:**
