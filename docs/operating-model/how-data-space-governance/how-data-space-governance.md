@@ -117,7 +117,7 @@ Data space participants and their solutions that have a valid certificate past O
 
 **A business application** provides specific logic and schemas defined in a Catena-X use case (e.g., data processing, transformation functions) that is applied to input data to produce an expected output. This includes the use of Catena-X semantic models (semantic interoperability) as well as the technical data exchange using standardized protocols and API-specifications (technical interoperability). This does not apply to internal systems of an organization, such as internal databases, data lakes, data pipelines (ETL) or source systems.
 
-Companies may want to **integrate internal systems** including company-internal business applications to the Catena-X data space. However, tt is crucial that all participants can rely on a standardized data exchange to ensure stable and consistent multi-tier data chains based on data sovereignty and interoperability. Consequently, the following principles apply:
+Companies may want to **integrate internal systems** including company-internal business applications to the Catena-X data space. However, it is crucial that all participants can rely on a standardized data exchange to ensure stable and consistent multi-tier data chains based on data sovereignty and interoperability. Consequently, the following principles apply:
 
 - All company-internal business applications required to maintain a stable and consistent multi-tier data (see XXX) must compy with Catena-X standards and be certified by a CAB.
 - All company-internal business applications associated with the Catena-X brand and/or offered on a Catena-X marketplace must comply to Catena-X standards and be certified by a CAB.
