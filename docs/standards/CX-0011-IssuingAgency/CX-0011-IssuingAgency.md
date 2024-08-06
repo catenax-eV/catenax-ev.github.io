@@ -1,9 +1,9 @@
 ---
 tags:
-  - BPDM
-  - Core Service Provider
-  - Sandbox Services (Beta)
-  - Sandbox Service Provider
+  - CAT/BPDM
+  - CAT/Core Service Provider
+  - CAT/Sandbox Services (Beta)
+  - CAT/Sandbox Service Provider
 ---
 
 # CX-0011 Issuing Agency v1.0.1

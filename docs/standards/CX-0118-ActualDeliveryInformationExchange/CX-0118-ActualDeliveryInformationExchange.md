@@ -1,3 +1,9 @@
+---
+tags:
+  - CAT/Business Application Provider
+  - UC/PURIS
+---
+
 # CX-0118 Delivery Information Exchange 2.0.0
 
 ## ABSTRACT

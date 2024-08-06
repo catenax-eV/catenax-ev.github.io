@@ -160,26 +160,26 @@ This identifier MUST be used by the data provider to define the semantics of the
 
 All different formats of the semantic model can be found in the github repository.
 
-- [https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.single_level_bom_as_specified/2.0.0](https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.single_level_bom_as_specified/2.0.0)
+- [https://github.com/eclipse-tractusx/sldt-semantic-models/tree/4d239fc5709f71f39c3cf13581b5bcf960905157/io.catenax.single_level_bom_as_specified/2.0.0](https://github.com/eclipse-tractusx/sldt-semantic-models/tree/4d239fc5709f71f39c3cf13581b5bcf960905157/io.catenax.single_level_bom_as_specified/2.0.0)
 
 #### 2.5.1 RDF TURTLE
 
 The rdf turtle file, an instance of the Semantic Aspect Meta Model, is the master for generating additional file formats and serializations.
 
-- [https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.single_level_bom_as_specified/2.0.0/SingleLevelBomAsSpecified.ttl](https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.single_level_bom_as_specified/2.0.0/SingleLevelBomAsSpecified.ttl)
+- [https://github.com/eclipse-tractusx/sldt-semantic-models/blob/4d239fc5709f71f39c3cf13581b5bcf960905157/io.catenax.single_level_bom_as_specified/2.0.0/SingleLevelBomAsSpecified.ttl](https://github.com/eclipse-tractusx/sldt-semantic-models/blob/4d239fc5709f71f39c3cf13581b5bcf960905157/io.catenax.single_level_bom_as_specified/2.0.0/SingleLevelBomAsSpecified.ttl)
 
 The open source command line tool of the Eclipse Semantic Modeling Framework is used for generation
 of other file formats like for example a JSON Schema, aasx for Asset Administration Shell Submodel
 Template or a HTML documentation.
 
-- [https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.single_level_bom_as_specified/2.0.0/gen](https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.single_level_bom_as_specified/2.0.0/gen)
+- [https://github.com/eclipse-tractusx/sldt-semantic-models/tree/4d239fc5709f71f39c3cf13581b5bcf960905157/io.catenax.single_level_bom_as_specified/2.0.0/gen](https://github.com/eclipse-tractusx/sldt-semantic-models/tree/4d239fc5709f71f39c3cf13581b5bcf960905157/io.catenax.single_level_bom_as_specified/2.0.0/gen)
 
 #### 2.5.2 JSON SCHEMA
 
 A JSON Schema can be generated from the RDF Turtle file. The JSON Schema defines the Value-Only
 payload of the Asset Administration Shell for the API operation "GetSubmodel".
 
-- [https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.single_level_bom_as_specified/2.0.0/gen/SingleLevelBomAsSpecified.json](https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.single_level_bom_as_specified/2.0.0/gen/SingleLevelBomAsSpecified.json)
+- [https://github.com/eclipse-tractusx/sldt-semantic-models/blob/4d239fc5709f71f39c3cf13581b5bcf960905157/io.catenax.single_level_bom_as_specified/2.0.0/gen/SingleLevelBomAsSpecified.json](https://github.com/eclipse-tractusx/sldt-semantic-models/blob/4d239fc5709f71f39c3cf13581b5bcf960905157/io.catenax.single_level_bom_as_specified/2.0.0/gen/SingleLevelBomAsSpecified.json)
 
 #### 2.5.3 AASX
 

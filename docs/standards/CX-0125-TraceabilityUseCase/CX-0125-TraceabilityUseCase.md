@@ -1,3 +1,9 @@
+---
+tags:
+  - CAT/Business Application Provider
+  - UC/Traceability
+---
+
 # CX-0125 Traceability Use Case v2.0.0
 
 ## ABSTRACT
@@ -195,7 +201,9 @@ The IDS protocol as described in CX-0018 **MUST** be followed in the data exchan
 
 As the IDS protocol is being used, data **MUST NOT** be transferred before a corresponding contract negotiation has been successfully passed by the participants of the data exchange and a valid contract is present as described in CX-0018.
 
-The described [Notification Process](#51-notification-process) and especially status schema **MUST** be supported.
+The described [Notification Process](#51-quality-notification-process) and especially status schema **MUST** be supported.
+
+### 4.1 QUALITY NOTIFICATION API  
 
 The described [Notification API](#41-quality-notification-api) **MUST** be provisioned in order to receive Quality Alerts or Quality Investigation.
 The required data offers for Quality Alerts and Quality Investigations **MUST** be created and linked to the described endpoints of the [Notification API](#41-quality-notification-api).

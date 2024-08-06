@@ -1,9 +1,9 @@
 ---
 tags:
-  - Portal
-  - Core Service Provider
-  - Sandbox Services (Beta)
-  - Sandbox Service Provider
+  - CAT/Portal
+  - CAT/Core Service Provider
+  - CAT/Sandbox Services (Beta)
+  - CAT/Sandbox Service Provider
 ---
 
 # CX-0001 EDC Discovery API v1.0.2

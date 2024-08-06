@@ -1,9 +1,8 @@
 ---
 tags:
-  - Portal
-  - Core Service Provider
-  - Sandbox Services (Beta)
-  - Sandbox Service Provider
+  - CAT/Portal
+  - CAT/Core Service Provider
+  - CAT/Sandbox Services (Beta)
 ---
 
 # CX-0014 Employees and Technical Users v1.0.1

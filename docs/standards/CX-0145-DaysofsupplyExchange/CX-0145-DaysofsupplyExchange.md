@@ -1,3 +1,9 @@
+---
+tags:
+  - CAT/Business Application Provider
+  - UC/PURIS
+---
+
 # CX-0145 Days of supply Exchange 1.0.0
 
 ## ABSTRACT
@@ -386,7 +392,7 @@ This identifier **MUST** be used by the data provider to define the semantics of
 The RDF turtle file, an instance of the Semantic Aspect Meta Model, is the master for generating additional
 file formats and serializations. It can be found under the following link:
 
-> [https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.days_of_supply/2.0.0/DaysOfSupply.ttl](https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.days_of_supply/2.0.0/DaysOfSupply.ttl)
+> [https://github.com/eclipse-tractusx/sldt-semantic-models/blob/4d239fc5709f71f39c3cf13581b5bcf960905157/io.catenax.days_of_supply/2.0.0/DaysOfSupply.ttl](https://github.com/eclipse-tractusx/sldt-semantic-models/blob/4d239fc5709f71f39c3cf13581b5bcf960905157/io.catenax.days_of_supply/2.0.0/DaysOfSupply.ttl)
 
 The open source command line tool of the Eclipse Semantic Modeling Framework is used for generation of
 other file formats like for example a JSON Schema, aasx for Asset Administration Shell Submodel Template

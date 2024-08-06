@@ -1,3 +1,9 @@
+---
+tags:
+  - CAT/Business Application Provider
+  - UC/Ecopass
+---
+
 # CX-0143 Use Case Circular Economy - Digital Product Passport Standard 1.0.0
 
 ## ABSTRACT
@@ -472,7 +478,7 @@ All formats can be generated through the turtle file and the [SAMM command line 
 The rdf turtle file, an instance of the Semantic Aspect Meta Model, is the master for generating additional file formats and serializations. It can be found in the current version 4.0.0 in the github repository.
 
 ```
-https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.generic.digital_product_passport/4.0.0/DigitalProductPassport.ttl
+https://github.com/eclipse-tractusx/sldt-semantic-models/blob/4d239fc5709f71f39c3cf13581b5bcf960905157/io.catenax.generic.digital_product_passport/4.0.0/DigitalProductPassport.ttl
 ```
 
 ##### 3.1.5.2 JSON SCHEMA
@@ -480,7 +486,7 @@ https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.ge
 A JSON Schema can be generated from the RDF Turtle file. The JSON Schema defines the Value-Only payload of the Asset Administration Shell for the API operation "GetSubmodel". It can be found in the current version in the "gen" subfolder in the github repository.
 
 ```
-https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.generic.digital_product_passport/4.0.0/gen
+https://github.com/eclipse-tractusx/sldt-semantic-models/tree/4d239fc5709f71f39c3cf13581b5bcf960905157/io.catenax.generic.digital_product_passport/4.0.0/gen
 ```
 
 ##### 3.1.5.3 AASX
@@ -488,7 +494,7 @@ https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.ge
 An AASX file can be generated from the RDF Turtle file. The AASX file defines one of the requested artifacts for a Submodel Template Specification. It can be found in the current version in the "gen" subfolder in the github repository.
 
 ```
-https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.generic.digital_product_passport/4.0.0/gen
+https://github.com/eclipse-tractusx/sldt-semantic-models/tree/4d239fc5709f71f39c3cf13581b5bcf960905157/io.catenax.generic.digital_product_passport/4.0.0/gen
 ```
 
 ### 3.2 ASPECT MODEL "BATTERY PASS"
@@ -500,9 +506,9 @@ To use the model pieces of the [Digital Product Passport](#31-aspect-model-digit
 
 #### 3.2.2 SPECIFICATIONS ARTIFACTS
 
-This aspect model is written in SAMM 2.1.0 as a modeling language conformant to [CX-0003 SAMM Semantic Aspect Meta Model](https://catena-x.net/fileadmin/user_upload/Standard-Bibliothek/Archiv/Update_Juli_23_R_3.2/CX-0003-SAMMSemanticAspectMetaModel-v1.0.2.pdf).
+This aspect model is written in SAMM 2.1.0 as a modeling language conformant to [CX-0003 SAMM Semantic Aspect Meta Model](https://catenax-ev.github.io/docs/next/standards/CX-0003-SAMMSemanticAspectMetaModel).
 
-Like all Catena-X data models, this model is available in a machine-readable format on GitHub conformant to [CX-0003 SAMM Semantic Aspect Meta Model](https://catena-x.net/fileadmin/user_upload/Standard-Bibliothek/Archiv/Update_Juli_23_R_3.2/CX-0003-SAMMSemanticAspectMetaModel-v1.0.2.pdf).
+Like all Catena-X data models, this model is available in a machine-readable format on GitHub conformant to [CX-0003 SAMM Semantic Aspect Meta Model](https://catenax-ev.github.io/docs/next/standards/CX-0003-SAMMSemanticAspectMetaModel).
 
 #### 3.2.3 LICENSE
 
@@ -526,7 +532,7 @@ All formats can be generated through the turtle file and the [SAMM command line 
 The rdf turtle file, an instance of the Semantic Aspect Meta Model, is the master for generating additional file formats and serializations. It can be found in the current version 5.0.0 in the github repository.
 
 ```
-https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.battery.battery_pass/5.0.0/BatteryPass.ttl
+https://github.com/eclipse-tractusx/sldt-semantic-models/blob/4d239fc5709f71f39c3cf13581b5bcf960905157/io.catenax.battery.battery_pass/5.0.0/BatteryPass.ttl
 ```
 
 ##### 3.2.5.2 JSON SCHEMA
@@ -534,7 +540,7 @@ https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.ba
 A JSON Schema can be generated from the RDF Turtle file. The JSON Schema defines the Value-Only payload of the Asset Administration Shell for the API operation "GetSubmodel". It can be found in the current version in the "gen" subfolder in the github repository.
 
 ```
-https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.battery.battery_pass/5.0.0/gen
+https://github.com/eclipse-tractusx/sldt-semantic-models/tree/4d239fc5709f71f39c3cf13581b5bcf960905157/io.catenax.battery.battery_pass/5.0.0/gen
 ```
 
 ##### 3.2.5.3 AASX
@@ -542,7 +548,7 @@ https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.ba
 An AASX file can be generated from the RDF Turtle file. The AASX file defines one of the requested artifacts for a Submodel Template Specification. It can be found in the current version in the "gen" subfolder in the github repository.
 
 ```
-https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.battery.battery_pass/5.0.0/gen
+https://github.com/eclipse-tractusx/sldt-semantic-models/tree/4d239fc5709f71f39c3cf13581b5bcf960905157/io.catenax.battery.battery_pass/5.0.0/gen
 ```
 
 ### 3.3 ASPECT MODEL "TRANSMISSION PASS"
@@ -553,9 +559,9 @@ The transmission passport corresponds to the [Digital Product Passport](#31-aspe
 
 #### 3.3.2 SPECIFICATIONS ARTIFACTS
 
-This aspect model is written in SAMM 2.1.0 as a modeling language conformant to [CX-0003 SAMM Semantic Aspect Meta Model](https://catena-x.net/fileadmin/user_upload/Standard-Bibliothek/Archiv/Update_Juli_23_R_3.2/CX-0003-SAMMSemanticAspectMetaModel-v1.0.2.pdf).
+This aspect model is written in SAMM 2.1.0 as a modeling language conformant to [CX-0003 SAMM Semantic Aspect Meta Model](https://catenax-ev.github.io/docs/standards/CX-0003-SAMMSemanticAspectMetaModel).
 
-Like all Catena-X data models, this model is available in a machine-readable format on GitHub conformant to [CX-0003 SAMM Semantic Aspect Meta Model](https://catena-x.net/fileadmin/user_upload/Standard-Bibliothek/Archiv/Update_Juli_23_R_3.2/CX-0003-SAMMSemanticAspectMetaModel-v1.0.2.pdf).
+Like all Catena-X data models, this model is available in a machine-readable format on GitHub conformant to [CX-0003 SAMM Semantic Aspect Meta Model](https://catenax-ev.github.io/docs/standards/CX-0003-SAMMSemanticAspectMetaModel).
 
 #### 3.3.3 LICENSE
 
@@ -579,7 +585,7 @@ All formats can be generated through the turtle file and the [SAMM command line 
 The rdf turtle file, an instance of the Semantic Aspect Meta Model, is the master for generating additional file formats and serializations. It can be found in the current version 2.0.0 in the github repository.
 
 ```
-https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.transmission.transmission_pass/2.0.0/TransmissionPass.ttl
+https://github.com/eclipse-tractusx/sldt-semantic-models/blob/4d239fc5709f71f39c3cf13581b5bcf960905157/io.catenax.transmission.transmission_pass/2.0.0/TransmissionPass.ttl
 ```
 
 ##### 3.3.5.2 JSON SCHEMA
@@ -587,7 +593,7 @@ https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.tr
 A JSON Schema can be generated from the RDF Turtle file. The JSON Schema defines the Value-Only payload of the Asset Administration Shell for the API operation "GetSubmodel". It can be found in the current version in the "gen" subfolder in the github repository.
 
 ```
-https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.transmission.transmission_pass/2.0.0/gen
+https://github.com/eclipse-tractusx/sldt-semantic-models/tree/4d239fc5709f71f39c3cf13581b5bcf960905157/io.catenax.transmission.transmission_pass/2.0.0/gen
 ```
 
 ##### 3.3.5.3 AASX
@@ -595,7 +601,7 @@ https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.tr
 An AASX file can be generated from the RDF Turtle file. The AASX file defines one of the requested artifacts for a Submodel Template Specification.
 
 ```
-https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.transmission.transmission_pass/2.0.0/gen
+https://github.com/eclipse-tractusx/sldt-semantic-models/tree/4d239fc5709f71f39c3cf13581b5bcf960905157/io.catenax.transmission.transmission_pass/2.0.0/gen
 ```
 
 ## 4 APPLICATION PROGRAMMING INTERFACES
@@ -645,10 +651,10 @@ The EDC assets for product passports **MUST** follow the JSON.
 #### 4.1.2 EDC Policy Structure
 
 A participant mentioned under [1.1](#11-audience--scope) **MUST** sign the overall
-[Catena-X Terms and Condition](https://catena-x.net/en/catena-x-introduce-implement/governance-framework-for-data-space-operations) as well as the sustainability agreement
-[circular economy framework agreement](https://catena-x.net/en/catena-x-introduce-implement/governance-framework-for-data-space-operations).
+[Catena-X Terms and Condition](https://catenax-ev.github.io/docs/regulatory-framework/governance-framework) as well as the sustainability agreement
+[circular economy framework agreement](https://catenax-ev.github.io/docs/regulatory-framework/20000ft/use-case-ce).
 
- Have a look at example policies [here](https://github.com/catenax-eV/cx-odrl-profile/blob/main/example_usage_policy.json). A guideline for different use cases profiles has been provided [here](https://github.com/catenax-eV/cx-odrl-profile/blob/main/profile.md)
+ Have a look at example policies [here](https://github.com/catenax-eV/cx-odrl-profile/blob/c96b426ded7922f44bdc33bfc5e0bf754031b5e8/example_usage_policy.json). A guideline for different use cases profiles has been provided [here](https://github.com/catenax-eV/cx-odrl-profile/blob/c96b426ded7922f44bdc33bfc5e0bf754031b5e8/profile.md)
 
 ##### 4.1.2.1 Conventions for Use Case Policy in context data exchange
 
@@ -670,8 +676,8 @@ A Data Provider may tie certain access authorizations ("Access Policies") to its
 
 In the context of data usage policies (“Usage Policies”), Participants and related services **MUST** use the following policy rules:
 
-- Use Case Framework (“FrameworkAgreement”), for the Digital Product Pass **MUST** be the latest circular economy framework agreement contraint provided in the profiles [here](https://github.com/catenax-eV/cx-odrl-profile/blob/main/profile.md#frameworkagreement).
-- for the Digital Product Passport, Battery Passport and other passports the latest (“UsagePurpose”) for circular economy "dpp" **MUST** be used. It is defined [here](https://github.com/catenax-eV/cx-odrl-profile/blob/main/profile.md#usagepurpose) in the latest policy profile contraints.
+- Use Case Framework (“FrameworkAgreement”), for the Digital Product Pass **MUST** be the latest circular economy framework agreement contraint provided in the profiles [here](https://github.com/catenax-eV/cx-odrl-profile/blob/c96b426ded7922f44bdc33bfc5e0bf754031b5e8/profile.md#frameworkagreement).
+- for the Digital Product Passport, Battery Passport and other passports the latest (“UsagePurpose”) for circular economy "dpp" **MUST** be used. It is defined [here](https://github.com/catenax-eV/cx-odrl-profile/blob/c96b426ded7922f44bdc33bfc5e0bf754031b5e8/profile.md#usagepurpose) in the latest policy profile contraints.
 
 Additionally, respective usage policies **MAY** include the following policy rule:
 

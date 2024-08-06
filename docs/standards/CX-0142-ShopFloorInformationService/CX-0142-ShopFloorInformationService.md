@@ -1,3 +1,9 @@
+---
+tags:
+  - CAT/Business Application Provider
+  - UC/Modular Production
+---
+
 # CX-0142 Shop Floor Information Service v1.0.0
 
 ## ABSTRACT
@@ -293,13 +299,13 @@ at the data plane of the Tractus-X EDC, which forwards them to the endpoint at t
 The Unsubscribe request MUST be sent from the consumer of Shop-Floor-Information to the Modular Production using an HTTP
 DELETE request.
 
-`http://{internal-server}/relatedMessageId/00000000-0000-0000-C000-000000000042`
+`http://\{internal-server\}/relatedMessageId/00000000-0000-0000-C000-000000000042`
 
 The final id value should be copied from the GetProductionForecast. An example HTTP request is seen below:
 
 ```text
 DELETE /relatedMessageId/00000000-0000-0000-C000-000000000042  HTTP/1.1
-Host: {{internal-server}}
+Host: {\{internal-server\}}
 ```
 
 ##### 1.4.1.2 Data Models
@@ -417,7 +423,7 @@ Production Tracking provides two API calls. Examples for each call are listed be
 An example JSON string for the GetProductionForecastData can be found in section 1.4.2.2. GetProductionTracking is the
 request to obtain Shop-Floor-Information regarding the manufacturing steps of a product. The Model itself contains the
 Catena-X Header Aspect
-Model (https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.shared.message_header/2.0.0), so
+Model (https://github.com/eclipse-tractusx/sldt-semantic-models/tree/4d239fc5709f71f39c3cf13581b5bcf960905157/io.catenax.shared.message_header/2.0.0), so
 that the BPNS of the requesting partner is provided. Within the request, the customerID, which is the internal
 customerID in the Modular Production management tool, and the identifierNumber, which is used to identify the product
 for which the production tracking data is requested, are required.
@@ -793,7 +799,7 @@ For a comprehensive understanding of the rights, restrictions, and obligations a
 Catena-X ecosystem, we refer users to
 
 - the
-  detailed [ODRL policy repository](https://eur01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fgithub.com%2Fcatenax-eV%2Fcx-odrl-profile&data=05%7C02%7Cjanchristoph.wehrstedt%40siemens.com%7C05a0c15c764248e9ac8f08dc3452af45%7C38ae3bcd95794fd4addab42e1495d55a%7C1%7C0%7C638442776973800689%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C0%7C%7C%7C&sdata=x%2BNCiEm%2Fxhq3qHcIQ%2FDcxhtCzL8Yc5YBowyW9et8BnM%3D&reserved=0).
+  detailed [ODRL policy repository](https://github.com/catenax-eV/cx-odrl-profile).
   This document provides in-depth explanations of the terms and conditions applied to data access and utilization,
   ensuring that all engagement with our data is conducted responsibly and in accordance with established guidelines.
 - the ODRL schema template. This defines how policies used for data sharing/usage should get defined. Those schemas MUST
@@ -813,14 +819,14 @@ policy rules:
 
 - Use Case Framework (“FrameworkAgreement”)
 - at least one use case purpose (“UsagePurpose”) from the above
-  mentioned [ODRL policy repository](https://eur01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fgithub.com%2Fcatenax-eV%2Fcx-odrl-profile&data=05%7C02%7Cjanchristoph.wehrstedt%40siemens.com%7C05a0c15c764248e9ac8f08dc3452af45%7C38ae3bcd95794fd4addab42e1495d55a%7C1%7C0%7C638442776973818516%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C0%7C%7C%7C&sdata=0BdTHllOvpwpx5IoCUIhTBBJlcTX%2FfSEvzPJQv9ZNJ0%3D&reserved=0).
+  mentioned [ODRL policy repository](https://github.com/catenax-eV/cx-odrl-profile).
 
 Additionally, respective usage policies MAY include the following policy rule:
 
 - Reference Contract (“ContractReference”).
 
 Details on namespaces and ODLR policy rule values to be used for the above-mentioned types are provided via
-the [ODRL policy repository](https://eur01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fgithub.com%2Fcatenax-eV%2Fcx-odrl-profile&data=05%7C02%7Cjanchristoph.wehrstedt%40siemens.com%7C05a0c15c764248e9ac8f08dc3452af45%7C38ae3bcd95794fd4addab42e1495d55a%7C1%7C0%7C638442776973830220%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C0%7C%7C%7C&sdata=Ni%2BHYAEEV9rkmbf3AVNM2NNQoKmbngTjrvtPObf2w1A%3D&reserved=0).
+the [ODRL policy repository](https://github.com/catenax-eV/cx-odrl-profile).
 
 #### 2.1.4 DIGITAL TWINS AND SPECIFIC ASSET IDs
 
@@ -875,7 +881,7 @@ This identifier MUST be used by the data provider to define the semantics of the
 The RDF turtle file, an instance of the Semantic Aspect Meta Model, is the master for generating additional file formats
 and serializations.
 
-> https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.shopfloor_information.get_production_forecast/2.0.0/GetProductionForecast.ttl
+> https://github.com/eclipse-tractusx/sldt-semantic-models/blob/4d239fc5709f71f39c3cf13581b5bcf960905157/io.catenax.shopfloor_information.get_production_forecast/2.0.0/GetProductionForecast.ttl
 
 The open source command line tool of the Eclipse Semantic Modeling Framework is used for generation of other file
 formats like for example a JSON Schema, aasx for Asset Administration Shell Submodel Template or a HTML documentation.
@@ -960,7 +966,7 @@ The semantic model has the unique identifier:
 The rdf turtle file, an instance of the Semantic Aspect Meta Model, is the master for generating additional file formats
 and serializations.
 
-> https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.shopfloor_information.provide_production_forecast/2.0.0/ProvideProductionForecast.ttl
+> https://github.com/eclipse-tractusx/sldt-semantic-models/blob/4d239fc5709f71f39c3cf13581b5bcf960905157/io.catenax.shopfloor_information.provide_production_forecast/2.0.0/ProvideProductionForecast.ttl
 
 The open source command line tool of the Eclipse Semantic Modeling Framework is used for generation of other file
 formats like for example a JSON Schema, aasx for Asset Administration Shell Submodel Template or a HTML documentation.
@@ -1056,7 +1062,7 @@ This identifier MUST be used by the data provider to define the semantics of the
 The rdf turtle file, an instance of the Semantic Aspect Meta Model, is the master for generating additional file formats
 and serializations.
 
-> https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.shared.shopfloor_information_types/2.0.0/ShopfloorInformationTypes.ttl
+> https://github.com/eclipse-tractusx/sldt-semantic-models/blob/4d239fc5709f71f39c3cf13581b5bcf960905157/io.catenax.shared.shopfloor_information_types/2.0.0/ShopfloorInformationTypes.ttl
 
 The open source command line tool of the Eclipse Semantic Modeling Framework is used for generation of other file
 formats like for example a JSON Schema, aasx for Asset Administration Shell Submodel Template or a HTML documentation.
@@ -1126,7 +1132,7 @@ This identifier MUST be used by the data provider to define the semantics of the
 The rdf turtle file, an instance of the Semantic Aspect Meta Model, is the master for generating additional file formats
 and serializations.
 
-> https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.shopfloor_information.get_production_tracking/1.0.0/GetProductionTracking.ttl
+> https://github.com/eclipse-tractusx/sldt-semantic-models/blob/4d239fc5709f71f39c3cf13581b5bcf960905157/io.catenax.shopfloor_information.get_production_tracking/1.0.0/GetProductionTracking.ttl
 
 The open source command line tool of the Eclipse Semantic Modeling Framework is used for generation of other file
 formats like for example a JSON Schema, aasx for Asset Administration Shell Submodel Template or a HTML documentation.
@@ -1224,7 +1230,7 @@ This identifier MUST be used by the data provider to define the semantics of the
 The rdf turtle file, an instance of the Semantic Aspect Meta Model, is the master for generating additional file formats
 and serializations.
 
-> https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.shopfloor_information.provide_production_tracking/1.0.0/ProvideProductionTracking.ttl
+> https://github.com/eclipse-tractusx/sldt-semantic-models/blob/4d239fc5709f71f39c3cf13581b5bcf960905157/io.catenax.shopfloor_information.provide_production_tracking/1.0.0/ProvideProductionTracking.ttl
 
 The open source command line tool of the Eclipse Semantic Modeling Framework is used for generation of other file
 formats like for example a JSON Schema, aasx for Asset Administration Shell Submodel Template or a HTML documentation.

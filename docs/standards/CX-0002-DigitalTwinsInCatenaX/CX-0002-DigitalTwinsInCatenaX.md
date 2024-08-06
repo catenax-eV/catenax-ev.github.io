@@ -1,11 +1,11 @@
 ---
-position: 1
+position: 2
 tags:
-  - Enablement Service Provider
-  - Digital Twin Registry aaS
-  - Digital Twin Registry
-  - Semantic
-  - Digital Twin
+  - CAT/Enablement Service Provider
+  - CAT/Digital Twin Registry aaS
+  - CAT/Digital Twin Registry
+  - CAT/Semantic
+  - CAT/Digital Twin
 ---
 
 # CX-0002 Digital Twins in Catena-X v2.2.0

@@ -1,3 +1,9 @@
+---
+tags:
+  - CAT/Business Application Provider
+  - UC/MaaS
+---
+
 # CX-0129 Request for Quotation Exchange v2.0.0
 
 ## ABSTRACT

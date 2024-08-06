@@ -209,7 +209,7 @@ The following http response codes **MUST** be defined for IRS API endpoints:
 - **403:** Forbidden - Authorization refused by server.
 - **404:** Not Found - Requested resource not found
 
-[IRS API 4.5.2]([IRS API](https://github.com/eclipse-tractusx/item-relationship-service/blob/4.5.2/docs/src/api/irs-api.yaml))
+[IRS API 4.5.2]([IRS API](./assets/irs-api.yaml))
 More information for each endpoint can be extracted from the IRS API documentation.
 
 ## 3 REFERENCES

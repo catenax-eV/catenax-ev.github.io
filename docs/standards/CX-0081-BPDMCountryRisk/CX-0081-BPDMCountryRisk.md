@@ -1,3 +1,8 @@
+---
+tags:
+  - CAT/Value Added Services
+---
+
 # CX-0081 Country Risk API v1.2.0
 
 ## ABSTRACT

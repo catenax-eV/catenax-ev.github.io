@@ -8,7 +8,8 @@ export default function DocsVersionDropdownNavbarItemWrapper(props) {
  
   const doesPathnameContainDocsPluginId = pathname.includes("/docs/")
   if (!doesPathnameContainDocsPluginId) {
-    return null
+    return null;
+  }else{
+    return <DocsVersionDropdownNavbarItem {...props} />;
   }
-  return <DocsVersionDropdownNavbarItem {...props} />;
 }

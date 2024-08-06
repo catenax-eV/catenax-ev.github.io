@@ -1,15 +1,13 @@
 ---
 tags:
-  - Data Provider & Consumer 
-  - Connector
-  - Enablement Service Provider
-  - Connector as a Service
-  - Sandbox Services (Beta)
-  - Sandbox Service Provider
-  
+  - CAT/Data Provider & Consumer
+  - CAT/Connector
+  - CAT/Enablement Service Provider
+  - CAT/Connector as a Service
+  - CAT/Sandbox Services (Beta)
 ---
 
-# CX-0018 Dataspace Connectivity v3.0.0
+# CX-0018 Dataspace Connectivity v.3.1.0
 
 ## ABSTRACT
 
@@ -33,7 +31,7 @@ ecosystem. The aim is to ensure interoperability and data sovereignty at the sam
 #### AUDIENCE
 
 The role definition is based on the definition of
-the [CX Operating Model v2.1](https://catena-x.net/fileadmin/_online_media_/CX_Operating_Modelv2.1_final.pdf).
+the [CX Operating Model v3.0](https://catenax-ev.github.io/docs/next/operating-model/why-introduction).
 
 The standard is relevant for the following roles, as they must be certified against it:
 
@@ -100,7 +98,7 @@ appear in all capitals, as shown here.
 | Dataspace Protocol (DSP)                     | Set of specifications designed to facilitate interoperable data sharing within a dataspace, currently governed by the IDSA                                                                                                   | https://github.com/International-Data-Spaces-Association/ids-specification                        |
 | Connector                                    | (Catena-X) Technical component that allows business applications to interact with each other within a dataspace                                                                                                              | https://github.com/eclipse-tractusx/tractusx-edc                                                  |
 | (Catena-X) Business Applications             | (Catena-X) Applications that enable functionality of different use cases, hosted by a data provider or consumer itself or by a business application provider                                                                 | https://eclipse-tractusx.github.io/developer                                                      |
-| Catena-X Marketplace                         | The Marketplace inside a portal, allowing participants of the Catena-X network to search and select Catena-X Business Applicactions                                                                                          | https://catena-x.net/en/offers/portal-marketplace                                                 |
+| Catena-X Marketplace                         | The Marketplace inside a portal, allowing participants of the Catena-X network to search and select Catena-X Business Applications                                                                                          | https://catena-x.net/en/offers/portal-marketplace                                                 |
 | Business Partner Number (BPN)                | Every participant in the Catena-X network has a unique, unchangeable identifier, called business partner number (BPN). The legal entity of an organization is represented by the Business Partner Number Legal Entity (BPNL) | [CX - 0010 Business Partner Number](https://catena-x.net/de/standard-library)                     |
 | Data Catalog Vocabulary (DCAT)               | RDF vocabulary designed to facilitate interoperability between data catalogs published on the Web                                                                                                                            | https://www.w3.org/TR/vocab-dcat-3                                                                |
 | Open Data Rights Language (ODRL)             | Policy expression language that provides a flexible and interoperable information model, vocabulary, and encoding mechanisms for representing statements about the usage of content and services                             | https://www.w3.org/TR/odrl-model, https://www.w3.org/TR/odrl-vocab, https://w3c.github.io/odrl/bp |
@@ -109,7 +107,7 @@ appear in all capitals, as shown here.
 - The term *Credential Service* is adopted from the IATP.
 - The terms *Core Service Provider A/B (CSP A/B)*, *Onboarding Service Provider (OSP)*, *Enablement Service Provider (
   ESP)*, *Business Application Provider (BAP)*, *Advisory Provider (AP)* and *Conformity Assessment Body (CAB)* are
-  adopted from   the [CX Operating Model v2.1](https://catena-x.net/fileadmin/_online_media_/CX_Operating_Modelv2.1_final.pdf)
+  adopted from the [CX Operating Model v3.0](https://catenax-ev.github.io/docs/next/operating-model/why-introduction)
 
 ## 2 MAIN CONTENT
 
@@ -198,51 +196,65 @@ Credential Service in order to execute IATP VPP Request 4. This corresponds to t
 `odrl:Offer` objects contained in a `dcat:Catalog` SHOULD carry `odrl:Constraint`s that are specified in the
 [CX-ODRL-Profile](#31-normative-references). Subsequent standards are encouraged to specify further
 restrictions of said profile, especially on the `odrl:rightOperand`s. The following list compiles a set of well-defined
-policies that Participants SHOULD include in their offers and guidance on how to check them.
+policies that Data Providers and Data Consumers SHOULD include in their offers and guidance on how to check them. Application Providers MUST support all constraints of the following table.
 
 | Name                        | leftOperand (expanded IRI)                           | operator <br /> (compacted IRI) | valid rightOperands (literal) | validation mechanism                                                                                                                                                                                                                                                                     |
 |-----------------------------|------------------------------------------------------|--------------------------------|-------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | MembershipConstraint        | `https://w3id.org/catenax/policy/Membership`         | `odrl:eq`                      | `active`                      | Membership Credential (CX - 0149)                                                                                                                                                                                                                                                        |
-| UseCaseConstraints          | `https://w3id.org/catenax/policy/FrameworkAgreement` | `odrl:eq`                      | `[usecasename]:[version]`     | UseCaseFrameworkAgreementCredential (CX - 0050)<br />The exact mapping logic from credential and to rightOperand specified in [tractusx-profiles](https://github.com/eclipse-tractusx/tractusx-profiles/blob/64f83dde1432573db456500f091f223929d43307/cx/policy/specs/policy.mapping.md). |
-| ContractReferenceConstraint | `https://w3id.org/catenax/policy/ContractReference`  | `odrl:eq`                      | `[string]:[version]`          | *unchecked*                                                                                                                                                                                                                                                                              |
-| UsagePurposeConstraint      | `https://w3id.org/catenax/policy/UsagePurpose`       | `odrl:eq`                      | `[string]:[version]`          | *unchecked*                                                                                                                                                                                                                                                                              |
+| UseCaseConstraints          | `https://w3id.org/catenax/policy/FrameworkAgreement` | `odrl:eq`                      | `[usecasename]:[version]`     | UseCaseFrameworkAgreementCredential (CX - 0050)<br />The exact mapping logic is specified in the section [Framework Agreement to Verifiable Credential Mapping](#framework-agreement-to-verifiable-credential-mapping) |
+| ContractReferenceConstraint | `https://w3id.org/catenax/policy/ContractReference`  | `odrl:eq`                      | `[string]:[version]`          | The value comparison necessary for validation SHOULD be based on [CX-ODRL-Profile](#31-normative-references)          |
+| UsagePurposeConstraint      | `https://w3id.org/catenax/policy/UsagePurpose`       | `odrl:eq`                      | `[string]:[version]`          | The value comparison used necessary for validation SHOULD be based on [CX-ODRL-Profile](#31-normative-references)        |
 
-> Note: The list is available in machine-readable form with links to the respective legal documents in the
-> catenax-ev/cx-odrl-profile repository.
+Note: The list is available in machine-readable form with links to the respective legal documents in the
+[CX-ODRL-Profile](#31-normative-references).
 
 Providers SHOULD chain constraints (if necessary) via `odrl:and`. Examples can be found
-in [catenax-ev/cx-odrl-profiles](#32-non-normative-references).
+in [CX-ODRL-Profile](#31-normative-references).
 
-Providers MUST perform access control checks on their data offers as a `dcat:Catalog` object may expose
+Providers MUST perform access control checks based on CX credentials on their data offers as a `dcat:Catalog` object may expose
 information restricted by governance and regulation.
+
+#### Framework Agreement to Verifiable Credential Mapping
+
+The mapping between the rightOperands of a cx-policy:FrameworkAgreement to its referring Verifiable Credential (described in CX-0050) is done via the credential type and its version.
+
+- The given rightOperand needs to be separated by the first “:” to separate the version term. Only one separator is allowed.
+
+- Thereafter, the term “Credential” needs to be appended to identify the relevant credential via its credential type.
+
+- The version maps  the “contractVersion” property inside the relevant credential.
+
+Example (rightOperand to Credential):
+
+- DataExchangeGovernance:x.x -> DataExchangeGovernanceCredential with contractVersion “x.x”
+
+Note: Versions are to be handled as strings / literals and do not require any semantic comparison.
+
+#### Catena-X ODRL Profile
+
+To clearly identify the relevant Catena-X ODRL Profile, every policy (and their subclasses) MUST use the ODRL ‘profile’ property with an IRI referring to the Catena-X ODRL Profile as defined in [ODRL policy](https://www.w3.org/TR/odrl-model/#policy) The current version is: https://w3id.org/catenax/policy/profile2405 or in compact form: cx-policy:profile2405.
 
 ### 2.5 Conventions for Datasets
 
 A Provider MUST annotate all instances `dcat:Dataset` in a `dcat:Catalog` with the following properties:
 
-- `dct:type` holding an object with at least a `@id` property pointing to a concept describing what type of API this
-  Dataset represents. Subsequent standards define the exact value this property shall hold, depending on the Business
-  scenario. The set of concepts is maintained in the taxonomy `https://w3id.org/catenax/taxonomy#` and MUST
-  extend the concept https://w3id.org/catenax/taxonomy#Asset.
-- `cx-common:version` holding a SemVer-conformant string indicating the API version of the API that was typed by the
-  `dct:type` property. Subsequent standards define the exact value this property shall hold, depending on the Business
-  scenario.
+- `dct:type` holding an object with at least a `@id` property pointing to a concept describing what type of API this Dataset represents. Subsequent standards define the exact value this property shall hold, depending on the Business scenario. The set of concepts is maintained in the taxonomy `https://w3id.org/catenax/taxonomy#` and MUST extend the concept https://w3id.org/catenax/taxonomy#Asset.
+- `cx-common:version` holding a SemVer-conformant string indicating the API version of the API that was typed by the `dct:type` property. Subsequent standards define the exact value this property shall hold, depending on the Business scenario.
 
 ## 3 REFERENCES
 
 ### 3.1 NORMATIVE REFERENCES
 
 - [IDSA Dataspace Protocol 2024-01](https://github.com/International-Data-Spaces-Association/ids-specification/releases/tag/2024-1)
-- [Identity And Trust Protocol v0.8](https://github.com/eclipse-tractusx/identity-trust/blob/0.8.1/specifications/verifiable.presentation.protocol.md)
-- [CX - 0050 Framework Agreement Credential v1.2.0](https://catena-x.net/de/standard-library)
-- [CX - 0149 Verfied Company Identity v1.0.0](https://catena-x.net/de/standard-library)
-- [Tractus-X Profiles v1.0](https://github.com/eclipse-tractusx/tractusx-profiles/releases/tag/1.0.0)
+- [Identity And Trust Protocol v0.8.1](https://github.com/eclipse-tractusx/identity-trust/blob/0.8.1/specifications/verifiable.presentation.protocol.md)
+- [CX-0050 Framework Agreement Credential v2.1.0](https://catena-x.net/de/standard-library)
+- [CX-0149 Verified Company Identity v1.0.0](https://catena-x.net/de/standard-library)
+- [CX-ODRL-Profile](https://github.com/catenax-eV/cx-odrl-profile)
 
 ### 3.2 NON-NORMATIVE REFERENCES
 
 > *This section is non-normative*
 
-- [Catena-X Profile of the Open Digital Rights Language (ODRL)](https://github.com/catenax-eV/cx-odrl-profile)
 - [Connector Kit](https://eclipse-tractusx.github.io/docs-kits/next/category/connector-kit)
 
 ### 3.3 REFERENCE IMPLEMENTATIONS
@@ -256,7 +268,3 @@ A Provider MUST annotate all instances `dcat:Dataset` in a `dcat:Catalog` with t
 ### FIGURES
 
 Figure 1: Framework of data exchange
-
-## Legal
-
-Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

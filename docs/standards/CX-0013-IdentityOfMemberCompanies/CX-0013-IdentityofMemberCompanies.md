@@ -1,12 +1,10 @@
 ---
 tags:
-  - Enablement Service Provider
-  - Wallet as a Service
-  - MIW
-  - Core Service Provider
-  - Identity Wallet
-  - Sandbox Services (Beta)
-  - Sandbox Service Provider 
+  - CAT/Enablement Service Provider
+  - CAT/SSI
+  - CAT/Core Service Provider
+  - CAT/Identity Wallet
+  - CAT/Sandbox Services (Beta)
 ---
 
 # CX-0013 Identity of Member Company v2.0.0

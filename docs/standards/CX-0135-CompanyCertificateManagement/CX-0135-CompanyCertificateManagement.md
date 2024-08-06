@@ -1,3 +1,8 @@
+---
+tags:
+  - CAT/Value Added Services
+---
+
 # CX-0135 - BP company certificate management v2.0.0
 
 :::info

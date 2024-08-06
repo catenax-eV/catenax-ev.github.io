@@ -1,9 +1,9 @@
 ---
 tags:
-  - MIW
-  - Core Service Provider
-  - Identity Wallet
-  - Sandbox Services (Beta)
+  - CAT/SSI
+  - CAT/Core Service Provider
+  - CAT/Identity Wallet
+  - CAT/Sandbox Services (Beta)
 ---
 
 # CX-0049 DID Document v2.0.0

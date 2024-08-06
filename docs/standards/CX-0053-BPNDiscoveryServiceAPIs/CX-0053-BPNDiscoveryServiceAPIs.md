@@ -1,13 +1,12 @@
 ---
 tags:
-  - Portal
-  - Core Service Provider
-  - Sandbox Services (Beta)
-  - Sandbox Service Provider
-  - BPDM
+  - CAT/Portal
+  - CAT/Core Service Provider
+  - CAT/Sandbox Services (Beta)
+  - CAT/BPDM
 ---
 
-# CX-0053 Discovery Finder and BPN Discovery Service APIs v1.1.0
+# CX-0053 Discovery Finder and BPN Discovery Service APIs v1.1.1
 
 ## ABSTRACT
 
@@ -138,8 +137,7 @@ This service is a prerequisite to find the available BPN Discovery Services.
 
 ### 2.2.1 API Endpoints & resources
 
-The API endpoints MUST be implemented conformant to the [openAPI specification](
-https://github.com/eclipse-tractusx/sldt-discovery-finder/blob/main/backend/src/main/resources/static/discovery-finder-openapi.yaml) for the discovery finder service.
+The API endpoints MUST be implemented conformant to the [openAPI specification](./assets/discovery-finder-openapi.yaml) for the discovery finder service.
 
 For further information on the discovery finder service see its [documentation]( https://github.com/eclipse-tractusx/sldt-discovery-finder/blob/main/docs/documentation.md).
 
@@ -167,10 +165,9 @@ A Discovery Finder service is a prerequisite to find the available BPN Discovery
 
 #### 3.2.1 API Endpoints & Resources
 
-The API endpoints MUST be implemented conformant to the the [openAPI specification](
-https://github.com/eclipse-tractusx/sldt-bpn-discovery/blob/main/backend/src/main/resources/static/bpn-discovery-service-openapi.yaml) for the BPN discovery service.
+The API endpoints MUST be implemented conformant to the the [openAPI specification](./assets/bpn-discovery-service-openapi.yaml) for the BPN discovery service.
 
-For further information on the service see its [documentation]( https://github.com/eclipse-tractusx/sldt-bpn-discovery/blob/main/docs/documentation.md).
+For further information on the service see its [documentation](https://github.com/eclipse-tractusx/sldt-bpn-discovery/blob/0ee7074af5aa039bf68f1a1b312aa20ffc70f204/docs/documentation.md).
 
 #### 3.2.2 Available Data Types
 
@@ -198,7 +195,7 @@ CX-0012 Business Partner Data Pool
 
 CX-0018 Eclipse Data Space Connector
 
-[Catena-X Operating Model Whitepaper](https://catena-x.net/fileadmin/user_upload/Publikationen_und_WhitePaper_des_Vereins/CX_Operating_Modelv2.1_final.pdf). Whitepaper. Release V2.1 – October 16, 2023. Catena-X e.V.
+[Catena-X Operating Model v3.0](https://catenax-ev.github.io/docs/next/operating-model/why-introduction).
 
 ### 4.3 REFERENCE IMPLEMENTATIONS
 

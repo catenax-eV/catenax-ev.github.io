@@ -1,3 +1,8 @@
+---
+tags:
+  - CAT/Value Added Services
+---
+
 # CX-0116 Sanction Party Watchlist Dashboard v1.2.0
 
 ## TABLE OF CONTENTS

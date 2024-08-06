@@ -1,9 +1,9 @@
-# CX-0029 Product Carbon Footprint Rulebook v2.0.0
+# CX-0029 Product Carbon Footprint Rulebook v3.0.0
 
 :::note[Note 1: Only available as a PDF-File]
 As CX-0029 has been re-classified as a *non-technical requirement*
 
-**PDF-Version**: [CX-0029-ProductCarbonFootprintRulebook-v2.0.0.pdf](./assets/CX-0029-ProductCarbonFootprintRulebook-v2.0.0.pdf)
+**Link to the new Version**: [NFR-PCF-Rulebook v3.0](http://localhost:3000/docs/next/non-functional/overview)
 :::
 
 :::note[Note 2: Re-Classification]

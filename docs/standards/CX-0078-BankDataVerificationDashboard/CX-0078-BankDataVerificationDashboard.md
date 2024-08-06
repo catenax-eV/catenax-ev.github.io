@@ -1,3 +1,8 @@
+---
+tags:
+  - CAT/Value Added Services
+---
+
 # CX-0078 Bank Data Verification Dashboard v1.2.0
 
 ## ABSTRACT

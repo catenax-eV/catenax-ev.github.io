@@ -1,3 +1,8 @@
+---
+tags:
+  - UC/ESS
+---
+
 # CX-0144 ESS Use Case Standard 1.0.0
 
 ## ABSTRACT
@@ -151,23 +156,23 @@ urn:bamm:io.catenax.essincident:3.0.0
 
 All different formats of the semantic model can be found in the github repository.
 
-[https://github.com/eclipse-tractusx/sldt-semantic- models/tree/main/io.catenax.essincident/3.0.0](https://github.com/eclipse-tractusx/sldt-semantic-%20models/tree/main/io.catenax.essincident/3.0.0)
+[https://github.com/eclipse-tractusx/sldt-semantic-models/tree/4d239fc5709f71f39c3cf13581b5bcf960905157/io.catenax.essincident/3.0.0](https://github.com/eclipse-tractusx/sldt-semantic-models/tree/4d239fc5709f71f39c3cf13581b5bcf960905157/io.catenax.essincident/3.0.0)
 
 ##### 3.1.5.1 RDF TURTLE
 
 The rdf turtle file, an instance of the Semantic Aspect Meta Model, is the master for generating additional file formats and serializations.
 
-https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.essincident/3.0.0/EssIncident.ttl
+https://github.com/eclipse-tractusx/sldt-semantic-models/blob/4d239fc5709f71f39c3cf13581b5bcf960905157/io.catenax.essincident/3.0.0/EssIncident.ttl
 
 The open-source command line tool of the Eclipse Semantic Modeling Framework is used for generation of other file formats like for example a JSON Schema, aasx for Asset Administration Shell Submodel Template or a HTML documentation.
 
-https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.essincident/3.0.0/gen
+https://github.com/eclipse-tractusx/sldt-semantic-models/tree/4d239fc5709f71f39c3cf13581b5bcf960905157/io.catenax.essincident/3.0.0/gen
 
 ##### 3.1.5.2 JSON SCHEMA
 
 A JSON Schema can be generated from the RDF Turtle file. The JSON Schema defines the Value-Only payload of the Asset Administration Shell for the API operation \"GetSubmodel\".
 
-https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.essincident/3.0.0/gen/EssIncident-schema.json
+https://github.com/eclipse-tractusx/sldt-semantic-models/blob/4d239fc5709f71f39c3cf13581b5bcf960905157/io.catenax.essincident/3.0.0/gen/EssIncident-schema.json
 
 ##### 3.1.5.3 AASX
 
@@ -175,7 +180,7 @@ An AASX file can be generated from the RDF Turtle file. The AASX file defines on
 
 Note: As soon as the specification V3.0 of the Asset Administration Shell specification is available an update will be provided.
 
-https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.essincident/3.0.0/gen/EssIncident.aasx
+https://github.com/eclipse-tractusx/sldt-semantic-models/blob/4d239fc5709f71f39c3cf13581b5bcf960905157/io.catenax.essincident/3.0.0/gen/EssIncident.aasx
 
 ##### 3.1.5.4 JSON SAMPLE
 

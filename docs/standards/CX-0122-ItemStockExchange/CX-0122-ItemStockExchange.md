@@ -1,3 +1,8 @@
+---
+tags:
+  - UC/PURIS
+---
+
 # CX-0122 Item Stock Exchange 2.0.0
 
 ## ABSTRACT
@@ -51,7 +56,7 @@ prevention of bottlenecks and shortages.
 
 > *This section is non-normative*
 
-This standard is relevant for the following roles defined in [[CX-OMW]](#62-non-normative-reference):
+This standard is relevant for the following roles defined in [[CX-OMW]](#62-non-normative-references):
 
 - **Data Providers**  willing to provide *Item Stock* data
 - **Data Consumers**  interested in requesting and receiving *Item Stock* data
@@ -91,7 +96,7 @@ The sections marked as non-normative, all authoring guidelines, diagrams, exampl
 this specification are non-normative. Everything else in this specification is normative. The key
 words  **MAY** ,  **MUST** ,  **MUST NOT** ,  **OPTIONAL** ,  **RECOMMENDED** ,  **REQUIRED** ,
 **SHOULD** and  **SHOULD NOT** in this document are to be interpreted as described in [BCP 14]
-[[RFC2119]](#62-non-normative-reference) [[RFC8174]](#62-non-normative-reference) when, and only when, they appear in all capitals, as shown here.
+[[RFC2119]](#62-non-normative-references) [[RFC8174]](#62-non-normative-references) when, and only when, they appear in all capitals, as shown here.
 
 All participants and their solutions will need to prove that they are conform with the Catena-X
 standards. To validate that the standards are applied correctly, Catena-X employs Conformity
@@ -1100,7 +1105,7 @@ respective location with its address.
 | [CX-0145] | Days of Supply Exchange | 1.0.0 |
 | [CX-0146] | Supply Chain Disruption Notifications | 1.0.0 |
 
-### 6.2 NON-NORMATIVE REFERENCE
+### 6.2 NON-NORMATIVE REFERENCES
 
 > *This section is non-normative*
 

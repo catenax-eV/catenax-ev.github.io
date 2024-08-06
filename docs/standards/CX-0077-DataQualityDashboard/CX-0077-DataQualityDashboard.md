@@ -1,3 +1,8 @@
+---
+tags:
+  - CAT/Value Added Services
+---
+
 # CX-0077 Data Quality Dashboard v1.2.0
 
 ## ABSTRACT

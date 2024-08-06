@@ -1,9 +1,8 @@
 ---
 tags:
-  - Marketplace
-  - Core Service Provider
-  - Sandbox Services (Beta)
-  - Sandbox Service Provider
+  - CAT/Marketplace
+  - CAT/Core Service Provider
+  - CAT/Sandbox Services (Beta)
 ---
 
 # CX-0054 Application Service Release v1.0.1
@@ -168,7 +167,7 @@ To prove conformity with the Application and Service Release Process standard,
 Examples and further information can be found in the
  [Tractus-X Github Repository > Portal > Application Release Process](https://github.com/eclipse-tractusx/portal-assets/tree/main/docs/04.%20App(s)/02.%20App%20Release%20Process)
  and in the [Tractus-X Github Repository > Portal > Service Release Process](https://github.com/eclipse-tractusx/portal-assets/tree/main/docs/05.%20Service(s)/02.%20Service%20Release%20Process)
- and in the [Tractus-X Github Repository > Auto-Setup Backend > Documentation](https://github.com/eclipse-tractusx/autosetup-backend/blob/main/docs/ARC42.md)
+ and in the [Tractus-X Github Repository > Auto-Setup Backend > Documentation](https://github.com/eclipse-tractusx/managed-service-orchestrator/blob/4d6d8025c3e23c3b255cb43d178d2fcc8d879348/docs/ARC42.md)
 
 ### 1.7 TERMINOLOGY
 
