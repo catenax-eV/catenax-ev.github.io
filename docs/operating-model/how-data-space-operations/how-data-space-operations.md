@@ -105,6 +105,8 @@ For more details on possible connector usage scenarios, please refer to our [Onb
 
 ## Supply Chain Visibility (BETA)
 
+*This chapter is released as beta, which therefore is as of now not normative and may change significantly in subsequent iterations. The aim is to provide a definition and a guideline for 1U1D.  In doing so, we want to start the review of the definition - so that we have long-term an overview of which use case has which requirement.*
+
 Catena-X is committed to making sovereign data exchange easy to use. This includes not just technical aspects but also support compliance scenarios, for example in terms of anti-trust legislation, confidentiality clauses in supply contracts, etc..  
 
 The resulting guideline for supply chain visibility in Catena-X data space is known as the “One Up / One Down Rule” (1U1D-Rule). This means that each company in the supply chain can only use and share data with its direct suppliers (One Down / N+1) and customers (One Up / N-1). It ensures that companies receive enough information to fulfill their specific tasks and to enable Catena-X to fulfill use cases throughout the entire value chain, but at the same time retain control over access to sensitive data.
@@ -127,7 +129,3 @@ Part-based visibility makes a more granular distinction in data exchange than th
 ### Entity-based visibility
 
 In comparison to part-based visibility, entity-based visibility does not differentiate between the individual subcomponents or the assemblies. This means that all subparts and process steps of the respective other legal entity (One Up / N-1) or (One Down / N+1) are provided. In this figure, data is exchanged with Tier-X-1 (1Up) about the part that has a direct relationship with it and the assemblies. It is recommended that supply chain visibility respects symmetrical relationships where granularity of data visibility is equivalent on supplier and customer side.
-
-### BETA
-
-This chapter is released as beta, which therefore is as of now not normative and may change significantly in subsequent iterations. The aim is to provide a definition and a guideline for 1U1D.  In doing so, we want to start the review of the definition - so that we have long-term an overview of which use case has which requirement.
