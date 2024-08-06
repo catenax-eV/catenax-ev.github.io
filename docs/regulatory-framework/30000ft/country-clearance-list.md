@@ -3,9 +3,9 @@ pagination_prev: null
 pagination_next: null
 ---
 
-# Country Clearance List
+# Catena-X: Country Clearance List
 
-## Clearance List "White List"
+## Clearance List "Allow List"
 
 > *Onboarding possible without limitations*
 
@@ -53,7 +53,7 @@ pagination_next: null
 | United States of America | US |
 | Vietnam | VN |
 
-## Clearance List "Yellow List"
+## Clearance List "Conditional List"
 
 > *Onboarding possible after due diligence check, followed by seperate approval by the Catena-X association*
 
