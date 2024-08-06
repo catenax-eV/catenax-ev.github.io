@@ -28,6 +28,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Predefined Use Case Framework PCF Exchange V1.0 (valid until October 2024)
 - Predefined Use Case Framework Quality V1.0 (valid until October 2024)
 - Predefined Use Case Framework Traceability V1.0 (valid until October 2024)
+
 ## [1.0.0]
 
 ### Added
