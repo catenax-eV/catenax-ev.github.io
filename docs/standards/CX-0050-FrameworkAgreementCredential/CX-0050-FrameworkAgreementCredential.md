@@ -54,7 +54,7 @@ The "Framework" document defines the conditions for data exchange. Having agreed
 
 > *This section is non-normative*
 
-As well as sections marked as non-normative, all authoring guidelines, diagrams, examples, and notes in this specification are non-normative. Everything else in this specification is normative.
+Sections marked as non-normative, all authoring guidelines, diagrams, examples, and notes in this specification are non-normative. Everything else in this specification is normative.
 
 The key words **MAY**, **MUST**, **MUST NOT**, **OPTIONAL**, **RECOMMENDED**, **REQUIRED**, **SHOULD** and **SHOULD NOT** in this document document are to be interpreted as described in BCP 14 [RFC2119] [RFC8174] when, and only when, they appear in all capitals, as shown here.
 
@@ -118,6 +118,7 @@ Explanation:
 
 - `id` is the uuid of the newly created credential - the uuid is defined by the issuer component
 - `context` is fix defined for the current used schema - we should already consider that the schema might get updated in future. Ideally we are flexible to have this scenario that the old schema is set to "INACTIVE" and a new schema is used for new created credentials
+
 - `type` is fix defined for this specific credential
 - `issuanceDate` calculated on runtime
 - `expirationDate` calculated by the issuer component based on defined credential static data expiry date => always not > 12 month

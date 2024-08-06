@@ -19,13 +19,12 @@ Please be aware that the Refinement Phase is to keep you aware of the overall ti
 
 - Ready refined feature proposals.
 - Feature proposal aligned with the Tractus-X community (contributor/committer).
-- Ready for [Release Planning Day 1](release-planning-day-1.md) and [Day 2](release-planning-day-2.md).
+- Ready for [Release Planning Days](release-planning-days.md).
 
 ## Attendees
 
 - Expert Groups
 - Committees
-- Business Domain Manager (optional)
 - Tractus-X community (contributor/committer)
 
 ## Invitation

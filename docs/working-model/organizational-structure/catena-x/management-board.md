@@ -16,7 +16,7 @@ The primary goal is to enhance the value provided to members and other stakehold
 
 The Management Board holds significant responsibility in determining and overseeing the relevant business domains for the association. Once these domains are identified, the Board ensures they are adequately covered through the establishment and management of committees. Here are the specific responsibilities of the Management Board in this context:
 
-- **Initiating new Committees**: The management can form new Committees and hands them over the responsibility for a specific domain..
+- **Initiating new Committees**: The management can form new Committees and hands them over the responsibility for a specific domain.
 
 - **Closing Expert Groups**: If a Committee is no longer needed, the management board has the authority to disband them.
 

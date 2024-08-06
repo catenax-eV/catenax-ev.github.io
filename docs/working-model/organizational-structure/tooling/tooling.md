@@ -18,6 +18,10 @@ All open-source content has to be in Tractus-X. The private teams and repository
 - Filestorage
 - "Knowledgestore"
 
+## CX Houston
+
+...
+
 ## GitHub
 
 GitHub is the main tool for development, when we talk about the Eclipse Tractus-X Project, the open-source part. GitHub is also getting more and more relevant for the Committee and Expert Group work.

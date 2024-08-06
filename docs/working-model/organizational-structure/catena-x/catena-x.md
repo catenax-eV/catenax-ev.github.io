@@ -15,8 +15,8 @@ title: Catena-X
 |  | Close Committees | A | R | C | I |  |  |  |  |
 |  | Setup Expert Groups |  | C | A |  | R |  |  | S |
 |  | [Close Expert Groups](expert-group.md#closing-of-expert-groups) |  | C | A |  | R | C,I | I | S |
-| Development | [Develop new feature requests](../../process-structure/process-from-idea-to-production.md#create-new-feature-proposal) |  |  |  |  | C | A | R |  |
-|  | [Approve features requests](../../process-structure/process-from-idea-to-production.md#check-strategic-fit) |  |  |  | R | A | S | I |  |
+| Development | Develop new feature requests |  |  |  |  | C | A | R |  |
+|  | Approve features requests) |  |  |  | R | A | S | I |  |
 |  | Foster the development of features by providing development resources | S |  |  |  | S |  | A,R |  |
 |  | Remove impediments for the features development / for Expert Group(s) |  | C |  | S | R |  |  |  |
 | Promote | [Promote the use cases of the business domain inside and outside the association](committee.md#communication) | S | C |  | R | A |  |  | S |

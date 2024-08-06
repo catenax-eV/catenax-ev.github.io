@@ -14,7 +14,7 @@ The life of an Expert Group is devided into three phases:
 2. [Working Phase](#working-phase)
 3. [Closing](#closing-of-expert-groups)
 
-The overview of the existing Expert Groups can be found in the [organizational chart](https://catena-x.net/fileadmin/user_upload/06_Ueber_uns/Ueber_uns_der_Verein/OrgaChart_Website.pdf) on the Catena-X homepage.
+The overview of the existing Expert Groups can be found in the [organizational chart](https://catena-x.net/fileadmin/user_upload/06_Ueber_uns/Ueber_uns_der_Verein/Catena-X_Organization_Chart.pdf) on the Catena-X homepage.
 
 ## Product strategy
 
