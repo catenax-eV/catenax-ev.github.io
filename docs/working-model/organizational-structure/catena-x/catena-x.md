@@ -1,7 +1,23 @@
 ---
 sidebar_position: 2
-title: Catena-X
+title: Catena-X Automotive Network e.V
 ---
+
+The **Catena-X Automotive Network e.V.** is often referred to as 'the association'. It is important to understand that the association consists of five bodies with different tasks and responsibilities. The association bodies are:
+
+- [Management board](./management-board.md)
+- [Committees](committee.md)
+- [Expert Groups](./expert-group.md)
+- [Working Groups](working-groups.md)
+- [Catena-X office](./catena-x-office.md)
+
+The association promotes, sponsors, and coordinates the overlying requirements of the Eclipse Tractus-X Project.
+
+Committees and Expert Groups are mapped to products or use cases. They are advertised, selected, and established on the basis of a requirement. The application phases are similar and the distributors are always the Catena-X members.
+
+:::info
+Please note that while this descriptions of the association bodies capture the essence of the Committee and the Expert Group roles, they are not exhaustive. The dynamic nature of the association means that roles can evolve, and members of the Committee and Expert Groups may engage in additional activities beyond what is described. The descriptions are intended to serve as a guide, providing a clear indication of the expected contributions of the Committee and the Expert Groups, yet it allows for flexibility and adaptation as the project and its needs grow and change.
+:::
 
 ## RASIC matrix for association bodies
 
@@ -23,6 +39,7 @@ title: Catena-X
 
 The RASIC should provide an overview of the tasks the Association bodies are engaging in. Each individual in the Mgmt. board, a Committee or an Expert Group is at least a "member". If one takes over additional roles, e.g. as "Lead", the responsibilities of that role are added to those as member. In detail, the responsibilities for specific individual aspects may differ slightly (but always in alignment with this overarching RASIC.
 
+<!--
 ## SOAR
 
 As the association, all four bodies aim to advance Catena-X as the leading global data ecosystem for the automotive value chain. In order to do so they follow the SOAR model.
@@ -33,7 +50,7 @@ As the association, all four bodies aim to advance Catena-X as the leading globa
 - **R** = Represent as the only ones speaking for Catena-X
 
 ![C-X Office SOAR](../assets/cx-mgmt-office-soar.drawio.svg)
-
+-->
 ## Escalation path
 
 If an issue cannot be resolved by the designated association body, it must be escalated to the appropriate higher authority. The escalation pathway is as follows:

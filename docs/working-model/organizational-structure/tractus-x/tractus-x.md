@@ -1,4 +1,4 @@
 ---
 sidebar_position: 2
-title: Tractus-X
+title: Eclipse Tractus-X
 ---
