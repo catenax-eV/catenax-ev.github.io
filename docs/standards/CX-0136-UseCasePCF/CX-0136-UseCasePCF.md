@@ -163,9 +163,9 @@ follow the [CX-0002 Digital Twins in Catena-X v2.2.0](#211-list-of-standalone-st
 > **Note**
 Not needed for PCF as the BPN is known by the application.
 
-##### 2.1.2.5 Registration of the Digital Twin and the PCF Submodel in the Digital Twin Registry
+##### 2.1.2.5 Registration of the Digital Twin and the PCF Exchange Endpoint in the Digital Twin Registry
 
-The PCF use case utilizes Asset Administration Shell (AAS) logic and Material Twins. Therefore Digital Twins SHOULD be registered in the decentralized Digital Twin Registry (DTR). In order to lookup the twin ID, the data provider MUST register the twins with the specificAssetIds ``manufacturerPartId`` and ``digitalTwinType=PartType``.
+The PCF use case utilizes Asset Administration Shell (AAS) logic and Material Twins. Therefore Digital Twins SHOULD be registered in the decentralized Digital Twin Registry (DTR). In order to lookup the twin ID, the data provider MUST register the twins with the specificAssetIds ``manufacturerPartId`` and ``digitalTwinType=PartType``. In addition, further specificAssetIds as described in CX-0126 SHOULD be added to the Digital Twin.
 
 > **Note**
 > The following JSON snippet only illustrates which specificAssetIds have to be used. It *cannot* be used as a copy paste template for twin creation! When setting up a digital twin the data provider has to ensure that these entries are visible to all consumers he wants to address by using the corresponding security mechanisms provided with the digital twin registry.
@@ -184,9 +184,9 @@ The PCF use case utilizes Asset Administration Shell (AAS) logic and Material Tw
 ```
 
 - Data provider also MUST provide an Digital Twin registry API endpoint following the [CX-0002 Digital Twins in Catena-X v2.2.0](#211-list-of-standalone-standards).
-- Data provider MUST register the related PCF submodel as shown in the example below.
-- The submodel MUST be registered with the ``"idShort": "PCFExchangeEndpoint"``
-- The subprotocolBody for PCF exchange MUST be defined like the following description
+- Data provider MUST register the related PCF exchange endpoint as shown in the example below.
+- The PCF exchange endpoint MUST be registered with the ``"idShort": "PCFExchangeEndpoint"``
+- The subprotocolBody for PCF exchange enpoint MUST be defined like the following description
   
   ``"subprotocolBody": "id=AssetId_of_EDCasset;dspEndpoint=https://some.controlplane.url:7173/api/v1/dsp"``
 - The id added to the subprotocolBody SHOULD be a UUIDv4
@@ -231,9 +231,9 @@ The PCF use case utilizes Asset Administration Shell (AAS) logic and Material Tw
 }
 ```
 
-##### 2.1.2.6 Requesting a PCF without an existing Digital Twin or PCF submodel
+##### 2.1.2.6 Requesting a PCF without an existing Digital Twin or PCF exchange endpoint
 
-In case no Digital Twin or PCF submodel is registered (yet), the asset to use is identified by its type (``{"@id":"cx-taxo:PCFExchange"}``).
+In case no Digital Twin or PCF exchange endpoint is registered (yet), the asset to use is identified by its type (``{"@id":"cx-taxo:PCFExchange"}``).
 
 ##### 2.1.2.7 EDC Data Asset Structure
 
@@ -373,6 +373,15 @@ Contract definitions of data providers MUST follow the structure below (also def
 ##### 2.1.2.8 Data Exchange
 
 As the PCF use case currently supports only asynchronous data exchange, app provider MUST follow the API definition specification in [4.1 PCF EXCHANGE API](#41-pcf-exchange-api). The exchanged data follows the standardized data model defind in [3.1 ASPECT MODEL PCF](#31-aspect-model-pcf).
+
+##### 2.1.2.9 Optional PCF Data Provisioning via Digital Twin Submodel Descriptors (Synchronous Data Exchange)
+
+If the Digital Twin is available and already registered, PCF data SHOULD also be provided in a way that enables data pull. For this add-on, the PCF aspect model MUST be registered as additional SUBMODEL interface belonging to that Digital Twin, as described in the standards CX-0002 and CX-0126. 
+
+Data Consumers SHOULD consider to request the PCF data directly instead of sending a PCF request.
+
+Examples can be found in the PCF KIT.
+
 
 #### 2.1.3 ADDITIONAL REQUIREMENTS
 
