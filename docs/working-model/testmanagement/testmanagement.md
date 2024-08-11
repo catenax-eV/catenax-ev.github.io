@@ -14,8 +14,9 @@ Test management involves the planning, execution, and monitoring of testing acti
   - Automated deployments.
   - Version control of deployments.
   - Rollbacks to previous versions.
- 
+
 ### Infrastructure Maintenance
+
 - **INT-Environment:** last Sunday of each month -> Products should check their deployments after downtime
 
 ### Xray
