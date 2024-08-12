@@ -65,14 +65,14 @@ Data Provider is free to allow Data Consumer to grant access and/or transfer the
 
 Data Provider, Data Consumer and/or App Provider are responsible for compliance with all legal and regulatory requirements applicable (in particular with regard to (i) antitrust law (including, but not limited to, antitrust compliant implementation taking into account Compliance by Conduct), (ii) tax, trade and export control law, (iii) data protection, and (iv) digital regulation) for themselves and any of their Affiliates.
 
-#### 2.4 EXIT
+2.4 EXIT
 
 [Return / Deletion of data]
 
 Existing data exchange contracts remain unaffected, if a Participant withdraws its registration from this Data Exchange Governance or terminates its contract with an operating company.
 Participants are free to agree individually, unless the Repository specifies mandatory requirements.
 
-#### 2.5 HOW LONG?
+2.5 HOW LONG?
 
 [Term of data exchange contract, including duration of (i) Data Provider's obligation to provide data and (ii) usage right(s)]
 
