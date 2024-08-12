@@ -48,32 +48,32 @@ Participants may only exchange data within an existing customer or supplier rela
 [Data categories by (i) technical description and (ii) data quality parameters (if any)] [Additional characteristics of data quality]
 [Scope of usage right(s)]
 
-Participants must provide and use data in compliance with the [standards](./../../standards/overview.md) set by the Association:
-Unless otherwise agreed individually, Participants expressly exclude any requirements for quality, coherence, completeness of data and Data Provider provides data in its respective state "as is" and "as available".  
-
-Data Consumer may only use the data in line with the agreed purpose(s), unless specified otherwise in the Repository.  
-
-Participants must use the namespace "```cx-policy:UsagePurpose.*```" (the element "cx-policy" being the ***"Left Operand"***) and "```<purposename>:<version>```" when they refer to a Predefined Purpose. In addition, they may agree on an individual purpose (**"Individual Purpose"**), provided they agree on at least one Predefined Purpose or only refer to an existing contract between the Participants.
-
+>Participants must provide and use data in compliance with the [standards](./../../standards/overview.md) set by the Association:
+>
+>Unless otherwise agreed individually, Participants expressly exclude any requirements for quality, coherence, completeness of data and Data Provider provides data in its respective state "as is" and "as available".  
+>
+>Data Consumer may only use the data in line with the agreed purpose(s), unless specified otherwise in the Repository.  
+>
+>Participants must use the namespace "```cx-policy:UsagePurpose.*```" (the element "cx-policy" being the ***"Left Operand"***) and "```<purposename>:<version>```" when they refer to a Predefined Purpose. In addition, they may agree on an individual purpose (**"Individual Purpose"**), provided they agree on at least one Predefined Purpose or only refer to an existing contract between the Participants.
 Participants must use the namespace "```cx-policy:UsagePurpose.*```" when they refer to an Individual Purpose. Participants may refer to such existing contracts by using the namespace "cx-policy:ContractReference" and indicate the contract number or another unique identifier known to both Participants.
-
-Data Provider is free to allow Data Consumer to grant access and/or transfer the Data to Data Consumer's affiliates (affiliated companies within the meaning of Section 15 German Stock Corporation Act, Aktiengesetz, ***"Affiliates"***), provided that Data Consumer ensures compliance of its Affiliates with this Data Exchange Governance.
+>
+>Data Provider is free to allow Data Consumer to grant access and/or transfer the Data to Data Consumer's affiliates (affiliated companies within the meaning of Section 15 German Stock Corporation Act, Aktiengesetz, ***"Affiliates"***), provided that Data Consumer ensures compliance of its Affiliates with this Data Exchange Governance.
 
 #### 2.3 COMPLIANCE
 
 [Data Provider, Data Consumer and/or App Provider must comply with all legal and regulatory requirements applicable (in particular with regard to (i) antitrust law (including, but not limited to, antitrust compliant implementation taking into account Compliance by Conduct), (ii) tax, trade and export control law, (iii) data protection, and (iv) digital regulation).]
 
-Data Provider, Data Consumer and/or App Provider are responsible for compliance with all legal and regulatory requirements applicable (in particular with regard to (i) antitrust law (including, but not limited to, antitrust compliant implementation taking into account Compliance by Conduct), (ii) tax, trade and export control law, (iii) data protection, and (iv) digital regulation) for themselves and any of their Affiliates.
+>Data Provider, Data Consumer and/or App Provider are responsible for compliance with all legal and regulatory requirements applicable (in particular with regard to (i) antitrust law (including, but not limited to, antitrust compliant implementation taking into account Compliance by Conduct), (ii) tax, trade and export control law, (iii) data protection, and (iv) digital regulation) for themselves and any of their Affiliates.
 
-2.4 EXIT
+#### 2.4 EXIT
 
 [Return / Deletion of data]
 
-Existing data exchange contracts remain unaffected, if a Participant withdraws its registration from this Data Exchange Governance or terminates its contract with an operating company.
+>Existing data exchange contracts remain unaffected, if a Participant withdraws its registration from this Data Exchange Governance or terminates its contract with an operating company.
 Participants are free to agree individually, unless the Repository specifies mandatory requirements.
 
-2.5 HOW LONG?
+#### 2.5 HOW LONG?
 
 [Term of data exchange contract, including duration of (i) Data Provider's obligation to provide data and (ii) usage right(s)]
 
-Participants are free to agree individually, unless the Repository specifies mandatory requirements.
+>Participants are free to agree individually, unless the Repository specifies mandatory requirements.
