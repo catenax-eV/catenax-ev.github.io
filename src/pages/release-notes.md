@@ -38,7 +38,7 @@ details to be found [here](https://eclipse-tractusx.github.io/CHANGELOG)
 
 ### Further Scope Clarification
 
-To maintain the integrity and reliability of the onboarding process, the signing of self-descriptions will be temporarily suspended:
+To maintain the integrity and reliability of the onboarding process, the signing of self-descriptions (GXDC-compliance check) will be temporarily suspended:
 
 - This suspension only affects the CSP-B role within CX-0001 and CX-0006.
 - The functionality of Catena-X and the security framework will remain unaffected.
