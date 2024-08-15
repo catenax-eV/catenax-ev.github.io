@@ -62,7 +62,7 @@ Test management involves the planning, execution, and monitoring of testing acti
 - **Features:**
   - Resource recommendations
   - Cost savings if applied by the product teams
- 
+
 ### Infrastructure Maintenance
 
 - **INT-Environment:** last Sunday of each month -> Products should check their deployments after downtime
