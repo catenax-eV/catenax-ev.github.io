@@ -45,5 +45,5 @@ To maintain the integrity and reliability of the onboarding process, the signing
     - The provided SD documents MUST be GAIA-X compliant, i.e. MUST provide a compliance credential issued from GAIA-X AISBL. – to be temporarily deactivated
   - [CX-0006](./../../docs/standards/CX-0006-RegistrationAndInitialOnboarding/CX-0006-RegistrationAndInitialOnboarding.md).
     - Onboarding service providers / core service providers MUST ensure the creation of a Self-Description (SD) of the Legal Person as part of the application verification process. The SD MUST be stored in a central location and MUST be in line with the GAIA-X standards/guidelines
-- The functionality of Catena-X and the security framework will remain unaffected.
-- The validation of company data and identifiers will continue as usual.
+
+The functionality of Catena-X and the security framework will remain unaffected furthermore the validation of company data and identifiers will continue as usual.
