@@ -123,7 +123,7 @@ The software testing of reference implementations is sponsored and coordinated b
 
 ### Product Tests
 
-Product tests include unit, regression and integration tests based on product helm charts with individual dependencies.  
+Product tests include unit, regression and integration tests based on product helm charts with individual dependencies.
 
 Contributors can create pull requests (PRs) for their developed features at any time. A PR must be assigned to a feature issue committed in the open planning. To get faster code reviews, it is recommended to submit small PRs.
 
