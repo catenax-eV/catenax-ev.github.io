@@ -1,5 +1,29 @@
 # Test Management
 
+<!-- TOC -->
+* [Test Management](#test-management)
+  * [Overview](#overview)
+  * [Tools](#tools)
+    * [Argo CD](#argo-cd)
+    * [Vault](#vault)
+    * [Grafana](#grafana)
+    * [Goldilocks](#goldilocks)
+    * [Xray](#xray)
+  * [Processes](#processes)
+    * [Test Cases in Xray](#test-cases-in-xray)
+    * [Deployment of Specific Versions in Argo CD](#deployment-of-specific-versions-in-argo-cd)
+  * [Dependencies](#dependencies)
+    * [Internal Dependencies](#internal-dependencies)
+    * [External Dependencies](#external-dependencies)
+  * [Conclusion](#conclusion)
+  * [Test Management old](#test-management-old)
+    * [Product Tests](#product-tests)
+    * [Release Tests](#release-tests)
+    * [Test Beds](#test-beds)
+    * [Defect Management](#defect-management)
+    * [Test Artifacts](#test-artifacts)
+<!-- TOC -->
+
 ## Overview
 
 Test management involves the planning, execution, and monitoring of testing activities to ensure the quality and functionality of software products. This document outlines the tools and processes involved in our test management strategy.
@@ -9,14 +33,37 @@ Test management involves the planning, execution, and monitoring of testing acti
 ### Argo CD
 
 - **Purpose:** Continuous delivery tool for Kubernetes.
-- **Usage:** Deployment of specific versions of products.
+- **Usage:** https://argocd.int.catena-x.net
 - **Features:**
-  - Automated deployments.
-  - Version control of deployments.
-  - Rollbacks to previous versions.
+  - Automated deployments
+  - Version control of deployments
+  - Rollbacks to previous versions
 
+### Vault
+
+- **Purpose:** Store secrets for deployment configurations.
+- **Usage:** https://vault.core.catena-x.net
+- **Features:**
+  - Secret management
+  - Usable in Argo CD with Argo-Vault Plugin
+
+### Grafana
+
+- **Purpose:** Monitoring of resources of the product teams
+- **Usage:** https://grafana.int.catena-x.net
+- **Features:**
+  - Dashboards for monitoring
+  - Alerting
+
+### Goldilocks
+
+- **Purpose:** Resource usage recommendations for the product teams
+- **Usage:** https://goldilocks.int.catena-x.net
+- **Features:**
+  - Resource recommendations
+  - Cost savings if applied by the product teams
+ 
 ### Infrastructure Maintenance
-
 - **INT-Environment:** last Sunday of each month -> Products should check their deployments after downtime
 
 ### Xray
@@ -24,9 +71,9 @@ Test management involves the planning, execution, and monitoring of testing acti
 - **Purpose:** Test management tool integrated with Jira.
 - **Usage:** Managing test cases.
 - **Features:**
-  - Creation and execution of test cases.
-  - Test coverage reporting.
-  - Integration with CI/CD pipelines.
+  - Creation and execution of test cases
+  - Test coverage reporting
+  - Integration with CI/CD pipelines
 
 ## Processes
 
