@@ -38,8 +38,12 @@ details to be found [here](https://eclipse-tractusx.github.io/CHANGELOG)
 
 ### Further Scope Clarification
 
-To maintain the integrity and reliability of the onboarding process, the signing of self-descriptions (GXDC-compliance check) will be temporarily suspended:
+To maintain the integrity and reliability of the onboarding process, the signing of self-descriptions by the Gaia-X Digital Clearing House (GXDCH) will be temporarily suspended:
 
-- This suspension only affects the CSP-B role within CX-0001 and CX-0006.
+- This suspension only affects the [CSP-B](./../../docs/operating-model/who-roles-in-the-catena-x-ecosystem/who-roles-in-the-catena-x-ecosystem.md#core-service-provider-b) role within the following CACs:
+  - [CX-0001](./../../docs/standards/CX-0001-EDCDiscoveryAPI/CX-0001-EDCDiscoveryAPI.md)
+    - The provided SD documents MUST be GAIA-X compliant, i.e. MUST provide a compliance credential issued from GAIA-X AISBL. – to be temporarily deactivated
+  - [CX-0006](./../../docs/standards/CX-0006-RegistrationAndInitialOnboarding/CX-0006-RegistrationAndInitialOnboarding.md).
+    - Onboarding service providers / core service providers MUST ensure the creation of a Self-Description (SD) of the Legal Person as part of the application verification process. The SD MUST be stored in a central location and MUST be in line with the GAIA-X standards/guidelines
 - The functionality of Catena-X and the security framework will remain unaffected.
 - The validation of company data and identifiers will continue as usual.
