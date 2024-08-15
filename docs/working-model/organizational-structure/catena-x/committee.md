@@ -4,9 +4,9 @@ sidebar_position: 2
 
 # Committee
 
-Committees are specialized bodies appointed by the board to address specific topics or tasks relevant to the association and the related eco system. Within the Catena-X Automotive Network e.V., the purpose and mandate of these Committees are to formulate recommendations for the board's decisions regarding matters to the association, in alignment with Catena-X's roadmap and the organization's strategic direction. Which means, they are responsible for the **mission**, **vision** and the **roadmap** related to their specific domain.
+Committees are specialized bodies appointed by the board to address specific topics or tasks relevant to the association and the related eco system. The purpose and mandate Committees are to formulate the **mission**, **vision** and the **roadmap** related to their specific domain.
 
-The Committee  is encouraged to embrace this adaptability, taking initiative to address emerging challenges and opportunities, and to collaborate with other Committees and Expert Groups to achieve the organization's objectives. The success of the association hinges on the proactive and collaborative efforts of the Committee to lead with vision, communicate effectively, and prioritize features that align with our mission and strategic goals.
+The Committee  is encouraged to take initiative to address emerging challenges and opportunities, and to collaborate with other Committees and Expert Groups to achieve the organization's objectives. The success of the association hinges on the proactive and collaborative efforts of the Committee to lead with vision, communicate effectively, and prioritize features that align with our mission and strategic goals.
 
 The overview of the existing committees can be found in the [organizational chart](https://catena-x.net/fileadmin/user_upload/06_Ueber_uns/Ueber_uns_der_Verein/Catena-X_Organization_Chart.pdf) on the Catena-X homepage.
 
@@ -15,8 +15,6 @@ The overview of the existing committees can be found in the [organizational char
 The Committee is responsible for developing a clear and forward-looking strategy for the business domain. The strategy should contain a vision that guides the direction for the coming years and serve as a beacon for all strategic decisions.
 
 Decisions at this level focus on how each Expert Group can effectively contribute to the overall mission and goals of the association.
-
-The main goal is to ensure that each Expert Group is effective in serving the members and supporting the association’s objectives.
 
 The Committee creates a roadmap outlining key initiatives and milestones for the upcoming year. This roadmap is continuously reviewed and updated to respond to changes in the market and within the organization.
 
@@ -40,11 +38,11 @@ Committees have the mandate to achieve their goals through the establishment and
 
 Every Committee must elect a Lead and a Co-Lead. Both act as first point of contact for any inquiries and requests towards the Committee. Further the leads are required to take care of the following taks:
 
-- The leaders of the Committee appoint the Committee members based on the preliminary selection of applications by the board and their existing professional expertise.
+- Appoint the Committee members based on the preliminary selection of applications by the board and their existing professional expertise.
 - Creation of work packages in alignment with the other Committee members
 
 If the leads see fit they can they can handover the exectution of the task to other Committee members or create additional roles if they see fit. The general intention for the lead role is to be first among equals by keeping the strings together.
 
 ### Mentor for Expert Groups (optional)
 
-For each Expert Group associated to a Committee, a member of the Committee should be nominated as mentor. The mentor should a senior matter expert in the respective field of the Expert Group. The mentor works as interface to the Expert Groups and provide mentoring to ensure the success of the Expert Group.
+For each Expert Group associated to a Committee, a member of the Committee should be nominated as mentor. The mentor should be a senior matter expert in the respective field of the Expert Group. The mentor works as interface to the Expert Groups and provide mentoring to ensure the success of the Expert Group.

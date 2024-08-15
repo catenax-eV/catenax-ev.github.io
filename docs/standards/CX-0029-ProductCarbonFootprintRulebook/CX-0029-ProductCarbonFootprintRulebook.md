@@ -3,7 +3,7 @@
 :::note[Note 1: Only available as a PDF-File]
 As CX-0029 has been re-classified as a *non-technical requirement*
 
-**Link to the new Version**: [NFR-PCF-Rulebook v3.0](http://localhost:3000/docs/next/non-functional/overview)
+**Link to the new Version**: [NFR-PCF-Rulebook v3.0](./../../non-functional/assets/files/CX-NFR-PCF-Rulebook_v.3.0.pdf)
 :::
 
 :::note[Note 2: Re-Classification]

@@ -18,7 +18,7 @@ The Management Board holds significant responsibility in determining and oversee
 
 - **Initiating new Committees**: The management can form new Committees and hands them over the responsibility for a specific domain.
 
-- **Closing Expert Groups**: If a Committee is no longer needed, the management board has the authority to disband them.
+- **Closing Commitees**: If a Committee is no longer needed, the management board has the authority to disband them.
 
 - **Oversight and Governance**: Committees operate under the guidance and oversight of two sponsors, who must be member of the management board
 
@@ -26,10 +26,12 @@ The Management Board holds significant responsibility in determining and oversee
 
 ## Management board roles
 
+Please note that there are more roles in the Management board. This section however covers only those roles that are relevant for working model.
+
 ### Board sponsor
 
-Board sponsors ensure that the committees strategy and initiatives align with the organization's overall strategic goals and objectives. They act as the liaison between the committee and the board, facilitating clear and effective communication and ensures that the committee has the support needed from other parts of the organization.
+Board sponsors ensure that the Committees strategy and initiatives align with the organization's overall strategic goals and objectives. They act as the liaison between the Committee and the board, facilitating clear and effective Communication and ensures that the Committee has the support needed from other parts of the organization.
 
 ### Mediation board member
 
-The mediation board member is elected by from and by the management board. The mediation board member serves as the ultimate decision-maker when conflicts or disputes cannot be resolved at lower levels within the association. They provide a final, binding resolution to escalated issues, ensuring that decisions are fair and just.
+The mediation board member is elected by from and by the management board. The mediation board member serves as the ultimate decision-maker when conflicts or disputes cannot be resolved at lower levels within the association. He or she provides a final, binding resolution to escalated issues, ensuring that decisions are fair and just.
