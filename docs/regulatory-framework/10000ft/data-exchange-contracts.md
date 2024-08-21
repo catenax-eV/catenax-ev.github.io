@@ -16,7 +16,7 @@ pagination_next: null
 
 #### 1.1 Objective
 
-The Catena-X Data Space ("**CX Data Space**") enables Data Providers ("**DP**") and Data Consumers ("**D**C") to conclude data exchange contracts via the eclipse data space connector or another registered connector ("**RC Process**"). The document is intended to educate (pro-spective) Participants and help them to align their internal organisational processes.
+The Catena-X Data Space ("**CX Data Space**") enables Data Providers ("**DP**") and Data Consumers ("**D**C") to conclude data exchange contracts via the eclipse data space connector or another registered connector ("**RC Process**"). The document is intended to educate (prospective) Participants and help them to align their internal organisational processes.
 
 #### 1.2 Registration Process
 
