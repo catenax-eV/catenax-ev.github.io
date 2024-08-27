@@ -1,32 +1,41 @@
 # Test Management
 
+<!-- TOC -->
+- [Test Management](#test-management)
+  - [Overview](#overview)
+  - [Tools](#tools)
+    - [Xray](#xray)
+  - [Processes](#processes)
+    - [Test Cases in Xray](#test-cases-in-xray)
+    - [Deployment of Specific Versions in ArgoCD](#deployment-of-specific-versions-in-argocd)
+  - [Dependencies](#dependencies)
+    - [Internal Dependencies](#internal-dependencies)
+    - [External Dependencies](#external-dependencies)
+  - [Conclusion](#conclusion)
+  - [Test Management old](#test-management-old)
+    - [Product Tests](#product-tests)
+    - [Release Tests](#release-tests)
+    - [Test Beds](#test-beds)
+    - [Defect Management](#defect-management)
+    - [Test Artifacts](#test-artifacts)
+<!-- TOC -->
+
 ## Overview
 
-Test management involves the planning, execution, and monitoring of testing activities to ensure the quality and functionality of software products. This document outlines the tools and processes involved in our test management strategy.
+Test management involves the planning, execution, and monitoring of testing activities to ensure the quality and
+functionality of software products. This document outlines the tools and processes involved in our test management
+strategy.
 
 ## Tools
-
-### Argo CD
-
-- **Purpose:** Continuous delivery tool for Kubernetes.
-- **Usage:** Deployment of specific versions of products.
-- **Features:**
-  - Automated deployments.
-  - Version control of deployments.
-  - Rollbacks to previous versions.
-
-### Infrastructure Maintenance
-
-- **INT-Environment:** last Sunday of each month -> Products should check their deployments after downtime
 
 ### Xray
 
 - **Purpose:** Test management tool integrated with Jira.
 - **Usage:** Managing test cases.
 - **Features:**
-  - Creation and execution of test cases.
-  - Test coverage reporting.
-  - Integration with CI/CD pipelines.
+  - Creation and execution of test cases
+  - Test coverage reporting
+  - Integration with CI/CD pipelines
 
 ## Processes
 
@@ -36,7 +45,7 @@ Test management involves the planning, execution, and monitoring of testing acti
 - **Execution:** Run test cases during different stages of the development lifecycle.
 - **Reporting:** Generate reports to track test coverage and identify areas for improvement.
 
-### Deployment of Specific Versions in Argo CD
+### Deployment of Specific Versions in ArgoCD
 
 - **Planning:** Schedule deployments based on the release plan.
 - **Execution:** Deploy specific versions of products to the Kubernetes environment using Argo CD.
@@ -63,6 +72,10 @@ Test management involves the planning, execution, and monitoring of testing acti
 ## Conclusion
 
 Effective test management requires careful planning, execution, and monitoring. By utilizing tools like Argo CD and Xray, and by managing both internal and external dependencies, we can ensure high-quality software releases that meet user expectations and business requirements.
+
+## Timeline 24.12
+
+![image](https://github.com/user-attachments/assets/573df434-2c36-473a-a891-08af639314fd)
 
 -------------------------------------------
 
