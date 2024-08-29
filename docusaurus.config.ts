@@ -124,6 +124,12 @@ const config: Config = {
           ],
         },
         {
+          type: "docSidebar",
+          sidebarId: "sidebar_working_model",
+          position: "left",
+          label: "Working Model",
+        },
+        {
           type: 'docsVersionDropdown',
           position: 'right',
         },
