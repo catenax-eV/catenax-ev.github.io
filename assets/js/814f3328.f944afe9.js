@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcatenax_ev_github_io_new=self.webpackChunkcatenax_ev_github_io_new||[]).push([[7472],{55513:e=>{e.exports=JSON.parse('{"title":"Recent posts","items":[]}')}}]);
