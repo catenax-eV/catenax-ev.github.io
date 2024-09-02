@@ -7,7 +7,7 @@ tags:
   - CAT/Sandbox Services (Beta)
 ---
 
-# CX - 0050 Framework Agreement Credential v.2.1.0
+# CX-0050 Framework Agreement Credential v.2.1.0
 
 ## REVISIONS & UPDATE
 
