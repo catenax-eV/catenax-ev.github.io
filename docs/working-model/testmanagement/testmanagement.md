@@ -1,13 +1,17 @@
 # Test Management
 
-<!-- TOC -->
+<!-- TOC
 - [Test Management](#test-management)
   - [Overview](#overview)
   - [Tools](#tools)
+    - [Argo CD](#argo-cd)
+    - [Vault](#vault)
+    - [Grafana](#grafana)
+    - [Goldilocks](#goldilocks)
     - [Xray](#xray)
   - [Processes](#processes)
     - [Test Cases in Xray](#test-cases-in-xray)
-    - [Deployment of Specific Versions in ArgoCD](#deployment-of-specific-versions-in-argocd)
+    - [Deployment of Specific Versions in Argo CD](#deployment-of-specific-versions-in-argo-cd)
   - [Dependencies](#dependencies)
     - [Internal Dependencies](#internal-dependencies)
     - [External Dependencies](#external-dependencies)
@@ -18,7 +22,7 @@
     - [Test Beds](#test-beds)
     - [Defect Management](#defect-management)
     - [Test Artifacts](#test-artifacts)
-<!-- TOC -->
+TOC -->
 
 ## Overview
 
@@ -27,6 +31,43 @@ functionality of software products. This document outlines the tools and process
 strategy.
 
 ## Tools
+
+### Argo CD
+
+- **Purpose:** Continuous delivery tool for Kubernetes.
+- **Usage:** https://argocd.int.catena-x.net
+- **Features:**
+  - Automated deployments
+  - Version control of deployments
+  - Rollbacks to previous versions
+
+### Vault
+
+- **Purpose:** Store secrets for deployment configurations.
+- **Usage:** https://vault.core.catena-x.net
+- **Features:**
+  - Secret management
+  - Usable in Argo CD with Argo-Vault Plugin
+
+### Grafana
+
+- **Purpose:** Monitoring of resources of the product teams
+- **Usage:** https://grafana.int.catena-x.net
+- **Features:**
+  - Dashboards for monitoring
+  - Alerting
+
+### Goldilocks
+
+- **Purpose:** Resource usage recommendations for the product teams
+- **Usage:** https://goldilocks.int.catena-x.net
+- **Features:**
+  - Resource recommendations
+  - Cost savings if applied by the product teams
+
+### Infrastructure Maintenance
+
+- **INT-Environment:** last Sunday of each month -> Products should check their deployments after downtime
 
 ### Xray
 
@@ -89,7 +130,7 @@ The software testing of reference implementations is sponsored and coordinated b
 
 ### Product Tests
 
-Product tests include unit, regression and integration tests based on product helm charts with individual dependencies.  
+Product tests include unit, regression and integration tests based on product helm charts with individual dependencies.
 
 Contributors can create pull requests (PRs) for their developed features at any time. A PR must be assigned to a feature issue committed in the open planning. To get faster code reviews, it is recommended to submit small PRs.
 
