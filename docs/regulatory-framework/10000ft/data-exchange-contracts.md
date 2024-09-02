@@ -16,7 +16,7 @@ pagination_next: null
 
 #### 1.1 Objective
 
-The Catena-X Data Space ("**CX Data Space**") enables Data Providers ("**DP**") and Data Consumers ("**D**C") to conclude data exchange con- tracts via the eclipse data space connector or another registered connector ("**RC Process**"). The document is intended to educate (pro- spective) Participants and help them to align their internal organisational processes.
+The Catena-X Data Space ("**CX Data Space**") enables Data Providers ("**DP**") and Data Consumers ("**D**C") to conclude data exchange contracts via the eclipse data space connector or another registered connector ("**RC Process**"). The document is intended to educate (prospective) Participants and help them to align their internal organisational processes.
 
 #### 1.2 Registration Process
 
@@ -24,7 +24,7 @@ Each participating entity ("**Participant**") must register and accept the Gover
 
 #### 1.3 Registered Connector as a means to effect data exchange contracts
 
-Each Participant with a BPN-L has at least one dedicated registered connector ("**RC**"), either self-managed or hosted. The RC facilitates the conclusion of data exchange contracts and the subsequent exchange of data. Where the DP allows a DC to share data with its affili- ates, those affiliates do not need an own RC.
+Each Participant with a BPN-L has at least one dedicated registered connector ("**RC**"), either self-managed or hosted. The RC facilitates the conclusion of data exchange contracts and the subsequent exchange of data. Where the DP allows a DC to share data with its affiliates, those affiliates do not need an own RC.
 
 #### 1.4 Predefined Use Case Frameworks
 
@@ -40,9 +40,9 @@ Illustration 1: RC Process with the example of an Eclipse Data Space Connector (
 
 ### 2. EXECUTIVE SUMMARY: CONCLUDING AND PERFORMING DATA EXCHANGE CONTRACTS VIA REGISTERED CONNECTORS
 
-DP and DC conclude a data exchange contract under a Predefined Use Case at the point that the DP's RC has delivered the DP's state- ment of acceptance to the DC in respect of a specific data set preconfigured by the DP.
+DP and DC conclude a data exchange contract under a Predefined Use Case at the point that the DP's RC has delivered the DP's statement of acceptance to the DC in respect of a specific data set preconfigured by the DP.
 
-To that end, the DP specifies the data set it is prepared to exchange with one or several DC, by referencing a Predefined Use Case Frame- work, specifying certain Access Policies under the Use Case and related usage policies (including who may view which data set and en- gage with the DP's RC) as well as related legal terms. A permitted DC can view and evaluate the data set under the related Access Policies after the DP has checked the DC's Use Case Participation Credential.
+To that end, the DP specifies the data set it is prepared to exchange with one or several DC, by referencing a Predefined Use Case Framework, specifying certain Access Policies under the Use Case and related usage policies (including who may view which data set and engage with the DP's RC) as well as related legal terms. A permitted DC can view and evaluate the data set under the related Access Policies after the DP has checked the DC's Use Case Participation Credential.
 
 The DC makes a legally binding offer ("**Offer**") to the DP by referencing the data set (Step 8). Subsequently, the DP accepts the DC's Offer by reproducing the exact content of the Offer in the DP's RC. The RC delivers this declaration of acceptance to the DC (Step 9: "**Contract Closure / Success**"). At that point, DP and DC have concluded a valid contract under law.
 
@@ -55,7 +55,7 @@ DP and DC store the data exchange contract individually (no central storage) aft
 Any data exchange contract ("**Contract**") between a DP and DC requires **an offer** and the other party's **acceptance**.\*
 
 :::note
-\*German contract formation rules under the German Civil Code. These rules do not require the DC to pay a consideration to create a valid contract. This can be different in other jurisdictions (e.g. US law). In general, the Governance Framework allows for deviations from any mandatory terms under Predefined Use Case Frameworks, if neces- sary to form a binding contract under another choice of governing law made by a DP and DC.
+\*German contract formation rules under the German Civil Code. These rules do not require the DC to pay a consideration to create a valid contract. This can be different in other jurisdictions (e.g. US law). In general, the Governance Framework allows for deviations from any mandatory terms under Predefined Use Case Frameworks, if necessary to form a binding contract under another choice of governing law made by a DP and DC.
 :::
 
 The OpCo is responsible to provide the technical means for the contract negotiation, including acceptance of the Use Case Framework as well as any legally necessary information on the contract formation process.
@@ -64,7 +64,7 @@ The OpCo is responsible to provide the technical means for the contract negotiat
 
 In step A, DP specifies a data set it is prepared to exchange with a data consumer ("**Data Offers**"). For each of these data sets, DP specifies **all contract terms** by referencing a Predefined Use Case Framework and, if desired, specifies any additional terms within the confines of the Predefined Use Case Framework (e.g. choice of law, dispute resolution).
 
-DP also sets technical policies that establish which Participants can view and interact with a Data Offer (“Access Policy”). DP does not ac- tively send Data Offers to any Participant. Any such Data Offer by DP **is non-binding (invitation to offer) and not an offer under law**.
+DP also sets technical policies that establish which Participants can view and interact with a Data Offer (“Access Policy”). DP does not actively send Data Offers to any Participant. Any such Data Offer by DP **is non-binding (invitation to offer) and not an offer under law**.
 Following this, the DP's catalogue includes the Data Offer(s).
 
 If the parties choose to conclude additional terms outside of Catena-X (see 1.5), these bilateral contracts need to be referenced in the data offer.
@@ -89,7 +89,7 @@ DC views Data Offer(s) and evaluates its/their terms (step 6-7).
 
 If DC wants to conclude a binding data exchange contract based on the terms of a Data Offer, DC can communicate such desire to DP by way of reference to a specific Data Offer. Under German law, this constitutes a binding offer by DC.
 
-For now, DC only has the option to accept all terms of an Offer (or not). The RC Data Exchange Process does not yet provide for DC to make an offer that deviates from the terms of a Data Offer as set by the DP. However, future release versions will provide for contract nego- tiation with counter offers by DC.
+For now, DC only has the option to accept all terms of an Offer (or not). The RC Data Exchange Process does not yet provide for DC to make an offer that deviates from the terms of a Data Offer as set by the DP. However, future release versions will provide for contract negotiation with counter offers by DC.
 
 #### 3.6 DP accepts DC's Offer in Step 9
 
@@ -101,10 +101,10 @@ During the contract formation process, DC sends identity credentials to DP and D
 
 #### 3.8 Data exchange
 
-In step 10, DC requests access to DP's data from DP. DP sends an access token to DC. Following that, DC can use such token to down- load the data provided by DP. DC may repeat this process multiple times, using the same token. Following the retrieval of data, DC pro- cesses such data.
+In step 10, DC requests access to DP's data from DP. DP sends an access token to DC. Following that, DC can use such token to download the data provided by DP. DC may repeat this process multiple times, using the same token. Following the retrieval of data, DC processes such data.
 
 #### 3.9 Automating contract negotiations in Predefined Use Case Frameworks
 
-The Association will develop further automation and scalability of the RC Process. The RC will enable Participants to choose from a range of text modules when negotiating and agreeing on terms within the Predefined Use Case Frameworks (e.g. liability/dispute resolu- tion/choice of law etc.).
+The Association will develop further automation and scalability of the RC Process. The RC will enable Participants to choose from a range of text modules when negotiating and agreeing on terms within the Predefined Use Case Frameworks (e.g. liability/dispute resolution/choice of law etc.).
 
 Also, Participants will be able to define conditions for automated acceptances (via their RC) in response to offers from other Participants within Predefined Use Case Frameworks.
