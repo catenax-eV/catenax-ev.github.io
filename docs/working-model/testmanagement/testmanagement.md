@@ -68,7 +68,7 @@ strategy.
 ### Infrastructure Maintenance
 
 - **INT-Environment:** last Sunday of each month -> Products should check their deployments after downtime
-- 
+
 ### Xray
 
 - **Purpose:** Test management tool integrated with Jira.
