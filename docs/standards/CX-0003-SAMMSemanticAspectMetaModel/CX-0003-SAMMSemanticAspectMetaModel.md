@@ -1,5 +1,4 @@
 ---
-position: 3
 tags:
   - CAT/Semantic
 ---
