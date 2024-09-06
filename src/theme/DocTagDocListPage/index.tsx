@@ -17,7 +17,7 @@ import {
 import Translate, {translate} from '@docusaurus/Translate';
 import SearchMetadata from '@theme/SearchMetadata';
 import type {Props} from '@theme/DocTagDocListPage';
-import Unlisted from '@theme/Unlisted';
+import Unlisted from '@theme/ContentVisibility/Unlisted';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
 
@@ -94,7 +94,7 @@ function DocTagDocListPageContent({
                 <Translate
                   id="theme.tags.tagsPageLink"
                   description="The label of the link targeting the tag list page">
-                  View All Tags
+                  View all tags
                 </Translate>
               </Link>
             </header>
