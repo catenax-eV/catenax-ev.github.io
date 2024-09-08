@@ -25,7 +25,7 @@ details to be found [here](/docs/next/operating-model/changelog)
 
 details to be found [here](/docs/next/regulatory-framework/changelog)
 
-### Tractus-X Features & KITs
+### Tractus-X reference implementations
 
 A comprehensive, coherent and compatible set of development artefacts. Highlights include:
 
@@ -34,7 +34,19 @@ A comprehensive, coherent and compatible set of development artefacts. Highlight
 - the advancement of Self Sovereign Identity concepts
 - several improvements to the user-friendliness of KITs based on feedback received to date, making Tractus-X overall more accessible and welcoming to newcomers and veterans alike.
 
-details to be found [here](https://eclipse-tractusx.github.io/CHANGELOG)
+details to be found [here](https://eclipse-tractusx.github.io/CHANGELOG/#2408---2024-08-05)
+
+#### Compliant versions and clarifications
+
+By default, the versions listed in the [Tractus-X changelog](https://eclipse-tractusx.github.io/CHANGELOG/#2408---2024-08-05) are the recommended versions. Non-compatible or other compatible versions which are not part of the Tractus-X release are listed below:
+
+| Component                                    | Versions                                       |
+|----------------------------------------------|------------------------------------------------|
+| Eclipse Data Space Connector (Tractus-X EDC) | [0.7.3](https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.7.3) [E2E-Tested] [Recommended] <br /> [0.7.4](https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.7.4) [Latest] |
+
+[Latest] – latest released version  
+[E2E-Tested] – version was [End-to-End](docs/next/working-model/release-management/development-and-release/e2e-test) tested  
+[Recommended] – Version recommended by the Catena-X association  
 
 ### Further Scope Clarification
 
