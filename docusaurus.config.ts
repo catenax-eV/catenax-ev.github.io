@@ -109,6 +109,12 @@ const config: Config = {
           label: "Operating Model",
         },
         {
+          type: "docSidebar",
+          sidebarId: "sidebar_working_model",
+          position: "left",
+          label: "Working Model",
+        },
+        {
           type: 'dropdown',
           label: 'Releases',
           position: 'left',
@@ -122,12 +128,6 @@ const config: Config = {
               label: 'Release Notes',
             },
           ],
-        },
-        {
-          type: "docSidebar",
-          sidebarId: "sidebar_working_model",
-          position: "left",
-          label: "Working Model",
         },
         {
           type: 'docsVersionDropdown',
