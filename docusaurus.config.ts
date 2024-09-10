@@ -54,6 +54,9 @@ const config: Config = {
       } satisfies Preset.Options,
     ],
   ],
+  markdown: {
+    mermaid: true,
+  },
   themes: [
     [
       require.resolve("@easyops-cn/docusaurus-search-local"),
@@ -61,6 +64,7 @@ const config: Config = {
         hashed: true,
       },
     ],
+    '@docusaurus/theme-mermaid'
   ],
 
   themeConfig: {
