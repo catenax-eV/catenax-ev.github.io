@@ -6,7 +6,7 @@ tags:
   - CAT/Sandbox Service Provider
 ---
 
-# CX-0001 EDC Discovery API v1.0.2
+# CX-0001 EDC Discovery API v1.0.3
 
 ## ABSTRACT
 
@@ -112,7 +112,7 @@ applied correctly, Catena-X employs Conformity Assessment Bodies
     onboarding process.
 
 - The provided SD documents **MUST** be GAIA-X compliant, i.e. **MUST**
-    provide a compliance credential issued from GAIA-X AIBSL.
+    provide a compliance credential issued from GAIA-X AISBL.
 
 - The implemented service **SHOULD** use the SD storage as source of
     truth.
@@ -404,7 +404,7 @@ applied correctly, Catena-X employs Conformity Assessment Bodies
 - SD documents **MUST** be created for every Connector registered and stored by the Participants. The Core Service Provide make them available.
 
 - The provided SD documents **MUST** be GAIA-X compliant, i.e. MUST
-    provide a compliance credential issued from GAIA-X AIBSL.
+    provide a compliance credential issued from GAIA-X AISBL.
 
 A test case will be, that an EDC instance has to be onboarded for a
 specific participant identified by a BPN. The SD for the EDC has to be
