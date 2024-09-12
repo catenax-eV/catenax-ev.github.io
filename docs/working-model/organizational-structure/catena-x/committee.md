@@ -12,7 +12,7 @@ The overview of the existing committees can be found in the [organizational char
 
 ## Business domain strategy
 
-The Committee is responsible for developing a clear and forward-looking strategy for the business domain. The strategy should contain a vision that guides the direction for the coming years and serve as a beacon for all strategic decisions.
+The Committee is responsible for developing a clear and forward-looking strategy for the business domain. The strategy should contain a vision that guides the direction for the coming years and serves as a beacon for all strategic decisions.
 
 Decisions at this level focus on how each Expert Group can effectively contribute to the overall mission and goals of the association.
 
@@ -36,13 +36,13 @@ Committees have the mandate to achieve their goals through the establishment and
 
 ### Lead and Co-Lead
 
-Every Committee must elect a Lead and a Co-Lead. Both act as first point of contact for any inquiries and requests towards the Committee. Further the leads are required to take care of the following taks:
+Every Committee must elect a Lead and a Co-Lead. Both act as first point of contact for any inquiries and requests towards the Committee. Furthermore, the leads are required to take care of the following tasks:
 
 - Appoint the Committee members based on the preliminary selection of applications by the board and their existing professional expertise.
 - Creation of work packages in alignment with the other Committee members
 
-If the leads see fit they can they can handover the exectution of the task to other Committee members or create additional roles if they see fit. The general intention for the lead role is to be first among equals by keeping the strings together.
+If the leads see fit they can handover the exectution of the task to other Committee members or create additional roles if they see fit. The general intention for the lead role is to be "first among equals" by keeping the strings together.
 
 ### Mentor for Expert Groups (optional)
 
-For each Expert Group associated to a Committee, a member of the Committee should be nominated as mentor. The mentor should be a senior matter expert in the respective field of the Expert Group. The mentor works as interface to the Expert Groups and provide mentoring to ensure the success of the Expert Group.
+For each Expert Group associated with a Committee, a member of the Committee should be nominated as a mentor. The mentor should be a senior matter expert in the respective field of the Expert Group. The mentor works as an interface to the Expert Groups and provides mentoring to ensure the success of the Expert Group.
