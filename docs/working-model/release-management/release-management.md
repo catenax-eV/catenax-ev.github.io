@@ -2,15 +2,15 @@
 
 ## Preparation Phase (4 weeks)
 
-In line with the organisation's vision and strategy the purpose of the preparation phase is to have an initial rough plan for each single release in terms of content and deadlines. This involves identifying technical topics (architecture, software development, (new) features and updates) as well as associated standards that are to be implemented.
+In line with the organization's vision and strategy the purpose of the preparation phase is to have an initial rough plan for each single release in terms of content and deadlines. This involves identifying technical topics (architecture, software development, (new) features and updates) as well as associated standards that are to be implemented.
 
 ## Planning (10 weeks)
 
-The planning phase deals with the concrete planning of the content of the individual releases. Based on the association roadmap, the topics in the product backlog and the previous rough planning, the refinement work now begins. The aim of the planning is to ensure that the content is specified, prioritized, scheduled, committed and released at the end of the phase.
+The planning phase deals with the concrete planning of the content of the individual releases. Based on the association roadmap, the topics in the product backlog and the previous rough planning, the detailed refinement work now begins. The aim of the planning is to ensure that the content is specified, prioritized, scheduled, committed and then released at the end of the phase.
 
 ## Development & Release (15 weeks)
 
-The development and release phase includes the development of the software and standards. The individual units are developed and tested in up to six increments. This is followed by final integration and end-to-end test for the software. In addition there is an opt-out phase for commenting on the developed standards (45 days). If successful the individual units will be released and published.
+The development and release phase includes the development of the software and standards. The individual units are developed and tested in up to six increments. This is followed by final integration and end-to-end testing for the software. In addition there is an opt-out phase for commenting on the developed standards (45 days). If successful the individual units will be released and published.
 
 ---------------------------
 
