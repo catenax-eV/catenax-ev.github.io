@@ -42,11 +42,10 @@ By default, the versions listed in the [Tractus-X changelog](https://eclipse-tra
 
 | Component                                    | Versions                                       |
 |----------------------------------------------|------------------------------------------------|
-| Eclipse Data Space Connector (Tractus-X EDC) | [0.7.3](https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.7.3) [E2E-Tested] [Recommended] <br /> [0.7.4](https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.7.4) [Latest] |
+| Eclipse Data Space Connector (Tractus-X EDC) | [0.7.3](https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.7.3) [Recommended] <br /> [0.7.4](https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.7.4) <br />   [0.7.5](https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.7.5) [Latest] |
 
 [Latest] – latest released version  
-[E2E-Tested] – version was [End-to-End](docs/next/working-model/release-management/development-and-release/e2e-test) tested  
-[Recommended] – Version recommended by the Catena-X association  
+[Recommended] – recommended by the Catena-X association (Compliant with the [Catena-X Standards](/docs/next/standards/overview) and [End-to-End](docs/next/working-model/release-management/development-and-release/e2e-test) tested)
 
 ### Further Scope Clarification
 
