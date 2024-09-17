@@ -153,11 +153,11 @@ sidebar_class_name: separator-top
 | CX-0088            |  Aspect Model for Remaining Useful Life data                               | Merged into CX-0138 Use Case Behaviour Twin Endurance Estimator Digital Product Pass                                                   |
 | CX-0090            |  API Endurance Estimator                               |  Merged into CX-0138 Use Case Behaviour Twin Endurance Estimator                                                  |
 | CX-0089            | Triangle Behavioral Twin Endurance Estimator Service                              | Merged into CX-0138 Use Case Behaviour Twin Endurance Estimator Digital Product Pass                                                    |
-| CX-0026            |  PCF Data Model                            |  Merged into CX-0143 Use Case PCF                                                  |
-| CX-0027            |  Product Carbon Footprint Aspect Model                            |  Merged into CX-0143 Use Case PCF                                                  |
-| CX-0028            | PCF Request API                    |   Merged into CX-0143 Use Case PCF                                               |
+| CX-0026            |  PCF Data Model                            |  Merged into CX-0136 Use Case PCF                                                  |
+| CX-0027            |  Product Carbon Footprint Aspect Model                            |  Merged into CX-0136 Use Case PCF                                                  |
+| CX-0028            | PCF Request API                    |   Merged into CX-0136 Use Case PCF                                               |
 | CX-0134            |  PCF Calculation Integration                               | Merged into CX-0143 Use Case PCF                                                   |
-| CX-0063            | PCF Triangle                                 |  Merged into CX-0143 Use Case PCF                                                  |
+| CX-0063            | PCF Triangle                                 |  Merged into CX-0136 Use Case PCF                                                  |
 | CX-0052            | Manufacturing Capability Aspect Model                                 |  Merged into CX-0115 Manufacturing Capability Exchange                                                  |
 | CX-0100            | Triangle for Secondary Marketplace                                 |  Merged into CX-0117 Use Case Circular Economy - Secondary Marketplace                                                  |
 | CX-0016            | Company Attribute Verification                                 |  Merged into CX-0149 Verified Company Identity                                                  |

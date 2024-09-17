@@ -4,7 +4,7 @@ tags:
   - UC/Quality
 ---
 
-# CX-0123 Quality Use Case Standard v2.0.0
+# CX-0123 Quality Use Case Standard v2.1.0
 
 ## ABSTRACT
 
@@ -24,6 +24,10 @@ based on data sharing agreements and usage policies.
 ```
 
 ## COMPARISON WITH THE PREVIOUS VERSION OF THE STANDARD
+
+Changes compared to V2.0.0 of CX-0123:
+
+- Update aspect model `urn:samm:io.catenax.fleet.vehicles:3.0.0`
 
 Changes compared to V1.0.0 of CX-0123:
 
@@ -125,7 +129,7 @@ As OEM data provider for a Supplier as data consumer, if data is provided, I **M
 - Aspect Model QualityTask  v2.0.0
 - Aspect Model FleetDiagnosticData  v2.0.0
 - Aspect Model FleetClaimData  v2.0.0
-- Aspect Model FleetVehicles v2.1.0
+- Aspect Model FleetVehicles v3.0.0
 - Aspect Model QualityTaskAttachment v2.0.0
 - Aspect Model FailurePattern v1.0.0
 
@@ -207,7 +211,7 @@ To flatten a hierarchical structure into ONE table for data providing the cross-
 Beginning from root entity: Do a left outer join with all children one level down. Than for every children that also has child entities: Do a left out join with all child entities one level down.
 ```
 
-Conventions for Use Case Policy in context data exchange
+### Conventions for Use Case Policy in context data exchange
 
 In alignment with our commitment to data sovereignty, a specific framework governing the utilization of data within the Catena-X use cases has been outlined. A set of specific policies on data offering and data usage level detail the conditions under which data may be accessed, shared, and used, ensuring compliance with legal standards.
 
@@ -216,18 +220,19 @@ For a comprehensive understanding of the rights, restrictions, and obligations a
 - the detailed ODRL policy repository. This document provides in-depth explanations of the terms and conditions applied to data access and utilization, ensuring that all engagement with our data is conducted responsibly and in accordance with established guidelines.
 - the ODRL schema template. This defines how policies used for data sharing/usage should get defined. Those schemas MUST be followed when providing services or apps for data sharing/consuming.
 
-Additional Details regarding Access Policies
+**Additional Details regarding Access Policies**
 
 A Data Provider may tie certain access authorizations ("Access Policies") to its data offers for members of Catena-X and one or several Data Consumers. By limiting access to certain Participants, Data Provider maintains control over its anti-trust obligations when sharing certain data. In particular, Data Provider may apply Access Policies to restrict access to a particular data offer for only one Participant identified by a specific business partner number:
 
 - Membership
 - BPNL
 
-Additional Details regarding Usage Policies
+**Additional Details regarding Usage Policies**
 
 In the context of data usage policies (“Usage Policies”), Participants and related services MUST use the following policy rules:
 
-- Use Case Framework (“FrameworkAgreement”) at least one use case purpose (“UsagePurpose”) from the above mentioned ODRL policy repository.
+- Use Case Framework (“FrameworkAgreement”)
+- at least one use case purpose (“UsagePurpose”) from the above mentioned [ODRL policy](https://github.com/catenax-eV/cx-odrl-profile) repository.
 
 Additionally, respective usage policies MAY include the following policy rule:
 
@@ -606,7 +611,7 @@ github overwrites the information in this specification document.
 The semantic model has the unique identifier
 
 ```text
-<urn:samm:io.catenax.fleet.vehicles:2.1.0#>
+<urn:samm:io.catenax.fleet.vehicles:3.0.0#>
 ```
 
 #### 3.6.5 FORMATS OF SEMANTIC MODEL
@@ -619,7 +624,7 @@ The rdf turtle file, an instance of the Semantic Aspect Meta Model, is the maste
 It can be found in the current version 2.1.0 in the github repository.
 
 ```text
-[https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.fleet.vehicles/2.1.0/Vehicles.ttl]
+[https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.fleet.vehicles/3.0.0/Vehicles.ttl]
 ```
 
 The open source command line tool of the Eclipse Semantic Modeling Framework  is used for generation of other file formats like JSON Schema, aasx for Asset Administration Shell Submodel Template or HTML documentation.
@@ -630,7 +635,7 @@ A JSON Schema can be generated from the RDF Turtle file. The JSON Schema defines
 It can be found in the current version in the "gen" subfolder in the github repository.
 
 ```text
-[https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.fleet.vehicles/2.1.0/gen]
+[https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.fleet.vehicles/3.0.0/gen]
 ```
 
 ##### 3.6.5.3 AASX
@@ -858,7 +863,7 @@ The Tractus-X EDC **SHOULD** act as a reverse proxy towards those APIs, as it ho
 
 The quality notification API **MUST** be implemented as specified in the [openAPI](./assets/earlywarningnotification-1-0-0.yaml) documentation.
 
-In fact, it is **OPTIONAL** to implement the endpoint paths exactly as described in the [openAPI](./assets/earlywarningnotification-1-0-0.yaml). The reason is that those endpoints are not called from any supply chain partner directly. Rather, they are called from the Tractus-X EDC as part of data assets. In that sense, it is just important to implement endpoints that can process the defined request body and respond with the HTTP status codes and - if required - reply with the defined response body.
+In fact, it is **OPTIONAL** to implement the endpoint paths exactly as described in the [openAPI](./assets/earlywarningnotification-1-0-0.yaml)). The reason is that those endpoints are not called from any supply chain partner directly. Rather, they are called from the Tractus-X EDC as part of data assets. In that sense, it is just important to implement endpoints that can process the defined request body and respond with the HTTP status codes and - if required - reply with the defined response body.
 
 The data assets will act similar to a reverse proxy for the notification endpoints, therefore rather the data assets are of significance, which **SHOULD** be exposed towards Catena-X through the Data Offer Catalogues in the Tractus-X EDC or any other CX-0018 compliant connector.
 
