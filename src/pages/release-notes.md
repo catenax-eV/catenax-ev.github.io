@@ -36,9 +36,11 @@ A comprehensive, coherent and compatible set of development artefacts. Highlight
 
 details to be found [here](https://eclipse-tractusx.github.io/CHANGELOG/#2408---2024-08-05)
 
-#### Compliant versions and clarifications
+#### Details on compatible and non-compliant versions
 
-By default, the versions listed in the [Tractus-X changelog](https://eclipse-tractusx.github.io/CHANGELOG/#2408---2024-08-05) are the recommended versions. Non-compatible or other compatible versions which are not part of the Tractus-X release are listed below:
+By default, the versions listed in the [Tractus-X changelog](https://eclipse-tractusx.github.io/CHANGELOG/#2408---2024-08-05) are the recommended versions. Non-compliant or other compatible versions of the Tractus-X release or the apps are listed below. If a version is interoperable with the initial release version and those features and with all other listed versions its listed as compatible.
+
+#### Compatible versions
 
 | Component                                    | Versions                                       |
 |----------------------------------------------|------------------------------------------------|
@@ -46,6 +48,12 @@ By default, the versions listed in the [Tractus-X changelog](https://eclipse-tra
 
 [Latest] – latest released version  
 [Recommended] – recommended by the Catena-X association (Compliant with the [Catena-X Standards](/docs/next/standards/overview) and [End-to-End](docs/next/working-model/release-management/development-and-release/e2e-test) tested)
+
+#### Non-compliant versions
+
+| Component | Versions |
+| --------- | -------- |
+| N/A       | N/A      |
 
 ### Further Scope Clarification
 
