@@ -36,9 +36,9 @@ A comprehensive, coherent and compatible set of development artefacts. Highlight
 
 details to be found [here](https://eclipse-tractusx.github.io/CHANGELOG/#2408---2024-08-05)
 
-#### Details on compatible and non-compliant versions
+#### Details on compatible and non-compatible versions
 
-By default, the versions listed in the [Tractus-X changelog](https://eclipse-tractusx.github.io/CHANGELOG/#2408---2024-08-05) are the recommended versions. Non-compliant or other compatible versions of the Tractus-X release or the apps are listed below. If a version is interoperable with the initial release version and those features and with all other listed versions its listed as compatible.
+By default, the versions listed in the [Tractus-X changelog](https://eclipse-tractusx.github.io/CHANGELOG/#2408---2024-08-05) are the recommended versions. Non-compatible or other compatible versions of the Tractus-X release or the apps are listed below. If a version is interoperable with the initial release version and those features and with all other listed versions its listed as compatible.
 
 #### Compatible versions
 
@@ -47,9 +47,9 @@ By default, the versions listed in the [Tractus-X changelog](https://eclipse-tra
 | Eclipse Data Space Connector (Tractus-X EDC) | [0.7.3](https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.7.3) [Recommended] <br /> [0.7.4](https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.7.4) <br />   [0.7.5](https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.7.5) [Latest] |
 
 [Latest] – latest released version  
-[Recommended] – recommended by the Catena-X association (Compliant with the [Catena-X Standards](/docs/next/standards/overview) and [End-to-End](docs/next/working-model/release-management/development-and-release/e2e-test) tested)
+[Recommended] – recommended by the Catena-X association (Compatible with the [Catena-X Standards](/docs/next/standards/overview) and [End-to-End](docs/next/working-model/release-management/development-and-release/e2e-test) tested)
 
-#### Non-compliant versions
+#### Non-compatible versions
 
 | Component | Versions |
 | --------- | -------- |
