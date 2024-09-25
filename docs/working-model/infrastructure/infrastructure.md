@@ -1,23 +1,23 @@
 # Infrastructure
 
-<!-- TOC -->
-- [Infrastructure](#infrastructure)
-  - [Available environments](#available-environments)
-    - [Core Environment](#core-environment)
-    - [Integration Environment](#integration-environment)
-  - [Environment Setup](#environment-setup)
-  - [Tools](#tools)
-    - [Argo CD](#argo-cd)
-    - [Vault](#vault)
-    - [Grafana](#grafana)
-    - [Goldilocks](#goldilocks)
-  - [Infrastructure Maintenance](#infrastructure-maintenance)
-  - [Fair Play Policy CX-Environments](#fair-play-policy-cx-environments)
-    - [Purpose](#purpose)
-    - [Equal Access to Resources](#equal-access-to-resources)
-    - [Fair Usage Guidelines](#fair-usage-guidelines)
-    - [Consequences of Violation](#consequences-of-violation)
-<!-- TOC -->
+<!-- TOC 
+* [Infrastructure](#infrastructure)
+  * [Available environments](#available-environments)
+    * [Core Environment](#core-environment)
+    * [Integration Environment](#integration-environment)
+  * [Environment Setup](#environment-setup)
+  * [Tools](#tools)
+    * [Argo CD](#argo-cd)
+    * [Vault](#vault)
+    * [Grafana](#grafana)
+    * [Goldilocks](#goldilocks)
+  * [Infrastructure Maintenance](#infrastructure-maintenance)
+  * [Fair Play Policy CX-Environments](#fair-play-policy-cx-environments)
+    * [Purpose](#purpose)
+    * [Equal Access to Resources](#equal-access-to-resources)
+    * [Fair Usage Guidelines](#fair-usage-guidelines)
+    * [Consequences of Violation](#consequences-of-violation)
+TOC -->
 
 Infrastructure involves the functionality of deploying, provision of a virtual environment and tools for monitoring
 applications to ensure the quality and functionality of software products. This document outlines the technology and
@@ -75,36 +75,36 @@ flowchart BT
 
 ### Argo CD
 
-- **Purpose:** Continuous delivery tool for Kubernetes.
-- **Features:**
-  - Automated deployments
-  - Version control of deployments
-  - Rollbacks to previous versions
+* **Purpose:** Continuous delivery tool for Kubernetes.
+* **Features:**
+  * Automated deployments
+  * Version control of deployments
+  * Rollbacks to previous versions
 
 ### Vault
 
-- **Purpose:** Store secrets for deployment configurations.
-- **Features:**
-  - Secret management
-  - Usable in Argo CD with Argo-Vault Plugin
+* **Purpose:** Store secrets for deployment configurations.
+* **Features:**
+  * Secret management
+  * Usable in Argo CD with Argo-Vault Plugin
 
 ### Grafana
 
-- **Purpose:** Monitoring of resources of the product teams
-- **Features:**
-  - Dashboards for monitoring
-  - Alerting
+* **Purpose:** Monitoring of resources of the product teams
+* **Features:**
+  * Dashboards for monitoring
+  * Alerting
 
 ### Goldilocks
 
-- **Purpose:** Resource usage recommendations for the product teams
-- **Features:**
-  - Resource recommendations
-  - Cost savings if applied by the product teams
+* **Purpose:** Resource usage recommendations for the product teams
+* **Features:**
+  * Resource recommendations
+  * Cost savings if applied by the product teams
 
 ## Infrastructure Maintenance
 
-- **INT-Environment:** last Sunday of each month -> Products should check their deployments after downtime
+* **INT-Environment:** last Sunday of each month -> Products should check their deployments after downtime
 
 ## Fair Play Policy CX-Environments
 
@@ -126,13 +126,13 @@ group should engage in actions that monopolize resources, impair performance, or
 
 To promote fair play and responsible resource usage:
 
-- **Reasonable Resource requests and limits**: Product teams should adhere to reasonable usage of CPU and Memory, to
+* **Reasonable Resource requests and limits**: Product teams should adhere to reasonable usage of CPU and Memory, to
   ensure optimal service for all. To get a hint on how the request/limit for your container should be, please take a
   look in Goldilocks (links can be found in the [environments](#available-environments) section). Especially CPU and Memory
   recommendations should be considered.
   Since there isn't much of a load on the systems (excluding testing before a release), the apps won't need many
   resources.
-- **Monitor your Namespace in ArgoCD**: You should regularly check your resource usage, requests and limits in your
+* **Monitor your Namespace in ArgoCD**: You should regularly check your resource usage, requests and limits in your
   namespace. This can be done with [Grafana](#available-environments), here you can find many dashboards, that support
   you with that.
 
@@ -140,9 +140,9 @@ To promote fair play and responsible resource usage:
 
 If a product team is found to be in violation of this Fair Play Policy, the following actions may be taken:
 
-- Issuing a notice to inform the product team of the violation/improper usage.
-- The system team might proactively create pull requests with decreased values for resource request/limits in the
+* Issuing a notice to inform the product team of the violation/improper usage.
+* The system team might proactively create pull requests with decreased values for resource request/limits in the
   product teams repository.
-- If a product team is not responding after several attempts of communication (via GitHub, MS Teams, Email), we reserve
+* If a product team is not responding after several attempts of communication (via GitHub, MS Teams, Email), we reserve
   the right to delete the resources created with ArgoCD by the product team. This may also apply, if no one is actively
   working on a product that is already deployed on any environment.
