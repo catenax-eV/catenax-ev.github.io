@@ -8,7 +8,7 @@ Based on a predefined agenda (depending on the features on the board), individua
 
 ## Meeting (1 day)
 <!-- markdown-link-check-disable -->
-- Present all the given features which are already on the [board]((https://github.com/orgs/eclipse-tractusx/projects/26)) and related View `RXX.XX - Preperation`.<!-- markdown-link-check-enable -->
+- Present all the given features which are already on the [board](https://github.com/orgs/eclipse-tractusx/projects/26) and related View `RXX.XX - Preperation`.<!-- markdown-link-check-enable -->
 - Walkthrough of the feature proposals.
 - Discuss quality and dependencies of the feature proposals.
 - Discuss expectations of DoE.
