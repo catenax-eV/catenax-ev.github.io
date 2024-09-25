@@ -54,3 +54,7 @@ The Leads are tasked with ensuring that the Expert Group effectively delivers on
 The Leads of the Working Group assumes the responsibility of monitoring and ensuring that members fulfill their time commitments effectively. Should a member consistently fail to meet their obligations, the Lead has the authority to escalate the issue to the primary contact within the member company.
 
 The Lead roles are designed to be "first among equals," responsible for maintaining cohesion and coordination within the Expert Group. They ensure that all efforts align with the Committee's objectives and facilitate efficient progress towards achieving them.
+
+### Expert Group Member
+
+An Expert Group Member plays an active role in shaping decisions, offering input, and collaborating with others to achieve the Expert Group goals. They attend meetings, participate in discussions, and contribute to the planning and execution of tasks. An Expert Group Member is responsible for taking hands-on actions by actively contributing to the development of standards, kits, and/or reference implementations.
