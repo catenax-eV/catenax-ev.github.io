@@ -15,42 +15,43 @@ The association promotes, sponsors, and coordinates the overlying requirements o
 
 Committees and Expert Groups are mapped to products or use cases. They are advertised, selected, and established on the basis of a requirement. The application phases are similar and the distributors are always the Catena-X members.
 
-:::info
-Please note that while this descriptions of the association bodies capture the essence of the Committee and the Expert Group roles, they are not exhaustive. The dynamic nature of the association means that roles can evolve, and members of the Committee and Expert Groups may engage in additional activities beyond what is described. The descriptions are intended to serve as a guide, providing a clear indication of the expected contributions of the Committee and the Expert Groups, yet it allows for flexibility and adaptation as the project and its needs grow and change.
-:::
+## Roles and Responsibilities within the Association
 
-## RASIC matrix for association bodies
+### Association Member
 
-|  | R = Responsible; A = Accountable; S = Supportive; I = Informed; C = Consulted | Management board |  | Committee |  |  | Expert Group |  | Catena-X office |
+This is the basic role that every employee in the of an Association Member can obtain. Being a member grants access to Associations meetings and fundamental tooling necessary for participation, such as viewing content, participating in discussions, or accessing standard resources.
+
+The role must be requested actively.
+
+### Other roles
+
+An [Association Member](#association-member) can acquire additional roles by joining one of the Association's bodies. The rights associated with these roles are granted in addition to those already held as an Association Member.
+
+## DACI matrix for association bodies
+
+- *Driver* (**D**): A single driver of overall project like the person steering a car.
+- *Approver* (**A**): One or more approvers who make most project decisions, and are responsible if it fails.
+- *Contributor* (**C**): Are the worker-bees who are responsible for deliverables; and with whom there is two-way communication.
+- *Informed* (**I**): Those who are impacted by the project and are provided status and informed of decisions; and with whom there is one-way communication.
+
+|  |  | Management board |  | Committee |  |  | Expert Group |  | [Catena-X office](catena-x-office.md) |
 |---|---|---|---|---|---|---|---|---|---|
 |  |  | Member | [Sponsor](management-board.md#board-sponsor) | [Lead](committee.md#lead-and-co-lead) | Member | [Mentor](committee.md#mentor-for-expert-groups-optional) | Lead | Member |  |
-| Strategy | [Develop and maintain the Association strategy](management-board.md#association-strategy) | A | R | I |  |  | I |  | S |
-|  | [Develop and maintain the business domain strategy](committee.md#business-domain-strategy) | I | A,C | R | S |  | I | I | S |
-|  | [Develop and maintain a strategy on functional level](expert-group.md#functional-level-strategy)  |  | I | A |  | C | R | S | S |
-| Mgmt. of association bodies | Setup Committees | R,A |  |  |  |  |  |  | S |
-|  | Close Committees | A | R | C | I |  |  |  |  |
-|  | Setup Expert Groups |  | C | A |  | R |  |  | S |
-|  | [Close Expert Groups](expert-group.md#closing-of-expert-groups) |  | C | A |  | R | C,I | I | S |
-| Development | Develop new feature requests |  |  |  |  | C | A | R |  |
-|  | Approve features requests) |  |  |  | R | A | S | I |  |
-|  | Foster the development of features by providing development resources | S |  |  |  | S |  | A,R |  |
-|  | Remove impediments for the features development / for Expert Group(s) |  | C |  | S | R |  |  |  |
-| Promote | [Promote the use cases of the business domain inside and outside the association](committee.md#communication) | S | C |  | R | A |  |  | S |
+| Strategy | [Develop and maintain the Association strategy](management-board.md#association-strategy) | A | D | I |  |  | I |  | C |
+|  | [Develop and maintain the business domain strategy](committee.md#business-domain-strategy) | I | A | D | C |  | I | I | C |
+|  | [Develop and maintain a strategy on functional level](expert-group.md#functional-level-strategy)  |  | I | A |  | C | D | C | C |
+| Mgmt. of association bodies | Setup Committees | D, A |  |  |  |  |  |  | C |
+|  | Close Committees | A | D | C | I |  |  |  |  |
+|  | Setup Expert Groups |  | I | A | A | D |  |  | C |
+|  | [Close Expert Groups](expert-group.md#closing-of-expert-groups) |  | I | A |  | D | A | A | C |
+| Development | Propose new feature requests |  |  | C  | C | C | A | D |  |
+|  | Approve features requests) |  |  |  | I | I | D | A,C |  |
+|  | Track the progress of the feature) |  |  |  | I | I | D | A,C |  |
+|  | Test and Feedback of the delivered feature) |  |  |  | I | I | D | A,C |  |
+| Promote | [Promote use cases](committee.md#communication) | C | C |  | D | A |  |  | C |
 
-The RASIC should provide an overview of the tasks the Association bodies are engaging in. Each individual in the Mgmt. board, a Committee or an Expert Group is at least a "member". If one takes over additional roles, e.g. as "Lead", the responsibilities of that role are added to those as member. In detail, the responsibilities for specific individual aspects may differ slightly (but always in alignment with this overarching RASIC.
+The DACI should provide an overview of the tasks the Association bodies are engaging in. Each individual in the management board, a committee or an expert group is at least a "member". If one takes over additional roles, *e.g.*, as "Lead", the responsibilities of that role are added to those as member. In detail, the responsibilities for specific individual aspects may differ slightly (but always in alignment with this overarching DACI.
 
-<!--
-## SOAR
-
-As the association, all four bodies aim to advance Catena-X as the leading global data ecosystem for the automotive value chain. In order to do so they follow the SOAR model.
-
-- **S** = Standardizes to lay the foundation/basis for the ecosystem
-- **O** = Orchestrates to structure and organize the ecosystem
-- **A** = Activates by making standards applicable and relevant
-- **R** = Represent as the only ones speaking for Catena-X
-
-![C-X Office SOAR](../assets/cx-mgmt-office-soar.drawio.svg)
--->
 ## Escalation path
 
 If an issue cannot be resolved by the designated association body, it must be escalated to the appropriate higher authority. The escalation pathway is as follows:
