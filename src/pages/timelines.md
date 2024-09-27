@@ -5,6 +5,10 @@ will end up in one ecosystem release called **Io**
 
 Please have a look at [Release management](/release-management), to get more information.
 
+## Overview of further upcoming releases
+
+![Overall timeline for Releases from 24.12 to 25.12 ](@site/static/img/cx-timeline-overview.svg)
+
 ## Release 24.12
 
 ![Timeline for Release 24.12 ](@site/static/img/cx-timeline-24.12.svg)
@@ -13,6 +17,3 @@ Please have a look at [Release management](/release-management), to get more inf
 
 ![Timeline for Release 25.03 ](@site/static/img/cx-timeline-25.03.svg)
 
-## Overview of further upcoming releases
-
-![Overall timeline for Releases from 24.12 to 25.12 ](@site/static/img/cx-timeline-overview.svg)
