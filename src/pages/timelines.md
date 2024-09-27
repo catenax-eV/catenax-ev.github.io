@@ -16,4 +16,3 @@ Please have a look at [Release management](/release-management), to get more inf
 ## Release 25.03
 
 ![Timeline for Release 25.03 ](@site/static/img/cx-timeline-25.03.svg)
-
