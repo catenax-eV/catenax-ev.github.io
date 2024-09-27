@@ -58,10 +58,6 @@ The versioning of artifacts such as standards, normative documents, KITs or refe
 
 To reduce certification efforts, the grace period for switching from one major version to the next major version from the Jupiter version onwards is still one year - see overlap Jupiter [maintained] and Mars [current] in the timeline. The validity of certification can be up to 24 months.
 
-## Timeline for Release 25.03
-
-![Timeline for Release 25.03 ](@site/static/img/cx-timeline-25.03.png)
-
 ## Further information
 
 This page summarizes the most important points for release management. Further information can be found in the Operating Model [How: Life Cycle Management](/docs/operating-model/how-life-cycle-management).
