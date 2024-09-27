@@ -176,3 +176,8 @@ An AASX file can be generated from the RDF Turtle file. The AASX file defines on
 ```
 https://github.com/eclipse-tractusx/sldt-semantic-models/tree/4d239fc5709f71f39c3cf13581b5bcf960905157/io.catenax.transmission.transmission_pass/2.0.0/gen
 ```
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).
+
