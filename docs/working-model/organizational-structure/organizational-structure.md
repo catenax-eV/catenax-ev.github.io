@@ -32,6 +32,9 @@ The committers are responsible for the prioritization of the features within the
 
 ## Other Initiatives
 
-- Other initiatives (such as M-X) can use our processes to propose...
-  - Feature proposals
-  - Standardization candidates (?)
+Other initiatives (such as Manufacturing-X) can use this process to propose:
+
+- Feature proposals
+- Standardization candidates (?)
+
+"Use this process" means they are either Tractus-X Contributor and/or member of an Expert Group.
