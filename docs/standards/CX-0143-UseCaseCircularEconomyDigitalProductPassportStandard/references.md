@@ -24,3 +24,7 @@ No further references.
 > *This section is non-normative*
 
 A reference implementation for data consumption according to the presented standard can be found at [https://github.com/eclipse-tractusx/digital-product-pass](https://github.com/eclipse-tractusx/digital-product-pass).
+
+## Legal
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).
