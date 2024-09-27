@@ -108,4 +108,3 @@ Contract definitions of data providers **MUST** follow this structure (also defi
 ## Legal
 
 Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).
-
