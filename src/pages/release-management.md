@@ -60,7 +60,7 @@ To reduce certification efforts, the grace period for switching from one major v
 
 ## Timeline for Release 25.03
 
-![Timeline for Release 25.03 ](@site/static/img/cx-timeline-25.03.png)
+![Timeline for Release 25.03 ](@site/static/img/cx-timeline-25.03.svg)
 
 ## Further information
 
