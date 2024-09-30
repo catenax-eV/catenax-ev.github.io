@@ -18,11 +18,11 @@ The Management Board holds significant responsibility in determining and oversee
 
 - **Initiating new Committees**: The management can form new Committees and hands them over the responsibility for a specific domain.
 
-- **Closing Commitees**: If a Committee is no longer needed, the management board has the authority to disband them.
-
 - **Oversight and Governance**: Committees operate under the guidance and oversight of two sponsors, who must be member of the management board
 
 - **Escalation Point**: The Management Board acts as the last point of escalation for any significant issues or challenges that arise within the association. This function is executed through the [mediation board member](#mediation-board-member).
+
+- **Closing Commitees**: If a Committee is no longer needed, the management board has the authority to disband them.
 
 ## Management board roles
 
