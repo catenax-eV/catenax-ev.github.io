@@ -22,6 +22,14 @@ The following environments are currently available.
 | Grafana    | [https://grafana.int.catena-x.net](https://grafana.int.catena-x.net)       |
 | Goldilocks | [https://goldilocks.int.catena-x.net](https://goldilocks.int.catena-x.net) |
 
+### Stable Environment
+
+| Tool       | URL                                                                              |
+|------------|----------------------------------------------------------------------------------|
+| ArgoCD     | [https://argocd.stable.catena-x.net](https://argocd.stable.catena-x.net)         |
+| Grafana    | [https://grafana.stable.catena-x.net](https://grafana.stable.catena-x.net)       |
+| Goldilocks | [https://goldilocks.stable.catena-x.net](https://goldilocks.stable.catena-x.net) |
+
 <!-- markdown-link-check-disable -->
 
 ## Environment Setup

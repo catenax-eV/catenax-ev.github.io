@@ -5,13 +5,13 @@ title: Catena-X Automotive Network e.V
 
 The **Catena-X Automotive Network e.V.** is often referred to as 'the association'. It is important to understand that the association consists of five bodies with different tasks and responsibilities. The association bodies are:
 
-- [Management board](./management-board.md)
-- [Committees](committee.md)
-- [Expert Groups](./expert-group.md)
-- [Working Groups](working-groups.md)
-- [Catena-X office](./catena-x-office.md)
+- [Management board](./management-board.md),
+- [Committees](committee.md),
+- [Expert Groups](./expert-group.md),
+- [Working Groups](working-groups.md), and
+- [Catena-X office](./catena-x-office.md).
 
-The association promotes, sponsors, and coordinates the overlying requirements of the Eclipse Tractus-X Project.
+The Association promotes, sponsors, and coordinates the overlying requirements of the Eclipse Tractus-X Project.
 
 Committees and Expert Groups are mapped to products or use cases. They are advertised, selected, and established on the basis of a requirement. The application phases are similar and the distributors are always the Catena-X members.
 
@@ -54,7 +54,7 @@ The DACI should provide an overview of the tasks the Association bodies are enga
 
 ## Escalation path
 
-If an issue cannot be resolved by the designated association body, it must be escalated to the appropriate higher authority. The escalation pathway is as follows:
+If an issue cannot be resolved by the designated Association body, it must be escalated to the appropriate higher authority. The escalation pathway is as follows:
 
 1. **Expert Groups**: Issues should initially be addressed within the Expert Groups. If the Expert Group Members are unable to find a solution, a vote may be conducted to reach a decision. Should the vote fail to achieve a majority or if an Expert Group member raises substantial concerns regarding the outcome, the issue may be escalated.
 2. **Responsible Committee**: If the Expert Groups are unable to resolve the issue, it is escalated to the responsible committee. This committee is tasked with oversight and decision-making based on broader organizational perspectives.
