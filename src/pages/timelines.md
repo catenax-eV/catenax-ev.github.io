@@ -8,7 +8,7 @@ Please have a look at [Release management](/release-management), to get more inf
 
 ![Overall timeline for Releases from 24.12 to 25.12 ](@site/static/img/cx-timeline-overview.png)
 
-## Release 24.12
+## Catena-X Io (Preview), incl. Eclipse Tractus-X Release 24.12
 
 ![Timeline for Release 24.12 ](@site/static/img/cx-timeline-24.12.png)
 
