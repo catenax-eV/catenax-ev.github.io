@@ -124,10 +124,15 @@ const config: Config = {
               label: 'Release Management',
             },
             {
-              to: '/release-notes',
-              label: 'Release Notes',
+              to: '/timelines',
+              label: 'Timelines',
             },
           ],
+        },
+        {
+          label: 'Releases Notes',
+          to: '/release-notes',
+          position: 'left',
         },
         {
           type: 'docsVersionDropdown',
