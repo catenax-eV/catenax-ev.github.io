@@ -24,9 +24,9 @@ Committees serve as the sole strategic owners of a business domain, meaning they
 
 Committees act as representatives of all members within an association, ensuring that the interests and needs of the broader membership are reflected in their decisions. As such, committees must be transparent about their work and incorporate feedback into their decissions. The measures to do so are:
 
-- **Regualar sounding**: Committees must organize a regular [sounding](../../process-structure/association-general.md#committee-sounding) event at least every 6 month
+- **Regualar sounding**: Committees must organize a regular [sounding](../../process-structure/association-general.md#committee-sounding) event at least every 6 month.
 
-- **Feedback channel**: In order to receive feedback and input from other association member a feedback channel must be kept and communicated
+- **Feedback channel**: In order to receive feedback and input from other association member a feedback channel must be kept and communicated.
 
 - **Collaboration across domains**: Committees should proactively [connect with one another](../../process-structure/association-general.md) to drive the Association forward, ensuring alignment across various domains and initiatives.
 
@@ -44,16 +44,16 @@ Committees have the mandate to achieve their goals through the establishment and
 
 ### Lead and Co-Lead
 
-Every Committee must elect a Lead and a Co-Lead. Both act as first point of contact for any inquiries and requests towards the Committee. Further the leads are required to take care of the following taks:
+Every Committee must elect a Lead and a Co-Lead. Both act as first point of contact for any inquiries and requests towards the Committee. Furthermore the leads are required to take care of the following tasks:
 
 - Appoint the Committee members based on the preliminary selection of applications by the board and their existing professional expertise.
 - Creation of work packages in alignment with the other Committee members
 
-If the leads see fit they can they can handover the exectution of the task to other Committee members or create additional roles if they see fit. The general intention for the lead role is to be first among equals by keeping the strings together.
+If the leads see fit they can they can handover the exectution of the task to other Committee members or create additional roles if they see fit. The general intention for the lead role is to be "first among equals" by keeping the strings together.
 
 ### Mentor for Expert Groups
 
-For each Expert Group associated to a Committee, a member of the Committee must be nominated as mentor. The mentor should be a senior matter expert in the respective field of the Expert Group. The mentor is ment to be:
+For each Expert Group associated with a Committee, a member of the Committee must be nominated as mentor. The mentor should be a senior matter expert in the respective field of the Expert Group. The mentor is ment to be:
 
 - **Interface to the Expert Groups** and provide mentoring to ensure the success of the Expert Group.
 - **Primary contact for Standards** related to the Committee
