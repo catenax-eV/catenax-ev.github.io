@@ -22,7 +22,7 @@ Each group or role is vital to the project's ecosystem and contributes uniquely 
 
 2. [**Committer**](tractus-x/committer.md): Committers are contributors who have been granted the ability to directly access the project's code repository to make changes. They have a deeper level of commitment to the project and are responsible for reviewing and accepting contributions from others.
 
-## Collaboration between Catena-X and Eclipse Tractus-X
+## Collaboration Between Catena-X and Eclipse Tractus-X
 
 ![Collaboration](./assets/expert-group-experts-committers.drawio.svg)
 
@@ -32,6 +32,9 @@ The committers are responsible for the prioritization of the features within the
 
 ## Other Initiatives
 
-- Other initiatives (such as M-X) can use our processes to propose...
-  - Feature proposals
-  - Standardization candidates (?)
+Other initiatives (such as Manufacturing-X) can use this process to propose:
+
+- Feature proposals
+- Standardization candidates (?)
+
+"Use this process" means they are either Tractus-X Contributor and/or member of an Expert Group.

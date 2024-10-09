@@ -1,24 +1,5 @@
 # Infrastructure
 
-<!-- TOC -->
-- [Infrastructure](#infrastructure)
-  - [Available environments](#available-environments)
-    - [Core Environment](#core-environment)
-    - [Integration Environment](#integration-environment)
-  - [Environment Setup](#environment-setup)
-  - [Tools](#tools)
-    - [Argo CD](#argo-cd)
-    - [Vault](#vault)
-    - [Grafana](#grafana)
-    - [Goldilocks](#goldilocks)
-  - [Infrastructure Maintenance](#infrastructure-maintenance)
-  - [Fair Play Policy CX-Environments](#fair-play-policy-cx-environments)
-    - [Purpose](#purpose)
-    - [Equal Access to Resources](#equal-access-to-resources)
-    - [Fair Usage Guidelines](#fair-usage-guidelines)
-    - [Consequences of Violation](#consequences-of-violation)
-<!-- TOC -->
-
 Infrastructure involves the functionality of deploying, provision of a virtual environment and tools for monitoring
 applications to ensure the quality and functionality of software products. This document outlines the technology and
 processes involved in our infrastructure.
@@ -40,6 +21,14 @@ The following environments are currently available.
 | ArgoCD     | [https://argocd.int.catena-x.net](https://argocd.int.catena-x.net)         |
 | Grafana    | [https://grafana.int.catena-x.net](https://grafana.int.catena-x.net)       |
 | Goldilocks | [https://goldilocks.int.catena-x.net](https://goldilocks.int.catena-x.net) |
+
+### Stable Environment
+
+| Tool       | URL                                                                              |
+|------------|----------------------------------------------------------------------------------|
+| ArgoCD     | [https://argocd.stable.catena-x.net](https://argocd.stable.catena-x.net)         |
+| Grafana    | [https://grafana.stable.catena-x.net](https://grafana.stable.catena-x.net)       |
+| Goldilocks | [https://goldilocks.stable.catena-x.net](https://goldilocks.stable.catena-x.net) |
 
 <!-- markdown-link-check-disable -->
 
