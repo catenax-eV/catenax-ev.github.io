@@ -135,3 +135,29 @@ If a product team is found to be in violation of this Fair Play Policy, the foll
 - If a product team is not responding after several attempts of communication (via GitHub, MS Teams, Email), we reserve
   the right to delete the resources created with ArgoCD by the product team. This may also apply, if no one is actively
   working on a product that is already deployed on any environment.
+
+### How to deploy your Helm-Charts via ArgoCD
+
+To deploy your released Helm-Charts with our ArgoCD instance, simply navigate to your environment of choice
+([Environments](#available-environments)).
+Next, create an [ArgoCD-App](https://argo-cd.readthedocs.io/en/stable/getting_started/#creating-apps-via-ui) with your
+associated Namespace and Project.
+You can store your environment specific configuration in a subfolder [like the Portal does](https://github.com/eclipse-tractusx/portal/tree/main/environments).
+These values files can be used in the manifest of the Argo-App like the following:
+
+```yaml
+project: project-portal
+source:
+  repoURL: 'https://github.com/eclipse-tractusx/portal.git'
+  path: charts/portal
+  targetRevision: portal-2.3.0-alpha.1
+  plugin:
+    env:
+      - name: AVP_SECRET
+        value: vault-secret
+      - name: helm_args
+        value: '-f values.yaml -f ../../environments/helm-values/values-int.yaml'
+destination:
+  server: 'https://kubernetes.default.svc'
+  namespace: product-portal
+```
