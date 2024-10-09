@@ -136,7 +136,7 @@ If a product team is found to be in violation of this Fair Play Policy, the foll
   the right to delete the resources created with ArgoCD by the product team. This may also apply, if no one is actively
   working on a product that is already deployed on any environment.
 
-### How to deploy your Helm-Charts via ArgoCD
+## How to deploy your Helm-Charts via ArgoCD
 
 To deploy your released Helm-Charts with our ArgoCD instance, simply navigate to your environment of choice
 ([Environments](#available-environments)).
