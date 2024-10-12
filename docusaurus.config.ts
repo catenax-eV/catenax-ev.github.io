@@ -102,6 +102,12 @@ const config: Config = {
         },
         {
           type: "docSidebar",
+          sidebarId: "sidebar_certification",
+          position: "left",
+          label: "Certification",
+        },
+        {
+          type: "docSidebar",
           sidebarId: "sidebar_regulatory_framework",
           position: "left",
           label: "Regulatory Framework",
@@ -124,6 +130,10 @@ const config: Config = {
           position: 'left',
           items: [
             {
+              label: 'Releases Notes',
+              to: '/release-notes'
+            },
+            {
               to: '/release-management',
               label: 'Release Management',
             },
@@ -132,11 +142,6 @@ const config: Config = {
               label: 'Timelines',
             },
           ],
-        },
-        {
-          label: 'Releases Notes',
-          to: '/release-notes',
-          position: 'left',
         },
         {
           type: 'docsVersionDropdown',
