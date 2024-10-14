@@ -104,7 +104,7 @@ const config: Config = {
           type: "docSidebar",
           sidebarId: "sidebar_certification",
           position: "left",
-          label: "Certification",
+          label: "Conformity Assessment",
         },
         {
           type: "docSidebar",
