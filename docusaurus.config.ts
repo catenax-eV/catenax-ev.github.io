@@ -130,12 +130,12 @@ const config: Config = {
           position: 'left',
           items: [
             {
-              label: 'Release Notes',
+              label: 'Notes',
               to: '/release-notes'
             },
             {
               to: '/release-management',
-              label: 'Release Management',
+              label: 'Management',
             },
             {
               to: '/timelines',
