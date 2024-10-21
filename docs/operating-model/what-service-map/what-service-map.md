@@ -3,9 +3,7 @@ sidebar_position: 1
 ---
 # What: Service Map
 
-The architecture of the Catena-X Operating System (cxOS) is derived from the reference
-
-architectures of the International Data Spaces Association (IDSA) and Gaia-X. The cxOS consists of three areas: Core, Onboarding, and Enablement Services shown in Figure [Service Map](./what-service-map.md).
+The architecture of the Catena-X Operating System (cxOS) is derived from the reference architectures of the International Data Spaces Association (IDSA) and Gaia-X. The cxOS consists of three areas: Core, Onboarding, and Enablement Services shown in Figure [Service Map](./what-service-map.md).
 
 ![Service Map (Deployment View)](./assets/service-map.png)  
 *Service Map (Deployment View)*
