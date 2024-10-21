@@ -41,10 +41,13 @@ const config: Config = {
           sidebarPath: './sidebars.ts',
           versions: {
             current: {
-              label: 'Jupiter (preview)',
+              label: 'CX-Io (preview)',
+            },
+            'Jupiter': {
+              label: 'CX-Jupiter (current)',
             },
             '24.03': {
-              label: '24.03 (current)',
+              label: '24.03 (deprecated)',
             },
           },
         },
