@@ -1,8 +1,7 @@
 ---
 sidebar_position: 1
+title: Management Board
 ---
-
-# Management board
 
 ## Association Strategy
 
