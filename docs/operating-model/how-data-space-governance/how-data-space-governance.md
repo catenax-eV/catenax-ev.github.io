@@ -42,58 +42,21 @@ An overview of the certification process is depicted in Figure [Catena-X Certifi
 ![Catena-X Certification Process](./assets/catena-x-certification-process.png)
 *Catena-X Certification Process*
 
-The *Catena-X Conformity Assessment Handbook* provides a detailed description of how Catena-X conducts conformity assessment through Conformity Assessment Bodies. The most current version can always be found on the [Catena-X website](https://catena-x.net/en/catena-x-introduce-implement/certification).
-
-### Catena-X Labels
-
-Catena-X issues four different labels to indicate a company has been successfully certified or qualified and is compliant with Catena-X standards. This is in order to help customers find suitable and legitimate providers who have been assessed to comply with Catena-X standards or qualification requirements.
-Each label is issued to the relevant role after achieving successful certification and/or qualification. Labels are associated with the offered services of the provider as stated in the certification framework on the  [Catena-X website](https://catena-x.net/en/catena-x-introduce-implement/certification).
-
-**Certified Operating Company**
-![Certified Operating Company](./assets/certified-operating-company.png)
-
-Certified operating companies are companies certified for operating core services in the Catena-X ecosystem.
-
-**Certified Provider**  
-![Certified Provider](./assets/certified-provider.png)
-
-“Provider” is defined by standards for the general participation in the data ecosystem depending on their role.
-The standards include but are not limited to the following standard types: International standards (e.g., ISO 27001), Catena-X Standards and Rules, Service-Level Agreements. This role can be obtained e.g. by an ESP, BAP or OSP.
-
-**Certified Solution**  
-![Certified Solution](./assets/certified-solution.png)
-
-“Solution” is defined by standards that focus on executable software based on business domain or platform capabilities and includes but is not limited to: Application Logic, Application Programming Interface Specification,  Data Access (e.g., usage policies), Payload or Meta-Data, Processes (e.g., onboarding process), Business Logic (e.g., PCF Rulebook), Consulting Offerings, Conformity Assessment Requirements
-
-Certified solutions specifically refers to the solutions certified.
-
-**Qualified Advisor** (Advisory Provider)  
-![Qualified Advisor](./assets/qualified-advisor.png)
-
-Qualified Advisor refers to the individual advisor qualified for advisory services related to the Catena-X data space and its use. If a company has more than 5 Qualified Advisors, they can also use the label at company level.
-
-#### Scope of Labels
-
-Labels are only to be used upon a successful completion of the certification/ qualification process. The type of certification process conducted is subject to the assessment of the CAB. The type of qualification process conducted is subject to the assessment of the Catena-X association. Certificates are bound to an ecosystem release, e.g. Jupiter and expire the moment, an ecosystem release is outdated (lifecycle state = deprecated). To maintain a valid label,  a certification for one of the subsequent ecosystem releases has to be completed. The use of older terminologies and visuals are not permitted and are therefore to be phased out within a transition period of three months since the latest release of this document, Catena-X Operating Model. Furthermore, companies shall solely use the name of the label for their role (certified operating company/ certified provider/ certified solution) as specified in the Catena-X Certification Framework.
-Companies or advisors are solely liable for providing the services. The certification does not provide any warranties of the quality of the work and the services of the certified companies or qualified advisor. In order to verify the validity of a provider at hand, please refer to the official list of certified providers on the  [Catena-X website](https://catena-x.net/en/catena-x-introduce-implement/certification).
-
-#### Guidelines of Label Use
-
-Any official Catena-X label can be downloaded from the [Catena-X repository](https://github.com/catenax-eV/cx-resources). The labels are to be used in their original design only. Changes to the label, the wording, or the color scheme shall not be conducted. In any communication, the label is to be referred to with the term “Catena-X certified" or "Catena-X qualified” only. The term is exclusive to Catena-X certified companies or Catena-X qualified advisors.
+The *Catena-X Conformity Assessment Handbook* provides a detailed description of how Catena-X conducts conformity assessment through the Conformity Assessment Bodies. The most current version can always be found on the [Catena-X Library](https://catenax-ev.github.io/docs/next/certification/certification).
 
 ### Certification framework
 
 Certifications and qualifications at Catena-X can be obtained for different types of services or solutions. The certifications are split into different "roles" indicating the type of relationship to Catena-X, as well as the"module", the specific service provided. The roles of certified companies vary between the provision of a key part of infrastructure or service ( Enablement Service Provider or Core Service provider) and complementing further solutions or services to the data space. In line with this role differentiation, the certifications have a different scope and different Catena-X standards associated with them.
  Companies shall always mention the specific role and module they have been awarded the certification in e.g. Connector, Traceability, MaaS... .
 
-![Certification](./assets/Certification.png)  
+![Certification](./assets/certification.svg)  
 *Certification System*
 
  The following figure details the standards applicable to each of the six roles and matching modules.
 
-![Modular System1](./assets/modular_system1.png)
+![Modular System: Use Cases](./assets/modular_system1.svg)
 
-![Modular System2](./assets/modular_system2.png)
+![Modular System: Data Space Roles](./assets/modular_system2.svg)
 
 ### Certification updates
 
@@ -131,25 +94,6 @@ Catena-X marketplace provider (i.e. CSP-A) verify that the listed business appli
 
 In the future, there will be multiple CSP-As that enable business applications and services to be verified and listed on various marketplaces, as mentioned in chapter [Increase Decentralization of Core Services](./../outlook/outlook.md#increase-decentralization-of-core-services).
 
-## Nomination Process for unique Roles (e.g., CSP-B)
-
-The nomination process is intended to ensure neutrality and trustworthy execution of selected roles and tasks within the Catena-X ecosystem. The Catena-X Association is responsible for the execution of the nomination process including partner selection.
-
-The various rights and obligations of the provider are described in the Request for Tender (RFT). This is, for example, the license for operation, which can also be withdrawn in case of unfair behavior. This ensures fair awarding and safe operation of the various components. Tasks include, for example, the operation of Core Services - Section B by Core Service Providers or the certification of providers and solutions by CABs. An overview of the nomination process is depicted in Figure [Catena-X Nomination Process](./how-data-space-governance.md#nomination-process-for-unique-roles-eg-csp-b).
-
-![Catena-X Nomination Process](./assets/catena-x-nomination-process.png)
-*Catena-X Nomination Process*
-
-The process steps of the nomination process are described in detail below.
-| Process Step                                            | Description                                                                                                                                                   | Input                               | Output                                                |
-| ------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------- | ----------------------------------------------------- |
-| Create Request for Tender (RfT)                         | The Catena-X Association is responsible for the creation of the Request   for Tender (RfT) document (e.g., for Core Services - section B)                     |                                     | RfT Document(s)                                       |
-| Publish RfT on Website                                  | The Catena-X Association is responsible for the publication and   distribution of the [RfT Document on the website](https://catena-x.net/en/).                | RfT Document(s)                     | RfT Document(s) RfT Event incl. Timeline RfT Template |
-| Create and Submit Tender for selected   Core Service(s) | A provider can create and submit a tender for the published RfT.                                                                                              | RfT Document RfT Event RfT Template | Tender                                                |
-| Receive and Review Submissions                          | The Catena-X Association compares the tender(s), regarding the fulfillment of   the nomination criteria and creates a short list of candidates for the board. | Tender(s)                           | Short List of Provider Candidates                     |
-| Select Provider                                         | The board of the Association elects a provider with an absolute majority   vote.                                                                              | Short List of Provider Candidates   | Nomination of Provider                                |
-| Inform Providers                                        | The Catena-X Association informs all provider(s) about the result of the   nomination process.                                                                |                                     |                                                       |
-
 ## Qualification Process
 
 ### Why do we qualify?
@@ -176,13 +120,47 @@ For most advisory service providers, the first option applies. Qualification thr
 
 As of the Operating Model White Paper v.3, the process for qualification through training has yet to be established. It will be released on the [Catena-X website](https://catena-x.net/en/catena-x-introduce-implement/advisory-ecosystem) as soon as it is available. Qualification through experience applies to all advisory service providers that registered for and participated in the Catena-X beta phase. If a company is interested in qualification and/or the proof of qualification, the first step is to contact the Catena-X Association via [onboardingcommittee@catena-x.net](mailto:onboardingcommittee@catena-x.net). Further information and a first questionnaire to collect basic information about the company will then be made accessible.
 
-## Guidelines of qualification use
+## Catena-X Labels
+
+Catena-X issues four different labels to indicate a company has been successfully certified or qualified and is compliant with Catena-X standards. This is in order to help customers find suitable and legitimate providers who have been assessed to comply with Catena-X standards or qualification requirements.
+Each label is issued to the relevant role after achieving successful certification and/or qualification. Labels are associated with the offered services of the provider as stated in the certification framework on the  [Catena-X website](https://catena-x.net/en/catena-x-introduce-implement/certification).
+
+**Certified Operating Company**
+![Certified Operating Company](./assets/CX_Logo_Certified-Operating-Company_CLR_RGB_pos_16x9@300.jpg)
+
+Certified operating companies are companies certified for operating core services in the Catena-X ecosystem.
+
+**Certified Provider**  
+![Certified Provider](./assets/CX_Logo_Certified-Provider_CLR_RGB_pos_16x9@300.jpg)
+
+“Provider” is defined by standard [CX-0008](https://catenax-ev.github.io/docs/next/standards/CX-0008-RelevantStandardsForConformityAssessments) for the general participation in the data ecosystem depending on their role.
+
+**Certified Solution**  
+![Certified Solution](./assets/CX_Logo_Certified-Solution_CLR_RGB_pos_16x9@300.jpg)
+
+“Solution” is defined by standards that focus on executable software based on business domain or platform capabilities and includes but is not limited to: Application Logic, Application Programming Interface Specification,  Data Access (e.g., usage policies), Payload or Meta-Data, Processes (e.g., onboarding process), Business Logic (e.g., PCF Rulebook), and Conformity Assessment Requirements. Those Solutions can be certified for several use cases or capabilities and are grouped by them.
+
+Certified solutions specifically refers to the solutions certified.
+
+**Qualified Advisor**
+![Qualified Advisor](./assets/CX_Logo_Qualified-Advisor_CLR_RGB_pos_16x9@300.jpg)
 
 Different from Catena-X Certification, Catena-X qualification is a label held by an individual. Individuals passing the assessment process and being awarded the title "Qualified Advisor" may refer to themselves as "Catena-X qualified". Companies with more than 5 employees with this qualification may refer to their entire company as "Catena-X qualified".
 
+### Scope of Labels (qualified/certified)
+
+Both certification and qualification awards the right to hold and use a label with either the word "qualified" or a specific title combining the words "qualified" or "certified" with a role description. Labels are only to be used upon a successful completion of the certification/ qualification process. Certificates are bound to an ecosystem release, e.g. Jupiter and expire the moment, an ecosystem release is outdated (lifecycle state = deprecated). To maintain a valid label,  a certification for one of the subsequent ecosystem releases has to be completed. The use of older terminologies and visuals are not permitted and are therefore to be phased out within a transition period of three months since the latest release of this document, Catena-X Operating Model. Furthermore, companies shall solely use the name of the label for their role (certified operating company/ certified provider/ certified solution or respectively qualified advisor) as specified in the Catena-X Certification Framework or Regulatory Framework.
+Companies or advisors are solely liable for providing the services. The certification does not provide any warranties of the quality of the work and the services of the certified companies or qualified advisor.
+
+### Labeling guidelines
+
+Any official Catena-X label can be downloaded from the [Catena-X repository](https://github.com/catenax-eV/cx-resources). Please refer to the "[README](https://github.com/catenax-eV/cx-resources/tree/main?tab=readme-ov-file#catena-x-resources)" with the instructions on how to obtain and use the labels. The labels are to be used in their original design only. Changes to the label, the wording, or the color scheme shall not be conducted. In any communication, the label is to be referred to with the term “Catena-X certified" or "Catena-X qualified” only. The term is exclusive to Catena-X certified companies or Catena-X qualified advisors.
+
 ## Regulatory Framework
 
-The Catena-X Regulatory Framework for data space operations outlines the non-technical requirements and responsibilities for all stakeholders involved in the Catena-X data ecosystem. It includes detailed information on data sovereignty, mandatory use case requirements, and other regulatory considerations that are relevant and mandatory to our activities. The Regulatory Framework is made up of individual components that each govern a specific layer of our data space operations. To understand the layers of our Regulatory Framework, Catena-X uses flight levels as a metaphor (see Figure Catena-X Governance Framework flight levels):
+The Catena-X Regulatory Framework for data space operations outlines the non-technical requirements and responsibilities for all stakeholders involved in the Catena-X data ecosystem. It includes detailed information on data sovereignty, mandatory use case requirements, and other regulatory considerations that are relevant and mandatory to our activities. The Regulatory Framework is made up of individual components that each govern a specific layer of our data space operations. Find all the details about the Regulatory Framework [here](https://catenax-ev.github.io/docs/next/regulatory-framework/governance-framework).
+
+To understand the layers of our Regulatory Framework, Catena-X uses flight levels as a metaphor (see Figure Catena-X Governance Framework flight levels):
 
 ![Catena-X Flightlevels](./assets/catena-x-governance-framework-flight-levels.png)
 *Catena-X Flightlevels*
@@ -191,7 +169,7 @@ The Operating Model, the 10 Golden Rules and the Country Clearance List fall und
 
 The Data Exchange Governance and the standardised usage policies are located at the 20,000-ft level (Use Case Level), where the fundamental requirements for data usage in a use case are defined.
 
-******Disclaimer: The Data Exchange Governance is only temporarily located at this level. It will soon be located at the 30,000-ft level.***
+***Disclaimer: The Data Exchange Governance is only temporarily located at this level. It will soon be located at the 30,000-ft level.***
 
 The 10,000-ft level (Data Offering Level) provides guidance for data offerings by Data Providers and Consumers.
 
@@ -309,3 +287,23 @@ To ensure that the Catena-X association has the opportunity to investigate and r
 With this version of the operating model we will only establish the process (e.g. add Solutions and participants to the Data Space Clearance List) and tools (e.g. Data Space Clearance List) mentioned above. The consequences of violations, as described in the chapter [What are the consequences of such violations](./how-data-space-governance.md#what-are-the-consequences-of-such-violations), will be further refined and elaborated upon.
 
 Further details can be found in the chapter [Outlook](./../outlook/outlook.md#enforcement-of-compliance-with-normative-documents).
+
+## Nomination Process for unique Roles (e.g., CSP-B)
+
+The nomination process is intended to ensure neutrality and trustworthy execution of selected roles and tasks within the Catena-X ecosystem. The Catena-X Association is responsible for the execution of the nomination process including partner selection.
+
+The various rights and obligations of the provider are described in the Request for Tender (RFT). This is, for example, the license for operation, which can also be withdrawn in case of unfair behavior. This ensures fair awarding and safe operation of the various components. Tasks include, for example, the operation of Core Services - Section B by Core Service Providers or the certification of providers and solutions by CABs. An overview of the nomination process is depicted in Figure [Catena-X Nomination Process](./how-data-space-governance.md#nomination-process-for-unique-roles-eg-csp-b).
+
+![Catena-X Nomination Process](./assets/catena-x-nomination-process.png)
+*Catena-X Nomination Process*
+
+The process steps of the nomination process are described in detail below.
+
+| Process Step                                            | Description                                                                                                                                                   | Input                               | Output                                                |
+| ------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------- | ----------------------------------------------------- |
+| Create Request for Tender (RfT)                         | The Catena-X Association is responsible for the creation of the Request   for Tender (RfT) document (e.g., for Core Services - section B)                     |                                     | RfT Document(s)                                       |
+| Publish RfT on Website                                  | The Catena-X Association is responsible for the publication and   distribution of the [RfT Document on the website](https://catena-x.net/en/).                | RfT Document(s)                     | RfT Document(s) RfT Event incl. Timeline RfT Template |
+| Create and Submit Tender for selected   Core Service(s) | A provider can create and submit a tender for the published RfT.                                                                                              | RfT Document RfT Event RfT Template | Tender                                                |
+| Receive and Review Submissions                          | The Catena-X Association compares the tender(s), regarding the fulfillment of   the nomination criteria and creates a short list of candidates for the board. | Tender(s)                           | Short List of Provider Candidates                     |
+| Select Provider                                         | The board of the Association elects a provider with an absolute majority   vote.                                                                              | Short List of Provider Candidates   | Nomination of Provider                                |
+| Inform Providers                                        | The Catena-X Association informs all provider(s) about the result of the   nomination process.                                                                |                                     |                                                       |
