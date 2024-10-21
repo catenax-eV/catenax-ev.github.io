@@ -1,6 +1,12 @@
 # Release Notes
 
-## [JUPITER] (PREVIEW)
+:::info
+
+For more information, on the **legal notice** please visit [here](https://catenax-ev.github.io/copyright).
+
+:::
+
+## [CX-JUPITER]
 
 ### Catena-X Standards
 
@@ -42,9 +48,9 @@ By default, the versions listed in the [Tractus-X changelog](https://eclipse-tra
 
 #### Compatible versions
 
-| Component                                    | Versions                                       |
-|----------------------------------------------|------------------------------------------------|
-| Eclipse Data Space Connector (Tractus-X EDC) | [0.7.3](https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.7.3) [Recommended] <br /> [0.7.4](https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.7.4) <br />   [0.7.5](https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.7.5) [Latest] |
+| Component                                    | Versions                                                                                                                                                                                                                                                                      | Comments                                                                                                                     |
+| -------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| Eclipse Data Space Connector <br /> (Tractus-X EDC) | [0.7.3](https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.7.3) <br /> [0.7.4](https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.7.4) <br />   [0.7.5](https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.7.5) <br />   [0.7.6](https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.7.6) [Latest] | Versions ≤ 0.7.5 are effected by a security issue details [here](https://github.com/eclipse-tractusx/tractusx-edc/pull/1584). |
 
 [Latest] – latest released version  
 [Recommended] – recommended by the Catena-X association (Compatible with the [Catena-X Standards](/docs/next/standards/overview) and [End-to-End](docs/next/working-model/release-management/development-and-release/e2e-test) tested)
