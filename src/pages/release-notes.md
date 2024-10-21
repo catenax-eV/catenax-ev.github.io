@@ -6,7 +6,7 @@ For more information, on the **legal notice** please visit [here](https://catena
 
 :::
 
-## [JUPITER] (PREVIEW)
+## [CX-JUPITER]
 
 ### Catena-X Standards
 
