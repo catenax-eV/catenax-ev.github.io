@@ -33,7 +33,7 @@ There are two main organizations in GitHub:
 
 :::note
 
-- for the open-source part (reference implementations and Kits) GitHub is mandatory. Its used for planning, issue tracking, discussions, development, reviews and release etc.
+- for the open-source part (reference implementations and KITs) GitHub is mandatory. Its used for planning, issue tracking, discussions, development, reviews and release etc.
 - for the standardization part, GitHub is also set as mandatory
 - for Committee work and Expert Groups the Association provides private repositories within the *catenax-eV* GitHub organization
 

@@ -1,8 +1,7 @@
 ---
 sidebar_position: 3
+title: Expert Group
 ---
-
-# Expert Group
 
 The aim of the Expert Groups within the Catena-X Automotive Network e.V. is to develop results together with the members in line with the association's strategic direction. The Expert Groups are initiated and managed by the related Committee. Depending on their scope, Expert Groups do not exist forever. They work on dedicated topics, present the results to the Committee and are then [retired](#iii-closing). If a follow up is required, a new Expert Group has to be initiated.
 
@@ -65,13 +64,13 @@ Responsibilities of the Expert Group members include:
 - maintaining effective collaboration and coordination within the group
 - continuously seeking opportunities for improvement
 
-An Expert Group Member plays an active role in shaping decisions, offering input, and collaborating with others to achieve the Expert Group goals. The experts will familiarise themselves with the implementation in Eclipse Tractus-X and the respective standards and KITs. They attend meetings, participate in discussions, and contribute to the planning and execution of tasks. An Expert Group Member is responsible for taking hands-on actions by actively contributing to the development of standards, kits, and/or reference implementations.
+An Expert Group Member plays an active role in shaping decisions, offering input, and collaborating with others to achieve the Expert Group goals. The experts will familiarise themselves with the implementation in Eclipse Tractus-X and the respective standards and KITs. They attend meetings, participate in discussions, and contribute to the planning and execution of tasks. An Expert Group Member is responsible for taking hands-on actions by actively contributing to the development of standards, KITs, and/or reference implementations.
 
 ## Expert Group Responsibilities
 
 ### 1. Roadmap Preparation
 
-- Prepare a roadmap for the expert group, including features, newly proposed Catena-X standards or changes to existing standards, and Key Innovation Topics (KITs).
+- Prepare a roadmap for the expert group, including features, newly proposed Catena-X standards or changes to existing standards, and Keep It Together (KITs).
 - Communicate and discuss the roadmap with the assigned committee and reviewer group.
 
 ### 2. Refinement and Tracking
@@ -80,13 +79,13 @@ An Expert Group Member plays an active role in shaping decisions, offering input
 - Discuss and present Git issues and standardization requests during Open Planning and lead dependency planning.
 - Track the development of features throughout the Catena-X release.
 - Regularly update the committee and reviewer group on the status during the release.
-- Update Git issues for the planned features and Kit changes in sig-release.
+- Update Git issues for the planned features and KIT changes in sig-release.
 
 ### 3. Project Management and Communication
 
 - Prepare open planning during the refinement phase.
 - Maintain regular synchronization with the committee and reviewer group during refinement.
-- Create Git issues for planned features and Kit changes in the sig-release repository with appropriate labeling (e.g., EG, prep PIx).
+- Create Git issues for planned features and KIT changes in the sig-release repository with appropriate labeling (e.g., EG, prep PIx).
 - Create standardization or change requests using the Houston tool.
 
 ### 4. Quality Assurance and Presentation
