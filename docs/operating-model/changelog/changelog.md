@@ -5,6 +5,17 @@ sidebar_position: 1
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [3.0.2]
+
+### Changed
+
+- How: Life Cycle Management
+  - Updated the name of the releases (added CX and changed Mars to Saturn) and corrected spelling
+- How: Data Space Governance
+  - Updated the modular system of the certification framework to comply with CX-Jupiter.
+  - Release of new Catena-X labels
+  - Rework the chapter structure and smaller fixes
+
 ## [3.0.1]
 
 ### Added
