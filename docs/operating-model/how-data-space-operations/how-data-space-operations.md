@@ -26,7 +26,7 @@ After registration, participants can start the technical integration process (e.
 
 ### Managing Company Hierarchies
 
-After successful registration, participants can create and manage their company hierarchies. With release 24.08, Catena-X Business Partner Data Management allows you to create and manage sites and additional addresses for your legal entities. In a future version, it will also be possible to create and manage relationships between two legal entities (e.g., subsidiaries). This is relevant, for example, for the various connector usage scenarios as described [here](how-data-space-operation#edc-deployment-and-usage-premises”).
+After successful registration, participants can create and manage their company hierarchies. With release 24.08, Catena-X Business Partner Data Management allows you to create and manage sites and additional addresses for your legal entities. In a future version, it will also be possible to create and manage relationships between two legal entities (e.g., subsidiaries). This is relevant, for example, for the various connector usage scenarios as described [here](how-data-space-operations.md#edc-deployment-and-usage-premises).
 
 ## Gaia-X Compliance
 
