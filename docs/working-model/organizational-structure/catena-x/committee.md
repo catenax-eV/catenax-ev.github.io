@@ -1,8 +1,7 @@
 ---
 sidebar_position: 2
+title: Committee
 ---
-
-# Committee
 
 Committees are specialized bodies appointed by the board to address specific topics or tasks relevant to the association and the related eco system. The purpose and mandate Committees are to formulate the **vision**, **mission** and the **roadmap** related to their specific domain.
 
