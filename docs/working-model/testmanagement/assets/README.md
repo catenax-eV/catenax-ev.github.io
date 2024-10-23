@@ -1,1 +1,0 @@
-# Assets used by testmanagement
