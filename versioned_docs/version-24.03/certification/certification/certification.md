@@ -63,7 +63,7 @@ Certification is carried out in a modular, role-based manner in order to fulfil 
 
 It is also possible to have your solution certified for several use cases or capabilities. In the case mentioned above - PCF - this would lead to synergy effects and the Connector, Semantic and Provider Base would not have to be certified a second time, as they are also included in other use cases or capabilities.
 
-All relevant standards, including the corresponding conformity criteria, can be viewed at any time in the [Catena-X standard library](https://catenax-ev.github.io/docs/next/standards/overview).
+All relevant standards, including the corresponding conformity criteria, can be viewed at any time in the [Catena-X standard library](../../standards/overview.md).
 
 ### For which capabilities can I already be certified today?
 
