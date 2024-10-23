@@ -195,7 +195,7 @@ CX-0012 Business Partner Data Pool
 
 CX-0018 Eclipse Data Space Connector
 
-[Catena-X Operating Model v3.0](https://catenax-ev.github.io/docs/next/operating-model/why-introduction).
+[Catena-X Operating Model v3.0](../../operating-model/why-introduction/why-introduction.md).
 
 ### 4.3 REFERENCE IMPLEMENTATIONS
 

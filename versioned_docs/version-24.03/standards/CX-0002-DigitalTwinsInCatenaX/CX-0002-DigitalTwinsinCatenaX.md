@@ -201,7 +201,7 @@ BPN (see standard CX-0053).
 ### 1.6 Examples
 
 Examples can be found in
-[the Tractus-X DTR's documentation](https://github.com/eclipse-tractusx/sldt-digital-twin-registry/tree/main/docs) and the [Digital Twin Kit](https://eclipse-tractusx.github.io/docs-kits/next/category/digital-twin-kit/)
+[the Tractus-X DTR's documentation](https://github.com/eclipse-tractusx/sldt-digital-twin-registry/tree/main/docs) and the [Digital Twin Kit](https://eclipse-tractusx.github.io/docs-kits/24.03/category/digital-twin-kit/)
 
 ### 1.7 Terminology
 

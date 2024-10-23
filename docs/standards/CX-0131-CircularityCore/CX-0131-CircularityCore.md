@@ -381,7 +381,7 @@ For the selection of an R-Strategy of a component consider the differentiation i
 
 The policies mentioned in this chapter **MUST** be fulfilled by each use case mentioned in this document as well as a participant mentioned under [1.1](#11-audience--scope) **MUST** agree to the overall [Catena-X Terms and Condition](https://catena-x.net/en/catena-x-introduce-implement/governance-framework-for-data-space-operations)
 as well as the general FrameworkAgreement
- [DataExchangeGovernance:1.0](https://catenax-ev.github.io/docs/next/regulatory-framework/20000ft/Data%20Exchange%20Governance).
+ [DataExchangeGovernance:1.0](../../regulatory-framework/20000ft/data-exchange-governance.md).
 This follows the first SSI setup following the [IAM Standards](#21-overall-standalone-standards) in CX covering the new SSI infrastructure which will released with release 3.2.
 
 The minimum set of **membership** and the **Data Exchange Governance** Framework Agreement

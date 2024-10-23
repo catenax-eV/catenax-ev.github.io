@@ -42,7 +42,7 @@ An overview of the certification process is depicted in Figure [Catena-X Certifi
 ![Catena-X Certification Process](./assets/catena-x-certification-process.png)
 *Catena-X Certification Process*
 
-The *Catena-X Conformity Assessment Handbook* provides a detailed description of how Catena-X conducts conformity assessment through the Conformity Assessment Bodies. The most current version can always be found on the [Catena-X Library](https://catenax-ev.github.io/docs/next/certification/certification).
+The *Catena-X Conformity Assessment Handbook* provides a detailed description of how Catena-X conducts conformity assessment through the Conformity Assessment Bodies. The most current version can always be found on the [Catena-X Library](../../certification/certification/certification.md).
 
 ### Certification framework
 
@@ -133,7 +133,7 @@ Certified operating companies are companies certified for operating core service
 **Certified Provider**  
 ![Certified Provider](./assets/CX_Logo_Certified-Provider_CLR_RGB_pos_16x9@300.jpg)
 
-“Provider” is defined by standard [CX-0008](https://catenax-ev.github.io/docs/next/standards/CX-0008-RelevantStandardsForConformityAssessments) for the general participation in the data ecosystem depending on their role.
+“Provider” is defined by standard [CX-0008](../../standards/CX-0008-RelevantStandardsForConformityAssessments) for the general participation in the data ecosystem depending on their role.
 
 **Certified Solution**  
 ![Certified Solution](./assets/CX_Logo_Certified-Solution_CLR_RGB_pos_16x9@300.jpg)
@@ -158,7 +158,7 @@ Any official Catena-X label can be downloaded from the [Catena-X repository](htt
 
 ## Regulatory Framework
 
-The Catena-X Regulatory Framework for data space operations outlines the non-technical requirements and responsibilities for all stakeholders involved in the Catena-X data ecosystem. It includes detailed information on data sovereignty, mandatory use case requirements, and other regulatory considerations that are relevant and mandatory to our activities. The Regulatory Framework is made up of individual components that each govern a specific layer of our data space operations. Find all the details about the Regulatory Framework [here](https://catenax-ev.github.io/docs/next/regulatory-framework/governance-framework).
+The Catena-X Regulatory Framework for data space operations outlines the non-technical requirements and responsibilities for all stakeholders involved in the Catena-X data ecosystem. It includes detailed information on data sovereignty, mandatory use case requirements, and other regulatory considerations that are relevant and mandatory to our activities. The Regulatory Framework is made up of individual components that each govern a specific layer of our data space operations. Find all the details about the Regulatory Framework [here](../../regulatory-framework/governance-framework.md).
 
 To understand the layers of our Regulatory Framework, Catena-X uses flight levels as a metaphor (see Figure Catena-X Governance Framework flight levels):
 
