@@ -14,7 +14,7 @@ The meeting aims to gather initial ideas for potential roadmap items for the nex
 ## Preparation
 
 - Roadmap items must be added planning board, either as
-  - **Tractus-X** for all work on Kits, Reference Implementation, API Specification, Protocols, Sample Data, Architecture, Documentation, Deployment Scripts, Tutorials etc
+  - **Tractus-X** for all work on KITs, Reference Implementation, API Specification, Protocols, Sample Data, Architecture, Documentation, Deployment Scripts, Tutorials etc
   - **Catena-X** for intended work on Standards
   - **Organisational** for all other intended work
 - Each roadmap item must be assigned to a responsible Committe or Expert Group

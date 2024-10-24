@@ -1,0 +1,43 @@
+@startuml Figure_3
+title Shared Digital Approach - Registration of IC Part Type Twin
+
+autonumber
+
+box "Supplier" #LightBlue
+    participant SupplierApplication as "Application"
+    participant SupplierDTR as "dDTR"
+    participant SupplierSubmodelEndpoint as "Submodel Endpoint"
+    participant SupplierEDC as "Connector"
+end box
+
+box "Customer" #LightGreen
+    participant CustomerEDC as "Connector"
+    participant CustomerSubmodelEndpoint as "Submodel Endpoint"
+    participant CustomerDTR as "dDTR"
+    participant CustomerApplication as "Application"
+end box
+
+== Supplier registers IC Part Type Twin with Submodel for Customer ==
+
+    note over SupplierApplication, SupplierSubmodelEndpoint: Supplier created Part Type Twin
+
+
+== Customer registers IC Part Type Twin with Submodel for Supplier ==
+    CustomerApplication -> CustomerEDC: Register dDTR for partner at Connector
+    activate CustomerEDC 
+    return OK
+
+    note over CustomerSubmodelEndpoint, CustomerApplication: Keeping Submodel updated only needed\nfor repository pattern
+    CustomerApplication -> CustomerSubmodelEndpoint: Create Submodel
+    activate CustomerSubmodelEndpoint
+    return OK
+
+    CustomerApplication -> CustomerEDC: Register endpoint of Submodel for READ access for partner at Connector
+    activate CustomerEDC
+    return OK
+
+    CustomerApplication -> CustomerDTR: Register IC Part Type Twin Shell Descriptor\n with Submodel endpoint\nfor Partner in dDTR\n(DSP endpoint)
+    activate CustomerDTR
+    return OK
+
+@enduml

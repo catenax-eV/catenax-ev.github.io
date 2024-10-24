@@ -1,6 +1,12 @@
 # Release Notes
 
-## [JUPITER] (PREVIEW)
+:::info
+
+For more information, on the **legal notice** please visit [here](https://catenax-ev.github.io/copyright).
+
+:::
+
+## [CX-JUPITER]
 
 ### Catena-X Standards
 
@@ -9,13 +15,13 @@
 - 67 deprecated standards in the course of consolidation to achieve more user-friendliness
 - updated modular certification framework
 
-details to be found [here](/docs/next/standards/changelog)
+details to be found [here](/docs/standards/changelog)
 
 ### Catena-X Operating Model
 
 - updated to version 3.0 enabling many new ecosystem components such as the OSP role, Catena-X Sandboxes and an overhaul to release management focused on stability and reliability
 
-details to be found [here](/docs/next/operating-model/changelog)
+details to be found [here](/docs/operating-model/changelog)
 
 ### Catena-X Regulatory Framework
 
@@ -23,7 +29,7 @@ details to be found [here](/docs/next/operating-model/changelog)
 - adding various pre-defined use case frameworks, e.g. Circular Economy, Demand and Capacity Management, etc.
 - moving China to White List, allowing onboarding of Chinese companies to the Catena-X network
 
-details to be found [here](/docs/next/regulatory-framework/changelog)
+details to be found [here](/docs/regulatory-framework/changelog)
 
 ### Tractus-X reference implementations
 
@@ -42,12 +48,12 @@ By default, the versions listed in the [Tractus-X changelog](https://eclipse-tra
 
 #### Compatible versions
 
-| Component                                    | Versions                                       |
-|----------------------------------------------|------------------------------------------------|
-| Eclipse Data Space Connector (Tractus-X EDC) | [0.7.3](https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.7.3) [Recommended] <br /> [0.7.4](https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.7.4) <br />   [0.7.5](https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.7.5) [Latest] |
+| Component                                    | Versions                                                                                                                                                                                                                                                                      | Comments                                                                                                                     |
+| -------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| Eclipse Data Space Connector <br /> (Tractus-X EDC) | [0.7.3](https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.7.3) <br /> [0.7.4](https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.7.4) <br />   [0.7.5](https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.7.5) <br />   [0.7.6](https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.7.6) [Latest] | Versions ≤ 0.7.5 are effected by a security issue details [here](https://github.com/eclipse-tractusx/tractusx-edc/pull/1584). |
 
 [Latest] – latest released version  
-[Recommended] – recommended by the Catena-X association (Compatible with the [Catena-X Standards](/docs/next/standards/overview) and [End-to-End](docs/next/working-model/release-management/development-and-release/e2e-test) tested)
+[Recommended] – recommended by the Catena-X association (Compatible with the [Catena-X Standards](/docs/standards/overview) and [End-to-End](docs/working-model/release-management/development-and-release/e2e-test) tested)
 
 #### Non-compatible versions
 
@@ -59,10 +65,10 @@ By default, the versions listed in the [Tractus-X changelog](https://eclipse-tra
 
 To maintain the integrity and reliability of the onboarding process, the signing of self-descriptions by the Gaia-X Digital Clearing House (GXDCH) will be temporarily suspended:
 
-- This suspension only affects the [CSP-B](/docs/next/operating-model/who-roles-in-the-catena-x-ecosystem#core-service-provider-b) role within the following CACs:
-  - [CX-0001](/docs/next/standards/CX-0001-EDCDiscoveryAPI#15-proof-of-conformity)
+- This suspension only affects the [CSP-B](/docs/operating-model/who-roles-in-the-catena-x-ecosystem#core-service-provider-b) role within the following CACs:
+  - [CX-0001](/docs/standards/CX-0001-EDCDiscoveryAPI#15-proof-of-conformity)
     - The provided SD documents MUST be GAIA-X compliant, i.e. MUST provide a compliance credential issued from GAIA-X AISBL. – to be temporarily deactivated
-  - [CX-0006](/docs/next/standards/CX-0006-RegistrationAndInitialOnboarding#238-gaia-x).
+  - [CX-0006](/docs/standards/CX-0006-RegistrationAndInitialOnboarding#238-gaia-x).
     - Onboarding service providers / core service providers MUST ensure the creation of a Self-Description (SD) of the Legal Person as part of the application verification process. The SD MUST be stored in a central location and MUST be in line with the GAIA-X standards/guidelines
 
 The functionality of Catena-X and the security framework will remain unaffected furthermore the validation of company data and identifiers will continue as usual.
