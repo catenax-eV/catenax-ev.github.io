@@ -15,7 +15,7 @@ However, this vision is complex: companies at various stages of the automotive v
 
 The standards of our Catena-X data ecosystem define how the exchange of data and information in our network works. They are the basis for ensuring that the technologies, components, policies, and processes used are developed and operated according to uniform rules. All standards developed for the Catena-X data ecosystem are based on the technological and industry-specific requirements of the automotive industry.
 
-The Catena-X Association publishes standards for generic core and enabling services as well as for domain-specific business applications (see KITs Chapter [KITs – Keep It Together](./../what-service-map/what-service-map.md#kits--keep-it-together)). These standards and artifacts form the basis for the development and operation of software components in the Catena-X network to ensure interoperability and data sovereignty between different software components and providers. All relevant standards are accessible in the [Catena-X standard library](https://catena-x.net/de/standard-library).
+The Catena-X Association publishes standards for generic core and enabling services as well as for domain-specific business applications (see KITs Chapter [KITs – Keep It Together](./../what-service-map/what-service-map.md#kits--keep-it-together)). These standards and artifacts form the basis for the development and operation of software components in the Catena-X network to ensure interoperability and data sovereignty between different software components and providers. All relevant standards are accessible in the [Catena-X standard library](./../../standards/overview.md).
 
 ### How do we standardize?
 
@@ -112,6 +112,7 @@ The various rights and obligations of the provider are described in the Request 
 *Catena-X Nomination Process*
 
 The process steps of the nomination process are described in detail below.
+
 | Process Step                                            | Description                                                                                                                                             | Input                               | Output                                                |
 |---------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------|-------------------------------------------------------|
 | Create Request for Tender (RfT)                         | The Catena-X Association is responsible for the creation of the Request   for Tender (RfT) document (e.g., for Core Services - section B)               |                                     | RfT Document(s)                                       |
