@@ -94,11 +94,11 @@ const config: Config = {
           position: 'left',
           items: [
             {
-              to: '/docs/next/standards/overview/',
+              to: '/docs/standards/overview/',
               label: 'Standards',
             },
             {
-              to: '/docs/next/non-functional/overview/',
+              to: '/docs/non-functional/overview/',
               label: 'Non-functional requirements',
             },
           ],

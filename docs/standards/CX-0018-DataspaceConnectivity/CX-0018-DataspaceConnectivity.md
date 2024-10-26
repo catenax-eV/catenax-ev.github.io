@@ -31,7 +31,7 @@ ecosystem. The aim is to ensure interoperability and data sovereignty at the sam
 #### AUDIENCE
 
 The role definition is based on the definition of
-the [CX Operating Model v3.0](https://catenax-ev.github.io/docs/next/operating-model/why-introduction).
+the [CX Operating Model v3.0](../../operating-model/why-introduction/why-introduction.md).
 
 The standard is relevant for the following roles, as they must be certified against it:
 
@@ -107,7 +107,7 @@ appear in all capitals, as shown here.
 - The term *Credential Service* is adopted from the IATP.
 - The terms *Core Service Provider A/B (CSP A/B)*, *Onboarding Service Provider (OSP)*, *Enablement Service Provider (
   ESP)*, *Business Application Provider (BAP)*, *Advisory Provider (AP)* and *Conformity Assessment Body (CAB)* are
-  adopted from the [CX Operating Model v3.0](https://catenax-ev.github.io/docs/next/operating-model/why-introduction)
+  adopted from the [CX Operating Model v3.0](../../operating-model/why-introduction/why-introduction.md)
 
 ## 2 MAIN CONTENT
 
