@@ -146,7 +146,7 @@ In addition, the following standards are used to support the PCF usecase. Athoug
 
 ##### 2.1.2.1 On Boarding and IAM
 
-All participants mentioned under [1.1 AUDIENCE & SCOPE](#11-audience--scope) MUST be onboarded Catena-X members. Data provider and consumer must in addition be participants of the PCF use case. The standards covering this are NOT part of this document but can all be found within the [Catena-X standard repository](https://catenax-ev.github.io/docs/next/standards/overview).
+All participants mentioned under [1.1 AUDIENCE & SCOPE](#11-audience--scope) MUST be onboarded Catena-X members. Data provider and consumer must in addition be participants of the PCF use case. The standards covering this are NOT part of this document but can all be found within the [Catena-X standard repository](../../standards/overview.md).
 
 ##### 2.1.2.2 Fetching EDC Endpoints
 
