@@ -7,7 +7,7 @@ tags:
 # CX-0139 Information as a Service - External Data Provider  v1.0.0
 
 :::info
-This standard is suspended for certification.
+This standard is currently suspended for certification.
 :::
 
 ## ABSTRACT
