@@ -6,6 +6,10 @@ tags:
 
 # CX-0139 Information as a Service - External Data Provider  v1.0.0
 
+:::info
+This standard is currently suspended for certification.
+:::
+
 ## ABSTRACT
 
 Catena-X as an open and collaborative Data-Ecosystem and the current Operating Model defines Data Provider and Data Consumer as Members of an existing Value Chain, providing and consuming Operative Data necessary for their Business Relation.
