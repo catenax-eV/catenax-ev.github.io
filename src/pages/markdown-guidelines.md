@@ -170,11 +170,11 @@ In this sentence _this_ _part_ is italic.
    1) sub item
 ```
 
-### Images/Figures
+### Images/Figures/Files
 
-In addition to the image itself we also provide a alternatives text "alt" in the square brackets. In markdown captions are not supported. We will use the same text as the "alt" in italic writing directly under the image.
+In addition to the image itself we also provide a alternatives text "alt" in the square brackets. In markdown captions are not supported. We will use the same text as the "alt" in italic writing directly under the image. All kind of files must be named in kebab-case.
 
-#### DOs - Images/Figures
+#### DOs - Images/Figures/Files
 
 ```MD
 ![Nice Image](./assets/nice-image.png)
