@@ -15,6 +15,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
   - Updated the modular system of the certification framework to comply with CX-Jupiter.
   - Release of new Catena-X labels
   - Rework the chapter structure and smaller fixes
+- What: Service Map & Who: Roles in the Catena-X ecosystem
+  - extended Sandbox until the end of 2024
 
 ## [3.0.1]
 
