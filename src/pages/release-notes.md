@@ -65,7 +65,7 @@ By default, the versions listed in the [Tractus-X changelog](https://eclipse-tra
 
 To uphold the integrity and reliability of the onboarding process, there will be a temporary change of the standards. This change is in-line with a feature supported in the current reference implementation.
 
-Impact: [CSP-B](/docs/operating-model/who-roles-in-the-catena-x-ecosystem/who-roles-in-the-catena-x-ecosystem.md#core-service-provider-b) & [Onboarding service providers](/docs/operating-model/who-roles-in-the-catena-x-ecosystem/who-roles-in-the-catena-x-ecosystem.md#onboarding-service-provider) roles within the following CACs:
+Impact: [CSP-B](/docs/operating-model/who-roles-in-the-catena-x-ecosystem#core-service-provider-b) & [Onboarding service providers](/docs/operating-model/who-roles-in-the-catena-x-ecosystem#onboarding-service-provider) roles within the following CACs:
   - [CX-0001](/docs/standards/CX-0001-EDCDiscoveryAPI#15-proof-of-conformity)
     - The provided SD documents MUST be GAIA-X compliant, i.e. MUST provide a compliance credential issued from GAIA-X AISBL. – to be temporarily deactivated
   - [CX-0006](/docs/standards/CX-0006-RegistrationAndInitialOnboarding#238-gaia-x).
