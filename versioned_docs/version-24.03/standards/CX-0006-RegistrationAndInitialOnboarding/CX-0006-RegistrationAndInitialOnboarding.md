@@ -1,5 +1,5 @@
 
-# CX-0006 Registration and Initial Onboarding v1.1.3
+# CX-0006 Registration and Initial Onboarding v1.1.4
 
 ## ABSTRACT
 
