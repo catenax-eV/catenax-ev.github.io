@@ -7,7 +7,7 @@ tags:
   - CAT/Onboarding Service Provider
 ---
 
-# CX-0006 Registration and Initial Onboarding v2.0.0
+# CX-0006 Registration and Initial Onboarding v2.0.1
 
 ## ABSTRACT
 
@@ -305,8 +305,8 @@ registration API.
 
 The sequence diagram below depicts an exemplary registration flow through an Onboarding Service Provider.
 
-```plantuml
-@startuml
+```mermaid
+sequenceDiagram
 
 title "Exemplary registration flow using a Onboarding Service Provider"
 
@@ -319,8 +319,6 @@ title "Exemplary registration flow using a Onboarding Service Provider"
 "Core Service Provider" -> "Core Service Provider" : 7.) Internal validation and processing of registration request
 "Core Service Provider" -> "Onboarding Service Provider" : 8.) POST back registration status ("Approved", "Decline", "Error")
 "Core Service Provider" -> "To be onboarded company" : 9.) Send back registration status ("Approved", "Decline", "Error") - including instructions how to access Catena-X
-
-@enduml
 ```
 
 Figure 3: Exemplary registration flow using a Onboarding Service Provider
