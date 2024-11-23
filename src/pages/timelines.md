@@ -26,8 +26,8 @@ Milestones featuring the Catena-X logo indicate closed meetings, which are organ
 [![Timeline for Release 25.06](@site//static/img/cx-timeline-25.06.png)](@site//static/img/cx-timeline-25.06.png)
 *Timeline for Release 25.06*
 
-[![Timeline for Release 25.09](@site//static/img/cx-timeline-25.06.png)](@site//static/img/cx-timeline-25.09.png)
+[![Timeline for Release 25.09](@site/static/img/cx-timeline-25.09.png)](@site//static/img/cx-timeline-25.09.png)
 *Timeline for Release 25.09*
 
-[![Timeline for Release 25.06](@site//static/img/cx-timeline-25.06.png)](@site//static/img/cx-timeline-25.12.png)
+[![Timeline for Release 25.12](@site/static/img/cx-timeline-25.12.png)](@site/static/img/cx-timeline-25.12.png)
 *Timeline for Release 25.12*
