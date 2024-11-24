@@ -35,3 +35,7 @@ Milestones featuring the Catena-X logo indicate closed meetings, which are organ
 
 [![Timeline for Release 25.12](@site/static/img/cx-timeline-25.12.png)](@site/static/img/cx-timeline-25.12.png)
 *Timeline for Release 25.12*
+
+:::note
+The timeline for Release 26.03 will be published soon.
+:::
