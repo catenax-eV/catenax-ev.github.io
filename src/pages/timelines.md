@@ -31,5 +31,7 @@ Milestones featuring the Catena-X logo indicate closed meetings, which are organ
 [![Timeline for Release 25.09](@site/static/img/cx-timeline-25.09.png)](@site/static/img/cx-timeline-25.09.png)
 *Timeline for Release 25.09*
 
+### Catena-X Titan, incl. Eclipse Tractus-X Release 25.12 & 26.03
+
 [![Timeline for Release 25.12](@site/static/img/cx-timeline-25.12.png)](@site/static/img/cx-timeline-25.12.png)
 *Timeline for Release 25.12*
