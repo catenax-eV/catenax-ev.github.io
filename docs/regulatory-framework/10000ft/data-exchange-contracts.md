@@ -36,7 +36,7 @@ Data providers & data consumer have the option of concluding bilateral contracts
 
 ![RC Process](./assets/data-exchange-process.png)
 
-Illustration 1: RC Process with the example of an Eclipse Data Space Connector (EDC). Source: [Catena-X Operating Model](../../operating-model/why-introduction/why-introduction.md)
+Illustration 1: RC Process with the example of an Eclipse Data Space Connector (EDC). Source: [Catena-X Operating Model](/docs/next/operating-model/why-introduction/)
 
 ### 2. EXECUTIVE SUMMARY: CONCLUDING AND PERFORMING DATA EXCHANGE CONTRACTS VIA REGISTERED CONNECTORS
 
