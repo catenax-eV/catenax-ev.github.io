@@ -26,7 +26,7 @@ The first is the [operating model](./../operating-model/why-introduction). The o
 
 The ["10 Golden Rules"](./30000ft/ten-golden-rules) document, which outlines the basic principles of the data ecosystem, is published by the Catena-X association and provides clear guidelines for necessary specifications at lower levels. It also specifies how far a technical standard can go. The agreement between the CSPs and participants (e.g., data providers and data consumers) is established during onboarding.
 
-Furthermore, the [Country Clearance List](/docs/next/regulatory-framework/30000ft/country-clearance-list) must be observed, which shows the countries for which onboarding is possible without restrictions and the countries for which onboarding is possible after a due diligence check.
+Furthermore, the [Country Clearance List](./30000ft/country-clearance-list) must be observed, which shows the countries for which onboarding is possible without restrictions and the countries for which onboarding is possible after a due diligence check.
 
 ## 20,000ft - Use Case Level
 
