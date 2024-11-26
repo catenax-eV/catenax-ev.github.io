@@ -33,6 +33,7 @@ pagination_next: null
 | Italy | IT |
 | Japan | JP |
 | Latvia | LV |
+| Liechtenstein | LIE |
 | Lithuania | LT |
 | Luxembourg | LU |
 | Malaysia | MY |
@@ -113,4 +114,4 @@ pagination_next: null
 | Ukraine | UA |
 | United Arab Emirates | AE |
 | Uruguay | UY |
-| Vanuatu | VU
+| Vanuatu | VU |
