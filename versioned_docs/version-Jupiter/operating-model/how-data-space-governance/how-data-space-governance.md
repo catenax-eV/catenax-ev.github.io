@@ -106,7 +106,7 @@ Advisory services are hard, if not impossible, to standardize. Consequently, con
 
 Catena-X invites advisory service providers of all kinds to support the successful onboarding of data space participants, SMEs in particular. One of the few prerequisites is the binding commitment to provide high-quality consulting at fair and reasonable costs. Catena-X supports this endeavor with information and predefined content as well as a qualification system to prove appropriate support and consulting competencies.
 
-Different from Catena-X Certification, Catena-X qualification is a label held by an individual. Individuals passing the assessment process and being awarded the title "Qualified Advisor" may refer to themselves as "Catena-X qualified". Companies with more than 5 employees with this qualification may refer to their entire company as "Catena-X qualified". Alternatively, if more than 50% of a company's staff is qualified, it may equally refer to the entire company as "Catena-X qualified". Any "Catena-X qualified" label has a validity of 12 months.
+Different from Catena-X Certification, Catena-X qualification is a label held by an individual. Individuals passing the assessment process and being awarded the title "Qualified Advisor" may refer to themselves as `Catena-X qualified`. Companies with more than 5 employees with this qualification may refer to their entire company as `Catena-X qualified`. Alternatively, if more than 50% of a company's staff is qualified, it may equally refer to the entire company as `Catena-X qualified`. Any `Catena-X qualified` label has a validity of 12 months.
 
 ### How do we qualify?
 
