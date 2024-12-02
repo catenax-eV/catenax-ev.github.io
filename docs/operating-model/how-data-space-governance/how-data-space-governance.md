@@ -106,19 +106,13 @@ Advisory services are hard, if not impossible, to standardize. Consequently, con
 
 Catena-X invites advisory service providers of all kinds to support the successful onboarding of data space participants, SMEs in particular. One of the few prerequisites is the binding commitment to provide high-quality consulting at fair and reasonable costs. Catena-X supports this endeavor with information and predefined content as well as a qualification system to prove appropriate support and consulting competencies.
 
+Different from Catena-X Certification, Catena-X qualification is a label held by an individual. Individuals passing the assessment process and being awarded the title "Qualified Advisor" may refer to themselves as `Catena-X qualified`. Companies with more than 5 employees with this qualification may refer to their entire company as `Catena-X qualified`. Alternatively, if more than 50% of a company's staff is qualified, it may equally refer to the entire company as `Catena-X qualified`. Any `Catena-X qualified` label has a validity of 12 months.
+
 ### How do we qualify?
 
-There are two ways to become a Catena-X qualified advisory service provider.
+With the launch of the [Catena-X Campus](https://catena-x.academy), Catena-X offers dedicated training to all interested advisory service providers. To gain the label *Qualified Advisor* on the Catena-X ecosystem, the successful completion of the *Consultant Qualification* on the *Training Area* of the Catena-X Campus is a prerequisite. This dedicated training covers all aspects relevant to advising users of the Catena-X data ecosystem, from topics concerning business impact to questions on operations & governance.
 
-1. Qualification through training
-2. Qualification through existing experience
-
-For most advisory service providers, the first option applies. Qualification through existing experience is a path offered to advisory service providers that have gained experience by actively contributing to the Catena-X ecosystem either by directly accompanying companies within the Catena-X beta phase or contributing directly to the Catena-X kickstarter consortium as a listed member. An overview of the qualification process is depicted in Figure [Catena-X Qualification Process](./how-data-space-governance.md#how-do-we-qualify).
-
-![Catena-X Qualification Process](./assets/catena-x-qualification-process.png)
-*Catena-X Qualification Process*
-
-As of the Operating Model White Paper v.3, the process for qualification through training has yet to be established. It will be released on the [Catena-X website](https://catena-x.net/en/catena-x-introduce-implement/advisory-ecosystem) as soon as it is available. Qualification through experience applies to all advisory service providers that registered for and participated in the Catena-X beta phase. If a company is interested in qualification and/or the proof of qualification, the first step is to contact the Catena-X Association via [onboardingcommittee@catena-x.net](mailto:onboardingcommittee@catena-x.net). Further information and a first questionnaire to collect basic information about the company will then be made accessible.
+The Catena-X qualification process is under constant development and further, specialized modules including dedicated labels will be published soon.
 
 ## Catena-X Labels
 
