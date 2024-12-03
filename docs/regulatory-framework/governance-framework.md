@@ -22,11 +22,11 @@ To easily grasp the layers of our Governance Framework, think of flight level as
 At this level, the governance framework is defined by the Catena-X Association and the basic principles of the data ecosystem are outlined. Compliance is mandatory for all participants in the data space.
 There are several normative documents to consider.
 
-The first is the [operating model](./../operating-model/why-introduction). The operating model lays the foundation and is the pre-requisite for further standardization, certification, implementation, and operations of software components and partners in the Catena-X data space. The operating model is continuously updated to reflect the evolution of business and regulatory requirements, as well as emerging technologies.
+The first is the [operating model](https://catenax-ev.github.io/docs/next/operating-model/why-introduction). The operating model lays the foundation and is the pre-requisite for further standardization, certification, implementation, and operations of software components and partners in the Catena-X data space. The operating model is continuously updated to reflect the evolution of business and regulatory requirements, as well as emerging technologies.
 
-The ["10 Golden Rules"](./30000ft/ten-golden-rules) document, which outlines the basic principles of the data ecosystem, is published by the Catena-X association and provides clear guidelines for necessary specifications at lower levels. It also specifies how far a technical standard can go. The agreement between the CSPs and participants (e.g., data providers and data consumers) is established during onboarding.
+The ["10 Golden Rules"](https://catenax-ev.github.io/docs/next/regulatory-framework/30000ft/ten-golden-rules) document, which outlines the basic principles of the data ecosystem, is published by the Catena-X association and provides clear guidelines for necessary specifications at lower levels. It also specifies how far a technical standard can go. The agreement between the CSPs and participants (e.g., data providers and data consumers) is established during onboarding.
 
-Furthermore, the [Country Clearance List](./30000ft/country-clearance-list) must be observed, which shows the countries for which onboarding is possible without restrictions and the countries for which onboarding is possible after a due diligence check.
+Furthermore, the [Country Clearance List](https://catenax-ev.github.io/docs/next/regulatory-framework/30000ft/country-clearance-list) must be observed, which shows the countries for which onboarding is possible without restrictions and the countries for which onboarding is possible after a due diligence check.
 
 ## 20,000ft - Use Case Level
 
