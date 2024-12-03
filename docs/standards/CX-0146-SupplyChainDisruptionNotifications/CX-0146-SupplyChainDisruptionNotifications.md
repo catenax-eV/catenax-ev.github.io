@@ -1,4 +1,4 @@
-# CX-0146 Supply Chain Disruption Notifications 1.0.0
+# CX-0146 Supply Chain Disruption Notifications 1.0.1
 
 ## ABSTRACT
 
@@ -13,7 +13,8 @@ demonstrated the requirement for such a fast standardized process among all part
 
 ## COMPARISON WITH THE PREVIOUS VERSION OF THE STANDARD
 
-This is the first version of the standard.
+Changed:
+- Removed wrong and unused part (`"method": "POST"`) of connector asset definition
 
 ## 1 INTRODUCTION
 
@@ -624,7 +625,6 @@ An example Data Asset definition is given below.
         "proxyBody": "true",
         "proxyMethod": "true",
         "baseUrl": "{{DEMAND_AND_CAPACITY_NOTIFICATION_API_ENDPOINT}}",
-        "method": "POST",
         "contentType": "application/json"
     }
 }

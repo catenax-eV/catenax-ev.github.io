@@ -3,7 +3,7 @@ tags:
   - CAT/Semantic
 ---
 
-# CX-0003 SAMM Aspect Meta Model v1.1.0
+# CX-0003 SAMM Aspect Meta Model v1.2.0
 
 ## ABSTRACT
 
@@ -19,6 +19,11 @@ digital twin API of the Asset Administration Shell.
 This standard is designed for semantic modelling and usage of semantic models in Catena-X.
 
 ## COMPARISON WITH THE PREVIOUS VERSION OF THE STANDARD
+
+Changes compared to V1.1.0 of CX-0003:
+
+- Update of references
+- Aligned with the newest governance process (the status "standardized" has been removed from semantic models).
 
 Changes compared to V1.0.2 of CX-0003:
 
@@ -70,7 +75,7 @@ conforming to this Aspect model. The combination of raw runtime data and its cor
 
 This chapter just gives a rough overview of the architecture.
 
-The architectural component "Semantic Hub" is considered to be a core service. The architectural component "Digital Twin Registry" is considered to be an enabling service. "The Enablement Services are a bundle of decentral services that enable participation in the Catena-X data space. Each participant must deploy and use the enablement services to connect to the data space and enable standardized interactions based on the requirements of the respective use case." For more details see [Catena-X Operating Model Whitepaper](https://catena-x.net/fileadmin/user_upload/Publikationen_und_WhitePaper_des_Vereins/CX_Operating_Modelv2.1_final.pdf).
+The architectural component "Semantic Hub" is considered to be a core service. The architectural component "Digital Twin Registry" is considered to be an enabling service. "The Enablement Services are a bundle of decentral services that enable participation in the Catena-X data space. Each participant must deploy and use the enablement services to connect to the data space and enable standardized interactions based on the requirements of the respective use case." For more details see [Catena-X Operating Model](https://catenax-ev.github.io/docs/next/operating-model/why-introduction).
 
 The Semantic Hub is a database containing aspect models released in Catena-X. These aspect models are accessible via a UI in the Catena-X Portal. The database is synchronized with the public github  (see [Proof of conformity](#13-conformance-and-proof-of-conformity)) containing the machine-readable specification of the aspect models that shall be conformant to the Semantic Aspect Meta Model as specified in this document. Every aspect model has a unique ID and this is why it can be referenced. Up to now there is a central Semantic Hub for the complete data space. This makes sense for the standardized and released aspect models. In the future also proprietary aspect models might be defined. So also decentralized Semantic Hubs will be possible.
 
@@ -81,7 +86,7 @@ information about its semantics. The semantics is described via an
 aspect model conformant to the Semantic Aspect Meta Model as specified
 in this document.
 
-The Eclipse Data Space Connector (EDC) (see standard [CX-0018](https://catena-x.net/de/tractus-x/standard-library)) defines access and usage policies for the different digital twins and aspects of the digital twins.
+The Eclipse Data Space Connector (EDC) (see standard [CX-0018](https://catenax-ev.github.io/docs/next/standards/overview)) defines access and usage policies for the different digital twins and aspects of the digital twins.
 
 ### 1.3 Conformance and Proof of Conformity
 
@@ -99,14 +104,13 @@ The key words MAY, MUST, MUST NOT, OPTIONAL, RECOMMENDED, REQUIRED, SHOULD and S
 
 All participants and their solutions will need to prove that they conform to the Catena-X standards. To validate that the standards are applied correctly, Catena-X employs Conformity Assessment Bodies (CABs).
 
-Every aspect model released or standardized in Catena-X MUST be
-maintained in [Tractus-X - SLDT Semantic Models](https://github.com/eclipse-tractusx/sldt-semantic-models).
+Every aspect model released in Catena-X **MUST** be maintained in [Tractus-X - SLDT Semantic Models](https://github.com/eclipse-tractusx/sldt-semantic-models).
 
 For [validation of aspect models](https://eclipse-esmf.github.io/esmf-developer-guide/tooling-guide/java-aspect-tooling.html#validating-aspect-models) open-source tool support is available as part of the [ESMF SDK](https://github.com/eclipse-esmf/esmf-sdk).
 
 Every aspect model in
 [Tractus-X - SLDT Semantic Models](https://github.com/eclipse-tractusx/sldt-semantic-models) that has the
-status "released" or "standardized" MUST be validated without errors
+status "released" **MUST** be validated without errors
 against the Semantic Aspect Meta Model. For the current version of the
 Semantic Aspect Meta Model under consideration see [normative references](#31-normative-references).
 For the currently used version of the Validator see information in
@@ -170,29 +174,28 @@ Digital Twin Registry.
 
 Note 3 to entry: an aspect corresponds to a [*Submodel*](#submodel) in the [*Asset Administration Shell*](#asset-administration-shell)
 
-*\[SOURCE: [Eclipse Semantic Modeling Framework (ESMF)](https://projects.eclipse.org/projects/dt.esmf](https://eclipse-esmf.github.io/samm-specification/snapshot/index.html), editorial changes and notes added \]*
+*\[SOURCE: [Eclipse Semantic Modeling Framework (ESMF)](https://eclipse-esmf.github.io/samm-specification/snapshot/index.html), editorial changes and notes added \]*
 
 #### Aspect Model
 
 > a formal, machine-readable semantic description (expressed with
 RDF/turtle) of data accessible from an [*Aspect*](#aspect).
 
-Note 1 to entry: An Aspect Model must adhere to the Semantic Aspect Meta Model (SAMM), i.e., it utilizes elements and relations defined in the Semantic Aspect Meta Model and is compliant with the validity rules defined by the Semantic Aspect Meta Model.
+Note 1 to entry: An Aspect Model **MUST** adhere to the Semantic Aspect Meta Model (SAMM), i.e., it utilizes elements and relations defined in the Semantic Aspect Meta Model and is compliant with the validity rules defined by the Semantic Aspect Meta Model.
 
 Note 2 to entry: Aspect models are logical data models which can be used to detail a conceptual model in order to describe the semantics of runtime data related to a concept. Further, elements of an Aspect model can/should refer to terms of a standardized Business Glossary (if existing).
 
 Note 3 to entry: An Aspect Model describes the semantics of a [*Submodel*](#submodel).
 
-*\[SOURCE: [Eclipse Semantic Modeling Framework (ESMF)](https://projects.eclipse.org/projects/dt.esmf](https://eclipse-esmf.github.io/samm-specification/snapshot/index.html), editorial changes and notes added \]*
+*\[SOURCE: [Eclipse Semantic Modeling Framework (ESMF)](https://eclipse-esmf.github.io/samm-specification/snapshot/index.html), editorial changes and notes added \]*
 
-#### Asset Administration Shell
+#### Asset Administration Shell (AAS)
 
-> standardized [*digital representation*](#digital-representation) of an asset
+> standardized digital representation of an asset
 
-Note 1 to entry: Asset Administration Shell and Administration Shell are
-used synonymously.
+Note 1 to entry: Asset Administration Shell and Administration Shell are used synonymously.
 
-*\[SOURCE: IEC 63278-1, note added\]*
+*\[SOURCE: IEC 63278-1:2023, note added\]*
 
 #### Submodel Template
 
@@ -215,49 +218,26 @@ process, or system was changed to an asset)\]*
 
 > information and services representing an entity from a given viewpoint
 
-EXAMPLE 1: examples of information are properties (e.g., maximum
-temperature), actual parameters (e.g., actual velocity), events (e.g.,
-notification of status change), schematics (electrical), and
-visualization information (2D and 3D drawings).
+EXAMPLE 1: examples of information are properties (e.g. maximum temperature), actual parameters (e.g. actual velocity), events (e.g. notification of status change), schematics (electrical), and visualization information (2D and 3D drawings).
 
-EXAMPLE 2: examples of services are providing the history of the
-configuration data, providing the actual velocity, and providing a
-simulation.
+EXAMPLE 2: examples of services are asset services (for example providing the history of the configuration data or providing the actual velocity) and asset related services (for example providing a simulation).
 
-EXAMPLE 3: examples of viewpoints are mechanical, electrical, or
-commercial characteristics.
+EXAMPLE 3: examples of viewpoints are mechanical, electrical, or commercial characteristics.
 
-*\[SOURCE: IEC 63278-1, editorial changes\]*
+*\[SOURCE: IEC 63278-1:2023, editorial changes\]*
 
 #### Submodel
 
-> container of [*SubmodelElement*](#submodelelement)s defining a hierarchical structure
-consisting of SubmodelElements
+> representation of an aspect of an asset
 
-*\[SOURCE: IEC 63278-1\]*
-
-#### SubmodelElement
-
-> elements in a [*Submodel*](#submodel)
-
-*\[SOURCE: IEC 63278-1\]*
-
-#### Submodel template
-
-> container of Submodel template elements defining a hierarchical
-structure consisting of Submodel template elements
-
-*\[SOURCE: IEC 63278-1, note removed\]*
-
-Additional terminology used in this standard can be looked up in the
-glossary on the association homepage.
+*\[SOURCE: IEC 63278-1:2023\]*
 
 ## 2 Semantic Aspect Meta Model (SAMM)
 
 ### 2.1 Eclipse Semantic Modeling Framework
 
 The [Semantic Aspect Meta Model (SAMM)](https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model) is specified as an open standard
-as integral part of the [Eclipse Semantic Modeling Framework (ESMF)](https://projects.eclipse.org/projects/dt.esmf).
+as integral part of the [Eclipse Semantic Modeling Framework (ESMF)](https://eclipse-esmf.github.io/samm-specification/snapshot/index.html).
 This part again is part of the Top-Level Project [Eclipse Digital
 Twin](ttps://projects.eclipse.org/projects/dt). The Eclipse Digital Twin Top-Level Project is a
 collaborative, open-source initiative at the Eclipse Foundation
@@ -291,21 +271,17 @@ complement a digital twin with a semantic foundation.
 2.1.0)")
 
 The complete specification and further information about its
-implementation and requirements can be accessed via the [Eclipse Semantic Modeling Framework (ESMF)][https://projects.eclipse.org/projects/dt.esmf](https://eclipse-esmf.github.io/samm-specification/snapshot/index.html).
+implementation and requirements can be accessed via the [Eclipse Semantic Modeling Framework (ESMF)][https://eclipse-esmf.github.io/samm-specification/snapshot/index.html](https://eclipse-esmf.github.io/samm-specification/snapshot/index.html).
 
-Every aspect model in
-https://github.com/eclipse-tractusx/sldt-semantic-models that has
-status "released" or "standardized" MUST be conformant to the
-Semantic Aspect Meta Model.
+Every aspect model within the Eclipse Tractus-X repository [https://github.com/eclipse-tractusx/sldt-semantic-models](SLDT-Semantic-Models) that has status "released" **MUST** be conformant to the Semantic Aspect Meta Model.
 
-Every new aspect model MUST be conformant to the version of the Semantic
-Aspect Meta Model as noted in the [normative reference](#31-normative-references) [SAMM](#2-semantic-aspect-meta-model-samm).
+Every new aspect model **MUST** be conformant to the version of the Semantic Aspect Meta Model as noted in the [normative reference](#31-normative-references) [SAMM](#2-semantic-aspect-meta-model-samm).
 
 ### 2.3 Creation and Maintenance
 
-Every aspect model released or standardized in Catena-X MUST be maintained in Tractus-X: https://github.com/eclipse-tractusx/sldt-semantic-models.
+Every aspect model released in Catena-X **MUST** be maintained in Eclipse Tractus-X: [https://github.com/eclipse-tractusx/sldt-semantic-models](SLDT-Semantic-Models).
 
-Every semantic model MUST have a unique identifier conformant to the meta model identifiers definition in [SAMM](#2-semantic-aspect-meta-model-samm). For the semantic models developed in the scope of Catena-X the unique identifier MUST start with
+Every semantic model **MUST** have a unique identifier conformant to the meta model identifiers definition in [SAMM](#2-semantic-aspect-meta-model-samm). For the semantic models developed in the scope of Catena-X the unique identifier **MUST** start with
 
 ```
 urn:samm:io.catenax.
@@ -318,24 +294,24 @@ recycling\":
 urn:samm:io.catenax.material_for_recycling:1.0.0#MaterialForRecylcing
 ```
 
-The governance process for new, updated or deprecated aspect models MUST be followed. The governance process for new, updated or deprecated aspect models is defined by Catena-X e.V. Additionally, the governance process is described directly in the github project: https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/documentation/GOVERNANCE.md.
+The governance process for new, updated or deprecated aspect models **MUST** be followed. The governance process for new, updated or deprecated aspect models is defined by Catena-X e.V. Additionally, the governance process is described directly in the Eclipse Tractus-X project: [https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/documentation/GOVERNANCE.md](GOVERNANCE.md).
 
-NOTE: Older versions of already released or published aspect models MAY start with
+NOTE: Older versions of already released or published aspect models **MAY** start with
 
 ```
 urn:bamm:io.catenax
 ```
 
-However, aspect models with prefix urn:bamm MUST not be used any longer.
+However, aspect models with prefix urn:bamm **MUST NOT** be used any longer.
 
 For migration of older aspect models see the  [Migration guide](https://eclipse-esmf.github.io/esmf-developer-guide/tooling-guide/bamm-migration.html).
 
-NOTE: SAMM was named BAMM until end of 2022 (BAMM for BAMM Aspect Meta Model). Renaming was executed in the context of the migration of the corresponding open source projects from Open Manufacturing Platform (OMP), a Linux Foundation project, to [Industrial Digital Twin Association (IDTA)](https://industrialdigitaltwin.org) and [Eclipse Foundation](https://www.eclipse.org/org/foundation/).
+:::note[Note] SAMM was named BAMM until end of 2022 (BAMM for BAMM Aspect Meta Model). Renaming was executed in the context of the migration of the corresponding open source projects from Open Manufacturing Platform (OMP), a Linux Foundation project, to [Industrial Digital Twin Association (IDTA)](https://industrialdigitaltwin.org) and [Eclipse Foundation](https://www.eclipse.org/org/foundation/). :::
 
 ### 2.4 Usage
 
 Every aspect of a digital twin registered in a digital twin registry
-(see [CX-0002](CX-0002-DigitalTwinsInCatenaX)) accessible in the Catena-X data space MUST have a
+(see [CX-0002](CX-0002-DigitalTwinsInCatenaX)) accessible in the Catena-X data space **MUST** have a
 semantic description (semantic ID) that is conformant to the unique aspect
 model ID associated to it (see chapter [Creation and Maintenance](#23-creation-and-maintenance)).
 
@@ -350,8 +326,8 @@ urn:samm:io.catenax.material_for_recycling:1.0.0#MaterialForRecycling
 ### 3.1 Normative References
 
 - [SAMM Semantic Aspect Meta Model, Version 2.1.0](https://eclipse-esmf.github.io/samm-specification/2.1.0/index.html).
-- CX-0002 DIGITAL TWINS IN CATENA-X. Download in [Catena-X Standard Library](https://catena-x.net/de/tractus-x/standard-library).
-- [Catena-X Operating Model Whitepaper](https://catena-x.net/fileadmin/user_upload/Publikationen_und_WhitePaper_des_Vereins/CX_Operating_Modelv2.1_final.pdf). Release V2.1 -- October 16, 2023.
+- CX-0002 DIGITAL TWINS IN CATENA-X. Download in [Catena-X Standard Library](https://catenax-ev.github.io/docs/next/standards/overview).
+- [Catena-X Operating Model](https://catenax-ev.github.io/docs/next/operating-model/why-introduction).
 
 ### 3.2 Non-Normative References
 

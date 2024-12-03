@@ -1,4 +1,4 @@
-# CX-0128 - Demand and Capacity Management Data Exchange v2.0.0
+# CX-0128 - Demand and Capacity Management Data Exchange v2.1.0
 
 ## ABSTRACT
 
@@ -73,7 +73,7 @@ For clarity on the roles and responsibility of each actor, please see [Chapter 5
 
 Illustrations and descriptions of roles are provided to help explain concepts and processes but are not mandatory. This standard requires that data consumers, providers and business application providers must adopt a uniform business logic, data models and data exchange protocols to ensure interoperable data exchange.
 
-This standard focuses on direct one-to-one business relationships between customers and suppliers. Companies participating in Catena-X DCM must have signed the DCM framework agreement.
+This standard focuses on direct one-to-one business relationships between customers and suppliers. Companies participating in Catena-X DCM must have agreed to the *Data Exchange Governance* framework agreement.
 
 ### 1.2 Context and Architecture Fit
 
@@ -102,23 +102,54 @@ The capitalized key words such as **MAY, MUST, MUST NOT, OPTIONAL, RECOMMENDED, 
 
 Participants must demonstrate conformity with Catena-X standards. Conformity Assessment Bodies (CABs) verify that standards are correctly applied.
 
+If a participant or application only implements either the business role customer or the business role supplier, then conformity must only be demonstrated along conformity assessment criteria (CACs) that apply to the specific business role.
+
 **Proof of Conformity for Data Models**
 
-Participants must implement and conform to the standardized data models as described in [Chapter 3](#3-aspect-models).
+Participants must implement and conform to the standardized data models as described in [Chapter 3](#3-aspect-models). Depending on which business role a participant or application implements only parts of [Chapter 3](#3-aspect-models) are relevant for conformity. 
+
+|Data model|Business role|Relevant capability|
+|--|--|--|
+|WeekBasedMaterialDemand|Customer|Data provider|
+|WeekBasedMaterialDemand|Supplier|Data consumer|
+|WeekBasedCapacityGroup|Customer|Data consumer|
+|WeekBasedMaterialDemand|Supplier|Data provider|
+|IdBasedRequestForUpdate|Customer or supplier|Data provider and data consumer|
+|IdBasedComment|Customer or supplier|Data provider and data consumer|
 
 **Proof of Conformity for APIs**
 
-Participants must implement and conform to the standardized APIs as described in [Chapter 4](#4-application-programming-interfaces).
+Participants must implement and conform to the standardized APIs as described in [Chapter 4](#4-application-programming-interfaces). Depending on which business role a participant or application implements only parts of [Chapter 4](#4-application-programming-interfaces) are relevant for conformity. 
+
+|API taxonomy|Business role|Relevant capability|
+|--|--|--|
+|DcmWeekBasedMaterialDemand|Customer|Call API|
+|DcmWeekBasedMaterialDemand|Supplier|Offer API|
+|DcmWeekBasedCapacityGroup|Customer|Offer API|
+|DcmWeekBasedCapacityGroup|Supplier|Call API|
+|DcmIdBasedRequestForUpdate|Customer and supplier|Offer and call API|
+|DcmIdBasedComment|Customer or supplier|Offer and call API|
+|Submodel|Customer or supplier|Offer and call API|
 
 **Proof of Conformity for Process and Core Business Logic**
 
-Participants must implement and conform to the DCM core business logic as described in [Chapter 5](#5-processes).
+Participants must implement and conform to the DCM core business logic as described in [Chapter 5](#5-processes). Depending on which business role a participant or application implements only parts of [Chapter 5](#5-processes) are relevant for conformity. 
+
+|Relevant process step|Business role|
+|--|--|
+|Manage demands|Customer|
+|Manage capacities|Supplier|
+|Bottleneck calculation|Customer and supplier|
+|Collaborate|Customer and supplier|
+|Align capacities and demands|Customer and supplier|
+|Update demands|Customer|
+|Update capacities|Supplier|
 
 ### 1.4 Examples
 
 #### 1.4.1 Examples for Process and Core Business Logic
 
-Customers and suppliers must agree to the DCM framework agreement, implement the core business logic from [Chapter 5](#5-processes) and manage their access authorizations. They should ensure that material demand and capacity data are accurate, regularly updated and shared in a standardized format.
+Customers and suppliers must have agreed to the *Data Exchange Governance* framework agreement, implement the core business logic from [Chapter 5](#5-processes) and manage their access authorizations. They should ensure that material demand and capacity data are accurate, regularly updated and shared in a standardized format.
 
 Business application providers must implement APIs as described in this standard and enforce requirements for a trusted usage environment, contractual agreements and antitrust requirements. Their applications must also enforce process traceability and data sovereignty.
 
@@ -309,7 +340,7 @@ A data provider may tie certain access authorizations `Access Policies` to its d
 
 In the context of data usage policies `Usage Policies`, participants and related services MUST use the following policy rules:
 
-- Use Case Framework `FrameworkAgreement`
+- *Data Exchange Governance* framework agreement.
 - At least one use case purpose `UsagePurpose` from the above mentioned [[ODRL](#repositories)] policy repository.
 
 Additionally, respective usage policies MAY include the following policy rule:
@@ -364,7 +395,7 @@ This Catena-X data model is released under the [CC-BY-4.0](#72-non-normative-ref
 The semantic model has the unique identifier
 
 ```text
-urn:samm:io.catenax.week_based_material_demand:3.0.0
+urn:samm:io.catenax.week_based_material_demand:3.0.1
 ```
 
 Data providers MUST use this identifier to clearly define the semantics of the data they are transferring.
@@ -376,7 +407,7 @@ Data providers MUST use this identifier to clearly define the semantics of the d
 All other file format and serializations are derived from a RDF turtle file. It is the source for the Semantic Aspect Meta Model. You can access the RDF turtle file at the following URL:
 
 ```text
-https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.week_based_material_demand/3.0.0/WeekBasedMaterialDemand.ttl
+https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.week_based_material_demand/3.0.1/WeekBasedMaterialDemand.ttl
 ```
 
 The open source command line tool of the Eclipse Semantic Modeling Framework is used to generate other file formats such as JSON schema, AASX for Asset Administration Shell Submodel template or HTML documentation.
@@ -435,7 +466,7 @@ This Catena-X data model is released under the ([CC-BY-4.0](#72-non-normative-re
 The semantic model has the unique identifier
 
 ```text
-urn:samm:io.catenax.week_based_capacity_group:3.0.0
+urn:samm:io.catenax.week_based_capacity_group:3.0.1
 ```
 
 Data providers MUST use this identifier to clearly define the semantics of the data they are transferring.
@@ -447,7 +478,7 @@ Data providers MUST use this identifier to clearly define the semantics of the d
 All other file format and serializations are derived from a RDF turtle file. It is the source for the Semantic Aspect Meta Model. You can access the RDF turtle file at the following URL:
 
 ```text
-https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.week_based_capacity_group/3.0.0/WeekBasedCapacityGroup.ttl
+https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.week_based_capacity_group/3.0.1/WeekBasedCapacityGroup.ttl
 ```
 
 The open source command line tool of the Eclipse Semantic Modeling Framework is used to generate other file formats such as JSON schema, AASX for Asset Administration Shell Submodel template or HTML documentation.
@@ -873,7 +904,7 @@ If a week's demand is zero (value = `0`), it MUST be explicitly stated and inclu
 
 The `linkedDemandSeries` property specifies which particular `WeekBasedMaterialDemand` a `WeekBasedCapacityGroup` is referencing. To clarify the `linkedDemandSeries` points to a demand with a specific trio: `demandCategory`, `customerLocation` and `materialNumberCustomer`.
 
-The customer MAY define a `WeekBasedCapacityGroup` as inactive by setting and transferring the `capacityGroupIsInactive` flag to the supplier. The inactive `WeekBasedCapacityGroup` MUST be ignored during the demand-capacity matching over the whole horizon, i.e. must be considered in the same way as not existing data for the demand-capacity matching. Inactivating data may trigger their archiving or deletion in the local DCM application of the business partner. The inactive flag of a `WeekBasedCapacityGroup` MUST NOT affect linked `WeekBasedMaterialDemand` objects or other linked `WeekBasedCapacityGroup`. The inactivation of a `WeekBasedCapacityGroup` MAY result in the situation that its linked active `WeekBasedMaterialDemand` objects have to be newly linked to other active `WeekBasedCapacityGroup`. Once a `WeekBasedCapacityGroup` has been set as inactive, this MAY be undone by reverting the `capacityGroupIsInactive` flag. In this case, the `WeekBasedCapacityGroup` MUST again be considered during the demand-capacity matching. The reverting of the inactive flag of a `WeekBasedCapacityGroup` may correspond to a newly created and initially transferred or to an updated `WeekBasedCapacityGroup`.
+The supplier MAY define a `WeekBasedCapacityGroup` as inactive by setting and transferring the `capacityGroupIsInactive` flag to the customer. The inactive `WeekBasedCapacityGroup` MUST be ignored during the demand-capacity matching over the whole horizon, i.e. must be considered in the same way as not existing data for the demand-capacity matching. Inactivating data may trigger their archiving or deletion in the local DCM application of the business partner. The inactive flag of a `WeekBasedCapacityGroup` MUST NOT affect linked `WeekBasedMaterialDemand` objects or other linked `WeekBasedCapacityGroup`. The inactivation of a `WeekBasedCapacityGroup` MAY result in the situation that its linked active `WeekBasedMaterialDemand` objects have to be newly linked to other active `WeekBasedCapacityGroup`. Once a `WeekBasedCapacityGroup` has been set as inactive, this MAY be undone by reverting the `capacityGroupIsInactive` flag. In this case, the `WeekBasedCapacityGroup` MUST again be considered during the demand-capacity matching. The reverting of the inactive flag of a `WeekBasedCapacityGroup` may correspond to a newly created and initially transferred or to an updated `WeekBasedCapacityGroup`.
 
 Suppliers MAY use demand volatility metrics, including the optional entity `demandVolatilityParameters` within the JSON payload.
 
@@ -1727,7 +1758,8 @@ Before beginning data exchange, the following conditions MUST be met:
 
 - Customer and supplier MUST have registered with a Catena-X operational company and conform to the Catena-X guidelines
 - Customer and supplier MUST have entered into a contract with each other
-- Customer and supplier MUST have signed the DCM framework agreement
+- Customer and supplier MUST have agreed to the *Data Exchange Governance* framework agreement
+
 - Customer and supplier MUST agree on a common unit of measure (see [Units of measure used in DCM](#units-of-measure-used-in-dcm)) for product-level data exchange (`WeekBasedMaterialDemand` and `WeekBasedCapacityGroup`)
 - Customer and supplier MUST have the technical capability to engage in the DCM process with their business applications
 
@@ -2046,9 +2078,15 @@ Suppliers initiate the calculation of the demand deviation metric by specifying 
 
 The demand deviation MUST be calculated as follows:
 
+<!--
 $$Absolute Deviation =\sum Latest Demand - \sum Previous Demand$$
 
-$$Relative Deviation = \frac\{\sum Latest Demand - \sum Previous Demand\}\{\sum Previous Demand\}$$
+$$Relative Deviation = \frac {{\sum Latest Demand} - {\sum Previous Demand}} {\sum Previous Demand}$$
+-->
+
+![Calculation of the absolute deviation](./assets/DCM_DeviationAbsolute.svg)
+
+![Calculation of the relative deviation](./assets/DCM_DeviationRelative.svg)
 
 ∑ ≙ sum of demands per calendar week of each material demand series assigned within the `WeekBasedCapacityGroup`.
 
@@ -2109,7 +2147,7 @@ It is RECOMMENDED to apply the following rules:
 
 > *This section and all its subsections are normative*
 
-All participants involved in the Catena-X DCM use case MUST consent to the DCM framework agreement.
+All participants involved in the Catena-X DCM use case MUST consent to the *Data Exchange Governance* framework agreement.
 
 A key aspect of managing business partner relationships within Catena-X involves defining and applying policies that facilitate and protect data exchange. Both customers and suppliers MUST implement and uphold these policies in order to guarantee a secure and collaborative data exchange:
 
@@ -2117,7 +2155,8 @@ A key aspect of managing business partner relationships within Catena-X involves
 |:---------|:------------|:------------|
 | **Access Policy** | BPN-restricted Data Usage | Limit access to the data offered to a list of specified BPNs (to the connectors with the BPN attribute listed in the policy) |
 | **Access Policy** | Membership Credential | Limit access to data offered to Catena-X participants |
-| **Usage Policy** | DCM Framework Agreement Credential | Limit access to data offered to participants who have signed the DCM Framework Agreement |
+| **Usage Policy** | DataExchangeGovernance:1.0 | Limit access to data offered to participants who have agreed to the *Data Exchange Governance* framework agreement |
+
 
 ## 7 REFERENCES
 
@@ -2125,19 +2164,19 @@ A key aspect of managing business partner relationships within Catena-X involves
 
 > *This section and all its subsections are normative*
 
-[CX-0001] `v1.0.2` EDC Discovery API
+[CX-0001] `v1.0.3` EDC Discovery API
 
 [CX-0002] `v2.2.0` Digital Twins in Catena-X
 
-[CX-0003] `v1.1.0` SAMM Aspect Meta Model
+[CX-0003] `v1.2.0` SAMM Aspect Meta Model
 
-[CX-0010] `v2.0.0` Business Partner Number
+[CX-0010] `v2.1.0` Business Partner Number
 
-[CX-0018] `v3.0.0` Dataspace Connectivity
+[CX-0018] `v3.2.0` Dataspace Connectivity
 
 [CX-0126] `v2.0.0` Industry Core: Part Type
 
-[CX-0146] `v1.0.0` Supply Chain Disruption Notifications
+[CX-0146] `v1.0.1` Supply Chain Disruption Notifications
 
 ### 7.2 Non-Normative References
 

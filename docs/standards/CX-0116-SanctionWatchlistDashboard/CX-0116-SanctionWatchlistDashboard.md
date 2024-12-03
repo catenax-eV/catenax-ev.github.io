@@ -3,9 +3,7 @@ tags:
   - CAT/Value Added Services
 ---
 
-# CX-0116 Sanction Party Watchlist Dashboard v1.2.0
-
-## TABLE OF CONTENTS
+# CX-0116 Sanction Party Watchlist Dashboard v1.2.1
 
 ## ABSTRACT
 
@@ -20,6 +18,7 @@ SWD has to contain a user and authorization management capability aligned with t
 | ----------- | ------------------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | 1.1.0       |           |   SR         | Added chapter 3 for SWD API.     |
 | 1.2.0       | 2024-03-13          |     SR      | Corrected 2.3 - country list, Added chapter 3.4 Data Types and 3.5 Data Attributes, Added chapter 3.6 for data sovereignty as additional requirement. |
+| 1.2.1       | 2024-09-04          |     SR      | Moved SWD Style Guide Reference from Normative Section to Non-Normative Section |
 
 ## 1 INTRODUCTION
 
@@ -124,7 +123,11 @@ SWD has to contain the following dashboard-based functionalities:
 5. Sanction Watchlist Weighting settings
 6. Language setting for German and English
 
-The Sanction Party Watchlist Dashboard design relies on the Catena-X style guide. See details under confluence.catena-x.net/display/CORE/CX+Style+Guide
+The Sanction Party Watchlist Dashboard design can rely on the Catena-X style guide.  
+
+- Open-source repository: https://github.com/eclipse-tractusx/portal-shared-components
+- NPM package: https://www.npmjs.com/package/@catena-x/portal-shared-components/v/2.1.2
+- Storybook: https://eclipse-tractusx.github.io/portal-shared-components/?path=/docs/chip--docs
 
 SWD does contain an own API.
 
@@ -200,11 +203,6 @@ The SWD Dashboard MUST provide the following results:
 5. Sanction Watchlist Weighting settings
 6. Language setting for German and English
 
-The Sanction Party Watchlist Dashboard design MUST rely on the Catena-X style guide.  
-
-- Open-source repository: https://github.com/eclipse-tractusx/portal-shared-components
-- NPM package: https://www.npmjs.com/package/@catena-x/portal-shared-components/v/2.1.2
-- Storybook: https://eclipse-tractusx.github.io/portal-shared-components/?path=/docs/chip--docs
 
 ## 3 SWD API
 

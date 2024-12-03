@@ -3,19 +3,16 @@ tags:
   - CAT/Value Added Services
 ---
 
-# CX-0076 - Golden Record End-to-End Requirements Standard v.1.2.0
+# CX-0076 - Golden Record End-to-End Requirements Standard v.1.3.0
 
-## ABSTRACT
-
-When building business data management from disparate data sources, there are often issues with duplicate records, incomplete values within a record, and records with poor data quality. The Golden Record process solves these issues by e.g., data enrichment, typification and improving data quality within a record. The Golden Record is a concept within Master Data Management (MDM) that identifies and defines the single version of truth of business partner data, where truth is understood to be data that is trusted to be accurate, complete, correct and up to date. Thus, the Golden Record represents this trusted and best possible result of a specific business partner data set and ends up with an assigned unique identifier, represented as a Business Partner Number (BPN).
-
-Updating and maintaining business partner data can be a lengthy, costly, and time-consuming activity that currently has to be undertaken by each company individually.
-
-The purpose of this standard is to describe guidelines and requirements specific for the challenges of business data maintenance and defines the required quality criteria for Golden Records. These quality criteria not only serve the users of the Golden Record, but also form the basis for all Catena-X use cases.
 
 ## FOR WHOM IS THE STANDARD DESIGNED
 
 See chapter 1.1 Audience & Scope
+
+
+
+
 
 ## COMPARISON WITH THE PREVIOUS VERSION OF THE STANDARD
 
@@ -24,6 +21,15 @@ See chapter 1.1 Audience & Scope
 | V1.0.0  | Initial      | 22.03.2024 |
 | V1.1.0  | <li>Adjustment of Table 2 in chapter [2.1.9 GOLDEN RECORD OUTPUT REQUIREMENTS](#219-golden-record-output-requirements). Data field references deleted. </li><li>Street is now neither mandatory nor optional for Japan as listed in Table 2</li><li>New paragraph added at the end of chapter [2.1.2](#212-upload-criteria-and-mandatory-fields) providing more details on "own data" </li> <li> Chapter [2.1.6](#216-quality-checks-for-legal-entity-including-legal-form) has been expanded specifying expected relations and quality checks in more detail.</li><li>Chapter [2.1.10 NOTIFICATIONS](#2110-notifications) added.</li> <li>Chapter [2.1.11 CONFIDENCE LEVEL](#2111-confidence-level) added</li><li>Footnote for tax jurisdiction added in chapter [2.1.8](#218-quality-checks-for-tax-number-and-other-identifier)</li> | 22.06.2024 |
 | V1.2.0  | <li>Adjustment of Table 2 in chapter [2.1.9 GOLDEN RECORD OUTPUT REQUIREMENTS](#219-golden-record-output-requirements). Adding Tax Jurisdiction Code </li> <li>Adjustment in chapter [2.1.11 CONFIDENCE LEVEL](#2111-confidence-level). Adjust text for validation interval</li> <li>District and Region is now mandatory for Romania as listed in Table 2</li> | 01.08.2024 |
+| V1.3.0  | <li>Adjustment of Table 2 in chapter [2.1.9 GOLDEN RECORD OUTPUT REQUIREMENTS](#219-golden-record-output-requirements). Removed footnote for tax jurisdiction code as it is now technically implemented </li> <li>Adjustment / enhancements of footnotes references regarding new standard versions </li> <li>Adapted to new template structure| 02.12.2024 |
+
+## ABSTRACT
+
+When building business data management from disparate data sources, there are often issues with duplicate records, incomplete values within a record, and records with poor data quality. The Golden Record process solves these issues by e.g., data enrichment, typification and improving data quality within a record. The Golden Record is a concept within Master Data Management (MDM) that identifies and defines the single version of truth of business partner data, where truth is understood to be data that is trusted to be accurate, complete, correct and up to date. Thus, the Golden Record represents this trusted and best possible result of a specific business partner data set and ends up with an assigned unique identifier, represented as a Business Partner Number (BPN).
+
+Updating and maintaining business partner data can be a lengthy, costly, and time-consuming activity that currently has to be undertaken by each company individually.
+
+The purpose of this standard is to describe guidelines and requirements specific for the challenges of business data maintenance and defines the required quality criteria for Golden Records. These quality criteria not only serve the users of the Golden Record, but also form the basis for all Catena-X use cases.
 
 ## 1 INTRODUCTION
 
@@ -41,13 +47,13 @@ This document focuses on the outcome of the Golden Record Process. It is relevan
 
 In scope are the requirements of cleansing and enriching the business partner data records with the aim to create a Golden Record proposal.
 
-Not in scope is the way of how business partner data can be shared to create a Golden Record. Please refer to the Catena-X standard CX-0074 Business Partner Gate API v3.0.0 for more details.
+Not in scope is the way of how business partner data can be shared to create a Golden Record. Please refer to the Catena-X standard CX-0074 Business Partner Gate API v3.1.0 for more details.
 
-Not in scope is the overall Business Partner Pool with all Golden Records within Catena-X and the way of how the Golden Records can be retrieved. Please refer to the Catena-X CX-0012 Business Partner Pool API v4.0.0 standard for more details.
+Not in scope is the overall Business Partner Pool with all Golden Records within Catena-X and the way of how the Golden Records can be retrieved. Please refer to the Catena-X CX-0012 Business Partner Pool API v4.1.0 standard for more details.
 
 Not in scope is the general definition of the Business Partner L/S/A-logic. Please refer to the Catena-X standard CX-0010 Business Partner Number v2.0.0  standard for more details.
 
-You can find the other standards in the standard library of Catena-X: https://catena-x.net/de/standard-library.
+You can find the other standards in the standard library of Catena-X: https://catena-x.net/en/standard-library.
 
 ### 1.2 CONTEXT
 
@@ -55,11 +61,11 @@ You can find the other standards in the standard library of Catena-X: https://ca
 
 The establishment of various industry networks (such as Catena-X) has increased the need to establish data standards across the entire automotive value chain and to promote industry-wide, international data exchange. For the networking of OEMs, suppliers, customers, and industrial partners, it is essential to define and introduce a cross-industry standard for the identification of business partners and to provide the corresponding data in a certain quality to increase the usefulness and trust in the provided data in the form of Golden Records.
 
-### 1.3 CONFORMANCE
+### 1.3 CONFORMANCE AND PROOF OF CONFORMITY
 
 > *This section is non-normative*
 
-As well as sections marked as non-normative, all authoring guidelines, diagrams, examples, and notes in this specification are non-normative. Everything else in this specification is normative.
+If sections are marked as non-normative, all authoring guidelines, diagrams, examples, and notes in these sections are non-normative. Everything else in this specification is normative.
 
 The key words MAY, MUST, MUST NOT, OPTIONAL, RECOMMENDED, REQUIRED, SHOULD and SHOULD NOT in this document are to be interpreted as described in [BCP 14](https://datatracker.ietf.org/doc/html/bcp14) [[RFC2119](https://www.w3.org/TR/did-core/#bib-rfc2119 "Key words for use in RFCs to Indicate Requirement Levels")] [[RFC8174](https://www.w3.org/TR/did-core/#bib-rfc8174 "Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words")] when, and only when, they appear in all capitals, as shown here.
 
@@ -109,7 +115,7 @@ For further details on BPNLs please see standard CX-0010 Business Partner Number
 
 A BPNS represents and uniquely identifies a Site, for example where a production plant, warehouse or office building is located.
 
-For further details on BPNSs please see standard CX-0010 Business Partner Number v2.0.0.
+For further details on BPNSs please see standard CX-0010 Business Partner Number v2.1.0.
 
 #### 1.5.7 BUSINESS PARTNER NUMBER ADDRESS
 
@@ -117,13 +123,13 @@ A BPNA represents and uniquely identifies an (geographical) Address, which can b
 
 It is important to note that only the BPNL must be used to uniquely identify a Legal Entity. Even in the case that the BPNA represents the legal Address of the Legal Entity, it shall not be used to uniquely identify the Legal Entity.
 
-For further details on BPNAs please see standard CX-0010 Business Partner Number v2.0.0.
+For further details on BPNAs please see standard CX-0010 Business Partner Number v2.1.0.
 
 #### 1.5.8 RELATIONS
 
 There are relations between a Legal Entity (BPNL), its Sites (BPNS), and its Addresses (BPNA).
 
-For more information, please refer to the standard CX-0010 Business Partner Number v2.0.0.
+For more information, please refer to the standard CX-0010 Business Partner Number v2.1.0.
 
 #### 1.5.9 TAX NUMBER AND OTHER IDENTIFIER
 
@@ -159,7 +165,7 @@ Mandatory fields quality checks:
 - City MUST NOT be empty.
 - The External identifier, meaning the unique identifier from the uploading party, MUST NOT be empty.
 
-Please refer to the CX-0074 Business Partner Gate API v3.0.0 standard for the respective data fields.  
+Please refer to the CX-0074 Business Partner Gate API v3.1.0 standard for the respective data fields.  
 
 For uploading data, a mechanism MUST be provided to flag uploaded data as "own data", representing that this data belongs to my company.
 
@@ -209,7 +215,7 @@ The linkage answers the following question: Does the current dataset (incoming f
 
 If an uploaded record does not exist in the CX pool with an available BPN, a new BPN MUST be created and linked to the uploaded data record. Otherwise, the existing BPN MUST be used and linked to the uploaded data record.
 
-The creation of the BPN MUST be performed according to Catena-X standard CX-0010 Business Partner Number v2.0.0.
+The creation of the BPN MUST be performed according to Catena-X standard CX-0010 Business Partner Number v2.1.0.
 
 ### 2.1.6 QUALITY CHECKS FOR LEGAL ENTITY, INCLUDING LEGAL FORM
 
@@ -239,7 +245,7 @@ It MUST be checked if the Legal Form is valid for this country and formally corr
 
 - When an additional Business Partner address data set is uploaded which is not a legal entity, and thus a BPNA needs to be created yet, a relation to a BPNL MUST be established.
 
-- If no existing BPNL from the Pool could be identified and assigned, a new corresponding BPNL MUST be created by the service provider including the required data fields. The respective BPNA and the new BPNL must then be linked to each other accordingly.
+- If no existing BPNL from the CX pool could be identified and assigned, a new corresponding BPNL MUST be created by the service provider including the required data fields. The respective BPNA and the new BPNL must then be linked to each other accordingly.
 
 - This applies only, if the exact legal entity can be clearly identified based on the given information by the provided input.
 
@@ -270,7 +276,7 @@ The following quality checks are designed to verify that the shared Tax Number o
 **Tax Number and Other Identifier quality checks:**
 
 - It MUST be checked that the Tax Number is correct according to national registers and their syntax.
-- It MUST be checked that the format of the tax jurisdiction code [^8] is correct.
+- It MUST be checked that the format of the tax jurisdiction code is correct.
 - It MUST be checked that the format of Other Identifier (such as, but not limited to DUNS, LEI, EIN, UBI, GLN) is valid.
 - The consistency between Canadian Business Number and GST MUST be checked (Goods and Service Tax Number)
 - The issuing body MUST be filled, to be able to correctly assign the responsible commercial register when data records are uploaded for a Legal Entity including the corresponding commercial register number.
@@ -282,7 +288,7 @@ The requirements described below relate to the expected outcome after the Golden
 
 Below is a list of countries for which a rule has been defined. If a rule says, "Applies to all countries", the full list in Table 1 MUST be applied. Exceptions will be specified.
 
-There is also a rule-specific list of data fields in which the result MUST be written. This will be stated in column Attribute (Data Model). For details on the data model, please see CX 0012 Business Partner Pool API and CX 0074 Business Partner Gate API v3.0.0.
+There is also a rule-specific list of data fields in which the result MUST be written. This will be stated in column Attribute (Data Model). For details on the data model, please see CX-0012 Business Partner Pool API v4.1.0 and CX-0074 Business Partner Gate API v3.1.0.
 
 ***Table 1: Country List based on ISO 3166-1***
 
@@ -319,11 +325,11 @@ The following information rules MUST apply:
 | **Business Rule** | **Affected Country** |
 | ------------------| -------------------- |
 | Registered name (Legal Entity incl. Legal Form, if registered) MUST be set.  | **Mandatory for:** <br /> Applies to all countries as defined in Table 1. |
-| Tax Number MUST be set                                                       | **Mandatory for:** <br /> Applies to all countries as defined in Table 1. <br />**Exception,** neither mandatory nor optional for: CR, CU, IR, KW, LB, VA |
-| Tax Jurisdiction Code MUST be set[^8]                                        | **Mandatory for:** <br />BR, CA, US(PR)<br /> |
+| Tax Number MUST be set[^8]                                                     | **Mandatory for:** <br /> Applies to all countries as defined in Table 1. <br />**Exception,** neither mandatory nor optional for: CR, CU, IR, KW, LB, VA |
+| Tax Jurisdiction Code MUST be set                                        | **Mandatory for:** <br />BR, CA, US(PR)<br /> |
 | External identifier – number MUST be set                                     | **Mandatory for:** <br /> Applies to all countries as defined in Table 1. |
 | External identifier – number                                                 | **Optional for:** Applies to all countries as defined in Table 1. |
-| External identifier - type                                                   | **Optional for:** <br /> Applies to all countries as defined in Table 1. |
+| External identifier – type                                                   | **Optional for:** <br /> Applies to all countries as defined in Table 1. |
 | Country MUST be set                                                          | **Mandatory for:** <br /> Applies to all countries as defined in Table 1.<br />**Exception**, neither mandatory nor optional: CN |
 | Region, state MUST be set                                                    | **Mandatory for:** <br />BR, CA, CZ, IN, MX, RO, RU, US(PR)<br />**Optional for:**  <br />AD, AL, AM, AR, AT, AU, AZ, BA, BE, BG, BO, BY, CH/LI, CL, CO, CR, CU, CY, DE, DK, DZ, EC, EE, ES, FI, FR, GE, GI, GR, GT, HN, HR, HT, HU, IE, IS, IT, JM, JP, KG, KZ, LB, LT, LU, LV, MC, MD, ME, MK, MT, MY, NI, NL, NO, PA, PE, PH, PL, PT, PY, RS, SE, SI, SK, SM, SV, TH, TJ, TM, TR, TT, UA, UK/JE/GG, UY, UZ, VA, VE <br /><br /> **Neither mandatory nor optional:**<br />AE, CN, EG, GH, GP, HK, ID, IR, IL, KE, KR, KW, MA, NA, NZ, PK, QA, SA, SN, SG, ZA, LK, TW, TN, VN, XK, ZA, ZW |
 | Secondary region (county) - Sub-province MUST be set                         | **Optional for**:<br />Applies to all countries as defined in Table 1.<br />**Exception,** mandatory for: RU<br />**Exception**, neither mandatory nor optional for: <br />AE, DZ, AU, EG, GH, GP, HK, IN, ID, IR, IL, JP, KE, KR, KW, MY, MA, NA, NZ, PK, PH, QA, SA, SN, SG, ZA, LK, TW, TH, TN, AE, VN, XK, ZW |
@@ -364,7 +370,7 @@ approved by data owner (high, e.g. value 5)
 
 **Used by:**
 
-To be understood as "more as one cx member" is using this Business Partner data record.
+To be understood as "more as one CX member" is using this Business Partner data record.
 Grant e.g. 1 point, if this record is used by one or more members.
 
 **Checked by:**
@@ -396,7 +402,7 @@ This standardization document does not describe the process and functionality to
 
 ### 2.3 DATA QUALITY RULE ACCESSIBILITY
 
-The quality checks as described in this standard are using the input based on the Business Partner Gate API with the respective endpoints. For further details please refer to Catena-X standard CX-0074 Business Partner Gate API v3.0.0.
+The quality checks as described in this standard are using the input based on the Business Partner Gate API with the respective endpoints. For further details please refer to Catena-X standard CX-0074 Business Partner Gate API v3.1.0.
 
 ## 3 REFERENCES
 
@@ -404,15 +410,15 @@ The quality checks as described in this standard are using the input based on th
 
 > *This section is normative*
 
-- CX–0010 Business Partner Number v2.0.0
-- CX–0012 Business Partner Pool API v4.0.0
-- CX–0074 Business Partner Gate API v3.0.0
+- CX–0010 Business Partner Number v2.1.0
+- CX–0012 Business Partner Pool API v4.1.0
+- CX–0074 Business Partner Gate API v3.1.0
 
 ### 3.2 NON-NORMATIVE REFERENCES
 
 > *This section is non-normative*
 
-- [BPDM Catena-X Website](https://catena-x.net/en/offers/bpdm)
+- [BPDM Catena-X Website](https://catena-x.net/en/offers-standards/bpdm)
 
 ### 3.3 REFERENCE IMPLEMENTATIONS
 
@@ -434,11 +440,16 @@ Intentionally left blank.
 
 Intentionally left blank.
 
-[^1]: For details related to the Pool API, please see standard CX-0012 Business Partner Data Pool API v4.0.0.
-[^2]: For details related to the Business Partner number and the different types, please see standard CX-0010 Business Partner Number v2.0.0.
-[^3]: For details on the data model and data fields please refer to the standard CX-0074 Business Partner Gate API standard v3.0.0.
-[^4]: Although in some cases there can be more than one legal address assigned to the same legal entityE.g. Siemens in Germany (Berlin & Munich). This might lead to changes to data model definitions including relations in the future.
+[^1]: For details related to the Pool API, please see standard CX-0012 Business Partner Data Pool API v4.1.0.
+[^2]: For details related to the Business Partner number and the different types, please see standard CX-0010 Business Partner Number v2.1.0.
+[^3]: For details on the data model and data fields please refer to the standard CX-0074 Business Partner Gate API standard v3.1.0.
+[^4]: Although in some cases there can be more than one legal address assigned to the same legal entity, e.g., Siemens in Germany (Berlin & Munich). This might lead to changes to data model definitions including relations in the future. For details, please see standard CX-0074 Business Partner Gate API standard v3.1.0.
 [^5]: Note that there is currently a debate that a site is a consolidation of addresses (BPNA), with all addresses being equally ranked, since a "main" address cannot always be defined at this point in time. This may lead to changes in the next update of this standard.
 [^6]: Notification is to be understood as an information (info, warning, error) to be provided to the user. It's not to be understood as a short-term notification similar to a e.g., 30 second pop up message.
 [^7]: Numbers (values) are to be seen as examples to make the calculation easier to understand.
-[^8]: This requirement is valid, however, the data model as described in CX-0074 Business Partner Gate API v3.0.0 and CX-0012 Business Partner Pool API v4.0.0 does not provide respective fields yet. This will be probably provided with an upcoming standard release. Thus, a certification to this requirement cannot happen as of today until the data model got extended accordingly.
+[^8]: This rule MUST be applied unless local law or tax regulations do not require the existence / assignment of a tax number, e.g., for associations, small businesses, educational institutions.
+
+### LEGAL
+
+Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).
+

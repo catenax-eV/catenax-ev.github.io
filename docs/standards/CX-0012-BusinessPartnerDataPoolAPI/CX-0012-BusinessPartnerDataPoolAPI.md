@@ -6,7 +6,7 @@ tags:
   - CAT/Sandbox Service Provider
 ---
 
-# CX-0012 Business Partner Data Pool API v4.0.0
+# CX-0012 Business Partner Data Pool API v4.1.0
 
 ## FOR WHOM IS THE STANDARD DESIGNED
 
@@ -14,14 +14,15 @@ This document is mainly targeted to technical individuals involved in integratin
 
 ## COMPARISON WITH THE PREVIOUS VERSION OF THE STANDARD
 
-| **Version** | **Publishing Date** | **Author** | **Description of Change**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| ----------- | ------------------- | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1.1.0       | 2022-11-30          |            | Initial version by Catena-X Association                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| 1.1.1       | 2023-06-03          |            | Addendum for Conformity Assessment added                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| 2.0.0       | 2023-09-26          |            | Included new API and terminology chapter                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| 2.1.0       | 2024-01-10          |            | Small additions to the terminology and API specification chapters: added “business partner type” in changelog entry; added “administrative area (level 1)” as sub-object; added ISO 6709 and WGS 84 for geographic coordinates; added GET/sites; linked OpenAPI document in release branch instead of main                                                                                                                                                                                                                                                                                |
-| 3.0.0       | 2024-03-22          |            | Added additional street attributes; removed boolean attributes in favor of enum for address types, like in the Gate API; switched to the new document structure                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| **Version** | **Publishing Date** | **Author** | **Description of Change**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| ----------- | ------------------- | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1.1.0       | 2022-11-30          |            | Initial version by Catena-X Association                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| 1.1.1       | 2023-06-03          |            | Addendum for Conformity Assessment added                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| 2.0.0       | 2023-09-26          |            | Included new API and terminology chapter                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| 2.1.0       | 2024-01-10          |            | Small additions to the terminology and API specification chapters: added “business partner type” in changelog entry; added “administrative area (level 1)” as sub-object; added ISO 6709 and WGS 84 for geographic coordinates; added GET/sites; linked OpenAPI document in release branch instead of main                                                                                                                                                                                                                                                                                                                                                                               |
+| 3.0.0       | 2024-03-22          |            | Added additional street attributes; removed boolean attributes in favor of enum for address types, like in the Gate API; switched to the new document structure                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | 4.0.0       | 2024-06-07          |            | Added footnote to indicate that the term "site main address" is subject to change; added the CX-0018 version; changed and added the detailed asset structure; added footnote to clarify role distribution; removed terms Company Data and Sharing Member, as they are not used here; removed classification sub-object, to reintroduce it in a presumably new form in one of the next non-breaking versions of this standard; added "is Catena-X Member data" attribute; removed "api/catena/" from the endpoint definitions; added data sovereignty chapters as additional requirements; fix changelog controller endpoint for business-partners to match the reference implementation. |
+| 4.1.0       | 2024-12-02          |            | Added tax jurisdiction code                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 
 ## ABSTRACT
 
@@ -46,13 +47,13 @@ This standard is relevant for the following audience:
 
 This document focuses on the Business Partner Pool API (short: Pool API) that is part of the Business Partner Data Management (BPDM) described on the [BPDM Catena-X Website](https://catena-x.net/en/offers-standards/bpdm). It is relevant for Core Service Providers who want to provide services for retrieving a cleansed, high-quality business partner data record (Golden Record) for a given business partner number (BPN). It is also relevant for onboarding service providers, business application providers as well as data providers and consumers who want to use such services.
 
-Not in scope are the structure and logic of the business partner number itself and the mechanism on how the business partner number is issued. There is a separate standard for this: CX-0010 Business Partner Number 2.0.0.
+Not in scope are the structure and logic of the business partner number itself and the mechanism on how the business partner number is issued. There is a separate standard for this: CX-0010 Business Partner Number 2.1.0.
 
-Not in scope is the way of how business partner data records can be shared to create a Golden Record. There is a separate standard for this: CX-0074 Business Partner Data Gate API 3.0.0.
+Not in scope is the way of how business partner data records can be shared to create a Golden Record. There is a separate standard for this: CX-0074 Business Partner Data Gate API 3.1.0.
 
-Not in scope are the requirements of cleansing and enriching the business partner data records with the aim to create a Golden Record. There is a separate standard for this: CX-0076 Golden Record End to End Requirement Standards 1.2.0.
+Not in scope are the requirements of cleansing and enriching the business partner data records with the aim to create a Golden Record. There is a separate standard for this: CX-0076 Golden Record End to End Requirement Standards 1.3.0.
 
-You can find the other standards in the standard library of Catena-X: https://catena-x.net/en/standard-library.
+You can find the other standards in the [Catena-X standard library](https://catena-x.net/en/standard-library).
 
 ### 1.2 CONTEXT AND ARCHITECTURE FIT
 
@@ -65,15 +66,15 @@ The Pool API is a crucial core component in Catena-X and its platform capability
 3. Data Governance: The Pool API is the basis for a data governance framework and helps to enforce data quality standards, such as data completeness, accuracy, and consistency. This helps to ensure that business partner data is of high quality and can be trusted for use in various business processes.
 4. Interoperability: The Pool API provides an interoperable and standardized way to access business partner data, ensuring both Core Service Provider interchangeability and streamlined data accessibility for all consumers of the API.
 
-There is a reference implementation for the Pool API on GitHub. It is part of a Spring Boot Kotlin open-source software project under the hood of the Eclipse Foundation and follows the Apache 2.0 licenses.
+There is a reference implementation for the [Business Partner Data Pool API (6.1.x)](https://github.com/eclipse-tractusx/bpdm/tree/3579e50d6200b6a7ce2a9da811475cff4cbffe06/bpdm-pool-api/src/main/kotlin/org/eclipse/tractusx/bpdm/pool/api) on GitHub. It is part of a Spring Boot Kotlin open-source software project under the hood of the Eclipse Foundation and follows the Apache 2.0 licenses.
 
-For the complete and up-to-date API setup refer to the following website: https://github.com/eclipse-tractusx/bpdm
+For the complete and up-to-date BPDM setup refer to the [Eclipse Tractus-X BPDM GitHub repository (6.1.x)](https://github.com/eclipse-tractusx/bpdm/blob/3579e50d6200b6a7ce2a9da811475cff4cbffe06/README.md).
 
-For an architecture overview refer to the ARC42 documentation: https://github.com/eclipse-tractusx/bpdm/tree/92963a535c3c7bc9882afc885267ada6ed04930d/docs/arc42
+For an architecture overview refer to the [BPDM ARC42 documentation (6.1.x)](https://github.com/eclipse-tractusx/bpdm/tree/3579e50d6200b6a7ce2a9da811475cff4cbffe06/docs/architecture).
 
 To use the Pool API in the BPDM use case apart from this standard, the following other standards should be considered by all participants for which this standard is relevant:
 
-- CX-0018 Dataspace Connectivity 3.0.0
+- CX-0018 Dataspace Connectivity 3.1.0
 
 ### 1.3 CONFORMANCE AND PROOF OF CONFORMITY
 
@@ -81,7 +82,7 @@ To use the Pool API in the BPDM use case apart from this standard, the following
 
 If sections are marked as non-normative, all authoring guidelines, diagrams, examples, and notes in these sections are non-normative. Everything else in this specification is normative.
 
-The key words MAY, **MUST**, **MUST NOT**, **OPTIONAL**, **RECOMMENDED**, **REQUIRED**, **SHOULD** and **SHOULD NOT** in this document are to be interpreted as described in [BCP 14](https://datatracker.ietf.org/doc/html/bcp14) [[RFC2119](https://www.w3.org/TR/did-core/#bib-rfc2119)] [[RFC8174](https://www.w3.org/TR/did-core/#bib-rfc8174)] when, and only when, they appear in all capitals, as shown here.
+The key words **MAY**, **MUST**, **MUST NOT**, **OPTIONAL**, **RECOMMENDED**, **REQUIRED**, **SHOULD** and **SHOULD NOT** in this document are to be interpreted as described in [BCP 14](https://datatracker.ietf.org/doc/html/bcp14), [RFC2119](https://www.w3.org/TR/did-core/#bib-rfc2119), [RFC8174](https://www.w3.org/TR/did-core/#bib-rfc8174) when, and only when, they appear in all capitals, as shown here.
 
 All participants and their solutions will need to prove, that they are conform with the Catena-X standards. To validate that the standards are applied correctly, Catena-X employs Conformity Assessment Bodies (CABs).
 
@@ -113,7 +114,7 @@ This chapter explains the data model[^1] from a conceptual / terminology point o
 
 ##### 1.5.2.1 BUSINESS PARTNER
 
-![Business Partner](./assets/BusinessPartner.png)
+![Business Partner](./assets/diagrams/class/business-partner.png)
 
 In general, a business partner is any entity (such as a customer, a supplier, an employee, or a service provider) that does business with another entity.
 
@@ -123,7 +124,7 @@ BPDM distinguishes between three business partner types to represent an organiza
 
 ##### 1.5.2.2 LEGAL ENTITY
 
-![Legal Entity](./assets/LegalEntity.png)
+![Legal Entity](./assets/diagrams/class/legal-entity.png)
 
 In general, a legal entity is a juridical person that has legal rights and duties related to contracts, agreements, and obligations. The term especially applies to any kind of organization (such as an enterprise or company, university, association, etc.) established under the law applicable to a country.
 
@@ -166,7 +167,7 @@ A legal entity state indicates if the legal entity is active or inactive[^3]. Th
 
 ##### 1.5.2.3 SITE
 
-![Site](./assets/Site.png)
+![Site](./assets/diagrams/class/site.png)
 
 In general, a site is a delimited geographical area in which an organization (such as an enterprise or company, university, association, etc.) conducts business.
 
@@ -197,7 +198,7 @@ A site state indicates if the site is active or inactive[^4]. This does not desc
 
 ##### 1.5.2.4 ADDRESS
 
-![Address](./assets/Address.png)
+![Address](./assets/diagrams/class/address.png)
 
 In general, an address is a collection of information to describe a physical location, using a street name with a house number and/or a post office box as reference. In addition, an address consists of several postal attributes, such as country, region (state), county, township, city, district, or postal code, which help deliver mail.
 
@@ -241,34 +242,37 @@ An address state indicates if the address is active or inactive[^5]. This does n
 
 ##### 1.5.2.5 LEGAL FORM
 
+<!-- ![Address](./assets/diagrams/class/legal-form.png) -->
+
 A legal form is a mandatory corporate legal framework by which companies can conduct business, charitable or other permissible activities.
 
-| **Attribute** | **Description**                                                                                                                                     | **(Data) Type / Code List / Enumeration** |
-| ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------- |
-| Technical Key | The technical identifier of the legal form according to [ISO 20275](https://en.wikipedia.org/wiki/ISO_20275).                                       | String                                    |
-| Name          | The name of legal form according to [ISO 20275](https://en.wikipedia.org/wiki/ISO_20275).                                                           | String                                    |
-| Abbreviation  | The abbreviated name of the legal form according to [ISO 20275](https://en.wikipedia.org/wiki/ISO_20275), such as AG for German Aktiengesellschaft. | String                                    |
+| **Attribute** | **Description**                                                                                                                                                              | **(Data) Type / Code List / Enumeration** |
+| ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------- |
+| Technical Key | The technical identifier of the legal form according to [ISO 20275:2017](https://www.iso.org/obp/ui/en/#iso:std:iso:20275:ed-1:v1:en).                                       | String                                    |
+| Name          | The name of legal form according to [ISO 20275:2017](https://www.iso.org/obp/ui/en/#iso:std:iso:20275:ed-1:v1:en).                                                           | String                                    |
+| Abbreviation  | The abbreviated name of the legal form according to [ISO 20275:2017](https://www.iso.org/obp/ui/en/#iso:std:iso:20275:ed-1:v1:en), such as AG for German Aktiengesellschaft. | String                                    |
 
 ##### 1.5.2.6 PHYSICAL POSTAL ADDRESS
 
 A physical postal address describes the physical location of an office, warehouse, gate, etc.
 
-| **Attribute**               | **Description**                                                                                                                                                                                                                                                                    | **(Data) Type / Code List / Enumeration**                          |
-| --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ |
-| Geographic Coordinates      | The exact location of the physical postal address in latitude, longitude, and altitude.                                                                                                                                                                                            | [Geographic Coordinates](#1529-geographic-coordinates)             |
-| Country                     | The two-letter country code of the physical postal address according to [ISO 3166-1](https://en.wikipedia.org/wiki/ISO_3166-1).                                                                                                                                                    | String                                                             |
-| Administrative Area Level 1 | The administrative area of the physical postal address, such as a region within a country.                                                                                                                                                                                         | [Administrative Area (Level 1)](#1528-administrative-area-level-1) |
-| Administrative Area Level 2 | The name of the locally regulated secondary country subdivision of the physical postal address, such as county within a country.                                                                                                                                                   | String                                                             |
-| Administrative Area Level 3 | The name of the locally regulated tertiary country subdivision of the physical address, such as townships within a country.                                                                                                                                                        | String                                                             |
-| Postal Code                 | The alphanumeric identifier (sometimes including spaces or punctuation) of the physical [postal address](https://en.wikipedia.org/wiki/Address_(geography)) for the purpose of sorting [mail](https://en.wikipedia.org/wiki/Mail), synonyms: postcode, post code, PIN or ZIP code. | String                                                             |
-| City                        | The name of the city of the physical postal address, synonyms: town, village, municipality.                                                                                                                                                                                        | String                                                             |
-| District                    | The name of the district of the physical postal address which divides the city into several smaller areas.                                                                                                                                                                         | String                                                             |
-| Street                      | The street of the physical postal address, synonyms: road, avenue, lane, boulevard, highway                                                                                                                                                                                        | [Street](#15261-street)                                            |
-| Company Postal Code         | The company postal code of the physical postal address, which is sometimes required for large companies.                                                                                                                                                                           | String                                                             |
-| Industrial Zone             | The industrial zone of the physical postal address, designating an area for industrial development, synonym: industrial area.                                                                                                                                                      | String                                                             |
-| Building                    | The alphanumeric identifier of the building addressed by the physical postal address.                                                                                                                                                                                              | String                                                             |
-| Floor                       | The number of a floor in the building addressed by the physical postal address, synonym: level.                                                                                                                                                                                    | String                                                             |
-| Door                        | The number of a door in the building on the respective floor addressed by the physical postal address, synonyms: room, suite.                                                                                                                                                      | String                                                             |
+| **Attribute**               | **Description**                                                                                                                                                                                                          | **(Data) Type / Code List / Enumeration**                          |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------ |
+| Geographic Coordinates      | The exact location of the physical postal address in latitude, longitude, and altitude.                                                                                                                                  | [Geographic Coordinates](#1529-geographic-coordinates)             |
+| Country                     | The two-letter country code of the physical postal address according to [ISO 3166-1:2020](https://www.iso.org/obp/ui/en/#iso:std:iso:3166:-1:ed-4:v1:en).                                                                | String                                                             |
+| Administrative Area Level 1 | The administrative area of the physical postal address, such as a region within a country.                                                                                                                               | [Administrative Area (Level 1)](#1528-administrative-area-level-1) |
+| Administrative Area Level 2 | The name of the locally regulated secondary country subdivision of the physical postal address, such as county within a country.                                                                                         | String                                                             |
+| Administrative Area Level 3 | The name of the locally regulated tertiary country subdivision of the physical address, such as townships within a country.                                                                                              | String                                                             |
+| Postal Code                 | The alphanumeric identifier (sometimes including spaces or punctuation) of the physical postal address for the purpose of sorting mail, synonyms: postcode, post code, PIN or ZIP code.                                  | String                                                             |
+| City                        | The name of the city of the physical postal address, synonyms: town, village, municipality.                                                                                                                              | String                                                             |
+| District                    | The name of the district of the physical postal address which divides the city into several smaller areas.                                                                                                               | String                                                             |
+| Street                      | The street of the physical postal address, synonyms: road, avenue, lane, boulevard, highway                                                                                                                              | [Street](#15261-street)                                            |
+| Company Postal Code         | The company postal code of the physical postal address, which is sometimes required for large companies.                                                                                                                 | String                                                             |
+| Tax Jurisdiction Code       | The identifier of the particular geographic or governmental area to which the physical mailing address belongs and which is responsible for administering tax laws and collecting taxes from individuals and businesses. | String                                                             |
+| Industrial Zone             | The industrial zone of the physical postal address, designating an area for industrial development, synonym: industrial area.                                                                                            | String                                                             |
+| Building                    | The alphanumeric identifier of the building addressed by the physical postal address.                                                                                                                                    | String                                                             |
+| Floor                       | The number of a floor in the building addressed by the physical postal address, synonym: level.                                                                                                                          | String                                                             |
+| Door                        | The number of a door in the building on the respective floor addressed by the physical postal address, synonyms: room, suite.                                                                                            | String                                                             |
 
 ###### 1.5.2.6.1 STREET
 
@@ -293,9 +297,9 @@ An alternative postal address describes an alternative way of delivery for examp
 | **Attribute**               | **Description**                                                                                                                                                                                                                                                                                                                                                    | **(Data) Type / Code List / Enumeration**                          |
 | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------ |
 | Geographic Coordinates      | The exact location of the alternative postal address in latitude, longitude, and altitude.                                                                                                                                                                                                                                                                         | [Geographic Coordinates](#1529-geographic-coordinates)             |
-| Country                     | The two-letter country code of the postal address according to [ISO 3166-1](https://en.wikipedia.org/wiki/ISO_3166-1).                                                                                                                                                                                                                                             | String                                                             |
+| Country                     | The two-letter country code of the postal address according to [ISO 3166-1:2020](https://www.iso.org/obp/ui/en/#iso:std:iso:3166:-1:ed-4:v1:en)..                                                                                                                                                                                                                  | String                                                             |
 | Administrative Area Level 1 | The administrative area of the alternative postal address, such as a region within a country.                                                                                                                                                                                                                                                                      | [Administrative Area (Level 1)](#1528-administrative-area-level-1) |
-| Postal Code                 | The alphanumeric identifier (sometimes including spaces or punctuation) of the alternative [postal address](https://en.wikipedia.org/wiki/Address_(geography)) for the purpose of sorting [mail](https://en.wikipedia.org/wiki/Mail), synonyms: postcode, post code, PIN or ZIP code.                                                                              | String                                                             |
+| Postal Code                 | The alphanumeric identifier (sometimes including spaces or punctuation) of the alternative postal address for the purpose of sorting mail, synonyms: postcode, post code, PIN or ZIP code.                                                                                                                                                                         | String                                                             |
 | City                        | The name of the city of the alternative postal address, synonyms: town, village, municipality.                                                                                                                                                                                                                                                                     | String                                                             |
 | Delivery Service Type       | One of the alternative postal address types: P.O. box, private bag, boite postale.                                                                                                                                                                                                                                                                                 | Enum                                                               |
 | Delivery Service Qualifier  | The qualifier uniquely identifying the delivery service endpoint of the alternative postal address in conjunction with the delivery service number. In some countries for example, entering a P.O. box number, postal code and city is not sufficient to uniquely identify a P.O. box, because the same P.O. box number is assigned multiple times in some cities. | String                                                             |
@@ -303,16 +307,16 @@ An alternative postal address describes an alternative way of delivery for examp
 
 ##### 1.5.2.8 ADMINISTRATIVE AREA (LEVEL 1)
 
-An administrative area (level 1) is the country subdivision according to [ISO 3166-2](https://en.wikipedia.org/wiki/ISO_3166-2), such as regions within a country.
+An administrative area (level 1) is the country subdivision according to [ISO 3166-2:2020](https://www.iso.org/obp/ui/#iso:std:iso:3166:-2:ed-4:v1:en), such as regions within a country.
 
-| **Attribute** | **Description**                                                                                                                                                                                                                                                                                               | **(Data) Type / Code List / Enumeration** |
-| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------- |
-| Name          | The name of the country subdivision according to [ISO 3166-2](https://en.wikipedia.org/wiki/ISO_3166-2).                                                                                                                                                                                                      | String                                    |
-| Code          | The six-character alphanumeric code according to [ISO 3166-2](https://en.wikipedia.org/wiki/ISO_3166-2), consisting of the two-letter [ISO 3166-1](https://en.wikipedia.org/wiki/ISO_3166-1) country code and a three-character alphanumeric code for the subdivision in that country, separated by a hyphen. | String                                    |
+| **Attribute** | **Description**                                                                                                                                                                                                                                                                                                                                                | **(Data) Type / Code List / Enumeration** |
+| ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------- |
+| Name          | The name of the country subdivision according to [ISO 3166-2:2020](https://www.iso.org/obp/ui/#iso:std:iso:3166:-2:ed-4:v1:en).                                                                                                                                                                                                                                | String                                    |
+| Code          | The six-character alphanumeric code according to [ISO 3166-2:2020](https://www.iso.org/obp/ui/#iso:std:iso:3166:-2:ed-4:v1:en), consisting of the two-letter [ISO 3166-1:2020](https://www.iso.org/obp/ui/en/#iso:std:iso:3166:-1:ed-4:v1:en) country code and a three-character alphanumeric code for the subdivision in that country, separated by a hyphen. | String                                    |
 
 ##### 1.5.2.9 GEOGRAPHIC COORDINATES
 
-Geographic coordinates describe an exact location in latitude, longitude, and altitude, according to [ISO 6709](https://en.wikipedia.org/wiki/ISO_6709) with [WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System#WGS84) as the currently only supported coordinate reference system.
+Geographic coordinates describe an exact location in latitude, longitude, and altitude, according to [ISO 6709:2022](https://www.iso.org/obp/ui/en/#iso:std:iso:6709:ed-3:v1:en) with [WGS 84 (NGA STND 0036 1.0.0)](https://nsgreg.nga.mil/doc/view?i=4085) as the currently only supported coordinate reference system.
 
 | **Attribute** | **Description**                                                                                                                                                                                   | **(Data) Type / Code List / Enumeration** |
 | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------- |
@@ -322,7 +326,7 @@ Geographic coordinates describe an exact location in latitude, longitude, and al
 
 ##### 1.5.2.10 IDENTIFIER TYPE
 
-![Identifier Type](./assets/IdentifierType.png)
+![Identifier Type](./assets/diagrams/class/identifier-type.png)
 
 An identifier type defines the name or category of an identifier, such as the German Handelsregisternummer, VAT number, Global Location Number (GLN), etc. The identifier type is valid for a business partner type and used in a specific country.
 
@@ -334,7 +338,7 @@ An identifier type defines the name or category of an identifier, such as the Ge
 
 ##### 1.5.2.11 CHANGELOG ENTRY
 
-![Changelog Entry](./assets/ChangelogEntry.png)
+![Changelog Entry](./assets/diagrams/class/changelog-entry.png)
 
 An entry of the changelog, which is created each time a business partner is modified and contains data about the change. The actual new state of the business partner is not included.
 
@@ -347,7 +351,7 @@ An entry of the changelog, which is created each time a business partner is modi
 
 ##### 1.5.2.12 IDENTIFIER MAPPING ENTRY
 
-![Identifier Mapping Entry](./assets/IdentifierMappingEntry.png)
+![Identifier Mapping Entry](./assets/diagrams/class/identifier-mapping-entry.png)
 
 An identifier mapping entry of a specific identifier (of a specific identifier type) to a BPNL, BPNS or BPNA.
 
@@ -358,17 +362,17 @@ An identifier mapping entry of a specific identifier (of a specific identifier t
 
 ## 2 BUSINESS PARTNER POOL API \[NORMATIVE\]
 
-The Business Partner Pool API enables the access to Golden Record business partner data and provides it to other Catena-X services and consumers. The Pool API **MUST** be implemented based on the [OpenAPI 3.0.1 specification](https://github.com/OAI/OpenAPI-Specification/blob/465fcb3abfcfb43f7ac8cc2c47495bcb1f485b01/versions/3.0.1.md).
+The Business Partner Gate API allows to upload and download business partner data records to improve their quality and enrich them with additional information. The Gate API **MUST** be implemented based on the [OpenAPI specification (3.0.1)](https://github.com/OAI/OpenAPI-Specification/blob/761a0797ebf2e35e687ebef07741d1c10675e08c/versions/3.0.1.md).
 
 ### 2.1 PRECONDITIONS AND DEPENDENCIES
 
-To run the API the following **SHOULD** be set up: https://github.com/eclipse-tractusx/bpdm/blob/92963a535c3c7bc9882afc885267ada6ed04930d/README.md
+To run the API, the technical components described in the [Eclipse Tractus-X BPDM GitHub repository (6.1.x)](https://github.com/eclipse-tractusx/bpdm/blob/3579e50d6200b6a7ce2a9da811475cff4cbffe06/README.md) **SHOULD** be set up.
 
 ### 2.2 API SPECIFICATION
 
 #### 2.2.1 API ENDPOINTS & RESOURCES
 
-The Pool API **MUST** be implemented as defined in the following OpenAPI document: https://raw.githubusercontent.com/eclipse-tractusx/bpdm/release/6.0.x/docs/api/pool.json
+The Gate API **MUST** be implemented as defined in the following OpenAPI document: [Business Partner Data Pool OpenAPI specification (6.1.x)](https://github.com/eclipse-tractusx/bpdm/blob/3579e50d6200b6a7ce2a9da811475cff4cbffe06/docs/api/pool.json)
 
 The resources **MUST** use the well-known HTTP request methods for CRU(D) operations:
 
@@ -400,11 +404,11 @@ The legal entity controller **MUST** allow to create, update, or read business p
 | POST/legal-entities                   | Creates a new legal entity.                                                                              |
 | PUT/legal-entities                    | Updates an existing legal entity.                                                                        |
 | GET/legal-entities                    | Returns legal entities by different search parameters.                                                   |
-| GET/legal-entities/\{idValue\}          | Returns a legal entity by an identifier, like BPNL, DUNS or EU VAT ID, specified by the identifier type. |
+| GET/legal-entities/\{idValue\}        | Returns a legal entity by an identifier, like BPNL, DUNS or EU VAT ID, specified by the identifier type. |
 | POST/legal-entities/search            | Returns legal entities by an array of BPNL.                                                              |
 | POST/members/legal-entities/search    | Returns only legal entities by an array of BPNL, which are owned by Catena-X Members.                    |
-| GET/legal-entities/\{bpnl\}/sites       | Returns all sites of a legal entity with a specific BPNL.                                                |
-| GET/legal-entities/\{bpnl\}/addresses   | Returns all addresses of a legal entity with a specific BPNL.                                            |
+| GET/legal-entities/\{bpnl\}/sites     | Returns all sites of a legal entity with a specific BPNL.                                                |
+| GET/legal-entities/\{bpnl\}/addresses | Returns all addresses of a legal entity with a specific BPNL.                                            |
 
 ##### 2.2.1.2 SITE CONTROLLER
 
@@ -415,7 +419,7 @@ The site controller **MUST** allow to create, update, or read business partners 
 | POST/sites                    | Creates a new site.                                                                                                |
 | PUT/sites                     | Updates an existing site.                                                                                          |
 | GET/sites                     | Returns sites by different search parameters.                                                                      |
-| GET/sites/\{bpns\}              | Returns a site by its BPNS.                                                                                        |
+| GET/sites/\{bpns\}            | Returns a site by its BPNS.                                                                                        |
 | POST/sites/search             | Returns sites by an array of BPNS and/or an array of corresponding BPNL.                                           |
 | POST/members/sites/search     | Returns only sites by an array of BPNS and/or an array of corresponding BPNL, which are owned by Catena-X Members. |
 
@@ -428,7 +432,7 @@ The address controller **MUST** allow to create, update, or read business partne
 | POST/addresses                   | Creates a new address.                                                                                                                                       |
 | PUT/addresses                    | Updates an existing address.                                                                                                                                 |
 | GET/addresses                    | Returns addresses by different search parameters.                                                                                                            |
-| GET/addresses/\{bpna\}             | Returns an address by its BPNA.                                                                                                                              |
+| GET/addresses/\{bpna\}           | Returns an address by its BPNA.                                                                                                                              |
 | POST/addresses/search            | Returns addresses by an array of BPNA and/or an array of corresponding BPNS and/or an array of corresponding BPNL.                                           |
 | POST/members/addresses/search    | Returns only addresses by an array of BPNA and/or an array of corresponding BPNS and/or an array of corresponding BPNL, which are owned by Catena-X Members. |
 
@@ -472,7 +476,7 @@ The following data assets **MUST** be registered at the Core Service Provider so
 
 | **Type** | **Subject**                    | **Version** | **Description**                                                                                                                                                                                                                                                                                          |
 | -------- | ------------------------------ | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| BPDMPool | ReadAccessPoolForCatenaXMember | 6.0         | Grants the Catena-X Member read access to the Pool API. This can be used to read legal entity, site, address, legal form, identifier type and administrative area level 1 data. To that end, it also grants read access to the respective changelog and identifier mappings, as well as relational data. |
+| BPDMPool | ReadAccessPoolForCatenaXMember | 6.1           | Grants the Catena-X Member read access to the Pool API. This can be used to read legal entity, site, address, legal form, identifier type and administrative area level 1 data. To that end, it also grants read access to the respective changelog and identifier mappings, as well as relational data. |
 
 Read access for legal entities, sites and address **MUST** be restricted to Catena-X Member data (see the corresponding attribute for legal entity, site and address), because the Pool may also contain legal entities, sites and address, which are not owned by Catena-X Members.
 
@@ -497,7 +501,7 @@ Example data asset ([*dct:type*](https://purl.org/dc/terms/type) for asset type,
           "@id": "cx-taxo:ReadAccessPoolForCatenaXMember"
         },
         "dct:description": "Grants the Catena-X Member read access to the Pool API. This can be used to read legal entity, site, address, legal form, identifier type and administrative area level 1 data. To that end, it also grants read access to the respective changelog entries and identifier mappings, as well as relational data.",
-        "cx-common:version": "6.0"
+        "cx-common:version": "6.1"
     },
     "dataAddress": {
         "@type": "DataAddress",
@@ -527,7 +531,7 @@ The following http response codes **MUST** be defined for all resources:
 - 404 - Not Found
 - 500 - Internal Server Error
 
-HTTP Status Code Registry **MUST** be adhered to in the implementation for the decision on when to use which error code: https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml
+The [IANA HTTP Status Code Registry](https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml) **MUST** be adhered to for the decision on when to use which error code.
 
 #### 2.2.5 ADDITIONAL REQUIREMENTS
 
@@ -564,26 +568,31 @@ Details on  namespaces and ODRL policy rule values to be used for the above-ment
 
 ### 3.1 NORMATIVE REFERENCES
 
-- [Pool API specification 6.0.x](https://raw.githubusercontent.com/eclipse-tractusx/bpdm/release/6.0.x/docs/api/pool.json)
-- [ISO 20275](https://en.wikipedia.org/wiki/ISO_20275)
-- [ISO 3166](https://www.iso.org/iso-3166-country-codes.html)
-  - [ISO 3166-1](https://en.wikipedia.org/wiki/ISO_3166-1)
-  - [ISO 3166-2](https://en.wikipedia.org/wiki/ISO_3166-2)
-
-- [ISO 6709](https://en.wikipedia.org/wiki/ISO_6709)
-- [WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System#WGS84)
+- [ISO 20275:2017](https://www.iso.org/obp/ui/en/#iso:std:iso:20275:ed-1:v1:en)
+- [ISO 3166-1:2020](https://www.iso.org/obp/ui/en/#iso:std:iso:3166:-1:ed-4:v1:en)
+- [ISO 3166-2:2020](https://www.iso.org/obp/ui/#iso:std:iso:3166:-2:ed-4:v1:en)
+- [ISO 6709:2022](https://www.iso.org/obp/ui/en/#iso:std:iso:6709:ed-3:v1:en)
+- [WGS 84 (NGA STND 0036 1.0.0)](https://nsgreg.nga.mil/doc/view?i=4085)
+- [OpenAPI specification (3.0.1)](https://github.com/OAI/OpenAPI-Specification/blob/761a0797ebf2e35e687ebef07741d1c10675e08c/versions/3.0.1.md)
+- [Eclipse Tractus-X BPDM GitHub Repository (6.1.x)](https://github.com/eclipse-tractusx/bpdm/blob/3579e50d6200b6a7ce2a9da811475cff4cbffe06/README.md)
+- [Business Partner Data Pool OpenAPI specification (6.1.x)](https://github.com/eclipse-tractusx/bpdm/blob/3579e50d6200b6a7ce2a9da811475cff4cbffe06/docs/api/pool.json)
+- [IANA HTTP Status Code Registry (from 2022-06-08)](https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml)
+- [ODRL policy repository](https://github.com/catenax-eV/cx-odrl-profile) (accessed 2024-10-02)
 
 ### 3.2 NON-NORMATIVE REFERENCES
 
 > *This section is non-normative*
 
-- [BPDM Catena-X Website](https://catena-x.net/en/offers-standards/bpdm)
+- [BPDM Catena-X Website](https://catena-x.net/en/offers-standards/bpdm) (accessed 2024-10-02)
+- [Catena-X standard library](https://catena-x.net/en/standard-library) (accessed 2024-10-02)
 
 ### 3.3 REFERENCE IMPLEMENTATIONS
 
 > *This section is non-normative*
 
-- [Business Partner Pool API 6.0.x](https://github.com/eclipse-tractusx/bpdm/tree/92963a535c3c7bc9882afc885267ada6ed04930d/bpdm-pool-api/src/main/kotlin/org/eclipse/tractusx/bpdm/pool/api)
+- [Business Partner Data Pool API (6.1.x)](https://github.com/eclipse-tractusx/bpdm/tree/3579e50d6200b6a7ce2a9da811475cff4cbffe06/bpdm-pool-api/src/main/kotlin/org/eclipse/tractusx/bpdm/pool/api)
+- [Eclipse Tractus-X BPDM GitHub repository (6.1.x)](https://github.com/eclipse-tractusx/bpdm/blob/3579e50d6200b6a7ce2a9da811475cff4cbffe06/README.md)
+- [BPDM ARC42 documentation (6.1.x)](https://github.com/eclipse-tractusx/bpdm/tree/3579e50d6200b6a7ce2a9da811475cff4cbffe06/docs/architecture)
 
 ## ANNEXES
 

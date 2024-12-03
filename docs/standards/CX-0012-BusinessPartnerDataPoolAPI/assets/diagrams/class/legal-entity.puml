@@ -1,0 +1,117 @@
+@startuml legal-entity
+
+package "Legal Entity and References" {
+  entity LegalEntity {
+    BPNL
+    LegalName
+    ShortName
+    IsCatenaXMemberData
+    CreatedAt
+    UpdateAt
+  }
+
+  entity Site {
+      BPNS
+      ...
+  }
+
+  entity Address {
+      BPNA
+      ...
+  }
+
+  class LegalEntityState {
+    ValidFrom
+    ValidTo
+  }
+
+  enum LegalEntityStateType {
+    Active
+    Inactive
+  }
+
+  class LegalEntityIdentifier {
+    Value
+    IssuingBody
+  }
+
+  entity IdentifierType {
+    TechnicalKey
+    Name
+    ...
+  }
+
+  ' taken out from 24.05, as not clear if this is modelled correctly
+  ' class Classification {
+  '   Value
+  '   Code
+  ' }
+
+  ' enum ClassificationType {
+  '   NACE
+  '   NAF
+  '   NAICS
+  '   SIC
+  ' }
+
+  entity LegalForm {
+    TechnicalKey
+    ...
+  }
+
+  class LegalAddress {}
+
+  ' not standardized yet
+  ' class ConfidenceCriteria {
+  '   SharedByOwner
+  '   CheckedByExternalSource
+  '   NumberOfSharingMembers
+  '   LastConfidenceCheckAt
+  '   NextConfidenceCheckAt
+  '   ConfidenceLevel
+  ' }
+
+  ' not implemented / standardized yet
+  ' class LegalEntityScriptVariant {
+  '   LegalName
+  '   ShortName
+  ' }
+
+  ' enum ScriptCode {
+  '   Arab
+  '   Cyrl
+  '   Hans
+  '   Jpan
+  '   Latn
+  '   ...
+  ' }
+
+  Address "1..*" -d-o "1" LegalEntity : LegalEntityBPN
+  Site "*" -d-o "1" LegalEntity : LegalEntityBPN
+
+  LegalEntity "1" *-l-> "*" LegalEntityState : States
+  LegalEntityState "*" -d-o "1" LegalEntityStateType : Type
+  
+  LegalEntity "1" *-d-> "*" LegalEntityIdentifier : Identifiers
+  LegalEntityIdentifier "*" -d-o "1" IdentifierType : Type
+  
+  ' taken out from 24.05, as not clear if this is modelled correctly
+  ' LegalEntity "1" *-d-> "*" Classification : Classifications
+  ' Classification "*" -d-o "1" ClassificationType : Type
+  
+  LegalEntity "*" -d-o "0..1" LegalForm : LegalForm
+
+  LegalEntity "1" -r-> "1" LegalAddress : LegalAddress
+  LegalAddress -u-|> Address
+
+  ' not standardized yet
+  ' LegalEntity "1" -u-> "1" ConfidenceCriteria : ConfidenceCriteria
+
+  ' not implemented / standardized yet
+  ' LegalEntity "1" *--> "*" LegalEntityScriptVariant : ScriptVariants
+  ' LegalEntityScriptVariant "*" --o "1" ScriptCode : ScriptCode
+}
+
+hide methods
+hide LegalAddress members
+@enduml

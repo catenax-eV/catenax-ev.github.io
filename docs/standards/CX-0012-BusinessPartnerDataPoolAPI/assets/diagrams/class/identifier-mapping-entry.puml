@@ -1,0 +1,15 @@
+@startuml identifier-mapping-entry
+
+package "Identifier Mapping Entry and References" {
+  abstract class BusinessPartner {}
+  
+  entity IdentifierMappingEntry {
+    IdentifierValue
+  }
+
+  IdentifierMappingEntry "*" .u.> "1" BusinessPartner : BPN
+}
+
+hide methods
+hide BusinessPartner members
+@enduml

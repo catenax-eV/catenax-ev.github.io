@@ -3,7 +3,7 @@ tags:
   - CAT/Value Added Services
 ---
 
-# CX-0078 Bank Data Verification Dashboard v1.2.0
+# CX-0078 Bank Data Verification Dashboard v1.2.1
 
 ## ABSTRACT
 
@@ -23,7 +23,8 @@ BDV has to contain a user and authorization management capability aligned with t
 | **Version** | **Publishing Date** | **Description of Change**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | ----------- | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 |1.2.0       | 2024-03-24          | Corrected 2.3. - country list, Added chapter 3.4 Data Types and 3.5 Data Attributes, Added chapter 3.6 for data sovereignty as additional requirement.
-1.2.0       | 2024-04-09         | Corrected 2.3. - Enhanced usage policies of BDV API                                                                                                                                                                                    |
+1.2.0       | 2024-04-09         | Corrected 2.3. - Enhanced usage policies of BDV API
+|1.2.1       | 2024-09-04         | Moved BDV Style Guide reference from Normative Section to Non-Normative Section
 
 ## 1 INTRODUCTION
 
@@ -232,7 +233,6 @@ BDV MUST contain the following dashboard-based functionalities:
 8. Search function
 9. BDV dashboard settings by time, KPI, layout and view, country, language limited to German and English
 
-> The BDV dashboard design MUST use the Catena-X style guide. See details under confluence.catena-x.net/display/CORE/CX+Style+Guide
 
 ## 3 BDV API
 
