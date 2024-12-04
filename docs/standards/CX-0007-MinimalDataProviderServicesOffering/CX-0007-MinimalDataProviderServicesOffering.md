@@ -2,15 +2,7 @@
 
 ## 1. INTRODUCTION
 
-Data provisioning is one of the key success factors for a data space, as
-without data offers, there is nothing to consume with the various
-business applications that data consumers will use. While it is
-relatively easy for large enterprises with extensive IT capabilities to
-connect their backend systems to the Catena-X landscape, providing data
-is a challenging task for SMEs and non-tech savvy companies. Thus,
-simple to use tools for data provisioning - such as excel upload tools
-- are needed, which can be operated by regular employees without
-sophisticated IT skills.
+Data provisioning is one of the key success factors for a data space, as without data offers, there is nothing to consume with the various business applications that data consumers will use. While it is relatively easy for large enterprises with extensive IT capabilities to connect their backend systems to the Catena-X landscape, providing data is a challenging task for SMEs and non-tech savvy companies. Thus, simple to use tools for data provisioning - such as excel upload tools - are needed, which can be operated by regular employees without sophisticated IT skills.
 
 The purpose of this document is to describe the necessary functional
 building blocks of a minimal data provider service, as well as to give
@@ -450,7 +442,7 @@ of the tool with the Catena-X IdP for a SSO integration.
 As long as not specified differently, the latest version of the standard **MUST** be applied.
 
 - CX-0013 Identity of Member Companies
-- CX-0018 Dataspace Connectivity 
+- CX-0018 Dataspace Connectivity
 - CX-0149 Data Space Identity and Identification
 
 ### 3.2 NON-NORMATIVE REFERENCES

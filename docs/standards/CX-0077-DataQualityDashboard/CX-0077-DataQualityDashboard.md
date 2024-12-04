@@ -8,7 +8,7 @@ tags:
 ## ABSTRACT
 
 The Data Quality Dashboard (DQD) has to rely on a set of clearly defined quality rules
-which is the basis of the Golden Record Process and secures the syntactical and logical correctness of mission-critical business partner data attributes. To secure global consistency the DQD rule relies on defined ISO norms as defined in this document- – see Standardization Document CX-0076 Version 1.1.0, Golden Record EndtoEnd Requirements Standard. DQD has to capture at least 112 countries based on ISO 3166-1. DQD has to validate BP data records in the Inbound and Outbound Persistence of the related Catena-X (CX) Member who licensed DQD. Each DQD rule has to validate the syntactical correctness of defined mandatory, regulatory required and optional BP data record attributes related to the specific regulations by the country authorized institutions. DQD furthermore has to rely on the following Standards: ISO 3166-1, ISO 20275, ISO 01-140-10, ISO 8601, ISO/IEC 8859-1.
+which is the basis of the Golden Record Process and secures the syntactical and logical correctness of mission-critical business partner data attributes. To secure global consistency the DQD rule relies on defined ISO norms as defined in this document – see Standardization Document CX-0076 Version 1.1.0, Golden Record EndtoEnd Requirements Standard. DQD has to capture at least 112 countries based on ISO 3166-1. DQD has to validate BP data records in the Inbound and Outbound Persistence of the related Catena-X (CX) Member who licensed DQD. Each DQD rule has to validate the syntactical correctness of defined mandatory, regulatory required and optional BP data record attributes related to the specific regulations by the country authorized institutions. DQD furthermore has to rely on the following Standards: ISO 3166-1, ISO 20275, ISO 01-140-10, ISO 8601, ISO/IEC 8859-1.
 
 DQD has to visualize the outcome of the data quality rules via a dashboard.
 The DQD dashboard design relies on the Catena-X style guide. See details under:
@@ -239,7 +239,6 @@ The DQD Dashboard MUST provide the capabilities:
 1. DQD contains a help function
 1. DQD contains the capability to change layout and view setting by user
 1. DQD contains an admin screen which enables user specific settings like layout and view settings, KPI target and threshold settings
-
 
 ## 3.0 DQD API
 

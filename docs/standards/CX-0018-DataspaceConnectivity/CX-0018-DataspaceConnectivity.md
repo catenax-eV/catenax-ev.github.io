@@ -210,7 +210,7 @@ policies that Data Providers and Data Consumers SHOULD include in their offers a
 Note: The list is available in machine-readable form with links to the respective legal documents in the
 [CX-ODRL-Profile](#odrl-profile).
 
-Each Data Offer visible in a Provider's `dcat:Catalog` MUST include at least an `odrl:Constraint` according to the definition of _UseCaseContraint_ as defined above.
+Each Data Offer visible in a Provider's `dcat:Catalog` MUST include at least an `odrl:Constraint` according to the definition of *UseCaseContraint* as defined above.
 
 Providers SHOULD chain constraints (if necessary) via `odrl:and`. Examples can be found
 in [CX-ODRL-Profile](#odrl-profile).

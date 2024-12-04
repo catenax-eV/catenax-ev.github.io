@@ -203,7 +203,6 @@ The SWD Dashboard MUST provide the following results:
 5. Sanction Watchlist Weighting settings
 6. Language setting for German and English
 
-
 ## 3 SWD API
 
 ### 3.1 API ENDPOINTS AND RESOURCES

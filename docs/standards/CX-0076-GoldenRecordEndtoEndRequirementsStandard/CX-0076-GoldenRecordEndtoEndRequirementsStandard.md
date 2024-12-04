@@ -5,14 +5,9 @@ tags:
 
 # CX-0076 - Golden Record End-to-End Requirements Standard v.1.3.0
 
-
 ## FOR WHOM IS THE STANDARD DESIGNED
 
 See chapter 1.1 Audience & Scope
-
-
-
-
 
 ## COMPARISON WITH THE PREVIOUS VERSION OF THE STANDARD
 
@@ -452,4 +447,3 @@ Intentionally left blank.
 ### LEGAL
 
 Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).
-

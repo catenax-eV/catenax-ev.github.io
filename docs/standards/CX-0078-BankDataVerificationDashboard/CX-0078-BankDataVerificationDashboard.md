@@ -233,7 +233,6 @@ BDV MUST contain the following dashboard-based functionalities:
 8. Search function
 9. BDV dashboard settings by time, KPI, layout and view, country, language limited to German and English
 
-
 ## 3 BDV API
 
 ### 3.1 API ENDPOINTS AND RESOURCES

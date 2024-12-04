@@ -106,7 +106,7 @@ If a participant or application only implements either the business role custome
 
 **Proof of Conformity for Data Models**
 
-Participants must implement and conform to the standardized data models as described in [Chapter 3](#3-aspect-models). Depending on which business role a participant or application implements only parts of [Chapter 3](#3-aspect-models) are relevant for conformity. 
+Participants must implement and conform to the standardized data models as described in [Chapter 3](#3-aspect-models). Depending on which business role a participant or application implements only parts of [Chapter 3](#3-aspect-models) are relevant for conformity.
 
 |Data model|Business role|Relevant capability|
 |--|--|--|
@@ -119,7 +119,7 @@ Participants must implement and conform to the standardized data models as descr
 
 **Proof of Conformity for APIs**
 
-Participants must implement and conform to the standardized APIs as described in [Chapter 4](#4-application-programming-interfaces). Depending on which business role a participant or application implements only parts of [Chapter 4](#4-application-programming-interfaces) are relevant for conformity. 
+Participants must implement and conform to the standardized APIs as described in [Chapter 4](#4-application-programming-interfaces). Depending on which business role a participant or application implements only parts of [Chapter 4](#4-application-programming-interfaces) are relevant for conformity.
 
 |API taxonomy|Business role|Relevant capability|
 |--|--|--|
@@ -133,7 +133,7 @@ Participants must implement and conform to the standardized APIs as described in
 
 **Proof of Conformity for Process and Core Business Logic**
 
-Participants must implement and conform to the DCM core business logic as described in [Chapter 5](#5-processes). Depending on which business role a participant or application implements only parts of [Chapter 5](#5-processes) are relevant for conformity. 
+Participants must implement and conform to the DCM core business logic as described in [Chapter 5](#5-processes). Depending on which business role a participant or application implements only parts of [Chapter 5](#5-processes) are relevant for conformity.
 
 |Relevant process step|Business role|
 |--|--|
@@ -2156,7 +2156,6 @@ A key aspect of managing business partner relationships within Catena-X involves
 | **Access Policy** | BPN-restricted Data Usage | Limit access to the data offered to a list of specified BPNs (to the connectors with the BPN attribute listed in the policy) |
 | **Access Policy** | Membership Credential | Limit access to data offered to Catena-X participants |
 | **Usage Policy** | DataExchangeGovernance:1.0 | Limit access to data offered to participants who have agreed to the *Data Exchange Governance* framework agreement |
-
 
 ## 7 REFERENCES
 
