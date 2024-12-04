@@ -279,7 +279,7 @@ Every new aspect model **MUST** be conformant to the version of the Semantic Asp
 
 ### 2.3 Creation and Maintenance
 
-Every aspect model released in Catena-X **MUST** be maintained in Eclipse Tractus-X: [https://github.com/eclipse-tractusx/sldt-semantic-models](SLDT-Semantic-Models).
+Every aspect model released in Catena-X **MUST** be maintained in Eclipse Tractus-X: [SLDT-Semantic-Models](https://github.com/eclipse-tractusx/sldt-semantic-models).
 
 Every semantic model **MUST** have a unique identifier conformant to the meta model identifiers definition in [SAMM](#2-semantic-aspect-meta-model-samm). For the semantic models developed in the scope of Catena-X the unique identifier **MUST** start with
 
