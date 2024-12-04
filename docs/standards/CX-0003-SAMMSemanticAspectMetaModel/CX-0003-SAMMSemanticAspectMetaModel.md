@@ -273,7 +273,7 @@ complement a digital twin with a semantic foundation.
 The complete specification and further information about its
 implementation and requirements can be accessed via the [Eclipse Semantic Modeling Framework (ESMF)][https://eclipse-esmf.github.io/samm-specification/snapshot/index.html](https://eclipse-esmf.github.io/samm-specification/snapshot/index.html).
 
-Every aspect model within the Eclipse Tractus-X repository [https://github.com/eclipse-tractusx/sldt-semantic-models](SLDT-Semantic-Models) that has status "released" **MUST** be conformant to the Semantic Aspect Meta Model.
+Every aspect model within the Eclipse Tractus-X repository [SLDT-Semantic-Models](https://github.com/eclipse-tractusx/sldt-semantic-models) that has status "released" **MUST** be conformant to the Semantic Aspect Meta Model.
 
 Every new aspect model **MUST** be conformant to the version of the Semantic Aspect Meta Model as noted in the [normative reference](#31-normative-references) [SAMM](#2-semantic-aspect-meta-model-samm).
 
@@ -294,7 +294,7 @@ recycling\":
 urn:samm:io.catenax.material_for_recycling:1.0.0#MaterialForRecylcing
 ```
 
-The governance process for new, updated or deprecated aspect models **MUST** be followed. The governance process for new, updated or deprecated aspect models is defined by Catena-X e.V. Additionally, the governance process is described directly in the Eclipse Tractus-X project: [https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/documentation/GOVERNANCE.md](GOVERNANCE.md).
+The governance process for new, updated or deprecated aspect models **MUST** be followed. The governance process for new, updated or deprecated aspect models is defined by Catena-X e.V. Additionally, the governance process is described directly in the Eclipse Tractus-X project: [GOVERNANCE.md](https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/documentation/GOVERNANCE.md).
 
 NOTE: Older versions of already released or published aspect models **MAY** start with
 
