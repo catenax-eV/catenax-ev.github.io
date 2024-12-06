@@ -1,8 +1,8 @@
 # Release Notes
 
-:::info
+:::note[Reminder]
 
-For more information, on the **legal notice** please visit [here](https://catenax-ev.github.io/copyright).
+For the **legal notice** please visit [here](https://catenax-ev.github.io/copyright).
 
 :::
 
