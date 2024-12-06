@@ -4,7 +4,7 @@ Effective management of versions and changes for Catena-X standards, KITs and op
 
 ## Support Dates
 
-![Support Dates](/img/support-dates.jpg)
+[![Support Dates](@site/static/img/support-dates.jpg)](@site/static/img/support-dates.jpg)
 
 ## Consistency and Compatibility
 
@@ -38,7 +38,7 @@ Based on the first experiences in live operation, the release management for the
 
 ## Rationale for Changes
 
-![Release Timeline](/img/release-schedule.png)
+[![Release Timeline](@site/static/img/release-schedule.png)](@site/static/img/release-schedule.png)
 
 These changes allow all stakeholders to take advantage of quality-assured dependency and compatibility management, and better predictability for the operational deployment and certification phase.
 

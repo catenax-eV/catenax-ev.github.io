@@ -5,6 +5,16 @@ sidebar_position: 1
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [3.0.3]
+
+### Changed
+
+- How: Data Space Governance
+  - Removed category "qualification through existing experience"
+  - Removed illustration of process
+  - Merged "Who do we qualify" with "Guidelines of qualification use"
+  - Added link to Catena-X Campus
+
 ## [3.0.2]
 
 ### Changed

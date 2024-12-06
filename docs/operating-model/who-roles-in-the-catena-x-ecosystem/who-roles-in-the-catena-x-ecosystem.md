@@ -283,5 +283,5 @@ Given that the Catena-X brand derives much of its value throug trust, Catena-X S
 **Prerequisites and Limitations:**
 
 - As a BETA service, an SP and its services must not yet be certified by a CAB. Instead, operating a Catena-X Sandbox requires specific approval from the Catena-X Association and the signing of a self-assessment.
-- Any approval granted to operate a Catena-X Sandbox is limited until the end of 2024.
+- Any approval granted to operate a Catena-X Sandbox is limited until October 2024.
 - An SP is responsible for upholding certification verifications and checks for compliance with the Catena-X governance framework, given that a direct connection with the CSP-B is currently infeasible. Thereby, the Catena-X Association and the CSP-B are also not responsible or liable for any SLAs provided by the SP.
