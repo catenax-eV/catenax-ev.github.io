@@ -1,0 +1,40 @@
+@startuml legal-address
+
+package "Business Parter (Legal Address)" {
+  object LegalEntity {
+    LegalName = "Dr. Ing. h.c. F. Porsche Aktiengesellschaft"
+    ShortName = "Porsche AG"
+  }
+
+  object Address1 {
+    Name = ""
+    Country = "DE"
+    City = "Stuttgart"
+    PostalCode = "70435"
+    Street = "Porscheplatz"
+    HouseNumber = "1"
+  }
+
+  object BusinessPartner {
+    AddressType = "LegalAddress"
+    NameParts = [
+      "Dr. Ing. h.c. F. Porsche", 
+      "Aktiengesellschaft", 
+      "", 
+      ""]
+    ShortName = "Porsche AG"
+    Country = "DE"
+    City = "Stuttgart"
+    PostalCode = "70435"
+    Street = "Porscheplatz"
+    HouseNumber = "1"
+  }
+
+  BusinessPartner -r-> LegalEntity : BPNL
+  BusinessPartner -r-> Address1 : BPNA
+  LegalEntity .d.> Address1 : LegalAddress
+  Address1 -u-> LegalEntity : BPNL
+}
+
+@enduml
+

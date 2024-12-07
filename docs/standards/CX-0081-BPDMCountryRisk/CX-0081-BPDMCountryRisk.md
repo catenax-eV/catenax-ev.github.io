@@ -318,7 +318,7 @@ The following data asset MUST be registered at the Core Service Provider so that
 
 | **Name**                                  | **Type**       | **Version** | **Description**                                                                                                                                                                                                                                                                                                                                                                               |
 |-------------------------------------------|----------------|-------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| FullAccessCountryRiskSharingForVASUser    | CountryRisk    | 1.3.1       | Grants unrestricted access to business partner data for the Data Consumer of the Country Risk Dashboard and Sharing API. This includes data identified via BPN and enriched from the pool. It allows the use of risk categorizations from various indices within the data consumer's company. Data usage is covered by the framework agreement for the gate.                           |
+| FullAccessCountryRiskSharingForVASUser    | CountryRisk    | 1.3.1       | Grants unrestricted access to business partner data for the Data Consumer of the Country Risk Dashboard and Sharing API. This includes data identified via BPN and enriched from the pool. It allows the use of risk categorizations from various indices within the data consumer's company. Data usage is covered by the *Data Exchange Governance* framework agreement.                           |
 
 For each read resource in the Sharing Country Risk API there MUST be a dedicated Data asset definition.
 
@@ -341,7 +341,7 @@ Example data asset:
           "@id": "cx-taxo:FullAccessCountryRiskSharingForVASUser"
         },
         "cx-common:version": "1.3.1",
-      "cx-common:description": "Grants unrestricted access to business partner data for the Data Consumer of the Country Risk Dashboard and Sharing API. This includes data identified via BPN and enriched from the pool. It allows the use of risk categorizations from various indices within the data consumer's company. Data usage is covered by the framework agreement for the gate."
+      "cx-common:description": "Grants unrestricted access to business partner data for the Data Consumer of the Country Risk Dashboard and Sharing API. This includes data identified via BPN and enriched from the pool. It allows the use of risk categorizations from various indices within the data consumer's company. Data usage is covered by the *Data Exchange Governance* framework agreement."
     },
     "dataAddress": {
         "@type": "DataAddress",

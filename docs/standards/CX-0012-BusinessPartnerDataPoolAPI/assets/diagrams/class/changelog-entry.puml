@@ -1,0 +1,29 @@
+@startuml changelog-entry
+
+package "Changelog Entry and References" {
+  abstract class BusinessPartner {  }
+  
+  entity ChangelogEntry {
+    Timestamp
+  }
+
+  enum BusinessPartnerType {
+    LegalEntity
+    Site
+    Address
+  }
+
+  enum ChangelogType {
+    Create
+    Update
+  }
+
+  ChangelogEntry "*" .u.> "1" BusinessPartner : BPN
+
+  ChangelogEntry "*" -d-o "1" BusinessPartnerType : BusinessPartnerType
+  ChangelogEntry "*" -d-o "1" ChangelogType : ChangelogType
+}
+
+hide methods
+hide BusinessPartner members
+@enduml

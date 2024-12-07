@@ -1,0 +1,24 @@
+@startuml changelog-entry
+
+package "Changelog Entry and References" {
+  entity BusinessPartner {
+    External ID
+    ...
+  }
+  
+  entity ChangelogEntry {
+    Timestamp
+  }
+
+  enum ChangelogType {
+    Create
+    Update
+  }
+
+  ChangelogEntry "*" -u-> "1" BusinessPartner : ExternalID
+
+  ChangelogEntry "*" -d-o "1" ChangelogType : ChangelogType
+}
+
+hide methods
+@enduml

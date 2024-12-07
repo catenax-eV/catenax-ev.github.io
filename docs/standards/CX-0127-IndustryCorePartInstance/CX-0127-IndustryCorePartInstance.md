@@ -1,9 +1,10 @@
 ---
 tags:
   - CAT/Semantic
+  - CAT/Industry Core
 ---
 
-# CX-0127 Industry Core: Part Instance 2.0.0  
+# CX-0127 Industry Core: Part Instance 2.0.1
 
 ## ABSTRACT
 
@@ -212,7 +213,7 @@ Note: Data Assets differentiated only by major version **MUST** be offered in pa
 
 The asset's globalAssetId **MUST** be equal to the unique id used in Catena-X.
 
-The following specific asset IDs not marked as optional **MUST** be available when registering a digital twin or when adding the above mentioned submodels to an existing twin for a  part instance in order to allow discovery (see  CX-0002 for additional information). The specific asset IDs marked as optional **MAY** be used in addition.
+The following specific asset IDs not marked as optional **MUST** be available in the decentral Digital Twin Registry when registering a digital twin or when adding the above mentioned submodels to an existing twin for a  part instance in order to allow searching for that specific asset ID (see  CX-0002 for additional information). The specific asset IDs marked as optional **MAY** be used in addition.
 
 The following conventions for specific Asset IDs apply to all digital twins:
 
@@ -573,7 +574,7 @@ Example JSON payload: Submodel **"Batch" v3.0.0**
       }
     ]
   },
-  "catenaXId": "580d3adf-1981-44a0-a214-13d6ceed9379",
+  "catenaXId": "urn:uuid:580d3adf-1981-44a0-a214-13d6ceed9379",
   "partTypeInformation": {
     "partClassification": [
       {
