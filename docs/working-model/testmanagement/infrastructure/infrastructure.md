@@ -161,3 +161,27 @@ destination:
   server: 'https://kubernetes.default.svc'
   namespace: product-portal
 ```
+
+### Ingress configuration
+
+In order to connect to your deployed services with a secured connection, you have to annotate you Ingresses with the following:
+
+```yaml
+
+metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+```
+
+If that annotation is not present, the cert-manager can't detect your Ingress and is not able to create a certificate for it.
+Also, the tls secretName must be unique throughout your namespace. If you put your service name in the secretName, you should be good to go.
+The URL of the Ingress should be unique throughout the whole cluster, since other teams are using the same url as well.
+Good practice is to combine it with your service and project name.
+
+```yaml
+
+  tls:
+    - hosts:
+        - {projectName}-{serviceName}.int.catena-x.net
+      secretName: tls-secret-{serviceName}
+```
