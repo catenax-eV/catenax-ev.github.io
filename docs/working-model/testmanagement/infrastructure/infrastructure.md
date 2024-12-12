@@ -163,6 +163,7 @@ destination:
 ```
 
 ### Ingress configuration
+
 In order to connect to your deployed services with a secured connection, you have to annotate you Ingresses with the following:
 ```yaml
 metadata:
