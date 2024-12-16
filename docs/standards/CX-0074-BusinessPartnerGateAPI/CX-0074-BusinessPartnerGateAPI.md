@@ -4,10 +4,9 @@ tags:
   - CAT/Core Service Provider
   - CAT/Sandbox Services (Beta)
   - CAT/BPDM
-  - CAT/Portal
 ---
 
-# CX-0074 Business Partner Data Gate API v3.0.0
+# CX-0074 Business Partner Gate API v3.1.0
 
 ## TABLE OF CONTENTS
 
@@ -17,12 +16,13 @@ This document is mainly targeted to technical individuals involved in integratin
 
 ## COMPARISON WITH THE PREVIOUS VERSION OF THE STANDARD
 
-| **Version** | **Publishing Date** | **Author** | **Description of Change**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| ----------- | ------------------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| 1.0.0       | 2023-09-26          |            | Initial version by Catena-X Association                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| 1.1.0       | 2024-01-10          |            | Small additions to the terminology chapters: added roles “supplier” & “customer”; added ISO 6709 and WGS 84 for geographic coordinates; added generic business partner outlook; moved attribute “sharing process started at” from specific business partner entities to the sharing state entry (API was correct); linked OpenAPI document in release branch instead of main                                                                                                                                                                                                                                 |
-| 2.0.0       | 2024-03-22          |            | Added business partner description and removed detailed legal entity, site and address descriptions from terminology chapter; removed business partner type from changelog entry and sharing state entry descriptions; added business partner endpoints and removed legal entity, site and address endpoints; added “house number supplement” attribute; added “is own company data” attribute to claim ownership; switched to the new document structure                                                                                                                                                    |
+| **Version** | **Publishing Date** | **Author** | **Description of Change**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| ----------- | ------------------- | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1.0.0       | 2023-09-26          |            | Initial version by Catena-X Association                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| 1.1.0       | 2024-01-10          |            | Small additions to the terminology chapters: added roles “supplier” & “customer”; added ISO 6709 and WGS 84 for geographic coordinates; added generic business partner outlook; moved attribute “sharing process started at” from specific business partner entities to the sharing state entry (API was correct); linked OpenAPI document in release branch instead of main                                                                                                                                                                                                                                   |
+| 2.0.0       | 2024-03-22          |            | Added business partner description and removed detailed legal entity, site and address descriptions from terminology chapter; removed business partner type from changelog entry and sharing state entry descriptions; added business partner endpoints and removed legal entity, site and address endpoints; added “house number supplement” attribute; added “is own company data” attribute to claim ownership; switched to the new document structure                                                                                                                                                      |
 | 3.0.0       | 2024-06-07          |            | Added footnote to indicate that the term "site main address" is subject to change; added the CX-0018 version; changed and added the detailed asset structure; added footnote to clarify role distribution; removed classification sub-object, to reintroduce it in a presumably new form in one of the next non-breaking versions of this standard; removed business partner state and introduced separate states at representation classes; added outlook for business partner relationship; removed "api/catena/" from the endpoint definitions; added data sovereignty chapters as additional requirements. |
+| 3.1.0       | 2024-12-02          |            | Added tax jurisdiction code; change outlook on business partner relationship                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 
 ## ABSTRACT
 
@@ -46,13 +46,13 @@ This standard is relevant for the following audience:
 
 This document focuses on the Business Partner Gate API (short: Gate API) that is part of the Business Partner Data Management (BPDM) described on the [BPDM Catena-X Website](https://catena-x.net/en/offers-standards/bpdm). It is relevant for core service providers who want to provide services for uploading and downloading business partner master data records with the aim of cleansing and enriching them and thus create a high-quality business partner data record (Golden Record), which is identified by the business partner number (BPN). It is also relevant for onboarding service providers, business application providers as well as data providers and consumers who want to use such services.
 
-Not in scope are the structure and logic of the business partner number itself and the mechanism on how the business partner number is issued. There is a separate standard for this: CX-0010 Business Partner Number 2.0.0.
+Not in scope are the structure and logic of the business partner number itself and the mechanism on how the business partner number is issued. There is a separate standard for this: CX-0010 Business Partner Number 2.1.0.
 
-Not in scope is the overall Business Partner Data Pool with all Golden Records within Catena-X and the way of how the Golden Records can be retrieved. There is a separate standard for this: CX-0012 Business Partner Data Pool API 4.0.0.
+Not in scope is the overall Business Partner Data Pool with all Golden Records within Catena-X and the way of how the Golden Records can be retrieved. There is a separate standard for this: CX-0012 Business Partner Data Pool API 4.1.0.
 
-Not in scope are the requirements of cleansing and enriching the business partner data records with the aim to create a Golden Record. There is a separate standard for this: CX-0076 Golden Record End to End Requirements Standard 1.2.0.
+Not in scope are the requirements of cleansing and enriching the business partner data records with the aim to create a Golden Record. There is a separate standard for this: CX-0076 Golden Record End to End Requirements Standard 1.3.0.
 
-You can find the other standards in the standard library of Catena-X: https://catena-x.net/en/standard-library
+You can find the other standards in the [Catena-X standard library](https://catena-x.net/en/standard-library).
 
 ### 1.2 CONTEXT AND ARCHITECTURE FIT
 
@@ -65,16 +65,16 @@ The Gate API is a crucial core component in Catena-X and its platform capability
 3. Data Governance: The Gate API is the basis for a data governance framework and helps to enforce data quality standards, such as data completeness, accuracy, and consistency. It allows to compare the uploaded business partner data records against the corrected and enriched ones and provides the Sharing Member with a proposal for taking over the changes into the local MDM systems. This helps to ensure that business partner data is of high quality and can be trusted for use in various business processes.
 4. Interoperability: The Gate API provides an interoperable and standardized way of uploading and downloading business partner data, ensuring both Core Service Provider interchangeability and streamlined data accessibility for all consumers of the API.
 
-There is a reference implementation for the Gate API on GitHub. It is part of a Spring Boot Kotlin open-source software project under the hood of the Eclipse Foundation and follows the Apache 2.0 licenses.
+There is a reference implementation for the [Business Partner Gate API (6.1.x)](https://github.com/eclipse-tractusx/bpdm/tree/3579e50d6200b6a7ce2a9da811475cff4cbffe06/bpdm-gate-api/src/main/kotlin/org/eclipse/tractusx/bpdm/gate/api) on GitHub. It is part of a Spring Boot Kotlin open-source software project under the hood of the Eclipse Foundation and follows the Apache 2.0 licenses.
 
-For the complete and up-to-date API setup refer to the following website: https://github.com/eclipse-tractusx/bpdm
+For the complete and up-to-date BPDM setup refer to the [Eclipse Tractus-X BPDM GitHub repository (6.1.x)](https://github.com/eclipse-tractusx/bpdm/blob/3579e50d6200b6a7ce2a9da811475cff4cbffe06/README.md).
 
-For an architecture overview refer to the ARC42 documentation: https://github.com/eclipse-tractusx/bpdm/tree/951dd4b38699caa0f50c5d756d8d0079880d2c11/docs/arc42
+For an architecture overview refer to the [BPDM ARC42 documentation (6.1.x)](https://github.com/eclipse-tractusx/bpdm/tree/3579e50d6200b6a7ce2a9da811475cff4cbffe06/docs/architecture).
 
 To use the Gate API in the BPDM use case apart from this standard, the following other standards should be considered by all participants for which this standard is relevant:
 
-- CX-0018 Dataspace Connectivity 3.0.0
-- CX-0012 Business Partner Data Pool API 4.0.0
+- CX-0018 Dataspace Connectivity 3.1.0
+- CX-0012 Business Partner Data Pool API 4.1.0
 
 ### 1.3 CONFORMANCE AND PROOF OF CONFORMITY
 
@@ -82,7 +82,7 @@ To use the Gate API in the BPDM use case apart from this standard, the following
 
 If sections are marked as non-normative, all authoring guidelines, diagrams, examples, and notes in these sections are non-normative. Everything else in this specification is normative.
 
-The key words MAY, **MUST**, **MUST NOT**, **OPTIONAL**, **RECOMMENDED**, **REQUIRED**, **SHOULD** and **SHOULD NOT** in this document are to be interpreted as described in [BCP 14](https://datatracker.ietf.org/doc/html/bcp14) [[RFC2119](https://www.w3.org/TR/did-core/#bib-rfc2119)] [[RFC8174](https://www.w3.org/TR/did-core/#bib-rfc8174)] when, and only when, they appear in all capitals, as shown here.
+The key words MAY, **MUST**, **MUST NOT**, **OPTIONAL**, **RECOMMENDED**, **REQUIRED**, **SHOULD** and **SHOULD NOT** in this document are to be interpreted as described in [BCP 14](https://datatracker.ietf.org/doc/html/bcp14), [RFC2119](https://www.w3.org/TR/did-core/#bib-rfc2119), [RFC8174](https://www.w3.org/TR/did-core/#bib-rfc8174) when, and only when, they appear in all capitals, as shown here.
 
 All participants and their solutions will need to prove, that they are conform with the Catena-X standards. To validate that the standards are applied correctly, Catena-X employs Conformity Assessment Bodies (CABs).
 
@@ -101,7 +101,7 @@ A business partner having assigned a legal entity and its legal address.
 
 ***Dr. Ing. h.c. F. Porsche Aktiengesellschaft, Porscheplatz 1, 70435 Stuttgart, Deutschland***
 
-![Legal Address](./assets/LegalAddress.png)
+![Legal Address](./assets/diagrams/object/legal-address.png)
 
 ### 1.4.2 EXAMPLE 2
 
@@ -109,7 +109,7 @@ A business partner having assigned a legal entity and one of its additional addr
 
 ***Dr. Ing. h.c. F. Porsche Aktiengesellschaft, Schwieberdinger Str. 130, 70435 Stuttgart, Deutschland***
 
-![Additional Address without Site](./assets/AdditionalAddressWithoutSite.png)
+![Additional Address without Site](./assets/diagrams/object/additional-address-without-site.png)
 
 ### 1.4.3 EXAMPLE 3
 
@@ -117,7 +117,7 @@ A business partner having assigned a legal entity, a site and its main address[^
 
 ***Dr. Ing. h.c. F. Porsche Aktiengesellschaft, Porsche Zuffenhausen, Werk 2, Hauptpforte, Porschestraße 42, 70435 Stuttgart, Deutschland***
 
-![Site Main Address](./assets/SiteMainAddress.png)
+![Site Main Address](./assets/diagrams/object/site-main-address.png)
 
 ### 1.4.4 EXAMPLE 4
 
@@ -125,7 +125,7 @@ A business partner having assigned a legal entity, a site and its main address[^
 
 ***Schaeffler Group USA INC. Fort Mill 1, 308 Springhill Farm Rd, Fort Mill, SC 29715, USA***
 
-![Legal and Site Main Address](./assets/LegalAndSiteMainAddress.png)
+![Legal and Site Main Address](./assets/diagrams/object/legal-and-site-main-address.png)
 
 ### 1.4.5 EXAMPLE 5
 
@@ -133,7 +133,7 @@ A business partner having assigned a legal entity, a site and one of its address
 
 ***Dr. Ing. h.c. F. Porsche Aktiengesellschaft, Porsche Zuffenhausen, Werk 2, Pforte (Lieferanten), Schwieberdinger Str. 130, 70435 Stuttgart, Deutschland***
 
-![Additional Address with Site](./assets/AdditionalAddressWithSite.png)
+![Additional Address with Site](./assets/diagrams/object/additional-address-with-site.png)
 
 ### 1.5 TERMINOLOGY
 
@@ -160,7 +160,7 @@ This chapter explains the data model[^1] from a conceptual / terminology point o
 
 #### 1.5.2.1 BUSINESS PARTNER
 
-![Business Partner](./assets/BusinessPartner.png)
+![Business Partner](./assets/diagrams/class/business-partner.png)
 
 In general, a business partner is any entity (such as a customer, a supplier, an employee, or a service provider) that does business with another entity.
 
@@ -272,32 +272,33 @@ An address state indicates if the address is active or inactive[^3]. This does n
 
 A legal form is a mandatory corporate legal framework by which companies can conduct business, charitable or other permissible activities.
 
-| **Attribute** | **Description**                                                                                                                                     | **(Data) Type / Code List / Enumeration** |
-| ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------- |
-| Technical Key | The technical identifier of the legal form according to [ISO 20275](https://en.wikipedia.org/wiki/ISO_20275).                                       | String                                    |
-| Name          | The name of legal form according to [ISO 20275](https://en.wikipedia.org/wiki/ISO_20275).                                                           | String                                    |
-| Abbreviation  | The abbreviated name of the legal form according to [ISO 20275](https://en.wikipedia.org/wiki/ISO_20275), such as AG for German Aktiengesellschaft. | String                                    |
+| **Attribute** | **Description**                                                                                                                                                              | **(Data) Type / Code List / Enumeration** |
+| ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------- |
+| Technical Key | The technical identifier of the legal form according to [ISO 20275:2017](https://www.iso.org/obp/ui/en/#iso:std:iso:20275:ed-1:v1:en).                                       | String                                    |
+| Name          | The name of legal form according to [ISO 20275:2017](https://www.iso.org/obp/ui/en/#iso:std:iso:20275:ed-1:v1:en).                                                           | String                                    |
+| Abbreviation  | The abbreviated name of the legal form according to [ISO 20275:2017](https://www.iso.org/obp/ui/en/#iso:std:iso:20275:ed-1:v1:en), such as AG for German Aktiengesellschaft. | String                                    |
 
 #### 1.5.2.3 PHYSICAL POSTAL ADDRESS
 
 A physical postal address describes the physical location of an office, warehouse, gate, etc.
 
-| **Attribute**               | **Description**                                                                                                                                                                                                                                                                    | **(Data) Type / Code List / Enumeration**                          |
-| --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ |
-| Geographic Coordinates      | The exact location of the physical postal address in latitude, longitude, and altitude.                                                                                                                                                                                            | [Geographic Coordinate](#1526-geographic-coordinates)              |
-| Country                     | The two-letter country code of the physical postal address according to [ISO 3166-1](https://en.wikipedia.org/wiki/ISO_3166-1).                                                                                                                                                    | String                                                             |
-| Administrative Area Level 1 | The administrative area of the physical postal address, such as a region within a country.                                                                                                                                                                                         | [Administrative Area (Level 1)](#1525-administrative-area-level-1) |
-| Administrative Area Level 2 | The name of the locally regulated secondary country subdivision of the physical postal address, such as county within a country.                                                                                                                                                   | String                                                             |
-| Administrative Area Level 3 | The name of the locally regulated tertiary country subdivision of the physical address, such as townships within a country.                                                                                                                                                        | String                                                             |
-| Postal Code                 | The alphanumeric identifier (sometimes including spaces or punctuation) of the physical [postal address](https://en.wikipedia.org/wiki/Address_(geography)) for the purpose of sorting [mail](https://en.wikipedia.org/wiki/Mail), synonyms: postcode, post code, PIN or ZIP code. | String                                                             |
-| City                        | The name of the city of the physical postal address, synonyms: town, village, municipality.                                                                                                                                                                                        | String                                                             |
-| District                    | The name of the district of the physical postal address which divides the city in several smaller areas.                                                                                                                                                                           | String                                                             |
-| Street                      | The street of the physical postal address, synonyms: road, avenue, lane, boulevard, highway                                                                                                                                                                                        | [Street](#15231-street)                                            |
-| Company Postal Code         | The company postal code of the physical postal address, which is sometimes required for large companies.                                                                                                                                                                           | String                                                             |
-| Industrial Zone             | The industrial zone of the physical postal address, designating an area for industrial development, synonym: industrial area.                                                                                                                                                      | String                                                             |
-| Building                    | The alphanumeric identifier of the building addressed by the physical postal address.                                                                                                                                                                                              | String                                                             |
-| Floor                       | The number of a floor in the building addressed by the physical postal address, synonym: level.                                                                                                                                                                                    | String                                                             |
-| Door                        | The number of a door in the building on the respective floor addressed by the physical postal address, synonyms: room, suite.                                                                                                                                                      | String                                                             |
+| **Attribute**               | **Description**                                                                                                                                                                                                          | **(Data) Type / Code List / Enumeration**                          |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------ |
+| Geographic Coordinates      | The exact location of the physical postal address in latitude, longitude, and altitude.                                                                                                                                  | [Geographic Coordinate](#1526-geographic-coordinates)              |
+| Country                     | The two-letter country code of the physical postal address according to [ISO 3166-1:2020](https://www.iso.org/obp/ui/en/#iso:std:iso:3166:-1:ed-4:v1:en).                                                                | String                                                             |
+| Administrative Area Level 1 | The administrative area of the physical postal address, such as a region within a country.                                                                                                                               | [Administrative Area (Level 1)](#1525-administrative-area-level-1) |
+| Administrative Area Level 2 | The name of the locally regulated secondary country subdivision of the physical postal address, such as county within a country.                                                                                         | String                                                             |
+| Administrative Area Level 3 | The name of the locally regulated tertiary country subdivision of the physical address, such as townships within a country.                                                                                              | String                                                             |
+| Postal Code                 | The alphanumeric identifier (sometimes including spaces or punctuation) of the physical postal address for the purpose of sorting mail, synonyms: postcode, post code, PIN or ZIP code.                                  | String                                                             |
+| City                        | The name of the city of the physical postal address, synonyms: town, village, municipality.                                                                                                                              | String                                                             |
+| District                    | The name of the district of the physical postal address which divides the city in several smaller areas.                                                                                                                 | String                                                             |
+| Street                      | The street of the physical postal address, synonyms: road, avenue, lane, boulevard, highway                                                                                                                              | [Street](#15231-street)                                            |
+| Company Postal Code         | The company postal code of the physical postal address, which is sometimes required for large companies.                                                                                                                 | String                                                             |
+| Tax Jurisdiction Code       | The identifier of the particular geographic or governmental area to which the physical mailing address belongs and which is responsible for administering tax laws and collecting taxes from individuals and businesses. | String                                                             |
+| Industrial Zone             | The industrial zone of the physical postal address, designating an area for industrial development, synonym: industrial area.                                                                                            | String                                                             |
+| Building                    | The alphanumeric identifier of the building addressed by the physical postal address.                                                                                                                                    | String                                                             |
+| Floor                       | The number of a floor in the building addressed by the physical postal address, synonym: level.                                                                                                                          | String                                                             |
+| Door                        | The number of a door in the building on the respective floor addressed by the physical postal address, synonyms: room, suite.                                                                                            | String                                                             |
 
 ##### 1.5.2.3.1 STREET
 
@@ -322,9 +323,9 @@ An alternative postal address describes an alternative way of delivery for examp
 | **Attribute**               | **Description**                                                                                                                                                                                                                                                                                                                                                    | **(Data) Type / Code List / Enumeration**                          |
 | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------ |
 | Geographic Coordinates      | The exact location of the alternative postal address in latitude, longitude, and altitude.                                                                                                                                                                                                                                                                         | [Geographic Coordinate](#1526-geographic-coordinates)              |
-| Country                     | The two-letter country code of the postal address according to [ISO 3166-1](https://en.wikipedia.org/wiki/ISO_3166-1).                                                                                                                                                                                                                                             | String                                                             |
+| Country                     | The two-letter country code of the postal address according to [ISO 3166-1:2020](https://www.iso.org/obp/ui/en/#iso:std:iso:3166:-1:ed-4:v1:en).                                                                                                                                                                                                                   | String                                                             |
 | Administrative Area Level 1 | The administrative area of the alternative postal address, such as a region within a country.                                                                                                                                                                                                                                                                      | [Administrative Area (Level 1)](#1525-administrative-area-level-1) |
-| Postal Code                 | The alphanumeric identifier (sometimes including spaces or punctuation) of the physical [postal address](https://en.wikipedia.org/wiki/Address_(geography)) for the purpose of sorting [mail](https://en.wikipedia.org/wiki/Mail), synonyms: postcode, post code, PIN or ZIP code.                                                                                 | String                                                             |
+| Postal Code                 | The alphanumeric identifier (sometimes including spaces or punctuation) of the physical postal address for the purpose of sorting mail, synonyms: postcode, post code, PIN or ZIP code.                                                                                                                                                                            | String                                                             |
 | City                        | The name of the city of the physical postal address, synonyms: town, village, municipality.                                                                                                                                                                                                                                                                        | String                                                             |
 | City                        | The name of the city of the alternative postal address, synonyms: town, village, municipality.                                                                                                                                                                                                                                                                     | String                                                             |
 | Delivery Service Type       | One of the alternative postal address types: P.O. box, private bag, boite postale.                                                                                                                                                                                                                                                                                 | Enum                                                               |
@@ -333,26 +334,26 @@ An alternative postal address describes an alternative way of delivery for examp
 
 #### 1.5.2.5 ADMINISTRATIVE AREA (Level 1)
 
-An administrative area (level 1) is the country subdivision according to [ISO 3166-2](https://en.wikipedia.org/wiki/ISO_3166-2), such as regions within a country.
+An administrative area (level 1) is the country subdivision according to [ISO 3166-2:2020](https://www.iso.org/obp/ui/#iso:std:iso:3166:-2:ed-4:v1:en), such as regions within a country.
 
-| **Attribute** | **Description**                                                                                                                                                                                                                                                                                               | **(Data) Type / Code List / Enumeration** |
-| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------- |
-| Name          | The name of the country subdivision according to [ISO 3166-2](https://en.wikipedia.org/wiki/ISO_3166-2).                                                                                                                                                                                                      | String                                    |
-| Code          | The six-character alphanumeric code according to [ISO 3166-2](https://en.wikipedia.org/wiki/ISO_3166-2), consisting of the two-letter [ISO 3166-1](https://en.wikipedia.org/wiki/ISO_3166-1) country code and a three-character alphanumeric code for the subdivision in that country, separated by a hyphen. | String                                    |
+| **Attribute** | **Description**                                                                                                                                                                                                                                                                                                                                                | **(Data) Type / Code List / Enumeration** |
+| ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------- |
+| Name          | The name of the country subdivision according to [ISO 3166-2:2020](https://www.iso.org/obp/ui/#iso:std:iso:3166:-2:ed-4:v1:en).                                                                                                                                                                                                                                | String                                    |
+| Code          | The six-character alphanumeric code according to [ISO 3166-2:2020](https://www.iso.org/obp/ui/#iso:std:iso:3166:-2:ed-4:v1:en), consisting of the two-letter [ISO 3166-1:2020](https://www.iso.org/obp/ui/en/#iso:std:iso:3166:-1:ed-4:v1:en) country code and a three-character alphanumeric code for the subdivision in that country, separated by a hyphen. | String                                    |
 
 #### 1.5.2.6 GEOGRAPHIC COORDINATES
 
-Geographic coordinates describe an exact location in latitude, longitude, and altitude, according to [ISO 6709](https://en.wikipedia.org/wiki/ISO_6709) with [WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System#WGS84) as the currently only supported coordinate reference system.
+Geographic coordinates describe an exact location in latitude, longitude, and altitude, according to [ISO 6709:2022](https://www.iso.org/obp/ui/en/#iso:std:iso:6709:ed-3:v1:en) with [WGS 84 (NGA STND 0036 1.0.0)](https://nsgreg.nga.mil/doc/view?i=4085) as the currently only supported coordinate reference system.
 
-| **Attribute** | **Description**                                                                                                                                                                                   | **(Data) Type / Code List / Enumeration** |
-| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------- |
-| Longitude     | The geographic coordinate of a place indicating the distance to the west or east of the line passing through Greenwich, in decimal degrees ([DD](https://en.wikipedia.org/wiki/Decimal_degrees)). | Float                                     |
-| Latitude      | The geographic coordinate of a place indicating its distance to the north or south of the equator, in decimal degrees ([DD](https://en.wikipedia.org/wiki/Decimal_degrees)).                      | Float                                     |
-| Altitude      | The geographic coordinate of a place indicating its height above mean sea level, in meters.                                                                                                            | Float                                     |
+| **Attribute** | **Description**                                                                                                                             | **(Data) Type / Code List / Enumeration** |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------- |
+| Longitude     | The geographic coordinate of a place indicating the distance to the west or east of the line passing through Greenwich, in decimal degrees. | Float                                     |
+| Latitude      | The geographic coordinate of a place indicating its distance to the north or south of the equator, in decimal degrees.                      | Float                                     |
+| Altitude      | The geographic coordinate of a place indicating its height above mean sea level, in meters.                                                 | Float                                     |
 
 #### 1.5.2.7 IDENTIFIER TYPE
 
-![Identifier Type](./assets/IdentifierType.png)
+![Identifier Type](./assets/diagrams/class/identifier-type.png)
 
 | **Attribute**         | **Description**                                                                                | **(Data) Type / Code List / Enumeration** |
 | --------------------- | ---------------------------------------------------------------------------------------------- | ----------------------------------------- |
@@ -362,7 +363,7 @@ Geographic coordinates describe an exact location in latitude, longitude, and al
 
 #### 1.5.2.8 SHARING STATE ENTRY
 
-![Sharing State Entry](./assets/SharingStateEntry.png)
+![Sharing State Entry](./assets/diagrams/class/sharing-state-entry.png)
 
 A sharing state entry shows the progress in the sharing process and is updated each time the progress for a business partner changes. The business partner is identified by the external ID.
 
@@ -375,7 +376,7 @@ A sharing state entry shows the progress in the sharing process and is updated e
 
 #### 1.5.2.9 CHANGELOG ENTRY
 
-![Changelog Entry](./assets/ChangelogEntry.png)
+![Changelog Entry](./assets/diagrams/class/changelog-entry.png)
 
 An entry of the changelog, which is created each time a business partner is modified and contains data about the change. The actual new state of the business partner is not included.
 
@@ -387,17 +388,17 @@ An entry of the changelog, which is created each time a business partner is modi
 
 ## 2 BUSINESS PARTNER GATE API \[NORMATIVE\]
 
-The Business Partner Gate API allows to upload and download business partner data records to improve their quality and enrich them with additional information. The Gate API **MUST** be implemented based on the [OpenAPI 3.0.1 specification](https://github.com/OAI/OpenAPI-Specification/blob/761a0797ebf2e35e687ebef07741d1c10675e08c/versions/3.0.1.md).
+The Business Partner Gate API allows to upload and download business partner data records to improve their quality and enrich them with additional information. The Gate API **MUST** be implemented based on the [OpenAPI specification (3.0.1)](https://github.com/OAI/OpenAPI-Specification/blob/761a0797ebf2e35e687ebef07741d1c10675e08c/versions/3.0.1.md).
 
 ### 2.1 PRECONDITIONS AND DEPENDENCIES
 
-To run the API the following **SHOULD** be set up: [https://github.com/eclipse-tractusx/bpdm/blob/release/6.0.x/README.md](https://github.com/eclipse-tractusx/bpdm/blob/951dd4b38699caa0f50c5d756d8d0079880d2c11/README.md)
+To run the API, the technical components described in the [Eclipse Tractus-X BPDM GitHub repository (6.1.x)](https://github.com/eclipse-tractusx/bpdm/blob/3579e50d6200b6a7ce2a9da811475cff4cbffe06/README.md) **SHOULD** be set up.
 
 ### 2.2 API SPECIFICATION
 
 #### 2.2.1 API ENDPOINT & RESOURCES
 
-The Gate API **MUST** be implemented as defined in the following OpenAPI document: https://raw.githubusercontent.com/eclipse-tractusx/bpdm/release/6.0.x/docs/api/gate.json
+The Gate API **MUST** be implemented as defined in the following OpenAPI document: [Business Partner Gate OpenAPI specification (6.1.x)](https://github.com/eclipse-tractusx/bpdm/blob/3579e50d6200b6a7ce2a9da811475cff4cbffe06/docs/api/gate.json)
 
 The resources **MUST** use the well-known HTTP request methods for CRU(D) operations:
 
@@ -420,7 +421,7 @@ Uploading and downloading data to/from the Gate API **MUST** follow a staging co
 - Business Partner controller
 - Changelog controller
 
-Note that all resources of the OpenAPI document described in the following are MANDATORY. Conversely, all resources not described in the following are **OPTIONAL**.
+Note that all resources of the OpenAPI document described in the following are **MANDATORY**. Conversely, all resources not described in the following are **OPTIONAL**.
 
 #### 2.2.1.1 BUSINESS PARTNER CONTROLLER
 
@@ -436,8 +437,8 @@ The business partner controller **MUST** allow to create, update, or read busine
 
 The sharing state controller **MUST** allow to read sharing state entries of business partners. A sharing state of type "Success" **SHOULD** include the assigned BPNL, BPNS and BPNA. The sharing state controller **MUST** have the following resources:
 
-| **Sharing State Controller Resources** | **Description**                                                                                                           |
-| -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| **Sharing State Controller Resources** | **Description**                                                                               |
+| -------------------------------------- | --------------------------------------------------------------------------------------------- |
 | GET/sharing-state                      | Returns sharing states of business partners, optionally filtered by an array of external IDs. |
 
 #### 2.2.1.3 CHANGELOG CONTROLLER
@@ -459,9 +460,9 @@ The following data assets **MUST** be registered at the Core Service Provider so
 
 | **Type** | **Subject**                          | **Version** | **Description**                                                                                                                                                                                                                                                                                                                                                                   |
 | -------- | ------------------------------------ | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| BPDMGate | FullAccessGateInputForSharingMember  | 6.0         | Grants the Sharing Member full access to the input persistence. This can be used to read business partner data in the input persistence, and create / update business partner data in the input persistence from data sources of the Sharing Member. To that end, it also grants read access to the input changelog entries.                                                      |
-| BPDMGate | ReadAccessGateInputForSharingMember  | 6.0         | Grants the Sharing Member read access to the input persistence. This can be used explicitly for value-added services to read business partner data from the input persistence. To that end, it also grants read access to the input changelog entries.                                                                                                                            |
-| BPDMGate | ReadAccessGateOutputForSharingMember | 6.0         | Grants the Sharing Member read access to the output persistence. This can be used to read business partner data from the output persistence so that the data sources of the Sharing Member can be updated. Furthermore, it can be used to update data sources in value-added services. To that end, it also grants read access to the output changelog and sharing state entries. |
+| BPDMGate | FullAccessGateInputForSharingMember  | 6.1         | Grants the Sharing Member full access to the input persistence. This can be used to read business partner data in the input persistence, and create / update business partner data in the input persistence from data sources of the Sharing Member. To that end, it also grants read access to the input changelog entries.                                                      |
+| BPDMGate | ReadAccessGateInputForSharingMember  | 6.1         | Grants the Sharing Member read access to the input persistence. This can be used explicitly for value-added services to read business partner data from the input persistence. To that end, it also grants read access to the input changelog entries.                                                                                                                            |
+| BPDMGate | ReadAccessGateOutputForSharingMember | 6.1         | Grants the Sharing Member read access to the output persistence. This can be used to read business partner data from the output persistence so that the data sources of the Sharing Member can be updated. Furthermore, it can be used to update data sources in value-added services. To that end, it also grants read access to the output changelog and sharing state entries. |
 
 Example data asset ([*dct:type*](https://purl.org/dc/terms/type) for asset type, [*dct:subject*](https://purl.org/dc/terms/subject) for asset subject, [*dct:description*](https://purl.org/dc/terms/description) for asset description and *cx-common:version* for asset version from the table above):
 
@@ -482,7 +483,7 @@ Example data asset ([*dct:type*](https://purl.org/dc/terms/type) for asset type,
           "@id": "cx-taxo:FullAccessGateInputForSharingMember"
         },
         "dct:description": "Grants the Sharing Member full access to the input persistence. This can be used to read business partner data in the input persistence, and create / update business partner data in the input persistence from data sources of the Sharing Member. To that end, it also grants read access to the input changelog entries.",
-        "cx-common:version": "6.0"
+        "cx-common:version": "6.1"
     },
     "dataAddress": {
         "@type": "DataAddress",
@@ -512,7 +513,7 @@ The following http response codes **MUST** be defined for all resources:
 - 404 - Not Found
 - 500 - Internal Server Error
 
-HTTP Status Code Registry **MUST** be adhered to in the implementation for the decision on when to use which error code: https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml
+The [IANA HTTP Status Code Registry](https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml) **MUST** be adhered to for the decision on when to use which error code.
 
 ### 2.2.5 ADDITIONAL REQUIREMENTS
 
@@ -549,26 +550,31 @@ Details on  namespaces and ODRL policy rule values to be used for the above-ment
 
 ## 3.1 NORMATIVE REFERENCES
 
-- [Gate API specification 6.0.x](https://raw.githubusercontent.com/eclipse-tractusx/bpdm/release/6.0.x/docs/api/gate.json)
-- [ISO 20275](https://en.wikipedia.org/wiki/ISO_20275)
-- [ISO 3166](https://www.iso.org/iso-3166-country-codes.html)
-  - [ISO 3166-1](https://en.wikipedia.org/wiki/ISO_3166-1)
-  - [ISO 3166-2](https://en.wikipedia.org/wiki/ISO_3166-2)
-
-- [ISO 6709](https://en.wikipedia.org/wiki/ISO_6709)
-- [WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System#WGS84)
+- [ISO 20275:2017](https://www.iso.org/obp/ui/en/#iso:std:iso:20275:ed-1:v1:en)
+- [ISO 3166-1:2020](https://www.iso.org/obp/ui/en/#iso:std:iso:3166:-1:ed-4:v1:en)
+- [ISO 3166-2:2020](https://www.iso.org/obp/ui/#iso:std:iso:3166:-2:ed-4:v1:en)
+- [ISO 6709:2022](https://www.iso.org/obp/ui/en/#iso:std:iso:6709:ed-3:v1:en)
+- [WGS 84 (NGA STND 0036 1.0.0)](https://nsgreg.nga.mil/doc/view?i=4085)
+- [OpenAPI specification (3.0.1)](https://github.com/OAI/OpenAPI-Specification/blob/761a0797ebf2e35e687ebef07741d1c10675e08c/versions/3.0.1.md)
+- [Eclipse Tractus-X BPDM GitHub Repository (6.1.x)](https://github.com/eclipse-tractusx/bpdm/blob/3579e50d6200b6a7ce2a9da811475cff4cbffe06/README.md)
+- [Business Partner Gate OpenAPI specification (6.1.x)](https://github.com/eclipse-tractusx/bpdm/blob/3579e50d6200b6a7ce2a9da811475cff4cbffe06/docs/api/gate.json)
+- [IANA HTTP Status Code Registry (from 2022-06-08)](https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml)
+- [ODRL policy repository](https://github.com/catenax-eV/cx-odrl-profile) (accessed 2024-10-02)
 
 ## 3.2 NON-NORMATIVE REFERENCES
 
 > *This section is non-normative*
 
-- [BPDM Catena-X Website](https://catena-x.net/en/offers-standards/bpdm)
+- [BPDM Catena-X Website](https://catena-x.net/en/offers-standards/bpdm) (accessed 2024-10-02)
+- [Catena-X standard library](https://catena-x.net/en/standard-library) (accessed 2024-10-02)
 
 ## REFERENCE IMPLEMENTATION
 
 > *This section is non-normative*
 
-- [Business Partner Gate API 6.0.x](https://github.com/eclipse-tractusx/bpdm/tree/951dd4b38699caa0f50c5d756d8d0079880d2c11/bpdm-gate-api/src/main/kotlin/org/eclipse/tractusx/bpdm/gate/api)
+- [Business Partner Gate API (6.1.x)](https://github.com/eclipse-tractusx/bpdm/tree/3579e50d6200b6a7ce2a9da811475cff4cbffe06/bpdm-gate-api/src/main/kotlin/org/eclipse/tractusx/bpdm/gate/api)
+- [Eclipse Tractus-X BPDM GitHub repository (6.1.x)](https://github.com/eclipse-tractusx/bpdm/blob/3579e50d6200b6a7ce2a9da811475cff4cbffe06/README.md)
+- [BPDM ARC42 documentation (6.1.x)](https://github.com/eclipse-tractusx/bpdm/tree/3579e50d6200b6a7ce2a9da811475cff4cbffe06/docs/architecture)
 
 ## ANNEXES
 
@@ -576,16 +582,17 @@ Details on  namespaces and ODRL policy rule values to be used for the above-ment
 
 > *This section is non-normative*
 
-The following picture shows the business partner with the business partner relationship as an outlook for one of the next versions of this standard:
+The following picture shows the business partner relationship and its reference as an outlook for one of the next versions of this standard:
 
-![Business Partner with Relationship](./assets/BusinessPartnerWithRelationship.png)
+![Business Partner Relationship](./assets/diagrams/class/business-partner-relationship.png)
 
 The idea is to use the business partner relationship to upload different kinds of relations between two business partners, such as:
 
-- a business partner is the legal entity for another business partner
+- a business partner is the registered alternative for another business partner, e.g. in case of multiple registered headquarters
+- a business partner is managed in Catena-X portal by another business partner to facilitate administration of large corporations [^8]
 - a business partner is replaced by another business partner
 
-It is not intended to use the business partner relationship for legal hierarchies (majority shareholding).
+It is not intended to use the business partner relationship for legal hierarchies (subsidiaries / majority shareholding).
 
 ### TABLES
 
@@ -606,6 +613,8 @@ Intentionally left blank.
 [^6]: Note that the Sharing Member assumes the roles Data Provider on upload and Data Consumer on download of business partner data, while the Core Service Provider assumes the roles Data Consumer on upload and Data Provider on download of business partner data.
 
 [^7]: Note that the definition of the data assets depends on the current implementation state of the reference implementation (Tractus-X Eclipse Dataspace Connector). Therefore the data assets represent permissions on APIs, whereas they should actually only represent APIs.
+
+[^8]: Note that relationships of this type are private to the business partners they involve.
 
 ## Legal
 

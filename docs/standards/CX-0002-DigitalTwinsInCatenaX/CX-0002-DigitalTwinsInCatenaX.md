@@ -1,5 +1,4 @@
 ---
-position: 2
 tags:
   - CAT/Enablement Service Provider
   - CAT/Digital Twin Registry aaS
@@ -274,7 +273,7 @@ BPN (see standard CX-0053).
 ### 1.5 Examples
 
 Examples can be found in
-[the Tractus-X DTR's documentation](https://github.com/eclipse-tractusx/sldt-digital-twin-registry/tree/main/docs) and the [Digital Twin Kit](https://eclipse-tractusx.github.io/docs-kits/category/digital-twin-kit/)
+[the Tractus-X DTR's documentation](https://github.com/eclipse-tractusx/sldt-digital-twin-registry/tree/main/docs) and the [Digital Twin Kit](https://eclipse-tractusx.github.io/docs-kits/next/category/digital-twin-kit/)
 
 ### 1.6 Terminology
 

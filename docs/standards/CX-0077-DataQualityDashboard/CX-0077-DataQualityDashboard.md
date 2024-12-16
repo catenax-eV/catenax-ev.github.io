@@ -3,14 +3,20 @@ tags:
   - CAT/Value Added Services
 ---
 
-# CX-0077 Data Quality Dashboard v1.2.0
+# CX-0077 Data Quality Dashboard v1.2.1
 
 ## ABSTRACT
 
 The Data Quality Dashboard (DQD) has to rely on a set of clearly defined quality rules
-which is the basis of the Golden Record Process and secures the syntactical and logical correctness of mission-critical business partner data attributes. To secure global consistency the DQD rule relies on defined ISO norms as defined in this document- – see Standardization Document CX-0076 Version 1.1.0, Golden Record EndtoEnd Requirements Standard. DQD has to capture at least 112 countries based on ISO 3166-1. DQD has to validate BP data records in the Inbound and Outbound Persistence of the related Catena-X (CX) Member who licensed DQD. Each DQD rule has to validate the syntactical correctness of defined mandatory, regulatory required and optional BP data record attributes related to the specific regulations by the country authorized institutions. DQD furthermore has to rely on the following Standards: ISO 3166-1, ISO 20275, ISO 01-140-10, ISO 8601, ISO/IEC 8859-1.
+which is the basis of the Golden Record Process and secures the syntactical and logical correctness of mission-critical business partner data attributes. To secure global consistency the DQD rule relies on defined ISO norms as defined in this document – see Standardization Document CX-0076 Version 1.1.0, Golden Record EndtoEnd Requirements Standard. DQD has to capture at least 112 countries based on ISO 3166-1. DQD has to validate BP data records in the Inbound and Outbound Persistence of the related Catena-X (CX) Member who licensed DQD. Each DQD rule has to validate the syntactical correctness of defined mandatory, regulatory required and optional BP data record attributes related to the specific regulations by the country authorized institutions. DQD furthermore has to rely on the following Standards: ISO 3166-1, ISO 20275, ISO 01-140-10, ISO 8601, ISO/IEC 8859-1.
 
 DQD has to visualize the outcome of the data quality rules via a dashboard.
+The DQD dashboard design relies on the Catena-X style guide. See details under:
+
+- Library: [https://www.npmjs.com/package/@catena-x/portal-shared-components](https://www.npmjs.com/package/@catena-x/portal-shared-components)
+- Docu: [https://eclipse-tractusx.github.io/portal-shared-components/](https://eclipse-tractusx.github.io/portal-shared-components/)
+- NPM package: [https://www.npmjs.com/package/@catena-x/portal-shared-components/v/2.1.2](https://www.npmjs.com/package/@catena-x/portal-shared-components/v/2.1.2)
+- Storybook: [https://eclipse-tractusx.github.io/portal-shared-components/](https://eclipse-tractusx.github.io/portal-shared-components/)
 
 DQD uses the Gate API CX-0074_v3.0.0 and the Pool API CX-0012_v4.0.0 based on the CX-0018 Data Space Connectivity 3.0.0
 for pulling BP data records. DQD is a client/ server cloud application which contains a Web Client and a Cloud Server Application.
@@ -26,7 +32,8 @@ The standard enables software and service companies to develop business partner 
 | **Version** | **Publishing Date** | **Author** | **Description of Change**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | ----------- | ------------------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | 1.1.0       |           |   SR         | Added chapter 3 for DQD API. |
-| 1.2.0       | 2024-03-13          |     SR      | Corrected 2.3.3 - country list, Added chapter 3.5 Data Types and 3.6 Data Attributes, Added chapter 3.7 for data sovereignty as additional requirement.                                                                                                                                                                                                                           |
+| 1.2.0       | 2024-03-13          |     SR      | Corrected 2.3.3 - country list, Added chapter 3.5 Data Types and 3.6 Data Attributes, Added chapter 3.7 for data sovereignty as additional requirement.
+|1.2.1       | 2024-09-04          |     SR      | Moved DQD Dashboard Style Guide Reference from Normative Section to Non-Normative Section                                                                                          |
 
 ## 1 INTRODUCTION
 
@@ -232,13 +239,6 @@ The DQD Dashboard MUST provide the capabilities:
 1. DQD contains a help function
 1. DQD contains the capability to change layout and view setting by user
 1. DQD contains an admin screen which enables user specific settings like layout and view settings, KPI target and threshold settings
-
-The DQD dashboard design relies on the Catena-X style guide. See details under:
-
-- Library: [https://www.npmjs.com/package/@catena-x/portal-shared-components](https://www.npmjs.com/package/@catena-x/portal-shared-components)
-- Docu: [https://eclipse-tractusx.github.io/portal-shared-components/](https://eclipse-tractusx.github.io/portal-shared-components/)
-- NPM package: [https://www.npmjs.com/package/@catena-x/portal-shared-components/v/2.1.2](https://www.npmjs.com/package/@catena-x/portal-shared-components/v/2.1.2)
-- Storybook: [https://eclipse-tractusx.github.io/portal-shared-components/](https://eclipse-tractusx.github.io/portal-shared-components/)
 
 ## 3.0 DQD API
 

@@ -1,0 +1,18 @@
+@startuml business-partner-simple
+
+package "Business Partner" {
+  entity LegalEntity {}
+  
+  entity Site {}
+
+  entity Address {}
+  
+  abstract class BusinessPartner {}
+
+  LegalEntity -u-|> BusinessPartner
+  Site -u-|> BusinessPartner
+  Address -u-|> BusinessPartner
+}
+
+hide members
+@enduml

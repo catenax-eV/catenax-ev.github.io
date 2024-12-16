@@ -1,29 +1,8 @@
-
-# CX-0007 Minimal Data Provider Service Offering v1.0.2
-
-## ABSTRACT
-
-Data provisioning is one of the key success factors for a data space, as
-without data offers, there is nothing to consume with the various
-business applications that data consumers will use. While it is
-relatively easy for large enterprises with extensive IT capabilities to
-connect their backend systems to the Catena-X landscape, providing data
-is a challenging task for SMEs and non-tech savvy companies. Thus,
-simple to use tools for data provisioning -- such as excel upload tools
--- are needed, which can be operated by regular employees without
-sophisticated IT skills.
+# CX-0007 Minimal Data Provider Service Offering v1.1.0
 
 ## 1. INTRODUCTION
 
-Data provisioning is one of the key success factors for a data space, as
-without data offers, there is nothing to consume with the various
-business applications that data consumers will use. While it is
-relatively easy for large enterprises with extensive IT capabilities to
-connect their backend systems to the Catena-X landscape, providing data
-is a challenging task for SMEs and non-tech savvy companies. Thus,
-simple to use tools for data provisioning -- such as excel upload tools
--- are needed, which can be operated by regular employees without
-sophisticated IT skills.
+Data provisioning is one of the key success factors for a data space, as without data offers, there is nothing to consume with the various business applications that data consumers will use. While it is relatively easy for large enterprises with extensive IT capabilities to connect their backend systems to the Catena-X landscape, providing data is a challenging task for SMEs and non-tech savvy companies. Thus, simple to use tools for data provisioning - such as excel upload tools - are needed, which can be operated by regular employees without sophisticated IT skills.
 
 The purpose of this document is to describe the necessary functional
 building blocks of a minimal data provider service, as well as to give
@@ -43,7 +22,7 @@ Minimal data provider service offerings will in the following also be referred t
 
 > *This section is non-normative*
 
-The target audience of this standard is any application or service provider that wants to offer services related to one time data provisioning, such as but not limited to, manual text masks or file-based uploads. It is not intended to explain how continuous backend integrations of e.g. ERP or MES systems into the Catena-X network can work. Please refer to CX-0055 for this. This standard applies to data provisioning for all Catena-X Use-Cases.
+The target audience of this standard is any application or service provider that wants to offer services related to one time data provisioning, such as but not limited to, manual text masks or file-based uploads. It is not intended to explain how continuous backend integrations of e.g. ERP or MES systems into the Catena-X network can work. Please refer to CX-0055 for this. This standard applies to data provisioning for all Catena-X Use Cases.
 
 This document is relevant for the following roles:
 
@@ -66,18 +45,16 @@ use different apps from various providers, but still are able to
 exchange data between them. To enable the network, a common technological basis is needed.
 
 Data is described with a standardized semantic, which is specific for
-each Use-Case. The semantics are described with the semantic modeling
+each Use Case. The semantics are described with the semantic modeling
 language SAMM.
 
 Furthermore, data discovery and access is enabled by the Asset Administration Shell (Digital Twins),
 or by knowledge agents.
 
-The data exchange itself happens in a self-sovereign way via the EDC.  
+The data exchange itself happens in a self-sovereign way via the Connector (e.g. the Eclipse Dataspace Connector (EDC)).  
 
-Any tool that is built to provide data, needs to fulfill use-case
-specific (semantic models, calculation logic, etc.) and independent (e.g. use of EDC, IAM Concept)
-standards. The use-case specific standards are listed in a "Use-Case Policy" and
-are available via the association homepage.
+Any tool that is built to provide data, needs to fulfill Use Case
+specific standards (semantic models, calculation logic, etc.) and standards independent of Use Cases (e.g. use of EDC, IAM Concept). The Use Case specific standards can be found in the [Catena-X Standards Library](https://catenax-ev.github.io/docs/next/standards/overview).
 
 Of specific importance for data provisioning tools is the concept of data sovereignty.
 Data sovereignty is one of the core values of the Catena-X network. Each
@@ -126,7 +103,7 @@ so on and so forth.
 
 The uploaded data needs to be persisted in an appropriate database
 solution, so that it can be received upon request. Depending on the data
-and the use-case, this could be a SQL, No-SQL, S3 or streaming storage.
+and the Use Case, this could be a SQL, No-SQL, S3 or streaming storage.
 
 Note: It is not enough to register a digital twin or create an EDC
 contract offer as they only contain meta-data and references to the
@@ -149,8 +126,8 @@ be registered at the EDC discovery service.
 
 #### 1.3.5 DIGITAL TWIN REGISTRY (DTR)
 
-Starting with release 3.2, the DTR is a decentral component
-that must be implemented with each data provider.
+The DTR is a decentral component
+that must be implemented with each data provider offering digital twin aspects.
 It stores references to aspects of digital twins.
 The actual data ("the digital twin") is stored in the data persistence layer
 that comes with a minimal data provider service. The backend needs to
@@ -158,11 +135,11 @@ interact with the decentral DTR to register newly created/uploaded twins.
 In case a user deletes data, the backend also needs to de-register the twins
 again. For an API description of the DTR, refer to CX-0002.
 
-A minimal data provider service offering either must include its own
+A minimal data provider service offering for digital twin aspects either must include its own
 decentral DTR or it can be configurable to work with an external decentral DTR.
 
 Furthermore, the DTR that is used must be discoverable by data consumers and thus
-be registered at the discovery finder and #TODO Discovery finder
+be registered at the discovery finder.
 
 #### 1.3.6 SSI INTEGRATION
 
@@ -171,9 +148,9 @@ provide the correct attributes and roles of a data provider to the EDC.
 
 #### 1.3.7 SEMANTIC MODELLING LANGUAGES AND MODELS
 
-Depending on the use-case, different semantic modelling languages and
+Depending on the Use Case, different semantic modelling languages and
 semantic models need to be understood by the upload tool. E.g.: if the
-upload tool wants to work for the use-case traceability, the tool needs
+upload tool wants to work for the Use Case traceability, the tool needs
 to be able to process the Aspect Model: SerialPartTypization in the SAMM
 language.
 
@@ -182,11 +159,11 @@ Catena-X. When this changes in the future, this standard will be updated
 to also reference other modelling languages.
 
 The semantic modelling languages and models that are used within a
-use-case can be found within the "Use Case Policy" for each use-case.
+Use Case can be found within the respective Use Case standards.
 It's mandatory for the tool to function with those semantic modelling
 languages and semantic models.
 
-A list of all released semantic models can be found in Github: https://github.com/eclipse-tractusx/sldt-semantic-models.
+A list of all released semantic models can be found in the [Eclipse Tractus-X Github-Repository](https://github.com/eclipse-tractusx/sldt-semantic-models).
 
 ### 1.4 CONFORMANCE
 
@@ -218,52 +195,48 @@ provide the following to the CAB:  
 - Functional Specification / Pflichtenheft describing how the functional and non-functional requirements stated in chapter 2.2 shall be fulfilled.
 - Proof that the service offering fulfills all of the standards listed in chapter 2.1
 
-The partner collects the requested documents and results and sends them to the responsible CAB. The CAB might also conduct an external audit to assess conformance with the standards. The responsible CABs can be found on the homepage of the association: [www.catena-x.net](http://www.catena-x.net/).
+The partner collects the requested documents and results and sends them to the responsible CAB. The CAB might also conduct an external audit to assess conformance with the standards. The responsible CABs can be found on the homepage of the association: [https://www.catena-x.net](https://www.catena-x.net).
 
 The solution can only be listed in an official Catena-X Marketplace after successful verification of conformity.
 
 ## 2. MINIMAL DATA PROVIDER SERVICE OFFERING
 
-All requirements that are listed as "mandatory" under chapter 2.2 MUST generally be
+All requirements that are listed as "mandatory" under chapter 2.2 **MUST** generally be
 fulfilled by a service offering. If a service offering does not fulfill
 a mandatory requirement, the provider offering the service MUST
 explain why he derives from the requirement. It is then up to the CAB to
 decide if the service offering still receives a certificate.
 
-All requirements that are listed as "optional" SHOULD be fulfilled by a
+All requirements that are listed as "optional" **SHOULD** be fulfilled by a
 service offering.
 
-The specific standards listed in chapter 2.1 MUST be implemented correctly.
+The specific standards listed in chapter 2.1 **MUST** be implemented correctly.
 
 ## 2.1 ADHERENCE TO SPECIFIC STANDARDS
 
-The following use-case agnostic standards MUST be implemented correctly.
+The following Use Case agnostic standards **MUST** be implemented correctly.
 More details can be found in the respective individual standards:
 
 - CX-0013 Identity of Member Companies
-- CX-0016 Company Attribute Verification
-- CX-0017 Company Role by the Connector
-- CX-0018 Eclipse Data Space Connector (EDC)
+- CX-0149 Verified Company Identity
+- CX-0018 Dataspace Connectivity
 
-Depending on the use-cases for which the service offering is intended,
-additional and use-case specific standards are relevant and MUST be implemented.
-Please refer to the use-case specific standards therefore.  
+Depending on the Use Cases for which the service offering is intended,
+additional and Use Case specific standards are relevant and **MUST** be implemented.
+Please refer to the Use Case specific standards therefore.
 
-E.g. if the Minimal Data Provider Service Offering is intended to work for the traceability use-case,
-conformance with the standards that are listed in the "Use-Case Policy Traceability" must be shown.
-This includes:
+E.g. if the Minimal Data Provider Service Offering is intended to work for the traceability Use Case,
+conformance with the respective standards must be shown.
+For the example of traceability, this includes:
 
-- CX-0019 Aspect Model: Serial Part Typization
-- CX-0020 Aspect Model: Aspect Model: Assembly Part Relationship
-- CX-0021 Aspect Model: Batch
-- CX-0022 Notification Process
+- CX-0125 Traceability Use Case
 - CX-0002 Digital Twins in Catena-X
 
-NOTE: The enablement service provider CAN also choose to provide the option to configure an existing
+NOTE: The Enablement Service Provider **MAY** also choose to provide the option to configure an existing
 EDC, DTR or other decentral component with the upload tool instead of including it with the offer.
-However, he MUST provide one of the two options.
+However,  one of the two options **MUST** be provided.
 
-As long as not specified differently, the latest version of the standards MUST be applied.
+As long as not specified differently, the latest version of the standards **MUST** be applied.
 
 ## 2.2 FUNCTIONAL & NON-FUNCTIONAL BUILDING BLOCKS
 
@@ -287,15 +260,15 @@ As long as not specified differently, the latest version of the standards MUST b
 
 |     ID  \|   Obligation                                                                                                                                                                                                                                                                                                |     Title                 |
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------|
-|     FR-03 \| Mandatory                                                                                                                                                                                                                                                                                                 |     Use-Case Selection    |
+|     FR-03 \| Mandatory                                                                                                                                                                                                                                                                                                 |     Use Case Selection    |
 |     Description                                                                                                                                                                                                                                                                                                        |                           |
-|     As a user, I want to be able to select, for which Catena-X Use-Case I want to upload data. Based on that selection, I then only want to see relevant information/templates (e.g., semantic models) for that specific Use-Case. If the tool is only built for one use-case, this feature doesn’t apply.     |                           |
+|     As a user, I want to be able to select, for which Catena-X Use Case I want to upload data. Based on that selection, I then only want to see relevant information/templates (e.g., semantic models) for that specific Use Case. If the tool is only built for one Use Case, this feature doesn’t apply.     |                           |
 
 |     ID  \|   Obligation                                                                                                                                                                                                                                                                                                      |     Title                                       |
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------|
 |     FR-04 \| Mandatory                                                                                                                                                                                                                                                                                                       |     Understandable Semantic Model Templates     |
 |     Description                                                                                                                                                                                                                                                                                                              |                                                 |
-| As a user, I want to be able to download semantic model templates for the use-case I selected in FR-03 so that I can fill them out with the necessary data. I also want the templates to be understandable for a non-expert in the semantic language so that I can enter   the right data in the right fields.     |                                                 |
+| As a user, I want to be able to download semantic model templates for the Use Case I selected in FR-03 so that I can fill them out with the necessary data. I also want the templates to be understandable for a non-expert in the semantic language so that I can enter   the right data in the right fields.     |                                                 |
 
 |     ID  \|   Obligation                                                                                                                                                                               |     Title                |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------|
@@ -416,7 +389,7 @@ It’s difficult to strictly specify the mandatory nonfunctional requirements, a
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------|
 |     NFR-03                                                                                                                                                                                                            |     Reliability/Availability    |
 |     Description                                                                                                                                                                                                       |                                 |
-|     Catena-X relies on uninterrupted data   chains for most of its use-cases. Thus, the data needs to be highly   available, as customers follow up processes rely on the availability of data   from a provider.     |                                 |
+|     Catena-X relies on uninterrupted data   chains for most of its Use Cases. Thus, the data needs to be highly   available, as customers follow up processes rely on the availability of data   from a provider.     |                                 |
 
 ### 2.3 DUTIES OF AN ENABLEMENT SERVICE PROVIDER
 
@@ -436,24 +409,24 @@ trust framework version 10/22
 
 Self-Descriptions can be created via the Portal and API, refer to the portal documentation for details.
 
-An enablement service provider MUST make sure that each connector
+An enablement service provider **MUST** make sure that each connector
 that he deploys with the upload tool also gets a valid Self-Description.
 
 #### 2.3.2 IMPLEMENT SSI SOLUTION
 
-Starting with Release 3.2, the EDC uses SSI for authentication and authorization.
-An upload tool MUST support the correct application of the SSI standards and connect to a wallet.
+The EDC uses SSI for authentication and authorization.
+An upload tool **MUST** support the correct application of the SSI standards and connect to a wallet.
 
 #### 2.3.3 REGISTER CONNECTOR AT EDC DISCOVERY SERVICE
 
-In case the upload tool brings its own connector, it MUST be registered at the EDC discovery service.
+In case the upload tool brings its own connector, it **MUST** be registered at the EDC discovery service.
 
 #### 2.3.4 MAKE DIGITAL TWIN REGISTRY DISCOVERABLE
 
 Note: This chapter only applies if a digital twin registry is required.
 
-In case the upload tool brings its own digital twin registry, it MUST be discoverable.
-To achieve this, the correct entries at the discovery finder and BPN Discovery service MUST be made.
+In case the upload tool brings its own digital twin registry, it **MUST** be discoverable.
+To achieve this, the correct entries at the discovery finder and BPN Discovery service **MUST** be made.
 
 #### 2.3.5 OPTIONAL: CONNECT TO CX IDP
 
@@ -466,12 +439,11 @@ of the tool with the Catena-X IdP for a SSO integration.
 
 ### 3.1 NORMATIVE REFERENCES
 
-As long as not specified differently, the latest version of the standard MUST be applied.
+As long as not specified differently, the latest version of the standard **MUST** be applied.
 
 - CX-0013 Identity of Member Companies
-- CX-0016 Company Attribute Verification
-- CX-0017 Company Role by the Connector
-- CX-0018 Eclipse Data Space Connector (EDC)
+- CX-0018 Dataspace Connectivity
+- CX-0149 Data Space Identity and Identification
 
 ### 3.2 NON-NORMATIVE REFERENCES
 

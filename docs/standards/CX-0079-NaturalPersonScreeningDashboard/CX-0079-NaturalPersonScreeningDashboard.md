@@ -3,7 +3,7 @@ tags:
   - CAT/Value Added Services
 ---
 
-# CX-0079 Natural Person Screening Dashboard v1.2.0
+# CX-0079 Natural Person Screening Dashboard v1.2.1
 
 ## ABSTRACT
 
@@ -31,6 +31,7 @@ The standard enables software and service companies to develop business partner 
 | ----------- | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | 1.1.0       |            | Added chapter 3 for NPS API.     |
 | 1.2.0       | 2024-03-24 | Corrected 2.3 - country list, Added chapter 3.6 Data Types and 3.7 Data Attributes, Added chapter 3.8 for data sovereignty as additional requirement. |
+| 1.2.1      | 2024-09-04 | Moved NPS Style Guide Reference from Normative Section to Non-Normative Section |
 
 ## 1 INTRODUCTION
 
@@ -50,6 +51,13 @@ This document is focusing on the functionality of the Natural Person Screening D
 > *This section is non-normative*
 
 The Natural Person Screening Dashboard is a screening tool and methodology to identify automated with a high probability if a BP data record in the Inbound Persistence is a Natural Person or a Legal Entity. The results of the validation have to be provided via a dashboard.
+
+The NPS dashboard design relies on the Catena-X style guide. See details under:
+Open-Source Repository: https://github.com/eclipse-tractusx/portal-shared-components
+
+NPM package: https://www.npmjs.com/package/@catena-x/portal-shared-components/v/2.1.2
+
+Storybook: https://eclipse-tractusx.github.io/portal-shared-components/?path=/docs/chip--docs
 
 The description of the required Gate API CX-0074, Version 3.0.0 is accessible throug the standard library of Catena-X: https://catena-x.net/de/standard-library
 
@@ -145,12 +153,6 @@ Number of rules used
 Search function and scrollbars
 Number of data records validated by NPS
 
-NPS has to rely on the Catena-X style guide.
-See details under
-
-- NPM package: https://www.npmjs.com/package/@catena-x/portal-shared-components/v/2.1.2
-- Storybook: https://eclipse-tractusx.github.io/portal-shared-components/?path=/docs/chip--docs
-
 NPS has to contain an administration screen with the following functionalities
 
 1. User Role definition and allocation
@@ -160,13 +162,6 @@ NPS has to contain an administration screen with the following functionalities
 5. Layout and View settings
 
 There is the intent that the results of NPS have to be accessible via a logfile of each CX Member.
-
-The NPS dashboard design relies on the Catena-X style guide. See details under:
-Open-Source Repository: https://github.com/eclipse-tractusx/portal-shared-components
-
-NPM package: https://www.npmjs.com/package/@catena-x/portal-shared-components/v/2.1.2
-
-Storybook: https://eclipse-tractusx.github.io/portal-shared-components/?path=/docs/chip--docs
 
 The Natural Person Screening (NPS) MUST perform the validation if a BP data record which was uploaded into the Inbound Persistence is a Natural Person that is an individual human being, or a Legal Entity based as defined in CX-0010 Version 2.0.0 or higher. To perform the Natural Person Screening rules, NPS MUST use the Gate API as defined in CX-0074 Version 1.1.0 or higher which MUST be implemented based on the OpenAPI 3.0.1 specification or higher.
 
@@ -265,14 +260,6 @@ The NPS Dashboard Admin Screen MUST provide the following capabilities:
 3. Country settings
 4. Notification settings
 5. Layout and View settings
-
-NPS has to rely on the Catena-X style guide.
-See details under
-
-- Library: https://www.npmjs.com/package/@catena-x/portal-shared-components
-- Docu: https://eclipse-tractusx.github.io/portal-shared-components/?path=/docs/chip--docs
-- NPM package: https://www.npmjs.com/package/@catena-x/portal-shared-components/v/2.1.2
-- Storybook: https://eclipse-tractusx.github.io/portal-shared-components/?path=/docs/chip--docs
 
 ## 3.0 NPS API
 

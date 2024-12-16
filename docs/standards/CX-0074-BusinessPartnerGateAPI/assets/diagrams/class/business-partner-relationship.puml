@@ -1,0 +1,36 @@
+' not implemented / standardized yet
+
+@startuml business-partner-relationship
+
+package "Business Partner Relationship and References" {
+  entity BusinessPartner {
+    ExternalID
+    NameParts
+    IsOwnCompanyData
+    CreatedAt
+    UpdateAt
+  }
+
+  entity BusinessPartnerRelationship {
+    ExternalID
+    CreatedAt
+    UpdateAt
+    ValidFrom
+    ValidTo
+  }
+
+  enum BusinessPartnerRelationshipType {
+    IsRegisteredAlternativeFor
+    IsManagedInCatenaXPortalBy
+    IsReplacedBy
+  }
+
+  BusinessPartnerRelationship "*" -l-> "1" BusinessPartner : Target
+  BusinessPartnerRelationship "*" -l-> "1" BusinessPartner : Source
+  BusinessPartnerRelationship "*" -d-> "1" BusinessPartnerRelationshipType : Type
+  
+}
+
+hide methods
+hide BusinessPartnerRelationship methods
+@enduml
