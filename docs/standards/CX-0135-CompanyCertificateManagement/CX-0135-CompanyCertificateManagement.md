@@ -177,7 +177,7 @@ https://github.com/eclipse-tractusx/sldt-semantic-models/blob/1ac8967e89074e4244
 :::info
 The Aspect Model will be updated to version 3.0.0 within the next release (CX-Io):
 
-> [io.catenax.shared.business_partner_certificate/3.0.0/BusinessPartnerCertificate.ttl](https://github.com/eclipse-tractusx/sldt-semantic-models/blob/6cdb6b9e889b0bd9b9a168c3596733c585c561e5/io.catenax.shared.business_partner_certificate/3.0.0/BusinessPartnerCertificate.ttl)
+> [urn:samm:io.catenax.business_partner_certificate:3.0.0](https://github.com/eclipse-tractusx/sldt-semantic-models/blob/6cdb6b9e889b0bd9b9a168c3596733c585c561e5/io.catenax.shared.business_partner_certificate/3.0.0/BusinessPartnerCertificate.ttl)
 
 it is strongly RECOMMENDED to apply the version 3.0.0 for the certification as version 1.0.0 will be deprecated.
 :::
