@@ -175,11 +175,11 @@ The RDF turtle file, an instance of the Semantic Aspect Meta Model, is the maste
 https://github.com/eclipse-tractusx/sldt-semantic-models/blob/1ac8967e89074e42446727303033d86506bad85b/io.catenax.shared.business_partner_certificate/1.0.0/BusinessPartnerCertificate.ttl
 
 :::info
-The Aspect Model will be updated to version 3.0.0 within the next release:
+The Aspect Model will be updated to version 3.0.0 within the next release (CX-Io):
 
-> https://github.com/eclipse-tractusx/sldt-semantic-models/blob/6cdb6b9e889b0bd9b9a168c3596733c585c561e5/io.catenax.shared.business_partner_certificate/3.0.0/BusinessPartnerCertificate.ttl
+> [io.catenax.shared.business_partner_certificate/3.0.0/BusinessPartnerCertificate.ttl](https://github.com/eclipse-tractusx/sldt-semantic-models/blob/6cdb6b9e889b0bd9b9a168c3596733c585c561e5/io.catenax.shared.business_partner_certificate/3.0.0/BusinessPartnerCertificate.ttl)
 
-it is strongly RECOMMENDED to apply the version 3.0.0 for the certification.
+it is strongly RECOMMENDED to apply the version 3.0.0 for the certification as version 1.0.0 will be deprecated.
 :::
 
 The open source command line tool of the Eclipse Semantic Modeling Framework is used for generation of other file formats like for example a JSON Schema, AASX for Asset Administration Shell Submodel Template or a HTML documentation.
