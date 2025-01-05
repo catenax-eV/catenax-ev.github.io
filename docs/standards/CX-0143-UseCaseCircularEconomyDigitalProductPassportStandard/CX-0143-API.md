@@ -48,9 +48,9 @@ The EDC assets for product passports **MUST** follow the JSON.
 
 ### 3.1.2 EDC Policy Structure
 
-A participant mentioned under [1.1](#11-audience--scope) **MUST** sign the overall
-[Catena-X Terms and Condition](https://catenax-ev.github.io/docs/regulatory-framework/governance-framework) as well as the sustainability agreement
-[circular economy framework agreement](https://catenax-ev.github.io/docs/regulatory-framework/20000ft/use-case-ce).
+A participant mentioned under [1.1](#11-audience--scope) **MUST** agree to the overall
+[Catena-X Terms and Condition](https://catenax-ev.github.io/docs/regulatory-framework/governance-framework) as well as the general FrameworkAgreement
+[DataExchangeGovernance:1.0](https://catenax-ev.github.io/docs/next/regulatory-framework/20000ft/Data%20Exchange%20Governance).
 
  Have a look at example policies [here](https://github.com/catenax-eV/cx-odrl-profile/blob/c96b426ded7922f44bdc33bfc5e0bf754031b5e8/example_usage_policy.json). A guideline for different use cases profiles has been provided [here](https://github.com/catenax-eV/cx-odrl-profile/blob/c96b426ded7922f44bdc33bfc5e0bf754031b5e8/profile.md)
 
@@ -74,8 +74,8 @@ A Data Provider may tie certain access authorizations ("Access Policies") to its
 
 In the context of data usage policies (“Usage Policies”), Participants and related services **MUST** use the following policy rules:
 
-- Use Case Framework (“FrameworkAgreement”), for the Digital Product Pass **MUST** be the latest circular economy framework agreement contraint provided in the profiles [here](https://github.com/catenax-eV/cx-odrl-profile/blob/c96b426ded7922f44bdc33bfc5e0bf754031b5e8/profile.md#frameworkagreement).
-- for the Digital Product Passport, Battery Passport and other passports the latest (“UsagePurpose”) for circular economy "dpp" **MUST** be used. It is defined [here](https://github.com/catenax-eV/cx-odrl-profile/blob/c96b426ded7922f44bdc33bfc5e0bf754031b5e8/profile.md#usagepurpose) in the latest policy profile contraints.
+- Use Case Framework (“FrameworkAgreement”), for the Digital Product Pass **MUST** be the `DataExchangeGovernance:1.0` framework agreement provided in the profiles [here](https://github.com/catenax-eV/cx-odrl-profile/blob/c96b426ded7922f44bdc33bfc5e0bf754031b5e8/profile.md#frameworkagreement).
+- for the Digital Product Passport, Battery Passport and other passports the latest (“UsagePurpose”) for circular economy `cx.circular.dpp:1` **MUST** be used. It is defined [here](https://github.com/catenax-eV/cx-odrl-profile/blob/c96b426ded7922f44bdc33bfc5e0bf754031b5e8/profile.md#usagepurpose) in the latest policy profile contraints.
 
 Additionally, respective usage policies **MAY** include the following policy rule:
 
