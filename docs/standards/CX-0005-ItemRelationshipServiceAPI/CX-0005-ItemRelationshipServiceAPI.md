@@ -157,7 +157,7 @@ To find the correct assets within a data space the Digital Twin registry is beei
 
 ### 2.2.1 API ENDPOINTS & RESOURCES
 
-The openAPI documentation is formulated here [IRS API 4.5.2]([IRS API](https://github.com/eclipse-tractusx/item-relationship-service/blob/4.5.2/docs/src/api/irs-api.yaml))
+The openAPI documentation is formulated here [IRS API 4.5.2]([IRS API](./assets/irs-api.yaml))
 The following Endpoints **MUST** be implemented as described in the openAPI document:
 
 - ItemRelationshipService
