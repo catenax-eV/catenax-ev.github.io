@@ -1,0 +1,290 @@
+@startuml business-partner
+
+package "Business Partner and References" {
+  entity BusinessPartner {
+    ExternalID
+    NameParts
+    IsOwnCompanyData
+    CreatedAt
+    UpdateAt
+  }
+
+  ' taken out from 24.05 using the separate entity states only
+  ' class BusinessPartnerState {
+  '   ValidFrom
+  '   ValidTo
+  ' }
+
+  ' enum BusinessPartnerStateType {
+  '   Active
+  '   Inactive
+  ' }
+
+  class LegalEntityState {
+    ValidFrom
+    ValidTo
+  }
+
+  enum LegalEntityStateType {
+    Active
+    Inactive
+  }
+  
+  class SiteState {
+    ValidFrom
+    ValidTo
+  }
+
+  enum SiteStateType{
+      Active
+      Inactive
+    }
+
+  class AddressState {
+    ValidFrom
+    ValidTo
+  }
+
+  enum AddressStateType{
+    Active
+    Inactive
+  }
+
+  class BusinessPartnerIdentifier {
+    Value
+    IssuingBody
+  }
+
+  ' taken out from 24.05, as not clear if this is modelled correctly
+  ' class Classification{
+  '   Value
+  '   Code
+  ' }
+    
+  ' enum ClassificationType {
+  '   NACE
+  '   NAF
+  '   NAICS
+  '   SIC
+  ' }
+
+  entity IdentifierType {
+    TechnicalKey
+    Name
+    ...
+  }
+
+  enum Role {
+    Supplier
+    Customer
+  }
+
+  entity LegalForm {
+    TechnicalKey
+    ...
+  }
+
+  entity LegalEntity {
+    BPNL
+    ...
+  }
+
+  class LegalEntityRepresentation {
+    LegalName
+    ShortName
+  }
+
+  entity Site {
+    BPNS
+    ...
+  }
+
+  class SiteRepresentation {
+    Name
+  }
+
+  entity Address {
+    BPNA
+    ...
+  }
+
+  class AddressRepresentation {
+    Name
+  }
+
+  ' not yet standardized, as not clear if operating company can correctly implement it
+  ' class ConfidenceCriteria {
+  '   SharedByOwner
+  '   CheckedByExternalSource
+  '   NumberOfSharingMembers
+  '   LastConfidenceCheckAt
+  '   NextConfidenceCheckAt
+  '   ConfidenceLevel
+  ' }
+
+  class AddressRepresentation { }
+
+  enum AddressType {
+    LegalAddress
+    SiteMainAddress
+    LegalAndSiteMainAddress
+    AdditionalAddress
+  }
+  
+  class AlternativePostalAddress{
+    DeliveryServiceQualifier
+    DeliveryServiceNumber
+  }
+
+  enum DeliveryServiceType {
+    POBox
+    PrivateBag
+    BoitePostale
+  }
+
+  class PhysicalPostalAddress{
+    AdministrativeAreaLevel2
+    AdministrativeAreaLevel3
+    District
+    CompanyPostalCode
+    TaxJurisdictionCode
+    IndustrialZone
+    Building
+    Floor
+    Door 
+  }
+
+  abstract class PostalAddress{
+    PostalCode
+    City
+  }
+
+  enum Country {
+    DE
+    FR
+    US
+    ...
+  }
+
+  entity AdministrativeAreaLevel1{
+    Code
+    Name
+    ...
+  }
+
+  class GeographicCoordinates {
+    Latitude
+    Longitude
+    Altitude
+  }
+
+  class Street {
+    NamePrefix
+    AdditionalNamePrefix
+    Name
+    NameSuffix
+    AdditionalNameSuffix
+    HouseNumber
+    HouseNumberSupplement
+    Milestone
+    Direction
+  }
+
+  ' not implemented / standardized yet
+  ' class LegalEntityScriptVariant {
+  '   LegalName
+  '   ShortName
+  ' }
+  
+  ' class SiteScriptVariant {
+  '   Name
+  ' }
+
+  ' class AddressScriptVariant {
+  '   Name
+  ' }
+
+  ' class BusinessPartnerScriptVariant {
+  '   NameParts
+  ' }
+
+  ' enum ScriptCode {
+  '   Arab
+  '   Cyrl
+  '   Hans
+  '   Jpan
+  '   Latn
+  '   ...
+  ' }
+
+  BusinessPartner "1" -u-> "1" LegalEntityRepresentation : LegalEntity
+  BusinessPartner "1" -u-> "0..1" SiteRepresentation : Site
+  BusinessPartner "1" -u-> "1" AddressRepresentation : Address
+
+  LegalEntityRepresentation "0..1" -u-> "1" LegalEntity : BPNL
+  SiteRepresentation "0..1" -u-> "1" Site : BPNS
+  AddressRepresentation "0..1" -u-> "1" Address : BPNA
+
+  AddressRepresentation "*" -u-o "1" AddressType : Type
+  AddressRepresentation "1" -d-> "0..1" AlternativePostalAddress : AlternativePostalAddress
+  AlternativePostalAddress "*" -d-o "1" DeliveryServiceType : DeliveryServiceType
+  AlternativePostalAddress -d-|> PostalAddress
+  
+  AddressRepresentation "1" -d-> "1" PhysicalPostalAddress : PhysicalPostalAddress
+  PhysicalPostalAddress "1" -d-> "0..1" Street : Street
+  PhysicalPostalAddress -d-|> PostalAddress
+  
+  PostalAddress "*" -d-o "1" Country : Country
+  PostalAddress "*" -d-o "0..1" AdministrativeAreaLevel1 : AdministrativeAreaLevel1
+  PostalAddress "1" -d-> "0..1" GeographicCoordinates : GeographicCoordinates
+
+  ' not yet standardized, as not clear if operating company can correctly implement it
+  ' LegalEntityRepresentation "1" -u-> "1" ConfidenceCriteria : ConfidenceCriteria
+  ' SiteRepresentation "1" -u-> "1" ConfidenceCriteria : ConfidenceCriteria
+  ' AddressRepresentation "1" -u-> "1" ConfidenceCriteria : ConfidenceCriteria
+
+  ' taken out from 24.05 using the separate entity states only
+  ' BusinessPartner "1" *-d-> "*" BusinessPartnerState : States
+  ' BusinessPartnerState "*" -d-o "1" BusinessPartnerStateType : Type
+  
+  LegalEntityRepresentation "1" *-u-> "*" LegalEntityState : States
+  LegalEntityState "*" -u-o "1" LegalEntityStateType : Type
+
+  SiteRepresentation "1" *-u-> "*" SiteState : States
+  SiteState "*" -u-o "1" SiteStateType : Type
+
+  AddressRepresentation "1" *-u-> "*" AddressState : States
+  AddressState "*" -u-o "1" AddressStateType : Type
+
+  BusinessPartner "1" *-d-> "*" BusinessPartnerIdentifier : Identifiers
+  BusinessPartnerIdentifier "*" -d-o "1" IdentifierType : Type
+
+  BusinessPartner "*" -d-o "*" Role : Roles
+
+  ' taken out from 24.05, as not clear if this is modelled correctly
+  ' LegalEntityRepresentation "1" *-d-> "*" Classification : Classifications
+  ' Classification "*" -d-o "1" ClassificationType : Type
+  
+  LegalEntityRepresentation "*" -d-o "0..1" LegalForm : LegalForm
+
+  ' not implemented / standardized yet
+  ' LegalEntityRepresentation "1" *--> "*" LegalEntityScriptVariant : ScriptVariants
+  ' LegalEntityScriptVariant "*" --o "1" ScriptCode : ScriptCode
+
+  ' SiteRepresentation "1" *--> "*" SiteScriptVariant : ScriptVariants
+  ' SiteScriptVariant "*" --o "1" ScriptCode : ScriptCode
+
+  ' AddressRepresentation "1" *--> "*" AddressScriptVariant : ScriptVariants
+  ' AddressScriptVariant "*" --o "1" ScriptCode : ScriptCode
+  ' AddressScriptVariant "1" -d-> "1" PhysicalPostalAddress : PhysicalPostalAddress
+  ' AddressScriptVariant "1" -d-> "0..1" AlternativePostalAddress : AlternativePostalAddress
+
+  ' BusinessPartner "1" *--> "*" BusinessPartnerScriptVariant : ScriptVariants
+  ' BusinessPartnerScriptVariant "*" --o "1" ScriptCode : ScriptCode
+}
+
+hide methods
+hide AddressRepresentation methods
+hide LegalEntityRepresentation methods 
+hide SiteRepresentation methods
+@enduml

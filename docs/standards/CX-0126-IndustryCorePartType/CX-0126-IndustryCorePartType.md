@@ -1,9 +1,10 @@
 ---
 tags:
   - CAT/Semantic
+  - CAT/Industry Core
 ---
 
-# CX-0126 Industry Core: Part Type 2.0.0
+# CX-0126 Industry Core: Part Type 2.1.0
 
 ## ABSTRACT
 
@@ -14,6 +15,9 @@ This standard describes the **Industry Core: Part Type**. It sets the foundation
 This standard is designed for everybody who wants to register, describe and use digital twins on part type level.
 
 ## COMPARISON WITH THE PREVIOUS VERSION OF THE STANDARD
+
+- Added guidance in [Section 2.1.2](#212-data-required)
+  - criteria for applying the industry core for part types
 
 - Added new content in [Section 2.1.3](#213-additional-requirements)
   - New paragraph "Conventions for Use Case Policy in context data exchange"
@@ -151,6 +155,25 @@ The aspect model "SingleLevelUsageAsPlanned" **MAY** be linked to the Asset Admi
 The submodel data **MUST** be transferred using the IDS Protocol as described in CX-0018.
 The Tractus-X EDC as a reference implementation is **RECOMMENDED** to be used as a connector conformant to CX-0018.
 
+Whenever data related to a single part type or on specific material number level is shared between partners, the use case **MUST** check which of the two cases mentioned below apply and act accordingly.
+
+**Case 1: Aspect model contains data that describe the properties of a part type and are typically created by the manufacturer**
+*Examples are product name, product properties, product handling instructions, product passport, product carbon footprint*
+
+It is **RECOMMENDED** to create a digital twin as described above. It is **RECOMMENDED** to attach the use case specific aspect models to the digital twin following the CX-0002 standard. If no twin exists it is **RECOMMENDED** to create the digital twin and attach the data as a submodel.
+
+> ***Note:*** With the Saturn-Release (2025) this requirement will be changed from **RECOMMENDED** to **MUST**.
+
+Notifications **MAY** be used in addition but **SHOULD** be reduced to a minimum.
+Duplicate digital twins **SHOULD** be avoided, therefore applications **SHOULD** scan the existing Digital Twin Registry for already existing twins for the same part type before creating a new one. In case of an existing twin, only submodel information **SHOULD** be attached to the existing twin.
+
+**Case 2: Aspect model contains data that relate to different stages of the life cycle of the part type and are potentially created by other participants in the data chain**
+*Examples are product demands, product capacities, product stock, product end of life*
+
+It is **RECOMMENDED** to create a digital twin as described above. The use case specific aspect models **SHOULD** be attached to the digital twin following the CX-0002 standard
+Notifications **MAY** be used in addition.
+Several participants in the data chain **MAY** create digital twins related to that part type following the CX-0002 standard.
+
 #### 2.1.3 ADDITIONAL REQUIREMENTS
 
 As the IDS protocol is being used, data **MUST NOT** be transferred before a corresponding contract negotiation has been successfully passed by the participants of the data exchange and a valid contract is present as described in CX-0018. The required data offers **MUST** be discoverable through the Digital Twin Registry as submodel endpoints.
@@ -196,7 +219,7 @@ The API versions **MUST** be published in the property https://w3id.org/catenax/
 
 The asset's globalAssetId **MUST** be equal to the unique id used in Catena-X
 
-The following specific asset IDs not marked as optional **MUST** be available when registering a digital twin or when adding the above mentioned submodels to an existing twin for a  part type in order to allow discovery. (see  CX-0002 that provides additional information), while `customerPartId` is **RECOMMENDED** to be added to the twin whenever possible, as customers usually do not have access to the manufacturer part number in their logistics processes. The specific asset IDs marked as optional **MAY** be used in addition.
+The following specific asset IDs not marked as optional **MUST** be available in the decentral Digital Twin Registry when registering a digital twin or when adding the above mentioned submodels to an existing twin for a  part type in order to allow searching for that specific asset ID. (see  CX-0002 that provides additional information), while `customerPartId` is **RECOMMENDED** to be added to the twin whenever possible, as customers usually do not have access to the manufacturer part number in their logistics processes. The specific asset IDs marked as optional **MAY** be used in addition.
 
 The following conventions for specific Asset IDs apply to all digital twins:
 
@@ -299,15 +322,15 @@ A JSON Schema can be generated from the RDF Turtle file. The JSON Schema defines
 
 A AASX file can be generated from the RDF Turtle file. The AASX file defines one of the requested artifacts for a submodel template specification conformant to [SMT](#62-non-normative-references).
 
-**Note:** As soon as the specification v3.0 of the Asset Administration Shell specification is available and update will be provided.
+**Note:** As soon as the specification v3.0 of the Asset Administration Shell specification is available an update will be provided.
 
 #### 3.1.6 EXAMPLE DATA
 
-Example JSON payload: Submodel "PartTypeInformation" v1.0.0 that is **mandatory** in this standard version.
+Example JSON payload: Submodel "PartTypeInformation" v2.0.0 that is **mandatory** in this standard version.
 
 ```json
 {
-  "catenaXId" : "580d3adf-1981-44a0-a214-13d6ceed9379",
+  "catenaXId" : "urn:uuid:580d3adf-1981-44a0-a214-13d6ceed9379",
   "partTypeInformation" : {
     "partClassification" : [
       {
@@ -641,3 +664,5 @@ This section is empty.
 ## Legal
 
 Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).
+
+[def]: #212-data-required
