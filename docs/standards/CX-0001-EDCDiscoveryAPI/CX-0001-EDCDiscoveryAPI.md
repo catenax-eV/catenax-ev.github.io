@@ -125,12 +125,12 @@ A test case could be, that an EDC instance has to be onboarded for a specific pa
 
 ```json
 {
-    "id": "<https://compliance.gaia-x.eu/.well-known/participant.json>",
+    "id": "https://compliance.gaia-x.eu/.well-known/participant.json",
     "@context": [
-        "<https://www.w3.org/2018/credentials/v1>",
-        "<https://registry.gaia-x.eu/v2206/api/shape/files?file=participant&type=jsonld>",
-        "<https://raw.githubusercontent.com/eclipse-tractusx/sd-factory/main/src/main/resources/verifiablecredentials.jsonld/sd-document-v22.10.jsonld>",
-        "<https://w3id.org/vc/status-list/2021/v1>"
+        "https://www.w3.org/2018/credentials/v1",
+        "https://registry.gaia-x.eu/v2206/api/shape/files?file=participant&type=jsonld",
+        "https://raw.githubusercontent.com/eclipse-tractusx/sd-factory/main/src/main/resources/verifiablecredentials.jsonld/sd-document-v22.10.jsonld",
+        "https://w3id.org/vc/status-list/2021/v1"
     ],
     "type": [
         "VerifiableCredential",
@@ -162,11 +162,11 @@ A test case could be, that an EDC instance has to be onboarded for a specific pa
         "gx-participant:termsAndConditions": "70c1d713215f95191a11d38fe2341faed27d19e083917bc8732ca4fea4976700"
     },
     "credentialStatus": {
-        "id": "<https://managed-identity-wallets.int.demo.catena-x.net/api/credentials/status/315de87e-713c-4bd8-aa58-a31a4189b71f#7>",
+        "id": "https://managed-identity-wallets.int.demo.catena-x.net/api/credentials/status/315de87e-713c-4bd8-aa58-a31a4189b71f#7",
         "type": "StatusList2021Entry",
         "statusPurpose": "revocation",
         "statusListIndex": "7",
-        "statusListCredential": "<https://managed-identity-wallets.int.demo.catena-x.net/api/credentials/status/315de87e-713c-4bd8-aa58-a31a4189b71f>"
+        "statusListCredential": "https://managed-identity-wallets.int.demo.catena-x.net/api/credentials/status/315de87e-713c-4bd8-aa58-a31a4189b71f"
     },
     "proof": {
         "type": "Ed25519Signature2018",
