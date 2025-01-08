@@ -6,7 +6,7 @@ tags:
   - CAT/Sandbox Service Provider
 ---
 
-# CX-0001 EDC Discovery API v1.0.3
+# CX-0001 EDC Discovery API v1.0.4
 
 ## ABSTRACT
 
