@@ -167,7 +167,6 @@ destination:
 In order to connect to your deployed services with a secured connection, you have to annotate you Ingresses with the following:
 
 ```yaml
-
 metadata:
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt-prod"
@@ -179,7 +178,6 @@ The URL of the Ingress should be unique throughout the whole cluster, since othe
 Good practice is to combine it with your service and project name.
 
 ```yaml
-
   tls:
     - hosts:
         - {projectName}-{serviceName}.int.catena-x.net

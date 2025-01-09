@@ -37,13 +37,13 @@ An [Association Member](#association-member) can acquire additional roles by joi
 |  |  | Management board |  | Committee |  |  | Expert Group |  | [Catena-X office](catena-x-office.md) |
 |---|---|---|---|---|---|---|---|---|---|
 |  |  | Member | [Sponsor](management-board.md#board-sponsor) | [Lead](committee.md#lead-and-co-lead) | Member | [Mentor](committee.md#mentor-for-expert-groups-optional) | Lead | Member |  |
-| Strategy | [Develop and maintain the Association strategy](management-board.md#association-strategy) | A | D | I |  |  | I |  | C |
-|  | [Develop and maintain the business domain strategy](committee.md#business-domain-strategy) | I | A | D | C |  | I | I | C |
-|  | [Develop and maintain a strategy on functional level](expert-group.md#functional-level-strategy)  |  | I | A |  | C | D | C | C |
+| Strategy | [Develop and maintain the Association strategy](management-board.md#association-strategy) | A | D | I |  |  | I |  | |
+|  | [Develop and maintain the business domain strategy](committee.md#business-domain-strategy) | I | A | D | C |  | I | I | |
+|  | [Develop and maintain a strategy on functional level](expert-group.md#functional-level-strategy)  |  | I | A |  | C | D | C | |
 | Mgmt. of association bodies | Setup Committees | D, A |  |  |  |  |  |  | C |
 |  | Close Committees | A | D | C | I |  |  |  |  |
-|  | Setup Expert Groups |  | I | A | A | D |  |  | C |
-|  | [Close Expert Groups](expert-group.md#closing-of-expert-groups) |  | I | A |  | D | A | A | C |
+|  | Setup Expert Groups |  | I | A | A | D |  |  | |
+|  | [Close Expert Groups](expert-group.md#closing-of-expert-groups) |  | I | A |  | D | A | A | |
 | Development | Propose new feature requests |  |  | C  | C | C | A | D |  |
 |  | Approve features requests) |  |  |  | I | I | D | A,C |  |
 |  | Track the progress of the feature) |  |  |  | I | I | D | A,C |  |
