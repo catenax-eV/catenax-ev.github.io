@@ -3,7 +3,7 @@ tags:
   - CAT/Value Added Services
 ---
 
-# CX-0135 BP Company Certificate Management v2.1.0
+# CX-0135 BP Company Certificate Management v2.1.1
 
 ## ABSTRACT
 
@@ -165,6 +165,14 @@ This Catena-X data model is made available under the terms of the Creative Commo
 The semantic model has the unique identifier
 
 > urn:samm:io.catenax.business_partner_certificate:1.0.0
+
+:::info
+The Aspect Model will be updated to version 3.0.0 within the next release (CX-Io):
+
+> [urn:samm:io.catenax.business_partner_certificate:3.0.0](https://github.com/eclipse-tractusx/sldt-semantic-models/blob/6cdb6b9e889b0bd9b9a168c3596733c585c561e5/io.catenax.shared.business_partner_certificate/3.0.0/BusinessPartnerCertificate.ttl)
+
+it is strongly RECOMMENDED to apply the version 3.0.0 (or higher) for the certification as version 1.0.0 will be deprecated.
+:::
 
 This identifier **MUST** be used by the data provider to define the semantics of the data being transferred.
 
