@@ -4,7 +4,7 @@ tags:
   - UC/Quality
 ---
 
-# CX-0131 Circularity Core v1.2.0
+# CX-0131 Circularity Core v1.1.0
 
 ## ABSTRACT
 
@@ -193,17 +193,17 @@ To participate in the EoL Services use-case, the following single standards are 
 - CX-0127:2.0 Industry Core: Part Instance with the Aspect Model "SerialPart"
 - CX-0127:2.0 Industry Core: Part Instance with the Aspect Model "SingleLevelBoMAsBuilt"
 - CX-0126:2.0 Industry Core: Part Type with the Aspect Model "SingleLevelBomAsPlanned"
-- [Aspect Model SingleLevelBoMAsSpecified](#31-aspect-model-singlelevelbomasspecified)
-- [Aspect Model MaterialForHomologation](#32-aspect-model-materialforhomologation)
-- [Aspect Model PartAsSpecified](#33-aspect-model-partasspecified)
-- [Aspect Model QualityTask](#34-aspect-model-qualitytask)
-- [Aspect Model VehicleProductDescription](#35-aspect-model-vehicleproductdescription)
+- [Aspect Model SingleLevelBoMAsSpecified v2.0.0](#31-aspect-model-singlelevelbomasspecified)
+- [Aspect Model MaterialForHomologation v1.0.0](#32-aspect-model-materialforhomologation)
+- [Aspect Model PartAsSpecified v1.0.1](#33-aspect-model-partasspecified)
+- [Aspect Model QualityTask v1.0.2](#34-aspect-model-qualitytask)
+- [Aspect Model VehicleProductDescription v2.0.0](#35-aspect-model-vehicleproductdescription)
 - [Aspect Model FleetDiagnosticData](#36-aspect-model-fleetdiagnosticdata)
-- [Aspect Model FleetClaimData](#37-aspect-model-fleetclaimdata)
-- [Aspect Model PartAnalyses](#38-aspect-model-partanalyses)
-- [Aspect Model ManufacturedPartsQualityInformation](#39-aspect-model-manufacturedpartsqualityinformation)
-- [Aspect Model FleetVehicles](#310-aspect-model-fleetvehicles)
-- [Aspect Model QualityTaskAttachment](#311-aspect-model-qualitytaskattachment)
+- [Aspect Model FleetClaimData v1.0.1](#37-aspect-model-fleetclaimdata)
+- [Aspect Model PartAnalyses v2.0.0](#38-aspect-model-partanalyses)
+- [Aspect Model ManufacturedPartsQualityInformation v1.0.1](#39-aspect-model-manufacturedpartsqualityinformation)
+- [Aspect Model FleetVehicles v1.0.0](#310-aspect-model-fleetvehicles)
+- [Aspect Model QualityTaskAttachment v1.0.0](#311-aspect-model-qualitytaskattachment)
 
 Participants in the use case **MUST** follow Catena-X aligned [data models](https://github.com/eclipse-tractusx/sldt-semantic-models).
 
@@ -221,13 +221,13 @@ For the remanufacturing or refurbishment of a component or part, the following r
 
 Application Provider for EoL Services **MUST** be able to handle the following certificates:
 
-- [Aspect Model Certificate of Decommissioning](#322-aspect-model-decommissioningcertificate)
-- [Aspect Model Reuse Certificate](#316-aspect-model-reusecertificate)
-- [Aspect Model Waste Certificate](#317-aspect-model-wastecertificate)
-- [Aspect Model Refurbishing Certificate](#318-aspect-model-refurbishingcertificate)
-- [Aspect Model Remanufacturing Certificate](#319-aspect-model-remanufacturingcertificate)
-- [Aspect Model Material Recycling Certificate](#320-aspect-model-materialrecyclingcertificate)
-- [Aspect Model Repair Certificate](#321-aspect-model-repaircertificate)
+- [Aspect Model Certificate of Decommissioning v1.0](#322-aspect-model-decommissioningcertificate)
+- [Aspect Model Reuse Certificate v3.0](#316-aspect-model-reusecertificate)
+- [Aspect Model Waste Certificate v1.0](#317-aspect-model-wastecertificate)
+- [Aspect Model Refurbishing Certificate v3.0](#318-aspect-model-refurbishingcertificate)
+- [Aspect Model Remanufacturing Certificate v3.0](#319-aspect-model-remanufacturingcertificate)
+- [Aspect Model Material Recycling Certificate v1.0](#320-aspect-model-materialrecyclingcertificate)
+- [Aspect Model Repair Certificate v1.0.0](#321-aspect-model-repaircertificate)
 
 ##### 2.4.2.1 Registration of the Digital Twin and the Submodel in the Digital Twin Registry
 
@@ -310,10 +310,10 @@ To participate in the CE-Assistant use-case, compliance to the following data mo
 
 To participate in the CE-Assistant use-case, compliance to the following data models / certificates is **RECOMMENDED** by all participants for which the standard is relevant:
 
-- [Aspect Model Reuse Certificate](#316-aspect-model-reusecertificate)
-- [Aspect Model Refurbishing Certificate](#318-aspect-model-refurbishingcertificate)
-- [Aspect Model Remanufacturing Certificate](#319-aspect-model-remanufacturingcertificate)
-- [Aspect Model Repair Certificate](#321-aspect-model-repaircertificate)
+- [Aspect Model Reuse Certificate v3.0](#316-aspect-model-reusecertificate)
+- [Aspect Model Refurbishing Certificate v3.0](#318-aspect-model-refurbishingcertificate)
+- [Aspect Model Remanufacturing Certificate v3.0](#319-aspect-model-remanufacturingcertificate)
+- [Aspect Model Repair Certificate v1.0.0](#321-aspect-model-repaircertificate)
 
 #### 2.5.2 DATA REQUIRED for CE Assistant
 
@@ -379,53 +379,14 @@ For the selection of an R-Strategy of a component consider the differentiation i
 
 ### 2.6 EDC Policy Structure
 
-The policies mentioned in this chapter **MUST** be fulfilled by each use case mentioned in this document as well as a participant mentioned under [1.1](#11-audience--scope) **MUST** agree to the overall [Catena-X Terms and Condition](https://catena-x.net/en/catena-x-introduce-implement/governance-framework-for-data-space-operations)
-as well as the general FrameworkAgreement
- [DataExchangeGovernance:1.0](../../regulatory-framework/20000ft/data-exchange-governance.md).
+The policies mentioned in this chapter **MUST** be fulfilled by each use case mentioned in this document as well as a participant mentioned under [1.1](#11-audience--scope) **MUST** agree to the overall [Catena-X Data Exchange Governance Framework Agreement](https://catenax-ev.github.io/docs/next/regulatory-framework/20000ft/data-exchange-governance)
+as well as the general FrameworkAgreement [DataExchangeGovernance:1.0](https://catenax-ev.github.io/docs/next/regulatory-framework/20000ft/data-exchange-governance).
+
 This follows the first SSI setup following the [IAM Standards](#21-overall-standalone-standards) in CX covering the new SSI infrastructure which will released with release 3.2.
 
-The minimum set of **membership** and the **Data Exchange Governance** Framework Agreement
+The minimum set of the **Data Exchange Governance** Framework Agreement and one purpose is provided in the [Example Usage Policy](https://github.com/catenax-eV/cx-odrl-profile/blob/905831b0c8287f088d6ff8c098076d567a0498a7/example_usage_policy.json).
 
-```json
-{
-    "@context": {
-        "odrl": "http://www.w3.org/ns/odrl/2/"
-    },
-    "@type": "PolicyDefinitionRequestDto",
-    "@id": "{{POLICY_ID}}",
-    "policy": {
-        "@type": "Policy",
-        "odrl:permission": [
-            {
-                "odrl:action": "USE",
-                "odrl:constraint": {
-                    "@type": "LogicalConstraint",
-                    "odrl:and": [
-                        {
-                            "@type": "Constraint",
-                            "odrl:leftOperand": "Membership",
-                            "odrl:operator": {
-                                "@id": "odrl:eq"
-                            },
-                            "odrl:rightOperand": "active"
-                        },
-                        {
-                            "@type": "Constraint",
-                            "odrl:leftOperand": "FrameworkAgreement.sustainability",
-                            "odrl:operator": {
-                                "@id": "odrl:eq"
-                            },
-                            "odrl:rightOperand": "active"
-                        }
-                    ]
-                }
-            }
-        ]
-    }
-}
-```
-
-For more examples have a look [here](https://github.com/eclipse-tractusx/ssi-docu/blob/main/docs/architecture/cx-3-2/edc/policy.definitions.md).
+For more examples have a look [here](https://github.com/eclipse-tractusx/ssi-docu/blob/22256a296387351b24975cbd8c4446af69c52265/docs/architecture/cx-3-2/edc/policy.definitions.md).
 
 ## 3 ASPECT MODELS
 
@@ -601,15 +562,15 @@ The data model End of Life of Vehicle Compliance describes the RRR calculation r
 The semantic model has the unique identifier:
 
 ```text
-  urn:samm:io.catenax.fleet.vehicles:3.0.0#
+  urn:samm:io.catenax.fleet.vehicles:2.1.0#
 ```
 
 The artifacts of the semantic model:
 
 ```
-RDF Turtle File: https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.fleet.vehicles/3.0.0/Vehicles.ttl
-JSON Schema: https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.fleet.vehicles/3.0.0/gen
-AASX: https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.fleet.vehicles/3.0.0/gen
+RDF Turtle File: https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.fleet.vehicles/2.1.0/Vehicles.ttl
+JSON Schema: https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.fleet.vehicles/2.1.0/gen
+AASX: https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.fleet.vehicles/2.1.0/gen
 ```
 
 ### 3.11 ASPECT MODEL "QualityTaskAttachment"

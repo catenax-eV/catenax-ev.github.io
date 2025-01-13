@@ -1,0 +1,13 @@
+@startuml business-partner-type
+
+package "Business Partner Type" {
+
+  enum BusinessPartnerType {
+    LegalEntity
+    Site
+    Address
+  }
+}
+
+hide methods
+@enduml
