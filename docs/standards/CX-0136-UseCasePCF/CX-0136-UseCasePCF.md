@@ -136,11 +136,11 @@ To participate in the CO2 use-case, the following standard MUST be fulfilled:
 
 In addition, the following standards are used to support the PCF usecase. Athough they are NOT part of this specification, they are mentioned here, as APIs or other assets provided by them are used within the PCF usecase:
 
-- [CX-0001 EDC Discovery API v1.0.2](https://catena-x.net/en/standard-library)
-- [CX-0002 Digital Twins in Catena-X v2.2.0](https://catena-x.net/en/standard-library)
-- [CX-0003 SAMM Aspect Meta Model v1.1.0](https://catena-x.net/en/standard-library)
-- [CX-0018 Dataspace Connectivity v3.1.0](https://catena-x.net/en/standard-library)
-- [CX-0126 Industry Core: Part Type v2.0.0](https://catena-x.net/en/standard-library)
+- [CX-0001 EDC Discovery API v1.0.2](https://catenax-ev.github.io)
+- [CX-0002 Digital Twins in Catena-X v2.2.0](https://catenax-ev.github.io)
+- [CX-0003 SAMM Aspect Meta Model v1.1.0](https://catenax-ev.github.io)
+- [CX-0018 Dataspace Connectivity v3.1.0](https://catenax-ev.github.io)
+- [CX-0126 Industry Core: Part Type v2.0.0](https://catenax-ev.github.io)
 
 #### 2.1.2 ADDITIONAL REQUIREMENTS
 
