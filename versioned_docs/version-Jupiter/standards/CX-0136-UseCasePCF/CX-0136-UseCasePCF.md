@@ -4,7 +4,7 @@ tags:
   - UC/PCF
 ---
 
-# CX-0136 Use Case PCF 2.0.0
+# CX-0136 Use Case PCF 2.0.1
 
 ## ABSTRACT
 
@@ -132,21 +132,21 @@ A formal, machine-readable semantic description (expressed with RDF/turtle) of d
 
 To participate in the CO2 use-case, the following standard MUST be fulfilled:
 
-- [Product Carbon Footprint Rulebook v3.0.0](https://catenax-ev.github.io)
+- [Product Carbon Footprint Rulebook v3.0.0](https://catena-x.net/en/standard-library)
 
 In addition, the following standards are used to support the PCF usecase. Athough they are NOT part of this specification, they are mentioned here, as APIs or other assets provided by them are used within the PCF usecase:
 
-- [CX-0001 EDC Discovery API v1.0.2](https://catenax-ev.github.io)
-- [CX-0002 Digital Twins in Catena-X v2.2.0](https://catenax-ev.github.io)
-- [CX-0003 SAMM Aspect Meta Model v1.1.0](https://catenax-ev.github.io)
-- [CX-0018 Dataspace Connectivity v3.1.0](https://catenax-ev.github.io)
-- [CX-0126 Industry Core: Part Type v2.0.0](https://catenax-ev.github.io)
+- [CX-0001 EDC Discovery API v1.0.2](https://catena-x.net/en/standard-library)
+- [CX-0002 Digital Twins in Catena-X v2.2.0](https://catena-x.net/en/standard-library)
+- [CX-0003 SAMM Aspect Meta Model v1.1.0](https://catena-x.net/en/standard-library)
+- [CX-0018 Dataspace Connectivity v3.1.0](https://catena-x.net/en/standard-library)
+- [CX-0126 Industry Core: Part Type v2.0.0](https://catena-x.net/en/standard-library)
 
 #### 2.1.2 ADDITIONAL REQUIREMENTS
 
 ##### 2.1.2.1 On Boarding and IAM
 
-All participants mentioned under [1.1 AUDIENCE & SCOPE](#11-audience--scope) MUST be onboarded Catena-X members. Data provider and consumer must in addition be participants of the PCF use case. The standards covering this are NOT part of this document but can all be found within the [Catena-X standard repository](../../standards/overview.md).
+All participants mentioned under [1.1 AUDIENCE & SCOPE](#11-audience--scope) MUST be onboarded Catena-X members. Data provider and consumer must in addition be participants of the PCF use case. The standards covering this are NOT part of this document but can all be found within the [Catena-X standard repository](https://catenax-ev.github.io/docs/next/standards/overview).
 
 ##### 2.1.2.2 Fetching EDC Endpoints
 
@@ -294,9 +294,10 @@ The requester of an asset MUST be able to handle multiple assets for this endpoi
 
 ###### 2.1.2.7.2 EDC Policy Structure
 
-A participant mentioned under [1.1 AUDIENCE & SCOPE](#11-audience--scope) MUST sign the overall
+A participant mentioned under [1.1 AUDIENCE & SCOPE](#11-audience--scope) MUST agree to the overall
 [Catena-X Terms and Condition](https://catena-x.net/en/catena-x-introduce-implement/governance-framework-for-data-space-operations)
-as well as the [PCF Framework Agreement](https://catena-x.net/fileadmin/user_upload/04_Einfuehren_und_umsetzen/Governance_Framework/231016_Catena-X_Use_Case_Framework_PCF.pdf).
+as well as the general FrameworkAgreement
+ [DataExchangeGovernance:1.0](https://catenax-ev.github.io/docs/next/regulatory-framework/20000ft/data-exchange-governance).
 This follows the first SSI setup originally released with Catena-X Rel. 3.2. For more details see the [corresponding standards](https://github.com/catenax-eV/product-standardization-prod/tree/main/standards) which are NOT part of this document.
 
 The minimum set of **Membership**, the PCF **FrameworkAgreement** and the **UsagePurpose**
@@ -312,7 +313,7 @@ MUST to be added to the asset:
         "@context": [
             "https://www.w3.org/ns/odrl.jsonld",
             {
-                "cx-policy": "https://w3id.org/catenax/policy/v1.0.0/"
+                "cx-policy": "https://w3id.org/catenax/policy/"
             }
         ],
         "@type": "Policy",
@@ -325,7 +326,7 @@ MUST to be added to the asset:
                         {
                             "leftOperand": "cx-policy:FrameworkAgreement",
                             "operator": "eq",
-                            "rightOperand": "Pcf:1.0"
+                            "rightOperand": "DataExchangeGovernance:1.0"
                         },
                         {
                             "leftOperand": "cx-policy:Membership",
@@ -433,7 +434,7 @@ The following scenario describes, how
   - transfers the calculation result from his supplier to the PCF calculation tool
   - uses the suppliers calculation result for his PCF calculation
 
-![PCF Calculation Integration Scenario](./assets/catena-x-pcv-integration-small.jpg)
+![PCF Calculation Integration Scenario](./assets/catena-x-pcf-integration-small.jpg)
 
 #### 2.2.2 EXAMPLES FOR PCF CALCULATION TOOL INTEGRATION
 
