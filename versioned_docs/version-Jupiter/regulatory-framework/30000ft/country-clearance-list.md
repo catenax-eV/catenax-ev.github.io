@@ -50,6 +50,7 @@ pagination_next: null
 | Spain | ES |
 | Sweden | SE |
 | Switzerland | CH |
+| United Arab Emirates | AE |
 | United Kingdom | GB |
 | United States of America | US |
 | Vietnam | VN |
@@ -112,6 +113,5 @@ pagination_next: null
 | Tunisia | TN |
 | Turkey | TR |
 | Ukraine | UA |
-| United Arab Emirates | AE |
 | Uruguay | UY |
 | Vanuatu | VU |
