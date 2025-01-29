@@ -93,7 +93,7 @@ To validate the value proposition or technical specifications, a new use case ca
 
 The Catena-X data space also enables secure and sovereign data exchange for individual collaboration between DPCs. In this scenario, the DPCs are responsible for defining a bilateral semantic model, as well as appropriate usage and access policies. Alternatively, they can make use of existing usage and access policies that meets their needs. The goal of the Catena-X data space remains to always create interoperable use cases with stable and consistent multi-tier data chains. Note that individual collaboration without standards provides only limited interoperability and cannot be certified and thus not be listed on one of the marketplaces.
 
-### Sandboxes (BETA)
+### Sandboxes
 
 **Catena-X Sandboxes** contain all cxOS services required for the operation of a minimum valuable Catena-X data space, namely:
 
@@ -102,7 +102,7 @@ The Catena-X data space also enables secure and sovereign data exchange for indi
 
 The exclusions do not prohibit the offering or integration of the Golden Record Service, but it is not required for the operation of a sandbox. The cleansing service of the Golden Record Service is not a mandatory services as this is only required for the testing of special use cases - the majority can also be tested without a cleansing service the Golden Record Service. This also makes it possible to provide a cost-effective offer, as no additional costs are incurred. The GXDCH is only relevant for the productive data space and is therefore only available to the CSP-B. Therefore, there can be no integration with the sandbox provider here. As the Self-Descriptions (SDs) are not required for testing the use cases there is no limitation.
 
-As shown in the [role description](./../who-roles-in-the-catena-x-ecosystem/who-roles-in-the-catena-x-ecosystem.md#sandbox-provider-beta) of the SP, the SP itself and the participants in the sandbox must be onboarded into the productive Catena-X data space via an OSP or CSP-B - see [onboarding](./../how-data-space-operations/how-data-space-operations.md#general-onboarding). The BPNs issued do not have to be used in the Sandbox, so no technical integration has to take place.
+As shown in the [role description](./../who-roles-in-the-catena-x-ecosystem/who-roles-in-the-catena-x-ecosystem.md#sandbox-provider) of the SP, the SP itself and the participants in the sandbox must be onboarded into the productive Catena-X data space via an OSP or CSP-B - see [onboarding](./../how-data-space-operations/how-data-space-operations.md#general-onboarding). The BPNs issued do not have to be used in the Sandbox, so no technical integration has to take place.
 
 Catena-X Sandboxes offer participants the option to try out the network and its features while still using test data. On the one hand, they serve the purpose of offering a **Proof of Concept (POC) environment**, both for future Catena-X releases as well as for interested parties to “try out” Catena-X before migrating to the productive operating environment. On the other hand, they provide the foundation for more automated **Catena-X conformity assessment**. Catena-X Sandboxes will require certification in the future and are distinctly recognizable by an official Catena-X label.
 
@@ -114,9 +114,5 @@ The following conditions apply to any Catena-X Sandbox:
 
 - Catena-X Release: any officially supported Catena-X Release
 - Data: limited to test data
-- Apps & Solutions offered:  Catena-X certified, if  standardized Catena-X services are offered; Non-certified if no Catena-X standards exist (see *Direct collaboration (no multi-tier approach*)).
+- Apps & Solutions offered:  Catena-X certified, if  standardized Catena-X services are offered; Non-certified if no Catena-X standards exist (see *Direct collaboration (no multi-tier approach*))
 - Users: registered Catena-X data space participants only
-
-#### Limitations
-
-Catena-X aims to foster new forms of innovation and scaling. Sandboxes promise to offer much in order to enhance our network in that regard. Thereby, we are providing the limited option (BETA) to host and participate in Catena-X Sandboxes according to the criteria listed in Chapter [Who - Roles in the Ecosystem](./../who-roles-in-the-catena-x-ecosystem/who-roles-in-the-catena-x-ecosystem.md). This option is currently limited until the end of 2024 in order to further evaluate the criteria and market feedback for our ecosystem. All feedback collected will flow into future versions of the Catena-X Operating Model.
