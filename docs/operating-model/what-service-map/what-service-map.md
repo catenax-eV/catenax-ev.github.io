@@ -114,5 +114,5 @@ The following conditions apply to any Catena-X Sandbox:
 
 - Catena-X Release: any officially supported Catena-X Release
 - Data: limited to test data
-- Apps & Solutions offered:  Catena-X certified, if  standardized Catena-X services are offered; Non-certified if no Catena-X standards exist (see *Direct collaboration (no multi-tier approach*))
+- Apps & Solutions offered: Catena-X certified, if standardized Catena-X services are offered; Non-certified if no Catena-X standards exist (see *Direct collaboration (no multi-tier approach*))
 - Users: registered Catena-X data space participants only
