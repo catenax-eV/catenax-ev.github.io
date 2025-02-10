@@ -7,6 +7,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [3.0.4]
 
+### Added
+
+- Glossary
+  - Added abbreviations DCP, DSP, SAMM
+  
 ### Changed
 
 - What: Service Map & Who: Roles in the Catena-X ecosystem
