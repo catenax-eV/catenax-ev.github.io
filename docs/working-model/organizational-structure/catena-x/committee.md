@@ -7,7 +7,7 @@ Committees are specialized bodies appointed by the board to address specific top
 
 The Committee  is encouraged to take initiative to address emerging challenges and opportunities, and to collaborate with other Committees and Expert Groups to achieve the organization's objectives.
 
-The overview of the existing committees can be found in the [organizational chart](https://catena-x.net/fileadmin/user_upload/06_Ueber_uns/Ueber_uns_der_Verein/Catena-X_Organization_Chart.pdf) on the Catena-X homepage.
+The overview of the existing committees can be found in the [organizational chart](https://catena-x.net/typo3conf/ext/catenax/Resources/Public/Images/Assets/Catena-X_Organization_Chart.pdf) on the Catena-X homepage.
 
 ## Business domain ownership
 
