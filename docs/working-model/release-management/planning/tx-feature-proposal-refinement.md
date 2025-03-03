@@ -27,4 +27,4 @@ title: Feature proposal refinement
 ## Deadline
 
 - Open Planning Cut-off Features must have mandatory content from the DoE and approval before the open planning meeting. This is a critical deadline.
-- [Release planning days](./tx-release-planning-days.md)
+- Release planning days

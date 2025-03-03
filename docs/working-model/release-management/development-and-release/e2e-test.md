@@ -6,7 +6,7 @@ sidebar_position: 8
 
 ## Task
 
-End-to-end [testing](../../testmanagement/testmanagement.md) covers verification of the entire software application from start to finish. E2E tests include all the systems, components, and integrations involved in the application’s workflow.
+End-to-end testing covers verification of the entire software application from start to finish. E2E tests include all the systems, components, and integrations involved in the application’s workflow.
 
 ## To Dos
 

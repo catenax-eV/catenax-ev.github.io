@@ -7,7 +7,7 @@ The aim of the Expert Groups within the Catena-X Automotive Network e.V. is to d
 
 ## Expert Group Life Cycle
 
-![Expert Group Lifeline](../assets/expert-group-life-line-v2.drawio.svg)
+![Expert Group Lifeline](./assets/expert-group-life-line-v2.drawio.svg)
 
 The lifecycle of an Expert Group is divided into three phases:
 
@@ -32,9 +32,14 @@ The focus lies on implementation, realization and the delivery of tangible resul
 
 During their working phase, Expert Groups are expected to continuously develop and advance their assigned topics. This involves regular meetings, collaborative research, and consistent communication among members to ensure progress. Additionally, planned work and results should be regularly shared within the association to promote transparency and collective insight. The groups should also provide periodic updates to the committee, highlighting key milestones, challenges encountered, and any adjustments to their objectives. Active engagement and a commitment to innovation and improvement are essential to the success of the Expert Groups in achieving their goals. The [committee mentor](./committee.md#committee-and-expert-groups) guides the Expert Group and reports back to the committee on progress. The committee will review the outcomes for strategic fit of Catena-X.
 
-The working phase should be viewed as a cyclical series of regular activities that align with the [release cycles](../../process-structure/process-structure.md) and its phases of the association.
+The working phase should be viewed as a cyclical series of regular activities that align with the [release cycles](../process-structure/process-structure.md) and its phases of the association.
 
-The composition of the Expert Groups is not static and is expected to change over their life time. In any case people that want to join an existing Expert Group need to be approved the same way, as applicants for new Expert Groups. If a Expert Group member is stepping down from its position, it cannot be handed over to another employee of the same company.
+The composition of the Expert Groups is not static and is expected to change over their life time. In any case people that want to join an existing Expert Group need to be approved the same way, as applicants for new Expert Groups. Cases in which the composition might be:
+
+- a Expert Group member is stepping down from its position or
+- an association member wants to join an existing Expert group.
+
+Companies that have interest to join an existing Expert Group should reach out to their contact in the [Catena-X office](./catena-x-office.md) to be included in the Expert Group.
 
 ### 3. Closing
 
@@ -52,19 +57,21 @@ To ensure a structured and predictable development of their use case, Expert Gro
 - **12 Months:** Based on the vision, summarize the key steps planned for the upcoming year. Focus on high-level objectives and what users will gain, ensuring consistent and predictable progress for adopters.
 - **3 Months:** This plan aligns with the release planning, providing specific details on immediate actions and deliverables.
 
+<!-- needs to be revised
 ### Release DACI for Expert Groups
 
 |Phase|Process|Expert Group role|Explanation|
 |---|---|---|---|
-|Preparation|[Roadmap Preparation](../../release-management/planning/cx-roadmap-preparation.md)|Driver|Prepare a roadmap for the expert group, including features, newly proposed Catena-X standards or changes to existing standards, and KITs. Communicate and discuss the roadmap with the assigned committee and reviewer group.|
-||[Release Roadmap Review](../../release-management/planning/cx-release-roadmap-review.md)|Driver|Present the Roadmap items to the broader audience within the association, to inform them and get feedback about the intended work.|
-|Planning|[Feature proposal creation](../../release-management/planning/tx-feature-proposal-creation-approval.md)|Driver|Break down intended work in Eclipse Tractus-X into features.|
-||[Feature proposal refinement](../../release-management/planning/tx-feature-proposal-refinement.md)||Update Git issues for the planned features and Kit changes in sig-release. Prepare open planning during the refinement phase.|
-||[Release planning days](../../release-management/planning/tx-release-planning-days.md)||Discuss and present Git issues and standardization requests during Open Planning and lead dependency planning.|
-||[Standard Request Creation](../../release-management/planning/std-standard-request-creation.md)||Create standardization or change requests using the Houston tool.|
+|Preparation|[Roadmap Preparation]|Driver|Prepare a roadmap for the expert group, including features, newly proposed Catena-X standards or changes to existing standards, and KITs. Communicate and discuss the roadmap with the assigned committee and reviewer group.|
+||[Release Roadmap Review]|Driver|Present the Roadmap items to the broader audience within the association, to inform them and get feedback about the intended work.|
+|Planning|[Feature proposal creation]|Driver|Break down intended work in Eclipse Tractus-X into features.|
+||[Feature proposal refinement]||Update Git issues for the planned features and Kit changes in sig-release. Prepare open planning during the refinement phase.|
+||[Release planning days]||Discuss and present Git issues and standardization requests during Open Planning and lead dependency planning.|
+||[Standard Request Creation]||Create standardization or change requests using the Houston tool.|
 |Development|Development||Track the development of features throughout the Catena-X release.|
 ||E2E Test||Oversee the testing and documentation of new features.|
 ||Standard development||Ensure the creation or adaptation of Catena-X standards and address feedback from TC4S or other reviewers.|
+-->
 
 ## Expert Group Roles
 
@@ -73,7 +80,7 @@ To ensure a structured and predictable development of their use case, Expert Gro
 The Leads serve as the primary points of contact, ensuring the effective delivery of the product strategy by the Expert Group. The Leads are tasked with (in addition to their role as Core Group member):
 
 - **Coordination:** The Leads should maintain cohesion and coordination within the Expert Group to align with the Committee's objectives
-- **Monitoring:** Leads should monitor the Core Team member participation in the Expert Group. If they feel that a Core Team member is not performing according to their commitment, they can escalate the topic to the primary contact of thr member company (in alignment with the Committee and Association Office).
+- **Monitoring:** Leads should monitor the Core Team member participation in the Expert Group. If they feel that a Core Team member's performance does not align with their commitment, they should address the topic individually with the member.
 - **Closing of the Expert Group:** Leads can request the [closing of the Expert Group](#3-closing) once the Group reached their goals.
 
 ### Core Group Member
@@ -95,6 +102,18 @@ Responsibilities of the Core Group members include:
 Each company can only be represented by one person per Expert Group. The seat in the Expert Group is tied to the individual, not to the company itself.
 Core Group members are expected to regularly reaffirm their commitment to their responsibilities. If they are unable to do so (e.g., due to internal company projects), they should proactively step down from the Core Group to ensure effective planning and allocation of available resources.
 
+> [!TIP]
+> **Golden rules for Core Group Members**
+>
+> - **Support Your Leads**: Leads take on extra responsibilities beyond their regular jobs. Value their efforts and collaborate as a team, not as a service provider.
+> - **Be Proactive**: Catena-X thrives on active participation. Keep yourself informed through meetings or minutes—don’t rely on others to catch you up.
+> - **Be Transparent**: Balancing this work with your regular job can be challenging. If your availability changes, communicate it early with your Expert Group.
+> - **Keep Your Commitments**: If you take on a task, ensure it’s delivered. Failing to do so shifts the burden onto other members, which isn’t fair to the team.
+> - **Speak Up**: Share your ideas, concerns, and feedback openly. Your voice matters, and open communication is key to the group's success.
+> - **Stay Motivated**: You’re here because you want to be. Let your intrinsic motivation drive your contributions!
+
 ### Review Group Member
 
 Review group members are experts in the specific field of the respective group. They serve as sparring partners to the core team, providing critical feedback, guidance, and support. To fulfill this role effectively, they must immerse themselves in the topic and closely monitor the latest progress of the expert group. Additionally, review group members may take over work packages from the core team and participate in workshops, further contributing to the group's efforts and outcomes.
+
+Companies also have the option to add additional resources to the Expert Group that are not part of the Core Group. These resources, such as developers, can take on dedicated tasks for a specific release and leave the group once the task is completed. This flexible contribution model helps enhance the group's capacity and efficiency.

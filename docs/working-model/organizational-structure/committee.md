@@ -15,19 +15,19 @@ Committees serve as the sole strategic owners of a business domain, meaning they
 
 - **Business domain strategy**: The Committee is responsible for developing a clear and forward-looking strategy for the business domainby breaking down the [vision](https://catena-x.net/en/vision) and [mission](https://catena-x.net/en/benefits) of the Catena-X association for the respective domain. The strategy should serve as a beacon for all strategic decisions (strategic horizon 3 month, 12 month, 3 years).
 
-- **Standards management**: Committees own dedicated [standards](https://bcgcatenax.sharepoint.com/:x:/r/sites/MitgliederbereichMemberArea_Catena-XAutomotiveNetworke.V/_layouts/15/Doc2.aspx?action=edit&sourcedoc=%7B9f834319-f51e-468c-8e69-1da76f8b50c6%7D&wdOrigin=TEAMS-MAGLEV.teamsSdk_ns.rwc&wdExp=TEAMS-TREATMENT&wdhostclicktime=1720772259595&web=1). Each change of an owned standard must be approved by the Committee as part of the [standardization process](../../process-structure/cx-from-idea-to-standard.md).
+- **Standards management**: Committees own dedicated [standards](https://bcgcatenax.sharepoint.com/:x:/r/sites/MitgliederbereichMemberArea_Catena-XAutomotiveNetworke.V/_layouts/15/Doc2.aspx?action=edit&sourcedoc=%7B9f834319-f51e-468c-8e69-1da76f8b50c6%7D&wdOrigin=TEAMS-MAGLEV.teamsSdk_ns.rwc&wdExp=TEAMS-TREATMENT&wdhostclicktime=1720772259595&web=1). Each change of an owned standard must be approved by the Committee as part of the [standardization process](../process-structure/process-normative-documents.md).
 
-- **KITs management**: Committees have a dedicated responsibility for [Tractus-X KITs](https://eclipse-tractusx.github.io/Kits). Committees must check during the [planning process](../../process-structure/tx-from-idea-to-production.md) that all features a strategically aligned to the Associations goals.
+- **KITs management**: Committees have a dedicated responsibility for [Tractus-X KITs](https://eclipse-tractusx.github.io/Kits). Committees must check during the [planning process](../process-structure/process-tractus-x.md#phase-2-planning) that all features a strategically aligned to the Associations goals.
 
 ## Committee and the Association
 
 Committees act as representatives of all members within an association, ensuring that the interests and needs of the broader membership are reflected in their decisions. As such, committees must be transparent about their work and incorporate feedback into their decissions. The measures to do so are:
 
-- **Regualar sounding**: Committees must organize a regular [sounding](../../process-structure/association-general.md#committee-sounding) event at least every 6 month.
+- **Regualar sounding**: Committees must organize a regular [sounding](../process-structure/association-general.md#sounding) event at least every 6 month.
 
 - **Feedback channel**: In order to receive feedback and input from other association member a feedback channel must be kept and communicated.
 
-- **Collaboration across domains**: Committees should proactively [connect with one another](../../process-structure/association-general.md) to drive the Association forward, ensuring alignment across various domains and initiatives.
+- **Collaboration across domains**: Committees should proactively [connect with one another](../process-structure/association-general.md) to drive the Association forward, ensuring alignment across various domains and initiatives.
 
 ## Committee and Expert Groups
 
