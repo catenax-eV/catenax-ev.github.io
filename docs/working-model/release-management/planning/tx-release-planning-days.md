@@ -8,7 +8,7 @@ sidebar_position: 10
 A two-day planning workshop to align the upcoming development activities.  
 **Principle:** People who do the work plan the work.
 
-Usually the Release Planning Days are held jointly woth the [Standard Planning Days](./std-standard-planning.md)
+Usually the Release Planning Days are held jointly woth the Standard Planning Days
 :::
 
 During the Open Planning the items for upcoming release are planned. All feature proposals that were handed in on time are going to be presented to the audience. The Open Planning is the last chance to provide feedback about the scope of the feature proposal. After the presentation of the feature proposal by the feature author, the committers are going to prioritize the feature proposal in alignment with the topic owner. A feature proposal becomes part of the upcoming release only by receiving the commitment by the committees and not by being presented in the Open Planning!
@@ -33,8 +33,8 @@ To enter the Open Planning a feature proposal must meet the DoE X days before th
 
 The invitation must be gathered proactively from the [Eclipse Tractus-X](https://eclipse-tractusx.github.io/community/open-meetings#one-time-meetings).
 
-- [Committees](../../organizational-structure/catena-x/committee.md)
-- [Expert Groups](../../organizational-structure/catena-x/expert-group.md)
+- Committees
+- Expert Groups
 - Tractus-X community (contributor/committer)
 
 ## Timeline

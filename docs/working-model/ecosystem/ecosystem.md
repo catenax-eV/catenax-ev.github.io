@@ -19,7 +19,7 @@ The **Catena-X Automotive Network e.V.** (in the following called 'Association')
 - Indirect partners (e.g., business application and service providers)
 - Consulting partners (e.g., research institutes, transfer centers)
 
-Members of the Association can participate in [Committees](../organizational-structure/catena-x/committee.md) and [Expert Groups](../organizational-structure/catena-x/expert-group.md).
+Members of the Association can participate in [Committees](../organizational-structure/committee.md) and [Expert Groups](../organizational-structure/expert-group.md).
 
 ## Development Environment
 
@@ -37,5 +37,5 @@ The Catena-X Association publishes standards with the goal of enabling interoper
 
 Contribute to...
 
-- **Specifications and Standards** in the Catena-X Association by working in [Committees](../organizational-structure/catena-x/committee.md) and [Expert Groups](../organizational-structure/catena-x/expert-group.md)
+- **Specifications and Standards** in the Catena-X Association by working in [Committees](../organizational-structure/committee.md) and [Expert Groups](../organizational-structure/expert-group.md)
 - **Reference Implementations** by implementing features, improvements, bugs, new service etc. in the [Tractus-X](https://eclipse-tractusx.github.io/) Project that comply with the Catena-X standards
