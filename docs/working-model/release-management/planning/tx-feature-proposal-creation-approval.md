@@ -12,4 +12,4 @@ title: Feature proposal creation
 
 ## Deadline
 
-- [Draft feature freeze](./tx-draft-feature-freeze.md)
+- Draft feature freeze

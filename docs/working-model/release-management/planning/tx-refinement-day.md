@@ -19,7 +19,7 @@ Based on a predefined agenda (depending on the features on the board), individua
 ## Outcome
 
 - Ready refined feature proposal which fulfil the DoE.
-- Feature proposal with status `Backlog` => Ready for [Release Planning](./tx-release-planning-days.md).
+- Feature proposal with status `Backlog` => Ready for Release Planning.
 - Alignment with the community (Committees, Expert groups, Tractus-X community).
 - All dependencies are documented on the feature proposal.
 - Linked issues on product specific repositories.
@@ -28,6 +28,6 @@ Based on a predefined agenda (depending on the features on the board), individua
 
 The invitation must be gathered proactively from the [Eclipse Tractus-X](https://eclipse-tractusx.github.io/community/open-meetings#one-time-meetings).
 
-- [Committees](../../organizational-structure/catena-x/committee.md)
-- [Expert Groups](../../organizational-structure/catena-x/expert-group.md)
+- Committees
+- Expert Groups
 - Tractus-X community (contributor/committer)

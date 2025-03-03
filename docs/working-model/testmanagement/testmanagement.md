@@ -1,25 +1,5 @@
 # Test Management
 
-<!-- TOC
-- [Test Management](#test-management)
-  - [Overview](#overview)
-  - [Tools](#tools)
-    - [Xray](#xray)
-  - [Processes](#processes)
-    - [Test Cases in Xray](#test-cases-in-xray)
-    - [Deployment of Specific Versions in ArgoCD](#deployment-of-specific-versions-in-argocd)
-  - [Dependencies](#dependencies)
-    - [Internal Dependencies](#internal-dependencies)
-    - [External Dependencies](#external-dependencies)
-  - [Conclusion](#conclusion)
-  - [Test Management old](#test-management-old)
-    - [Product Tests](#product-tests)
-    - [Release Tests](#release-tests)
-    - [Test Beds](#test-beds)
-    - [Defect Management](#defect-management)
-    - [Test Artifacts](#test-artifacts)
-TOC -->
-
 ## Overview
 
 Test management involves the planning, execution, and monitoring of testing activities to ensure the quality and
