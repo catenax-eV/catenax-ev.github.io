@@ -17,7 +17,7 @@ Unlike committees, Working Groups cannot make independent strategic decisions; i
 - **Developing the strategic direction:** Working Groups should develop recommendations for actions related to their topic in alignment with the association's overall strategy.
 - **Driving standardization:** Working Groups can be tasked write new standards or update existing ones, if the standard has no owner.
 
-![Working Group Lifeline](../assets/working-group-life-line-v1.drawio.svg)
+![Working Group Lifeline](./assets/working-group-life-line-v1.drawio.svg)
 
 Working Groups have a finite lifetime that is determined at the time of their establishment. If additional time is needed to complete their objectives, a request for prolongation can be made, but it must be approved by the Management Board.
 

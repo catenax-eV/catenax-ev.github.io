@@ -8,8 +8,8 @@ title: Association - General alignment
 - **Goal:** Main update event for association members to address topics of relevance the whole Association.
 
 - **Attendees:**
-  - [Association member](../organizational-structure/catena-x/catena-x.md#association-member)
-  - Inivations are managed by the [Associaiton Office](../organizational-structure/catena-x/catena-x-office.md)
+  - [Association member](../organizational-structure/organizational-structure.md#roles-and-responsibilities-within-the-association)
+  - Inivations are managed by the [Associaiton Office](../organizational-structure/catena-x-office.md)
 
 - **Schedule:**
   - Quarterly
@@ -19,9 +19,9 @@ title: Association - General alignment
 - **Goal:** Update on general release process, changes, and communication. Additionally providing romm for feedback and overall release related questions.
 
 - **Attendees:**
-  - [Committee Leads](../organizational-structure/catena-x/committee.md#lead-and-co-lead)
-  - [Expert Group Leads](../organizational-structure/catena-x/expert-group.md#expert-group-leads)
-  - Inivations are managed by the [Associaiton Office](../organizational-structure/catena-x/catena-x-office.md)
+  - [Committee Leads](../organizational-structure/committee.md#lead-and-co-lead)
+  - [Expert Group Leads](../organizational-structure/expert-group.md#expert-group-leads)
+  - Inivations are managed by the [Associaiton Office](../organizational-structure/catena-x-office.md)
 
 - **Schedule:**
   - Bi-weekly
@@ -34,7 +34,7 @@ title: Association - General alignment
 
 - **Attendees:**
   - Technical contacts of products and KITs
-  - Inivations are managed by the [Associaiton Office](../organizational-structure/catena-x/catena-x-office.md)
+  - Inivations are managed by the [Associaiton Office](../organizational-structure/catena-x-office.md)
 
 - **Schedule:**
   - Bi-weekly
@@ -43,11 +43,11 @@ title: Association - General alignment
 
 ## Sounding
 
-- **Goal:** Update association members on recent progress, present future plans, and gather feedback from the audience. The meeting is organized by the committee individually with the support of the [Associaiton Office](../organizational-structure/catena-x/catena-x-office.md).
+- **Goal:** Update association members on recent progress, present future plans, and gather feedback from the audience. The meeting is organized by the committee individually with the support of the [Associaiton Office](../organizational-structure/catena-x-office.md).
 
 - **Attendees:**
-  - [Association member](../organizational-structure/catena-x/catena-x.md#association-member)
-  - Inivations are managed by the [Associaiton Office](../organizational-structure/catena-x/catena-x-office.md)
+  - Association member
+  - Inivations are managed by the [Associaiton Office](../organizational-structure/catena-x-office.md)
 
 - **Schedule:**
   - every 6 month by every committee

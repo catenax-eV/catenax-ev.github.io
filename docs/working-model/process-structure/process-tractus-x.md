@@ -1,9 +1,9 @@
 ---
-sidebar_position: 2
-title: Tractus-X - From Idea to Release
+sidebar_position: 5
+title: Tractus-X Release 
 ---
 
-The development of open source components in Tractus-X is a collaborative effort between the association bodies (Committees and Expert Groups) and the [open source community](contribution-guideline.md). The association bodies ensure that feature requests align with the strategic goals of the project, meanwhile, the open source community ensures the delivery high-quality code. Together, they ensure the interests of Catena-X and Eclipse Tractux-X are consirdered and respected.
+The development of open source components in Tractus-X is a collaborative effort between the association bodies (Committees and Expert Groups) and the [open source community]. The association bodies ensure that feature requests align with the strategic goals of the project, meanwhile, the open source community ensures the delivery high-quality code. Together, they ensure the interests of Catena-X and Eclipse Tractux-X are consirdered and respected.
 
 ![Overview Tractus-X Release phases](assets/release-planing-next-steps-horizontal-tractus-x.drawio.svg)
 
@@ -15,11 +15,11 @@ All planned work on Kits, Reference Implementation, API Specification, Protocols
 
 ### Preparation ToDo's
 
-- [Create roadmap item](../release-management/planning/cx-roadmap-item-creation.md)
+- [Create roadmap item]
 
 ### Preparation Milestones
 
-- [Release Roadmap Review](../release-management/planning/cx-release-roadmap-review.md)
+- [Release Roadmap Review]
 
 ## Phase 2: Planning
 
@@ -27,14 +27,14 @@ This phase involves breaking down high-level requirements into detailed specific
 
 ### Planning ToDo's
 
-- [Feature proposal creation and approval](../release-management/planning/tx-feature-proposal-creation-approval.md)
-- [Feature proposal refinement](../release-management/planning/tx-feature-proposal-refinement.md)
+- [Feature proposal creation and approval]
+- [Feature proposal refinement]
 
 ### Planning milestones
 
-- [Refinement day](../release-management/planning/tx-refinement-day.md)
-- [Draft feature freeze](../release-management/planning/tx-draft-feature-freeze.md)
-- [Release planning days](../release-management/planning/tx-release-planning-days.md)
+- [Refinement day]
+- [Draft feature freeze]
+- [Release planning days]
 
 ## Phase 3: Development
 
@@ -42,15 +42,15 @@ The development and release phase includes the development of the software and K
 
 ### Development ToDo's
 
-- [Development (Increment 1 - 6)](../release-management/development-and-release/increment-1-6.md)
+- [Development (Increment 1 - 6)]
 
 ### Development milestones
 
-- [Initial pull request](../release-management/development-and-release/kit-initial-pull-request.md)
-- [Final pull request](../release-management/development-and-release/kit-final-pull-request.md)
-- [Feature freeze](../release-management/development-and-release/feature-freeze.md)
-- [Release freeze](../release-management/development-and-release/release-freeze.md)
-- [E2E test](../release-management/development-and-release/e2e-test.md)
+- [Initial pull request]
+- [Final pull request]
+- [Feature freeze]
+- [Release freeze]
+- [E2E test]
 
 ## FAQs
 
