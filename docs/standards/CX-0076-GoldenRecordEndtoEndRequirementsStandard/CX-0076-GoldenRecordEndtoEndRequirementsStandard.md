@@ -3,7 +3,7 @@ tags:
   - CAT/Value Added Services
 ---
 
-# CX-0076 - Golden Record End-to-End Requirements Standard v.1.3.0
+# CX-0076 - Golden Record End-to-End Requirements Standard v.1.3.1
 
 ## FOR WHOM IS THE STANDARD DESIGNED
 
@@ -405,9 +405,9 @@ The quality checks as described in this standard are using the input based on th
 
 > *This section is normative*
 
-- CX–0010 Business Partner Number v2.1.0
-- CX–0012 Business Partner Pool API v4.1.0
-- CX–0074 Business Partner Gate API v3.1.0
+- CX–0010 Business Partner Number v2.2.0
+- CX–0012 Business Partner Pool API v4.2.0
+- CX–0074 Business Partner Gate API v3.2.0
 
 ### 3.2 NON-NORMATIVE REFERENCES
 

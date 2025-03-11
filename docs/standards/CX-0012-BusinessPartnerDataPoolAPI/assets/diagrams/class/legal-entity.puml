@@ -1,5 +1,7 @@
 @startuml legal-entity
 
+skinparam dpi 50
+
 package "Legal Entity and References" {
   entity LegalEntity {
     BPNL

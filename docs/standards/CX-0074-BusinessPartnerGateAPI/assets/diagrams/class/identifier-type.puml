@@ -1,5 +1,7 @@
 @startuml identifier-type
 
+skinparam dpi 50
+
 package "Identifier Type and References" {
 
   class BusinessPartnerIdentifier {
@@ -10,9 +12,9 @@ package "Identifier Type and References" {
   entity IdentifierType {
     TechnicalKey
     Name
-    ' Abbreviation
-    ' TransliteratedName
-    ' TransliteratedAbbreviation
+    Abbreviation
+    TransliteratedName
+    TransliteratedAbbreviation
   }
 
   enum BusinessPartnerType {
@@ -20,26 +22,23 @@ package "Identifier Type and References" {
     Address
   }
 
-  ' not standardized yet
-  ' class IdentifierTypeDetail {
-  '   Mandatory
-  ' }
+  class IdentifierTypeDetail {
+    Mandatory
+  }
 
-  ' not standardized yet
-  ' enum Country {
-  '   DE
-  '   FR
-  '   US
-  '   ...
-  ' }
+  enum Country {
+    DE
+    FR
+    US
+    ...
+  }
 
   IdentifierType "*" -d-o "1" BusinessPartnerType : BusinessPartnerType
 
   BusinessPartnerIdentifier "*" -d-o "1" IdentifierType : Type
 
-  ' not standardized yet
-  ' IdentifierType "1" *-d-> "*" IdentifierTypeDetail : Details
-  ' IdentifierTypeDetail "*" -r-o "1" Country : Country
+  IdentifierType "1" *-d-> "*" IdentifierTypeDetail : Details
+  IdentifierTypeDetail "*" -r-o "1" Country : Country
 }
 
 hide methods

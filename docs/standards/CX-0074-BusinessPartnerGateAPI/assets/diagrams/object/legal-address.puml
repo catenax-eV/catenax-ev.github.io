@@ -1,5 +1,7 @@
 @startuml legal-address
 
+skinparam dpi 50
+
 package "Business Parter (Legal Address)" {
   object LegalEntity {
     LegalName = "Dr. Ing. h.c. F. Porsche Aktiengesellschaft"

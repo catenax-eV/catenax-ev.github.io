@@ -1,5 +1,7 @@
 @startuml business-partner
 
+skinparam dpi 50
+
 package "Business Partners" {
   entity LegalEntity {
     BPNL

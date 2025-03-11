@@ -6,7 +6,7 @@ tags:
   - CAT/Sandbox Service Provider
 ---
 
-# CX-0012 Business Partner Data Pool API v4.1.0
+# CX-0012 Business Partner Data Pool API v4.2.1
 
 ## FOR WHOM IS THE STANDARD DESIGNED
 
@@ -23,6 +23,7 @@ This document is mainly targeted to technical individuals involved in integratin
 | 3.0.0       | 2024-03-22          |            | Added additional street attributes; removed boolean attributes in favor of enum for address types, like in the Gate API; switched to the new document structure                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | 4.0.0       | 2024-06-07          |            | Added footnote to indicate that the term "site main address" is subject to change; added the CX-0018 version; changed and added the detailed asset structure; added footnote to clarify role distribution; removed terms Company Data and Sharing Member, as they are not used here; removed classification sub-object, to reintroduce it in a presumably new form in one of the next non-breaking versions of this standard; added "is Catena-X Member data" attribute; removed "api/catena/" from the endpoint definitions; added data sovereignty chapters as additional requirements; fix changelog controller endpoint for business-partners to match the reference implementation. |
 | 4.1.0       | 2024-12-02          |            | Added tax jurisdiction code                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| 4.2.0       | 2025-03-17          |            | Added attributes for legal forms and identifier types; removed the POST endpoint for administrative areas; added a footnote about the plan for changing from minor to major asset versioning; added footnote about plural in the abbreviation(s) attribute for legal forms; added requirement about the correct asset property format as defined in CX-0018                                                                                                                                                                                                                                                                                                                                                                   |
 
 ## ABSTRACT
 
@@ -47,9 +48,9 @@ This standard is relevant for the following audience:
 
 This document focuses on the Business Partner Pool API (short: Pool API) that is part of the Business Partner Data Management (BPDM) described on the [BPDM Catena-X Website](https://catena-x.net/en/offers-standards/bpdm). It is relevant for Core Service Providers who want to provide services for retrieving a cleansed, high-quality business partner data record (Golden Record) for a given business partner number (BPN). It is also relevant for onboarding service providers, business application providers as well as data providers and consumers who want to use such services.
 
-Not in scope are the structure and logic of the business partner number itself and the mechanism on how the business partner number is issued. There is a separate standard for this: CX-0010 Business Partner Number 2.1.0.
+Not in scope are the structure and logic of the business partner number itself and the mechanism on how the business partner number is issued. There is a separate standard for this: CX-0010 Business Partner Number 2.2.0.
 
-Not in scope is the way of how business partner data records can be shared to create a Golden Record. There is a separate standard for this: CX-0074 Business Partner Data Gate API 3.1.0.
+Not in scope is the way of how business partner data records can be shared to create a Golden Record. There is a separate standard for this: CX-0074 Business Partner Data Gate API 3.2.0.
 
 Not in scope are the requirements of cleansing and enriching the business partner data records with the aim to create a Golden Record. There is a separate standard for this: CX-0076 Golden Record End to End Requirement Standards 1.3.0.
 
@@ -66,15 +67,15 @@ The Pool API is a crucial core component in Catena-X and its platform capability
 3. Data Governance: The Pool API is the basis for a data governance framework and helps to enforce data quality standards, such as data completeness, accuracy, and consistency. This helps to ensure that business partner data is of high quality and can be trusted for use in various business processes.
 4. Interoperability: The Pool API provides an interoperable and standardized way to access business partner data, ensuring both Core Service Provider interchangeability and streamlined data accessibility for all consumers of the API.
 
-There is a reference implementation for the [Business Partner Data Pool API (6.1.x)](https://github.com/eclipse-tractusx/bpdm/tree/3579e50d6200b6a7ce2a9da811475cff4cbffe06/bpdm-pool-api/src/main/kotlin/org/eclipse/tractusx/bpdm/pool/api) on GitHub. It is part of a Spring Boot Kotlin open-source software project under the hood of the Eclipse Foundation and follows the Apache 2.0 licenses.
+There is a reference implementation for the [Business Partner Data Pool API (6.3.x)](https://github.com/eclipse-tractusx/bpdm/tree/72ba993eb2332613d6cee52c40182763f3e3735f/bpdm-pool-api/src/main/kotlin/org/eclipse/tractusx/bpdm/pool/api) on GitHub. It is part of a Spring Boot Kotlin open-source software project under the hood of the Eclipse Foundation and follows the Apache 2.0 licenses.
 
-For the complete and up-to-date BPDM setup refer to the [Eclipse Tractus-X BPDM GitHub repository (6.1.x)](https://github.com/eclipse-tractusx/bpdm/blob/3579e50d6200b6a7ce2a9da811475cff4cbffe06/README.md).
+For the complete and up-to-date BPDM setup refer to the [Eclipse Tractus-X BPDM GitHub repository (6.3.x)](https://github.com/eclipse-tractusx/bpdm/blob/72ba993eb2332613d6cee52c40182763f3e3735f/README.md).
 
-For an architecture overview refer to the [BPDM ARC42 documentation (6.1.x)](https://github.com/eclipse-tractusx/bpdm/tree/3579e50d6200b6a7ce2a9da811475cff4cbffe06/docs/architecture).
+For an architecture overview refer to the [BPDM ARC42 documentation (6.3.x)](https://github.com/eclipse-tractusx/bpdm/tree/72ba993eb2332613d6cee52c40182763f3e3735f/docs/architecture).
 
 To use the Pool API in the BPDM use case apart from this standard, the following other standards should be considered by all participants for which this standard is relevant:
 
-- CX-0018 Dataspace Connectivity 3.1.0
+- CX-0018 Dataspace Connectivity 3.3.0
 
 ### 1.3 CONFORMANCE AND PROOF OF CONFORMITY
 
@@ -114,7 +115,7 @@ This chapter explains the data model[^1] from a conceptual / terminology point o
 
 ##### 1.5.2.1 BUSINESS PARTNER
 
-![Business Partner](./assets/diagrams/class/business-partner.png)
+![Business Partner](./assets/diagrams/class/business-partner.svg)
 
 In general, a business partner is any entity (such as a customer, a supplier, an employee, or a service provider) that does business with another entity.
 
@@ -124,9 +125,9 @@ BPDM distinguishes between three business partner types to represent an organiza
 
 ##### 1.5.2.2 LEGAL ENTITY
 
-![Legal Entity](./assets/diagrams/class/legal-entity.png)
+![Legal Entity](./assets/diagrams/class/legal-entity.svg)
 
-In general, a legal entity is a juridical person that has legal rights and duties related to contracts, agreements, and obligations. The term especially applies to any kind of organization (such as an enterprise or company, university, association, etc.) established under the law applicable to a country.
+In general, a legal entity is a juridical person that has legal rights and duties related to contracts, agreements, and obligations. The term especially applies to any kind of organization established under the law applicable to a country.
 
 In Catena-X, a legal entity is a type of business partner representing a legally registered organization with its official registration information, such as legal name (including legal form, if registered), legal address and tax number.
 
@@ -167,9 +168,9 @@ A legal entity state indicates if the legal entity is active or inactive[^3]. Th
 
 ##### 1.5.2.3 SITE
 
-![Site](./assets/diagrams/class/site.png)
+![Site](./assets/diagrams/class/site.svg)
 
-In general, a site is a delimited geographical area in which an organization (such as an enterprise or company, university, association, etc.) conducts business.
+In general, a site is a delimited geographical area in which an organization conducts business.
 
 In Catena-X, a site is a type of business partner representing a physical location or area owned by a legal entity, where a production plant, a warehouse, or an office building is located.
 
@@ -198,7 +199,7 @@ A site state indicates if the site is active or inactive[^4]. This does not desc
 
 ##### 1.5.2.4 ADDRESS
 
-![Address](./assets/diagrams/class/address.png)
+![Address](./assets/diagrams/class/address.svg)
 
 In general, an address is a collection of information to describe a physical location, using a street name with a house number and/or a post office box as reference. In addition, an address consists of several postal attributes, such as country, region (state), county, township, city, district, or postal code, which help deliver mail.
 
@@ -242,15 +243,21 @@ An address state indicates if the address is active or inactive[^5]. This does n
 
 ##### 1.5.2.5 LEGAL FORM
 
-<!-- ![Address](./assets/diagrams/class/legal-form.png) -->
+![Legal Form](./assets/diagrams/class/legal-form.svg)
 
 A legal form is a mandatory corporate legal framework by which companies can conduct business, charitable or other permissible activities.
 
-| **Attribute** | **Description**                                                                                                                                                              | **(Data) Type / Code List / Enumeration** |
-| ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------- |
-| Technical Key | The technical identifier of the legal form according to [ISO 20275:2017](https://www.iso.org/obp/ui/en/#iso:std:iso:20275:ed-1:v1:en).                                       | String                                    |
-| Name          | The name of legal form according to [ISO 20275:2017](https://www.iso.org/obp/ui/en/#iso:std:iso:20275:ed-1:v1:en).                                                           | String                                    |
-| Abbreviation  | The abbreviated name of the legal form according to [ISO 20275:2017](https://www.iso.org/obp/ui/en/#iso:std:iso:20275:ed-1:v1:en), such as AG for German Aktiengesellschaft. | String                                    |
+| **Attribute**                | **Description**                                                                                                                                                                                     | **(Data) Type / Code List / Enumeration**                          |
+| ---------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ |
+| Technical Key                | The technical identifier of the legal form according to [ISO 20275:2017](https://www.iso.org/obp/ui/en/#iso:std:iso:20275:ed-1:v1:en).                                                              | String                                                             |
+| Name                         | The name of legal form according to [ISO 20275:2017](https://www.iso.org/obp/ui/en/#iso:std:iso:20275:ed-1:v1:en).                                                                                  | String                                                             |
+| Abbreviation[^10]            | A list of abbreviated names for the legal form according to [ISO 20275:2017](https://www.iso.org/obp/ui/en/#iso:std:iso:20275:ed-1:v1:en), such as AG for German Aktiengesellschaft.                | String                                                             |
+| Transliterated Name          | The transliterated name of legal form according to [ISO 20275:2017](https://www.iso.org/obp/ui/en/#iso:std:iso:20275:ed-1:v1:en).                                                                   | String                                                             |
+| Transliterated Abbreviations | A list of transliterated abbreviated names for the legal form according to [ISO 20275:2017](https://www.iso.org/obp/ui/en/#iso:std:iso:20275:ed-1:v1:en), such as AG for German Aktiengesellschaft. | String                                                             |
+| Language                     | The two-letter language code according to [ISO 639:2023](https://www.iso.org/obp/ui/en/#iso:std:iso:639:ed-2:v1:en) of the language, for that the name of the legal form has been given.            | String                                                             |
+| Country                      | The two-letter country code according to [ISO 3166-1:2020](https://www.iso.org/obp/ui/en/#iso:std:iso:3166:-1:ed-4:v1:en) of the country in which the legal form is valid.                          | String                                                             |
+| Administrative Area Level 1  | The administrative area in which the legal form is valid, such as a region within a country.                                                                                                        | [Administrative Area (Level 1)](#1528-administrative-area-level-1) |
+| Is Active                    | Indicates whether the legal form is actively used or is inactive and should not be used to register new organizations.                                                                              | Boolean                                                            |
 
 ##### 1.5.2.6 PHYSICAL POSTAL ADDRESS
 
@@ -297,7 +304,7 @@ An alternative postal address describes an alternative way of delivery for examp
 | **Attribute**               | **Description**                                                                                                                                                                                                                                                                                                                                                    | **(Data) Type / Code List / Enumeration**                          |
 | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------ |
 | Geographic Coordinates      | The exact location of the alternative postal address in latitude, longitude, and altitude.                                                                                                                                                                                                                                                                         | [Geographic Coordinates](#1529-geographic-coordinates)             |
-| Country                     | The two-letter country code of the postal address according to [ISO 3166-1:2020](https://www.iso.org/obp/ui/en/#iso:std:iso:3166:-1:ed-4:v1:en)..                                                                                                                                                                                                                  | String                                                             |
+| Country                     | The two-letter country code of the postal address according to [ISO 3166-1:2020](https://www.iso.org/obp/ui/en/#iso:std:iso:3166:-1:ed-4:v1:en).                                                                                                                                                                                                                  | String                                                             |
 | Administrative Area Level 1 | The administrative area of the alternative postal address, such as a region within a country.                                                                                                                                                                                                                                                                      | [Administrative Area (Level 1)](#1528-administrative-area-level-1) |
 | Postal Code                 | The alphanumeric identifier (sometimes including spaces or punctuation) of the alternative postal address for the purpose of sorting mail, synonyms: postcode, post code, PIN or ZIP code.                                                                                                                                                                         | String                                                             |
 | City                        | The name of the city of the alternative postal address, synonyms: town, village, municipality.                                                                                                                                                                                                                                                                     | String                                                             |
@@ -326,19 +333,31 @@ Geographic coordinates describe an exact location in latitude, longitude, and al
 
 ##### 1.5.2.10 IDENTIFIER TYPE
 
-![Identifier Type](./assets/diagrams/class/identifier-type.png)
+![Identifier Type](./assets/diagrams/class/identifier-type.svg)
 
 An identifier type defines the name or category of an identifier, such as the German Handelsregisternummer, VAT number, Global Location Number (GLN), etc. The identifier type is valid for a business partner type and used in a specific country.
 
-| **Attribute**         | **Description**                                                                                | **(Data) Type / Code List / Enumeration** |
-| --------------------- | ---------------------------------------------------------------------------------------------- | ----------------------------------------- |
-| Technical Key         | The technical identifier of the identifier type.                                               | String                                    |
-| Name                  | The name of the identifier type.                                                               | String                                    |
-| Business Partner Type | One of the types of business partners for which the identifier is valid: legal entity, address | Enum                                      |
+| **Attribute**               | **Description**                                                                                     | **(Data) Type / Code List / Enumeration** |
+| --------------------------- | --------------------------------------------------------------------------------------------------- | ----------------------------------------- |
+| Technical Key               | The technical identifier of the identifier type.                                                    | String                                    |
+| Name                        | The name of the identifier type.                                                                    | String                                    |
+| Business Partner Type       | One of the types of business partners for which the identifier type is valid: legal entity, address | Enum                                      |
+| Abbreviation                | The abbreviated name of the identifier type.                                                        | String                                    |
+| Transliterated Name         | The transliterated name of the identifier type.                                                     | String                                    |
+| Transliterated Abbreviation | The transliterated abbreviated name of of the identifier type.                                      | String                                    |
+
+###### 1.5.2.10.1 IDENTIFIER TYPE DETAILS
+
+The identifier type details describe for which countries an identifier is valid and mandatory
+
+| **Attribute** | **Description**                                                                                                                                                                                                                            | **(Data) Type / Code List / Enumeration** |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------- |
+| Country       | The two-letter country code according to [ISO 3166-1:2020](https://www.iso.org/obp/ui/en/#iso:std:iso:3166:-1:ed-4:v1:en) of the country in which the identifier type is valid. Can be empty if identifier type is valid in all countries. | String                                    |
+| Mandatory     | Indicates wheter the identifier type is mandatory in the country.                                                                                                                                                                          | Boolean                                    |
 
 ##### 1.5.2.11 CHANGELOG ENTRY
 
-![Changelog Entry](./assets/diagrams/class/changelog-entry.png)
+![Changelog Entry](./assets/diagrams/class/changelog-entry.svg)
 
 An entry of the changelog, which is created each time a business partner is modified and contains data about the change. The actual new state of the business partner is not included.
 
@@ -351,7 +370,7 @@ An entry of the changelog, which is created each time a business partner is modi
 
 ##### 1.5.2.12 IDENTIFIER MAPPING ENTRY
 
-![Identifier Mapping Entry](./assets/diagrams/class/identifier-mapping-entry.png)
+![Identifier Mapping Entry](./assets/diagrams/class/identifier-mapping-entry.svg)
 
 An identifier mapping entry of a specific identifier (of a specific identifier type) to a BPNL, BPNS or BPNA.
 
@@ -362,17 +381,17 @@ An identifier mapping entry of a specific identifier (of a specific identifier t
 
 ## 2 BUSINESS PARTNER POOL API \[NORMATIVE\]
 
-The Business Partner Gate API allows to upload and download business partner data records to improve their quality and enrich them with additional information. The Gate API **MUST** be implemented based on the [OpenAPI specification (3.0.1)](https://github.com/OAI/OpenAPI-Specification/blob/761a0797ebf2e35e687ebef07741d1c10675e08c/versions/3.0.1.md).
+The Business Partner Pool API enables the access to Golden Record business partner data and provides it to other Catena-X services and consumers. The Pool API **MUST** be implemented based on the [OpenAPI specification (3.0.1)](https://github.com/OAI/OpenAPI-Specification/blob/761a0797ebf2e35e687ebef07741d1c10675e08c/versions/3.0.1.md).
 
 ### 2.1 PRECONDITIONS AND DEPENDENCIES
 
-To run the API, the technical components described in the [Eclipse Tractus-X BPDM GitHub repository (6.1.x)](https://github.com/eclipse-tractusx/bpdm/blob/3579e50d6200b6a7ce2a9da811475cff4cbffe06/README.md) **SHOULD** be set up.
+To run the API, the technical components described in the [Eclipse Tractus-X BPDM GitHub repository (6.3.x)](https://github.com/eclipse-tractusx/bpdm/blob/72ba993eb2332613d6cee52c40182763f3e3735f/README.md) **SHOULD** be set up.
 
 ### 2.2 API SPECIFICATION
 
 #### 2.2.1 API ENDPOINTS & RESOURCES
 
-The Gate API **MUST** be implemented as defined in the following OpenAPI document: [Business Partner Data Pool OpenAPI specification (6.1.x)](https://github.com/eclipse-tractusx/bpdm/blob/3579e50d6200b6a7ce2a9da811475cff4cbffe06/docs/api/pool.json)
+The Pool API **MUST** be implemented as defined in the following OpenAPI document: [Business Partner Data Pool OpenAPI specification (6.3.x)](https://github.com/eclipse-tractusx/bpdm/blob/72ba993eb2332613d6cee52c40182763f3e3735f/docs/api/pool.json)
 
 The resources **MUST** use the well-known HTTP request methods for CRU(D) operations:
 
@@ -438,13 +457,12 @@ The address controller **MUST** allow to create, update, or read business partne
 
 ##### 2.2.1.4 METADATA CONTROLLER (CODE LISTS)
 
-The metadata controller **MUST** allow to create or read legal forms, identifier types, and administrative areas on level 1. It **MUST** have the following resources:
+The metadata controller **MUST** allow to create or read legal forms, identifier types, and read administrative areas on level 1. It **MUST** have the following resources:
 
 | **Metadata Controller Resources** | **Description**                                                             |
 | --------------------------------- | --------------------------------------------------------------------------- |
 | POST/legal-forms                  | Creates a new legal form.                                                   |
 | POST/identifier-types             | Creates a new identifier type.                                              |
-| POST/administrative-areas-level1  | Creates a new administrative area on level 1.                               |
 | GET/legal-forms                   | Returns all legal forms.                                                    |
 | GET/identifier-types              | Returns all identifier types filtered by business partner type and country. |
 | GET/administrative-areas-level1   | Returns all administrative areas on level 1.                                |
@@ -474,20 +492,27 @@ The API **MUST** use JSON as the payload format transported via HTTP. Other for
 
 The following data assets **MUST** be registered at the Core Service Provider so that the Catena-X Member can negotiate an API usage contract with the Core Service Provider and access the BPDM Pool (hosted by the Core Service Provider) through these assets [^8]:
 
-| **Type** | **Subject**                    | **Version** | **Description**                                                                                                                                                                                                                                                                                          |
-| -------- | ------------------------------ | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| BPDMPool | ReadAccessPoolForCatenaXMember | 6.1           | Grants the Catena-X Member read access to the Pool API. This can be used to read legal entity, site, address, legal form, identifier type and administrative area level 1 data. To that end, it also grants read access to the respective changelog and identifier mappings, as well as relational data. |
+| **Type**         | **Subject**                            | **Version** | **Description**                                                                                                                                                                                                                                                                                          |
+| ---------------- | -------------------------------------- | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| cx-taxo:BPDMPool | cx-taxo:ReadAccessPoolForCatenaXMember | 6.3[^11]    | Grants the Catena-X Member read access to the Pool API. This can be used to read legal entity, site, address, legal form, identifier type and administrative area level 1 data. To that end, it also grants read access to the respective changelog and identifier mappings, as well as relational data. |
 
-Read access for legal entities, sites and address **MUST** be restricted to Catena-X Member data (see the corresponding attribute for legal entity, site and address), because the Pool may also contain legal entities, sites and address, which are not owned by Catena-X Members.
+Read access for legal entities, sites and addresses **MUST** be restricted to Catena-X Member data (see the corresponding attribute for legal entity, site and address), because the Pool may also contain legal entities, sites and addresses, which are not owned by Catena-X Members.
 
 Write resources (create and update) of the Pool API **MUST NOT** be called from outside of the Catena-X operating environment. Consequently, data assets for them are **NOT REQUIRED**.
 
-Example data asset ([*dct:type*](https://purl.org/dc/terms/type) for asset type, [*dct:subject*](https://purl.org/dc/terms/subject) for asset subject, [*dct:description*](https://purl.org/dc/terms/description) for asset description and *cx-common:version* for asset version from the table above):
+The data asset **MUST** contain the following properties with the corresponding values from the table above:
+
+- [*dct:type*](http://purl.org/dc/terms/type) for type (as @id reference), see also CX-0018
+- [*dct:subject*](http://purl.org/dc/terms/subject) for subject (as @id reference)
+- [*dct:description*](http://purl.org/dc/terms/description) for description
+- [*cx-common:version*](https://w3id.org/catenax/ontology/common#version) for version, see also CX-0018
+
+An example payload for the asset:
 
 ```json
 {
     "@context": {
-        "dct": "https://purl.org/dc/terms/",
+        "dct": "http://purl.org/dc/terms/",
         "cx-taxo": "https://w3id.org/catenax/taxonomy#",
         "cx-common": "https://w3id.org/catenax/ontology/common#",
     },
@@ -501,7 +526,7 @@ Example data asset ([*dct:type*](https://purl.org/dc/terms/type) for asset type,
           "@id": "cx-taxo:ReadAccessPoolForCatenaXMember"
         },
         "dct:description": "Grants the Catena-X Member read access to the Pool API. This can be used to read legal entity, site, address, legal form, identifier type and administrative area level 1 data. To that end, it also grants read access to the respective changelog entries and identifier mappings, as well as relational data.",
-        "cx-common:version": "6.1"
+        "cx-common:version": "6.3"
     },
     "dataAddress": {
         "@type": "DataAddress",
@@ -568,14 +593,14 @@ Details on  namespaces and ODRL policy rule values to be used for the above-ment
 
 ### 3.1 NORMATIVE REFERENCES
 
+- [ISO 639:2023](https://www.iso.org/obp/ui/en/#iso:std:iso:639:ed-2:v1:en)
 - [ISO 20275:2017](https://www.iso.org/obp/ui/en/#iso:std:iso:20275:ed-1:v1:en)
 - [ISO 3166-1:2020](https://www.iso.org/obp/ui/en/#iso:std:iso:3166:-1:ed-4:v1:en)
 - [ISO 3166-2:2020](https://www.iso.org/obp/ui/#iso:std:iso:3166:-2:ed-4:v1:en)
 - [ISO 6709:2022](https://www.iso.org/obp/ui/en/#iso:std:iso:6709:ed-3:v1:en)
 - [WGS 84 (NGA STND 0036 1.0.0)](https://nsgreg.nga.mil/doc/view?i=4085)
 - [OpenAPI specification (3.0.1)](https://github.com/OAI/OpenAPI-Specification/blob/761a0797ebf2e35e687ebef07741d1c10675e08c/versions/3.0.1.md)
-- [Eclipse Tractus-X BPDM GitHub Repository (6.1.x)](https://github.com/eclipse-tractusx/bpdm/blob/3579e50d6200b6a7ce2a9da811475cff4cbffe06/README.md)
-- [Business Partner Data Pool OpenAPI specification (6.1.x)](https://github.com/eclipse-tractusx/bpdm/blob/3579e50d6200b6a7ce2a9da811475cff4cbffe06/docs/api/pool.json)
+- [Business Partner Data Pool OpenAPI specification (6.3.x)](https://github.com/eclipse-tractusx/bpdm/blob/72ba993eb2332613d6cee52c40182763f3e3735f/docs/api/pool.json)
 - [IANA HTTP Status Code Registry (from 2022-06-08)](https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml)
 - [ODRL policy repository](https://github.com/catenax-eV/cx-odrl-profile) (accessed 2024-10-02)
 
@@ -583,16 +608,16 @@ Details on  namespaces and ODRL policy rule values to be used for the above-ment
 
 > *This section is non-normative*
 
-- [BPDM Catena-X Website](https://catena-x.net/en/offers-standards/bpdm) (accessed 2024-10-02)
-- [Catena-X standard library](https://catena-x.net/en/standard-library) (accessed 2024-10-02)
+- [BPDM Catena-X Website](https://catena-x.net/en/offers-standards/bpdm) (accessed 2024-12-17)
+- [Catena-X standard library](https://catena-x.net/en/standard-library) (accessed 2024-12-17)
 
 ### 3.3 REFERENCE IMPLEMENTATIONS
 
 > *This section is non-normative*
 
-- [Business Partner Data Pool API (6.1.x)](https://github.com/eclipse-tractusx/bpdm/tree/3579e50d6200b6a7ce2a9da811475cff4cbffe06/bpdm-pool-api/src/main/kotlin/org/eclipse/tractusx/bpdm/pool/api)
-- [Eclipse Tractus-X BPDM GitHub repository (6.1.x)](https://github.com/eclipse-tractusx/bpdm/blob/3579e50d6200b6a7ce2a9da811475cff4cbffe06/README.md)
-- [BPDM ARC42 documentation (6.1.x)](https://github.com/eclipse-tractusx/bpdm/tree/3579e50d6200b6a7ce2a9da811475cff4cbffe06/docs/architecture)
+- [Business Partner Data Pool API (6.3.x)](https://github.com/eclipse-tractusx/bpdm/tree/72ba993eb2332613d6cee52c40182763f3e3735f/bpdm-pool-api/src/main/kotlin/org/eclipse/tractusx/bpdm/pool/api)
+- [Eclipse Tractus-X BPDM GitHub repository (6.3.x)](https://github.com/eclipse-tractusx/bpdm/blob/72ba993eb2332613d6cee52c40182763f3e3735f/README.md)
+- [BPDM ARC42 documentation (6.3.x)](https://github.com/eclipse-tractusx/bpdm/tree/72ba993eb2332613d6cee52c40182763f3e3735f/docs/architecture)
 
 ## ANNEXES
 
@@ -625,6 +650,10 @@ Intentionally left blank.
 [^8]: Note that further assets will most probably be introduced in one of the next versions of this standard.
 
 [^9]: Note that the definition of the data assets depends on the current implementation state of the reference implementation (Tractus-X Eclipse Dataspace Connector). Therefore the data assets represent permissions on APIs, whereas they should actually only represent APIs.
+
+[^10]: This should be in plural, which will be fixed in the next major version of this standard.
+
+[^11]: Note that in one of the next versions of this standard we will change from minor asset versioning (version 6.3, 7.0, etc.) to major asset versioning (version 6.x, 7.x, etc.) to comply with the API path versioning.
 
 ## Legal
 
