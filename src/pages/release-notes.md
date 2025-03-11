@@ -53,6 +53,10 @@ By default, the versions listed in the ***[Tractus-X changelog](https://eclipse-
 
 ### Further Scope Clarification
 
+...
+
+---
+
 ## [CX-Jupiter]
 
 ### Catena-X Standards
