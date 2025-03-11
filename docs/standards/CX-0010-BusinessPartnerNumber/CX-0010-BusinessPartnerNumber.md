@@ -6,7 +6,7 @@ tags:
   - CAT/Sandbox Service Provider
 ---
 
-# CX-0010 BUSINESS PARTNER NUMBER v2.2.1
+# CX-0010 Business Partner Number v2.2.1
 
 ## FOR WHOM IS THE STANDARD DESIGNED
 
