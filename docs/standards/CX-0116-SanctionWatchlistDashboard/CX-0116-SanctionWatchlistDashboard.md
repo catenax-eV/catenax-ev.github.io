@@ -203,7 +203,6 @@ The SWD Dashboard MUST provide the following results:
 5. Sanction Watchlist Weighting settings
 6. Language setting for German and English
 
-
 ## 3 SWD API
 
 ### 3.1 API ENDPOINTS AND RESOURCES
@@ -328,4 +327,4 @@ Intentionally left blank.
 
 ## Legal
 
-Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).
+Copyright © 2025 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

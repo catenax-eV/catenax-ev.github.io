@@ -3,7 +3,7 @@ tags:
   - CAT/Value Added Services
 ---
 
-# CX-0135 BP Company Certificate Management v2.2.0
+# CX-0135 Business Partner Company Certificate Management v2.2.0
 
 ## ABSTRACT
 
@@ -143,16 +143,16 @@ E.g. Business service providers that offer a validation service for company cert
 The attribute *uploader* defines the company (uploader) who originally provided the given certificate (e.g. company A provided it to business application provider B, business application provider B is a trusted validator). This company is also identified by a BPN.
 
 #### 1.5.10 DOCUMENT
+
 The document entity ensures that all necessary metadata and content for a document is well-defined and easily manageable.
 
-*documentID* represents a unique identifier for the document. It ensures that each document can be uniquely referenced. 
+*documentID* represents a unique identifier for the document. It ensures that each document can be uniquely referenced.
 
 *creationDate* represents the date and time when the document was created, including the time zone offset. Example: "2024-08-23T13:19:00.280+02:00".
 
 *contentType* specifies the format of the document's content using the MIME type standard. For example, "application/pdf" indicates the document is in PDF format.
 
 *contentBase64* contains the actual content of the document, encoded in Base64 format. This allows binary data (e.g., a PDF file) to be safely included as a text string.
-
 
 ## 2 ASPECT MODELS
 
@@ -219,4 +219,4 @@ not applicable
 
 ## Legal
 
-Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).
+Copyright © 2025 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

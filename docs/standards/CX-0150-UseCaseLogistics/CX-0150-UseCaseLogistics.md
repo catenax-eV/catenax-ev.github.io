@@ -42,18 +42,18 @@ Note: Fulfilling a use case standard by a data provider / consumer can be done i
 
 1. Purchase a certified app for the use-case. In this case the data provider / consumer does not need to prove conformity again and
 2. Data Provisioning / Consumption without a certified app for the use case.
-   
+
 ### 1.2 CONTEXT AND ARCHITECTURE FIT
 
 > *This section is non-normative*
 
 **Logistic section:**
-Traceability of parts and materials is crucial in the automotive industry to enable e.g. quality management and calculating the correct PCF value. But not just the manufacturing process or used materials have an influence to the product quality and the PCF. How these parts, batches or vehicles are conveyed and handled on the route of transport can have an impact to it. Some examples are heat or humidity to chemical products or shock to sensitive or breakable goods. It makes a difference in calculating a PCF value in case of ground shipping vs. air freight. 
+Traceability of parts and materials is crucial in the automotive industry to enable e.g. quality management and calculating the correct PCF value. But not just the manufacturing process or used materials have an influence to the product quality and the PCF. How these parts, batches or vehicles are conveyed and handled on the route of transport can have an impact to it. Some examples are heat or humidity to chemical products or shock to sensitive or breakable goods. It makes a difference in calculating a PCF value in case of ground shipping vs. air freight.
 So, the aim of the **Use Case Logistics and Customs** is to provide additional information about the transport (used vehicles, real time information about the location etc.), the transport unit (also known as "handling unit")  and specific details of package content. It enables to track and trace the single stages of the value creation chain to enable further data driven use cases in the logistics without compromising data sovereignty.
 
 In order to create this transparency on transport, transport unit etc. relevant data should be made available by the affected participants of a value chain in addition of the transparency on physical assets. This process is described in the standard CX - 0127 INDUSTRY CORE: PART INSTANCE 2.0.0. This standard enables data and app providers to deliver solutions for building data chains for serialized parts, batches etc.. This is achieved via the standardized creation of digital twins of vehicles, parts and materials as well as the logical linking to their sub-components (Bill of Material, BoM). The default visibility of digital twins and their respective semantic models follows the one-up/one-down principle.
 
-By tracking and tracing back the logistic conditions of parts, batches or vehicles - suppliers, carriers etc. can quickly identify the source of any quality issues due to an incompatible treatment on the transport way. By using a digital twin for transport units and provide specific information about the packed goods via aspect model "packingList 1.0", it is possible to identify the affected goods and take corrective actions to address them. Comprehensive traceability across the value creation network enables the automotive and further industries to quickly respond to any quality issues in their supply chain. 
+By tracking and tracing back the logistic conditions of parts, batches or vehicles - suppliers, carriers etc. can quickly identify the source of any quality issues due to an incompatible treatment on the transport way. By using a digital twin for transport units and provide specific information about the packed goods via aspect model "packingList 1.0", it is possible to identify the affected goods and take corrective actions to address them. Comprehensive traceability across the value creation network enables the automotive and further industries to quickly respond to any quality issues in their supply chain.
 
 ![LogisticTwins.png](./assets/LogisticTwins.png)
 
@@ -154,7 +154,6 @@ A number mapped 1:1 to VIN, but pseudonomised.
 
 **Vehicle Identification Number (VIN):**
 The VIN number is a 17-character code assigned by the manufacturer to every vehicle, providing specific information about its make, model, year of manufacture, and other key features. It is a unique identifier that allows the vehicle to be easily tracked and identified throughout its lifespan.  Additional terminology used in this standard can be looked up in the glossary on the association homepage.
-
 
 ## 2 RELEVANT PARTS OF THE STANDARD FOR SPECIFIC USE CASES
 
@@ -258,7 +257,7 @@ To enforce a strict need-to-know (and prevent data from being exposed to non-aut
 An overview of the relevant aspect models of this standard.
 
 - PackingList
-- IotSensorData v2.0.0 
+- IotSensorData v2.0.0
 - AssetTrackerLinks v2.0.0
 
 If a data provider decides to provide data on aspect models of this standard they **MUST** provide the data conformant to the semantic models specified in this document.
@@ -274,7 +273,7 @@ The unique identifier of the semantic model specified in this document **MUST** 
 
 ### 3.1 ASPECT MODEL "PackingList"
 
-#### 3.1.1 INTRODUCTION 
+#### 3.1.1 INTRODUCTION
 
 This aspect model provides information about the packed goods inside of a transport unit. All goods of inserted parts, batches etc. and their corresponding quantity are listed and **MUST** be connected between the individual existing digital twins of them (e.g. partInstance) and the digital twin of transport unit. Only under this condition it is possible to track and especially trace the goods afterwards in case of a quality issue due to an improper treatment on the transport way in a catena-x compliant manner. Hence, the affected goods can be narrowed down and are identifiable.
 
@@ -404,5 +403,4 @@ There is no prcoess defintion in this standard version available.
 
 ## Legal
 
-Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).
-
+Copyright © 2025 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

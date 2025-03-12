@@ -233,7 +233,6 @@ BDV MUST contain the following dashboard-based functionalities:
 8. Search function
 9. BDV dashboard settings by time, KPI, layout and view, country, language limited to German and English
 
-
 ## 3 BDV API
 
 ### 3.1 API ENDPOINTS AND RESOURCES
@@ -356,4 +355,4 @@ Intentionally left blank.
 
 ## Legal
 
-Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).
+Copyright © 2025 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

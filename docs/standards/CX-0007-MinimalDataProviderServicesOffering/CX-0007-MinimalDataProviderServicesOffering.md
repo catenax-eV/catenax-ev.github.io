@@ -232,7 +232,6 @@ For the example of digital product passport, this includes:
 
 - CX-0143 Use Case Circular Economy Digital Product Passport
 
-
 NOTE: The Enablement Service Provider **MAY** also choose to provide the option to configure an existing
 EDC, DTR or other decentral component with the upload tool instead of including it with the offer.
 However,  one of the two options **MUST** be provided.
@@ -458,4 +457,4 @@ Example: The code found at https://github.com/eclipse-tractusx/dft-frontend in c
 
 ## Legal
 
-Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).
+Copyright © 2025 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

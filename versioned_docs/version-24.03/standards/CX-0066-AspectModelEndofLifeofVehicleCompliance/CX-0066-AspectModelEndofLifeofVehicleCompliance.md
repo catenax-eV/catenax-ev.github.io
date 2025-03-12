@@ -604,4 +604,4 @@ VDA 231-106 - https://webshop.vda.de/VDA/de/vda-231-106-102021
 
 ## Legal
 
-Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).
+Copyright © 2025 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

@@ -36,7 +36,7 @@ sidebar_class_name: separator-top
 
 | CX-Nr.  | Standard Name | Version |  Management Summary |
 |-----------|-----------|:-----------:|--------------------|
-| CX-0125 | Traceability Use Case | 2.1 | <ul><li>Enhanced existing content of Section ABSTRACT, Section FOR WHOM IS THE STANDARD DESIGNED, Section 1.1, Section 1.2 with new information regarding block informations in context with the existing Quality Investigations and Quality Alerts.</li><li>Renamed Section 2.1 title from _Quality Notifications and Data Exchange_ to _Data Exchange for Quality and Block Notifications_ and adapted existing content with additional information.</li><li>Adapted existing content of Section 2.1.3 with bug fixes and additional information for the new Block Notification function.</li><li> Added new Section 4.2. to describe the new Block Notification API (Optional). </li><li>Added new Section 5.2. to describe the new Block Notification process (Optional).</li></ul> |
+| CX-0125 | Traceability Use Case | 2.1 | <ul><li>Enhanced existing content of Section ABSTRACT, Section FOR WHOM IS THE STANDARD DESIGNED, Section 1.1, Section 1.2 with new information regarding block informations in context with the existing Quality Investigations and Quality Alerts.</li><li>Renamed Section 2.1 title from *Quality Notifications and Data Exchange* to *Data Exchange for Quality and Block Notifications* and adapted existing content with additional information.</li><li>Adapted existing content of Section 2.1.3 with bug fixes and additional information for the new Block Notification function.</li><li> Added new Section 4.2. to describe the new Block Notification API (Optional). </li><li>Added new Section 5.2. to describe the new Block Notification process (Optional).</li></ul> |
 | CX-0128 | Demand and Capacity Management Data Exchange | 2.1 | <ul><li>Added consolidated *Conformity Assessment Criteria* to support the certification.</li><li>Updated *FrameworkAgreement* Credentials and references.</li></ul> |
 
 #### Sustainability
@@ -45,7 +45,7 @@ sidebar_class_name: separator-top
 |-----------|-----------|:-----------:|--------------------|
 | PCF-Rulebook | 3.1 | ... (currently not normative) |
 
-#### Misc.
+#### Misc
 
 | CX-Nr.  | Standard Name | Version |  Management Summary |
 |-----------|-----------|:-----------:|--------------------|
