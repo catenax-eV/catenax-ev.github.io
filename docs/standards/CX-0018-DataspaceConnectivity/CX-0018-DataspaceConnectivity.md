@@ -7,7 +7,7 @@ tags:
   - CAT/Sandbox Services (Beta)
 ---
 
-# CX-0018 Dataspace Connectivity v.3.3.0
+# CX-0018 Dataspace Connectivity v.3.3.1
 
 ## ABSTRACT
 
@@ -158,8 +158,7 @@ Providers MAY offer any of the following Transfer Type Profiles:
 
 #### 2.2.1 HttpData-PULL
 
-A Consumer MUST send a `dspace:TransferRequestMessage` with `dct:format`:`HttpData-PULL` and no
-`dspace:dataAddress` property.
+A Consumer MUST send a `dspace:TransferRequestMessage` with `"dct:format":"HttpData-PULL"`. A Provider is not required to process the `dspace:dataAddress` property.
 
 A Provider MUST send a `dspace:TransferStartMessage` with sufficient information in the `dspace:dataAddress` property so
 that an HTTP request to the `dspace:endpoint` may succeed. The `dspace:endpointType` property MUST be
