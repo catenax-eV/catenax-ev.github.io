@@ -11,22 +11,22 @@ For more information, on the **legal notice** please visit [here](https://catena
 ### Catena-X Standards
 
 - 2 new standards, completing the set of Catena-X' initial use cases
-- 12 updated standards to ensure quality, coherence and the implementation of our "breaking change" via SSI
+- 12 updated standards to ensure quality
 - 1 deprecated standards in the course of consolidation to achieve more user-friendliness
-- updated modular certification framework (see Operating Model ***ADD LINK XXX***)
+- updated modular certification framework (see [Operating Model](https://catenax-ev.github.io/docs/next/operating-model/how-data-space-governance#certification-framework))
 
 details to be found [here](/docs/standards/changelog)
 
 ### Catena-X Operating Model
 
-- updated to version ***X.X*** enabling many new ecosystem components such as the OSP role, Catena-X Sandboxes and an overhaul to release management focused on stability and reliability
+- updated to version 3.0.5
+- only patch changes e.g. clarification of the Sandbox, update modular System covering the new standards and update glossary etc.
 
 details to be found [here](/docs/operating-model/changelog)
 
 ### Catena-X Regulatory Framework
 
-- ...
-- ...
+- only patch changes in comparison to CX-Jupiter
 
 details to be found [here](/docs/regulatory-framework/changelog)
 
@@ -44,6 +44,10 @@ details to be found [here](https://eclipse-tractusx.github.io/CHANGELOG/#2408---
 By default, the versions listed in the ***[Tractus-X changelog](https://eclipse-tractusx.github.io/CHANGELOG/#2503---2025-03-17)*** are the recommended versions. Non-compatible or other compatible versions of the Tractus-X release or the apps are listed below. If a version is interoperable with the initial release version and those features and with all other listed versions its listed as compatible.
 
 #### Compatible versions
+
+| Component | Versions | Comments |
+| -------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| Eclipse Data Space Connector <br /> (Tractus-X EDC) | [0.7.7](https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.7.7) <br /> [0.8.0](https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.8.0) <br /> [0.8.1](https://github.com/eclipse-tractusx/tractusx-edc/releases/[tag/0.8.1) <br /> [0.9.0](https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.9.0) [Latest] ||
 
 #### Non-compatible versions
 
