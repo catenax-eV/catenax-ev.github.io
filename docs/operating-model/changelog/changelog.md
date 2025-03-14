@@ -5,12 +5,19 @@ sidebar_position: 1
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [3.0.5]
+
+### Added
+
+- Glossary
+  - Added abbreviations DCP, DSP, SAMM
+
 ## [3.0.4]
 
 ### Changed
 
 - What: Service Map & Who: Roles in the Catena-X ecosystem
-  - remove Beta and Limitations of Sandbox and Sandboxprovider role
+  - Removed Beta and Limitations of Sandbox and Sandboxprovider role
 
 ## [3.0.3]
 

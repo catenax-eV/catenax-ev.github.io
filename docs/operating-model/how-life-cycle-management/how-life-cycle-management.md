@@ -99,12 +99,6 @@ The release schedule does not cover patches. The schedule defines such long time
 
 Security patches are different, because to fix a bug, it is required to change the behavior, but the security issue makes it mandatory to patch the release. The decision, when a patch can be deployed, is with the participants of the deployment gate. Additionally, there is a dependency to the standard, because the security issue could already be initiated by the standard itself. This would not only require a patch, but at least a note in the standard.
 
-### Introduction of the release schedule
-
-As can be seen below the ecosystem release at the end of 2024 is the start of release management and naming. The release at the end of 2024 is therefore a hard network change resulting in an upgrade day. This is the last scheduled Catena-X release with this category of impact. Starting with the development of Tractus-X 24.12, the implementation will be carried out with the aim of making the release compatible with [Jupiter]. The same applies to the further creation of the Catena-X Association's artifacts. In this first phase there is only one major release. The complete implementation of 2 major releases running in parallel will be available after the next major ecosystem release [Jupiter].
-
-The details of the technical implementation and the process for defining the releases can be found in chapter [Backwards compatibility](./how-life-cycle-management.md#backwards-compatibility).
-
 ## Backwards compatibility
 
 Compatibility between the releases is one of the cornerstones of a stable network. There are major versions with potential breaking changes, but such changes have to work with the grace period of the maintenance version in mind. This means that the evolution is ensured by following the approach of two versions available at the same time.

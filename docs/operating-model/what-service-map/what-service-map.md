@@ -24,7 +24,7 @@ Please note that there are various options for running enablement services, rang
 
 In contrast to Enablement Services, Core Services are provided and operated by Core Service providers A/B. Core services provide common accessibility and discoverability functionalities for data space participants. Examples include BPN issuer for maintaining business partner numbers, and participant information, IAM solutions for identity and access management, and discovery services to localize the address of assets in decentral organized registries across the data space. The Core Services can be divided into two areas:
 
-**Core Services A** lists Core Services that can be operated “n” times in the Catena-X data space.
+**Core Services A** lists Core Services that can be operated "n" times in the Catena-X data space.
 
 **Core Services B** lists Core Services that can only be operated once in the Catena-X data space due to business reasons or technical limitations and are therefore tendered via the nomination process of the Association.
 
@@ -104,7 +104,7 @@ The exclusions do not prohibit the offering or integration of the Golden Record 
 
 As shown in the [role description](./../who-roles-in-the-catena-x-ecosystem/who-roles-in-the-catena-x-ecosystem.md#sandbox-provider) of the SP, the SP itself and the participants in the sandbox must be onboarded into the productive Catena-X data space via an OSP or CSP-B - see [onboarding](./../how-data-space-operations/how-data-space-operations.md#general-onboarding). The BPNs issued do not have to be used in the Sandbox, so no technical integration has to take place.
 
-Catena-X Sandboxes offer participants the option to try out the network and its features while still using test data. On the one hand, they serve the purpose of offering a **Proof of Concept (POC) environment**, both for future Catena-X releases as well as for interested parties to “try out” Catena-X before migrating to the productive operating environment. On the other hand, they provide the foundation for more automated **Catena-X conformity assessment**. Catena-X Sandboxes will require certification in the future and are distinctly recognizable by an official Catena-X label.
+Catena-X Sandboxes offer participants the option to try out the network and its features while still using test data. On the one hand, they serve the purpose of offering a **Proof of Concept (POC) environment**, both for future Catena-X releases as well as for interested parties to "try out" Catena-X before migrating to the productive operating environment. On the other hand, they provide the foundation for more automated **Catena-X conformity assessment**. Catena-X Sandboxes will require certification in the future and are distinctly recognizable by an official Catena-X label.
 
 Sandboxes must visibly distinguish their services from the productive Catena-X operating environment provided by the official CSP-B (e.g. through a disclaimer to its users) in combination with advertising a clear path into the productive Catena-X operating environment for any user that intends to join the Catena-X data space.
 
@@ -114,5 +114,5 @@ The following conditions apply to any Catena-X Sandbox:
 
 - Catena-X Release: any officially supported Catena-X Release
 - Data: limited to test data
-- Apps & Solutions offered: Catena-X certified, if standardized Catena-X services are offered; Non-certified if no Catena-X standards exist (see *Direct collaboration (no multi-tier approach*))
+- Apps & Solutions offered:  Catena-X certified, if  standardized Catena-X services are offered; Non-certified if no Catena-X standards exist (see *Direct collaboration (no multi-tier approach*))
 - Users: registered Catena-X data space participants only
