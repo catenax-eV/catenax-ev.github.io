@@ -104,9 +104,7 @@ The exclusions do not prohibit the offering or integration of the Golden Record 
 
 As shown in the [role description](./../who-roles-in-the-catena-x-ecosystem/who-roles-in-the-catena-x-ecosystem.md#sandbox-provider) of the SP, the SP itself and the participants in the sandbox must be onboarded into the productive Catena-X data space via an OSP or CSP-B - see [onboarding](./../how-data-space-operations/how-data-space-operations.md#general-onboarding). The BPNs issued by the CSP-B do not have to be re-used in the sandbox, so no technical integration between the SP and the CSP-B has to take place.
 
-
 The Catena-X Sandbox shall not be confused with a development or testing environment for Business Application Providers. On the one hand, Catena-X Sandboxes serve the purpose of offering a **Proof of Concept (POC) environment**, both for future Catena-X releases as well as for interested parties to test and explore the Catena-X network and its solutions or business applications (offered in the Catena-X marketplace) before migrating to the productive operating environment. On the other hand, they will provide the foundation for more automated **Catena-X conformity assessment** in the future. Catena-X Sandboxes themselves require certification and are distinctly recognizable by an official Catena-X label.
-
 
 Catena-X Sandboxes must visibly distinguish their services from the productive Catena-X operating environment provided by the official CSP-B (e.g. through a disclaimer to its users) in combination with advertising a clear path into the productive Catena-X operating environment for any user that intends to join the Catena-X data space.
 
