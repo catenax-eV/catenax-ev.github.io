@@ -66,15 +66,7 @@ Each certified partner needs to ensure conformity to the standards to be active 
 
 For ecosystem releases, all major components of the Catena-X data ecosystem will be updated for all active and future users of the network. To offer a smooth transition to all our stakeholders to a new major release, certain measures are taken during the transitional period:
 
-#### 1. Self-Assessment to maintain valid certification
-
-Catena-X will release a standard update on the [Catena-X Library website](https://catenax-ev.github.io/docs/standards/overview).
-
-The productive environment of the Catena-X data ecosystem (productive environment) will support the valid ecosystem releases. This will be accompanied by an **update of the certification framework** ("which role needs to have which components certified").
-
-Each partner needs to ensure conformity to the new standards to be active in the data space. To this end, the following procedure applies: Every participant in the data space has to complete their certification via a CAB or, in case of an existing certification, via free self-assessment. If there is no valid certificate for a supported ecosystem release, Partners must be removed from the data space at the direction of the Catena-X Association.
-
-#### 2. Certification of business applications vs. internal systems that fall under the definition of a Catena-X business application*
+#### 1. Certification of business applications vs. internal systems that fall under the definition of a Catena-X business application*
 
 **A business application** provides specific logic and schemas defined in a Catena-X use case (e.g., data processing, transformation functions) that is applied to input data to produce an expected output. This includes the use of Catena-X semantic models (semantic interoperability) as well as the technical data exchange using standardized protocols and API-specifications (technical interoperability). This does not apply to internal systems of an organization, such as internal databases, data lakes, data pipelines (ETL), or source systems.
 
@@ -85,7 +77,7 @@ Companies may want to **integrate internal systems** including company-internal 
 
 If an company-internal business application meets either of these criteria, Catena-X certification is mandatory.
 
-#### 3. No Catena-X Business Applications without listing on a Certified Catena-X Marketplace
+#### 2. No Catena-X Business Applications without listing on a Certified Catena-X Marketplace
 
 Catena-X is built on trust. All Catena-X certified business applications and services must be listed on a certified Catena-X marketplace.
 Catena-X marketplace providers (i.e. CSP-A) verify that the listed business applications and services have a valid certification issued by a CAB and therefore comply with the Catena-X standards. Catena-X does not allow the provision of a solution without a marketplace listing.
