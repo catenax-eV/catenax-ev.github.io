@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # 2. Aspect Models
 
-> *This section is normantive*
+> *This section is normative*
 
 ## 2.1 ASPECT MODEL "DIGITAL PRODUCT PASSPORT"
 

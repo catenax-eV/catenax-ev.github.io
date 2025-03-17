@@ -4,7 +4,7 @@ sidebar_position: 4
 
 # 3. Application Programming Interfaces
 
-> *This section is normantive*
+> *This section is normative*
 
 ## 3.1 EDC DATA ASSET STRUCTURE
 

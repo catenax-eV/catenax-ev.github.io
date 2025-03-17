@@ -7,6 +7,8 @@ tags:
 
 # Introduction
 
+CX-0143 Use Case Circular Economy - Digital Product Passport v1.0.1
+
 ## ABSTRACT
 
 This standard focuses on the digital product passport use case. This includes relevant requirements for
