@@ -2,7 +2,6 @@
 position: 1
 sidebar_class_name: separator-top
 ---
-
 # Changelog
 
 ## Summary of Release CX-Io
@@ -42,8 +41,8 @@ sidebar_class_name: separator-top
 #### Sustainability
 
 | CX-Nr.  | Standard Name | Version |  Management Summary |
-|-----------|-----------|:-----------:|--------------------|
-| PCF-Rulebook | 3.1 | ... (currently not normative) |
+|:-----------|:-----------|:-----------|:--------------------|
+| / | PCF-Rulebook | 3.1 | <ul><li>Absolute PCF contributions have been introduced to ensure that biogenic CO₂ (including potential negative values) is correctly accounted for.</li><li>Editorial changes to enhance clarity, with no changes to the underlying methodology.</li></ul>               |
 
 #### Misc
 
@@ -55,7 +54,7 @@ sidebar_class_name: separator-top
 ### B) List of new standards
 
 | CX-Nr.  | Standard Name | Version |  Management Summary |
-|-----------|-----------|:-----------:|--------------------|
+|:-----------|:-----------|:-----------|:--------------------|
 | CX-0150 | Logistics | 1.0 | <ul><li> This standard is designed for everybody who wants to participate in the logistics and customs use case.</li><li>The following features are provided:<ul><li>Traceability of transport (e.g. truck, ship, airplane), transport units and packing list.</li><li>Fulfilling customs requirements, like long-term supplier declaration (coming soon).</li></ul></li></ul> |
 | CX-0151 | Industry Core Basics | 1.0 | <ul><li>This standard defines basic features of the Industry Core. The Industry Core is a shared foundation for use cases that utilize notifications, digital twins and aspect models in Catena-X.</li></ul> |
 
