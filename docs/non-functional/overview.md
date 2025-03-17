@@ -24,3 +24,7 @@ When you start to work with die PCF verification framework please note, that the
 | ESS Code of Conduct v1.0 (German) | ESS Code of Conduct v1.0 (English) |
 |:---:|:---:|
 | [![CX-NFR-ESS-Codex_v.1.0_DE.png](./assets/images/CX-NFR-ESS-Codex_v.1.0_DE.png)](./assets/files/CX-NFR-ESS-Codex_v.1.0_DE.pdf) | [![CX-NFR-ESS-Codex_v.1.0_EN.png](./assets/images/CX-NFR-ESS-Codex_v.1.0_EN.png)](./assets/files/CX-NFR-ESS-Codex_v.1.0_EN.pdf) |
+
+## Legal
+
+Copyright © 2025 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).
