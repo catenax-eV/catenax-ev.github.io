@@ -1,4 +1,4 @@
-# CX-0007 Minimal Data Provider Service Offering v1.1.0
+# CX-0007 Minimal Data Provider Service Offering v1.1.1
 
 ## 1. INTRODUCTION
 
@@ -22,7 +22,7 @@ Minimal data provider service offerings will in the following also be referred t
 
 > *This section is non-normative*
 
-The target audience of this standard is any application or service provider that wants to offer services related to one time data provisioning, such as but not limited to, manual text masks or file-based uploads. It is not intended to explain how continuous backend integrations of e.g. ERP or MES systems into the Catena-X network can work. Please refer to CX-0055 for this. This standard applies to data provisioning for all Catena-X Use Cases.
+The target audience of this standard is any application or service provider that wants to offer services related to one time data provisioning, such as but not limited to, manual text masks or file-based uploads. It is not intended to explain how continuous backend integrations of e.g. ERP or MES systems into the Catena-X network can work. Please refer to CX-0055 for this. This standard applies to data provisioning for all Catena-X Use Cases that are based on the Industry Core standards.
 
 This document is relevant for the following roles:
 
@@ -48,8 +48,7 @@ Data is described with a standardized semantic, which is specific for
 each Use Case. The semantics are described with the semantic modeling
 language SAMM.
 
-Furthermore, data discovery and access is enabled by the Asset Administration Shell (Digital Twins),
-or by knowledge agents.
+In this document we are focusing on data discovery and data access via the Asset Administration Shell (Digital Twins).
 
 The data exchange itself happens in a self-sovereign way via the Connector (e.g. the Eclipse Dataspace Connector (EDC)).  
 
@@ -64,7 +63,7 @@ data. The participant also can decide on a dataset level, which of his
 partners is able to see the various data offers (Access Policies) and
 then decide under which conditions he is willing to share data (Usage
 Policies). Furthermore, the user of the upload tool must be able to
-update or delete the actual data, access and usage policies as well as
+update or delete the actual data, defined access and usage policies as well as
 any meta data and references to data.
 
 A data provisioning tool, as described in the next section, must make sure that
@@ -97,7 +96,7 @@ interactions with other components. It needs to handle the upload of
 data into the data persistence layer, create/delete/update the EDC contract
 offer, (De-)register data at the digital twin
 registry, handle authentication and authorization at the application and
-so on and so forth.
+so on.
 
 #### 1.3.3 DATA PERSISTANCE LAYER
 
@@ -109,34 +108,33 @@ Note: It is not enough to register a digital twin or create an EDC
 contract offer as they only contain meta-data and references to the
 actual data. The actual data also needs to be made available after it
 has been uploaded to the tool. That is the responsibility of the data
-persistence layer.
+persistance layer.
 
 #### 1.3.4 EDC
 
 The EDC is a separate component that is needed to enable a sovereign
-data exchange. There's currently no data provisioning for the various
-use cases without an EDC. The EDC always needs to be deployed together
+data exchange. In Catena-X, it is not possible to provide or consume data without an EDC. The EDC always needs to be deployed together
 with the front- and backend. Also, the EDC currently isn't tenant
 isolated, thus one EDC needs to be deployed per customer company.
 
 As an alternative, the solution can be configurable with an external EDC.
 
 Furthermore, the EDC that is used must be discoverable by data consumers and thus
-be registered at the EDC discovery service.
+be registered at the EDC discovery service in the operating company.
 
 #### 1.3.5 DIGITAL TWIN REGISTRY (DTR)
 
 The DTR is a decentral component
 that must be implemented with each data provider offering digital twin aspects.
 It stores references to aspects of digital twins.
-The actual data ("the digital twin") is stored in the data persistence layer
+The actual data is stored in the data persistance layer
 that comes with a minimal data provider service. The backend needs to
 interact with the decentral DTR to register newly created/uploaded twins.
 In case a user deletes data, the backend also needs to de-register the twins
 again. For an API description of the DTR, refer to CX-0002.
 
 A minimal data provider service offering for digital twin aspects either must include its own
-decentral DTR or it can be configurable to work with an external decentral DTR.
+decentral DTR or must be configurable to work with an external decentral DTR.
 
 Furthermore, the DTR that is used must be discoverable by data consumers and thus
 be registered at the discovery finder.
@@ -150,8 +148,8 @@ provide the correct attributes and roles of a data provider to the EDC.
 
 Depending on the Use Case, different semantic modelling languages and
 semantic models need to be understood by the upload tool. E.g.: if the
-upload tool wants to work for the Use Case traceability, the tool needs
-to be able to process the Aspect Model: SerialPartTypization in the SAMM
+upload tool wants to work for the use case Industry Core, the tool needs
+to be able to process the Aspect Model: SerialPart in the SAMM
 language.
 
 Note: SAMM is currently the only modeling language that is used within
@@ -167,7 +165,7 @@ A list of all released semantic models can be found in the [Eclipse Tractus-X Gi
 
 ### 1.4 CONFORMANCE
 
-As well as sections marked as non-normative, all authoring guidelines,
+All sections marked as non-normative, all authoring guidelines,
 diagrams, examples, and notes in this specification are non-normative.
 Everything else in this specification is normative.
 
@@ -204,7 +202,7 @@ The solution can only be listed in an official Catena-X Marketplace after succes
 All requirements that are listed as "mandatory" under chapter 2.2 **MUST** generally be
 fulfilled by a service offering. If a service offering does not fulfill
 a mandatory requirement, the provider offering the service MUST
-explain why he derives from the requirement. It is then up to the CAB to
+explain why he deviates from the requirement. It is then up to the CAB to
 decide if the service offering still receives a certificate.
 
 All requirements that are listed as "optional" **SHOULD** be fulfilled by a
@@ -220,17 +218,19 @@ More details can be found in the respective individual standards:
 - CX-0013 Identity of Member Companies
 - CX-0149 Verified Company Identity
 - CX-0018 Dataspace Connectivity
+- CX-0002 Digital Twins in Catena-X
+- CX-0126 Industry Core: Part Type
+- CX-0127 Industry Core: Part Instance
 
 Depending on the Use Cases for which the service offering is intended,
 additional and Use Case specific standards are relevant and **MUST** be implemented.
 Please refer to the Use Case specific standards therefore.
 
-E.g. if the Minimal Data Provider Service Offering is intended to work for the traceability Use Case,
+E.g. if the Minimal Data Provider Service Offering is intended to work for the digital product passport Use Case,
 conformance with the respective standards must be shown.
-For the example of traceability, this includes:
+For the example of digital product passport, this includes:
 
-- CX-0125 Traceability Use Case
-- CX-0002 Digital Twins in Catena-X
+- CX-0143 Use Case Circular Economy Digital Product Passport
 
 NOTE: The Enablement Service Provider **MAY** also choose to provide the option to configure an existing
 EDC, DTR or other decentral component with the upload tool instead of including it with the offer.
@@ -453,8 +453,8 @@ As long as not specified differently, the latest version of the standard **MUST*
 
 > *This section is non-normative*
 
-Example: The code found at https://github.com/eclipse-tractusx/dft-frontend in combination with https://github.com/eclipse-tractusx/dft-backend presents a reference implementation that implements this standard.
+Example: The code found at https://github.com/eclipse-tractusx/dft-frontend in combination with https://github.com/eclipse-tractusx/dft-backend presents a reference implementation that partly implemented this standard (not updated to current release) and more.
 
 ## Legal
 
-Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).
+Copyright © 2025 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

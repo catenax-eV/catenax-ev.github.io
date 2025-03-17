@@ -705,4 +705,4 @@ Every API endpoint defined in Chapter 2.2.1 MUST respond to incoming requests wi
 
 ## Legal
 
-Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).
+Copyright © 2025 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).
