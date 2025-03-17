@@ -15,11 +15,11 @@ However, this vision is complex: companies at various stages of the automotive v
 
 The standards of our Catena-X data ecosystem define how the exchange of data and information in our network works. They are the basis for ensuring that the technologies, components, policies, and processes used are developed and operated according to uniform rules. All standards developed for the Catena-X data ecosystem are based on the technological and industry-specific requirements of the automotive industry.
 
-The Catena-X Association publishes standards for generic core and enabling services as well as for domain-specific business applications (see KITs Chapter [KITs – Keep It Together](./../what-service-map/what-service-map.md#kits--keep-it-together)). These standards and artifacts form the basis for the development and operation of software components in the Catena-X network to ensure interoperability and data sovereignty between different software components and providers. All relevant standards are accessible in the [Catena-X standard library](https://catenax-ev.github.io/docs/standards/overview).
+The Catena-X Association publishes standards for generic core and enabling services as well as for domain-specific business applications (see KITs Chapter [KITs - Keep It Together](./../what-service-map/what-service-map.md#kits--keep-it-together)). These standards and artifacts form the basis for the development and operation of software components in the Catena-X network to ensure interoperability and data sovereignty between different software components and providers. All relevant standards are accessible in the [Catena-X standard library](https://catenax-ev.github.io/docs/standards/overview).
 
 ### How do we standardize?
 
-Based on [Catena-X’s Intellectual Property(IP)-Regulations](https://catena-x.net/fileadmin/user_upload/Vereinsdokumente/Catena-X_IP_Regelwerk_IP_Regulations.pdf) and in compliance with applicable antitrust law, the Catena-X standardization process aims to develop and implement uniform standards for networking and data exchange in the automotive sector. A general overview of the process is depicted in Figure [Catena-X Standardization Process](./how-data-space-governance.md#how-do-we-standardize):
+Based on [Catena-X's Intellectual Property(IP)-Regulations](https://catena-x.net/fileadmin/user_upload/Vereinsdokumente/Catena-X_IP_Regelwerk_IP_Regulations.pdf) and in compliance with applicable antitrust law, the Catena-X standardization process aims to develop and implement uniform standards for networking and data exchange in the automotive sector. A general overview of the process is depicted in Figure [Catena-X Standardization Process](./how-data-space-governance.md#how-do-we-standardize):
 
 ![Catena-X Standardization Process](./assets/catena-x-standardization-process.png)
 *Catena-X Standardization Process*
@@ -62,21 +62,11 @@ Certifications and qualifications at Catena-X can be obtained for different type
 
 Each certified partner needs to ensure conformity to the standards to be active in the data space. Every certified participant in the data space must remain compatible with at least one of the supported ecosystem releases through certification via a CAB. If there is no valid certificate after the ecosystem release tied to the respective certificate expires, Partners lose the status of certification/ qualification and are no longer listed as such on the Data Space Clearance List after the above-mentioned 120 days grace period expires. Each label is obtained after the successful completion of the Catena-X certification or qualification process.
 
-### Further clarifications for Release Jupiter
+### Further clarifications for Ecosystem Releases
 
-Jupiter is the next ecosystem release of the Catena-X data ecosystem. For the first time, all major components of the Catena-X data ecosystem will be updated for all active and future users of the network. To offer a smooth transition to all our stakeholders to a new major release, certain measures are taken during the transitional period:
+For ecosystem releases, all major components of the Catena-X data ecosystem will be updated for all active and future users of the network. To offer a smooth transition to all our stakeholders to a new major release, certain measures are taken during the transitional period:
 
-#### 1. Self-Assessment to maintain valid certification after Release 24.05
-
-Catena-X will release a standard update (Preview Jupiter) in June 2024, on the Catena-X Association website. **This release will include “breaking changes” as defined in the** [Semantic Versioning](https://semver.org/).
-
-The productive environment of the Catena-X data ecosystem (productive environment) will be **exclusively on Release Jupiter**. This will be accompanied by an **update of the certification framework** (“which role needs to have which components certified”).
-
-Each partner needs to ensure conformity to the new standards to be active in the data space. To this end, the following procedure applies: Every participant in the data space has until **October 2024** (grace period) to complete their certification via a CAB or, in case of an existing certification, via free self-assessment. If there is no valid certificate for Jupiter, Partners must be removed from the data space at the direction of the Catena-X Association as of October 16th, 2024.
-
-Data space participants and their solutions that have a valid certificate past October 2024 can use the period between the standard update in June 2024 and the industrialization of Jupiter via the Operating Company to prove their compliance to the Association via a **free self-assessment** and thus confirm the validity of their certificate even after release updates (up to a maximum of 12 months after initial issue). A corresponding form including confirmation of conformity with each standard required for the certificate can be requested from [info@catena-x.net](mailto:info@catena-x.net).
-
-#### 2. Certification of business applications vs. internal systems that fall under the definition of a Catena-X business application*
+#### 1. Certification of business applications vs. internal systems that fall under the definition of a Catena-X business application*
 
 **A business application** provides specific logic and schemas defined in a Catena-X use case (e.g., data processing, transformation functions) that is applied to input data to produce an expected output. This includes the use of Catena-X semantic models (semantic interoperability) as well as the technical data exchange using standardized protocols and API-specifications (technical interoperability). This does not apply to internal systems of an organization, such as internal databases, data lakes, data pipelines (ETL), or source systems.
 
@@ -87,7 +77,7 @@ Companies may want to **integrate internal systems** including company-internal 
 
 If an company-internal business application meets either of these criteria, Catena-X certification is mandatory.
 
-#### 3. No Catena-X Business Applications without listing on a Certified Catena-X Marketplace
+#### 2. No Catena-X Business Applications without listing on a Certified Catena-X Marketplace
 
 Catena-X is built on trust. All Catena-X certified business applications and services must be listed on a certified Catena-X marketplace.
 Catena-X marketplace providers (i.e. CSP-A) verify that the listed business applications and services have a valid certification issued by a CAB and therefore comply with the Catena-X standards. Catena-X does not allow the provision of a solution without a marketplace listing.
@@ -127,12 +117,12 @@ Certified operating companies are companies certified for operating core service
 **Certified Provider**  
 ![Certified Provider](./assets/CX_Logo_Certified-Provider_CLR_RGB_pos_16x9@300.jpg)
 
-“Provider” is defined by standard [CX-0008](https://catenax-ev.github.io/docs/next/standards/CX-0008-RelevantStandardsForConformityAssessments) for the general participation in the data ecosystem depending on their role.
+"Provider" is defined by standard [CX-0008](https://catenax-ev.github.io/docs/next/standards/CX-0008-RelevantStandardsForConformityAssessments) for the general participation in the data ecosystem depending on their role.
 
 **Certified Solution**  
 ![Certified Solution](./assets/CX_Logo_Certified-Solution_CLR_RGB_pos_16x9@300.jpg)
 
-“Solution” is defined by standards that focus on executable software based on business domain or platform capabilities and includes but is not limited to: Application Logic, Application Programming Interface Specification,  Data Access (e.g., usage policies), Payload or Meta-Data, Processes (e.g., onboarding process), Business Logic (e.g., PCF Rulebook), and Conformity Assessment Requirements. Those Solutions can be certified for several use cases or capabilities and are grouped by them.
+"Solution" is defined by standards that focus on executable software based on business domain or platform capabilities and includes but is not limited to: Application Logic, Application Programming Interface Specification, Data Access (e.g., usage policies), Payload or Meta-Data, Processes (e.g., onboarding process), Business Logic (e.g., PCF Rulebook), and Conformity Assessment Requirements. Those Solutions can be certified for several use cases or capabilities and are grouped by them.
 
 Certified solutions specifically refers to the solutions certified.
 
@@ -150,7 +140,7 @@ Companies or advisors are solely liable for providing the services. The certific
 
 ### Labeling guidelines
 
-Any official Catena-X label can be downloaded from the [Catena-X repository](https://github.com/catenax-eV/cx-resources). Please refer to the "[README](https://github.com/catenax-eV/cx-resources/tree/main?tab=readme-ov-file#catena-x-resources)" with the instructions on how to obtain and use the labels. The labels are to be used in their original design only. Changes to the label, the wording, or the color scheme shall not be conducted. In any communication, the label is to be referred to with the term “Catena-X certified" or "Catena-X qualified” only. The term is exclusive to Catena-X certified companies or Catena-X qualified advisors.
+Any official Catena-X label can be downloaded from the [Catena-X repository](https://github.com/catenax-eV/cx-resources). Please refer to the "[README](https://github.com/catenax-eV/cx-resources/tree/main?tab=readme-ov-file#catena-x-resources)" with the instructions on how to obtain and use the labels. The labels are to be used in their original design only. Changes to the label, the wording, or the color scheme shall not be conducted. In any communication, the label is to be referred to with the term "Catena-X certified" or "Catena-X qualified" only. The term is exclusive to Catena-X certified companies or Catena-X qualified advisors.
 
 ## Regulatory Framework
 
