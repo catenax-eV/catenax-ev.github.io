@@ -5,24 +5,128 @@ title: Tractus-X Release
 
 The development of open source components in Tractus-X is a collaborative effort between the association bodies (Committees and Expert Groups) and the [open source community]. The association bodies ensure that feature requests align with the strategic goals of the project, meanwhile, the open source community ensures the delivery high-quality code. Together, they ensure the interests of Catena-X and Eclipse Tractux-X are consirdered and respected.
 
+The release of content in Tractus-X is governed by the open source community. The association however takes influence on the planning concerning its interests. The release process for Tractus-X is devided into four phases:
+
+1. [Planning](#1planning)
+2. [Implementation](#2implementation)
+3. [Testing](#3testing)
+4. [Release](#4release)
+
 ![Overview Tractus-X Release phases](assets/release-planing-next-steps-horizontal-tractus-x.drawio.svg)
 
-## Phase 1: Preparation
+## 1.Planning
 
-The Preparation Phase is the foundational phase that sets the direction and scope for the entire release. It ensures that all stakeholders have a shared understanding of the release's content.
+The Preparation Phase is crucial for setting the direction and scope of the release. It ensures all stakeholders align on the planned content. During this phase, all work related to KITs, Reference Implementation, API Specification, Protocols, Sample Data, Architecture, Documentation, Deployment Scripts, or Tutorials should be announced.
 
-All planned work on Kits, Reference Implementation, API Specification, Protocols, Sample Data, Architecture, Documentation, Deployment Scripts or Tutorials should be announced during this phase.
+Anyone can contribute by creating an issue in Tractus-X. The creator is responsible for refining the proposal until it meets the minimal content requirements for validation. Depending on the feature proposal it needs to be broken down into detailed specifications, addressing any ambiguities, and preparing comprehensive plans that guide the subsequent development and implementation activities. The goal is to ensure that all aspects of the project are clearly understood, accurately defined, and ready to be built, reducing the risk of issues during the implementation phase.
 
-### Preparation ToDo's
+In the Open Planning, upcoming release items are reviewed, and issues submitted on time are presented. This is the final opportunity for feedback on a proposal's scope. After the presentation, committers will prioritize proposals in coordination with topic owners.
 
-- [Create roadmap item]
+## 2.Implementation
+<!--
+# KIT Initial Pull Request
 
-### Preparation Milestones
+## Milestone
 
-- [Release Roadmap Review]
+KIT creators to prepare the initial pull request for their KIT in the Tractus-X website repo.
 
-## Phase 2: Planning
+## To Dos for KIT Creator
 
+- Check and follow the Tractus-X Release Guidelines for KITs (TRG 9.01) before doing your pull request.
+- Ensure that all GitHub workflows are successful (e.g., 3rd party dependency, markdown linting, security).
+- Initial pull request for the KIT has to be created latest 4 weeks before the release date.
+- Assign MD OG & Senior Expert Standardization as Reviewers (mandatory) and experts/committers from your product.
+
+## To Dos for KIT Reviewer
+
+- Review/approve the initial pull request and give detailed feedback within 2 weeks.
+- General review criteria include consistency, coherence, and overall quality checks across all KITs – content should be reviewed beforehand by a responsible CX association committee.
+- Objective review criteria are currently being finalized.
+
+# KIT Final Pull Request
+
+## Milestone
+
+To Dos for KIT Reviewer:
+
+- Approve final pull request.
+- If necessary, give feedback asap, at the latest within 1 week.
+- Merge pull request after reviews/approvals.
+
+-->
+
+## 3.Testing
+
+Test management involves the planning, execution, and monitoring of testing activities to ensure the quality and functionality of software products. Effective test management requires careful planning, execution, and monitoring. By utilizing a wide range of tools and by managing both internal and external dependencies, we can ensure high-quality software releases that meet user expectations and business requirements.
+
+:::warning[NOTE]
+The test management tools are owned by the association and is provided to association members exclusively and not the open source community!
+:::
+
+<!--
+# Feature Freeze / Kick-Off E2E Test (mid of Increment 5)
+
+## Milestone
+
+No further development of features and functions.
+
+- Committed content for the current CX Release package shall be available.
+- Any deviations must be documented and communicated, especially items not covered or incomplete.
+
+## Code Version
+
+- FOSS: tagged at least / best case: released in Tractus-X.
+- All relevant and active TRGs are fulfilled for deployment.
+- A released product Helm-Chart is available.
+
+## Testing
+
+- Unit-Tests and/or Tests at the end of a Sprint are successfully completed and results documented.
+
+The final integration test is not an independent test but rather builds upon previous testing efforts, ensuring seamless integration across the system.
+
+# Integration Testing
+
+## Task
+
+Integration testing pinpoints those communication issues between software components. It usually occurs after unit testing and before system testing.
+
+## To Dos
+
+- Components of the software are gradually integrated and tested as a unified group.
+- Find defects that surface due to code conflicts between software modules when they are integrated with each other.
+
+## Outcome
+
+- Components are working well.
+- No conflicts between software modules such as:
+  - Incompatibility between subsystem versions.
+  - Data format conflict.
+  - Different processing logic.
+
+# E2E Test
+
+## Task
+
+End-to-end testing covers verification of the entire software application from start to finish. E2E tests include all the systems, components, and integrations involved in the application’s workflow.
+
+## To Dos
+
+- Test in a production-equivalent environment to simulate real scenarios.
+- Simulate various user journeys from simple to complex.
+- Test the software interacts with external applications instead of only focusing on an internal codebase like an integration test does.
+- Review the developed results and check if they fit the requirements.
+
+## Outcome
+
+- Applications are verified from start to finish.
+- Components work together seamlessly and meet user expectations.
+-->
+
+## 4.Release
+<!--- All necessary tasks are performed to ensure that the software is stable, bug-free, and ready for delivery to users.-->
+
+<!--
 This phase involves breaking down high-level requirements into detailed specifications, addressing any ambiguities, and preparing comprehensive plans that guide the subsequent development and implementation activities. The goal of this phase is to ensure that all aspects of the project are clearly understood, accurately defined, and ready to be built, reducing the risk of issues during the implementation phase.
 
 ### Planning ToDo's
@@ -36,7 +140,7 @@ This phase involves breaking down high-level requirements into detailed specific
 - [Draft feature freeze]
 - [Release planning days]
 
-## Phase 3: Development
+## 3.Testing
 
 The development and release phase includes the development of the software and KITs. The individual units are developed and tested in up to six increments. This is followed by final integration and end-to-end test for the software.
 
@@ -52,6 +156,8 @@ The development and release phase includes the development of the software and K
 - [Release freeze]
 - [E2E test]
 
+## 4.Release
+
 ## FAQs
 
 **How are the open meetings communicated?**
@@ -66,7 +172,7 @@ Dependencies can be discussed in our open refinement meetings as well as via our
 **Who gives access to the sig-release repository to enable planning process?**
 Please refer to our Tractus-X [Getting Started Guide](https://eclipse-tractusx.github.io/docs/oss/getting-started).
 
-<!-- OLD CONTENT THAT NEEDS TO BE INCORPORATED OR DELETED
+OLD CONTENT THAT NEEDS TO BE INCORPORATED OR DELETED
 
 TODO THIBAULT
 
