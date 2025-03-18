@@ -9,10 +9,10 @@ This page contains a summary of the standardization process. The normative descr
 
 Every Standard that is officially released under the umbrella of Catena-X MUST follow a specific process comprised out of four stages:
 
-1. [Request](#request)
-2. [Creation](#creation)
-3. [Verification](#verification)
-4. [Release](#release)
+1. [Request](#1request)
+2. [Creation](#2creation)
+3. [Verification](#3verification)
+4. [Release](#4release)
 
 Whereby each stage is accompanied by a quality gate, which MUST ensure that all Catena-X principles (e.g. the ten Golden Rules) remain intact and are not compromised.
 
@@ -28,17 +28,17 @@ The standard owner can decide if they want to do the changes themself or if they
 
 ## Release Stages For Standards
 
-### Request
+### 1.Request
 
-All Standard Request to create a new or update a Standard must be requested the in <!-- markdown-link-check-disable -->[product-standardization-prod repo](https://github.com/catenax-eV/product-standardization-prod/issues)<!-- markdown-link-check-enable--> by raising an issue.  Standard Requests can be created by all Association members.
+All [Standard Request](#standard-request) to create a new or update a Standard must be requested the in <!-- markdown-link-check-disable -->[product-standardization-prod repo](https://github.com/catenax-eV/product-standardization-prod/issues)<!-- markdown-link-check-enable--> by raising an issue.  Standard Requests can be created by all Association members.
 
 New Standard Requests must be presented in the [Internal Planning Meeting](#internal-planning-meeting).
 
-A first quality gate (“Quality Gate I”) ensures that standard candidates moving forward are limited to those that adhere to the values and goals of the Catena-X data ecosystem. Each Standard Request is checked for relevance, redundancy, and conformance. Provided a green light has been given, the Standard Request is transformed into a Standard Candidate which is officially transferred into the release schedule. If the Standard Requests gets declined, the intended work is finally rejected and will not become part of a Catena-X Standard.
+A first quality gate (“Quality Gate I”) ensures that Standard Requests moving forward are limited to those that adhere to the values and goals of the Catena-X data ecosystem. Each Standard Request is checked for relevance, redundancy, and conformance. Provided a green light has been given, the Standard Request is transformed into a [Standard Candidate](#standard-candidate) which is officially transferred into the release schedule. If the Standard Requests gets declined, the intended work is finally rejected and will not become part of a Catena-X Standard.
 
 Per Standard only one Standard Request can be created per Release. All Standard Requests MUST be submitted prior to the start of QG1. A later submission of a standard request will be rejected by default!
 
-### Creation
+### 2.Creation
 
 Standard Candidates must be implemented in the [product-standardization-prod repo](https://github.com/catenax-eV/product-standardization-prod/issues). Each Standard Candidate is implemented in an own branch. The branch is created and provided by the [Association Office](../organizational-structure/catena-x-office.md).
 
@@ -57,18 +57,18 @@ During the creation of the Standard Candidate it should be reviewed by the respo
 
 A second quality gate (“Quality Gate II”) thus ensures that only Standard Candidates that correspond to the quality expectations of Catena-X are being released. During QG2, the maturity of the standard is being verified and, provided a green light is given, a technical recommendation for its release is made to the [Management Board](../organizational-structure/management-board.md).
 
-### Verification
+### 3.Verification
 
 Approved Standard Candidates enter a 45-day Opt-Out Phase, during which association members can veto their release for specific reasons, such as:
 
-After this phase, TC4S reviews the feedback and addresses concerns. Cleared Standard Candidates are then presented to the [Management Board](../organizational-structure/management-board.md) for formal approval.
+After this phase, [TC4S](#tc4s) reviews the feedback and addresses concerns. Cleared Standard Candidates are then presented to the [Management Board](../organizational-structure/management-board.md) for formal approval.
 
 - If approved, the Standard Candidate enters the Release Stage.
 - If rejected, it will not be released.
 
-### Release
+### 4.Release
 
-The Release Stage is handled by the Association Office. Approved Standards are published in the Standards Library.
+The Release Stage is handled by the [Association Office](../organizational-structure/catena-x-office.md). Approved Standards are published in the [Standards Library](https://catenax-ev.github.io/docs/standards/overview).
 
 ## Planning Artifacts
 
@@ -87,51 +87,19 @@ Meeting details
 - **GitHub**: Specific access to GitHub (Roadmap needed) -> managed by the [Association Office](../organizational-structure/catena-x-office.md)
 - **Access**: Only Catena-X e.V. members are allowed to get access
 
-<!-- ### Standard Request
+### Standard Request
+
+A Standard Request is an initial, unvalidated proposal to create or modify a standard. It presents an idea or concept without yet meeting formal criteria or undergoing a quality review.
 
 ### Standard Candidate
 
+A Standard Candidate is the result of transforming a Standard Request into a document that adheres to specific formal requirements. While it originates from the initial idea, the Candidate is structured and detailed according to established guidelines and has passed QG1.
+
 ### TC4S
 
--->
-<!-- ---
+The responsibilities of the TC4S (Technical Committee for Standardization) are as follows:
 
-## Thibault
-
-## Phase 1: Preparation
-
-During the preparation phase demands for new Standards or for the change of an existing one must be identified. Both might cause of adaptations in Semantic Models, Logic/Schema, API Specification, Protocols. All intended work on standards should be announced in the Association.
-
-### Preparation ToDo's
-
-- [Create roadmap item](../release-management/planning/cx-roadmap-item-creation.md)
-
-### Preparation Milestones
-
-- [Release Roadmap Review](../release-management/planning/cx-release-roadmap-review.md)
-
-## Phase 2: Planning
-
-A detailed description of the change request or new standard request is needed and should be refined during the planning phase. The detailed description needs to be discussed during the planning days with the audience (all Association members) and especially with the TC4S (Technical Committee 4 Standardization). All [dependencies](https://jschuetz88.github.io/cx-dependencies) must be identified, discussed and aligned.
-
-### Planning ToDo's
-
-- [Standard Request Creation](../release-management/planning/std-standard-request-creation.md)
-
-### Planning Milestones
-
-- [Release planning days](../release-management/planning/std-standard-planning.md)
-- [Quality Gate 1](../release-management/development-and-release/quality-gate-1.md)
-
-## Phase 3: Development
-
-New standards and changes of existing standards must be created in the standardization repository. Each standard request is implemented in an own branch.
-
-If multiple individuals seek to implement a standard request and need alignment, they must organize this collaboration themselves. The private workspace of the respective Expert Group should be utilized for this purpose.
-
-### Development timeline
-
-- [Main creation phase](../release-management/development-and-release/main-creation-phase.md)
-- [Quality Gate 2](../release-management/development-and-release/quality-gate-2.md)
-- [Opt-Out period](../release-management/development-and-release/opt-out-period.md)
--->
+- **Defining and Enforcing Quality Requirements**: The TC4S is responsible for establishing and ensuring adherence to overall quality standards.
+- **Independent Operation**: The TC4S acts independently based on a defined standardization process, ensuring unbiased decision-making.
+- **Guiding Expert Groups**: The TC4S leads expert groups and subcommittees throughout the standardization process.
+- **Supporting the Catena-X Board**: The TC4S assists the Management Board in evaluating and assessing standardization requests.
