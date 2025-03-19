@@ -3,7 +3,11 @@ sidebar_position: 1
 title: Overview
 ---
 
-This working model is meticulously designed for members of our association and those involved in the various association bodies. It serves as a comprehensive guide to understanding the organizational structure, the specific roles within the association, and the interrelation between Catena-X and Tractus-X. It includes detailed information on planning and building (Plan and Build), contrasting with the <!-- markdown-link-check-disable -->[Operating model](/docs/next/operating-model/why-introduction)<!-- markdown-link-check-enable --> that describes the model for the production/live environment (Run).
+This working model is meticulously designed for members of our association and those involved in the various association bodies. It serves as a comprehensive guide to understanding the organizational structure, the specific roles within the association, and the interrelation between Catena-X and Tractus-X. It includes detailed information on the development environment (Plan and Build), contrasting with the <!-- markdown-link-check-disable -->[Operating model](/docs/next/operating-model/why-introduction)<!-- markdown-link-check-enable --> that describes the model for the production/live environment (Run).
+
+The focus of the development environment is on the one hand on the creation of standardization candidates that can be submitted into the standardization process of the Association, and on the other hand, the development of open-source reference implementations and other implementations for the dataspace.
+
+![Catena-X Development environment](./assets/cx-development-environment.drawio.svg)
 
 ## Audience and Purpose
 
