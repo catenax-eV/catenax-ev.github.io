@@ -195,7 +195,7 @@ CX-0012 Business Partner Data Pool
 
 CX-0018 Eclipse Data Space Connector
 
-[Catena-X Operating Model v3.0](../../operating-model/why-introduction/why-introduction.md).
+[Catena-X Operating Model v3.0](https://catenax-ev.github.io/docs/next/operating-model/why-introduction).
 
 ### 4.3 REFERENCE IMPLEMENTATIONS
 
@@ -209,4 +209,4 @@ https://github.com/eclipse-tractusx/sldt-bpn-discovery
 
 ## Legal
 
-Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).
+Copyright © 2025 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

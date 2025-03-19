@@ -3,7 +3,7 @@ tags:
   - CAT/Value Added Services
 ---
 
-# CX-0135 BP Company Certificate Management v2.1.1
+# CX-0135 Business Partner Company Certificate Management v2.2.0
 
 ## ABSTRACT
 
@@ -17,7 +17,7 @@ This standard is intended for participants in the data space who wish to provide
 
 ## COMPARISON WITH THE PREVIOUS VERSION OF THE STANDARD
 
-The previous version of the standard was designed for an API. This standard has been updated to a semantic data model.
+The standard has been updated to include the newest version of the semantic data model. The semantic model has been enhanced to incorporate additional data attributes related to the physical document. The issuer data attribute, previously optional and representing a BPN, has been updated to include the issuer's name as a mandatory attribute
 
 ## 1 INTRODUCTION
 
@@ -45,11 +45,11 @@ The establishment of various industry networks, such as Catena-X, has significan
 
 By implementing this standard, companies can streamline the process of managing and exchanging certificates, reducing the burden of maintaining multiple certificates for different customers. Additionally, the standard ensures that certificates are exchanged in a secure and reliable manner, enhancing trust and confidence in the data exchange process. Overall, the introduction of a cross-industry standard for company certificates is a crucial step towards achieving seamless and secure data exchange across the automotive industry.
 
-This aspect model is written in SAMM 2.1.0 as a modeling language conformant to [CX-0003:1.1 SAMM Semantic Aspect Meta Model](../CX-0003-SAMMSemanticAspectMetaModel/CX-0003-SAMMSemanticAspectMetaModel.md).
+This aspect model is written in SAMM 2.1.0 as a modeling language conformant to [CX-0003 SAMM Aspect Meta Model v1.2.0](https://catenax-ev.github.io/docs/next/standards/CX-0003-SAMMSemanticAspectMetaModel).
 
 SAMM is used to create data models, which are attached to e.g. digital twins in the form of an Asset Administration Shell (AAS) submodel or exchanged as JSON-File.
 
-All submodels in Catena-X are managed in the [Tractus-X GitHub repository](https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.shared.business_partner_certificate). A data model is requested and exchanged via Catena-X using an Eclipse Dataspace Connector (CX-0001:1.0 EDC Discovery API), which is a separate Catena-X standard.
+All submodels in Catena-X are managed in the [Tractus-X GitHub repository](https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.shared.business_partner_certificate). A data model is requested and exchanged via Catena-X using an Eclipse Dataspace Connector (CX-0001:1.0.4 EDC Discovery API), which is a separate Catena-X standard.
 
 ### 1.3 CONFORMANCE AND PROOF OF CONFORMITY
 
@@ -73,7 +73,7 @@ In this section the different parts of the data model are explained.
 
 #### 1.5.1 BPNL BUSINESS PARTNER NUMBER LEGAL ENTITY
 
-A *Business Partner Number Legal Entity* (BPNL) represents and uniquely identifies a Legal Entity, which is defined by its legal name (including Legal Form, if registered), legal Address and Tax Number. For further details on BPNLs please see standard CX-0010:2.0 Business Partner Number.
+A *Business Partner Number Legal Entity* (BPNL) represents and uniquely identifies a Legal Entity, which is defined by its legal name (including Legal Form, if registered), legal Address and Tax Number. For further details on BPNLs please see standard CX-0010:2.1.0 Business Partner Number.
 
 For this standard and the data model the BPNL is the BPN id of the certified legal entity.
 
@@ -142,9 +142,17 @@ E.g. Business service providers that offer a validation service for company cert
 
 The attribute *uploader* defines the company (uploader) who originally provided the given certificate (e.g. company A provided it to business application provider B, business application provider B is a trusted validator). This company is also identified by a BPN.
 
-#### 1.5.10 ID
+#### 1.5.10 DOCUMENT
 
-The internal reference id to request a certificate document.
+The document entity ensures that all necessary metadata and content for a document is well-defined and easily manageable.
+
+*documentID* represents a unique identifier for the document. It ensures that each document can be uniquely referenced.
+
+*creationDate* represents the date and time when the document was created, including the time zone offset. Example: "2024-08-23T13:19:00.280+02:00".
+
+*contentType* specifies the format of the document's content using the MIME type standard. For example, "application/pdf" indicates the document is in PDF format.
+
+*contentBase64* contains the actual content of the document, encoded in Base64 format. This allows binary data (e.g., a PDF file) to be safely included as a text string.
 
 ## 2 ASPECT MODELS
 
@@ -152,9 +160,9 @@ The internal reference id to request a certificate document.
 
 > *This section is normative*
 
-This aspect model is written in SAMM 2.1.0 as a modeling language conformant to [CX-0003:1.1] as input for the semantic driven workflow.
+This aspect model is written in SAMM 2.1.0 as a modeling language conformant to [CX-0003:1.2.0] as input for the semantic driven workflow.
 
-Like all Catena-X data models, this model is available in a machine-readable format on GitHub conformant to [CX-0003:1.1].
+Like all Catena-X data models, this model is available in a machine-readable format on GitHub conformant to [CX-0003:1.2.0].
 
 #### 2.1.1 LICENSE
 
@@ -164,7 +172,7 @@ This Catena-X data model is made available under the terms of the Creative Commo
 
 The semantic model has the unique identifier
 
-> urn:samm:io.catenax.business_partner_certificate:1.0.0
+> urn:samm:io.catenax.business_partner_certificate:3.0.0
 
 This identifier **MUST** be used by the data provider to define the semantics of the data being transferred.
 
@@ -172,15 +180,7 @@ This identifier **MUST** be used by the data provider to define the semantics of
 
 The RDF turtle file, an instance of the Semantic Aspect Meta Model, is the master for generating additional file formats and serializations.
 
-https://github.com/eclipse-tractusx/sldt-semantic-models/blob/1ac8967e89074e42446727303033d86506bad85b/io.catenax.shared.business_partner_certificate/1.0.0/BusinessPartnerCertificate.ttl
-
-:::info
-The Aspect Model will be updated to version 3.0.0 within the next release (CX-Io):
-
-> [urn:samm:io.catenax.business_partner_certificate:3.0.0](https://github.com/eclipse-tractusx/sldt-semantic-models/blob/6cdb6b9e889b0bd9b9a168c3596733c585c561e5/io.catenax.shared.business_partner_certificate/3.0.0/BusinessPartnerCertificate.ttl)
-
-it is strongly RECOMMENDED to apply the version 3.0.0 (or higher) for the certification as version 1.0.0 will be deprecated.
-:::
+(https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.shared.business_partner_certificate/3.0.0/BusinessPartnerCertificate.ttl)
 
 The open source command line tool of the Eclipse Semantic Modeling Framework is used for generation of other file formats like for example a JSON Schema, AASX for Asset Administration Shell Submodel Template or a HTML documentation.
 
@@ -188,14 +188,14 @@ The open source command line tool of the Eclipse Semantic Modeling Framework is 
 
 ### 3.1 NORMATIVE REFERENCES
 
-- CX-0003:1.1 SAMM Aspect Meta Model
-- CX-0010:2.0 Business Partner Number
+- CX-0003:1.2.0 SAMM Aspect Meta Model
+- CX-0010:2.1.0 Business Partner Number
 
 ### 3.2 NON-NORMATIVE REFERENCES
 
 > *This section is non-normative*
 
-- CX-0001:1.0 EDC Discovery API
+- CX-0001:1.0.4 EDC Discovery API
 
 ### 3.3 REFERENCE IMPLEMENTATIONS
 
@@ -219,4 +219,4 @@ not applicable
 
 ## Legal
 
-Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).
+Copyright © 2025 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

@@ -4,7 +4,7 @@ sidebar_position: 4
 
 # 3. Application Programming Interfaces
 
-> *This section is normantive*
+> *This section is normative*
 
 ## 3.1 EDC DATA ASSET STRUCTURE
 
@@ -107,4 +107,4 @@ Contract definitions of data providers **MUST** follow this structure (also defi
 
 ## Legal
 
-Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).
+Copyright © 2025 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

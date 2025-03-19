@@ -132,7 +132,7 @@ A formal, machine-readable semantic description (expressed with RDF/turtle) of d
 
 To participate in the CO2 use-case, the following standard MUST be fulfilled:
 
-- [Product Carbon Footprint Rulebook v3.0.0](https://catena-x.net/en/standard-library)
+- [Product Carbon Footprint Rulebook v3.0.0](https://catenax-ev.github.io/docs/non-functional/overview)
 
 In addition, the following standards are used to support the PCF usecase. Athough they are NOT part of this specification, they are mentioned here, as APIs or other assets provided by them are used within the PCF usecase:
 
@@ -434,7 +434,7 @@ The following scenario describes, how
   - transfers the calculation result from his supplier to the PCF calculation tool
   - uses the suppliers calculation result for his PCF calculation
 
-![PCF Calculation Integration Scenario](./assets/catena-x-pcf-integration-small.jpg)
+![PCF Calculation Integration Scenario](./assets/catena-x-pcf-integration-standard-small.jpg)
 
 #### 2.2.2 EXAMPLES FOR PCF CALCULATION TOOL INTEGRATION
 

@@ -2,6 +2,8 @@
 
 @startuml business-partner-relationship
 
+skinparam dpi 50
+
 package "Business Partner Relationship and References" {
   entity BusinessPartner {
     ExternalID
@@ -15,13 +17,13 @@ package "Business Partner Relationship and References" {
     ExternalID
     CreatedAt
     UpdateAt
-    ValidFrom
-    ValidTo
+    'ValidFrom
+    'ValidTo
   }
 
   enum BusinessPartnerRelationshipType {
     IsRegisteredAlternativeFor
-    IsManagedInCatenaXPortalBy
+    IsManagedBy
     IsReplacedBy
   }
 

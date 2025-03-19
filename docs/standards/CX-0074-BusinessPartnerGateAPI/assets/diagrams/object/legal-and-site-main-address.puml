@@ -1,5 +1,7 @@
 @startuml legal-and-site-main-address
 
+skinparam dpi 50
+
 package "Business Parter (Legal and Site Main Address)" {
   object LegalEntity {
     LegalName = "Schaeffler Group USA INC."

@@ -7,6 +7,8 @@ tags:
 
 # Introduction
 
+CX-0143 Use Case Circular Economy - Digital Product Passport v1.0.1
+
 ## ABSTRACT
 
 This standard focuses on the digital product passport use case. This includes relevant requirements for
@@ -117,4 +119,4 @@ The following terms are especially relevant for the understanding of the standar
 
 ## Legal
 
-Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).
+Copyright © 2025 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

@@ -158,18 +158,18 @@ The Tractus-X EDC as a reference implementation is **RECOMMENDED** to be used as
 Whenever data related to a single part type or on specific material number level is shared between partners, the use case **MUST** check which of the two cases mentioned below apply and act accordingly.
 
 **Case 1: Aspect model contains data that describe the properties of a part type and are typically created by the manufacturer**
-*Examples are product name, product properties, product handling instructions, product passport, product carbon footprint*
-
+*Examples are product name, product properties, product handling instructions, product passport, product carbon footprint*  
+  
 It is **RECOMMENDED** to create a digital twin as described above. It is **RECOMMENDED** to attach the use case specific aspect models to the digital twin following the CX-0002 standard. If no twin exists it is **RECOMMENDED** to create the digital twin and attach the data as a submodel.
 
 > ***Note:*** With the Saturn-Release (2025) this requirement will be changed from **RECOMMENDED** to **MUST**.
 
-Notifications **MAY** be used in addition but **SHOULD** be reduced to a minimum.
+Notifications **MAY** be used in addition but **SHOULD** be reduced to a minimum.  
 Duplicate digital twins **SHOULD** be avoided, therefore applications **SHOULD** scan the existing Digital Twin Registry for already existing twins for the same part type before creating a new one. In case of an existing twin, only submodel information **SHOULD** be attached to the existing twin.
 
 **Case 2: Aspect model contains data that relate to different stages of the life cycle of the part type and are potentially created by other participants in the data chain**
 *Examples are product demands, product capacities, product stock, product end of life*
-
+  
 It is **RECOMMENDED** to create a digital twin as described above. The use case specific aspect models **SHOULD** be attached to the digital twin following the CX-0002 standard
 Notifications **MAY** be used in addition.
 Several participants in the data chain **MAY** create digital twins related to that part type following the CX-0002 standard.
@@ -663,6 +663,6 @@ This section is empty.
 
 ## Legal
 
-Copyright © 2024 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).
+Copyright © 2025 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).
 
 [def]: #212-data-required

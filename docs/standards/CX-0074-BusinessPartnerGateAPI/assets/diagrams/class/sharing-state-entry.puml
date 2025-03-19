@@ -1,5 +1,7 @@
 @startuml sharing-state-entry
 
+skinparam dpi 50
+
 package "Sharing State Entry and References" {
   entity BusinessPartner {
     ExternalID

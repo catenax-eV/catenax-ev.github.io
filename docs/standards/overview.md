@@ -21,7 +21,6 @@ tags:
   - CAT/Sandbox Service Provider
   - CAT/Sandbox Services (Beta)
   - CAT/Semantic
-  - CAT/Third Party Information Provider
   - CAT/Value Added Services
   - CAT/Business Application Provider
   - UC/Quality
@@ -34,4 +33,10 @@ tags:
   - UC/Modular Production
   - UC/PURIS
   - UC/OSIM
+  - UC/Logistics
 ---
+
+:::info[Important notification]
+
+**CX-Io** is fully compatible with **CX-Jupiter**. Business Application Providers, however, now need to certify their solutions against the **CX-Io standards**.
+:::

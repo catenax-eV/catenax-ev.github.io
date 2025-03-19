@@ -1,5 +1,7 @@
 @startuml additional-address-without-site
 
+skinparam dpi 50
+
 package "Business Parter (Additional Address) w/o Site" {
   object LegalEntity {
     LegalName = "Dr. Ing. h.c. F. Porsche Aktiengesellschaft"

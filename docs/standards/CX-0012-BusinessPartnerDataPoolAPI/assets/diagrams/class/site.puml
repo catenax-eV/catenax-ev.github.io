@@ -1,5 +1,7 @@
 @startuml site
 
+skinparam dpi 50
+
 package "Site and References" {
   entity LegalEntity {
     BPNL
