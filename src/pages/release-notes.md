@@ -34,10 +34,43 @@ details to be found [here](/docs/regulatory-framework/changelog)
 
 A comprehensive, coherent and compatible set of development artefacts. Highlights include:
 
-- ...
-- ...
+**Portal**
 
-details to be found [here](https://eclipse-tractusx.github.io/CHANGELOG/#2408---2024-08-05)
+- Enhance the App/Service registration process
+  - Reduces necessity of creating multiple services to enable the usage of multiple technical users; leads to more flexibility for the app/service provider
+- Optimization of the Service/App Subscription Process
+  - Enhances security and user experience
+- Automatic Setting of the Catena-X Membership Flag
+  - Automates the flag-setting process, making onboarding more efficient
+- Integration of the Gaia-X Clearinghouse Interface
+  - The new API provides more flexibility from a Gaia-X perspective. The Portal backend must switch to the new API for proper data validation during company onboarding and SD document creation
+
+**SSI Credential Issuer**
+
+- Support for Bitstring Status List
+  - Ensures compliance with the updated W3C standard.
+- Process Status List API
+  - Enables the retriggering of failed process steps to improve stability
+
+**EDC**
+
+- Empty Asset Selector
+  - Blocks contract definitions with an empty asset selector to prevent erroneous data publication
+- Policy Checks
+  - Adds policy validation APIs and validation during policy creation
+- Restart Broken Transfers
+  - Automatically restarts an abandoned data transfer, e.g., after a data plane crash
+
+**IRS**
+
+- Efficient Orchestration of EDC Negotiations
+  - Reduces unnecessary duplicate negotiations and improves performance
+- Remediation of technical Debt
+  - Improved calculation of order and batch statuses, along with integration of progress indicators.
+- Limitation of Parallel Job Execution
+  - Reduces system load and prevents resource exhaustion
+
+details to be found [here](https://eclipse-tractusx.github.io/CHANGELOG/#2503---2025-03-19)
 
 #### Details on compatible and non-compatible versions
 
