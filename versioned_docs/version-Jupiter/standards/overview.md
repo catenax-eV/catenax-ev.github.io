@@ -35,3 +35,8 @@ tags:
   - UC/PURIS
   - UC/OSIM
 ---
+
+:::info[Important notification]
+
+**CX-Io** is fully compatible with **CX-Jupiter**. Business Application Providers, however, now need to certify their solutions against the **CX-Io standards**.
+:::
