@@ -102,6 +102,10 @@ Different from Catena-X Certification, Catena-X qualification is a label held by
 
 With the launch of the [Catena-X Campus](https://catena-x.academy), Catena-X offers dedicated training to all interested advisory service providers. To gain the label *Qualified Advisor* on the Catena-X ecosystem, the successful completion of the *Consultant Qualification* on the *Training Area* of the Catena-X Campus is a prerequisite. This dedicated training covers all aspects relevant to advising users of the Catena-X data ecosystem, from topics concerning business impact to questions on operations & governance.
 
+After applying for the company-related qualification, the number of employees of the applying company and the number of Catena-X qualified employees at the time of application as well as the issue dates of these personal qualifications are checked. The validity of the most recently acquired qualification must be at least 10 months at the time of application for the company-related qualification.
+The number of permanent employees at the time of the application is decisive for the listing. Even if the number of employees changes within a year, the number does not have to be corrected retrospectively within the validity period of the acquired company-related qualification. A correction is only necessary in the event of requalification after one year.
+The qualification is valid from receipt of payment and is only issued at this point in time. A company may only advertise with the title ‘Catena-X qualified Advisory Provider’ / ‘Catena-X qualified’ starting from the moment it receives a company-related qualification.
+
 The Catena-X qualification process is under constant development and further, specialized modules including dedicated labels will be published soon.
 
 ## Catena-X Labels
