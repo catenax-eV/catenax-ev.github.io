@@ -151,7 +151,7 @@ const config: Config = {
           position: 'right',
         },
         {
-          to: 'https://catena-x.net/en/',
+          to: 'https://catena-x.net',
           'aria-label':'Catena-X Automotive Network e.V.',
           position: 'right',
           target: '_blank',
