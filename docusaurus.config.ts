@@ -212,7 +212,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Catena-X Automotive Network e.V. (<a href="https://catena-x.net/de/tractus-x/impressum">Imprint</a>)`,
+      copyright: `Copyright © ${new Date().getFullYear()} Catena-X Automotive Network e.V. (<a href="https://catena-x.net/imprint/">Imprint</a>)`,
     },
     prism: {
       theme: prismThemes.github,
