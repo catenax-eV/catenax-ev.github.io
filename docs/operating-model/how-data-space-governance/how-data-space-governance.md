@@ -132,9 +132,13 @@ Certified solutions specifically refers to the solutions certified.
 
 **Qualified Advisor**
 ![Qualified Advisor](./assets/CX_Logo_Qualified-Advisor_CLR_RGB_pos_16x9@300.jpg)
-![Qualified Advisor](./assets/Logo_Catena-X_QualifiedAdvisoryProvider.png)
+Different from Catena-X Certification, Catena-X qualification is a label held by an individual. Individuals passing the assessment process and being awarded the title "Qualified Advisor" may refer to themselves as "Catena-X qualified".
 
-Different from Catena-X Certification, Catena-X qualification is a label held by an individual. Individuals passing the assessment process and being awarded the title "Qualified Advisor" may refer to themselves as "Catena-X qualified". Companies with more than 5 employees with this qualification may refer to their entire company as "Catena-X qualified" and will get the label "Qualified Advisory Provider". Alternatively, if more than 50% of a company's staff is qualified, it may equally refer to the entire company as "Catena-X qualified". Any "Catena-X qualified" label has a validity of 12 months (for more details see [Qualification Process](https://catenax-ev.github.io/docs/next/operating-model/how-data-space-governance#qualification-process)).
+![Qualified Advisor](./assets/Logo_Catena-X_QualifiedAdvisoryProvider.png)
+ Companies with more than 5 employees with this qualification may refer to their entire company as "Catena-X qualified" and will get the label "Qualified Advisory Provider". Alternatively, if more than 50% of a company's staff is qualified, it may equally refer to the entire company as "Catena-X qualified". Once a company meets the required number of qualified employees, it is automatically highlighted by Catena-X on the following list with an asterisk (*) and bold formatting: [Catena-X Qualified Advisor](https://catena-x.academy/catena-x-qualified-advisor/).
+To use the “Advisory Provider” logo, the company simply needs to contact the Catena-X Association and complete the corresponding application form.
+
+Any "Catena-X qualified" label has a validity of 12 months (for more details see [Qualification Process](https://catenax-ev.github.io/docs/next/operating-model/how-data-space-governance#qualification-process)).
 
 ### Scope of Labels (qualified/certified)
 
