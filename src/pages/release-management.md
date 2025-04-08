@@ -27,7 +27,7 @@ Based on the first experiences in live operation, the release management for the
 | T-X Planning & Release Cycle        | 4 Times / Year                                      |
 | Upgrade Day for CSP-A / CSP-B / OSP | Synced Upgrade Day (coordinated by Catena-X association) |
 | Grace Period                        | 1 Year                                              |
-| Catena-X & T-X Artefact Versioning       | Semantic Versioning                                 |
+| Catena-X & Eclipse Tractus-X Artefact Versioning       | Semantic Versioning                                 |
 | Catena-X Ecosystem Release Cycle | 4 Times / Years     | 2 Times / Year                                                                     |
 | Catena-X Release Versioning      | Calendar Versioning | Planet Names (e.g. Jupiter)                                                        |
 | Catena-X Deployment Gate         |                     | Representatives from each industry partner group to define ecosystem release scope |
