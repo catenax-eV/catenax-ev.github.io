@@ -46,7 +46,7 @@ Versioning with planet names (e.g. Jupiter) is used to improve communication and
 
 [^1]: An ecosystem release can only be deprecated after a minimum of 24 months, but it is not automatically deprecated after this period. Deprecation depends on the publication of a subsequent release. If no newer version is released, the existing version remains valid indefinitely. This applies to the product or to any standard or normative document within the release. As a result, a release may remain normative and in active use for a decade or more, depending on the updated version of a normative document or standard.
 
-The versioning of artifacts such as standards, normative documents, KITs or reference implementations is done via semantic versioning.
+The versioning of artifacts such as normative documents (e.g. standards), KITs or reference implementations is done via semantic versioning.
 
 To reduce certification efforts, the grace period for switching from one major version to the next major version from the Jupiter version onwards is still one year - see overlap CX-Jupiter [maintained] and CX-Saturn [current] in the timeline. The validity of certification can be up to 24 months.
 
