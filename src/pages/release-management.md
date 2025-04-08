@@ -31,7 +31,7 @@ Based on the first experiences in live operation, the release management for the
 | Catena-X Ecosystem Release Cycle | 4 Times / Years     | 2 Times / Year                                                                     |
 | Catena-X Release Versioning      | Calendar Versioning | Planet Names (e.g. Jupiter)                                                        |
 | Catena-X Deployment Gate         |                     | Representatives from each industry partner group to define ecosystem release scope |
-| Backward Compatibility      | No Commitment       | Commitment by�T-X Project                                                          |
+| Backward Compatibility      | No Commitment       | Commitment by the Eclipse Tractus-X Project                                                          |
 
 ## Additional notes
 
