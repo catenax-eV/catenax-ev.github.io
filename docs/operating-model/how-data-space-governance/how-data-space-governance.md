@@ -19,12 +19,12 @@ The Catena-X Association publishes standards for generic core and enabling servi
 
 ### How do we standardize?
 
-Based on [Catena-X's Intellectual Property(IP)-Regulations](https://catena-x.net/fileadmin/user_upload/Vereinsdokumente/Catena-X_IP_Regelwerk_IP_Regulations.pdf) and in compliance with applicable antitrust law, the Catena-X standardization process aims to develop and implement uniform standards for networking and data exchange in the automotive sector. A general overview of the process is depicted in Figure [Catena-X Standardization Process](./how-data-space-governance.md#how-do-we-standardize):
+Based on [Catena-X's Intellectual Property(IP)-Regulations](https://catena-x.net/wp-content/uploads/2025/03/Catena-X_IP_Regelwerk_IP_Regulations.pdf) and in compliance with applicable antitrust law, the Catena-X standardization process aims to develop and implement uniform standards for networking and data exchange in the automotive sector. A general overview of the process is depicted in Figure [Catena-X Standardization Process](./how-data-space-governance.md#how-do-we-standardize):
 
 ![Catena-X Standardization Process](./assets/catena-x-standardization-process.png)
 *Catena-X Standardization Process*
 
-The [Catena-X Website](https://catena-x.net/en/catena-x-introduce-implement/standardisierung) provides a detailed description of how Catena-X standards are being developed including everyone involved and their respective responsibilities.
+The [Catena-X Website](https://catena-x.net/association/standardization/) offers a comprehensive overview of the importance of standardization, how standards are being developed and the core elements of standardisation.
 
 ## Conformity Assessment and Certification
 
@@ -34,7 +34,7 @@ Cross-company interactions highly rely on mutual trust. Catena-X issues certific
 
 ### What do we certify?
 
-Catena-X certification is done in a modular, role-based way, to fulfill different requirements of participants in our ecosystem, whether IT application providers, service providers or onboarding partners. The modularity allows high flexibility and lowers the efforts and redundancies for all parties involved. The certification framework details all standards a company has to comply with based on their role, the goal of their service and the use-case in which they participate e.g. PLM & Quality, Sustainability, Resiliency. Catena-X standards become mandatory for certification as soon as they have been integrated into the certification framework. The Catena-X Association aims to release an update of its certification framework simultaneously with newly released standards. The most current version can always be found on the [Catena-X website](https://catena-x.net/en/catena-x-introduce-implement/certification).
+Catena-X certification is done in a modular, role-based way, to fulfill different requirements of participants in our ecosystem, whether IT application providers, service providers or onboarding partners. The modularity allows high flexibility and lowers the efforts and redundancies for all parties involved. The certification framework details all standards a company has to comply with based on their role, the goal of their service and the use-case in which they participate e.g. PLM & Quality, Sustainability, Resiliency. Catena-X standards become mandatory for certification as soon as they have been integrated into the certification framework. The Catena-X Association aims to release an update of its certification framework simultaneously with newly released standards. The most current version can always be found on the [Catena-X website](https://catena-x.net/ecosystem/certification/).
 
 ### How do we certify?
 
@@ -102,12 +102,16 @@ Different from Catena-X Certification, Catena-X qualification is a label held by
 
 With the launch of the [Catena-X Campus](https://catena-x.academy), Catena-X offers dedicated training to all interested advisory service providers. To gain the label *Qualified Advisor* on the Catena-X ecosystem, the successful completion of the *Consultant Qualification* on the *Training Area* of the Catena-X Campus is a prerequisite. This dedicated training covers all aspects relevant to advising users of the Catena-X data ecosystem, from topics concerning business impact to questions on operations & governance.
 
+After applying for the company-related qualification, the number of employees of the applying company and the number of Catena-X qualified employees at the time of application, as well as the issue dates of these personal qualifications are checked. The validity of the most recently acquired qualification must be at least 10 months at the time of application for the company-related qualification.
+The number of permanent employees at the time of application is decisive for the listing. Even if the number of employees changes within a year, the number does not have to be corrected retrospectively within the validity period of the acquired company-related qualification. A correction is only necessary in the event of requalification after one year.
+The qualification is valid from receipt of payment and is only issued at this point in time. A company may only advertise with the title ‘Catena-X qualified Advisory Provider’ / ‘Catena-X qualified’ starting from the moment it receives a company-related qualification.
+
 The Catena-X qualification process is under constant development and further, specialized modules including dedicated labels will be published soon.
 
 ## Catena-X Labels
 
 Catena-X issues four different labels to indicate a company has been successfully certified or qualified and is compliant with Catena-X standards. This is to help customers find suitable and legitimate providers who have been assessed to comply with Catena-X standards or qualification requirements.
-Each label is issued to the relevant role after achieving successful certification and/or qualification. Labels are associated with the offered services of the provider as stated in the certification framework on the  [Catena-X website](https://catena-x.net/en/catena-x-introduce-implement/certification).
+Each label is issued to the relevant role after achieving successful certification and/or qualification. Labels are associated with the offered services of the provider as stated in the certification framework on the  [Catena-X website](https://catena-x.net/ecosystem/certification/).
 
 **Certified Operating Company**
 ![Certified Operating Company](./assets/CX_Logo_Certified-Operating-Company_CLR_RGB_pos_16x9@300.jpg)
@@ -128,8 +132,13 @@ Certified solutions specifically refers to the solutions certified.
 
 **Qualified Advisor**
 ![Qualified Advisor](./assets/CX_Logo_Qualified-Advisor_CLR_RGB_pos_16x9@300.jpg)
+Different from Catena-X Certification, Catena-X qualification is a label held by an individual. Individuals passing the assessment process and being awarded the title "Qualified Advisor" may refer to themselves as "Catena-X qualified".
 
-Different from Catena-X Certification, Catena-X qualification is a label held by an individual. Individuals passing the assessment process and being awarded the title "Qualified Advisor" may refer to themselves as "Catena-X qualified". Companies with more than 5 employees with this qualification may refer to their entire company as "Catena-X qualified".
+![Qualified Advisor](./assets/Logo_Catena-X_QualifiedAdvisoryProvider.png)
+ Companies with more than 5 employees with this qualification may refer to their entire company as "Catena-X qualified" and will get the label "Qualified Advisory Provider". Alternatively, if more than 50% of a company's staff is qualified, it may equally refer to the entire company as "Catena-X qualified". Once a company meets the required number of qualified employees, it is automatically highlighted by Catena-X on the following list with an asterisk (*) and bold formatting: [Catena-X Qualified Advisor](https://catena-x.academy/catena-x-qualified-advisor/).
+To use the “Advisory Provider” logo, the company simply needs to contact the Catena-X Association and complete the corresponding application form.
+
+Any "Catena-X qualified" label has a validity of 12 months (for more details see [Qualification Process](https://catenax-ev.github.io/docs/next/operating-model/how-data-space-governance#qualification-process)).
 
 ### Scope of Labels (qualified/certified)
 
@@ -186,7 +195,7 @@ A general overview of the process is depicted in Figure [Catena-X process for No
 
 ### Country Clearance List
 
-The Catena-X association issues a [country clearance list](https://catena-x.net/fileadmin/user_upload/04_Einfuehren_und_umsetzen/Governance_Framework/Catena-X_-_Country_Clearance_list.pdf) that specifies countries, in which companies can be onboarded to the Catena-X data space. This list acts as mandatory guidance to all OSPs for registering participants in the Catena-X data space.
+The Catena-X association issues a [country clearance list](https://catenax-ev.github.io/docs/regulatory-framework/30000ft/country-clearance-list) that specifies countries, in which companies can be onboarded to the Catena-X data space. This list acts as mandatory guidance to all OSPs for registering participants in the Catena-X data space.
 
 In the same document, the Catena-X association includes countries currently under clearance review. An onboarding of companies from this category is only possible after a due diligence check, followed by separate approval by the Catena-X association. A request for such a due diligence check can be requested by any OSP to the Catena-X association under [info@catena-x.net](mailto:info@catena-x.net).
 
@@ -288,7 +297,7 @@ The process steps of the nomination process are described in detail below.
 | Process Step                                            | Description                                                                                                                                                   | Input                               | Output                                                |
 | ------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------- | ----------------------------------------------------- |
 | Create Request for Tender (RfT)                         | The Catena-X Association is responsible for the creation of the Request   for Tender (RfT) document (e.g., for Core Services - section B)                     |                                     | RfT Document(s)                                       |
-| Publish RfT on Website                                  | The Catena-X Association is responsible for the publication and   distribution of the [RfT Document on the website](https://catena-x.net/en/).                | RfT Document(s)                     | RfT Document(s) RfT Event incl. Timeline RfT Template |
+| Publish RfT on Website                                  | The Catena-X Association is responsible for the publication and   distribution of the [RfT Document on the website](https://catena-x.net).                | RfT Document(s)                     | RfT Document(s) RfT Event incl. Timeline RfT Template |
 | Create and Submit Tender for selected   Core Service(s) | A provider can create and submit a tender for the published RfT.                                                                                              | RfT Document RfT Event RfT Template | Tender                                                |
 | Receive and Review Submissions                          | The Catena-X Association compares the tender(s), regarding the fulfillment of   the nomination criteria and creates a short list of candidates for the board. | Tender(s)                           | Short List of Provider Candidates                     |
 | Select Provider                                         | The board of the Association elects a provider with an absolute majority   vote.                                                                              | Short List of Provider Candidates   | Nomination of Provider                                |
