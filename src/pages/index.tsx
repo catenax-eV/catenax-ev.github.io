@@ -12,7 +12,7 @@ const OptionList = [
   {
     title: 'Catena-x Automotive Network e.V.',
     Svg: require('@site/static/img/logo.svg').default,
-    link: 'https://catena-x.net/en/about-us/the-association/become-a-member',
+    link: 'https://catena-x.net/association/membership-benefits/',
     text: "Become a member",
     description: (
       <>
