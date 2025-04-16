@@ -44,7 +44,7 @@ An overview of the certification process is depicted in Figure [Catena-X Certifi
 
 The *Catena-X Conformity Assessment Handbook* provides a detailed description of how Catena-X conducts conformity assessment through the Conformity Assessment Bodies. The most current version can always be found on the [Catena-X Library](https://catenax-ev.github.io/docs/next/certification/certification).
 
-Prerequisite of any certification is the registration of the participant that wants to get certified. The registration (see Chapter [Registration](./../how-data-space-operations/how-data-space-operations.md#registration)) is ideally done before any certification request or latest started with the start of the certification request.
+Prerequisite of any certification is the registration / onboarding of the participant who wants to get certified. The registration (see Chapter [Registration](./../how-data-space-operations/how-data-space-operations.md#registration)) is ideally done before any certification request or latest started with the start of the certification request.
 
 ### Certification framework
 
