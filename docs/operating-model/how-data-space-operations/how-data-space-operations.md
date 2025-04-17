@@ -28,9 +28,9 @@ After registration, participants can start the technical integration process (e.
 
 After successful registration, participants can create and manage their company hierarchies. Catena-X Business Partner Data Management allows you to create and manage sites and additional addresses for your legal entities. In a future version, it will also be possible to create and manage relationships between two legal entities (e.g., subsidiaries). This is relevant, for example, for the various connector usage scenarios as described [here](https://catenax-ev.github.io/docs/next/operating-model/how-data-space-operations#edc-deployment-and-usage-premises).
 
-## Gaia-X Compliance
+## Clearing House as a trust anchor
 
-The Gaia-X Digital Clearing House (GXDCH) is an external service that maximizes trust within the Catena-X data space, and data space interoperability with other initiatives based on the Gaia-X Trust Framework. The GXDCH enables the validation of legal entities, ensures Gaia-X compliance, and creates an eIDAS conform digital signature (self-description) for all data space participants. There is one GXDCH provider for the Catena-X data space, which is nominated and managed by the Catena-X Association. To ensure compliance with the Catena-X onboarding process, the CSP-B must connect to the GXDCH.
+The Digital Clearing House, currently the Gaia-X Digital Clearing House (GXDCH), is an external service that maximizes trust within the Catena-X data space, and data space interoperability with other initiatives based on the (Gaia-X) Trust Framework. The Clearing House enables the validation of legal entities, ensures Gaia-X compliance, and creates an eIDAS conform digital signature (self-description) for all data space participants. There is one GXDCH provider for the Catena-X data space, which is nominated and managed by the Catena-X Association. To ensure compliance with the Catena-X onboarding process, the CSP-B must connect to the GXDCH.
 
 ## Implementation of the Self Sovereign Identity Concept
 
