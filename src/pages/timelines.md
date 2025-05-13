@@ -28,6 +28,18 @@ Milestones featuring the Catena-X logo indicate closed meetings, which are organ
 [![Timeline for Release 25.12](@site/static/img/cx-timeline-25.12.png)](@site/static/img/cx-timeline-25.12.png)
 *Timeline for Release 25.12*
 
-:::note
-The timeline for Release 26.03 will be published soon.
-:::
+[![Timeline for Release 26.03](@site/static/img/cx-timeline-26.03.png)](@site/static/img/cx-timeline-26.03.png)
+*Timeline for Release 26.03*
+
+### Catena-X Neptune, incl. Eclipse Tractus-X Release 26.06 & 26.09
+
+[![Timeline for Release 26.06](@site/static/img/cx-timeline-26.06.png)](@site/static/img/cx-timeline-26.06.png)
+*Timeline for Release 26.06*
+
+[![Timeline for Release 26.09](@site/static/img/cx-timeline-26.09.png)](@site/static/img/cx-timeline-26.09.png)
+*Timeline for Release 26.09*
+
+### Catena-X Proteus, incl. Eclipse Tractus-X Release 26.12 & 27.03
+
+[![Timeline for Release 26.12](@site/static/img/cx-timeline-26.12.png)](@site/static/img/cx-timeline-26.12.png)
+*Timeline for Release 26.12*
