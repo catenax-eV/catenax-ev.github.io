@@ -38,6 +38,7 @@ pagination_next: null
 | Luxembourg | LU |
 | Malaysia | MY |
 | Malta | MT |
+| Mexico | MX |
 | Netherlands | NL |
 | Poland | PL |
 | Portugal | PT |
@@ -88,7 +89,6 @@ pagination_next: null
 | Kuwait | KW |
 | Maldives | MV |
 | Mauritius | MU |
-| Mexico | MX |
 | Montenegro | ME |
 | Namibia | NA |
 | New Zealand | NZ |
