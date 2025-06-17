@@ -7,7 +7,7 @@ tags:
   - CAT/Sandbox Services (Beta)
 ---
 
-# CX-0018 Dataspace Connectivity v.3.3.1
+# CX-0018 Dataspace Connectivity v.4.0.0
 
 ## ABSTRACT
 
@@ -16,9 +16,11 @@ ecosystem. The aim is to ensure interoperability and data sovereignty at the sam
 
 ## COMPARISON WITH THE PREVIOUS VERSION OF THE STANDARD
 
-- add details on participant identifiers
-- add details on transfer types
-- list consumer-sent messages that must be authenticated  
+- Update to DSP version 2025-1 and DCP version 1.0
+- Switch identifier in DSP communication from BPN to DID
+- Add management domain concepts and introducing the reference in the DID document
+- Add protocol version handling
+- Add section on backward compatibility 
 
 ## 1 INTRODUCTION
 
@@ -73,19 +75,14 @@ The following figure shows how the connector fits into the overall framework of 
 
 *Figure 1: Framework of data exchange*
 
-> Note: At time of the release, the Identity Wallet solution is not decentralized yet. However, this standard already
-> provides most of the infrastructure to operate Wallets (DCP-Credential-Services) in a distributed manner.
-> More information about the SSI-infrastructure can be found in the relevant standards.
-
 ### 1.3 CONFORMANCE AND PROOF OF CONFORMITY
 
 As well as sections marked as non-normative, all authoring guidelines, diagrams, examples, and notes in this
 specification are non-normative. Everything else in this specification is normative.
 
-The key words **MAY**, **MUST**, **MUST NOT**, **OPTIONAL**, **RECOMMENDED**, **REQUIRED**, **SHOULD** and **SHOULD NOT
-**
-in this document are to be interpreted as described in BCP 14 RFC2119, RFC8174 when, and only when, they
-appear in all capitals, as shown here.
+The key words **MAY**, **MUST**, **MUST NOT**, **OPTIONAL**, **RECOMMENDED**, **REQUIRED**, **SHOULD** and
+**SHOULD NOT** in this document are to be interpreted as described in BCP 14 RFC2119, RFC8174 when, and only
+when, they appear in all capitals, as shown here.
 
 ### 1.4 TERMINOLOGY
 
@@ -98,7 +95,6 @@ appear in all capitals, as shown here.
 | Connector                                    | (Catena-X) Technical component that allows business applications to interact with each other within a dataspace                                                                                                              | https://github.com/eclipse-tractusx/tractusx-edc                                                  |
 | (Catena-X) Business Applications             | (Catena-X) Applications that enable functionality of different use cases, hosted by a data provider or consumer itself or by a business application provider                                                                 | https://eclipse-tractusx.github.io/developer                                                      |
 | Catena-X Marketplace                         | The Marketplace inside a portal, allowing participants of the Catena-X network to search and select Catena-X Business Applications                                                                                           | https://catena-x.net/en/offers/portal-marketplace                                                 |
-| Business Partner Number (BPN)                | Every participant in the Catena-X network has a unique, unchangeable identifier, called business partner number (BPN). The legal entity of an organization is represented by the Business Partner Number Legal Entity (BPNL) | [CX - 0010 Business Partner Number](#business-partner-number)                                     |
 | Data Catalog Vocabulary (DCAT)               | RDF vocabulary designed to facilitate interoperability between data catalogs published on the Web                                                                                                                            | https://www.w3.org/TR/vocab-dcat-3                                                                |
 | Open Data Rights Language (ODRL)             | Policy expression language that provides a flexible and interoperable information model, vocabulary, and encoding mechanisms for representing statements about the usage of content and services                             | https://www.w3.org/TR/odrl-model, https://www.w3.org/TR/odrl-vocab, https://w3c.github.io/odrl/bp |
 
@@ -135,13 +131,13 @@ Providers and Consumer MUST expose the specified endpoints for the
 - Transfer Process Protocol
 - Version Metadata
 
-as specified in the HTTPS binding of the Dataspace Protocol 2024-01.
+as specified in the HTTPS binding of the Dataspace Protocol.
 
-#### 2.1.1 Usage of BPNL in the data exchange
+#### 2.1.1 Usage of DID in the data exchange
 
-A Participant Agent MUST use the BPNL in all protocol message properties that identify a Participant. This includes
-properties such as `dspace:participantId` in the `Catalog` response message, `odrl:assigner` and `odrl:assignee`
-in the `dspace:ContractAgreementMessage`.
+A Participant Agent MUST use the [DID](#decentralized-identifiers-did) in all protocol message properties that identify
+a Participant. This includes properties such as `dspace:participantId` in the `Catalog` response message,
+`odrl:assigner` and `odrl:assignee` in the `dspace:ContractAgreementMessage`.
 
 ### 2.2 Transfer Type Profiles
 
@@ -154,11 +150,13 @@ via a `dspace:TransferRequestMessage`.
 > Despite the IRIs `dspace:HttpData-PULL` and `dspace:AmazonS3-PUSH` are not yet included in the DSP-context, they will
 > be used as preliminary identifiers.
 
-Providers MAY offer any of the following Transfer Type Profiles:
+Providers MUST offer at least one Transfer Type Profile. The remainder of this section provides regulations for
+a non-exhaustive selection of Transfer Type Profiles. Further profiles can be defined by consecutive standards.
 
 #### 2.2.1 HttpData-PULL
 
-A Consumer MUST send a `dspace:TransferRequestMessage` with `"dct:format":"HttpData-PULL"`. A Provider is not required to process the `dspace:dataAddress` property.
+A Consumer MUST send a `dspace:TransferRequestMessage` with `"dct:format":"HttpData-PULL"`. A Provider is not required
+to process the `dspace:dataAddress` property.
 
 A Provider MUST send a `dspace:TransferStartMessage` with sufficient information in the `dspace:dataAddress` property so
 that an HTTP request to the `dspace:endpoint` may succeed. The `dspace:endpointType` property MUST be
@@ -203,18 +201,16 @@ transfer as specified by the received request.
 This standard assumes that each Participant has been issued a set of Verifiable Credentials (VCs) according to the
 relevant Catena-X standards. These VCs are stored in a Credential Service.
 
-A Consumer MUST be able to retrieve an access token according to the Verifiable Presentation Protocol (VPP) that is part
-of the [Decentralized Claims Protocol (DCP)](#decentralized-claims-protocol). This corresponds to Request 1 in the
-presentation flow where this Consumer acts as Client.
+A Consumer MUST be able to retrieve an access token according to the Verifiable Presentation Protocol (VPP) that is
+part of the [Decentralized Claims Protocol (DCP)](#decentralized-claims-protocol). This corresponds to Request 1 in
+the presentation flow where this Consumer acts as Client.
 
 A Provider MUST be able to receive and securely verify an access token and derive information on a Consumer's
 Credential Service in order to execute the DCP VPP Request 4. This corresponds to the role of Verifier.
 
-A Consumer MUST include an appropriately scoped STS-Token in the `Authorization` header of the following requests:
-
-- `CatalogRequestMessage` (see [DSP](#dataspace-protocol))
-- `ContractRequestMessage` (see [DSP](#dataspace-protocol))
-- `refresh` (see [HttpData-PULL](#221-httpdata-pull))
+A Consumer MUST include an appropriately scoped STS-Token in the `Authorization` header in all DSP messages sent
+to the provider (see [DSP](#dataspace-protocol)) and in addition in the `refresh` message
+(see [HttpData-PULL](#221-httpdata-pull))
 
 ### 2.4 Conventions for Policy Constraints
 
@@ -234,7 +230,8 @@ Application Providers MUST support all constraints of the following table.
 Note: The list is available in machine-readable form with links to the respective legal documents in the
 [CX-ODRL-Profile](#odrl-profile).
 
-Each Data Offer visible in a Provider's `dcat:Catalog` MUST include at least an `odrl:Constraint` according to the definition of *UseCaseContraint* as defined above.
+Each Data Offer visible in a Provider's `dcat:Catalog` MUST include at least an `odrl:Constraint` according to the
+definition of *UseCaseContraint* as defined above.
 
 Providers SHOULD chain constraints (if necessary) via `odrl:and`. Examples can be found
 in [CX-ODRL-Profile](#odrl-profile).
@@ -279,44 +276,87 @@ A Provider MUST annotate all instances `dcat:Dataset` in a `dcat:Catalog` with t
   the `dct:type` property. It is allowed to use version information that is incomplete according to SemVer.
   Subsequent standards define the exact value this property shall hold, depending on the Business scenario.
 
-## 3 REFERENCES
+### 2.6 Participant Agent Management
 
-### 3.1 NORMATIVE REFERENCES
+A Provider SHOULD organize his participant agents in a way, that there is exactly one participant agent providing a
+root catalog. Further participant agents SHOULD be provided as `dcat:Catalog` entry in the root catalog referring to
+the catalog endpoint of the second participant agent.
+
+A provider MUST publish all participant agents that should be detectable by a Consumer for an initial contact by
+specifying the participants catalog endpoint address in the DID document as specified in the
+[CX-0049 DID Document standard](#did-document). The endpoint address has the format
+`https://provider-connector.provider-domain.com/subpath/versionpath/catalog`. The path parts are defined by
+
+- `subpath`: The address `https://provider-connector.provider-domain.com/subpath` defines the root endpoint of the
+  providers participant agent.
+- `versionpath`: The path part that is returned by the `well-known version metadata endpoint` (see
+  [DSP](#dataspace-protocol)).
+- `catalog`: The catalog endpoint of a participant agent (see [DSP](#dataspace-protocol)).
+
+The definition of the service reference reflects the section `Discovery of Catalog Services` in the
+[DSP](#dataspace-protocol).
+
+### 2.7 Protocol Version Handling
+
+Prior to any DSP communication, a Consumers participant agent MUST evaluate the protocol versions supported by
+the targeted Providers participant agent by calling the `well-known version metadata endpoint` (see
+[DSP](#dataspace-protocol)). He MUST use a protocol version supported by both participant agents.
+
+A Providers participant agent MUST be capable to identify by the called DSP api, which version the Consumers
+participant agents is using for the communication and MUST answer with the right response formats according to
+that version.
+
+The reference of a participant in the DID Document MUST refer to the catalog service of the latest version supported
+following the format specified in [section 2.6](#26-participant-agent-management).
+
+## 3 BACKWARD COMPATIBILITY
+
+Backward compatibility is handled by the Dataspace Protocol version used for the communication between two participant
+agents. All differences are handled by explicit versioning of the protocol. This includes changes in details that are
+not motivated by the Dataspace Protocol itself but by semantic changes attached to the protocol version update.
+
+Based on this constraint, backward compatibility is handled by the mechanism specified in
+[section 2.7](#27-protocol-version-handling).
+
+## 4 REFERENCES
+
+### 4.1 NORMATIVE REFERENCES
 
 #### Dataspace Protocol
 
 The Dataspace Protocol is an external reference. A Participant Agent MUST implement the referenced version to comply to
 this standard version.
 
-- [Dataspace Protocol (DSP) version 2024-01](https://github.com/International-Data-Spaces-Association/ids-specification/releases/tag/2024-1)
+- [Dataspace Protocol (DSP) version 2025-01](https://eclipse-dataspace-protocol-base.github.io/DataspaceProtocol/2025-1-RC1)
 
 #### Decentralized Claims Protocol
 
 The Decentralized Claims Protocol is an external reference. A Participant Agent MUST implement the referenced version to
 comply to this standard version.
 
-Note: In previous versions of this specification, the protocol referenced under its previous name "Identity and
-Trust Protocol" (IATP).
-
-- [Decentralized Claims Protocol (DCP) version 0.8.1](https://github.com/eclipse-dataspace-dcp/decentralized-claims-protocol/releases/tag/0.8.1).
+- [Decentralized Claims Protocol (DCP) version 1.0](https://eclipse-dataspace-dcp.github.io/decentralized-claims-protocol/v1.0-RC2).
   Especially relevant is
-  the [Verifiable Presentation Protocol](https://github.com/eclipse-dataspace-dcp/decentralized-claims-protocol/blob/0.8.1/specifications/verifiable.presentation.protocol.md)
+  the [Verifiable Presentation Protocol](https://eclipse-dataspace-dcp.github.io/decentralized-claims-protocol/v1.0-RC2/#verifiable-presentation-protocol)
 
 #### RFC 6749
 
 https://www.rfc-editor.org/rfc/rfc6749#section-6
 
-#### Business Partner Number
+#### Decentralized Identifiers (DID)
 
-- [CX - 0010 Business Partner Number v2.1.0](https://catenax-ev.github.io/docs/next/standards/CX-0010-BusinessPartnerNumber)
+- [Decentralized Identifiers W3C standard](https://www.w3.org/TR/did-1.0/)
 
 #### Framework Agreement Credential
 
-- [CX-0050 Framework Agreement Credential v2.1.0](https://catenax-ev.github.io/docs/next/standards/CX-0050-FrameworkAgreementCredential)
+- [CX-0050 Framework Agreement Credential](https://catenax-ev.github.io/docs/standards/CX-0050-FrameworkAgreementCredential)
+
+#### DID Document
+
+- [CX-0049 DID Document](https://catenax-ev.github.io/docs/standards/CX-0049-DIDDocumentSchema)
 
 #### Verified Company Identity
 
-- [CX-0149 Verified Company Identity v1.0.0](https://catenax-ev.github.io/docs/next/standards/CX-0149-Dataspaceidentityandidentification)
+- [CX-0149 Verified Company Identity](https://catenax-ev.github.io/docs/standards/CX-0149-Dataspaceidentityandidentification)
 
 #### ODRL Profile
 
@@ -324,15 +364,15 @@ https://www.rfc-editor.org/rfc/rfc6749#section-6
 
 #### CX Operating Model
 
-- [CX Operating Model 3.0.1](https://catenax-ev.github.io/docs/next/operating-model/why-introduction)
+- [CX Operating Model](https://catenax-ev.github.io/docs/operating-model/why-introduction)
 
-### 3.2 NON-NORMATIVE REFERENCES
+### 4.2 NON-NORMATIVE REFERENCES
 
 > *This section is non-normative*
 
-- [Connector Kit](https://eclipse-tractusx.github.io/docs-kits/next/category/connector-kit)
+- [Connector Kit](https://eclipse-tractusx.github.io/docs-kits/category/connector-kit)
 
-### 3.3 REFERENCE IMPLEMENTATIONS
+### 4.3 REFERENCE IMPLEMENTATIONS
 
 > *This section is non-normative*
 

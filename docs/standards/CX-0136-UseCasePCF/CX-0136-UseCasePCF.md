@@ -4,7 +4,7 @@ tags:
   - UC/PCF
 ---
 
-# CX-0136 Use Case PCF 2.0.1
+# CX-0136 Use Case PCF 2.1.0
 
 ## ABSTRACT
 
@@ -91,7 +91,7 @@ The following terms are especially relevant for the understanding of the standar
 **Product Carbon Footprint (PCF)**
 The balance of Greenhouse Gas (GHG) emissions along the entire life cycle of a product in a defined application and in relation to a defined unit of use.
 The Product Carbon Footprint (PCF) is the most established method for
-determining the climate impact of a product. Within the boundary of the Catena-X PCF Rulebook (see [Product Carbon Footprint Rulebook v3.0.0](#211-list-of-standalone-standards)), emissions related to the product use and end-of-life stages are excluded from the PCF.
+determining the climate impact of a product. Within the boundary of the Catena-X PCF Rulebook (see [Product Carbon Footprint Rulebook v3.1.0](#211-list-of-standalone-standards)), emissions related to the product use and end-of-life stages are excluded from the PCF.
 
 **Business Partner Number (BPN)**
 A BPN is the unique identifier of a partner within Catena-X.
@@ -132,7 +132,7 @@ A formal, machine-readable semantic description (expressed with RDF/turtle) of d
 
 To participate in the CO2 use-case, the following standard MUST be fulfilled:
 
-- [Product Carbon Footprint Rulebook v3.0.0](https://catenax-ev.github.io/docs/non-functional/overview)
+- [Product Carbon Footprint Rulebook v3.1.0](https://catenax-ev.github.io/docs/next/non-functional/overview)
 
 In addition, the following standards are used to support the PCF usecase. Athough they are NOT part of this specification, they are mentioned here, as APIs or other assets provided by them are used within the PCF usecase:
 
@@ -434,7 +434,7 @@ The following scenario describes, how
   - transfers the calculation result from his supplier to the PCF calculation tool
   - uses the suppliers calculation result for his PCF calculation
 
-![PCF Calculation Integration Scenario](./assets/catena-x-pcf-integration-standard-small.jpg)
+![PCF Calculation Integration Scenario](./assets/20231115-Catena-X-PCF-Integration-Standard-small.jpg)
 
 #### 2.2.2 EXAMPLES FOR PCF CALCULATION TOOL INTEGRATION
 
@@ -446,7 +446,7 @@ Section [2.2.4 PCF DATA FORMAT FOR PCF CALCULATION INTEGRATION](#224-pcf-data-fo
 
 > *This section is normantive*
 
-The methodology used for calculating a PCF MUST be conformant with [Product Carbon Footprint Rulebook v3.0.0](#211-list-of-standalone-standards).
+The methodology used for calculating a PCF MUST be conformant with [Product Carbon Footprint Rulebook v3.1.0](#211-list-of-standalone-standards).
 
 #### 2.2.4 PCF DATA FORMAT FOR PCF CALCULATION INTEGRATION
 

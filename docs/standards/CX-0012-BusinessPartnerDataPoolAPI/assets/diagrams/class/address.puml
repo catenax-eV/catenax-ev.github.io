@@ -16,7 +16,7 @@ package "Address and References" {
   entity Address {
     BPNA
     Name
-    IsCatenaXMemberData
+    IsParticipantData
     CreatedAt
     UpdateAt
   }

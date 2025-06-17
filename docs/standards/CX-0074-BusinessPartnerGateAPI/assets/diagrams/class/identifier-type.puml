@@ -15,11 +15,20 @@ package "Identifier Type and References" {
     Abbreviation
     TransliteratedName
     TransliteratedAbbreviation
+    Format
   }
 
   enum BusinessPartnerType {
     LegalEntity
     Address
+  }
+
+  enum IdentifierTypeCategory {
+    VAT
+    TIN
+    NBR
+    IBR
+    OTH
   }
 
   class IdentifierTypeDetail {
@@ -34,6 +43,7 @@ package "Identifier Type and References" {
   }
 
   IdentifierType "*" -d-o "1" BusinessPartnerType : BusinessPartnerType
+  IdentifierType "*" -o "*" IdentifierTypeCategory : IdentifierTypeCategory
 
   BusinessPartnerIdentifier "*" -d-o "1" IdentifierType : Type
 

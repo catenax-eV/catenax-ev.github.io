@@ -1,4 +1,4 @@
-# CX-0005 Item Relationship Service API 2.1.1
+# CX-0005 Item Relationship Service API 2.2.0
 
 ## FOR WHOM IS THE STANDARD DESIGNED
 
@@ -45,31 +45,26 @@ Domain.
 
 This standardization is built upon existing standards, such as
 
-- “EDC Discovery API" [CX-0001]
-- “Digital Twins in Catena-X“ [CX-0002]
-- “SAMM Semantic Aspect Meta Model“ [CX-0003]
-- “BusinessPartnerNumber“ [CX-0010]
-- “Dataspace Connectivity v3.0.0” [CX-0018]
-- “Implementation Specification: Data Provisioning for Release 2” [CX-0024]
-- “Aspect Model: DataModelBoMAsSpecified“ [CX-0030]
-- “Aspect Model: DataModelPartAsSpecified“ [CX-0032]
-- “Aspect Model: PartSiteInformationAsPlanned" [CX-0094]
-- “TraceabilityUseCase“ [CX-0125]
-- "Industry Core: Part Instance" [CX-0127]
-- "Industry Core: Part Type" [CX-0126]
+- CX-0001 EDC Discovery API
+- CX-0002 Digital Twins in Catena-X
+- CX-0003 SAMM Semantic Aspect Meta Model
+- CX-0010 Business Partner Number
+- CX-0018 Dataspace Connectivity
+- CX-0125 Traceability UseCase
+- CX-0127 Industry Core: Part Instance
+- CX-0126 Industry Core: Part Type
 
 further Aspects which conclude in connecting Digital Twins between each other will be added to the Semantic Hub.
 
 The following aspect models are also relevant:
 
-- “Aspect Model: SingleLevelUsageAsBuilt"
-- “Aspect Model: SingleLevelUsageAsPlanned"
-- “Aspect Model: JustInSequencePart"
-- “Aspect Model: PartSiteInformationAsBuilt"
-- “Aspect Model: PartSiteInformationAsPlanned"
+- SingleLevelUsageAsBuilt ([urn:samm:io.catenax.single_level_usage_as_built:3.0.0#](https://github.com/eclipse-tractusx/sldt-semantic-models/blob/9701bf539044f1fc9353fa6ca4c091f0969c4f72/io.catenax.single_level_usage_as_built/3.0.0/SingleLevelUsageAsBuilt.ttl))
+- SingleLevelUsageAsPlanned ([urn:samm:io.catenax.single_level_usage_as_planned:2.0.0#](https://github.com/eclipse-tractusx/sldt-semantic-models/blob/9701bf539044f1fc9353fa6ca4c091f0969c4f72/io.catenax.single_level_usage_as_planned/2.0.0/SingleLevelUsageAsPlanned.ttl))
+- JustInSequencePart ([urn:samm:io.catenax.just_in_sequence_part:3.0.0#](https://github.com/eclipse-tractusx/sldt-semantic-models/blob/9701bf539044f1fc9353fa6ca4c091f0969c4f72/io.catenax.just_in_sequence_part/3.0.0/JustInSequencePart.ttl))
+- PartSiteInformationAsBuilt ([urn:samm:io.catenax.shared.part_site_information_as_built:2.0.0#](https://github.com/eclipse-tractusx/sldt-semantic-models/blob/9701bf539044f1fc9353fa6ca4c091f0969c4f72/io.catenax.shared.part_site_information_as_built/2.0.0/PartSiteInformationAsBuilt.ttl))
 
 Currently, no open Standard exists, which addresses this issue, based on the combination of the used
-standards like Aspect Models, AAS (AssetAdministrationShell), EDC (Eclipse Dataspace Connector), and the Implementation specification it is a solution fit to the needs of Catena-X to simplify the interactions with data chains.
+standards like Aspect Models, AAS (Asset Administration Shell), EDC (Eclipse Dataspace Connector), and the Implementation specification it is a solution fit to the needs of Catena-X to simplify the interactions with data chains.
 
 This API has been designed to provide Interoperability within Catena-X on a Data Chain layer. Currently,
 this is being developed in the Tractus-X Eclipse FOSS project.
@@ -122,11 +117,11 @@ and in the [Tractus-X Github Repository](https://github.com/eclipse-tractusx/ite
 Business Partner Number (BPN)
 : A BPN is the unique identifier of a partner within Catena-X
 
-InternationalDataSpace(IDS)
+International Data Space(IDS)
 : InternationalDataSpace and its protocol for data exchange foresees an compliant
 connector handling contract negotiations before each data transfer and defines a general architecture for data exchange.
 
-EclipseDataspaceConnector(EDC)
+Eclipse Dataspace Connector(EDC)
 : The EDC is a reference implementation for an IDS-compliant connector currently acting as a
 de-facto standard and/or reference Implementation within Catena-X
 
@@ -148,7 +143,7 @@ RESTful APIs.
 The IRS API and the IRS App **MUST** be connected to an EDC in order to consume data offers within the Catena-X data space. It will handle the access and usage control so that a data sovereign data space can be provided
 
 The data accessed and consolidated via the IRS **MUST** be accessible via EDC Assets by data providers;
-“Dataspace Connectivity v3.0.0” [CX-0018] and be registered via the Registry Service (Digital Twin Registry) [CX–0002].
+"Dataspace Connectivity" [CX-0018] and be registered via the Registry Service (Digital Twin Registry) [CX–0002].
 
 The Aspects to traverse along data chains are built upon the data chain aspect template. Aspect models such as the SingleLevelBOMasBuilt is built upon that. The IRS API uses that information to build connected data chains.
 To find the correct assets within a data space the Digital Twin registry is beeing used. These preconditions need to be met, so that the IRS API works accordingly.
@@ -216,40 +211,31 @@ More information for each endpoint can be extracted from the IRS API documentati
 
 ### 3.1 NORMATIVE REFERENCES
 
-- Digital Twins in Catena-X [CX–0002]
-- Dataspace Connectivity v3.0.0 [CX-0018]
-- Implementation Specification: Data Provisioning for Release 2 [CX-0024]
-- TraceabilityDataProvisioningBoMAs-PlannedTriangle [CX-0061]
-- “TraceabilityUseCase“ [CX-0125]
+- CX–0002 Digital Twins in Catena-X v2.2
+- CX-0018 Dataspace Connectivity v3.3
+- CX-0125 Traceability UseCase v2.1
 
 ### 3.2 NON-NORMATIVE REFERENCES
 
 > *This section is non-normative*
 
-- “Aspect Model: DataModelBoMAsSpecified“ [CX-0030]
-- “Aspect Model: DataModelPartAsSpecified“ [CX-0032]
-- “AspectModel: PartSiteInformationAsPlanned“ [CX-0094]
-- "IndustryCorePartInstance" [CX-0127]
-- "IndustryCorePartType" [CX-0126]
+**Standards**
 
-- [Item Relationship Service (Publication on website)](https://catena-x.net/en/offers-standards/item-relationship-service)
+- CX-0127 Industry Core: Part Instance v2.0
+- CX-0126 Industry Core: Part Type v2.0
+
+**Aspect Models**
+
+- SingleLevelUsageAsBuilt ([urn:samm:io.catenax.single_level_usage_as_built:3.0.0#](https://github.com/eclipse-tractusx/sldt-semantic-models/blob/9701bf539044f1fc9353fa6ca4c091f0969c4f72/io.catenax.single_level_usage_as_built/3.0.0/SingleLevelUsageAsBuilt.ttl))
+- SingleLevelUsageAsPlanned ([urn:samm:io.catenax.single_level_usage_as_planned:2.0.0#](https://github.com/eclipse-tractusx/sldt-semantic-models/blob/9701bf539044f1fc9353fa6ca4c091f0969c4f72/io.catenax.single_level_usage_as_planned/2.0.0/SingleLevelUsageAsPlanned.ttl))
+- JustInSequencePart ([urn:samm:io.catenax.just_in_sequence_part:3.0.0#](https://github.com/eclipse-tractusx/sldt-semantic-models/blob/9701bf539044f1fc9353fa6ca4c091f0969c4f72/io.catenax.just_in_sequence_part/3.0.0/JustInSequencePart.ttl))
+- PartSiteInformationAsBuilt ([urn:samm:io.catenax.shared.part_site_information_as_built:2.0.0#](https://github.com/eclipse-tractusx/sldt-semantic-models/blob/9701bf539044f1fc9353fa6ca4c091f0969c4f72/io.catenax.shared.part_site_information_as_built/2.0.0/PartSiteInformationAsBuilt.ttl))
 
 ### 3.3 REFERENCE IMPLEMENTATIONS
 
 > *This section is non-normative*
 
-The code found at [https://github.com/eclipse-tractusx/item-relationship-service](https://github.com/eclipse-tractusx/item-relationship-service)
-represents a reference implementation that implements this standard.
-
-## ANNEXES
-
-### FIGURES
-
-> *This section is non-normative*
-
-### TABLES
-
-> *This section is non-normative*
+A reference implementation of this standard can be found at [https://github.com/eclipse-tractusx/item-relationship-service](https://github.com/eclipse-tractusx/item-relationship-service).
 
 ## Legal
 

@@ -1,4 +1,4 @@
-# CX-0128 - Demand and Capacity Management Data Exchange v2.1.0
+# CX-0128 - Demand and Capacity Management Data Exchange v2.2.0
 
 ## ABSTRACT
 
@@ -23,6 +23,11 @@ Cross-company interactions and common business logic required for DCM are standa
 ## COMPARISON WITH PREVIOUS VERSIONS OF THIS STANDARD
 
 > *This section and all its subsections are non-normative*
+
+### Release 25.06
+
+- Added list of all chapters containing conformity assessment criteria to [Chapter 1.3](#13-conformity-and-proof-of-conformity)
+- Reduced number of conformity assessment criteria throughout this standard
 
 ### Release 24.05
 
@@ -104,46 +109,62 @@ Participants must demonstrate conformity with Catena-X standards. Conformity Ass
 
 If a participant or application only implements either the business role customer or the business role supplier, then conformity must only be demonstrated along conformity assessment criteria (CACs) that apply to the specific business role.
 
+Conformity assessment criteria are only found in the following chapters:
+
+- [2.3 Additional Requirements](#23-additional-requirements)
+- [3.1 Aspect Model WeekBasedMaterialDemand](#31-aspect-model-weekbasedmaterialdemand)
+- [3.2 Aspect Model WeekBasedCapacityGroup](#32-aspect-model-weekbasedcapacitygroup)
+- [3.3 Aspect Model IdBasedRequestForUpdate](#33-aspect-model-idbasedrequestforupdate)
+- [3.4 Aspect Model IdBasedComment](#34-aspect-model-idbasedcomment)
+- [4 APPLICATION PROGRAMMING INTERFACES](#4-application-programming-interfaces)
+- [4.1 WeekBasedMaterialDemand API](#41-weekbasedmaterialdemand-api)
+- [4.2 WeekBasedCapacityGroup API](#42-weekbasedcapacitygroup-api)
+- [4.3 RequestForUpdate API](#43-requestforupdate-api)
+- [4.4 IdBasedComment API](#44-idbasedcomment-api)
+- [4.5 DCM Asset Administration Shell API (AAS API)](#45-dcm-asset-administration-shell-api-aas-api)
+- [5 PROCESSES](#5-processes)
+- [6 FRAMEWORK AGREEMENT AND POLICIES](#6-framework-agreement-and-policies)
+
 **Proof of Conformity for Data Models**
 
 Participants must implement and conform to the standardized data models as described in [Chapter 3](#3-aspect-models). Depending on which business role a participant or application implements only parts of [Chapter 3](#3-aspect-models) are relevant for conformity.
 
-|Data model|Business role|Relevant capability|
-|--|--|--|
-|WeekBasedMaterialDemand|Customer|Data provider|
-|WeekBasedMaterialDemand|Supplier|Data consumer|
-|WeekBasedCapacityGroup|Customer|Data consumer|
-|WeekBasedMaterialDemand|Supplier|Data provider|
-|IdBasedRequestForUpdate|Customer or supplier|Data provider and data consumer|
-|IdBasedComment|Customer or supplier|Data provider and data consumer|
+| Data model              | Business role        | Relevant capability             |
+| ----------------------- | -------------------- | ------------------------------- |
+| WeekBasedMaterialDemand | Customer             | Data provider                   |
+| WeekBasedMaterialDemand | Supplier             | Data consumer                   |
+| WeekBasedCapacityGroup  | Customer             | Data consumer                   |
+| WeekBasedMaterialDemand | Supplier             | Data provider                   |
+| IdBasedRequestForUpdate | Customer or supplier | Data provider and data consumer |
+| IdBasedComment          | Customer or supplier | Data provider and data consumer |
 
 **Proof of Conformity for APIs**
 
 Participants must implement and conform to the standardized APIs as described in [Chapter 4](#4-application-programming-interfaces). Depending on which business role a participant or application implements only parts of [Chapter 4](#4-application-programming-interfaces) are relevant for conformity.
 
-|API taxonomy|Business role|Relevant capability|
-|--|--|--|
-|DcmWeekBasedMaterialDemand|Customer|Call API|
-|DcmWeekBasedMaterialDemand|Supplier|Offer API|
-|DcmWeekBasedCapacityGroup|Customer|Offer API|
-|DcmWeekBasedCapacityGroup|Supplier|Call API|
-|DcmIdBasedRequestForUpdate|Customer and supplier|Offer and call API|
-|DcmIdBasedComment|Customer or supplier|Offer and call API|
-|Submodel|Customer or supplier|Offer and call API|
+| API taxonomy               | Business role         | Relevant capability    |
+| -------------------------- | --------------------- | -------------------    |
+| DcmWeekBasedMaterialDemand | Customer              | Call API               |
+| DcmWeekBasedMaterialDemand | Supplier              | Offer API              |
+| DcmWeekBasedCapacityGroup  | Customer              | Offer API              |
+| DcmWeekBasedCapacityGroup  | Supplier              | Call API               |
+| DcmIdBasedRequestForUpdate | Customer or supplier  | Offer API and call API |
+| DcmIdBasedComment          | Customer or supplier  | Offer API and call API |
+| Submodel                   | Customer or supplier  | Offer API and call API |
 
 **Proof of Conformity for Process and Core Business Logic**
 
 Participants must implement and conform to the DCM core business logic as described in [Chapter 5](#5-processes). Depending on which business role a participant or application implements only parts of [Chapter 5](#5-processes) are relevant for conformity.
 
-|Relevant process step|Business role|
-|--|--|
-|Manage demands|Customer|
-|Manage capacities|Supplier|
-|Bottleneck calculation|Customer and supplier|
-|Collaborate|Customer and supplier|
-|Align capacities and demands|Customer and supplier|
-|Update demands|Customer|
-|Update capacities|Supplier|
+| Relevant process step        | Business role         |
+| ---------------------------- | --------------------- |
+| Manage demands               | Customer              |
+| Manage capacities            | Supplier              |
+| Bottleneck calculation       | Customer and supplier |
+| Collaborate                  | Customer and supplier |
+| Align capacities and demands | Customer and supplier |
+| Update demands               | Customer              |
+| Update capacities            | Supplier              |
 
 ### 1.4 Examples
 
@@ -275,35 +296,35 @@ This section provides JSON examples for `WeekBasedMaterialDemand`, `WeekBasedCap
 
 ### 1.5 Terminology
 
-| Term            | Description                                                                                                    |
-|:----------------|:---------------------------------------------------------------------------------------------------------------|
-| Actual Capacity | This is the capacity a supplier realistically plans to have available to produce a certain amount of material per week for a customer. It takes into account the supplier's own assessment of their capabilities, inventory and existing commitments. |
-| Agreed Capacity | May be coordinated between customer and supplier. The agreed capacity must not constitute a legal obligation to deliver. Using the agreed capacity is optional and has purely informative character. The agreed capacity may be greater than, less than or equal to the actual or maximum capacity of the supplier. It may be used for a time frame shorter than the whole time series. |
-| Aspect Model | An Aspect model is a structured, machine-readable description of data. It utilizes the Turtle file format to serialize a Resource Description Framework (RDF) graph, that relates to a specific aspect. It must follow the Semantic Aspect Meta Model (SAMM) guidelines, meaning it uses defined elements and rules from SAMM. Aspect models help to clarify the meaning of data at runtime and should link to standardized business glossary terms, if available. |
-| Bottleneck | A facility, function, department, or resource whose capacity is less than the demand placed upon it. For example, a bottleneck machine or work center exists where jobs are processed at a slower rate than they are demanded (Source: ASCM Supply Chain Dictionary, 17th edition). |
-| Business application provider | Offers tools for demand and capacity management that conform to the core business logic, data models and APIs described in this standard. |
-| Business Partner Number Legal Entity (BPNL) | A BPNL is an unique identifier for a company or partner within the Catena-X network. |
-| Business Partner Number Site (BPNS) | A BPNS is an unique identifier for a specific location, such as a factory, within the Catena-X network. |
-| Calendar Week | A week consisting of seven days, typically numbered according to the week containing the year's first Thursday. For example, if the first Thursday of the year is on January 1st, that week is considered Week 1. |
-| Capacity | 1. The capability of a system to perform its expected function. 2. The capability of a worker, machine, work center, plant, or organization to produce output per time period. (Source: ASCM Supply Chain Dictionary, 17th edition). |
-| Capacity Group | A Capacity Group is where material demand and capacity information are matched for collaborative planning. When written as `WeekBasedCapacityGroup`, it refers to a specific data model within this standard. |
-| Comment | A feature that allows two business partners to exchange messages about material demand and capacity, facilitating direct collaboration and quick issue resolution. |
-| Comments | These are purely text-based exchanges without the transfer of documents or attachments. |
-| CreationEntity | Currently, a Creation Entity groups `WeekBasedCapacityGroup` objects to support digital twins in the planning process. It may represent a production plant and will be further defined in future revisions of this standard. |
-| Customer | A role within the DCM use case. Receives goods from its suppliers. Participating companies can have multiple roles at the same time. Customers provide consistent and up-to-date demand forecast and receive capacity data from suppliers. |
-|(Simulated) Delta-Production | This is an optional feature that allows suppliers to manage capacity bottlenecks by simulating changes in production without altering actual or maximum capacity. |
-| Demand Deviation | This is an optional metric that allows suppliers to monitor changes in customer demands and to identify significant changes that can collaboratively be addressed by suppliers and customers. |  
-| Digital Twin | Based on [[CX-0002](#71-normative-references)] Standard a digital twin (DT) describes a digital representation of an asset sufficient to meet the requirements of a set of use cases. For detailed information please refer to [[CX-0002](#71-normative-references)] Digital Twins in Catena-X. |
-| Flexible Capacity | The difference between maximum and actual capacity, representing the potential to increase capacity without further agreements, such as extending the use of production resources within a week. In particular, it refers to measures to extend the weekly utilization of the available production resources. |
-| Linking material demand | Material demands can be linked directly to a capacity group or indirectly through another capacity group, which is known as "Nesting." |
-| Load Factor | Optional feature of a capacity group. ~ adds individual numerical material load factors to `WeekBasedMaterialDemand` linked by the `WeekBasedCapacityGroup`. ~ adds flexibility to the unit of measure of the capacity group. |
-| Material | The elements, constituents, or substances of which something is composed or can be made. Usually referred to by a material number. |
-| (Material) demand | A need for a particular product or component. The demand could come from any number of sources (e.g., a customer order or forecast, an interplant requirement, a branch warehouse request for a service part, or the manufacturing of another product). At the finished goods level, demand data is usually different from sales data because demand does not necessarily result in sales (i.e., If there is no stock, there will be no sale (Source: ASCM Supply Chain Dictionary, 17th edition)). Material demand may comprise multiple demand series by location and demand categories. When the term is written as one word (`WeekBasedMaterialDemand`), the term refers specifically to the respective aspect model. |
-| Maximum Capacity | Is the maximum releasable capacity of a supplier which should be possible to achieve a material output per calendar week with a certain unit of measure for one customer. The maximum capacity is based on capacity-increasing measures, agreed by the parties involved. Capacity-increasing measures can be, for example, a longer utilization of the available production resources, a shift extension or additional shifts. Secondarily, additional resources can also be activated. |
-| Nesting | A method by which a capacity group links another capacity group, allowing for dynamic changes and centralized data management. |
-| Supplier | A role within the DCM use case. Supplies goods to its customers. Participating companies can have multiple roles at the same time. Suppliers provide consistent and up-to-date capacity data and receive demands from customers. |
-| Surplus | A surplus is a situation in which an oversupply exists. |
-| WeekBasedCapacityGroup | This term refers to the specific `WeekBasedCapacityGroup` object defined in this standard. |
+| Term                                        | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| :------------------------------------------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Actual Capacity                             | This is the capacity a supplier realistically plans to have available to produce a certain amount of material per week for a customer. It takes into account the supplier's own assessment of their capabilities, inventory and existing commitments.                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| Agreed Capacity                             | May be coordinated between customer and supplier. The agreed capacity must not constitute a legal obligation to deliver. Using the agreed capacity is optional and has purely informative character. The agreed capacity may be greater than, less than or equal to the actual or maximum capacity of the supplier. It may be used for a time frame shorter than the whole time series.                                                                                                                                                                                                                                                                                                                                   |
+| Aspect Model                                | An Aspect model is a structured, machine-readable description of data. It utilizes the Turtle file format to serialize a Resource Description Framework (RDF) graph, that relates to a specific aspect. It must follow the Semantic Aspect Meta Model (SAMM) guidelines, meaning it uses defined elements and rules from SAMM. Aspect models help to clarify the meaning of data at runtime and should link to standardized business glossary terms, if available.                                                                                                                                                                                                                                                        |
+| Bottleneck                                  | A facility, function, department, or resource whose capacity is less than the demand placed upon it. For example, a bottleneck machine or work center exists where jobs are processed at a slower rate than they are demanded (Source: ASCM Supply Chain Dictionary, 17th edition).                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| Business application provider               | Offers tools for demand and capacity management that conform to the core business logic, data models and APIs described in this standard.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| Business Partner Number Legal Entity (BPNL) | A BPNL is an unique identifier for a company or partner within the Catena-X network.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| Business Partner Number Site (BPNS)         | A BPNS is an unique identifier for a specific location, such as a factory, within the Catena-X network.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| Calendar Week                               | A week consisting of seven days, typically numbered according to the week containing the year's first Thursday. For example, if the first Thursday of the year is on January 1st, that week is considered Week 1.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| Capacity                                    | 1. The capability of a system to perform its expected function. 2. The capability of a worker, machine, work center, plant, or organization to produce output per time period. (Source: ASCM Supply Chain Dictionary, 17th edition).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| Capacity Group                              | A Capacity Group is where material demand and capacity information are matched for collaborative planning. When written as `WeekBasedCapacityGroup`, it refers to a specific data model within this standard.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| Comment                                     | A feature that allows two business partners to exchange messages about material demand and capacity, facilitating direct collaboration and quick issue resolution.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| Comments                                    | These are purely text-based exchanges without the transfer of documents or attachments.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| CreationEntity                              | Currently, a Creation Entity groups `WeekBasedCapacityGroup` objects to support digital twins in the planning process. It may represent a production plant and will be further defined in future revisions of this standard.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| Customer                                    | A role within the DCM use case. Receives goods from its suppliers. Participating companies can have multiple roles at the same time. Customers provide consistent and up-to-date demand forecast and receive capacity data from suppliers.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| (Simulated) Delta-Production                | This is an optional feature that allows suppliers to manage capacity bottlenecks by simulating changes in production without altering actual or maximum capacity.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| Demand Deviation                            | This is an optional metric that allows suppliers to monitor changes in customer demands and to identify significant changes that can collaboratively be addressed by suppliers and customers.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| Digital Twin                                | Based on [[CX-0002](#71-normative-references)] Standard a digital twin (DT) describes a digital representation of an asset sufficient to meet the requirements of a set of use cases. For detailed information please refer to [[CX-0002](#71-normative-references)] Digital Twins in Catena-X.                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| Flexible Capacity                           | The difference between maximum and actual capacity, representing the potential to increase capacity without further agreements, such as extending the use of production resources within a week. In particular, it refers to measures to extend the weekly utilization of the available production resources.                                                                                                                                                                                                                                                                                                                                                                                                             |
+| Linking material demand                     | Material demands can be linked directly to a capacity group or indirectly through another capacity group, which is known as "Nesting."                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| Load Factor                                 | Optional feature of a capacity group. ~ adds individual numerical material load factors to `WeekBasedMaterialDemand` linked by the `WeekBasedCapacityGroup`. ~ adds flexibility to the unit of measure of the capacity group.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| Material                                    | The elements, constituents, or substances of which something is composed or can be made. Usually referred to by a material number.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| (Material) demand                           | A need for a particular product or component. The demand could come from any number of sources (e.g., a customer order or forecast, an interplant requirement, a branch warehouse request for a service part, or the manufacturing of another product). At the finished goods level, demand data is usually different from sales data because demand does not necessarily result in sales (i.e., If there is no stock, there will be no sale (Source: ASCM Supply Chain Dictionary, 17th edition)). Material demand may comprise multiple demand series by location and demand categories. When the term is written as one word (`WeekBasedMaterialDemand`), the term refers specifically to the respective aspect model. |
+| Maximum Capacity                            | Is the maximum releasable capacity of a supplier which should be possible to achieve a material output per calendar week with a certain unit of measure for one customer. The maximum capacity is based on capacity-increasing measures, agreed by the parties involved. Capacity-increasing measures can be, for example, a longer utilization of the available production resources, a shift extension or additional shifts. Secondarily, additional resources can also be activated.                                                                                                                                                                                                                                   |
+| Nesting                                     | A method by which a capacity group links another capacity group, allowing for dynamic changes and centralized data management.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| Supplier                                    | A role within the DCM use case. Supplies goods to its customers. Participating companies can have multiple roles at the same time. Suppliers provide consistent and up-to-date capacity data and receive demands from customers.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| Surplus                                     | A surplus is a situation in which an oversupply exists.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| WeekBasedCapacityGroup                      | This term refers to the specific `WeekBasedCapacityGroup` object defined in this standard.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 
 For additional terminology, please refer to the glossary on the association's homepage.
 
@@ -323,6 +344,12 @@ This standard utilizes Supply Chain Disruption Notifications. Supply Chain Disru
 
 ### 2.3 Additional Requirements
 
+Policies within Catena-X MUST be aligned with the example usage policy in the CX ODRL Profile and with all subsections of [2.3 Additional Requirements](#23-additional-requirements).  
+
+```text
+https://github.com/catenax-eV/cx-odrl-profile/blob/main/example_usage_policy.json
+```
+
 #### 2.3.1 Conventions for Use Case Policy in Context Data Exchange
 
 In alignment with our commitment to data sovereignty, a specific framework governing the utilization of data within the Catena-X use cases has been described. A set of specific policies on data offering and data usage level detail the conditions under which data may be accessed, shared, and used, ensuring compliance with legal standards.
@@ -330,7 +357,7 @@ In alignment with our commitment to data sovereignty, a specific framework gover
 For a comprehensive understanding of the rights, restrictions, and obligations associated with data usage in the Catena-X ecosystem, we refer users to:
 
 - The detailed [[ODRL](#repositories)] policy repository. This document provides in-depth explanations of the terms and conditions applied to data access and utilization, ensuring that all engagement with our data is conducted responsibly and in accordance with established guidelines.
-- The ODRL schema template. This defines how policies used for data sharing/usage should get defined. Those schemas MUST be followed when providing services or apps for data sharing/consuming.
+- The ODRL schema template. This defines how policies used for data sharing/usage should get defined. Those schemas must be followed when providing services or apps for data sharing/consuming.
 
 ##### 2.3.1.1 Additional details regarding access policies
 
@@ -338,12 +365,12 @@ A data provider may tie certain access authorizations `Access Policies` to its d
 
 ##### 2.3.1.2 Additional details regarding usage policies
 
-In the context of data usage policies `Usage Policies`, participants and related services MUST use the following policy rules:
+In the context of data usage policies `Usage Policies`, participants and related services must use the following policy rules:
 
 - *Data Exchange Governance* framework agreement.
 - At least one use case purpose `UsagePurpose` from the above mentioned [[ODRL](#repositories)] policy repository.
 
-Additionally, respective usage policies MAY include the following policy rule:
+Additionally, respective usage policies may include the following policy rule:
 
 - Reference Contract `ContractReference`.
 
@@ -355,31 +382,31 @@ Details on namespaces and ODRL policy rule values to be used for the above-menti
 
 ### 3.1 Aspect Model WeekBasedMaterialDemand
 
+The [unique identifier](#314-identifier-of-semantic-model) for the semantic model, as specified in this standard, MUST be used to define the meaning of the data being transferred.
+
+The JSON payload provided by data providers MUST comply with the [JSON schema](#3152-json-schema) as specified in this standard and MUST be validated against the same JSON schema by data consumers.
+
+Within the Catena-X data space `WeekBasedMaterialDemand` data MUST be requested and exchanged using a connector, conforming to the standards [[CX-0018](#71-normative-references)] and [[CX-0002](#71-normative-references)]. It MUST be transferred using the [WeekBasedMaterialDemand API](#41-weekbasedmaterialdemand-api)
+
 #### 3.1.1 Introduction
 
-For the exchange of material demand information, customers MUST provide data to suppliers. The data format specified in this standard MUST be conformed to.
+For the exchange of material demand information, customers must provide data to suppliers. The data format specified in this standard must be conformed to.
 
-Customers and suppliers MUST implement the `WeekBasedMaterialDemand` data model.
+Customers and suppliers must implement the `WeekBasedMaterialDemand` data model.
 
-Suppliers MUST be able to consume and process material demand information.
+Suppliers must be able to consume and process material demand information.
 
-Customers MUST be able to provide and process material demand information.
+Customers must be able to provide and process material demand information.
 
-Data providers of `WeekBasedMaterialDemand` data MUST ensure that it aligns with the semantic model specified in this standard.
+Data providers of `WeekBasedMaterialDemand` data must ensure that it aligns with the semantic model specified in this standard.
 
-The unique identifier for the semantic model, as specified in this standard, MUST be used to define the meaning of the data being transferred.
+Business applications utilizing `WeekBasedMaterialDemand` data must consume this data, conforming to the semantic model specified in this standard.
 
-Business applications utilizing `WeekBasedMaterialDemand` data MUST consume this data, conforming to the semantic model specified in this standard.
+This semantic model has been made available in the central Semantic Hub.
 
-This semantic model MUST be made available in the central Semantic Hub.
+Data consumers and data providers must comply with the license of the semantic model specified in [Section 3.1.3](#313-license).
 
-Data consumers and data providers MUST comply with the license of the semantic model specified in [Section 3.1.3](#313-license).
-
-Within the Catena-X data space `WeekBasedMaterialDemand` data MUST be requested and exchanged using a connector, conforming to the standards [[CX-0018](#71-normative-references)] and [[CX-0002](#71-normative-references)].
-
-The JSON Payload provided by data providers MUST comply with the JSON schema as specified in this standard.
-
-The characteristics BPNL and BPNS MUST be used, conforming with [[CX-0010](#71-normative-references)].
+The characteristics BPNL and BPNS must be used, conforming with [[CX-0010](#71-normative-references)].
 
 #### 3.1.2 Specification Artifacts
 
@@ -398,7 +425,7 @@ The semantic model has the unique identifier
 urn:samm:io.catenax.week_based_material_demand:3.0.1
 ```
 
-Data providers MUST use this identifier to clearly define the semantics of the data they are transferring.
+Data providers must use this identifier to clearly define the semantics of the data they are transferring.
 
 #### 3.1.5 Formats of Semantic Model
 
@@ -416,9 +443,17 @@ The open source command line tool of the Eclipse Semantic Modeling Framework is 
 
 A JSON schema, which describes the structure of the data payload, can be created from the RDF turtle file. This schema specifically describes the data format for the `GetSubmodel` API operation within the Asset Administration Shell, focusing on the values without including semantic information. This allows for a clear and structured way to retrieve data from the API.
 
+```text
+https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.week_based_material_demand/3.0.1/gen/WeekBasedMaterialDemand-schema.json
+```
+
 ##### 3.1.5.3 AASX
 
 An AASX file can be generated from the RDF turtle file. The AASX file defines one of the requested artifacts for a Submodel template specification conformant to [[SMT](#72-non-normative-references)].
+
+```text
+https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.week_based_material_demand/3.0.1/gen/WeekBasedMaterialDemand.aasx
+```
 
 #### 3.1.6 Semantic Model
 
@@ -426,31 +461,31 @@ Not applicable.
 
 ### 3.2 Aspect Model WeekBasedCapacityGroup
 
+The [unique identifier](#324-identifier-of-semantic-model) for the semantic model, as specified in this standard, MUST be used to define the meaning of the data being transferred.
+
+The JSON payload provided by data providers MUST comply with the [JSON schema](#3252-json-schema) as specified in this standard and MUST be validated against the same JSON schema by data consumers.
+
+Within the Catena-X data space `WeekBasedMaterialCapacityGroup` data MUST be requested and exchanged using a connector, conforming to the standards [[CX-0018](#71-normative-references)] and [[CX-0002](#71-normative-references)]. It MUST be transferred using the [WeekBasedCapacityGroup API](#42-weekbasedcapacitygroup-api)
+
 #### 3.2.1 Introduction
 
-For the exchange of capacity group information, suppliers MUST provide data to customers. The data format specified in this standard MUST be conformed to.
+For the exchange of capacity group information, suppliers must provide data to customers. The data format specified in this standard must be conformed to.
 
-Customers and suppliers MUST implement the `WeekBasedCapacityGroup` data model.
+Customers and suppliers must implement the `WeekBasedCapacityGroup` data model.
 
-Suppliers MUST be able to provide and process capacity group information.
+Suppliers must be able to provide and process capacity group information.
 
-Customers MUST be able to consume and process capacity group information.
+Customers must be able to consume and process capacity group information.
 
-Data providers of `WeekBasedCapacityGroup` data MUST ensure that it aligns with the semantic model specified in this standard.
+Data providers of `WeekBasedCapacityGroup` data must ensure that it aligns with the semantic model specified in this standard.
 
-The unique identifier for the semantic model, as specified in this standard, MUST be used to define the meaning of the data being transferred.
+Business applications utilizing `WeekBasedCapacityGroup` data must consume this data, conforming to the semantic model specified in this standard.
 
-Business applications utilizing `WeekBasedCapacityGroup` data MUST consume this data, conforming to the semantic model specified in this standard.
+This semantic model has been made available in the central Semantic Hub.
 
-This semantic model MUST be made available in the central Semantic Hub.
+Data consumers and data providers must comply with the license of the semantic model specified in [Section 3.2.3](#323-license).
 
-Data consumers and data providers MUST comply with the license of the semantic model specified in [Section 3.2.3](#323-license).
-
-Within the Catena-X data space `WeekBasedCapacityGroup` data MUST be requested and exchanged using a connector, conforming to the standards [[CX-0018](#71-normative-references)] and [[CX-0002](#71-normative-references)].
-
-The JSON Payload provided by data providers MUST comply with the JSON schema as specified in this standard.
-
-The characteristics BPNL and BPNS MUST be used, conforming with [[CX-0010](#71-normative-references)].
+The characteristics BPNL and BPNS must be used, conforming with [[CX-0010](#71-normative-references)].
 
 #### 3.2.2 Specification Artifacts
 
@@ -469,7 +504,7 @@ The semantic model has the unique identifier
 urn:samm:io.catenax.week_based_capacity_group:3.0.1
 ```
 
-Data providers MUST use this identifier to clearly define the semantics of the data they are transferring.
+Data providers must use this identifier to clearly define the semantics of the data they are transferring.
 
 #### 3.2.5 Formats of Semantic Model
 
@@ -487,9 +522,17 @@ The open source command line tool of the Eclipse Semantic Modeling Framework is 
 
 A JSON schema, which describes the structure of the data payload, can be created from the RDF turtle file. This schema specifically describes the data format for the `GetSubmodel` API operation within the Asset Administration Shell, focusing on the values without including semantic information. This allows for a clear and structured way to retrieve data from the API.
 
+```text
+https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.week_based_capacity_group/3.0.1/gen/WeekBasedCapacityGroup-schema.json
+```
+
 ##### 3.2.5.3 AASX
 
 An AASX file can be generated from the RDF turtle file. The AASX file defines one of the requested artifacts for a Submodel template specification conformant to [[SMT](#72-non-normative-references)].
+
+```text
+https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.week_based_capacity_group/3.0.1/gen/WeekBasedCapacityGroup.aasx
+```
 
 #### 3.2.6 Semantic Model
 
@@ -497,29 +540,29 @@ Not applicable.
 
 ### 3.3 Aspect Model IdBasedRequestForUpdate
 
+The [unique identifier](#324-identifier-of-semantic-model) for the semantic model, as specified in this standard, MUST be used to define the meaning of the data being transferred.
+
+The JSON payload provided by data providers MUST comply with the [JSON schema](#3352-json-schema) as specified in this standard and MUST be validated against the same JSON schema by data consumers.
+
+Within the Catena-X data space `IdBasedRequestForUpdate` data MUST be requested and exchanged using a connector, conforming to the standards [[CX-0018](#71-normative-references)] and [[CX-0002](#71-normative-references)]. It MUST be transferred using the [RequestForUpdate API](#43-requestforupdate-api).
+
 #### 3.3.1 Introduction
 
-`IdBasedRequestForUpdate` can be exchanged between customer and supplier conforming to the API standard described in [Chapter 4.3](#43-requestforupdate-api). The data format specified in this standard MUST be conformed to.
+`IdBasedRequestForUpdate` can be exchanged between customer and supplier conforming to the API standard described in [Capter 4.3](#43-requestforupdate-api). The data format specified in this standard must be conformed to.
 
-Customers and suppliers MUST implement the `IdBasedRequestForUpdate` data model.
+Customers and suppliers must implement the `IdBasedRequestForUpdate` data model.
 
-Customers and suppliers MUST be able to consume and process a request for update.
+Customers and suppliers must be able to consume and process a request for update.
 
-Providing an `IdBasedRequestForUpdate` is OPTIONAL. It is RECOMMENDED to be both capable of providing and consuming a request for update.
+Providing an `IdBasedRequestForUpdate` is optional. It is recommended to be both capable of providing and consuming a request for update.
 
-Providers of an `IdBasedRequestForUpdate` MUST ensure that it aligns with the semantic model specified in this standard.
+Data providers of an `IdBasedRequestForUpdate` must ensure that it aligns with the semantic model specified in this standard.
 
-The unique identifier for the semantic model, as specified in this standard, MUST be used to define the meaning of the data being transferred.
+Business applications utilizing `IdBasedRequestForUpdate` data must consume this data, conforming to the semantic model specified in this standard.
 
-Business applications utilizing `IdBasedRequestForUpdate` data MUST consume this data, conforming to the semantic model specified in this standard.
+This semantic model has been made available in the central Semantic Hub.
 
-This semantic model MUST be made available in the central Semantic Hub.
-
-Data consumers and data providers MUST comply with the license of the semantic model specified in [Section 3.3.3](#333-license).
-
-Within the Catena-X data space `IdBasedRequestForUpdate` data MUST be requested and exchanged using a connector, conforming to the standards [[CX-0018](#71-normative-references)] and [[CX-0002](#71-normative-references)].
-
-The JSON Payload provided by data providers MUST comply with the JSON schema as specified in this standard.
+Data consumers and data providers must comply with the license of the semantic model specified in [Section 3.3.3](#333-license).
 
 #### 3.3.2 Specification Artifacts
 
@@ -538,7 +581,7 @@ The semantic model has the unique identifier
 urn:samm:io.catenax.id_based_request_for_update:3.0.0
 ```
 
-Data providers MUST use this identifier to clearly define the semantics of the data they are transferring.
+Data providers must use this identifier to clearly define the semantics of the data they are transferring.
 
 #### 3.3.5 Formats of Semantic Model
 
@@ -556,9 +599,17 @@ The open source command line tool of the Eclipse Semantic Modeling Framework is 
 
 A JSON schema, which describes the structure of the data payload, can be created from the RDF turtle file. This schema specifically describes the data format for the `GetSubmodel` API operation within the Asset Administration Shell, focusing on the values without including semantic information. This allows for a clear and structured way to retrieve data from the API.
 
+```text
+https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.id_based_request_for_update/3.0.0/gen/IdBasedRequestForUpdate-schema.json
+```
+
 ##### 3.3.5.3 AASX
 
 An AASX file can be generated from the RDF turtle file. The AASX file defines one of the requested artifacts for a Submodel template specification conformant to [[SMT](#72-non-normative-references)].
+
+```text
+https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.id_based_request_for_update/3.0.0/gen/IdBasedRequestForUpdate.aasx
+```
 
 #### 3.3.6 Semantic Model
 
@@ -566,31 +617,31 @@ Not applicable.
 
 ### 3.4 Aspect Model IdBasedComment
 
+The [unique identifier](#344-identifier-of-semantic-model) for the semantic model, as specified in this standard, MUST be used to define the meaning of the data being transferred.
+
+The JSON Payload provided by data providers MUST comply with the [JSON schema](#3452-json-schema) as specified in this standard and MUST be validated against the same JSON schema by data consumers.
+
+Within the Catena-X data space `IdBasedComment` data MUST be requested and exchanged using a connector, conforming to the standards [[CX-0018](#71-normative-references)] and [[CX-0002](#71-normative-references)]. It must be transferred using the [IdBasedComment API](#44-idbasedcomment-api).
+
 #### 3.4.1 Introduction
 
-An `IdBasedComment` can refer to a `WeekBasedCapacityGroup`, its weekly capacities, a `WeekBasedMaterialDemand`, or its weekly demand series. This comment can be exchanged between customer and supplier conforming to the API standard described in [Chapter 4.4](#44-idbasedcomment-api). The data format specified in this standard MUST be conformed to.
+An `IdBasedComment` can refer to a `WeekBasedCapacityGroup`, its weekly capacities, a `WeekBasedMaterialDemand`, or its weekly demand series. This comment can be exchanged between customer and supplier conforming to the API standard described in [Chapter 4.4](#44-idbasedcomment-api). The data format specified in this standard must be conformed to.
 
-Customers and suppliers MUST implement the `IdBasedComment` data model.
+Customers and suppliers must implement the `IdBasedComment` data model.
 
-Customers and suppliers MUST be able to provide and process an `IdBasedComment`.
+Customers and suppliers must be able to provide and process an `IdBasedComment`.
 
-Customers and suppliers MUST be able to consume and process an `IdBasedComment`.
+Customers and suppliers must be able to consume and process an `IdBasedComment`.
 
-Data providers of `IdBasedComment` data MUST ensure that it aligns with the semantic model specified in this standard.
+Data providers of `IdBasedComment` data must ensure that it aligns with the semantic model specified in this standard.
 
-The unique identifier for the semantic model, as specified in this standard, MUST be used to define the meaning of the data being transferred.
+Business applications utilizing `IdBasedComment` data must consume this data, conforming to the semantic model specified in this standard.
 
-Business applications utilizing `IdBasedComment` data MUST consume this data, conforming to the semantic model specified in this standard.
+This semantic model has been made available in the central Semantic Hub.
 
-This semantic model MUST be made available in the central Semantic Hub.
+Data consumers and data providers must comply with the license of the semantic model specified in [Section 3.4.3](#343-license).
 
-Data consumers and data providers MUST comply with the license of the semantic model specified in [Section 3.4.3](#343-license).
-
-Within the Catena-X data space `IdBasedComment` data MUST be requested and exchanged using a connector, conforming to the standards [[CX-0018](#71-normative-references)] and [[CX-0002](#71-normative-references)].
-
-The JSON Payload provided by data providers MUST comply with the JSON schema as specified in this standard.
-
-The characteristics BPNL and BPNS MUST be used, conforming with [[CX-0010](#71-normative-references)].
+The characteristics BPNL and BPNS must be used, conforming with [[CX-0010](#71-normative-references)].
 
 #### 3.4.2 Specification Artifacts
 
@@ -609,7 +660,7 @@ The semantic model has the unique identifier
 urn:samm:io.catenax.id_based_comment:1.0.0
 ```
 
-Data providers MUST use this identifier to clearly define the semantics of the data they are transferring.
+Data providers must use this identifier to clearly define the semantics of the data they are transferring.
 
 #### 3.4.5 Formats of Semantic Model
 
@@ -627,9 +678,17 @@ The open source command line tool of the Eclipse Semantic Modeling Framework is 
 
 A JSON schema, which describes the structure of the data payload, can be created from the RDF turtle file. This schema specifically describes the data format for the `GetSubmodel` API operation within the Asset Administration Shell, focusing on the values without including semantic information. This allows for a clear and structured way to retrieve data from the API.
 
+```text
+https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.id_based_comment/1.0.0/gen/IdBasedComment-schema.json
+```
+
 ##### 3.4.5.3 AASX
 
 An AASX file can be generated from the RDF turtle file. The AASX file defines one of the requested artifacts for a Submodel template specification conformant to [[SMT](#72-non-normative-references)].
+
+```text
+https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.id_based_comment/1.0.0/gen/IdBasedComment.aasx
+```
 
 #### 3.4.6 Semantic Model
 
@@ -669,64 +728,74 @@ Within the RDF turtle file, you will find detailed descriptions for how to use t
 
 ### 4.1 WeekBasedMaterialDemand API
 
+Within the Catena-X data space APIs MUST only be accessible via a connector, conforming to the standard [[CX-0018](#71-normative-references)].
+
+The API MUST be registered as a data asset as defined in [Section 4.1.2.5](#4125-data-asset-structure).
+
+The API MUST be implemented as defined in [Section 4.1.2](#412-api-specification).
+
 The `WeekBasedMaterialDemand` object is used to provide material demand information from customer to supplier.
 
-Customers MUST be able to provide `WeekBasedMaterialDemand`.
+Customers must be able to provide `WeekBasedMaterialDemand`.
 
-Suppliers MUST be able to consume and process `WeekBasedMaterialDemand`.
+Suppliers must be able to consume and process `WeekBasedMaterialDemand`.
 
 #### 4.1.1 Preconditions and Dependencies
 
-The `WeekBasedMaterialDemand` API MUST be published towards the network using a Data Asset/Contract Offer, which is in line with the Dataspace Protocol as specified by the International Data Spaces Association (IDSA) and MUST conform with the Catena-X standard [[CX-0001](#71-normative-references)].
+The `WeekBasedMaterialDemand` API must be published towards the network using a Data Asset/Contract Offer, which is in line with the Dataspace Protocol as specified by the International Data Spaces Association (IDSA) and must conform with the Catena-X standard [[CX-0001](#71-normative-references)].
 
 #### 4.1.2 API Specification
 
+```text
+https://catenax-ev.github.io/assets/files/catena-x-dcm-week-based-material-demand-3_0_0-cdbb230355f36a0dd6e4a387fb604c31.yaml
+```
+
 ##### 4.1.2.1 API endpoints and resources
 
-The API requires a single endpoint that accepts HTTP POST requests as described in [[RFC9110](#72-non-normative-references)]. The specific structure of the endpoint MAY vary, but its address MUST be included in the Data Asset as defined in [Section 4.1.2.5](#4125-data-asset-structure).
+The API requires a single endpoint that accepts HTTP POST requests as described in [[RFC9110](#72-non-normative-references)]. The specific structure of the endpoint may vary, but its address must be included in the Data Asset as defined in [Section 4.1.2.5](#4125-data-asset-structure).
 
 ##### 4.1.2.2 Data exchange
 
-Customers MUST provide suppliers with `WeekBasedMaterialDemand` data via HTTP POST request. The data MUST conform to the format specified in this standard and it MUST NOT exceed 15 MiB in size. It MUST be a valid JSON string and MUST include all mandatory properties. The data model with all its properties MUST conform to the respective aspect model and the definitions in [Chapter 3.1](#31-aspect-model-weekbasedmaterialdemand) as well as [Units of measure used in DCM](#units-of-measure-used-in-dcm). Properties marked as "optional" MAY be included in the data.
-When consuming a payload, that contains unknown properties not described within the data model but is otherwise correct, those properties MUST be ignored.
+Customers must provide suppliers with `WeekBasedMaterialDemand` data via HTTP POST request. The data must conform to the format specified in this standard and it must not exceed 15 MiB in size. It must be a valid JSON string and must include all mandatory properties. The data model with all its properties must conform to the respective aspect model and the definitions in [Chapter 3.1](#31-aspect-model-weekbasedmaterialdemand) as well as [Units of measure used in DCM](#units-of-measure-used-in-dcm). Properties marked as "optional" may be included in the data.
+When consuming a payload, that contains unknown properties not described within the data model but is otherwise correct, those properties must be ignored.
 
-Attributes that are strings MUST be formatted correctly. For example, `expectedSupplierLocation` MUST be formatted as a BPNS. The `pointInTime` property MUST represent the week's Monday in the format YYYY-MM-DD as described in [[ISO8601](#72-non-normative-references)].
+Attributes that are strings must be formatted correctly. For example, `expectedSupplierLocation` must be formatted as a BPNS. The `pointInTime` property must represent the week's Monday in the format YYYY-MM-DD as described in [[ISO8601](#72-non-normative-references)].
 
-The `demandCategory` property MUST be set to one of the predefined values from [Section 5.5.1](#551-detailed-description-of-demand-data).
+The `demandCategory` property must be set to one of the predefined values from [Section 5.5.1](#551-detailed-description-of-demand-data).
 
-The `unitOfMeasure` property MUST be set to one of the predefined values from [Units of measure used in DCM](#units-of-measure-used-in-dcm). If no unit of measure is to be provided, the customer MUST omit the property and set the `unitOfMeasureIsOmitted` flag to true.
+The `unitOfMeasure` property must be set to one of the predefined values from [Units of measure used in DCM](#units-of-measure-used-in-dcm). If no unit of measure is to be provided, the customer must omit the property and set the `unitOfMeasureIsOmitted` flag to true.
 
-Multiple `WeekBasedMaterialDemand` aspects MAY be provided in one transfer as a JSON list. If only one `WeekBasedMaterialDemand` aspect is provided, it MUST be as list with one entry.
+Multiple `WeekBasedMaterialDemand` aspects may be provided in one transfer as a JSON list. If only one `WeekBasedMaterialDemand` aspect is provided, it must be as list with one entry.
 
 The current week is denominated as N=0, the next week as N=1, the week after the next week as N=2 and so on.
-The data series in the `WeekBasedMaterialDemand` SHOULD start from week N=2. The dataset MUST include at least one week, where N>1 and MUST NOT contain duplicate weeks. Weeks N=0 and N=1 MAY be included. If demand changes, the entire dataset MUST be provided again, avoiding inconsistent or incomplete data. The new dataset might contain additional data or less data than the previous version of the same dataset. This includes the possibility that a `demandSeries` might have been removed entirely. Each `WeekBasedMaterialDemand` object MUST be unique for a given `supplier`, `customer` and `materialNumberCustomer` combination. This means that customers need to aggregate demands from all their factories before providing them to suppliers as a single `WeekBasedMaterialDemand`.
+The data series in the `WeekBasedMaterialDemand` should start from week N=2. The dataset must include at least one week, where N>1 and must not contain duplicate weeks. Weeks N=0 and N=1 may be included. If demand changes, the entire dataset must be provided again, avoiding inconsistent or incomplete data. The new dataset might contain additional data or less data than the previous version of the same dataset. This includes the possibility that a `demandSeries` might have been removed entirely. Each `WeekBasedMaterialDemand` object must be unique for a given `supplier`, `customer` and `materialNumberCustomer` combination. This means that customers need to aggregate demands from all their factories before providing them to suppliers as a single `WeekBasedMaterialDemand`.
 
-If a week's demand is zero (value = `0`), it MUST be explicitly stated and included in the `WeekBasedMaterialDemand`, unknown demands (value = `null`) SHOULD be omitted.
+If a week's demand is zero (value = `0`), it must be explicitly stated and included in the `WeekBasedMaterialDemand`, unknown demands (value = `null`) should be omitted.
 
-The customer MAY define a `WeekBasedMaterialDemand` as inactive by setting and transferring the `materialDemandIsInactive` flag to the supplier. The inactive `WeekBasedMaterialDemand` and their related `demandSeries` data MUST be ignored during the demand-capacity matching over the whole horizon, i.e. must be considered in the same way as not existing data for the demand-capacity matching. Inactivating a `WeekBasedMaterialDemand` may trigger their archiving or deletion in the local DCM application of the business partner.
-Once a `WeekBasedMaterialDemand` has been set as inactive, this MAY be undone by the customer by reverting the `materialDemandIsInactive` flag. In this case, the `WeekBasedMaterialDemand` MUST again be considered during the demand-capacity matching. The reverting of the inactive flag of a `WeekBasedMaterialDemand` may correspond to a newly created and initially transferred or to an updated `WeekBasedMaterialDemand`.
+The customer may define a `WeekBasedMaterialDemand` as inactive by setting and transferring the `materialDemandIsInactive` flag to the supplier. The inactive `WeekBasedMaterialDemand` and their related `demandSeries` data must be ignored during the demand-capacity matching over the whole horizon, i.e. must be considered in the same way as not existing data for the demand-capacity matching. Inactivating a `WeekBasedMaterialDemand` may trigger their archiving or deletion in the local DCM application of the business partner.
+Once a `WeekBasedMaterialDemand` has been set as inactive, this may be undone by the customer by reverting the `materialDemandIsInactive` flag. In this case, the `WeekBasedMaterialDemand` must again be considered during the demand-capacity matching. The reverting of the inactive flag of a `WeekBasedMaterialDemand` may correspond to a newly created and initially transferred or to an updated `WeekBasedMaterialDemand`.
 
 ##### 4.1.2.3 UUID generation and handling
 
-UUIDv4 is REQUIRED for exchanging demand data to ensure uniqueness and security. The UUID MUST be generated conforming to [[RFC4122](#72-non-normative-references)] and MUST be treated as unique within the supplier-customer relationship.
+UUIDv4 is required for exchanging demand data to ensure uniqueness and security. The UUID must be generated conforming to [[RFC4122](#72-non-normative-references)] and must be treated as unique within the supplier-customer relationship.
 
 See [Section 4.1.2.7](#4127-validating-payload) for further handling information.
 
 ##### 4.1.2.4 Available data types
 
-The API MUST use JSON formatted data transmitted over HTTPS.
+The API must use JSON formatted data transmitted over HTTPS.
 
 ##### 4.1.2.5 Data asset structure
 
-The HTTP POST endpoint introduced in [Section 4.1.2.1](#4121-api-endpoints-and-resources) MUST NOT be called from a supply chain partner directly. Rather, it MUST be called via connector conformant to [[CX-0018](#71-normative-references)]. Therefore, the endpoint MUST be offered as a Data Asset. The latter MUST have a property `https://purl.org/dc/terms/type` with the ID `https://w3id.org/catenax/taxonomy#DcmWeekBasedMaterialDemand`. It can be abbreviated if the namespaces of key and value are part of the json-ld @context object (see example below). This property SHOULD be used to identify the asset when searching the assets catalog of a supplier. Because the asset reflects the contractual relationship between a supplier and its customers, only one asset with the aforementioned property for one version MUST be visible to the customer at any time to avoid ambiguity.
+The HTTP POST endpoint introduced in [Section 4.1.2.1](#4121-api-endpoints-and-resources) must not be called from a supply chain partner directly. Rather, it must be called via connector conformant to [[CX-0018](#71-normative-references)]. Therefore, the endpoint must be offered as a Data Asset. The latter must have a property `http://purl.org/dc/terms/type` with the ID `https://w3id.org/catenax/taxonomy#DcmWeekBasedMaterialDemand`. It can be abbreviated if the namespaces of key and value are part of the json-ld @context object (see example below). This property should be used to identify the asset when searching the assets catalog of a supplier. Because the asset reflects the contractual relationship between a supplier and its customers, only one asset with the aforementioned property for one version must be visible to the customer at any time to avoid ambiguity.
 
-The API version described in this standard MUST be published in the property `https://w3id.org/catenax/ontology/common#version` as version 2.0 in the asset. The requester of an asset MUST be able to handle multiple assets for this endpoint, being differentiated only by the version. The requester SHOULD choose the asset with the highest compatible version number implemented by themselves. If the requester cannot find a compatible version with their own, the requester MUST terminate the data transfer.
+The API version described in this standard must be published in the property `https://w3id.org/catenax/ontology/common#version` as version `2.0` in the asset. The requester of an asset must be able to handle multiple assets for this endpoint, being differentiated only by the version. The requester should choose the asset with the highest compatible version number implemented by themselves. If the requester cannot find a compatible version with their own, the requester must terminate the data transfer.
 
-Each supplier MUST ensure that only their customers have access to the asset by using access and usage policies and respective contract definitions.
+Each supplier must ensure that only their customers have access to the asset by using access and usage policies and respective contract definitions.
 
 An example Data Asset definition is shown below.
 
-> Note: Expressions in double curly braces \{\{\}\} MUST be substituted with a corresponding value.
+> Note: Expressions in double curly braces \{\{\}\} must be substituted with a corresponding value.
 >
 > Asset definition example for Management API v3 (non-normative)
 
@@ -736,7 +805,7 @@ An example Data Asset definition is shown below.
     "edc": "https://w3id.org/edc/v0.0.1/ns/",
     "cx-common": "https://w3id.org/catenax/ontology/common#",
     "cx-taxo": "https://w3id.org/catenax/taxonomy#",
-    "dct": "https://purl.org/dc/terms/"
+    "dct": "http://purl.org/dc/terms/"
   },
   "@id": "{{ ASSET_ID }}",
   "properties": {
@@ -759,32 +828,32 @@ An example Data Asset definition is shown below.
 
 ##### 4.1.2.6 Error handling
 
-Every API endpoint defined in [Section 4.1.2.1](#4121-api-endpoints-and-resources) MUST respond to incoming requests with HTTP status codes as described in [[RFC9110](#72-non-normative-references)]. All of the following HTTP status codes, except for codes `200` and `201`, MUST be interpreted as failures. Therefore, it may be sufficient for a business application to simply check if the status code is `200` or `201` or not. If not, the request failed.
+Every API endpoint defined in [Section 4.1.2.1](#4121-api-endpoints-and-resources) must respond to incoming requests with HTTP status codes as described in [[RFC9110](#72-non-normative-references)]. All of the following HTTP status codes, except for codes `200` and `201`, must be interpreted as failures. Therefore, it may be sufficient for a business application to simply check if the status code is `200` or `201` or not. If not, the request failed.
 
-| HTTP Status Code | HTTP Status Message | Description |
-|:-----------------|:--------------------|:-------------|
-| 200 | OK | The request has succeeded. The `WeekBasedMaterialDemand` has been successfully processed in the backend system. |
-| 201 | Created | The request has succeeded and has led to the creation of a new `WeekBasedMaterialDemand` in the backend system. |
-| 400 | Bad request | The server cannot or will not process the request due to something that is perceived to be a client error (e.g. malformed request syntax, invalid request message framing, or deceptive request routing). |
-| 401 | Unauthorized | The client request has not been completed because it lacks valid authentication credentials for the requested resource. |
-| 403 | Forbidden | The `WeekBasedMaterialDemand` in question is not available for the client (e.g. it belongs to a different company). |
-| 405 | Method not allowed | The method used to request the data was not POST. |
-| 422 | Unprocessable Entity | The request was well-formed but was unable to be followed due to semantic errors, e.g. the JSON payload could not be parsed. |
-| 503 | Service Unavailable | The server is not ready to handle the request. |
+| HTTP Status Code   | HTTP Status Message   | Description                                                                                                                                                                                               |
+| :----------------- | :-------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 200                | OK                    | The request has succeeded. The `WeekBasedMaterialDemand` has been successfully processed in the backend system.                                                                                           |
+| 201                | Created               | The request has succeeded and has led to the creation of a new `WeekBasedMaterialDemand` in the backend system.                                                                                           |
+| 400                | Bad request           | The server cannot or will not process the request due to something that is perceived to be a client error (e.g. malformed request syntax, invalid request message framing, or deceptive request routing). |
+| 401                | Unauthorized          | The client request has not been completed because it lacks valid authentication credentials for the requested resource.                                                                                   |
+| 403                | Forbidden             | The `WeekBasedMaterialDemand` in question is not available for the client (e.g. it belongs to a different company).                                                                                       |
+| 405                | Method not allowed    | The method used to request the data was not POST.                                                                                                                                                         |
+| 422                | Unprocessable Entity  | The request was well-formed but was unable to be followed due to semantic errors, e.g. the JSON payload could not be parsed.                                                                              |
+| 503                | Service Unavailable   | The server is not ready to handle the request.                                                                                                                                                            |
 
-If one `WeekBasedMaterialDemand` aspect is provided in one HTTP request, the return codes MUST be used as stated in the table above.
+If one `WeekBasedMaterialDemand` aspect is provided in one HTTP request, the return codes must be used as stated in the table above.
 
-If a list of multiple `WeekBasedMaterialDemand` aspects is provided in one HTTP request, the status code `400` MUST be used if at least one `WeekBasedMaterialDemand` in the list cannot be processed. Applications MAY choose to process valid entries from a list which also contains invalid entries. If a list of multiple `WeekBasedMaterialDemand` aspects is provided in one HTTP request and all of them can be processed successfully, the status code `200` MUST be used.
+If a list of multiple `WeekBasedMaterialDemand` aspects is provided in one HTTP request, the status code `400` must be used if at least one `WeekBasedMaterialDemand` in the list cannot be processed. Applications may choose to process valid entries from a list which also contains invalid entries. If a list of multiple `WeekBasedMaterialDemand` aspects is provided in one HTTP request and all of them can be processed successfully, the status code `200` must be used.
 
-The return codes `401`, `405`, `422` and `503` in the table above MAY also be applicable to a list of multiple `WeekBasedMaterialDemand` aspects.
+The return codes `401`, `405`, `422` and `503` in the table above may also be applicable to a list of multiple `WeekBasedMaterialDemand` aspects.
 
 ##### 4.1.2.7 Validating payload
 
-The following tables are supposed to answer questions regarding what business logic MUST be executed when consuming a `WeekBasedMaterialDemand` which has been formed in a specific way.
+The following tables are supposed to answer questions regarding what business logic must be executed when consuming a `WeekBasedMaterialDemand` which has been formed in a specific way.
 
-The order of rules is indicated by the 'Number' row. The rules MUST be executed in exactly this order, starting from the lowest number.
+The order of rules is indicated by the 'Number' row. The rules must be executed in exactly this order, starting from the lowest number.
 
-The first rule that matches MUST be executed. All other rules MUST be ignored.
+The first rule that matches must be executed. All other rules must be ignored.
 
 'value' indicates the actual value written in quotation marks and without any specific formatting (e.g. italic).
 
@@ -796,117 +865,127 @@ The first rule that matches MUST be executed. All other rules MUST be ignored.
 
 A whitespace or an empty cell indicates that for this specific rule that row is not applicable.
 
-| **Number** | 1 |  |
-|---|---|---|
-| **Properties** |  |  |
-| **Meta Properties** | Any property | *Invalid value* |
-|  | All other properties | *Any value* |
-| **Actions** | Business Logic | Ignore consumed values |
-|  | Return Code | 400 - Bad Request |
+| **Number**          | 1                    |                        |
+| ---                 | ---                  | ---                    |
+| **Properties**      |                      |                        |
+| **Meta Properties** | Any property         | *Invalid value*        |
+|                     | All other properties | *Any value*            |
+| **Actions**         | Business Logic       | Ignore consumed values |
+|                     | Return Code          | 400 - Bad Request      |
 
-| **Number** | 2 |  |
-|---|---|---|
-| **Properties** | customer | Customer BPNL does not match the providing connectors registered BPNL |
-| **Meta Properties** | Any property |  |
-|  | All other properties | *Valid value* |
-| **Actions** | Business Logic | Ignore consumed values |
-|  | Return Code | 400 - Bad Request |
+| **Number**          | 2                    |                                                                       |
+| ---                 | ---                  | ---                                                                   |
+| **Properties**      | customer             | Customer BPNL does not match the providing connectors registered BPNL |
+| **Meta Properties** | Any property         |                                                                       |
+|                     | All other properties | *Valid value*                                                         |
+| **Actions**         | Business Logic       | Ignore consumed values                                                |
+|                     | Return Code          | 400 - Bad Request                                                     |
 
-| **Number** | 3 |  |
-|---|---|---|
-| **Properties** | customer | Supplier does not match any Supplier BPNL that I am responsible for |
-| **Meta Properties** | Any property |  |
-|  | All other properties | *Valid value* |
-| **Actions** | Business Logic | Ignore consumed values |
-|  | Return Code | 400 - Bad Request |
+| **Number**          | 3                    |                                                                     |
+| ---                 | ---                  | ---                                                                 |
+| **Properties**      | customer             | Supplier does not match any Supplier BPNL that I am responsible for |
+| **Meta Properties** | Any property         |                                                                     |
+|                     | All other properties | *Valid value*                                                       |
+| **Actions**         | Business Logic       | Ignore consumed values                                              |
+|                     | Return Code          | 400 - Bad Request                                                   |
 
-| **Number** | 4 |  |
-|---|---|---|
-| **Properties** | materialDemandID  | *Known value* |
-|  | changedAt  | More recent than all previously consumed `WeekBasedMaterialDemand` with the same materialDemandID |
-| **Meta Properties** | Any property |  |
-|  | All other properties | *Valid value* |
-| **Actions** | Business Logic | Overwrite all existing values |
-|  | Return Code | 200 - OK |
+| **Number**          | 4                    |                                                                                                   |
+| ---                 | ---                  | ---                                                                                               |
+| **Properties**      | materialDemandID     | *Known value*                                                                                     |
+|                     | changedAt            | More recent than all previously consumed `WeekBasedMaterialDemand` with the same materialDemandID |
+| **Meta Properties** | Any property         |                                                                                                   |
+|                     | All other properties | *Valid value*                                                                                     |
+| **Actions**         | Business Logic       | Overwrite all existing values                                                                     |
+|                     | Return Code          | 200 - OK                                                                                          |
 
-| **Number** | 5 |  |
-|---|---|---|
-| **Properties** | materialDemandID  | *Unknown value*, but there exists another UUID for the exact same combination of supplier, customer and materialNumberCustomer |
-|  | customer  | *Known value* |
-|  | supplier  | *Known value* |
-|  | materialNumberCustomer  | *Known value* |
-| **Meta Properties** | Any property |  |
-|  | All other properties | *Valid value* |
-| **Actions** | Business Logic | Ignore consumed values |
-|  | Return Code | 400 - Bad Request |
+| **Number**          | 5                      |                                                                                                                                |
+| ---                 | ---                    | ---                                                                                                                            |
+| **Properties**      | materialDemandID       | *Unknown value*, but there exists another UUID for the exact same combination of supplier, customer and materialNumberCustomer |
+|                     | customer               | *Known value*                                                                                                                  |
+|                     | supplier               | *Known value*                                                                                                                  |
+|                     | materialNumberCustomer | *Known value*                                                                                                                  |
+| **Meta Properties** | Any property           |                                                                                                                                |
+|                     | All other properties   | *Valid value*                                                                                                                  |
+| **Actions**         | Business Logic         | Ignore consumed values                                                                                                         |
+|                     | Return Code            | 400 - Bad Request                                                                                                              |
 
-| **Number** | 6 |  |
-|---|---|---|
-| **Properties** | materialDemandID | *Unknown value* |
-| **Meta Properties** | Any property |  |
-|  | All other properties | *Valid value* |
-| **Actions** | Business Logic | Save as new material demand with consumed values |
-|  | Return Code | 201 - Created |
+| **Number**          | 6                    |                                                  |
+| ---                 | ---                  | ---                                              |
+| **Properties**      | materialDemandID     | *Unknown value*                                  |
+| **Meta Properties** | Any property         |                                                  |
+|                     | All other properties | *Valid value*                                    |
+| **Actions**         | Business Logic       | Save as new material demand with consumed values |
+|                     | Return Code          | 201 - Created                                    |
 
-| **Number** | 7 |  |
-|---|---|---|
-| **Properties** | materialDemandID  | *Known value* |
-|  | changedAt  | Older than any previously consumed `WeekBasedMaterialDemand` with the same materialDemandID |
-| **Meta Properties** | Any property |  |
-|  | All other properties | *Any value* |
-| **Actions** | Business Logic | Ignore consumed values |
-|  | Return Code | 400 - Bad Request |
+| **Number**          | 7                    |                                                                                             |
+| ---                 | ---                  | ---                                                                                         |
+| **Properties**      | materialDemandID     | *Known value*                                                                               |
+|                     | changedAt            | Older than any previously consumed `WeekBasedMaterialDemand` with the same materialDemandID |
+| **Meta Properties** | Any property         |                                                                                             |
+|                     | All other properties | *Any value*                                                                                 |
+| **Actions**         | Business Logic       | Ignore consumed values                                                                      |
+|                     | Return Code          | 400 - Bad Request                                                                           |
 
-| **Number** | 8 |  |
-|---|---|---|
-| **Properties** | materialDemandID  | *Known value* |
-|  | changedAt  | Identical to the most recent of all previously consumed `WeekBasedMaterialDemand` with the same materialDemandID |
-| **Meta Properties** | Any property |  |
-|  | All other properties | *Any value* |
-| **Actions** | Business Logic | Overwrite all existing values with consumed values |
-|  | Return Code | 200 - OK |
+| **Number**          | 8                    |                                                                                                                  |
+| ---                 | ---                  | ---                                                                                                              |
+| **Properties**      | materialDemandID     | *Known value*                                                                                                    |
+|                     | changedAt            | Identical to the most recent of all previously consumed `WeekBasedMaterialDemand` with the same materialDemandID |
+| **Meta Properties** | Any property         |                                                                                                                  |
+|                     | All other properties | *Any value*                                                                                                      |
+| **Actions**         | Business Logic       | Overwrite all existing values with consumed values                                                               |
+|                     | Return Code          | 200 - OK                                                                                                         |
 
 ### 4.2 WeekBasedCapacityGroup API
 
+Within the Catena-X data space APIs MUST only be accessible via a connector, conforming to the standard [[CX-0018](#71-normative-references)].
+
+The API MUST be registered as a data asset as defined in [Section 4.2.2.5](#4225-data-asset-structure).
+
+The API MUST be implemented as defined in [Section 4.2.2](#422-api-specification).
+
 The `WeekBasedCapacityGroup` object is used to provide capacity group information from supplier to customer.
 
-Suppliers MUST be able to provide `WeekBasedCapacityGroup`
+Suppliers must be able to provide `WeekBasedCapacityGroup`
 
-Customers MUST be able to consume and process `WeekBasedCapacityGroup`
+Customers must be able to consume and process `WeekBasedCapacityGroup`
 
 #### 4.2.1 Preconditions and Dependencies
 
-The `WeekBasedCapacityGroup` API MUST be published towards the network using a Data Asset/Contract Offer, which is in line with the Dataspace Protocol as specified by IDSA and MUST conform with the Catena-X standard [[CX-0001](#71-normative-references)].
+The `WeekBasedCapacityGroup` API must be published towards the network using a Data Asset/Contract Offer, which is in line with the Dataspace Protocol as specified by IDSA and must conform with the Catena-X standard [[CX-0001](#71-normative-references)].
 
 #### 4.2.2 API Specification
 
+```text
+https://catenax-ev.github.io/assets/files/catena-x-dcm-week-based-capacity-group-3_0_0-e8effbe4304a0b6a40b3878667f5b984.yaml
+```
+
 ##### 4.2.2.1 API endpoints and resources
 
-The API requires a single endpoint that accepts HTTP POST requests as described in [[RFC9110](#72-non-normative-references)]. The specific structure of the endpoint MAY vary, but its address MUST be included in the Data Asset as defined in [Section 4.1.2.5](#4125-data-asset-structure).
+The API requires a single endpoint that accepts HTTP POST requests as described in [[RFC9110](#72-non-normative-references)]. The specific structure of the endpoint may vary, but its address must be included in the Data Asset as defined in [Section 4.1.2.5](#4125-data-asset-structure).
 
 ##### 4.2.2.2 Data exchange
 
-Suppliers MUST provide customers with `WeekBasedCapacityGroup` data via HTTP POST request. The data MUST conform to the format specified in this standard and it MUST NOT exceed 15 MiB in size. It MUST be a valid JSON string and MUST include all mandatory properties. The data model with all its properties MUST conform to the respective aspect model and the definitions in [Chapter 3.2](#32-aspect-model-weekbasedcapacitygroup) as well as in [Units of measure used in DCM](#units-of-measure-used-in-dcm). Properties marked as "optional" MAY be included in the data.
-When consuming a payload, that contains unknown properties not described within the data model but is otherwise correct, those properties MUST be ignored.
+Suppliers must provide customers with `WeekBasedCapacityGroup` data via HTTP POST request. The data must conform to the format specified in this standard and it must not exceed 15 MiB in size. It must be a valid JSON string and must include all mandatory properties. The data model with all its properties must conform to the respective aspect model and the definitions in [Chapter 3.2](#32-aspect-model-weekbasedcapacitygroup) as well as in [Units of measure used in DCM](#units-of-measure-used-in-dcm). Properties marked as "optional" may be included in the data.
+When consuming a payload, that contains unknown properties not described within the data model but is otherwise correct, those properties must be ignored.
 
-Attributes that are strings MUST be formatted correctly. For example, `customer` MUST be formatted as a BPNL. The `pointInTime` property MUST represent the week's Monday in the format YYYY-MM-DD as described in [[ISO8601](#72-non-normative-references)].
+Attributes that are strings must be formatted correctly. For example, `customer` must be formatted as a BPNL. The `pointInTime` property must represent the week's Monday in the format YYYY-MM-DD as described in [[ISO8601](#72-non-normative-references)].
 
-The `demandCategory` property MUST be set to one of the predefined values from [Section 5.5.1](#551-detailed-description-of-demand-data).
+The `demandCategory` property must be set to one of the predefined values from [Section 5.5.1](#551-detailed-description-of-demand-data).
 
-The `unitOfMeasure` property MUST be set to one of the predefined values from [Units of measure used in DCM](#units-of-measure-used-in-dcm). If no unit of measure is to be provided, the customer MUST omit the property and set the `unitOfMeasureIsOmitted` flag to true.
+The `unitOfMeasure` property must be set to one of the predefined values from [Units of measure used in DCM](#units-of-measure-used-in-dcm). If no unit of measure is to be provided, the customer must omit the property and set the `unitOfMeasureIsOmitted` flag to true.
 
-Multiple `WeekBasedCapacityGroup` aspects MAY be provided in one transfer as a JSON list. If only one `WeekBasedCapacityGroup` aspect is provided, it MUST be as a list with one entry.
+Multiple `WeekBasedCapacityGroup` aspects may be provided in one transfer as a JSON list. If only one `WeekBasedCapacityGroup` aspect is provided, it must be as a list with one entry.
 
 The current week is denominated as N=0, the next week as N=1, the week after the next week as N=2 and so on.
-The data series in the `WeekBasedCapacityGroup` SHOULD start from N=2. The dataset MUST include at least one week, where N>1 and MUST NOT contain duplicate weeks. Weeks N=0 and N=1 MAY be included. If capacity changes, the entire dataset MUST be provided again, avoiding inconsistent or incomplete data. A single combination of `demandCategory`, `customerLocation` and `materialNumberCustomer` MAY be referenced across multiple `WeekBasedCapacityGroup` objects. This means that one `materialNumberCustomer` MAY appear in the `linkedDemandSeries` of several distinct `WeekBasedCapacityGroup` objects.
+The data series in the `WeekBasedCapacityGroup` should start from N=2. The dataset must include at least one week, where N>1 and must not contain duplicate weeks. Weeks N=0 and N=1 may be included. If capacity changes, the entire dataset must be provided again, avoiding inconsistent or incomplete data. A single combination of `demandCategory`, `customerLocation` and `materialNumberCustomer` may be referenced across multiple `WeekBasedCapacityGroup` objects. This means that one `materialNumberCustomer` may appear in the `linkedDemandSeries` of several distinct `WeekBasedCapacityGroup` objects.
 
-If a week's demand is zero (value = `0`), it MUST be explicitly stated and included in the `WeekBasedMaterialDemand`, unknown demands (value = `null`) SHOULD be omitted.
+If a week's demand is zero (value = `0`), it must be explicitly stated and included in the `WeekBasedMaterialDemand`, unknown demands (value = `null`) should be omitted.
 
 The `linkedDemandSeries` property specifies which particular `WeekBasedMaterialDemand` a `WeekBasedCapacityGroup` is referencing. To clarify the `linkedDemandSeries` points to a demand with a specific trio: `demandCategory`, `customerLocation` and `materialNumberCustomer`.
 
-The supplier MAY define a `WeekBasedCapacityGroup` as inactive by setting and transferring the `capacityGroupIsInactive` flag to the customer. The inactive `WeekBasedCapacityGroup` MUST be ignored during the demand-capacity matching over the whole horizon, i.e. must be considered in the same way as not existing data for the demand-capacity matching. Inactivating data may trigger their archiving or deletion in the local DCM application of the business partner. The inactive flag of a `WeekBasedCapacityGroup` MUST NOT affect linked `WeekBasedMaterialDemand` objects or other linked `WeekBasedCapacityGroup`. The inactivation of a `WeekBasedCapacityGroup` MAY result in the situation that its linked active `WeekBasedMaterialDemand` objects have to be newly linked to other active `WeekBasedCapacityGroup`. Once a `WeekBasedCapacityGroup` has been set as inactive, this MAY be undone by reverting the `capacityGroupIsInactive` flag. In this case, the `WeekBasedCapacityGroup` MUST again be considered during the demand-capacity matching. The reverting of the inactive flag of a `WeekBasedCapacityGroup` may correspond to a newly created and initially transferred or to an updated `WeekBasedCapacityGroup`.
+The supplier may define a `WeekBasedCapacityGroup` as inactive by setting and transferring the `capacityGroupIsInactive` flag to the customer. The inactive `WeekBasedCapacityGroup` must be ignored during the demand-capacity matching over the whole horizon, i.e. must be considered in the same way as not existing data for the demand-capacity matching. Inactivating data may trigger their archiving or deletion in the local DCM application of the business partner. The inactive flag of a `WeekBasedCapacityGroup` must not affect linked `WeekBasedMaterialDemand` objects or other linked `WeekBasedCapacityGroup`. The inactivation of a `WeekBasedCapacityGroup` may result in the situation that its linked active `WeekBasedMaterialDemand` objects have to be newly linked to other active `WeekBasedCapacityGroup`. Once a `WeekBasedCapacityGroup` has been set as inactive, this may be undone by reverting the `capacityGroupIsInactive` flag. In this case, the `WeekBasedCapacityGroup` must again be considered during the demand-capacity matching. The reverting of the inactive flag of a `WeekBasedCapacityGroup` may correspond to a newly created and initially transferred or to an updated `WeekBasedCapacityGroup`.
 
-Suppliers MAY use demand volatility metrics, including the optional entity `demandVolatilityParameters` within the JSON payload.
+Suppliers may use demand volatility metrics, including the optional entity `demandVolatilityParameters` within the JSON payload.
 
 The following properties are used by demand volatility metrics:
 
@@ -921,39 +1000,39 @@ The following properties are used by demand volatility metrics:
     - relativePositiveDeviation
     - relativeNegativeDeviation
 
-Suppliers use `startReferenceDateTime` to define the start of the demand volatility metric calculation, it is also marks the start of the first measurement interval. Its value MUST be chosen, so that transfer times are considered, allowing the customer to consume the data while `startReferenceDateTime` is still larger than the customer´s system time. It is RECOMMENDED to allow for a grace period of at least 24 hours.
+Suppliers use `startReferenceDateTime` to define the start of the demand volatility metric calculation, it is also marks the start of the first measurement interval. Its value must be chosen, so that transfer times are considered, allowing the customer to consume the data while `startReferenceDateTime` is still larger than the customer´s system time. It is recommended to allow for a grace period of at least 24 hours.
 
 In order to get the start of any subsequent measurement intervals the value of `measurementInterval` needs to be converted from integer to weeks and added to `startReferenceDateTime`.
 
-Once demand volatility metric calculation has been initialized `startReferenceDateTime` MUST maintain its value.
+Once demand volatility metric calculation has been initialized `startReferenceDateTime` must maintain its value.
 
 If the value of `startReferenceDateTime` or `measurementInterval`  changes this is considered another initialization.
 
 For details, see [Chapter 3.2](#32-aspect-model-weekbasedcapacitygroup).
 
-The sequence of entries within the `linkedDemandSeries` of a `WeekBasedCapacityGroup` does not follow any particular order and MUST be treated as non-sequential or random.
+The sequence of entries within the `linkedDemandSeries` of a `WeekBasedCapacityGroup` does not follow any particular order and must be treated as non-sequential or random.
 
 ##### 4.2.2.3 UUID generation and handling
 
-UUIDv4 is REQUIRED for exchanging capacity data to ensure uniqueness and security. The UUID MUST be generated conforming to [[RFC4122](#72-non-normative-references)] and MUST be treated as unique within the supplier-customer relationship.
+UUIDv4 is required for exchanging capacity data to ensure uniqueness and security. The UUID must be generated conforming to [[RFC4122](#72-non-normative-references)] and must be treated as unique within the supplier-customer relationship.
 
 See [Section 4.1.2.7](#4127-validating-payload) for further handling information.
 
 ##### 4.2.2.4 Available data types
 
-The API MUST use JSON formatted data transmitted over HTTPS.
+The API must use JSON formatted data transmitted over HTTPS.
 
 ##### 4.2.2.5 Data asset structure
 
-The HTTP POST endpoint introduced in [Section 4.2.2.1](#4221-api-endpoints-and-resources) MUST NOT be called from a supply chain partner directly. Rather, it MUST be called via a connector conformant to [[CX-0018](#71-normative-references)]. Therefore, the endpoint MUST be offered as a Data Asset. The latter MUST have a property `https://purl.org/dc/terms/type` with the ID `https://w3id.org/catenax/taxonomy#DcmWeekBasedCapacityGroup`. It can be abbreviated if the namespaces of key and value are part of the json-ld @context object (see example below). This property SHOULD be used to identify the asset when searching the assets catalog of a customer. Because the asset reflects the contractual relationship between a customer and its suppliers, only one asset with the aforementioned property for one version MUST be visible to the supplier at any time to avoid ambiguity.
+The HTTP POST endpoint introduced in [Section 4.2.2.1](#4221-api-endpoints-and-resources) must not be called from a supply chain partner directly. Rather, it must be called via a connector conformant to [[CX-0018](#71-normative-references)]. Therefore, the endpoint must be offered as a Data Asset. The latter must have a property `http://purl.org/dc/terms/type` with the ID `https://w3id.org/catenax/taxonomy#DcmWeekBasedCapacityGroup`. It can be abbreviated if the namespaces of key and value are part of the json-ld @context object (see example below). This property should be used to identify the asset when searching the assets catalog of a customer. Because the asset reflects the contractual relationship between a customer and its suppliers, only one asset with the aforementioned property for one version must be visible to the supplier at any time to avoid ambiguity.
 
-The API version described in this standard MUST be published in the property `https://w3id.org/catenax/ontology/common#version` as version 2.0 in the asset. The requester of an asset MUST be able to handle multiple assets for this endpoint, being differentiated only by the version. The requester SHOULD choose the asset with the highest compatible version number implemented by themselves. If the requester cannot find a compatible version with their own, the requester MUST terminate the data transfer.
+The API version described in this standard must be published in the property `https://w3id.org/catenax/ontology/common#version` as version `2.0` in the asset. The requester of an asset must be able to handle multiple assets for this endpoint, being differentiated only by the version. The requester should choose the asset with the highest compatible version number implemented by themselves. If the requester cannot find a compatible version with their own, the requester must terminate the data transfer.
 
-Each customer MUST ensure that only their suppliers have access to the asset by using access and usage policies and respective contract definitions.
+Each customer must ensure that only their suppliers have access to the asset by using access and usage policies and respective contract definitions.
 
 An example Data Asset definition is shown below.
 
-> Note: Expressions in double curly braces \{\{\}\} MUST be substituted with a corresponding value.
+> Note: Expressions in double curly braces \{\{\}\} must be substituted with a corresponding value.
 >
 > Asset definition example for management API v3 (non-normative)
 
@@ -963,7 +1042,7 @@ An example Data Asset definition is shown below.
     "edc": "https://w3id.org/edc/v0.0.1/ns/",
     "cx-common": "https://w3id.org/catenax/ontology/common#",
     "cx-taxo": "https://w3id.org/catenax/taxonomy#",
-    "dct": "https://purl.org/dc/terms/"
+    "dct": "http://purl.org/dc/terms/"
   },
   "@id": "{{ ASSET_ID }}",
   "properties": {
@@ -986,32 +1065,32 @@ An example Data Asset definition is shown below.
 
 ##### 4.2.2.6 Error handling
 
-Every API endpoint defined in [Section 4.2.2.1](#4221-api-endpoints-and-resources) MUST respond to incoming requests with HTTP status codes as described in [[RFC9110](#72-non-normative-references)]. All of the following HTTP status codes, except for codes `200` and `201`, MUST be interpreted as failures. Therefore, it may be sufficient for a business application to simply check if the status code is `200` or `201` or not. If not, the request failed.
+Every API endpoint defined in [Section 4.2.2.1](#4221-api-endpoints-and-resources) must respond to incoming requests with HTTP status codes as described in [[RFC9110](#72-non-normative-references)]. All of the following HTTP status codes, except for codes `200` and `201`, must be interpreted as failures. Therefore, it may be sufficient for a business application to simply check if the status code is `200` or `201` or not. If not, the request failed.
 
-| HTTP Status Code | HTTP Status Message | Description |
-|:-----------------|:--------------------|:-------------|
-| 200 | OK | The request has succeeded. The `WeekBasedCapacityGroup` has been successfully processed in the backend system. |
-| 201 | Created | The request has succeeded and has led to the creation of a new `WeekBasedCapacityGroup` in the backend system. |
-| 400 | Bad request | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). |
-| 401 | Unauthorized | The client request has not been completed because it lacks valid authentication credentials for the requested resource. |
-| 403 | Forbidden | The `WeekBasedCapacityGroup` in question is not available for the client (e.g. it belongs to a different company). |
-| 405 | Method not allowed | The method used to request the data was not POST. |
-| 422 | Unprocessable Entity | The request was well-formed but was unable to be followed due to semantic errors, e.g. the JSON payload could not be parsed. |
-| 503 | Service Unavailable | The client request has not been completed because it lacks valid authentication credentials for the requested resource. |
+| HTTP Status Code   | HTTP Status Message   | Description                                                                                                                                                                                                |
+| :----------------- | :-------------------- | :-------------                                                                                                                                                                                             |
+| 200                | OK                    | The request has succeeded. The `WeekBasedCapacityGroup` has been successfully processed in the backend system.                                                                                             |
+| 201                | Created               | The request has succeeded and has led to the creation of a new `WeekBasedCapacityGroup` in the backend system.                                                                                             |
+| 400                | Bad request           | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). |
+| 401                | Unauthorized          | The client request has not been completed because it lacks valid authentication credentials for the requested resource.                                                                                    |
+| 403                | Forbidden             | The `WeekBasedCapacityGroup` in question is not available for the client (e.g. it belongs to a different company).                                                                                         |
+| 405                | Method not allowed    | The method used to request the data was not POST.                                                                                                                                                          |
+| 422                | Unprocessable Entity  | The request was well-formed but was unable to be followed due to semantic errors, e.g. the JSON payload could not be parsed.                                                                               |
+| 503                | Service Unavailable   | The client request has not been completed because it lacks valid authentication credentials for the requested resource.                                                                                    |
 
-If one `WeekBasedCapacityGroup` aspect is provided in one HTTP request, the return codes MUST be used as stated in the table above.
+If one `WeekBasedCapacityGroup` aspect is provided in one HTTP request, the return codes must be used as stated in the table above.
 
-If a list of multiple `WeekBasedCapacityGroup` aspects is provided in one HTTP request, the status code `400` MUST be used if at least one `WeekBasedCapacityGroup` in the list cannot be processed. Applications MAY choose to process valid entries from a list which also contains invalid entries. If a list of multiple `WeekBasedCapacityGroup` aspects is provided in one HTTP request and all of them can be processed successfully, the status code `200` MUST be used.
+If a list of multiple `WeekBasedCapacityGroup` aspects is provided in one HTTP request, the status code `400` must be used if at least one `WeekBasedCapacityGroup` in the list cannot be processed. Applications may choose to process valid entries from a list which also contains invalid entries. If a list of multiple `WeekBasedCapacityGroup` aspects is provided in one HTTP request and all of them can be processed successfully, the status code `200` must be used.
 
-The return codes `401`, `405`, `422` and `503` in the table above MAY also be applicable to a list of multiple `WeekBasedCapacityGroup` aspects.
+The return codes `401`, `405`, `422` and `503` in the table above may also be applicable to a list of multiple `WeekBasedCapacityGroup` aspects.
 
 ##### 4.2.2.7 Validating payload
 
-The following tables are supposed to answer questions regarding what business logic MUST be executed when consuming a `WeekBasedCapacityGroup` which has been formed in a specific way.
+The following tables are supposed to answer questions regarding what business logic must be executed when consuming a `WeekBasedCapacityGroup` which has been formed in a specific way.
 
 The order of rules is indicated by the 'Number' row.
 
-The first rule that matches MUST be executed. All other rules MUST be ignored.
+The first rule that matches must be executed. All other rules must be ignored.
 
 'value' indicates the actual value written in quotation marks and without any specific formatting (e.g. italic).
 
@@ -1023,117 +1102,127 @@ The first rule that matches MUST be executed. All other rules MUST be ignored.
 
 A whitespace or an empty cell indicates that for this specific rule that row is not applicable.
 
-| **Number** | 1 |  |
-|---|---|---|
-| **Properties** |  |  |
-| **Meta Properties** | Any property | *Invalid value* |
-|  | All other properties | *Any value* |
-| **Actions** | Business Logic | Ignore consumed values |
-|  | Return Code | 400 - Bad Request |
+| **Number**          | 1                    |                        |
+| ---                 | ---                  | ---                    |
+| **Properties**      |                      |                        |
+| **Meta Properties** | Any property         | *Invalid value*        |
+|                     | All other properties | *Any value*            |
+| **Actions**         | Business Logic       | Ignore consumed values |
+|                     | Return Code          | 400 - Bad Request      |
 
-| **Number** | 2 |  |
-|---|---|---|
-| **Properties** | customer | Supplier BPNL does not match the providing connectors registered BPNL |
-| **Meta Properties** | Any property |  |
-|  | All other properties | *Valid value* |
-| **Actions** | Business Logic | Ignore consumed values |
-|  | Return Code | 400 - Bad Request |
+| **Number**          | 2                    |                                                                       |
+| ---                 | ---                  | ---                                                                   |
+| **Properties**      | customer             | Supplier BPNL does not match the providing connectors registered BPNL |
+| **Meta Properties** | Any property         |                                                                       |
+|                     | All other properties | *Valid value*                                                         |
+| **Actions**         | Business Logic       | Ignore consumed values                                                |
+|                     | Return Code          | 400 - Bad Request                                                     |
 
-| **Number** | 3 |  |
-|---|---|---|
-| **Properties** | customer | Customer does not match any Supplier BPNL that I am responsible for |
-| **Meta Properties** | Any property |  |
-|  | All other properties | *Valid value* |
-| **Actions** | Business Logic | Ignore consumed values |
-|  | Return Code | 400 - Bad Request |
+| **Number**          | 3                    |                                                                     |
+| ---                 | ---                  | ---                                                                 |
+| **Properties**      | customer             | Customer does not match any Supplier BPNL that I am responsible for |
+| **Meta Properties** | Any property         |                                                                     |
+|                     | All other properties | *Valid value*                                                       |
+| **Actions**         | Business Logic       | Ignore consumed values                                              |
+|                     | Return Code          | 400 - Bad Request                                                   |
 
-| **Number** | 4 |  |
-|---|---|---|
-| **Properties** | linkedCapacityGroups | Either both `linkedCapacityGroups` and `linkedDemandSeries` contain *Any value* or do not contain a value. |
-| | linkedDemandSeries | Either both `linkedCapacityGroups` and `linkedDemandSeries` contain *Any value* or do not contain a value. |
-| **Meta Properties** | Any property |  |
-|  | All other properties | *Valid value* |
-| **Actions** | Business Logic | Ignore consumed values |
-|  | Return Code | 400 - Bad Request |
+| **Number**          | 4                    |                                                                                                            |
+| ---                 | ---                  | ---                                                                                                        |
+| **Properties**      | linkedCapacityGroups | Either both `linkedCapacityGroups` and `linkedDemandSeries` contain *Any value* or do not contain a value. |
+|                     | linkedDemandSeries   | Either both `linkedCapacityGroups` and `linkedDemandSeries` contain *Any value* or do not contain a value. |
+| **Meta Properties** | Any property         |                                                                                                            |
+|                     | All other properties | *Valid value*                                                                                              |
+| **Actions**         | Business Logic       | Ignore consumed values                                                                                     |
+|                     | Return Code          | 400 - Bad Request                                                                                          |
 
-| **Number** | 5 |  |
-|---|---|---|
-| **Properties** | startReferenceDateTime | *value* \< *system time* AND *value* \<\> *current value* of `startReferenceDateTime` |
-| **Meta Properties** | Any property |  |
-|  | All other properties | *Valid value* |
-| **Actions** | Business Logic | Ignore consumed values. |
-|  | Return Code | 400 - Bad Request |
+| **Number**          | 5                      |                                                                                       |
+| ---                 | ---                    | ---                                                                                   |
+| **Properties**      | startReferenceDateTime | *value* \< *system time* AND *value* \<\> *current value* of `startReferenceDateTime` |
+| **Meta Properties** | Any property           |                                                                                       |
+|                     | All other properties   | *Valid value*                                                                         |
+| **Actions**         | Business Logic         | Ignore consumed values.                                                               |
+|                     | Return Code            | 400 - Bad Request                                                                     |
 
-| **Number** | 6 |  |
-|---|---|---|
-| **Properties** | capacityGroupID  | *Known value* |
-|  | changedAt  | More recent than all previously consumed `WeekBasedCapacityGroup` with the same capacityGroupID |
-| **Meta Properties** | Any property |  |
-|  | All other properties | *Valid value* |
-| **Actions** | Business Logic | Overwrite all existing values |
-|  | Return Code | 200 - OK |
+| **Number**          | 6                    |                                                                                                 |
+| ---                 | ---                  | ---                                                                                             |
+| **Properties**      | capacityGroupID      | *Known value*                                                                                   |
+|                     | changedAt            | More recent than all previously consumed `WeekBasedCapacityGroup` with the same capacityGroupID |
+| **Meta Properties** | Any property         |                                                                                                 |
+|                     | All other properties | *Valid value*                                                                                   |
+| **Actions**         | Business Logic       | Overwrite all existing values                                                                   |
+|                     | Return Code          | 200 - OK                                                                                        |
 
-| **Number** | 7 |  |
-|---|---|---|
-| **Properties** | capacityGroupID  | *Unknown value* |
-| **Meta Properties** | Any property |  |
-|  | All other properties | *Valid value* |
-| **Actions** | Business Logic | Save as new capacity group with consumed values |
-|  | Return Code | 201 - Created |
+| **Number**          | 7                    |                                                 |
+| ---                 | ---                  | ---                                             |
+| **Properties**      | capacityGroupID      | *Unknown value*                                 |
+| **Meta Properties** | Any property         |                                                 |
+|                     | All other properties | *Valid value*                                   |
+| **Actions**         | Business Logic       | Save as new capacity group with consumed values |
+|                     | Return Code          | 201 - Created                                   |
 
-| **Number** | 8 |  |
-|---|---|---|
-| **Properties** | capacityGroupID  | *Known value* |
-|  | changedAt  | Older than any previously consumed `WeekBasedCapacityGroup` with the same capacityGroupID |
-| **Meta Properties** | Any property |  |
-|  | All other properties | *Any value* |
-| **Actions** | Business Logic | Ignore consumed values |
-|  | Return Code | 400 - Bad Request |
+| **Number**          | 8                    |                                                                                           |
+| ---                 | ---                  | ---                                                                                       |
+| **Properties**      | capacityGroupID      | *Known value*                                                                             |
+|                     | changedAt            | Older than any previously consumed `WeekBasedCapacityGroup` with the same capacityGroupID |
+| **Meta Properties** | Any property         |                                                                                           |
+|                     | All other properties | *Any value*                                                                               |
+| **Actions**         | Business Logic       | Ignore consumed values                                                                    |
+|                     | Return Code          | 400 - Bad Request                                                                         |
 
-| **Number** | 9 |  |
-|---|---|---|
-| **Properties** | capacityGroupID  | *Known value* |
-|  | changedAt  | Identical to the most recent of all previously consumed `WeekBasedCapacityGroup` with the same capacityGroupID |
-| **Meta Properties** | Any property |  |
-|  | All other properties | *Any value* |
-| **Actions** | Business Logic | Overwrite all existing values with consumed values |
-|  | Return Code | 200 - OK |
+| **Number**          | 9                    |                                                                                                                |
+| ---                 | ---                  | ---                                                                                                            |
+| **Properties**      | capacityGroupID      | *Known value*                                                                                                  |
+|                     | changedAt            | Identical to the most recent of all previously consumed `WeekBasedCapacityGroup` with the same capacityGroupID |
+| **Meta Properties** | Any property         |                                                                                                                |
+|                     | All other properties | *Any value*                                                                                                    |
+| **Actions**         | Business Logic       | Overwrite all existing values with consumed values                                                             |
+|                     | Return Code          | 200 - OK                                                                                                       |
 
 ### 4.3 RequestForUpdate API
 
+Within the Catena-X data space APIs MUST only be accessible via a connector, conforming to the standard [[CX-0018](#71-normative-references)].
+
+The API MUST be registered as a data asset as defined in [Section 4.3.2.4](#4324-data-asset-structure).
+
+The API MUST be implemented as defined in [Section 4.3.2](#432-api-specification).
+
 The `IdBasedRequestForUpdate` object (RfU) is used to request updates of some or even all `WeekBasedMaterialDemand` or `WeekBasedCapacityGroup` objects.
 
-Customers and Supplier MUST be able to consume and process a RfU. Being able to provide a RfU is RECOMMENDED.
+Customers and Supplier must be able to consume and process a RfU. Being able to provide a RfU is recommended.
 
-To properly proccess a RfU, the following steps MUST be executed:
+To properly proccess a RfU, the following steps must be executed:
 
 1. Response: Answering with the appropriate HTTP status code
 2. Action: If that status code is `200 OK`: Providing the requested material demands and capacity groups via `WeekBasedMaterialDemand` API or `WeekBasedCapacityGroup` API respectively.
 
-It is RECOMMENDED that this functionality SHOULD NOT be an end-user functionality which can be executed in an user interface.
+It is recommended that this functionality should not be an end-user functionality which can be executed in an user interface.
 
 #### 4.3.1 Preconditions and Dependencies
 
-The `IdBasedRequestForUpdate` API MUST be published towards the network using a Data Asset/Contract Offer, which is in line with the Dataspace Protocol as specified by IDSA and MUST conform with the Catena-X standard [[CX-0001](#71-normative-references)].
+The `IdBasedRequestForUpdate` API must be published towards the network using a Data Asset/Contract Offer, which is in line with the Dataspace Protocol as specified by IDSA and must conform with the Catena-X standard [[CX-0001](#71-normative-references)].
 
 #### 4.3.2 API Specification
 
+```text
+https://catenax-ev.github.io/assets/files/catena-x-dcm-id-based-request-for-update-3_0_0-731c6a202b533e7416113b4a207ca959.yaml
+```
+
 ##### 4.3.2.1 API endpoints and resources
 
-The API requires a single endpoint that accepts HTTP POST requests as described in [[RFC9110](#72-non-normative-references)]. The specific structure of the endpoint MAY vary, but its address MUST be included in the Data Asset as defined in [Section 4.1.2.5](#4125-data-asset-structure).
+The API requires a single endpoint that accepts HTTP POST requests as described in [[RFC9110](#72-non-normative-references)]. The specific structure of the endpoint May vary, but its address must be included in the Data Asset as defined in [Section 4.3.2.4](#4324-data-asset-structure).
 
 ##### 4.3.2.2 Data exchange
 
-The `IdBasedRequestForUpdate` data MUST be provided by the customer to the supplier or vice versa via HTTP POST request. The data MUST conform to the format specified in this standard and it MUST NOT exceed 15 MiB in size.
-When consuming a payload, that contains unknown properties not described within this standard but is otherwise correct, those properties MUST be ignored.
+The `IdBasedRequestForUpdate` data must be provided by the customer to the supplier or vice versa via HTTP POST request. The data must conform to the format specified in this standard and it must not exceed 15 MiB in size.
+When consuming a payload, that contains unknown properties not described within this standard but is otherwise correct, those properties must be ignored.
 
 An empty RfU payload requests all data within the specific customer-supplier relationship.
 
-A RfU payload MAY specify that only `WeekBasedMaterialDemand` or `WeekBasedCapacityGroup` objects are requested within the specific customer-supplier relationship.
+A RfU payload May specify that only `WeekBasedMaterialDemand` or `WeekBasedCapacityGroup` objects are requested within the specific customer-supplier relationship.
 
-A RfU payload MAY specify that only certain data objects, identified by their respective UUID, are requested within the specific customer-supplier relationship.
+A RfU payload May specify that only certain data objects, identified by their respective UUID, are requested within the specific customer-supplier relationship.
 
-A RfU payload MAY specify that only certain data objects, that have been updated, identified by their respective UUID and `changedAt` value, are requested within the specific customer-supplier relationship.
+A RfU payload May specify that only certain data objects, that have been updated, identified by their respective UUID and `changedAt` value, are requested within the specific customer-supplier relationship.
 
 The following example payloads are intended to illustrate the different possible payloads of an `IdBasedRequestForUpdate`:
 
@@ -1207,19 +1296,19 @@ RfU: Provide only certain Objects and only if my version is not up to date
 
 ##### 4.3.2.3 Available data types
 
-The API MUST use JSON formatted data transmitted over HTTPS.
+The API must use JSON formatted data transmitted over HTTPS.
 
 ##### 4.3.2.4 Data asset structure
 
-The HTTP POST endpoint introduced in [Section 4.3.2.1](#4321-api-endpoints-and-resources) MUST NOT be called from a supply chain partner directly. Rather, it MUST be called via a connector conformant to [[CX-0018](#71-normative-references)]. Therefore, the endpoint MUST be offered as a Data Asset. The latter MUST have a property `https://purl.org/dc/terms/type` with the ID `https://w3id.org/catenax/taxonomy#DcmIdBasedRequestForUpdate`. It can be abbreviated if the namespaces of key and value are part of the json-ld @context object (see example below). This property SHOULD be used to identify the asset when searching the assets catalog of a partner. Because the asset reflects the contractual relationship between two DCM partners, only one asset with the aforementioned property for one version MUST be visible to the partner at any time to avoid ambiguity.
+The HTTP POST endpoint introduced in [Section 4.3.2.1](#4321-api-endpoints-and-resources) must not be called from a supply chain partner directly. Rather, it must be called via a connector conformant to [[CX-0018](#71-normative-references)]. Therefore, the endpoint must be offered as a Data Asset. The latter must have a property `http://purl.org/dc/terms/type` with the ID `https://w3id.org/catenax/taxonomy#DcmIdBasedRequestForUpdate`. It can be abbreviated if the namespaces of key and value are part of the json-ld @context object (see example below). This property should be used to identify the asset when searching the assets catalog of a partner. Because the asset reflects the contractual relationship between two DCM partners, only one asset with the aforementioned property for one version must be visible to the partner at any time to avoid ambiguity.
 
-The API version described in this standard MUST be published in the property `https://w3id.org/catenax/ontology/common#version` as version 2.0 in the asset. The requester of an asset MUST be able to handle multiple assets for this endpoint, being differentiated only by the version. The requester SHOULD choose the asset with the highest compatible version number implemented by themselves. If the requester cannot find a compatible version with their own, the requester MUST terminate the data transfer.
+The API version described in this standard must be published in the property `https://w3id.org/catenax/ontology/common#version` as version `2.0` in the asset. The requester of an asset must be able to handle multiple assets for this endpoint, being differentiated only by the version. The requester should choose the asset with the highest compatible version number implemented by themselves. If the requester cannot find a compatible version with their own, the requester must terminate the data transfer.
 
-Each DCM participant MUST ensure that only their business partners have access to the asset by using access and usage policies and respective contract definitions.
+Each DCM participant must ensure that only their business partners have access to the asset by using access and usage policies and respective contract definitions.
 
 An example Data Asset definition is shown below.
 
-> Note: Expressions in double curly braces \{\{\}\} MUST be substituted with a corresponding value.
+> Note: Expressions in double curly braces \{\{\}\} must be substituted with a corresponding value.
 >
 > Asset definition example for management API v3 (non-normative)
 
@@ -1229,7 +1318,7 @@ An example Data Asset definition is shown below.
     "edc": "https://w3id.org/edc/v0.0.1/ns/",
     "cx-common": "https://w3id.org/catenax/ontology/common#",
     "cx-taxo": "https://w3id.org/catenax/taxonomy#",
-    "dct": "https://purl.org/dc/terms/"
+    "dct": "http://purl.org/dc/terms/"
   },
   "@id": "{{ ASSET_ID }}",
   "properties": {
@@ -1252,23 +1341,23 @@ An example Data Asset definition is shown below.
 
 ##### 4.3.2.5 Error handling
 
-Every API endpoint defined in [Section 4.3.2.1](#4321-api-endpoints-and-resources) MUST respond to incoming requests with HTTP status codes as described in [[RFC9110](#72-non-normative-references)]. All of the following HTTP status codes, except for code `200` , MUST be interpreted as failures. Therefore, it may be sufficient for a business application to simply check if the status code is `200` or not. If not, the request failed.
+Every API endpoint defined in [Section 4.3.2.1](#4321-api-endpoints-and-resources) must respond to incoming requests with HTTP status codes as described in [[RFC9110](#72-non-normative-references)]. All of the following HTTP status codes, except for code `200` , must be interpreted as failures. Therefore, it may be sufficient for a business application to simply check if the status code is `200` or not. If not, the request failed.
 
-| HTTP Status Code | HTTP Status Message |  Description |
-|:-----------------|:--------------------|:-------------|
-| 200 | OK | The request has succeeded. The `IdBasedRequestForUpdate` has been successfully processed in the backend system. |
-| 400 | Bad request | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). |
-| 401 | Unauthorized | The client request has not been completed because it lacks valid authentication credentials for the requested resource. |
-| 403 | Forbidden | The `IdBasedRequestForUpdate` functionality is not available for the client. |
-| 405 | Method not allowed | The method used to request the data was not POST. |
-| 422 | Unprocessable Entity | The request was well-formed but was unable to be followed due to semantic errors, e.g. the JSON payload could not be parsed. |
-| 503 | Service Unavailable | The client request has not been completed because it lacks valid authentication credentials for the requested resource. |
+| HTTP Status Code   | HTTP Status Message   | Description                                                                                                                                                                                                |
+| :----------------- | :-------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 200                | OK                    | The request has succeeded. The `IdBasedRequestForUpdate` has been successfully processed in the backend system.                                                                                            |
+| 400                | Bad request           | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). |
+| 401                | Unauthorized          | The client request has not been completed because it lacks valid authentication credentials for the requested resource.                                                                                    |
+| 403                | Forbidden             | The `IdBasedRequestForUpdate` functionality is not available for the client.                                                                                                                               |
+| 405                | Method not allowed    | The method used to request the data was not POST.                                                                                                                                                          |
+| 422                | Unprocessable Entity  | The request was well-formed but was unable to be followed due to semantic errors, e.g. the JSON payload could not be parsed.                                                                               |
+| 503                | Service Unavailable   | The client request has not been completed because it lacks valid authentication credentials for the requested resource.                                                                                    |
 
 Because multiple material demands and capacity groups can be requested at the same time HTTP status code `200` only means that the `IdBasedRequestForUpdate` was processed successfully and that the data objects will be provided in due time.
 
-The requested data objects SHOULD be provided within five minutes, but definitely they MUST be provided within 24 hours.
+The requested data objects should be provided within five minutes, but definitely they must be provided within 24 hours.
 
-If only a single data object is requested it MUST be provided within 10 seconds.
+If only a single data object is requested it must be provided within 10 seconds.
 
 ##### 4.3.2.6 Validating payload
 
@@ -1276,77 +1365,87 @@ Payload validation only applies to the formal layer. If a payload is correctly f
 
 ### 4.4 IdBasedComment API
 
+Within the Catena-X data space APIs MUST only be accessible via a connector, conforming to the standard [[CX-0018](#71-normative-references)].
+
+The API MUST be registered as a data asset as defined in [Section 4.4.2.5](#4425-data-asset-structure).
+
+The API MUST be implemented as defined in [Section 4.4.2](#442-api-specification).
+
 The `IdBasedComment` object is used to exchange comments, referencing a `WeekBasedCapacityGroup` or a `WeekBasedMaterialDemand` between customer and supplier.
 
-Customers and suppliers MUST be able to provide, consume and process `IdBasedComment`.
+Customers and suppliers must be able to provide, consume and process `IdBasedComment`.
 
 #### 4.4.1 Preconditions and Dependencies
 
-The `IdBasedComment` API MUST be published towards the network using a Data Asset/Contract Offer, which is in line with the Dataspace Protocol as specified by IDSA and MUST conform with the Catena-X standard [[CX-0001](#71-normative-references)].
+The `IdBasedComment` API must be published towards the network using a Data Asset/Contract Offer, which is in line with the Dataspace Protocol as specified by IDSA and must conform with the Catena-X standard [[CX-0001](#71-normative-references)].
 
 #### 4.4.2 API Specification
 
+```text
+https://catenax-ev.github.io/assets/files/catena-x-dcm-id-based-comment-1_0_0-106418e3be839d6e0556543e717691be.yaml
+```
+
 ##### 4.4.2.1 API endpoints and resources
 
-The API requires a single endpoint that accepts HTTP POST requests as described in [[RFC9110](#72-non-normative-references)]. The specific structure of the endpoint MAY vary, but its address MUST be included in the Data Asset as defined in [Section 4.1.2.5](#4125-data-asset-structure).
+The API requires a single endpoint that accepts HTTP POST requests as described in [[RFC9110](#72-non-normative-references)]. The specific structure of the endpoint may vary, but its address must be included in the Data Asset as defined in [Section 4.4.2.5](#4425-data-asset-structure).
 
 ##### 4.4.2.2 Data exchange
 
-The `IdBasedComment` data MUST be provided by the customer to the supplier or vice versa via HTTP POST request. The data MUST conform to the format specified in this standard and it MUST NOT exceed 15 MiB in size. It MUST be a valid JSON string and MUST include all mandatory properties. The data model with all its properties MUST conform to the respective aspect model and the definitions in [Chapter 3.4](#34-aspect-model-idbasedcomment).
-When consuming a payload, that contains unknown properties not described within the data model but is otherwise correct, those properties MUST be ignored.
+The `IdBasedComment` data must be provided by the customer to the supplier or vice versa via HTTP POST request. The data must conform to the format specified in this standard and it must not exceed 15 MiB in size. It must be a valid JSON string and must include all mandatory properties. The data model with all its properties must conform to the respective aspect model and the definitions in [Chapter 3.4](#34-aspect-model-idbasedcomment).
+When consuming a payload, that contains unknown properties not described within the data model but is otherwise correct, those properties must be ignored.
 
-Attributes that are strings MUST be formatted correctly. For example, `expectedSupplierLocation` MUST be formatted as a BPNS. The `listOfReferenceDates` collection MUST represent the calendar week's Mondays in the format YYYY-MM-DD as described in [[ISO8601](#72-non-normative-references)].
+Attributes that are strings must be formatted correctly. For example, `expectedSupplierLocation` must be formatted as a BPNS. The `listOfReferenceDates` collection must represent the calendar week's Mondays in the format YYYY-MM-DD as described in [[ISO8601](#72-non-normative-references)].
 
-Certain properties, such as `author`, `objectId`, `listOfReferenceDates` and `objectType`, have specific requirements for their values. `author` MUST contain a valid email address or BPNL if anonymity is preferred. `objectId`, MUST be the UUID of either the `WeekBasedMaterialDemand` or `WeekBasedCapacityGroup` the comments is referencing. `objectType` MUST be as a Catena-X aspect model unique identifier without a version. See [Section 3.1.4](#314-identifier-of-semantic-model) and [Section 3.2.4](#324-identifier-of-semantic-model).
+Certain properties, such as `author`, `objectId`, `listOfReferenceDates` and `objectType`, have specific requirements for their values. `author` must contain a valid email address or BPNL if anonymity is preferred. `objectId`, must be the UUID of either the `WeekBasedMaterialDemand` or `WeekBasedCapacityGroup` the comments is referencing. `objectType` must be as a Catena-X aspect model unique identifier without a version. See [Section 3.1.4](#314-identifier-of-semantic-model) and [Section 3.2.4](#324-identifier-of-semantic-model).
 
-Multiple `IdBasedComment` aspects MAY be provided in one transfer as a JSON list. If only one `IdBasedComment` aspect is provided, it MUST be as a list with one entry.
+Multiple `IdBasedComment` aspects may be provided in one transfer as a JSON list. If only one `IdBasedComment` aspect is provided, it must be as a list with one entry.
 
-A comment MAY reference more than one calendar week utilizing the `listOfReferenceDates` property. Every entry in `listOfReferenceDates` MUST be set to a Monday, MUST conform to [[ISO8601](#72-non-normative-references)] and MUST use the format YYYY-MM-DD (for example 2023-02-13).
+A comment may reference more than one calendar week utilizing the `listOfReferenceDates` property. Every entry in `listOfReferenceDates` must be set to a Monday, must conform to [[ISO8601](#72-non-normative-references)] and must use the format YYYY-MM-DD (for example 2023-02-13).
 
-Applications that consume a `IdBasedComment` with the property `requestDelete` set to `true` MUST delete the comment in compliance with General Data Protection Regulation (GDPR). Deletion is final and MUST NOT be reversed.
+Applications that consume a `IdBasedComment` with the property `requestDelete` set to `true` must delete the comment in compliance with General Data Protection Regulation (GDPR). Deletion is final and must not be reversed.
 
-Applications SHOULD remember which comments they originated in order to prevent unauthorized deletion.
+Applications should remember which comments they originated in order to prevent unauthorized deletion.
 
-An `IdBasedComment` SHOULD always be provided with as much information as is available, so that the consuming application can better decide how to process the comment.
+An `IdBasedComment` should always be provided with as much information as is available, so that the consuming application can better decide how to process the comment.
 
-The table below MUST be considered in addition to the data model itself and describes which properties MUST be treated as mandatory so that applications can execute certain actions on an `IdBasedComment`.
+The table below must be considered in addition to the data model itself and describes which properties must be treated as mandatory so that applications can execute certain actions on an `IdBasedComment`.
 
-| Property \ Action | Create | Update | Delete |
-|---|---|---|---|
-| **commentId** | MUST | MUST | MUST |
-| **objectId** | MUST | MUST | MUST |
-| **objectType** | MUST | MUST | MUST |
-| **supplier** | MUST | MUST | MUST |
-| **customer** | MUST | MUST | MUST |
-| commentType | SHOULD - if not, consumer can use value `default` | SHOULD - if not, consumer can use value `default` | MAY |
-| author | SHOULD - if not, consumer can use sender BPNL from connector | SHOULD - if not, consumer can use sender BPNL from connector | MAY |
-| postedAt | SHOULD - if not, consumer can set timestamp of receipt | SHOULD - MUST NOT differ from time of creation | MAY |
-| listOfReferenceDates | MAY | MAY | MAY |
-| changedAt | MAY | SHOULD - if not consumer can set timestamp of receipt | MAY |
-| commentText | SHOULD | SHOULD | MAY |
-| requestDelete | MUST NOT | MUST NOT | MUST |
+| Property \ Action    | Create                                                                | Update                                                                | Delete    |
+| -------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------- |
+| **commentId**        | mandatory                                                             | mandatory                                                             | mandatory |
+| **objectId**         | mandatory                                                             | mandatory                                                             | mandatory |
+| **objectType**       | mandatory                                                             | mandatory                                                             | mandatory |
+| **supplier**         | mandatory                                                             | mandatory                                                             | mandatory |
+| **customer**         | mandatory                                                             | mandatory                                                             | mandatory |
+| commentType          | recommended - if desired, consumer can use value `default`            | recommended - if desired, consumer can use value `default`            | optional  |
+| author               | recommended - if desired, consumer can use sender BPNL from connector | recommended - if desired, consumer can use sender BPNL from connector | optional  |
+| postedAt             | recommended - if desired, consumer can set timestamp of receipt       | recommended - must not differ from time of creation                   | optional  |
+| listOfReferenceDates | optional                                                              | optional                                                              | optional  |
+| changedAt            | optional                                                              | recommended - if not consumer can set timestamp of receipt            | optional  |
+| commentText          | recommended                                                           | recommended                                                           | optional  |
+| requestDelete        | not allowed                                                           | not allowed                                                           | mandatory |
 
 ##### 4.4.2.3 UUID generation and handling
 
-UUIDv4 is REQUIRED for exchanging comment data to ensure uniqueness and security. The UUID MUST be generated conforming to [[RFC4122](#72-non-normative-references)] and MUST be treated as unique within the supplier-customer relationship.
+UUIDv4 is required for exchanging comment data to ensure uniqueness and security. The UUID must be generated conforming to [[RFC4122](#72-non-normative-references)] and must be treated as unique within the supplier-customer relationship.
 
 See [Section 4.1.2.7](#4127-validating-payload) for further handling information.
 
 ##### 4.4.2.4 Available data types
 
-The API MUST use JSON formatted data transmitted over HTTPS.
+The API must use JSON formatted data transmitted over HTTPS.
 
 ##### 4.4.2.5 Data asset structure
 
-The HTTP POST endpoint introduced in [Section 4.4.2.1](#4421-api-endpoints-and-resources) MUST NOT be called from a supply chain partner directly. Rather, it MUST be called via a connector conformant to [[CX-0018](#71-normative-references)]. Therefore, the endpoint MUST be offered as a Data Asset. The latter MUST have a property `https://purl.org/dc/terms/type` with the ID `https://w3id.org/catenax/taxonomy#DcmIdBasedComment`. It can be abbreviated if the namespaces of key and value are part of the json-ld @context object (see example below). This property SHOULD be used to identify the asset when searching the assets catalog of a partner. Because the asset reflects the contractual relationship between two DCM partners, only one asset with the aforementioned property for one version MUST be visible to the partner at any time to avoid ambiguity.
+The HTTP POST endpoint introduced in [Section 4.4.2.1](#4421-api-endpoints-and-resources) must not be called from a supply chain partner directly. Rather, it must be called via a connector conformant to [[CX-0018](#71-normative-references)]. Therefore, the endpoint must be offered as a Data Asset. The latter must have a property `http://purl.org/dc/terms/type` with the ID `https://w3id.org/catenax/taxonomy#DcmIdBasedComment`. It can be abbreviated if the namespaces of key and value are part of the json-ld @context object (see example below). This property should be used to identify the asset when searching the assets catalog of a partner. Because the asset reflects the contractual relationship between two DCM partners, only one asset with the aforementioned property for one version must be visible to the partner at any time to avoid ambiguity.
 
-The API version described in this standard MUST be published in the property `https://w3id.org/catenax/ontology/common#version` as version 2.0 in the asset. The requester of an asset MUST be able to handle multiple assets for this endpoint, being differentiated only by the version. The requester SHOULD choose the asset with the highest compatible version number implemented by themselves. If the requester cannot find a compatible version with their own, the requester MUST terminate the data transfer.
+The API version described in this standard must be published in the property `https://w3id.org/catenax/ontology/common#version` as version `2.0` in the asset. The requester of an asset must be able to handle multiple assets for this endpoint, being differentiated only by the version. The requester should choose the asset with the highest compatible version number implemented by themselves. If the requester cannot find a compatible version with their own, the requester must terminate the data transfer.
 
-Each DCM participant MUST ensure that only their business partners have access to the asset by using access and usage policies and respective contract definitions.
+Each DCM participant must ensure that only their business partners have access to the asset by using access and usage policies and respective contract definitions.
 
 An example Data Asset definition is shown below.
 
-> Note: Expressions in double curly braces \{\{\}\} MUST be substituted with a corresponding value.
+> Note: Expressions in double curly braces \{\{\}\} must be substituted with a corresponding value.
 >
 > Asset definition example for management API v3 (non-normative)
 
@@ -1356,7 +1455,7 @@ An example Data Asset definition is shown below.
     "edc": "https://w3id.org/edc/v0.0.1/ns/",
     "cx-common": "https://w3id.org/catenax/ontology/common#",
     "cx-taxo": "https://w3id.org/catenax/taxonomy#",
-    "dct": "https://purl.org/dc/terms/"
+    "dct": "http://purl.org/dc/terms/"
   },
   "@id": "{{ ASSET_ID }}",
   "properties": {
@@ -1379,33 +1478,33 @@ An example Data Asset definition is shown below.
 
 ##### 4.4.2.6 Error handling
 
-Every API endpoint defined in [Section 4.4.2.1](#4421-api-endpoints-and-resources) MUST respond to incoming requests with HTTP status codes as described in [[RFC9110](#72-non-normative-references)]. All of the following HTTP status codes, except for codes `200` and `201`, MUST be interpreted as failures. Therefore, it may be sufficient for a business application to simply check if the status code is `200` or `202` or not. If not, the request failed.
+Every API endpoint defined in [Section 4.4.2.1](#4421-api-endpoints-and-resources) must respond to incoming requests with HTTP status codes as described in [[RFC9110](#72-non-normative-references)]. All of the following HTTP status codes, except for codes `200` and `201`, must be interpreted as failures. Therefore, it may be sufficient for a business application to simply check if the status code is `200` or `201` or not. If not, the request failed.
 
-| HTTP Status Code | HTTP Status Message |  Description |
-|:-----------------|:--------------------|:-------------|
-| 200 | OK | The request has succeeded. The `IdBasedComment` has been successfully processed in the backend system. |
-| 201 | Created | The request has succeeded and has led to the creation of a new `IdBasedComment` in the backend system. |
-| 400 | Bad request | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). |
-| 401 | Unauthorized | The client request has not been completed because it lacks valid authentication credentials for the requested resource. |
-| 403 | Forbidden | The `IdBasedComment` in question is not available for the client (e.g. it belongs to a different company). |
-| 405 | Method not allowed | The method used to request the data was not POST. |
-| 422 | Unprocessable Entity | The request was well-formed but was unable to be followed due to semantic errors, e.g. the JSON payload could not be parsed. |
-| 501 | Not Implemented | The `IdBasedComment` is not accepted since the feature is not implemented. |
-| 503 | Service Unavailable | The client request has not been completed because it lacks valid authentication credentials for the requested resource. |
+| HTTP Status Code   | HTTP Status Message   | Description                                                                                                                                                                                                |
+| :----------------- | :-------------------- | :-------------                                                                                                                                                                                             |
+| 200                | OK                    | The request has succeeded. The `IdBasedComment` has been successfully processed in the backend system.                                                                                                     |
+| 201                | Created               | The request has succeeded and has led to the creation of a new `IdBasedComment` in the backend system.                                                                                                     |
+| 400                | Bad request           | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). |
+| 401                | Unauthorized          | The client request has not been completed because it lacks valid authentication credentials for the requested resource.                                                                                    |
+| 403                | Forbidden             | The `IdBasedComment` in question is not available for the client (e.g. it belongs to a different company).                                                                                                 |
+| 405                | Method not allowed    | The method used to request the data was not POST.                                                                                                                                                          |
+| 422                | Unprocessable Entity  | The request was well-formed but was unable to be followed due to semantic errors, e.g. the JSON payload could not be parsed.                                                                               |
+| 501                | Not Implemented       | The `IdBasedComment` is not accepted since the feature is not implemented.                                                                                                                                 |
+| 503                | Service Unavailable   | The client request has not been completed because it lacks valid authentication credentials for the requested resource.                                                                                    |
 
-If one `IdBasedComment` aspect is provided in one HTTP request, the return codes MUST be used as stated in the table above.
+If one `IdBasedComment` aspect is provided in one HTTP request, the return codes must be used as stated in the table above.
 
-If a list of multiple `IdBasedComment` aspects is provided in one HTTP request, the status code `400` MUST be used if at least one `IdBasedComment` in the list cannot be processed. Applications MAY choose to process valid entries from a list which also contains invalid entries. If a list of multiple `IdBasedComment` aspects is provided in one HTTP request and all of them can be processed successfully, the status code 200 MUST be used.
+If a list of multiple `IdBasedComment` aspects is provided in one HTTP request, the status code `400` must be used if at least one `IdBasedComment` in the list cannot be processed. Applications may choose to process valid entries from a list which also contains invalid entries. If a list of multiple `IdBasedComment` aspects is provided in one HTTP request and all of them can be processed successfully, the status code 200 must be used.
 
-The return codes `401`, `405`, `422` and `503` in the table above MAY also be applicable to a list of multiple `IdBasedComment` aspects.
+The return codes `401`, `405`, `422` and `503` in the table above may also be applicable to a list of multiple `IdBasedComment` aspects.
 
 ##### 4.4.2.7 Validating payload
 
-The following tables are supposed to answer questions regarding what business logic MUST be executed when consuming a `IdBasedComment` which has been formed in a specific way.
+The following tables are supposed to answer questions regarding what business logic must be executed when consuming a `IdBasedComment` which has been formed in a specific way.
 
 The order of rules is indicated by the 'Number' row.
 
-The first rule that matches MUST be executed. All other rules MUST be ignored.
+The first rule that matches must be executed. All other rules must be ignored.
 
 'value' indicates the actual value written in quotation marks and without any specific formatting (e.g. italic).
 
@@ -1417,92 +1516,96 @@ The first rule that matches MUST be executed. All other rules MUST be ignored.
 
 A whitespace or an empty cell indicates that for this specific rule that row is not applicable.
 
-| **Number** | 1 |  |
-|---|---|---|
-| **Properties** |  |  |
-| **Meta Properties** | Any property | *Invalid value* |
-|  | All other properties | *Any value* |
-| **Actions** | Business Logic | Ignore consumed values |
-|  | Return Code | 400 - Bad Request |
+| **Number**          | 1                    |                        |
+| ---                 | ---                  | ---                    |
+| **Properties**      |                      |                        |
+| **Meta Properties** | Any property         | *Invalid value*        |
+|                     | All other properties | *Any value*            |
+| **Actions**         | Business Logic       | Ignore consumed values |
+|                     | Return Code          | 400 - Bad Request      |
 
-| **Number** | 2 |  |
-|---|---|---|
-| **Properties** | messageHeader.header.senderBpn | Supplier BPNL does not match the sending connectors registered BPNL |
-| **Meta Properties** | Any property |  |
-|  | All other properties | *Valid value* |
-| **Actions** | Business Logic | Ignore consumed values |
-|  | Return Code | 400 - Bad Request |
+| **Number**          | 2                              |                                                                     |
+| ---                 | ---                            | ---                                                                 |
+| **Properties**      | messageHeader.header.senderBpn | Supplier BPNL does not match the sending connectors registered BPNL |
+| **Meta Properties** | Any property                   |                                                                     |
+|                     | All other properties           | *Valid value*                                                       |
+| **Actions**         | Business Logic                 | Ignore consumed values                                              |
+|                     | Return Code                    | 400 - Bad Request                                                   |
 
-| **Number** | 3 |  |
-|---|---|---|
-| **Properties** | messageHeader.header.senderBpn | Consumer does not match any Partners BPNL that I am in a relation with |
-| **Meta Properties** | Any property |  |
-|  | All other properties | *Valid value* |
-| **Actions** | Business Logic | Ignore consumed values |
-|  | Return Code | 400 - Bad Request |
+| **Number**          | 3                              |                                                                        |
+| ---                 | ---                            | ---                                                                    |
+| **Properties**      | messageHeader.header.senderBpn | Consumer does not match any Partners BPNL that I am in a relation with |
+| **Meta Properties** | Any property                   |                                                                        |
+|                     | All other properties           | *Valid value*                                                          |
+| **Actions**         | Business Logic                 | Ignore consumed values                                                 |
+|                     | Return Code                    | 400 - Bad Request                                                      |
 
-| **Number** | 4 |  |
-|---|---|---|
-| **Properties** | objectId | Does not match a UUID (`WeekBasedMaterialDemand` or `WeekBasedCapacityGroup`) the consumer exchanged with the provider before |
-| **Meta Properties** | Any property |  |
-|  | All other properties | *Valid value* |
-| **Actions** | Business Logic | Ignore consumed values |
-|  | Return Code | 403 - Forbidden |
+| **Number**          | 4                    |                                                                                                                               |
+| ---                 | ---                  | ---                                                                                                                           |
+| **Properties**      | objectId             | Does not match a UUID (`WeekBasedMaterialDemand` or `WeekBasedCapacityGroup`) the consumer exchanged with the provider before |
+| **Meta Properties** | Any property         |                                                                                                                               |
+|                     | All other properties | *Valid value*                                                                                                                 |
+| **Actions**         | Business Logic       | Ignore consumed values                                                                                                        |
+|                     | Return Code          | 403 - Forbidden                                                                                                               |
 
-| **Number** | 5 |  |
-|---|---|---|
-| **Properties** | objectType | Matches the identifier of the `WeekBasedMaterialDemand` (`urn:samm:io.catenax.week_based_material_demand`), but the endpoint does not process an `IdBasedComment` linked to a `WeekBasedMaterialDemand` (compare [Section 5.9.1](#591-detailed-description-of-comments))  |
-| **Meta Properties** | Any property |  |
-|  | All other properties | *Any value* |
-| **Actions** | Business Logic | Ignore consumed values |
-|  | Return Code | 501 - Not Implemented |
+| **Number**          | 5                    |                                                                                                                                                                                                                                                                          |
+| ---                 | ---                  | ---                                                                                                                                                                                                                                                                      |
+| **Properties**      | objectType           | Matches the identifier of the `WeekBasedMaterialDemand` (`urn:samm:io.catenax.week_based_material_demand`), but the endpoint does not process an `IdBasedComment` linked to a `WeekBasedMaterialDemand` (compare [Section 5.9.1](#591-detailed-description-of-comments)) |
+| **Meta Properties** | Any property         |                                                                                                                                                                                                                                                                          |
+|                     | All other properties | *Any value*                                                                                                                                                                                                                                                              |
+| **Actions**         | Business Logic       | Ignore consumed values                                                                                                                                                                                                                                                   |
+|                     | Return Code          | 501 - Not Implemented                                                                                                                                                                                                                                                    |
 
-| **Number** | 6 |  |
-|---|---|---|
-| **Properties** | commentId  | *Known value* |
-|  | requestDelete  | `true` |
-| Meta Properties | Any property |  |
-|  | All other properties | *Any value* |
-| **Actions** | Business Logic | Delete comment incl. all of its history from consumers application(s) |
-|  | Return Code | 200 - OK |
+| **Number**      | 6                    |                                                                       |
+| ---             | ---                  | ---                                                                   |
+| **Properties**  | commentId            | *Known value*                                                         |
+|                 | requestDelete        | `true`                                                                |
+| Meta Properties | Any property         |                                                                       |
+|                 | All other properties | *Any value*                                                           |
+| **Actions**     | Business Logic       | Delete comment incl. all of its history from consumers application(s) |
+|                 | Return Code          | 200 - OK                                                              |
 
-| **Number** | 7 |  |
-|---|---|---|
-| **Properties** | commentId  | *Known value* |
-|  | changedAt  | More recent than all previously consumed `IdBasedComment` with the same commentId |
-| **Meta Properties** | Any property |  |
-|  | All other properties | *Valid value* |
-| **Actions** | Business Logic | Overwrite all existing values |
-|  | Return Code | 200 - OK |
+| **Number**          | 7                    |                                                                                   |
+| ---                 | ---                  | ---                                                                               |
+| **Properties**      | commentId            | *Known value*                                                                     |
+|                     | changedAt            | More recent than all previously consumed `IdBasedComment` with the same commentId |
+| **Meta Properties** | Any property         |                                                                                   |
+|                     | All other properties | *Valid value*                                                                     |
+| **Actions**         | Business Logic       | Overwrite all existing values                                                     |
+|                     | Return Code          | 200 - OK                                                                          |
 
-| **Number** | 8 |  |
-|---|---|---|
-| **Properties** | commentId  | *Unknown value* |
-| Meta Properties | Any property |  |
-|  | All other properties | *Valid value* |
-| **Actions** | Business Logic | Save as new comment with consumed values |
-|  | Return Code | 201 - Created |
+| **Number**      | 8                    |                                          |
+| ---             | ---                  | ---                                      |
+| **Properties**  | commentId            | *Unknown value*                          |
+| Meta Properties | Any property         |                                          |
+|                 | All other properties | *Valid value*                            |
+| **Actions**     | Business Logic       | Save as new comment with consumed values |
+|                 | Return Code          | 201 - Created                            |
 
-| **Number** | 9 |  |
-|---|---|---|
-| **Properties** | commentId  | *Known value* |
-|  | changedAt  | Older than any previously consumed `IdBasedComment` with the same commentId |
-| **Meta Properties** | Any property |  |
-|  | All other properties | *Any value* |
-| **Actions** | Business Logic | Ignore consumed values |
-|  | Return Code | 400 - Bad Request |
+| **Number**          | 9                    |                                                                             |
+| ---                 | ---                  | ---                                                                         |
+| **Properties**      | commentId            | *Known value*                                                               |
+|                     | changedAt            | Older than any previously consumed `IdBasedComment` with the same commentId |
+| **Meta Properties** | Any property         |                                                                             |
+|                     | All other properties | *Any value*                                                                 |
+| **Actions**         | Business Logic       | Ignore consumed values                                                      |
+|                     | Return Code          | 400 - Bad Request                                                           |
 
 ### 4.5 DCM Asset Administration Shell API (AAS API)
 
 Data providers MAY adopt the DCM AAS API. If they choose otherwise, none of the obligations of this section apply.
 
+Within the Catena-X data space APIs MUST only be accessible via a connector, conforming to the standard [[CX-0018](#71-normative-references)].
+
+The API MUST be implemented as defined in [Section 4.5.2](#452-api-specification).
+
 The `WeekBasedMaterialDemand` contains the demand information which is provided from the customer to the supplier. The supplier maintains a set of Submodels (one for each `WeekBasedMaterialDemand`) and registers them in their Digital Twin Registry. Both conform to the definitions of [[CX-0002](#71-normative-references)].
 
 The `WeekBasedCapacityGroup` contains the capacity information which is provided from the supplier to the customer. The customer maintains a set of Submodels (one for each `WeekBasedCapacityGroup`) and registers them in their Digital Twin Registry. Both conform to the definitions of [[CX-0002](#71-normative-references)].
 
-Suppliers MUST be able to host and correctly expose the `WeekBasedMaterialDemand`-Submodel and update the customer-hosted `WeekBasedCapacityGroup`-Submodel.
+Suppliers must be able to host and correctly expose the `WeekBasedMaterialDemand`-Submodel and update the customer-hosted `WeekBasedCapacityGroup`-Submodel.
 
-Customers MUST be able to host and correctly expose the `WeekBasedCapacityGroup`-Submodel and update the supplier-hosted `WeekBasedMaterialDemand`-Submodel.
+Customers must be able to host and correctly expose the `WeekBasedCapacityGroup`-Submodel and update the supplier-hosted `WeekBasedMaterialDemand`-Submodel.
 
 #### 4.5.1 Preconditions and Dependencies
 
@@ -1514,11 +1617,11 @@ Not applicable.
 
 Exchanging Data via the DCM AAS API requires customers and suppliers to both act in the roles of data provider and data consumer. The API is a superset of [[CX-0002](#71-normative-references)] with the following specializations:
 
-- A supplier MUST host and expose a Submodel `WeekBasedMaterialDemand` via the Submodel-API as defined in [[CX-0002](#71-normative-references)]
-- A customer MUST host and expose a Submodel `WeekBasedCapacityGroup` via the Submodel-API as defined in [[CX-0002](#71-normative-references)]
-- Additionally, suppliers and customers MUST offer the PatchSubmodel-Operation with the content-modifier `$value` on all Submodels as defined in [[AAS Pt.2](#72-non-normative-references)]
-  - A supplier MUST client-side be capable to update the `WeekBasedCapacityGroup`-Submodel hosted by the customer
-  - A customer MUST client-side be capable to update the `WeekBasedMaterialDemand`-Submodel hosted by the supplier
+- A supplier must host and expose a Submodel `WeekBasedMaterialDemand` via the Submodel-API as defined in [[CX-0002](#71-normative-references)]
+- A customer must host and expose a Submodel `WeekBasedCapacityGroup` via the Submodel-API as defined in [[CX-0002](#71-normative-references)]
+- Additionally, suppliers and customers must offer the PatchSubmodel-Operation with the content-modifier `$value` on all Submodels as defined in [[AAS Pt.2](#72-non-normative-references)]
+  - A supplier must client-side be capable to update the `WeekBasedCapacityGroup`-Submodel hosted by the customer
+  - A customer must client-side be capable to update the `WeekBasedMaterialDemand`-Submodel hosted by the supplier
 
 ##### 4.5.2.2 Data exchange
 
@@ -1526,21 +1629,21 @@ Restrictions on the exchanged data can be retrieved from the data models. Additi
 
 ##### 4.5.2.3 UUID generation and handling
 
-UUIDv4 is REQUIRED for exchanging demand and capacity data to ensure uniqueness and security. The UUID MUST be generated conforming to [[RFC4122](#72-non-normative-references)] and MUST be treated as unique within the supplier-customer relationship.
+UUIDv4 is required for exchanging demand and capacity data to ensure uniqueness and security. The UUID must be generated conforming to [[RFC4122](#72-non-normative-references)] and must be treated as unique within the supplier-customer relationship.
 
 See [Section 4.1.2.7](#4127-validating-payload) for further handling information.
 
 ##### 4.5.2.4 Available data types
 
-The API MUST use JSON formatted data transmitted over HTTPS.
+The API must use JSON formatted data transmitted over HTTPS.
 
 ##### 4.5.2.5 DTR registration
 
-As mandated by [[CX-0002](#71-normative-references)], all Data-Providers MUST provide a Digital Twin Registry and use it to link their Submodels to identified assets. Assets in the DTR are identified via `specificAssetIds`.
+As mandated by [[CX-0002](#71-normative-references)], all Data-Providers must provide a Digital Twin Registry and use it to link their Submodels to identified assets. Assets in the DTR are identified via `specificAssetIds`.
 
-When registering Submodels with semanticId `WeekBasedMaterialDemand`, the data provider (supplier) MUST reuse the IDs mandated in [[CX-0126](#71-normative-references)], section 2.1.4.
+When registering Submodels with semanticId `WeekBasedMaterialDemand`, the data provider (supplier) must reuse the IDs mandated in [[CX-0126](#71-normative-references)], section 2.1.4.
 
-When registering Submodels with semanticId `WeekBasedCapacityGroup`, the data provider (customer) MUST create a single `specificAssetId` with name `creationEntityId` and a UUIDv4 as value.
+When registering Submodels with semanticId `WeekBasedCapacityGroup`, the data provider (customer) must create a single `specificAssetId` with name `creationEntityId` and a UUIDv4 as value.
 
 All other properties are standardized in [[CX-0002](#71-normative-references)] or [[AAS Pt.2](#72-non-normative-references)] respectively.
 
@@ -1703,6 +1806,33 @@ Error handling is specified by [[CX-0002](#71-normative-references)] and [[AAS P
 
 > *This section and all its subsections are normative*
 
+Companies adopting demand and capacity management in Catena-X MUST conform to the processes and guidelies defined in [Chapter 5](#5-processes) and all its subsections.
+
+The following sections describe capabilities, that are REQUIRED (except for subsections that are defined as optional):
+
+- [5.5 Providing Demand Data to Supplier](#55-providing-demand-data-to-supplier)
+- [5.6 Providing Capacity Data to Customer](#56-providing-capacity-data-to-customer)
+- [5.7 Comparison of Demand and Capacity Data within a Capacity Group](#57-comparison-of-demand-and-capacity-data-within-a-capacity-group)
+- [5.8 Request for Update (RfU)](#58-request-for-update-rfu)
+- [5.9 Collaboration Functionalities for Demand and Capacity Management](#59-collaboration-functionalities-for-demand-and-capacity-management)
+
+The following sections describe capabilities, that are OPTIONAL:
+
+- [5.6.4 Load Factors for WeekBasedCapacityGroup](#564-load-factors-for-weekbasedcapacitygroup)
+- [5.7.2 Simulated Delta-Production (Pre-/Post-production)](#572-simulated-delta-production-pre-post-production)
+- [5.10 Supply Chain Disruption Notifications](#510-supply-chain-disruption-notifications)
+- [5.11 Demand Volatility Metrics](#511-demand-volatility-metrics)
+
+Software solutions implementing demand and capacity management in Catena-X MUST conform to the data formats and processes defined in the following sections, for every capability they intend to offer:
+
+- [5.5 Providing Demand Data to Supplier](#55-providing-demand-data-to-supplier)
+- [5.6 Providing Capacity Data to Customer](#56-providing-capacity-data-to-customer)
+- [5.7 Comparison of Demand and Capacity Data within a Capacity Group](#57-comparison-of-demand-and-capacity-data-within-a-capacity-group)
+- [5.8 Request for Update (RfU)](#58-request-for-update-rfu)
+- [5.9 Collaboration Functionalities for Demand and Capacity Management](#59-collaboration-functionalities-for-demand-and-capacity-management)
+- [5.10 Supply Chain Disruption Notifications](#510-supply-chain-disruption-notifications)
+- [5.11 Demand Volatility Metrics](#511-demand-volatility-metrics)
+
 ### 5.1 Contextual Description
 
 The DCM process requires the following steps:
@@ -1713,11 +1843,11 @@ The DCM process requires the following steps:
 
 In addition the following step is optional:
 
-- Customers and suppliers MAY collaborate by sharing comments
+- Customers and suppliers may collaborate by sharing comments
 
-To facilitate these steps and enable effective collaboration, customers and suppliers in a direct business relationship MUST share data and MUST ensure that shared data is up-to-date.
+To facilitate these steps and enable effective collaboration, customers and suppliers in a direct business relationship must share data and must ensure that shared data is up-to-date.
 
-All companies participating in Catena-X DCM MUST adopt the common core business logic, data models and data exchange structure described in this standard.
+All companies participating in Catena-X DCM must adopt the common core business logic, data models and data exchange structure described in this standard.
 
 ### 5.2 Actors and Roles
 
@@ -1754,14 +1884,14 @@ For more detailed information, please refer to the Annex [Figures](#figures).
 
 ### 5.4 Prerequisites for a Collaborative Demand and Capacity Management
 
-Before beginning data exchange, the following conditions MUST be met:
+Before beginning data exchange, the following conditions must be met:
 
-- Customer and supplier MUST have registered with a Catena-X operational company and conform to the Catena-X guidelines
-- Customer and supplier MUST have entered into a contract with each other
-- Customer and supplier MUST have agreed to the *Data Exchange Governance* framework agreement
+- Customer and supplier must have registered with a Catena-X operational company and conform to the Catena-X guidelines
+- Customer and supplier must have entered into a contract with each other
+- Customer and supplier must have agreed to the *Data Exchange Governance* framework agreement
 
-- Customer and supplier MUST agree on a common unit of measure (see [Units of measure used in DCM](#units-of-measure-used-in-dcm)) for product-level data exchange (`WeekBasedMaterialDemand` and `WeekBasedCapacityGroup`)
-- Customer and supplier MUST have the technical capability to engage in the DCM process with their business applications
+- Customer and supplier must agree on a common unit of measure (see [Units of measure used in DCM](#units-of-measure-used-in-dcm)) for product-level data exchange (`WeekBasedMaterialDemand` and `WeekBasedCapacityGroup`)
+- Customer and supplier must have the technical capability to engage in the DCM process with their business applications
 
 Once these conditions are satisfied, the exchange of demand data and capacity data and fundamental collaboration are enabled.
 
@@ -1771,52 +1901,52 @@ Once these conditions are satisfied, the exchange of demand data and capacity da
 
 Customers provide `WeekBasedMaterialDemand` data and any updates to their supplier.
 
-The supplier MUST be able to consume the `WeekBasedMaterialDemand` from the customer.
+The supplier must be able to consume the `WeekBasedMaterialDemand` from the customer.
 
 A `WeekBasedMaterialDemand` indicates the need for a specific product or component over a certain time frame and quantity.
 
-Customers MUST regularly provide their suppliers with `WeekBasedMaterialDemand` data. It is RECOMMENDED to provide the dataset without any gaps, extending at least nine months into the future.
+Customers must regularly provide their suppliers with `WeekBasedMaterialDemand` data. It is recommended to provide the dataset without any gaps, extending at least nine months into the future.
 
-Customers MAY provide data that extends up to 24 months (or even longer) into the future, as this is considered ideal.
+Customers may provide data that extends up to 24 months (or even longer) into the future, as this is considered ideal.
 
-The `WeekBasedMaterialDemand` data series MAY start from week *n+2* (where n is the current week), although the focus is on mid- to long-term planning (typically 4 to 24 months).
+The `WeekBasedMaterialDemand` data series may start from week *n+2* (where n is the current week), although the focus is on mid- to long-term planning (typically 4 to 24 months).
 
 The customer has the option to mark a `WeekBasedMaterialDemand` as inactive (i.e. the demand is obsolete), in this case the demand will not be considered in the demand-capacity matching. However, the `WeekBasedMaterialDemand` can be reactivated again.
 
 For technical details see [Section 4.1.2.2](#4122-data-exchange).
 
-Customers MUST conform to the following guidelines for qualitative demand data and enable an efficient demand and capacity matching:
+Customers must conform to the following guidelines for qualitative demand data and enable an efficient demand and capacity matching:
 
-- Demand quantities MUST be organized into weekly buckets
-- The difference between forecasted demand and actual single-orders SHOULD be minimal
-- Demands quantities SHOULD include product phase-ins and/or phase-outs where necessary
+- Demand quantities must be organized into weekly buckets
+- The difference between forecasted demand and actual single-orders should be minimal
+- Demands quantities should include product phase-ins and/or phase-outs where necessary
 
 For a detailed process description, see [Figures](#figures). Below is an example of how a `WeekBasedMaterialDemand` might be visualized.
 
 ![Visualized example for Demand Data](./assets/DCM_Example_DemandData.svg)  
 *Figure 2: Example of Demand Data Visualization*
 
-- `WeekBasedMaterialDemand` data MUST be categorized as follows:
+- `WeekBasedMaterialDemand` data must be categorized as follows:
 
-| Demand Category | Description | Demand Category Code (based on data model) |
-|:----------------|:------------|:-------------------------------------------|
-| Default | No Assignment | 0001 |
-| After-Sales | After sales demand of spare parts | A1S1 |
-| Series | Dependent demand e.g. production, assembly, raw material | SR99 |
-| Phase-In-period | Ramp up of a new product or new material introduction | PI01 |
-| Single-Order | Demand outside the normal spectrum of supply | OS01 |
-| Small series | Short time frame for demand and pose to higher volatility | OI01 |
-| Extraordinary demand | Demand on top of standard demand | ED01 |
-| Phase-Out-period | Ramp down of a retiring product or material from the market | PO01 |
+| Demand Category      | Description                                                 | Demand Category Code (based on data model)   |
+| :----------------    | :------------                                               | :------------------------------------------- |
+| Default              | No Assignment                                               | 0001                                         |
+| After-Sales          | After sales demand of spare parts                           | A1S1                                         |
+| Series               | Dependent demand e.g. production, assembly, raw material    | SR99                                         |
+| Phase-In-period      | Ramp up of a new product or new material introduction       | PI01                                         |
+| Single-Order         | Demand outside the normal spectrum of supply                | OS01                                         |
+| Small series         | Short time frame for demand and pose to higher volatility   | OI01                                         |
+| Extraordinary demand | Demand on top of standard demand                            | ED01                                         |
+| Phase-Out-period     | Ramp down of a retiring product or material from the market | PO01                                         |
 
-- Demand data MUST be consistent with other data exchanged, such as call-offs and updated whenever changes occur
+- Demand data must be consistent with other data exchanged, such as call-offs and updated whenever changes occur
 
 For implementation details, see [Chapter 3.1](#31-aspect-model-weekbasedmaterialdemand).
 
 Additional guidelines:
 
-- Customers SHOULD update demand data at least monthly
-- Customers SHOULD avoid or minimize unnecessary fluctuations in demands to allow a better capacity planning, because a stable demand plan enables better capacity planning
+- Customers should update demand data at least monthly
+- Customers should avoid or minimize unnecessary fluctuations in demands to allow a better capacity planning, because a stable demand plan enables better capacity planning
 
 #### 5.5.2 WeekBasedMaterialDemand Structure
 
@@ -1837,19 +1967,19 @@ The following image shows how `WeekBasedMaterialDemand` information could be vis
 
 #### 5.6.1 Detailed Description of Capacity Data
 
-Suppliers provide `WeekBasedCapacityGroup` data and any updates to their customers. This data MUST refer to the `WeekBasedMaterialDemand` data they previously consumed from their customers.
+Suppliers provide `WeekBasedCapacityGroup` data and any updates to their customers. This data must refer to the `WeekBasedMaterialDemand` data they previously consumed from their customers.
 
-The customer MUST be able to consume the `WeekBasedCapacityGroup` from the supplier.
+The customer must be able to consume the `WeekBasedCapacityGroup` from the supplier.
 
-Suppliers MUST conform to the following guidelines for qualitative capacity data:
+Suppliers must conform to the following guidelines for qualitative capacity data:
 
 - **Actual capacity** represents the supplier's planned available capacity
-- **Maximum capacity** is the highest possible capacity that the supplier can offer, which MAY be equal to or greater than the actual capacity but MUST NOT be less
+- **Maximum capacity** is the highest possible capacity that the supplier can offer, which may be equal to or greater than the actual capacity but must not be less
 - **Flexible capacity** is the difference between maximum capacity and actual capacity
 
-In addition suppliers MAY conform to the following:
+In addition suppliers may conform to the following:
 
-- **Agreed capacity** represents the agreed capacity of a supplier for a specific customer material(s) within a capacity group. It MUST NOT constitute a legal obligation to deliver. Using the agreed capacity is OPTIONAL and has purely informative character. The agreed capacity MAY be greater than, less than or equal to the actual or maximum capacity of the supplier. It MAY be used for a time frame shorter than the whole time series.
+- **Agreed capacity** represents the agreed capacity of a supplier for a specific customer material(s) within a capacity group. It must not constitute a legal obligation to deliver. Using the agreed capacity is optional and has purely informative character. The agreed capacity may be greater than, less than or equal to the actual or maximum capacity of the supplier. It may be used for a time frame shorter than the whole time series.
 
 For detailed capacity definitions, see [Chapter 1.5](#15-terminology).
 
@@ -1861,7 +1991,7 @@ A `WeekBasedCapacityGroup` dataset includes information about which material dem
 
 The `WeekBasedCapacityGroup` can represent combined capacities from machines, facilities, or entire plants. For additional details, especially if using the DCM Asset Administration Shell, see [Chapter 4.5](#45-dcm-asset-administration-shell-api-aas-api).
 
-For a functional `WeekBasedCapacityGroup`, the supplier MUST link it directly or indirectly to a `WeekBasedMaterialDemand`.
+For a functional `WeekBasedCapacityGroup`, the supplier must link it directly or indirectly to a `WeekBasedMaterialDemand`.
 
 - Direct linking involves connecting at least one `WeekBasedMaterialDemand` to the `WeekBasedCapacityGroup`
 - Indirect linking (or "nesting") involves connecting the `WeekBasedCapacityGroup` to another `WeekBasedCapacityGroup` that is already linked to a `WeekBasedMaterialDemand`
@@ -1869,7 +1999,7 @@ For a functional `WeekBasedCapacityGroup`, the supplier MUST link it directly or
 ![Visualized example of possible linkage of WeekBasedMaterialDemand to WeekBasedCapacityGroup](./assets/DCM_Example_CG_Structure.svg)  
 *Figure 4: Example of Linking `WeekBasedMaterialDemand` to `WeekBasedCapacityGroup`*
 
-When a supplier provides a `WeekBasedCapacityGroup` to a customer, the following properties MUST have a value so that `WeekBasedCapacityGroup` and `WeekBasedMaterialDemand` can be linked:
+When a supplier provides a `WeekBasedCapacityGroup` to a customer, the following properties must have a value so that `WeekBasedCapacityGroup` and `WeekBasedMaterialDemand` can be linked:
 
 - `supplier`
 - `customer`
@@ -1877,7 +2007,7 @@ When a supplier provides a `WeekBasedCapacityGroup` to a customer, the following
 - `customerLocation`
 - `demandCategory`
 
-If there's no complete match between supplier and customer data, it's RECOMMENDED to initiate collaboration, as described in [Chapter 5.9](#59-collaboration-functionalities-for-demand-and-capacity-management).
+If there's no complete match between supplier and customer data, it's recommended to initiate collaboration, as described in [Chapter 5.9](#59-collaboration-functionalities-for-demand-and-capacity-management).
 
 The supplier has the option to mark a `WeekBasedCapacityGroup` as inactive (i.e. the capacity is obsolete), in this case the capacity will not be considered in the demand-capacity matching. However, the `WeekBasedCapacityGroup` can be reactivated again.
 
@@ -1899,11 +2029,11 @@ The figure below demonstrates:
 
 The feature “load factors” allows suppliers to model and represent otherwise impossible capacity occurrences, by introducing a numerical multiplication factor, that changes the interpretation of a capacity group.
 
-Suppliers MAY apply load factors within a `WeekBasedCapacityGroup`. If they choose to do so, a load factor MUST be applied to every `WeekBasedMaterialDemand` linked by the `WeekBasedCapacityGroup`.
+Suppliers may apply load factors within a `WeekBasedCapacityGroup`. If they choose to do so, a load factor must be applied to every `WeekBasedMaterialDemand` linked by the `WeekBasedCapacityGroup`.
 
-If a `WeekBasedCapacityGroup` links several `WeekBasedMaterialDemand`, which contain the same material, load factors applied to those `WeekBasedMaterialDemand` SHOULD be identical.
+If a `WeekBasedCapacityGroup` links several `WeekBasedMaterialDemand`, which contain the same material, load factors applied to those `WeekBasedMaterialDemand` should be identical.
 
-Load factors SHOULD be used to solve the following two problems:
+Load factors should be used to solve the following two problems:
 
 - Usage of non-homogeneous material variants within a capacity group, resulting in diverging capacity utilization.
 - Requirement for having a different unit of measure within a `WeekBasedCapacityGroup`, as opposed to its linked `WeekBasedMaterialDemand`.
@@ -1913,7 +2043,7 @@ Load factors solve these problems by:
 - Scaling the weekly demand linearly if a material variant causes higher or lower than normal load within the capacity group. Load factors can for example express a reduction to 90% or an increase to 150%.
 - Acting as conversion factors, converting the unit of measure of a `WeekBasedMaterialDemand` into the unit of measure of the `WeekBasedCapacityGroup`. This leads to a conversion into either “time” (unit:secondUnitOfTime) or “cycle” (unit:cycle), expressing that, for example, a piece of material takes 12 seconds or a set of material takes half a cycle to manufacture.
 
-A load factor of 1 is neutral and leaves the linked `WeekBasedMaterialDemand` unchanged. Because load factors are applied via the `WeekBasedCapacityGroup` a `WeekBasedMaterialDemand` can have multiple load factors applied to it, that differ from each other. Without load factors applied the unit of measure of a `WeekBasedCapacityGroup` and its linked `WeekBasedMaterialDemand` SHOULD be identical. With load factors applied they MAY differ. Lot size restrictions, especially lot size = 1, are not considered when using load factors. Rounding any fractional conversion results SHOULD be avoided to keep demand-capacity comparison consistent.
+A load factor of 1 is neutral and leaves the linked `WeekBasedMaterialDemand` unchanged. Because load factors are applied via the `WeekBasedCapacityGroup` a `WeekBasedMaterialDemand` can have multiple load factors applied to it, that differ from each other. Without load factors applied the unit of measure of a `WeekBasedCapacityGroup` and its linked `WeekBasedMaterialDemand` should be identical. With load factors applied they may differ. Lot size restrictions, especially lot size = 1, are not considered when using load factors. Rounding any fractional conversion results should be avoided to keep demand-capacity comparison consistent.
 
 ### 5.7 Comparison of Demand and Capacity Data within a Capacity Group
 
@@ -1921,29 +2051,29 @@ The comparison of aggregated demands and capacities helps to identify imbalances
 
 #### 5.7.1 Matching Results and Resolution
 
-Both customers and suppliers MUST use the same logic when comparing demand and capacity, based on the `WeekBasedCapacityGroup` and `WeekBasedMaterialDemand` models.
+Both customers and suppliers must use the same logic when comparing demand and capacity, based on the `WeekBasedCapacityGroup` and `WeekBasedMaterialDemand` models.
 
-Inactive `WeekBasedMaterialDemand` data and its related `demandSeries` data as well as inactive `WeekBasedCapacityGroup` data MUST NOT be considered when comparing the demand with the corresponding capacity values.
+Inactive `WeekBasedMaterialDemand` data and its related `demandSeries` data as well as inactive `WeekBasedCapacityGroup` data must not be considered when comparing the demand with the corresponding capacity values.
 
 The table below describes potential scenarios and their outcomes:
 
-| Scenario and Week | Matching situation (MUST) | Matching result (MUST) | Color (MAY) |Hex Code (MAY)|
-|:---------------:|:--------------------------|:----------------------:|:-----------:|:------------:|
-| 1 | Demand = actual capacity = maximum capacity | Zero deviation | Green | #809500 |
-| 2 | Demand = actual capacity < maximum capacity | Zero deviation | Green | #809500 |
-| 3 | Demand < actual capacity = maximum capacity | Surplus | Green | #809500 |
-| 4 | Demand < actual capacity < maximum capacity | Surplus | Green | #809500 |
-| 5 | Demand > actual capacity = maximum capacity | Bottleneck | Red | #D91E18 |
-| 6 | Actual capacity < demand = maximum capacity | Bottleneck | Orange | #FFA600 |
-| 7 | Actual capacity < demand < maximum capacity | Bottleneck | Orange | #FFA600 |
-| 8 | Actual capacity < maximum capacity < demand | Bottleneck | Red | #D91E18 |
+| Scenario and Week | Matching situation (MUST)                   | Matching result (MUST)   | Color (MAY)   | Hex Code (MAY) |
+| :---------------: | :------------------------------------------ | :----------------------: | :-----------: | :------------: |
+| 1                 | Demand = actual capacity = maximum capacity | Zero deviation           | Green         | #809500        |
+| 2                 | Demand = actual capacity < maximum capacity | Zero deviation           | Green         | #809500        |
+| 3                 | Demand < actual capacity = maximum capacity | Surplus                  | Green         | #809500        |
+| 4                 | Demand < actual capacity < maximum capacity | Surplus                  | Green         | #809500        |
+| 5                 | Demand > actual capacity = maximum capacity | Bottleneck               | Red           | #D91E18        |
+| 6                 | Actual capacity < demand = maximum capacity | Bottleneck               | Orange        | #FFA600        |
+| 7                 | Actual capacity < demand < maximum capacity | Bottleneck               | Orange        | #FFA600        |
+| 8                 | Actual capacity < maximum capacity < demand | Bottleneck               | Red           | #D91E18        |
 
 An example visualization is provided below.
 
 ![Visualized example of Demand and Capacity Data Matching and Comparison](./assets/DCM_Example_MatchAndCompare.svg)  
 *Figure 6: Visualized example of Demand and Capacity Data Matching and Comparison*
 
-When a bottleneck or surplus is identified, collaboration between customer and supplier is strongly RECOMMENDED. For more details, see [Figures](#figures).
+When a bottleneck or surplus is identified, collaboration between customer and supplier is strongly recommended. For more details, see [Figures](#figures).
 
 The exchange of comments is a key collaborative feature, enabling a dialogue between customers and suppliers. For more information, refer to [Chapter 5.9](#59-collaboration-functionalities-for-demand-and-capacity-management).
 
@@ -1955,15 +2085,15 @@ Simulated Delta-Production is a feature that helps suppliers to manage their pro
 
 The main advantage of using simulated Delta-Production is that it gives suppliers a way to manage small capacity shortfalls. This can be done manually or automatically, which saves time and effort that would otherwise be spent on frequent capacity adjustments, particularly when demand is unpredictable.
 
-Simulated Delta-Production enables suppliers to add extra detail to their capacity information. This helps illustrate solutions for capacity issues or times when production resources might be offline. Only the end results of simulated Delta-Production are shared with the customer. Suppliers MAY input a simulated Delta-Production value for each week as needed (see Fig. 7 and 8), which shows an increase or decrease in planned demand without actually changing the real figures.
+Simulated Delta-Production enables suppliers to add extra detail to their capacity information. This helps illustrate solutions for capacity issues or times when production resources might be offline. Only the end results of simulated Delta-Production are shared with the customer. Suppliers may input a simulated Delta-Production value for each week as needed (see Fig. 7 and 8), which shows an increase or decrease in planned demand without actually changing the real figures.
 
 ##### 5.7.2.2 Definition of simulated delta-production (Pre-/post-production) in the context of capacity groups
 
-Simulated Delta-Production MAY be used within a Capacity Group to indicate how production can be adjusted to meet demand. It helps cover potential shortfalls by showing where goods could be produced earlier or later than currently demanded. Suppliers can provide these simulated values on a weekly basis alongside their regular capacity data. There's no need to give details about the duration of these adjustments, as this can be inferred from the number of weeks for which the simulated data is provided.
+Simulated Delta-Production may be used within a Capacity Group to indicate how production can be adjusted to meet demand. It helps cover potential shortfalls by showing where goods could be produced earlier or later than currently demanded. Suppliers can provide these simulated values on a weekly basis alongside their regular capacity data. There's no need to give details about the duration of these adjustments, as this can be inferred from the number of weeks for which the simulated data is provided.
 
-When comparing demand and capacity data, the simulated values are considered without altering the actual data. If a simulated Delta-Production value is provided, it MUST be included in the weekly demand and capacity comparison. A positive value indicates a virtual increase in planned demand, while a negative value indicates a virtual decrease.
+When comparing demand and capacity data, the simulated values are considered without altering the actual data. If a simulated Delta-Production value is provided, it must be included in the weekly demand and capacity comparison. A positive value indicates a virtual increase in planned demand, while a negative value indicates a virtual decrease.
 
-Simulated Delta-Production MUST NOT change the material demand. It's strictly a simulation feature.
+Simulated Delta-Production must not change the material demand. It's strictly a simulation feature.
 
 Suppliers can use comments to provide customers with additional information about the simulated Delta-Production. For more details on this communication feature, see [Chapter 5.9](#59-collaboration-functionalities-for-demand-and-capacity-management).
 
@@ -1978,9 +2108,9 @@ Below are two examples of how simulated Delta-Production might be represented vi
 ### 5.8 Request for Update (RfU)
 
 The Request for Update (RfU) enables customers and suppliers to ask for updates on `WeekBasedMaterialDemand` and `WeekBasedCapacityGroup`. This can be particularly useful to check for and avoid data inconsistency.
-Customer and Supplier MUST be capable of consuming and correctly responding to a RfU. Being able to provide a RfU is RECOMMENDED.
+Customer and Supplier must be capable of consuming and correctly responding to a RfU. Being able to provide a RfU is recommended.
 
-It is RECOMMENDED that this feature is inaccessible to the end-user.
+It is recommended that this feature is inaccessible to the end-user.
 
 For further technical information please see [Chapter 3.3](#33-aspect-model-idbasedrequestforupdate) and [Chapter 4.3](#43-requestforupdate-api).
 
@@ -1994,30 +2124,30 @@ This standard only covers the exchange of textual comments without attachments. 
 
 #### 5.9.1 Detailed Description of Comments
 
-Customers and suppliers MUST be able to process, provide and consume comments linked to specific objects identified by an `ObjectID`. These objects MUST be a `WeekBasedMaterialDemand` or a `WeekBasedCapacityGroup`. Comments MAY also reference specific time periods to enhance clarity. The exchange of comments MUST conform to standardized data formats and API processing as described in [Chapter 3.4](#34-aspect-model-idbasedcomment) and [Chapter 4.4](#44-idbasedcomment-api).
+Customers and suppliers must be able to process, provide and consume comments linked to specific objects identified by an `ObjectID`. These objects must be a `WeekBasedMaterialDemand` or a `WeekBasedCapacityGroup`. Comments may also reference specific time periods to enhance clarity. The exchange of comments must conform to standardized data formats and API processing as described in [Chapter 3.4](#34-aspect-model-idbasedcomment) and [Chapter 4.4](#44-idbasedcomment-api).
 
-Customers and suppliers MUST be able to provide and consume comments linked to `WeekBasedCapacityGroup`.
+Customers and suppliers must be able to provide and consume comments linked to `WeekBasedCapacityGroup`.
 
-Customers and suppliers MUST be able to consume comments linked to `WeekBasedMaterialDemand`. Customers and suppliers SHOULD also be able to process comments linked to `WeekBasedMaterialDemand`. If comments for `WeekBasedMaterialDemand` are not processed by the business logic behind the API a HTTP status code MUST be sent, conforming to [Chapter 4.4](#44-idbasedcomment-api).
+Customers and suppliers must be able to consume comments linked to `WeekBasedMaterialDemand`. Customers and suppliers should also be able to process comments linked to `WeekBasedMaterialDemand`. If comments for `WeekBasedMaterialDemand` are not processed by the business logic behind the API a HTTP status code must be sent, conforming to [Chapter 4.4](#44-idbasedcomment-api).
 
-Customers and suppliers SHOULD be able to provide comments linked to `WeekBasedMaterialDemand`.
+Customers and suppliers should be able to provide comments linked to `WeekBasedMaterialDemand`.
 
-Customers and supplier MUST be able to provide and consume a comment deletion. Only the business partner that created the comment MUST be able to update or delete it. If a comment is updated, the `changedAt` timestamp MUST reflect the change. If a comment deletion is being processed successfully the `IdBasedComment` itself, as well as data derived from it, MUST be deleted.
+Customers and supplier must be able to provide and consume a comment deletion. Only the business partner that created the comment must be able to update or delete it. If a comment is updated, the `changedAt` timestamp must reflect the change. If a comment deletion is being processed successfully the `IdBasedComment` itself, as well as data derived from it, must be deleted.
 
-The table below describes the types of comments that MUST be used:
+The table below describes the types of comments that must be used:
 
-| Comment Type | Description | Comment Type Code (based on data model) |
-|:-------------|:------------|:----------------------------------------|
-| Information comment | Comment purely provides additional information to the exchanged data | `information` |
-| Warning comment | Comment provides additional information, which should be considered by the consumer, who might initiate follow up activities | `warning` |
-| Action required comment | Consumer of the comment should react on provided information | `actionRequired` |
-| Default | Default comment type without special classification | `default` |
+| Comment Type            | Description                                                                                                                  | Comment Type Code (based on data model)   |
+| :-------------          | :------------                                                                                                                | :---------------------------------------- |
+| Information comment     | Comment purely provides additional information to the exchanged data                                                         | `information`                             |
+| Warning comment         | Comment provides additional information, which should be considered by the consumer, who might initiate follow up activities | `warning`                                 |
+| Action required comment | Consumer of the comment should react on provided information                                                                 | `actionRequired`                          |
+| Default                 | Default comment type without special classification                                                                          | `default`                                 |
 
-The creator of a comment is responsible for its content and MUST comply with antitrust and information privacy laws.
+The creator of a comment is responsible for its content and must comply with antitrust and information privacy laws.
 
 ### 5.10 Supply Chain Disruption Notifications
 
-To enable a quick information flow outside a capacity group and the DCM process with regards to upcoming disruptions in the supply chain and potential effect beyond the one-to-one business relationship, a notifications functionality MAY be used. If a business partner decides to use this feature it MUST be used conforming to [[CX–0146](#71-normative-references)].
+To enable a quick information flow outside a capacity group and the DCM process with regards to upcoming disruptions in the supply chain and potential effect beyond the one-to-one business relationship, a notifications functionality may be used. If a business partner decides to use this feature it must be used conforming to [[CX–0146](#71-normative-references)].
 
 ### 5.11 Demand Volatility Metrics
 
@@ -2031,44 +2161,44 @@ This standard supports the following volatility metrics:
 
 #### 5.11.2 Demand Deviation Process
 
-Customers MUST be able to consume `WeekBasedCapacityGroup`.
+Customers must be able to consume `WeekBasedCapacityGroup`.
 
-Customers SHOULD be able to fully process `WeekBasedCapacityGroup` that include properties related to demand volatility and calculate the demand deviation metric. If they choose otherwise, none of the obligations of [Chapter 5.11](#511-demand-volatility-metrics) apply.
+Customers should be able to fully process `WeekBasedCapacityGroup` that include properties related to demand volatility and calculate the demand deviation metric. If they choose otherwise, none of the obligations of [Chapter 5.11](#511-demand-volatility-metrics) apply.
 
-Suppliers MUST process and provide `WeekBasedCapacityGroup`.
+Suppliers must process and provide `WeekBasedCapacityGroup`.
 
-Suppliers SHOULD process and provide `WeekBasedCapacityGroup` that include properties related to demand volatility and calculate the demand deviation metric. If they choose to use this feature at least `startReferenceDateTime` and `measurementInterval` must be provided. If they choose otherwise, none of the obligations of [Chapter 5.11](#511-demand-volatility-metrics) apply.
+Suppliers should process and provide `WeekBasedCapacityGroup` that include properties related to demand volatility and calculate the demand deviation metric. If they choose to use this feature at least `startReferenceDateTime` and `measurementInterval` must be provided. If they choose otherwise, none of the obligations of [Chapter 5.11](#511-demand-volatility-metrics) apply.
 
 After suppliers identify critical `WeekBasedCapacityGroup` and apply demand deviation metrics to them the following applies:
 
-- Suppliers and customers MUST calculate the demand deviation metric exactly as described in [Section 5.11.3](#5113-demand-deviation-metric). Other calculation methods MUST NOT be used for the calculation of the metric.
-- Suppliers MUST calculate the demand deviation metric on `WeekBasedCapacityGroup` level.
-- Suppliers MUST activate each of the `WeekBasedCapacityGroups` for which the metric has to be calculated, see [Chapter 4.2](#42-weekbasedcapacitygroup-api).
-- Suppliers MUST specify the start date of calculations at a future date and time. The first calculation will then be completed at the end of the first measurement interval, see [Chapter 4.2](#42-weekbasedcapacitygroup-api).
-- If suppliers change the measurement interval, they MUST specify a new start date of calculations at a future date and time.
-- Suppliers SHOULD NOT calculate the demand deviation based on any data measured before the start date of calculations.
-- Suppliers MUST provide the parameters of the calculation of the demand deviation metric to their customers, as specified in [Section 5.11.3](#5113-demand-deviation-metric) and [Chapter 4.2](#42-weekbasedcapacitygroup-api).
-- Suppliers SHOULD compare the results of the calculation of the demand deviation metric to the relevant alert thresholds defined for the demand deviation metric, see [Section 5.11.3](#5113-demand-deviation-metric).
+- Suppliers and customers must calculate the demand deviation metric exactly as described in [Section 5.11.3](#5113-demand-deviation-metric). Other calculation methods must not be used for the calculation of the metric.
+- Suppliers must calculate the demand deviation metric on `WeekBasedCapacityGroup` level.
+- Suppliers must activate each of the `WeekBasedCapacityGroups` for which the metric has to be calculated, see [Chapter 4.2](#42-weekbasedcapacitygroup-api).
+- Suppliers must specify the start date of calculations at a future date and time. The first calculation will then be completed at the end of the first measurement interval, see [Chapter 4.2](#42-weekbasedcapacitygroup-api).
+- If suppliers change the measurement interval, they must specify a new start date of calculations at a future date and time.
+- Suppliers should not calculate the demand deviation based on any data measured before the start date of calculations.
+- Suppliers must provide the parameters of the calculation of the demand deviation metric to their customers, as specified in [Section 5.11.3](#5113-demand-deviation-metric) and [Chapter 4.2](#42-weekbasedcapacitygroup-api).
+- Suppliers should compare the results of the calculation of the demand deviation metric to the relevant alert thresholds defined for the demand deviation metric, see [Section 5.11.3](#5113-demand-deviation-metric).
 
 The demand deviation is calculated locally and compared against the consumed or provided values from the `WeekBasedCapacityGroup`. The table below describes potential scenarios and their outcomes:
 
-| Scenario and Week | Matching situation (MUST) | Matching result (MUST) | Color (MAY) |Hex Code (MAY)|
-|:---------------:|:--------------------------|:----------------------:|:-----------:|:------------:|
-| 1 | Calculated relative demand deviation > `relativePositiveDeviation` | Unacceptable deviation | Red | #D91E18 |
-| 2 | Calculated relative demand deviation < `relativeNegativeDeviation` | Unacceptable deviation | Red | #D91E18 |
-| 3 | Calculated absolute demand deviation > `absolutePositiveDeviation` | Unacceptable deviation | Red | #D91E18 |
-| 4 | Calculated absolute demand deviation < `absoluteNegativeDeviation` | Unacceptable deviation | Red | #D91E18 |
+| Scenario and Week | Matching situation (must)                                          | Matching result (must)   | Color         | Hex Code       |
+| :---------------: | :----------------------------------------------------------------: | :----------------------: | :-----------: | :------------: |
+| 1                 | Calculated relative demand deviation > `relativePositiveDeviation` | Unacceptable deviation   | Red           | #D91E18        |
+| 2                 | Calculated relative demand deviation < `relativeNegativeDeviation` | Unacceptable deviation   | Red           | #D91E18        |
+| 3                 | Calculated absolute demand deviation > `absolutePositiveDeviation` | Unacceptable deviation   | Red           | #D91E18        |
+| 4                 | Calculated absolute demand deviation < `absoluteNegativeDeviation` | Unacceptable deviation   | Red           | #D91E18        |
 
 ![Visualized Example of Demand Deviation and Alert Threshold Comparison](./assets/DCM_Example_DemandDeviationAndAlertThreshold.svg)  
 *Figure 9: Visualized example of Demand Deviation and Alert Threshold Comparison*
 
-It is RECOMMENDED that suppliers organize individual collaborative alignments with customers to discuss the status of significant volatility measurements of demand deviation, ideally at least on a quarterly basis.
+It is recommended that suppliers organize individual collaborative alignments with customers to discuss the status of significant volatility measurements of demand deviation, ideally at least on a quarterly basis.
 
 The exchange of comments is a key collaborative feature, enabling a dialogue between customers and suppliers. For details, see [Chapter 5.9](#59-collaboration-functionalities-for-demand-and-capacity-management).
 
 #### 5.11.3 Demand Deviation Metric
 
-The demand deviation metric is generally based on the comparison of the latest demand with a previous demand. It is RECOMMENDED to compare the latest demand with previous demands on a monthly basis, in line with typical monthly long-term planning cycles and set the measurement interval to 4 weeks.
+The demand deviation metric is generally based on the comparison of the latest demand with a previous demand. It is recommended to compare the latest demand with previous demands on a monthly basis, in line with typical monthly long-term planning cycles and set the measurement interval to 4 weeks.
 
 The demand deviation metric is calculated at the `WeekBasedCapacityGroup` level, meaning the demands of 1..n material demand series assigned to a specific `WeekBasedCapacityGroup` are aggregated on a weekly level and form the basis for the calculation. Thus, the time series of aggregated material demands which is measured at a defined point in time in the current week is equal to the latest demand. The time series of aggregated material demands which is measured at a defined point in time in an earlier week is equal to the previous demand.
 
@@ -2076,7 +2206,7 @@ Suppliers initiate the calculation of the demand deviation metric by specifying 
 
 **Calculation**
 
-The demand deviation MUST be calculated as follows:
+The demand deviation must be calculated as follows:
 
 <!--
 $$Absolute Deviation =\sum Latest Demand - \sum Previous Demand$$
@@ -2093,20 +2223,20 @@ $$Relative Deviation = \frac {{\sum Latest Demand} - {\sum Previous Demand}} {\s
 ![Visualized Example of Demand Deviation Calculation at Capacity Group Level](./assets/DCM_Example_DemandDeviationCalculation.svg)  
 *Figure 10: Visualized example of demand deviation calculation at capacity group level*
 
-It is RECOMMENDED to store the inputs for the calculations of the demand deviation metric for at least 6 months.
+It is recommended to store the inputs for the calculations of the demand deviation metric for at least 6 months.
 
 **Alert Threshold**
 
 Alert thresholds are positive or negative values of demand deviation that define unacceptable levels of demand volatility with reference to a specific subhorizon.
 
-Suppliers SHOULD specify values for at least one of the following two alert thresholds:
+Suppliers should specify values for at least one of the following two alert thresholds:
 
 - Maximum relative positive deviation: (e.g. max. 15 % quantity increase compared to previous demand)
-  - ∆rel. pos. MUST be ≥ 0 (1 ≙ 100%)
+  - ∆rel. pos. must be ≥ 0 (1 ≙ 100%)
 - Maximum relative negative deviation: (e.g. max. 10 % quantity decrease compared to previous demand)
-  - ∆rel. neg. MUST be ≥ 0 and ≤ 1 (1 ≙ -100%)
+  - ∆rel. neg. must be ≥ 0 and ≤ 1 (1 ≙ -100%)
 
-To cover more business scenarios, suppliers MAY specify values for the following two alert thresholds:
+To cover more business scenarios, suppliers may specify values for the following two alert thresholds:
 
 - Maximum absolute positive deviation: (e.g. max. 1000 units more compared to previous demand)
   - ∆abs. pos.
@@ -2117,7 +2247,7 @@ Threshold values cannot be standardized across the Catena-X network, but must be
 
 **Subhorizons**
 
-A subhorizon is a period of time that represents a part of the whole DCM time frame and is used for a specific view on the calculation of the demand deviation metric. Suppliers MAY specify subhorizons to allow for different alert thresholds, as the flexibility of supply chains decreases, the closer demand values approach today's date. It is RECOMMENDED to divide the rolling DCM time frame (typically up to 104 weeks) into multiple subhorizons.
+A subhorizon is a period of time that represents a part of the whole DCM time frame and is used for a specific view on the calculation of the demand deviation metric. Suppliers may specify subhorizons to allow for different alert thresholds, as the flexibility of supply chains decreases, the closer demand values approach today's date. It is recommended to divide the rolling DCM time frame (typically up to 104 weeks) into multiple subhorizons.
 
 A subhorizon is defined as follows:
 
@@ -2131,7 +2261,7 @@ The start and end of a subhorizon are determined as follows:
 - Subhorizon start = week 0 for the first subhorizon OR subhorizon end of the previous subhorizon + 1
 - Subhorizon end = subhorizon start + subhorizon length l
 
-It is RECOMMENDED to apply the following rules:
+It is recommended to apply the following rules:
 
 - The subhorizons are sequenced consecutively (1,2,3,...).
 - The sequence starts always with 1.
@@ -2151,11 +2281,11 @@ All participants involved in the Catena-X DCM use case MUST consent to the *Data
 
 A key aspect of managing business partner relationships within Catena-X involves defining and applying policies that facilitate and protect data exchange. Both customers and suppliers MUST implement and uphold these policies in order to guarantee a secure and collaborative data exchange:
 
-| Category | Policy Name | Description |
-|:---------|:------------|:------------|
-| **Access Policy** | BPN-restricted Data Usage | Limit access to the data offered to a list of specified BPNs (to the connectors with the BPN attribute listed in the policy) |
-| **Access Policy** | Membership Credential | Limit access to data offered to Catena-X participants |
-| **Usage Policy** | DataExchangeGovernance:1.0 | Limit access to data offered to participants who have agreed to the *Data Exchange Governance* framework agreement |
+| Category          | Policy Name                | Description                                                                                                                  |
+| :---------        | :------------              | :------------                                                                                                                |
+| **Access Policy** | BPN-restricted Data Usage  | Limit access to the data offered to a list of specified BPNs (to the connectors with the BPN attribute listed in the policy) |
+| **Access Policy** | Membership Credential      | Limit access to data offered to Catena-X participants                                                                        |
+| **Usage Policy**  | DataExchangeGovernance:1.0 | Limit access to data offered to participants who have agreed to the *Data Exchange Governance* framework agreement           |
 
 ## 7 REFERENCES
 
@@ -2181,23 +2311,23 @@ A key aspect of managing business partner relationships within Catena-X involves
 
 > *This section and all its subsections are non-normative*
 
-[RFC2119] `March 1997` Key words for use in RFCs to Indicate Requirement Levels (https://www.rfc-editor.org/rfc/rfc2119)
+[RFC2119] `March 1997` Key words for use in RFCs to Indicate Requirement Levels (<https://www.rfc-editor.org/rfc/rfc2119>)
 
-[RFC8174] `May 2017` Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words (https://www.rfc-editor.org/rfc/rfc8174)
+[RFC8174] `May 2017` Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words (<https://www.rfc-editor.org/rfc/rfc8174>)
 
 [ISO3166] `2020-08` ISO 3166 Country Codes
 
 [ISO8601] `2019-02` Date and time format
 
-[RFC4122] `July 2005` A Universally Unique IDentifier (UUID) URN Namespace (https://www.rfc-editor.org/rfc/rfc4122)
+[RFC4122] `July 2005` A Universally Unique IDentifier (UUID) URN Namespace (<https://www.rfc-editor.org/rfc/rfc4122>)
 
-[RFC9110] `June 2022` HTTP Semantics (https://www.rfc-editor.org/rfc/rfc9110)
+[RFC9110] `June 2022` HTTP Semantics (<https://www.rfc-editor.org/rfc/rfc9110>)
 
-[CC-BY-4.0] `Version 4.0` Creative Commons Attribution 4.0 International license (https://creativecommons.org/licenses/by/4.0/legalcode.en)
+[CC-BY-4.0] `Version 4.0` Creative Commons Attribution 4.0 International license (<https://creativecommons.org/licenses/by/4.0/legalcode.en>)
 
-[SMT] `1st Version` Guideline: How to create a Submodel template specification (https://industrialdigitaltwin.org/wp-content/uploads/2022/12/I40-IDTA-WS-Process-How-to-write-a-SMT-FINAL-.pdf)
+[SMT] `1st Version` Guideline: How to create a Submodel template specification (<https://industrialdigitaltwin.org/wp-content/uploads/2022/12/I40-IDTA-WS-Process-How-to-write-a-SMT-FINAL-.pdf>)
 
-[I4.0-AAS] `1.0RC02` Details of the Asset Administration Shell - Part 2 (https://www.plattform-i40.de/IP/Redaktion/EN/Downloads/Publikation/Details_of_the_Asset_Administration_Shell_Part2_V1.html)
+[I4.0-AAS] `1.0RC02` Details of the Asset Administration Shell - Part 2 (<https://www.plattform-i40.de/IP/Redaktion/EN/Downloads/Publikation/Details_of_the_Asset_Administration_Shell_Part2_V1.html>)
 
 ### 7.3 Reference Implementations
 
@@ -2223,46 +2353,46 @@ Below are illustrative figures that depict the DCM process from the viewpoints o
 
 #### Units of measure used in DCM
 
-| Dimension | UN Code | Description (English) | Description (German) | UN Symbol | C-X Symbol | Reference unit used in data models |
-|:----------|--------:|:----------------------|:---------------------|----------:|-----------:|:-----------------------------------|
-| Mass | GRM | gram | Gramm | g | g | unit:gram |
-| Mass | KGM | kilogram | Kilogramm | kg | kg | unit:kilogram |
-| Mass | TNE | metric ton | Metrische Tonne | t | t | unit:tonneMetricTon |
-| Mass | STN | ton (US) or short ton (UK/US) | US Tonne | ton (US) | ton | unit:tonUsOrShortTonUkorus |
-| Mass | ONZ | ounce | Unze | oz | oz | unit:ounceAvoirdupois |
-| Mass | LBR | pound | Pfund | lb | lb | unit:pound |
-| Length | CMT | centimetre | Zentimeter | cm | cm | unit:centimetre |
-| Length | MTR | metre | Meter | m | m | unit:metre |
-| Length | KTM | kilometre | Kilometer | km | km | unit:kilometre |
-| Length | INH | inch | Zoll | in | in | unit:inch |
-| Length | FOT | foot | Fuß | ft | ft | unit:foot |
-| Length | YRD | yard | Yard | yd | yd | unit:yard |
-| Area | CMK | square centimetre | Quadrat-zentimeter | cm2 | cm2 | unit:squareCentimetre |
-| Area | MTK | square metre | Quadratmeter | m2 | m2 | unit:squareMetre |
-| Area | INK | square inch | Quadratzoll | in2 | in2 | unit:squareInch |
-| Area | FTK | square foot | Quadratfuß | ft2 | ft2 | unit:squareFoot |
-| Area | YDK | square yard | Quadratyard | yd2 | yd2 | unit:squareYard |
-| Volume | CMQ | cubic centimeter | Kubikzentimeter | cm3 | cm3 | unit:cubicCentimetre |
-| Volume | MTQ | cubic meter | Kubikmeter | m3 | m3 | unit:cubicMetre |
-| Volume | INQ | cubic inch | Kubikzoll | in3 | in3 | unit:cubicInch |
-| Volume | FTQ | cubic foot | Kubikfuß | ft3 | ft3 | unit:cubicFoot |
-| Volume | YDQ | cubic yard | Kubikyard | yd3 | yd3 | unit:cubicYard |
-| Volume | MLT | millilitrev | Millimeter | ml | ml | unit:millilitre |
-| Volume | LTR | litre | Liter | l | l | unit:litre |
-| Volume | HLT | hectolitre | Hektoliter | hl | hl | unit:hectolitre |
-| Quantum | H87 | piece | Stück | - | pc | unit:piece |
-| Quantum | SET | set | Satz | - | set | unit:set |
-| Quantum | PR | pair | Paar | - | pr | unit:pair |
-| Quantum | ZP | page | Blatt | - | pg | unit:page |
-| Mechanic | KWH | kilowatt hour | Kilowattstunde | kW·h | kwh | unit:kilowattHour |
-| Time | SEC | second [unit of time] | Sekunde [Maßeinheit der Zeit] | s | s | unit:secondUnitOfTime |
-| Time | MIN | minute [unit of time] | Minute [Maßeinheit der Zeit] | min | min | unit:minuteUnitOfTime |
-| Time | HUR | hour | Stunde | h | h | unit:hourUnitOfTime |
-| Cycle | B7 | cycle | Zyklus | [empty] | cyl | unit:cycle |
+| Dimension   | UN Code   | Description (English)         | Description (German)          | UN Symbol   | C-X Symbol   | Reference unit used in data models   |
+| :---------- | --------: | :---------------------------- | :---------------------------- | ----------: | -----------: | :----------------------------------- |
+| Mass        | GRM       | gram                          | Gramm                         | g           | g            | unit:gram                            |
+| Mass        | KGM       | kilogram                      | Kilogramm                     | kg          | kg           | unit:kilogram                        |
+| Mass        | TNE       | metric ton                    | Metrische Tonne               | t           | t            | unit:tonneMetricTon                  |
+| Mass        | STN       | ton (US) or short ton (UK/US) | US Tonne                      | ton (US)    | ton          | unit:tonUsOrShortTonUkorus           |
+| Mass        | ONZ       | ounce                         | Unze                          | oz          | oz           | unit:ounceAvoirdupois                |
+| Mass        | LBR       | pound                         | Pfund                         | lb          | lb           | unit:pound                           |
+| Length      | CMT       | centimetre                    | Zentimeter                    | cm          | cm           | unit:centimetre                      |
+| Length      | MTR       | metre                         | Meter                         | m           | m            | unit:metre                           |
+| Length      | KTM       | kilometre                     | Kilometer                     | km          | km           | unit:kilometre                       |
+| Length      | INH       | inch                          | Zoll                          | in          | in           | unit:inch                            |
+| Length      | FOT       | foot                          | Fuß                           | ft          | ft           | unit:foot                            |
+| Length      | YRD       | yard                          | Yard                          | yd          | yd           | unit:yard                            |
+| Area        | CMK       | square centimetre             | Quadrat-zentimeter            | cm2         | cm2          | unit:squareCentimetre                |
+| Area        | MTK       | square metre                  | Quadratmeter                  | m2          | m2           | unit:squareMetre                     |
+| Area        | INK       | square inch                   | Quadratzoll                   | in2         | in2          | unit:squareInch                      |
+| Area        | FTK       | square foot                   | Quadratfuß                    | ft2         | ft2          | unit:squareFoot                      |
+| Area        | YDK       | square yard                   | Quadratyard                   | yd2         | yd2          | unit:squareYard                      |
+| Volume      | CMQ       | cubic centimeter              | Kubikzentimeter               | cm3         | cm3          | unit:cubicCentimetre                 |
+| Volume      | MTQ       | cubic meter                   | Kubikmeter                    | m3          | m3           | unit:cubicMetre                      |
+| Volume      | INQ       | cubic inch                    | Kubikzoll                     | in3         | in3          | unit:cubicInch                       |
+| Volume      | FTQ       | cubic foot                    | Kubikfuß                      | ft3         | ft3          | unit:cubicFoot                       |
+| Volume      | YDQ       | cubic yard                    | Kubikyard                     | yd3         | yd3          | unit:cubicYard                       |
+| Volume      | MLT       | millilitrev                   | Millimeter                    | ml          | ml           | unit:millilitre                      |
+| Volume      | LTR       | litre                         | Liter                         | l           | l            | unit:litre                           |
+| Volume      | HLT       | hectolitre                    | Hektoliter                    | hl          | hl           | unit:hectolitre                      |
+| Quantum     | H87       | piece                         | Stück                         | -           | pc           | unit:piece                           |
+| Quantum     | SET       | set                           | Satz                          | -           | set          | unit:set                             |
+| Quantum     | PR        | pair                          | Paar                          | -           | pr           | unit:pair                            |
+| Quantum     | ZP        | page                          | Blatt                         | -           | pg           | unit:page                            |
+| Mechanic    | KWH       | kilowatt hour                 | Kilowattstunde                | kW·h        | kwh          | unit:kilowattHour                    |
+| Time        | SEC       | second [unit of time]         | Sekunde [Maßeinheit der Zeit] | s           | s            | unit:secondUnitOfTime                |
+| Time        | MIN       | minute [unit of time]         | Minute [Maßeinheit der Zeit]  | min         | min          | unit:minuteUnitOfTime                |
+| Time        | HUR       | hour                          | Stunde                        | h           | h            | unit:hourUnitOfTime                  |
+| Cycle       | B7        | cycle                         | Zyklus                        | [empty]     | cyl          | unit:cycle                           |
 
 ### Repositories
 
-[ODRL] ODRL policy repository (https://github.com/catenax-eV/cx-odrl-profile)
+[ODRL] ODRL policy repository (<https://github.com/catenax-eV/cx-odrl-profile>)
 
 ## ABOUT THIS STANDARD AND MOTIVATION
 

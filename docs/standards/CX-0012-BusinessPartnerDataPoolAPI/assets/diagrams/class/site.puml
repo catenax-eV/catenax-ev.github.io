@@ -11,7 +11,7 @@ package "Site and References" {
   entity Site {
     BPNS
     Name
-    IsCatenaXMemberData
+    IsParticipantData
     CreatedAt
     UpdateAt
   }

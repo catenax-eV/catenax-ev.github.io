@@ -7,7 +7,7 @@ tags:
 
 # Introduction
 
-CX-0143 Use Case Circular Economy - Digital Product Passport v1.0.1
+CX-0143 Use Case Circular Economy - Digital Product Passport v1.1.0
 
 ## ABSTRACT
 

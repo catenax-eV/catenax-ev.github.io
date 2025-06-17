@@ -14,7 +14,6 @@ demonstrated the requirement for such a fast standardized process among all part
 ## COMPARISON WITH THE PREVIOUS VERSION OF THE STANDARD
 
 Changed:
-
 - Removed wrong and unused part (`"method": "POST"`) of connector asset definition
 
 ## 1 INTRODUCTION

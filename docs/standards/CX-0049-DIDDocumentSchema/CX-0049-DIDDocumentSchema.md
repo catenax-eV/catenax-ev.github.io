@@ -6,7 +6,7 @@ tags:
   - CAT/Sandbox Services (Beta)
 ---
 
-# CX-0049 DID Document v2.0.0
+# CX-0049 DID Document v2.1.0
 
 ## COMPARISON WITH THE PREVIOUS VERSION OF THE STANDARD
   
@@ -51,7 +51,7 @@ In general the concept of SSI according to the W3C standard [https://www.w3.org/
 The DID itself does not have to contain any identity features. In this context, the DID document contains a collection of service endpoints and the public keys of the identified participant, which can be used for any cryptographic signature and any type of authentication. For the storage of the DID document, it must be ensured that the document cannot be changed by third parties, as this would enable identity theft through manipulation of the public key.
 In the context of SSI, there is no need for a central issuing office for identities. Due to open standards and the associated multitude of providers of DIDs and verifiable credentials, the data sovereignty of the participants in the network is ensured.
 
-In addition to defined service endpoints, especially for the request for verifiable credentials, the did standard also allows the definition of specific endpoints for context-related services.
+In addition to defined service endpoints, especially for the request for verifiable credentials, the did standard also allows the definition of specific endpoints for context-related services.	
 
 To ensure that the DID of a participant can be used and is accepted by all other participants in the network, but also across networks, the DID document is based on the W3C standard [https://www.w3.org/TR/did-core/#did-documents]. Compliance with the W3C standard for DID documents applies both to DIDs created by Enablement Service Providers of Wallet services in the course of registration.
 
@@ -92,9 +92,9 @@ And he also **MUST** ensure that the DID document is accessible for everyone ove
 
 To validate these criteria for an own implementation of the Core Service Provider the following information **MUST** be handed to the Conformity Assessment Body:
 
-- A documentation (e.g. based on Arc42) explaining the architecture, access management   and process flows of the implementation.
+- A documentation (e.g. based on Arc42) explaining the architecture, access management and process flows of the implementation.
 
-To validate these criteria of conformance of the DID Document to the DID Document schema the following information **MUST** be handed to the Conformity Assessment Body:
+To validate these criteria of conformance of the DID document to the DID document schema the following information **MUST** be handed to the Conformity Assessment Body:
 
 - A documentation (e.g. based on Arc42) explaining the architecture, process flows, the data structures and storage infrastructure of the solution.
 
@@ -107,20 +107,12 @@ Not applicable.
 ## 2. DID DOCUMENT
 
 The following DID document uses a kind of real data to present a better readable example of it's structure.
-For Release 24.05 the accepted DID Method for all participant's DIDs is `did:web` method defined here:
+From Release 24.05 onwards, the accepted DID Method for all participant's DIDs is `did:web` method defined here:
 https://w3c-ccg.github.io/did-method-web/
+Future releases might allow other DID methods. In this case, the allowed DID methods will be specified in this standard.
 
-```text
-Disclaimer:
 
-In future releases it will be possible for every participant to use his existing DID, managed by his own wallet, for the registration to Catena-X. This will also include the usage of other DID methods than `did:web`.
-```
-
-### 2.1 VERIFICATION METHOD
-
-The used verification method for the created DID documents of the participants is `JsonWebKey2020`
-
-### 2.2 DID DOCUMENT STRUCTURE
+### 2.1 DID DOCUMENT STRUCTURE
 
 > *This section is normantive*
 
@@ -128,47 +120,55 @@ The DID document for the Decentralized Identifiers provided by all Catena-X memb
 
 ```json
 {
-   "@context":[
-      "https://www.w3.org/ns/did/v1"
-   ],
-   "id":"did:web:ica-catena-x-dim-consumer-dev-dev-dis-diddoc.cfapps.eu12.hana.ondemand.com:user:issuer",
-   "verificationMethod":[
-      {
-         "id":"did:web:ica-catena-x-dim-consumer-dev-dev-dis-diddoc.cfapps.eu12.hana.ondemand.com:user:issuer#keys-2120c0bb-e72f-4e1a-8d14-0b3480afbdc6",
-         "type":"JsonWebKey2020",
-         "controller":"did:web:ica-catena-x-dim-consumer-dev-dev-dis-diddoc.cfapps.eu12.hana.ondemand.com:user:issuer",
-         "publicKeyJwk":{
-            "kty":"EC",
-            "crv":"secp256k1",
-            "x":"608KKIEIupnefu502gmZMv2SMOUpYFB7w5VniJIMDlg",
-            "y":"aD7P3H-PCtSjxGPYhRqpjl12QtK-e0qaPI7AFy3v5KQ"
-         }
-      },
-      {
-         "id":"did:web:ica-catena-x-dim-consumer-dev-dev-dis-diddoc.cfapps.eu12.hana.ondemand.com:user:issuer#keys-768f94e5-67b2-464f-a1de-e2beb9828aed",
-         "type":"JsonWebKey2020",
-         "controller":"did:web:ica-catena-x-dim-consumer-dev-dev-dis-diddoc.cfapps.eu12.hana.ondemand.com:user:issuer",
-         "publicKeyJwk":{
-            "kty":"EC",
-            "crv":"secp256k1",
-            "x":"NT_jO4J7ljC0oyZiO4ffp_igIZ5EYZMgICIoO54T2HE",
-            "y":"YnH3cpAFyGcfiX1v1HBEYgJhVO3TajqTV-CbXOi-MT8"
-         }
+  "@context": [
+    "https://www.w3.org/ns/did/v1",
+    "https://w3id.org/security/suites/jws-2020/v1",
+    "https://w3id.org/dspace-dcp/v1.0/dcp.jsonld",
+    "https://w3id.org/dspace/2025/1/context.jsonld"
+  ],
+  "id": "did:web:portal-backend.integration.cofinity-x.com:api:administration:staticdata:did:BPNLCOFINITYEZFA",
+  "service": [
+    {
+      "type": "CredentialService",
+      "serviceEndpoint": "https://dis-agent-prod.eu10.dim.cloud.sap/api/v1.0.0/iatp",
+      "id": "did:web:portal-backend.integration.cofinity-x.com:api:administration:staticdata:did:BPNLCOFINITYEZFA#CredentialService"
+    },
+    {
+      "type": "CatalogService",
+      "serviceEndpoint": "https://provider-connector.provider-domain.com/subpath/versionpath/catalog",
+      "id": "did:web:provider-domain.com#dsp-agent-1"
+    }
+  ],
+  "verificationMethod": [
+    {
+      "id": "did:web:portal-backend.integration.cofinity-x.com:api:administration:staticdata:did:BPNLCOFINITYEZFA#keys-3d69dfe8-8360-406b-8d36-057b01332401",
+      "type": "JsonWebKey2020",
+      "controller": "did:web:portal-backend.integration.cofinity-x.com:api:administration:staticdata:did:BPNLCOFINITYEZFA",
+      "publicKeyJwk": {
+        "kty": "EC",
+        "crv": "secp256k1",
+        "x": "q9nbHpbHVtGPCqDND890HknjWNgTAtS4B7Wupt5KvEU",
+        "y": "hsM-AJylGUIzBq0nPr58Wue76XiMkjBYbs3nuPveuWg"
       }
-   ],
-   "authentication":[
-      "did:web:ica-catena-x-dim-consumer-dev-dev-dis-diddoc.cfapps.eu12.hana.ondemand.com:user:issuer#keys-2120c0bb-e72f-4e1a-8d14-0b3480afbdc6",
-      "did:web:ica-catena-x-dim-consumer-dev-dev-dis-diddoc.cfapps.eu12.hana.ondemand.com:user:issuer#keys-768f94e5-67b2-464f-a1de-e2beb9828aed"
-   ],
-   "service":[
-      {
-         "id":"did:example:1701379495100",
-         "type":"DIDMessaging",
-         "serviceEndpoint":[
-            "https://example.com/path1"
-         ]
+    },
+    {
+      "id": "did:web:portal-backend.integration.cofinity-x.com:api:administration:staticdata:did:BPNLCOFINITYEZFA#keys-d1aa73fa-efae-44b1-8841-740a5981825e",
+      "type": "JsonWebKey2020",
+      "controller": "did:web:portal-backend.integration.cofinity-x.com:api:administration:staticdata:did:BPNLCOFINITYEZFA",
+      "publicKeyJwk": {
+        "kty": "EC",
+        "crv": "secp256k1",
+        "x": "2p-qDH8jXEc_u_1IjBVUfM1awhUk5aNR3dmcCRaXzmA",
+        "y": "aK8KQDeinJWxnjkmDJSwCXoe6-zSc2lCq-Yc1rSgkUo"
       }
-   ]
+    }
+  ],
+  "authentication": [
+    "did:web:portal-backend.integration.cofinity-x.com:api:administration:staticdata:did:BPNLCOFINITYEZFA#keys-3d69dfe8-8360-406b-8d36-057b01332401"
+  ],
+  "capabilityInvocation": [
+    "did:web:portal-backend.integration.cofinity-x.com:api:administration:staticdata:did:BPNLCOFINITYEZFA#keys-d1aa73fa-efae-44b1-8841-740a5981825e"
+  ]
 }
 ```
 
@@ -182,7 +182,7 @@ The content of the DID document is explained as follows:
 
 ### 2.2 DID DOCUMENT LOCATION AND RESOLUTION
 
-The used DID method for Release 24.05 is -as mentioned- `did:web` which means that the DID itself includes the location to the DID document.
+The used DID method for Release 24.05 onwards is `did:web` which means that the DID itself includes the location to the DID document.
 The location of the DID document is accessible over http or https and provided by the Core Service Provider.
 
 ## 3 REFERENCES
