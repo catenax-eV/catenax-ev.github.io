@@ -1,0 +1,34 @@
+@startuml address-simple
+
+skinparam dpi 50
+
+package "Address and References" {
+  entity LegalEntity {}
+  
+  entity Site {}
+  
+  entity Address {
+    BPNA
+    ...
+  }
+
+  class LegalAddress {}
+
+  class MainAddress {}
+
+  Address "1..*" -u-o "1" LegalEntity : LegalEntityBPN
+  Address "1..*" -u-o "0..1" Site: SiteBPN
+
+  LegalEntity "1" --> "1" LegalAddress : LegalAddress
+  LegalAddress -u-|> Address
+
+  Site "1" --> "1" MainAddress : MainAddress    
+  MainAddress -u-|> Address
+}
+
+hide methods
+hide LegalAddress members
+hide MainAddress members
+hide LegalEntity members
+hide Site members
+@enduml

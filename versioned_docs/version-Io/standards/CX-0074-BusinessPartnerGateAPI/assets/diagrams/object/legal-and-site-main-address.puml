@@ -1,0 +1,58 @@
+@startuml legal-and-site-main-address
+
+skinparam dpi 50
+
+package "Business Parter (Legal and Site Main Address)" {
+  object LegalEntity {
+    LegalName = "Schaeffler Group USA INC."
+    ShortName = ""
+  }
+
+  object Address1 {
+    Name = "Fort Mill 1"
+    Country = "US"
+    City = "Fort Mill"
+    PostalCode = "88046"
+    Street = "Springhill Farm Rd"
+    HouseNumber = "308"
+  }
+
+  object Address2 {
+    Name = "Fort Mill 2"
+    Country = "US"
+    City = "Fort Mill"
+    PostalCode = "88046"
+    Street = "Springhill Farm Rd"
+    HouseNumber = "308"
+  }
+
+  object Site1 {
+    Name = "Schaeffler Group USA INC. Fort Mill"
+  }
+
+  object BusinessPartner {
+    AddressType = "LegalAndSiteMainAddress"
+    NameParts = [
+      "Schaeffler Group USA INC.", 
+      "Fort Mill 1", 
+      "", 
+      ""]
+    Country = "US"
+    City = "Fort Mill"
+    PostalCode = "88046"
+    Street = "Springhill Farm Rd"
+    HouseNumber = "308"
+  }
+
+  BusinessPartner -r-> LegalEntity : BPNL
+  BusinessPartner -r-> Site1 : BPNS
+  BusinessPartner -u-> Address1 : BPNA
+  LegalEntity .d.> Address1 : LegalAddress
+  Site1 .d.> Address1 : SiteMainAddress
+  Address1 -u-> Site1 : BPNS
+  Address2 -l-> Site1 : BPNS
+  Site1 -u-> LegalEntity : BPNL
+}
+
+@enduml
+

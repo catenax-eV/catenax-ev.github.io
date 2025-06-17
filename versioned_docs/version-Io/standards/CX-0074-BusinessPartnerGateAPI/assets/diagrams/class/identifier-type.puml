@@ -1,0 +1,45 @@
+@startuml identifier-type
+
+skinparam dpi 50
+
+package "Identifier Type and References" {
+
+  class BusinessPartnerIdentifier {
+    Value
+    IssuingBody
+  }
+
+  entity IdentifierType {
+    TechnicalKey
+    Name
+    Abbreviation
+    TransliteratedName
+    TransliteratedAbbreviation
+  }
+
+  enum BusinessPartnerType {
+    LegalEntity
+    Address
+  }
+
+  class IdentifierTypeDetail {
+    Mandatory
+  }
+
+  enum Country {
+    DE
+    FR
+    US
+    ...
+  }
+
+  IdentifierType "*" -d-o "1" BusinessPartnerType : BusinessPartnerType
+
+  BusinessPartnerIdentifier "*" -d-o "1" IdentifierType : Type
+
+  IdentifierType "1" *-d-> "*" IdentifierTypeDetail : Details
+  IdentifierTypeDetail "*" -r-o "1" Country : Country
+}
+
+hide methods
+@enduml
