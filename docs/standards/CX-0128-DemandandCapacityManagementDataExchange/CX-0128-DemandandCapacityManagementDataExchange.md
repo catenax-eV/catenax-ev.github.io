@@ -2311,23 +2311,23 @@ A key aspect of managing business partner relationships within Catena-X involves
 
 > *This section and all its subsections are non-normative*
 
-[RFC2119] `March 1997` Key words for use in RFCs to Indicate Requirement Levels (<https://www.rfc-editor.org/rfc/rfc2119>)
+[RFC2119] `March 1997` Key words for use in RFCs to Indicate Requirement Levels ([https://www.rfc-editor.org/rfc/rfc2119](https://www.rfc-editor.org/rfc/rfc2119))
 
-[RFC8174] `May 2017` Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words (<https://www.rfc-editor.org/rfc/rfc8174>)
+[RFC8174] `May 2017` Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words ([https://www.rfc-editor.org/rfc/rfc8174](https://www.rfc-editor.org/rfc/rfc8174))
 
 [ISO3166] `2020-08` ISO 3166 Country Codes
 
 [ISO8601] `2019-02` Date and time format
 
-[RFC4122] `July 2005` A Universally Unique IDentifier (UUID) URN Namespace (<https://www.rfc-editor.org/rfc/rfc4122>)
+[RFC4122] `July 2005` A Universally Unique IDentifier (UUID) URN Namespace ([https://www.rfc-editor.org/rfc/rfc4122](https://www.rfc-editor.org/rfc/rfc4122))
 
-[RFC9110] `June 2022` HTTP Semantics (<https://www.rfc-editor.org/rfc/rfc9110>)
+[RFC9110] `June 2022` HTTP Semantics ([https://www.rfc-editor.org/rfc/rfc9110](https://www.rfc-editor.org/rfc/rfc9110))
 
-[CC-BY-4.0] `Version 4.0` Creative Commons Attribution 4.0 International license (<https://creativecommons.org/licenses/by/4.0/legalcode.en>)
+[CC-BY-4.0] `Version 4.0` Creative Commons Attribution 4.0 International license ([https://creativecommons.org/licenses/by/4.0/legalcode.en](https://creativecommons.org/licenses/by/4.0/legalcode.en))
 
-[SMT] `1st Version` Guideline: How to create a Submodel template specification (<https://industrialdigitaltwin.org/wp-content/uploads/2022/12/I40-IDTA-WS-Process-How-to-write-a-SMT-FINAL-.pdf>)
+[SMT] `1st Version` Guideline: How to create a Submodel template specification ([https://industrialdigitaltwin.org/wp-content/uploads/2022/12/I40-IDTA-WS-Process-How-to-write-a-SMT-FINAL-.pdf](https://industrialdigitaltwin.org/wp-content/uploads/2022/12/I40-IDTA-WS-Process-How-to-write-a-SMT-FINAL-.pdf))
 
-[I4.0-AAS] `1.0RC02` Details of the Asset Administration Shell - Part 2 (<https://www.plattform-i40.de/IP/Redaktion/EN/Downloads/Publikation/Details_of_the_Asset_Administration_Shell_Part2_V1.html>)
+[I4.0-AAS] `1.0RC02` Details of the Asset Administration Shell - Part 2 ([https://www.plattform-i40.de/IP/Redaktion/EN/Downloads/Publikation/Details_of_the_Asset_Administration_Shell_Part2_V1.html](https://www.plattform-i40.de/IP/Redaktion/EN/Downloads/Publikation/Details_of_the_Asset_Administration_Shell_Part2_V1.html))
 
 ### 7.3 Reference Implementations
 
@@ -2392,7 +2392,7 @@ Below are illustrative figures that depict the DCM process from the viewpoints o
 
 ### Repositories
 
-[ODRL] ODRL policy repository (<https://github.com/catenax-eV/cx-odrl-profile>)
+[ODRL] ODRL policy repository ([https://github.com/catenax-eV/cx-odrl-profile](https://github.com/catenax-eV/cx-odrl-profile))
 
 ## ABOUT THIS STANDARD AND MOTIVATION
 

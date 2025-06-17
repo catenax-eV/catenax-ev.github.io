@@ -434,7 +434,7 @@ The following scenario describes, how
   - transfers the calculation result from his supplier to the PCF calculation tool
   - uses the suppliers calculation result for his PCF calculation
 
-![PCF Calculation Integration Scenario](./assets/20231115-Catena-X-PCF-Integration-Standard-small.jpg)
+![PCF Calculation Integration Scenario](./assets/catena-x-pcf-integration-standard-small.jpg)
 
 #### 2.2.2 EXAMPLES FOR PCF CALCULATION TOOL INTEGRATION
 
