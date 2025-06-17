@@ -5,6 +5,24 @@ sidebar_position: 1
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [3.0.6]
+
+### Added
+
+- Who: Roles in the Catena-x ecosystem
+  - Added TISAX Level 2 as a mandatory requirement for all OSPs, ESPs, and BAPs, effective from July 2025, with a 12-month grace period
+  - Added TISAX Level 3 as a mandatory requirement for CSP-A and CSP-B roles
+- How: Life Cycle Management
+  - Added an 'Environments' section and provided an explanation of the 'Int' environment
+
+### Changed
+
+- How: How data space governance
+  - Added clarification that internal systems are not required to be listed on the public marketplace.
+  - Furthermore, included a statement that all data space participants adherence to governance components such as Trust ID and related mechanisms.
+- Who: Roles in the Catena-x ecosystem
+  - Added that CSP-A, CSP-B, OSP, BAP, AP, DPC must be registered to Catena-X data space.
+
 ## [3.0.5]
 
 ### Added
