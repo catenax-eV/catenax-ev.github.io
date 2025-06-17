@@ -35,9 +35,10 @@ other CSP-As.
 
 **Prerequisites:**
 
-- A CSP-A and its services must be certified by a CAB
-- A CSP-A must accept and comply with the Catena-X regulatory framework
-during onboarding via one of the OSPs.
+- A CSP-A and its services must be certified by a CAB.
+- A CSP-A must accept and comply with the Catena-X regulatory framework during onboarding via one of the OSPs.
+- A CSP-A **must** prove compliance with TISAX Level 3.
+- A CSP-A **must** be registered to the Catena-X data space.
 
 **Current Limitations:**
 
@@ -65,7 +66,7 @@ For smooth operations, the CSP-B must provide comprehensive technical documentat
 
 - The CSP-B **must** support the integration of all other data space participants to the Core Services B.
 - A CSP-B **must** implement an IAM synchronization with CSP-As and OSPs.
-- The CSP-B **must** integrate the GXDCH provided by the Catena-X Association.
+- A CSP-B **must** integrate the GXDCH provided by the Catena-X Association.
 
 **Prerequisites:**
 
@@ -74,6 +75,8 @@ For smooth operations, the CSP-B must provide comprehensive technical documentat
 - A CSP-B and its services **must** be certified by a CAB.
 - A CSP-B **must** offer a partnerRegistration API to any OSP requesting it
 - A CSP-B **must** accept and comply with the Catena-X regulatory framework via an MoU with the Association.
+- A CSP-B **must** prove compliance with TISAX Level 3.
+- A CSP-B **must** be registered to Catena-X data space.
 
 **Current Limitations:**
 
@@ -97,6 +100,7 @@ OSPs are responsible for deploying, operating, and maintaining onboarding servic
 
 - An OSP and its services **must** be certified by a CAB.
 - An OSP **must** accept and comply with the Catena-X regulatory framework.
+- An OSP **must** be registered to Catena-X data space.
 
 **Current Limitations:**
 
@@ -128,6 +132,8 @@ Catena-X semantic models.
 
 - An ESP and its services **must** be certified by a CAB.
 - An ESP **must** accept and comply with the Catena-X regulatory framework during onboarding via one of the OSPs.
+- An ESP **must** prove compliance with TISAX Level 2.
+- An ESP **must** be registered to Catena-X data space.
 
 **Current Limitations:**
 
@@ -153,6 +159,8 @@ them on one or multiple of the marketplaces
 - A BAP and its services **must** be certified by a CAB.
 - A BAP **must** list its solution on a marketplace provided by a CSP-A.
 - A BAP **must** accept and comply with the Catena-X regulatory framework during onboarding via one of the OSPs.
+- A BAP **must** prove compliance with TISAX Level 2.
+- A BAP **must** be registered to Catena-X data space.
 
 **Current Limitations:**
 
@@ -174,6 +182,7 @@ n/a
 
 - An AP **must** be qualified by the Catena-X Association.
 - An AP **must** accept and comply with the Catena-X regulatory framework during onboarding via one of the OSPs.
+- An AP **must** be registered to Catena-X data space.
 
 **Current Limitations:**
 
@@ -201,6 +210,8 @@ solution). Alternatively, a DPC can certify and operate its own business applica
 
 - A DPC **must** use certified enablement services or business applications. Alternatively, a DPC **must** certify its own enablement services and/or business applications by one of the CABs (as outlined in Chapter [Conformity Assessment](./../how-data-space-governance/how-data-space-governance.md#conformity-assessment)).
 - A DPC **must** accept and comply with the Catena-X regulatory framework during onboarding via one of the OSPs
+- A DPC **must** prove compliance with TISAX Level 2.
+- A DPC **must** be registered to Catena-X data space.
 
 **Current Limitations:**
 

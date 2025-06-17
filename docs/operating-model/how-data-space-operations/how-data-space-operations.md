@@ -120,7 +120,7 @@ The figure shows a generic section of the value chain. The basic principle - one
 
 Besides this implementation suppliers and customers have to agree on how the 1U1D-Rule applies to their specific contractual agreement and use case. For example, if there are agreements in place to handle directed parts or ad-hoc agreements to handle a critical supply situation, supply chain visibility may be extended.
 
-The default standard for part relationships is defined in Catena-X Standards [CX-0126](https://catenax-ev.github.io/docs/next/standards/CX-0126-IndustryCorePartType) and [CX-0127](https://catenax-ev.github.io/docs/next/standards/CX-0127-IndustryCorePartInstance). An overarching explanation can be found in the [Tractus-X KITS](https://eclipse-tractusx.github.io/docs-kits/kits/Industry%20Core%20Kit/Business%20View%20Industry%20Core%20Kit).
+The default standard for part relationships is defined in Catena-X Standards [CX-0126](https://catenax-ev.github.io/docs/next/standards/CX-0126-IndustryCorePartType) and [CX-0127](https://catenax-ev.github.io/docs/next/standards/CX-0127-IndustryCorePartInstance). An overarching explanation can be found in the [Tractus-X KITS](https://eclipse-tractusx.github.io/docs-kits/kits/industry-core-kit/adoption-view).
 
 ### Part-based visibility
 
