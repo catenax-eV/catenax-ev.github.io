@@ -47,7 +47,8 @@ const config: Config = {
               label: 'CX-Io (Current)',
             },
             'Jupiter': {
-              label: 'CX-Jupiter (Maintained)',
+              label: 'CX-Jupiter',
+              banner: 'unmaintained'
             }
           },
         },
