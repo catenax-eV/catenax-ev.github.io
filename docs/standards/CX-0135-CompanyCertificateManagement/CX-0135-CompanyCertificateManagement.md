@@ -19,9 +19,10 @@ This standard is relevant to the following parties:
 - Business Application Provider
 
 ## COMPARISON WITH THE PREVIOUS VERSION OF THE STANDARD
+
 The updated standard introduces several enhancements over the previous version. One of the key changes is the definition of an OpenAPI. This will allow companies to proactively request certificates and provide feedback on their status. For the notification's requests, the Industry Core Standard (CX-0151 Industry Core: Basics v.1.0.0) has been adopted.
 
-Another important update involves a correction to the data model. The enclosedSiteBpn trait now accurately supports both BPNS and BPNA values, resolving a previous issue. 
+Another important update involves a correction to the data model. The enclosedSiteBpn trait now accurately supports both BPNS and BPNA values, resolving a previous issue.
 Resolved an issue in the usage policy.
 
 These enhancements are designed to improve functionality and user experience, making the standard more reliable, efficient, and user-friendly.
@@ -38,7 +39,6 @@ The following company certificate use cases are supported in this release, inclu
 4. (*new*) Data Provider wants to notify a Data Consumer of the availability of a new Asset
 
 For avoidance of the doubt, we are not replacing the existing publication semantic model.
-
 
 ### 1.1 AUDIENCE & SCOPE
 
@@ -82,7 +82,6 @@ See [API Message Flow](#215-message-flow-expectations) expectations for conforma
 
 > *This section and all its subsections are normative*
 
-
 Today, Data Consumer do not have a way to request certificates from a Data Provider. Also, Data Providers have no visibility on the status of a published certificate beyond the technical delivery. Finally, Data Providers do not have a standard mechanism to send new certificates to the Consumer when they become available.
 We are adding the following 4 Application Programming Interfaces to remediate these shortcommings:
 
@@ -94,6 +93,7 @@ We are adding the following 4 Application Programming Interfaces to remediate th
 ### 2.1 API Specification
 
 #### 2.1.1 API endpoints and resources
+
 **Company Certificate Request**
 
  Consumer is requesting a specific certificate to Provider. Reponse could be 200 if the certificate was found or 404 otherwise.
@@ -180,7 +180,6 @@ Certificate is pushed by the provider to the consumer. The enclosed Bpns can be 
 **Status: Accepted**
 Certificate is accepted. Document UUID should match the incoming message. The enclosed Bpns can be a mix of sites and addresses
 
-
 ```json
 {
   "header" : {
@@ -208,9 +207,9 @@ Certificate is accepted. Document UUID should match the incoming message. The en
 }
 ```
 
-
 **Status: Rejected**
 Certificate is rejected by Consumer with multiple reasons
+
 ```json
 {
   "header" : {
@@ -251,10 +250,9 @@ Certificate is rejected by Consumer with multiple reasons
 }
 ```
 
-
-
 **Status: Received**
 Certificate has been received by Consumer and validation is in progress
+
 ```json
 {
   "header" : {
@@ -281,8 +279,10 @@ Certificate has been received by Consumer and validation is in progress
   }
 }
 ```
-**Company Certificate Available** 
+
+**Company Certificate Available**
 The data consumer is notified that a certificate is available. The data consumer may want to send a subsequent GET or fetch the asset from the catalog.
+
 ```json
 {
   "header" : {
@@ -308,7 +308,9 @@ The data consumer is notified that a certificate is available. The data consumer
   }
 }
 ```
+
 #### 2.1.2 ERROR HANDLING
+
 The following http response codes MUST be defined for all resources:
 
 | Status Code | Description                |
@@ -316,17 +318,18 @@ The following http response codes MUST be defined for all resources:
 | 200         | OK                         |
 | 500         | Internal Server Error      |
 
-
 #### 2.1.3 Available data types
 
 The API MUST use JSON formatted data transmitted over HTTPS.
 
 #### 2.1.4  Data asset structure
+
 > *This section is normative*
 
 The HTTP endpoints introduced in chapter 2.1.1 API endpoints and resources MUST NOT be called from a business partner directly. Rather, it MUST be called via an connector communication. Therefore, exactly one asset MUST be offered in the connector catalog.
 
 The property [[type]](http://purl.org/dc/terms/type) MUST reference the name of the notification API as defined in the Catena-X taxonomy published under [[taxonomy]](https://w3id.org/catenax/taxonomy).
+
 | **Type**        | **Subject**                                      | **Version** | **Description**                                                                 |
 |-----------------|--------------------------------------------------|-------------|---------------------------------------------------------------------------------|
 | cx-taxo:CCMAPI  | cx-taxo:CompanyCertificateManagementNotificationApi | 3.0         | Enables the Catena-X Members to send and receive Notifications in regards with the Company Certificates Data Exchange |
@@ -334,7 +337,6 @@ The property [[type]](http://purl.org/dc/terms/type) MUST reference the name of 
 *Example:*
 
 ```json
-
 {
     "@id": "CCMAPI",
     "@type": "Asset",
@@ -357,7 +359,6 @@ The property [[type]](http://purl.org/dc/terms/type) MUST reference the name of 
 }
 ```
 
-
 #### 2.1.5 MESSAGE FLOW EXPECTATIONS
 
 - Data Provider MUST expose company certificates in their catalog when using pull mechanism.
@@ -369,34 +370,31 @@ The property [[type]](http://purl.org/dc/terms/type) MUST reference the name of 
 - Data Consumer MAY send a notification of reception when the certificate validation has started.
 - Data Provider MAY send a certificate availability notification when a new certificate has been published in the EDC catalog. Data Consumer SHOULD get the new certificate via the pull data exchange mechanism.
 
-##### 2.1.5.1 PUSH Mechanism 
+##### 2.1.5.1 PUSH Mechanism
 
 ![PUSH Scenarios](assets/Certificate_Push.png)  
-
 
 The Certificate PUSH Diagram describes the secure transmission of certificates from a Backend Certificate Provider to a Backend Certificate Receiver via EDC (Eclipse Data Connector) components.
 The process starts with a contract agreement for a Notification Asset, followed by the provider pushing the certificate to the provided endpoint in the asset.  The certificate is then processed by the Backend Certificate Receiver, which finalizes the workflow by generating a feedback message which is pushed to the provider.
 
-
-
-
-##### 2.1.5.2 PULL Mechanism 
+##### 2.1.5.2 PULL Mechanism
 
 ![PULL Scenarios](assets/Certificate_Pull.png)
 
-
-The Certificate PULL Diagram describes the process of Consumer retrieving a certificate from a Provider via an EDC. 
+The Certificate PULL Diagram describes the process of Consumer retrieving a certificate from a Provider via an EDC.
 It begins with the provider creating a Certificate Asset with corresponding contract definition in the EDC Catalog. The Consumer searches the catalog using specific filters, initiates a contract negotiation, and retrieves the Endpoint Data Reference (EDR). The Data Plane then facilitates secure data transfer, allowing the consumer to pull the certificate. Once retrieved, the Backend Certificate Consumer processes the certificate and sends a Feedback Message to confirm the status.
 
 ##### 2.1.5.3 PUSH notification followed by PULL mechanism
+
 After the data provider has created a Certificate Asset with corresponding contract definition in the EDC Catalog the data provider sends a Certificate Available Notification to the data consumer. The data consumer uses the above described PULL mechanism to get the certificate data. This reduces the data consumers need for active checks for missing certificates or certificate updates and enables access to the latest certificate data.
 
 ##### 2.1.6 Usage Policy
 
-The “Connector Asset for Certificate Notifications” included in the EDC of a data consumer MUST contain a usage policy that includes the Catena-X Data Exchange Governance document in the latest version. 
+The “Connector Asset for Certificate Notifications” included in the EDC of a data consumer MUST contain a usage policy that includes the Catena-X Data Exchange Governance document in the latest version.
 That includes the following usage purpose:
+
 - **`cx.ccm.base:1:`** *The exchanged business partner certificates are used for the purpose of verification and validation of the existence of a certification.*
-  
+
 Additional more general usage policies MAY be included, but all the usage policies MUST contain the above usage purpose.
 
 ``` json
@@ -434,17 +432,17 @@ Additional more general usage policies MAY be included, but all the usage polici
     ]
   }
 }
+```
 
-``` 
 The left operand "leftOperand": "cx-policy:ContractReference" MUST be included only if such a bilateral framework contract exists.
 
-``` json
+```json
                     {
                         "leftOperand": "cx-policy:ContractReference",
                         "operator": "eq",
                         "rightOperand": "x12345"
                     },
-``` 
+```
 
 ## 3 ASPECT MODELS
 
@@ -476,11 +474,8 @@ Semantic model is defined [here](https://github.com/eclipse-tractusx/sldt-semant
 
 The open source command line tool of the Eclipse Semantic Modeling Framework is used for generation of other file formats like for example a JSON Schema, AASX for Asset Administration Shell Submodel Template or a HTML documentation.
 
-
 > **Info:**  
 > In the updated version of the data model (v3.1.0), the property `enclosedSitesBpn` accepts values of either `BPNS` or `BPNA`, whereas the previous version (v3.0.0) only supported `BPNS`. This update breaks backward compatibility because systems or applications relying on the previous model will not recognize or process the new `BPNA` value correctly. It is strongly **RECOMMENDED** to apply version `3.1.0` (or higher) for certification
-
-
 
 ### 3.2 TERMINOLOGY
 
@@ -562,8 +557,6 @@ The attribute *uploader* defines the company (uploader) who originally provided 
 
 The internal reference id to request a certificate document.
 
-
-
 ## 4 REFERENCES
 
 ### 4.1 NORMATIVE REFERENCES
@@ -571,7 +564,6 @@ The internal reference id to request a certificate document.
 - [CX-0003:1.1 SAMM Aspect Meta Model](https://catenax-ev.github.io/docs/standards/CX-0003-SAMMSemanticAspectMetaModel)
 - [CX-0010:2.0 Business Partner Number](https://catenax-ev.github.io/docs/standards/CX-0010-BusinessPartnerNumber)
 - CX-0151 Industry Core: Basics v.1.0.0
-
 
 ### 4.2 NON-NORMATIVE REFERENCES
 

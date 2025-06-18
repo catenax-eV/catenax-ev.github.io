@@ -14,6 +14,7 @@ demonstrated the requirement for such a fast standardized process among all part
 ## COMPARISON WITH THE PREVIOUS VERSION OF THE STANDARD
 
 Changed:
+
 - Removed wrong and unused part (`"method": "POST"`) of connector asset definition
 
 ## 1 INTRODUCTION
@@ -25,8 +26,7 @@ challenges:
   demand and capacity status is slow and error prone
 - lack of standards complicates the exchange of information
 - lack of trust between the partners involved prevents the exchange of data
-- current IT solutions provide bilateral (i.e. one-to-one) data exchange and often do not scale well
-  (i.e. one-to-n)
+- current IT solutions provide bilateral (i.e. one-to-one) data exchange and often do not scale well (i.e. one-to-n)
 
 This often leads to shortages, high expenses for "fire fighting" in the supply chain, production
 disruptions, and ultimately to dissatisfied customers.

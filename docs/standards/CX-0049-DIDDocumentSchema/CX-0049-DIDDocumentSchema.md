@@ -51,7 +51,7 @@ In general the concept of SSI according to the W3C standard [https://www.w3.org/
 The DID itself does not have to contain any identity features. In this context, the DID document contains a collection of service endpoints and the public keys of the identified participant, which can be used for any cryptographic signature and any type of authentication. For the storage of the DID document, it must be ensured that the document cannot be changed by third parties, as this would enable identity theft through manipulation of the public key.
 In the context of SSI, there is no need for a central issuing office for identities. Due to open standards and the associated multitude of providers of DIDs and verifiable credentials, the data sovereignty of the participants in the network is ensured.
 
-In addition to defined service endpoints, especially for the request for verifiable credentials, the did standard also allows the definition of specific endpoints for context-related services.	
+In addition to defined service endpoints, especially for the request for verifiable credentials, the did standard also allows the definition of specific endpoints for context-related services.
 
 To ensure that the DID of a participant can be used and is accepted by all other participants in the network, but also across networks, the DID document is based on the W3C standard [https://www.w3.org/TR/did-core/#did-documents]. Compliance with the W3C standard for DID documents applies both to DIDs created by Enablement Service Providers of Wallet services in the course of registration.
 
@@ -110,7 +110,6 @@ The following DID document uses a kind of real data to present a better readable
 From Release 24.05 onwards, the accepted DID Method for all participant's DIDs is `did:web` method defined here:
 https://w3c-ccg.github.io/did-method-web/
 Future releases might allow other DID methods. In this case, the allowed DID methods will be specified in this standard.
-
 
 ### 2.1 DID DOCUMENT STRUCTURE
 

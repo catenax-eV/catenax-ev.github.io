@@ -22,9 +22,9 @@ The following features are provided:
 - Traceability of transport (e.g. truck, ship, airplane), transport units and packing list.
 
 ## COMPARISON WITH THE PREVIOUS VERSION OF THE STANDARD
- 
+
 With the decision to create separate standards for the use cases of logistics and customs duties, all content relating to customs duties has been removed from this standard.
- 
+
 > Note: This release (**25.06**) contains **minor changes**!
 
 ## 1 INTRODUCTION

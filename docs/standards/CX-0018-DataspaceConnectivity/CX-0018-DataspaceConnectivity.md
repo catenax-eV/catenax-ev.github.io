@@ -20,7 +20,7 @@ ecosystem. The aim is to ensure interoperability and data sovereignty at the sam
 - Switch identifier in DSP communication from BPN to DID
 - Add management domain concepts and introducing the reference in the DID document
 - Add protocol version handling
-- Add section on backward compatibility 
+- Add section on backward compatibility
 
 ## 1 INTRODUCTION
 

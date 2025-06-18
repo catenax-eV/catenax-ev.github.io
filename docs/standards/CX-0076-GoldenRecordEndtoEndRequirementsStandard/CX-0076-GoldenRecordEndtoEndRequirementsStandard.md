@@ -278,14 +278,14 @@ The following quality checks are designed to verify that the shared Tax Number o
 - The issuing body MUST be filled, to be able to correctly assign the responsible commercial register when data records are uploaded for a Legal Entity including the corresponding commercial register number.
   This quality check applies to Tax Numbers assigned to a specific commercial register or similar, such as, but not limited to, the German Handelsregisternummer.
 
- ##### A list of identifiers for Europe is incorporated in standard CX-0010 BUSINESS PARTNER NUMBER v3.0.0. There they are defined in terms of:
--	Technical key
--	Name (including transliterated name and abbreviation)
--	Identifier type category with corresponding identifier types
--	BP type (identifier is applicable for either legal entity and / or address) 
--	format 
--	countries they are used.
+**A list of identifiers for Europe is incorporated in standard CX-0010 BUSINESS PARTNER NUMBER v3.0.0. There they are defined in terms of:**
 
+- Technical key
+- Name (including transliterated name and abbreviation)
+- Identifier type category with corresponding identifier types
+- BP type (identifier is applicable for either legal entity and / or address)
+- format
+- countries they are used.
 
 ### 2.1.9 GOLDEN RECORD OUTPUT REQUIREMENTS
 
@@ -396,7 +396,7 @@ A BP data record was shared by a French CX member as data owner 3 months ago, va
 | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------- |
 | Used by       | 3 CX member companies | 1                                    |
 | Checked by     | French trade register                                                                                                                                                                         | 3                                   |
-| Approved by     | Data Owner (as data originator)                                                                                                                                                                         | 5       
+| Approved by     | Data Owner (as data originator)                                                                                                                                                                         | 5
 | **Confidence level**     |                                                                                                                                                                          | **9** (maximum)                             |
 
 The higher the points, the higher the confidence level.

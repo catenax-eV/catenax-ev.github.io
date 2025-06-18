@@ -28,7 +28,7 @@ The following features are provided:
 ## COMPARISON WITH THE PREVIOUS VERSION OF THE STANDARD
 
 - Enhanced existing content of [Section ABSTRACT](#abstract), [Section FOR WHOM IS THE STANDARD DESIGNED](#for-whom-is-the-standard-designed), [Section 1.1](#11-audience--scope), [Section 1.2](#12-context-and-architecture-fit) with new information regarding block informations in context with the existing Quality Investigations and Quality Alerts.
-- Renamed [Section 2.1](#21-data-exchange-for-quality-and-block-notifications) title from _Quality Notifications and Data Exchange_ to _Data Exchange for Quality and Block Notifications_ and adapted existing content with additional information.
+- Renamed [Section 2.1](#21-data-exchange-for-quality-and-block-notifications) title from *Quality Notifications and Data Exchange* to *Data Exchange for Quality and Block Notifications* and adapted existing content with additional information.
 - Adapted existing content of [Section 2.1.3](#213-additional-requirements) with bug fixes and additional information for the new Block Notification function.
 - Added new [Section 4.2.](#42-block-notification-api) to describe the new Block Notification API.
 - Added new [Section 5.2.](#52-block-notification-process) to describe the new Block Notification process.
@@ -41,7 +41,7 @@ This document summarizes all standards to be supported by a network participants
 
 ### 1.1 AUDIENCE & SCOPE
 
-> _This section is non-normative_
+> *This section is non-normative*
 
 This document is targeting subsets of the following roles:
 
@@ -61,7 +61,7 @@ Note: Fulfilling a use-case standard by a data provider / consumer can be done i
 
 ### 1.2 CONTEXT AND ARCHITECTURE FIT
 
-> _This section is non-normative_
+> *This section is non-normative*
 
 Traceability of parts and materials is crucial in the automotive industry to enable e.g. quality management and circular economy. So, the aim of the Use Case Traceability is to trace physical parts and materials across the entire value creation chain to enable data driven use cases over all n-tier levels without compromising data sovereignty.
 
@@ -73,11 +73,11 @@ The following figure provides an overview of the architecture of all components 
 
 ![CX0125_notification_architecture_level_1.svg](./assets/CX0125_notification_architecture_level_1.svg)
 
-**_Figure 1: Architecture Overview_**
+***Figure 1: Architecture Overview***
 
 ### 1.3 CONFORMANCE AND PROOF OF CONFORMITY
 
-> _This section is non-normative_
+> *This section is non-normative*
 
 Sections marked as non-normative, all authoring guidelines, diagrams, examples, and notes in this specification are non-normative. Everything else in this specification is normative.
 
@@ -97,7 +97,7 @@ Examples of data assets and contract offer structure in the Tractus-X EDC or any
 
 The versions of the standardization documents valid for this standard are mentioned in sections where the [standalone standards](#211-list-of-standalone-standards), [normative references](#61-normative-references) and [non-normative references](#62-non-normative-references) are listed. The valid versions are not specifically mentioned in the body text.
 
-\*_Disclaimer: The operating model released by the Catena-X association will define the roadmap, content and scope for the certification process. This will include the roles, certification and further assessment procedures as well as the rollout phases._
+\**Disclaimer: The operating model released by the Catena-X association will define the roadmap, content and scope for the certification process. This will include the roles, certification and further assessment procedures as well as the rollout phases.*
 
 ### 1.4 EXAMPLES
 
@@ -107,7 +107,7 @@ Examples for APIs: See according subsection [4 APPLICATION PROGRAMMING INTERFACE
 
 ### 1.5 TERMINOLOGY
 
-> _This section is non-normative_
+> *This section is non-normative*
 
 **Application Programming Interface (API):**
 An API is a way for two or more computer programs to communicate with each other.
@@ -119,7 +119,7 @@ Note 1 to entry: An Aspect Model must adhere to the Semantic Aspect Meta Model (
 
 Note 2 to entry: Aspect Models are logical data models which can be used to detail a conceptual model in order to describe the semantics of runtime data related to a concept. Further, elements of an Aspect model can/should refer to terms of a standardized Business Glossary (if existing).
 
-_[Source: Catena-X, CX-0002, note 3 removed]_
+*[Source: Catena-X, CX-0002, note 3 removed]*
 
 **Asset:**
 An Asset describes on Data Provider side the data set which will be shared or can be consumed by a Data Consumer.
@@ -168,7 +168,7 @@ The VIN number is a 17-character code assigned by the manufacturer to every vehi
 
 ## 2 RELEVANT PARTS OF THE STANDARD FOR SPECIFIC USE CASES
 
-> _This section is normative_
+> *This section is normative*
 
 ### 2.1 "DATA EXCHANGE FOR QUALITY AND BLOCK NOTIFICATIONS"
 
@@ -180,7 +180,7 @@ The standards for Traceability and Industry Core: Part Instance serve as an enab
 
 #### 2.1.1 LIST OF STANDALONE STANDARDS
 
-> _This section is normative_
+> *This section is normative*
 
 To participate in Notifications, the following single standards **MUST** be fulfilled by all participants for which the standard is relevant:
 
@@ -249,7 +249,7 @@ Note: Data Assets differentiated only by major version **MUST** be offered in pa
 
 ## 3 ASPECT MODELS
 
-> _This section is normative_
+> *This section is normative*
 
 An overview of the relevant aspect models of this standard.
 
@@ -525,7 +525,7 @@ Example JSON Payload: Submodel "SpecialCharacteristicMeasurement" for a qualitat
 
 ## 4 APPLICATION PROGRAMMING INTERFACES
 
-> _This section is normative_
+> *This section is normative*
 
 ### 4.1 QUALITY NOTIFICATION API  
 
@@ -918,7 +918,7 @@ Excerpt of a possible JSON payload example for updating existing block informati
 
 ## 5 PROCESSES
 
-> _This section is normative_
+> *This section is normative*
 
 ### 5.1 QUALITY NOTIFICATION PROCESS
 
@@ -944,7 +944,7 @@ The notification itself has various states. The states and their cycle are descr
 
 ![CX0125_Notification-State-Model.svg](./assets/CX0125_Notification-State-Model.svg)
 
-**_Figure 2: Description of Process_**
+***Figure 2: Description of Process***
 
 The state of a notification MUST be exchanged via the [Notification API](#41-quality-notification-api).
 
@@ -986,7 +986,7 @@ has to be mentioned:
 
 ![CX0125_SendAndReceive_2.svg](./assets/CX0125_SendAndReceive_2.svg)
 
-**_Figure 3: Send and Receive Quality Investigation_**
+***Figure 3: Send and Receive Quality Investigation***
 
 ###### 5.1.2.2.2 SENDING AND RECEIVING OF A QUALITY ALERT
 
@@ -1002,7 +1002,7 @@ has to be mentioned:
 
 ![CX0125_SendAndReceive_3.svg](./assets/CX0125_SendAndReceive_3.svg)
 
-**_Figure 4: Send and Receive Quality Alert_**
+***Figure 4: Send and Receive Quality Alert***
 
 ###### 5.1.2.2.3 UPDATE OF A QUALITY INVESTIGATION
 
@@ -1011,7 +1011,7 @@ depicted.
 
 ![CX0125_UpdateQuality_4.svg](./assets/CX0125_UpdateQuality_4.svg)
 
-**_Figure 5: Update Quality Investigation_**
+***Figure 5: Update Quality Investigation***
 
 ###### 5.1.2.2.4 UPDATE OF A QUALITY ALERT
 
@@ -1019,7 +1019,7 @@ Below, the UML sequence diagram to update a quality alert is depicted.
 
 ![CX0125_UpdateQualityAlert_5.svg](./assets/CX0125_UpdateQualityAlert_5.svg)
 
-**_Figure 6: Update Quality Alert_**
+***Figure 6: Update Quality Alert***
 
 ### 5.2 BLOCK NOTIFICATION PROCESS
 
@@ -1041,10 +1041,10 @@ In order to track the blocking process in the Catena X network, a defined status
 
 ![CX0125_block-notification-state-model.svg](./assets/CX0125_block-notification-state-model.svg)
 
-**_Figure 7: Description of the Block Process_**
+***Figure 7: Description of the Block Process***
 
 - ACTIVE means that the part has been identified as a damaged and safety-critical part and must therefore be blocked on the customer side.
-- PART_BLOCKED is used when the recipient has received the block notification and actually blocks / sorts out the damaged parts as a measure.
+- PART\_BLOCKED is used when the recipient has received the block notification and actually blocks / sorts out the damaged parts as a measure.
 - CANCELED serves as the update status of the component originally identified to be blocked if the supplier subsequently determines that the original part does meet safety requirements, is not damaged or that the information was sent by mistake. This status can also be set by the manufacturer if, after an (initial) analysis, the part does not require a block.
 
 The status of a notification and the block status of each part of the notification **MUST** be exchanged via the API described in chapter [4.2. Block Notification API](#42-block-notification-api).
@@ -1090,13 +1090,13 @@ In addition to the above-mentioned general remarks, the following remark has to 
 
 ![CX0125_block-notification-update-status.svg](./assets/CX0125_block-notification-update-status.svg)
 
-**_Figure 9: Update an existing block information via a Block Notification_**
+***Figure 9: Update an existing block information via a Block Notification***
 
 ## 6 REFERENCES
 
 ### 6.1 NORMATIVE REFERENCES
 
-> _This section is normative_
+> *This section is normative*
 
 - CX-0001 EDC Discovery API 1.0.2
 - CX-0002 Digital Twins in Catena–X 2.2.0
@@ -1111,7 +1111,7 @@ In addition to the above-mentioned general remarks, the following remark has to 
 
 ### 6.2 NON-NORMATIVE REFERENCES
 
-> _This section is non-normative_
+> *This section is non-normative*
 
 - The Traceability KIT and sub-KITs will include further information on data asset structures, Digital Twin Submodel examples and API calls to be made.
 
@@ -1121,17 +1121,17 @@ In addition to the above-mentioned general remarks, the following remark has to 
 
 ### 6.3 REFERENCE IMPLEMENTATIONS
 
-> _This section is non-normative_
+> *This section is non-normative*
 
 ## ANNEXES
 
 ### FIGURES
 
-> _This section is non-normative_
+> *This section is non-normative*
 
 ### TABLES
 
-> _This section is non-normative_
+> *This section is non-normative*
 
 ## Legal
 
