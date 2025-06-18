@@ -184,6 +184,10 @@ const config: Config = {
               label: "Markdown Guidelines",
               href: "/markdown-guidelines",
             },
+            {
+              label: "Modeling Governance",
+              href: "/modeling-governance",
+            },
           ],
         },
         {
