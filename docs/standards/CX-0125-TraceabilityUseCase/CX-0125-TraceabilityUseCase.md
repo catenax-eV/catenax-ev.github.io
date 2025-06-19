@@ -1044,7 +1044,7 @@ In order to track the blocking process in the Catena X network, a defined status
 ***Figure 7: Description of the Block Process***
 
 - ACTIVE means that the part has been identified as a damaged and safety-critical part and must therefore be blocked on the customer side.
-- PART_BLOCKED is used when the recipient has received the block notification and actually blocks / sorts out the damaged parts as a measure.
+- PART\_BLOCKED is used when the recipient has received the block notification and actually blocks / sorts out the damaged parts as a measure.
 - CANCELED serves as the update status of the component originally identified to be blocked if the supplier subsequently determines that the original part does meet safety requirements, is not damaged or that the information was sent by mistake. This status can also be set by the manufacturer if, after an (initial) analysis, the part does not require a block.
 
 The status of a notification and the block status of each part of the notification **MUST** be exchanged via the API described in chapter [4.2. Block Notification API](#42-block-notification-api).
@@ -1114,8 +1114,10 @@ In addition to the above-mentioned general remarks, the following remark has to 
 > *This section is non-normative*
 
 - The Traceability KIT and sub-KITs will include further information on data asset structures, Digital Twin Submodel examples and API calls to be made.
+
 - [SMT] How to create a submodel template specification. Guideline. Download from: https://industrialdigitaltwin.org/wp-content/uploads/2022/12/I40-IDTA-WS-Process-How-to-write-a-SMT-FINAL-.pdf
-- CX Operating Model [https://catenax-ev.github.io/docs/operating-model/why-introduction](https://catenax-ev.github.io/docs/operating-model/why-introduction)
+
+- CX Operating Model [https://catena-x.net/fileadmin/\_online_media\_/CX_Operating_Modelv2.1_final.pdf](https://catena-x.net/fileadmin/_online_media_/CX_Operating_Modelv2.1_final.pdf)
 
 ### 6.3 REFERENCE IMPLEMENTATIONS
 

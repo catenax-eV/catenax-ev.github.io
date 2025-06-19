@@ -41,14 +41,15 @@ const config: Config = {
           sidebarPath: './sidebars.ts',
           versions: {
             current: {
-              label: 'CX-Io (preview)',
+              label: 'CX-Saturn (Preview)',
+            },
+            'Io': {
+              label: 'CX-Io (Current)',
             },
             'Jupiter': {
-              label: 'CX-Jupiter (current)',
-            },
-            '24.03': {
-              label: '24.03 (deprecated)',
-            },
+              label: 'CX-Jupiter',
+              banner: 'unmaintained'
+            }
           },
         },
         theme: {
@@ -182,6 +183,10 @@ const config: Config = {
             {
               label: "Markdown Guidelines",
               href: "/markdown-guidelines",
+            },
+            {
+              label: "Modeling Governance",
+              href: "/modeling-governance",
             },
           ],
         },

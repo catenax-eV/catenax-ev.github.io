@@ -1,0 +1,34 @@
+@startuml sharing-state-entry
+
+skinparam dpi 50
+
+package "Sharing State Entry and References" {
+  entity BusinessPartner {
+    ExternalID
+    ...
+  }
+  
+  entity SharingStateEntry {
+    SharingProcessStartedAt
+  }
+
+  enum SharingStateType {
+    Pending
+    Success
+    Error
+  }
+
+  enum SharingErrorCode {
+    SharingProcessError
+    SharingTimeout
+    BPNNotInPool
+  }
+
+  SharingStateEntry "*" -u-> "1" BusinessPartner : ExternalID
+
+  SharingStateEntry "*" -d-o "1" SharingStateType : SharingStateType
+  SharingStateEntry "*" -d-o "0..1" SharingErrorCode : SharingErrorCode
+}
+
+hide methods
+@enduml

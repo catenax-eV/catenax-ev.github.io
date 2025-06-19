@@ -4,7 +4,7 @@ skinparam dpi 50
 
 package "Business Parter (Legal and Site Main Address)" {
   object LegalEntity {
-    LegalName = "Schaeffler Group USA INC."
+    LegalName = "Schaeffler Group USA Inc."
     ShortName = ""
   }
 
@@ -27,13 +27,13 @@ package "Business Parter (Legal and Site Main Address)" {
   }
 
   object Site1 {
-    Name = "Schaeffler Group USA INC. Fort Mill"
+    Name = "Schaeffler Group USA Inc. Fort Mill"
   }
 
   object BusinessPartner {
     AddressType = "LegalAndSiteMainAddress"
     NameParts = [
-      "Schaeffler Group USA INC.", 
+      "Schaeffler Group USA Inc.", 
       "Fort Mill 1", 
       "", 
       ""]

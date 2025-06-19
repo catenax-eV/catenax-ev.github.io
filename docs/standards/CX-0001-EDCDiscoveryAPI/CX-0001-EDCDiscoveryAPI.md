@@ -6,34 +6,27 @@ tags:
   - CAT/Sandbox Service Provider
 ---
 
-# CX-0001 EDC Discovery API v1.0.4
-
-## ABSTRACT
-
-The definition and introduction of a cross-industry standard for the discovering of EDC instances is crucial for the networking of OEMs, suppliers, consumers, and industrial partners to automatically look up services and data. In a high competing eco systems data are the new oil. Even meta data on data offerings can provide business sensitive information. Hence even meta data for data offerings will be secured via an EDC endpoint.
-
-As the Catena-X network expands, a sizable amount of data assets will be available via EDC connection technology. It could be difficult to efficiently identify the proper EDC endpoint within the network.
-
-To be GAIA-X compliant each EDC endpoint must provide a Self Description (SD) of type ServiceOffering. Based on these SD a Data & Service Discovery Service must be provided to easily look up suitable EDC instances to query data offerings efficiently.
+# CX-0001 EDC Discovery API v1.1
 
 ## 1. Introduction
 
-Participants do not want their personal information made public. As a
-result, these may only be searched indirectly, which necessitates
-knowing or establishing who the data should be obtained from. Because no
-one wants to examine every EDC instance (load of the net, latency
-becomes ever larger with increasing number of participants, procedure
-does not scale thus). As a result, the number of EDC instances requested
-must be limited by suitable filters. As a result, subscribers must first
-determine who may have the data depending on their specific
-circumstances. This is performed by utilizing the EDC discovery service.
-The Business Partner Number (BPN) is currently the only criterion
-provided for restricting the EDC instances in question.
+For certain use cases within the Catena-X Data Space, there is only rudimentary information on the data provider from
+whom a consumer would like to get data from, e.g., only the Business Partner Number of the provider is known.
+For such cases, it is crucial, that the Data Space provides a mechanism that allows to find the Participant Agent of
+the provider in order to initiate a data transfer. This standard specifies a discovery service that based on the
+knowledge of the Business Partner Number allows to retrieve the Participant Agent endpoint.
 
-This standard has not the scope and intention to be a general solution
-pattern to search and discover any service and data offer. It is limited
-to look up the EDC instance in front of these service and data
-offerings.
+The second important aspect specified in this standard is a requirement towards GAIA-X compliance, which requires
+that each Participant Agent must provide a Self Description (SD) of type `ServiceOffering`. This requires a
+registration of a Participant Agent at the Core Service Provider B.
+
+NOTE: It is a deliberate decision to keep the name `EDC Discovery API` for this standard, although the name EDC is not
+defined within the Data Space. The correct term, as defined in the
+[Data Space Protocol](#data-space-protocol) is `Participant Agent` which will be used throughout this
+standard. The reason for not changing the title of the standard as well is based on the fact that the name
+`EDC Discovery` is used in other normative documents as well. A consistent change of the naming would require an
+effort that is not justified as this standard is about to become obsolete and replaced by other mechanisms in
+the near future.
 
 ### 1.1 Audience & Scope
 
@@ -47,54 +40,39 @@ This standard is relevant for the following roles:
 - Onboarding Service Provider
 - Enablement Service Provider
 
-For now, the EDC Discovery API is limited to filter suitable EDC
-instances based on BPN number providing data and service offerings. This
-document describes the relevant API endpoint to be created by an
-operating company to enable EDC discovery by supported criterions
-(currently on the BPN number).
+The purpose of the `EDC Discovery API` is to provide the ability to identify Participant Agents provided by
+a Data Space participant based on the knowlegse of the Business Partner Number of the participant. This
+document describes the relevant API endpoint to be created by an Core Service Provider B.
 
-### 1.2 Context
+### 1.2 Architecture Overview
 
 > *This section is non-normative*
 
-The EDC Discovery API is used to search and find service and data
-offerings. In a network of network this is the most crucial topic to
-build value added data services and data chains.
+![CX-0001-EDC_DiscoveryApiService.png](./assets/CX-0001-EDC_DiscoveryApiService.png)
 
-### 1.3 Architecture Overview
+Figure 2 Main Interactions
 
-> *This section is non-normative*
+A service providing the `EDC Discovery API` is provided from a Core Service Provider B. As every Participant Agent
+is requested to be registered with the Core Service Provider B, this discovery service has complete information on
+existing Participant Agents and the corresponding participant referenced by the Business Partner Number.
 
-![CX-0001-main-components.png](./assets/CX-0001-main-components.png)
+Every Data Consumer who is about to initiate a data transfer according to
+[CX-0018](#cx-0018-dataspace-connectivity) needs to know the participant
+agents endpoint to initiate contact. If this endpoint is not known, the `EDC Discovery API` service allows to
+search for this endpoint of the Data Provider in question based on the Business Partner Number. After retrieving
+the Participant Agents endpoint, the Data Consumer can initiate the interactions as specified in
+[CX-0018](#cx-0018-dataspace-connectivity).
 
-Figure 2 Main Components
+How a Data Consumer gets to know the Business Partner Number of the Data Provider is not in scope of this standard.
 
-In Figure 2 a high-level overview of the EDC Discovery Service workflow
-is sketched. Both connectors must be registered within an identity
-provider providing Verifiable Credentials (VC) to prove their identity by e.g. a Managed Identity Wallet (MIW). Any
-data provider can register assets and expose them to a metadata broker
-(Federated Catalog) for other consuming connectors to find. For
-registration Self Descriptions of Type LegalPerson and ServiceOffering
-for the providing EDC instance must be registered at the federated
-catalog. Via EDC Discovery Service the EDC instance can be queried via
-BPN number, which is part of the SD artifacts. Finally, the consumer can
-obtain contract offers from the provider and begin contract
-negotiations.
+### 1.3 Conformance
 
-The federated Catalog will be the storage of SD and the EDC Discovery Service the query API to retrieve URL of EDC instance of interest. There is no longer a central Digital Twin Registry (DTR) available from core service, but decentral instances (DDTR) hidden behind a data providing EDC. Hence any consumer has to identify the providing EDC to get access to the DDTR behind that EDC.
+As well as sections marked as non-normative, all authoring guidelines, diagrams, examples, and notes in this
+specification are non-normative. Everything else in this specification is normative.
 
-### 1.4 Conformance
-
-As well as sections marked as non-normative, all authoring guidelines,
-diagrams, examples, and notes in this specification are non-normative.
-Everything else in this specification is normative.
-
-The key words MAY, MUST, MUST NOT, OPTIONAL, RECOMMENDED, REQUIRED,
-SHOULD and SHOULD NOT in this document are to be interpreted as
-described in [BCP
-14](https://datatracker.ietf.org/doc/html/bcp14) \[[RFC2119](https://www.w3.org/TR/did-core/#bib-rfc2119)\]
-\[[RFC8174](https://www.w3.org/TR/did-core/#bib-rfc8174)\] when, and
-only when, they appear in all capitals, as shown here.
+The key words **MAY**, **MUST**, **MUST NOT**, **OPTIONAL**, **RECOMMENDED**, **REQUIRED**, **SHOULD** and **SHOULD NOT**
+in this document are to be interpreted as described in BCP 14 RFC2119, RFC8174 when, and only when, they
+appear in all capitals, as shown here.
 
 ### 1.5 Proof of conformity
 
@@ -103,103 +81,23 @@ conform with the Catena-X standards. To validate that the standards are
 applied correctly, Catena-X employs Conformity Assessment Bodies
 (CABs).
 
-- The Service Operator **MUST** provide an onboarding process for
-    participants and EDC instances. According to CX - 0006 Registration
-    and initial onboarding
+- The Service Operator MUST provide an onboarding process for
+  participants and participant agent instances. This has to be provided in
+  accordance to
+  [CX-0006](#cx-0006-registration-and-initial-onboarding)
 
-- The implemented service **MUST** use an SD storage like SD-Hub or
-    Federated Catalogue for storing the SD documents provided during the
-    onboarding process.
+- The implemented service MUST use an SD storage like SD-Hub for storing the SD documents
+  provided during the onboarding process.
 
-- The provided SD documents **MUST** be GAIA-X compliant, i.e. **MUST**
-    provide a compliance credential issued from GAIA-X AISBL.
+- The provided SD documents MUST be GAIA-X compliant, i.e. MUST provide a compliance credential issued
+  from GAIA-X AISBL.
 
-- The implemented service **SHOULD** use the SD storage as source of
-    truth.
-
-A test case could be, that an EDC instance has to be onboarded for a specific participant identified by a BPN. The SD for the EDC has to be visible in the supported SD storage (currently central hosted by the Core Service Provider). The SD documents has to be accessible by the dataspace participants.
+A test case could be, that a Participant Agent instance has to be onboarded for a specific participant
+identified by a BPN. The SD for the Participant Agent has to be visible in the supported SD storage
+(currently central hosted by the Core Service Provider B). The SD documents has to be accessible by the
+dataspace participants.
 
 ### 1.6 Examples
-
-**SD for Legal Person**
-
-```json
-{
-    "id": "https://compliance.gaia-x.eu/.well-known/participant.json",
-    "@context": [
-        "https://www.w3.org/2018/credentials/v1",
-        "https://registry.gaia-x.eu/v2206/api/shape/files?file=participant&type=jsonld",
-        "https://raw.githubusercontent.com/eclipse-tractusx/sd-factory/main/src/main/resources/verifiablecredentials.jsonld/sd-document-v22.10.jsonld",
-        "https://w3id.org/vc/status-list/2021/v1"
-    ],
-    "type": [
-        "VerifiableCredential",
-        "LegalPerson"
-    ],
-    "issuer": "did:sov:Bq3Nk9Z7sT8KeqNCnG4PrB",
-    "issuanceDate": "2022-09-23T23:23:23.235Z",
-    "credentialSubject": {
-        "ctxsd:bpn": "1234",
-        "id": "did:web:compliance.gaia-x.eu",
-        "gx-participant:name": "Gaia-X AISBL",
-        "gx-participant:legalName": "Gaia-X European Association for Data and Cloud AISBL",
-        "gx-participant:registrationNumber": {
-            "gx-participant:registrationNumberType": "local",
-            "gx-participant:registrationNumberNumber": "0762747721"
-        },
-        "gx-participant:headquarterAddress": {
-            "gx-participant:addressCountryCode": "BE",
-            "gx-participant:addressCode": "BE-BRU",
-            "gx-participant:streetAddress": "Avenue des Arts 6-9",
-            "gx-participant:postalCode": "1210"
-        },
-        "gx-participant:legalAddress": {
-            "gx-participant:addressCountryCode": "BE",
-            "gx-participant:addressCode": "BE-BRU",
-            "gx-participant:streetAddress": "Avenue des Arts 6-9",
-            "gx-participant:postalCode": "1210"
-        },
-        "gx-participant:termsAndConditions": "70c1d713215f95191a11d38fe2341faed27d19e083917bc8732ca4fea4976700"
-    },
-    "credentialStatus": {
-        "id": "https://managed-identity-wallets.int.demo.catena-x.net/api/credentials/status/315de87e-713c-4bd8-aa58-a31a4189b71f#7",
-        "type": "StatusList2021Entry",
-        "statusPurpose": "revocation",
-        "statusListIndex": "7",
-        "statusListCredential": "https://managed-identity-wallets.int.demo.catena-x.net/api/credentials/status/315de87e-713c-4bd8-aa58-a31a4189b71f"
-    },
-    "proof": {
-        "type": "Ed25519Signature2018",
-        "created": "2023-02-08T14:12:12Z",
-        "proofPurpose": "assertionMethod",
-        "verificationMethod": "did:sov:Bq3Nk9Z7sT8KeqNCnG4PrB#key-1",
-        "jws": "eyJhbGciOiAiRWREU0EiLCAiYjY0IjogZmFsc2UsICJjcml0IjogWyJiNjQiXX0..E4x-UYAS6d4UqK6cuaRLzJ4ZgZxUZL6NrMZePmqPZjt5XckcYU7HK1iTV9OuBJxj8YkeZxWCYsC4E5QkeliOCg"
-    },
-    "complianceCredential": {
-        "@context": [
-            "https://www.w3.org/2018/credentials/v1"
-        ],
-        "type": [
-            "VerifiableCredential",
-            "ParticipantCredential"
-        ],
-        "id": "https://catalogue.gaia-x.eu/credentials/ParticipantCredential/1664629337488",
-        "issuer": "did:web:compliance.gaia-x.eu",
-        "issuanceDate": "2022-10-01T13:02:17.489Z",
-        "credentialSubject": {
-            "id": "did:web:compliance.gaia-x.eu",
-            "hash": "3280866b1b8509ce287850fb113dc76d1334959c759f82a57415164d7a3a4026"
-        },
-        "proof": {
-            "type": "JsonWebSignature2020",
-            "created": "2022-10-01T13:02:17.489Z",
-            "proofPurpose": "assertionMethod",
-            "jws": "eyJhbGciOiJQUzI1NiIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..YQAIjkqX6OL4U3efV0zumn8-l8c4wQo98SOSlzt53HOR8qlLu5L5lmwZJnAsR7gKW-6jv5GBT0X4ORQ1ozLvihFj6eaxxJNgzLFPoH5w9UEaEIO8mMGyeQ-YQYWBbET3IK1mcHm2VskEsvpLvQGnk6kYJCXJzmaHMRSF3WOjNq_JWN8g-SldiGhgfKsJvIkjCeRm3kCt_UVeHMX6SoLMFDjI8JVxD9d5AG-kbK-xb13mTMdtbcyBtBJ_ahQcbNaxH-CfSDTSN51szLJBG-Ok-OlMagHY_1dqViXAKl4T5ShoS9fjxQItJvFPGA14axkY6s00xKVCUusi31se6rxC9g",
-            "verificationMethod": "did:web:compliance.gaia-x.eu"
-        }
-    }
-}
-```
 
 **SD for ServiceOffering**
 
@@ -296,7 +194,7 @@ standard:
 
 **Business Partner Number (BPN)**
 
-A BPN is the unique identifier of a partner within Catena-X.
+A BPN is the unique identifier of a partner within Catena-X, see [CX-0010](#cx-0010-business-partner-number).
 
 **Self Description (SD)**
 
@@ -306,6 +204,11 @@ Self-Descriptions. Such Self-Descriptions will for example include
 information like the address of a company, a specific service
 description or certificates and labels.
 
+**Participant Agent**
+
+A Participant Agent is a service that fulfills the requirements of the
+[CX-0018 standard](#cx-0018-dataspace-connectivity)
+
 Additional terminology used in this standard can be looked up in the
 glossary on the association homepage.
 
@@ -313,53 +216,49 @@ glossary on the association homepage.
 
 > *This section is normative*
 
-The EDC discovery service **MUST** be offered as central available endpoint by the Core Service Provider.
-Every EDC registered in the network **MUST** be registered in the EDC discovery service. Therefore the needed workflows/processes (as defined in CX - 0006 Registration and initial onboarding) **MUST** be followed/implemented.
+The `EDC Discovery API` service MUST be offered as central available endpoint by the Core Service Provider B.
+Every Participant Agent operated in the Data Space MUST be registered.
 
-The EDC discovery endpoint can get triggered via technical as well as
+The `EDC Discovery API` can get triggered via technical as well as
 real users, if relevant roles are available.
 
 For technical user, a company can request the user creation with the
 technical user creation feature inside the portal.
 
-All participants and their solutions will need to proof, that they are
-conform with the Catena-X standards. To validate that the standards are
-applied correctly, Catena-X employs Conformity Assessment Bodies
-(CABs).
+- The Core Service Provider B MUST offer a process/workflow to register Participant Agents; Enablement Service
+  Provider as well as Application Service Provider MUST run the Participant Agent registration for their service customers.
 
-- The Core Service Provider **MUST** offer a process/workflow to register dataspace connectors (as defined in CX - 0006 Registration and initial onboarding); Enablement Service Provider as well as Application Service Provider **MUST** run the connector registration for their service customers.
+- SD documents MUST be created for every Participant Agent registered and stored by the Participants.
+  The Core Service Provider B make them available.
 
-- SD documents **MUST** be created for every Connector registered and stored by the Participants. The Core Service Provide make them available.
+- The provided SD documents MUST be GAIA-X compliant, i.e. MUST provide a compliance credential issued from GAIA-X AISBL.
 
-- The provided SD documents **MUST** be GAIA-X compliant, i.e. MUST
-    provide a compliance credential issued from GAIA-X AISBL.
-
-A test case will be, that an EDC instance has to be onboarded for a
+A test case will be, that a Participant Agent instance has to be onboarded for a
 specific participant identified by a BPN. The SD for the EDC has to be
 visible in the supported SD storage. The query against this new
-registered EDC instance for the given BPN **SHOULD** provide the connector
+registered EDC instance for the given BPN SHOULD provide the connector
 url as stated in the SD document.
 
 ## 2.1 Preconditions and dependencies
 
-The self-description documents used as data source **MUST** be GAIA-X
-compliant, i.e. adhering to the GAIA-X Trustframework in the currently
+The self-description documents used as data source MUST be GAIA-X
+compliant, i.e. adhering to the [GAIA-X Trustframework](#gaia-x-trustframework) in the currently
 supported version in Catena-X (usually the latest published version and
-the version before). In addition, these SD documents **MUST** be registered
-at an SD storage like SD-Hub or Federated Catalogue.
+the version before). In addition, these SD documents MUST be registered
+at an SD storage like SD-Hub.
 
 ## 2.2 API Specification
 
 ### 2.2.1 API Endpoints & resources
 
-The EDC Discovery API **MUST** be implemented as specified in the openAPI
-documentation as stated here: https://\....
+The `EDC Discovery API` MUST be implemented as specified here:
 
 Endpoint: POST: `/api/administration/connectors/discovery`
 
 **Request body**
 
-the request body can be kept empty (to retrieve a complete list of registered connectors) or be filled with one or multiple BPNs to retrieve a list of registered EDC endpoints for the giving BPNs.
+the request body can be kept empty (to retrieve a complete list of registered Participant Agents) or be filled
+with one or multiple BPNs to retrieve a list of registered Participant Agent endpoints for the giving BPNs.
 
 ```json
 [
@@ -386,17 +285,17 @@ the request body can be kept empty (to retrieve a complete list of registered co
 ]
 ```
 
-For each bpn an own response object is provided. In case of multiple EDC
-instances for one bpn an array is returned (first result set) otherwise
+For each BPN an own response object is provided. In case of multiple Participant Agent
+instances for one BPN an array is returned (first result set) otherwise
 a single value (second result set)
 
 ### 2.2.2 Available Data Types
 
 The API MUST use JSON as the payload transported via HTTP.
 
-### 2.2.3 EDC Data Asset Structure
+### 2.2.3 Data Asset Structure
 
-This API do not have to be accessed via an EDC instance but can be
+This API is not accessed via a Participant Agent but can be
 queried from any authorized participant or service directly.
 
 ### 2.2.4 Error Handling
@@ -419,10 +318,25 @@ HTTP standard response codes that MUST be used.
 
 Following Standards are used within this standard:
 
-- GAIA-X Trustframework:
-    https://gaia-x.eu/wp-content/uploads/2022/05/Gaia-X-Trust-Framework-22.04.pdf
-- CX - 0006 Registration and initial onboarding
-- CX - 0010 Business Partner Number
+#### CX-0006 Registration and initial onboarding
+
+- [CX-0006](https://catenax-ev.github.io/docs/standards/CX-0006-RegistrationAndInitialOnboarding)
+
+#### CX-0010 Business Partner Number
+
+- [CX-0010](https://catenax-ev.github.io/docs/standards/CX-0010-BusinessPartnerNumber)
+
+#### CX-0018 Dataspace Connectivity
+
+- [CX-0018](https://catenax-ev.github.io/docs/standards/CX-0018-DataspaceConnectivity)
+
+#### Data Space Protocol
+
+- [DSP](https://eclipse-dataspace-protocol-base.github.io/DataspaceProtocol/2025-1-RC1)
+
+#### GAIA-X Trustframework
+
+- [GAIA-X Trustframework](https://docs.gaia-x.eu/policy-rules-committee/trust-framework/22.10/)
 
 ## Legal
 

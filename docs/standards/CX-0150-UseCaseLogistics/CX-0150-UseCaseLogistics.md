@@ -4,27 +4,32 @@ tags:
   - UC/Logistics
 ---
 
-# CX-0150 Logistics and Customs Use Case v1.0.0
+# CX-0150 Logistics Use Case v1.1.0
 
 ## ABSTRACT
 
-This standard is used to define the basic rules to participate in the logistics and customs use case.
+This standard is used to define the basic rules to participate in the logistics use case.
 
 The use case is based on the industry core and uses the digital twins and aspect models of the industry core. Furthermore it includes
 use case-specific aspect models (e.g. packingList) that go beyond the industry core and are used to make various entities in the network, such as transport units, traceable.
 
 ## FOR WHOM IS THE STANDARD DESIGNED
 
-This standard is designed for everybody who wants to participate in the logistics and customs use case.
+This standard is designed for everybody who wants to participate in the logistics use case.
 
 The following features are provided:
 
 - Traceability of transport (e.g. truck, ship, airplane), transport units and packing list.
-- Fulfilling customs requirements, like long-term supplier declaration (coming soon).
+
+## COMPARISON WITH THE PREVIOUS VERSION OF THE STANDARD
+
+With the decision to create separate standards for the use cases of logistics and customs duties, all content relating to customs duties has been removed from this standard.
+
+> Note: This release (**25.06**) contains **minor changes**!
 
 ## 1 INTRODUCTION
 
-This document summarizes all standards to be supported by a network participants IT infrastructure to participate for the **Use Case Logistics and Customs**. This involves protocols, semantic models and platform capabilities to be used.
+This document summarizes all standards to be supported by a network participants IT infrastructure to participate for the **Use Case Logistics**. This involves protocols, semantic models and platform capabilities to be used.
 
 ### 1.1 AUDIENCE & SCOPE
 
@@ -34,9 +39,8 @@ This document is targeting subsets of the following roles:
 
 - Data Provider / Consumer
 - Business Application Provider
-- Enablement Service Provider
 
-The **Use Case Logistics and Customs** is only relevant in case of tracking transport units, the transport itselfs and e.g. using and providing information about GTL (global transport label according to VDA 4994 - Please refer to: https://www.vda.de/de/aktuelles/publikationen/publication/vda-4994---global-transport-label-v2.0-2023-07--ersetzt-die-vda-4902- ) and the requirement to track and share information in a Catena-X compliant way.
+The **Use Case Logistics** is only relevant in case of tracking transport units, the transport itselfs and e.g. using and providing information about GTL (global transport label according to VDA 4994 - Please refer to: https://www.vda.de/de/aktuelles/publikationen/publication/vda-4994---global-transport-label-v2.0-2023-07--ersetzt-die-vda-4902- ) and the requirement to track and share information in a Catena-X compliant way.
 
 Note: Fulfilling a use case standard by a data provider / consumer can be done in two ways:
 
@@ -47,9 +51,8 @@ Note: Fulfilling a use case standard by a data provider / consumer can be done i
 
 > *This section is non-normative*
 
-**Logistic section:**
 Traceability of parts and materials is crucial in the automotive industry to enable e.g. quality management and calculating the correct PCF value. But not just the manufacturing process or used materials have an influence to the product quality and the PCF. How these parts, batches or vehicles are conveyed and handled on the route of transport can have an impact to it. Some examples are heat or humidity to chemical products or shock to sensitive or breakable goods. It makes a difference in calculating a PCF value in case of ground shipping vs. air freight.
-So, the aim of the **Use Case Logistics and Customs** is to provide additional information about the transport (used vehicles, real time information about the location etc.), the transport unit (also known as "handling unit")  and specific details of package content. It enables to track and trace the single stages of the value creation chain to enable further data driven use cases in the logistics without compromising data sovereignty.
+So, the aim of the **Use Case Logistics** is to provide additional information about the transport (used vehicles, real time information about the location etc.), the transport unit (also known as "handling unit")  and specific details of package content. It enables to track and trace the single stages of the value creation chain to enable further data driven use cases in the logistics without compromising data sovereignty.
 
 In order to create this transparency on transport, transport unit etc. relevant data should be made available by the affected participants of a value chain in addition of the transparency on physical assets. This process is described in the standard CX - 0127 INDUSTRY CORE: PART INSTANCE 2.0.0. This standard enables data and app providers to deliver solutions for building data chains for serialized parts, batches etc.. This is achieved via the standardized creation of digital twins of vehicles, parts and materials as well as the logical linking to their sub-components (Bill of Material, BoM). The default visibility of digital twins and their respective semantic models follows the one-up/one-down principle.
 
@@ -57,7 +60,7 @@ By tracking and tracing back the logistic conditions of parts, batches or vehicl
 
 ![LogisticTwins.png](./assets/LogisticTwins.png)
 
-To participate in the **Use Case Logistics and Customs**, the following single standards MUST be fulfilled by all participants for which the standard is relevant:
+To participate in the **Use Case Logistics**, the following single standards MUST be fulfilled by all participants for which the standard is relevant:
 
 - CX-0002 Digital Twins in Catena-X
 - CX-0126 IndustryCorePartType
@@ -374,7 +377,6 @@ There is no prcoess defintion in this standard version available.
 - CX-0105 Asset Tracking 1.1
 - CX-0126 Industry Core - Part Type 2.0
 - CX-0127 Industry Core - Part Instance 2.0
-- Tractus-X EDC Reference Implementation - [https://github.com/eclipse-tractusx/tractusx-edc](https://github.com/eclipse-tractusx/tractusx-edc)
 
 [^1]: [https://catena-x.net/fileadmin/user_upload/Vereinsdokumente/Catena-X_IP_Regelwerk_IP_Regulations.pdf](https://catena-x.net/fileadmin/user_upload/Vereinsdokumente/Catena-X_IP_Regelwerk_IP_Regulations.pdf)
 [^2]: [https://catenax-ev.github.io/docs/standards/overview](https://catenax-ev.github.io/docs/standards/overview)
@@ -383,6 +385,7 @@ There is no prcoess defintion in this standard version available.
 
 > *This section is non-normative*
 
+- Tractus-X EDC Reference Implementation - [https://github.com/eclipse-tractusx/tractusx-edc](https://github.com/eclipse-tractusx/tractusx-edc)
 - The Traceability KIT and sub-KITs will include further information on data asset structures, Digital Twin Submodel examples and API calls to be made.
 - [SMT] How to create a submodel template specification. Guideline. Download from: [How to Create a Submodel Template Specification](https://industrialdigitaltwin.org/wp-content/uploads/2022/12/I40-IDTA-WS-Process-How-to-write-a-SMT-FINAL-.pdf)
 - CX Operating Model [Operating Model v3.0](https://catenax-ev.github.io/docs/next/operating-model/why-introduction)

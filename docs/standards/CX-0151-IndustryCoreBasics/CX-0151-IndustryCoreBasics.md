@@ -1,8 +1,3 @@
----
-tags:
-  - CAT/Industry Core
----
-
 # CX - 0151 Industry Core: Basics v.1.0.0
 
 ## ABSTRACT
@@ -59,7 +54,7 @@ Use cases can define and standardize their own notification APIs. They need to e
 
 - They must extend the content part of the notification data format with their own business content.
 - They must define a set of operations that should be supported with the use case specific notification API.
-- They also must define a name for their notification API which is, for example, used in the `dct:type` property of the connector asset.  
+- They also must define a name for their notification API which is, for example, used in the `dct:type` property of the connector asset.
 
 As all use cases use the same underlying notification technology based on Industry Core, use cases still are interoperable. Data and app providers only need to implement one notification technology that is jointly used by all use cases and do not need to implement several different technologies for message-based data exchange.
 
@@ -97,11 +92,11 @@ Examples of Discrete Objects in the automotive context:
 
 Even with an underlying object, the usage of a digital twin might still not be necessary based on the predefined exclusive utilization of the data within a use-case. Therefore the following questions should be answered:
 
-- Is the object and especially the data linked to it shared or likely to be shared between different use cases?
-- Is the object itself linked to different sets of data (submodels), that are individually accessed?
-- Is the object identified by different identifiers, requiring the use or translation of these identifiers for discovery mechanisms?
-- Is the object commonly accessed individually and not via mass data requests?
-- Is the data intended to be used more than once and therefore worth to be discovered?
+- Is the object and especially the data linked to it shared or likely to be shared between different use cases ?
+- Is the object itself linked to different sets of data (submodels), that are individually accessed ?
+- Is the object identified by different identifiers, requiring the use or translation of these identifiers for discovery mechanisms ?
+- Is the object commonly accessed individually and not via mass data requests ?
+- Is the data intended to be used more than once and therefore worth to be discovered ?
 
 If all of the above questions are answered with a clear "No", a twin might be overhead for an object or data to be shared within one specific use-case.
 Examples include:
@@ -193,7 +188,7 @@ The following terms are especially relevant for the understanding of the standar
 
 **Notification API**: A message-based data exchange within Catena-X that supports a set of operations.
 
-**Unique ID / Catena-X ID**: A Unique ID uniquely identifies a particular real-world asset. In Industry Core, these are: serialized parts (including vehicles), batches, JIS parts (Just-in-Sequence) and catalog parts. A Unique ID is a URN and has the following format: urn:uuid:`<UUIDv4>`, i.e., the NID is "uuid" and the NSS is an UUID Version 4 (as described here: https://en.wikipedia.org/wiki/Universally_unique_identifier). Unique IDs are used in several places in Industry Core, e.g., as globalAssetId for digital twins. Although they share the same format with other identifiers like, e.g., the AAS identifier, they are separate identifiers that identify different resources and should not be mistaken with these other identifiers.
+**Unique ID / Catena-X ID**: A Unique ID uniquely identifies a particular real-world asset. In Industry Core, these are: serialized parts (including vehicles), batches, JIS parts (Just-in-Sequence) and catalog parts. A Unique ID is a URN and has the following format: urn:uuid:\<UUIDv4\>, i.e., the NID is "uuid" and the NSS is an UUID Version 4 (as described here: https://en.wikipedia.org/wiki/Universally_unique_identifier). Unique IDs are used in several places in Industry Core, e.g., as globalAssetId for digital twins. Although they share the same format with other identifiers like, e.g., the AAS identifier, they are separate identifiers that identify different resources and should not be mistaken with these other identifiers.
 
 ## 2 RELEVANT PARTS OF THE STANDARD FOR SPECIFIC USE CASES
 

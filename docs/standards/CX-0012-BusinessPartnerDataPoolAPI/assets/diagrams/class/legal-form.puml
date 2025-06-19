@@ -9,7 +9,7 @@ package "Legal Form and References" {
  entity LegalForm {
     TechnicalKey
     Name
-    Abbreviation
+    Abbreviations
     TransliteratedName
     TransliteratedAbbreviations
     IsActive

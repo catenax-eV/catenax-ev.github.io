@@ -7,7 +7,7 @@ package "Legal Entity and References" {
     BPNL
     LegalName
     ShortName
-    IsCatenaXMemberData
+    IsParticipantData
     CreatedAt
     UpdateAt
   }

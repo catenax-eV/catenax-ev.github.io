@@ -1,0 +1,37 @@
+@startuml Figure_3
+title Registration of IC Part Type Twin
+
+autonumber
+
+box "Supplier" #LightBlue
+    participant SupplierApplication as "Application"
+    participant SupplierDTR as "dDTR"
+    participant SupplierSubmodelEndpoint as "Submodel Endpoint"
+    participant SupplierEDC as "Connector"
+end box
+
+box "Customer" #LightGreen
+    participant CustomerEDC as "Connector"
+    participant CustomerSubmodelEndpoint as "Submodel Endpoint"
+    participant CustomerDTR as "dDTR"
+    participant CustomerApplication as "Application"
+end box
+
+== Supplier registers IC Part Type Twin with Submodel for Customer ==
+    SupplierApplication -> SupplierEDC: Register dDTR for partner at Connector
+    activate SupplierEDC 
+    return OK
+
+    note over SupplierSubmodelEndpoint, SupplierApplication: Keeping Submodel updated only needed\nfor repository pattern
+    SupplierApplication -> SupplierSubmodelEndpoint: Create Submodel
+    activate SupplierSubmodelEndpoint
+    return OK
+
+    SupplierApplication -> SupplierEDC: Register endpoint of Submodel for READ access for partner at Connector
+    activate SupplierEDC
+    return OK
+
+    SupplierApplication -> SupplierDTR: Register IC Part Type Twin Shell Descriptor\n with Submodel endpoint\nfor Partner in dDTR\n(DSP endpoint)
+    activate SupplierDTR
+    return OK
+@enduml

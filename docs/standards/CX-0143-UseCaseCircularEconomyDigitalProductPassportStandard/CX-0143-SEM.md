@@ -39,7 +39,7 @@ In case of doubt the license, copyright and authors information in github overwr
 This semantic model has the unique identifier:
 
 ```
-urn:samm:io.catenax.generic.digital_product_passport:4.0.0#
+urn:samm:io.catenax.generic.digital_product_passport:6.0.0#
 ```
 
 ### 2.1.5 FORMATS OF SEMANTIC MODEL

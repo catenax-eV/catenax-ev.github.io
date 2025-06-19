@@ -6,7 +6,7 @@ tags:
   - CAT/BPDM
 ---
 
-# CX-0074 Business Partner Gate API v3.2.1
+# CX-0074 Business Partner Gate API v4.0.0
 
 ## FOR WHOM IS THE STANDARD DESIGNED
 
@@ -21,13 +21,14 @@ This document is mainly targeted to technical individuals involved in integratin
 | 2.0.0       | 2024-03-22          |            | Added business partner description and removed detailed legal entity, site and address descriptions from terminology chapter; removed business partner type from changelog entry and sharing state entry descriptions; added business partner endpoints and removed legal entity, site and address endpoints; added “house number supplement” attribute; added “is own company data” attribute to claim ownership; switched to the new document structure                                                                                                                                                      |
 | 3.0.0       | 2024-06-07          |            | Added footnote to indicate that the term "site main address" is subject to change; added the CX-0018 version; changed and added the detailed asset structure; added footnote to clarify role distribution; removed classification sub-object, to reintroduce it in a presumably new form in one of the next non-breaking versions of this standard; removed business partner state and introduced separate states at representation classes; added outlook for business partner relationship; removed "api/catena/" from the endpoint definitions; added data sovereignty chapters as additional requirements. |
 | 3.1.0       | 2024-12-02          |            | Added tax jurisdiction code; change outlook on business partner relationship                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| 3.2.0       | 2025-03-17          |            | Added attributes for legal forms and identifier types; added a footnote about the plan for changing from minor to major asset versioning; added footnote about plural in the abbreviation(s) attribute for legal forms; added requirement about the correct asset property format as defined in CX-0018                                                                                                                                                                                                                                                                                                                                                                                           |
+| 3.2.0       | 2025-03-17          |            | Added attributes for legal forms and identifier types; added a footnote about the plan for changing from minor to major asset versioning; added footnote about plural in the abbreviation(s) attribute for legal forms; added requirement about the correct asset property format as defined in CX-0018                                                                                                                                                                                                                                                                                                        |
+| 4.0.0       | 2025-06-01          |            | Updated the asset structure to the major version 7 of the Gate API; added detailed identifier type description; added format and identifier type category attributes to the identifier type API; renamed "Abbreviation" attribute to "Abbreviations" for legal forms.                                                                                                                                                                                                                                                                                                                                          |
 
 ## ABSTRACT
 
-The Business Partner Data Management (BPDM) is a distributed service-based system, composed of a set of dedicated services, that simultaneously serve multiple stakeholders. It is based on a central data pool of business partners, which is consistent with the overall design principles of Catena-X. The main target is to create business partner data records (such as customer/supplier) with a high quality and currentness, to provide other processes with these data. This results in less rework and adjustment due to better master data quality which ultimately leads to an overall cost reduction for participating companies. Additionally, Value Added Services shall be offered to enrich those business partner data sets even further and give additional information or warnings about the business partners. Getting a 360° view on your business partners also helps with reducing costs and achieving process excellence because better decisions can be made.
+The Business Partner Data Management (BPDM) is a distributed service-based system, composed of a set of dedicated services, that simultaneously serve multiple stakeholders and use cases. It is based on a central data pool of business partners, which is operated under data space governance and underlies interoperability through standardization. The main target is to create business partner data records (such as customer/supplier) with a high quality and currentness, to provide other processes with these data. This results in less rework and adjustment due to better master data quality which ultimately leads to an overall cost reduction for participating companies. Additionally, Value Added Services shall be offered to enrich those business partner data sets even further and give additional information or warnings about the business partners. Getting a 360° view on your business partners also helps with reducing costs and achieving process excellence because better decisions can be made.
 
-The Business Partner Gate allows any Catena-X member to share own business partner data as well as business partner data of its suppliers and customers with the Catena-X network so that cleansed and enriched business partner data records, so-called Golden Records, can be created and made available. It is a main component of the architecture framework at Catena-X, as it enables the Catena-X members to leverage accurate, complete, and consistent business partner data for Catena-X applications and shared services.
+The Business Partner Gate allows any data space participant to share own business partner data as well as business partner data of its suppliers and customers with the data space so that cleansed and enriched business partner data records, so-called Golden Records, can be created and made available. It is a main component of the architecture framework, as it enables the data space participants to leverage accurate, complete, and consistent business partner data for data space applications and shared services.
 
 The Business Partner Gate can be accessed via the standardized API described in this standard.
 
@@ -43,37 +44,38 @@ This standard is relevant for the following audience:
 - Onboarding Service Provider
 - Data Provider and Consumer
 
-This document focuses on the Business Partner Gate API (short: Gate API) that is part of the Business Partner Data Management (BPDM) described on the [BPDM Catena-X Website](https://catena-x.net/en/offers-standards/bpdm). It is relevant for core service providers who want to provide services for uploading and downloading business partner master data records with the aim of cleansing and enriching them and thus create a high-quality business partner data record (Golden Record), which is identified by the business partner number (BPN). It is also relevant for onboarding service providers, business application providers as well as data providers and consumers who want to use such services.
+This document focuses on the Business Partner Gate API (short: Gate API) that is part of the Business Partner Data Management (BPDM) use case described on the [BPDM website](https://catena-x.net/use-case-cluster/next-level-master-data-management/). It is relevant for core service providers who want to provide services for uploading and downloading business partner master data records with the aim of cleansing and enriching them and thus create a high-quality business partner data record (Golden Record), which is identified by the business partner number (BPN). It is also relevant for onboarding service providers, business application providers as well as data providers and consumers who want to use such services.
 
-Not in scope are the structure and logic of the business partner number itself and the mechanism on how the business partner number is issued. There is a separate standard for this: CX-0010 Business Partner Number 2.2.0.
+Not in scope are the structure and logic of the business partner number itself and the mechanism on how the business partner number is issued. There is a separate standard for this: CX-0010 Business Partner Number 3.0.0.
 
-Not in scope is the overall Business Partner Data Pool with all Golden Records within Catena-X and the way of how the Golden Records can be retrieved. There is a separate standard for this: CX-0012 Business Partner Data Pool API 4.2.0.
+Not in scope is the overall Business Partner Data Pool with all Golden Records within the data space and the way of how the Golden Records can be retrieved. There is a separate standard for this: CX-0012 Business Partner Data Pool API 5.0.0.
 
-Not in scope are the requirements of cleansing and enriching the business partner data records with the aim to create a Golden Record. There is a separate standard for this: CX-0076 Golden Record End to End Requirements Standard 1.3.0.
+Not in scope are the requirements of cleansing and enriching the business partner data records with the aim to create a Golden Record. There is a separate standard for this: CX-0076 Golden Record End to End Requirements Standard 1.4.0.
 
-You can find the other standards in the [Catena-X standard library](https://catena-x.net/en/standard-library).
+You can find the other standards in the [standard library](https://catenax-ev.github.io/docs/standards/overview).
 
 ### 1.2 CONTEXT AND ARCHITECTURE FIT
 
 > *This section is non-normative*
 
-The Gate API is a crucial core component in Catena-X and its platform capability BPDM because it contributes to the following functions:
+The Gate API is a crucial core component for the data space, the Golden Record Service as Core Service B and the BPDM use case because it contributes to the following functions:
 
 1. Data Consistency: The Gate API allows that data related to business partners can be collected from multiple sources and can be sent through the sharing process to correct, enrich and validate the data. This ultimately enables BPDM to create accurate, complete, and consistent business partner data records (Golden Records). This helps to reduce the risk of errors and inconsistencies in business partner data.
-2. Data Sovereignty: The Gate API allows to upload and download business partner data in a data sovereign way, because each Catena-X member has its own area of business partner data in BPDM, where private data (like customer / supplier relationships) is only visible to the Catena-X member.
+2. Data Sovereignty: The Gate API allows to upload and download business partner data in a data sovereign way, because each Sharing Member has its own area of business partner data in BPDM, where private data (like customer / supplier relationships) is only visible to the data owner.
 3. Data Governance: The Gate API is the basis for a data governance framework and helps to enforce data quality standards, such as data completeness, accuracy, and consistency. It allows to compare the uploaded business partner data records against the corrected and enriched ones and provides the Sharing Member with a proposal for taking over the changes into the local MDM systems. This helps to ensure that business partner data is of high quality and can be trusted for use in various business processes.
 4. Interoperability: The Gate API provides an interoperable and standardized way of uploading and downloading business partner data, ensuring both Core Service Provider interchangeability and streamlined data accessibility for all consumers of the API.
 
-There is a reference implementation for the [Business Partner Gate API (6.3.x)](https://github.com/eclipse-tractusx/bpdm/tree/72ba993eb2332613d6cee52c40182763f3e3735f/bpdm-gate-api/src/main/kotlin/org/eclipse/tractusx/bpdm/gate/api) on GitHub. It is part of a Spring Boot Kotlin open-source software project under the hood of the Eclipse Foundation and follows the Apache 2.0 licenses.
+There is a reference implementation for the [Business Partner Gate API (7.0.x)](https://github.com/eclipse-tractusx/bpdm/tree/e518d4cb7be420b6a7c50499a237ae6bf0ffc00c/bpdm-gate-api/src/main/kotlin/org/eclipse/tractusx/bpdm/gate/api) on GitHub. It is part of a Spring Boot Kotlin open-source software project under the hood of the Eclipse Foundation and follows the Apache 2.0 licenses.
 
-For the complete and up-to-date BPDM setup refer to the [Eclipse Tractus-X BPDM GitHub repository (6.3.x)](https://github.com/eclipse-tractusx/bpdm/blob/72ba993eb2332613d6cee52c40182763f3e3735f/README.md).
+For the complete and up-to-date BPDM setup refer to the [Eclipse Tractus-X BPDM GitHub repository (7.0.x)](https://github.com/eclipse-tractusx/bpdm/blob/e518d4cb7be420b6a7c50499a237ae6bf0ffc00c/README.md).
 
-For an architecture overview refer to the [BPDM ARC42 documentation (6.3.x)](https://github.com/eclipse-tractusx/bpdm/tree/72ba993eb2332613d6cee52c40182763f3e3735f/docs/architecture).
+For an architecture overview refer to the [BPDM ARC42 documentation (7.0.x)](https://github.com/eclipse-tractusx/bpdm/tree/e518d4cb7be420b6a7c50499a237ae6bf0ffc00c/docs/architecture).
 
 To use the Gate API in the BPDM use case apart from this standard, the following other standards should be considered by all participants for which this standard is relevant:
 
-- CX-0018 Dataspace Connectivity 3.3.0
-- CX-0012 Business Partner Data Pool API 4.2.0
+- CX-0010 Business Partner Number 3.0.0
+- CX-0012 Business Partner Data Pool API 5.0.0
+- CX-0018 Dataspace Connectivity 4.0.0
 
 ### 1.3 CONFORMANCE AND PROOF OF CONFORMITY
 
@@ -122,7 +124,7 @@ A business partner having assigned a legal entity, a site and its main address[^
 
 A business partner having assigned a legal entity, a site and its main address[^5], which is also the legal address.
 
-***Schaeffler Group USA INC. Fort Mill 1, 308 Springhill Farm Rd, Fort Mill, SC 29715, USA***
+***Schaeffler Group USA Inc. Fort Mill 1, 308 Springhill Farm Rd, Fort Mill, SC 29715, USA***
 
 ![Legal and Site Main Address](./assets/diagrams/object/legal-and-site-main-address.svg)
 
@@ -140,9 +142,9 @@ A business partner having assigned a legal entity, a site and one of its address
 
 ### 1.5.1 GENERAL
 
-**Golden Record:** Golden Record defines a business partner data record which successfully passed a set of predefined quality rules. These rules qualified the data record into a harmonized, standardized, and semantically unified data structure which is defined by Catena-X. The Golden Record status is a prerequisite for each BP data record to receive a valid BPN.
+**Golden Record:** A Golden Record is a business partner data record which successfully passed a set of predefined quality rules. These rules qualified the data record into a harmonized, standardized, and semantically unified data structure which is defined by the BPDM standards. The Golden Record status is a prerequisite for each business partner data record to receive a valid business partner number.
 
-**Sharing Member:** A Sharing Member is a Catena-X member who shares the business partner data of his own business environment[^6].
+**Sharing Member:** A Sharing Member is a data space participant who shares the business partner data of his own business environment[^6].
 
 **Company Data:** Company Data are business partner data that represent the organizational structures of the Sharing Member.
 
@@ -163,7 +165,7 @@ This chapter explains the data model[^1] from a conceptual / terminology point o
 
 In general, a business partner is any entity (such as a customer, a supplier, an employee, or a service provider) that does business with another entity.
 
-In Catena-X, a business partner is an organization (such as an enterprise or company, university, association, etc., and not a natural person) or one of its substructures that acts as unique partner within the automotive supply chain - either in the role of a direct participant, or a consultant, or a non-production-material (NPM) supplier.
+In data spaces, a business partner is an organization (such as an enterprise or company, university, association, etc., and not a natural person) or one of its organization parts that acts as unique partner within the supply chain - either in the role of a direct participant, or a consultant, or a non-production-material (NPM) supplier.
 
 The business partner entity in the Gate API provides a merged view on the entity combinations from the Business Partner Data Pool. In all combinations, a business partner has exactly one legal entity and one address assigned. It may additionally have a site assigned if the assigned address belongs to the site and the site is known to BPDM / has been shared by the owner. Note that for the assignment of the entities the respective BPNL, BPNS or BPNA (from the Business Partner Data Pool) are used.
 
@@ -194,7 +196,7 @@ These are the attributes of the business partner:
 
 ##### 1.5.2.1.1 BUSINESS PARTNER IDENTIFIER
 
-A business partner identifier (uniquely) identifies the business partner, such as the German Handelsregisternummer, a VAT number, etc.
+A business partner identifier (uniquely) identifies the business partner, such as the German Handelsregisternummer, a VAT registration / taxpayer identification number, etc.
 
 | **Attribute** | **Description**                                                                                                                                                                              | **(Data) Type / Code List / Enumeration** |
 | ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------- |
@@ -216,7 +218,7 @@ A legal entity representation adds context information to the legal entity, on w
 
 ###### 1.5.2.1.2.1 LEGAL ENTITY STATE
 
-A legal entity state indicates if the legal entity is active or inactive[^3]. This does not describe the relation between a Catena-X Member and a business partner and whether they have active business, but it describes whether the legal entity is still operating.
+A legal entity state indicates if the legal entity is active or inactive[^3]. This does not describe the relation between a data space participant and a business partner and whether they have active business, but it describes whether the legal entity is still operating.
 
 | **Attribute** | **Description**                                  | **(Data) Type / Code List / Enumeration** |
 | ------------- | ------------------------------------------------ | ----------------------------------------- |
@@ -236,7 +238,7 @@ A legal entity representation adds context information to the site, on which the
 
 ###### 1.5.2.1.3.1 SITE STATE
 
-A site state indicates if the site is active or inactive[^3]. This does not describe the relation between a Catena-X Member and a business partner and whether they have active business, but it describes whether the site is still operating.
+A site state indicates if the site is active or inactive[^3].This does not describe the relation between a data space participant and a business partner and whether they have active business, but it describes whether the site is still operating.
 
 | **Attribute** | **Description**                           | **(Data) Type / Code List / Enumeration** |
 | ------------- | ----------------------------------------- | ----------------------------------------- |
@@ -259,7 +261,7 @@ An address representation adds context information to the address, on which the 
 
 ###### 1.5.2.1.4.1 ADDRESS STATE
 
-An address state indicates if the address is active or inactive[^3]. This does not describe the relation between a Catena-X Member and a business partner and whether they have active business, but it describes whether the business partner is still operating at that address.
+An address state indicates if the address is active or inactive[^3]. This does not describe the relation between a data space participant and a business partner and whether they have active business, but it describes whether the business partner is still operating at that address.
 
 | **Attribute** | **Description**                           | **(Data) Type / Code List / Enumeration** |
 | ------------- | ----------------------------------------- | ----------------------------------------- |
@@ -277,7 +279,7 @@ A legal form is a mandatory corporate legal framework by which companies can con
 | ---------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ |
 | Technical Key                | The technical identifier of the legal form according to [ISO 20275:2017](https://www.iso.org/obp/ui/en/#iso:std:iso:20275:ed-1:v1:en).                                                              | String                                                             |
 | Name                         | The name of legal form according to [ISO 20275:2017](https://www.iso.org/obp/ui/en/#iso:std:iso:20275:ed-1:v1:en).                                                                                  | String                                                             |
-| Abbreviation[^9]             | A list of abbreviated names for the legal form according to [ISO 20275:2017](https://www.iso.org/obp/ui/en/#iso:std:iso:20275:ed-1:v1:en), such as AG for German Aktiengesellschaft.                | String                                                             |
+| Abbreviations                | A list of abbreviated names for the legal form according to [ISO 20275:2017](https://www.iso.org/obp/ui/en/#iso:std:iso:20275:ed-1:v1:en), such as AG for German Aktiengesellschaft.                | String                                                             |
 | Transliterated Name          | The transliterated name of legal form according to [ISO 20275:2017](https://www.iso.org/obp/ui/en/#iso:std:iso:20275:ed-1:v1:en).                                                                   | String                                                             |
 | Transliterated Abbreviations | A list of transliterated abbreviated names for the legal form according to [ISO 20275:2017](https://www.iso.org/obp/ui/en/#iso:std:iso:20275:ed-1:v1:en), such as AG for German Aktiengesellschaft. | String                                                             |
 | Language                     | The two-letter language code according to [ISO 639:2023](https://www.iso.org/obp/ui/en/#iso:std:iso:639:ed-2:v1:en) of the language, for that the name of the legal form has been given.            | String                                                             |
@@ -362,14 +364,35 @@ Geographic coordinates describe an exact location in latitude, longitude, and al
 
 ![Identifier Type](./assets/diagrams/class/identifier-type.svg)
 
+An identifier type defines the name or category of an identifier, such as the German Handelsregisternummer, a VAT registration / taxpayer identification number, etc. The identifier type is valid for a business partner type and used in a specific country.
+
 | **Attribute**               | **Description**                                                                                     | **(Data) Type / Code List / Enumeration** |
 | --------------------------- | --------------------------------------------------------------------------------------------------- | ----------------------------------------- |
 | Technical Key               | The technical identifier of the identifier type.                                                    | String                                    |
-| Name                        | The name of the identifier type.                                                                    | String                                    |
+| Name                        | The local name of the identifier type.                                                              | String                                    |
 | Business Partner Type       | One of the types of business partners for which the identifier type is valid: legal entity, address | Enum                                      |
-| Abbreviation                | The abbreviated name of the identifier type.                                                        | String                                    |
-| Transliterated Name         | The transliterated name of the identifier type.                                                     | String                                    |
-| Transliterated Abbreviation | The transliterated abbreviated name of of the identifier type.                                      | String                                    |
+| Identifier Type Category    | One of the categories of identifier types: VAT, TIN, NBR, IBR, OTH (see also below)                 | Enum                                      |
+| Abbreviation                | The local abbreviated name of the identifier type.                                                  | String                                    |
+| Transliterated Name         | The transliterated local name of the identifier type.                                               | String                                    |
+| Transliterated Abbreviation | The transliterated local abbreviated name of of the identifier type.                                | String                                    |
+| Format                      | The regular expression for the identifier type format                                               | String                                    |
+
+An identifier type can be classified into **one or more** of the following identifier type categories:
+
+  1. `VAT`: value-added tax registration (so-called value-added tax identification numbers (VAT IDs or VATINs), e.g. EU VAT ID, UID MWST/TVA/IPA)
+  2. `TIN`: taxpayer identification (so-called taxpayer identification numbers (TINs), e.g. SIREN, NIF)
+  3. `NBR`: national business registration (e.g. HRB-Nummer, Firmenbuchnummer) for different purposes (e.g. commercial register, trade register), which are not related to tax
+  4. `IBR`: international business registration (e.g. LEI, EORI) for different purposes (e.g. regulatory reporting, risk management at financial regulatory bodies)
+  5. `OTH`: other identifier types (e.g. D&B D-U-N-S, GS1 GLN), which are not legally secure
+
+##### 1.5.2.1 IDENTIFIER TYPE DETAILS
+
+The identifier type details describe for which countries an identifier is valid and mandatory
+
+| **Attribute** | **Description**                                                                                                                                                                                                                            | **(Data) Type / Code List / Enumeration** |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------- |
+| Country       | The two-letter country code according to [ISO 3166-1:2020](https://www.iso.org/obp/ui/en/#iso:std:iso:3166:-1:ed-4:v1:en) of the country in which the identifier type is valid. Can be empty if identifier type is valid in all countries. | String                                    |
+| Mandatory     | Indicates whether the identifier type is mandatory in the country.                                                                                                                                                                         | Boolean                                   |
 
 #### 1.5.2.8 SHARING STATE ENTRY
 
@@ -402,13 +425,13 @@ The Business Partner Gate API allows to upload and download business partner dat
 
 ### 2.1 PRECONDITIONS AND DEPENDENCIES
 
-To run the API, the technical components described in the [Eclipse Tractus-X BPDM GitHub repository (6.1.x)](https://github.com/eclipse-tractusx/bpdm/blob/3579e50d6200b6a7ce2a9da811475cff4cbffe06/README.md) **SHOULD** be set up.
+To run the API, the technical components described in the [Eclipse Tractus-X BPDM GitHub repository (7.0.x)](https://github.com/eclipse-tractusx/bpdm/blob/e518d4cb7be420b6a7c50499a237ae6bf0ffc00c/README.md) **SHOULD** be set up.
 
 ### 2.2 API SPECIFICATION
 
 #### 2.2.1 API ENDPOINT & RESOURCES
 
-The Gate API **MUST** be implemented as defined in the following OpenAPI document: [Business Partner Gate OpenAPI specification (6.1.x)](https://github.com/eclipse-tractusx/bpdm/blob/3579e50d6200b6a7ce2a9da811475cff4cbffe06/docs/api/gate.json)
+The Gate API **MUST** be implemented as defined in the following OpenAPI document: [Business Partner Gate OpenAPI specification (7.0.x)](https://github.com/eclipse-tractusx/bpdm/blob/e518d4cb7be420b6a7c50499a237ae6bf0ffc00c/docs/api/gate.json)
 
 The resources **MUST** use the well-known HTTP request methods for CRU(D) operations:
 
@@ -466,13 +489,13 @@ The API **MUST** use JSON as the payload format transported via HTTP. Other for
 
 ### 2.2.3 DATA ASSET STRUCTURE
 
-The following data assets **MUST** be registered at the Core Service Provider so that the Sharing Member can negotiate an API usage contract with the Core Service Provider and access its dedicated BPDM Gate (hosted by the Core Service Provider) through these data assets[^6]:
+The following data assets **MUST** be registered at the Core Service Provider so that the Sharing Member can negotiate an API usage contract based on the mentioned usage purpose with the Core Service Provider and access its dedicated BPDM Gate (hosted by the Core Service Provider) through these data assets[^6]:
 
-| **Type**         | **Subject**                                  | **Version** | **Description**                                                                                                                                                                                                                                                                                                                                                                   |
-| ---------------- | -------------------------------------------- | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| cx-taxo:BPDMGate | cx-taxo:FullAccessGateInputForSharingMember  | 6.3[^10]         | Grants the Sharing Member full access to the input persistence. This can be used to read business partner data in the input persistence, and create / update business partner data in the input persistence from data sources of the Sharing Member. To that end, it also grants read access to the input changelog entries.                                                      |
-| cx-taxo:BPDMGate | cx-taxo:ReadAccessGateInputForSharingMember  | 6.3[^10]         | Grants the Sharing Member read access to the input persistence. This can be used explicitly for value-added services to read business partner data from the input persistence. To that end, it also grants read access to the input changelog entries.                                                                                                                            |
-| cx-taxo:BPDMGate | cx-taxo:ReadAccessGateOutputForSharingMember | 6.3[^10]         | Grants the Sharing Member read access to the output persistence. This can be used to read business partner data from the output persistence so that the data sources of the Sharing Member can be updated. Furthermore, it can be used to update data sources in value-added services. To that end, it also grants read access to the output changelog and sharing state entries. |
+| **Type**         | **Subject**                                  | **Version** | **Usage Purpose**       | **Description**                                                                                                                                                                                                                                                                                                                                                                   |
+| ---------------- | -------------------------------------------- | ----------- | ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| cx-taxo:BPDMGate | cx-taxo:FullAccessGateInputForSharingMember  | 7           | cx.bpdm.gate.upload:1   | Grants the Sharing Member full access to the input persistence. This can be used to read business partner data in the input persistence, and create / update business partner data in the input persistence from data sources of the Sharing Member. To that end, it also grants read access to the input changelog entries.                                                      |
+| cx-taxo:BPDMGate | cx-taxo:ReadAccessGateInputForSharingMember  | 7           | cx.bpdm.vas:*:1         | Grants the Sharing Member read access to the input persistence. This can be used explicitly for value-added services to read business partner data from the input persistence. To that end, it also grants read access to the input changelog entries.                                                                                                                            |
+| cx-taxo:BPDMGate | cx-taxo:ReadAccessGateOutputForSharingMember | 7           | cx.bpdm.gate.download:1 | Grants the Sharing Member read access to the output persistence. This can be used to read business partner data from the output persistence so that the data sources of the Sharing Member can be updated. Furthermore, it can be used to update data sources in value-added services. To that end, it also grants read access to the output changelog and sharing state entries. |
 
 The data asset **MUST** contain the following properties with the corresponding values from the table above:
 
@@ -500,12 +523,12 @@ An example payload for the asset:
           "@id": "cx-taxo:FullAccessGateInputForSharingMember"
         },
         "dct:description": "Grants the Sharing Member full access to the input persistence. This can be used to read business partner data in the input persistence, and create / update business partner data in the input persistence from data sources of the Sharing Member. To that end, it also grants read access to the input changelog entries.",
-        "cx-common:version": "6.3"
+        "cx-common:version": "7"
     },
     "dataAddress": {
         "@type": "DataAddress",
         "type": "HttpData",
-        "baseUrl": "https://<host>/companies/<company>/api/v6/",
+        "baseUrl": "https://<host>/companies/<company>/api/v7/",
         "oauth2:tokenUrl": "https://<host>/auth/realms/<realm>/protocol/openid-connect/token",
         "oauth2:clientId": "<technical user>",
         "oauth2:clientSecretKey": "<key to the secret of the technical user in the vault>", 
@@ -574,24 +597,24 @@ Details on  namespaces and ODRL policy rule values to be used for the above-ment
 - [ISO 6709:2022](https://www.iso.org/obp/ui/en/#iso:std:iso:6709:ed-3:v1:en)
 - [WGS 84 (NGA STND 0036 1.0.0)](https://nsgreg.nga.mil/doc/view?i=4085)
 - [OpenAPI specification (3.0.1)](https://github.com/OAI/OpenAPI-Specification/blob/761a0797ebf2e35e687ebef07741d1c10675e08c/versions/3.0.1.md)
-- [Business Partner Gate OpenAPI specification (6.3.x)](https://github.com/eclipse-tractusx/bpdm/blob/72ba993eb2332613d6cee52c40182763f3e3735f/docs/api/gate.json)
+- [Business Partner Gate OpenAPI specification (7.0.x)](https://github.com/eclipse-tractusx/bpdm/blob/e518d4cb7be420b6a7c50499a237ae6bf0ffc00c/docs/api/gate.json)
 - [IANA HTTP Status Code Registry (from 2022-06-08)](https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml)
-- [ODRL policy repository](https://github.com/catenax-eV/cx-odrl-profile) (accessed 2024-12-17)
+- [ODRL policy repository](https://github.com/catenax-eV/cx-odrl-profile) (accessed 2025-04-01)
 
 ## 3.2 NON-NORMATIVE REFERENCES
 
 > *This section is non-normative*
 
-- [BPDM Catena-X Website](https://catena-x.net/en/offers-standards/bpdm) (accessed 2024-12-17)
-- [Catena-X standard library](https://catena-x.net/en/standard-library) (accessed 2024-12-17)
+- [BPDM website](https://catena-x.net/use-case-cluster/next-level-master-data-management/) (accessed 2025-04-02)
+- [standard library](https://catenax-ev.github.io/docs/standards/overview) (accessed 2025-04-02)
 
 ## REFERENCE IMPLEMENTATION
 
 > *This section is non-normative*
 
-- [Business Partner Gate API (6.3.x)](https://github.com/eclipse-tractusx/bpdm/tree/72ba993eb2332613d6cee52c40182763f3e3735f/bpdm-gate-api/src/main/kotlin/org/eclipse/tractusx/bpdm/gate/api)
-- [Eclipse Tractus-X BPDM GitHub repository (6.3.x)](https://github.com/eclipse-tractusx/bpdm/blob/72ba993eb2332613d6cee52c40182763f3e3735f/README.md)
-- [BPDM ARC42 documentation (6.3.x)](https://github.com/eclipse-tractusx/bpdm/tree/72ba993eb2332613d6cee52c40182763f3e3735f/docs/architecture)
+- [Business Partner Gate API (7.0.x)](https://github.com/eclipse-tractusx/bpdm/tree/e518d4cb7be420b6a7c50499a237ae6bf0ffc00c/bpdm-gate-api/src/main/kotlin/org/eclipse/tractusx/bpdm/gate/api)
+- [Eclipse Tractus-X BPDM GitHub repository (7.0.x)](https://github.com/eclipse-tractusx/bpdm/blob/e518d4cb7be420b6a7c50499a237ae6bf0ffc00c/README.md)
+- [BPDM ARC42 documentation (7.0.x)](https://github.com/eclipse-tractusx/bpdm/tree/e518d4cb7be420b6a7c50499a237ae6bf0ffc00c/docs/architecture)
 
 ## ANNEXES
 
@@ -605,8 +628,8 @@ The following picture shows the business partner relationship and its reference 
 
 The idea is to use the business partner relationship to upload different kinds of relations between two business partners, such as:
 
-- a business partner is the registered alternative for another business partner, e.g. in case of multiple registered headquarters
-- a business partner is managed in Catena-X portal by another business partner to facilitate administration of large corporations [^8]
+- a business partner is an alternative for the another business partner, e.g. in the case of multiple registered headquarters
+- a business partner is managed by another business partner to facilitate administration of large corporations [^8]
 - a business partner is replaced by another business partner
 
 It is not intended to use the business partner relationship for legal hierarchies (subsidiaries / majority shareholding).
@@ -632,10 +655,6 @@ Intentionally left blank.
 [^7]: Note that the definition of the data assets depends on the current implementation state of the reference implementation (Tractus-X Eclipse Dataspace Connector). Therefore the data assets represent permissions on APIs, whereas they should actually only represent APIs.
 
 [^8]: Note that relationships of this type are private to the business partners they involve.
-
-[^9]: This should be in plural, which will be fixed in the next major version of this standard.
-
-[^10]: Note that in one of the next versions of this standard we will change from minor asset versioning (version 6.3, 7.0, etc.) to major asset versioning (version 6.x, 7.x, etc.) to comply with the API path versioning.
 
 ## Legal
 

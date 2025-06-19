@@ -42,6 +42,9 @@ An overview of the certification process is depicted in Figure [Catena-X Certifi
 ![Catena-X Certification Process](./assets/catena-x-certification-process.png)
 *Catena-X Certification Process*
 
+As part of the certification, the data space participant commits to listing Catena-X solutions on the Catena-X Marketplace in accordance with the mandatory requirement of the Operating Model. This includes adherence to governance components such as Trust ID and related mechanisms. This requirement also applies retroactively to already onboarded partners. However, internal systems that are used solely within a company and are not intended for external provisioning do not require listing on a Catena-X marketplace. Catena-X does not allow the provision of solutions without a marketplace listing.
+For clarification: All solutions that exchange data within the Catena-X data space and pass it on to other Catena-X users must be certified. A list of all currently certified solutions can be made available through the association upon request. All commercial offers must be listed on a marketplace.
+
 The *Catena-X Conformity Assessment Handbook* provides a detailed description of how Catena-X conducts conformity assessment through the Conformity Assessment Bodies. The most current version can always be found on the [Catena-X Library](https://catenax-ev.github.io/docs/next/certification/certification).
 
 Prerequisite of any certification is the registration / onboarding of the participant who wants to get certified. The registration (see Chapter [Registration](./../how-data-space-operations/how-data-space-operations.md#registration)) is ideally done before any certification request or latest started with the start of the certification request.
@@ -82,7 +85,7 @@ If an company-internal business application meets either of these criteria, Cate
 #### 2. No Catena-X Business Applications without listing on a Certified Catena-X Marketplace
 
 Catena-X is built on trust. All Catena-X certified business applications and services must be listed on a certified Catena-X marketplace.
-Catena-X marketplace providers (i.e. CSP-A) verify that the listed business applications and services have a valid certification issued by a CAB and therefore comply with the Catena-X standards. Catena-X does not allow the provision of a solution without a marketplace listing.
+Catena-X marketplace providers (i.e. CSP-A) verify that the listed business applications and services have a valid certification issued by a CAB and therefore comply with the Catena-X standards. As already mentioned in [How do we certify](https://catenax-ev.github.io/docs/next/operating-model/how-data-space-governance#why-do-we-certify), internal systems that are used solely within a company and are not intended for external provisioning do not require listing on a Catena-X marketplace. Catena-X does not allow the provision of solutions without a marketplace listing.
 
 In the future, there will be multiple CSP-As that enable business applications and services to be verified and listed on various marketplaces, as mentioned in chapter [Increase Decentralization of Core Services](./../outlook/outlook.md#increase-decentralization-of-core-services).
 
@@ -106,7 +109,7 @@ With the launch of the [Catena-X Campus](https://catena-x.academy), Catena-X off
 
 After applying for the company-related qualification, the number of employees of the applying company and the number of Catena-X qualified employees at the time of application, as well as the issue dates of these personal qualifications are checked. The validity of the most recently acquired qualification must be at least 10 months at the time of application for the company-related qualification.
 The number of permanent employees at the time of application is decisive for the listing. Even if the number of employees changes within a year, the number does not have to be corrected retrospectively within the validity period of the acquired company-related qualification. A correction is only necessary in the event of requalification after one year.
-The qualification is valid from receipt of payment and is only issued at this point in time. A company may only advertise with the title ‘Catena-X qualified Advisory Provider’ / ‘Catena-X qualified’ starting from the moment it receives a company-related qualification.
+The qualification is valid from receipt of payment and is only issued at this point in time. A company may only advertise with the title 'Catena-X qualified Advisory Provider' / 'Catena-X qualified' starting from the moment it receives a company-related qualification.
 
 The Catena-X qualification process is under constant development and further, specialized modules including dedicated labels will be published soon.
 
@@ -138,7 +141,7 @@ Different from Catena-X Certification, Catena-X qualification is a label held by
 
 ![Qualified Advisor](./assets/Logo_Catena-X_QualifiedAdvisoryProvider.png)
  Companies with more than 5 employees with this qualification may refer to their entire company as "Catena-X qualified" and will get the label "Qualified Advisory Provider". Alternatively, if more than 50% of a company's staff is qualified, it may equally refer to the entire company as "Catena-X qualified". Once a company meets the required number of qualified employees, it is automatically highlighted by Catena-X on the following list with an asterisk (*) and bold formatting: [Catena-X Qualified Advisor](https://catena-x.academy/catena-x-qualified-advisor/).
-To use the “Advisory Provider” logo, the company simply needs to contact the Catena-X Association and complete the corresponding application form.
+To use the "Advisory Provider" logo, the company simply needs to contact the Catena-X Association and complete the corresponding application form.
 
 Any "Catena-X qualified" label has a validity of 12 months (for more details see [Qualification Process](https://catenax-ev.github.io/docs/next/operating-model/how-data-space-governance#qualification-process)).
 

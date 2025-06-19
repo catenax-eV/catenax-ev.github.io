@@ -2,1057 +2,1057 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <!-- Generiert durch Microsoft Visio, SVG Export DCM_CoreProcess_with_Twins_BPMN.svg Zeichenblatt-1 -->
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
-		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="36.3245in" height="7.51183in"
-		viewBox="0 0 2615.37 540.851" xml:space="preserve" color-interpolation-filters="sRGB" class="st46">
-	<v:documentProperties v:langID="1031" v:metric="true" v:viewMarkup="false"/>
+  xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="36.3245in" height="7.51183in"
+  viewBox="0 0 2615.37 540.851" xml:space="preserve" color-interpolation-filters="sRGB" class="st46">
+ <v:documentProperties v:langID="1031" v:metric="true" v:viewMarkup="false"/>
 
-	<style type="text/css">
-	<![CDATA[
-		.st1 {fill:#b3cb2d;fill-opacity:0;stroke:#809500;stroke-linecap:butt;stroke-width:1}
-		.st2 {fill:#b3cb2d;stroke:#809500;stroke-linecap:butt;stroke-width:1}
-		.st3 {fill:#b3cb2d;fill-opacity:0}
-		.st4 {stroke:#809500;stroke-linecap:butt;stroke-width:1;visibility:hidden}
-		.st5 {fill:#ffa600;fill-opacity:0;stroke:#dd8200;stroke-linecap:butt;stroke-width:1}
-		.st6 {fill:#ffa600;stroke:#dd8200;stroke-linecap:butt;stroke-width:1}
-		.st7 {fill:#ffa600;fill-opacity:0}
-		.st8 {stroke:#dd8200;stroke-linecap:butt;stroke-width:1;visibility:hidden}
-		.st9 {fill:#feffff;font-family:Manrope;font-size:1.00001em}
-		.st10 {fill:#b3cb2d;stroke:#809500;stroke-linecap:butt;stroke-width:1;visibility:hidden}
-		.st11 {fill:#ffa600;stroke:#dd8200;stroke-linecap:butt;stroke-width:1;visibility:hidden}
-		.st12 {fill:url(#grad0-51);stroke:#809500;stroke-linecap:butt;stroke-width:0.24}
-		.st13 {fill:#b3cb2d;stroke:#000000;stroke-linecap:butt;stroke-width:0.24;visibility:hidden}
-		.st14 {fill:#000000;stroke:none;stroke-linecap:butt;stroke-width:0.24;visibility:hidden}
-		.st15 {fill:#b3cb2d;stroke:#809500;stroke-linecap:butt;stroke-width:0.24;visibility:hidden}
-		.st16 {fill:#809500;font-family:Manrope;font-size:0.666664em}
-		.st17 {fill:url(#grad0-81);stroke:#dd8200;stroke-linecap:butt;stroke-width:0.24}
-		.st18 {fill:#ffa600;stroke:#000000;stroke-linecap:butt;stroke-width:0.24;visibility:hidden}
-		.st19 {fill:#ffa600;stroke:#dd8200;stroke-linecap:butt;stroke-width:0.24;visibility:hidden}
-		.st20 {fill:#dd8200;font-family:Manrope;font-size:0.666664em}
-		.st21 {fill:#ffffff;stroke:#809500;stroke-linecap:butt;stroke-width:0.24}
-		.st22 {fill:#b3cb2d;stroke:#809500;stroke-linecap:butt;stroke-width:0.24}
-		.st23 {fill:#ffffff}
-		.st24 {stroke:#000000;stroke-linecap:butt;stroke-width:0.75}
-		.st25 {marker-end:url(#mrkr4-143);stroke:#809500;stroke-linecap:butt;stroke-width:0.72}
-		.st26 {fill:#809500;fill-opacity:1;stroke:#809500;stroke-opacity:1;stroke-width:0.28571428571429}
-		.st27 {fill:#ffffff;stroke:#dd8200;stroke-linecap:butt;stroke-width:0.24}
-		.st28 {fill:#ffa600;stroke:#dd8200;stroke-linecap:butt;stroke-width:0.24}
-		.st29 {marker-end:url(#mrkr4-180);stroke:#dd8200;stroke-linecap:butt;stroke-width:0.72}
-		.st30 {fill:#dd8200;fill-opacity:1;stroke:#dd8200;stroke-opacity:1;stroke-width:0.28571428571429}
-		.st31 {fill:#ffffff;stroke:#6d1d25;stroke-linecap:butt;stroke-width:0.72;visibility:hidden}
-		.st32 {fill:#6d1d25;fill-opacity:1;stroke:#6d1d25;stroke-opacity:1;stroke-width:0.35714285714286}
-		.st33 {fill:#000000;stroke:#6e1e26;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.72;visibility:hidden}
-		.st34 {fill:#feffff;font-family:Manrope;font-size:0.666664em}
-		.st35 {font-size:1em}
-		.st36 {marker-end:url(#mrkr16-284);marker-start:url(#mrkr20-282);stroke:#dd8200;stroke-dasharray:5.76,2.88;stroke-linecap:butt;stroke-width:0.72}
-		.st37 {marker-end:url(#mrkr16-342);marker-start:url(#mrkr20-340);stroke:#809500;stroke-dasharray:5.76,2.88;stroke-linecap:butt;stroke-width:0.72}
-		.st38 {fill:#b3cb2d;stroke:#809500;stroke-linecap:butt;stroke-width:0.72}
-		.st39 {fill:#000000;stroke:#6d1d25;stroke-linecap:butt;stroke-width:0.72}
-		.st40 {fill:none;stroke:#6d1d25;stroke-linecap:butt;stroke-width:0.72;visibility:hidden}
-		.st41 {fill:#000000;stroke:#809500;stroke-linecap:butt;stroke-width:0.24}
-		.st42 {fill:#ffffff;stroke:none;stroke-linecap:butt;stroke-width:7.2}
-		.st43 {fill:#ffffff;stroke:none;stroke-linecap:butt}
-		.st44 {fill:#ffa600;stroke:#dd8200;stroke-linecap:butt;stroke-width:0.72}
-		.st45 {fill:#000000;stroke:#dd8200;stroke-linecap:butt;stroke-width:0.24}
-		.st46 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
-	]]>
-	</style>
+ <style type="text/css">
+ <![CDATA[
+  .st1 {fill:#b3cb2d;fill-opacity:0;stroke:#809500;stroke-linecap:butt;stroke-width:1}
+  .st2 {fill:#b3cb2d;stroke:#809500;stroke-linecap:butt;stroke-width:1}
+  .st3 {fill:#b3cb2d;fill-opacity:0}
+  .st4 {stroke:#809500;stroke-linecap:butt;stroke-width:1;visibility:hidden}
+  .st5 {fill:#ffa600;fill-opacity:0;stroke:#dd8200;stroke-linecap:butt;stroke-width:1}
+  .st6 {fill:#ffa600;stroke:#dd8200;stroke-linecap:butt;stroke-width:1}
+  .st7 {fill:#ffa600;fill-opacity:0}
+  .st8 {stroke:#dd8200;stroke-linecap:butt;stroke-width:1;visibility:hidden}
+  .st9 {fill:#feffff;font-family:Manrope;font-size:1.00001em}
+  .st10 {fill:#b3cb2d;stroke:#809500;stroke-linecap:butt;stroke-width:1;visibility:hidden}
+  .st11 {fill:#ffa600;stroke:#dd8200;stroke-linecap:butt;stroke-width:1;visibility:hidden}
+  .st12 {fill:url(#grad0-51);stroke:#809500;stroke-linecap:butt;stroke-width:0.24}
+  .st13 {fill:#b3cb2d;stroke:#000000;stroke-linecap:butt;stroke-width:0.24;visibility:hidden}
+  .st14 {fill:#000000;stroke:none;stroke-linecap:butt;stroke-width:0.24;visibility:hidden}
+  .st15 {fill:#b3cb2d;stroke:#809500;stroke-linecap:butt;stroke-width:0.24;visibility:hidden}
+  .st16 {fill:#809500;font-family:Manrope;font-size:0.666664em}
+  .st17 {fill:url(#grad0-81);stroke:#dd8200;stroke-linecap:butt;stroke-width:0.24}
+  .st18 {fill:#ffa600;stroke:#000000;stroke-linecap:butt;stroke-width:0.24;visibility:hidden}
+  .st19 {fill:#ffa600;stroke:#dd8200;stroke-linecap:butt;stroke-width:0.24;visibility:hidden}
+  .st20 {fill:#dd8200;font-family:Manrope;font-size:0.666664em}
+  .st21 {fill:#ffffff;stroke:#809500;stroke-linecap:butt;stroke-width:0.24}
+  .st22 {fill:#b3cb2d;stroke:#809500;stroke-linecap:butt;stroke-width:0.24}
+  .st23 {fill:#ffffff}
+  .st24 {stroke:#000000;stroke-linecap:butt;stroke-width:0.75}
+  .st25 {marker-end:url(#mrkr4-143);stroke:#809500;stroke-linecap:butt;stroke-width:0.72}
+  .st26 {fill:#809500;fill-opacity:1;stroke:#809500;stroke-opacity:1;stroke-width:0.28571428571429}
+  .st27 {fill:#ffffff;stroke:#dd8200;stroke-linecap:butt;stroke-width:0.24}
+  .st28 {fill:#ffa600;stroke:#dd8200;stroke-linecap:butt;stroke-width:0.24}
+  .st29 {marker-end:url(#mrkr4-180);stroke:#dd8200;stroke-linecap:butt;stroke-width:0.72}
+  .st30 {fill:#dd8200;fill-opacity:1;stroke:#dd8200;stroke-opacity:1;stroke-width:0.28571428571429}
+  .st31 {fill:#ffffff;stroke:#6d1d25;stroke-linecap:butt;stroke-width:0.72;visibility:hidden}
+  .st32 {fill:#6d1d25;fill-opacity:1;stroke:#6d1d25;stroke-opacity:1;stroke-width:0.35714285714286}
+  .st33 {fill:#000000;stroke:#6e1e26;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.72;visibility:hidden}
+  .st34 {fill:#feffff;font-family:Manrope;font-size:0.666664em}
+  .st35 {font-size:1em}
+  .st36 {marker-end:url(#mrkr16-284);marker-start:url(#mrkr20-282);stroke:#dd8200;stroke-dasharray:5.76,2.88;stroke-linecap:butt;stroke-width:0.72}
+  .st37 {marker-end:url(#mrkr16-342);marker-start:url(#mrkr20-340);stroke:#809500;stroke-dasharray:5.76,2.88;stroke-linecap:butt;stroke-width:0.72}
+  .st38 {fill:#b3cb2d;stroke:#809500;stroke-linecap:butt;stroke-width:0.72}
+  .st39 {fill:#000000;stroke:#6d1d25;stroke-linecap:butt;stroke-width:0.72}
+  .st40 {fill:none;stroke:#6d1d25;stroke-linecap:butt;stroke-width:0.72;visibility:hidden}
+  .st41 {fill:#000000;stroke:#809500;stroke-linecap:butt;stroke-width:0.24}
+  .st42 {fill:#ffffff;stroke:none;stroke-linecap:butt;stroke-width:7.2}
+  .st43 {fill:#ffffff;stroke:none;stroke-linecap:butt}
+  .st44 {fill:#ffa600;stroke:#dd8200;stroke-linecap:butt;stroke-width:0.72}
+  .st45 {fill:#000000;stroke:#dd8200;stroke-linecap:butt;stroke-width:0.24}
+  .st46 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+ ]]>
+ </style>
 
-	<defs id="Patterns_And_Gradients">
-		<linearGradient id="grad0-51" x1="0" y1="0" x2="1" y2="0" gradientTransform="rotate(90 0.5 0.5)">
-			<stop offset="0" stop-color="#b5cc2d" stop-opacity="1"/>
-			<stop offset="1" stop-color="#b5cc2d" stop-opacity="1"/>
-		</linearGradient>
-		<linearGradient id="grad0-81" x1="0" y1="0" x2="1" y2="0" gradientTransform="rotate(90 0.5 0.5)">
-			<stop offset="0" stop-color="#ffa600" stop-opacity="1"/>
-			<stop offset="1" stop-color="#ffa600" stop-opacity="1"/>
-		</linearGradient>
-	</defs>
-	<defs id="Markers">
-		<g id="lend4">
-			<path d="M 2 1 L 0 0 L 2 -1 L 2 1 " style="stroke:none"/>
-		</g>
-		<marker id="mrkr4-143" class="st26" v:arrowType="4" v:arrowSize="1" v:setback="7" refX="-7" orient="auto"
-				markerUnits="strokeWidth" overflow="visible">
-			<use xlink:href="#lend4" transform="scale(-3.5,-3.5) "/>
-		</marker>
-		<marker id="mrkr4-180" class="st30" v:arrowType="4" v:arrowSize="1" v:setback="7" refX="-7" orient="auto"
-				markerUnits="strokeWidth" overflow="visible">
-			<use xlink:href="#lend4" transform="scale(-3.5,-3.5) "/>
-		</marker>
-		<g id="lend1">
-			<path d="M 1 -1 L 0 0 L 1 1 " style="stroke-linecap:round;stroke-linejoin:round;fill:none"/>
-		</g>
-		<marker id="mrkr1-204" class="st32" v:arrowType="1" v:arrowSize="1" orient="auto" markerUnits="strokeWidth"
-				overflow="visible">
-			<use xlink:href="#lend1" transform="scale(-2.8,-2.8) "/>
-		</marker>
-		<g id="lend20">
-			<path
-					d="M 0 0.75 C -0.414214 0.75 -0.75 0.414214 -0.75 0 -0.75 -0.414214 -0.414214 -0.75 0 -0.75 0.414214 -0.75 0.75 -0.414214 0.75 0 0.75 0.414214 0.414214 0.75 0 0.75 Z "
-					style="stroke-linecap:round;stroke-linejoin:round;fill:none"/>
-		</g>
-		<marker id="mrkr20-282" class="st30" v:arrowType="20" v:arrowSize="1" v:setback="2.125" refX="2.125" orient="auto"
-				markerUnits="strokeWidth" overflow="visible">
-			<use xlink:href="#lend20" transform="scale(3.5) "/>
-		</marker>
-		<g id="lend16">
-			<path d="M 0 0 L 2 -1 L 2 1 L 0 0 " style="stroke-linecap:round;stroke-linejoin:round;fill:none"/>
-		</g>
-		<marker id="mrkr16-284" class="st30" v:arrowType="16" v:arrowSize="1" v:setback="7" refX="-7" orient="auto"
-				markerUnits="strokeWidth" overflow="visible">
-			<use xlink:href="#lend16" transform="scale(-3.5,-3.5) "/>
-		</marker>
-		<marker id="mrkr20-340" class="st26" v:arrowType="20" v:arrowSize="1" v:setback="2.125" refX="2.125" orient="auto"
-				markerUnits="strokeWidth" overflow="visible">
-			<use xlink:href="#lend20" transform="scale(3.5) "/>
-		</marker>
-		<marker id="mrkr16-342" class="st26" v:arrowType="16" v:arrowSize="1" v:setback="7" refX="-7" orient="auto"
-				markerUnits="strokeWidth" overflow="visible">
-			<use xlink:href="#lend16" transform="scale(-3.5,-3.5) "/>
-		</marker>
-	</defs>
-	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
-		<v:userDefs>
-			<v:ud v:nameU="visNavType" v:val="VT0(1):26"/>
-		</v:userDefs>
-		<title>Zeichenblatt-1</title>
-		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50394"
-				v:shadowOffsetY="-8.50394"/>
-		<v:layer v:name="Flussdiagramm" v:index="0"/>
-		<v:layer v:name="Verbinder" v:index="1"/>
-		<g id="group1-1" transform="translate(1,-1)" v:mID="1" v:groupContext="group">
-			<v:custProps>
-				<v:cp v:nameU="BpmnElementType" v:lbl="ElementTyp" v:prompt="" v:type="1"
-						v:format="Teilprozess;Ereignis;Gateway;Prozessdiagramm;Pool;Verantwortlichkeitsbereich;Artefakt;Verbindungsobjekt"
-						v:sortKey="" v:invis="false" v:ask="false" v:langID="1031" v:cal="0" v:val="VT4(Pool)"/>
-				<v:cp v:nameU="BpmnId" v:lbl="ID" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true" v:ask="false"
-						v:langID="1031" v:cal="0"/>
-				<v:cp v:nameU="BpmnCategories" v:lbl="Kategorien" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="false"
-						v:ask="false" v:langID="1031" v:cal="0"/>
-				<v:cp v:nameU="BpmnDocumentation" v:lbl="Dokumentation" v:prompt="" v:type="0" v:format="" v:sortKey=""
-						v:invis="false" v:ask="false" v:langID="1031" v:cal="0"/>
-				<v:cp v:nameU="BpmnName" v:lbl="Name" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true" v:ask="false"
-						v:langID="1031" v:cal="0" v:val="VT4(Titel)"/>
-				<v:cp v:nameU="BpmnProcessRef" v:lbl="ProzessRef" v:prompt="" v:type="1" v:format="Angezeigt;Ausgeblendet"
-						v:sortKey="" v:invis="false" v:ask="false" v:langID="1031" v:cal="0" v:val="VT4(Ausgeblendet)"/>
-				<v:cp v:nameU="BpmnProcessRef_Name" v:lbl="    Name" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true"
-						v:ask="false" v:langID="1031" v:cal="0"/>
-				<v:cp v:nameU="BpmnProcessRef_ProcessType" v:lbl="    ProzessTyp" v:prompt="" v:type="1"
-						v:format="Ohne;Privat;Zusammenfassung;Zusammenarbeit" v:sortKey="" v:invis="true" v:ask="false"
-						v:langID="1031" v:cal="0"/>
-				<v:cp v:nameU="BpmnProcessRef_Status" v:lbl="    Status" v:prompt="" v:type="1"
-						v:format="Ohne;Bereit;Aktiv;Abgebrochen;Wird abgebrochen;Abgebrochen;Wird abgeschlossen;Abgeschlossen"
-						v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"/>
-				<v:cp v:nameU="BpmnProcessRef_Assignments" v:lbl="    Zuweisungen" v:prompt="" v:type="1"
-						v:format="Angezeigt;Ausgeblendet" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"
-						v:val="VT4(Angezeigt)"/>
-				<v:cp v:nameU="BpmnProcessRef_Assignments_To" v:lbl="        Bis" v:prompt="" v:type="1"
-						v:format="Angezeigt;Ausgeblendet" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"
-						v:val="VT4(Angezeigt)"/>
-				<v:cp v:nameU="BpmnProcessRef_Assignments_To_Name" v:lbl="            Name" v:prompt="" v:type="0" v:format=""
-						v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"/>
-				<v:cp v:nameU="BpmnProcessRef_Assignments_To_Type" v:lbl="            Typ" v:prompt="" v:type="0" v:format=""
-						v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"/>
-				<v:cp v:nameU="BpmnProcessRef_Assignments_To_Value" v:lbl="            Wert" v:prompt="" v:type="1"
-						v:format="Angezeigt;Ausgeblendet" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"
-						v:val="VT4(Angezeigt)"/>
-				<v:cp v:nameU="BpmnProcessRef_Assignments_To_Value_ExpressionBody" v:lbl="                AusdruckTextkörper"
-						v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"/>
-				<v:cp v:nameU="BpmnProcessRef_Assignments_To_Value_ExpressionLanguage" v:lbl="                AusdruckSprache"
-						v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"/>
-				<v:cp v:nameU="BpmnProcessRef_Assignments_To_Correlation" v:lbl="            Korrelation" v:prompt="" v:type="3"
-						v:format="" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0" v:val="VT0(0):5"/>
-				<v:cp v:nameU="BpmnProcessRef_Assignments_From" v:lbl="        Von" v:prompt="" v:type="1"
-						v:format="Angezeigt;Ausgeblendet" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"
-						v:val="VT4(Angezeigt)"/>
-				<v:cp v:nameU="BpmnProcessRef_Assignments_From_ExpressionBody" v:lbl="            AusdruckTextkörper" v:prompt=""
-						v:type="0" v:format="" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"/>
-				<v:cp v:nameU="BpmnProcessRef_Assignments_From_ExpressionLanguage" v:lbl="            AusdruckSprache" v:prompt=""
-						v:type="0" v:format="" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"/>
-				<v:cp v:nameU="BpmnProcessRef_Assignments_AssignTime" v:lbl="        ZuweisungsZeit" v:prompt="" v:type="1"
-						v:format="Start;Ende" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"
-						v:val="VT4(Start)"/>
-				<v:cp v:nameU="BpmnProcessRef_Performers" v:lbl="    Ausführende" v:prompt="" v:type="0" v:format="" v:sortKey=""
-						v:invis="true" v:ask="false" v:langID="1031" v:cal="0"/>
-				<v:cp v:nameU="BpmnProcessRef_Properties" v:lbl="    Eigenschaften" v:prompt="" v:type="1"
-						v:format="Angezeigt;Ausgeblendet" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"
-						v:val="VT4(Angezeigt)"/>
-				<v:cp v:nameU="BpmnProcessRef_Properties_Name" v:lbl="        Name" v:prompt="" v:type="0" v:format="" v:sortKey=""
-						v:invis="true" v:ask="false" v:langID="1031" v:cal="0"/>
-				<v:cp v:nameU="BpmnProcessRef_Properties_Type" v:lbl="        Typ" v:prompt="" v:type="0" v:format="" v:sortKey=""
-						v:invis="true" v:ask="false" v:langID="1031" v:cal="0"/>
-				<v:cp v:nameU="BpmnProcessRef_Properties_Value" v:lbl="        Wert" v:prompt="" v:type="1"
-						v:format="Angezeigt;Ausgeblendet" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"
-						v:val="VT4(Angezeigt)"/>
-				<v:cp v:nameU="BpmnProcessRef_Properties_Value_ExpressionBody" v:lbl="            AusdruckTextkörper" v:prompt=""
-						v:type="0" v:format="" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"/>
-				<v:cp v:nameU="BpmnProcessRef_Properties_Value_ExpressionLanguage" v:lbl="            AusdruckSprache" v:prompt=""
-						v:type="0" v:format="" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"/>
-				<v:cp v:nameU="BpmnProcessRef_Properties_Correlation" v:lbl="        Korrelation" v:prompt="" v:type="3"
-						v:format="" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0" v:val="VT0(0):5"/>
-				<v:cp v:nameU="BpmnProcessRef_AdHoc" v:lbl="    AdHoc" v:prompt="" v:type="3" v:format="" v:sortKey=""
-						v:invis="true" v:ask="false" v:langID="1031" v:cal="0" v:val="VT0(0):5"/>
-				<v:cp v:nameU="BpmnAdHocOrdering" v:lbl="    AdHocSortierung " v:prompt="" v:type="1"
-						v:format="Sequenziell;Parallel" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"
-						v:val="VT4(Parallel)"/>
-				<v:cp v:nameU="BpmnAdHocCompletionCondition" v:lbl="    AdHocAbschlussBedingung" v:prompt="" v:type="1"
-						v:format="Angezeigt;Ausgeblendet" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"
-						v:val="VT4(Angezeigt)"/>
-				<v:cp v:nameU="BpmnAdHocCompletionCondition_ExpressionBody" v:lbl="        AusdruckTextkörper" v:prompt=""
-						v:type="0" v:format="" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"/>
-				<v:cp v:nameU="BpmnAdHocCompletionCondition_ExpressionLanguage" v:lbl="        AusdruckSprache" v:prompt=""
-						v:type="0" v:format="" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"/>
-				<v:cp v:nameU="BpmnParticipantRef" v:lbl="TeilnehmerRef" v:prompt="" v:type="1" v:format="Angezeigt;Ausgeblendet"
-						v:sortKey="" v:invis="false" v:ask="false" v:langID="1031" v:cal="0" v:val="VT4(Ausgeblendet)"/>
-				<v:cp v:nameU="BpmnParticipantRef_ParticipantType" v:lbl="    TeilnehmerTyp" v:prompt="" v:type="1"
-						v:format="Rolle;Entität" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"
-						v:val="VT4(Rolle)"/>
-				<v:cp v:nameU="BpmnParticipantRef_RoleRef" v:lbl="    RollenRef" v:prompt="" v:type="0" v:format="" v:sortKey=""
-						v:invis="true" v:ask="false" v:langID="1031" v:cal="0"/>
-				<v:cp v:nameU="BPMNLanes" v:lbl="Verantwortlichkeitsbereiche" v:prompt="" v:type="2" v:format="" v:sortKey=""
-						v:invis="true" v:ask="false" v:langID="1031" v:cal="0" v:val="VT0(0):26"/>
-				<v:cp v:nameU="BPMNBoundaryVisible" v:lbl="GrenzeSichtbar" v:prompt="" v:type="3" v:format="" v:sortKey=""
-						v:invis="true" v:ask="false" v:langID="1031" v:cal="0" v:val="VT0(0):5"/>
-				<v:cp v:nameU="BPMNMainPool" v:lbl="HauptPool" v:prompt="" v:type="3" v:format="" v:sortKey="" v:invis="false"
-						v:ask="false" v:langID="1031" v:cal="0" v:val="VT0(0):5"/>
-				<v:cp v:nameU="BPMNLanes" v:lbl="" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="false" v:ask="false"
-						v:langID="0" v:cal="0" v:val="VT0(1):26"/>
-			</v:custProps>
-			<v:userDefs>
-				<v:ud v:nameU="msvShapeCategories" v:prompt="" v:val="VT4(CFF Container;Pool)"/>
-				<v:ud v:nameU="msvStructureType" v:prompt="" v:val="VT4(Container)"/>
-				<v:ud v:nameU="msvSDContainerMargin" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="msvSDContainerResize" v:prompt="" v:val="VT0(2):26"/>
-				<v:ud v:nameU="msvSDContainerNoHighlight" v:prompt="" v:val="VT0(1):5"/>
-				<v:ud v:nameU="msvSDContainerNoRibbon" v:prompt="" v:val="VT0(1):5"/>
-				<v:ud v:nameU="msvSDContainerStyle" v:prompt="" v:val="VT0(1):26"/>
-				<v:ud v:nameU="visDirection" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="HeadingSide" v:prompt="" v:val="VT0(1):26"/>
-				<v:ud v:nameU="msvSDContainerStyleCount" v:prompt="" v:val="VT0(6):26"/>
-				<v:ud v:nameU="msvSDContainerRequiredCategories" v:prompt="" v:val="VT4(CFF List)"/>
-				<v:ud v:nameU="msvSDContainerExcludedCategories" v:prompt="" v:val="VT4()"/>
-				<v:ud v:nameU="RTL" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="visMasterStencil" v:prompt="" v:val="VT4(bpmn_u.vss)"/>
-				<v:ud v:nameU="visRotateLabel" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="visHeadingText" v:prompt=""/>
-				<v:ud v:nameU="visCFFStyle" v:prompt="" v:val="VT0(7):26"/>
-				<v:ud v:nameU="msvSDContainerLocked" v:prompt="" v:val="VT0(0):5"/>
-				<v:ud v:nameU="CFFVertical" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="numLanes" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="msvSDMembersOnHiddenLayer" v:prompt="" v:val="VT0(1):5"/>
-				<v:ud v:nameU="visCFFHeadingPos" v:prompt="" v:val="VT0(3):26"/>
-				<v:ud v:nameU="HeadingSpan" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="HeadingAlign" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="visHeadingHeight" v:prompt="" v:val="VT0(0.47244094488189):24"/>
-				<v:ud v:nameU="visShowTitle" v:prompt="" v:val="VT0(1):26"/>
-				<v:ud v:nameU="visShowPhase" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="visMargins" v:prompt="" v:val="VT0(0.23622047244094):24"/>
-				<v:ud v:nameU="visAutoExpand" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
-				<v:ud v:nameU="msvSDContainerLocked" v:prompt="" v:val="VT0(1):5"/>
-				<v:ud v:nameU="numLanes" v:prompt="" v:val="VT0(1):26"/>
-				<v:ud v:nameU="visHeadingHeight" v:prompt="" v:val="VT0(0):1"/>
-				<v:ud v:nameU="visShowTitle" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="visNavOrder" v:val="VT0(7000):26"/>
-			</v:userDefs>
-			<title>CFF-Container.17</title>
-			<g id="shape2-2" v:mID="2" v:groupContext="shape">
-				<title>Tabelle.2</title>
-				<v:userDefs>
-					<v:ud v:nameU="FillForegnd" v:prompt="" v:val="VT5(#ffffff)"/>
-					<v:ud v:nameU="FillBkgnd" v:prompt="" v:val="VT5(#ffffff)"/>
-					<v:ud v:nameU="CFFStyle" v:prompt="" v:val="VT0(7):26"/>
-					<v:ud v:nameU="FillForegndTrans" v:prompt="" v:val="VT0(0.8):27"/>
-					<v:ud v:nameU="FillForegnd" v:prompt="" v:val="VT5(#ffffff)"/>
-					<v:ud v:nameU="FillBkgnd" v:prompt="" v:val="VT5(#ffffff)"/>
-					<v:ud v:nameU="visAltText" v:val="VT4()"/>
-				</v:userDefs>
-				<rect x="0" y="292.151" width="2613.37" height="248.701" class="st1"/>
-			</g>
-			<g id="shape3-4" v:mID="3" v:groupContext="shape" transform="translate(-540.851,540.851) rotate(-90)">
-				<title>Tabelle.3</title>
-				<desc>Titel</desc>
-				<v:userDefs>
-					<v:ud v:nameU="msvStructureType" v:prompt="" v:val="VT4(Heading)"/>
-					<v:ud v:nameU="msvSDContainerHeadingEdge" v:prompt="" v:val="VT4(Right)"/>
-					<v:ud v:nameU="visHeadingHeight" v:prompt="" v:val="VT0(0.47244094488189):24"/>
-					<v:ud v:nameU="HeadingPos" v:prompt="" v:val="VT0(3):26"/>
-					<v:ud v:nameU="HSide" v:prompt="" v:val="VT0(1):26"/>
-					<v:ud v:nameU="HTxtMargin" v:prompt="" v:val="VT0(0.059055118110236):24"/>
-					<v:ud v:nameU="CStyle" v:prompt="" v:val="VT0(1):26"/>
-					<v:ud v:nameU="InsetY" v:prompt="" v:val="VT0(0):26"/>
-					<v:ud v:nameU="InsetX" v:prompt="" v:val="VT0(0):26"/>
-					<v:ud v:nameU="Inset" v:prompt="" v:val="VT0(0):24"/>
-					<v:ud v:nameU="scale" v:prompt="" v:val="VT0(1):26"/>
-					<v:ud v:nameU="AntiScale" v:prompt="" v:val="VT0(1):26"/>
-					<v:ud v:nameU="GridRounding" v:prompt="" v:val="VT0(0.23622047244094):24"/>
-					<v:ud v:nameU="visHeadingHeight" v:prompt="" v:val="VT0(0.31116263699002):1"/>
-				</v:userDefs>
-				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-				<v:textRect cx="124.35" cy="540.851" width="248.71" height="0"/>
-				<path d="M0 540.85 L248.7 540.85 L0 540.85 Z" class="st2"/>
-			</g>
-		</g>
-		<g id="shape4-6" v:mID="4" v:groupContext="shape" transform="translate(1,-1)">
-			<title>Verantwortlichkeitsbereichsliste.20</title>
-			<v:userDefs>
-				<v:ud v:nameU="msvStructureType" v:prompt="" v:val="VT4(List)"/>
-				<v:ud v:nameU="msvSDContainerLocked" v:prompt="" v:val="VT0(0):5"/>
-				<v:ud v:nameU="msvSDContainerMargin" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="msvSDContainerNoHighlight" v:prompt="" v:val="VT0(1):5"/>
-				<v:ud v:nameU="msvSDContainerNoRibbon" v:prompt="" v:val="VT0(1):5"/>
-				<v:ud v:nameU="msvSDContainerResize" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="msvShapeCategories" v:prompt="" v:val="VT4(CFF List;DoNotContain)"/>
-				<v:ud v:nameU="msvSDListRequiredCategories" v:prompt="" v:val="VT4(Swimlane)"/>
-				<v:ud v:nameU="msvSDContainerExcludedCategories" v:prompt="" v:val="VT4(CFF Container;CFF List;Phase;NonCFF)"/>
-				<v:ud v:nameU="msvSDContainerStyle" v:prompt="" v:val="VT0(1):26"/>
-				<v:ud v:nameU="msvSDListSpacing" v:prompt="" v:val="VT0(0):24"/>
-				<v:ud v:nameU="msvSDListDirection" v:prompt="" v:val="VT0(2):26"/>
-				<v:ud v:nameU="msvSDListAlignment" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="msvSDListItemMaster" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="msvSDListNoReorder" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="msvLayoutIncludeSubshapes" v:prompt="" v:val="VT0(0):5"/>
-				<v:ud v:nameU="msvSDMembersOnHiddenLayer" v:prompt="" v:val="VT0(1):5"/>
-				<v:ud v:nameU="visHeadingHeight" v:prompt="" v:val="VT0(0.47244094488189):24"/>
-				<v:ud v:nameU="visRotateLabel" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="visMasterStencil" v:prompt="" v:val="VT4(bpmn_u.vss)"/>
-				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
-				<v:ud v:nameU="msvSDContainerStyle" v:prompt="" v:val="VT0(7):26"/>
-				<v:ud v:nameU="visHeadingHeight" v:prompt="" v:val="VT0(0.47244094488189):24"/>
-				<v:ud v:nameU="visNavOrder" v:val="VT0(8000):26"/>
-			</v:userDefs>
-			<rect x="0" y="292.151" width="2613.37" height="248.701" class="st3"/>
-			<rect x="0" y="292.151" width="2613.37" height="248.701" class="st4"/>
-		</g>
-		<g id="group5-9" transform="translate(1.68475,-293.223)" v:mID="5" v:groupContext="group">
-			<v:custProps>
-				<v:cp v:nameU="BpmnElementType" v:lbl="ElementTyp" v:prompt="" v:type="1"
-						v:format="Teilprozess;Ereignis;Gateway;Prozessdiagramm;Pool;Verantwortlichkeitsbereich;Artefakt;Verbindungsobjekt"
-						v:sortKey="" v:invis="false" v:ask="false" v:langID="1031" v:cal="0" v:val="VT4(Pool)"/>
-				<v:cp v:nameU="BpmnId" v:lbl="ID" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true" v:ask="false"
-						v:langID="1031" v:cal="0"/>
-				<v:cp v:nameU="BpmnCategories" v:lbl="Kategorien" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="false"
-						v:ask="false" v:langID="1031" v:cal="0"/>
-				<v:cp v:nameU="BpmnDocumentation" v:lbl="Dokumentation" v:prompt="" v:type="0" v:format="" v:sortKey=""
-						v:invis="false" v:ask="false" v:langID="1031" v:cal="0"/>
-				<v:cp v:nameU="BpmnName" v:lbl="Name" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true" v:ask="false"
-						v:langID="1031" v:cal="0" v:val="VT4(Titel)"/>
-				<v:cp v:nameU="BpmnProcessRef" v:lbl="ProzessRef" v:prompt="" v:type="1" v:format="Angezeigt;Ausgeblendet"
-						v:sortKey="" v:invis="false" v:ask="false" v:langID="1031" v:cal="0" v:val="VT4(Ausgeblendet)"/>
-				<v:cp v:nameU="BpmnProcessRef_Name" v:lbl="    Name" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true"
-						v:ask="false" v:langID="1031" v:cal="0"/>
-				<v:cp v:nameU="BpmnProcessRef_ProcessType" v:lbl="    ProzessTyp" v:prompt="" v:type="1"
-						v:format="Ohne;Privat;Zusammenfassung;Zusammenarbeit" v:sortKey="" v:invis="true" v:ask="false"
-						v:langID="1031" v:cal="0"/>
-				<v:cp v:nameU="BpmnProcessRef_Status" v:lbl="    Status" v:prompt="" v:type="1"
-						v:format="Ohne;Bereit;Aktiv;Abgebrochen;Wird abgebrochen;Abgebrochen;Wird abgeschlossen;Abgeschlossen"
-						v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"/>
-				<v:cp v:nameU="BpmnProcessRef_Assignments" v:lbl="    Zuweisungen" v:prompt="" v:type="1"
-						v:format="Angezeigt;Ausgeblendet" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"
-						v:val="VT4(Angezeigt)"/>
-				<v:cp v:nameU="BpmnProcessRef_Assignments_To" v:lbl="        Bis" v:prompt="" v:type="1"
-						v:format="Angezeigt;Ausgeblendet" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"
-						v:val="VT4(Angezeigt)"/>
-				<v:cp v:nameU="BpmnProcessRef_Assignments_To_Name" v:lbl="            Name" v:prompt="" v:type="0" v:format=""
-						v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"/>
-				<v:cp v:nameU="BpmnProcessRef_Assignments_To_Type" v:lbl="            Typ" v:prompt="" v:type="0" v:format=""
-						v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"/>
-				<v:cp v:nameU="BpmnProcessRef_Assignments_To_Value" v:lbl="            Wert" v:prompt="" v:type="1"
-						v:format="Angezeigt;Ausgeblendet" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"
-						v:val="VT4(Angezeigt)"/>
-				<v:cp v:nameU="BpmnProcessRef_Assignments_To_Value_ExpressionBody" v:lbl="                AusdruckTextkörper"
-						v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"/>
-				<v:cp v:nameU="BpmnProcessRef_Assignments_To_Value_ExpressionLanguage" v:lbl="                AusdruckSprache"
-						v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"/>
-				<v:cp v:nameU="BpmnProcessRef_Assignments_To_Correlation" v:lbl="            Korrelation" v:prompt="" v:type="3"
-						v:format="" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0" v:val="VT0(0):5"/>
-				<v:cp v:nameU="BpmnProcessRef_Assignments_From" v:lbl="        Von" v:prompt="" v:type="1"
-						v:format="Angezeigt;Ausgeblendet" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"
-						v:val="VT4(Angezeigt)"/>
-				<v:cp v:nameU="BpmnProcessRef_Assignments_From_ExpressionBody" v:lbl="            AusdruckTextkörper" v:prompt=""
-						v:type="0" v:format="" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"/>
-				<v:cp v:nameU="BpmnProcessRef_Assignments_From_ExpressionLanguage" v:lbl="            AusdruckSprache" v:prompt=""
-						v:type="0" v:format="" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"/>
-				<v:cp v:nameU="BpmnProcessRef_Assignments_AssignTime" v:lbl="        ZuweisungsZeit" v:prompt="" v:type="1"
-						v:format="Start;Ende" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"
-						v:val="VT4(Start)"/>
-				<v:cp v:nameU="BpmnProcessRef_Performers" v:lbl="    Ausführende" v:prompt="" v:type="0" v:format="" v:sortKey=""
-						v:invis="true" v:ask="false" v:langID="1031" v:cal="0"/>
-				<v:cp v:nameU="BpmnProcessRef_Properties" v:lbl="    Eigenschaften" v:prompt="" v:type="1"
-						v:format="Angezeigt;Ausgeblendet" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"
-						v:val="VT4(Angezeigt)"/>
-				<v:cp v:nameU="BpmnProcessRef_Properties_Name" v:lbl="        Name" v:prompt="" v:type="0" v:format="" v:sortKey=""
-						v:invis="true" v:ask="false" v:langID="1031" v:cal="0"/>
-				<v:cp v:nameU="BpmnProcessRef_Properties_Type" v:lbl="        Typ" v:prompt="" v:type="0" v:format="" v:sortKey=""
-						v:invis="true" v:ask="false" v:langID="1031" v:cal="0"/>
-				<v:cp v:nameU="BpmnProcessRef_Properties_Value" v:lbl="        Wert" v:prompt="" v:type="1"
-						v:format="Angezeigt;Ausgeblendet" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"
-						v:val="VT4(Angezeigt)"/>
-				<v:cp v:nameU="BpmnProcessRef_Properties_Value_ExpressionBody" v:lbl="            AusdruckTextkörper" v:prompt=""
-						v:type="0" v:format="" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"/>
-				<v:cp v:nameU="BpmnProcessRef_Properties_Value_ExpressionLanguage" v:lbl="            AusdruckSprache" v:prompt=""
-						v:type="0" v:format="" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"/>
-				<v:cp v:nameU="BpmnProcessRef_Properties_Correlation" v:lbl="        Korrelation" v:prompt="" v:type="3"
-						v:format="" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0" v:val="VT0(0):5"/>
-				<v:cp v:nameU="BpmnProcessRef_AdHoc" v:lbl="    AdHoc" v:prompt="" v:type="3" v:format="" v:sortKey=""
-						v:invis="true" v:ask="false" v:langID="1031" v:cal="0" v:val="VT0(0):5"/>
-				<v:cp v:nameU="BpmnAdHocOrdering" v:lbl="    AdHocSortierung " v:prompt="" v:type="1"
-						v:format="Sequenziell;Parallel" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"
-						v:val="VT4(Parallel)"/>
-				<v:cp v:nameU="BpmnAdHocCompletionCondition" v:lbl="    AdHocAbschlussBedingung" v:prompt="" v:type="1"
-						v:format="Angezeigt;Ausgeblendet" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"
-						v:val="VT4(Angezeigt)"/>
-				<v:cp v:nameU="BpmnAdHocCompletionCondition_ExpressionBody" v:lbl="        AusdruckTextkörper" v:prompt=""
-						v:type="0" v:format="" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"/>
-				<v:cp v:nameU="BpmnAdHocCompletionCondition_ExpressionLanguage" v:lbl="        AusdruckSprache" v:prompt=""
-						v:type="0" v:format="" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"/>
-				<v:cp v:nameU="BpmnParticipantRef" v:lbl="TeilnehmerRef" v:prompt="" v:type="1" v:format="Angezeigt;Ausgeblendet"
-						v:sortKey="" v:invis="false" v:ask="false" v:langID="1031" v:cal="0" v:val="VT4(Ausgeblendet)"/>
-				<v:cp v:nameU="BpmnParticipantRef_ParticipantType" v:lbl="    TeilnehmerTyp" v:prompt="" v:type="1"
-						v:format="Rolle;Entität" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"
-						v:val="VT4(Rolle)"/>
-				<v:cp v:nameU="BpmnParticipantRef_RoleRef" v:lbl="    RollenRef" v:prompt="" v:type="0" v:format="" v:sortKey=""
-						v:invis="true" v:ask="false" v:langID="1031" v:cal="0"/>
-				<v:cp v:nameU="BPMNLanes" v:lbl="Verantwortlichkeitsbereiche" v:prompt="" v:type="2" v:format="" v:sortKey=""
-						v:invis="true" v:ask="false" v:langID="1031" v:cal="0" v:val="VT0(0):26"/>
-				<v:cp v:nameU="BPMNBoundaryVisible" v:lbl="GrenzeSichtbar" v:prompt="" v:type="3" v:format="" v:sortKey=""
-						v:invis="true" v:ask="false" v:langID="1031" v:cal="0" v:val="VT0(0):5"/>
-				<v:cp v:nameU="BPMNMainPool" v:lbl="HauptPool" v:prompt="" v:type="3" v:format="" v:sortKey="" v:invis="false"
-						v:ask="false" v:langID="1031" v:cal="0" v:val="VT0(0):5"/>
-				<v:cp v:nameU="BPMNLanes" v:lbl="" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="false" v:ask="false"
-						v:langID="0" v:cal="0" v:val="VT0(1):26"/>
-			</v:custProps>
-			<v:userDefs>
-				<v:ud v:nameU="msvShapeCategories" v:prompt="" v:val="VT4(CFF Container;Pool)"/>
-				<v:ud v:nameU="msvStructureType" v:prompt="" v:val="VT4(Container)"/>
-				<v:ud v:nameU="msvSDContainerMargin" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="msvSDContainerResize" v:prompt="" v:val="VT0(2):26"/>
-				<v:ud v:nameU="msvSDContainerNoHighlight" v:prompt="" v:val="VT0(1):5"/>
-				<v:ud v:nameU="msvSDContainerNoRibbon" v:prompt="" v:val="VT0(1):5"/>
-				<v:ud v:nameU="msvSDContainerStyle" v:prompt="" v:val="VT0(1):26"/>
-				<v:ud v:nameU="visDirection" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="HeadingSide" v:prompt="" v:val="VT0(1):26"/>
-				<v:ud v:nameU="msvSDContainerStyleCount" v:prompt="" v:val="VT0(6):26"/>
-				<v:ud v:nameU="msvSDContainerRequiredCategories" v:prompt="" v:val="VT4(CFF List)"/>
-				<v:ud v:nameU="msvSDContainerExcludedCategories" v:prompt="" v:val="VT4()"/>
-				<v:ud v:nameU="RTL" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="visMasterStencil" v:prompt="" v:val="VT4(bpmn_u.vss)"/>
-				<v:ud v:nameU="visRotateLabel" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="visHeadingText" v:prompt=""/>
-				<v:ud v:nameU="visCFFStyle" v:prompt="" v:val="VT0(7):26"/>
-				<v:ud v:nameU="msvSDContainerLocked" v:prompt="" v:val="VT0(0):5"/>
-				<v:ud v:nameU="CFFVertical" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="numLanes" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="msvSDMembersOnHiddenLayer" v:prompt="" v:val="VT0(1):5"/>
-				<v:ud v:nameU="visCFFHeadingPos" v:prompt="" v:val="VT0(3):26"/>
-				<v:ud v:nameU="HeadingSpan" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="HeadingAlign" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="visHeadingHeight" v:prompt="" v:val="VT0(0.47244094488189):24"/>
-				<v:ud v:nameU="visShowTitle" v:prompt="" v:val="VT0(1):26"/>
-				<v:ud v:nameU="visShowPhase" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="visMargins" v:prompt="" v:val="VT0(0.23622047244094):24"/>
-				<v:ud v:nameU="visAutoExpand" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
-				<v:ud v:nameU="msvSDContainerLocked" v:prompt="" v:val="VT0(1):5"/>
-				<v:ud v:nameU="numLanes" v:prompt="" v:val="VT0(1):26"/>
-				<v:ud v:nameU="visHeadingHeight" v:prompt="" v:val="VT0(0):1"/>
-				<v:ud v:nameU="visShowTitle" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="visNavOrder" v:val="VT0(2000):26"/>
-			</v:userDefs>
-			<title>CFF Container.102</title>
-			<g id="shape6-10" v:mID="6" v:groupContext="shape">
-				<title>Tabelle.6</title>
-				<v:userDefs>
-					<v:ud v:nameU="FillForegnd" v:prompt="" v:val="VT5(#ffffff)"/>
-					<v:ud v:nameU="FillBkgnd" v:prompt="" v:val="VT5(#ffffff)"/>
-					<v:ud v:nameU="CFFStyle" v:prompt="" v:val="VT0(7):26"/>
-					<v:ud v:nameU="FillForegndTrans" v:prompt="" v:val="VT0(0.8):27"/>
-					<v:ud v:nameU="FillForegnd" v:prompt="" v:val="VT5(#ffffff)"/>
-					<v:ud v:nameU="FillBkgnd" v:prompt="" v:val="VT5(#ffffff)"/>
-					<v:ud v:nameU="visAltText" v:val="VT4()"/>
-				</v:userDefs>
-				<rect x="0" y="294.223" width="2612.68" height="246.628" class="st5"/>
-			</g>
-			<g id="shape7-12" v:mID="7" v:groupContext="shape" transform="translate(-540.851,540.851) rotate(-90)">
-				<title>Tabelle.7</title>
-				<desc>Titel</desc>
-				<v:userDefs>
-					<v:ud v:nameU="msvStructureType" v:prompt="" v:val="VT4(Heading)"/>
-					<v:ud v:nameU="msvSDContainerHeadingEdge" v:prompt="" v:val="VT4(Right)"/>
-					<v:ud v:nameU="visHeadingHeight" v:prompt="" v:val="VT0(0.47244094488189):24"/>
-					<v:ud v:nameU="HeadingPos" v:prompt="" v:val="VT0(3):26"/>
-					<v:ud v:nameU="HSide" v:prompt="" v:val="VT0(1):26"/>
-					<v:ud v:nameU="HTxtMargin" v:prompt="" v:val="VT0(0.059055118110236):24"/>
-					<v:ud v:nameU="CStyle" v:prompt="" v:val="VT0(1):26"/>
-					<v:ud v:nameU="InsetY" v:prompt="" v:val="VT0(0):26"/>
-					<v:ud v:nameU="InsetX" v:prompt="" v:val="VT0(0):26"/>
-					<v:ud v:nameU="Inset" v:prompt="" v:val="VT0(0):24"/>
-					<v:ud v:nameU="scale" v:prompt="" v:val="VT0(1):26"/>
-					<v:ud v:nameU="AntiScale" v:prompt="" v:val="VT0(1):26"/>
-					<v:ud v:nameU="GridRounding" v:prompt="" v:val="VT0(0.23622047244094):24"/>
-					<v:ud v:nameU="visHeadingHeight" v:prompt="" v:val="VT0(0.31116263699002):1"/>
-				</v:userDefs>
-				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-				<v:textRect cx="123.314" cy="540.851" width="246.63" height="0"/>
-				<path d="M0 540.85 L246.63 540.85 L0 540.85 Z" class="st6"/>
-			</g>
-		</g>
-		<g id="shape8-14" v:mID="8" v:groupContext="shape" transform="translate(1.68475,-293.223)">
-			<title>Swimlane List.105</title>
-			<v:userDefs>
-				<v:ud v:nameU="msvStructureType" v:prompt="" v:val="VT4(List)"/>
-				<v:ud v:nameU="msvSDContainerLocked" v:prompt="" v:val="VT0(0):5"/>
-				<v:ud v:nameU="msvSDContainerMargin" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="msvSDContainerNoHighlight" v:prompt="" v:val="VT0(1):5"/>
-				<v:ud v:nameU="msvSDContainerNoRibbon" v:prompt="" v:val="VT0(1):5"/>
-				<v:ud v:nameU="msvSDContainerResize" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="msvShapeCategories" v:prompt="" v:val="VT4(CFF List;DoNotContain)"/>
-				<v:ud v:nameU="msvSDListRequiredCategories" v:prompt="" v:val="VT4(Swimlane)"/>
-				<v:ud v:nameU="msvSDContainerExcludedCategories" v:prompt="" v:val="VT4(CFF Container;CFF List;Phase;NonCFF)"/>
-				<v:ud v:nameU="msvSDContainerStyle" v:prompt="" v:val="VT0(1):26"/>
-				<v:ud v:nameU="msvSDListSpacing" v:prompt="" v:val="VT0(0):24"/>
-				<v:ud v:nameU="msvSDListDirection" v:prompt="" v:val="VT0(2):26"/>
-				<v:ud v:nameU="msvSDListAlignment" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="msvSDListItemMaster" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="msvSDListNoReorder" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="msvLayoutIncludeSubshapes" v:prompt="" v:val="VT0(0):5"/>
-				<v:ud v:nameU="msvSDMembersOnHiddenLayer" v:prompt="" v:val="VT0(1):5"/>
-				<v:ud v:nameU="visHeadingHeight" v:prompt="" v:val="VT0(0.47244094488189):24"/>
-				<v:ud v:nameU="visRotateLabel" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="visMasterStencil" v:prompt="" v:val="VT4(bpmn_u.vss)"/>
-				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
-				<v:ud v:nameU="msvSDContainerStyle" v:prompt="" v:val="VT0(7):26"/>
-				<v:ud v:nameU="visHeadingHeight" v:prompt="" v:val="VT0(0.47244094488189):24"/>
-				<v:ud v:nameU="visNavOrder" v:val="VT0(1000):26"/>
-			</v:userDefs>
-			<rect x="0" y="294.223" width="2612.68" height="246.628" class="st7"/>
-			<rect x="0" y="294.223" width="2612.68" height="246.628" class="st8"/>
-		</g>
-		<g id="group9-17" transform="translate(1,-1)" v:mID="9" v:groupContext="group">
-			<v:custProps>
-				<v:cp v:nameU="BpmnElementType" v:lbl="ElementTyp" v:prompt="" v:type="1"
-						v:format="Teilprozess;Ereignis;Gateway;Prozessdiagramm;Pool;Verantwortlichkeitsbereich;Artefakt;Verbindungsobjekt"
-						v:sortKey="" v:invis="false" v:ask="false" v:langID="1031" v:cal="0"
-						v:val="VT4(Verantwortlichkeitsbereich)"/>
-				<v:cp v:nameU="BpmnId" v:lbl="ID" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true" v:ask="false"
-						v:langID="1031" v:cal="0"/>
-				<v:cp v:nameU="BpmnCategories" v:lbl="Kategorien" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="false"
-						v:ask="false" v:langID="1031" v:cal="0"/>
-				<v:cp v:nameU="BpmnDocumentation" v:lbl="Dokumentation" v:prompt="" v:type="0" v:format="" v:sortKey=""
-						v:invis="false" v:ask="false" v:langID="1031" v:cal="0"/>
-				<v:cp v:nameU="BpmnName" v:lbl="Name" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true" v:ask="false"
-						v:langID="1031" v:cal="0" v:val="VT4(Funktion)"/>
-				<v:cp v:nameU="BpmnPoolElementType" v:lbl="ElementTyp" v:prompt="" v:type="1"
-						v:format="Teilprozess;Ereignis;Gateway;Prozessdiagramm;Pool;Verantwortlichkeitsbereich;Artefakt;Verbindungsobjekt"
-						v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0" v:val="VT4(Pool)"/>
-				<v:cp v:nameU="BpmnPoolId" v:lbl="ID" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true" v:ask="false"
-						v:langID="1031" v:cal="0" v:val="VT4()"/>
-				<v:cp v:nameU="BpmnPoolCategories" v:lbl="Kategorien" v:prompt="" v:type="0" v:format="" v:sortKey=""
-						v:invis="true" v:ask="false" v:langID="1031" v:cal="0" v:val="VT0(0):26"/>
-				<v:cp v:nameU="BpmnPoolDocumentation" v:lbl="Dokumentation" v:prompt="" v:type="0" v:format="" v:sortKey=""
-						v:invis="true" v:ask="false" v:langID="1031" v:cal="0" v:val="VT0(0):26"/>
-				<v:cp v:nameU="BpmnPoolName" v:lbl="Name" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true"
-						v:ask="false" v:langID="1031" v:cal="0" v:val="VT4(Funktion)"/>
-				<v:cp v:nameU="BPMNPoolLanes" v:lbl="Verantwortlichkeitsbereiche" v:prompt="" v:type="2" v:format="" v:sortKey=""
-						v:invis="true" v:ask="false" v:langID="1031" v:cal="0" v:val="VT0(1):26"/>
-				<v:cp v:nameU="BPMNPoolBoundaryVisible" v:lbl="GrenzeSichtbar" v:prompt="" v:type="3" v:format="" v:sortKey=""
-						v:invis="true" v:ask="false" v:langID="1031" v:cal="0" v:val="VT0(0):5"/>
-				<v:cp v:nameU="BPMNPoolMainPool" v:lbl="HauptPool" v:prompt="" v:type="3" v:format="" v:sortKey="" v:invis="true"
-						v:ask="false" v:langID="1031" v:cal="0" v:val="VT0(0):5"/>
-				<v:cp v:nameU="BpmnMultiInstance" v:lbl="Mehrere Instanzen" v:prompt="" v:type="3" v:format="" v:sortKey=""
-						v:invis="false" v:ask="false" v:langID="1031" v:cal="0" v:val="VT0(0):5"/>
-				<v:cp v:nameU="BpmnElementType" v:lbl="" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true"
-						v:ask="false" v:langID="0" v:cal="0" v:val="VT0(0):26"/>
-				<v:cp v:nameU="BpmnCategories" v:lbl="" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true"
-						v:ask="false" v:langID="0" v:cal="0" v:val="VT0(0):26"/>
-				<v:cp v:nameU="BpmnDocumentation" v:lbl="" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true"
-						v:ask="false" v:langID="0" v:cal="0" v:val="VT0(0):26"/>
-				<v:cp v:nameU="BpmnName" v:lbl="" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="false" v:ask="false"
-						v:langID="0" v:cal="0" v:val="VT4(Supplier)"/>
-				<v:cp v:nameU="BpmnPoolElementType" v:lbl="" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="false"
-						v:ask="false" v:langID="0" v:cal="0" v:val="VT4(Pool)"/>
-				<v:cp v:nameU="BpmnPoolId" v:lbl="" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="false" v:ask="false"
-						v:langID="0" v:cal="0" v:val="VT0(0):26"/>
-				<v:cp v:nameU="BpmnPoolCategories" v:lbl="" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="false"
-						v:ask="false" v:langID="0" v:cal="0" v:val="VT0(0):26"/>
-				<v:cp v:nameU="BpmnPoolDocumentation" v:lbl="" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="false"
-						v:ask="false" v:langID="0" v:cal="0" v:val="VT0(0):26"/>
-				<v:cp v:nameU="BpmnPoolName" v:lbl="" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="false" v:ask="false"
-						v:langID="0" v:cal="0" v:val="VT4(Titel)"/>
-				<v:cp v:nameU="BPMNPoolLanes" v:lbl="" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="false"
-						v:ask="false" v:langID="0" v:cal="0" v:val="VT0(1):26"/>
-				<v:cp v:nameU="BPMNPoolBoundaryVisible" v:lbl="" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="false"
-						v:ask="false" v:langID="0" v:cal="0" v:val="VT0(0):5"/>
-				<v:cp v:nameU="BPMNPoolMainPool" v:lbl="" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="false"
-						v:ask="false" v:langID="0" v:cal="0" v:val="VT0(0):5"/>
-			</v:custProps>
-			<v:userDefs>
-				<v:ud v:nameU="msvShapeCategories" v:prompt="" v:val="VT4(Swimlane;Lane)"/>
-				<v:ud v:nameU="msvStructureType" v:prompt="" v:val="VT4(Container)"/>
-				<v:ud v:nameU="msvSDContainerMargin" v:prompt="" v:val="VT0(0.23622047244094):24"/>
-				<v:ud v:nameU="msvSDContainerResize" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="msvSDContainerNoHighlight" v:prompt="" v:val="VT0(0):5"/>
-				<v:ud v:nameU="msvSDContainerNoRibbon" v:prompt="" v:val="VT0(1):5"/>
-				<v:ud v:nameU="msvSDContainerStyle" v:prompt="" v:val="VT0(1):26"/>
-				<v:ud v:nameU="visDirection" v:prompt="" v:val="VT0(1):26"/>
-				<v:ud v:nameU="HeadingSide" v:prompt="" v:val="VT0(1):26"/>
-				<v:ud v:nameU="msvSDContainerStyleCount" v:prompt="" v:val="VT0(6):26"/>
-				<v:ud v:nameU="msvSDContainerRequiredCategories" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="msvSDContainerExcludedCategories" v:prompt=""
-						v:val="VT4(CFF Container;CFF List;Swimlane;Phase;NonCFF)"/>
-				<v:ud v:nameU="RTL" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="visMasterStencil" v:prompt="" v:val="VT4(bpmn_m.vssx)"/>
-				<v:ud v:nameU="visRotateLabel" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="visHeadingText" v:prompt="" v:val="VT4(Funktion)"/>
-				<v:ud v:nameU="visCFFStyle" v:prompt="" v:val="VT0(1):26"/>
-				<v:ud v:nameU="msvSDContainerLocked" v:prompt="" v:val="VT0(0):5"/>
-				<v:ud v:nameU="msvLayoutIncludeSubshapes" v:prompt="" v:val="VT0(0):5"/>
-				<v:ud v:nameU="msvSDMembersOnHiddenLayer" v:prompt="" v:val="VT0(1):5"/>
-				<v:ud v:nameU="SwimlaneListGUID" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="visCFFSettings" v:prompt="" v:val="VT4()"/>
-				<v:ud v:nameU="visCFFSingleLaneShowAll" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="LineWeight" v:prompt="" v:val="VT0(0.0034722222222222):29"/>
-				<v:ud v:nameU="BPMNPool" v:prompt="" v:val="VT0(0):5"/>
-				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
-				<v:ud v:nameU="msvShapeCategories" v:prompt="" v:val="VT4(Swimlane;Lane;DoNotContain)"/>
-				<v:ud v:nameU="msvSDContainerMargin" v:prompt="" v:val="VT0(0.23622047244094):24"/>
-				<v:ud v:nameU="visDirection" v:prompt="" v:val="VT0(1):26"/>
-				<v:ud v:nameU="RTL" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="visRotateLabel" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="visHeadingText" v:prompt="" v:val="VT4(Supplier)"/>
-				<v:ud v:nameU="visCFFStyle" v:prompt="" v:val="VT0(7):26"/>
-				<v:ud v:nameU="SwimlaneListGUID" v:prompt="" v:val="VT15({812DF75F-E87E-4AAF-8AF0-71A8EA9E0D33}):41"/>
-				<v:ud v:nameU="visCFFSettings" v:prompt="" v:val="VT4(/stg1=7, /stg2=0, /stg3=0, /stg4=1, /stg5=0,2362, /stg6=0)"/>
-				<v:ud v:nameU="LineWeight" v:prompt="" v:val="VT0(0.013888888888889):29"/>
-				<v:ud v:nameU="BPMNPool" v:prompt="" v:val="VT0(1):5"/>
-				<v:ud v:nameU="visNavOrder" v:val="VT0(9000):26"/>
-			</v:userDefs>
-			<title>Pool/Verantwortlichkeitsbereich.9</title>
-			<g id="shape10-18" v:mID="10" v:groupContext="shape">
-				<title>Tabelle.10</title>
-				<v:userDefs>
-					<v:ud v:nameU="FillForegnd" v:prompt="" v:val="VT5(#ffffff)"/>
-					<v:ud v:nameU="FillBkgnd" v:prompt="" v:val="VT5(#ffffff)"/>
-					<v:ud v:nameU="CFFStyle" v:prompt="" v:val="VT0(1):26"/>
-					<v:ud v:nameU="FillForegndTrans" v:prompt="" v:val="VT0(1):27"/>
-					<v:ud v:nameU="FillForegnd" v:prompt="" v:val="VT5(#ffffff)"/>
-					<v:ud v:nameU="FillBkgnd" v:prompt="" v:val="VT5(#ffffff)"/>
-					<v:ud v:nameU="CFFStyle" v:prompt="" v:val="VT0(7):26"/>
-					<v:ud v:nameU="visAltText" v:val="VT4()"/>
-				</v:userDefs>
-				<rect x="0" y="292.151" width="2613.37" height="248.701" class="st1"/>
-			</g>
-			<g id="shape11-20" v:mID="11" v:groupContext="shape" transform="translate(1319.44,0)">
-				<title>Tabelle.11</title>
-				<v:userDefs>
-					<v:ud v:nameU="visAltText" v:val="VT4()"/>
-				</v:userDefs>
-			</g>
-			<g id="shape12-22" v:mID="12" v:groupContext="shape" transform="translate(-506.836,540.851) rotate(-90)">
-				<title>Tabelle.12</title>
-				<desc>Supplier</desc>
-				<v:userDefs>
-					<v:ud v:nameU="msvStructureType" v:prompt="" v:val="VT4(Heading)"/>
-					<v:ud v:nameU="msvSDContainerHeadingEdge" v:prompt="" v:val="VT4(Right)"/>
-					<v:ud v:nameU="visHeadingHeight" v:prompt="" v:val="VT0(0.47244094488189):24"/>
-					<v:ud v:nameU="HeadingPos" v:prompt="" v:val="VT0(3):26"/>
-					<v:ud v:nameU="HSide" v:prompt="" v:val="VT0(1):26"/>
-					<v:ud v:nameU="HTxtMargin" v:prompt="" v:val="VT0(0.059055118110236):24"/>
-					<v:ud v:nameU="CStyle" v:prompt="" v:val="VT0(1):26"/>
-					<v:ud v:nameU="InsetY" v:prompt="" v:val="VT0(0):26"/>
-					<v:ud v:nameU="InsetX" v:prompt="" v:val="VT0(0):26"/>
-					<v:ud v:nameU="Inset" v:prompt="" v:val="VT0(0):24"/>
-					<v:ud v:nameU="CFFStyle" v:prompt="" v:val="VT0(1):26"/>
-					<v:ud v:nameU="HeadingPos" v:prompt="" v:val="VT0(3):26"/>
-					<v:ud v:nameU="CFFStyle" v:prompt="" v:val="VT0(7):26"/>
-				</v:userDefs>
-				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-				<v:textRect cx="124.35" cy="523.844" width="248.71" height="34.0157"/>
-				<path d="M0 540.85 L248.7 540.85 L248.7 506.84 L0 506.84 L0 540.85 Z" class="st2"/>
-				<text x="101.51" y="527.44" class="st9" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>Supplier</text>			</g>
-		</g>
-		<g id="group13-25" transform="translate(1.68475,-293.223)" v:mID="13" v:groupContext="group">
-			<v:custProps>
-				<v:cp v:nameU="BpmnElementType" v:lbl="ElementTyp" v:prompt="" v:type="1"
-						v:format="Teilprozess;Ereignis;Gateway;Prozessdiagramm;Pool;Verantwortlichkeitsbereich;Artefakt;Verbindungsobjekt"
-						v:sortKey="" v:invis="false" v:ask="false" v:langID="1031" v:cal="0"
-						v:val="VT4(Verantwortlichkeitsbereich)"/>
-				<v:cp v:nameU="BpmnId" v:lbl="ID" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true" v:ask="false"
-						v:langID="1031" v:cal="0"/>
-				<v:cp v:nameU="BpmnCategories" v:lbl="Kategorien" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="false"
-						v:ask="false" v:langID="1031" v:cal="0"/>
-				<v:cp v:nameU="BpmnDocumentation" v:lbl="Dokumentation" v:prompt="" v:type="0" v:format="" v:sortKey=""
-						v:invis="false" v:ask="false" v:langID="1031" v:cal="0"/>
-				<v:cp v:nameU="BpmnName" v:lbl="Name" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true" v:ask="false"
-						v:langID="1031" v:cal="0" v:val="VT4(Funktion)"/>
-				<v:cp v:nameU="BpmnPoolElementType" v:lbl="ElementTyp" v:prompt="" v:type="1"
-						v:format="Teilprozess;Ereignis;Gateway;Prozessdiagramm;Pool;Verantwortlichkeitsbereich;Artefakt;Verbindungsobjekt"
-						v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0" v:val="VT4(Pool)"/>
-				<v:cp v:nameU="BpmnPoolId" v:lbl="ID" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true" v:ask="false"
-						v:langID="1031" v:cal="0" v:val="VT4()"/>
-				<v:cp v:nameU="BpmnPoolCategories" v:lbl="Kategorien" v:prompt="" v:type="0" v:format="" v:sortKey=""
-						v:invis="true" v:ask="false" v:langID="1031" v:cal="0" v:val="VT0(0):26"/>
-				<v:cp v:nameU="BpmnPoolDocumentation" v:lbl="Dokumentation" v:prompt="" v:type="0" v:format="" v:sortKey=""
-						v:invis="true" v:ask="false" v:langID="1031" v:cal="0" v:val="VT0(0):26"/>
-				<v:cp v:nameU="BpmnPoolName" v:lbl="Name" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true"
-						v:ask="false" v:langID="1031" v:cal="0" v:val="VT4(Funktion)"/>
-				<v:cp v:nameU="BPMNPoolLanes" v:lbl="Verantwortlichkeitsbereiche" v:prompt="" v:type="2" v:format="" v:sortKey=""
-						v:invis="true" v:ask="false" v:langID="1031" v:cal="0" v:val="VT0(1):26"/>
-				<v:cp v:nameU="BPMNPoolBoundaryVisible" v:lbl="GrenzeSichtbar" v:prompt="" v:type="3" v:format="" v:sortKey=""
-						v:invis="true" v:ask="false" v:langID="1031" v:cal="0" v:val="VT0(0):5"/>
-				<v:cp v:nameU="BPMNPoolMainPool" v:lbl="HauptPool" v:prompt="" v:type="3" v:format="" v:sortKey="" v:invis="true"
-						v:ask="false" v:langID="1031" v:cal="0" v:val="VT0(0):5"/>
-				<v:cp v:nameU="BpmnMultiInstance" v:lbl="Mehrere Instanzen" v:prompt="" v:type="3" v:format="" v:sortKey=""
-						v:invis="false" v:ask="false" v:langID="1031" v:cal="0" v:val="VT0(0):5"/>
-				<v:cp v:nameU="BpmnElementType" v:lbl="" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true"
-						v:ask="false" v:langID="0" v:cal="0" v:val="VT0(0):26"/>
-				<v:cp v:nameU="BpmnCategories" v:lbl="" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true"
-						v:ask="false" v:langID="0" v:cal="0" v:val="VT0(0):26"/>
-				<v:cp v:nameU="BpmnDocumentation" v:lbl="" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true"
-						v:ask="false" v:langID="0" v:cal="0" v:val="VT0(0):26"/>
-				<v:cp v:nameU="BpmnName" v:lbl="" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="false" v:ask="false"
-						v:langID="0" v:cal="0" v:val="VT4(Customer)"/>
-				<v:cp v:nameU="BpmnPoolElementType" v:lbl="" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="false"
-						v:ask="false" v:langID="0" v:cal="0" v:val="VT4(Pool)"/>
-				<v:cp v:nameU="BpmnPoolId" v:lbl="" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="false" v:ask="false"
-						v:langID="0" v:cal="0" v:val="VT0(0):26"/>
-				<v:cp v:nameU="BpmnPoolCategories" v:lbl="" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="false"
-						v:ask="false" v:langID="0" v:cal="0" v:val="VT0(0):26"/>
-				<v:cp v:nameU="BpmnPoolDocumentation" v:lbl="" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="false"
-						v:ask="false" v:langID="0" v:cal="0" v:val="VT0(0):26"/>
-				<v:cp v:nameU="BpmnPoolName" v:lbl="" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="false" v:ask="false"
-						v:langID="0" v:cal="0" v:val="VT4(Titel)"/>
-				<v:cp v:nameU="BPMNPoolLanes" v:lbl="" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="false"
-						v:ask="false" v:langID="0" v:cal="0" v:val="VT0(1):26"/>
-				<v:cp v:nameU="BPMNPoolBoundaryVisible" v:lbl="" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="false"
-						v:ask="false" v:langID="0" v:cal="0" v:val="VT0(0):5"/>
-				<v:cp v:nameU="BPMNPoolMainPool" v:lbl="" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="false"
-						v:ask="false" v:langID="0" v:cal="0" v:val="VT0(0):5"/>
-			</v:custProps>
-			<v:userDefs>
-				<v:ud v:nameU="msvShapeCategories" v:prompt="" v:val="VT4(Swimlane;Lane)"/>
-				<v:ud v:nameU="msvStructureType" v:prompt="" v:val="VT4(Container)"/>
-				<v:ud v:nameU="msvSDContainerMargin" v:prompt="" v:val="VT0(0.23622047244094):24"/>
-				<v:ud v:nameU="msvSDContainerResize" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="msvSDContainerNoHighlight" v:prompt="" v:val="VT0(0):5"/>
-				<v:ud v:nameU="msvSDContainerNoRibbon" v:prompt="" v:val="VT0(1):5"/>
-				<v:ud v:nameU="msvSDContainerStyle" v:prompt="" v:val="VT0(1):26"/>
-				<v:ud v:nameU="visDirection" v:prompt="" v:val="VT0(1):26"/>
-				<v:ud v:nameU="HeadingSide" v:prompt="" v:val="VT0(1):26"/>
-				<v:ud v:nameU="msvSDContainerStyleCount" v:prompt="" v:val="VT0(6):26"/>
-				<v:ud v:nameU="msvSDContainerRequiredCategories" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="msvSDContainerExcludedCategories" v:prompt=""
-						v:val="VT4(CFF Container;CFF List;Swimlane;Phase;NonCFF)"/>
-				<v:ud v:nameU="RTL" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="visMasterStencil" v:prompt="" v:val="VT4(bpmn_m.vssx)"/>
-				<v:ud v:nameU="visRotateLabel" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="visHeadingText" v:prompt="" v:val="VT4(Funktion)"/>
-				<v:ud v:nameU="visCFFStyle" v:prompt="" v:val="VT0(1):26"/>
-				<v:ud v:nameU="msvSDContainerLocked" v:prompt="" v:val="VT0(0):5"/>
-				<v:ud v:nameU="msvLayoutIncludeSubshapes" v:prompt="" v:val="VT0(0):5"/>
-				<v:ud v:nameU="msvSDMembersOnHiddenLayer" v:prompt="" v:val="VT0(1):5"/>
-				<v:ud v:nameU="SwimlaneListGUID" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="visCFFSettings" v:prompt="" v:val="VT4()"/>
-				<v:ud v:nameU="visCFFSingleLaneShowAll" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="LineWeight" v:prompt="" v:val="VT0(0.0034722222222222):29"/>
-				<v:ud v:nameU="BPMNPool" v:prompt="" v:val="VT0(0):5"/>
-				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
-				<v:ud v:nameU="msvShapeCategories" v:prompt="" v:val="VT4(Swimlane;Lane;DoNotContain)"/>
-				<v:ud v:nameU="msvSDContainerMargin" v:prompt="" v:val="VT0(0.23622047244094):24"/>
-				<v:ud v:nameU="visDirection" v:prompt="" v:val="VT0(1):26"/>
-				<v:ud v:nameU="RTL" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="visRotateLabel" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="visHeadingText" v:prompt="" v:val="VT4(Customer)"/>
-				<v:ud v:nameU="visCFFStyle" v:prompt="" v:val="VT0(7):26"/>
-				<v:ud v:nameU="SwimlaneListGUID" v:prompt="" v:val="VT15({FF69C04C-217B-472A-8DE3-A5805A6B65C5}):41"/>
-				<v:ud v:nameU="visCFFSettings" v:prompt="" v:val="VT4(/stg1=7, /stg2=0, /stg3=0, /stg4=1, /stg5=0,2362, /stg6=0)"/>
-				<v:ud v:nameU="LineWeight" v:prompt="" v:val="VT0(0.013888888888889):29"/>
-				<v:ud v:nameU="BPMNPool" v:prompt="" v:val="VT0(1):5"/>
-				<v:ud v:nameU="visNavOrder" v:val="VT0(3000):26"/>
-			</v:userDefs>
-			<title>Pool / Lane.106</title>
-			<g id="shape14-26" v:mID="14" v:groupContext="shape">
-				<title>Tabelle.14</title>
-				<v:userDefs>
-					<v:ud v:nameU="FillForegnd" v:prompt="" v:val="VT5(#ffffff)"/>
-					<v:ud v:nameU="FillBkgnd" v:prompt="" v:val="VT5(#ffffff)"/>
-					<v:ud v:nameU="CFFStyle" v:prompt="" v:val="VT0(1):26"/>
-					<v:ud v:nameU="FillForegndTrans" v:prompt="" v:val="VT0(1):27"/>
-					<v:ud v:nameU="FillForegnd" v:prompt="" v:val="VT5(#ffffff)"/>
-					<v:ud v:nameU="FillBkgnd" v:prompt="" v:val="VT5(#ffffff)"/>
-					<v:ud v:nameU="CFFStyle" v:prompt="" v:val="VT0(7):26"/>
-					<v:ud v:nameU="visAltText" v:val="VT4()"/>
-				</v:userDefs>
-				<rect x="0" y="294.223" width="2612.68" height="246.628" class="st5"/>
-			</g>
-			<g id="shape15-28" v:mID="15" v:groupContext="shape" transform="translate(1319.1,0)">
-				<title>Tabelle.15</title>
-				<v:userDefs>
-					<v:ud v:nameU="visAltText" v:val="VT4()"/>
-				</v:userDefs>
-			</g>
-			<g id="shape16-30" v:mID="16" v:groupContext="shape" transform="translate(-506.836,540.851) rotate(-90)">
-				<title>Tabelle.16</title>
-				<desc>Customer</desc>
-				<v:userDefs>
-					<v:ud v:nameU="msvStructureType" v:prompt="" v:val="VT4(Heading)"/>
-					<v:ud v:nameU="msvSDContainerHeadingEdge" v:prompt="" v:val="VT4(Right)"/>
-					<v:ud v:nameU="visHeadingHeight" v:prompt="" v:val="VT0(0.47244094488189):24"/>
-					<v:ud v:nameU="HeadingPos" v:prompt="" v:val="VT0(3):26"/>
-					<v:ud v:nameU="HSide" v:prompt="" v:val="VT0(1):26"/>
-					<v:ud v:nameU="HTxtMargin" v:prompt="" v:val="VT0(0.059055118110236):24"/>
-					<v:ud v:nameU="CStyle" v:prompt="" v:val="VT0(1):26"/>
-					<v:ud v:nameU="InsetY" v:prompt="" v:val="VT0(0):26"/>
-					<v:ud v:nameU="InsetX" v:prompt="" v:val="VT0(0):26"/>
-					<v:ud v:nameU="Inset" v:prompt="" v:val="VT0(0):24"/>
-					<v:ud v:nameU="CFFStyle" v:prompt="" v:val="VT0(1):26"/>
-					<v:ud v:nameU="HeadingPos" v:prompt="" v:val="VT0(3):26"/>
-					<v:ud v:nameU="CFFStyle" v:prompt="" v:val="VT0(7):26"/>
-				</v:userDefs>
-				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-				<v:textRect cx="123.314" cy="523.844" width="246.63" height="34.0157"/>
-				<path d="M0 540.85 L246.63 540.85 L246.63 506.84 L0 506.84 L0 540.85 Z" class="st6"/>
-				<text x="95.6" y="527.44" class="st9" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>Customer</text>			</g>
-		</g>
-		<g id="shape17-33" v:mID="17" v:groupContext="shape" transform="translate(35.0157,-1)">
-			<title>Phasenliste.17</title>
-			<v:userDefs>
-				<v:ud v:nameU="msvStructureType" v:prompt="" v:val="VT4(List)"/>
-				<v:ud v:nameU="msvSDContainerRequiredCategories" v:prompt="" v:val="VT4(Phase)"/>
-				<v:ud v:nameU="msvSDListRequiredCategories" v:prompt="" v:val="VT4(Phase)"/>
-				<v:ud v:nameU="msvShapeCategories" v:prompt="" v:val="VT4(CFF List;DoNotContain)"/>
-				<v:ud v:nameU="msvSDContainerMargin" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="msvSDContainerLocked" v:prompt="" v:val="VT0(0):5"/>
-				<v:ud v:nameU="msvSDContainerNoHighlight" v:prompt="" v:val="VT0(1):5"/>
-				<v:ud v:nameU="msvSDContainerNoRibbon" v:prompt="" v:val="VT0(1):5"/>
-				<v:ud v:nameU="msvSDContainerResize" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="msvSDContainerStyle" v:prompt="" v:val="VT0(1):26"/>
-				<v:ud v:nameU="msvSDListSpacing" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="msvSDListDirection" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="msvSDListAlignment" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="msvSDListItemMaster" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="msvSDListNoReorder" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="msvLayoutIncludeSubshapes" v:prompt="" v:val="VT0(0):5"/>
-				<v:ud v:nameU="msvSDMembersOnHiddenLayer" v:prompt="" v:val="VT0(1):5"/>
-				<v:ud v:nameU="visHeadingHeight" v:prompt="" v:val="VT0(0.23622047244094):24"/>
-				<v:ud v:nameU="visMasterStencil" v:prompt="" v:val="VT4(bpmn_u.vss)"/>
-				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
-				<v:ud v:nameU="msvSDContainerLocked" v:prompt="" v:val="VT0(1):5"/>
-				<v:ud v:nameU="msvSDContainerStyle" v:prompt="" v:val="VT0(7):26"/>
-				<v:ud v:nameU="visNavOrder" v:val="VT0(11000):26"/>
-			</v:userDefs>
-			<rect x="0" y="292.151" width="2579.35" height="248.701" class="st10"/>
-		</g>
-		<g id="group18-35" transform="translate(35.0157,-1)" v:mID="18" v:groupContext="group">
-			<v:userDefs>
-				<v:ud v:nameU="msvStructureType" v:prompt="" v:val="VT4(Container)"/>
-				<v:ud v:nameU="msvShapeCategories" v:prompt="" v:val="VT4(Phase;DoNotContain)"/>
-				<v:ud v:nameU="msvSDContainerExcludedCategories" v:prompt=""
-						v:val="VT4(CFF Container;CFF List;Swimlane;Phase;NonCFF)"/>
-				<v:ud v:nameU="msvSDContainerLocked" v:prompt="" v:val="VT0(0):5"/>
-				<v:ud v:nameU="msvSDContainerNoHighlight" v:prompt="" v:val="VT0(1):5"/>
-				<v:ud v:nameU="msvSDContainerNoRibbon" v:prompt="" v:val="VT0(1):5"/>
-				<v:ud v:nameU="msvSDContainerMargin" v:prompt="" v:val="VT0(0.23622047244094):24"/>
-				<v:ud v:nameU="msvSDContainerResize" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="msvSDMembersOnHiddenLayer" v:prompt="" v:val="VT0(1):5"/>
-				<v:ud v:nameU="visCFFStyle" v:prompt="" v:val="VT0(1):26"/>
-				<v:ud v:nameU="msvSDContainerStyle" v:prompt="" v:val="VT0(1):26"/>
-				<v:ud v:nameU="msvLayoutIncludeSubshapes" v:prompt="" v:val="VT0(0):5"/>
-				<v:ud v:nameU="ListDirection" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="visShowPhase" v:prompt="" v:val="VT0(1):26"/>
-				<v:ud v:nameU="visMasterStencil" v:prompt="" v:val="VT4(bpmn_u.vss)"/>
-				<v:ud v:nameU="LineWeight" v:prompt="" v:val="VT0(0.0034722222222222):29"/>
-				<v:ud v:nameU="RTL" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="CFFVertical" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
-				<v:ud v:nameU="msvSDContainerMargin" v:prompt="" v:val="VT0(0.23622047244094):24"/>
-				<v:ud v:nameU="visCFFStyle" v:prompt="" v:val="VT0(7):26"/>
-				<v:ud v:nameU="msvSDContainerStyle" v:prompt="" v:val="VT0(7):26"/>
-				<v:ud v:nameU="ListDirection" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="visShowPhase" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="LineWeight" v:prompt="" v:val="VT0(0.013888888888889):29"/>
-				<v:ud v:nameU="RTL" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="CFFVertical" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="visNavOrder" v:val="VT0(10000):26"/>
-			</v:userDefs>
-			<title>Trennzeichen.18</title>
-			<g id="shape19-36" v:mID="19" v:groupContext="shape">
-				<title>Tabelle.19</title>
-				<v:userDefs>
-					<v:ud v:nameU="FlipX" v:prompt="" v:val="VT0(0):26"/>
-					<v:ud v:nameU="visAltText" v:val="VT4()"/>
-				</v:userDefs>
-			</g>
-			<g id="shape20-38" v:mID="20" v:groupContext="shape" transform="translate(-34.0157,-248.701)">
-				<title>Tabelle.20</title>
-				<desc>Phase</desc>
-				<v:userDefs>
-					<v:ud v:nameU="msvStructureType" v:prompt="" v:val="VT4(Heading)"/>
-					<v:ud v:nameU="HeadingPos" v:prompt="" v:val="VT0(2):26"/>
-					<v:ud v:nameU="msvSDContainerHeadingEdge" v:prompt="" v:val="VT4(Bottom)"/>
-					<v:ud v:nameU="HAlign" v:prompt="" v:val="VT0(2):26"/>
-					<v:ud v:nameU="SwimlaneHeadingSize" v:prompt="" v:val="VT0(0.47244094488189):24"/>
-					<v:ud v:nameU="FirstHeadingExtend" v:prompt="" v:val="VT0(0):26"/>
-					<v:ud v:nameU="HeadingPos" v:prompt="" v:val="VT0(2):26"/>
-					<v:ud v:nameU="SwimlaneHeadingSize" v:prompt="" v:val="VT0(0.47244094488189):24"/>
-					<v:ud v:nameU="FirstHeadingExtend" v:prompt="" v:val="VT0(0.47244094488189):24"/>
-				</v:userDefs>
-				<v:textBlock v:margins="rect(2,2,2,2)" v:tabSpace="42.5197"/>
-				<v:textRect cx="1306.68" cy="540.851" width="2613.37" height="0"/>
-				<path d="M0 540.85 L2613.37 540.85 L0 540.85 Z" class="st2"/>
-			</g>
-		</g>
-		<g id="shape21-40" v:mID="21" v:groupContext="shape" transform="translate(35.7005,-293.223)">
-			<title>Phase List.110</title>
-			<v:userDefs>
-				<v:ud v:nameU="msvStructureType" v:prompt="" v:val="VT4(List)"/>
-				<v:ud v:nameU="msvSDContainerRequiredCategories" v:prompt="" v:val="VT4(Phase)"/>
-				<v:ud v:nameU="msvSDListRequiredCategories" v:prompt="" v:val="VT4(Phase)"/>
-				<v:ud v:nameU="msvShapeCategories" v:prompt="" v:val="VT4(CFF List;DoNotContain)"/>
-				<v:ud v:nameU="msvSDContainerMargin" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="msvSDContainerLocked" v:prompt="" v:val="VT0(0):5"/>
-				<v:ud v:nameU="msvSDContainerNoHighlight" v:prompt="" v:val="VT0(1):5"/>
-				<v:ud v:nameU="msvSDContainerNoRibbon" v:prompt="" v:val="VT0(1):5"/>
-				<v:ud v:nameU="msvSDContainerResize" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="msvSDContainerStyle" v:prompt="" v:val="VT0(1):26"/>
-				<v:ud v:nameU="msvSDListSpacing" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="msvSDListDirection" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="msvSDListAlignment" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="msvSDListItemMaster" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="msvSDListNoReorder" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="msvLayoutIncludeSubshapes" v:prompt="" v:val="VT0(0):5"/>
-				<v:ud v:nameU="msvSDMembersOnHiddenLayer" v:prompt="" v:val="VT0(1):5"/>
-				<v:ud v:nameU="visHeadingHeight" v:prompt="" v:val="VT0(0.23622047244094):24"/>
-				<v:ud v:nameU="visMasterStencil" v:prompt="" v:val="VT4(bpmn_u.vss)"/>
-				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
-				<v:ud v:nameU="msvSDContainerLocked" v:prompt="" v:val="VT0(1):5"/>
-				<v:ud v:nameU="msvSDContainerStyle" v:prompt="" v:val="VT0(7):26"/>
-				<v:ud v:nameU="visNavOrder" v:val="VT0(5000):26"/>
-			</v:userDefs>
-			<rect x="0" y="294.223" width="2578.67" height="246.628" class="st11"/>
-		</g>
-		<g id="group22-42" transform="translate(35.7005,-293.223)" v:mID="22" v:groupContext="group">
-			<v:userDefs>
-				<v:ud v:nameU="msvStructureType" v:prompt="" v:val="VT4(Container)"/>
-				<v:ud v:nameU="msvShapeCategories" v:prompt="" v:val="VT4(Phase;DoNotContain)"/>
-				<v:ud v:nameU="msvSDContainerExcludedCategories" v:prompt=""
-						v:val="VT4(CFF Container;CFF List;Swimlane;Phase;NonCFF)"/>
-				<v:ud v:nameU="msvSDContainerLocked" v:prompt="" v:val="VT0(0):5"/>
-				<v:ud v:nameU="msvSDContainerNoHighlight" v:prompt="" v:val="VT0(1):5"/>
-				<v:ud v:nameU="msvSDContainerNoRibbon" v:prompt="" v:val="VT0(1):5"/>
-				<v:ud v:nameU="msvSDContainerMargin" v:prompt="" v:val="VT0(0.23622047244094):24"/>
-				<v:ud v:nameU="msvSDContainerResize" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="msvSDMembersOnHiddenLayer" v:prompt="" v:val="VT0(1):5"/>
-				<v:ud v:nameU="visCFFStyle" v:prompt="" v:val="VT0(1):26"/>
-				<v:ud v:nameU="msvSDContainerStyle" v:prompt="" v:val="VT0(1):26"/>
-				<v:ud v:nameU="msvLayoutIncludeSubshapes" v:prompt="" v:val="VT0(0):5"/>
-				<v:ud v:nameU="ListDirection" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="visShowPhase" v:prompt="" v:val="VT0(1):26"/>
-				<v:ud v:nameU="visMasterStencil" v:prompt="" v:val="VT4(bpmn_u.vss)"/>
-				<v:ud v:nameU="LineWeight" v:prompt="" v:val="VT0(0.0034722222222222):29"/>
-				<v:ud v:nameU="RTL" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="CFFVertical" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
-				<v:ud v:nameU="msvSDContainerMargin" v:prompt="" v:val="VT0(0.23622047244094):24"/>
-				<v:ud v:nameU="visCFFStyle" v:prompt="" v:val="VT0(7):26"/>
-				<v:ud v:nameU="msvSDContainerStyle" v:prompt="" v:val="VT0(7):26"/>
-				<v:ud v:nameU="ListDirection" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="visShowPhase" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="LineWeight" v:prompt="" v:val="VT0(0.013888888888889):29"/>
-				<v:ud v:nameU="RTL" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="CFFVertical" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="visNavOrder" v:val="VT0(4000):26"/>
-			</v:userDefs>
-			<title>Separator.111</title>
-			<g id="shape23-43" v:mID="23" v:groupContext="shape">
-				<title>Tabelle.23</title>
-				<v:userDefs>
-					<v:ud v:nameU="FlipX" v:prompt="" v:val="VT0(0):26"/>
-					<v:ud v:nameU="visAltText" v:val="VT4()"/>
-				</v:userDefs>
-			</g>
-			<g id="shape24-45" v:mID="24" v:groupContext="shape" transform="translate(-34.0157,-246.628)">
-				<title>Tabelle.24</title>
-				<desc>Phase</desc>
-				<v:userDefs>
-					<v:ud v:nameU="msvStructureType" v:prompt="" v:val="VT4(Heading)"/>
-					<v:ud v:nameU="HeadingPos" v:prompt="" v:val="VT0(2):26"/>
-					<v:ud v:nameU="msvSDContainerHeadingEdge" v:prompt="" v:val="VT4(Bottom)"/>
-					<v:ud v:nameU="HAlign" v:prompt="" v:val="VT0(2):26"/>
-					<v:ud v:nameU="SwimlaneHeadingSize" v:prompt="" v:val="VT0(0.47244094488189):24"/>
-					<v:ud v:nameU="FirstHeadingExtend" v:prompt="" v:val="VT0(0):26"/>
-					<v:ud v:nameU="HeadingPos" v:prompt="" v:val="VT0(2):26"/>
-					<v:ud v:nameU="SwimlaneHeadingSize" v:prompt="" v:val="VT0(0.47244094488189):24"/>
-					<v:ud v:nameU="FirstHeadingExtend" v:prompt="" v:val="VT0(0.47244094488189):24"/>
-				</v:userDefs>
-				<v:textBlock v:margins="rect(2,2,2,2)" v:tabSpace="42.5197"/>
-				<v:textRect cx="1306.34" cy="540.851" width="2612.69" height="0"/>
-				<path d="M0 540.85 L2612.68 540.85 L0 540.85 Z" class="st6"/>
-			</g>
-		</g>
-		<g id="group25-47" transform="translate(59.857,-121.193)" v:mID="25" v:groupContext="group" v:layerMember="0">
-			<v:custProps>
-				<v:cp v:nameU="BpmnId" v:lbl="ID" v:prompt="" v:type="0" v:format="" v:sortKey="A" v:invis="true" v:ask="false"
-						v:langID="1031" v:cal="0" v:val="VT4()"/>
-				<v:cp v:nameU="BpmnCategories" v:lbl="Kategorien" v:prompt="" v:type="0" v:format="" v:sortKey="A" v:invis="false"
-						v:ask="false" v:langID="1031" v:cal="0" v:val="VT4()"/>
-				<v:cp v:nameU="BpmnDocumentation" v:lbl="Dokumentation" v:prompt="" v:type="0" v:format="" v:sortKey="A"
-						v:invis="false" v:ask="false" v:langID="1031" v:cal="0" v:val="VT4()"/>
-				<v:cp v:nameU="BpmnName" v:lbl="Name" v:prompt="" v:type="0" v:format="" v:sortKey="A" v:invis="true" v:ask="false"
-						v:langID="1031" v:cal="0" v:val="VT4()"/>
-				<v:cp v:nameU="BpmnEventType" v:lbl="EreignisTyp" v:prompt="" v:type="1"
-						v:format="Anfang;Anfang (ohne Unterbrechung);Zwischen;Zwischen (ohne Unterbrechung);Zwischen (Auslösung);Ende"
-						v:sortKey="B" v:invis="false" v:ask="false" v:langID="1031" v:cal="0" v:val="VT4(Anfang)"/>
-				<v:cp v:nameU="BpmnTriggerOrResult" v:lbl="TriggerOderErgebnis" v:prompt="" v:type="1"
-						v:format="Ohne;Nachricht;Zeitgeber;Bedingt;Signal;Mehrfach;Fehler;Kompensation;Eskalation;Parallel mehrfach"
-						v:sortKey="B" v:invis="true" v:ask="false" v:langID="1031" v:cal="0" v:val="VT4(Ohne)"/>
-				<v:cp v:nameU="BpmnTriggerOrResult_Start" v:lbl="TriggerOderErgebnis" v:prompt="" v:type="1"
-						v:format="Ohne;Nachricht;Zeitgeber;Bedingt;Signal;Mehrfach;Fehler;Kompensation;Eskalation;Parallel mehrfach"
-						v:sortKey="B" v:invis="false" v:ask="false" v:langID="1031" v:cal="0" v:val="VT4(Ohne)"/>
-				<v:cp v:nameU="BpmnTriggerOrResult_Intermediate" v:lbl="TriggerOderErgebnis" v:prompt="" v:type="1"
-						v:format="Ohne;Nachricht;Zeitgeber;Fehler;Abbrechen;Kompensation;Bedingt;Link;Signal;Mehrfach;Eskalation;Parallel mehrfach"
-						v:sortKey="B" v:invis="true" v:ask="false" v:langID="1031" v:cal="0" v:val="VT4(Ohne)"/>
-				<v:cp v:nameU="BpmnTriggerOrResult_End_Throwing" v:lbl="TriggerOderErgebnis" v:prompt="" v:type="1"
-						v:format="Ohne;Nachricht;Kompensation;Link;Signal;Mehrfach;Eskalation" v:sortKey="B" v:invis="true"
-						v:ask="false" v:langID="1031" v:cal="0" v:val="VT4(Ohne)"/>
-				<v:cp v:nameU="BpmnTriggerOrResult_End" v:lbl="TriggerOderErgebnis" v:prompt="" v:type="1"
-						v:format="Ohne;Nachricht;Fehler;Abbrechen;Kompensation;Signal;Abschließen;Mehrfach;Eskalation"
-						v:sortKey="B" v:invis="true" v:ask="false" v:langID="1031" v:cal="0" v:val="VT4(Ohne)"/>
-				<v:cp v:nameU="BpmnEventDetailType" v:lbl="    EreignisDetailTyp" v:prompt="" v:type="1"
-						v:format="Ohne;Nachricht;Zeitgeber;Fehler;Abbrechen;Kompensation;Bedingt;Link;Signal;Abschließen;Mehrfach;Eskalation;Parallel mehrfach"
-						v:sortKey="C" v:invis="true" v:ask="false" v:langID="1031" v:cal="0" v:val="VT4(Ohne)"/>
-				<v:cp v:nameU="BpmnElementType" v:lbl="ElementTyp" v:prompt="" v:type="1"
-						v:format="Teilprozess;Ereignis;Gateway;Prozessdiagramm;Pool;Verantwortlichkeitsbereich;Artefakt;Verbindungsobjekt"
-						v:sortKey="C" v:invis="true" v:ask="false" v:langID="1031" v:cal="0" v:val="VT4(Ereignis)"/>
-				<v:cp v:nameU="BpmnTriggerOrResult_Start_NonInterrupting" v:lbl="TriggerOderErgebnis" v:prompt="" v:type="1"
-						v:format="Nachricht;Zeitgeber;Bedingt;Signal;Mehrfach;Eskalation;Parallel mehrfach" v:sortKey="B"
-						v:invis="true" v:ask="false" v:langID="1031" v:cal="0" v:val="VT4(Ohne)"/>
-				<v:cp v:nameU="BpmnTriggerOrResult_Intermediate_NonInterrupting" v:lbl="TriggerOderErgebnis" v:prompt="" v:type="1"
-						v:format="Nachricht;Zeitgeber;Bedingt;Signal;Mehrfach;Eskalation;Parallel mehrfach" v:sortKey="B"
-						v:invis="true" v:ask="false" v:langID="1031" v:cal="0" v:val="VT4(Ohne)"/>
-				<v:cp v:nameU="BpmnName" v:lbl="" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="false" v:ask="false"
-						v:langID="0" v:cal="0" v:val="VT4(Start)"/>
-				<v:cp v:nameU="Function" v:lbl="" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="false" v:ask="false"
-						v:langID="1031" v:cal="0" v:val="VT4(Supplier)"/>
-			</v:custProps>
-			<v:userDefs>
-				<v:ud v:nameU="BPMNFillPattern" v:prompt="" v:val="VT0(1):26"/>
-				<v:ud v:nameU="msvShapeCategories" v:prompt="" v:val="VT4(Event)"/>
-				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
-				<v:ud v:nameU="visNavOrder" v:val="VT0(12000):26"/>
-			</v:userDefs>
-			<title>Start Event</title>
-			<desc>Start</desc>
-			<g id="shape26-48" v:mID="26" v:groupContext="shape" v:layerMember="0">
-				<title>Tabelle.26</title>
-				<v:userDefs>
-					<v:ud v:nameU="EventTypeMode" v:prompt="" v:val="VT0(0):26"/>
-				</v:userDefs>
-				<ellipse cx="20.701" cy="520.15" rx="20.701" ry="20.701" class="st12"/>
-			</g>
-			<g id="shape27-52" v:mID="27" v:groupContext="shape" v:layerMember="0">
-				<title>Tabelle.27</title>
-				<ellipse cx="20.701" cy="520.15" rx="16.5608" ry="16.5608" class="st13"/>
+ <defs id="Patterns_And_Gradients">
+  <linearGradient id="grad0-51" x1="0" y1="0" x2="1" y2="0" gradientTransform="rotate(90 0.5 0.5)">
+   <stop offset="0" stop-color="#b5cc2d" stop-opacity="1"/>
+   <stop offset="1" stop-color="#b5cc2d" stop-opacity="1"/>
+  </linearGradient>
+  <linearGradient id="grad0-81" x1="0" y1="0" x2="1" y2="0" gradientTransform="rotate(90 0.5 0.5)">
+   <stop offset="0" stop-color="#ffa600" stop-opacity="1"/>
+   <stop offset="1" stop-color="#ffa600" stop-opacity="1"/>
+  </linearGradient>
+ </defs>
+ <defs id="Markers">
+  <g id="lend4">
+   <path d="M 2 1 L 0 0 L 2 -1 L 2 1 " style="stroke:none"/>
+  </g>
+  <marker id="mrkr4-143" class="st26" v:arrowType="4" v:arrowSize="1" v:setback="7" refX="-7" orient="auto"
+    markerUnits="strokeWidth" overflow="visible">
+   <use xlink:href="#lend4" transform="scale(-3.5,-3.5) "/>
+  </marker>
+  <marker id="mrkr4-180" class="st30" v:arrowType="4" v:arrowSize="1" v:setback="7" refX="-7" orient="auto"
+    markerUnits="strokeWidth" overflow="visible">
+   <use xlink:href="#lend4" transform="scale(-3.5,-3.5) "/>
+  </marker>
+  <g id="lend1">
+   <path d="M 1 -1 L 0 0 L 1 1 " style="stroke-linecap:round;stroke-linejoin:round;fill:none"/>
+  </g>
+  <marker id="mrkr1-204" class="st32" v:arrowType="1" v:arrowSize="1" orient="auto" markerUnits="strokeWidth"
+    overflow="visible">
+   <use xlink:href="#lend1" transform="scale(-2.8,-2.8) "/>
+  </marker>
+  <g id="lend20">
+   <path
+     d="M 0 0.75 C -0.414214 0.75 -0.75 0.414214 -0.75 0 -0.75 -0.414214 -0.414214 -0.75 0 -0.75 0.414214 -0.75 0.75 -0.414214 0.75 0 0.75 0.414214 0.414214 0.75 0 0.75 Z "
+     style="stroke-linecap:round;stroke-linejoin:round;fill:none"/>
+  </g>
+  <marker id="mrkr20-282" class="st30" v:arrowType="20" v:arrowSize="1" v:setback="2.125" refX="2.125" orient="auto"
+    markerUnits="strokeWidth" overflow="visible">
+   <use xlink:href="#lend20" transform="scale(3.5) "/>
+  </marker>
+  <g id="lend16">
+   <path d="M 0 0 L 2 -1 L 2 1 L 0 0 " style="stroke-linecap:round;stroke-linejoin:round;fill:none"/>
+  </g>
+  <marker id="mrkr16-284" class="st30" v:arrowType="16" v:arrowSize="1" v:setback="7" refX="-7" orient="auto"
+    markerUnits="strokeWidth" overflow="visible">
+   <use xlink:href="#lend16" transform="scale(-3.5,-3.5) "/>
+  </marker>
+  <marker id="mrkr20-340" class="st26" v:arrowType="20" v:arrowSize="1" v:setback="2.125" refX="2.125" orient="auto"
+    markerUnits="strokeWidth" overflow="visible">
+   <use xlink:href="#lend20" transform="scale(3.5) "/>
+  </marker>
+  <marker id="mrkr16-342" class="st26" v:arrowType="16" v:arrowSize="1" v:setback="7" refX="-7" orient="auto"
+    markerUnits="strokeWidth" overflow="visible">
+   <use xlink:href="#lend16" transform="scale(-3.5,-3.5) "/>
+  </marker>
+ </defs>
+ <g v:mID="0" v:index="1" v:groupContext="foregroundPage">
+  <v:userDefs>
+   <v:ud v:nameU="visNavType" v:val="VT0(1):26"/>
+  </v:userDefs>
+  <title>Zeichenblatt-1</title>
+  <v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50394"
+    v:shadowOffsetY="-8.50394"/>
+  <v:layer v:name="Flussdiagramm" v:index="0"/>
+  <v:layer v:name="Verbinder" v:index="1"/>
+  <g id="group1-1" transform="translate(1,-1)" v:mID="1" v:groupContext="group">
+   <v:custProps>
+    <v:cp v:nameU="BpmnElementType" v:lbl="ElementTyp" v:prompt="" v:type="1"
+      v:format="Teilprozess;Ereignis;Gateway;Prozessdiagramm;Pool;Verantwortlichkeitsbereich;Artefakt;Verbindungsobjekt"
+      v:sortKey="" v:invis="false" v:ask="false" v:langID="1031" v:cal="0" v:val="VT4(Pool)"/>
+    <v:cp v:nameU="BpmnId" v:lbl="ID" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true" v:ask="false"
+      v:langID="1031" v:cal="0"/>
+    <v:cp v:nameU="BpmnCategories" v:lbl="Kategorien" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="false"
+      v:ask="false" v:langID="1031" v:cal="0"/>
+    <v:cp v:nameU="BpmnDocumentation" v:lbl="Dokumentation" v:prompt="" v:type="0" v:format="" v:sortKey=""
+      v:invis="false" v:ask="false" v:langID="1031" v:cal="0"/>
+    <v:cp v:nameU="BpmnName" v:lbl="Name" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true" v:ask="false"
+      v:langID="1031" v:cal="0" v:val="VT4(Titel)"/>
+    <v:cp v:nameU="BpmnProcessRef" v:lbl="ProzessRef" v:prompt="" v:type="1" v:format="Angezeigt;Ausgeblendet"
+      v:sortKey="" v:invis="false" v:ask="false" v:langID="1031" v:cal="0" v:val="VT4(Ausgeblendet)"/>
+    <v:cp v:nameU="BpmnProcessRef_Name" v:lbl="    Name" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true"
+      v:ask="false" v:langID="1031" v:cal="0"/>
+    <v:cp v:nameU="BpmnProcessRef_ProcessType" v:lbl="    ProzessTyp" v:prompt="" v:type="1"
+      v:format="Ohne;Privat;Zusammenfassung;Zusammenarbeit" v:sortKey="" v:invis="true" v:ask="false"
+      v:langID="1031" v:cal="0"/>
+    <v:cp v:nameU="BpmnProcessRef_Status" v:lbl="    Status" v:prompt="" v:type="1"
+      v:format="Ohne;Bereit;Aktiv;Abgebrochen;Wird abgebrochen;Abgebrochen;Wird abgeschlossen;Abgeschlossen"
+      v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"/>
+    <v:cp v:nameU="BpmnProcessRef_Assignments" v:lbl="    Zuweisungen" v:prompt="" v:type="1"
+      v:format="Angezeigt;Ausgeblendet" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"
+      v:val="VT4(Angezeigt)"/>
+    <v:cp v:nameU="BpmnProcessRef_Assignments_To" v:lbl="        Bis" v:prompt="" v:type="1"
+      v:format="Angezeigt;Ausgeblendet" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"
+      v:val="VT4(Angezeigt)"/>
+    <v:cp v:nameU="BpmnProcessRef_Assignments_To_Name" v:lbl="            Name" v:prompt="" v:type="0" v:format=""
+      v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"/>
+    <v:cp v:nameU="BpmnProcessRef_Assignments_To_Type" v:lbl="            Typ" v:prompt="" v:type="0" v:format=""
+      v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"/>
+    <v:cp v:nameU="BpmnProcessRef_Assignments_To_Value" v:lbl="            Wert" v:prompt="" v:type="1"
+      v:format="Angezeigt;Ausgeblendet" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"
+      v:val="VT4(Angezeigt)"/>
+    <v:cp v:nameU="BpmnProcessRef_Assignments_To_Value_ExpressionBody" v:lbl="                AusdruckTextkörper"
+      v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"/>
+    <v:cp v:nameU="BpmnProcessRef_Assignments_To_Value_ExpressionLanguage" v:lbl="                AusdruckSprache"
+      v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"/>
+    <v:cp v:nameU="BpmnProcessRef_Assignments_To_Correlation" v:lbl="            Korrelation" v:prompt="" v:type="3"
+      v:format="" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0" v:val="VT0(0):5"/>
+    <v:cp v:nameU="BpmnProcessRef_Assignments_From" v:lbl="        Von" v:prompt="" v:type="1"
+      v:format="Angezeigt;Ausgeblendet" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"
+      v:val="VT4(Angezeigt)"/>
+    <v:cp v:nameU="BpmnProcessRef_Assignments_From_ExpressionBody" v:lbl="            AusdruckTextkörper" v:prompt=""
+      v:type="0" v:format="" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"/>
+    <v:cp v:nameU="BpmnProcessRef_Assignments_From_ExpressionLanguage" v:lbl="            AusdruckSprache" v:prompt=""
+      v:type="0" v:format="" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"/>
+    <v:cp v:nameU="BpmnProcessRef_Assignments_AssignTime" v:lbl="        ZuweisungsZeit" v:prompt="" v:type="1"
+      v:format="Start;Ende" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"
+      v:val="VT4(Start)"/>
+    <v:cp v:nameU="BpmnProcessRef_Performers" v:lbl="    Ausführende" v:prompt="" v:type="0" v:format="" v:sortKey=""
+      v:invis="true" v:ask="false" v:langID="1031" v:cal="0"/>
+    <v:cp v:nameU="BpmnProcessRef_Properties" v:lbl="    Eigenschaften" v:prompt="" v:type="1"
+      v:format="Angezeigt;Ausgeblendet" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"
+      v:val="VT4(Angezeigt)"/>
+    <v:cp v:nameU="BpmnProcessRef_Properties_Name" v:lbl="        Name" v:prompt="" v:type="0" v:format="" v:sortKey=""
+      v:invis="true" v:ask="false" v:langID="1031" v:cal="0"/>
+    <v:cp v:nameU="BpmnProcessRef_Properties_Type" v:lbl="        Typ" v:prompt="" v:type="0" v:format="" v:sortKey=""
+      v:invis="true" v:ask="false" v:langID="1031" v:cal="0"/>
+    <v:cp v:nameU="BpmnProcessRef_Properties_Value" v:lbl="        Wert" v:prompt="" v:type="1"
+      v:format="Angezeigt;Ausgeblendet" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"
+      v:val="VT4(Angezeigt)"/>
+    <v:cp v:nameU="BpmnProcessRef_Properties_Value_ExpressionBody" v:lbl="            AusdruckTextkörper" v:prompt=""
+      v:type="0" v:format="" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"/>
+    <v:cp v:nameU="BpmnProcessRef_Properties_Value_ExpressionLanguage" v:lbl="            AusdruckSprache" v:prompt=""
+      v:type="0" v:format="" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"/>
+    <v:cp v:nameU="BpmnProcessRef_Properties_Correlation" v:lbl="        Korrelation" v:prompt="" v:type="3"
+      v:format="" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0" v:val="VT0(0):5"/>
+    <v:cp v:nameU="BpmnProcessRef_AdHoc" v:lbl="    AdHoc" v:prompt="" v:type="3" v:format="" v:sortKey=""
+      v:invis="true" v:ask="false" v:langID="1031" v:cal="0" v:val="VT0(0):5"/>
+    <v:cp v:nameU="BpmnAdHocOrdering" v:lbl="    AdHocSortierung " v:prompt="" v:type="1"
+      v:format="Sequenziell;Parallel" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"
+      v:val="VT4(Parallel)"/>
+    <v:cp v:nameU="BpmnAdHocCompletionCondition" v:lbl="    AdHocAbschlussBedingung" v:prompt="" v:type="1"
+      v:format="Angezeigt;Ausgeblendet" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"
+      v:val="VT4(Angezeigt)"/>
+    <v:cp v:nameU="BpmnAdHocCompletionCondition_ExpressionBody" v:lbl="        AusdruckTextkörper" v:prompt=""
+      v:type="0" v:format="" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"/>
+    <v:cp v:nameU="BpmnAdHocCompletionCondition_ExpressionLanguage" v:lbl="        AusdruckSprache" v:prompt=""
+      v:type="0" v:format="" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"/>
+    <v:cp v:nameU="BpmnParticipantRef" v:lbl="TeilnehmerRef" v:prompt="" v:type="1" v:format="Angezeigt;Ausgeblendet"
+      v:sortKey="" v:invis="false" v:ask="false" v:langID="1031" v:cal="0" v:val="VT4(Ausgeblendet)"/>
+    <v:cp v:nameU="BpmnParticipantRef_ParticipantType" v:lbl="    TeilnehmerTyp" v:prompt="" v:type="1"
+      v:format="Rolle;Entität" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"
+      v:val="VT4(Rolle)"/>
+    <v:cp v:nameU="BpmnParticipantRef_RoleRef" v:lbl="    RollenRef" v:prompt="" v:type="0" v:format="" v:sortKey=""
+      v:invis="true" v:ask="false" v:langID="1031" v:cal="0"/>
+    <v:cp v:nameU="BPMNLanes" v:lbl="Verantwortlichkeitsbereiche" v:prompt="" v:type="2" v:format="" v:sortKey=""
+      v:invis="true" v:ask="false" v:langID="1031" v:cal="0" v:val="VT0(0):26"/>
+    <v:cp v:nameU="BPMNBoundaryVisible" v:lbl="GrenzeSichtbar" v:prompt="" v:type="3" v:format="" v:sortKey=""
+      v:invis="true" v:ask="false" v:langID="1031" v:cal="0" v:val="VT0(0):5"/>
+    <v:cp v:nameU="BPMNMainPool" v:lbl="HauptPool" v:prompt="" v:type="3" v:format="" v:sortKey="" v:invis="false"
+      v:ask="false" v:langID="1031" v:cal="0" v:val="VT0(0):5"/>
+    <v:cp v:nameU="BPMNLanes" v:lbl="" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="false" v:ask="false"
+      v:langID="0" v:cal="0" v:val="VT0(1):26"/>
+   </v:custProps>
+   <v:userDefs>
+    <v:ud v:nameU="msvShapeCategories" v:prompt="" v:val="VT4(CFF Container;Pool)"/>
+    <v:ud v:nameU="msvStructureType" v:prompt="" v:val="VT4(Container)"/>
+    <v:ud v:nameU="msvSDContainerMargin" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="msvSDContainerResize" v:prompt="" v:val="VT0(2):26"/>
+    <v:ud v:nameU="msvSDContainerNoHighlight" v:prompt="" v:val="VT0(1):5"/>
+    <v:ud v:nameU="msvSDContainerNoRibbon" v:prompt="" v:val="VT0(1):5"/>
+    <v:ud v:nameU="msvSDContainerStyle" v:prompt="" v:val="VT0(1):26"/>
+    <v:ud v:nameU="visDirection" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="HeadingSide" v:prompt="" v:val="VT0(1):26"/>
+    <v:ud v:nameU="msvSDContainerStyleCount" v:prompt="" v:val="VT0(6):26"/>
+    <v:ud v:nameU="msvSDContainerRequiredCategories" v:prompt="" v:val="VT4(CFF List)"/>
+    <v:ud v:nameU="msvSDContainerExcludedCategories" v:prompt="" v:val="VT4()"/>
+    <v:ud v:nameU="RTL" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="visMasterStencil" v:prompt="" v:val="VT4(bpmn_u.vss)"/>
+    <v:ud v:nameU="visRotateLabel" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="visHeadingText" v:prompt=""/>
+    <v:ud v:nameU="visCFFStyle" v:prompt="" v:val="VT0(7):26"/>
+    <v:ud v:nameU="msvSDContainerLocked" v:prompt="" v:val="VT0(0):5"/>
+    <v:ud v:nameU="CFFVertical" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="numLanes" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="msvSDMembersOnHiddenLayer" v:prompt="" v:val="VT0(1):5"/>
+    <v:ud v:nameU="visCFFHeadingPos" v:prompt="" v:val="VT0(3):26"/>
+    <v:ud v:nameU="HeadingSpan" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="HeadingAlign" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="visHeadingHeight" v:prompt="" v:val="VT0(0.47244094488189):24"/>
+    <v:ud v:nameU="visShowTitle" v:prompt="" v:val="VT0(1):26"/>
+    <v:ud v:nameU="visShowPhase" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="visMargins" v:prompt="" v:val="VT0(0.23622047244094):24"/>
+    <v:ud v:nameU="visAutoExpand" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+    <v:ud v:nameU="msvSDContainerLocked" v:prompt="" v:val="VT0(1):5"/>
+    <v:ud v:nameU="numLanes" v:prompt="" v:val="VT0(1):26"/>
+    <v:ud v:nameU="visHeadingHeight" v:prompt="" v:val="VT0(0):1"/>
+    <v:ud v:nameU="visShowTitle" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="visNavOrder" v:val="VT0(7000):26"/>
+   </v:userDefs>
+   <title>CFF-Container.17</title>
+   <g id="shape2-2" v:mID="2" v:groupContext="shape">
+    <title>Tabelle.2</title>
+    <v:userDefs>
+     <v:ud v:nameU="FillForegnd" v:prompt="" v:val="VT5(#ffffff)"/>
+     <v:ud v:nameU="FillBkgnd" v:prompt="" v:val="VT5(#ffffff)"/>
+     <v:ud v:nameU="CFFStyle" v:prompt="" v:val="VT0(7):26"/>
+     <v:ud v:nameU="FillForegndTrans" v:prompt="" v:val="VT0(0.8):27"/>
+     <v:ud v:nameU="FillForegnd" v:prompt="" v:val="VT5(#ffffff)"/>
+     <v:ud v:nameU="FillBkgnd" v:prompt="" v:val="VT5(#ffffff)"/>
+     <v:ud v:nameU="visAltText" v:val="VT4()"/>
+    </v:userDefs>
+    <rect x="0" y="292.151" width="2613.37" height="248.701" class="st1"/>
+   </g>
+   <g id="shape3-4" v:mID="3" v:groupContext="shape" transform="translate(-540.851,540.851) rotate(-90)">
+    <title>Tabelle.3</title>
+    <desc>Titel</desc>
+    <v:userDefs>
+     <v:ud v:nameU="msvStructureType" v:prompt="" v:val="VT4(Heading)"/>
+     <v:ud v:nameU="msvSDContainerHeadingEdge" v:prompt="" v:val="VT4(Right)"/>
+     <v:ud v:nameU="visHeadingHeight" v:prompt="" v:val="VT0(0.47244094488189):24"/>
+     <v:ud v:nameU="HeadingPos" v:prompt="" v:val="VT0(3):26"/>
+     <v:ud v:nameU="HSide" v:prompt="" v:val="VT0(1):26"/>
+     <v:ud v:nameU="HTxtMargin" v:prompt="" v:val="VT0(0.059055118110236):24"/>
+     <v:ud v:nameU="CStyle" v:prompt="" v:val="VT0(1):26"/>
+     <v:ud v:nameU="InsetY" v:prompt="" v:val="VT0(0):26"/>
+     <v:ud v:nameU="InsetX" v:prompt="" v:val="VT0(0):26"/>
+     <v:ud v:nameU="Inset" v:prompt="" v:val="VT0(0):24"/>
+     <v:ud v:nameU="scale" v:prompt="" v:val="VT0(1):26"/>
+     <v:ud v:nameU="AntiScale" v:prompt="" v:val="VT0(1):26"/>
+     <v:ud v:nameU="GridRounding" v:prompt="" v:val="VT0(0.23622047244094):24"/>
+     <v:ud v:nameU="visHeadingHeight" v:prompt="" v:val="VT0(0.31116263699002):1"/>
+    </v:userDefs>
+    <v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+    <v:textRect cx="124.35" cy="540.851" width="248.71" height="0"/>
+    <path d="M0 540.85 L248.7 540.85 L0 540.85 Z" class="st2"/>
+   </g>
+  </g>
+  <g id="shape4-6" v:mID="4" v:groupContext="shape" transform="translate(1,-1)">
+   <title>Verantwortlichkeitsbereichsliste.20</title>
+   <v:userDefs>
+    <v:ud v:nameU="msvStructureType" v:prompt="" v:val="VT4(List)"/>
+    <v:ud v:nameU="msvSDContainerLocked" v:prompt="" v:val="VT0(0):5"/>
+    <v:ud v:nameU="msvSDContainerMargin" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="msvSDContainerNoHighlight" v:prompt="" v:val="VT0(1):5"/>
+    <v:ud v:nameU="msvSDContainerNoRibbon" v:prompt="" v:val="VT0(1):5"/>
+    <v:ud v:nameU="msvSDContainerResize" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="msvShapeCategories" v:prompt="" v:val="VT4(CFF List;DoNotContain)"/>
+    <v:ud v:nameU="msvSDListRequiredCategories" v:prompt="" v:val="VT4(Swimlane)"/>
+    <v:ud v:nameU="msvSDContainerExcludedCategories" v:prompt="" v:val="VT4(CFF Container;CFF List;Phase;NonCFF)"/>
+    <v:ud v:nameU="msvSDContainerStyle" v:prompt="" v:val="VT0(1):26"/>
+    <v:ud v:nameU="msvSDListSpacing" v:prompt="" v:val="VT0(0):24"/>
+    <v:ud v:nameU="msvSDListDirection" v:prompt="" v:val="VT0(2):26"/>
+    <v:ud v:nameU="msvSDListAlignment" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="msvSDListItemMaster" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="msvSDListNoReorder" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="msvLayoutIncludeSubshapes" v:prompt="" v:val="VT0(0):5"/>
+    <v:ud v:nameU="msvSDMembersOnHiddenLayer" v:prompt="" v:val="VT0(1):5"/>
+    <v:ud v:nameU="visHeadingHeight" v:prompt="" v:val="VT0(0.47244094488189):24"/>
+    <v:ud v:nameU="visRotateLabel" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="visMasterStencil" v:prompt="" v:val="VT4(bpmn_u.vss)"/>
+    <v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+    <v:ud v:nameU="msvSDContainerStyle" v:prompt="" v:val="VT0(7):26"/>
+    <v:ud v:nameU="visHeadingHeight" v:prompt="" v:val="VT0(0.47244094488189):24"/>
+    <v:ud v:nameU="visNavOrder" v:val="VT0(8000):26"/>
+   </v:userDefs>
+   <rect x="0" y="292.151" width="2613.37" height="248.701" class="st3"/>
+   <rect x="0" y="292.151" width="2613.37" height="248.701" class="st4"/>
+  </g>
+  <g id="group5-9" transform="translate(1.68475,-293.223)" v:mID="5" v:groupContext="group">
+   <v:custProps>
+    <v:cp v:nameU="BpmnElementType" v:lbl="ElementTyp" v:prompt="" v:type="1"
+      v:format="Teilprozess;Ereignis;Gateway;Prozessdiagramm;Pool;Verantwortlichkeitsbereich;Artefakt;Verbindungsobjekt"
+      v:sortKey="" v:invis="false" v:ask="false" v:langID="1031" v:cal="0" v:val="VT4(Pool)"/>
+    <v:cp v:nameU="BpmnId" v:lbl="ID" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true" v:ask="false"
+      v:langID="1031" v:cal="0"/>
+    <v:cp v:nameU="BpmnCategories" v:lbl="Kategorien" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="false"
+      v:ask="false" v:langID="1031" v:cal="0"/>
+    <v:cp v:nameU="BpmnDocumentation" v:lbl="Dokumentation" v:prompt="" v:type="0" v:format="" v:sortKey=""
+      v:invis="false" v:ask="false" v:langID="1031" v:cal="0"/>
+    <v:cp v:nameU="BpmnName" v:lbl="Name" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true" v:ask="false"
+      v:langID="1031" v:cal="0" v:val="VT4(Titel)"/>
+    <v:cp v:nameU="BpmnProcessRef" v:lbl="ProzessRef" v:prompt="" v:type="1" v:format="Angezeigt;Ausgeblendet"
+      v:sortKey="" v:invis="false" v:ask="false" v:langID="1031" v:cal="0" v:val="VT4(Ausgeblendet)"/>
+    <v:cp v:nameU="BpmnProcessRef_Name" v:lbl="    Name" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true"
+      v:ask="false" v:langID="1031" v:cal="0"/>
+    <v:cp v:nameU="BpmnProcessRef_ProcessType" v:lbl="    ProzessTyp" v:prompt="" v:type="1"
+      v:format="Ohne;Privat;Zusammenfassung;Zusammenarbeit" v:sortKey="" v:invis="true" v:ask="false"
+      v:langID="1031" v:cal="0"/>
+    <v:cp v:nameU="BpmnProcessRef_Status" v:lbl="    Status" v:prompt="" v:type="1"
+      v:format="Ohne;Bereit;Aktiv;Abgebrochen;Wird abgebrochen;Abgebrochen;Wird abgeschlossen;Abgeschlossen"
+      v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"/>
+    <v:cp v:nameU="BpmnProcessRef_Assignments" v:lbl="    Zuweisungen" v:prompt="" v:type="1"
+      v:format="Angezeigt;Ausgeblendet" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"
+      v:val="VT4(Angezeigt)"/>
+    <v:cp v:nameU="BpmnProcessRef_Assignments_To" v:lbl="        Bis" v:prompt="" v:type="1"
+      v:format="Angezeigt;Ausgeblendet" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"
+      v:val="VT4(Angezeigt)"/>
+    <v:cp v:nameU="BpmnProcessRef_Assignments_To_Name" v:lbl="            Name" v:prompt="" v:type="0" v:format=""
+      v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"/>
+    <v:cp v:nameU="BpmnProcessRef_Assignments_To_Type" v:lbl="            Typ" v:prompt="" v:type="0" v:format=""
+      v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"/>
+    <v:cp v:nameU="BpmnProcessRef_Assignments_To_Value" v:lbl="            Wert" v:prompt="" v:type="1"
+      v:format="Angezeigt;Ausgeblendet" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"
+      v:val="VT4(Angezeigt)"/>
+    <v:cp v:nameU="BpmnProcessRef_Assignments_To_Value_ExpressionBody" v:lbl="                AusdruckTextkörper"
+      v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"/>
+    <v:cp v:nameU="BpmnProcessRef_Assignments_To_Value_ExpressionLanguage" v:lbl="                AusdruckSprache"
+      v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"/>
+    <v:cp v:nameU="BpmnProcessRef_Assignments_To_Correlation" v:lbl="            Korrelation" v:prompt="" v:type="3"
+      v:format="" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0" v:val="VT0(0):5"/>
+    <v:cp v:nameU="BpmnProcessRef_Assignments_From" v:lbl="        Von" v:prompt="" v:type="1"
+      v:format="Angezeigt;Ausgeblendet" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"
+      v:val="VT4(Angezeigt)"/>
+    <v:cp v:nameU="BpmnProcessRef_Assignments_From_ExpressionBody" v:lbl="            AusdruckTextkörper" v:prompt=""
+      v:type="0" v:format="" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"/>
+    <v:cp v:nameU="BpmnProcessRef_Assignments_From_ExpressionLanguage" v:lbl="            AusdruckSprache" v:prompt=""
+      v:type="0" v:format="" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"/>
+    <v:cp v:nameU="BpmnProcessRef_Assignments_AssignTime" v:lbl="        ZuweisungsZeit" v:prompt="" v:type="1"
+      v:format="Start;Ende" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"
+      v:val="VT4(Start)"/>
+    <v:cp v:nameU="BpmnProcessRef_Performers" v:lbl="    Ausführende" v:prompt="" v:type="0" v:format="" v:sortKey=""
+      v:invis="true" v:ask="false" v:langID="1031" v:cal="0"/>
+    <v:cp v:nameU="BpmnProcessRef_Properties" v:lbl="    Eigenschaften" v:prompt="" v:type="1"
+      v:format="Angezeigt;Ausgeblendet" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"
+      v:val="VT4(Angezeigt)"/>
+    <v:cp v:nameU="BpmnProcessRef_Properties_Name" v:lbl="        Name" v:prompt="" v:type="0" v:format="" v:sortKey=""
+      v:invis="true" v:ask="false" v:langID="1031" v:cal="0"/>
+    <v:cp v:nameU="BpmnProcessRef_Properties_Type" v:lbl="        Typ" v:prompt="" v:type="0" v:format="" v:sortKey=""
+      v:invis="true" v:ask="false" v:langID="1031" v:cal="0"/>
+    <v:cp v:nameU="BpmnProcessRef_Properties_Value" v:lbl="        Wert" v:prompt="" v:type="1"
+      v:format="Angezeigt;Ausgeblendet" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"
+      v:val="VT4(Angezeigt)"/>
+    <v:cp v:nameU="BpmnProcessRef_Properties_Value_ExpressionBody" v:lbl="            AusdruckTextkörper" v:prompt=""
+      v:type="0" v:format="" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"/>
+    <v:cp v:nameU="BpmnProcessRef_Properties_Value_ExpressionLanguage" v:lbl="            AusdruckSprache" v:prompt=""
+      v:type="0" v:format="" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"/>
+    <v:cp v:nameU="BpmnProcessRef_Properties_Correlation" v:lbl="        Korrelation" v:prompt="" v:type="3"
+      v:format="" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0" v:val="VT0(0):5"/>
+    <v:cp v:nameU="BpmnProcessRef_AdHoc" v:lbl="    AdHoc" v:prompt="" v:type="3" v:format="" v:sortKey=""
+      v:invis="true" v:ask="false" v:langID="1031" v:cal="0" v:val="VT0(0):5"/>
+    <v:cp v:nameU="BpmnAdHocOrdering" v:lbl="    AdHocSortierung " v:prompt="" v:type="1"
+      v:format="Sequenziell;Parallel" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"
+      v:val="VT4(Parallel)"/>
+    <v:cp v:nameU="BpmnAdHocCompletionCondition" v:lbl="    AdHocAbschlussBedingung" v:prompt="" v:type="1"
+      v:format="Angezeigt;Ausgeblendet" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"
+      v:val="VT4(Angezeigt)"/>
+    <v:cp v:nameU="BpmnAdHocCompletionCondition_ExpressionBody" v:lbl="        AusdruckTextkörper" v:prompt=""
+      v:type="0" v:format="" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"/>
+    <v:cp v:nameU="BpmnAdHocCompletionCondition_ExpressionLanguage" v:lbl="        AusdruckSprache" v:prompt=""
+      v:type="0" v:format="" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"/>
+    <v:cp v:nameU="BpmnParticipantRef" v:lbl="TeilnehmerRef" v:prompt="" v:type="1" v:format="Angezeigt;Ausgeblendet"
+      v:sortKey="" v:invis="false" v:ask="false" v:langID="1031" v:cal="0" v:val="VT4(Ausgeblendet)"/>
+    <v:cp v:nameU="BpmnParticipantRef_ParticipantType" v:lbl="    TeilnehmerTyp" v:prompt="" v:type="1"
+      v:format="Rolle;Entität" v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0"
+      v:val="VT4(Rolle)"/>
+    <v:cp v:nameU="BpmnParticipantRef_RoleRef" v:lbl="    RollenRef" v:prompt="" v:type="0" v:format="" v:sortKey=""
+      v:invis="true" v:ask="false" v:langID="1031" v:cal="0"/>
+    <v:cp v:nameU="BPMNLanes" v:lbl="Verantwortlichkeitsbereiche" v:prompt="" v:type="2" v:format="" v:sortKey=""
+      v:invis="true" v:ask="false" v:langID="1031" v:cal="0" v:val="VT0(0):26"/>
+    <v:cp v:nameU="BPMNBoundaryVisible" v:lbl="GrenzeSichtbar" v:prompt="" v:type="3" v:format="" v:sortKey=""
+      v:invis="true" v:ask="false" v:langID="1031" v:cal="0" v:val="VT0(0):5"/>
+    <v:cp v:nameU="BPMNMainPool" v:lbl="HauptPool" v:prompt="" v:type="3" v:format="" v:sortKey="" v:invis="false"
+      v:ask="false" v:langID="1031" v:cal="0" v:val="VT0(0):5"/>
+    <v:cp v:nameU="BPMNLanes" v:lbl="" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="false" v:ask="false"
+      v:langID="0" v:cal="0" v:val="VT0(1):26"/>
+   </v:custProps>
+   <v:userDefs>
+    <v:ud v:nameU="msvShapeCategories" v:prompt="" v:val="VT4(CFF Container;Pool)"/>
+    <v:ud v:nameU="msvStructureType" v:prompt="" v:val="VT4(Container)"/>
+    <v:ud v:nameU="msvSDContainerMargin" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="msvSDContainerResize" v:prompt="" v:val="VT0(2):26"/>
+    <v:ud v:nameU="msvSDContainerNoHighlight" v:prompt="" v:val="VT0(1):5"/>
+    <v:ud v:nameU="msvSDContainerNoRibbon" v:prompt="" v:val="VT0(1):5"/>
+    <v:ud v:nameU="msvSDContainerStyle" v:prompt="" v:val="VT0(1):26"/>
+    <v:ud v:nameU="visDirection" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="HeadingSide" v:prompt="" v:val="VT0(1):26"/>
+    <v:ud v:nameU="msvSDContainerStyleCount" v:prompt="" v:val="VT0(6):26"/>
+    <v:ud v:nameU="msvSDContainerRequiredCategories" v:prompt="" v:val="VT4(CFF List)"/>
+    <v:ud v:nameU="msvSDContainerExcludedCategories" v:prompt="" v:val="VT4()"/>
+    <v:ud v:nameU="RTL" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="visMasterStencil" v:prompt="" v:val="VT4(bpmn_u.vss)"/>
+    <v:ud v:nameU="visRotateLabel" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="visHeadingText" v:prompt=""/>
+    <v:ud v:nameU="visCFFStyle" v:prompt="" v:val="VT0(7):26"/>
+    <v:ud v:nameU="msvSDContainerLocked" v:prompt="" v:val="VT0(0):5"/>
+    <v:ud v:nameU="CFFVertical" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="numLanes" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="msvSDMembersOnHiddenLayer" v:prompt="" v:val="VT0(1):5"/>
+    <v:ud v:nameU="visCFFHeadingPos" v:prompt="" v:val="VT0(3):26"/>
+    <v:ud v:nameU="HeadingSpan" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="HeadingAlign" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="visHeadingHeight" v:prompt="" v:val="VT0(0.47244094488189):24"/>
+    <v:ud v:nameU="visShowTitle" v:prompt="" v:val="VT0(1):26"/>
+    <v:ud v:nameU="visShowPhase" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="visMargins" v:prompt="" v:val="VT0(0.23622047244094):24"/>
+    <v:ud v:nameU="visAutoExpand" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+    <v:ud v:nameU="msvSDContainerLocked" v:prompt="" v:val="VT0(1):5"/>
+    <v:ud v:nameU="numLanes" v:prompt="" v:val="VT0(1):26"/>
+    <v:ud v:nameU="visHeadingHeight" v:prompt="" v:val="VT0(0):1"/>
+    <v:ud v:nameU="visShowTitle" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="visNavOrder" v:val="VT0(2000):26"/>
+   </v:userDefs>
+   <title>CFF Container.102</title>
+   <g id="shape6-10" v:mID="6" v:groupContext="shape">
+    <title>Tabelle.6</title>
+    <v:userDefs>
+     <v:ud v:nameU="FillForegnd" v:prompt="" v:val="VT5(#ffffff)"/>
+     <v:ud v:nameU="FillBkgnd" v:prompt="" v:val="VT5(#ffffff)"/>
+     <v:ud v:nameU="CFFStyle" v:prompt="" v:val="VT0(7):26"/>
+     <v:ud v:nameU="FillForegndTrans" v:prompt="" v:val="VT0(0.8):27"/>
+     <v:ud v:nameU="FillForegnd" v:prompt="" v:val="VT5(#ffffff)"/>
+     <v:ud v:nameU="FillBkgnd" v:prompt="" v:val="VT5(#ffffff)"/>
+     <v:ud v:nameU="visAltText" v:val="VT4()"/>
+    </v:userDefs>
+    <rect x="0" y="294.223" width="2612.68" height="246.628" class="st5"/>
+   </g>
+   <g id="shape7-12" v:mID="7" v:groupContext="shape" transform="translate(-540.851,540.851) rotate(-90)">
+    <title>Tabelle.7</title>
+    <desc>Titel</desc>
+    <v:userDefs>
+     <v:ud v:nameU="msvStructureType" v:prompt="" v:val="VT4(Heading)"/>
+     <v:ud v:nameU="msvSDContainerHeadingEdge" v:prompt="" v:val="VT4(Right)"/>
+     <v:ud v:nameU="visHeadingHeight" v:prompt="" v:val="VT0(0.47244094488189):24"/>
+     <v:ud v:nameU="HeadingPos" v:prompt="" v:val="VT0(3):26"/>
+     <v:ud v:nameU="HSide" v:prompt="" v:val="VT0(1):26"/>
+     <v:ud v:nameU="HTxtMargin" v:prompt="" v:val="VT0(0.059055118110236):24"/>
+     <v:ud v:nameU="CStyle" v:prompt="" v:val="VT0(1):26"/>
+     <v:ud v:nameU="InsetY" v:prompt="" v:val="VT0(0):26"/>
+     <v:ud v:nameU="InsetX" v:prompt="" v:val="VT0(0):26"/>
+     <v:ud v:nameU="Inset" v:prompt="" v:val="VT0(0):24"/>
+     <v:ud v:nameU="scale" v:prompt="" v:val="VT0(1):26"/>
+     <v:ud v:nameU="AntiScale" v:prompt="" v:val="VT0(1):26"/>
+     <v:ud v:nameU="GridRounding" v:prompt="" v:val="VT0(0.23622047244094):24"/>
+     <v:ud v:nameU="visHeadingHeight" v:prompt="" v:val="VT0(0.31116263699002):1"/>
+    </v:userDefs>
+    <v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+    <v:textRect cx="123.314" cy="540.851" width="246.63" height="0"/>
+    <path d="M0 540.85 L246.63 540.85 L0 540.85 Z" class="st6"/>
+   </g>
+  </g>
+  <g id="shape8-14" v:mID="8" v:groupContext="shape" transform="translate(1.68475,-293.223)">
+   <title>Swimlane List.105</title>
+   <v:userDefs>
+    <v:ud v:nameU="msvStructureType" v:prompt="" v:val="VT4(List)"/>
+    <v:ud v:nameU="msvSDContainerLocked" v:prompt="" v:val="VT0(0):5"/>
+    <v:ud v:nameU="msvSDContainerMargin" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="msvSDContainerNoHighlight" v:prompt="" v:val="VT0(1):5"/>
+    <v:ud v:nameU="msvSDContainerNoRibbon" v:prompt="" v:val="VT0(1):5"/>
+    <v:ud v:nameU="msvSDContainerResize" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="msvShapeCategories" v:prompt="" v:val="VT4(CFF List;DoNotContain)"/>
+    <v:ud v:nameU="msvSDListRequiredCategories" v:prompt="" v:val="VT4(Swimlane)"/>
+    <v:ud v:nameU="msvSDContainerExcludedCategories" v:prompt="" v:val="VT4(CFF Container;CFF List;Phase;NonCFF)"/>
+    <v:ud v:nameU="msvSDContainerStyle" v:prompt="" v:val="VT0(1):26"/>
+    <v:ud v:nameU="msvSDListSpacing" v:prompt="" v:val="VT0(0):24"/>
+    <v:ud v:nameU="msvSDListDirection" v:prompt="" v:val="VT0(2):26"/>
+    <v:ud v:nameU="msvSDListAlignment" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="msvSDListItemMaster" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="msvSDListNoReorder" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="msvLayoutIncludeSubshapes" v:prompt="" v:val="VT0(0):5"/>
+    <v:ud v:nameU="msvSDMembersOnHiddenLayer" v:prompt="" v:val="VT0(1):5"/>
+    <v:ud v:nameU="visHeadingHeight" v:prompt="" v:val="VT0(0.47244094488189):24"/>
+    <v:ud v:nameU="visRotateLabel" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="visMasterStencil" v:prompt="" v:val="VT4(bpmn_u.vss)"/>
+    <v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+    <v:ud v:nameU="msvSDContainerStyle" v:prompt="" v:val="VT0(7):26"/>
+    <v:ud v:nameU="visHeadingHeight" v:prompt="" v:val="VT0(0.47244094488189):24"/>
+    <v:ud v:nameU="visNavOrder" v:val="VT0(1000):26"/>
+   </v:userDefs>
+   <rect x="0" y="294.223" width="2612.68" height="246.628" class="st7"/>
+   <rect x="0" y="294.223" width="2612.68" height="246.628" class="st8"/>
+  </g>
+  <g id="group9-17" transform="translate(1,-1)" v:mID="9" v:groupContext="group">
+   <v:custProps>
+    <v:cp v:nameU="BpmnElementType" v:lbl="ElementTyp" v:prompt="" v:type="1"
+      v:format="Teilprozess;Ereignis;Gateway;Prozessdiagramm;Pool;Verantwortlichkeitsbereich;Artefakt;Verbindungsobjekt"
+      v:sortKey="" v:invis="false" v:ask="false" v:langID="1031" v:cal="0"
+      v:val="VT4(Verantwortlichkeitsbereich)"/>
+    <v:cp v:nameU="BpmnId" v:lbl="ID" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true" v:ask="false"
+      v:langID="1031" v:cal="0"/>
+    <v:cp v:nameU="BpmnCategories" v:lbl="Kategorien" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="false"
+      v:ask="false" v:langID="1031" v:cal="0"/>
+    <v:cp v:nameU="BpmnDocumentation" v:lbl="Dokumentation" v:prompt="" v:type="0" v:format="" v:sortKey=""
+      v:invis="false" v:ask="false" v:langID="1031" v:cal="0"/>
+    <v:cp v:nameU="BpmnName" v:lbl="Name" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true" v:ask="false"
+      v:langID="1031" v:cal="0" v:val="VT4(Funktion)"/>
+    <v:cp v:nameU="BpmnPoolElementType" v:lbl="ElementTyp" v:prompt="" v:type="1"
+      v:format="Teilprozess;Ereignis;Gateway;Prozessdiagramm;Pool;Verantwortlichkeitsbereich;Artefakt;Verbindungsobjekt"
+      v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0" v:val="VT4(Pool)"/>
+    <v:cp v:nameU="BpmnPoolId" v:lbl="ID" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true" v:ask="false"
+      v:langID="1031" v:cal="0" v:val="VT4()"/>
+    <v:cp v:nameU="BpmnPoolCategories" v:lbl="Kategorien" v:prompt="" v:type="0" v:format="" v:sortKey=""
+      v:invis="true" v:ask="false" v:langID="1031" v:cal="0" v:val="VT0(0):26"/>
+    <v:cp v:nameU="BpmnPoolDocumentation" v:lbl="Dokumentation" v:prompt="" v:type="0" v:format="" v:sortKey=""
+      v:invis="true" v:ask="false" v:langID="1031" v:cal="0" v:val="VT0(0):26"/>
+    <v:cp v:nameU="BpmnPoolName" v:lbl="Name" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true"
+      v:ask="false" v:langID="1031" v:cal="0" v:val="VT4(Funktion)"/>
+    <v:cp v:nameU="BPMNPoolLanes" v:lbl="Verantwortlichkeitsbereiche" v:prompt="" v:type="2" v:format="" v:sortKey=""
+      v:invis="true" v:ask="false" v:langID="1031" v:cal="0" v:val="VT0(1):26"/>
+    <v:cp v:nameU="BPMNPoolBoundaryVisible" v:lbl="GrenzeSichtbar" v:prompt="" v:type="3" v:format="" v:sortKey=""
+      v:invis="true" v:ask="false" v:langID="1031" v:cal="0" v:val="VT0(0):5"/>
+    <v:cp v:nameU="BPMNPoolMainPool" v:lbl="HauptPool" v:prompt="" v:type="3" v:format="" v:sortKey="" v:invis="true"
+      v:ask="false" v:langID="1031" v:cal="0" v:val="VT0(0):5"/>
+    <v:cp v:nameU="BpmnMultiInstance" v:lbl="Mehrere Instanzen" v:prompt="" v:type="3" v:format="" v:sortKey=""
+      v:invis="false" v:ask="false" v:langID="1031" v:cal="0" v:val="VT0(0):5"/>
+    <v:cp v:nameU="BpmnElementType" v:lbl="" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true"
+      v:ask="false" v:langID="0" v:cal="0" v:val="VT0(0):26"/>
+    <v:cp v:nameU="BpmnCategories" v:lbl="" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true"
+      v:ask="false" v:langID="0" v:cal="0" v:val="VT0(0):26"/>
+    <v:cp v:nameU="BpmnDocumentation" v:lbl="" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true"
+      v:ask="false" v:langID="0" v:cal="0" v:val="VT0(0):26"/>
+    <v:cp v:nameU="BpmnName" v:lbl="" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="false" v:ask="false"
+      v:langID="0" v:cal="0" v:val="VT4(Supplier)"/>
+    <v:cp v:nameU="BpmnPoolElementType" v:lbl="" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="false"
+      v:ask="false" v:langID="0" v:cal="0" v:val="VT4(Pool)"/>
+    <v:cp v:nameU="BpmnPoolId" v:lbl="" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="false" v:ask="false"
+      v:langID="0" v:cal="0" v:val="VT0(0):26"/>
+    <v:cp v:nameU="BpmnPoolCategories" v:lbl="" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="false"
+      v:ask="false" v:langID="0" v:cal="0" v:val="VT0(0):26"/>
+    <v:cp v:nameU="BpmnPoolDocumentation" v:lbl="" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="false"
+      v:ask="false" v:langID="0" v:cal="0" v:val="VT0(0):26"/>
+    <v:cp v:nameU="BpmnPoolName" v:lbl="" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="false" v:ask="false"
+      v:langID="0" v:cal="0" v:val="VT4(Titel)"/>
+    <v:cp v:nameU="BPMNPoolLanes" v:lbl="" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="false"
+      v:ask="false" v:langID="0" v:cal="0" v:val="VT0(1):26"/>
+    <v:cp v:nameU="BPMNPoolBoundaryVisible" v:lbl="" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="false"
+      v:ask="false" v:langID="0" v:cal="0" v:val="VT0(0):5"/>
+    <v:cp v:nameU="BPMNPoolMainPool" v:lbl="" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="false"
+      v:ask="false" v:langID="0" v:cal="0" v:val="VT0(0):5"/>
+   </v:custProps>
+   <v:userDefs>
+    <v:ud v:nameU="msvShapeCategories" v:prompt="" v:val="VT4(Swimlane;Lane)"/>
+    <v:ud v:nameU="msvStructureType" v:prompt="" v:val="VT4(Container)"/>
+    <v:ud v:nameU="msvSDContainerMargin" v:prompt="" v:val="VT0(0.23622047244094):24"/>
+    <v:ud v:nameU="msvSDContainerResize" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="msvSDContainerNoHighlight" v:prompt="" v:val="VT0(0):5"/>
+    <v:ud v:nameU="msvSDContainerNoRibbon" v:prompt="" v:val="VT0(1):5"/>
+    <v:ud v:nameU="msvSDContainerStyle" v:prompt="" v:val="VT0(1):26"/>
+    <v:ud v:nameU="visDirection" v:prompt="" v:val="VT0(1):26"/>
+    <v:ud v:nameU="HeadingSide" v:prompt="" v:val="VT0(1):26"/>
+    <v:ud v:nameU="msvSDContainerStyleCount" v:prompt="" v:val="VT0(6):26"/>
+    <v:ud v:nameU="msvSDContainerRequiredCategories" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="msvSDContainerExcludedCategories" v:prompt=""
+      v:val="VT4(CFF Container;CFF List;Swimlane;Phase;NonCFF)"/>
+    <v:ud v:nameU="RTL" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="visMasterStencil" v:prompt="" v:val="VT4(bpmn_m.vssx)"/>
+    <v:ud v:nameU="visRotateLabel" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="visHeadingText" v:prompt="" v:val="VT4(Funktion)"/>
+    <v:ud v:nameU="visCFFStyle" v:prompt="" v:val="VT0(1):26"/>
+    <v:ud v:nameU="msvSDContainerLocked" v:prompt="" v:val="VT0(0):5"/>
+    <v:ud v:nameU="msvLayoutIncludeSubshapes" v:prompt="" v:val="VT0(0):5"/>
+    <v:ud v:nameU="msvSDMembersOnHiddenLayer" v:prompt="" v:val="VT0(1):5"/>
+    <v:ud v:nameU="SwimlaneListGUID" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="visCFFSettings" v:prompt="" v:val="VT4()"/>
+    <v:ud v:nameU="visCFFSingleLaneShowAll" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="LineWeight" v:prompt="" v:val="VT0(0.0034722222222222):29"/>
+    <v:ud v:nameU="BPMNPool" v:prompt="" v:val="VT0(0):5"/>
+    <v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+    <v:ud v:nameU="msvShapeCategories" v:prompt="" v:val="VT4(Swimlane;Lane;DoNotContain)"/>
+    <v:ud v:nameU="msvSDContainerMargin" v:prompt="" v:val="VT0(0.23622047244094):24"/>
+    <v:ud v:nameU="visDirection" v:prompt="" v:val="VT0(1):26"/>
+    <v:ud v:nameU="RTL" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="visRotateLabel" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="visHeadingText" v:prompt="" v:val="VT4(Supplier)"/>
+    <v:ud v:nameU="visCFFStyle" v:prompt="" v:val="VT0(7):26"/>
+    <v:ud v:nameU="SwimlaneListGUID" v:prompt="" v:val="VT15({812DF75F-E87E-4AAF-8AF0-71A8EA9E0D33}):41"/>
+    <v:ud v:nameU="visCFFSettings" v:prompt="" v:val="VT4(/stg1=7, /stg2=0, /stg3=0, /stg4=1, /stg5=0,2362, /stg6=0)"/>
+    <v:ud v:nameU="LineWeight" v:prompt="" v:val="VT0(0.013888888888889):29"/>
+    <v:ud v:nameU="BPMNPool" v:prompt="" v:val="VT0(1):5"/>
+    <v:ud v:nameU="visNavOrder" v:val="VT0(9000):26"/>
+   </v:userDefs>
+   <title>Pool/Verantwortlichkeitsbereich.9</title>
+   <g id="shape10-18" v:mID="10" v:groupContext="shape">
+    <title>Tabelle.10</title>
+    <v:userDefs>
+     <v:ud v:nameU="FillForegnd" v:prompt="" v:val="VT5(#ffffff)"/>
+     <v:ud v:nameU="FillBkgnd" v:prompt="" v:val="VT5(#ffffff)"/>
+     <v:ud v:nameU="CFFStyle" v:prompt="" v:val="VT0(1):26"/>
+     <v:ud v:nameU="FillForegndTrans" v:prompt="" v:val="VT0(1):27"/>
+     <v:ud v:nameU="FillForegnd" v:prompt="" v:val="VT5(#ffffff)"/>
+     <v:ud v:nameU="FillBkgnd" v:prompt="" v:val="VT5(#ffffff)"/>
+     <v:ud v:nameU="CFFStyle" v:prompt="" v:val="VT0(7):26"/>
+     <v:ud v:nameU="visAltText" v:val="VT4()"/>
+    </v:userDefs>
+    <rect x="0" y="292.151" width="2613.37" height="248.701" class="st1"/>
+   </g>
+   <g id="shape11-20" v:mID="11" v:groupContext="shape" transform="translate(1319.44,0)">
+    <title>Tabelle.11</title>
+    <v:userDefs>
+     <v:ud v:nameU="visAltText" v:val="VT4()"/>
+    </v:userDefs>
+   </g>
+   <g id="shape12-22" v:mID="12" v:groupContext="shape" transform="translate(-506.836,540.851) rotate(-90)">
+    <title>Tabelle.12</title>
+    <desc>Supplier</desc>
+    <v:userDefs>
+     <v:ud v:nameU="msvStructureType" v:prompt="" v:val="VT4(Heading)"/>
+     <v:ud v:nameU="msvSDContainerHeadingEdge" v:prompt="" v:val="VT4(Right)"/>
+     <v:ud v:nameU="visHeadingHeight" v:prompt="" v:val="VT0(0.47244094488189):24"/>
+     <v:ud v:nameU="HeadingPos" v:prompt="" v:val="VT0(3):26"/>
+     <v:ud v:nameU="HSide" v:prompt="" v:val="VT0(1):26"/>
+     <v:ud v:nameU="HTxtMargin" v:prompt="" v:val="VT0(0.059055118110236):24"/>
+     <v:ud v:nameU="CStyle" v:prompt="" v:val="VT0(1):26"/>
+     <v:ud v:nameU="InsetY" v:prompt="" v:val="VT0(0):26"/>
+     <v:ud v:nameU="InsetX" v:prompt="" v:val="VT0(0):26"/>
+     <v:ud v:nameU="Inset" v:prompt="" v:val="VT0(0):24"/>
+     <v:ud v:nameU="CFFStyle" v:prompt="" v:val="VT0(1):26"/>
+     <v:ud v:nameU="HeadingPos" v:prompt="" v:val="VT0(3):26"/>
+     <v:ud v:nameU="CFFStyle" v:prompt="" v:val="VT0(7):26"/>
+    </v:userDefs>
+    <v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+    <v:textRect cx="124.35" cy="523.844" width="248.71" height="34.0157"/>
+    <path d="M0 540.85 L248.7 540.85 L248.7 506.84 L0 506.84 L0 540.85 Z" class="st2"/>
+    <text x="101.51" y="527.44" class="st9" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>Supplier</text>   </g>
+  </g>
+  <g id="group13-25" transform="translate(1.68475,-293.223)" v:mID="13" v:groupContext="group">
+   <v:custProps>
+    <v:cp v:nameU="BpmnElementType" v:lbl="ElementTyp" v:prompt="" v:type="1"
+      v:format="Teilprozess;Ereignis;Gateway;Prozessdiagramm;Pool;Verantwortlichkeitsbereich;Artefakt;Verbindungsobjekt"
+      v:sortKey="" v:invis="false" v:ask="false" v:langID="1031" v:cal="0"
+      v:val="VT4(Verantwortlichkeitsbereich)"/>
+    <v:cp v:nameU="BpmnId" v:lbl="ID" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true" v:ask="false"
+      v:langID="1031" v:cal="0"/>
+    <v:cp v:nameU="BpmnCategories" v:lbl="Kategorien" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="false"
+      v:ask="false" v:langID="1031" v:cal="0"/>
+    <v:cp v:nameU="BpmnDocumentation" v:lbl="Dokumentation" v:prompt="" v:type="0" v:format="" v:sortKey=""
+      v:invis="false" v:ask="false" v:langID="1031" v:cal="0"/>
+    <v:cp v:nameU="BpmnName" v:lbl="Name" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true" v:ask="false"
+      v:langID="1031" v:cal="0" v:val="VT4(Funktion)"/>
+    <v:cp v:nameU="BpmnPoolElementType" v:lbl="ElementTyp" v:prompt="" v:type="1"
+      v:format="Teilprozess;Ereignis;Gateway;Prozessdiagramm;Pool;Verantwortlichkeitsbereich;Artefakt;Verbindungsobjekt"
+      v:sortKey="" v:invis="true" v:ask="false" v:langID="1031" v:cal="0" v:val="VT4(Pool)"/>
+    <v:cp v:nameU="BpmnPoolId" v:lbl="ID" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true" v:ask="false"
+      v:langID="1031" v:cal="0" v:val="VT4()"/>
+    <v:cp v:nameU="BpmnPoolCategories" v:lbl="Kategorien" v:prompt="" v:type="0" v:format="" v:sortKey=""
+      v:invis="true" v:ask="false" v:langID="1031" v:cal="0" v:val="VT0(0):26"/>
+    <v:cp v:nameU="BpmnPoolDocumentation" v:lbl="Dokumentation" v:prompt="" v:type="0" v:format="" v:sortKey=""
+      v:invis="true" v:ask="false" v:langID="1031" v:cal="0" v:val="VT0(0):26"/>
+    <v:cp v:nameU="BpmnPoolName" v:lbl="Name" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true"
+      v:ask="false" v:langID="1031" v:cal="0" v:val="VT4(Funktion)"/>
+    <v:cp v:nameU="BPMNPoolLanes" v:lbl="Verantwortlichkeitsbereiche" v:prompt="" v:type="2" v:format="" v:sortKey=""
+      v:invis="true" v:ask="false" v:langID="1031" v:cal="0" v:val="VT0(1):26"/>
+    <v:cp v:nameU="BPMNPoolBoundaryVisible" v:lbl="GrenzeSichtbar" v:prompt="" v:type="3" v:format="" v:sortKey=""
+      v:invis="true" v:ask="false" v:langID="1031" v:cal="0" v:val="VT0(0):5"/>
+    <v:cp v:nameU="BPMNPoolMainPool" v:lbl="HauptPool" v:prompt="" v:type="3" v:format="" v:sortKey="" v:invis="true"
+      v:ask="false" v:langID="1031" v:cal="0" v:val="VT0(0):5"/>
+    <v:cp v:nameU="BpmnMultiInstance" v:lbl="Mehrere Instanzen" v:prompt="" v:type="3" v:format="" v:sortKey=""
+      v:invis="false" v:ask="false" v:langID="1031" v:cal="0" v:val="VT0(0):5"/>
+    <v:cp v:nameU="BpmnElementType" v:lbl="" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true"
+      v:ask="false" v:langID="0" v:cal="0" v:val="VT0(0):26"/>
+    <v:cp v:nameU="BpmnCategories" v:lbl="" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true"
+      v:ask="false" v:langID="0" v:cal="0" v:val="VT0(0):26"/>
+    <v:cp v:nameU="BpmnDocumentation" v:lbl="" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true"
+      v:ask="false" v:langID="0" v:cal="0" v:val="VT0(0):26"/>
+    <v:cp v:nameU="BpmnName" v:lbl="" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="false" v:ask="false"
+      v:langID="0" v:cal="0" v:val="VT4(Customer)"/>
+    <v:cp v:nameU="BpmnPoolElementType" v:lbl="" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="false"
+      v:ask="false" v:langID="0" v:cal="0" v:val="VT4(Pool)"/>
+    <v:cp v:nameU="BpmnPoolId" v:lbl="" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="false" v:ask="false"
+      v:langID="0" v:cal="0" v:val="VT0(0):26"/>
+    <v:cp v:nameU="BpmnPoolCategories" v:lbl="" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="false"
+      v:ask="false" v:langID="0" v:cal="0" v:val="VT0(0):26"/>
+    <v:cp v:nameU="BpmnPoolDocumentation" v:lbl="" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="false"
+      v:ask="false" v:langID="0" v:cal="0" v:val="VT0(0):26"/>
+    <v:cp v:nameU="BpmnPoolName" v:lbl="" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="false" v:ask="false"
+      v:langID="0" v:cal="0" v:val="VT4(Titel)"/>
+    <v:cp v:nameU="BPMNPoolLanes" v:lbl="" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="false"
+      v:ask="false" v:langID="0" v:cal="0" v:val="VT0(1):26"/>
+    <v:cp v:nameU="BPMNPoolBoundaryVisible" v:lbl="" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="false"
+      v:ask="false" v:langID="0" v:cal="0" v:val="VT0(0):5"/>
+    <v:cp v:nameU="BPMNPoolMainPool" v:lbl="" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="false"
+      v:ask="false" v:langID="0" v:cal="0" v:val="VT0(0):5"/>
+   </v:custProps>
+   <v:userDefs>
+    <v:ud v:nameU="msvShapeCategories" v:prompt="" v:val="VT4(Swimlane;Lane)"/>
+    <v:ud v:nameU="msvStructureType" v:prompt="" v:val="VT4(Container)"/>
+    <v:ud v:nameU="msvSDContainerMargin" v:prompt="" v:val="VT0(0.23622047244094):24"/>
+    <v:ud v:nameU="msvSDContainerResize" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="msvSDContainerNoHighlight" v:prompt="" v:val="VT0(0):5"/>
+    <v:ud v:nameU="msvSDContainerNoRibbon" v:prompt="" v:val="VT0(1):5"/>
+    <v:ud v:nameU="msvSDContainerStyle" v:prompt="" v:val="VT0(1):26"/>
+    <v:ud v:nameU="visDirection" v:prompt="" v:val="VT0(1):26"/>
+    <v:ud v:nameU="HeadingSide" v:prompt="" v:val="VT0(1):26"/>
+    <v:ud v:nameU="msvSDContainerStyleCount" v:prompt="" v:val="VT0(6):26"/>
+    <v:ud v:nameU="msvSDContainerRequiredCategories" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="msvSDContainerExcludedCategories" v:prompt=""
+      v:val="VT4(CFF Container;CFF List;Swimlane;Phase;NonCFF)"/>
+    <v:ud v:nameU="RTL" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="visMasterStencil" v:prompt="" v:val="VT4(bpmn_m.vssx)"/>
+    <v:ud v:nameU="visRotateLabel" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="visHeadingText" v:prompt="" v:val="VT4(Funktion)"/>
+    <v:ud v:nameU="visCFFStyle" v:prompt="" v:val="VT0(1):26"/>
+    <v:ud v:nameU="msvSDContainerLocked" v:prompt="" v:val="VT0(0):5"/>
+    <v:ud v:nameU="msvLayoutIncludeSubshapes" v:prompt="" v:val="VT0(0):5"/>
+    <v:ud v:nameU="msvSDMembersOnHiddenLayer" v:prompt="" v:val="VT0(1):5"/>
+    <v:ud v:nameU="SwimlaneListGUID" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="visCFFSettings" v:prompt="" v:val="VT4()"/>
+    <v:ud v:nameU="visCFFSingleLaneShowAll" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="LineWeight" v:prompt="" v:val="VT0(0.0034722222222222):29"/>
+    <v:ud v:nameU="BPMNPool" v:prompt="" v:val="VT0(0):5"/>
+    <v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+    <v:ud v:nameU="msvShapeCategories" v:prompt="" v:val="VT4(Swimlane;Lane;DoNotContain)"/>
+    <v:ud v:nameU="msvSDContainerMargin" v:prompt="" v:val="VT0(0.23622047244094):24"/>
+    <v:ud v:nameU="visDirection" v:prompt="" v:val="VT0(1):26"/>
+    <v:ud v:nameU="RTL" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="visRotateLabel" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="visHeadingText" v:prompt="" v:val="VT4(Customer)"/>
+    <v:ud v:nameU="visCFFStyle" v:prompt="" v:val="VT0(7):26"/>
+    <v:ud v:nameU="SwimlaneListGUID" v:prompt="" v:val="VT15({FF69C04C-217B-472A-8DE3-A5805A6B65C5}):41"/>
+    <v:ud v:nameU="visCFFSettings" v:prompt="" v:val="VT4(/stg1=7, /stg2=0, /stg3=0, /stg4=1, /stg5=0,2362, /stg6=0)"/>
+    <v:ud v:nameU="LineWeight" v:prompt="" v:val="VT0(0.013888888888889):29"/>
+    <v:ud v:nameU="BPMNPool" v:prompt="" v:val="VT0(1):5"/>
+    <v:ud v:nameU="visNavOrder" v:val="VT0(3000):26"/>
+   </v:userDefs>
+   <title>Pool / Lane.106</title>
+   <g id="shape14-26" v:mID="14" v:groupContext="shape">
+    <title>Tabelle.14</title>
+    <v:userDefs>
+     <v:ud v:nameU="FillForegnd" v:prompt="" v:val="VT5(#ffffff)"/>
+     <v:ud v:nameU="FillBkgnd" v:prompt="" v:val="VT5(#ffffff)"/>
+     <v:ud v:nameU="CFFStyle" v:prompt="" v:val="VT0(1):26"/>
+     <v:ud v:nameU="FillForegndTrans" v:prompt="" v:val="VT0(1):27"/>
+     <v:ud v:nameU="FillForegnd" v:prompt="" v:val="VT5(#ffffff)"/>
+     <v:ud v:nameU="FillBkgnd" v:prompt="" v:val="VT5(#ffffff)"/>
+     <v:ud v:nameU="CFFStyle" v:prompt="" v:val="VT0(7):26"/>
+     <v:ud v:nameU="visAltText" v:val="VT4()"/>
+    </v:userDefs>
+    <rect x="0" y="294.223" width="2612.68" height="246.628" class="st5"/>
+   </g>
+   <g id="shape15-28" v:mID="15" v:groupContext="shape" transform="translate(1319.1,0)">
+    <title>Tabelle.15</title>
+    <v:userDefs>
+     <v:ud v:nameU="visAltText" v:val="VT4()"/>
+    </v:userDefs>
+   </g>
+   <g id="shape16-30" v:mID="16" v:groupContext="shape" transform="translate(-506.836,540.851) rotate(-90)">
+    <title>Tabelle.16</title>
+    <desc>Customer</desc>
+    <v:userDefs>
+     <v:ud v:nameU="msvStructureType" v:prompt="" v:val="VT4(Heading)"/>
+     <v:ud v:nameU="msvSDContainerHeadingEdge" v:prompt="" v:val="VT4(Right)"/>
+     <v:ud v:nameU="visHeadingHeight" v:prompt="" v:val="VT0(0.47244094488189):24"/>
+     <v:ud v:nameU="HeadingPos" v:prompt="" v:val="VT0(3):26"/>
+     <v:ud v:nameU="HSide" v:prompt="" v:val="VT0(1):26"/>
+     <v:ud v:nameU="HTxtMargin" v:prompt="" v:val="VT0(0.059055118110236):24"/>
+     <v:ud v:nameU="CStyle" v:prompt="" v:val="VT0(1):26"/>
+     <v:ud v:nameU="InsetY" v:prompt="" v:val="VT0(0):26"/>
+     <v:ud v:nameU="InsetX" v:prompt="" v:val="VT0(0):26"/>
+     <v:ud v:nameU="Inset" v:prompt="" v:val="VT0(0):24"/>
+     <v:ud v:nameU="CFFStyle" v:prompt="" v:val="VT0(1):26"/>
+     <v:ud v:nameU="HeadingPos" v:prompt="" v:val="VT0(3):26"/>
+     <v:ud v:nameU="CFFStyle" v:prompt="" v:val="VT0(7):26"/>
+    </v:userDefs>
+    <v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+    <v:textRect cx="123.314" cy="523.844" width="246.63" height="34.0157"/>
+    <path d="M0 540.85 L246.63 540.85 L246.63 506.84 L0 506.84 L0 540.85 Z" class="st6"/>
+    <text x="95.6" y="527.44" class="st9" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>Customer</text>   </g>
+  </g>
+  <g id="shape17-33" v:mID="17" v:groupContext="shape" transform="translate(35.0157,-1)">
+   <title>Phasenliste.17</title>
+   <v:userDefs>
+    <v:ud v:nameU="msvStructureType" v:prompt="" v:val="VT4(List)"/>
+    <v:ud v:nameU="msvSDContainerRequiredCategories" v:prompt="" v:val="VT4(Phase)"/>
+    <v:ud v:nameU="msvSDListRequiredCategories" v:prompt="" v:val="VT4(Phase)"/>
+    <v:ud v:nameU="msvShapeCategories" v:prompt="" v:val="VT4(CFF List;DoNotContain)"/>
+    <v:ud v:nameU="msvSDContainerMargin" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="msvSDContainerLocked" v:prompt="" v:val="VT0(0):5"/>
+    <v:ud v:nameU="msvSDContainerNoHighlight" v:prompt="" v:val="VT0(1):5"/>
+    <v:ud v:nameU="msvSDContainerNoRibbon" v:prompt="" v:val="VT0(1):5"/>
+    <v:ud v:nameU="msvSDContainerResize" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="msvSDContainerStyle" v:prompt="" v:val="VT0(1):26"/>
+    <v:ud v:nameU="msvSDListSpacing" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="msvSDListDirection" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="msvSDListAlignment" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="msvSDListItemMaster" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="msvSDListNoReorder" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="msvLayoutIncludeSubshapes" v:prompt="" v:val="VT0(0):5"/>
+    <v:ud v:nameU="msvSDMembersOnHiddenLayer" v:prompt="" v:val="VT0(1):5"/>
+    <v:ud v:nameU="visHeadingHeight" v:prompt="" v:val="VT0(0.23622047244094):24"/>
+    <v:ud v:nameU="visMasterStencil" v:prompt="" v:val="VT4(bpmn_u.vss)"/>
+    <v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+    <v:ud v:nameU="msvSDContainerLocked" v:prompt="" v:val="VT0(1):5"/>
+    <v:ud v:nameU="msvSDContainerStyle" v:prompt="" v:val="VT0(7):26"/>
+    <v:ud v:nameU="visNavOrder" v:val="VT0(11000):26"/>
+   </v:userDefs>
+   <rect x="0" y="292.151" width="2579.35" height="248.701" class="st10"/>
+  </g>
+  <g id="group18-35" transform="translate(35.0157,-1)" v:mID="18" v:groupContext="group">
+   <v:userDefs>
+    <v:ud v:nameU="msvStructureType" v:prompt="" v:val="VT4(Container)"/>
+    <v:ud v:nameU="msvShapeCategories" v:prompt="" v:val="VT4(Phase;DoNotContain)"/>
+    <v:ud v:nameU="msvSDContainerExcludedCategories" v:prompt=""
+      v:val="VT4(CFF Container;CFF List;Swimlane;Phase;NonCFF)"/>
+    <v:ud v:nameU="msvSDContainerLocked" v:prompt="" v:val="VT0(0):5"/>
+    <v:ud v:nameU="msvSDContainerNoHighlight" v:prompt="" v:val="VT0(1):5"/>
+    <v:ud v:nameU="msvSDContainerNoRibbon" v:prompt="" v:val="VT0(1):5"/>
+    <v:ud v:nameU="msvSDContainerMargin" v:prompt="" v:val="VT0(0.23622047244094):24"/>
+    <v:ud v:nameU="msvSDContainerResize" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="msvSDMembersOnHiddenLayer" v:prompt="" v:val="VT0(1):5"/>
+    <v:ud v:nameU="visCFFStyle" v:prompt="" v:val="VT0(1):26"/>
+    <v:ud v:nameU="msvSDContainerStyle" v:prompt="" v:val="VT0(1):26"/>
+    <v:ud v:nameU="msvLayoutIncludeSubshapes" v:prompt="" v:val="VT0(0):5"/>
+    <v:ud v:nameU="ListDirection" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="visShowPhase" v:prompt="" v:val="VT0(1):26"/>
+    <v:ud v:nameU="visMasterStencil" v:prompt="" v:val="VT4(bpmn_u.vss)"/>
+    <v:ud v:nameU="LineWeight" v:prompt="" v:val="VT0(0.0034722222222222):29"/>
+    <v:ud v:nameU="RTL" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="CFFVertical" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+    <v:ud v:nameU="msvSDContainerMargin" v:prompt="" v:val="VT0(0.23622047244094):24"/>
+    <v:ud v:nameU="visCFFStyle" v:prompt="" v:val="VT0(7):26"/>
+    <v:ud v:nameU="msvSDContainerStyle" v:prompt="" v:val="VT0(7):26"/>
+    <v:ud v:nameU="ListDirection" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="visShowPhase" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="LineWeight" v:prompt="" v:val="VT0(0.013888888888889):29"/>
+    <v:ud v:nameU="RTL" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="CFFVertical" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="visNavOrder" v:val="VT0(10000):26"/>
+   </v:userDefs>
+   <title>Trennzeichen.18</title>
+   <g id="shape19-36" v:mID="19" v:groupContext="shape">
+    <title>Tabelle.19</title>
+    <v:userDefs>
+     <v:ud v:nameU="FlipX" v:prompt="" v:val="VT0(0):26"/>
+     <v:ud v:nameU="visAltText" v:val="VT4()"/>
+    </v:userDefs>
+   </g>
+   <g id="shape20-38" v:mID="20" v:groupContext="shape" transform="translate(-34.0157,-248.701)">
+    <title>Tabelle.20</title>
+    <desc>Phase</desc>
+    <v:userDefs>
+     <v:ud v:nameU="msvStructureType" v:prompt="" v:val="VT4(Heading)"/>
+     <v:ud v:nameU="HeadingPos" v:prompt="" v:val="VT0(2):26"/>
+     <v:ud v:nameU="msvSDContainerHeadingEdge" v:prompt="" v:val="VT4(Bottom)"/>
+     <v:ud v:nameU="HAlign" v:prompt="" v:val="VT0(2):26"/>
+     <v:ud v:nameU="SwimlaneHeadingSize" v:prompt="" v:val="VT0(0.47244094488189):24"/>
+     <v:ud v:nameU="FirstHeadingExtend" v:prompt="" v:val="VT0(0):26"/>
+     <v:ud v:nameU="HeadingPos" v:prompt="" v:val="VT0(2):26"/>
+     <v:ud v:nameU="SwimlaneHeadingSize" v:prompt="" v:val="VT0(0.47244094488189):24"/>
+     <v:ud v:nameU="FirstHeadingExtend" v:prompt="" v:val="VT0(0.47244094488189):24"/>
+    </v:userDefs>
+    <v:textBlock v:margins="rect(2,2,2,2)" v:tabSpace="42.5197"/>
+    <v:textRect cx="1306.68" cy="540.851" width="2613.37" height="0"/>
+    <path d="M0 540.85 L2613.37 540.85 L0 540.85 Z" class="st2"/>
+   </g>
+  </g>
+  <g id="shape21-40" v:mID="21" v:groupContext="shape" transform="translate(35.7005,-293.223)">
+   <title>Phase List.110</title>
+   <v:userDefs>
+    <v:ud v:nameU="msvStructureType" v:prompt="" v:val="VT4(List)"/>
+    <v:ud v:nameU="msvSDContainerRequiredCategories" v:prompt="" v:val="VT4(Phase)"/>
+    <v:ud v:nameU="msvSDListRequiredCategories" v:prompt="" v:val="VT4(Phase)"/>
+    <v:ud v:nameU="msvShapeCategories" v:prompt="" v:val="VT4(CFF List;DoNotContain)"/>
+    <v:ud v:nameU="msvSDContainerMargin" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="msvSDContainerLocked" v:prompt="" v:val="VT0(0):5"/>
+    <v:ud v:nameU="msvSDContainerNoHighlight" v:prompt="" v:val="VT0(1):5"/>
+    <v:ud v:nameU="msvSDContainerNoRibbon" v:prompt="" v:val="VT0(1):5"/>
+    <v:ud v:nameU="msvSDContainerResize" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="msvSDContainerStyle" v:prompt="" v:val="VT0(1):26"/>
+    <v:ud v:nameU="msvSDListSpacing" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="msvSDListDirection" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="msvSDListAlignment" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="msvSDListItemMaster" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="msvSDListNoReorder" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="msvLayoutIncludeSubshapes" v:prompt="" v:val="VT0(0):5"/>
+    <v:ud v:nameU="msvSDMembersOnHiddenLayer" v:prompt="" v:val="VT0(1):5"/>
+    <v:ud v:nameU="visHeadingHeight" v:prompt="" v:val="VT0(0.23622047244094):24"/>
+    <v:ud v:nameU="visMasterStencil" v:prompt="" v:val="VT4(bpmn_u.vss)"/>
+    <v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+    <v:ud v:nameU="msvSDContainerLocked" v:prompt="" v:val="VT0(1):5"/>
+    <v:ud v:nameU="msvSDContainerStyle" v:prompt="" v:val="VT0(7):26"/>
+    <v:ud v:nameU="visNavOrder" v:val="VT0(5000):26"/>
+   </v:userDefs>
+   <rect x="0" y="294.223" width="2578.67" height="246.628" class="st11"/>
+  </g>
+  <g id="group22-42" transform="translate(35.7005,-293.223)" v:mID="22" v:groupContext="group">
+   <v:userDefs>
+    <v:ud v:nameU="msvStructureType" v:prompt="" v:val="VT4(Container)"/>
+    <v:ud v:nameU="msvShapeCategories" v:prompt="" v:val="VT4(Phase;DoNotContain)"/>
+    <v:ud v:nameU="msvSDContainerExcludedCategories" v:prompt=""
+      v:val="VT4(CFF Container;CFF List;Swimlane;Phase;NonCFF)"/>
+    <v:ud v:nameU="msvSDContainerLocked" v:prompt="" v:val="VT0(0):5"/>
+    <v:ud v:nameU="msvSDContainerNoHighlight" v:prompt="" v:val="VT0(1):5"/>
+    <v:ud v:nameU="msvSDContainerNoRibbon" v:prompt="" v:val="VT0(1):5"/>
+    <v:ud v:nameU="msvSDContainerMargin" v:prompt="" v:val="VT0(0.23622047244094):24"/>
+    <v:ud v:nameU="msvSDContainerResize" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="msvSDMembersOnHiddenLayer" v:prompt="" v:val="VT0(1):5"/>
+    <v:ud v:nameU="visCFFStyle" v:prompt="" v:val="VT0(1):26"/>
+    <v:ud v:nameU="msvSDContainerStyle" v:prompt="" v:val="VT0(1):26"/>
+    <v:ud v:nameU="msvLayoutIncludeSubshapes" v:prompt="" v:val="VT0(0):5"/>
+    <v:ud v:nameU="ListDirection" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="visShowPhase" v:prompt="" v:val="VT0(1):26"/>
+    <v:ud v:nameU="visMasterStencil" v:prompt="" v:val="VT4(bpmn_u.vss)"/>
+    <v:ud v:nameU="LineWeight" v:prompt="" v:val="VT0(0.0034722222222222):29"/>
+    <v:ud v:nameU="RTL" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="CFFVertical" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+    <v:ud v:nameU="msvSDContainerMargin" v:prompt="" v:val="VT0(0.23622047244094):24"/>
+    <v:ud v:nameU="visCFFStyle" v:prompt="" v:val="VT0(7):26"/>
+    <v:ud v:nameU="msvSDContainerStyle" v:prompt="" v:val="VT0(7):26"/>
+    <v:ud v:nameU="ListDirection" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="visShowPhase" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="LineWeight" v:prompt="" v:val="VT0(0.013888888888889):29"/>
+    <v:ud v:nameU="RTL" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="CFFVertical" v:prompt="" v:val="VT0(0):26"/>
+    <v:ud v:nameU="visNavOrder" v:val="VT0(4000):26"/>
+   </v:userDefs>
+   <title>Separator.111</title>
+   <g id="shape23-43" v:mID="23" v:groupContext="shape">
+    <title>Tabelle.23</title>
+    <v:userDefs>
+     <v:ud v:nameU="FlipX" v:prompt="" v:val="VT0(0):26"/>
+     <v:ud v:nameU="visAltText" v:val="VT4()"/>
+    </v:userDefs>
+   </g>
+   <g id="shape24-45" v:mID="24" v:groupContext="shape" transform="translate(-34.0157,-246.628)">
+    <title>Tabelle.24</title>
+    <desc>Phase</desc>
+    <v:userDefs>
+     <v:ud v:nameU="msvStructureType" v:prompt="" v:val="VT4(Heading)"/>
+     <v:ud v:nameU="HeadingPos" v:prompt="" v:val="VT0(2):26"/>
+     <v:ud v:nameU="msvSDContainerHeadingEdge" v:prompt="" v:val="VT4(Bottom)"/>
+     <v:ud v:nameU="HAlign" v:prompt="" v:val="VT0(2):26"/>
+     <v:ud v:nameU="SwimlaneHeadingSize" v:prompt="" v:val="VT0(0.47244094488189):24"/>
+     <v:ud v:nameU="FirstHeadingExtend" v:prompt="" v:val="VT0(0):26"/>
+     <v:ud v:nameU="HeadingPos" v:prompt="" v:val="VT0(2):26"/>
+     <v:ud v:nameU="SwimlaneHeadingSize" v:prompt="" v:val="VT0(0.47244094488189):24"/>
+     <v:ud v:nameU="FirstHeadingExtend" v:prompt="" v:val="VT0(0.47244094488189):24"/>
+    </v:userDefs>
+    <v:textBlock v:margins="rect(2,2,2,2)" v:tabSpace="42.5197"/>
+    <v:textRect cx="1306.34" cy="540.851" width="2612.69" height="0"/>
+    <path d="M0 540.85 L2612.68 540.85 L0 540.85 Z" class="st6"/>
+   </g>
+  </g>
+  <g id="group25-47" transform="translate(59.857,-121.193)" v:mID="25" v:groupContext="group" v:layerMember="0">
+   <v:custProps>
+    <v:cp v:nameU="BpmnId" v:lbl="ID" v:prompt="" v:type="0" v:format="" v:sortKey="A" v:invis="true" v:ask="false"
+      v:langID="1031" v:cal="0" v:val="VT4()"/>
+    <v:cp v:nameU="BpmnCategories" v:lbl="Kategorien" v:prompt="" v:type="0" v:format="" v:sortKey="A" v:invis="false"
+      v:ask="false" v:langID="1031" v:cal="0" v:val="VT4()"/>
+    <v:cp v:nameU="BpmnDocumentation" v:lbl="Dokumentation" v:prompt="" v:type="0" v:format="" v:sortKey="A"
+      v:invis="false" v:ask="false" v:langID="1031" v:cal="0" v:val="VT4()"/>
+    <v:cp v:nameU="BpmnName" v:lbl="Name" v:prompt="" v:type="0" v:format="" v:sortKey="A" v:invis="true" v:ask="false"
+      v:langID="1031" v:cal="0" v:val="VT4()"/>
+    <v:cp v:nameU="BpmnEventType" v:lbl="EreignisTyp" v:prompt="" v:type="1"
+      v:format="Anfang;Anfang (ohne Unterbrechung);Zwischen;Zwischen (ohne Unterbrechung);Zwischen (Auslösung);Ende"
+      v:sortKey="B" v:invis="false" v:ask="false" v:langID="1031" v:cal="0" v:val="VT4(Anfang)"/>
+    <v:cp v:nameU="BpmnTriggerOrResult" v:lbl="TriggerOderErgebnis" v:prompt="" v:type="1"
+      v:format="Ohne;Nachricht;Zeitgeber;Bedingt;Signal;Mehrfach;Fehler;Kompensation;Eskalation;Parallel mehrfach"
+      v:sortKey="B" v:invis="true" v:ask="false" v:langID="1031" v:cal="0" v:val="VT4(Ohne)"/>
+    <v:cp v:nameU="BpmnTriggerOrResult_Start" v:lbl="TriggerOderErgebnis" v:prompt="" v:type="1"
+      v:format="Ohne;Nachricht;Zeitgeber;Bedingt;Signal;Mehrfach;Fehler;Kompensation;Eskalation;Parallel mehrfach"
+      v:sortKey="B" v:invis="false" v:ask="false" v:langID="1031" v:cal="0" v:val="VT4(Ohne)"/>
+    <v:cp v:nameU="BpmnTriggerOrResult_Intermediate" v:lbl="TriggerOderErgebnis" v:prompt="" v:type="1"
+      v:format="Ohne;Nachricht;Zeitgeber;Fehler;Abbrechen;Kompensation;Bedingt;Link;Signal;Mehrfach;Eskalation;Parallel mehrfach"
+      v:sortKey="B" v:invis="true" v:ask="false" v:langID="1031" v:cal="0" v:val="VT4(Ohne)"/>
+    <v:cp v:nameU="BpmnTriggerOrResult_End_Throwing" v:lbl="TriggerOderErgebnis" v:prompt="" v:type="1"
+      v:format="Ohne;Nachricht;Kompensation;Link;Signal;Mehrfach;Eskalation" v:sortKey="B" v:invis="true"
+      v:ask="false" v:langID="1031" v:cal="0" v:val="VT4(Ohne)"/>
+    <v:cp v:nameU="BpmnTriggerOrResult_End" v:lbl="TriggerOderErgebnis" v:prompt="" v:type="1"
+      v:format="Ohne;Nachricht;Fehler;Abbrechen;Kompensation;Signal;Abschließen;Mehrfach;Eskalation"
+      v:sortKey="B" v:invis="true" v:ask="false" v:langID="1031" v:cal="0" v:val="VT4(Ohne)"/>
+    <v:cp v:nameU="BpmnEventDetailType" v:lbl="    EreignisDetailTyp" v:prompt="" v:type="1"
+      v:format="Ohne;Nachricht;Zeitgeber;Fehler;Abbrechen;Kompensation;Bedingt;Link;Signal;Abschließen;Mehrfach;Eskalation;Parallel mehrfach"
+      v:sortKey="C" v:invis="true" v:ask="false" v:langID="1031" v:cal="0" v:val="VT4(Ohne)"/>
+    <v:cp v:nameU="BpmnElementType" v:lbl="ElementTyp" v:prompt="" v:type="1"
+      v:format="Teilprozess;Ereignis;Gateway;Prozessdiagramm;Pool;Verantwortlichkeitsbereich;Artefakt;Verbindungsobjekt"
+      v:sortKey="C" v:invis="true" v:ask="false" v:langID="1031" v:cal="0" v:val="VT4(Ereignis)"/>
+    <v:cp v:nameU="BpmnTriggerOrResult_Start_NonInterrupting" v:lbl="TriggerOderErgebnis" v:prompt="" v:type="1"
+      v:format="Nachricht;Zeitgeber;Bedingt;Signal;Mehrfach;Eskalation;Parallel mehrfach" v:sortKey="B"
+      v:invis="true" v:ask="false" v:langID="1031" v:cal="0" v:val="VT4(Ohne)"/>
+    <v:cp v:nameU="BpmnTriggerOrResult_Intermediate_NonInterrupting" v:lbl="TriggerOderErgebnis" v:prompt="" v:type="1"
+      v:format="Nachricht;Zeitgeber;Bedingt;Signal;Mehrfach;Eskalation;Parallel mehrfach" v:sortKey="B"
+      v:invis="true" v:ask="false" v:langID="1031" v:cal="0" v:val="VT4(Ohne)"/>
+    <v:cp v:nameU="BpmnName" v:lbl="" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="false" v:ask="false"
+      v:langID="0" v:cal="0" v:val="VT4(Start)"/>
+    <v:cp v:nameU="Function" v:lbl="" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="false" v:ask="false"
+      v:langID="1031" v:cal="0" v:val="VT4(Supplier)"/>
+   </v:custProps>
+   <v:userDefs>
+    <v:ud v:nameU="BPMNFillPattern" v:prompt="" v:val="VT0(1):26"/>
+    <v:ud v:nameU="msvShapeCategories" v:prompt="" v:val="VT4(Event)"/>
+    <v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+    <v:ud v:nameU="visNavOrder" v:val="VT0(12000):26"/>
+   </v:userDefs>
+   <title>Start Event</title>
+   <desc>Start</desc>
+   <g id="shape26-48" v:mID="26" v:groupContext="shape" v:layerMember="0">
+    <title>Tabelle.26</title>
+    <v:userDefs>
+     <v:ud v:nameU="EventTypeMode" v:prompt="" v:val="VT0(0):26"/>
+    </v:userDefs>
+    <ellipse cx="20.701" cy="520.15" rx="20.701" ry="20.701" class="st12"/>
+   </g>
+   <g id="shape27-52" v:mID="27" v:groupContext="shape" v:layerMember="0">
+    <title>Tabelle.27</title>
+  		<ellipse cx="20.701" cy="520.15" rx="16.5608" ry="16.5608" class="st13"/>
 			</g>
 			<g id="shape28-54" v:mID="28" v:groupContext="shape" v:layerMember="0" transform="translate(8.77724,-8.77724)">
 				<title>Tabelle.28</title>

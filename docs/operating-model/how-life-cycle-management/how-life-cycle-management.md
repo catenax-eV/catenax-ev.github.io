@@ -55,7 +55,7 @@ phase of two major versions (each valid for a minimum of 12 months):
 1. Current
 2. Maintenance
 
-There is a dedicated date, when the current version of Catena-X and Tractus-X gets in maintenance mode. After that, the maintenance version will be available for at least 12 months to ensure a smooth upgrade process for all participants of the Catena-X data space. This means that both major version are supported, i.e. get required security fixes and bug fixes without migration to the next higher major version. A deployed major version is supported for a minimum of two years.
+There is a dedicated date, when the current version of Catena-X and Tractus-X gets in maintenance mode. After that, the maintenance version will be available for at least 12 months to ensure a smooth upgrade process for all participants of the Catena-X data space. This means that both major version are supported, i.e. get required security fixes and bug fixes without migration to the next higher major version. A deployed major version is supported for a minimum of two years. But it can be in release state for a much longer period, only the maintenance timeframe has to be at least 12 months.
 
 All participants doing changes that are network-breaking or inter-company have to ensure one of the following variants to allow a smooth upgrade process:
 
@@ -98,6 +98,24 @@ The participants of the development and deployment gate decide about acceptance 
 The release schedule does not cover patches. The schedule defines such long timeframes between minor and major versions that it can be problematic to fix bugs or security issues. Therefore bugs shall be fixed independently of the release schedule, i.e. if a bugfix is required, it shall be done. A bug is a problem that is not changing the behavior, i.e. the behavior according to the standard is not changed.
 
 Security patches are different, because to fix a bug, it is required to change the behavior, but the security issue makes it mandatory to patch the release. The decision, when a patch can be deployed, is with the participants of the deployment gate. Additionally, there is a dependency to the standard, because the security issue could already be initiated by the standard itself. This would not only require a patch, but at least a note in the standard.
+
+### Environments
+
+Closely connected with the release schedule, there is also the landscape of environments to run the network. The guidelines for releases, patches apply for operating companies, namely CSP-A and CSP-B.
+
+To validate the upcoming releases, the association provides an INT environment for multiple aspects:
+
+| Aspect | INT Environment |
+| ------ | --------------- |
+| Primary Purpose | System integration testing, early functional validation, smoke testing |
+| Release Version | Current and then upcoming Tractus-X release, as aligned with Tractus-X release cycle |
+| Test Types Supported | E2E integration testing of new features, smoke testing of new deployments, E2E regression testing |
+| Data | Synthetic company and asset data |
+| Participants | Core & enabling services and business application developers/committers, product team testers/QA |
+| System Components | Integrated ecosystem: Connected core & enabling services, external shared services, open source applications (FOSS/OSS) |
+| Strategic Role | Primary environment for validating upcoming changes and ensuring system coherence |
+| Access Scope | Open for continuous team testing |
+| Update Frequency | More frequent. 1 or multiple release candidate deployments per changed application content up to and potentially during end-to-end testing of the upcoming Catena-X release |
 
 ## Backwards compatibility
 
