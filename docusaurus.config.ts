@@ -104,12 +104,13 @@ const config: Config = {
             },
           ],
         },
-        {
+       /* {
           type: "docSidebar",
           sidebarId: "sidebar_certification",
           position: "left",
           label: "Conformity Assessment",
         },
+        */
         {
           type: "docSidebar",
           sidebarId: "sidebar_regulatory_framework",
