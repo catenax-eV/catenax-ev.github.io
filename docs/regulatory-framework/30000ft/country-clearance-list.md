@@ -57,7 +57,7 @@ pagination_next: null
 | United States of America | US |
 | Vietnam | VN |
 
-[^1] This does not apply to Russian-occupied or annexed territories (Crimea, Kherson Oblast (including the Kinburn Peninsula/Mykolaiv), Donetsk, Luhansk and Zaporizhzhia).
+[^1]: This does not apply to Russian-occupied or annexed territories (Crimea, Kherson Oblast (including the Kinburn Peninsula/Mykolaiv), Donetsk, Luhansk and Zaporizhzhia).
 
 ## Clearance List "Conditional List"
 
