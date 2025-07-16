@@ -51,11 +51,13 @@ pagination_next: null
 | Spain | ES |
 | Sweden | SE |
 | Switzerland | CH |
-| Ukraine | UA |
+| Ukraine[^1] | UA |
 | United Arab Emirates | AE |
 | United Kingdom | GB |
 | United States of America | US |
 | Vietnam | VN |
+
+[^1]: This does not apply to Russian-occupied or annexed territories (Crimea, Kherson Oblast (including the Kinburn Peninsula/Mykolaiv), Donetsk, Luhansk and Zaporizhzhia).
 
 ## Clearance List "Conditional List"
 
