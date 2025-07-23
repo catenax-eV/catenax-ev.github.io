@@ -8,6 +8,14 @@ The upcoming releases are scheduled in the following order:
 
 [![Support Dates](@site/static/img/support-dates.jpg)](@site/static/img/support-dates.jpg)
 
+| Release    | Publication Date (Normative Documentes e.g. Standards and Certification Available) | Go-Live Date (Standards Become Effective) |
+|------------|----------------------------------------------------------|-------------------------------------------|
+| CX-Jupiter | 05.08.2024.                                                | 23.10.2024.                               |
+| CX-Io      | 17.03.2025                                               | 10.06.2025                                |
+| CX-Saturn  | 08.09.2025                                               | 25.11.2025                                |
+| CX-Titan   | 18.03.2026                                               | Mid of July 2026                          |
+| CX-Neptune | 16.09.2026                                               | TBD                                       |
+
 ## Consistency and Compatibility
 
 The release management coordinates the different releases in the Catena-X initiative to ensure a consistent and compatible bundle of:
