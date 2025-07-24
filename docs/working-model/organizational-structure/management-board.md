@@ -11,13 +11,15 @@ Decisions include determining the areas of focus for the Association, establishi
 
 The primary goal is to enhance the value provided to members and other stakeholders, ensuring the Association’s sustainability and growth. This might involve increasing membership, enhancing influence, or expanding the range of services offered.
 
-## Management board - Committees
+## Management board responsibilities
 
 The Management Board holds significant responsibility in determining and overseeing the relevant business domains for the association. Once these domains are identified, the Board ensures they are adequately covered through the establishment and management of committees. Here are the specific responsibilities of the Management Board in this context:
 
 - **Initiating new Committees**: The management can form new Committees and hands them over the responsibility for a specific domain.
 
 - **Oversight and Governance**: Committees operate under the guidance and oversight of two sponsors, who must be member of the management board
+
+- **Approval of Normative Documents**: The Management Board [formally approves](../process-structure/process-normative-documents.md#3verification) all standard candidates before their release.
 
 - **Escalation Point**: The Management Board acts as the last point of escalation for any significant issues or challenges that arise within the association. This function is executed through the [mediation board member](#mediation-board-member).
 
