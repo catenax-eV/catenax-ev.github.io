@@ -15,7 +15,7 @@ The lifecycle of an Expert Group is divided into three phases:
 2. [Working Phase](#2-working-phase)
 3. [Closing](#3-closing)
 
-The overview of the existing Expert Groups can be found in the [organizational chart](https://catena-x.net/fileadmin/user_upload/06_Ueber_uns/Ueber_uns_der_Verein/Catena-X_Organization_Chart.pdf) on the Catena-X homepage.
+The overview of the existing Expert Groups can be found in the [organizational chart](https://catena-x.net/association/expert-groups-committees/) on the Catena-X homepage.
 
 The product strategy involves the specific operational activities within a Expert Groups in collaboration with the committee. It deals with the tactical day-to-day tasks and processes that need to be executed to support the business domain strategy.
 
@@ -102,15 +102,17 @@ Responsibilities of the Core Group members include:
 Each company can only be represented by one person per Expert Group. The seat in the Expert Group is tied to the individual, not to the company itself.
 Core Group members are expected to regularly reaffirm their commitment to their responsibilities. If they are unable to do so (e.g., due to internal company projects), they should proactively step down from the Core Group to ensure effective planning and allocation of available resources.
 
-> [!TIP]
-> **Golden rules for Core Group Members**
->
-> - **Support Your Leads**: Leads take on extra responsibilities beyond their regular jobs. Value their efforts and collaborate as a team, not as a service provider.
-> - **Be Proactive**: Catena-X thrives on active participation. Keep yourself informed through meetings or minutes—don’t rely on others to catch you up.
-> - **Be Transparent**: Balancing this work with your regular job can be challenging. If your availability changes, communicate it early with your Expert Group.
-> - **Keep Your Commitments**: If you take on a task, ensure it’s delivered. Failing to do so shifts the burden onto other members, which isn’t fair to the team.
-> - **Speak Up**: Share your ideas, concerns, and feedback openly. Your voice matters, and open communication is key to the group's success.
-> - **Stay Motivated**: You’re here because you want to be. Let your intrinsic motivation drive your contributions!
+:::note[TIP]
+**Golden rules for Core Group Members**
+
+- **Support Your Leads**: Leads take on extra responsibilities beyond their regular jobs. Value their efforts and collaborate as a team, not as a service provider.
+- **Be Proactive**: Catena-X thrives on active participation. Keep yourself informed through meetings or minutes—don’t rely on others to catch you up.
+- **Be Transparent**: Balancing this work with your regular job can be challenging. If your availability changes, communicate it early with your Expert Group.
+- **Keep Your Commitments**: If you take on a task, ensure it’s delivered. Failing to do so shifts the burden onto other members, which isn’t fair to the team.
+- **Speak Up**: Share your ideas, concerns, and feedback openly. Your voice matters, and open communication is key to the group's success.
+- **Stay Motivated**: You’re here because you want to be. Let your intrinsic motivation drive your contributions!
+
+:::
 
 ### Review Group Member
 
