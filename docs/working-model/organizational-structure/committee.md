@@ -7,15 +7,15 @@ Committees are specialized bodies appointed by the board to address specific top
 
 The Committee  is encouraged to take initiative to address emerging challenges and opportunities, and to collaborate with other Committees and Expert Groups to achieve the organization's objectives.
 
-The overview of the existing committees can be found in the [organizational chart](https://catena-x.net/typo3conf/ext/catenax/Resources/Public/Images/Assets/Catena-X_Organization_Chart.pdf) on the Catena-X homepage.
+The overview of the existing committees can be found in the [organizational chart](https://catena-x.net/association/expert-groups-committees/) on the Catena-X homepage.
 
 ## Business domain ownership
 
 Committees serve as the sole strategic owners of a business domain, meaning they are responsible for defining the vision, setting long-term goals, and making key decisions that shape the direction of that domain. They oversee the development and execution of strategies, ensuring alignment with the association’s overall objectives. The committees tasks are:
 
-- **Business domain strategy**: The Committee is responsible for developing a clear and forward-looking strategy for the business domainby breaking down the [vision](https://catena-x.net/en/vision) and [mission](https://catena-x.net/en/benefits) of the Catena-X association for the respective domain. The strategy should serve as a beacon for all strategic decisions (strategic horizon 3 month, 12 month, 3 years).
+- **Business domain strategy**: The Committee is responsible for developing a clear and forward-looking strategy for the business domainby breaking down the [vision](https://catena-x.net/about-us/) and [mission](https://catena-x.net/association/membership-benefits/) of the Catena-X association for the respective domain. The strategy should serve as a beacon for all strategic decisions (strategic horizon 3 month, 12 month, 3 years). To ensure alignment, all roadmap items must be created or approved by the responsible committee to guarantee strategic fit.
 
-- **Standards management**: Committees own dedicated [standards](https://bcgcatenax.sharepoint.com/:x:/r/sites/MitgliederbereichMemberArea_Catena-XAutomotiveNetworke.V/_layouts/15/Doc2.aspx?action=edit&sourcedoc=%7B9f834319-f51e-468c-8e69-1da76f8b50c6%7D&wdOrigin=TEAMS-MAGLEV.teamsSdk_ns.rwc&wdExp=TEAMS-TREATMENT&wdhostclicktime=1720772259595&web=1). Each change of an owned standard must be approved by the Committee as part of the [standardization process](../process-structure/process-normative-documents.md).
+- **Standards management**: Committees own dedicated standards. Each change of an owned standard must be approved by the Committee as part of the [standardization process](../process-structure/process-normative-documents.md). An overview of the ownership is provided in *product-standardization-prod/src/standard-owners.md* within the *product-standardization-prod* repository of the Association.
 
 - **KITs management**: Committees have a dedicated responsibility for [Tractus-X KITs](https://eclipse-tractusx.github.io/Kits). Committees must check during the [planning process](../process-structure/process-tractus-x.md#phase-2-planning) that all features a strategically aligned to the Associations goals.
 
@@ -23,11 +23,11 @@ Committees serve as the sole strategic owners of a business domain, meaning they
 
 Committees act as representatives of all members within an association, ensuring that the interests and needs of the broader membership are reflected in their decisions. As such, committees must be transparent about their work and incorporate feedback into their decissions. The measures to do so are:
 
-- **Regualar sounding**: Committees must organize a regular [sounding](../process-structure/association-general.md#sounding) event at least every 6 month.
+- **Regualar sounding**: Committees must organize a regular sounding event at least every 6 month.
 
 - **Feedback channel**: In order to receive feedback and input from other association member a feedback channel must be kept and communicated.
 
-- **Collaboration across domains**: Committees should proactively [connect with one another](../process-structure/association-general.md) to drive the Association forward, ensuring alignment across various domains and initiatives.
+- **Collaboration across domains**: Committees should proactively connect with one another to drive the Association forward, ensuring alignment across various domains and initiatives.
 
 ## Committee and Expert Groups
 

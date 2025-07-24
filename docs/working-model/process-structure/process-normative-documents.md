@@ -4,7 +4,7 @@ title: Release of Standards
 ---
 
 :::warning[NOTE]
-This page contains a summary of the standardization process. The normative description of the process can be found [here](https://catena-x.net/fileadmin/user_upload/Vereinsdokumente/Catena-X_IP_Regelwerk_IP_Regulations.pdf).
+This page contains a summary of the standardization process. The normative description of the process can be found [here](https://catena-x.net/wp-content/uploads/2025/03/Catena-X_IP_Regelwerk_IP_Regulations.pdf).
 :::
 
 Every Standard that is officially released under the umbrella of Catena-X MUST follow a specific process comprised out of four stages:
@@ -18,7 +18,7 @@ Whereby each stage is accompanied by a quality gate, which MUST ensure that all 
 
 ![Standardization Process High Level](./assets/process_standardization_high_level.drawio.svg)
 
-The Catena-X Association strictly differentiates between normative (standards and non-technical requirements) and non-normative (white papers) documents. While process for normative documents is a normative process on its own which is strictly aligned with the anti-trust laws (see Operating Model), ...
+The Catena-X Association strictly differentiates between normative (standards and non-technical requirements) and non-normative (white papers) documents. The process for normative documents is a normative process on its own which is strictly aligned with the anti-trust laws (see Operating Model).
 
 ## Standards
 
@@ -46,12 +46,12 @@ If multiple individuals seek to implement a Standard Candidate and need alignmen
 
 Considering that Catena-X standards are the basis for its operations as well as conformity assessment for all corresponding actors and applications on the data ecosystem, it is of paramount importance that quality standards are met. Therefore some guardrails must be followed:
 
-- Usage of the Standards template,
-- Consider the CAC consolidation,
-- Take into account the Industry Core Basic Standard (CX-0151),
-- Versioning of APIs,
-- Aspect models must be existant, released and up to date, and
-- Asset structure must be defined.
+- **Usage of the Standards template,**
+- **Consider the CAC consolidation,**
+- **Take into account the Industry Core Basic Standard (CX-0151),**
+- **Versioning of APIs,**
+- **Aspect models must be existant, released and up to date, and**
+- **Asset structure must be defined.**
 
 During the creation of the Standard Candidate it should be reviewed by the responsible Committee to oversee its correctness from a business point of view.
 

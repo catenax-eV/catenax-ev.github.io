@@ -19,6 +19,37 @@ The Association promotes, sponsors, and coordinates the overlying requirements o
 
 Committees and Expert Groups are mapped to products or use cases. They are advertised, selected, and established on the basis of a requirement. The application phases are similar and the distributors are always the Catena-X members.
 
+### Formal decisions
+
+Some decisions taken by association bodies must be formally approved and documented.
+
+|   Decision                               |   Expert Group    |   Committee   |   Management Board    |
+|---                                        |---                |---            |---                    |
+|Setup of a new business domain/Committee   |                   |               |X                      |
+|Confirm lineup of Committees               |                   |               |X                      |
+|Setup of a new Expert Group                |                   |X              |                       |
+|Roadmap Items                              |X                  |X              |                       |
+|Standard Requests                          |X                  |X              |                       |
+|Normative documents*                       |X                  |X              |X                      |
+|Non-normative documents                    |X                  |X              |                       |
+
+*\*Normative documents additionaly require an approval by the TC4S (for standard candidates) or by the DSOC (for updates of the Operating Model).*
+
+Formal Approval Criteria:
+
+A decision is considered formally approved if all of the following conditions are met:
+
+- **Minimum Participation**: At least 5 members cast their votes. *Voting options: "approved", "not approved", "abstention".*
+
+- **Majority Approval**: The number of "approved" votes exceeds the number of "not approved" votes. *Note: "Abstention" votes are not counted towards the approval calculation.*
+
+Documentation Requirements:
+
+- All decisions must be recorded in the meeting minutes.
+- The documentation must include:
+  - The names of all voting members.
+  - The individual voting result for each member ("approved", "not approved", or "abstention").
+
 ### Roles and Responsibilities within the Association
 
 - **Association Member**: This is the basic role that every employee in the of an Association Member can obtain. Being a member grants access to Associations meetings and fundamental tooling necessary for participation, such as viewing content, participating in discussions, or accessing standard resources. The role must be requested actively.
