@@ -96,17 +96,17 @@ flowchart BT
   end  
   subgraph AKS_int["INT cluster"]  
     ArgoCD["ArgoCD \n argocd.int.catena-x.net"]  
-    ServiceDeployment[Product apps]  
+    ServiceDeployment["Product apps"]  
     Grafana  
     Goldilocks  
   end  
   subgraph AKS_core["Core cluster"]  
-    Vault["Vault \n vault.core.catena-x.net "]  
+    Vault["Vault \n vault.core.catena-x.net"]  
   end  
-  ArgoCD -- " get secrets " --> Vault  
-  ArgoCD -- " deploys " --> ServiceDeployment  
-  ArgoCD -- " pull images " --> GitHub_ghcr  
-  ArgoCD -- " authenticate user " --> GitHub_org
+  ArgoCD -- "get secrets" --> Vault  
+  ArgoCD -- "deploys" --> ServiceDeployment  
+  ArgoCD -- "pull images" --> GitHub_ghcr  
+  ArgoCD -- "authenticate user" --> GitHub_org  
 ```
 
 ### 2.4 Key Tools
