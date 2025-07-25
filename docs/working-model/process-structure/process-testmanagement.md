@@ -89,24 +89,27 @@ The infrastructure is designed for secure, automated deployments without direct 
 **Example Architecture Diagram:**
 
 ```mermaid  
-flowchart BT  
-  subgraph github["GitHub"]  
-    GitHub_ghcr[GitHub Container Registry]  
-    GitHub_org[GitHub Organizations]  
-  end  
-  subgraph AKS_int["INT cluster"]  
-    ArgoCD["ArgoCD \n argocd.int.catena-x.net"]  
-    ServiceDeployment["Product apps"]  
-    Grafana  
-    Goldilocks  
-  end  
-  subgraph AKS_core["Core cluster"]  
-    Vault["Vault \n vault.core.catena-x.net"]  
-  end  
-  ArgoCD -- "get secrets" --> Vault  
-  ArgoCD -- "deploys" --> ServiceDeployment  
-  ArgoCD -- "pull images" --> GitHub_ghcr  
-  ArgoCD -- "authenticate user" --> GitHub_org  
+flowchart BT
+  subgraph github["GitHub"]
+    GitHub_ghcr[GitHub Container Registry]
+    GitHub_org[GitHub Organizations]
+  end
+
+  subgraph AKS_int["INT cluster"]
+    ArgoCD["ArgoCD \n argocd.int.catena-x.net"]
+    ServiceDeployment["Product apps"]
+    Grafana
+    Goldilocks
+  end
+
+  subgraph AKS_core["Core cluster"]
+    Vault["Vault \n vault.core.catena-x.net"]
+  end
+
+  ArgoCD -- "get secrets" --> Vault
+  ArgoCD -- "deploys" --> ServiceDeployment
+  ArgoCD -- "pull images" --> GitHub_ghcr
+  ArgoCD -- "authenticate user" --> GitHub_org 
 ```
 
 ### 2.4 Key Tools
