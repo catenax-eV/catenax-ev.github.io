@@ -76,12 +76,14 @@ Infrastructure covers the deployment, provisioning of virtual environments, and 
 
 ### 2.3 Environment Setup
 
-The infrastructure is designed for secure, automated deployments without direct Azure access for product teams. Argo CD in the integration cluster deploys applications by:  
+The infrastructure is designed for secure, automated deployments without direct Azure access for product teams. Argo CD in the integration cluster deploys applications by:
+
 - Reading secrets from Vault in the core cluster  
 - Pulling images from GitHub Container Registry (GHCR)  
 - Authenticating users via GitHub Organizations
 
-**Example Architecture Diagram:**  
+**Example Architecture Diagram:**
+
 ```mermaid  
 flowchart BT  
   subgraph github["GitHub"]  
@@ -174,13 +176,16 @@ Ensures equitable access to shared resources, prevents misuse, and maintains a c
 
 #### Ingress Configuration
 
-- Annotate Ingresses for certificate management:  
+- Annotate Ingresses for certificate management:
+
     ```yaml  
     metadata:  
       annotations:  
         cert-manager.io/cluster-issuer: "letsencrypt-prod"  
-    ```  
-- Ensure `tls.secretName` is unique per namespace and URL is unique cluster-wide:  
+    ```
+
+- Ensure `tls.secretName` is unique per namespace and URL is unique cluster-wide:
+
     ```yaml  
     tls:  
       - hosts:  
