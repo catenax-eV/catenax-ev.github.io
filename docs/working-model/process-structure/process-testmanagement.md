@@ -69,10 +69,14 @@ Infrastructure covers the deployment, provisioning of virtual environments, and 
 ### 2.2 Available Environments
 
 | Environment     | Tools & URLs                                                                                  |  
-|-----------------|----------------------------------------------------------------------------------------------|  
-| **Core**        | Vault: [https://vault.core.catena-x.net](https://vault.core.catena-x.net)                    |  
-| **Integration** | ArgoCD: [https://argocd.int.catena-x.net](https://argocd.int.catena-x.net) <br> Grafana: [https://grafana.int.catena-x.net](https://grafana.int.catena-x.net) <br> Goldilocks: [https://goldilocks.int.catena-x.net](https://goldilocks.int.catena-x.net) <br> |  
-| **Stable**      | ArgoCD: [https://argocd.stable.catena-x.net](https://argocd.stable.catena-x.net) <br> Grafana: [https://grafana.stable.catena-x.net](https://grafana.stable.catena-x.net) <br> Goldilocks: [https://goldilocks.stable.catena-x.net](https://goldilocks.stable.catena-x.net) <br> |
+|-----------------|-----------------------------------------------------------------------------------------------|  
+| **Core**        | Vault: [https://vault.core.catena-x.net](https://vault.core.catena-x.net)                     |  
+| **Integration** | ArgoCD: [https://argocd.int.catena-x.net](https://argocd.int.catena-x.net)                    |
+|                 |Grafana: [https://grafana.int.catena-x.net](https://grafana.int.catena-x.net)                  |
+|                 |Goldilocks: [https://goldilocks.int.catena-x.net](https://goldilocks.int.catena-x.net)         |  
+| **Stable**      | ArgoCD: [https://argocd.stable.catena-x.net](https://argocd.stable.catena-x.net)              |
+|                 |Grafana: [https://grafana.stable.catena-x.net](https://grafana.stable.catena-x.net)            |
+|                 |Goldilocks: [https://goldilocks.stable.catena-x.net](https://goldilocks.stable.catena-x.net)   |
 
 ### 2.3 Environment Setup
 
