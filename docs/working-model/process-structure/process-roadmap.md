@@ -18,18 +18,18 @@ Roadmap must be added to the <!-- markdown-link-check-disable -->[Release Roadma
 - a meaningfull title,
 - a description outlining the scope of it so that other association members can understand it,
 - a Committee as driver, who is responsible to oversee the implementation of the Roadmap Item (the driver should only be set in alignment with the respective committee!),
-- an overview of Expert Groups that might have to contribute to the implementation of the Roadmap Item (set the Expert Group as a label to the Roadmap Item). The list will be reviewed during the Roadmap Review Meeting, and
+- an overview of Expert Groups that might have to contribute to the implementation of the Roadmap Item (set the Expert Group as a label to the Roadmap Item). The list will be reviewed during the Internal Planning Day, and
 - a Target Release (as Milestone) when the Roadmap Item should be delivered.
 
-All other informations requested by the Roadmap Item template must be added before presenting it in the Roadmap Review Meeting!
+All other informations requested by the Roadmap Item template must be added before presenting it in the Internal Planning Day!
 
 :::warning[TIP]
 Specific access to GitHub needed, which is managed by the C-X Management Office. Only Catena-X e.V. members are allowed to get access!
 :::
 
-## Roadmap Review Meeting
+## Internal Planning Day
 
-All roadmap items must be presented at least once during the C-X Roadmap Review Meeting. While this does not necessarily have to happen in the meeting immediately preceding the start of work, it should take place as soon as the scope is clearly defined.
+All roadmap items must be presented at least once during the C-X Internal Planning Day. While this does not necessarily have to happen in the meeting immediately preceding the start of work, it should take place as soon as the scope is clearly defined.
 
 The purpose of the meeting is to introduce initial ideas for potential roadmap items in upcoming releases. It provides an open forum where participants can present their concepts, allowing association members to gain early insights, identify key stakeholders, and gather feedback from the broader community. The responsible Committee or Expert Group presents the roadmap items to initiate discussions among association members. The expected outcome is a clear understanding of the scope and the identification of any further alignment needs for the refinement phase.
 

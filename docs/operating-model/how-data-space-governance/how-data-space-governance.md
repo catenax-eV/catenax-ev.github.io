@@ -65,7 +65,9 @@ Certifications and qualifications at Catena-X can be obtained for different type
 
 ### Certification updates
 
-Each certified partner needs to ensure conformity to the standards to be active in the data space. Every certified participant in the data space must remain compatible with at least one of the supported ecosystem releases through certification via a CAB. If there is no valid certificate after the ecosystem release tied to the respective certificate expires, Partners lose the status of certification/ qualification and are no longer listed as such on the Data Space Clearance List after the above-mentioned 120 days grace period expires. Each label is obtained after the successful completion of the Catena-X certification or qualification process.
+Each certified partner must ensure compliance with the standards in order to be active in the data space. Each certified participant in the data space must remain compatible with at least one of the supported ecosystem versions through certification by a CAB. If, after the expiry of the ecosystem version associated with the respective certificate, no valid certificate is available, the partners lose their certification/qualification status and will be removed from the Catena-X data space.
+
+The certification requirements become binding as of the official go-live date of the new release. The time between the publication of the standards and the go-live date serves as a transition phase, allowing partners to prepare and complete the certification process. Each label is issued after successful completion of the Catena-X certification or qualification process.
 
 ### Further clarifications for Ecosystem Releases
 
