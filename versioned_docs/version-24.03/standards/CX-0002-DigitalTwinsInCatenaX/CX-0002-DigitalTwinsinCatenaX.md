@@ -318,14 +318,14 @@ The following deviations are defined:
 
 EXAMPLE for Self-Description (**GetSelfDescription**) of a Digital Twin Registry solution :
 
-````json
+```json
 {
   "profiles": [
     "https://admin-shell.io/aas/API/3/0/DiscoveryServiceSpecification/SSP-001",
     "https://admin-shell.io/aas/API/3/0/AssetAdministrationShellRegistryServiceSpecification/SSP-002"
    ]
 }
-````
+```
 
 #### 2.1.3 Available Data Types
 

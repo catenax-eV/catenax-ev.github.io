@@ -277,7 +277,7 @@ This semantic model "Qualtiy Task" has the unique identifier
 
 ```text
 <urn:samm:io.catenax.quality_task:2.0.0#>
-````
+```
 
 #### 3.1.5 FORMATS OF SEMANTIC MODEL
 
