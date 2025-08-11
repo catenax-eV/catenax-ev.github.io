@@ -521,8 +521,6 @@ Example JSON Payload: Submodel "SpecialCharacteristicMeasurement" for a qualitat
 }
 ```
 
-````
-
 ## 4 APPLICATION PROGRAMMING INTERFACES
 
 > *This section is normative*
@@ -598,7 +596,7 @@ When using the Tractus-X EDC, the following asset **MUST** be registered. Other 
     ...
   }
 }  
-````
+```
 
 The variable \{\{httpServerWhichOffersTheHttpEndpoint\}\} **MUST** be set to the HTTP server that offers the endpoint. The path /qualityinvestigations/receive **MAY** align with the HTTP POST path as stated in Section 4.1.2.1. In that sense it can change dependent on the traceability application.
 
