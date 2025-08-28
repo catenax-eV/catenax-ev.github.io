@@ -12,9 +12,12 @@ Catena-X follows a business-oriented decentralization approach that aims to achi
 ![image](./assets/outlook-for-further-decentralization.png)  
 *Outlook for further Decentralization*
 
-## Further Integration of SSI Technologies
+## Further Integration of Self-Sovereign Identity
 
-To realize the Catena-X vision of a decentralized data space, we will further develop our SSI technologies. Future releases will enable the use of both managed identity wallets and self-provisioned identity wallets. Furthermore, it is planned to enable multiple issuers, e.g. through the decentralization of the issuer component by changing its classification from Core Service B, to a "sub-role" of the CSP-A including the introduction of a new role "Issuer Authority" to operate the component. To further strengthen trust in the data space, we will introduce the option to define various root trust anchors (e.g., the Catena-X Association). In addition, a chain of trust will be established to prove that a given credential comes from a trusted source according to the Catena-X Governance Framework. Those concepts are currently still under development.
+Over the upcoming releases, Catena-X's SSI concept will be significantly adapted to enable a large class of use cases and promote interoperability with other dataspaces.
+In the current setup, the CSP provides a wallet for participants and issues their verifiable credentials.
+This will gradually give way to a modular and flexible approach, where participants can use their own wallet in the dataspace, entities can issue, present, and verify credentials regardless of their role, and an increasing level of interoperability with the outside world is given.
+Future iterations of the SSI-related standards will work towards interoperability across dataspaces and integration of overarching standards.
 
 ## Data Space Interoperability
 
