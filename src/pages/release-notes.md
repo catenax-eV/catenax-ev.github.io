@@ -9,6 +9,26 @@ For more information, on the **legal notice** please visit [here](https://catena
 ## [CX-Saturn]
 
 ### Catena-X Standards
+ 
+- **4 new standards introduced**, expanding the foundation for digital master data, requirements exchange, tariffs, and policy constraints    
+  (CX-0154, CX-0155, CX-0153, CX-0152)
+ 
+- **15 standards updated** to further improve quality, interoperability, and usability    
+  - Improved processes for supply chain disruption and traceability, supporting more robust risk management and transparency    
+    (CX-0146, CX-0125)    
+  - Enhanced APIs and data models for product carbon footprint, quality management, and circular economy, enabling more efficient and reliable data exchange    
+    (CX-0136, CX-0123, CX-0143)    
+  - Finalized protocols and clearer policy implementation for dataspace connectivity, including update to the final versions of DSP 2025-1 and DCP 1.0, ensuring secure and future-proof integration    
+    (CX-0018, CX-0001, CX-0152)    
+  - Extended support for Digital Twins, including update of AAS interfaces based on Release 25-01 of the Specifications of the Asset Administration Shell (IDTA), strengthening asset management and integration    
+    (CX-0002)    
+  - Improved Business Partner Data Management (BPDM) standards, especially for master data and gate APIs, for better management of business partner data    
+    (CX-0012, CX-0074)    
+  - Updated identity and credential management with new requirements for wallets and verifiable credentials, now supporting "Bring Your Own Wallet"    
+    (CX-0149, CX-0049, CX-0050)
+ 
+- **1 standard deprecated** to consolidate the standards landscape and improve user-friendliness    
+  (CX-0013)
 
 ### Catena-X Operating Model
 
