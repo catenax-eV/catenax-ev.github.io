@@ -615,7 +615,7 @@ How to create a submodel template specification. Guideline. Download from: https
 
 [^3]: https://github.com/eclipse-esmf/esmf-sdk
 
-[^4]: [CX Operating Model](https://catena-x.net/fileadmin/_online_media_/CX_Operating_Modelv2.1_final.pdf)
+[^4]: [Catena-X Operating Model](https://catenax-ev.github.io/docs/next/operating-model/why-introduction)
 
 ### 6.3 REFERENCE IMPLEMENTATIONS
 

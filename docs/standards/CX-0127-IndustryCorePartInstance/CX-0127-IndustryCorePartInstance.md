@@ -1088,7 +1088,7 @@ https://industrialdigitaltwin.org/wp-content/uploads/2022/12/I40-IDTA-WS-Process
 
 [^3]: https://github.com/eclipse-esmf/esmf-sdk
 
-[^4]: https://catena-x.net/fileadmin/_online_media_/CX_Operating_Modelv2.1_final.pdf
+[^4]: https://catenax-ev.github.io/docs/next/operating-model/why-introduction
 
 ### 6.3 REFERENCE IMPLEMENTATIONS
 

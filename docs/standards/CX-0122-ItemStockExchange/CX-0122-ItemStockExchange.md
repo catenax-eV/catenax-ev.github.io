@@ -1072,7 +1072,7 @@ respective location with its address.
 
 | **Context** | **Link** |
 | --- | --- |
-| [CX-OMW] | Catena-X Operating Model Whitepaper. Download from: [https://catena-x.net/fileadmin/\_online\_media\_/CX\_Operating\_Modelv2.1_final.pdf](https://catena-x.net/fileadmin/_online_media_/CX_Operating_Modelv2.1_final.pdf) |
+| [CX-OMW] | [Catena-X Operating Model](https://catenax-ev.github.io/docs/next/operating-model/why-introduction) |
 | [RFC2119] | Bradner, S. Key words for use in RFCs to Indicate Requirement Levels. Available online: https://datatracker.ietf.org/doc/html/rfc2119 |
 | [RFC8174] | Leiba, B. Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words. Available online: https://datatracker.ietf.org/doc/html/rfc8174 |
 | [SMT] | How to create a submodel template specification. Guideline. Download from: https://industrialdigitaltwin.org/wp-content/uploads/2022/12/I40-IDTA-WS-Process-How-to-write-a-SMT-FINAL-.pdf |

@@ -656,7 +656,7 @@ The following http response codes MUST be defined for HTTP POST endpoint for the
 
 > *This section is non-normative*
 
-- [CX_Operating_Modelv2.1_final.pdf (catena-x.net)](https://catena-x.net/fileadmin/_online_media_/CX_Operating_Modelv2.1_final.pdf)
+- [Catena-X Operating Model](https://catenax-ev.github.io/docs/next/operating-model/why-introduction)
 
 ### 5.3 REFERENCE IMPLEMENTATIONS
 
