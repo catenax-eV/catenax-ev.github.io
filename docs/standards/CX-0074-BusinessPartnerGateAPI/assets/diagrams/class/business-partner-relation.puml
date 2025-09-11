@@ -1,0 +1,58 @@
+@startuml business-partner-relation
+
+skinparam dpi 50
+
+package "Business Partner Relation and References" {
+  entity BusinessPartner {
+    ExternalID
+    ...
+  }
+
+  entity BusinessPartnerRelation {
+    ExternalID
+    CreatedAt
+    UpdatedAt
+  }
+
+  ' Not standardized yet
+  ' class BusinessPartnerRelationState {
+  '   ValidFrom
+  '   ValidTo
+  ' }
+
+  ' enum BusinessPartnerRelationStateType {
+  '   ACTIVE
+  '   INACTIVE
+  ' }
+
+  ' enum BusinessPartnerRelationReason {
+  '   ReplacedDueToAcquisition
+  '   ReplacedDueToMerger
+  '   ReplacedDueToSpinOff
+  '   ReplacedDueToDivestiture
+  '   ReplacedDueToCarveOut
+  '   ReplacedDueToPrivatization
+  '   ReplacedDueToInitialPublicOffering
+  '   ReplacedDueToWrongData
+  '   ...
+  ' }
+
+  enum BusinessPartnerRelationType {
+    IsAlternativeHeadquarterFor
+    ' IsReplacedBy
+    IsManagedBy
+    '...
+  }
+
+  BusinessPartnerRelation "*" -l-> "1" BusinessPartner : BusinessPartnerSourceExternalID
+  BusinessPartnerRelation "*" -l-> "1" BusinessPartner : BusinessPartnerTargetExternalID
+  BusinessPartnerRelation "*" -d-o "1" BusinessPartnerRelationType : Type
+  'BusinessPartnerRelation "*" -d-o "0..1" BusinessPartnerRelationReason : Reason
+
+  'BusinessPartnerRelation "1" *-d-> "*" BusinessPartnerRelationState : States
+  'BusinessPartnerRelationState "*" -d-o "1" BusinessPartnerRelationStateType : Type
+}
+
+hide methods
+hide BusinessPartnerRelation methods
+@enduml

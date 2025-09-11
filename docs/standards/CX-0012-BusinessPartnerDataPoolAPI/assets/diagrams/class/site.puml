@@ -27,8 +27,8 @@ package "Site and References" {
   }
 
   enum SiteStateType{
-      Active
-      Inactive
+      ACTIVE
+      INACTIVE
     }
 
   class MainAddress {}

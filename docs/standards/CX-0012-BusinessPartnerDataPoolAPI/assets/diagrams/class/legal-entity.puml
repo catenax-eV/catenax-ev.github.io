@@ -28,13 +28,21 @@ package "Legal Entity and References" {
   }
 
   enum LegalEntityStateType {
-    Active
-    Inactive
+    ACTIVE
+    INACTIVE
   }
 
   class LegalEntityIdentifier {
     Value
     IssuingBody
+  }
+
+  class LegalEntityRelation {
+  }
+
+  enum LegalEntityRelationType {
+    IsAlternativeHeadquarterFor
+    IsManagedBy
   }
 
   entity IdentifierType {
@@ -96,6 +104,11 @@ package "Legal Entity and References" {
   
   LegalEntity "1" *-d-> "*" LegalEntityIdentifier : Identifiers
   LegalEntityIdentifier "*" -d-o "1" IdentifierType : Type
+
+  LegalEntity "1" *--> "*" LegalEntityRelation : Relations
+  LegalEntityRelation "*" --o "1" LegalEntityRelationType : Type
+  LegalEntityRelation "*" o--> "1" LegalEntity : LegalEntitySourceBPN
+  LegalEntityRelation "*" o--> "1" LegalEntity : LegalEntityTargetBPN
   
   ' taken out from 24.05, as not clear if this is modelled correctly
   ' LegalEntity "1" *-d-> "*" Classification : Classifications
@@ -116,4 +129,5 @@ package "Legal Entity and References" {
 
 hide methods
 hide LegalAddress members
+hide LegalEntityRelation members
 @enduml

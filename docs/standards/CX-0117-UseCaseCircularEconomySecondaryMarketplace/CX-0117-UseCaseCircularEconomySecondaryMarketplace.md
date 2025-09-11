@@ -104,12 +104,13 @@ To participate in the Circular Economy Secondary Marketplace use-case, the follo
 - [CX-0018:3.0](https://catena-x.net/en/library) Dataspace Connectivity
 - [CX-0049:2.0](https://catena-x.net/en/library) DID Document Schema
 - [CX-0050:2.0](https://catena-x.net/en/library) Framework Agreement Credential
+- [CX-0152:1.0](https://catena-x.net/en/library) Policy Constraints For Data Exchange
 
 #### 2.1.2 DATA REQUIRED
 
 #### 2.1.3 ADDITIONAL REQUIREMENTS
 
-See CX-0143:1.0 for the Discovery process and EDC policy usage for Battery Passes.
+See CX-0143 for the Discovery process and the conventions for Policy Constraints in access and usage policies for Battery Passes.
 
 #### 2.1.4 DIGITAL TWINS AND SPECIFIC ASSET IDs
 
