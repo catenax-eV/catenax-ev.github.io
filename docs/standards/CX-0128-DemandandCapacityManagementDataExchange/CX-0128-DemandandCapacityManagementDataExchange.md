@@ -2451,12 +2451,12 @@ Constraints that are marked as mandatory in the column **Usage Requirement** MUS
 
 | Policy Type      | Constraint               | leftOperand ("@context": ["https://w3id.org/catenax/2025/9/policy/context.jsonld"])  | operator | right Operand              | Usage Requirement |
 | --               | --                       | --                                                        | --       | --                         | --                |
-| Access Policy    | BPNL                     | BusinessPartnerNumber | isAnyOf, isNoneOf      | {{ PARTNER_BPNLs }}         | optional          |
-| Access Policy    | BPNL-Group               | BusinessPartnerGroup  | isAnyOf, isNoneOf | {{ PARTNER_GROUPs }}        | optional          |
+| Access Policy    | BPNL                     | BusinessPartnerNumber | isAnyOf, isNoneOf      | `{{ PARTNER_BPNLs }}`         | optional          |
+| Access Policy    | BPNL-Group               | BusinessPartnerGroup  | isAnyOf, isNoneOf | `{{ PARTNER_GROUPs }}`        | optional          |
 | Access Policy    | Membership               | Membership                | eq       | active                     | optional          |
 | **Usage Policy** | Data Exchange Governance | FrameworkAgreement        | eq       | DataExchangeGovernance:1.0 | mandatory         |
 | **Usage Policy** | Usage Purpose            | UsagePurpose              | isAnyOf       | cx.dcm.base:1              | mandatory         |
-| Usage Policy     | Contract Reference       | ContractReference         | isAllOf       | {{ Contract References }}   | optional          |
+| Usage Policy     | Contract Reference       | ContractReference         | isAllOf       | `{{ Contract References }}`   | optional          |
 
 Please note, that the access policy can be created without any constraints. In this case only the MembershipCredential is verified. Further details how to define policies and policy constraints can be found in CX-0152 as referenced in [paragraph Policy Constraints for Data Exchange](#policy-constraints-for-data-exchange).  
 
@@ -2466,43 +2466,28 @@ Please note, that the access policy can be created without any constraints. In t
 
 > *This section and all its subsections are normative*
 
-[CX-0001] `v1.0.3` EDC Discovery API
-
-[CX-0002] `v2.2.0` Digital Twins in Catena-X
-
-[CX-0003] `v1.2.0` SAMM Aspect Meta Model
-
-[CX-0010] `v2.1.0` Business Partner Number
-
-[CX-0018] `v3.2.0` Dataspace Connectivity
-
-[CX-0126] `v2.0.0` Industry Core: Part Type
-
-[CX-0146] `v1.0.1` Supply Chain Disruption Notifications
-
-[CX-0152] `v1.0.0` Policy Constraints For Data Exchange
+- [CX-0001] `v1.0.3` EDC Discovery API
+- [CX-0002] `v2.2.0` Digital Twins in Catena-X
+- [CX-0003] `v1.2.0` SAMM Aspect Meta Model
+- [CX-0010] `v2.1.0` Business Partner Number
+- [CX-0018] `v3.2.0` Dataspace Connectivity
+- [CX-0126] `v2.0.0` Industry Core: Part Type
+- [CX-0146] `v1.0.1` Supply Chain Disruption Notifications
+- [CX-0152] `v1.0.0` Policy Constraints For Data Exchange
 
 ### 7.2 Non-Normative References
 
 > *This section and all its subsections are non-normative*
 
-[RFC2119] `March 1997` Key words for use in RFCs to Indicate Requirement Levels (<https://www.rfc-editor.org/rfc/rfc2119>)
-
-[RFC8174] `May 2017` Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words (<https://www.rfc-editor.org/rfc/rfc8174>)
-
-[ISO3166] `2020-08` ISO 3166 Country Codes
-
-[ISO8601] `2019-02` Date and time format
-
-[RFC4122] `July 2005` A Universally Unique IDentifier (UUID) URN Namespace (<https://www.rfc-editor.org/rfc/rfc4122>)
-
-[RFC9110] `June 2022` HTTP Semantics (<https://www.rfc-editor.org/rfc/rfc9110>)
-
-[CC-BY-4.0] `Version 4.0` Creative Commons Attribution 4.0 International license (<https://creativecommons.org/licenses/by/4.0/legalcode.en>)
-
-[SMT] `1st Version` Guideline: How to create a Submodel template specification (<https://industrialdigitaltwin.org/wp-content/uploads/2022/12/I40-IDTA-WS-Process-How-to-write-a-SMT-FINAL-.pdf>)
-
-[I4.0-AAS] `1.0RC02` Details of the Asset Administration Shell - Part 2 (<https://www.plattform-i40.de/IP/Redaktion/EN/Downloads/Publikation/Details_of_the_Asset_Administration_Shell_Part2_V1.html>)
+- [RFC2119] `March 1997` Key words for use in RFCs to Indicate Requirement Levels (https://www.rfc-editor.org/rfc/rfc2119)
+- [RFC8174] `May 2017` Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words (https://www.rfc-editor.org/rfc/rfc8174)
+- [ISO3166] `2020-08` ISO 3166 Country Codes
+- [ISO8601] `2019-02` Date and time format
+- [RFC4122] `July 2005` A Universally Unique IDentifier (UUID) URN Namespace (https://www.rfc-editor.org/rfc/rfc4122)
+- [RFC9110] `June 2022` HTTP Semantics (https://www.rfc-editor.org/rfc/rfc9110)
+- [CC-BY-4.0] `Version 4.0` Creative Commons Attribution 4.0 International license (https://creativecommons.org/licenses/by/4.0/legalcode.en)
+- [SMT] `1st Version` Guideline: How to create a Submodel template specification (https://industrialdigitaltwin.org/wp-content/uploads/2022/12/I40-IDTA-WS-Process-How-to-write-a-SMT-FINAL-.pdf)
+- [I4.0-AAS] `1.0RC02` Details of the Asset Administration Shell - Part 2 (https://www.plattform-i40.de/IP/Redaktion/EN/Downloads/Publikation/Details_of_the_Asset_Administration_Shell_Part2_V1.html)
 
 ### 7.3 Reference Implementations
 

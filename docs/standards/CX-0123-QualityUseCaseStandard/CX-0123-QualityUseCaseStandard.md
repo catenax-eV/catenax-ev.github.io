@@ -171,7 +171,7 @@ The following table shows a list of connector catalogue properties. As a data pr
 |"@id"|"430f56d3-1234-1234-1234-abc123456789__io.catenax_fleet.claim_data__3.0.0.parquet"| Each catalogue entry needs a unique id. You can use a UUID v4 or a human readable id. **RECOMMENDED** human readable id follows the pattern `<catenaXQualityTaskId>__<SemanticModel>__<model_version>.parquet`. Separator are two underscores: `__`|
 |`"https://purl.org/dc/terms/conformsTo"`| "@id": "urn:samm:io.catenax.fleet.claim_data:3.0.0"|This property is QM-specific and a **MUST**. It holds the aspect-model-URN(without # at the end) that defines used aspect model and version.|
 |`"https://purl.org/dc/terms/format"`|"application/octet-stream;type=parquet-snappy"|This property is QM-specific and a **MUST**. It indicates the format of the data asset. Supported formats for file-based data transfer are "application/octet-stream;type=parquet-snappy", "application/octet-stream;type=gzip", "text/richtext;type=json". See `https://www.iana.org/assignments/media-types-parameters/media-types-parameters.xhtml`|
-|"dcat:qualifiedRelation"|`"{https://purl.org/dc/terms/isPartOf"`: {"@id": "430f56d3-1234-1234-1234-abc123456789"}}|This is QM-specific and a **MUST**. `{"isPartOf": {"@id": "<corresponding catenaXQualityTaskId>"}}`. Allows to filter for all file-based data assets that belong to one Catena-X Quality Task ID.|
+|"dcat:qualifiedRelation"|`"{https://purl.org/dc/terms/isPartOf": {"@id": "430f56d3-1234-1234-1234-abc123456789"}}` |This is QM-specific and a **MUST**. `{"isPartOf": {"@id": "<corresponding catenaXQualityTaskId>"}}`. Allows to filter for all file-based data assets that belong to one Catena-X Quality Task ID.|
 
 ##### 2.1.3.3 Apache parquet format
 
@@ -838,7 +838,10 @@ In case of doubt, GitHub overwrites the information for license, copyright and a
 ### 3.10.4 IDENTIFIER OF SEMANTIC MODEL
 
 The semantic model has the unique identifier
+
+```text
 <urn:samm:io.catenax.report_8d:1.0.0#>
+```
 
 ### 3.10.5 FORMATS OF SEMANTIC MODEL
 
@@ -889,7 +892,7 @@ In case of doubt, GitHub overwrites the information for license, copyright and a
 The semantic model has the unique identifier
 
 ```text
-<urn:samm:io.catenax.warranty_claim_request/1.0.0>
+<urn:samm:io.catenax.warranty_claim_request:1.0.0>
 ```
 
 #### 3.11.5 FORMATS OF SEMANTIC MODEL
@@ -948,7 +951,7 @@ In case of doubt, GitHub overwrites the information for license, copyright and a
 The semantic model has the unique identifier
 
 ```text
-<urn:samm:io.catenax.warranty_claim_request_verification/1.0.0>
+<urn:samm:io.catenax.warranty_claim_request_verification:1.0.0>
 ```
 
 #### 3.12.5 FORMATS OF SEMANTIC MODEL
@@ -1087,7 +1090,7 @@ The variable \{\{httpServerWhichOffersTheHttpEndpoint\}\} **MUST** be set to the
 
 ### 4.1.4 VERSIONING
 
-The API version described in this standard document **MUST** be published in the property <https://w3id.org/catenax/ontology/common#version> as version 2.0 in dcat:Dataset (<http://www.w3.org/ns/dcat#>).
+The API version described in this standard document **MUST** be published in the property [https://w3id.org/catenax/ontology/common#version](https://w3id.org/catenax/ontology/common#version) as version 2.0 in dcat:Dataset ([http://www.w3.org/ns/dcat#](http://www.w3.org/ns/dcat#)).
 
 ### 4.1.5 EXAMPLES
 

@@ -465,8 +465,8 @@ The data asset must be configured with the set of properties as defined in the t
 | **Property**                                                      | **Purpose**                                                                                      | **Usage & Constraints**                                                                                                                                                                              |
 | ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | ***@id***                                                         | Identifier of the asset.                                                                         | The asset ID must be unique and therefore must not be reused elsewhere.                                                                                                                              |
-| properties.**<http://purl.org/dc/terms/type>**                    | Defines the "Demand and Capacity Notification API" endpoint according to the Catena-X taxonomy.  | must be set to `{"@id": "https://w3id.org/catenax/taxonomy#DemandAndCapacityNotificationApi"}` to allow filtering the data assets catalog for the respective "Demand and Capacity Notification API". |
-| properties.**<https://w3id.org/catenax/ontology/common#version>** | The version of the standard defining the implemented API.                                        | must correspond to the version of the standard defining the "Demand and Capacity Notification API". The value must be set to `"2.0"` for APIs implementing this standard.                            |
+| properties.**\<http://purl.org/dc/terms/type\>**                    | Defines the "Demand and Capacity Notification API" endpoint according to the Catena-X taxonomy.  | must be set to `{"@id": "https://w3id.org/catenax/taxonomy#DemandAndCapacityNotificationApi"}` to allow filtering the data assets catalog for the respective "Demand and Capacity Notification API". |
+| properties.**\<https://w3id.org/catenax/ontology/common#version\>** | The version of the standard defining the implemented API.                                        | must correspond to the version of the standard defining the "Demand and Capacity Notification API". The value must be set to `"2.0"` for APIs implementing this standard.                            |
 | dataAddress.properties. **@type**                                 | Type of the DataAddress node.                                                                    | must be set to `"DataAddress"`.                                                                                                                                                                      |
 | dataAddress.properties. ***baseUrl***                             | Defines the HTTPS endpoint of the corresponding "Demand and Capacity Notification API" endpoint. | The `{{DEMAND_AND_CAPACITY_NOTIFICATION_REQUEST_ENDPOINT}}` refers to an URL under which the API endpoint is available. HTTPS transport protocol must be used.                                       |
 | dataAddress.properties. ***proxyBody***                           | Defines whether the endpoint allows to proxy the HTTPS body.                                     | must be set to `"true"` to allow the API endpoint to receive a HTTPS body via the HTTPS request.                                                                                                     |
@@ -599,7 +599,7 @@ A whitespace or an empty cell indicates that for this specific rule that row is 
 | Number          | 6                                                                                 |                                                                                 |
 | --------------- | --------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
 | Properties      | Entry in `materialsAffected`                                                      | Validation needs to be performed per entry in `materialsAffected`.              |
-|                 | `materialNumberCustomer`,<br>`materialNumberCustomer`,<br>`materialGlobalAssetId` | At least one of the material numbers is set.                                    |
+|                 | `materialNumberCustomer`,<br />`materialNumberCustomer`,<br />`materialGlobalAssetId` | At least one of the material numbers is set.                                    |
 | Meta Properties | Any property                                                                      |                                                                                 |
 |                 | `senderBpn`                                                                       | Material referenced by the material numbers does not belong to the `senderBpn`. |
 |                 | All other properties                                                              | *Valid value*                                                                   |
@@ -609,7 +609,7 @@ A whitespace or an empty cell indicates that for this specific rule that row is 
 | Number          | 7                                                                                 |                                                                    |
 | --------------- | --------------------------------------------------------------------------------- | ------------------------------------------------------------------ |
 | Properties      | Entry in `materialsAffected`                                                      | Validation needs to be performed per entry in `materialsAffected`. |
-|                 | `materialNumberCustomer`,<br>`materialNumberCustomer`,<br>`materialGlobalAssetId` | None of the material numbers is set.                               |
+|                 | `materialNumberCustomer`,<br />`materialNumberCustomer`,<br />`materialGlobalAssetId` | None of the material numbers is set.                               |
 | Meta Properties | Any property                                                                      |                                                                    |
 |                 | All other properties                                                              | *Valid value*                                                      |
 | Actions         | Business Logic                                                                    | Ignore received values                                             |
@@ -737,12 +737,12 @@ title: Forward Notification
 ---
 flowchart TD
 
-start@{ shape: circ, label: "Valid<br>Notification<br> Received" }
-stop@{ shape: circ, label: "Notification<br>Handled" }
+start@{ shape: circ, label: "Valid<br />Notification<br /> Received" }
+stop@{ shape: circ, label: "Notification<br />Handled" }
 save@{ shape: rect, label: "Save Message for History" }
 identify@{ shape: rect, label: "Identify Affected Material, Sites, Partner and Related Notifications" }
 evaluate@{ shape: trap-t, label: "Evaluate situation" }
-decide@{ shape: diamond, label: "Is Partner Affected <br>or Does Need Information?" }
+decide@{ shape: diamond, label: "Is Partner Affected <br />or Does Need Information?" }
 contextualize@{ shape: trap-t, label: "Contextualize Disruption for Materials, Sites, Partner and Time" }
 notify@{ shape: rect, label: "Send Contextualized Notification" }
 
@@ -872,11 +872,11 @@ Table 16: *List of normative standards*
 | [CX-0128]  | Demand and Capacity Management Data Exchange                                                                                                                                                | 2.0.0       |
 | [CX-0145]  | Days of Supply Exchange                                                                                                                                                                     | 1.0.0       |
 | [ISO8601]  | ISO 8601: Date and time format                                                                                                                                                              |             |
-| [RFC2119]  | Bradner, S. Key words for use in RFCs to Indicate Requirement Levels. Available online: <https://datatracker.ietf.org/doc/html/rfc2119>                                                     |             |
-| [RFC4122]  | A Universally Unique Identifier (UUID) URN Namespace (<https://www.rfc-editor.org/rfc/rfc4122>)                                                                                             |             |
-| [RFC8174]  | Leiba, B. Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words. Available online: <https://datatracker.ietf.org/doc/html/rfc8174>                                                      |             |
-| [RFC9110]  | HTTP Semantics (<https://www.rfc-editor.org/rfc/rfc9110>)                                                                                                                                   |             |
-| [SMT]      | How to create a submodel template specification. Guideline. Download from: <https://industrialdigitaltwin.org/wp-content/uploads/2022/12/I40-IDTA-WS-Process-How-to-write-a-SMT-FINAL-.pdf> |             |
+| [RFC2119]  | Bradner, S. Key words for use in RFCs to Indicate Requirement Levels. Available online: (https://datatracker.ietf.org/doc/html/rfc2119)[https://datatracker.ietf.org/doc/html/rfc2119]                                                     |             |
+| [RFC4122]  | A Universally Unique Identifier (UUID) URN Namespace ([https://www.rfc-editor.org/rfc/rfc4122](https://www.rfc-editor.org/rfc/rfc4122))                                                                                             |             |
+| [RFC8174]  | Leiba, B. Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words. Available online: [https://datatracker.ietf.org/doc/html/rfc8174](https://datatracker.ietf.org/doc/html/rfc8174)                                                      |             |
+| [RFC9110]  | HTTP Semantics ([https://www.rfc-editor.org/rfc/rfc9110](https://www.rfc-editor.org/rfc/rfc9110))                                                                                                                                   |             |
+| [SMT]      | How to create a submodel template specification. Guideline. Download from: (https://industrialdigitaltwin.org/wp-content/uploads/2022/12/I40-IDTA-WS-Process-How-to-write-a-SMT-FINAL-.pdf)[https://industrialdigitaltwin.org/wp-content/uploads/2022/12/I40-IDTA-WS-Process-How-to-write-a-SMT-FINAL-.pdf] |             |
 
 Table 17: *List of non-normative standards*
 

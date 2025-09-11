@@ -32,7 +32,7 @@ The Digital Product Passport (DPP) is a cornerstone of the European Union’s st
 
 Designed with interoperability and scalability in mind, the DPP fosters seamless data exchange between economic actors - particularly small and medium-sized enterprises - while ensuring that regulatory measures remain proportionate and manageable. It plays a vital role in integrating circularity into product design, manufacturing, and lifecycle management. Beyond regulatory compliance, the DPP serves as a strategic tool for efficiency gains by digitizing data exchange between partners and enabling continuous improvement of sustainability standards and policy refinement.
 
-The concept of the Digital Product Passport (DPP) was first introduced through the EU Battery Regulation, which came into force in 2023. This regulation mandated DPPs for batteries used in electric vehicles, industrial applications, and portable electronics. Building on the foundational framework of the Battery Regulation, the European Union expanded the scope of DPPs through the Ecodesign for Sustainable Products Regulation (ESPR), which entered into force in July 2024 (see chapter [References](../references#normative-references) ).
+The concept of the Digital Product Passport (DPP) was first introduced through the EU Battery Regulation, which came into force in 2023. This regulation mandated DPPs for batteries used in electric vehicles, industrial applications, and portable electronics. Building on the foundational framework of the Battery Regulation, the European Union expanded the scope of DPPs through the Ecodesign for Sustainable Products Regulation (ESPR), which entered into force in July 2024 (see chapter [References](references#normative-references) ).
 
 ### AUDIENCE & SCOPE
 
