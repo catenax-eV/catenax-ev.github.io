@@ -10,14 +10,14 @@ package "Changelog Entry and References" {
   }
 
   enum BusinessPartnerType {
-    LegalEntity
-    Site
-    Address
+    LEGALE_ENTITY
+    SITE
+    ADDRESS
   }
 
   enum ChangelogType {
-    Create
-    Update
+    CREATE
+    UPDATE
   }
 
   ChangelogEntry "*" .u.> "1" BusinessPartner : BPN

@@ -34,8 +34,8 @@ package "Address and References" {
   }
 
   enum AddressStateType{
-    Active
-    Inactive
+    ACTIVE
+    INACTIVE
   }
 
   class AddressIdentifier{
@@ -54,9 +54,9 @@ package "Address and References" {
   }
 
   enum DeliveryServiceType {
-    POBox
-    PrivateBag
-    BoitePostale
+    PO_BOX
+    PRIVATE_BAG
+    BOITE_POSTALE
   }
 
   class PhysicalPostalAddress{

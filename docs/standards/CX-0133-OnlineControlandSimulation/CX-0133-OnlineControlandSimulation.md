@@ -4,7 +4,7 @@ tags:
   - UC/OSIM
 ---
 
-# CX-0133 Online Control and Simulation 2.0.0
+# CX-0133 Online Control and Simulation 2.0.1
 
 ## ABSTRACT
 
@@ -492,6 +492,7 @@ Additional terminology used in this standard can be looked up in the glossary on
 - *CX-0001 EDC Discovery API Version 1.0.2*
 - *CX-0003 SAMM Aspect Meta Model Version 1.1.0*
 - *CX-0018 Dataspace Connectivity Version 3.0.0*
+- *CX-0152 Policy Constraints for Data Exchange 1.0.0*
 
 The here mentioned combinations of standards and versions apply to all following chapters.
 
@@ -499,11 +500,15 @@ The here mentioned combinations of standards and versions apply to all following
 
 No additional data requirements
 
-#### 2.1.3 ADDITIONAL REQUIREMENTS
+#### 2.1.3 POLICY CONSTRAINTS FOR DATA EXCHANGE
+
+In alignment with our commitment to data sovereignty, a specific framework governing the utilization of data within the Catena-X use cases has been outlined.  As part of this data sovereignty framework, conventions for access policies, for usage policies and for the constraints contained in the policies have been specified in standard 'CX-0152 Policy Constraints for Data Exchange'. This standard document CX-0152 **MUST** be followed when providing services or apps for data sharing/consuming and when sharing or consuming data in the Catena-X ecosystem. What conventions are relevant for what roles named in [1.1 AUDIENCE & SCOPE](#11-audience--scope) is specified in the CX-0152 standard document as well. CX-0152 can be found in the [standard library](https://catenax-ev.github.io/docs/standards/overview).
+
+#### 2.1.4 ADDITIONAL REQUIREMENTS
 
 The data provider MUST be able to pass the BPNL of the data consumer from the dataspace connector to OSim (e.g. using the EDC extension `provision-additional-headers`).
 
-#### 2.1.4 DIGITAL TWINS AND SPECIFIC ASSET IDs
+#### 2.1.5 DIGITAL TWINS AND SPECIFIC ASSET IDs
 
 This version of the document does not define any requirements for standardized integration and governance of digital twins.
 
@@ -774,7 +779,7 @@ Each supplier MUST ensure that only their customers have access to the asset by 
 
 An example EDC Data Asset definition with a corresponding access / usage policy and contract definition are shown below. Note: Expressions in double curly braces \{\{\}\} must be substituted with a corresponding value.
 
-**Asset definition:**
+**Example Asset definition:**
 
 ```json
 {
@@ -802,36 +807,70 @@ An example EDC Data Asset definition with a corresponding access / usage policy 
 }
 ```
 
-**Access and Usage Policy definition:**
+**Example Access Policy definition**:
 
 ```json
 {
-    "@context": {
-        "odrl": "<http://www.w3.org/ns/odrl/2/>"
-    },
-    "@type": "PolicyDefinitionRequestDto",
-    "@id": "osim-request-simulation-result-01-policy",
-    "policy": {
-        "@type": "Policy",
-        "odrl:permission" : [{
-            "odrl:action" : "USE",
-            "odrl:constraint" : {
-                "@type": "LogicalConstraint",
-                "odrl:or" : [{
-                    "@type" : "Constraint",
-                    "odrl:leftOperand" : "BusinessPartnerNumber",
-                    "odrl:operator" : {
-                        "@id": "odrl:eq"
-                    },
-                    "odrl:rightOperand" : "{{POLICY_BPN}}"
-                }]
-            }
-        }]
-    }
+  "@context": [
+    "http://www.w3.org/ns/odrl.jsonld",
+    "https://w3id.org/catenax/2025/9/policy/context.jsonld",
+  ],
+  "@type": "Set",
+  "@id": "osim-request-simulation-result-01-policy",
+    "permission": [
+      {
+        "action": "access",
+        "constraint": [
+          {
+            "and": [
+              {
+                "leftOperand": "BusinessPartnerNumber",
+                "operator": "isAnyOf",
+                "rightOperand": "{{BPNLs of BPs who are allowed to access the catalog}}"
+              }
+            ]
+          }
+        ]
+      }
+    ]
 }
 ```
 
-**Contract definition**
+**Example Usage Policy definition**:
+
+```json
+{
+  "@context": [
+    "http://www.w3.org/ns/odrl.jsonld",
+    "https://w3id.org/catenax/2025/9/policy/context.jsonld",
+  ],
+  "@type": "Set",
+  "@id": "osim-request-simulation-result-02-policy",
+    "permission": [
+      {
+        "action": "use",
+        "constraint": [
+          {
+            "and": [
+                {
+                  "leftOperand": "FrameworkAgreement",
+                  "operator": "eq",
+                  "rightOperand": "DataExchangeGovernance:1.0"
+                },
+                {
+                  "leftOperand": "UsagePurpose",
+                  "operator": "isAnyOf",
+                  "rightOperand": "cx.core.industrycore:1"
+                } 
+            ]
+          }
+        ]
+      }
+    ]
+}
+```
+
+**Example Contract definition**:
 
 ```json
 {
@@ -839,10 +878,10 @@ An example EDC Data Asset definition with a corresponding access / usage policy 
     "@id": "osim-request-simulation-result-01-contract",
     "@type": "ContractDefinition",
     "accessPolicyId": "osim-request-simulation-result-01-policy",
-    "contractPolicyId": "osim-request-simulation-result-01-policy",
+    "contractPolicyId": "osim-request-simulation-result-02-policy",
     "assetsSelector" : {
         "@type" : "CriterionDto",
-        "operandLeft": "https://w3id.org/edc/v0.0.1/ns/id",
+        "operandLeft": "https://w3id.org//v0.0.1/ns/id",
         "operator": "=",
         "operandRight": "osim-request-simulation-result-01"
     }
@@ -927,7 +966,7 @@ Each supplier MUST ensure that only their customers have access to the asset by 
 
 An example EDC Data Asset definition with a corresponding access / usage policy and contract definition are shown below. Note: Expressions in double curly braces \{\{\}\} must be substituted with a corresponding value.
 
-**Asset definition:**
+**Example Asset definition:**
 
 ```json
 {
@@ -956,40 +995,70 @@ An example EDC Data Asset definition with a corresponding access / usage policy 
 }
 ```
 
-**Access and Usage Policy definition:**
+**Example Access Policy definition:**
 
 ```json
 {
-  "@context": {
-    "odrl": "<http://www.w3.org/ns/odrl/2/>"
-  },
-  "@type": "PolicyDefinitionRequestDto",
+  "@context": [
+    "http://www.w3.org/ns/odrl.jsonld",
+    "https://w3id.org/catenax/2025/9/policy/context.jsonld",
+  ],
+  "@type": "Set",
   "@id": "osim-receive-simulation-result-01-policy",
-  "policy": {
-    "@type": "Policy",
-    "odrl:permission": [
+    "permission": [
       {
-        "odrl:action": "USE",
-        "odrl:constraint": {
-          "@type": "LogicalConstraint",
-          "odrl:or": [
-            {
-              "@type": "Constraint",
-              "odrl:leftOperand": "BusinessPartnerNumber",
-              "odrl:operator": {
-                "@id": "odrl:eq"
-              },
-              "odrl:rightOperand": "{{POLICY_BPN}}"
-            }
-          ]
-        }
+        "action": "access",
+        "constraint": [
+          {
+            "and": [
+              {
+                "leftOperand": "BusinessPartnerNumber",
+                "operator": "isAnyOf",
+                "rightOperand": "{{BPNLs of BPs who are allowed to access the catalog}}"
+              }
+            ]
+          }
+        ]
       }
     ]
-  }
 }
 ```
 
-**Contract definition**
+**Example Usage Policy definition:**
+
+```json
+{
+  "@context": [
+    "http://www.w3.org/ns/odrl.jsonld",
+    "https://w3id.org/catenax/2025/9/policy/context.jsonld",
+  ],
+  "@type": "Set",
+  "@id": "osim-receive-simulation-result-02-policy",
+    "permission": [
+      {
+        "action": "use",
+        "constraint": [
+          {
+            "and": [
+                {
+                  "leftOperand": "FrameworkAgreement",
+                  "operator": "eq",
+                  "rightOperand": "DataExchangeGovernance:1.0"
+                },
+                {
+                  "leftOperand": "UsagePurpose",
+                  "operator": "isAnyOf",
+                  "rightOperand": "cx.core.industrycore:1"
+                } 
+            ]
+          }
+        ]
+      }
+    ]
+}
+```
+
+**Example Contract definition**:
 
 ```json
 {
@@ -997,10 +1066,10 @@ An example EDC Data Asset definition with a corresponding access / usage policy 
     "@id": "osim-receive-simulation-result-01-contract",
     "@type": "ContractDefinition",
     "accessPolicyId": "osim-receive-simulation-result-01-policy",
-    "contractPolicyId": "osim-receive-simulation-result-01-policy",
+    "contractPolicyId": "osim-receive-simulation-result-02-policy",
     "assetsSelector" : {
         "@type" : "CriterionDto",
-        "operandLeft": "https://w3id.org/edc/v0.0.1/ns/id",
+        "operandLeft": "https://w3id.org//v0.0.1/ns/id",
         "operator": "=",
         "operandRight": "osim-receive-simulation-result-01"
     }
@@ -1104,7 +1173,7 @@ Each supplier MUST ensure that only their customers have access to the asset by 
 
 An example EDC Data Asset definition with a corresponding access / usage policy and contract definition are shown below. Note: Expressions in double curly braces \{\{\}\} must be substituted with a corresponding value.
 
-**Asset definition:**
+**Example Asset definition:**
 
 ```json
 {
@@ -1134,47 +1203,81 @@ An example EDC Data Asset definition with a corresponding access / usage policy 
 }
 ```
 
-**Access and Usage Policy definition:**
+**Example Access Policy definition:**
 
 ```json
 {
-    "@context": {
-        "odrl": "<http://www.w3.org/ns/odrl/2/>"
-    },
-    "@type": "PolicyDefinitionRequestDto",
-    "@id": "osim-request-scenario-feedback-01-policy",
-    "policy": {
-        "@type": "Policy",
-        "odrl:permission" : [{
-            "odrl:action" : "USE",
-            "odrl:constraint" : {
-                "@type": "LogicalConstraint",
-                "odrl:or" : [{
-                    "@type" : "Constraint",
-                    "odrl:leftOperand" : "BusinessPartnerNumber",
-                    "odrl:operator" : {
-                        "@id": "odrl:eq"
-                    },
-                    "odrl:rightOperand" : "{{POLICY_BPN}}"
-                }]
-            }
-        }]
-    }
+  "@context": [
+    "http://www.w3.org/ns/odrl.jsonld",
+    "https://w3id.org/catenax/2025/9/policy/context.jsonld",
+  ],
+  "@type": "Set",
+  "@id": "osim-request-scenario-feedback-01-policy",
+    "permission": [
+      {
+        "action": "access",
+        "constraint": [
+          {
+            "and": [
+              {
+                "leftOperand": "BusinessPartnerNumber",
+                "operator": "isAnyOf",
+                "rightOperand": "{{BPNLs of BPs who are allowed to access the catalog}}"
+              }
+            ]
+          }
+        ]
+      }
+    ]
 }
 ```
 
-**Contract definition**
+**Example Usage Policy definition:**
 
+```json
+{
+  "@context": [
+    "http://www.w3.org/ns/odrl.jsonld",
+    "https://w3id.org/catenax/2025/9/policy/context.jsonld",
+  ],
+  "@type": "Set",
+  "@id": "osim-request-scenario-feedback-02-policy",
+    "permission": [
+      {
+        "action": "use",
+        "constraint": [
+          {
+            "and": [
+                {
+                  "leftOperand": "FrameworkAgreement",
+                  "operator": "eq",
+                  "rightOperand": "DataExchangeGovernance:1.0"
+                },
+                {
+                  "leftOperand": "UsagePurpose",
+                  "operator": "isAnyOf",
+                  "rightOperand": "cx.core.industrycore:1"
+                } 
+            ]
+          }
+        ]
+      }
+    ]
+}
 ```
+
+**Example Contract definition**:
+
+```json
 {
     "@context": {},
     "@id": "osim-request-scenario-feedback-01-contract",
     "@type": "ContractDefinition",
     "accessPolicyId": "osim-request-scenario-feedback-01-policy",
-    "contractPolicyId": "osim-request-scenario-feedback-01-policy",
+    "contractPolicyId": "osim-request-scenario-feedback-02-policy",
     "assetsSelector" : {
         "@type" : "CriterionDto",
-        "operandLeft": "https://w3id.org/edc/v0.0.1/ns/id",
+        "operandLeft": "https://w3id.org//v0.0.1/ns/id",
         "operator": "=",
         "operandRight": "osim-request-scenario-feedback-01"
     }
@@ -1262,7 +1365,7 @@ Each supplier MUST ensure that only their customers have access to the asset by 
 
 An example EDC Data Asset definition with a corresponding access / usage policy and contract definition are shown below. Note: Expressions in double curly braces \{\{\}\} must be substituted with a corresponding value.
 
-**Asset definition:**
+**Example Asset definition:**
 
 ```json
 {
@@ -1291,36 +1394,70 @@ An example EDC Data Asset definition with a corresponding access / usage policy 
 }
 ```
 
-**Access and Usage Policy definition:**
+**Example Access Policy definition:**
 
 ```json
 {
-    "@context": {
-        "odrl": "<http://www.w3.org/ns/odrl/2/>"
-    },
-    "@type": "PolicyDefinitionRequestDto",
-    "@id": "osim-receive-scenario-feedback-01-policy",
-    "policy": {
-        "@type": "Policy",
-        "odrl:permission" : [{
-            "odrl:action" : "USE",
-            "odrl:constraint" : {
-                "@type": "LogicalConstraint",
-                "odrl:or" : [{
-                    "@type" : "Constraint",
-                    "odrl:leftOperand" : "BusinessPartnerNumber",
-                    "odrl:operator" : {
-                        "@id": "odrl:eq"
-                    },
-                    "odrl:rightOperand" : "{{POLICY_BPN}}"
-                }]
-            }
-        }]
-    }
+  "@context": [
+    "http://www.w3.org/ns/odrl.jsonld",
+    "https://w3id.org/catenax/2025/9/policy/context.jsonld",
+  ],
+  "@type": "Set",
+  "@id": "osim-receive-scenario-feedback-01-policy",
+    "permission": [
+      {
+        "action": "access",
+        "constraint": [
+          {
+            "and": [
+              {
+                "leftOperand": "BusinessPartnerNumber",
+                "operator": "isAnyOf",
+                "rightOperand": "{{BPNLs of BPs who are allowed to access the catalog}}"
+              }
+            ]
+          }
+        ]
+      }
+    ]
 }
 ```
 
-**Contract definition:**
+**Example Usage Policy definition:**
+
+```json
+{
+  "@context": [
+    "http://www.w3.org/ns/odrl.jsonld",
+    "https://w3id.org/catenax/2025/9/policy/context.jsonld",
+  ],
+  "@type": "Set",
+  "@id": "osim-receive-scenario-feedback-02-policy",
+    "permission": [
+      {
+        "action": "use",
+        "constraint": [
+          {
+            "and": [
+                {
+                  "leftOperand": "FrameworkAgreement",
+                  "operator": "eq",
+                  "rightOperand": "DataExchangeGovernance:1.0"
+                },
+                {
+                  "leftOperand": "UsagePurpose",
+                  "operator": "isAnyOf",
+                  "rightOperand": "cx.core.industrycore:1"
+                } 
+            ]
+          }
+        ]
+      }
+    ]
+}
+```
+
+**Example Contract definition**:
 
 ```json
 {
@@ -1328,10 +1465,10 @@ An example EDC Data Asset definition with a corresponding access / usage policy 
     "@id": "osim-receive-scenario-feedback-01-contract",
     "@type": "ContractDefinition",
     "accessPolicyId": "osim-receive-scenario-feedback-01-policy",
-    "contractPolicyId": "osim-receive-scenario-feedback-01-policy",
+    "contractPolicyId": "osim-receive-scenario-feedback-02-policy",
     "assetsSelector" : {
         "@type" : "CriterionDto",
-        "operandLeft": "https://w3id.org/edc/v0.0.1/ns/id",
+        "operandLeft": "https://w3id.org//v0.0.1/ns/id",
         "operator": "=",
         "operandRight": "osim-receive-scenario-feedback-01"
     }
@@ -1436,7 +1573,7 @@ Each supplier MUST ensure that only their customers have access to the asset by 
 
 An example EDC Data Asset definition with a corresponding access / usage policy and contract definition are shown below. Note: Expressions in double curly braces \{\{\}\} must be substituted with a corresponding value.
 
-**Asset definition:**
+**Example Asset definition:**
 
 ```json
 {
@@ -1465,36 +1602,70 @@ An example EDC Data Asset definition with a corresponding access / usage policy 
 }
 ```
 
-**Access and Usage Policy definition:**
+**Example Access Policy definition:**
 
 ```json
 {
-    "@context": {
-        "odrl": "<http://www.w3.org/ns/odrl/2/>"
-    },
-    "@type": "PolicyDefinitionRequestDto",
-    "@id": "osim-push-scenario-state-01-policy",
-    "policy": {
-        "@type": "Policy",
-        "odrl:permission" : [{
-            "odrl:action" : "USE",
-            "odrl:constraint" : {
-                "@type": "LogicalConstraint",
-                "odrl:or" : [{
-                    "@type" : "Constraint",
-                    "odrl:leftOperand" : "BusinessPartnerNumber",
-                    "odrl:operator" : {
-                        "@id": "odrl:eq"
-                    },
-                    "odrl:rightOperand" : "{{POLICY_BPN}}"
-                }]
-            }
-        }]
-    }
+  "@context": [
+    "http://www.w3.org/ns/odrl.jsonld",
+    "https://w3id.org/catenax/2025/9/policy/context.jsonld",
+  ],
+  "@type": "Set",
+  "@id": "osim-push-scenario-state-01-policy",
+    "permission": [
+      {
+        "action": "access",
+        "constraint": [
+          {
+            "and": [
+              {
+                "leftOperand": "BusinessPartnerNumber",
+                "operator": "isAnyOf",
+                "rightOperand": "{{BPNLs of BPs who are allowed to access the catalog}}"
+              }
+            ]
+          }
+        ]
+      }
+    ]
 }
 ```
 
-**Contract definition:**
+**Example Usage Policy definition:**
+
+```json
+{
+  "@context": [
+    "http://www.w3.org/ns/odrl.jsonld",
+    "https://w3id.org/catenax/2025/9/policy/context.jsonld",
+  ],
+  "@type": "Set",
+  "@id": "osim-push-scenario-state-02-policy",
+    "permission": [
+      {
+        "action": "use",
+        "constraint": [
+          {
+            "and": [
+                {
+                  "leftOperand": "FrameworkAgreement",
+                  "operator": "eq",
+                  "rightOperand": "DataExchangeGovernance:1.0"
+                },
+                {
+                  "leftOperand": "UsagePurpose",
+                  "operator": "isAnyOf",
+                  "rightOperand": "cx.core.industrycore:1"
+                } 
+            ]
+          }
+        ]
+      }
+    ]
+}
+```
+
+**Example Contract definition**:
 
 ```json
 {
@@ -1502,10 +1673,10 @@ An example EDC Data Asset definition with a corresponding access / usage policy 
     "@id": "osim-push-scenario-state-01-contract",
     "@type": "ContractDefinition",
     "accessPolicyId": "osim-push-scenario-state-01-policy",
-    "contractPolicyId": "osim-push-scenario-state-01-policy",
+    "contractPolicyId": "osim-push-scenario-state-02-policy",
     "assetsSelector" : {
         "@type" : "CriterionDto",
-        "operandLeft": "https://w3id.org/edc/v0.0.1/ns/id",
+        "operandLeft": "https://w3id.org//v0.0.1/ns/id",
         "operator": "=",
         "operandRight": "osim-push-scenario-state-01"
     }
@@ -1601,6 +1772,7 @@ see chapter [1.4.1 Process Examples](#141-process-examples)
 - CX-0001 EDC Discovery API Version 1.0.2
 - CX-0003 SAMM Aspect Meta Model Version 1.1.0
 - CX-0018 Dataspace Connectivity Version 3.0.0
+- CX-0152 Policy Constraints for Data Exchange 1.0.0
 
 ### 6.2 NON-NORMATIVE REFERENCES
 

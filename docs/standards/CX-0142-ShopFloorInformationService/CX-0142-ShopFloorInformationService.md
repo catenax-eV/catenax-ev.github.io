@@ -4,7 +4,7 @@ tags:
   - UC/Modular Production
 ---
 
-# CX-0142 Shop Floor Information Service v1.0.0
+# CX-0142 Shop Floor Information Service v1.0.1
 
 ## ABSTRACT
 
@@ -782,51 +782,15 @@ same.
 - *CX-0001 EDC Discovery API* Version 1.0.2
 - *CX-0003 SAMM Aspect Meta Model Version 1.1.0 or 1.0.2*
 - *CX-0018  **Dataspace Connectivity** Version 3.0.0*
+- *CX-0152 Policy Constraints for Data Exchange 1.0.0*
 
 #### 2.1.2 DATA REQUIRED
 
 No additional data requirements.
 
-#### 2.1.3 ADDITIONAL REQUIREMENTS
+#### 2.1.3 POLICY CONSTRAINTS FOR DATA EXCHANGE
 
-**Conventions for Use Case Policy in context data exchange**:
-
-In alignment with our commitment to data sovereignty, a specific framework governing the utilization of data within the
-Catena-X use cases has been outlined. A set of specific policies on data offering and data usage level detail the
-conditions under which data may be accessed, shared, and used, ensuring compliance with legal standards.
-
-For a comprehensive understanding of the rights, restrictions, and obligations associated with data usage in the
-Catena-X ecosystem, we refer users to
-
-- the
-  detailed [ODRL policy repository](https://github.com/catenax-eV/cx-odrl-profile).
-  This document provides in-depth explanations of the terms and conditions applied to data access and utilization,
-  ensuring that all engagement with our data is conducted responsibly and in accordance with established guidelines.
-- the ODRL schema template. This defines how policies used for data sharing/usage should get defined. Those schemas MUST
-  be followed when providing services or apps for data sharing/consuming.
-
-**Additional Details regarding Access Policies**:
-
-A Data Provider may tie certain access authorizations ("Access Policies") to its data offers for members of Catena-X and
-one or several Data Consumers. By limiting access to certain participants, the Data Provider maintains control over its
-anti-trust obligations when sharing certain data. In particular, the Data Provider may apply Access Policies to restrict
-access to a particular data offer for only one participant identified by a specific business partner number.
-
-**Additional Details regarding Usage Policies**:
-
-In the context of data usage policies (“Usage Policies”), Participants and related services MUST use the following
-policy rules:
-
-- Use Case Framework (“FrameworkAgreement”)
-- at least one use case purpose (“UsagePurpose”) from the above
-  mentioned [ODRL policy repository](https://github.com/catenax-eV/cx-odrl-profile).
-
-Additionally, respective usage policies MAY include the following policy rule:
-
-- Reference Contract (“ContractReference”).
-
-Details on namespaces and ODLR policy rule values to be used for the above-mentioned types are provided via
-the [ODRL policy repository](https://github.com/catenax-eV/cx-odrl-profile).
+In alignment with our commitment to data sovereignty, a specific framework governing the utilization of data within the Catena-X use cases has been outlined.  As part of this data sovereignty framework, conventions for access policies, for usage policies and for the constraints contained in the policies have been specified in standard 'CX-0152 Policy Constraints for Data Exchange'. This standard document CX-0152 **MUST** be followed when providing services or apps for data sharing/consuming and when sharing or consuming data in the Catena-X ecosystem. What conventions are relevant for what roles named in [1.1 AUDIENCE & SCOPE](#11-audience--scope) is specified in the CX-0152 standard document as well. CX-0152 can be found in the [standard library](https://catenax-ev.github.io/docs/standards/overview).
 
 #### 2.1.4 DIGITAL TWINS AND SPECIFIC ASSET IDs
 
@@ -1427,7 +1391,7 @@ respective contract definitions.
 An example Tractus-X Data Asset definition with corresponding access / usage policies and a contract definition is shown
 below. Note: Expressions in double curly braces \{\{\}\} must be substituted with a corresponding value.
 
-**Asset definition**:
+**Example Asset definition**:
 
 ```json
 {
@@ -1454,42 +1418,70 @@ below. Note: Expressions in double curly braces \{\{\}\} must be substituted wit
 }
 ```
 
-**Access and Usage Policy definition**:
+**Example Access Policy definition**:
 
 ```json
 {
-  "@context": {
-    "@vocab": "[https://w3id.org//v0.0.1/ns/](https://w3id.org/edc/v0.0.1/ns/)"
-  },
+  "@context": [
+    "http://www.w3.org/ns/odrl.jsonld",
+    "https://w3id.org/catenax/2025/9/policy/context.jsonld",
+  ],
+  "@type": "Set",
   "@id": "sis-request-production-forecast-01-policy",
-  "policy": {
-    "@context": [
-      "<https://www.w3.org/ns/odrl.jsonld>",
-      {
-        "cx-policy": "<https://w3id.org/catenax/policy/v1.0.0/>"
-      }
-    ],
-    "@type": "Policy",
-    "profile": "cx-policy:profile2405",
     "permission": [
       {
-        "action": "use",
-        "constraint": {
-          "or": [
-            {
-              "leftOperand": "BusinessPartnerNumber",
-              "operator": "eq",
-              "rightOperand": "{{POLICY_BPN}}"
-            }
-          ]
-        }
+        "action": "access",
+        "constraint": [
+          {
+            "and": [
+              {
+                "leftOperand": "BusinessPartnerNumber",
+                "operator": "isAnyOf",
+                "rightOperand": "{{BPNLs of BPs who are allowed to access the catalog}}"
+              }
+            ]
+          }
+        ]
       }
     ]
-  }
 }
 ```
 
-**Contract definition**:
+**Example Usage Policy definition**:
+
+```json
+{
+  "@context": [
+    "http://www.w3.org/ns/odrl.jsonld",
+    "https://w3id.org/catenax/2025/9/policy/context.jsonld",
+  ],
+  "@type": "Set",
+  "@id": "sis-request-production-forecast-02-policy",
+    "permission": [
+      {
+        "action": "use",
+        "constraint": [
+          {
+            "and": [
+                {
+                  "leftOperand": "FrameworkAgreement",
+                  "operator": "eq",
+                  "rightOperand": "DataExchangeGovernance:1.0"
+                },
+                {
+                  "leftOperand": "UsagePurpose",
+                  "operator": "isAnyOf",
+                  "rightOperand": "cx.core.industrycore:1"
+                } 
+            ]
+          }
+        ]
+      }
+    ]
+}
+```
+
+**Example Contract definition**:
 
 ```json
 {
@@ -1497,7 +1489,7 @@ below. Note: Expressions in double curly braces \{\{\}\} must be substituted wit
     "@id": "sis-request-production-forecast-01-contract",
     "@type": "ContractDefinition",
     "accessPolicyId": "sis-request-production-forecast-01-policy",
-    "contractPolicyId": "sis-request-production-forecast-01-policy",
+    "contractPolicyId": "sis-request-production-forecast-02-policy",
     "assetsSelector" : {
         "@type" : "CriterionDto",
         "operandLeft": "https://w3id.org//v0.0.1/ns/id",
@@ -1642,7 +1634,7 @@ via a data connection compliant to \[CX-0018\] communication. Therefore, the end
 An example Data Asset definition with a corresponding access / usage policy and contract definition are shown below.
 Note: Expressions in double curly braces \{\{\}\} must be substituted with a corresponding value.
 
-**Asset definition**:
+**Example Asset definition**:
 
 ```json
 {
@@ -1669,43 +1661,70 @@ Note: Expressions in double curly braces \{\{\}\} must be substituted with a cor
 }
 ```
 
-**Access and Usage Policy definition**:
+**Example Access Policy definition**:
 
 ```json
-
 {
-  "@context": {
-    "@vocab": "<https://w3id.org/edc/v0.0.1/ns/>"
-  },
+  "@context": [
+    "http://www.w3.org/ns/odrl.jsonld",
+    "https://w3id.org/catenax/2025/9/policy/context.jsonld",
+  ],
+  "@type": "Set",
   "@id": "sis-provide-production-forecast-01-policy",
-  "policy": {
-    "@context": [
-      "<https://www.w3.org/ns/odrl.jsonld>",
-      {
-        "cx-policy": "<https://w3id.org/catenax/policy/v1.0.0/>"
-      }
-    ],
-    "@type": "Policy",
-    "profile": "cx-policy:profile2405",
     "permission": [
       {
-        "action": "use",
-        "constraint": {
-          "or": [
-            {
-              "leftOperand": "BusinessPartnerNumber",
-              "operator": "eq",
-              "rightOperand": "{{POLICY_BPN}}"
-            }
-          ]
-        }
+        "action": "access",
+        "constraint": [
+          {
+            "and": [
+              {
+                "leftOperand": "BusinessPartnerNumber",
+                "operator": "isAnyOf",
+                "rightOperand": "{{BPNLs of BPs who are allowed to access the catalog}}"
+              }
+            ]
+          }
+        ]
       }
     ]
-  }
 }
 ```
 
-**Contract definition**:
+**Example Usage Policy definition**:
+
+```json
+{
+  "@context": [
+    "http://www.w3.org/ns/odrl.jsonld",
+    "https://w3id.org/catenax/2025/9/policy/context.jsonld",
+  ],
+  "@type": "Set",
+  "@id": "sis-provide-production-forecast-02-policy",
+    "permission": [
+      {
+        "action": "use",
+        "constraint": [
+          {
+            "and": [
+                {
+                  "leftOperand": "FrameworkAgreement",
+                  "operator": "eq",
+                  "rightOperand": "DataExchangeGovernance:1.0"
+                },
+                {
+                  "leftOperand": "UsagePurpose",
+                  "operator": "isAnyOf",
+                  "rightOperand": "cx.core.industrycore:1"
+                } 
+            ]
+          }
+        ]
+      }
+    ]
+}
+```
+
+**Example Contract definition**:
 
 ```json
 {
@@ -1713,7 +1732,7 @@ Note: Expressions in double curly braces \{\{\}\} must be substituted with a cor
     "@id": "sis-provide-production-forecast-01-contract",
     "@type": "ContractDefinition",
     "accessPolicyId": "sis-provide-production-forecast-01-policy",
-    "contractPolicyId": "sis-provide-production-forecast-01-policy",
+    "contractPolicyId": "sis-provide-production-forecast-02-policy",
     "assetsSelector" : {
         "@type" : "CriterionDto",
         "operandLeft": "https://w3id.org/edc/v0.0.1/ns/id",
@@ -1766,7 +1785,7 @@ an Data Asset.
 An example Data Asset definition with a corresponding access / usage policy and contract definition are shown below.
 Note: Expressions in double curly braces \{\{\}\} must be substituted with a corresponding value.
 
-**Asset definition**:
+**Example Asset definition**:
 
 ```json
 {
@@ -1793,42 +1812,70 @@ Note: Expressions in double curly braces \{\{\}\} must be substituted with a cor
 }
 ```
 
-**Access and Usage Policy definition**:
+**Example Access Policy definition**:
 
 ```json
 {
-  "@context": {
-    "@vocab": "<https://w3id.org/edc/v0.0.1/ns/>"
-  },
+  "@context": [
+    "http://www.w3.org/ns/odrl.jsonld",
+    "https://w3id.org/catenax/2025/9/policy/context.jsonld",
+  ],
+  "@type": "Set",
   "@id": "sis-unsubscribe-production-forecast-01-policy",
-  "policy": {
-    "@context": [
-      "<https://www.w3.org/ns/odrl.jsonld>",
-      {
-        "cx-policy": "<https://w3id.org/catenax/policy/v1.0.0/>"
-      }
-    ],
-    "@type": "Policy",
-    "profile": "cx-policy:profile2405",
     "permission": [
       {
-        "action": "use",
-        "constraint": {
-          "or": [
-            {
-              "leftOperand": "BusinessPartnerNumber",
-              "operator": "eq",
-              "rightOperand": "{{POLICY_BPN}}"
-            }
-          ]
-        }
+        "action": "access",
+        "constraint": [
+          {
+            "and": [
+              {
+                "leftOperand": "BusinessPartnerNumber",
+                "operator": "isAnyOf",
+                "rightOperand": "{{BPNLs of BPs who are allowed to access the catalog}}"
+              }
+            ]
+          }
+        ]
       }
     ]
-  }
 }
 ```
 
-**Contract definition**:
+**Example Usage Policy definition**:
+
+```json
+{
+  "@context": [
+    "http://www.w3.org/ns/odrl.jsonld",
+    "https://w3id.org/catenax/2025/9/policy/context.jsonld",
+  ],
+  "@type": "Set",
+  "@id": "sis-unsubscribe-production-forecast-02-policy",
+    "permission": [
+      {
+        "action": "use",
+        "constraint": [
+          {
+            "and": [
+                {
+                  "leftOperand": "FrameworkAgreement",
+                  "operator": "eq",
+                  "rightOperand": "DataExchangeGovernance:1.0"
+                },
+                {
+                  "leftOperand": "UsagePurpose",
+                  "operator": "isAnyOf",
+                  "rightOperand": "cx.core.industrycore:1"
+                } 
+            ]
+          }
+        ]
+      }
+    ]
+}
+```
+
+**Example Contract definition**:
 
 ```json
 {
@@ -1836,7 +1883,7 @@ Note: Expressions in double curly braces \{\{\}\} must be substituted with a cor
     "@id": "sis-unsubscribe-production-forecast-01-contract",
     "@type": "ContractDefinition",
     "accessPolicyId": "sis-unsubscribe-production-forecast-01-policy",
-    "contractPolicyId": "sis-unsubscribe-production-forecast-01-policy",
+    "contractPolicyId": "sis-unsubscribe-production-forecast-02-policy",
     "assetsSelector" : {
         "@type" : "CriterionDto",
         "operandLeft": "https://w3id.org/edc/v0.0.1/ns/id",
@@ -1985,7 +2032,7 @@ via a connector as defined in \[CX-0018\]. Therefore, the endpoint MUST be offer
 An example Data Asset definition with a corresponding access / usage policy and contract definition are shown below.
 Note: Expressions in double curly braces \{\{\}\} must be substituted with a corresponding value.
 
-**Asset definition**:
+**Example Asset definition**:
 
 ```json
 {
@@ -2013,38 +2060,66 @@ Note: Expressions in double curly braces \{\{\}\} must be substituted with a cor
 }
 ```
 
-**Access and Usage Policy definition**:
+**Example Access Policy definition**:
 
 ```json
 {
-  "@context": {
-    "@vocab": "<https://w3id.org/edc/v0.0.1/ns/>"
-  },
+  "@context": [
+    "http://www.w3.org/ns/odrl.jsonld",
+    "https://w3id.org/catenax/2025/9/policy/context.jsonld",
+  ],
+  "@type": "Set",
   "@id": "sis-get-production-tracking-01-policy",
-  "policy": {
-    "@context": [
-      "<https://www.w3.org/ns/odrl.jsonld>",
+    "permission": [
       {
-        "cx-policy": "<https://w3id.org/catenax/policy/v1.0.0/>"
+        "action": "access",
+        "constraint": [
+          {
+            "and": [
+              {
+                "leftOperand": "BusinessPartnerNumber",
+                "operator": "isAnyOf",
+                "rightOperand": "{{BPNLs of BPs who are allowed to access the catalog}}"
+              }
+            ]
+          }
+        ]
       }
-    ],
-    "@type": "Policy",
-    "profile": "cx-policy:profile2405",
+    ]
+}
+```
+
+**Example Usage Policy definition**:
+
+```json
+{
+  "@context": [
+    "http://www.w3.org/ns/odrl.jsonld",
+    "https://w3id.org/catenax/2025/9/policy/context.jsonld",
+  ],
+  "@type": "Set",
+  "@id": "sis-get-production-tracking-02-policy",
     "permission": [
       {
         "action": "use",
-        "constraint": {
-          "or": [
-            {
-              "leftOperand": "BusinessPartnerNumber",
-              "operator": "eq",
-              "rightOperand": "{{POLICY_BPN}}"
-            }
-          ]
-        }
+        "constraint": [
+          {
+            "and": [
+                {
+                  "leftOperand": "FrameworkAgreement",
+                  "operator": "eq",
+                  "rightOperand": "DataExchangeGovernance:1.0"
+                },
+                {
+                  "leftOperand": "UsagePurpose",
+                  "operator": "isAnyOf",
+                  "rightOperand": "cx.core.industrycore:1"
+                } 
+            ]
+          }
+        ]
       }
     ]
-  }
 }
 ```
 
@@ -2056,7 +2131,7 @@ Note: Expressions in double curly braces \{\{\}\} must be substituted with a cor
     "@id": "sis-get-production-tracking-01-contract",
     "@type": "ContractDefinition",
     "accessPolicyId": "sis-get-production-tracking-01-policy",
-    "contractPolicyId": "sis-get-production-tracking-01-policy",
+    "contractPolicyId": "sis-get-production-tracking-02-policy",
     "assetsSelector" : {
         "@type" : "CriterionDto",
         "operandLeft": "https://w3id.org/edc/v0.0.1/ns/id",
@@ -2196,7 +2271,7 @@ via a connector compliant with \[CX-0018\] communication. Therefore, the endpoin
 An example Data Asset definition with a corresponding access / usage policy and contract definition are shown below.
 Note: Expressions in double curly braces \{\{\}\} must be substituted with a corresponding value.
 
-**Asset definition**:
+**Example Asset definition**:
 
 ```json
 {
@@ -2223,42 +2298,70 @@ Note: Expressions in double curly braces \{\{\}\} must be substituted with a cor
 }
 ```
 
-**Access and Usage Policy definition**:
+**Example Access Policy definition**:
 
 ```json
 {
-  "@context": {
-    "@vocab": "<https://w3id.org/edc/v0.0.1/ns/>"
-  },
+  "@context": [
+    "http://www.w3.org/ns/odrl.jsonld",
+    "https://w3id.org/catenax/2025/9/policy/context.jsonld",
+  ],
+  "@type": "Set",
   "@id": "sis-provide-production-tracking-01-policy",
-  "policy": {
-    "@context": [
-      "<https://www.w3.org/ns/odrl.jsonld>",
-      {
-        "cx-policy": "<https://w3id.org/catenax/policy/v1.0.0/>"
-      }
-    ],
-    "@type": "Policy",
-    "profile": "cx-policy:profile2405",
     "permission": [
       {
-        "action": "use",
-        "constraint": {
-          "or": [
-            {
-              "leftOperand": "BusinessPartnerNumber",
-              "operator": "eq",
-              "rightOperand": "{{POLICY_BPN}}"
-            }
-          ]
-        }
+        "action": "access",
+        "constraint": [
+          {
+            "and": [
+              {
+                "leftOperand": "BusinessPartnerNumber",
+                "operator": "isAnyOf",
+                "rightOperand": "{{BPNLs of BPs who are allowed to access the catalog}}"
+              }
+            ]
+          }
+        ]
       }
     ]
-  }
 }
 ```
 
-**Contract definition**:
+**Example Usage Policy definition**:
+
+```json
+{
+  "@context": [
+    "http://www.w3.org/ns/odrl.jsonld",
+    "https://w3id.org/catenax/2025/9/policy/context.jsonld",
+  ],
+  "@type": "Set",
+  "@id": "sis-provide-production-tracking-02-policy",
+    "permission": [
+      {
+        "action": "use",
+        "constraint": [
+          {
+            "and": [
+                {
+                  "leftOperand": "FrameworkAgreement",
+                  "operator": "eq",
+                  "rightOperand": "DataExchangeGovernance:1.0"
+                },
+                {
+                  "leftOperand": "UsagePurpose",
+                  "operator": "isAnyOf",
+                  "rightOperand": "cx.core.industrycore:1"
+                } 
+            ]
+          }
+        ]
+      }
+    ]
+}
+```
+
+**Example Contract definition**:
 
 ```json
 {
@@ -2266,7 +2369,7 @@ Note: Expressions in double curly braces \{\{\}\} must be substituted with a cor
     "@id": "sis-provide-production-tracking-01-contract",
     "@type": "ContractDefinition",
     "accessPolicyId": "sis-provide-production-tracking-01-policy",
-    "contractPolicyId": "sis-provide-production-tracking-01-policy",
+    "contractPolicyId": "sis-provide-production-tracking-02-policy",
     "assetsSelector" : {
         "@type" : "CriterionDto",
         "operandLeft": "https://w3id.org/edc/v0.0.1/ns/id",
@@ -2364,6 +2467,7 @@ process** (i.e., data provider and/or data consumer) MUST fulfilll following req
 - CX-0003 SAMM Aspect Meta Model Version 1.1.0 or 1.0.2
 - CX-0010 Business Partner Number Version 2.0.0
 - CX-0018 Dataspace Connectivity Version 3.0.0
+- CX-0152 Policy Constraints For Data Exchange 1.0.0
 
 ### 6.2 NON-NORMATIVE REFERENCES
 

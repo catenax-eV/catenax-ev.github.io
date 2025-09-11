@@ -4,16 +4,16 @@ tags:
   - UC/Traceability
 ---
 
-# CX-0125 Traceability Use Case v2.1.0
+# CX-0125 Traceability Use Case v2.2.1
 
 ## ABSTRACT
 
 This standard is used to define the basic rules to participate in the Traceability Use Case.
 
 The use case is based on the industry core and uses the digital twins and aspect models of the industry core. Furthermore it includes
-use case-specific aspect models (e.g. TractionBatteryCode) that go beyond the industry core and are used to make various entities in the network, such as parts, traceable.
+use case-specific aspect models (e.g. TractionBatteryCode) and a digital twin (qualityTask) that go beyond the industry core and are used to make various entities in the network, such as parts, traceable.
 
-In addition, this document contains necessary standards for applications to send standardized notifications to exchange Quality Investigations, Quality Alerts and Block Informations in Catena-X. Quality Investigations refer to sending standardised notifications to suppliers (top-down) while Quality Alerts and Block Informations refer to sending notifications to customers (bottom-up). Those notifications will **enable the industry to exchange upon quality issues** and based on that to **actively initiate immediate measures** in a more standardised, integrated, accelerated and precise manner. This document describes the minimal requirements of the notification processes a traceability application or application stack needs to fulfill for being interoperable within the Catena-X platform as well as the specific API endpoints and their integration into IDSA conform data assets.
+In addition, this document contains necessary standards for applications to send standardized notifications to exchange Quality Investigations, Quality Alerts and Block Information in Catena-X. Quality Investigations refer to sending standardized notifications to suppliers (top-down) while Quality Alerts and Block Information refer to sending notifications to customers (bottom-up). Those notifications will **enable the industry to exchange upon quality issues** and based on that to **actively initiate immediate measures** in a more standardised, integrated, accelerated and precise manner. This document describes the minimal requirements of the notification processes a traceability application or application stack needs to fulfill for being interoperable within the Catena-X platform as well as the specific API endpoints and their integration into IDSA conform data assets.
 
 ## FOR WHOM IS THE STANDARD DESIGNED
 
@@ -24,16 +24,7 @@ The following features are provided:
 - Traceability of products (e.g. vehicles), parts and material (physical assets)
 - Notification of quality issues within the value chain
 - Notification of block information to actively initiate an immediate measure within the value chain
-
-## COMPARISON WITH THE PREVIOUS VERSION OF THE STANDARD
-
-- Enhanced existing content of [Section ABSTRACT](#abstract), [Section FOR WHOM IS THE STANDARD DESIGNED](#for-whom-is-the-standard-designed), [Section 1.1](#11-audience--scope), [Section 1.2](#12-context-and-architecture-fit) with new information regarding block informations in context with the existing Quality Investigations and Quality Alerts.
-- Renamed [Section 2.1](#21-data-exchange-for-quality-and-block-notifications) title from *Quality Notifications and Data Exchange* to *Data Exchange for Quality and Block Notifications* and adapted existing content with additional information.
-- Adapted existing content of [Section 2.1.3](#213-additional-requirements) with bug fixes and additional information for the new Block Notification function.
-- Added new [Section 4.2.](#42-block-notification-api) to describe the new Block Notification API.
-- Added new [Section 5.2.](#52-block-notification-process) to describe the new Block Notification process.
-
-> Note: This release (**25.03**) contains **minor changes**!
+- The possibility of a holistic analysis of a quality issue due to gather all provided data by means of DT (digital twin) qualityTask to prevent similar incidents.
 
 ## 1 INTRODUCTION
 
@@ -97,7 +88,7 @@ Examples of data assets and contract offer structure in the Tractus-X EDC or any
 
 The versions of the standardization documents valid for this standard are mentioned in sections where the [standalone standards](#211-list-of-standalone-standards), [normative references](#61-normative-references) and [non-normative references](#62-non-normative-references) are listed. The valid versions are not specifically mentioned in the body text.
 
-\**Disclaimer: The operating model released by the Catena-X association will define the roadmap, content and scope for the certification process. This will include the roles, certification and further assessment procedures as well as the rollout phases.*
+*Disclaimer: The operating model released by the Catena-X association will define the roadmap, content and scope for the certification process. This will include the roles, certification and further assessment procedures as well as the rollout phases.*
 
 ### 1.4 EXAMPLES
 
@@ -132,6 +123,9 @@ A bill of material resembles the structure of a product. It is a list of all raw
 
 **Business Partner Number (BPN):**
 A BPN is the unique identifier of a partner within Catena-X.
+
+**Digital Twin (DT):**
+A digital representation of an asset. Please see for detailed explanation CX-002 Digital Twins in Catena-X and CX-0151 Industry Core: Basics
 
 **Tractus-X Eclipse Dataspace Connector (Tractus-X EDC)**:
 The Tractus-X EDC is a reference implementation for a connector conformant to CX-0018 currently acting as a de-facto standard and/or reference Implementation within Catena-X. When mentioning the Tractus-X EDC in this standard, any other CX-0018 conformant connector is also a valid option.
@@ -212,34 +206,41 @@ The described [Block Notification Process](#52-block-notification-process) and e
 
 The described [Block Notification API](#42-block-notification-api) **MAY** be provisioned in order to receive and update Block Informations. The required data offers for Block Informations **MUST** be created and linked to the described endpoints of the Block Notification API in case Block Notifications will be provided.
 
-#### Conventions for Use Case Policy in context data exchange
+### 2.2 SPECIAL DIGITAL TWINS FOR TRACEABILITY AND SPECIFIC ASSET IDS
 
-In alignment with our commitment to data sovereignty, a specific framework governing the utilization of data within the Catena-X use cases has been outlined. A set of specific policies on data offering and data usage level detail the conditions under which data may be accessed, shared, and used, ensuring compliance with legal standards.
+The described concept of DT qualityTask **MUST** be supported.
+Basics about digital twins, which you should be familiar with to understand this section, are described in the Standard of Digital Twins (CX - 0002 Digital Twins in Catena-X).
 
-For a comprehensive understanding of the rights, restrictions, and obligations associated with data usage in the Catena-X ecosystem, we refer users to
+#### Digital Twin “qualityTask”
 
-- the detailed [ODRL policy repository](https://github.com/catenax-eV/cx-odrl-profile). This document provides in-depth explanations of the terms and conditions applied to data access and utilization, ensuring that all engagement with our data is conducted responsibly and in accordance with established guidelines.
-- the ODRL schema template. This defines how policies used for data sharing/usage should get defined. Those schemas **MUST** be followed when providing services or apps for data sharing/consuming.
+The Digital Twin (DT) qualityTask represents the quality issue or quality claim itself as a case or kind of a file. It is NOT a virtual representation of a physical asset (IDTA conformaty of DT; asset kind: not applicable). It provides the overarching bracket in case of abnormalities or a concrete quality claim which needs to be clarified (or wants to be studied), especially if affected parts are not identified and the root cause is unknown. All data which is available/provided and received/consumed refers to this DT. By using unique ID push (please see CX-0151 Industry Core, chapter 4.1.2 API SPECIFICATION) involved partners in the supply chain can be informed about an existing DT qualityTask and have the ability to pull provided data refering to the quality claim. As soon as parts are identified as nok-parts (and therefore part of the root cause) their DTs (part instances or batches) shall be linked to the DT qualityTask.
 
-##### Additional Details regarding Access Policies
+After detecting the root cause and solving the problem all data can be analysed holistically, insights may be used for preventive measures.
 
-A Data Provider may tie certain access authorizations ("Access Policies") to its data offers for members of Catena-X and one or several Data Consumers. By limiting access to certain Participants, Data Provider maintains control over its anti-trust obligations when sharing certain data. In particular, Data Provider may apply Access Policies to restrict access to a particular data offer for only one Participant identified by a specific business partner number:
+Here an example of using a DT qualityTask from a **Tier1 perspective**:
 
-- Membership
-- BPNL
+![DT QualityTask Catena-X Traceability Standard](./assets/dt-quality-task-cx-traceability-standard.png)
 
-##### Additional Details regarding Usage Policies
+The following conventions for **specific asset IDs** apply to DT qualityTask:
 
-In the context of data usage policies (“Usage Policies”), Participants and related services **MUST** use the following policy rules:
+|  Key                            |  Availability  |  Description                                                                                                                                                     |  Type    |
+|---------------------------------|----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
+|  manufacturerId                 |  Mandatory     |  The Business Partner Number (BPNL) of the manufacturer of the part.                                                                                             |  BPNL    |
+|  customerId                     |  Mandatory     |  The Business Partner Number (BPNA) of the customer                                                                                                              |  BPNA  |
+|  digitalTwinType                |  Mandatory     |  qualityTask<br>   |  String                                                                                                                                      |
+|  qualityTaskID                  |  Mandatory     |  A fully anonymous and unique Catena-X ID to reference an existing early warning project or a quality issue (which wants to be analysed) and its data (example)  |  String  |
+|  ManufacturerQualityTaskNumber  |  Optional      |  Internal tool or process specific case number, case file of DT qualityTask owner                                                                                |  String  |
+|  CustomerProblemID      |  Optional      |  Internal tool or process specific case number, case file of customer                                                                  |  String  |
+|  SupplierQualityTaskNumber      |  Optional      |  Internal tool or process specific case number, case file of supplier                                                                                            |  String  |
+|  globalAssetID                  |  Mandatory     |  The globalAssetId MUST be equal to the unique id used in Catena-X  (UUIDv4)                                                                                             |  String  |
 
-- Use Case Framework (“FrameworkAgreement”)
-- at least one use case purpose (“UsagePurpose”) from the above mentioned [ODRL policy repository](https://github.com/catenax-eV/cx-odrl-profile).
+The DT qualityTask is created and registrated in the dDTR (decentral Digital Twin Registry) due to a trigger of abnormaties or a quality issue by the OEM. The DT qualityTask can be created at the OEM, Tier1 and/or Tier2 as well for the same claim. By using different CX-ID the DTs are unique although the same qualityTaskID is used. The specific asset IDs needs to be selected according of the DT owner role.
 
-Additionally, respective usage policies **MAY** include the following policy rule:
+**Note: The DT qualityTask MUST NOT be registrated at the central CX discovery service. Otherwise the supply chain can be visible for the whole involved partners which violates the one-up/one-down principle. In case of handling the DT qualityTask as a "shared twin" between two partners (one-up AND one-down), care has to be taken, that the used specific asset ID are anonymised**.
 
-- Reference Contract (“ContractReference”).
+#### POLICY CONSTRAINTS FOR DATA EXCHANGE
 
-Details on namespaces and ODRL policy rule values to be used for the above-mentioned types are provided via the [ODRL policy repository](https://github.com/catenax-eV/cx-odrl-profile).
+In alignment with our commitment to data sovereignty, a specific framework governing the utilization of data within the Catena-X use cases has been outlined.  As part of this data sovereignty framework, conventions for access policies, for usage policies and for the constraints contained in the policies have been specified in standard 'CX-0152 Policy Constraints for Data Exchange'. This standard document CX-0152 **MUST** be followed when providing services or apps for data sharing/consuming and when sharing or consuming data in the Catena-X ecosystem. What conventions are relevant for what roles named in [1.1 AUDIENCE & SCOPE](#11-audience--scope) is specified in the CX-0152 standard document as well. CX-0152 can be found in the [standard library](https://catenax-ev.github.io/docs/standards/overview).
 
 ##### Versioning
 
@@ -596,7 +597,7 @@ When using the Tractus-X EDC, the following asset **MUST** be registered. Other 
     ...
   }
 }  
-```
+````
 
 The variable \{\{httpServerWhichOffersTheHttpEndpoint\}\} **MUST** be set to the HTTP server that offers the endpoint. The path /qualityinvestigations/receive **MAY** align with the HTTP POST path as stated in Section 4.1.2.1. In that sense it can change dependent on the traceability application.
 
@@ -725,7 +726,7 @@ The dataspace connector **SHOULD** act as a reverse proxy towards those APIs, as
 
 ##### 4.2.2.1 API-ENDPOINTS
 
-The block notification API **MUST** be implemented as specified in the [openAPI](./assets/CX0125_block-notifications-1-0-0.yaml) documentation.
+The block notification API **MUST** be implemented as specified in the [openAPI](./assets/CX0125_block-notifications-2-0-0.yaml) documentation.
 
 In fact, it is **OPTIONAL** to implement the endpoint paths exactly as described above. The reason is that those endpoints are not called from any supply chain partner directly. Rather, they are called from the Tractus-X EDC as part of data assets. In that sense, it is just important to implement endpoints that can process the defined request body and respond with the HTTP status codes and - if required - reply with the defined response body.
 
@@ -824,6 +825,7 @@ Excerpt of a possible JSON payload example for receiving new block informations:
   },
   "content": {
     "notificationStatus": "SENT",
+    "problemId": "SN-25-BTR-T25",
     "blockInformations": [
       {
         "catenaXId": "1C52A072-e637-C10b-Ed2A-Ec6Cc665d8Cb",
@@ -896,6 +898,7 @@ Excerpt of a possible JSON payload example for updating existing block informati
   },
   "content": {
     "notificationStatus": "SENT",
+    "problemId":  "SN-25-BTR-T25",
     "blockInformations": [
       {
         "catenaXId": "580d3adf-1981-44a0-a214-13d6ceed9379",
@@ -1042,7 +1045,7 @@ In order to track the blocking process in the Catena X network, a defined status
 ***Figure 7: Description of the Block Process***
 
 - ACTIVE means that the part has been identified as a damaged and safety-critical part and must therefore be blocked on the customer side.
-- PART\_BLOCKED is used when the recipient has received the block notification and actually blocks / sorts out the damaged parts as a measure.
+- PART_BLOCKED is used when the recipient has received the block notification and actually blocks / sorts out the damaged parts as a measure.
 - CANCELED serves as the update status of the component originally identified to be blocked if the supplier subsequently determines that the original part does meet safety requirements, is not damaged or that the information was sent by mistake. This status can also be set by the manufacturer if, after an (initial) analysis, the part does not require a block.
 
 The status of a notification and the block status of each part of the notification **MUST** be exchanged via the API described in chapter [4.2. Block Notification API](#42-block-notification-api).
@@ -1101,7 +1104,7 @@ In addition to the above-mentioned general remarks, the following remark has to 
 - CX-0003 SAMM Aspect Meta Model 1.1.0
 - CX-0018 Dataspace Connectivity 3.0.0
 - CX-0127 Industry Core - Part Instance 2.0.0
-- Tractus-X EDC Reference Implementation - https://github.com/eclipse-tractusx/tractusx-edc
+- CX-0152 Policy Constraints For Data Exchange v1.0.0
 
 [^1]: https://catena-x.net/fileadmin/user_upload/Vereinsdokumente/Catena-X_IP_Regelwerk_IP_Regulations.pdf
 
@@ -1113,9 +1116,11 @@ In addition to the above-mentioned general remarks, the following remark has to 
 
 - The Traceability KIT and sub-KITs will include further information on data asset structures, Digital Twin Submodel examples and API calls to be made.
 
+- Tractus-X EDC Reference Implementation - https://github.com/eclipse-tractusx/tractusx-edc
+
 - [SMT] How to create a submodel template specification. Guideline. Download from: https://industrialdigitaltwin.org/wp-content/uploads/2022/12/I40-IDTA-WS-Process-How-to-write-a-SMT-FINAL-.pdf
 
-- CX Operating Model [https://catena-x.net/fileadmin/\_online_media\_/CX_Operating_Modelv2.1_final.pdf](https://catena-x.net/fileadmin/_online_media_/CX_Operating_Modelv2.1_final.pdf)
+- [CX Operating Model](https://catenax-ev.github.io/docs/next/operating-model/why-introduction)
 
 ### 6.3 REFERENCE IMPLEMENTATIONS
 

@@ -13,8 +13,8 @@ package "Changelog Entry and References" {
   }
 
   enum ChangelogType {
-    Create
-    Update
+    CREATE
+    UPDATE
   }
 
   ChangelogEntry "*" -u-> "1" BusinessPartner : ExternalID
