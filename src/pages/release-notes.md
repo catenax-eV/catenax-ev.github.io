@@ -32,6 +32,37 @@ For more information, on the **legal notice** please visit [here](https://catena
 
 ### Catena-X Operating Model
 
+With the CX-Saturn release, the Operating Model strengthens compliance, clarifies governance rules, enhances lifecycle management, and refreshes the service map. The outlook on Self-Sovereign Identity (SSI) has been realigned, highlighting interoperability and standardization as key priorities.
+
+#### Roles & Compliance
+- TISAX Requirements
+  - TISAX Level 2 becomes mandatory for all OSPs, ESPs, and BAPs effective July 2025, with a 12-month grace period.
+  - TISAX Level 3 becomes mandatory for CSP-A and CSP-B roles.
+- Registration
+  - Roles including CSP-A, CSP-B, OSP, BAP, AP, and DPC must be registered in the Catena-X data space.
+
+#### Governance & Policies
+- Internal systems do not need to be listed on the public marketplace.
+- Reinforced that all data space participants must comply with governance components such as Trust ID and related mechanisms.
+- Removed reference to the deprecated CX-0008 Standard.
+
+#### Lifecycle Management
+- Introduced an Environments section, including details on the Int environment.
+
+#### Service Map
+- Updated to reflect the current state of services.
+- Assigned relevant standards to each service.
+
+#### Strategic Outlook
+- The chapter on “Further Integration of SSI Technologies” was refocused:
+  - Shift from purely technical decentralization towards a broader SSI concept.
+  - Transition from CSP-provided wallets to a bring-your-own-wallet approach.
+  - Enablement of all entities to issue, present, and verify credentials, regardless of role.
+  - Increased emphasis on interoperability across data spaces and alignment with global standards.
+
+details to be found [here](/docs/operating-model/changelog)
+
+
 ### Catena-X Regulatory Framework
 
 ### Tractus-X reference implementations
