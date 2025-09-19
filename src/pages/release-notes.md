@@ -40,6 +40,9 @@ With the CX-Saturn release, the Operating Model strengthens compliance, clarifie
   - TISAX Level 3 becomes mandatory for CSP-A and CSP-B roles.
 - Registration
   - Roles including CSP-A, CSP-B, OSP, BAP, AP, and DPC must be registered in the Catena-X data space.
+- New Roles
+  - Digital Clearing House: Defined as the trust anchor for onboarding, legal entity verification, and digital self-descriptions, with support for multiple regional DCHs; clarified prerequisites and current limitations.
+  - Attestation Provider: Defined as an independent verifier to strengthen trust and assurance within the Catena-X ecosystem.
 
 #### Governance & Policies
 - Internal systems do not need to be listed on the public marketplace.
