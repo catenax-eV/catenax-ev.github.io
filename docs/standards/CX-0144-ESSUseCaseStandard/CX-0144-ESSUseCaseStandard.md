@@ -3,7 +3,7 @@ tags:
   - UC/ESS
 ---
 
-# CX-0144 ESS Use Case Standard 1.0.0
+# CX-0144 ESS Use Case Standard 1.0.1
 
 ## ABSTRACT
 
@@ -91,38 +91,13 @@ The mandatory data described in the aspect model MUST be provided by data provid
 
 Mandatory data MUST be managed by the Business Application Providers. Optional data SHOULD be managed by the Business Application Providers.
 
-#### 2.1.3 ADDITIONAL REQUIREMENTS
+#### 2.1.3 POLICY CONSTRAINTS FOR DATA EXCHANGE
+
+In alignment with our commitment to data sovereignty, a specific framework governing the utilization of data within the Catena-X use cases has been outlined.  As part of this data sovereignty framework, conventions for access policies, for usage policies and for the constraints contained in the policies have been specified in standard 'CX-0152 Policy Constraints for Data Exchange'. This standard document CX-0152 **MUST** be followed when providing services or apps for data sharing/consuming and when sharing or consuming data in the Catena-X ecosystem. What conventions are relevant for what roles named in [1.1 AUDIENCE & SCOPE](#11-audience--scope) is specified in the CX-0152 standard document as well. CX-0152 can be found in the [standard library](https://catenax-ev.github.io/docs/standards/overview).
+
+#### 2.1.4 ADDITIONAL REQUIREMENTS
 
 The standards mentioned in chapter REFERENCES MUST be fulfilled by all participants for which the standard is relevant.
-
-### Conventions for Use Case Policy in context data exchange
-
-In alignment with our commitment to data sovereignty, a specific framework governing the utilization of data within the Catena-X use cases has been outlined. A set of specific policies on data offering and data usage level detail the conditions under which data may be accessed, shared, and used, ensuring compliance with legal standards.
-
-For a comprehensive understanding of the rights, restrictions, and obligations associated with data usage in the Catena-X ecosystem, we refer users to
-
-- the detailed ODRL policy repository. This document provides in-depth explanations of the terms and conditions applied to data access and utilization, ensuring that all engagement with our data is conducted responsibly and in accordance with established guidelines.
-- the ODRL schema template. This defines how policies used for data sharing/usage should get defined. Those schemas MUST be followed when providing services or apps for data sharing/consuming.
-
-#### Additional Details regarding Access Policies
-
-A Data Provider may tie certain access authorizations ("Access Policies") to its data offers for members of Catena-X  and one or several Data Consumers. By limiting access to certain Participants, Data Provider maintains control over its anti-trust obligations when sharing certain data. In particular, Data Provider may apply Access Policies to restrict access to a particular data offer for only one Participant identified by a specific business partner number:
-
-- Membership
-- BPNL
-
-#### Additional Details regarding Usage Policies
-
-In the context of data usage policies (“Usage Policies”), Participants and related services MUST use the following policy rules:
-
-- Use Case Framework (“FrameworkAgreement”)
-- at least one use case purpose (“UsagePurpose”) from the above mentioned ODRL policy repository.
-
-Additionally, respective usage policies MAY include the following policy rule:
-
-- Reference Contract (“ContractReference”).
-
-Details on  namespaces and ODLR policy rule values to be used for the above-mentioned types are provided via the ODRL policy repository.
 
 ## 3 ASPECT MODELS
 
@@ -350,7 +325,7 @@ The Clearing Agency sets the status to closed.
 
 ### 6.1 NORMATIVE REFERENCES
 
-> *This section is normantive*
+> *This section is normative*
 
 - CX-0001 EDC Discovery API 1.0.2
 - CX-0003 BAMM Aspect Meta Model 1.1.0
@@ -367,6 +342,7 @@ The Clearing Agency sets the status to closed.
 - CX-0053 BPN Discovery Services 1.0.1
 - CX-0067 Ontology models in Catena-X 1.0.0
 - CX-0084 Federated Queries in Data Spaces 1.0.0
+- CX-0152 Policy Constraints for Data Exchange 1.0.0
 
 ### 6.2 NON-NORMATIVE REFERENCES
 

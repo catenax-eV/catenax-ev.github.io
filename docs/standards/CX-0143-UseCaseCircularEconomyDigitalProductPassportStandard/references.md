@@ -8,10 +8,10 @@ sidebar_position: 6
 
 > *This section is normantive*
 
-- See chapter [2.1.1](#211-list-of-standalone-standards).
+- See chapter [1.1.1](#111-list-of-standalone-standards).
 - Public law references
-  - [Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL concerning batteries and waste batteries, repealing Directive 2006/66/EC and amending Regulation (EU) No 2019/1020](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A52020PC0798)
-  - [Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL establishing a framework for setting ecodesign requirements for sustainable products, amending Regulation (EU) 2023/1542 and repealing Directive 2009/125/EC](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52022PC0142) - referenced as "ESPR".
+  - [Regulation (EU) 2023/1542 of the European Parliament and of the Council of 12 July 2023 concerning batteries and waste batteries, amending Directive 2008/98/EC and Regulation (EU) 2019/1020 and repealing Directive 2006/66/EC](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32023R1542) - referenced as "Battery Regulation".
+  - [Regulation (EU) 2024/1781 of the European Parliament and of the Council of 13 June 2024 establishing a framework for the setting of ecodesign requirements for sustainable products, amending Directive (EU) 2020/1828 and Regulation (EU) 2023/1542 and repealing Directive 2009/125/EC](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:L_202401781) - referenced as "Ecodesign for Sustainable Products Regulation" or "ESPR".
 
 ## Non-Normative References
 

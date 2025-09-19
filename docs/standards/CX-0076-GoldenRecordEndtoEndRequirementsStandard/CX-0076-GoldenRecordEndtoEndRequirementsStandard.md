@@ -3,7 +3,7 @@ tags:
   - CAT/Value Added Services
 ---
 
-# CX-0076 - Golden Record End-to-End Requirements Standard v1.4.0
+# CX-0076 - Golden Record End-to-End Requirements Standard v1.5.0
 
 ## FOR WHOM IS THE STANDARD DESIGNED
 
@@ -17,7 +17,8 @@ See chapter 1.1 Audience & Scope
 | 1.1.0  | <ul><li>Adjustment of Table 2 in chapter [2.1.9 GOLDEN RECORD OUTPUT REQUIREMENTS](#219-golden-record-output-requirements). Data field references deleted. </li><li>Street is now neither mandatory nor optional for Japan as listed in Table 2</li><li>New paragraph added at the end of chapter [2.1.2](#212-upload-criteria-and-mandatory-fields) providing more details on "own data" </li> <li> Chapter [2.1.6](#216-quality-checks-for-legal-entity-including-legal-form) has been expanded specifying expected relations and quality checks in more detail.</li><li>Chapter [2.1.10 NOTIFICATIONS](#2110-notifications) added.</li> <li>Chapter [2.1.11 CONFIDENCE LEVEL](#2111-confidence-level) added</li><li>Footnote for tax jurisdiction added in chapter [2.1.8](#218-quality-checks-for-tax-number-and-other-identifier)</li></ul> | 22.06.2024 |
 | 1.2.0  | <ul><li>Adjustment of Table 2 in chapter [2.1.9 GOLDEN RECORD OUTPUT REQUIREMENTS](#219-golden-record-output-requirements). Adding Tax Jurisdiction Code </li> <li>Adjustment in chapter [2.1.11 CONFIDENCE LEVEL](#2111-confidence-level). Adjust text for validation interval</li> <li>District and Region is now mandatory for Romania as listed in Table 2</li></ul> | 01.08.2024 |
 | 1.3.0  | <ul><li>Adjustment of Table 2 in chapter [2.1.9 GOLDEN RECORD OUTPUT REQUIREMENTS](#219-golden-record-output-requirements). Removed footnote for tax jurisdiction code as it is now technically implemented </li> <li>Adjustment / enhancements of footnotes references regarding new standard versions </li> <li>Adapted to new template structure</li></ul> | 02.12.2024 |
-| 1.4.0  | <ul><li> Enhancement of chapter [2.1.8 QUALITY CHECKS FOR TAX NUMBER AND OTHER IDENTIFIER](#218-quality-checks-for-tax-number-and-other-identifier) with reference to standard CX-0010 where the identifier are thoroughly described  </li> <li>Added example for calculation of confidence level and adjusted wording to provide more precision [2.1.11 CONFIDENCE LEVEL](#2111-confidence-level) </li> <li>Minor  adjustements related to standard template and updating technical references / links </li></ul> | 01.06.2025 |
+| 1.4.0  | <ul><li> Enhancement of chapter [2.1.8 QUALITY CHECKS FOR TAX NUMBER AND OTHER IDENTIFIER](#218-quality-checks-for-tax-number-and-other-identifier) with reference to standard CX-0010 where the identifier are thoroughly described  </li> <li>Added example for calculation of confidence level and adjusted wording to provide more precision [2.1.11 CONFIDENCE LEVEL](#2111-confidence-level) </li> <li>Minor  adjustments related to standard template and updating technical references / links </li></ul> | 01.06.2025 |
+| 1.5.0  | <ul><li> Added relations between legal entities [1.5.8 RELATIONS](#158-relations)</li> <li> Adjusted wording for requirement regarding upload of BP data;  moved it from chapter [2.1.11 CONFIDENCE LEVEL](#2111-confidence-level) to chapter [2.1.2 UPLOAD CRITERIA AND MANDATORY FIELDS](#212-upload-criteria-and-mandatory-fields)  </li> <li>Extended example for calculation of confidence level [2.1.11 CONFIDENCE LEVEL](#2111-confidence-level) </li> <li>Minor  adjustments related to standard template and updating technical references / links </li></ul> | 24.08.2025 |
 
 ## ABSTRACT
 
@@ -43,9 +44,9 @@ This document focuses on the outcome of the Golden Record Process. It is relevan
 
 In scope are the requirements of cleansing and enriching the business partner data records with the aim to create a Golden Record proposal.
 
-Not in scope is the way of how business partner data can be shared to create a Golden Record. Please refer to the Catena-X standard CX-0074 Business Partner Gate API v4.0.0 for more details.
+Not in scope is the way of how business partner data can be shared to create a Golden Record. Please refer to the Catena-X standard CX-0074 Business Partner Gate API v4.1.0 for more details.
 
-Not in scope is the overall Business Partner Pool with all Golden Records within Catena-X and the way of how the Golden Records can be retrieved. Please refer to the Catena-X CX-0012 Business Partner Pool API v5.0.0 standard for more details.
+Not in scope is the overall Business Partner Pool with all Golden Records within Catena-X and the way of how the Golden Records can be retrieved. Please refer to the Catena-X CX-0012 Business Partner Pool API v5.1.0 standard for more details.
 
 Not in scope is the general definition of the Business Partner L/S/A-logic. Please refer to the Catena-X standard CX-0010 Business Partner Number v3.0.0  standard for more details.
 
@@ -71,7 +72,7 @@ All participants and their solutions will need to prove, that they are conform w
 
 > *This section is non-normative*
 
-Not applicable.
+Intentionally left blank.
 
 ### 1.5 TERMINOLOGY
 
@@ -127,9 +128,13 @@ There are relations between a Legal Entity (BPNL), its Sites (BPNS), and its Add
 
 For more information, please refer to the standard CX-0010 Business Partner Number v3.0.0.
 
+There are also relations between two Legal Entities (BPNL).
+
+For more information, please refer to the standard CX-0074 Business Partner Gate API v4.1.0.
+
 #### 1.5.9 TAX NUMBER AND OTHER IDENTIFIER
 
-The data quality rules are leveraging a variety of identifiers to cross check the correctness of Business Partner data record attributes. This includes Tax identifier issued by a legal authority like for example but not limited to EU VAT ID as well as other commercial Business Partner identification numbers such as for example Dun&Bradstreet-Number (DUNS®), Bureau van Dijk ID (BvD), Global Location Number (GLN) and others.
+The data quality rules are leveraging a variety of identifiers to cross-check the correctness of Business Partner data record attributes. This includes Tax identifier issued by a legal authority like for example but not limited to EU VAT ID, as well as other commercial Business Partner identification numbers such as for example Dun&Bradstreet-Number (DUNS®), Bureau van Dijk ID (BvD), Global Location Number (GLN) and others.
 
 ## 2 MAIN CONTENT
 
@@ -161,7 +166,7 @@ Mandatory fields quality checks:
 - City MUST NOT be empty.
 - The External identifier, meaning the unique identifier from the uploading party, MUST NOT be empty.
 
-Please refer to the CX-0074 Business Partner Gate API v4.0.0 standard for the respective data fields.  
+Please refer to the CX-0074 Business Partner Gate API v4.1.0 standard for the respective data fields.  
 
 For uploading data, a mechanism MUST be provided to flag uploaded data as "own data", representing that this data belongs to my company.
 
@@ -180,6 +185,18 @@ Service provider must be able to consolidate the site information which is provi
 Result of this consolidation MUST be the creation or update of respective BPNS based on the provided information.
 
 E.g., the field "name 3" of the upload data record contains "Plant/Werk Feuerbach" (identifier/name for the site) and thus refers to this specific site.
+
+**Provisioning of relation information**
+
+For a CX-sharing member acting as data owner it MUST be possible to provide BP data with relation information, e.g., that a shared address of a Business Partner belongs to a specific Legal Entity.
+This MUST be possible
+
+a) based on already existing BPN.
+b) based on provided external Id’s in case that the uploaded BP data have no assigned BPN yet (scenario: initial upload).
+
+The service provider MUST be able to identify this relation information in both cases, process and validate it and make it then available in the CX Pool, there represented by solely BPNs.  
+
+The above mentioned requirements are applicable for relations between Legal entities (BPNL) and their assigned Sites (BPNS) and Addresses (BPNA) but do currently not apply for relations between legal entities (BPNL-BPNL).
 
 ### 2.1.3 FEEDBACK BASED ON DATA INPUT
 
@@ -229,7 +246,7 @@ It MUST be checked if the Legal Form is valid for this country and formally corr
 
 - If the combination of a provided identifier, legal name and Address is found in the commercial register or equivalent official register, the type of this record MUST be set to BPNL.
 
-- In addition, a BPNA MUST be created which receives the *IsLegalAddress* flag, if the duplicate check or linkage does not return a result.
+- In addition, a BPNA MUST be created with address type *LegalAddress*, if the duplicate check or linkage does not return a result.
 
 - When a BPNA is uploaded, a relation to a L MUST be set.
 
@@ -245,7 +262,7 @@ It MUST be checked if the Legal Form is valid for this country and formally corr
 
 - This applies only, if the exact legal entity can be clearly identified based on the given information by the provided input.
 
-- If this is not unambiguously possible (in cases that no or several possible legal entities were identified), it is recommended, that the party who uploaded the BP-data and/or the respective data owner MUST be contacted to ensure data accuracy.
+- If this is not unambiguously possible (in cases that no or several possible legal entities were identified), it is recommended, that the party who uploaded the BP-data and/or the respective data owner SHOULD be contacted to ensure data accuracy.
 
 If additional addresses are recognized in the commercial register (or a similar trustworthy source), these MUST be created as AdditionalAddresses (BPNAs). Respective additions to the legal name MUST be included in the AddressName field of the BPNA.
 
@@ -278,22 +295,31 @@ The following quality checks are designed to verify that the shared Tax Number o
 - The issuing body MUST be filled, to be able to correctly assign the responsible commercial register when data records are uploaded for a Legal Entity including the corresponding commercial register number.
   This quality check applies to Tax Numbers assigned to a specific commercial register or similar, such as, but not limited to, the German Handelsregisternummer.
 
-**A list of identifiers for Europe is incorporated in standard CX-0010 BUSINESS PARTNER NUMBER v3.0.0. There they are defined in terms of:**
+A list of identifiers for Europe is incorporated in standard CX-0010 BUSINESS PARTNER NUMBER v3.0.0. There they are defined in terms of:
 
 - Technical key
 - Name (including transliterated name and abbreviation)
 - Identifier type category with corresponding identifier types
 - BP type (identifier is applicable for either legal entity and / or address)
 - format
-- countries they are used.
+- countries where they are used.
 
-### 2.1.9 GOLDEN RECORD OUTPUT REQUIREMENTS
+### 2.1.9 QUALITY CHECKS FOR RELATIONS BETWEEN TWO LEGAL ENTITIES
+
+The following quality checks are designed to verify that the shared relations between two Legal Entities are correct. The following checks MUST therefore be carried out:
+
+- The "is managed by" relation is only created after the Core Service Provider B has verified that the Managing Legal Entity has the legal authority / power of attorney for the Managed Legal Entity. How the verification MUST be done is defined by the Catena-X association.
+- The "is alternative headquarter for" relation MUST only be created after the Core Service Provider B has verified that the two legal addresses of the Legal Entities are both correctly registered in the national registers.  
+
+For details on the relations, see CX-0074 Business Partner Gate API v4.1.0.
+
+### 2.1.10 GOLDEN RECORD OUTPUT REQUIREMENTS
 
 The requirements described below relate to the expected outcome after the Golden Record process has been carried out. There are country specific rules and (mandatory/optional) attributes. Depending on the country the e.g., type of identifier and/or the format, can be different.
 
 Below is a list of countries for which a rule has been defined. If a rule says, "Applies to all countries", the full list in Table 1 MUST be applied. Exceptions will be specified.
 
-There is also a rule-specific list of data fields in which the result MUST be written. This will be stated in column Attribute (Data Model). For details on the data model, please see CX-0012 Business Partner Pool API v5.0.0 and CX-0074 Business Partner Gate API v4.0.0.
+There is also a rule-specific list of data fields in which the result MUST be written. This will be stated in column Attribute (Data Model). For details on the data model, please see CX-0012 Business Partner Pool API v5.1.0 and CX-0074 Business Partner Gate API v4.1.0.
 
 ***Table 1: Country List based on ISO 3166-1***
 
@@ -351,7 +377,7 @@ The following information rules MUST apply:
 | Business Partner Type (Legal Entity (L), Site (S), (logistical) Address (A)) | **Mandatory for:**<br />Applies to all countries as defined in Table 1. |
 | "BPNA belongs to Legal Entity (BPNL)"                                        | **Mandatory for:**<br />Applies to all countries as defined in Table 1. |
 
-### 2.1.10 NOTIFICATIONS
+### 2.1.11 NOTIFICATIONS
 
 A notification mechanism [^6] MUST be established to provide information per data record
 
@@ -365,49 +391,62 @@ In case of shared records by a sharing member, respective notifications MUST be 
 
 A confidence level MUST be calculated and assigned to BPNLs and BPNAs to indicate the data quality.
 
-### 2.1.11 CONFIDENCE LEVEL
+### 2.1.12 CONFIDENCE LEVEL
 
 The confidence level MUST be calculated based on the following quality dimensions in this ranked order from low to high:
 
-Used by (low, e.g., value 1[^7])
-Checked by and (mid, e.g. value 3)
-approved by data owner (high, e.g. value 5)
+- Used by (low, e.g., value 1[^7]),
+- Checked by (mid, e.g. value 3)
+- Approved by data owner (high, e.g. value 5)
+
+The higher the points, the higher the confidence level.
 
 **Used by:**
 
 To be understood as "more than one CX member" is using this Business Partner data record.
-Grant e.g. 1 point, if this record is used by two or more members.
+Grant e.g., 1 point, if this record is used by two or more members.
 
 **Checked by:**
 
-To be understood as "checked and validated by a trustworthy source (e.g. commercial registers). This applies only for BPNL and not for BPNS or BPNA. Used sources MUST be made transparent. Grant e.g. 3 points, if the data record got successfully validated.
+To be understood as "checked and validated by a trustworthy source (e.g. commercial registers). This applies only for BPNL and not for BPNS or BPNA. Used sources MUST be made transparent. Grant e.g., 3 points, if the data record got successfully validated.
 
 **Approved by data owner:**
 
 To be understood as data record was provided by data owner.
-Grant e.g. 5 points, if the data owner flag is set.
+Grant e.g., 5 points, if the data owner flag is set.
 
 Regular validations of the used by and checked by checks MUST be done on a regular basis, e.g., once every six months. Detected errors or deviations must be corrected in a timely manner. After having performed these checks a recalculation of the confidence level MUST be processed and update the corresponding Golden Record including the date of the last recalculation.
 
 **Calculation example:**
 
-A BP data record was shared by a French CX member as data owner 3 months ago, validated against the official trade register “Registre national du commerce et des sociétés” and became a Golden Record in the CX Pool with a BPNL assigned. Three other CX members use this Golden Record with the assigned BPNL.
-| **Dimension** | **Case example**                                                                                                                                                                                                                            | **Score** |
-| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------- |
-| Used by       | 3 CX member companies | 1                                    |
-| Checked by     | French trade register                                                                                                                                                                         | 3                                   |
-| Approved by     | Data Owner (as data originator)                                                                                                                                                                         | 5
-| **Confidence level**     |                                                                                                                                                                          | **9** (maximum)                             |
+A BP data record was shared by a French CX member as data owner 3 months ago, validated against the official trade register “Registre national du commerce et des sociétés” and became a Golden Record in the CX Pool with a BPNL assigned. Three other CX members use this Golden Record with the assigned BPNL. The data owner additionally shared site information for the same address, stating that this is also the site main address.
 
-The higher the points, the higher the confidence level.
+*Calculation for BPNL*
 
-In case respective address types, representing a BP Legal Entity, BP Site, or BP Address, can be shared by the data owner, a mechanism MUST be provided to also define respective relations between this uploaded data. (E.g., that a BP Address belongs to a specific BP Legal Entity.)
+| **Dimension**        | **Case example**                | **Score**       | **Description**|
+| -------------------- | ------------------------------- | --------------- |--------------- |
+| Used by              | 3 CX member companies           | 1               |The BP is shared by more than at least 2 CX members               |
+| Checked by           | French trade register           | 3               |The BP is validated by official, trustworthy sources based on legally secure identifiers (see CX-0010)               |
+| Approved by          | Data Owner (as data originator) | 5               |The BP has been shared by Data Owner               |
+| **Confidence level** |                                 | **9** (maximum) |               |
 
-This could be based, for example, on the external identifier.
+*Calculation for BPNS*
 
-This mechanism MUST be applied to data records of an initial upload where no Business Partner Numbers has been assigned yet.
+As there is no trustworthy source for sites only the site information of the site owner is counted.
+I.e., the score can only be 5 if a site is shared.
+For this reason, a calculation of a score for sites is obsolete and MUST not to be provisioned.
+The provider MUST ensure that the claiming of ownership for a site by a CX member is plausible (e.g., by checking the ownership flag).
 
-After having passed the Golden Record process, relation information MUST be available on the BPN-relations as well as per the mechanism as described above.
+*Calculation for BPNA*
+
+| **Dimension**        | **Case example**                | **Score**       | **Description**|
+| -------------------- | ------------------------------- | --------------- |--------------- |
+| Used by              | 3 CX member companies           | 1               |The BP is shared by more than at least 2 CX members               |
+| ~~Checked by~~           | ~~French trade register~~           | ~~3~~               |Normally there is no official, trustworthy source for validating BPNA, based on legally secure identifiers.*  For this reason this dimension is not considered in calculating the score on this BP level.                |
+| Approved by          | Data Owner (as data originator) | 5               |The BP has been shared by Data Owner               |
+| **Confidence level** |                                 | **6** (maximum) |               |
+
+*Note:* There can be exceptions in certain countries (e.g., SIRET in France) but since this statement is currently true for the Large majority of the others the exclusion of this dimension leads to an unified and better comparable overall calculation logic.
 
 ### 2.2 OUT OF SCOPE
 
@@ -415,7 +454,7 @@ This standardization document does not describe the process and functionality to
 
 ### 2.3 DATA QUALITY RULE ACCESSIBILITY
 
-The quality checks as described in this standard are using the input based on the Business Partner Gate API with the respective endpoints. For further details please refer to Catena-X standard CX-0074 Business Partner Gate API v4.0.0.
+The quality checks as described in this standard are using the input based on the Business Partner Gate API with the respective endpoints. For further details please refer to Catena-X standard CX-0074 Business Partner Gate API v4.1.0.
 
 ## 3 REFERENCES
 
@@ -424,14 +463,15 @@ The quality checks as described in this standard are using the input based on th
 > *This section is normative*
 
 - CX–0010 Business Partner Number v3.0.0
-- CX–0012 Business Partner Pool API v5.0.0
-- CX–0074 Business Partner Gate API v4.0.0
+- CX–0012 Business Partner Pool API v5.1.0
+- CX–0074 Business Partner Gate API v4.1.0
 
 ### 3.2 NON-NORMATIVE REFERENCES
 
 > *This section is non-normative*
 
-- [BPDM Catena-X Website](https://catena-x.net/use-case-cluster/next-level-master-data-management/)
+- [BPDM website](https://catena-x.net/use-case-cluster/next-level-master-data-management/) (accessed 2025-06-18)
+- [standard library](https://catenax-ev.github.io/docs/standards/overview) (accessed 2025-06-18)
 
 ### 3.3 REFERENCE IMPLEMENTATIONS
 
@@ -453,10 +493,10 @@ Intentionally left blank.
 
 Intentionally left blank.
 
-[^1]: For details related to the Pool API, please see standard CX-0012 Business Partner Data Pool API v5.0.0.
+[^1]: For details related to the Pool API, please see standard CX-0012 Business Partner Data Pool API v5.1.0.
 [^2]: For details related to the Business Partner number and the different types, please see standard CX-0010 Business Partner Number v3.0.0.
-[^3]: For details on the data model and data fields please refer to the standard CX-0074 Business Partner Gate API standard v4.0.0.
-[^4]: Although in some cases there can be more than one legal address assigned to the same legal entity, e.g., Siemens in Germany (Berlin & Munich). This might lead to changes to data model definitions including relations in the future. For details, please see standard CX-0074 Business Partner Gate API standard v4.0.0.
+[^3]: For details on the data model and data fields please refer to the standard CX-0074 Business Partner Gate API standard v4.1.0.
+[^4]: Although in some cases there can be more than one legal address assigned to the same legal entity, e.g., Siemens in Germany (Berlin & Munich). This has lead to changes of the data model definitions including the relation `is alternative headquarter for. For details, please see standard CX-0074 Business Partner Gate API standard v4.1.0.
 [^5]: Note that there is currently a debate that a site is a consolidation of addresses (BPNA), with all addresses being equally ranked, since a "main" address cannot always be defined at this point in time. This may lead to changes in the next update of this standard.
 [^6]: Notification is to be understood as an information (info, warning, error) to be provided to the user. It's not to be understood as a short-term notification similar to a e.g., 30 second pop up message.
 [^7]: Numbers (values) are to be seen as examples to make the calculation easier to understand.

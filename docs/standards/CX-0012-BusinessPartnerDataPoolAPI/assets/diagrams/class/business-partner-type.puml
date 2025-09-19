@@ -5,9 +5,9 @@ skinparam dpi 50
 package "Business Partner Type" {
 
   enum BusinessPartnerType {
-    LegalEntity
-    Site
-    Address
+    LEGALE_ENTITY
+    SITE
+    ADDRESS
   }
 }
 

@@ -28,8 +28,8 @@ package "Business Partner and References" {
   }
 
   enum LegalEntityStateType {
-    Active
-    Inactive
+    ACTIVE
+    INACTIVE
   }
   
   class SiteState {
@@ -38,9 +38,9 @@ package "Business Partner and References" {
   }
 
   enum SiteStateType{
-      Active
-      Inactive
-    }
+    ACTIVE
+    INACTIVE
+  }
 
   class AddressState {
     ValidFrom
@@ -48,8 +48,8 @@ package "Business Partner and References" {
   }
 
   enum AddressStateType{
-    Active
-    Inactive
+    ACTIVE
+    INACTIVE
   }
 
   class BusinessPartnerIdentifier {
@@ -77,8 +77,8 @@ package "Business Partner and References" {
   }
 
   enum Role {
-    Supplier
-    Customer
+    SUPPLIER
+    CUSTOMER
   }
 
   entity LegalForm {
@@ -139,9 +139,9 @@ package "Business Partner and References" {
   }
 
   enum DeliveryServiceType {
-    POBox
-    PrivateBag
-    BoitePostale
+    PO_BOX
+    PRIVATE_BAG
+    BOITE_POSTALE
   }
 
   class PhysicalPostalAddress{

@@ -21,7 +21,7 @@ package "Sharing State Entry and References" {
   enum SharingErrorCode {
     SharingProcessError
     SharingTimeout
-    BPNNotInPool
+    BpnNotInPool
   }
 
   SharingStateEntry "*" -u-> "1" BusinessPartner : ExternalID
