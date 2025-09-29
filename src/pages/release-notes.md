@@ -68,6 +68,16 @@ details to be found [here](/docs/operating-model/changelog)
 
 ### Catena-X Regulatory Framework
 
+#### Updates to Country Clearance Lists: 
+
+- Ukraine has been added to the Allow List, including additional information.
+- Mexico has been added to the Allow List.
+- Turkey has been added to the Allow List.
+
+These updates ensure that regulatory requirements are accurately reflected and that the respective countries are properly accounted for.
+
+details to be found [here](/docs/regulatory-framework/changelog)
+
 ### Tractus-X reference implementations
 
 #### Details on compatible and non-compatible versions
