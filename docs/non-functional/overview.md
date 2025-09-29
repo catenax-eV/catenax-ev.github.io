@@ -9,15 +9,9 @@ tags:
 
 ## Product Carbon Footprint
 
-| PCF-Rulebook v3.1 | PCF-Verification Framework v1.0* |
+| PCF-Rulebook v4.0 | PCF-Verification Framework v2.0 |
 |:---:|:---:|
-| [![CX-NFR-PCF-Rulebook_v.3.0.png](./assets/images/CX-NFR-PCF-Rulebook_v.3.1.png)](./assets/files/CX-NFR-PCF-Rulebook_v.3.1.pdf) | [![CX-NFR-PCF_TFS-verification_v.1.0.png](./assets/images/CX-NFR-PCF_TFS-verification_v.1.0.png)](./assets/files/CX-NFR-PCF_TFS-verification_v.1.0.pdf)  |
-
-:::note[\*Please note]
-
-When you start to work with die PCF verification framework please note, that the PCF Exchange data model(s) published by Catena-X or TFS do not yet support any propagation of Verification information with specific data attribute. In order to enable gaining experience with the PCF Verification it is recommended to provide the information such as 3rd party verification share of the PCF result (3PVS in %) as comment in the PCF dataset.
-
-:::
+| [![CX-NFR-PCF-Rulebook_v.4.0.png](./assets/images/CX-NFR-PCF-Rulebook.png)](./assets/files/CX-NFR-PCF-Rulebook_v.4.0.pdf) | [![CX-NFR-PCF_TFS-verification_v.2.0.png](./assets/images/CX-NFR-PCF_TFS-verification.png)](./assets/files/CX-NFR-PCF_TFS-verification_v.2.0.pdf)  |
 
 ## ESS Code of Conduct
 
