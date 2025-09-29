@@ -70,9 +70,9 @@ details to be found [here](/docs/operating-model/changelog)
 
 #### Updates to Country Clearance Lists: 
 
-- Ukraine has been added to the Allow List, including additional information.
-- Mexico has been added to the Allow List.
-- Turkey has been added to the Allow List.
+- Ukraine has been added to the _Allow List_, including additional information.
+- Mexico has been added to the _Allow List_.
+- Turkey has been added to the _Allow List_.
 
 These updates ensure that regulatory requirements are accurately reflected and that the respective countries are properly accounted for.
 
