@@ -63,20 +63,31 @@ With the CX-Saturn release, the Operating Model strengthens compliance, clarifie
   - Enablement of all entities to issue, present, and verify credentials, regardless of role.
   - Increased emphasis on interoperability across data spaces and alignment with global standards.
 
-details to be found [here](/docs/operating-model/changelog)
+#### Further Information
 
+Details can be found in the [changelog](/docs/operating-model/changelog)
 
 ### Catena-X Regulatory Framework
 
-#### Updates to Country Clearance Lists: 
+The latest update to the Catena-X Regulatory Framework includes adjustments to country clearance lists, the addition of a new contracting chapter, and an updated version of the Data Exchange Governance. These changes ensure that regulatory requirements are accurately reflected and consistently applied.
 
-- Ukraine has been added to the _Allow List_, including additional information.
-- Mexico has been added to the _Allow List_.
-- Turkey has been added to the _Allow List_.
+#### Updates to Country Clearance Lists
 
-These updates ensure that regulatory requirements are accurately reflected and that the respective countries are properly accounted for.
+- **Ukraine** has been added to the _Allow List_, including additional country information.  
+- **Mexico** has been added to the _Allow List_.  
+- **Turkey** has been added to the _Allow List_.  
 
-details to be found [here](/docs/regulatory-framework/changelog)
+#### New Chapter
+
+- **Contracting** has been introduced as a new chapter in the Regulatory Framework.  
+
+#### Updated Version of Data Exchange Governance
+
+- A new version of **Data Exchange Governance** (dated **30 September 2025**) has been published.  
+
+#### Further Information
+
+Details can be found in the [changelog](/docs/regulatory-framework/changelog).
 
 ### Tractus-X reference implementations
 
