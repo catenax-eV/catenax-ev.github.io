@@ -872,11 +872,11 @@ Table 16: *List of normative standards*
 | [CX-0128]  | Demand and Capacity Management Data Exchange                                                                                                                                                | 2.0.0       |
 | [CX-0145]  | Days of Supply Exchange                                                                                                                                                                     | 1.0.0       |
 | [ISO8601]  | ISO 8601: Date and time format                                                                                                                                                              |             |
-| [RFC2119]  | Bradner, S. Key words for use in RFCs to Indicate Requirement Levels. Available online: (https://datatracker.ietf.org/doc/html/rfc2119)[https://datatracker.ietf.org/doc/html/rfc2119]                                                     |             |
+| [RFC2119]  | Bradner, S. Key words for use in RFCs to Indicate Requirement Levels. Available online: [https://datatracker.ietf.org/doc/html/rfc2119](https://datatracker.ietf.org/doc/html/rfc2119)                                                     |             |
 | [RFC4122]  | A Universally Unique Identifier (UUID) URN Namespace ([https://www.rfc-editor.org/rfc/rfc4122](https://www.rfc-editor.org/rfc/rfc4122))                                                                                             |             |
 | [RFC8174]  | Leiba, B. Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words. Available online: [https://datatracker.ietf.org/doc/html/rfc8174](https://datatracker.ietf.org/doc/html/rfc8174)                                                      |             |
 | [RFC9110]  | HTTP Semantics ([https://www.rfc-editor.org/rfc/rfc9110](https://www.rfc-editor.org/rfc/rfc9110))                                                                                                                                   |             |
-| [SMT]      | How to create a submodel template specification. Guideline. Download from: (https://industrialdigitaltwin.org/wp-content/uploads/2022/12/I40-IDTA-WS-Process-How-to-write-a-SMT-FINAL-.pdf)[https://industrialdigitaltwin.org/wp-content/uploads/2022/12/I40-IDTA-WS-Process-How-to-write-a-SMT-FINAL-.pdf] |             |
+| [SMT]      | How to create a submodel template specification. Guideline. Download from: [https://industrialdigitaltwin.org/wp-content/uploads/2022/12/I40-IDTA-WS-Process-How-to-write-a-SMT-FINAL-.pdf](https://industrialdigitaltwin.org/wp-content/uploads/2022/12/I40-IDTA-WS-Process-How-to-write-a-SMT-FINAL-.pdf) |             |
 
 Table 17: *List of non-normative standards*
 

@@ -5,13 +5,13 @@ sidebar_class_name: separator-top
 
 # Changelog
 
-4 new standards 
-16 updated standards 
-1 deprecated standard 
+4 new standards
+16 updated standards
+1 deprecated standard
 
 ---
- 
-## A) Updated Standards 
+
+## A) Updated Standards
 
 Note: Detailed information regarding the changes can be found in the standard documents under the section “Comparison with the Previous Version of the Standard”.
 
