@@ -9,32 +9,25 @@ For more information, on the **legal notice** please visit [here](https://catena
 ## [CX-Saturn]
 
 ### Catena-X Standards
+
+- **4 new standards introduced**, expanding the foundation for digital master data, requirements exchange, tariffs, and policy constraints (CX-0154, CX-0155, CX-0153, CX-0152)
  
-- **4 new standards introduced**, expanding the foundation for digital master data, requirements exchange, tariffs, and policy constraints    
-  (CX-0154, CX-0155, CX-0153, CX-0152)
- 
-- **15 standards updated** to further improve quality, interoperability, and usability    
-  - Improved processes for supply chain disruption and traceability, supporting more robust risk management and transparency    
-    (CX-0146, CX-0125)    
-  - Enhanced APIs and data models for product carbon footprint, quality management, and circular economy, enabling more efficient and reliable data exchange    
-    (CX-0136, CX-0123, CX-0143)    
-  - Finalized protocols and clearer policy implementation for dataspace connectivity, including update to the final versions of DSP 2025-1 and DCP 1.0, ensuring secure and future-proof integration    
-    (CX-0018, CX-0001, CX-0152)    
-  - Extended support for Digital Twins, including update of AAS interfaces based on Release 25-01 of the Specifications of the Asset Administration Shell (IDTA), strengthening asset management and integration    
-    (CX-0002)    
-  - Improved Business Partner Data Management (BPDM) standards, especially for master data and gate APIs, for better management of business partner data    
-    (CX-0012, CX-0074)    
-  - Updated identity and credential management with new requirements for wallets and verifiable credentials, now supporting "Bring Your Own Wallet"    
-    (CX-0149, CX-0049, CX-0050)
- 
-- **1 standard deprecated** to consolidate the standards landscape and improve user-friendliness    
-  (CX-0013)
+- **15 standards updated** to further improve quality, interoperability, and usability
+- Improved processes for supply chain disruption and traceability, supporting more robust risk management and transparency (CX-0146, CX-0125)
+- Enhanced APIs and data models for product carbon footprint, quality management, and circular economy, enabling more efficient and reliable data exchange (CX-0136, CX-0123, CX-0143)
+- Finalized protocols and clearer policy implementation for dataspace connectivity, including update to the final versions of DSP 2025-1 and DCP 1.0, ensuring secure and future-proof integration (CX-0018, CX-0001, CX-0152)
+- Extended support for Digital Twins, including update of AAS interfaces based on Release 25-01 of the Specifications of the Asset Administration Shell (IDTA), strengthening asset management and integration (CX-0002)
+- Improved Business Partner Data Management (BPDM) standards, especially for master data and gate APIs, for better management of business partner data (CX-0012, CX-0074)
+- Updated identity and credential management with new requirements for wallets and verifiable credentials, now supporting "Bring Your Own Wallet" (CX-0149, CX-0049, CX-0050)
+
+- **1 standard deprecated** to consolidate the standards landscape and improve user-friendliness (CX-0013)
 
 ### Catena-X Operating Model
 
 With the CX-Saturn release, the Operating Model strengthens compliance, clarifies governance rules, enhances lifecycle management, and refreshes the service map. The outlook on Self-Sovereign Identity (SSI) has been realigned, highlighting interoperability and standardization as key priorities.
 
 #### Roles & Compliance
+
 - TISAX Requirements
   - TISAX Level 2 becomes mandatory for all OSPs, ESPs, and BAPs effective July 2025, with a 12-month grace period.
   - TISAX Level 3 becomes mandatory for CSP-A and CSP-B roles.
@@ -45,18 +38,22 @@ With the CX-Saturn release, the Operating Model strengthens compliance, clarifie
   - Attestation Provider: Defined as an independent verifier to strengthen trust and assurance within the Catena-X ecosystem.
 
 #### Governance & Policies
+
 - Internal systems do not need to be listed on the public marketplace.
 - Reinforced that all data space participants must comply with governance components such as Trust ID and related mechanisms.
 - Removed reference to the deprecated CX-0008 Standard.
 
 #### Lifecycle Management
+
 - Introduced an Environments section, including details on the Int environment.
 
 #### Service Map
+
 - Updated to reflect the current state of services.
 - Assigned relevant standards to each service.
 
 #### Strategic Outlook
+
 - The chapter on “Further Integration of SSI Technologies” was refocused:
   - Shift from purely technical decentralization towards a broader SSI concept.
   - Transition from CSP-provided wallets to a bring-your-own-wallet approach.
@@ -73,17 +70,17 @@ The latest update to the Catena-X Regulatory Framework includes adjustments to c
 
 #### Updates to Country Clearance Lists
 
-- **Ukraine** has been added to the _Allow List_, including additional country information.  
-- **Mexico** has been added to the _Allow List_.  
-- **Turkey** has been added to the _Allow List_.  
+- **Ukraine** has been added to the *Allow List*, including additional country information.
+- **Mexico** has been added to the *Allow List*.
+- **Turkey** has been added to the *Allow List*.
 
 #### New Chapter
 
-- **Contracting** has been introduced as a new chapter in the Regulatory Framework.  
+- **Contracting** has been introduced as a new chapter in the Regulatory Framework.
 
 #### Updated Version of Data Exchange Governance
 
-- A new version of **Data Exchange Governance** (dated **30 September 2025**) has been published.  
+- A new version of **Data Exchange Governance** (dated **30 September 2025**) has been published.
 
 #### Further Information
 
