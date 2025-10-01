@@ -10,7 +10,7 @@ For more information, on the **legal notice** please visit [here](https://catena
 
 ### Catena-X Standards
 
-- **4 new standards introduced**, expanding the foundation for digital master data, requirements exchange, tariffs, and policy constraints (CX-0154, CX-0155, CX-0153, CX-0152)
+- **4 new standards introduced**, expanding the foundation for digital engineering master data, requirements exchange, tariffs, and policy constraints (CX-0154, CX-0155, CX-0153, CX-0152)
 
 - **15 standards updated** to further improve quality, interoperability, and usability
 - Improved processes for supply chain disruption and traceability, supporting more robust risk management and transparency (CX-0146, CX-0125)

@@ -85,9 +85,9 @@ This section uses the following prefixes as abbreviations for namespaces
 
 All Constraints (`odrl:Constraint`) that are supported by the Catena-X data space are specified in the [Catena-X Policy Schema](./assets/policy-schema.json). This [Catena-X Policy Schema](./assets/policy-schema.json) references all Constraints (`odrl:Constraint`) with leftOperands (`odrl:leftOperand`) and rightOperands (`odrl:rightOperand`).
 
-Data Provider and Data Consumers **SHOULD** include in their data offers (`odrl:offer`) those Constraints (`odrl:Constraint`), which are listed in this [constraint folder](./CX-0152-Appendix#Constraint). For every Constraint (`odrl:Constraint`) in this [constraint folder](./CX-0152-Appendix#Constraint) the leftOperands (`odrl:leftOperand`), the allowed rightOperands (`odrl:rightOperand`) and the allowed operators (`odrl:operator`) are listed.
+Data Provider and Data Consumers **SHOULD** include in their data offers (`odrl:offer`) those Constraints (`odrl:Constraint`), which are listed in this [constraint folder](./CX-0152-PolicyConstrainsForDataExchange/Appendix#policy-constraints). For every Constraint (`odrl:Constraint`) in this [constraint folder](./CX-0152-PolicyConstrainsForDataExchange/Appendix#policy-constraints) the leftOperands (`odrl:leftOperand`), the allowed rightOperands (`odrl:rightOperand`) and the allowed operators (`odrl:operator`) are listed.
 
-Data Provider and Data Consumer **MUST NOT** include Constraints (`odrl:Constraint`) that are not contained in this [constraint folder](./CX-0152-Appendix#Constraint) in their Data Offers (`odrl:offer`) and **MUST** only use operators (`odrl:operator`) and rightOperands (`odrl:rightOperand`) assigned to the respective leftOperands (`odrl:leftOperand`). Application Providers **MUST** support all Constraints (`odrl:Constraint`), which are listed in this [constraint folder](./CX-0152-Appendix#Constraint). In case an arbitrary rightOperand (`odrl:rightOperand`) limited only by the type is allowed, it is mentioned as well by defining only the type (`schema:type`) of the rightOperand (`odrl:rightOperand`) without defining a constant (`schema:const`). By this, Data Provider and Data Consumer may agree on individual purposes ("Individual Purposes") in addition to the predefined purposes (“Predefined Purposes").  Data Provider and Data Consumer must use th leftOperand (`odrl:leftOperand`) "UsagePurpose” when they refer to an Individual Purpose in the rightOperand (`odrl:rightOperand`). Data Provider and Data Consumer may refer to existing individual contracts or/and contract conditions by using the namespace “ContractReference” and indicate the contract number or another unique identifier known to both Participants as value in the rightOperand (`odrl:rightOperand`).
+Data Provider and Data Consumer **MUST NOT** include Constraints (`odrl:Constraint`) that are not contained in this [constraint folder](./CX-0152-PolicyConstrainsForDataExchange/Appendix#policy-constraints) in their Data Offers (`odrl:offer`) and **MUST** only use operators (`odrl:operator`) and rightOperands (`odrl:rightOperand`) assigned to the respective leftOperands (`odrl:leftOperand`). Application Providers **MUST** support all Constraints (`odrl:Constraint`), which are listed in this [constraint folder](./CX-0152-PolicyConstrainsForDataExchange/Appendix#policy-constraints). In case an arbitrary rightOperand (`odrl:rightOperand`) limited only by the type is allowed, it is mentioned as well by defining only the type (`schema:type`) of the rightOperand (`odrl:rightOperand`) without defining a constant (`schema:const`). By this, Data Provider and Data Consumer may agree on individual purposes ("Individual Purposes") in addition to the predefined purposes (“Predefined Purposes").  Data Provider and Data Consumer must use th leftOperand (`odrl:leftOperand`) "UsagePurpose” when they refer to an Individual Purpose in the rightOperand (`odrl:rightOperand`). Data Provider and Data Consumer may refer to existing individual contracts or/and contract conditions by using the namespace “ContractReference” and indicate the contract number or another unique identifier known to both Participants as value in the rightOperand (`odrl:rightOperand`).
 
 #### CHAINING CONSTRAINTS
 
@@ -107,7 +107,7 @@ All 3 Catena-X specific Verifiable Credentials are described in detail in CX-005
 
 The validation mechanism done via the RC is described in CX-0018 Dataspace Connectivity, chapter Framework Agreement to Verifiable Credential ([see standard library](https://catenax-ev.github.io/docs/standards/overview)).
 
-The validation for the rightOperands (`odrl:rightOperand`) of all other Constraints (`odrl:Constraint`) **SHOULD** be done based on the schema defined in this [constraint folder](./CX-0152-Appendix#Constraint).
+The validation for the rightOperands (`odrl:rightOperand`) of all other Constraints (`odrl:Constraint`) **SHOULD** be done based on the schema defined in this [constraint folder](./CX-0152-PolicyConstrainsForDataExchange/Appendix#policy-constraints).
 
 #### Catena-X Policy Schema
 
@@ -115,7 +115,7 @@ To clearly identify the relevant Catena-X Policy Schema, every policy (and their
 
 #### EXAMPLES
 
-Examples for Constraints (`odrl:Constraint`) and their usage in Policies (`odrl:Policy`) can be found in the [samples folder](./CX-0152-Appendix#Sample). Thereby, one sample is named accordingly to the Constraint (`odrl:Constraint`), which it demonstrates.
+Examples for Constraints (`odrl:Constraint`) and their usage in Policies (`odrl:Policy`) can be found in the [samples folder](./CX-0152-PolicyConstrainsForDataExchange/Appendix#policy-constraints). Thereby, one sample is named accordingly to the Constraint (`odrl:Constraint`), which it demonstrates.
 
 ### 2.2 CONVENTIONS FOR ACCESS POLICIES
 
