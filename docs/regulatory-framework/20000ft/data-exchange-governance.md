@@ -48,7 +48,7 @@ Participants may only exchange data within an existing customer or supplier rela
 [Data categories by (i) technical description and (ii) data quality parameters (if any)] [Additional characteristics of data quality]
 [Scope of usage right(s)]
 
->Participants must provide and use data in compliance with the [standards](./../../standards/overview.md) set by the Association:
+>Participants must provide and use data in compliance with the [standards](https://catenax-ev.github.io/docs/standards/overview) set by the Association:
 >
 >Unless otherwise agreed individually, Participants expressly exclude any requirements for quality, coherence, completeness of data and Data Provider provides data in its respective state "as is" and "as available".  
 >

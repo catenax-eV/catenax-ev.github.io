@@ -51,6 +51,7 @@ pagination_next: null
 | Spain | ES |
 | Sweden | SE |
 | Switzerland | CH |
+| Turkey | TR |
 | Ukraine[^1] | UA |
 | United Arab Emirates | AE |
 | United Kingdom | GB |
@@ -114,6 +115,5 @@ pagination_next: null
 | Timor-Leste | TL |
 | Trinidad and Tobago | TT |
 | Tunisia | TN |
-| Turkey | TR |
 | Uruguay | UY |
 | Vanuatu | VU |
