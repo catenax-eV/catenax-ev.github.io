@@ -2,7 +2,7 @@
 title: "Changelog"
 ---
 
-# Changelog (CX-0153)
+## Changelog (CX-0153)
 
 All notable changes to CX-0153 will be documented in this file.
 

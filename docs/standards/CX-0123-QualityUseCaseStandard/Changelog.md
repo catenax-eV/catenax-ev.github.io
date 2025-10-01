@@ -2,7 +2,7 @@
 title: "Changelog"
 ---
 
-# Changelog (CX-0123)
+## Changelog (CX-0123)
 
 ## [3.0.0] - CX-Saturn (25.09)
 
