@@ -107,15 +107,14 @@ To validate the upcoming releases, the association provides an INT environment f
 
 | Aspect | INT Environment |
 | ------ | --------------- |
-| Primary Purpose | System integration testing, early functional validation, smoke testing |
-| Release Version | Current and then upcoming Tractus-X release, as aligned with Tractus-X release cycle |
-| Test Types Supported | E2E integration testing of new features, smoke testing of new deployments, E2E regression testing |
-| Data | Synthetic company and asset data |
-| Participants | Core & enabling services and business application developers/committers, product team testers/QA |
-| System Components | Integrated ecosystem: Connected core & enabling services, external shared services, open source applications (FOSS/OSS) |
-| Strategic Role | Primary environment for validating upcoming changes and ensuring system coherence |
-| Access Scope | Open for continuous team testing |
-| Update Frequency | More frequent. 1 or multiple release candidate deployments per changed application content up to and potentially during end-to-end testing of the upcoming Catena-X release |
+| Primary Purpose | End-to-End Integration Testing, System-level tests |
+| Release Version | Upcoming Tractus-X Release |
+| Test Types Supported | Functional Tests, End-to-End Integration Tests, User Journey Tests |
+| Data | Synthetic test data (structurally realistic) of onboarded test companies |
+| Participants | Product team devs (committers, leads) and testers, Catena-X test management |
+| System Components |Tractus-X Core and Enablement Services (Connected to External Shared Services) and Open Source Applications (FOSS) |
+| Access Control | Controlled (open to Tractus-X community / Catena-X members for continous testing during release cycles) |
+| Update Frequency | Minimum once per testing cycle, usually multiple release candidates |
 
 ## Backwards compatibility
 

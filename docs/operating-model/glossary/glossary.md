@@ -7,6 +7,7 @@ sidebar_position: 1
 |-----------------------|------------------------------------------------------------------|
 | AAS                   | Asset Administration Shell                                       |
 | AP                    | Advisory Provider                                                |
+| AtP                   | Attestation Provider                                             |
 | API                   | Application Programming Interfaces                               |
 | BAP                   | Business Application Provider                                    |
 | BPN(BPNL, BPNA, BPNS) | Business Partner Number (Legal   Entities, Addresses, Sites)     |
@@ -18,8 +19,9 @@ sidebar_position: 1
 | cxOS                  | Catena-X Operating System                                        |
 | DAPS                  | Dynamic Attribute Provisioning Service                           |
 | DCP                   | Decentralized Claims Protocol                                    |
+| DCH                   | Digital Clearing House                                           |
 | DDTR                  | Decentralized Digital Twin Registry                              |
-| DSP                   | Dataspace Protocol                                               |
+| DSP                   | Data Space Protocol                                               |
 | DSSC                  | Data Space Support Center                                        |
 | EDC                   | Eclipse Data Space Components                                    |
 | EDWG                  | Eclipse Data Space Working Group                                 |
