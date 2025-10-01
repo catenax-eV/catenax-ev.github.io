@@ -2,7 +2,7 @@
 tags:
   - CAT/Portal
   - CAT/Core Service Provider
-  - CAT/Sandbox Services (Beta)
+  - CAT/Sandbox Services
 ---
 
 # CX-0053 Discovery Finder and BPN Discovery Service APIs v1.1.1

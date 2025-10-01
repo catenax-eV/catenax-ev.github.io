@@ -19,7 +19,7 @@ tags:
   - CAT/Portal
   - CAT/Provider Base
   - CAT/Sandbox Service Provider
-  - CAT/Sandbox Services (Beta)
+  - CAT/Sandbox Services
   - CAT/Semantic
   - CAT/Value Added Services
   - CAT/Business Application Provider

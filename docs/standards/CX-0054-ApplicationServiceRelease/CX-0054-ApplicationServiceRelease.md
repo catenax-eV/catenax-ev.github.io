@@ -2,7 +2,7 @@
 tags:
   - CAT/Marketplace
   - CAT/Core Service Provider
-  - CAT/Sandbox Services (Beta)
+  - CAT/Sandbox Services
 ---
 
 # CX-0054 Application Service Release v1.0.1

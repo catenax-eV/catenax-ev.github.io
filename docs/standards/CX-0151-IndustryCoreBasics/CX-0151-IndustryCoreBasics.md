@@ -1,4 +1,4 @@
-# CX - 0151 Industry Core: Basics v.1.0.0
+# CX-0151 Industry Core: Basics v.1.0.0
 
 ## ABSTRACT
 

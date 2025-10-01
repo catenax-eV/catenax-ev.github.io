@@ -4,7 +4,7 @@ tags:
   - CAT/SSI
   - CAT/Core Service Provider
   - CAT/Identity Wallet
-  - CAT/Sandbox Services (Beta)
+  - CAT/Sandbox Services
 ---
 
 # CX-0050 CX-Specific Credentials v.2.2.0

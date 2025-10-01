@@ -3,7 +3,7 @@ tags:
   - CAT/SSI
   - CAT/Core Service Provider
   - CAT/Identity Wallet
-  - CAT/Sandbox Services (Beta)
+  - CAT/Sandbox Services
 ---
 
 # CX-0049 DID Document v2.2.0
