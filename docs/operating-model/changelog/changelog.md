@@ -33,9 +33,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
   - Removed link to deprecated CX-0008 Standard.
 - Outlook
   - Updated the chapter "Further Integration of SSI Technologies". The chapter now shifts focus from technical decentralization of issuers and trust anchors towards a broader SSI concept. It highlights the transition from CSP-provided wallets to a modular bring-your-own-wallet approach, enables all entities to issue, present, and verify credentials regardless of their role, and places stronger emphasis on interoperability across dataspaces and alignment with overarching standards.
-
-### Removed
-
 - Removed references to the deprecated CX-0008 standard.
 
 ## [3.0.5]
