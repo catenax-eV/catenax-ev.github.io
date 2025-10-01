@@ -18,3 +18,7 @@ All notable changes to CX-0049 will be documented in this file.
 ### Removed
 
 - the "CatalogService" field in the service array
+
+## Legal
+
+Copyright © 2025 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

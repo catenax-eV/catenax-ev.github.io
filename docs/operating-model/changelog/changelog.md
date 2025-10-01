@@ -146,3 +146,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Certification process: reference provided to Conformity Assessment Framework that details the Catena-X certification process further
 - Labels: Removed distinguishing factors between Certified Operating Company and Certified Partner
 - Outlook: updated according to release 23.09
+
+## Legal
+
+Copyright © 2025 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

@@ -58,3 +58,7 @@ Initial version of CX-0123. Before single standards (one for each data model) ex
 - update model Fleet.Vehicles and integrate model Vehicle.ProductDescription
 - update Data Sharing Rules
 - update Define Notification Process and API
+
+## Legal
+
+Copyright © 2025 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

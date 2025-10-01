@@ -1,4 +1,4 @@
-# CX - 0153 Tariffs Use Case v.1.0.2
+# CX-0153 Tariffs Use Case v.1.0.2
 
 ## FOR WHOM IS THE STANDARD DESIGNED
 
@@ -279,3 +279,7 @@ N/A
 > *This section is non-normative*
 
 N/A
+
+## Legal
+
+Copyright © 2025 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

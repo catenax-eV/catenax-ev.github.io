@@ -69,3 +69,7 @@ All notable changes to CX-0128 will be documented in this file.
 ## [X.X.X] - R23.09
 
 - Initial release as CX-0046, CX-0047 and CX-0048
+
+## Legal
+
+Copyright © 2025 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

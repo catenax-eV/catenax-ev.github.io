@@ -34,3 +34,7 @@ All notable changes to CX-0018 will be documented in this file.
 ### Removed
 
 - n/a
+
+## Legal
+
+Copyright © 2025 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

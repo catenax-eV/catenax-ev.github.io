@@ -115,3 +115,7 @@ All notable changes to CX-0012 will be documented in this file.
 ### Added
 
 - Initial version by Catena-X Association.
+
+## Legal
+
+Copyright © 2025 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

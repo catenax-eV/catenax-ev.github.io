@@ -17,3 +17,7 @@ All notable changes to CX-0152 will be documented in this file.
 
 - relevant parts in CX-0018 conventions for constraints were removed
 - relevant parts in all use case standards conventions for access policy, usage policy and constraints were removed (as patch during the opt out phase)
+
+## Legal
+
+Copyright © 2025 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

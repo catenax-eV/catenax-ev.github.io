@@ -24,3 +24,7 @@ All notable changes to **CX-0136 (Use Case PCF)** will be documented in this fil
 - Sequence diagrams reflecting endpoint calls have been adapted accordingly
 - Section 4.1.2 was updated to reflect the endpoint modifications ([4.1.2.1 API Endpoints & resources, in CX-0136-UseCasePCF.md](#api-specification))
 - Replaced listing of conventions for policies and policy constraints by the reference to standard CX-0152. This is not a change in normativity, but merely removes the duplicate listing of general conventions.
+
+## Legal
+
+Copyright © 2025 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

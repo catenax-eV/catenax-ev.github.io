@@ -45,3 +45,7 @@ All notable changes to CX-0002 will be documented in this file.
 ### Removed
 
 - Remove all normative references to the EDC implementation
+
+## Legal
+
+Copyright © 2025 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

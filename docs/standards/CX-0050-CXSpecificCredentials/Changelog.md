@@ -16,3 +16,7 @@ All notable changes to CX-0050 will be documented in this file.
 
 - rewrote introduction
   - now explains the concept of verifiable credentials and summarises how they are used in the CX-dataspace
+
+## Legal
+
+Copyright © 2025 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

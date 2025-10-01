@@ -20,3 +20,7 @@ All notable changes to CX-0149 will be documented in this file.
 
 - credential descriptions moved to CX-0050
 - references to OIDC
+
+## Legal
+
+Copyright © 2025 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).
