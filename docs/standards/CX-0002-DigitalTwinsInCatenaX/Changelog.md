@@ -2,8 +2,6 @@
 title: "Changelog"
 ---
 
-## Changelog (CX-0002)
-
 All notable changes to CX-0002 will be documented in this file.
 
 ## [2.3.0] - CX-Saturn (25.09)

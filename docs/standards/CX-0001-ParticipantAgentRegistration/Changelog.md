@@ -2,8 +2,6 @@
 title: "Changelog"
 ---
 
-## Changelog (CX-0001)
-
 All notable changes to CX-0001 will be documented in this file.
 
 ## [1.2.0] - 2025-06-23

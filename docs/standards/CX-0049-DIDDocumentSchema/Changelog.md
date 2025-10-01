@@ -2,8 +2,6 @@
 title: "Changelog"
 ---
 
-## Changelog (CX-0049)
-
 All notable changes to CX-0049 will be documented in this file.
 
 ## [2.2.0] - R25.09 (CX-Saturn)

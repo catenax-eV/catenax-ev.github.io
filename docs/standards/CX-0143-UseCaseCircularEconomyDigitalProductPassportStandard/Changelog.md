@@ -2,8 +2,6 @@
 title: "Changelog"
 ---
 
-## Changelog (CX-0143)
-
 All notable changes to CX-0143 will be documented in this file.
 
 ## [1.2.0] - 25.09 (CX-Saturn)

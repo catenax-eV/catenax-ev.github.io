@@ -2,8 +2,6 @@
 title: "Changelog"
 ---
 
-## Changelog (CX-0018)
-
 All notable changes to CX-0018 will be documented in this file.
 
 ## [4.1.1] - 25/09

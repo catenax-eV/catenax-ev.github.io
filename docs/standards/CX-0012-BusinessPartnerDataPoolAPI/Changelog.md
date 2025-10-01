@@ -2,8 +2,6 @@
 title: "Changelog"
 ---
 
-## Changelog (CX-0012)
-
 All notable changes to CX-0012 will be documented in this file.
 
 ## [5.1.0] - CX-Saturn (25.09)

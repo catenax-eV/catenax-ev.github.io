@@ -2,8 +2,6 @@
 title: "Changelog"
 ---
 
-## Changelog (CX-0146)
-
 All notable changes to CX-0146 will be documented in this file.
 
 ## [2.0.0] - 2025-06-24
