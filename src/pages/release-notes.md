@@ -88,15 +88,21 @@ Details can be found in the [changelog](/docs/regulatory-framework/changelog).
 
 ### Tractus-X reference implementations
 
-#### Details on compatible and non-compatible versions
-
-By default, the versions listed in the ***[Tractus-X changelog](https://eclipse-tractusx.github.io/CHANGELOG/#2503---2025-03-17)*** are the recommended versions. Non-compatible or other compatible versions of the Tractus-X release or the apps are listed below. If a version is interoperable with the initial release version and those features and with all other listed versions its listed as compatible.
+The Saturn release combines the Eclipse Tractus-X releases [25.06](https://eclipse-tractusx.github.io/blog-changelog/release-25-06) and [25.09](https://eclipse-tractusx.github.io/blog-changelog/release-25-09).  
+This ensures a solid baseline of updated components together with new capabilities for data sovereignty, interoperability, and traceability.
+Non-compatible or other compatible versions of the Tractus-X release or the apps are listed below. If a version is interoperable with the initial release version and those features and with all other listed versions its listed as compatible.
 
 #### Compatible versions
 
 | Component | Versions | Comments |
 | -------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| Eclipse Data Space Connector <br /> (Tractus-X EDC) | [0.7.7](https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.7.7) <br /> [0.8.0](https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.8.0) <br /> [0.8.1](https://github.com/eclipse-tractusx/tractusx-edc/releases/[tag/0.8.1) <br /> [0.9.0](https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.9.0) [Latest] ||
+| Tractus-X Connector <br />(**E**clipse **D**ataspace **C**omponents Connector)| [0.7.7](https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.7.7) <br /> [0.8.0](https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.8.0) <br /> [0.8.1](https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.8.1) <br /> [0.9.0](https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.9.0)  <br />  [0.10.0](https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.10.0) <br />  [0.11.0](https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.11.0) [Latest] |||
+
+:::warning
+
+Please ensure that you carefully review the current [know knows](https://eclipse-tractusx.github.io/blog-changelog/release-25-09#tractus-x-connector), familiarize yourself with the updated policy changes, and adhere to the migration guidelines.
+
+:::
 
 #### Non-compatible versions
 
