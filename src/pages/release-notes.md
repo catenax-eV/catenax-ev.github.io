@@ -94,9 +94,17 @@ Non-compatible or other compatible versions of the Tractus-X release or the apps
 
 #### Compatible versions
 
-| Component | Versions | Comments |
-| -------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| Tractus-X Connector <br />(**E**clipse **D**ataspace **C**omponents Connector)| [0.7.7](https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.7.7) <br /> [0.8.0](https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.8.0) <br /> [0.8.1](https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.8.1) <br /> [0.9.0](https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.9.0)  <br />  [0.10.0](https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.10.0) <br />  [0.11.0](https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.11.0) [Latest] |||
+#### CX-Jupiter
+
+| Component | Versions |
+| -------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Tractus-X Connector <br />(**E**clipse **D**ataspace **C**omponents Connector)| [0.7.7](https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.7.7) <br /> [0.8.0](https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.8.0) <br /> [0.8.1](https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.8.1) <br /> [0.9.0](https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.9.0)  <br />  [0.10.0](https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.10.0)  |
+
+#### CX-Saturn
+
+| Component | Versions |
+| -------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Tractus-X Connector <br />(**E**clipse **D**ataspace **C**omponents Connector)| [0.11.0](https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.11.0) [Latest]  |
 
 :::warning
 
