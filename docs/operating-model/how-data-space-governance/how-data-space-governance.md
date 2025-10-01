@@ -128,7 +128,7 @@ Certified operating companies are companies certified for operating core service
 **Certified Provider**  
 ![Certified Provider](./assets/CX_Logo_Certified-Provider_CLR_RGB_pos_16x9@300.jpg)
 
-"Provider" is defined by standard [CX-0008](https://catenax-ev.github.io/docs/next/standards/CX-0008-RelevantStandardsForConformityAssessments) for the general participation in the data ecosystem depending on their role.
+Certified Providers are companies that have been certified to deliver or operate services as defined in the [Service Map](https://catenax-ev.github.io/docs/next/operating-model/what-service-map) for the general participation in the data ecosystem depending on their role.
 
 **Certified Solution**  
 ![Certified Solution](./assets/CX_Logo_Certified-Solution_CLR_RGB_pos_16x9@300.jpg)
