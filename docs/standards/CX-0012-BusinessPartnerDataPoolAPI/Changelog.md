@@ -1,4 +1,8 @@
-# Changelog
+---
+title: "Changelog"
+---
+
+# Changelog (CX-0012)
 
 All notable changes to CX-0012 will be documented in this file.
 

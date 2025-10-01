@@ -1,4 +1,8 @@
-# Changelog
+---
+title: "Changelog"
+---
+
+# Changelog (CX-0128)
 
 All notable changes to CX-0128 will be documented in this file.
 

@@ -1,4 +1,8 @@
-# Changelog
+---
+title: "Changelog"
+---
+
+# Changelog (CX-0149)
 
 All notable changes to CX-0149 will be documented in this file.
 

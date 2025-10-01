@@ -1,4 +1,8 @@
-# Changelog
+---
+title: "Changelog"
+---
+
+# Changelog (CX-0155)
 
 All notable changes to CX-0155 will be documented in this file.
 

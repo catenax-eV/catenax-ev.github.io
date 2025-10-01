@@ -1,4 +1,8 @@
-# Changelog
+---
+title: "Changelog"
+---
+
+# Changelog (CX-0136)
 
 All notable changes to **CX-0136 (Use Case PCF)** will be documented in this file.
 
