@@ -108,9 +108,9 @@ Non-compatible or other compatible versions of the Tractus-X release or the apps
 
 :::warning
 
-Please ensure that you carefully review the current [know knows](https://eclipse-tractusx.github.io/blog-changelog/release-25-09#tractus-x-connector), familiarize yourself with the updated policy changes, and adhere to the migration guidelines.
+Please ensure that you carefully review the current [known knowns](https://eclipse-tractusx.github.io/blog-changelog/release-25-09#tractus-x-connector), familiarize yourself with the updated policy changes, and adhere to the migration guidelines.
 
-Important: Please be aware based on the Catena-X standard CX-0018 you MUSt use the Tractus-X Connector version 0.11.0 and higher to be compatible.
+Important: Please be aware that based on the Catena-X standard CX-0018 you MUST use the Tractus-X Connector version 0.11.0 and higher to be compatible.
 
 :::
 
