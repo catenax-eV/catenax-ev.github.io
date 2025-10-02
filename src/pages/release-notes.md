@@ -22,6 +22,22 @@ For more information, on the **legal notice** please visit [here](https://catena
 
 - **1 standard deprecated** to consolidate the standards landscape and improve user-friendliness (CX-0013)
 
+:::warning
+
+During the recent Deployment Gate for **CX-Saturn** the proposed standard candidates were reviewed with a strong focus on **backward compatibility with CX-Jupiter** as well as on potential **implementation risks**.  
+
+The following standards were identified as not fully **backward compatibility with CX-Jupiter**  and to fix this they were allowed to apply the required changes through a **fast-track process** to be included in the CX-Saturn release:
+
+- **CX-0123 - Quality Use Case (v3.0)**  
+- **CX-0136 – Use Case PCF (v2.2)**  
+- **CX-0143 – Use Case Circular Economy Digital Product (v1.2)**  
+- **CX-0154 – Digital Master Data (v1.0)**  
+- **CX-0155 – Requirements Exchange (v1.0)**  
+
+These standards will be released together with the  *CX-Saturn Go-Live** of all other standards on **25.11**.  
+
+:::
+
 ### Catena-X Operating Model
 
 With the CX-Saturn release, the Operating Model strengthens compliance, clarifies governance rules, enhances lifecycle management, and refreshes the service map. The outlook on Self-Sovereign Identity (SSI) has been realigned, highlighting interoperability and standardization as key priorities.
