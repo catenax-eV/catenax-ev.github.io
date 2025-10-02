@@ -1,4 +1,4 @@
-# CX - 0151 Industry Core: Basics v.1.0.0
+# CX-0151 Industry Core: Basics v.1.0.0
 
 ## ABSTRACT
 
@@ -103,8 +103,7 @@ Examples include:
 
 - the data to be shared is a set of mass data not linked to a specific instance of an object
 - the data is only being used and intended to be used by a single use-case and there is no cross-use-case relevancy anticipated
-- ...
-  
+
 ##### 1.2.2.2 Additional Recommendations and Comments
 
 If mass data is used for analysis to generate new data applicable to a specific object (e.g., material, serialized part, batch), this data should be linked to a digital twin at that level, while the originating mass data sets are not required to be linked. For example, analytics use cases leveraging mass data sets regarding multiple objects could feed their outcome back into the digital twins of the known objects, while the potentially use-case proprietary mass data sets are not necessarily represented by digital twins or submodels.

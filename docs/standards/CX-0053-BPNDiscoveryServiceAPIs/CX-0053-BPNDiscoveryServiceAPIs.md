@@ -2,8 +2,7 @@
 tags:
   - CAT/Portal
   - CAT/Core Service Provider
-  - CAT/Sandbox Services (Beta)
-  - CAT/BPDM
+  - CAT/Sandbox Services
 ---
 
 # CX-0053 Discovery Finder and BPN Discovery Service APIs v1.1.1
@@ -139,7 +138,7 @@ This service is a prerequisite to find the available BPN Discovery Services.
 
 The API endpoints MUST be implemented conformant to the [openAPI specification](./assets/discovery-finder-openapi.yaml) for the discovery finder service.
 
-For further information on the discovery finder service see its [documentation]( https://github.com/eclipse-tractusx/sldt-discovery-finder/blob/main/docs/documentation.md).
+For further information on the discovery finder service see its [documentation](https://github.com/eclipse-tractusx/sldt-discovery-finder/blob/main/docs/architecture/1-introduction-and-goals.md).
 
 ### 2.2.2 Available Data Types
 

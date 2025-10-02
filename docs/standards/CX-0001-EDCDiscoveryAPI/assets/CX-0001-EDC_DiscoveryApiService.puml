@@ -1,7 +1,0 @@
-@startuml EDC Discovery API service
-"Consumer App" -> "Consumer App" : Retrieve Business Partner Number of Provider
-"Consumer App" -> "EDC Discovery API service" : Get Participant Agent endpoint for Business Partner Number
-"EDC Discovery API service" -> "Consumer App" : Return Participant Agent endpoint
-"Consumer App" -> "Consumer Participant Agent" : Initiate DSP requests with Provider (BPN, Participant Agent endpoint)
-"Consumer Participant Agent" <-> "Provider Participant Agent" : Communicate via DSP protocol 
-@enduml

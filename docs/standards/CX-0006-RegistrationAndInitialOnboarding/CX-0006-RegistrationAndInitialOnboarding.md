@@ -2,7 +2,7 @@
 tags:
   - CAT/Portal
   - CAT/Core Service Provider
-  - CAT/Sandbox Services (Beta)
+  - CAT/Sandbox Services
   - CAT/Sandbox Service Provider
   - CAT/Onboarding Service Provider
 ---

@@ -1,4 +1,4 @@
-# CX-0128 - Demand and Capacity Management Data Exchange v2.2.0
+# CX-0128 - Demand and Capacity Management Data Exchange v2.2.1
 
 ## ABSTRACT
 
@@ -24,44 +24,6 @@ Cross-company interactions and common business logic required for DCM are standa
 
 > *This section and all its subsections are non-normative*
 
-### Release 25.06
-
-- Added list of all chapters containing conformity assessment criteria to [Chapter 1.3](#13-conformity-and-proof-of-conformity)
-- Reduced number of conformity assessment criteria throughout this standard
-
-### Release 24.05
-
-- Replaced `MaterialDemand` with `WeekBasedMaterialDemand` aspect model
-- Added deactivation of `WeekBasedCapacityGroup` to [Section 4.2.2.2](#4222-data-exchange)
-- Added deactivation of `WeekBasedMaterialDemand` to [Section 4.1.2.2](#4122-data-exchange)
-- Added [Chapter 2.3](#23-additional-requirements) Additional Requirements
-- Added [Chapter 5.10](#510-supply-chain-disruption-notifications) Supply Chain Disruption Notifications
-- Added [Chapter 5.11](#511-demand-volatility-metrics) Demand Volatility Metrics
-- Added Agreed Capacity to [Section 5.6.1](#561-detailed-description-of-capacity-data)
-- Added Repositories to [Annexes](#annexes)
-- Updated References in [Chapter 7](#7-references)
-- Updated `WeekBasedCapacityGroup` aspect model
-- Updated `WeekBasedMaterialDemand` aspect model
-- Updated `MessageHeaderAspect` version in [Chapter 4](#4-application-programming-interfaces)
-- Updated Policies in [Chapter 6](#6-framework-agreement-and-policies)
-- Updated choice of words and writing pattern throughout this standard
-
-### Release 24.03
-
-- Merged CX-0046, CX-0047 and CX-0048 into this standard
-- Replaced `WeekBasedMaterialDemand` with `MaterialDemand` aspect model
-- Added Nesting of `WeekBasedCapacityGroup` to [Section 5.6.2](#562-weekbasedcapacitygroup-structure)
-- Added [Section 5.6.4](#564-load-factors-for-weekbasedcapacitygroup) Load Factors
-- Added [Section 5.7.2](#572-simulated-delta-production-pre-post-production) Simulated Delta-Production (Pre-/Post-production)
-- Added [Chapter 5.8](#58-request-for-update-rfu) Request for Update
-- Added [Chapter 5.9](#59-collaboration-functionalities-for-demand-and-capacity-management) Collaboration functionalities for DCM
-- Updated `WeekBasedCapacityGroup` aspect model
-- Updated unit of measure representation and handling
-
-### Release 23.09
-
-- Initial release
-
 ## 1 INTRODUCTION
 
 > *This section and all its subsections are non-normative*
@@ -70,9 +32,9 @@ Cross-company interactions and common business logic required for DCM are standa
 
 This standard is intended for the three roles below, who are involved in the Demand and Capacity Management (DCM) process within the automotive industry:
 
-- Data Provider
-- Data Consumer
-- Business Application Provider
+- Data provider
+- Data consumer
+- Business application provider
 
 For clarity on the roles and responsibility of each actor, please see [Chapter 5.2](#52-actors-and-roles). The scope of this standard includes regulations for managing future demands and capacities. It does not cover the specific methods companies use to calculate their demand or capacity data, nor does it address internal company measures.
 
@@ -109,7 +71,7 @@ Participants must demonstrate conformity with Catena-X standards. Conformity Ass
 
 If a participant or application only implements either the business role customer or the business role supplier, then conformity must only be demonstrated along conformity assessment criteria (CACs) that apply to the specific business role.
 
-Conformity assessment criteria are only found in the following chapters:
+Conformity assessment criteria are found only in the following chapters:
 
 - [2.3 Additional Requirements](#23-additional-requirements)
 - [3.1 Aspect Model WeekBasedMaterialDemand](#31-aspect-model-weekbasedmaterialdemand)
@@ -119,7 +81,7 @@ Conformity assessment criteria are only found in the following chapters:
 - [4 APPLICATION PROGRAMMING INTERFACES](#4-application-programming-interfaces)
 - [4.1 WeekBasedMaterialDemand API](#41-weekbasedmaterialdemand-api)
 - [4.2 WeekBasedCapacityGroup API](#42-weekbasedcapacitygroup-api)
-- [4.3 RequestForUpdate API](#43-requestforupdate-api)
+- [4.3 IdBasedRequestForUpdate API](#43-idbasedrequestforupdate-api)
 - [4.4 IdBasedComment API](#44-idbasedcomment-api)
 - [4.5 DCM Asset Administration Shell API (AAS API)](#45-dcm-asset-administration-shell-api-aas-api)
 - [5 PROCESSES](#5-processes)
@@ -176,11 +138,9 @@ Business application providers must implement APIs as described in this standard
 
 #### 1.4.2 Examples for Data Models
 
-This section provides JSON examples for `WeekBasedMaterialDemand`, `WeekBasedCapacityGroup`, `IdBasedRequestForUpdate` and `IdBasedComment` payloads. The actual values must replace the placeholders in double curly braces. Further property descriptions are available in [Chapter 5](#5-processes).
+This section provides JSON examples for `WeekBasedMaterialDemand`, `WeekBasedCapacityGroup`, `IdBasedRequestForUpdate` and `IdBasedComment` payloads. Further property descriptions are available in [Chapter 5](#5-processes).
 
 ##### 1.4.2.1 WeekBasedMaterialDemand data model JSON structure
-
-> value-only payload serialization example
 
 ```json
 {
@@ -190,28 +150,26 @@ This section provides JSON examples for `WeekBasedMaterialDemand`, `WeekBasedCap
   "materialGlobalAssetId" : "urn:uuid:48878d48-6f1d-47f5-8ded-a441d0d879df",
   "materialDemandId" : "0157ba42-d2a8-4e28-8565-7b07830c1110",
   "materialNumberSupplier" : "MNR-8101-ID146955.001",
-  "supplier" : "{{CATENAX-SUPPLIER-BPNL}}",
+  "supplier" : "BPNL000000000BXT",
   "changedAt" : "2023-11-05T08:15:30.123-05:00",
   "demandSeries" : [ {
-    "expectedSupplierLocation" : "{{CATENAX-SUPPLIER-BPNS}}",
+    "expectedSupplierLocation" : "BPNS000000000PFA",
     "demands" : [ {
       "demand" : 1000,
       "pointInTime" : "2023-10-09"
     } ],
-    "customerLocation" : "{{CATENAX-CUSTOMER-BPNS}}",
+    "customerLocation" : "BPNS0000000000WN",
     "demandCategory" : {
       "demandCategoryCode" : "0001"
     }
   } ],
   "materialDemandIsInactive" : true,
   "materialNumberCustomer" : "MNR-7307-AU340474.002",
-  "customer" : "{{CATENAX-CUSTOMER-BPNL}}"
+  "customer" : "BPNL00000000015G"
 }
 ```
 
 ##### 1.4.2.2 WeekBasedCapacityGroup data model JSON structure
-
-> value-only payload serialization example
 
 ```json
 {
@@ -220,7 +178,7 @@ This section provides JSON examples for `WeekBasedMaterialDemand`, `WeekBasedCap
     "loadFactor" : 3.5,
     "materialNumberCustomer" : "MNR-7307-AU340474.002",
     "materialNumberSupplier" : "MNR-8101-ID146955.001",
-    "customerLocation" : "{{CATENAX-CUSTOMER-BPNS}}",
+    "customerLocation" : "BPNS0000000000WN",
     "demandCategory" : {
       "demandCategoryCode" : "0001"
     }
@@ -240,9 +198,9 @@ This section provides JSON examples for `WeekBasedMaterialDemand`, `WeekBasedCap
     "measurementInterval" : 4,
     "startReferenceDateTime" : "2024-01-10T12:00:00.320Z"
   },
-  "supplier" : "{{CATENAX-SUPPLIER-BPNL}}",
+  "supplier" : "BPNL000000000BXT",
   "name" : "Spark Plugs on drilling machine for car model XYZ",
-  "supplierLocations" : [ "{{CATENAX-SUPPLIER-BPNS}}" ],
+  "supplierLocations" : [ "BPNS000000000PFA" ],
   "capacities" : [ {
     "pointInTime" : "2022-08-01",
     "agreedCapacity" : 1800,
@@ -252,13 +210,61 @@ This section provides JSON examples for `WeekBasedMaterialDemand`, `WeekBasedCap
   } ],
   "changedAt" : "2023-03-10T12:27:11.320Z",
   "capacityGroupId" : "0157ba42-d2a8-4e28-8565-7b07830c1110",
-  "customer" : "{{CATENAX-CUSTOMER-BPNL}}"
+  "customer" : "BPNL00000000015G"
 }
 ```
 
 ##### 1.4.2.3 IdBasedRequestForUpdate data model JSON structure
 
-> value-only payload serialization example
+###### 1.4.2.3.1 RfU: Provide Everything
+
+```json
+{
+}
+```
+
+###### 1.4.2.3.2 RfU: Provide only Material Demands
+
+```json
+{
+    "weekBasedMaterialDemand": [
+    ]
+}
+```
+
+###### 1.4.2.3.3 RfU: Provide only Capacity Groups
+
+```json
+{
+    "weekBasedCapacityGroup": [
+    ]
+}
+```
+
+###### 1.4.2.3.4 RfU: Provide only certain Objects
+
+```json
+{
+  "weekBasedMaterialDemand": [
+    {
+      "materialDemandId": "0157ba42-d2a8-4e28-8565-7b07830c3456"
+    }
+  ],
+  "weekBasedCapacityGroup": [
+    {
+      "capacityGroupId": "0157ba42-d2a8-4e28-8565-7b07830c1110"
+    },
+    {
+      "capacityGroupId": "a2fc69ac-ede7-48d3-bee5-04de665d49f0"
+    },
+    {
+      "capacityGroupId": "34238729-990a-4b61-b0c6-336da7b71675"
+    }
+  ]
+}
+```
+
+###### 1.4.2.3.5 RfU: Provide only certain Objects and only if my version is not up to date
 
 ```json
 {
@@ -275,14 +281,12 @@ This section provides JSON examples for `WeekBasedMaterialDemand`, `WeekBasedCap
 
 ##### 1.4.2.4 IdBasedComment data model JSON structure
 
-> value-only payload serialization example
-
 ```json
 {
   "postedAt" : "2023-03-10T12:27:11.320Z",
   "listOfReferenceDates" : [ "2023-11-05" ],
   "author" : "someone@company.com",
-  "supplier" : "{{CATENAX-SUPPLIER-BPNL}}",
+  "supplier" : "BPNL000000000BXT",
   "commentType" : "information",
   "commentId" : "f5c151e4-30b5-4456-94fd-2a7b559b6121",
   "changedAt" : "2023-03-10T12:27:11.320Z",
@@ -290,7 +294,469 @@ This section provides JSON examples for `WeekBasedMaterialDemand`, `WeekBasedCap
   "requestDelete" : true,
   "objectId" : "dfeb1334-497e-4dab-97c1-4e6f4e1c0320",
   "objectType" : "urn:samm:io.catenax.week_based_capacity_group",
-  "customer" : "{{CATENAX-CUSTOMER-BPNL}}"
+  "customer" : "BPNL00000000015G"
+}
+```
+
+#### 1.4.3 Examples for Data Assets
+
+This section provides JSON examples for registering API endpoints as data assets with your own connector conformant to [CX-0018](#71-normative-references).
+
+##### 1.4.3.1 WeekBasedMaterialDemand API endpoint data asset
+
+```json
+{
+  "@context": {
+    "edc": "https://w3id.org/edc/v0.0.1/ns/",
+    "cx-common": "https://w3id.org/catenax/ontology/common#",
+    "cx-taxo": "https://w3id.org/catenax/taxonomy#",
+    "dct": "http://purl.org/dc/terms/"
+  },
+  "@id": "catx-dcm-materialdemand-receive",
+  "properties": {
+    "dct:type": {
+      "@id": "cx-taxo:DcmWeekBasedMaterialDemand"
+    },
+    "description": "Endpoint for providing Material Demands",
+    "cx-common:version": "2.0"
+  },
+  "dataAddress": {
+    "@type": "DataAddress",
+    "type": "HttpData",
+    "baseUrl": "https://myApplication.myCompany.com/catx/api/md",
+    "method": "POST",
+    "proxyBody": "true",
+    "contentType": "application/json"
+  }
+}
+```
+
+##### 1.4.3.2 WeekBasedCapacityGroup API endpoint data asset
+
+```json
+{
+  "@context": {
+    "edc": "https://w3id.org/edc/v0.0.1/ns/",
+    "cx-common": "https://w3id.org/catenax/ontology/common#",
+    "cx-taxo": "https://w3id.org/catenax/taxonomy#",
+    "dct": "http://purl.org/dc/terms/"
+  },
+  "@id": "catx-dcm-capacitygroup-receive",
+  "properties": {
+    "dct:type": {
+      "@id": "cx-taxo:DcmWeekBasedCapacityGroup"
+    },
+    "description": "Endpoint for providing Week Based Capacity Groups",
+    "cx-common:version": "2.0"
+  },
+  "dataAddress": {
+    "@type": "DataAddress",
+    "type": "HttpData",
+    "baseUrl": "https://myApplication.myCompany.com/catx/api/cg",
+    "method": "POST",
+    "proxyBody": "true",
+    "contentType": "application/json"
+  }
+}
+```
+
+##### 1.4.3.3 IdBasedRequestForUpdate API endpoint data asset
+
+```json
+{
+  "@context": {
+    "edc": "https://w3id.org/edc/v0.0.1/ns/",
+    "cx-common": "https://w3id.org/catenax/ontology/common#",
+    "cx-taxo": "https://w3id.org/catenax/taxonomy#",
+    "dct": "http://purl.org/dc/terms/"
+  },
+  "@id": "catx-dcm-rfu-receive",
+  "properties": {
+    "dct:type": {
+      "@id": "cx-taxo:DcmIdBasedRequestForUpdate"
+    },
+    "description": "Endpoint for requesting updates",
+    "cx-common:version": "2.0"
+  },
+  "dataAddress": {
+    "@type": "DataAddress",
+    "type": "HttpData",
+    "baseUrl": "https://myApplication.myCompany.com/catx/api/rfu",
+    "method": "POST",
+    "proxyBody": "true",
+    "contentType": "application/json"
+  }
+}
+```
+
+##### 1.4.3.4 IdBasedComment API endpoint data asset
+
+```json
+{
+  "@context": {
+    "edc": "https://w3id.org/edc/v0.0.1/ns/",
+    "cx-common": "https://w3id.org/catenax/ontology/common#",
+    "cx-taxo": "https://w3id.org/catenax/taxonomy#",
+    "dct": "http://purl.org/dc/terms/"
+  },
+  "@id": "catx-dcm-comment-receive",
+  "properties": {
+    "dct:type": {
+      "@id": "cx-taxo:DcmIdBasedComment"
+    },
+    "description": "Endpoint for providing comments",
+    "cx-common:version": "2.0"
+  },
+  "dataAddress": {
+    "@type": "DataAddress",
+    "type": "HttpData",
+    "baseUrl": "https://myApplication.myCompany.com/catx/api/cmt",
+    "method": "POST",
+    "proxyBody": "true",
+    "contentType": "application/json"
+  }
+}
+```
+
+#### 1.4.4 Capabilities as data assets
+
+This section provides JSON examples for data asset, policy and contract definition as utilized [Chapter 4.6 Capabilities as Data Assets](#46-capabilities-as-data-assets). A catalog request with response is shown as well.
+
+##### 1.4.4.1 Capability data asset
+
+```json
+{
+    "@context": {
+        "edc": "https://w3id.org/edc/v0.0.1/ns/",
+        "cx-common": "https://w3id.org/catenax/ontology/common#",
+        "cx-taxo": "https://w3id.org/catenax/taxonomy#",
+        "dct": "http://purl.org/dc/terms/"
+    },
+    "@id": "capability-load-factor",
+    "properties": {
+        "dct:type": {
+            "@id": "cx-taxo:DcmLoadFactor"
+        },
+        "description": "I do support the optional capability load factors"
+    },
+  "dataAddress": {
+  "@type": "DataAddress",
+  "type": "HttpData",
+  "baseUrl": "https://myCompany.com"
+
+ }
+}
+```
+
+##### 1.4.4.2 Always True Policy
+
+```json
+{
+    "@id": "always-true",
+    "@type": "PolicyDefinition",
+    "createdAt": 1729522849169,
+    "policy": {
+        "@id": "f65bbd32-9674-4cd7-a3c3-280dab4653a6",
+        "@type": "odrl:Set",
+        "odrl:permission": [],
+        "odrl:prohibition": [],
+        "odrl:obligation": []
+    },
+    "@context": {
+        "tx": "https://w3id.org/tractusx/v0.0.1/ns/",
+        "tx-auth": "https://w3id.org/tractusx/auth/",
+        "cx-policy": "https://w3id.org/catenax/2025/9/policy/context.jsonld",
+        "@vocab": "https://w3id.org/edc/v0.0.1/ns/",
+        "edc": "https://w3id.org/edc/v0.0.1/ns/",
+        "odrl": "http://www.w3.org/ns/odrl/2/"
+    }
+}
+```
+
+##### 1.4.4.3 Contract Definition
+
+```json
+{
+    "@context": {},
+    "@id": "DcmLoadFactor",
+    "@type": "ContractDefinition",
+    "accessPolicyId": "always-true",
+    "contractPolicyId": "always-true",
+    "assetsSelector": {
+        "@type": "CriterionDto",
+        "operandLeft": "https://w3id.org/edc/v0.0.1/ns/id",
+        "operator": "=",
+        "operandRight": "capability-load-factor"
+    }
+}
+```
+
+##### 1.4.4.4 Catalog request
+
+```json
+{
+ "@context": {},
+ "protocol": "dataspace-protocol-http",
+ "counterPartyAddress": "https://partnerEdc.com/api/v1/dsp",
+ "counterPartyId": "BPNL000000000BXT",
+ "querySpec": {
+  "@type": "QuerySpecDto",
+  "https://w3id.org/edc/v0.0.1/ns/offset": 0,
+  "https://w3id.org/edc/v0.0.1/ns/limit": 2,
+  "https://w3id.org/edc/v0.0.1/ns/filterExpression": [
+   {
+    "@type": "CriterionDto",
+    "operandLeft": "'http://purl.org/dc/terms/type'.'@id'",
+    "operator": "=",
+    "operandRight": "https://w3id.org/catenax/taxonomy#DcmLoadFactor"
+   }
+  ]
+ }
+}
+```
+
+##### 1.4.4.5 Response to catalog request
+
+```json
+{
+  "@id": "72d62115-d1f2-47ff-b522-f647f45dabdb",
+  "@type": "dcat:Catalog",
+  "dcat:dataset": {
+    "@id": "capability-load-factor",
+    "@type": "dcat:Dataset",
+    "odrl:hasPolicy": {
+      "@id": "RGNtTG9hZEZhY3Rvci00:Y2FwYWJpbGl0eS1sb2FkLWZhY3Rvcg==:NmIzZGVjMzgtZjllOS00NTljLTk4ZGQtOGY1MmVlMjhiMmVm",
+      "@type": "odrl:Offer",
+      "odrl:permission": [],
+      "odrl:prohibition": [],
+      "odrl:obligation": []
+    },
+    "dcat:distribution": [
+      {
+        "@type": "dcat:Distribution",
+        "dct:format": {
+          "@id": "AzureStorage-PUSH"
+        },
+        "dcat:accessService": {
+          "@id": "743fc8be-e463-433b-80e4-640373dc4a66",
+          "@type": "dcat:DataService",
+          "dcat:endpointDescription": "dspace:connector",
+          "dcat:endpointUrl": "https://myCompany.com/api/v1/dsp",
+          "dcat:endpointURL": "https://myCompany.com/api/v1/dsp"
+        }
+      },
+      {
+        "@type": "dcat:Distribution",
+        "dct:format": {
+          "@id": "HttpData-PULL"
+        },
+        "dcat:accessService": {
+          "@id": "743fc8be-e463-433b-80e4-640373dc4a66",
+          "@type": "dcat:DataService",
+          "dcat:endpointDescription": "dspace:connector",
+          "dcat:endpointUrl": "https://myCompany.com/api/v1/dsp",
+          "dcat:endpointURL": "https://myCompany.com/api/v1/dsp"
+        }
+      },
+      {
+        "@type": "dcat:Distribution",
+        "dct:format": {
+          "@id": "HttpData-PUSH"
+        },
+        "dcat:accessService": {
+          "@id": "743fc8be-e463-433b-80e4-640373dc4a66",
+          "@type": "dcat:DataService",
+          "dcat:endpointDescription": "dspace:connector",
+          "dcat:endpointUrl": "https://myCompany.com/api/v1/dsp",
+          "dcat:endpointURL": "https://myCompany.com/api/v1/dsp"
+        }
+      },
+      {
+        "@type": "dcat:Distribution",
+        "dct:format": {
+          "@id": "AmazonS3-PUSH"
+        },
+        "dcat:accessService": {
+          "@id": "743fc8be-e463-433b-80e4-640373dc4a66",
+          "@type": "dcat:DataService",
+          "dcat:endpointDescription": "dspace:connector",
+          "dcat:endpointUrl": "https://myCompany.com/api/v1/dsp",
+          "dcat:endpointURL": "https://myCompany.com/api/v1/dsp"
+        }
+      }
+    ],
+    "dct:type": {
+      "@id": "https://w3id.org/catenax/taxonomy#DcmLoadFactor"
+    },
+    "description": "I do support the optional capability load factors",
+    "id": "capability-load-factor"
+  },
+  "dcat:catalog": [],
+  "dcat:distribution": [],
+  "dcat:service": {
+    "@id": "743fc8be-e463-433b-80e4-640373dc4a66",
+    "@type": "dcat:DataService",
+    "dcat:endpointDescription": "dspace:connector",
+    "dcat:endpointUrl": "https://myCompany.com/api/v1/dsp",
+    "dcat:endpointURL": "https://myCompany.com/api/v1/dsp"
+  },
+  "dspace:participantId": "BPNL000000000BXT",
+  "@context": {
+    "tx": "https://w3id.org/tractusx/v0.0.1/ns/",
+    "tx-auth": "https://w3id.org/tractusx/auth/",
+    "cx-policy": "https://w3id.org/catenax/2025/9/policy/context.jsonld",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "dct": "http://purl.org/dc/terms/",
+    "odrl": "http://www.w3.org/ns/odrl/2/",
+    "dspace": "https://w3id.org/dspace/v0.8/",
+    "@vocab": "https://w3id.org/edc/v0.0.1/ns/",
+    "edc": "https://w3id.org/edc/v0.0.1/ns/"
+  }
+}
+```
+
+#### 1.4.5 AAS API Examples
+
+##### 1.4.5.1 Submodel registration
+
+```json
+{
+  "id": "{{id of the AAS}}",
+  "idShort": "{{short name of your AAS}}",
+  "specificAssetIds": [
+    {
+      "name": "creationEntityId",
+      "value": "{{someUuidV4}}",
+      "externalSubjectId": {
+        "type": "ExternalReference",
+        "keys": [
+          {
+            "type": "GlobalReference",
+            "value": "*"
+          }
+        ]
+      }
+    }
+  ],
+  "submodelDescriptors": [
+    {
+      "id": "{{someSubmodelId}}",
+      "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+          {
+            "type": "GlobalReference",
+            "value": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#WeekBasedCapacityGroup"
+          }
+        ]
+      },
+      "endpoints": [
+        {
+          "interface": "SUBMODEL-3.0",
+          "protocolInformation": {
+            "href": "{{dataplane baseurl extended with the appropriate path ending on /submodel}}",
+            "endpointProtocol": "HTTP",
+            "endpointProtocolVersion": [
+              "1.1"
+            ],
+            "subprotocol": "DSP",
+            "subprotocolBody": "id={{ID of the connector asset the submodel is living behind}};dspEndpoint={{controlPlaneEndpoint}}",
+            "subprotocolBodyEncoding": "plain",
+            "securityAttributes": [
+              {
+                "type": "NONE",
+                "key": "NONE",
+                "value": "NONE"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+##### 1.4.5.2 Data asset definition
+
+```json
+{
+  "@context": {
+    "cx-common": "https://w3id.org/catenax/ontology/common#",
+    "ctx": "https://w3id.org/catenax/taxonomy#",
+    "aas-semantics": "https://admin-shell.io/aas/3/0/HasSemantics/"
+  },
+  "@id": "{{ID for the Asset}}",
+  "properties": {
+    "dct:type": {
+      "@id": "ctx:Submodel"
+    },
+    "cx-common:version": "3.0",
+    "aas-semantics:semanticId": "{{URN of WeekBasedMaterialDemand or WeekBasedCapacityGroup Submodel}}"
+    },
+    "dataAddress": {
+      "@type": "DataAddress",
+      "type": "HttpData",
+      "proxyPath": "true",
+      "proxyBody": "true",
+      "proxyMethod": "true",
+      "proxyQueryParams": "true",
+      "baseUrl": "{{Submodel endpoint ending before /submodel}}"
+    }
+}
+```
+
+##### 1.4.5.3 Policy definition
+
+```json
+{
+  "@context": {
+    "@vocab": "https://w3id.org/edc/v0.0.1/ns/",
+    "http://www.w3.org/ns/odrl/2/"
+    "https://w3id.org/catenax/2025/9/policy/context.jsonld"
+  },
+  "@type": "Set",
+  "@id": "{{POLICY-DEFINITION-ID}}",
+  "policy": {
+    "permission": [
+      {
+        "action": "access",
+        "constraint": [
+          { 
+            "and": [
+              {
+              "leftOperand": "BusinessPartnerNumber",
+              "operator": "isAnyOf",
+              "rightOperand": "{{hard-coded BPNLs of privileged consumer}}"
+              }
+          
+             ]
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+##### 1.4.5.4 Contract definition
+
+```json
+{
+  "@context": {
+    "@vocab": "https://w3id.org/edc/v0.0.1/ns/"
+  },
+  "@type": "ContractDefinition",
+  "@id": "contract-definition-id",
+  "accessPolicyId": "{{POLICY-DEFINITION-ID}}",
+  "contractPolicyId": "{{POLICY-DEFINITION-ID}}",
+  "assetsSelector": [
+    {
+      "operandLeft": "https://w3id.org/edc/v0.0.1/ns/id",
+      "operator": "=",
+      "operandRight": "{{ID for the Asset}}"
+    }
+  ]
 }
 ```
 
@@ -312,7 +778,7 @@ This section provides JSON examples for `WeekBasedMaterialDemand`, `WeekBasedCap
 | Comments                                    | These are purely text-based exchanges without the transfer of documents or attachments.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | CreationEntity                              | Currently, a Creation Entity groups `WeekBasedCapacityGroup` objects to support digital twins in the planning process. It may represent a production plant and will be further defined in future revisions of this standard.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | Customer                                    | A role within the DCM use case. Receives goods from its suppliers. Participating companies can have multiple roles at the same time. Customers provide consistent and up-to-date demand forecast and receive capacity data from suppliers.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| (Simulated) Delta-Production                | This is an optional feature that allows suppliers to manage capacity bottlenecks by simulating changes in production without altering actual or maximum capacity.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| Delta-Production                            | This is an optional feature that allows suppliers to manage capacity bottlenecks by shifting demand from one week to another in production without altering actual capacity, maximum capacity or the material demand.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | Demand Deviation                            | This is an optional metric that allows suppliers to monitor changes in customer demands and to identify significant changes that can collaboratively be addressed by suppliers and customers.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | Digital Twin                                | Based on [[CX-0002](#71-normative-references)] Standard a digital twin (DT) describes a digital representation of an asset sufficient to meet the requirements of a set of use cases. For detailed information please refer to [[CX-0002](#71-normative-references)] Digital Twins in Catena-X.                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | Flexible Capacity                           | The difference between maximum and actual capacity, representing the potential to increase capacity without further agreements, such as extending the use of production resources within a week. In particular, it refers to measures to extend the weekly utilization of the available production resources.                                                                                                                                                                                                                                                                                                                                                                                                             |
@@ -342,39 +808,9 @@ This standard utilizes digital twins of "part type" (BOM as planned). Digital tw
 
 This standard utilizes Supply Chain Disruption Notifications. Supply Chain Disruption Notifications are also relevant to other Catena-X standards. For additional details see [[CX-0146](#71-normative-references)] Supply Chain Disruption Notifications.
 
-### 2.3 Additional Requirements
+### 2.3 POLICY CONSTRAINTS FOR DATA EXCHANGE
 
-Policies within Catena-X MUST be aligned with the example usage policy in the CX ODRL Profile and with all subsections of [2.3 Additional Requirements](#23-additional-requirements).  
-
-```text
-https://github.com/catenax-eV/cx-odrl-profile/blob/main/example_usage_policy.json
-```
-
-#### 2.3.1 Conventions for Use Case Policy in Context Data Exchange
-
-In alignment with our commitment to data sovereignty, a specific framework governing the utilization of data within the Catena-X use cases has been described. A set of specific policies on data offering and data usage level detail the conditions under which data may be accessed, shared, and used, ensuring compliance with legal standards.
-
-For a comprehensive understanding of the rights, restrictions, and obligations associated with data usage in the Catena-X ecosystem, we refer users to:
-
-- The detailed [[ODRL](#repositories)] policy repository. This document provides in-depth explanations of the terms and conditions applied to data access and utilization, ensuring that all engagement with our data is conducted responsibly and in accordance with established guidelines.
-- The ODRL schema template. This defines how policies used for data sharing/usage should get defined. Those schemas must be followed when providing services or apps for data sharing/consuming.
-
-##### 2.3.1.1 Additional details regarding access policies
-
-A data provider may tie certain access authorizations `Access Policies` to its data offers for members of Catena-X  and one or several data consumers. By limiting access to certain Participants, data provider maintains control over its anti-trust obligations when sharing certain data. In particular, data providers may apply access policies to restrict access to a particular data offer for only one participant identified by a specific business partner number.
-
-##### 2.3.1.2 Additional details regarding usage policies
-
-In the context of data usage policies `Usage Policies`, participants and related services must use the following policy rules:
-
-- *Data Exchange Governance* framework agreement.
-- At least one use case purpose `UsagePurpose` from the above mentioned [[ODRL](#repositories)] policy repository.
-
-Additionally, respective usage policies may include the following policy rule:
-
-- Reference Contract `ContractReference`.
-
-Details on namespaces and ODRL policy rule values to be used for the above-mentioned types are provided via the [[ODRL](#repositories)] policy repository.
+In alignment with our commitment to data sovereignty, a specific framework governing the utilization of data within the Catena-X use cases has been outlined.  As part of this data sovereignty framework, conventions for access policies, for usage policies and for the constraints contained in the policies have been specified in standard 'CX-0152 Policy Constraints for Data Exchange'. This standard document CX-0152 **MUST** be followed when providing services or apps for data sharing/consuming and when sharing or consuming data in the Catena-X ecosystem. What conventions are relevant for what roles named in [1.1 AUDIENCE & SCOPE](#11-audience--scope) is specified in the CX-0152 standard document as well. CX-0152 can be found in the [standard library](https://catenax-ev.github.io/docs/standards/overview).
 
 ## 3 ASPECT MODELS
 
@@ -544,11 +980,11 @@ The [unique identifier](#324-identifier-of-semantic-model) for the semantic mode
 
 The JSON payload provided by data providers MUST comply with the [JSON schema](#3352-json-schema) as specified in this standard and MUST be validated against the same JSON schema by data consumers.
 
-Within the Catena-X data space `IdBasedRequestForUpdate` data MUST be requested and exchanged using a connector, conforming to the standards [[CX-0018](#71-normative-references)] and [[CX-0002](#71-normative-references)]. It MUST be transferred using the [RequestForUpdate API](#43-requestforupdate-api).
+Within the Catena-X data space `IdBasedRequestForUpdate` data MUST be requested and exchanged using a connector, conforming to the standards [[CX-0018](#71-normative-references)] and [[CX-0002](#71-normative-references)]. It MUST be transferred using the [IdBasedRequestForUpdate API](#43-idbasedrequestforupdate-api).
 
 #### 3.3.1 Introduction
 
-`IdBasedRequestForUpdate` can be exchanged between customer and supplier conforming to the API standard described in [Capter 4.3](#43-requestforupdate-api). The data format specified in this standard must be conformed to.
+`IdBasedRequestForUpdate` can be exchanged between customer and supplier conforming to the API standard described in [Capter 4.3](#43-idbasedrequestforupdate-api). The data format specified in this standard must be conformed to.
 
 Customers and suppliers must implement the `IdBasedRequestForUpdate` data model.
 
@@ -621,7 +1057,7 @@ The [unique identifier](#344-identifier-of-semantic-model) for the semantic mode
 
 The JSON Payload provided by data providers MUST comply with the [JSON schema](#3452-json-schema) as specified in this standard and MUST be validated against the same JSON schema by data consumers.
 
-Within the Catena-X data space `IdBasedComment` data MUST be requested and exchanged using a connector, conforming to the standards [[CX-0018](#71-normative-references)] and [[CX-0002](#71-normative-references)]. It must be transferred using the [IdBasedComment API](#44-idbasedcomment-api).
+Within the Catena-X data space `IdBasedComment` data MUST be requested and exchanged using a connector, conforming to the standards [[CX-0018](#71-normative-references)] and [[CX-0002](#71-normative-references)]. It MUST be transferred using the [IdBasedComment API](#44-idbasedcomment-api).
 
 #### 3.4.1 Introduction
 
@@ -742,7 +1178,7 @@ Suppliers must be able to consume and process `WeekBasedMaterialDemand`.
 
 #### 4.1.1 Preconditions and Dependencies
 
-The `WeekBasedMaterialDemand` API must be published towards the network using a Data Asset/Contract Offer, which is in line with the Dataspace Protocol as specified by the International Data Spaces Association (IDSA) and must conform with the Catena-X standard [[CX-0001](#71-normative-references)].
+The `WeekBasedMaterialDemand` API must be published towards the network using a data asset and contract offer, which is in line with the dataspace protocol as specified by the International Data Spaces Association (IDSA) and must conform with the Catena-X standard [[CX-0001](#71-normative-references)].
 
 #### 4.1.2 API Specification
 
@@ -752,7 +1188,7 @@ https://catenax-ev.github.io/assets/files/catena-x-dcm-week-based-material-deman
 
 ##### 4.1.2.1 API endpoints and resources
 
-The API requires a single endpoint that accepts HTTP POST requests as described in [[RFC9110](#72-non-normative-references)]. The specific structure of the endpoint may vary, but its address must be included in the Data Asset as defined in [Section 4.1.2.5](#4125-data-asset-structure).
+The API requires a single endpoint that accepts HTTP POST requests as described in [[RFC9110](#72-non-normative-references)]. The specific structure of the endpoint may vary, but its address must be included in the data asset as defined in [Section 4.1.2.5](#4125-data-asset-structure).
 
 ##### 4.1.2.2 Data exchange
 
@@ -787,44 +1223,13 @@ The API must use JSON formatted data transmitted over HTTPS.
 
 ##### 4.1.2.5 Data asset structure
 
-The HTTP POST endpoint introduced in [Section 4.1.2.1](#4121-api-endpoints-and-resources) must not be called from a supply chain partner directly. Rather, it must be called via connector conformant to [[CX-0018](#71-normative-references)]. Therefore, the endpoint must be offered as a Data Asset. The latter must have a property `http://purl.org/dc/terms/type` with the ID `https://w3id.org/catenax/taxonomy#DcmWeekBasedMaterialDemand`. It can be abbreviated if the namespaces of key and value are part of the json-ld @context object (see example below). This property should be used to identify the asset when searching the assets catalog of a supplier. Because the asset reflects the contractual relationship between a supplier and its customers, only one asset with the aforementioned property for one version must be visible to the customer at any time to avoid ambiguity.
+The HTTP POST endpoint introduced in [Section 4.1.2.1](#4121-api-endpoints-and-resources) must not be called from a supply chain partner directly. Rather, it must be called via connector conformant to [[CX-0018](#71-normative-references)]. Therefore, the endpoint must be offered as a data asset. The latter must have a property `http://purl.org/dc/terms/type` with the ID `https://w3id.org/catenax/taxonomy#DcmWeekBasedMaterialDemand`. It can be abbreviated if the namespaces of key and value are part of the json-ld @context object (see example below). This property should be used to identify the asset when searching the assets catalog of a supplier. Because the asset reflects the contractual relationship between a supplier and its customers, only one asset with the aforementioned property for one version must be visible to the customer at any time to avoid ambiguity.
 
 The API version described in this standard must be published in the property `https://w3id.org/catenax/ontology/common#version` as version `2.0` in the asset. The requester of an asset must be able to handle multiple assets for this endpoint, being differentiated only by the version. The requester should choose the asset with the highest compatible version number implemented by themselves. If the requester cannot find a compatible version with their own, the requester must terminate the data transfer.
 
 Each supplier must ensure that only their customers have access to the asset by using access and usage policies and respective contract definitions.
 
-An example Data Asset definition is shown below.
-
-> Note: Expressions in double curly braces \{\{\}\} must be substituted with a corresponding value.
->
-> Asset definition example for Management API v3 (non-normative)
-
-```json
-{
-  "@context": {
-    "edc": "https://w3id.org/edc/v0.0.1/ns/",
-    "cx-common": "https://w3id.org/catenax/ontology/common#",
-    "cx-taxo": "https://w3id.org/catenax/taxonomy#",
-    "dct": "http://purl.org/dc/terms/"
-  },
-  "@id": "{{ ASSET_ID }}",
-  "properties": {
-    "dct:type": {
-      "@id": "cx-taxo:DcmWeekBasedMaterialDemand"
-    },
-    "description": "Endpoint for providing Material Demands",
-    "cx-common:version": "2.0"
-  },
-  "dataAddress": {
-    "@type": "DataAddress",
-    "type": "HttpData",
-    "baseUrl": "{{ URL-BACKEND-APPLICATION-WEEKBASEDMATERIALDEMAND-ENDPOINT }}",
-    "method": "POST",
-    "proxyBody": "true",
-    "contentType": "application/json"
-  }
-}
-```
+An example data asset definition can be found in [Section 1.4.3](#143-examples-for-data-assets).
 
 ##### 4.1.2.6 Error handling
 
@@ -951,7 +1356,7 @@ Customers must be able to consume and process `WeekBasedCapacityGroup`
 
 #### 4.2.1 Preconditions and Dependencies
 
-The `WeekBasedCapacityGroup` API must be published towards the network using a Data Asset/Contract Offer, which is in line with the Dataspace Protocol as specified by IDSA and must conform with the Catena-X standard [[CX-0001](#71-normative-references)].
+The `WeekBasedCapacityGroup` API must be published towards the network using a data Asset and contract offer, which is in line with the dataspace protocol as specified by IDSA and must conform with the Catena-X standard [[CX-0001](#71-normative-references)].
 
 #### 4.2.2 API Specification
 
@@ -961,7 +1366,7 @@ https://catenax-ev.github.io/assets/files/catena-x-dcm-week-based-capacity-group
 
 ##### 4.2.2.1 API endpoints and resources
 
-The API requires a single endpoint that accepts HTTP POST requests as described in [[RFC9110](#72-non-normative-references)]. The specific structure of the endpoint may vary, but its address must be included in the Data Asset as defined in [Section 4.1.2.5](#4125-data-asset-structure).
+The API requires a single endpoint that accepts HTTP POST requests as described in [[RFC9110](#72-non-normative-references)]. The specific structure of the endpoint may vary, but its address must be included in the data asset as defined in [Section 4.1.2.5](#4125-data-asset-structure).
 
 ##### 4.2.2.2 Data exchange
 
@@ -972,7 +1377,7 @@ Attributes that are strings must be formatted correctly. For example, `customer`
 
 The `demandCategory` property must be set to one of the predefined values from [Section 5.5.1](#551-detailed-description-of-demand-data).
 
-The `unitOfMeasure` property must be set to one of the predefined values from [Units of measure used in DCM](#units-of-measure-used-in-dcm). If no unit of measure is to be provided, the customer must omit the property and set the `unitOfMeasureIsOmitted` flag to true.
+The `unitOfMeasure` property must be set to one of the predefined values from [Units of measure used in DCM](#units-of-measure-used-in-dcm). If no unit of measure is to be provided, the supplier must omit the property and set the `unitOfMeasureIsOmitted` flag to true.
 
 Multiple `WeekBasedCapacityGroup` aspects may be provided in one transfer as a JSON list. If only one `WeekBasedCapacityGroup` aspect is provided, it must be as a list with one entry.
 
@@ -1024,44 +1429,13 @@ The API must use JSON formatted data transmitted over HTTPS.
 
 ##### 4.2.2.5 Data asset structure
 
-The HTTP POST endpoint introduced in [Section 4.2.2.1](#4221-api-endpoints-and-resources) must not be called from a supply chain partner directly. Rather, it must be called via a connector conformant to [[CX-0018](#71-normative-references)]. Therefore, the endpoint must be offered as a Data Asset. The latter must have a property `http://purl.org/dc/terms/type` with the ID `https://w3id.org/catenax/taxonomy#DcmWeekBasedCapacityGroup`. It can be abbreviated if the namespaces of key and value are part of the json-ld @context object (see example below). This property should be used to identify the asset when searching the assets catalog of a customer. Because the asset reflects the contractual relationship between a customer and its suppliers, only one asset with the aforementioned property for one version must be visible to the supplier at any time to avoid ambiguity.
+The HTTP POST endpoint introduced in [Section 4.2.2.1](#4221-api-endpoints-and-resources) must not be called from a supply chain partner directly. Rather, it must be called via a connector conformant to [[CX-0018](#71-normative-references)]. Therefore, the endpoint must be offered as a data asset. The latter must have a property `http://purl.org/dc/terms/type` with the ID `https://w3id.org/catenax/taxonomy#DcmWeekBasedCapacityGroup`. It can be abbreviated if the namespaces of key and value are part of the json-ld @context object (see example below). This property should be used to identify the asset when searching the assets catalog of a customer. Because the asset reflects the contractual relationship between a customer and its suppliers, only one asset with the aforementioned property for one version must be visible to the supplier at any time to avoid ambiguity.
 
 The API version described in this standard must be published in the property `https://w3id.org/catenax/ontology/common#version` as version `2.0` in the asset. The requester of an asset must be able to handle multiple assets for this endpoint, being differentiated only by the version. The requester should choose the asset with the highest compatible version number implemented by themselves. If the requester cannot find a compatible version with their own, the requester must terminate the data transfer.
 
 Each customer must ensure that only their suppliers have access to the asset by using access and usage policies and respective contract definitions.
 
-An example Data Asset definition is shown below.
-
-> Note: Expressions in double curly braces \{\{\}\} must be substituted with a corresponding value.
->
-> Asset definition example for management API v3 (non-normative)
-
-```json
-{
-  "@context": {
-    "edc": "https://w3id.org/edc/v0.0.1/ns/",
-    "cx-common": "https://w3id.org/catenax/ontology/common#",
-    "cx-taxo": "https://w3id.org/catenax/taxonomy#",
-    "dct": "http://purl.org/dc/terms/"
-  },
-  "@id": "{{ ASSET_ID }}",
-  "properties": {
-    "dct:type": {
-      "@id": "cx-taxo:DcmWeekBasedCapacityGroup"
-    },
-    "description": "Endpoint for providing Week Based Capacity Groups",
-    "cx-common:version": "2.0"
-  },
-  "dataAddress": {
-    "@type": "DataAddress",
-    "type": "HttpData",
-    "baseUrl": "{{ URL-BACKEND-APPLICATION-WEEKBASEDCAPACITYGROUP-ENDPOINT }}",
-    "method": "POST",
-    "proxyBody": "true",
-    "contentType": "application/json"
-  }
-}
-```
+An example data asset definition can be found in [Section 1.4.3](#143-examples-for-data-assets).
 
 ##### 4.2.2.6 Error handling
 
@@ -1178,7 +1552,7 @@ A whitespace or an empty cell indicates that for this specific rule that row is 
 | **Actions**         | Business Logic       | Overwrite all existing values with consumed values                                                             |
 |                     | Return Code          | 200 - OK                                                                                                       |
 
-### 4.3 RequestForUpdate API
+### 4.3 IdBasedRequestForUpdate API
 
 Within the Catena-X data space APIs MUST only be accessible via a connector, conforming to the standard [[CX-0018](#71-normative-references)].
 
@@ -1199,7 +1573,7 @@ It is recommended that this functionality should not be an end-user functionalit
 
 #### 4.3.1 Preconditions and Dependencies
 
-The `IdBasedRequestForUpdate` API must be published towards the network using a Data Asset/Contract Offer, which is in line with the Dataspace Protocol as specified by IDSA and must conform with the Catena-X standard [[CX-0001](#71-normative-references)].
+The `IdBasedRequestForUpdate` API must be published towards the network using a data asset and contract offer, which is in line with the dataspace protocol as specified by IDSA and must conform with the Catena-X standard [[CX-0001](#71-normative-references)].
 
 #### 4.3.2 API Specification
 
@@ -1209,7 +1583,7 @@ https://catenax-ev.github.io/assets/files/catena-x-dcm-id-based-request-for-upda
 
 ##### 4.3.2.1 API endpoints and resources
 
-The API requires a single endpoint that accepts HTTP POST requests as described in [[RFC9110](#72-non-normative-references)]. The specific structure of the endpoint May vary, but its address must be included in the Data Asset as defined in [Section 4.3.2.4](#4324-data-asset-structure).
+The API requires a single endpoint that accepts HTTP POST requests as described in [[RFC9110](#72-non-normative-references)]. The specific structure of the endpoint May vary, but its address must be included in the data asset as defined in [Section 4.3.2.4](#4324-data-asset-structure).
 
 ##### 4.3.2.2 Data exchange
 
@@ -1218,81 +1592,13 @@ When consuming a payload, that contains unknown properties not described within 
 
 An empty RfU payload requests all data within the specific customer-supplier relationship.
 
-A RfU payload May specify that only `WeekBasedMaterialDemand` or `WeekBasedCapacityGroup` objects are requested within the specific customer-supplier relationship.
+A RfU payload may specify that only `WeekBasedMaterialDemand` or `WeekBasedCapacityGroup` objects are requested within the specific customer-supplier relationship.
 
-A RfU payload May specify that only certain data objects, identified by their respective UUID, are requested within the specific customer-supplier relationship.
+A RfU payload may specify that only certain data objects, identified by their respective UUID, are requested within the specific customer-supplier relationship.
 
-A RfU payload May specify that only certain data objects, that have been updated, identified by their respective UUID and `changedAt` value, are requested within the specific customer-supplier relationship.
+A RfU payload may specify that only certain data objects, that have been updated, identified by their respective UUID and `changedAt` value, are requested within the specific customer-supplier relationship.
 
-The following example payloads are intended to illustrate the different possible payloads of an `IdBasedRequestForUpdate`:
-
-RfU: Provide Everything
-
-```json
-{
-}
-```
-
-RfU: Provide only Material Demands
-
-```json
-{
-    "weekBasedMaterialDemand": [
-    ]
-}
-```
-
-RfU: Provide only Capacity Groups
-
-```json
-{
-    "weekBasedCapacityGroup": [
-    ]
-}
-```
-
-RfU: Provide only certain Objects
-
-```json
-{
-    "weekBasedMaterialDemand": [
-        {
-            "materialDemandId":"278e333d-f06b-4b59-8e95-22862f69807f"},
-        {
-            "materialDemandId":"46adfa5d-36b7-4a9b-9ac6-508dac500dd2"}
-    ]
-},
-{
-    "weekBasedCapacityGroup": [
-        {
-            "capacityGroupId":"a2fc69ac-ede7-48d3-bee5-04de665d49f0"},
-        {
-            "capacityGroupId":"34238729-990a-4b61-b0c6-336da7b71675"}
-    ]
-}
-```
-
-RfU: Provide only certain Objects and only if my version is not up to date
-
-```json
-{
-    "weekBasedMaterialDemand": [
-        {
-            "materialDemandId":"278e333d-f06b-4b59-8e95-22862f69807f"},
-        {
-            "materialDemandId":"46adfa5d-36b7-4a9b-9ac6-508dac500dd2"}
-    ]
-},
-{
-    "weekBasedCapacityGroup": [
-        {
-            "capacityGroupId":"a2fc69ac-ede7-48d3-bee5-04de665d49f0"},
-        {
-            "capacityGroupId":"34238729-990a-4b61-b0c6-336da7b71675",
-            "changedAt": "2023-03-08T11:44:27.701+01:00"}
-    ]
-}
-```
+Payload examples can be found in [Section 1.4.2.3](#1423-idbasedrequestforupdate-data-model-json-structure).
 
 ##### 4.3.2.3 Available data types
 
@@ -1300,44 +1606,13 @@ The API must use JSON formatted data transmitted over HTTPS.
 
 ##### 4.3.2.4 Data asset structure
 
-The HTTP POST endpoint introduced in [Section 4.3.2.1](#4321-api-endpoints-and-resources) must not be called from a supply chain partner directly. Rather, it must be called via a connector conformant to [[CX-0018](#71-normative-references)]. Therefore, the endpoint must be offered as a Data Asset. The latter must have a property `http://purl.org/dc/terms/type` with the ID `https://w3id.org/catenax/taxonomy#DcmIdBasedRequestForUpdate`. It can be abbreviated if the namespaces of key and value are part of the json-ld @context object (see example below). This property should be used to identify the asset when searching the assets catalog of a partner. Because the asset reflects the contractual relationship between two DCM partners, only one asset with the aforementioned property for one version must be visible to the partner at any time to avoid ambiguity.
+The HTTP POST endpoint introduced in [Section 4.3.2.1](#4321-api-endpoints-and-resources) must not be called from a supply chain partner directly. Rather, it must be called via a connector conformant to [[CX-0018](#71-normative-references)]. Therefore, the endpoint must be offered as a data asset. The latter must have a property `http://purl.org/dc/terms/type` with the ID `https://w3id.org/catenax/taxonomy#DcmIdBasedRequestForUpdate`. It can be abbreviated if the namespaces of key and value are part of the json-ld @context object (see example below). This property should be used to identify the asset when searching the assets catalog of a partner. Because the asset reflects the contractual relationship between two DCM partners, only one asset with the aforementioned property for one version must be visible to the partner at any time to avoid ambiguity.
 
 The API version described in this standard must be published in the property `https://w3id.org/catenax/ontology/common#version` as version `2.0` in the asset. The requester of an asset must be able to handle multiple assets for this endpoint, being differentiated only by the version. The requester should choose the asset with the highest compatible version number implemented by themselves. If the requester cannot find a compatible version with their own, the requester must terminate the data transfer.
 
 Each DCM participant must ensure that only their business partners have access to the asset by using access and usage policies and respective contract definitions.
 
-An example Data Asset definition is shown below.
-
-> Note: Expressions in double curly braces \{\{\}\} must be substituted with a corresponding value.
->
-> Asset definition example for management API v3 (non-normative)
-
-```json
-{
-  "@context": {
-    "edc": "https://w3id.org/edc/v0.0.1/ns/",
-    "cx-common": "https://w3id.org/catenax/ontology/common#",
-    "cx-taxo": "https://w3id.org/catenax/taxonomy#",
-    "dct": "http://purl.org/dc/terms/"
-  },
-  "@id": "{{ ASSET_ID }}",
-  "properties": {
-    "dct:type": {
-      "@id": "cx-taxo:DcmIdBasedRequestForUpdate"
-    },
-    "description": "Endpoint for requesting updates",
-    "cx-common:version": "2.0"
-  },
-  "dataAddress": {
-    "@type": "DataAddress",
-    "type": "HttpData",
-    "baseUrl": "{{ URL-BACKEND-APPLICATION-IDBASEDREQUESTFORUPDATE-ENDPOINT }}",
-    "method": "POST",
-    "proxyBody": "true",
-    "contentType": "application/json"
-  }
-}
-```
+An example data asset definition can be found in [Section 1.4.3](#143-examples-for-data-assets).
 
 ##### 4.3.2.5 Error handling
 
@@ -1377,7 +1652,7 @@ Customers and suppliers must be able to provide, consume and process `IdBasedCom
 
 #### 4.4.1 Preconditions and Dependencies
 
-The `IdBasedComment` API must be published towards the network using a Data Asset/Contract Offer, which is in line with the Dataspace Protocol as specified by IDSA and must conform with the Catena-X standard [[CX-0001](#71-normative-references)].
+The `IdBasedComment` API must be published towards the network using a data asset and contract offer, which is in line with the dataspace protocol as specified by IDSA and must conform with the Catena-X standard [[CX-0001](#71-normative-references)].
 
 #### 4.4.2 API Specification
 
@@ -1387,7 +1662,7 @@ https://catenax-ev.github.io/assets/files/catena-x-dcm-id-based-comment-1_0_0-10
 
 ##### 4.4.2.1 API endpoints and resources
 
-The API requires a single endpoint that accepts HTTP POST requests as described in [[RFC9110](#72-non-normative-references)]. The specific structure of the endpoint may vary, but its address must be included in the Data Asset as defined in [Section 4.4.2.5](#4425-data-asset-structure).
+The API requires a single endpoint that accepts HTTP POST requests as described in [[RFC9110](#72-non-normative-references)]. The specific structure of the endpoint may vary, but its address must be included in the data asset as defined in [Section 4.4.2.5](#4425-data-asset-structure).
 
 ##### 4.4.2.2 Data exchange
 
@@ -1437,44 +1712,13 @@ The API must use JSON formatted data transmitted over HTTPS.
 
 ##### 4.4.2.5 Data asset structure
 
-The HTTP POST endpoint introduced in [Section 4.4.2.1](#4421-api-endpoints-and-resources) must not be called from a supply chain partner directly. Rather, it must be called via a connector conformant to [[CX-0018](#71-normative-references)]. Therefore, the endpoint must be offered as a Data Asset. The latter must have a property `http://purl.org/dc/terms/type` with the ID `https://w3id.org/catenax/taxonomy#DcmIdBasedComment`. It can be abbreviated if the namespaces of key and value are part of the json-ld @context object (see example below). This property should be used to identify the asset when searching the assets catalog of a partner. Because the asset reflects the contractual relationship between two DCM partners, only one asset with the aforementioned property for one version must be visible to the partner at any time to avoid ambiguity.
+The HTTP POST endpoint introduced in [Section 4.4.2.1](#4421-api-endpoints-and-resources) must not be called from a supply chain partner directly. Rather, it must be called via a connector conformant to [[CX-0018](#71-normative-references)]. Therefore, the endpoint must be offered as a data asset. The latter must have a property `http://purl.org/dc/terms/type` with the ID `https://w3id.org/catenax/taxonomy#DcmIdBasedComment`. It can be abbreviated if the namespaces of key and value are part of the json-ld @context object (see example below). This property should be used to identify the asset when searching the assets catalog of a partner. Because the asset reflects the contractual relationship between two DCM partners, only one asset with the aforementioned property for one version must be visible to the partner at any time to avoid ambiguity.
 
 The API version described in this standard must be published in the property `https://w3id.org/catenax/ontology/common#version` as version `2.0` in the asset. The requester of an asset must be able to handle multiple assets for this endpoint, being differentiated only by the version. The requester should choose the asset with the highest compatible version number implemented by themselves. If the requester cannot find a compatible version with their own, the requester must terminate the data transfer.
 
 Each DCM participant must ensure that only their business partners have access to the asset by using access and usage policies and respective contract definitions.
 
-An example Data Asset definition is shown below.
-
-> Note: Expressions in double curly braces \{\{\}\} must be substituted with a corresponding value.
->
-> Asset definition example for management API v3 (non-normative)
-
-```json
-{
-  "@context": {
-    "edc": "https://w3id.org/edc/v0.0.1/ns/",
-    "cx-common": "https://w3id.org/catenax/ontology/common#",
-    "cx-taxo": "https://w3id.org/catenax/taxonomy#",
-    "dct": "http://purl.org/dc/terms/"
-  },
-  "@id": "{{ ASSET_ID }}",
-  "properties": {
-    "dct:type": {
-      "@id": "cx-taxo:DcmIdBasedComment"
-    },
-    "description": "Endpoint for providing comments",
-    "cx-common:version": "2.0"
-  },
-  "dataAddress": {
-    "@type": "DataAddress",
-    "type": "HttpData",
-    "baseUrl": "{{ URL-BACKEND-APPLICATION-IDBASEDCOMMENT-ENDPOINT }}",
-    "method": "POST",
-    "proxyBody": "true",
-    "contentType": "application/json"
-  }
-}
-```
+An example data asset definition can be found in [Section 1.4.3](#143-examples-for-data-assets).
 
 ##### 4.4.2.6 Error handling
 
@@ -1599,13 +1843,13 @@ Within the Catena-X data space APIs MUST only be accessible via a connector, con
 
 The API MUST be implemented as defined in [Section 4.5.2](#452-api-specification).
 
-The `WeekBasedMaterialDemand` contains the demand information which is provided from the customer to the supplier. The supplier maintains a set of Submodels (one for each `WeekBasedMaterialDemand`) and registers them in their Digital Twin Registry. Both conform to the definitions of [[CX-0002](#71-normative-references)].
+The `WeekBasedMaterialDemand` contains the demand information which is provided from the customer to the supplier. The supplier maintains a set of submodels (one for each `WeekBasedMaterialDemand`) and registers them in their digital twin registry. Both conform to the definitions of [[CX-0002](#71-normative-references)].
 
-The `WeekBasedCapacityGroup` contains the capacity information which is provided from the supplier to the customer. The customer maintains a set of Submodels (one for each `WeekBasedCapacityGroup`) and registers them in their Digital Twin Registry. Both conform to the definitions of [[CX-0002](#71-normative-references)].
+The `WeekBasedCapacityGroup` contains the capacity information which is provided from the supplier to the customer. The customer maintains a set of submodels (one for each `WeekBasedCapacityGroup`) and registers them in their digital twin registry. Both conform to the definitions of [[CX-0002](#71-normative-references)].
 
-Suppliers must be able to host and correctly expose the `WeekBasedMaterialDemand`-Submodel and update the customer-hosted `WeekBasedCapacityGroup`-Submodel.
+Suppliers must be able to host and correctly expose the `WeekBasedMaterialDemand`-submodel and update the customer-hosted `WeekBasedCapacityGroup`-submodel.
 
-Customers must be able to host and correctly expose the `WeekBasedCapacityGroup`-Submodel and update the supplier-hosted `WeekBasedMaterialDemand`-Submodel.
+Customers must be able to host and correctly expose the `WeekBasedCapacityGroup`-submodel and update the supplier-hosted `WeekBasedMaterialDemand`-submodel.
 
 #### 4.5.1 Preconditions and Dependencies
 
@@ -1615,13 +1859,13 @@ Not applicable.
 
 ##### 4.5.2.1 API endpoints and resources
 
-Exchanging Data via the DCM AAS API requires customers and suppliers to both act in the roles of data provider and data consumer. The API is a superset of [[CX-0002](#71-normative-references)] with the following specializations:
+Exchanging data via the DCM AAS API requires customers and suppliers to both act in the roles of data provider and data consumer. The API is a superset of [[CX-0002](#71-normative-references)] with the following specializations:
 
-- A supplier must host and expose a Submodel `WeekBasedMaterialDemand` via the Submodel-API as defined in [[CX-0002](#71-normative-references)]
-- A customer must host and expose a Submodel `WeekBasedCapacityGroup` via the Submodel-API as defined in [[CX-0002](#71-normative-references)]
-- Additionally, suppliers and customers must offer the PatchSubmodel-Operation with the content-modifier `$value` on all Submodels as defined in [[AAS Pt.2](#72-non-normative-references)]
-  - A supplier must client-side be capable to update the `WeekBasedCapacityGroup`-Submodel hosted by the customer
-  - A customer must client-side be capable to update the `WeekBasedMaterialDemand`-Submodel hosted by the supplier
+- A supplier must host and expose a submodel `WeekBasedMaterialDemand` via the submodel API as defined in [[CX-0002](#71-normative-references)]
+- A customer must host and expose a submodel `WeekBasedCapacityGroup` via the submodel API as defined in [[CX-0002](#71-normative-references)]
+- Additionally, suppliers and customers must offer the PatchSubmodel-Operation with the content-modifier `$value` on all submodels as defined in [[AAS Pt.2](#72-non-normative-references)]
+  - A supplier must client-side be capable to update the `WeekBasedCapacityGroup`-submodel hosted by the customer
+  - A customer must client-side be capable to update the `WeekBasedMaterialDemand`-submodel hosted by the supplier
 
 ##### 4.5.2.2 Data exchange
 
@@ -1639,168 +1883,65 @@ The API must use JSON formatted data transmitted over HTTPS.
 
 ##### 4.5.2.5 DTR registration
 
-As mandated by [[CX-0002](#71-normative-references)], all Data-Providers must provide a Digital Twin Registry and use it to link their Submodels to identified assets. Assets in the DTR are identified via `specificAssetIds`.
+As mandated by [[CX-0002](#71-normative-references)], all data providers must provide a digital twin registry and use it to link their submodels to identified assets. Assets in the DTR are identified via `specificAssetIds`.
 
-When registering Submodels with semanticId `WeekBasedMaterialDemand`, the data provider (supplier) must reuse the IDs mandated in [[CX-0126](#71-normative-references)], section 2.1.4.
+When registering submodels with semanticId `WeekBasedMaterialDemand`, the data provider (supplier) must reuse the IDs mandated in [[CX-0126](#71-normative-references)], section 2.1.4.
 
-When registering Submodels with semanticId `WeekBasedCapacityGroup`, the data provider (customer) must create a single `specificAssetId` with name `creationEntityId` and a UUIDv4 as value.
+When registering submodels with semanticId `WeekBasedCapacityGroup`, the data provider (customer) must create a single `specificAssetId` with name `creationEntityId` and a UUIDv4 as value.
 
 All other properties are standardized in [[CX-0002](#71-normative-references)] or [[AAS Pt.2](#72-non-normative-references)] respectively.
 
-Example:
-
-```json
-{
-  "id": "{{id of the AAS}}",
-  "idShort": "{{short name of your AAS}}",
-  "specificAssetIds": [
-    {
-      "name": "creationEntityId",
-      "value": "{{someUuidV4}}",
-      "externalSubjectId": {
-        "type": "ExternalReference",
-        "keys": [
-          {
-            "type": "GlobalReference",
-            "value": "*"
-          }
-        ]
-      }
-    }
-  ],
-  "submodelDescriptors": [
-    {
-      "id": "{{someSubmodelId}}",
-      "semanticId": {
-        "type": "ExternalReference",
-        "keys": [
-          {
-            "type": "GlobalReference",
-            "value": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#WeekBasedCapacityGroup"
-          }
-        ]
-      },
-      "endpoints": [
-        {
-          "interface": "SUBMODEL-3.0",
-          "protocolInformation": {
-            "href": "{{dataplane baseurl extended with the appropriate path ending on /submodel}}",
-            "endpointProtocol": "HTTP",
-            "endpointProtocolVersion": [
-              "1.1"
-            ],
-            "subprotocol": "DSP",
-            "subprotocolBody": "id={{ID of the connector asset the submodel is living behind}};dspEndpoint={{controlPlaneEndpoint}}",
-            "subprotocolBodyEncoding": "plain",
-            "securityAttributes": [
-              {
-                "type": "NONE",
-                "key": "NONE",
-                "value": "NONE"
-              }
-            ]
-          }
-        }
-      ]
-    }
-  ]
-}
-```
+An example submodel registration can be found in [Chapter 1.4](#14-examples).
 
 ##### 4.5.2.6 Registration
 
-Obligations for the Asset Definition of the Digital Twin Registry are adopted from [[CX-0002](#71-normative-references)].
+Obligations for the asset definition of the digital twin registry are adopted from [[CX-0002](#71-normative-references)].
 
-Obligations for the Asset Definition of a Submodel are adopted from [[CX-0002](#71-normative-references)]. Of the example below, only the "properties"- section is defined as normative there. Please note that the example below only signifies a single registered Submodel. While bundling several Submodels into a single Asset, there are no normative requirements for Asset properties.
+Obligations for the asset definition of a submodel are adopted from [[CX-0002](#71-normative-references)]. Of the example below, only the "properties"- section is defined as normative there. Please note that the example below only signifies a single registered submodel. While bundling several submodels into a single asset, there are no normative requirements for asset properties.
 
 ###### 4.5.2.6.1 Data asset
 
-There are no normative statements on the section `dataAddress` for the Asset.
+There are no normative statements on the section `dataAddress` for the asset.
 
-```json
-{
-  "@context": {
-    "cx-common": "https://w3id.org/catenax/ontology/common#",
-    "ctx": "https://w3id.org/catenax/taxonomy#",
-    "aas-semantics": "https://admin-shell.io/aas/3/0/HasSemantics/"
-  },
-  "@id": "{{ID for the Asset}}",
-  "properties": {
-    "dct:type": {
-      "@id": "ctx:Submodel"
-    },
-    "cx-common:version": "3.0",
-    "aas-semantics:semanticId": "{{URN of WeekBasedMaterialDemand or WeekBasedCapacityGroup Submodel}}"
-    },
-    "dataAddress": {
-      "@type": "DataAddress",
-      "type": "HttpData",
-      "proxyPath": "true",
-      "proxyBody": "true",
-      "proxyMethod": "true",
-      "proxyQueryParams": "true",
-      "baseUrl": "{{Submodel endpoint ending before /submodel}}"
-    }
-}
-```
+An example data asset definition can be found in [Chapter 1.4](#14-examples).
 
 ###### 4.5.2.6.2 Policy definition
 
-This policy is an example to let a single business partner pass. It could be used as (part of) either an accessPolicy or contractPolicy.
+An example policy definition can be found in [Chapter 1.4](#14-examples).
 
-```json
-{
-  "@context": {
-    "@vocab": "https://w3id.org/edc/v0.0.1/ns/",
-    "odrl": "http://www.w3.org/ns/odrl/2/"
-  },
-  "@type": "PolicyDefinition",
-  "@id": "{{POLICY-DEFINITION-ID}}",
-  "policy": {
-    "odrl:permission": [
-      {
-        "odrl:action": "USE",
-        "odrl:constraint": [
-          {
-            "odrl:leftOperand": "{{BPN attribute in Data Consumer VC}}",
-            "odrl:operator": "=",
-            "odrl:rightOperand": "{{hard-coded BPN of privileged consumer}}"
-          }
-        ]
-      }
-    ],
-    "odrl:prohibition": [],
-    "odrl:obligation": []
-  }
-}
-```
+The example shown in [Section 1.4.5.3](#1453-policy-definition) lets a single business partner pass.  It could be used as (part of) either an access policy or usage policy.
 
 ###### 4.5.2.6.3 Contract definition
 
-This example for a contract definition connects the defined policy to the defined asset.
+The contract definition connects the defined policy to the defined asset.
 
-```json
-{
-  "@context": {
-    "@vocab": "https://w3id.org/edc/v0.0.1/ns/"
-  },
-  "@type": "ContractDefinition",
-  "@id": "contract-definition-id",
-  "accessPolicyId": "{{POLICY-DEFINITION-ID}}",
-  "contractPolicyId": "{{POLICY-DEFINITION-ID}}",
-  "assetsSelector": [
-    {
-      "operandLeft": "https://w3id.org/edc/v0.0.1/ns/id",
-      "operator": "=",
-      "operandRight": "{{ID for the Asset}}"
-    }
-  ]
-}
-```
+An example contract definition can be found in [Chapter 1.4](#14-examples).
 
 ##### 4.5.2.7 Error handling
 
 Error handling is specified by [[CX-0002](#71-normative-references)] and [[AAS Pt.2](#72-non-normative-references)].
+
+### 4.6 Capabilities as Data Assets
+
+Customer and supplier must indicate which [capabilities](#5-processes) they support by registering a corresponding data asset with their connector conformant to [[CX-0018](#71-normative-references)] (e.g. Tractus-X EDC).
+This allows customers to see, whether the data, they intend to provide their supplier, can be interpreted correctly by the supplier or not and vice versa.
+Every data assets must use a unique taxonomy to allow for easy identification of the corresponding capability.
+
+The data asset must have a property `http://purl.org/dc/terms/type` with an asset specific ID. The value for the ID can be found in the following table. It can be abbreviated if the namespaces of key and value are part of the json-ld @context object . This property should be used to identify the asset when searching the assets catalog of a customer or supplier.
+
+| #  | Capability                                                                                                                                   | Asset required by | ID                                                                 |
+| -- | --                                                                                                                                           | --                | --                                                                 |
+| 1  | [5.5 Providing Demand Data to Supplier](#55-providing-demand-data-to-supplier)                                                               | Supplier          | https://w3id.org/catenax/taxonomy#DcmWeekBasedMaterialDemand       |
+| 2  | [5.6 Providing Capacity Data to Customer](#56-providing-capacity-data-to-customer)                                                           | Customer          | https://w3id.org/catenax/taxonomy#DcmWeekBasedCapacityGroup        |
+| 3  | [5.7 Comparison of Demand and Capacity Data within a Capacity Group](#57-comparison-of-demand-and-capacity-data-within-a-capacity-group)     | N/A               | N/A                                                                |
+| 3  | [5.8 Request for Update (RfU)](#58-request-for-update-rfu)                                                                                   | Both              | https://w3id.org/catenax/taxonomy#DcmIdBasedRequestForUpdate       |
+| 4  | [5.9 Collaboration Functionalities for Demand and Capacity Management](#59-collaboration-functionalities-for-demand-and-capacity-management) | Both              | https://w3id.org/catenax/taxonomy#DcmIdBasedComment                |
+| 5  | [5.10 Supply Chain Disruption Notifications](#510-supply-chain-disruption-notifications)                                                     | Both              | https://w3id.org/catenax/taxonomy#DemandAndCapacityNotificationApi |
+| 6  | [5.6.4 Load Factors for WeekBasedCapacityGroup](#564-load-factors-for-weekbasedcapacitygroup)                                                | Customer          | https://w3id.org/catenax/taxonomy#DcmLoadFactor                    |
+| 7  | [5.7.2 Delta-Production (Pre-/Post-production)](#572-delta-production-pre-post-production)                                                   | Customer          | https://w3id.org/catenax/taxonomy#DcmDeltaProduction               |
+| 8  | [5.11 Demand Volatility Metrics](#511-demand-volatility-metrics)                                                                             | Customer          | https://w3id.org/catenax/taxonomy#DcmDemandVolatility              |
+
+Examples for data asset, policy and contract definition as well as catalog request and response to a catalog request can be found in [Chapter 1.4](#14-examples).
 
 ## 5 PROCESSES
 
@@ -1819,7 +1960,7 @@ The following sections describe capabilities, that are REQUIRED (except for subs
 The following sections describe capabilities, that are OPTIONAL:
 
 - [5.6.4 Load Factors for WeekBasedCapacityGroup](#564-load-factors-for-weekbasedcapacitygroup)
-- [5.7.2 Simulated Delta-Production (Pre-/Post-production)](#572-simulated-delta-production-pre-post-production)
+- [5.7.2 Delta-Production (Pre-/Post-production)](#572-delta-production-pre-post-production)
 - [5.10 Supply Chain Disruption Notifications](#510-supply-chain-disruption-notifications)
 - [5.11 Demand Volatility Metrics](#511-demand-volatility-metrics)
 
@@ -1878,7 +2019,7 @@ Typical job titles of personnel on the **business application provider** side:
 ### 5.3 Process Representation
 
 ![Process Chart DCM](./assets/DCM_CoreProcess_SHORT.svg)  
-*Figure 1: Process Chart DCM*
+*Figure 1: Process chart DCM*
 
 For more detailed information, please refer to the Annex [Figures](#figures).
 
@@ -1924,7 +2065,7 @@ Customers must conform to the following guidelines for qualitative demand data a
 For a detailed process description, see [Figures](#figures). Below is an example of how a `WeekBasedMaterialDemand` might be visualized.
 
 ![Visualized example for Demand Data](./assets/DCM_Example_DemandData.svg)  
-*Figure 2: Example of Demand Data Visualization*
+*Figure 2: Example of demand data visualization*
 
 - `WeekBasedMaterialDemand` data must be categorized as follows:
 
@@ -1997,7 +2138,7 @@ For a functional `WeekBasedCapacityGroup`, the supplier must link it directly or
 - Indirect linking (or "nesting") involves connecting the `WeekBasedCapacityGroup` to another `WeekBasedCapacityGroup` that is already linked to a `WeekBasedMaterialDemand`
 
 ![Visualized example of possible linkage of WeekBasedMaterialDemand to WeekBasedCapacityGroup](./assets/DCM_Example_CG_Structure.svg)  
-*Figure 4: Example of Linking `WeekBasedMaterialDemand` to `WeekBasedCapacityGroup`*
+*Figure 4: Example of linking `WeekBasedMaterialDemand` to `WeekBasedCapacityGroup`*
 
 When a supplier provides a `WeekBasedCapacityGroup` to a customer, the following properties must have a value so that `WeekBasedCapacityGroup` and `WeekBasedMaterialDemand` can be linked:
 
@@ -2022,8 +2163,8 @@ The figure below demonstrates:
 - The dashed line represents agreed capacity
 - The area between the solid and the dotted lines represents flexible capacity
 
-![Visualized example of Capacity Data](./assets/DCM_Example_CapacityData.svg)  
-*Figure 5: Example of Capacity Data Visualization*
+![Visualized example of capacity Data](./assets/DCM_Example_CapacityData.svg)  
+*Figure 5: Example of capacity data visualization*
 
 #### 5.6.4 Load Factors for WeekBasedCapacityGroup
 
@@ -2049,6 +2190,14 @@ A load factor of 1 is neutral and leaves the linked `WeekBasedMaterialDemand` 
 
 The comparison of aggregated demands and capacities helps to identify imbalances, such as when demand exceeds or falls short of capacity. For visuals, see [Figures](#figures).
 
+If a WeekBasedCapacityGroup provides both load factor and delta production, then load factor must be applied first and delta production applied last.
+
+<!--
+TotalDemand=\bigg(\sum(DemandSeriesValues*LoadFactor)\bigg)+DeltaProduction
+-->
+
+![Calculation of total demand](./assets/DCM_ExecutionOrder.svg)
+
 #### 5.7.1 Matching Results and Resolution
 
 Both customers and suppliers must use the same logic when comparing demand and capacity, based on the `WeekBasedCapacityGroup` and `WeekBasedMaterialDemand` models.
@@ -2070,40 +2219,40 @@ The table below describes potential scenarios and their outcomes:
 
 An example visualization is provided below.
 
-![Visualized example of Demand and Capacity Data Matching and Comparison](./assets/DCM_Example_MatchAndCompare.svg)  
-*Figure 6: Visualized example of Demand and Capacity Data Matching and Comparison*
+![Visualized example of demand and capacity data matching and comparison](./assets/DCM_Example_MatchAndCompare.svg)  
+*Figure 6: Visualized example of demand and capacity data matching and comparison*
 
 When a bottleneck or surplus is identified, collaboration between customer and supplier is strongly recommended. For more details, see [Figures](#figures).
 
 The exchange of comments is a key collaborative feature, enabling a dialogue between customers and suppliers. For more information, refer to [Chapter 5.9](#59-collaboration-functionalities-for-demand-and-capacity-management).
 
-#### 5.7.2 Simulated Delta-Production (Pre-/Post-production)
+#### 5.7.2 Delta-Production (Pre-/Post-production)
 
 ##### 5.7.2.1 Business value
 
-Simulated Delta-Production is a feature that helps suppliers to manage their production capacity more effectively. It allows them to address and balance capacity shortages without having to increase their actual or maximum capacity. Suppliers can choose to use this feature, but it is not mandatory. Simulated Delta-Production, which covers both simulated pre-production and post-production activities.
+Delta-Production is a feature that helps suppliers to manage their production capacity more effectively. It allows them to address and balance capacity shortages without having to increase their actual or maximum capacity. Suppliers can choose to use this feature, but it is not mandatory. Delta-Production, which covers both pre-production and post-production activities.
 
-The main advantage of using simulated Delta-Production is that it gives suppliers a way to manage small capacity shortfalls. This can be done manually or automatically, which saves time and effort that would otherwise be spent on frequent capacity adjustments, particularly when demand is unpredictable.
+The main advantage of using Delta-Production is that it gives suppliers a way to manage small capacity shortfalls. This can be done manually or automatically, which saves time and effort that would otherwise be spent on frequent capacity adjustments, particularly when demand is unpredictable.
 
-Simulated Delta-Production enables suppliers to add extra detail to their capacity information. This helps illustrate solutions for capacity issues or times when production resources might be offline. Only the end results of simulated Delta-Production are shared with the customer. Suppliers may input a simulated Delta-Production value for each week as needed (see Fig. 7 and 8), which shows an increase or decrease in planned demand without actually changing the real figures.
+Delta-Production enables suppliers to add extra detail to their capacity information. This helps illustrate solutions for capacity issues or times when production resources might be offline. Only the end results of Delta-Production are shared with the customer. Suppliers may input a Delta-Production value for each week as needed (see Fig. 7 and 8), which shows an increase or decrease in planned demand without actually changing the real figures.
 
-##### 5.7.2.2 Definition of simulated delta-production (Pre-/post-production) in the context of capacity groups
+##### 5.7.2.2 Definition of delta-production (Pre-/post-production) in the context of capacity groups
 
-Simulated Delta-Production may be used within a Capacity Group to indicate how production can be adjusted to meet demand. It helps cover potential shortfalls by showing where goods could be produced earlier or later than currently demanded. Suppliers can provide these simulated values on a weekly basis alongside their regular capacity data. There's no need to give details about the duration of these adjustments, as this can be inferred from the number of weeks for which the simulated data is provided.
+Delta-Production may be used within a Capacity Group to indicate how production can be adjusted to meet demand. It helps cover potential shortfalls by showing where goods could be produced earlier or later than currently demanded. Suppliers can provide these values on a weekly basis alongside their regular capacity data. There's no need to give details about the duration of these adjustments, as this can be inferred from the number of weeks for which the data is provided.
 
-When comparing demand and capacity data, the simulated values are considered without altering the actual data. If a simulated Delta-Production value is provided, it must be included in the weekly demand and capacity comparison. A positive value indicates a virtual increase in planned demand, while a negative value indicates a virtual decrease.
+When comparing demand and capacity data, the values are considered without altering the actual data. If a Delta-Production value is provided, it must be included in the weekly demand and capacity comparison. A positive value indicates a virtual increase in planned demand, while a negative value indicates a virtual decrease.
 
-Simulated Delta-Production must not change the material demand. It's strictly a simulation feature.
+Delta-Production must not change the WeekBasedMaterialDemand itself. It is only applied downstream when visualizing materials demands or doing calculations with demand data.
 
-Suppliers can use comments to provide customers with additional information about the simulated Delta-Production. For more details on this communication feature, see [Chapter 5.9](#59-collaboration-functionalities-for-demand-and-capacity-management).
+Suppliers can use comments to provide customers with additional information about the Delta-Production. For more details on this communication feature, see [Chapter 5.9](#59-collaboration-functionalities-for-demand-and-capacity-management).
 
-Below are two examples of how simulated Delta-Production might be represented visually.
+Below are two examples of how Delta-Production might be represented visually.
 
-![Visualized example of results of simulated Delta-Production (with pre-production)](./assets/DCM_Example_PreProduction.svg)
-*Figure 7: Visualized example of results of simulated Delta-Production (with pre-production)*
+![Visualized example of results of Delta-Production (with pre-production)](./assets/DCM_Example_PreProduction.svg)
+*Figure 7: Visualized example of results of Delta-Production (with pre-production)*
 
-![Visualized example of results of simulated Delta-Production (with post-production)](./assets/DCM_Example_PostProduction.svg)
-*Figure 8: Visualized example of results of simulated Delta-Production (with post-production)*
+![Visualized example of results of Delta-Production (with post-production)](./assets/DCM_Example_PostProduction.svg)
+*Figure 8: Visualized example of results of Delta-Production (with post-production)*
 
 ### 5.8 Request for Update (RfU)
 
@@ -2112,7 +2261,7 @@ Customer and Supplier must be capable of consuming and correctly responding to a
 
 It is recommended that this feature is inaccessible to the end-user.
 
-For further technical information please see [Chapter 3.3](#33-aspect-model-idbasedrequestforupdate) and [Chapter 4.3](#43-requestforupdate-api).
+For further technical information please see [Chapter 3.3](#33-aspect-model-idbasedrequestforupdate) and [Chapter 4.3](#43-idbasedrequestforupdate-api).
 
 ### 5.9 Collaboration Functionalities for Demand and Capacity Management
 
@@ -2189,8 +2338,8 @@ The demand deviation is calculated locally and compared against the consumed or 
 | 3                 | Calculated absolute demand deviation > `absolutePositiveDeviation` | Unacceptable deviation   | Red           | #D91E18        |
 | 4                 | Calculated absolute demand deviation < `absoluteNegativeDeviation` | Unacceptable deviation   | Red           | #D91E18        |
 
-![Visualized Example of Demand Deviation and Alert Threshold Comparison](./assets/DCM_Example_DemandDeviationAndAlertThreshold.svg)  
-*Figure 9: Visualized example of Demand Deviation and Alert Threshold Comparison*
+![Visualized example of demand deviation and alert threshold comparison](./assets/DCM_Example_DemandDeviationAndAlertThreshold.svg)  
+*Figure 9: Visualized example of demand deviation and alert threshold comparison*
 
 It is recommended that suppliers organize individual collaborative alignments with customers to discuss the status of significant volatility measurements of demand deviation, ideally at least on a quarterly basis.
 
@@ -2220,7 +2369,7 @@ $$Relative Deviation = \frac {{\sum Latest Demand} - {\sum Previous Demand}} {\s
 
 ∑ ≙ sum of demands per calendar week of each material demand series assigned within the `WeekBasedCapacityGroup`.
 
-![Visualized Example of Demand Deviation Calculation at Capacity Group Level](./assets/DCM_Example_DemandDeviationCalculation.svg)  
+![Visualized example of demand deviation calculation at capacity group level](./assets/DCM_Example_DemandDeviationCalculation.svg)  
 *Figure 10: Visualized example of demand deviation calculation at capacity group level*
 
 It is recommended to store the inputs for the calculations of the demand deviation metric for at least 6 months.
@@ -2270,8 +2419,8 @@ It is recommended to apply the following rules:
 - The entire DCM time frame (104 weeks) does not need to be fully populated with subhorizons.
 - In case a subhorizon does not contain any deviation properties, no alert threshold is applicable.
 
-![Visualized example of Demand Deviation subhorizons](./assets/DCM_Example_DemandDeviationSubHorizons.svg)  
-*Figure 11: Visualized example of Demand Deviation subhorizons and related alert thresholds*
+![Visualized example of demand deviation subhorizons](./assets/DCM_Example_DemandDeviationSubHorizons.svg)  
+*Figure 11: Visualized example of demand deviation subhorizons and related alert thresholds*
 
 ## 6 FRAMEWORK AGREEMENT AND POLICIES
 
@@ -2279,13 +2428,37 @@ It is recommended to apply the following rules:
 
 All participants involved in the Catena-X DCM use case MUST consent to the *Data Exchange Governance* framework agreement.
 
-A key aspect of managing business partner relationships within Catena-X involves defining and applying policies that facilitate and protect data exchange. Both customers and suppliers MUST implement and uphold these policies in order to guarantee a secure and collaborative data exchange:
+On the connector level the DCM API-endpoints are presented as data assets:
 
-| Category          | Policy Name                | Description                                                                                                                  |
-| :---------        | :------------              | :------------                                                                                                                |
-| **Access Policy** | BPN-restricted Data Usage  | Limit access to the data offered to a list of specified BPNs (to the connectors with the BPN attribute listed in the policy) |
-| **Access Policy** | Membership Credential      | Limit access to data offered to Catena-X participants                                                                        |
-| **Usage Policy**  | DataExchangeGovernance:1.0 | Limit access to data offered to participants who have agreed to the *Data Exchange Governance* framework agreement           |
+- [WeekBasedMaterialDemand API](#411-preconditions-and-dependencies)
+- [WeekBasedCapacityGroup API](#421-preconditions-and-dependencies)
+- [IdBasedRequestForUpdate API](#431-preconditions-and-dependencies)
+- [IdBasedComment API](#441-preconditions-and-dependencies)
+
+The way in which these assets are offered is defined by a contract definition on the connector level.
+This contract definition brings asset, usage policy and access policy together.
+The access policy controls whether a business partner is allowed to see the asset as part of a contract offer, when executing a catalog request.
+The usage policy defines which terms the business partner has to agree to, if he wants to consume the asset, which is a prerequisite for accessing the API-endpoint.
+Access and usage policy can be crafted using zero, one or multiple constraints.
+
+![Visualized relation between contract defnition, asset and policies](./assets/DCM_Example_CatalogOffer_Structure.svg)
+*Figure 12: Visualized relation between contract defnition, asset and policies*
+
+Both customers and suppliers MUST implement and uphold access and usage policies in order to guarantee a secure and collaborative data exchange.
+
+In accordance to the conventions defined in CX-0152 as referenced in [paragraph Policy Constraints for Data Exchange](#policy-constraints-for-data-exchange) following constraints can be used to create access and usage policies.
+Constraints that are marked as mandatory in the column **Usage Requirement** MUST be used to create the respective policy.
+
+| Policy Type      | Constraint               | leftOperand ("@context": ["https://w3id.org/catenax/2025/9/policy/context.jsonld"])  | operator | right Operand              | Usage Requirement |
+| --               | --                       | --                                                        | --       | --                         | --                |
+| Access Policy    | BPNL                     | BusinessPartnerNumber | isAnyOf, isNoneOf      | `{{ PARTNER_BPNLs }}`         | optional          |
+| Access Policy    | BPNL-Group               | BusinessPartnerGroup  | isAnyOf, isNoneOf | `{{ PARTNER_GROUPs }}`        | optional          |
+| Access Policy    | Membership               | Membership                | eq       | active                     | optional          |
+| **Usage Policy** | Data Exchange Governance | FrameworkAgreement        | eq       | DataExchangeGovernance:1.0 | mandatory         |
+| **Usage Policy** | Usage Purpose            | UsagePurpose              | isAnyOf       | cx.dcm.base:1              | mandatory         |
+| Usage Policy     | Contract Reference       | ContractReference         | isAllOf       | `{{ Contract References }}`   | optional          |
+
+Please note, that the access policy can be created without any constraints. In this case only the MembershipCredential is verified. Further details how to define policies and policy constraints can be found in CX-0152 as referenced in [paragraph Policy Constraints for Data Exchange](#policy-constraints-for-data-exchange).  
 
 ## 7 REFERENCES
 
@@ -2293,41 +2466,28 @@ A key aspect of managing business partner relationships within Catena-X involves
 
 > *This section and all its subsections are normative*
 
-[CX-0001] `v1.0.3` EDC Discovery API
-
-[CX-0002] `v2.2.0` Digital Twins in Catena-X
-
-[CX-0003] `v1.2.0` SAMM Aspect Meta Model
-
-[CX-0010] `v2.1.0` Business Partner Number
-
-[CX-0018] `v3.2.0` Dataspace Connectivity
-
-[CX-0126] `v2.0.0` Industry Core: Part Type
-
-[CX-0146] `v1.0.1` Supply Chain Disruption Notifications
+- [CX-0001] `v1.0.3` EDC Discovery API
+- [CX-0002] `v2.2.0` Digital Twins in Catena-X
+- [CX-0003] `v1.2.0` SAMM Aspect Meta Model
+- [CX-0010] `v2.1.0` Business Partner Number
+- [CX-0018] `v3.2.0` Dataspace Connectivity
+- [CX-0126] `v2.0.0` Industry Core: Part Type
+- [CX-0146] `v1.0.1` Supply Chain Disruption Notifications
+- [CX-0152] `v1.0.0` Policy Constraints For Data Exchange
 
 ### 7.2 Non-Normative References
 
 > *This section and all its subsections are non-normative*
 
-[RFC2119] `March 1997` Key words for use in RFCs to Indicate Requirement Levels ([https://www.rfc-editor.org/rfc/rfc2119](https://www.rfc-editor.org/rfc/rfc2119))
-
-[RFC8174] `May 2017` Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words ([https://www.rfc-editor.org/rfc/rfc8174](https://www.rfc-editor.org/rfc/rfc8174))
-
-[ISO3166] `2020-08` ISO 3166 Country Codes
-
-[ISO8601] `2019-02` Date and time format
-
-[RFC4122] `July 2005` A Universally Unique IDentifier (UUID) URN Namespace ([https://www.rfc-editor.org/rfc/rfc4122](https://www.rfc-editor.org/rfc/rfc4122))
-
-[RFC9110] `June 2022` HTTP Semantics ([https://www.rfc-editor.org/rfc/rfc9110](https://www.rfc-editor.org/rfc/rfc9110))
-
-[CC-BY-4.0] `Version 4.0` Creative Commons Attribution 4.0 International license ([https://creativecommons.org/licenses/by/4.0/legalcode.en](https://creativecommons.org/licenses/by/4.0/legalcode.en))
-
-[SMT] `1st Version` Guideline: How to create a Submodel template specification ([https://industrialdigitaltwin.org/wp-content/uploads/2022/12/I40-IDTA-WS-Process-How-to-write-a-SMT-FINAL-.pdf](https://industrialdigitaltwin.org/wp-content/uploads/2022/12/I40-IDTA-WS-Process-How-to-write-a-SMT-FINAL-.pdf))
-
-[I4.0-AAS] `1.0RC02` Details of the Asset Administration Shell - Part 2 ([https://www.plattform-i40.de/IP/Redaktion/EN/Downloads/Publikation/Details_of_the_Asset_Administration_Shell_Part2_V1.html](https://www.plattform-i40.de/IP/Redaktion/EN/Downloads/Publikation/Details_of_the_Asset_Administration_Shell_Part2_V1.html))
+- [RFC2119] `March 1997` Key words for use in RFCs to Indicate Requirement Levels (https://www.rfc-editor.org/rfc/rfc2119)
+- [RFC8174] `May 2017` Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words (https://www.rfc-editor.org/rfc/rfc8174)
+- [ISO3166] `2020-08` ISO 3166 Country Codes
+- [ISO8601] `2019-02` Date and time format
+- [RFC4122] `July 2005` A Universally Unique IDentifier (UUID) URN Namespace (https://www.rfc-editor.org/rfc/rfc4122)
+- [RFC9110] `June 2022` HTTP Semantics (https://www.rfc-editor.org/rfc/rfc9110)
+- [CC-BY-4.0] `Version 4.0` Creative Commons Attribution 4.0 International license (https://creativecommons.org/licenses/by/4.0/legalcode.en)
+- [SMT] `1st Version` Guideline: How to create a Submodel template specification (https://industrialdigitaltwin.org/wp-content/uploads/2022/12/I40-IDTA-WS-Process-How-to-write-a-SMT-FINAL-.pdf)
+- [I4.0-AAS] `1.0RC02` Details of the Asset Administration Shell - Part 2 (https://www.plattform-i40.de/IP/Redaktion/EN/Downloads/Publikation/Details_of_the_Asset_Administration_Shell_Part2_V1.html)
 
 ### 7.3 Reference Implementations
 
@@ -2344,10 +2504,10 @@ Not applicable.
 Below are illustrative figures that depict the DCM process from the viewpoints of customers and suppliers.
 
 ![Complete DCM process](./assets/DCM_CoreProcess_BPMN.svg)  
-*Figure 12: Complete DCM process*
+*Figure 13: Complete DCM process*
 
 ![Complete DCM process with digital twins](./assets/DCM_CoreProcess_with_Twins_BPMN.svg)  
-*Figure 13: Complete DCM process with digital twins*
+*Figure 14: Complete DCM process with digital twins*
 
 ### Tables
 
@@ -2389,10 +2549,6 @@ Below are illustrative figures that depict the DCM process from the viewpoints o
 | Time        | MIN       | minute [unit of time]         | Minute [Maßeinheit der Zeit]  | min         | min          | unit:minuteUnitOfTime                |
 | Time        | HUR       | hour                          | Stunde                        | h           | h            | unit:hourUnitOfTime                  |
 | Cycle       | B7        | cycle                         | Zyklus                        | [empty]     | cyl          | unit:cycle                           |
-
-### Repositories
-
-[ODRL] ODRL policy repository ([https://github.com/catenax-eV/cx-odrl-profile](https://github.com/catenax-eV/cx-odrl-profile))
 
 ## ABOUT THIS STANDARD AND MOTIVATION
 

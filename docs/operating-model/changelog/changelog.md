@@ -5,11 +5,13 @@ sidebar_position: 1
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
-## [3.0.6]
+## [3.1.0]
 
 ### Added
 
 - Who: Roles in the Catena-x ecosystem
+  - Added role description defining the Digital Clearing House as the trust anchor for onboarding, legal entity verification, and digital self-descriptions, with support for multiple regional DCHs and clarified prerequisites and current limitations
+  - Added role description defining the Attestation Provider to deliver independent verification and strengthen trust and assurance within the Catena-X ecosystem.
   - Added TISAX Level 2 as a mandatory requirement for all OSPs, ESPs, and BAPs, effective from July 2025, with a 12-month grace period
   - Added TISAX Level 3 as a mandatory requirement for CSP-A and CSP-B roles
 - How: Life Cycle Management
@@ -22,6 +24,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
   - Furthermore, included a statement that all data space participants adherence to governance components such as Trust ID and related mechanisms.
 - Who: Roles in the Catena-x ecosystem
   - Added that CSP-A, CSP-B, OSP, BAP, AP, DPC must be registered to Catena-X data space.
+- What: Service map
+  - The Service Map has been updated with the corresponding services to reflect the current state. In addition, the relevant standards have been assigned to each service.
+
+### Removed
+
+- How: Data Space Governance
+  - Removed link to deprecated CX-0008 Standard.
+- Outlook
+  - Updated the chapter "Further Integration of SSI Technologies". The chapter now shifts focus from technical decentralization of issuers and trust anchors towards a broader SSI concept. It highlights the transition from CSP-provided wallets to a modular bring-your-own-wallet approach, enables all entities to issue, present, and verify credentials regardless of their role, and places stronger emphasis on interoperability across dataspaces and alignment with overarching standards.
+- Removed references to the deprecated CX-0008 standard.
 
 ## [3.0.5]
 
@@ -134,3 +146,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Certification process: reference provided to Conformity Assessment Framework that details the Catena-X certification process further
 - Labels: Removed distinguishing factors between Certified Operating Company and Certified Partner
 - Outlook: updated according to release 23.09
+
+## Legal
+
+Copyright © 2025 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

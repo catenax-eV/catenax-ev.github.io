@@ -53,3 +53,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Changed
 
 - Moved China from Yellow List to White List, allowing onboarding of Chinese companies to the Catena-X network
+
+## Legal
+
+Copyright © 2025 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

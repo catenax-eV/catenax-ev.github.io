@@ -4,7 +4,16 @@ tags:
   - UC/PCF
 ---
 
-# CX-0136 Use Case PCF 2.1.0
+# CX-0136 Use Case PCF 2.2.1
+
+:::warning
+
+The following standards was identified as not fully **backward compatibility with CX-Jupiter**  and was allowed to apply the required changes through a **fast-track process** to be included in the CX-Saturn release.
+These exceptions will be released together with the  *CX-Saturn Go-Live** of all other standards on **25.11**.
+
+**Therefore, this version of the standard is not eligible for certification yet**
+
+:::
 
 ## ABSTRACT
 
@@ -43,7 +52,9 @@ This document defines the so-called *standardization triangle* for the PCF excha
 Standardization triangle hereby means the mandatory components, data models, APIs etc. that are required to enable the PCF exchange use case.
 Additionally, search objects as well as procedures to registering/providing and consuming the data will be defined.
 
-![Architecture Overview](./assets/ArchitecturalOverview.png)
+Here you see the architecture overview for **synchronous** and **asynchronous** data exchange:
+
+![Architecture Synchronous vs. Asynchronous Data Exchange](./assets/Architecture_Synchronous_vs.AsynchronousDataExchange.png)
 
 ### 1.3 CONFORMANCE AND PROOF OF CONFORMITY
 
@@ -73,6 +84,8 @@ This will include the roles, certification and further assessment procedures as 
 
 ### 1.4 EXAMPLES
 
+> *This section is non-normative*
+
 For examples how to
 
 - Request PCF data (with existing material twin including PCF submodel)
@@ -80,7 +93,7 @@ For examples how to
 - Respond PCF data
 - Update PCF data
 
-please refer to [PCF Kit](https://eclipse-tractusx.github.io/docs-kits/category/pcf-exchange-kit).
+please refer to [PCF Kit](https://eclipse-tractusx.github.io/docs-kits/category/product-carbon-footprint-exchange-kit).
 
 ### 1.5 TERMINOLOGY
 
@@ -91,7 +104,7 @@ The following terms are especially relevant for the understanding of the standar
 **Product Carbon Footprint (PCF)**
 The balance of Greenhouse Gas (GHG) emissions along the entire life cycle of a product in a defined application and in relation to a defined unit of use.
 The Product Carbon Footprint (PCF) is the most established method for
-determining the climate impact of a product. Within the boundary of the Catena-X PCF Rulebook (see [Product Carbon Footprint Rulebook v3.1.0](#211-list-of-standalone-standards)), emissions related to the product use and end-of-life stages are excluded from the PCF.
+determining the climate impact of a product. Within the boundary of the Catena-X PCF Rulebook (see [Product Carbon Footprint Rulebook v4.0.0](#211-list-of-standalone-standards)), emissions related to the product use and end-of-life stages are excluded from the PCF.
 
 **Business Partner Number (BPN)**
 A BPN is the unique identifier of a partner within Catena-X.
@@ -124,7 +137,7 @@ A formal, machine-readable semantic description (expressed with RDF/turtle) of d
 
 ## 2 RELEVANT PARTS OF THE STANDARD FOR SPECIFIC USE CASES
 
-> *This section is normantive*
+> *This section is normative*
 
 ### 2.1 PCF EXCHANGE
 
@@ -132,15 +145,17 @@ A formal, machine-readable semantic description (expressed with RDF/turtle) of d
 
 To participate in the CO2 use-case, the following standard MUST be fulfilled:
 
-- [Product Carbon Footprint Rulebook v3.1.0](https://catenax-ev.github.io/docs/next/non-functional/overview)
+- [Product Carbon Footprint Rulebook v4.0.0]([https://catenax-ev.github.io/docs/next/non-functional/overview](https://catenax-ev.github.io/docs/non-functional/overview#product-carbon-footprint)
 
 In addition, the following standards are used to support the PCF usecase. Athough they are NOT part of this specification, they are mentioned here, as APIs or other assets provided by them are used within the PCF usecase:
 
-- [CX-0001 EDC Discovery API v1.0.2](https://catenax-ev.github.io)
-- [CX-0002 Digital Twins in Catena-X v2.2.0](https://catenax-ev.github.io)
-- [CX-0003 SAMM Aspect Meta Model v1.1.0](https://catenax-ev.github.io)
-- [CX-0018 Dataspace Connectivity v3.1.0](https://catenax-ev.github.io)
-- [CX-0126 Industry Core: Part Type v2.0.0](https://catenax-ev.github.io)
+- [CX-0001 EDC Discovery API](https://catenax-ev.github.io/docs/standards/overview)
+- [CX-0002 Digital Twins in Catena-X](https://catenax-ev.github.io/docs/standards/overview)
+- [CX-0003 SAMM Aspect Meta Model](https://catenax-ev.github.io/docs/standards/overview)
+- [CX-0018 Dataspace Connectivity](https://catenax-ev.github.io/docs/standards/overview)
+- [CX-0118 Delivery Information Exchange](https://catenax-ev.github.io/docs/standards/overview)
+- [CX-0126 Industry Core: Part Type](https://catenax-ev.github.io/docs/standards/overview)
+- [CX-0151 Industry Core: Basics](https://catenax-ev.github.io/docs/standards/overview)
 
 #### 2.1.2 ADDITIONAL REQUIREMENTS
 
@@ -151,12 +166,12 @@ All participants mentioned under [1.1 AUDIENCE & SCOPE](#11-audience--scope) MUS
 ##### 2.1.2.2 Fetching EDC Endpoints
 
 To find the EDC endpoint addresses of related parties in Catena-X, app provider MUST follow the
-[CX-0001 EDC Discovery API v1.0.2](#211-list-of-standalone-standards) standard.
+[CX-0001 EDC Discovery API](#211-list-of-standalone-standards) standard.
 
 ##### 2.1.2.3 Searching for decentralized Digital Twin Registries
 
 To find decentralized Digital Twin Registries of related parties in Catena-X, app provider MUST
-follow the [CX-0002 Digital Twins in Catena-X v2.2.0](#211-list-of-standalone-standards) Standard.
+follow the [CX-0002 Digital Twins in Catena-X](#211-list-of-standalone-standards) Standard.
 
 ##### 2.1.2.4 Registration at the BPN Discovery Service
 
@@ -165,16 +180,20 @@ Not needed for PCF as the BPN is known by the application.
 
 ##### 2.1.2.5 Registration of the Digital Twin and the PCF Submodel in the Digital Twin Registry
 
-The PCF use case utilizes Asset Administration Shell (AAS) logic and Material Twins. Therefore Digital Twins SHOULD be registered in the decentralized Digital Twin Registry (DTR). In order to lookup the twin ID, the data provider MUST register the twins with the specificAssetIds ``manufacturerPartId`` and ``digitalTwinType=PartType``.
+The PCF use case utilizes Asset Administration Shell (AAS) logic and Material Twins. Therefore Digital Twins SHOULD be registered in the decentralized Digital Twin Registry (DTR). In order to look up the twin ID, the data provider MUST register the twins with digitalTwinType=PartType, and MUST include either the ``manufacturerPartId``, the ``customerPartId``, or both, in the ``specificAssetIds``.
 
 > **Note**
-> The following JSON snippet only illustrates which specificAssetIds have to be used. It *cannot* be used as a copy paste template for twin creation! When setting up a digital twin the data provider has to ensure that these entries are visible to all consumers he wants to address by using the corresponding security mechanisms provided with the digital twin registry.
+> The following JSON snippet only illustrates which specificAssetIds have to be used. It *cannot* be used as a copy paste template for twin creation! When setting up a digital twin the data provider has to ensure that these entries are visible to all consumers he wants to address by using the corresponding security mechanisms provided with the digital twin registry. For more information, please refer to [CX-0118 Delivery Information Exchange 2.0.0](../CX-0118-ActualDeliveryInformationExchange/CX-0118-ActualDeliveryInformationExchange.md).
 
 ```json
     "specificAssetIds": [
         {
             "key": "manufacturerPartId",
             "value": "%%PART-ID%%"
+        },
+        {
+            "key": "customerPartId",
+            "value": "%%CUSTOMER-PART-ID%%"
         },
         {
             "key": "digitalTwinType",
@@ -190,7 +209,7 @@ The PCF use case utilizes Asset Administration Shell (AAS) logic and Material Tw
   
   ``"subprotocolBody": "id=AssetId_of_EDCasset;dspEndpoint=https://some.controlplane.url:7173/api/v1/dsp"``
 - The id added to the subprotocolBody SHOULD be a UUIDv4
-- The ``href`` definition follows [CX-0002 Digital Twins in Catena-X v2.2.0](#211-list-of-standalone-standards) and MUST have the
+- The ``href`` definition follows [CX-0002 Digital Twins in Catena-X](#211-list-of-standalone-standards) and MUST have the
   following structure: ``https://edc.data.plane/productIds/mat345`` (URL to use via EDC proxy call to request PCF).
 
 > **Note**
@@ -211,7 +230,7 @@ The PCF use case utilizes Asset Administration Shell (AAS) logic and Material Tw
       "keys": [
         {
           "type": "GlobalReference",
-          "value": "urn:samm:io.catenax.pcf:7.0.0#Pcf"
+          "value": "urn:samm:io.catenax.pcf:8.0.0#Pcf"
         }
       ]
     },
@@ -245,7 +264,7 @@ The PCF asset MUST be registered as defined below (Management API v3):
 {
     "@context": {
         "edc": "https://w3id.org/edc/v0.0.1/ns/",
-        "odrl": "http://www.w3.org/ ns/odrl/2/",
+        "odrl": "http://www.w3.org/ns/odrl/2/",
         "dcat": "http://www.w3.org/ns/dcat#",
         "dct": "http://purl.org/dc/terms/",
         "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
@@ -259,7 +278,7 @@ The PCF asset MUST be registered as defined below (Management API v3):
         "rdfs:label": "PCF Data",
         "rdfs:comment": "Endpoint for PCF data",
         "cx-common:version": "1.1",
-        "aas-semantics:semanticId": {"@id":"urn:samm:io.catenax.pcf:7.0.0#Pcf"},
+        "aas-semantics:semanticId": {"@id":"urn:samm:io.catenax.pcf:8.0.0#Pcf"},
         "edc:contentType": "application/json",
         "dct:type": {"@id":"cx-taxo:PcfExchange"}
     },
@@ -277,7 +296,7 @@ The PCF asset MUST be registered as defined below (Management API v3):
 
 The following values MUST be present as EDC asset properties:
 
-- ``aas-semantics:semanticId``: MUST contain the value: ``"urn:samm:io.catenax.pcf:7.0.0#Pcf"``
+- ``aas-semantics:semanticId``: MUST contain the value: ``"urn:samm:io.catenax.pcf:8.0.0#Pcf"``
 - ``cx-common:version``: MUST contain the value: ``"1.1"``
 - ``dct:type``: MUST follow the schema: ``{"@id":"cx-taxo:PCFExchange"}``
 
@@ -297,63 +316,54 @@ The requester of an asset MUST be able to handle multiple assets for this endpoi
 A participant mentioned under [1.1 AUDIENCE & SCOPE](#11-audience--scope) MUST agree to the overall
 [Catena-X Terms and Condition](https://catena-x.net/en/catena-x-introduce-implement/governance-framework-for-data-space-operations)
 as well as the general FrameworkAgreement
- [DataExchangeGovernance:1.0](https://catenax-ev.github.io/docs/next/regulatory-framework/20000ft/data-exchange-governance).
-This follows the first SSI setup originally released with Catena-X Rel. 3.2. For more details see the [corresponding standards](https://github.com/catenax-eV/product-standardization-prod/tree/main/standards) which are NOT part of this document.
+ [Data Exchange Governance](https://catenax-ev.github.io/docs/next/regulatory-framework/20000ft/data-exchange-governance).
+This follows the first SSI setup originally released with Catena-X Rel. 3.2. For more details see the [corresponding standards](https://catenax-ev.github.io/docs/standards/overview) which are NOT part of this document.
 
 The minimum set of **Membership**, the PCF **FrameworkAgreement** and the **UsagePurpose**
 MUST to be added to the asset:
 
 ```json
 {
-    "@context": {
-        "@vocab": "https://w3id.org/edc/v0.0.1/ns/"
-    },
-    "@id": "a343fcbf-99fc-4ce8-8e9b-148c97605aab",
-    "policy": {
-        "@context": [
-            "https://www.w3.org/ns/odrl.jsonld",
-            {
-                "cx-policy": "https://w3id.org/catenax/policy/"
+"@context": [
+    "http://www.w3.org/ns/odrl.jsonld",
+    "https://w3id.org/catenax/2025/9/policy/context.jsonld"
+  ],
+  "@type": "Set",
+  "@id": "some-id",
+  "permission": [
+      {
+       "action": "use",
+       "constraint": [
+           {
+               "and": [
+                   {
+                      "leftOperand": "FrameworkAgreement",
+                      "operator": "eq",
+                      "rightOperand": "DataExchangeGovernance:1.0"
+                    },
+                    {
+                        "leftOperand": "Membership",
+                        "operator": "eq",
+                        "rightOperand": "active"
+                   },
+                   {
+                        "leftOperand": "UsagePurpose",
+                        "operator": "isAnyOf",
+                        "rightOperand": "cx.pcf.base:1"
+                    } 
+                ]
             }
-        ],
-        "@type": "Policy",
-        "profile": "cx-policy:profile2405",
-        "permission": [
-            {
-                "action": "use",
-                "constraint": {
-                    "and": [
-                        {
-                            "leftOperand": "cx-policy:FrameworkAgreement",
-                            "operator": "eq",
-                            "rightOperand": "DataExchangeGovernance:1.0"
-                        },
-                        {
-                            "leftOperand": "cx-policy:Membership",
-                            "operator": "eq",
-                            "rightOperand": "active"
-                        },
-                        {
-                            "leftOperand": "cx-policy:UsagePurpose",
-                            "operator": "eq",
-                            "rightOperand": "cx.pcf.base:1"
-                        }
-                    ]
-                }
-            }
-        ]
-    }
+          ]   
+        }
+    ]
 }
 ```
 
-> **Note**
-> Be aware that - due to an open issue in EDC version 0.7.x - all criterias must be added in fixed (alphabetical) order!
-
-In addition, references to bilateral contracts can be added to the policy definition. For more details on how to do this, please refer to the [PCF Kit](https://eclipse-tractusx.github.io/docs-kits/category/pcf-exchange-kit). For further details on policy structure and the usage of verifiable credentials please refer [here](https://github.com/eclipse-tractusx/ssi-docu/blob/main/docs/architecture/cx-3-2/edc/policy.definitions.md).
+In addition, references to bilateral contracts can be added to the policy definition. For more details on how to do this, please refer to the [PCF Kit](https://eclipse-tractusx.github.io/docs-kits/category/product-carbon-footprint-exchange-kit). For further details on policy structure and the usage of verifiable credentials please refer paragraph [2.1.3](#213-policy-constraints-for-data-exchange).
 
 ###### 2.1.2.7.3 Contract Definition
 
-Contract definitions of data providers MUST follow the structure below (also defined in [CX-0018 Dataspace Connectivity v3.1.0](#211-list-of-standalone-standards)):
+Contract definitions of data providers MUST follow the structure below (also defined in [CX-0018 Dataspace Connectivity](#211-list-of-standalone-standards)):
 
 ```json
 {
@@ -373,41 +383,14 @@ Contract definitions of data providers MUST follow the structure below (also def
 
 ##### 2.1.2.8 Data Exchange
 
-As the PCF use case currently supports only asynchronous data exchange, app provider MUST follow the API definition specification in [4.1 PCF EXCHANGE API](#41-pcf-exchange-api). The exchanged data follows the standardized data model defind in [3.1 ASPECT MODEL PCF](#31-aspect-model-pcf).
+The PCF use case supports synchronous and asynchronous data exchange. In case an asynchronous data exchange is needed, app provider MUST follow the API definition specification in [4.1 PCF EXCHANGE API](#41-pcf-exchange-api). The exchanged data follows the standardized data model defind in [3.1 ASPECT MODEL PCF](#31-aspect-model-pcf).
 
-#### 2.1.3 ADDITIONAL REQUIREMENTS
+#### 2.1.3 POLICY CONSTRAINTS FOR DATA EXCHANGE
 
-##### 2.1.3.1 Conventions for Use Case Policy in context data exchange
-
-In alignment with our commitment to data sovereignty, a specific framework governing the utilization of data within the Catena-X use cases has been outlined. A set of specific policies on data offering and data usage level detail the conditions under which data may be accessed, shared, and used, ensuring compliance with legal standards.
-
-For a comprehensive understanding of the rights, restrictions, and obligations associated with data usage in the Catena-X ecosystem, we refer users to
-
-- the detailed [ODRL policy repository](https://github.com/catenax-eV/cx-odrl-profile). This document provides in-depth explanations of the terms and conditions applied to data access and utilization, ensuring that all engagement with our data is conducted responsibly and in accordance with established guidelines.
-- the ODRL schema template. This defines how policies used for data sharing/usage should get defined. Those schemas MUST be followed when providing services or apps for data sharing/consuming.
-
-##### 2.1.3.2 Additional Details regarding Access Policies
-
-A Data Provider may tie certain access authorizations ("Access Policies") to its data offers for members of Catena-X  and one or several Data Consumers. By limiting access to certain Participants, Data Provider maintains control over its anti-trust obligations when sharing certain data. In particular, Data Provider may apply Access Policies to restrict access to a particular data offer for only one Participant identified by a specific business partner number:
-
-- Membership
-- BPNL
+In alignment with our commitment to data sovereignty, a specific framework governing the utilization of data within the Catena-X use cases has been outlined.  As part of this data sovereignty framework, conventions for access policies, for usage policies and for the constraints contained in the policies have been specified in standard 'CX-0152 Policy Constraints for Data Exchange'. This standard document CX-0152 **MUST** be followed when providing services or apps for data sharing/consuming and when sharing or consuming data in the Catena-X ecosystem. What conventions are relevant for what roles named in [1.1 AUDIENCE & SCOPE](#11-audience--scope) is specified in the CX-0152 standard document as well. CX-0152 can be found in the [standard library](https://catenax-ev.github.io/docs/standards/overview).
 
 > **Note**
-> The access policies for BPNL are not required for the PCF use case as PCF values are exchanged via the request and response process using public endpoints as specified in this specification, see [2.1 PCF EXCHANGE](#21-pcf-exchange).
-
-##### 2.1.3.3 Additional Details regarding Usage Policies
-
-In the context of data usage policies (“Usage Policies”), Participants and related services MUST use the following policy rules:
-
-- Use Case Framework (“FrameworkAgreement”)
-- at least one use case purpose (“UsagePurpose”) from the above mentioned [ODRL policy repository](https://github.com/catenax-eV/cx-odrl-profile).
-
-Additionally, respective usage policies MAY include the following policy rule:
-
-- Reference Contract (“ContractReference”).
-
-Details on namespaces and ODLR policy rule values to be used for the above-mentioned types are provided via the [ODRL policy repository](https://github.com/catenax-eV/cx-odrl-profile).
+> In case of an asynchronous data exchange (data push) the access policies are not required to be restricted for a specific BPNL (PCF values are exchanged via the request and response process, is using public endpoints as specified in this specification, see [2.1 PCF EXCHANGE](#21-pcf-exchange)).
 
 ### 2.2 PCF CALCULATION TOOL INTEGRATION
 
@@ -415,7 +398,7 @@ This section specifies the integration of PCF calculation solutions in a way tha
 
 #### 2.2.1 CONTEXT AND ARCHITECTURE FIT FOR PCF CALCULATION TOOL INTEGRATION
 
-> *This section is non-normantive*
+> *This section is non-normative*
 
 This documents shows
 
@@ -438,27 +421,27 @@ The following scenario describes, how
 
 #### 2.2.2 EXAMPLES FOR PCF CALCULATION TOOL INTEGRATION
 
-> *This section is non-normantive*
+> *This section is non-normative*
 
 Section [2.2.4 PCF DATA FORMAT FOR PCF CALCULATION INTEGRATION](#224-pcf-data-format-for-pcf-calculation-integration) describes the relevant data structure in context of integrating PCF calculationtools in Catena-X. An exemplary data set based on this specification can be found here: [CSV Example](./assets/PCF_Data_Model_Specification_for_Calculation_(Example).csv).
 
 #### 2.2.3 PCF CALCULATION METHODOLOGY
 
-> *This section is normantive*
+> *This section is normative*
 
-The methodology used for calculating a PCF MUST be conformant with [Product Carbon Footprint Rulebook v3.1.0](#211-list-of-standalone-standards).
+The methodology used for calculating a PCF MUST be conformant with [Product Carbon Footprint Rulebook](#211-list-of-standalone-standards).
 
 #### 2.2.4 PCF DATA FORMAT FOR PCF CALCULATION INTEGRATION
 
-> *This section is normantive*
+> *This section is normative*
 
 For the integration of PCF calculation solutions, the data format is derived from the standard PCF data model as described in section [ASPECT MODEL PCF](#31-aspect-model-pcf), though in integration context some individual properties are not mandatory but can be specified optionally.
 
-The data format for the integration of PCF calculation solutions in Catena-X MUST be conformant to the specification defined in [PCF Data Model Specification for Calculation Integration](./assets/PCF_Data_Model_Specification_for_Calculation_Integration.pdf).
+The data format for the integration of PCF calculation solutions in Catena-X MUST be conformant to the specification defined in [Product Carbon Footprint Rulebook](#211-list-of-standalone-standards).
 
 #### 2.2.5 PCF CALCULATION DATA EXCHANGE
 
-> *This section is non-normantive*
+> *This section is non-normative*
 
 To prove conformity with the PCF calculation tool integration standard, the following criteria SHOULD be applied:
 
@@ -473,7 +456,7 @@ A template in CSV format can be found here: [CSV Template](./assets/PCF_Data_Mod
 
 ## 3 ASPECT MODELS
 
-> *This section is normantive*
+> *This section is normative*
 
 ### 3.1 ASPECT MODEL PCF
 
@@ -483,8 +466,8 @@ This section describes the PCF data model, which is the basis for the interopera
 
 #### 3.1.2 SPECIFICATIONS ARTIFACTS
 
-The PCF aspect model is written in SAMM 2.1.0 as a modeling language conformant to [CX-0003 SAMM Aspect Meta Model v1.1.0](#211-list-of-standalone-standards) as input for the semantic driven workflow.
-Like all Catena-X data models, the PCF model is available in machine-readable format on GitHub conformant to [CX-0003 SAMM Aspect Meta Model v1.1.0](#211-list-of-standalone-standards).
+The PCF aspect model is written in SAMM 2.1.0 as a modeling language conformant to [CX-0003 SAMM Aspect Meta Model](#211-list-of-standalone-standards) as input for the semantic driven workflow.
+Like all Catena-X data models, the PCF model is available in machine-readable format on GitHub conformant to [CX-0003 SAMM Aspect Meta Model](#211-list-of-standalone-standards).
 
 #### 3.1.3 LICENSE
 
@@ -494,7 +477,7 @@ The Catena-X PCF data model is made available under the terms of the Creative Co
 
 The semantic model has the unique identifier
 
-> urn:samm:io.catenax.pcf:7.0.0
+> urn:samm:io.catenax.pcf:8.0.0
 
 This identifier MUST be used by the data provider to define the semantics of the data being transferred.
 
@@ -502,13 +485,13 @@ This identifier MUST be used by the data provider to define the semantics of the
 
 All different formats of the semantic model can be found in the github repository.
 
-https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.pcf/7.0.0
+https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.pcf/8.0.0
 
 ##### 3.1.5.1 RDF TURTLE
 
 The RDF (Resource Description Framework) Turtle file, an instance of the Semantic Aspect Meta Model, is the master for generating additional file formats and serializations.
 
-https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.pcf/7.0.0/Pcf.ttl
+https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.pcf/8.0.0/Pcf.ttl
 
 The open source command line tool of the Eclipse Semantic Modeling Framework is used for generation of other file formats like for example a JSON Schema, aasx for Asset Administration Shell Submodel Template or a HTML documentation. These other formats are saved in the "gen" folder in github.
 
@@ -517,19 +500,19 @@ The open source command line tool of the Eclipse Semantic Modeling Framework is 
 A JSON Schema can be generated from the RDF Turtle file. The JSON Schema defines the value-only
 payload of the Asset Administration Shell for the API operation "GetSubmodel".
 
-https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.pcf/7.0.0/gen/Pcf-schema.json
+https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.pcf/8.0.0/gen/Pcf-schema.json
 
 ##### 3.1.5.3 AASX
 
 An AASX file can be generated from the RDF Turtle file. The AASX file defines one of the requested artifacts for a Submodel Template Specification conformant to [SMT](#62-non-normative-references).
 
-https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.pcf/7.0.0/gen/Pcf.aasx
+https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.pcf/8.0.0/gen/Pcf.aasx
 
 ##### 3.1.5.4 HTML
 
 An HTML documentation of the PCF data model can be generated from the RDF Turtle file.
 
-https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.pcf/7.0.0/gen/Pcf.html
+https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.pcf/8.0.0/gen/Pcf.html
 
 #### 3.1.6 EXAMPLES
 
@@ -537,40 +520,56 @@ For an exemplary JSON payload based on the PCF data model see [Pcf.json](./asset
 
 ## 4 APPLICATION PROGRAMMING INTERFACES
 
-> *This section is normantive*
+> *This section is normative*
 
-### 4.1 PCF EXCHANGE API
+### 4.1 PCF EXCHANGE API FOR ASYNCHRONOUS DATA EXCHANGE
 
 #### 4.1.1 PRECONDITIONS AND DEPENDENCIES
 
-The PCF exchange API MUST be published towards the network using a data
+For asynchronous data exchange (data push) the PCF exchange API MUST be published towards the network using a data
 asset/contract offer in terms of the DSP protocol.
 
-Furthermore, the participants of these use case MUST follow the [CX-0001 EDC Discovery API v1.0.2](#211-list-of-standalone-standards) to find the relevant EDC Endpoints.
+Furthermore, the participants of these use case MUST follow the [CX-0001 EDC Discovery API](#211-list-of-standalone-standards) to find the relevant EDC Endpoints.
 
 #### 4.1.2 API SPECIFICATION
 
 ##### 4.1.2.1 API Endpoints & resources
 
 The PCF exchange API MUST be implemented as specified in the openAPI
-documentation as stated [here](./assets/catena-x-pcf-endpoint-1_1_1.yaml)
+documentation as stated [here](./assets/catena-x-pcf-endpoint-1_1_2.yaml)
 
-The following two API MUST be provided:
+The following two API SHOULD be provided as they reflect a revised version of requesting and responding to PCF exchange requests:
 
 ```text
-GET https://\{someURL\}/productIds/mat345?requestId=123&message=...
+GET https://\{someURL\}/footprintExchange/123?manufacturerPartId=456&customerPartId=789&message=...
 ```
 
 ```text
-PUT https://\{someURL\}/productIds/mat345?requestId=123
+PUT https://\{someURL\}footprintExchange/123?message=...&update=false
 ```
 
 - The caller's BPN is available through the HTTP header ``Edc-Bpn``.
-- When responding to a PCF exchange request the ``requestId`` is *mandatory* in the PUT call.
-- When sharing a PCF update the ``requestId`` is *NOT allowed* in the PUT call.
+- When sending a PCF exchange request, the ``requestId`` is *mandatory* in the ``GET`` call. Further, at least one of ``manufacturerPartId`` or ``customerPartId`` MUST be provided
+- When responding to a PCF exchange request the ``requestId`` is *mandatory* in the ``PUT`` call.
 
-> **Note**
-> Before the PCF data can be pushed back to the requester the data provider needs again to search for the EDC Endpoint of the requester following the EDC Discovery Service API! [CX-0001 EDC Discovery API v1.0.2](#211-list-of-standalone-standards)
+> **Note:**
+
+> To ensure backwards compatibility, the following API, albeit being deprecated, remain valid and MAY be used for one year after this current release:
+
+> ```text
+> GET https://\{someURL\}/productIds/mat345?requestId=123&message=...
+> ```
+
+> ```text
+> PUT https://\{someURL\}/productIds/mat345?requestId=123
+> ```
+
+> - The caller's BPN is available through the HTTP header ``Edc-Bpn``.
+> - When responding to a PCF exchange request the ``requestId`` is *mandatory* in the PUT call.
+> - When sharing a PCF update the ``requestId`` is *NOT allowed* in the PUT call.
+>
+> **Note:**
+> Before the PCF data can be pushed back to the requester the data provider needs again to search for the EDC Endpoint of the requester following the EDC Discovery Service API! [CX-0001 EDC Discovery API](#211-list-of-standalone-standards)
 
 #### 4.1.2.2 Available Data Types
 
@@ -600,9 +599,13 @@ defined PCF dataset back to the quested consumer.
 
 - Code 200: OK
 
+### 4.2 PCF EXCHANGE API FOR SYNCHRONOUS DATA EXCHANGE
+
+The PCF exchange API for synchronous data exchange MUST be implemented according to Industry Core Standard CX-0151 [here](https://github.com/catenax-eV/product-standardization-prod/blob/main/standards/CX-0151-IndustryCoreBasics/CX-0151-IndustryCoreBasics.md#4-application-programming-interfaces).
+
 ## 5 PROCESSES
 
-> *This section is normantive*
+> *This section is normative*
 
 The API wrapper shown in the following sequences is an optional component encapsulating the communication logic. This logic can also be implemented directly within the data exchange app.
 
@@ -611,6 +614,44 @@ The API wrapper shown in the following sequences is an optional component encaps
 ![EDCDiscoveryAndDTRAccess](./assets/EDCDiscoveryanddDTRAccess.png)
 
 ### 5.2 PCF REQUEST THROUGH AN EXISTING MATERIAL TWIN WITH A CORRESPONDING PCF RESPONSE
+
+For synchronous data exchange (data pull):
+
+```mermaid
+sequenceDiagram
+    participant Con as Data Consumer
+    participant CEDC as Consumer EDC <br/>Control Plane
+    participant PEDC as Provider EDC <br/>Control Plane
+    participant DTR as Digital Twin Registry
+    participant SM as Submodel Server
+    participant EDCD as EDC Discovery
+
+autonumber
+    critical: Consumer-Side discovery
+        Con->>EDCD: POST /api/administration/connectors/discovery with provider-bpn
+        EDCD-->>Con: EDC-endpoint
+        Con->>CEDC: POST /catalog/request with <br/>filter looking for DTR
+        CEDC-->>PEDC: forward
+        PEDC-->>CEDC: return
+        CEDC-->>Con: dcat:Dataset for DTR
+        Con->>PEDC: negotiate for DTR and retrieve token
+        PEDC-->>Con: access token
+        Con->>DTR: GET {{provider-data.plane}}/lookup/shells?assetIds=xyz&assetIds=abc
+        DTR-->>Con: aas-id
+        Con->>DTR: GET {{provider-data.plane}}/shell-descriptors/{{aas-id}} <br/> with aas-id encoded base64url
+        DTR-->>Con: shell-descriptor including the  <br/> submodel's Dataset-ID (subprotocolBody)
+     end
+        Con->>CEDC: POST /catalog/request with <br/>filter looking for Dataset-ID
+        CEDC-->>PEDC: forward
+        PEDC-->>CEDC: return
+        CEDC-->>Con: Dataset for submodel(-bundle)
+        Con->>PEDC: negotiate for Dataset and retrieve token
+        PEDC-->>Con: access token
+        Con->>SM: GET {{submodel-descriptor/href}}
+        SM-->>Con: data
+```
+
+For asynchronous data exchange (data push):
 
 ![PCFExchangeThroughAAS](./assets/PCFRequestthroughAAS.png)
 
@@ -626,7 +667,7 @@ The API wrapper shown in the following sequences is an optional component encaps
 
 ### 6.1 NORMATIVE REFERENCES
 
-> *This section is normantive*
+> *This section is normative*
 
 see [2.1.1](#211-list-of-standalone-standards)
 
@@ -640,15 +681,13 @@ see [2.1.1](#211-list-of-standalone-standards)
 
 > *This section is non-normative*
 
-Currently there is no reference FOSS implementation. For information about available solutions please consult the [PCF Kit](https://eclipse-tractusx.github.io/docs-kits/category/pcf-exchange-kit).
+Currently there is no reference FOSS implementation. For information about available solutions please consult the [PCF Kit](https://eclipse-tractusx.github.io/docs-kits/category/product-carbon-footprint-exchange-kit).
 
 ## ANNEXES
 
 ### FIGURES
 
 > *This section is non-normative*
-
-[Architectural Overview](./assets/ArchitecturalOverview.png)
 
 ### TABLES
 

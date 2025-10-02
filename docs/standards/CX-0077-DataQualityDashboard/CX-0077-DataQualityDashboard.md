@@ -3,7 +3,7 @@ tags:
   - CAT/Value Added Services
 ---
 
-# CX-0077 Data Quality Dashboard v1.2.1
+# CX-0077 Data Quality Dashboard v1.2.2
 
 ## ABSTRACT
 
@@ -297,36 +297,9 @@ The following data assets **MUST** be registered at the Core Service Provider so
 | ReadAccessDQDOutputForSharingMember  | DQD | 1.0         | Grants the Sharing Member read access of the DQD changelog.                                                                                                                         |
 The OAuth2 client permissions **MUST** be configured to solely allow access to the API resources defined in the corresponding asset, checking HTTP method (read vs. full access), path, query parameters and body of the HTTP request.
 
-### 3.7 **ADDITIONAL REQUIREMENTS**
+### 3.7 **POLICY CONSTRAINTS FOR DATA EXCHANGE**
 
-#### 3.7.1 **CONVENTIONS FOR USE CASE POLICY IN CONTEXT OF DATA EXCHANGE**
-  
-In alignment with our commitment to data sovereignty, a specific framework governing the utilization of data within the Catena-X use cases has been outlined. A set of specific policies on data offering and data usage level detail the conditions under which data may be accessed, shared, and used, ensuring compliance with legal standards.
-  
-For a comprehensive understanding of the rights, restrictions, and obligations associated with data usage in the Catena-X ecosystem, we refer users to
-
-- the detailed [ODRL policy repository](https://github.com/catenax-eV/cx-odrl-profile). This document provides in-depth explanations of the terms and conditions applied to data access and utilization, ensuring that all engagement with our data is conducted responsibly and in accordance with established guidelines.
-- the ODRL schema template. This defines how policies used for data sharing/usage should get defined. Those schemas **MUST** be followed when providing services or apps for data sharing/consuming.
-
-#### 3.7.2 **ADDITIONAL DETAILS REGARDING ACCESS POLICIES**
-
-A Data Provider may tie certain access authorizations ("Access Policies") to its data offers for members of Catena-X and one or several Data Consumers. By limiting access to certain Participants, Data Provider maintains control over its anti-trust obligations when sharing certain data. In particular, Data Provider may apply Access Policies to restrict access to a particular data offer for only one Participant identified by a specific business partner number:
-
-- Membership
-- BPNL
-
-#### 3.7.3 **ADDITIONAL DETAILS REGARDING USAGE POLICIES**
-
-In the context of data usage policies (“Usage Policies”), Participants and related services **MUST** use the following policy rules:
-  
-- Use Case Framework (“FrameworkAgreement”)
-- at least one use case purpose (“UsagePurpose”) from the above mentioned [ODRL policy repository](https://github.com/catenax-eV/cx-odrl-profile).
-  
-Additionally, respective usage policies **MAY** include the following policy rule:
-  
-- Reference Contract (“ContractReference”).
-  
-Details on  namespaces and ODRL policy rule values to be used for the above-mentioned types are provided via the [ODRL policy repository](https://github.com/catenax-eV/cx-odrl-profile).
+In alignment with our commitment to data sovereignty, a specific framework governing the utilization of data within the Catena-X use cases has been outlined.  As part of this data sovereignty framework, conventions for access policies, for usage policies and for the constraints contained in the policies have been specified in standard 'CX-0152 Policy Constraints for Data Exchange'. This standard document CX-0152 **MUST** be followed when providing services or apps for data sharing/consuming and when sharing or consuming data in the Catena-X ecosystem. What conventions are relevant for what roles named in [1.1 AUDIENCE & SCOPE](#11-audience--scope) is specified in the CX-0152 standard document as well. CX-0152 can be found in the [standard library](https://catenax-ev.github.io/docs/standards/overview).
 
 ### **3.8 ERROR HANDLING**
 

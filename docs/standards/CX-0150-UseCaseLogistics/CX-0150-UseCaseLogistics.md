@@ -4,13 +4,13 @@ tags:
   - UC/Logistics
 ---
 
-# CX-0150 Logistics Use Case v1.1.0
+# CX-0150 Logistics Use Case v1.2.1
 
 ## ABSTRACT
 
 This standard is used to define the basic rules to participate in the logistics use case.
 
-The use case is based on the industry core and uses the digital twins and aspect models of the industry core. Furthermore it includes
+The use case is based on the industry core and uses digital twins and aspect models of the industry core. Furthermore it includes
 use case-specific aspect models (e.g. packingList) that go beyond the industry core and are used to make various entities in the network, such as transport units, traceable.
 
 ## FOR WHOM IS THE STANDARD DESIGNED
@@ -21,15 +21,9 @@ The following features are provided:
 
 - Traceability of transport (e.g. truck, ship, airplane), transport units and packing list.
 
-## COMPARISON WITH THE PREVIOUS VERSION OF THE STANDARD
-
-With the decision to create separate standards for the use cases of logistics and customs duties, all content relating to customs duties has been removed from this standard.
-
-> Note: This release (**25.06**) contains **minor changes**!
-
 ## 1 INTRODUCTION
 
-This document summarizes all standards to be supported by a network participants IT infrastructure to participate for the **Use Case Logistics**. This involves protocols, semantic models and platform capabilities to be used.
+This document summarizes all standards to be supported by network participants IT infrastructure to participate for the **Logistics Use Case**. This involves protocols, semantic models and platform capabilities to be used.
 
 ### 1.1 AUDIENCE & SCOPE
 
@@ -40,11 +34,11 @@ This document is targeting subsets of the following roles:
 - Data Provider / Consumer
 - Business Application Provider
 
-The **Use Case Logistics** is only relevant in case of tracking transport units, the transport itselfs and e.g. using and providing information about GTL (global transport label according to VDA 4994 - Please refer to: https://www.vda.de/de/aktuelles/publikationen/publication/vda-4994---global-transport-label-v2.0-2023-07--ersetzt-die-vda-4902- ) and the requirement to track and share information in a Catena-X compliant way.
+The **Logistics Use Case** is only relevant in case of tracking transport units, the transport itselfs and e.g. using and providing information about GTL (global transport label according to VDA 4994 - Please refer to: https://www.vda.de/de/aktuelles/publikationen/publication/vda-4994---global-transport-label-v2.0-2023-07--ersetzt-die-vda-4902-) and the requirement to track and share information in a Catena-X compliant way.
 
 Note: Fulfilling a use case standard by a data provider / consumer can be done in two ways:
 
-1. Purchase a certified app for the use-case. In this case the data provider / consumer does not need to prove conformity again and
+1. Purchase a certified app for the use case. In this case the data provider / consumer does not need to prove conformity again and
 2. Data Provisioning / Consumption without a certified app for the use case.
 
 ### 1.2 CONTEXT AND ARCHITECTURE FIT
@@ -52,15 +46,15 @@ Note: Fulfilling a use case standard by a data provider / consumer can be done i
 > *This section is non-normative*
 
 Traceability of parts and materials is crucial in the automotive industry to enable e.g. quality management and calculating the correct PCF value. But not just the manufacturing process or used materials have an influence to the product quality and the PCF. How these parts, batches or vehicles are conveyed and handled on the route of transport can have an impact to it. Some examples are heat or humidity to chemical products or shock to sensitive or breakable goods. It makes a difference in calculating a PCF value in case of ground shipping vs. air freight.
-So, the aim of the **Use Case Logistics** is to provide additional information about the transport (used vehicles, real time information about the location etc.), the transport unit (also known as "handling unit")  and specific details of package content. It enables to track and trace the single stages of the value creation chain to enable further data driven use cases in the logistics without compromising data sovereignty.
+So, the aim of the **Logistics Use Case** is to provide additional information about the transport (used vehicles, real time information about the location etc.), the transport unit (also known as "handling unit")  and specific details of package content. It enables to track and trace the single stages of the value creation chain to enable further data driven use cases in the logistics without compromising data sovereignty.
 
 In order to create this transparency on transport, transport unit etc. relevant data should be made available by the affected participants of a value chain in addition of the transparency on physical assets. This process is described in the standard CX - 0127 INDUSTRY CORE: PART INSTANCE 2.0.0. This standard enables data and app providers to deliver solutions for building data chains for serialized parts, batches etc.. This is achieved via the standardized creation of digital twins of vehicles, parts and materials as well as the logical linking to their sub-components (Bill of Material, BoM). The default visibility of digital twins and their respective semantic models follows the one-up/one-down principle.
 
-By tracking and tracing back the logistic conditions of parts, batches or vehicles - suppliers, carriers etc. can quickly identify the source of any quality issues due to an incompatible treatment on the transport way. By using a digital twin for transport units and provide specific information about the packed goods via aspect model "packingList 1.0", it is possible to identify the affected goods and take corrective actions to address them. Comprehensive traceability across the value creation network enables the automotive and further industries to quickly respond to any quality issues in their supply chain.
+By tracking and tracing back the logistic conditions of parts, batches or vehicles - suppliers, carriers etc. can quickly identify the source of any quality issues due to an incompatible treatment on the transport way. By using a digital twin for transport units and provide specific information about the packed goods via aspect model "packingList1.0", it is possible to identify the affected goods and take corrective actions to address them. Comprehensive traceability across the value creation network enables the automotive and further industries to quickly respond to any quality issues in their supply chain.
 
 ![LogisticTwins.png](./assets/LogisticTwins.png)
 
-To participate in the **Use Case Logistics**, the following single standards MUST be fulfilled by all participants for which the standard is relevant:
+To participate in the **Logistics Use Case**, the following single standards MUST be fulfilled by all participants for which the standard is relevant:
 
 - CX-0002 Digital Twins in Catena-X
 - CX-0126 IndustryCorePartType
@@ -168,48 +162,95 @@ A digital twin MUST be created for the transport itself or the transport unit by
 
 The IDS protocol as described in CX-0018 MUST be followed in the data exchange.
 
-#### 2.2 ADDITIONAL REQUIREMENTS
+### 2.2 ADDITIONAL REQUIREMENTS
 
 As the IDS protocol is being used, data MUST NOT be transferred before a corresponding contract negotiation has been successfully passed by the participants of the data exchange and a valid contract is present as described in CX-0018.
 
-#### Conventions for Use Case Policy in context data exchange
+#### 2.2.1 Data asset structure
 
-In alignment with our commitment to data sovereignty, a specific framework governing the utilization of data within the Catena-X use cases has been outlined. A set of specific policies on data offering and data usage level detail the conditions under which data may be accessed, shared, and used, ensuring compliance with legal standards.
+> *This section is normative*
 
-For a comprehensive understanding of the rights, restrictions, and obligations associated with data usage in the Catena-X ecosystem, we refer users to
+| **Type**        | **Subject**                                      | **Version** | **Description**                                                                 |
+|-----------------|--------------------------------------------------|-------------|---------------------------------------------------------------------------------|
+| cx-taxo:LOGAPI  | cx-taxo:LogisticsApi | 1.0         | Enables the Catena-X Members to send and receive data in regards with the Logistics Data Exchange |
 
-- the detailed [ODRL policy repository](https://github.com/catenax-eV/cx-odrl-profile). This document provides in-depth explanations of the terms and conditions applied to data access and utilization, ensuring that all engagement with our data is conducted responsibly and in accordance with established guidelines.
-- the ODRL schema template. This defines how policies used for data sharing/usage should get defined. Those schemas **MUST** be followed when providing services or apps for data sharing/consuming.
+*Example:*
 
-##### Additional Details regarding Access Policies
+```json
 
-A Data Provider may tie certain access authorizations ("Access Policies") to its data offers for members of Catena-X  and one or several Data Consumers. By limiting access to certain Participants, Data Provider maintains control over its anti-trust obligations when sharing certain data. In particular, Data Provider may apply Access Policies to restrict access to a particular data offer for only one Participant identified by a specific business partner number:
+{
+    "@id": "LOGAPI",
+    "@type": "Asset",
+    "properties": {
+        "dct:type": {
+            "@id": "cx-taxo:LOGAPI"
+        },
+        "dct:subject": {
+            "@id": "cx-taxo:LogisticsApi"
+        },
+        "dct:description": "Enables the Catena-X Members to send and receive data in regards with the Logistics Data Exchange",
+        "cx-common:version": "1.0",
+    },
+    "dataAddress": {},
+    "@context": {
+        "dct": "http://purl.org/dc/terms/",
+        "cx-taxo": "https://w3id.org/catenax/taxonomy#",
+        "cx-common": "https://w3id.org/catenax/ontology/common#"
+    }
+}
+```
 
-- Membership
-- BPNL
+#### 2.2.2 POLICY CONSTRAINTS FOR DATA EXCHANGE
 
-##### Additional Details regarding Usage Policies
+In alignment with our commitment to data sovereignty, a specific framework governing the utilization of data within the Catena-X use cases has been outlined.  As part of this data sovereignty framework, conventions for access policies, for usage policies and for the constraints contained in the policies have been specified in standard 'CX-0152 Policy Constraints for Data Exchange'. This standard document CX-0152 **MUST** be followed when providing services or apps for data sharing/consuming and when sharing or consuming data in the Catena-X ecosystem. What conventions are relevant for what roles named in [1.1 AUDIENCE & SCOPE](#11-audience--scope) is specified in the CX-0152 standard document as well. CX-0152 can be found in the [standard library](https://catenax-ev.github.io/docs/standards/overview).
 
-In the context of data usage policies (“Usage Policies”), Participants and related services **MUST** use the following policy rules:
+#### 2.2.3 Usage Policy
 
-- Use Case Framework (“FrameworkAgreement”)
-- at least one use case purpose (“UsagePurpose”) from the above mentioned [ODRL policy repository](https://github.com/catenax-eV/cx-odrl-profile).
+The “Connector Asset for Logistics” included in the EDC of a data consumer **MUST** contain a usage policy following the requirements referenced in paragraph [2.2.2](#222-policy-constraints-for-data-exchange).
 
-Additionally, respective usage policies **MAY** include the following policy rule:
+The "rightOperand" for the "leftOperand" "UsagePurpose" **MUST** include the following usage purpose: **`cx.logistics.base:1`**. The legal meaning is named in CX-0152 (see [standard library](https://catenax-ev.github.io/docs/standards/overview)).
 
-- Reference Contract (“ContractReference”).
+Additional more general usage policies **MAY** be included, but all the usage policies MUST contain the above mentioned usage purpose as shown in the example below.
 
-Details on  namespaces and ODRL policy rule values to be used for the above-mentioned types are provided via the [ODRL policy repository](https://github.com/catenax-eV/cx-odrl-profile).
+``` json
+{
+  "@context": [
+    "http://www.w3.org/ns/odrl.jsonld",
+    "https://w3id.org/catenax/2025/9/policy/context.jsonld"
+  ],
+  "@type": "Set",
+  "@id": "anyID",
+  "permission": [
+    {
+      "action": "use",
+      "constraint": {
+        "and": [
+          {
+            "leftOperand": "FrameworkAgreement",
+            "operator": "eq",
+            "rightOperand": "DataExchangeGovernance:1.0"
+          },
+          {
+            "leftOperand": "UsagePurpose",
+            "operator": "isAnyOf",
+            "rightOperand": "cx.logistics.base:1"
+          }
+        ]
+      }
+    }
+  ]
+}
+```
 
-##### Versioning
+#### 2.2.4 Versioning
 
 The Aspect Models that are deployed as Digital Twins **MUST** be published in dcat:Dataset [http://www.w3.org/ns/dcat#](http://www.w3.org/ns/dcat#) in the property that holds the full URN of the Aspect Model [https://admin-shell.io/aas/3/0/HasSemantics/semanticId](https://admin-shell.io/aas/3/0/HasSemantics/semanticId). Versions are explicitly contained in the URN.
 The API versions **MUST** be published in the property https://w3id.org/catenax/ontology/common#version as version X.Y in dcat:Dataset [http://www.w3.org/ns/dcat#](http://www.w3.org/ns/dcat#).
 Note: Data Assets differentiated only by major version **MUST** be offered in parallel. The current standard and API versions mark the start of Life Cycle Management in Catena-X operations. Previous versions are dismissed.
 
-#### 2.3 SPECIAL DIGITAL TWINS FOR LOGISTICS AND SPECIFIC ASSET IDS
+### 2.3 SPECIAL DIGITAL TWINS FOR LOGISTICS AND SPECIFIC ASSET IDS
 
-The Logistic Use Case uses digital twins to make a company's data available to other Catena-X partners. Basics about digital twins, which you should be familiar with to understand this section, are described in the Standard of Digital Twins (CX - 0002 Digital Twins in Catena-X).
+The Logistic use case uses digital twins to make a company's data available to other Catena-X partners. Basics about digital twins, which you should be familiar with to understand this section, are described in the Standard of Digital Twins (CX-0002 Digital Twins in Catena-X).
 
 The asset's globalAssetId **MUST** be equal to the unique id used in Catena-X
 
@@ -217,17 +258,18 @@ The following specific asset IDs not marked as optional **MUST** be available wh
 
 **Digital Twin “TransportUnit”**
 
-In case of using a Global Transport Label or tracking a transport unit and provide data e.g. about the packing list, it **MUST** be used a digital twin for transport unit.
+In case of using a Global Transport Label (GTL) or tracking a transport unit and provide data e.g. about the packing list, it **MUST** be used a digital twin for transport unit.
 
 Specific asset IDs are used to identify digital twins when looking up or searching for these digital twins. This is a required step by a supplier of physical assets to connect the digital twins of the transport unit to the digital twins of their physical assets. Mandatory specific asset IDs ensure that at least this information is available for the digital twin.
 
-The following conventions for specific asset IDs apply to digital twins of a transport unit:
+The following conventions for specific asset IDs apply to digital twins of "*transport unit*":
 
 |  Key                |  Availability  |  Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |  Type    |
 |---------------------|----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
 |  manufacturerId     |  Mandatory     |  The Business Partner Number (BPNL) of the manufacturer of the part.                                                                                                                                                                                                                                                                                                                                                                                                                                     |  BPNL    |
-|  Shipping Note No.  |  Mandatory     |  (dt. Lieferschein-Nr.) Shipping Note No. of forwarding company                                                                                                                                                                                                                                                                                                                                                                                                                                          |  String  |
-|  Order No.          |  Mandatory     |  Shipping no. on package visible for carrier (Referenz-Nr.)                                                                                                                                                                                                                                                                                                                                                                                                                                              |  String  |
+|  Shipping Note No.  |  Mandatory     |  (dt. "Lieferschein-Nr.") Shipping Note No. of forwarding company                                                                                                                                                                                                                                                                                                                                                                                                                                          |  String  |
+|  Transport Unit No.            |  Mandatory      |  Number of transport unit / handling unit                                                                                                                                                                                                                                                                                                                                                                                                                                                            |  String  |
+|  Order No.          |  Mandatory     |  Shipping no. on package visible for carrier ("Referenz-Nr.")                                                                                                                                                                                                                                                                                                                                                                                                                                              |  String  |
 |  digitalTwinType    |  Mandatory     |  The type of the digital twin for transport unit: "TransportUnit".<br />      DigitalTwinType was added to allow data consumers to search for all digital twins of a particular type, e.g, only for catalog parts by using `digitalTwinType="PartType"` as filter. Without this filter, a search for a particular  manufacturer part ID would not only return the digital twin of the catalog part, but also all digital twins of instances of this catalog part, i.e., of the corresponding serial parts. |  String  |
 |  customerID         |  Mandatory     |  The Business Partner Number (BPN-A) of goods receiver                                                                                                                                                                                                                                                                                                                                                                                                                                                   |  BPN-A   |
 |  GTL No.            |  Optional      |  Master/Mixed Label No. according to VDA 4994                                                                                                                                                                                                                                                                                                                                                                                                                                                            |  String  |
@@ -238,7 +280,7 @@ In case of tracking transports and provide specific data e.g. about GPS for this
 
 Specific asset IDs are used to identify digital twins when looking up or searching for these digital twins. This is a required step by a supplier of physical assets to connect the digital twins of the transport to the digital twins of their physical assets. Mandatory specific asset IDs ensure that at least this information is available for the digital twin.
 
-The following conventions for specific asset IDs apply to digital twins of transport:
+The following conventions for specific asset IDs apply to digital twins of "*transport*":
 
 |  Key                    |  Availability  |  Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |  Type    |
 |-------------------------|----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
@@ -249,9 +291,9 @@ The following conventions for specific asset IDs apply to digital twins of trans
 |  customerID             |  Mandatory     |  The Business Partner Number (BPN-A) of goods receiver                                                                                                                                                                                                                                                                                                                                                                                                                                          |  BPN-A   |
 |  BusinessPartnerID      |  Mandatory     |  The Business Partner Number (BPN-L) of the logistic service Provider (LSP)                                                                                                                                                                                                                                                                                                                                                                                                                     |  BPN-L   |
 
-##### Authorization: Visbility of Specific Asset IDs in the DTR
+#### Note: Authorization - Visbility of Specific Asset IDs in the DTR
 
-To enforce a strict need-to-know (and prevent data from being exposed to non-authorized parties), the visibility of entries in the attribute `specificAssetIds` https://admin-shell.io/aas/3/0/AssetInformation/specificAssetIds must be protected, i.e.,their visibility must be restricted to only the manufacturer of the part (which is represented by the digital twin) and the customers of the part. For that, the attribute `externalSubjectIds` (https://admin-shell.io/aas/3/0/SpecificAssetId/externalSubjectId) must be used. For more information on the semantics of the mentioned properties, see AAS Pt. 1. For more information on the use of Digital Twins in Catena-X, see CX - 0002.
+To enforce a strict need-to-know (and prevent data from being exposed to non-authorized parties), the visibility of entries in the attribute `specificAssetIds` https://admin-shell.io/aas/3/0/AssetInformation/specificAssetIds must be protected, i.e.,their visibility must be restricted to only the manufacturer of the part and the customers of the part. For that, the attribute `externalSubjectIds` (https://admin-shell.io/aas/3/0/SpecificAssetId/externalSubjectId) must be used. For more information on the semantics of the mentioned properties, see AAS Pt. 1. For more information on the use of Digital Twins in Catena-X, see CX-0002.
 
 ## 3 ASPECT MODELS
 
@@ -259,18 +301,18 @@ To enforce a strict need-to-know (and prevent data from being exposed to non-aut
 
 An overview of the relevant aspect models of this standard.
 
-- PackingList
+- PackingList v1.0.0
 - IotSensorData v2.0.0
 - AssetTrackerLinks v2.0.0
 
 If a data provider decides to provide data on aspect models of this standard they **MUST** provide the data conformant to the semantic models specified in this document.
 
-Data consumers and data provider **MUST** comply with the license of the semantic models.
+Data consumer and data provider **MUST** comply with the license of the semantic models.
 
 The submodel data **MUST** be transferred using the IDS Protocol as described in CX-0018.
 The Tractus-X EDC as a reference implementation is **RECOMMENDED** to be used as a connector conformant to CX-0018.
 
-Data providers **MUST** provide data as part of a digital twin of the asset for serialized parts conformant to CX–0002. The JSON Payloads of data providers **MUST** be conformant to the JSON Schemas as specified in this document.
+Data provider **MUST** provide data as part of a digital twin of the asset for serialized parts conformant to CX–0002. The JSON Payloads of data providers **MUST** be conformant to the JSON Schemas as specified in this document.
 
 The unique identifier of the semantic model specified in this document **MUST** be used by the data provider to define the semantics of the data being transferred.
 
@@ -352,9 +394,9 @@ Ref. to CX-0105-AssetTrackingUseCase [https://catenax-ev.github.io/docs/standard
 
 The Asset Tracking Platform aims to bring different IoT sensor networks to a standard Catena-X network and use sensor data for a variety of use cases, like:
 
-Logistics teams can track their returnable packages and assets at any time using geo data
+Logistics teams can track their returnable packages and assets at any time using GEO data
 Use of automatic filling level measurements to drive efficient vendor-managed inventories
-Users (Tier suppliers, customers, carriers, insurers, etc.) are encouraged to monitor the quality of critical materials at any time during transportation.
+users (Tier suppliers, customers, carriers, insurers, etc.) are encouraged to monitor the quality of critical materials at any time during transportation.
 
 ## 4 APPLICATION PROGRAMMING INTERFACES
 
@@ -377,6 +419,7 @@ There is no prcoess defintion in this standard version available.
 - CX-0105 Asset Tracking 1.1
 - CX-0126 Industry Core - Part Type 2.0
 - CX-0127 Industry Core - Part Instance 2.0
+- CX-0152 Policy Constraints For Data Exchange 1.0
 
 [^1]: [https://catena-x.net/fileadmin/user_upload/Vereinsdokumente/Catena-X_IP_Regelwerk_IP_Regulations.pdf](https://catena-x.net/fileadmin/user_upload/Vereinsdokumente/Catena-X_IP_Regelwerk_IP_Regulations.pdf)
 [^2]: [https://catenax-ev.github.io/docs/standards/overview](https://catenax-ev.github.io/docs/standards/overview)
@@ -388,7 +431,8 @@ There is no prcoess defintion in this standard version available.
 - Tractus-X EDC Reference Implementation - [https://github.com/eclipse-tractusx/tractusx-edc](https://github.com/eclipse-tractusx/tractusx-edc)
 - The Traceability KIT and sub-KITs will include further information on data asset structures, Digital Twin Submodel examples and API calls to be made.
 - [SMT] How to create a submodel template specification. Guideline. Download from: [How to Create a Submodel Template Specification](https://industrialdigitaltwin.org/wp-content/uploads/2022/12/I40-IDTA-WS-Process-How-to-write-a-SMT-FINAL-.pdf)
-- CX Operating Model [Operating Model v3.0](https://catenax-ev.github.io/docs/next/operating-model/why-introduction)
+- CX Operating Model [Operating Model](https://catenax-ev.github.io/docs/next/operating-model/why-introduction)
+- Tractus-X EDC Reference Implementation - [https://github.com/eclipse-tractusx/tractusx-edc](https://github.com/eclipse-tractusx/tractusx-edc)
 
 ### 6.3 REFERENCE IMPLEMENTATIONS
 

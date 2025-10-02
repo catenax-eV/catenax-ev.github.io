@@ -4,7 +4,7 @@ tags:
   - UC/MaaS
 ---
 
-# CX-0115 Manufacturing Capability Exchange 1.0.0
+# CX-0115 Manufacturing Capability Exchange 1.0.1
 
 ## ABSTRACT
 
@@ -382,51 +382,11 @@ The following Catena-X standards are prerequisite for the implementation of this
 
 No additional data requirements.
 
-#### 2.1.3 ADDITIONAL REQUIREMENTS
+#### 2.1.3 POLICY CONSTRAINTS FOR DATA EXCHANGE
 
-##### CONVENTIONS FOR USE CASE POLICY IN CONTEXT DATA EXCHANGE
+In alignment with our commitment to data sovereignty, a specific framework governing the utilization of data within the Catena-X use cases has been outlined.  As part of this data sovereignty framework, conventions for access policies, for usage policies and for the constraints contained in the policies have been specified in standard 'CX-0152 Policy Constraints for Data Exchange'. This standard document CX-0152 **MUST** be followed when providing services or apps for data sharing/consuming and when sharing or consuming data in the Catena-X ecosystem. What conventions are relevant for what roles named in [1.1 AUDIENCE & SCOPE](#11-audience--scope) is specified in the CX-0152 standard document as well. CX-0152 can be found in the [standard library](https://catenax-ev.github.io/docs/standards/overview).
 
-In alignment with our commitment to data sovereignty, a specific framework governing the utilization
-of data within the Catena-X use cases has been outlined. A set of specific policies on data offering
-and data usage level detail the conditions under which data may be accessed, shared, and used,
-ensuring compliance with legal standards.
-
-For a comprehensive understanding of the rights, restrictions, and obligations associated with data
-usage in the Catena-X ecosystem, we refer users to
-
-- the detailed ODRL policy repository [[CX-ODRL]](#62-non-normative-references). This document provides in-depth explanations of the
-  terms and conditions applied to data access and utilization, ensuring that all engagement with our data
-  is conducted responsibly and in accordance with established guidelines.
-- the ODRL schema template. This defines how policies used for data sharing/usage should get defined.
-  Those schemas **MUST** be followed when providing services or apps for data sharing/consuming.
-
-###### ADDITIONAL DETAILS REGARDING ACCESS POLICIES
-
-A Data Provider may tie certain access authorizations ("Access Policies") to its data offers for
-members of Catena-X and one or several Data Consumers. By limiting access to certain Participants,
-Data Provider maintains control over its anti-trust obligations when sharing certain data. In
-particular, Data Provider may apply Access Policies to restrict access to a particular data offer
-for only one Participant identified by a specific business partner number.
-
-- Membership
-- BPNL
-
-###### ADDITIONAL DETAILS REGARDING USAGE POLICIES
-
-In the context of data usage policies (“Usage Policies”), Participants and related services **MUST** use
-the following policy rules:
-
-- Use Case Framework (“FrameworkAgreement”)
-- at least one use case purpose (“UsagePurpose”) from the above mentioned ODRL policy repository.
-
-Additionally, respective usage policies **MAY** include the following policy rule:
-
-- Reference Contract (“ContractReference”).
-  
-Details on namespaces and ODRL policy rule values to be used for the above-mentioned types are
-provided via the ODRL policy repository [[CX-ODRL]](#62-non-normative-references).
-
-##### CONFORMITY REQUIREMENTS
+#### 2.1.4 CONFORMITY REQUIREMENTS
 
 The manufacturing capability data **MUST** be sent from the manufacturer to the Manufacturing Network Registry
 according to the API standard described in [Chapter 4](#4-application-programming-interfaces).
@@ -626,32 +586,31 @@ requester **MUST** terminate the data transfer.
 
 ##### Connector Policy Definition
 
-The following policy is an example to let a single business partner pass. It could be used as (part of)
-either a `accessPolicy` or a `contractPolicy`.
+The following policy is an example to let a single business partner pass. As described in standard CX-0152, this policy constraint can only be used as part of an `accessPolicy`.
 
 ```json
 {
-  "@context": {
-    "@vocab": "https://w3id.org/edc/v0.0.1/ns/",
-    "odrl": "http://www.w3.org/ns/odrl/2/"
-  },
-  "@type": "PolicyDefinition",
+  "@context": [
+    "http://www.w3.or/ns/odrl.jsonld",
+    "https://w3id.org/catenax/2025/9/policy/context.jsonld"
+  ],
+  "@type": "Set",
   "@id": "{{POLICY-DEFINITION-ID}}",
   "policy": {
-    "odrl:permission": [
+    "permission": [
       {
-        "odrl:action": "USE",
-        "odrl:constraint": [
+        "action": "access",
+        "constraint": [
           {
-            "odrl:leftOperand": "{{BPN attribute in Data Consumer VC}}",
-            "odrl:operator": "=",
-            "odrl:rightOperand": "{{hard-coded BPN of privileged consumer}}"
+            "and": [
+            "leftOperand": "BusinessPartnerNumber",
+            "operator": "isAnyOf",
+            "rightOperand": "{{hard-coded BPNl of privileged consumer}}"
+            ]
           }
         ]
       }
-    ],
-    "odrl:prohibition": [],
-    "odrl:obligation": []
+    ]
   }
 }
 ```
@@ -804,6 +763,7 @@ Not applicable.
 | [CX-0006] | Registration and initial onboarding | 2.0.0
 | [CX-0010] | Business Partner Number (BPN) | 2.0.0
 | [CX-0018] | Dataspace Connectivity | 3.0.0
+| [CX-0152] | Policy Constraints for Data Exchange | 1.0.0
 
 ### 6.2 NON-NORMATIVE REFERENCES
 
@@ -811,8 +771,7 @@ Not applicable.
 
 | **Context** | **Link**
 | --- | ---
-| [CX-OMW] | Catena-X Operating Model Whitepaper. Download from: [https://catena-x.net/fileadmin/\_online\_media\_/CX\_Operating\_Modelv2.1\_final.pdf](https://catena-x.net/fileadmin/_online_media_/CX_Operating_Modelv2.1_final.pdf)
-| [CX-ODRL] | Catena-X ODRL Profile repository: https://github.com/catenax-eV/cx-odrl-profile
+| [CX-OMW] | [Catena-X Operating Model](https://catenax-ev.github.io/docs/next/operating-model/why-introduction)
 | [RFC2119] | Bradner, S. Key words for use in RFCs to Indicate Requirement Levels. Available online: https://datatracker.ietf.org/doc/html/rfc2119
 | [RFC4122] | A Universally Unique Identifier (UUID) URN Namespace (https://www.rfc-editor.org/rfc/rfc4122)
 | [RFC8174] | Leiba, B. Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words. Available online: https://datatracker.ietf.org/doc/html/rfc8174

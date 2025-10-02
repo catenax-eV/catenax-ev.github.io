@@ -4,7 +4,7 @@ tags:
   - UC/Behaviroal Twin
 ---
 
-# CX-0059 Use Case Behaviour Twin Endurance Predictor v2.0.0
+# CX-0059 Use Case Behaviour Twin Endurance Predictor v2.0.1
 
 ## ABSTRACT
 
@@ -200,34 +200,9 @@ The following only applies if you use the Knowledge Agent for the RuL use case.
 If you are engaged as a data provider, you MUST mount your data source to the federated knowledge graph as Graph Asset. Beside the policy and contract definition, a Graph Asset registration is needed.
 As a service provider you MUST make the service available as part of the federated knowledge graph, a Graph Asset pointing to your Remoting Agent endpoint is needed.
 
-##### Conventions for Use Case Policy in context data exchange
+##### POLICY CONSTRAINTS FOR DATA EXCHANGE
 
-In alignment with our commitment to data sovereignty, a specific framework governing the utilization of data within the Catena-X use cases has been outlined. A set of specific policies on data offering and data usage level detail the conditions under which data may be accessed, shared, and used, ensuring compliance with legal standards.
-
-For a comprehensive understanding of the rights, restrictions, and obligations associated with data usage in the Catena-X ecosystem, we refer users to
-
-- the detailed ODRL policy repository. This document provides in-depth explanations of the terms and conditions applied to data access and utilization, ensuring that all engagement with our data is conducted responsibly and in accordance with established guidelines.
-- the ODRL schema template. This defines how policies used for data sharing/usage should get defined. Those schemas MUST be followed when providing services or apps for data sharing/consuming.
-
-##### Additional details regarding Access Policies
-
-A Data Provider may tie certain access authorizations ("Access Policies") to its data offers for members of Catena-X and one or several Data Consumers. By limiting access to certain Participants, Data Provider maintains control over its anti-trust obligations when sharing certain data. In particular, Data Provider may apply Access Policies to restrict access to a particular data offer for only one Participant identified by a specific business partner number.
-
-- Membership
-- BPNL
-
-##### Additional Details regarding Usage Policies
-
-In the context of data usage policies ("Usage Policies"), Participants and related services MUST use the following policy rules:
-
-- Use Case Framework ("FrameworkAgreement")
-- at least one use case purpose ("UsagePurpose") from the above mentioned ODRL policy repository.
-
-Additionally, respective usage policies MAY include the following policy rule:
-
-- Reference Contract ("ContractReference").
-
-Details on namespaces and ODRL policy rule values to be used for the above-mentioned types are provided via the ODRL policy repository.
+In alignment with our commitment to data sovereignty, a specific framework governing the utilization of data within the Catena-X use cases has been outlined.  As part of this data sovereignty framework, conventions for access policies, for usage policies and for the constraints contained in the policies have been specified in standard 'CX-0152 Policy Constraints for Data Exchange'. This standard document CX-0152 **MUST** be followed when providing services or apps for data sharing/consuming and when sharing or consuming data in the Catena-X ecosystem. What conventions are relevant for what roles named in [1.1 AUDIENCE & SCOPE](#11-audience--scope) is specified in the CX-0152 standard document as well. CX-0152 can be found in the [standard library](https://catenax-ev.github.io/docs/standards/overview).
 
 ##### Versioning
 
@@ -782,12 +757,13 @@ The following http response codes MUST be defined for HTTP POST endpoint for the
 - CX-0023:v1.2 Notification API (only if using the notification based API)
 - CX-0067:v1.1 Ontology Models to realize federated query in Catena-X (only if using the Knowledge Agent)
 - CX-0084:v1.2 Federated Queries in Data Spaces (Knowledge Agent)
+- CX-0152:v1.0 Policy Constraints for Data Exchange
 
 ### 5.2 NON-NORMATIVE REFERENCES
 
 > *This section is non-normative*
 
-- [CX_Operating_Modelv2.1_final.pdf (catena-x.net)](https://catena-x.net/fileadmin/_online_media_/CX_Operating_Modelv2.1_final.pdf)
+- [Catena-X Operating Model)](https://catenax-ev.github.io/docs/next/operating-model/why-introduction)
 
 ## Legal
 

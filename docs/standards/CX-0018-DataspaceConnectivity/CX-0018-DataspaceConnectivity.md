@@ -4,23 +4,15 @@ tags:
   - CAT/Connector
   - CAT/Enablement Service Provider
   - CAT/Connector as a Service
-  - CAT/Sandbox Services (Beta)
+  - CAT/Sandbox Services
 ---
 
-# CX-0018 Dataspace Connectivity v.4.0.0
+# CX-0018 Dataspace Connectivity v.4.1.1
 
 ## ABSTRACT
 
 This document specifies the communication requirements for data exchange between participants in the Catena-X data
 ecosystem. The aim is to ensure interoperability and data sovereignty at the same time.
-
-## COMPARISON WITH THE PREVIOUS VERSION OF THE STANDARD
-
-- Update to DSP version 2025-1 and DCP version 1.0
-- Switch identifier in DSP communication from BPN to DID
-- Add management domain concepts and introducing the reference in the DID document
-- Add protocol version handling
-- Add section on backward compatibility
 
 ## 1 INTRODUCTION
 
@@ -111,7 +103,7 @@ when, they appear in all capitals, as shown here.
 This section uses the following prefixes as abbreviations for namespaces
 
 - `"dct": "http://purl.org/dc/terms/"`
-- `"dspace": "https://w3id.org/dspace/2024/1/"`
+- `"dspace": "https://w3id.org/dspace/2025/1/"`
 - `"odrl": "https://www.w3.org/ns/odrl/2/"`
 - `"dcat": "http://www.w3.org/ns/dcat#"`
 - `"cx-common": "https://w3id.org/catenax/ontology/common#"`
@@ -147,8 +139,8 @@ In their `dcat:Catalog` response to a `dspace:CatalogRequestMessage`, for each D
 Providers MUST be able to serve data according to that signal when data transfer is requested by a consumer
 via a `dspace:TransferRequestMessage`.
 
-> Despite the IRIs `dspace:HttpData-PULL` and `dspace:AmazonS3-PUSH` are not yet included in the DSP-context, they will
-> be used as preliminary identifiers.
+> Despite the IRIs of the currently used identifiers for transfer types are not yet included in the DSP-context, they
+> will be used as preliminary identifiers.
 
 Providers MUST offer at least one Transfer Type Profile. The remainder of this section provides regulations for
 a non-exhaustive selection of Transfer Type Profiles. Further profiles can be defined by consecutive standards.
@@ -205,44 +197,29 @@ A Consumer MUST be able to retrieve an access token according to the Verifiable 
 part of the [Decentralized Claims Protocol (DCP)](#decentralized-claims-protocol). This corresponds to Request 1 in
 the presentation flow where this Consumer acts as Client.
 
+The scope of the token for requesting a `dcat:Catalog` MUST include the following credentials as defined in
+[CX-0050](#cx-specific-credentials):
+
+- Membership Credential
+- Business Partner Number Credential
+- Framework Agreement Credential
+
 A Provider MUST be able to receive and securely verify an access token and derive information on a Consumer's
-Credential Service in order to execute the DCP VPP Request 4. This corresponds to the role of Verifier.
+Credential Service in order to execute the DCP VPP Request 6. This corresponds to the role of Verifier.
 
 A Consumer MUST include an appropriately scoped STS-Token in the `Authorization` header in all DSP messages sent
 to the provider (see [DSP](#dataspace-protocol)) and in addition in the `refresh` message
 (see [HttpData-PULL](#221-httpdata-pull))
 
-### 2.4 Conventions for Policy Constraints
+### 2.4 Policy Value to Verifiable Credential Mapping
 
-`odrl:Offer` objects contained in a `dcat:Catalog` SHOULD carry `odrl:Constraint`s that are specified in the
-[CX-ODRL-Profile](#odrl-profile). Subsequent standards are encouraged to specify further
-restrictions of said profile, especially on the `odrl:rightOperand`s. The following list compiles a set of well-defined
-policies that Data Providers and Data Consumers SHOULD include in their offers and guidance on how to check them.
-Application Providers MUST support all constraints of the following table.
+The conventions for policy constraints (`odrl:Constraint`) are defined in the Catena-X standard
+[CX-0152 Policy Constraints for Data Exchange](#policy-constraints-for-data-exchange). Based on this, the connector
+MUST support the verification of Verifiable Credential as described below.
 
-| Name                        | leftOperand (expanded IRI)                           | operator <br /> (compacted IRI) | valid rightOperands (literal) | validation mechanism                                                                                                                                                                                                                                      |
-|-----------------------------|------------------------------------------------------|---------------------------------|-------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| MembershipConstraint        | `https://w3id.org/catenax/policy/Membership`         | `odrl:eq`                       | `active`                      | [Membership Credential (CX - 0149)](#verified-company-identity)                                                                                                                                                                                           |
-| UseCaseConstraints          | `https://w3id.org/catenax/policy/FrameworkAgreement` | `odrl:eq`                       | `[usecasename]:[version]`     | [UseCaseFrameworkAgreementCredential (CX - 0050)](#framework-agreement-credential)<br />The exact mapping logic is specified in the section [Framework Agreement to Verifiable Credential Mapping](#framework-agreement-to-verifiable-credential-mapping) |
-| ContractReferenceConstraint | `https://w3id.org/catenax/policy/ContractReference`  | `odrl:eq`                       | `[string]:[version]`          | The value comparison necessary for validation SHOULD be based on [CX-ODRL-Profile](#odrl-profile)                                                                                                                                                         |
-| UsagePurposeConstraint      | `https://w3id.org/catenax/policy/UsagePurpose`       | `odrl:eq`                       | `[string]:[version]`          | The value comparison used necessary for validation SHOULD be based on [CX-ODRL-Profile](#odrl-profile)                                                                                                                                                    |
-
-Note: The list is available in machine-readable form with links to the respective legal documents in the
-[CX-ODRL-Profile](#odrl-profile).
-
-Each Data Offer visible in a Provider's `dcat:Catalog` MUST include at least an `odrl:Constraint` according to the
-definition of *UseCaseContraint* as defined above.
-
-Providers SHOULD chain constraints (if necessary) via `odrl:and`. Examples can be found
-in [CX-ODRL-Profile](#odrl-profile).
-
-Providers MUST perform access control checks based on CX credentials on their data offers as a `dcat:Catalog` object may
-expose information restricted by governance and regulation.
-
-#### Framework Agreement to Verifiable Credential Mapping
-
-The mapping between the rightOperands of a cx-policy:FrameworkAgreement to its referring Verifiable Credential (
-described in CX-0050) is done via the credential type and its version.
+The mapping between the rightOperands of a leftOperand indicating a credential to its referring Verifiable Credential
+(described in [CX-0050 CX-Specific Credentials](#cx-specific-credentials)) is done via the credential type and its
+version.
 
 - The given rightOperand needs to be separated by the first “:” to separate the version term. Only one separator is
   allowed.
@@ -256,13 +233,6 @@ Example (rightOperand to Credential):
 - DataExchangeGovernance:x.x -> DataExchangeGovernanceCredential with contractVersion “x.x”
 
 Note: Versions are to be handled as strings / literals and do not require any semantic comparison.
-
-#### Catena-X ODRL Profile
-
-To clearly identify the relevant Catena-X ODRL Profile, every policy (and their subclasses) MUST use the ODRL ‘profile’
-property with an IRI referring to the Catena-X ODRL Profile as defined
-in [ODRL policy](https://www.w3.org/TR/odrl-model/#policy) The current version
-is: `https://w3id.org/catenax/policy/profile2405` or in compact form: `cx-policy:profile2405`.
 
 ### 2.5 Conventions for Datasets
 
@@ -278,36 +248,60 @@ A Provider MUST annotate all instances `dcat:Dataset` in a `dcat:Catalog` with t
 
 ### 2.6 Participant Agent Management
 
-A Provider SHOULD organize his participant agents in a way, that there is exactly one participant agent providing a
-root catalog. Further participant agents SHOULD be provided as `dcat:Catalog` entry in the root catalog referring to
-the catalog endpoint of the second participant agent.
+A `dcat:Catalog` offered by a providers Participant Agent MUST provide only `dcat:Dataset` instances that can be
+negotiated with the same Participant Agent.
 
-A provider MUST publish all participant agents that should be detectable by a Consumer for an initial contact by
-specifying the participants catalog endpoint address in the DID document as specified in the
-[CX-0049 DID Document standard](#did-document). The endpoint address has the format
-`https://provider-connector.provider-domain.com/subpath/versionpath/catalog`. The path parts are defined by
+A provider SHOULD publish all Participant Agents that should be detectable by a Consumer by specifying the participants
+version endpoint address in the DID document as specified in the [CX-0049 DID Document standard](#did-document). The
+endpoint address has the format `https://subdomain.provider-domain.com/subpath/.well-known/dspace-version`,
+with `subpath` being an a arbitrary path below the providers chosen domain.
 
-- `subpath`: The address `https://provider-connector.provider-domain.com/subpath` defines the root endpoint of the
-  providers participant agent.
-- `versionpath`: The path part that is returned by the `well-known version metadata endpoint` (see
-  [DSP](#dataspace-protocol)).
-- `catalog`: The catalog endpoint of a participant agent (see [DSP](#dataspace-protocol)).
+The path `https://subdomain.provider-domain.com/subpath` MUST be the path used for registration of the connector at the
+Core Service B Provider.
 
-The definition of the service reference reflects the section `Discovery of Catalog Services` in the
-[DSP](#dataspace-protocol).
+The content of the `dspace-version` endpoint is defined in section on
+[protocol version handling](#27-protocol-version-handling)
+
+The definition of the service reference reflects the section `Discovery of Service Endpoints` in the
+[DSP spec](#dataspace-protocol).
 
 ### 2.7 Protocol Version Handling
 
-Prior to any DSP communication, a Consumers participant agent MUST evaluate the protocol versions supported by
-the targeted Providers participant agent by calling the `well-known version metadata endpoint` (see
-[DSP](#dataspace-protocol)). He MUST use a protocol version supported by both participant agents.
+A provider MUST provide the `version metadata endpoint` at the url
+`https://subdomain.provider-domain.com/subpath/.well-known/dspace-version` returning a response object as defined in
+the section on [Exposure of version in the DSP spec](#dataspace-protocol). An example for the response object is:
 
-A Providers participant agent MUST be capable to identify by the called DSP api, which version the Consumers
-participant agents is using for the communication and MUST answer with the right response formats according to
-that version.
+```json
+{
+  "protocolVersions": [
+    {
+      "version": "2025-1",
+      "path": "/2025-1",
+      "binding": "HTTPS"
+    },
+    {
+      "version": "0.8",
+      "path": "",
+      "binding": "HTTPS"
+    }
+  ]
+}
+```
 
-The reference of a participant in the DID Document MUST refer to the catalog service of the latest version supported
-following the format specified in [section 2.6](#26-participant-agent-management).
+The reference point of the given path segments in the response object is the base path that hosts the version
+metadata endpoint, i.e., in the described case `https://subdomain.provider-domain.com/subpath`. For example, from
+the given information, the path to access the `2025-1` version of the catalog service is
+`https://subdomain.provider-domain.com/subpath/2025-1/catalog` and the path for the old protocol version `0.8` is
+`https://subdomain.provider-domain.com/subpath/catalog`.
+
+A Consumers Participant Agent MUST evaluate the protocol versions supported by the targeted Provider and MUST limit
+the use of protocol versions to the latest offered by the Provider.
+
+A Providers Participant Agent MUST be capable to identify by the called DSP api, which version the Consumer
+is using for the communication and MUST answer with the right response formats according to that version.
+
+The definition of the version management reflects the section `Exposure of versions` in the
+[DSP spec](#dataspace-protocol).
 
 ## 3 BACKWARD COMPATIBILITY
 
@@ -315,8 +309,15 @@ Backward compatibility is handled by the Dataspace Protocol version used for the
 agents. All differences are handled by explicit versioning of the protocol. This includes changes in details that are
 not motivated by the Dataspace Protocol itself but by semantic changes attached to the protocol version update.
 
+Note: The previous version of the CX-0018 standard had a bug. The actual version used previously was DSP version `0.8`
+which MUST be used as key for referring to the previous version in the `version metadata endpoint`.
+
 Based on this constraint, backward compatibility is handled by the mechanism specified in
 [section 2.7](#27-protocol-version-handling).
+
+A Provider using the older standard version might neither provide discovery information in the DID document, nor provide
+the `version metadata endpoint`. In such cases, the Consumer Participant Agent MUST assume the provider to use the old
+protocol version and the centralized discovery mechanism to find the Participant Agents base endpoint.
 
 ## 4 REFERENCES
 
@@ -327,16 +328,16 @@ Based on this constraint, backward compatibility is handled by the mechanism spe
 The Dataspace Protocol is an external reference. A Participant Agent MUST implement the referenced version to comply to
 this standard version.
 
-- [Dataspace Protocol (DSP) version 2025-01](https://eclipse-dataspace-protocol-base.github.io/DataspaceProtocol/2025-1-RC1)
+- [Dataspace Protocol (DSP) version 2025-01](https://eclipse-dataspace-protocol-base.github.io/DataspaceProtocol/2025-1)
 
 #### Decentralized Claims Protocol
 
 The Decentralized Claims Protocol is an external reference. A Participant Agent MUST implement the referenced version to
 comply to this standard version.
 
-- [Decentralized Claims Protocol (DCP) version 1.0](https://eclipse-dataspace-dcp.github.io/decentralized-claims-protocol/v1.0-RC2).
+- [Decentralized Claims Protocol (DCP) version 1.0](https://eclipse-dataspace-dcp.github.io/decentralized-claims-protocol/v1.0).
   Especially relevant is
-  the [Verifiable Presentation Protocol](https://eclipse-dataspace-dcp.github.io/decentralized-claims-protocol/v1.0-RC2/#verifiable-presentation-protocol)
+  the [Verifiable Presentation Protocol](https://eclipse-dataspace-dcp.github.io/decentralized-claims-protocol/v1.0/#verifiable-presentation-protocol)
 
 #### RFC 6749
 
@@ -346,21 +347,17 @@ https://www.rfc-editor.org/rfc/rfc6749#section-6
 
 - [Decentralized Identifiers W3C standard](https://www.w3.org/TR/did-1.0/)
 
-#### Framework Agreement Credential
+#### CX-Specific Credentials
 
-- [CX-0050 Framework Agreement Credential](https://catenax-ev.github.io/docs/standards/CX-0050-FrameworkAgreementCredential)
+- [CX-0050 CX-Specific Credentials](https://catenax-ev.github.io/docs/standards/CX-0050-CXSpecificCredentials)
 
 #### DID Document
 
 - [CX-0049 DID Document](https://catenax-ev.github.io/docs/standards/CX-0049-DIDDocumentSchema)
 
-#### Verified Company Identity
+#### Policy Constraints for Data Exchange
 
-- [CX-0149 Verified Company Identity](https://catenax-ev.github.io/docs/standards/CX-0149-Dataspaceidentityandidentification)
-
-#### ODRL Profile
-
-- [CX-ODRL-Profile](https://github.com/catenax-eV/cx-odrl-profile)
+- [CX-0152 Policy Constraints for Data Exchange](https://catenax-ev.github.io/docs/standards/overview)
 
 #### CX Operating Model
 
@@ -383,3 +380,7 @@ https://www.rfc-editor.org/rfc/rfc6749#section-6
 ### FIGURES
 
 Figure 1: Framework of data exchange
+
+## Legal
+
+Copyright © 2025 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

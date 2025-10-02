@@ -4,7 +4,7 @@ tags:
   - UC/Quality
 ---
 
-# CX-0131 Circularity Core v1.1.0
+# CX-0131 Circularity Core v1.1.1
 
 ## ABSTRACT
 
@@ -84,51 +84,27 @@ Additional terminology used in this standard can be looked up in the glossary on
 - CX-0018:3.0 Dataspace Connectivity
 - CX-0049:2.0 DID Document Schema
 - CX-0050:2.0 Framework Agreement Credential
+- CX-0152:1.0 Policy Constraints for Data Exchange
 
 ### 2.2 General Requirements
 
-#### 2.2.1 Conventions for Use Case and Core (this document) Policy in context data exchange
+### 2.2.1 POLICY CONSTRAINTS FOR DATA EXCHANGE
 
-In alignment with our commitment to data sovereignty, a specific framework governing the utilization of data within the Catena-X use cases has been outlined. A set of specific policies on data offering and data usage level detail the conditions under which data may be accessed, shared, and used, ensuring compliance with legal standards.
+In alignment with our commitment to data sovereignty, a specific framework governing the utilization of data within the Catena-X use cases has been outlined.  As part of this data sovereignty framework, conventions for access policies, for usage policies and for the constraints contained in the policies have been specified in standard 'CX-0152 Policy Constraints for Data Exchange'. This standard document CX-0152 **MUST** be followed when providing services or apps for data sharing/consuming and when sharing or consuming data in the Catena-X ecosystem. What conventions are relevant for what roles named in [1.1 AUDIENCE & SCOPE](#11-audience--scope) is specified in standard [CX-0152](#21-overall-standalone-standards).
 
-For a comprehensive understanding of the rights, restrictions, and obligations associated with data usage in the Catena-X ecosystem, we refer users to
-
-- the detailed ODRL policy repository. This document provides in-depth explanations of the terms and conditions applied to data access and utilization, ensuring that all engagement with our data is conducted responsibly and in accordance with established guidelines.
-- the ODRL schema template. This defines how policies used for data sharing/usage should get defined. Those schemas **MUST** be followed when providing services or apps for data sharing/consuming.
-
-#### 2.2.2 Additional Details regarding Access Policies
-
-A Data Provider may tie certain access authorizations ("Access Policies") to its data offers for members of Catena-X  and one or several Data Consumers. By limiting access to certain Participants, Data Provider maintains control over its anti-trust obligations when sharing certain data. In particular, Data Provider may apply Access Policies to restrict access to a particular data offer for only one Participant identified by a specific business partner number:
-
-- Membership
-- BPNL
-
-#### 2.2.3 Additional Details regarding Usage Policies
-
-In the context of data usage policies (“Usage Policies”), Participants and related services **MUST** use the following policy rules:
-
-- Use Case Framework (“FrameworkAgreement”)
-- at least one use case purpose (“UsagePurpose”) from the above mentioned ODRL policy repository.
-
-Additionally, respective usage policies MAY include the following policy rule:
-
-- Reference Contract (“ContractReference”).
-
-Details on namespaces and ODLR policy rule values to be used for the above-mentioned types are provided via the ODRL policy repository.
-
-#### 2.2.4 Onboarding and IAM
+#### 2.2.2 Onboarding and IAM
 
 All participants mentioned under 1.1 **MUST** follow the CX Standards [CX-0006](https://catena-x.net/en/standard-library) and [CX-0013](https://catena-x.net/en/standard-library) to [CX-0017](https://catena-x.net/en/standard-library).
 
-#### 2.2.5 Fetching EDC Endpoints
+#### 2.2.3 Fetching EDC Endpoints
 
 To find the EDC Endpoint addresses of related parties in Catena-X, app provider **MUST** follow the [CX-0001](https://catena-x.net/en/standard-library) Standard.
 
-#### 2.2.6 Searching for Decentralized Digital Twin Registries
+#### 2.2.4 Searching for Decentralized Digital Twin Registries
 
 To find decentralized Digital Twin Registries of related parties in Catena-X, app provider **MUST** follow the [CX-0002](https://catena-x.net/en/standard-library) Standard.
 
-#### 2.2.7 Registration at the BPN Discovery Service
+#### 2.2.5 Registration at the BPN Discovery Service
 
 To find the Business Partner Number of the related parties in Catena-X, data provider (Only relevant for the sub use cases [2.4](#24-eol-services), [2.5](#25-ce-assistant)) **MUST** follow the [CX-0053:2.1](https://catena-x.net/en/standard-library) standard.
 
@@ -269,7 +245,7 @@ The contract definition **MUST** follow the CX-Standard [0018](#21-overall-stand
 
 ##### 2.4.2.4 EDC Policy Structure for EoL Services
 
-For the sub use case EoL Services the condition mentioned under [2.6](#26-edc-policy-structure) MUST be fulfilled. In addition the application **MUST** verify the presence of the dismantler credential (see [CX-0131](#2-standards-for-circularity-core)) before attaching the certificate to the twin. Prior to issuing a certificate, it is necessary to check whether a certificate has already been issued for this asset. If this is the case, it should be indicated to the issuing party.
+For the sub use case EoL Services the condition mentioned under [2.2.1](#221-policy-constraints-for-data-exchange) MUST be fulfilled. In addition the data provider application **MUST** verify the presence of the dismantler credential (see [CX-0131](#2-standards-for-circularity-core)) before attaching the certificate to the twin. Prior to issuing a certificate, it is necessary to check whether a certificate has already been issued for this asset. If this is the case, it should be indicated to the issuing party.
 
 **Example:**
 
@@ -379,14 +355,9 @@ For the selection of an R-Strategy of a component consider the differentiation i
 
 ### 2.6 EDC Policy Structure
 
-The policies mentioned in this chapter **MUST** be fulfilled by each use case mentioned in this document as well as a participant mentioned under [1.1](#11-audience--scope) **MUST** agree to the overall [Catena-X Data Exchange Governance Framework Agreement](https://catenax-ev.github.io/docs/next/regulatory-framework/20000ft/data-exchange-governance)
-as well as the general FrameworkAgreement [DataExchangeGovernance:1.0](https://catenax-ev.github.io/docs/next/regulatory-framework/20000ft/data-exchange-governance).
+The requirements to policies which **MUST** be fulfilled by each use case mentioned in this document are listed in chapter [2.2.1](#221-policy-constraints-for-data-exchange).
 
-This follows the first SSI setup following the [IAM Standards](#21-overall-standalone-standards) in CX covering the new SSI infrastructure which will released with release 3.2.
-
-The minimum set of the **Data Exchange Governance** Framework Agreement and one purpose is provided in the [Example Usage Policy](https://github.com/catenax-eV/cx-odrl-profile/blob/905831b0c8287f088d6ff8c098076d567a0498a7/example_usage_policy.json).
-
-For more examples have a look [here](https://github.com/eclipse-tractusx/ssi-docu/blob/22256a296387351b24975cbd8c4446af69c52265/docs/architecture/cx-3-2/edc/policy.definitions.md).
+Examples for access policies and usage policies are given in standard [CX-0152](#21-overall-standalone-standards).
 
 ## 3 ASPECT MODELS
 

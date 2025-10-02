@@ -2,11 +2,11 @@
 tags:
   - CAT/BPDM
   - CAT/Core Service Provider
-  - CAT/Sandbox Services (Beta)
+  - CAT/Sandbox Services
   - CAT/Sandbox Service Provider
 ---
 
-# CX-0010 Business Partner Number v3.0.0
+# CX-0010 Business Partner Number v3.0.1
 
 ## FOR WHOM IS THE STANDARD DESIGNED
 
@@ -234,7 +234,7 @@ Note that for this standard, organization part identifiers (OPIs, like BPNS and 
 
 The issuing organization **MUST** centrally issue BPNs, so that they are **globally unique** and can be used cross-application and cross-organization in an **interoperable** way in a data space. Catena-X e.V. grants a license through which an operating company can issue BPNs on behalf of the Catena-X e.V. and thus assume the role of the issuing organization.[^6]
 
-The issuing organization **MUST** issue BPNs for capital companies (such as german GmbH, AG; british Ltd., PLC; french SARL, SA etc.). All other legal forms are **OPTIONAL** for the issuance of BPNs and thus not regulated by this standard, such as:
+The issuing organization **MUST** issue BPNLs for capital companies (such as German GmbH, AG; British Ltd., PLC; French SARL, SA etc.). All other legal forms are **OPTIONAL** for the issuance of BPNLs and thus not regulated by this standard, such as:
 
 - (commercial) partnerships
 - sole-proprietorships
@@ -243,12 +243,15 @@ The issuing organization **MUST** issue BPNs for capital companies (such as germ
 - public sector companies
 - non-profit organizations
 
-The issuing organization **MUST NOT** issue BPNs for the following real-world entities:
+The issuing organization **MUST NOT** issue BPNLs, BPNSs or BPNAs for the following real-world entities, as they are not considered as **organizations or organization parts** in the sense of this standard:
 
 - natural persons (such as employees) who act for a legal entity and are not a legal entity on their own
+- elements of (legal) hierarchies if they are not a legal entity on their own
+
+The issuing organization **MUST NOT** issue BPNLs and **SHOULD NOT** issue BPNSs and BPNAs for the following real-world entities, as they are not considered as **organizations or organization parts** in the sense of this standard, especially due to their rather logistical function and / or non-standardized / restricted / missing usage as business partner data objects in master data management systems:
+
 - forms of freight forwarding (such as c/o addresses)
-- elements of (legal) hierarchies, if they are not a legal entity on their own
-- internal unloading points and other such places, which are solely used for internal logistics
+- internal loading / unloading points
 
 The issuing organization **MUST** issue BPNs for organization and organization parts in all member states of the European Union, Great Britain, Switzerland, Norway, and Northern Ireland (Protocol). All other countries as well as oversea dependencies / locations outside of Europe of the aforementioned countries are **OPTIONAL** for the issuance of BPNs and thus not regulated by this standard.
 
@@ -346,7 +349,7 @@ Both name and abbreviation are required in the local form, to make sure the exac
 
 The transliterated name and abbreviation **MUST** be the latinized form of name and abbreviation according to standardized transliteration rules using only Latin letters without diacritics ([A-Za-z]). This is important especially for non-latin based scripts, like Greek, Cyrillic, etc. However, transliterated name and abbreviation must also be included for latin based scripts with diacritics where diacritics **MUST** be replaced by the Latin letters without diacritics.
 
-The technical key **MUST** have the form \{scope\}\_\{transliterated abbreviation\}. The scope **MUST** be either an ISO 3166-1 2-letter country code or the abbreviation of an institution / system (like GLEIF, DUNS). Both scope and transliterated abbreviation **MUST** be capitalized. If the scope or transliterated abbreviation includes spaces, they **MUST** be replaced by underscores.
+The technical key **MUST** have the form `{scope}_{transliterated abbreviation}`. The scope **MUST** be either an ISO 3166-1 2-letter country code or the abbreviation of an institution / system (like GLEIF, DUNS). Both scope and transliterated abbreviation **MUST** be capitalized. If the scope or transliterated abbreviation includes spaces, they **MUST** be replaced by underscores.
 
 Note that it might be hard to adapt immediately to the identifier type codes proposed in this standard, as there are already current identifier type codes in use. It is **RECOMMENDED** to use these identifier type codes for new organizations and to map the current identifier type code to the new identifier type code for existing organizations so that both can be used in parallel, but the identifier type codes in this standard **MUST** be the leading ones.
 
