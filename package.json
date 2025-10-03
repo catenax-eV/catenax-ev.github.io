@@ -34,8 +34,8 @@
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^3.9.1",
-    "@docusaurus/tsconfig": "^3.6.3",
-    "@docusaurus/types": "^3.6.3",
+    "@docusaurus/tsconfig": "^3.9.1",
+    "@docusaurus/types": "^3.9.1",
     "husky": "^7.0.4",
     "markdownlint": "^0.25.1",
     "markdownlint-cli": "^0.31.1",
