@@ -1,14 +1,12 @@
 ---
-title: CX-Jupiter Release Notes
+title: CX-Jupiter
 description: Details of the CX-Jupiter release for Catena-X, including standards, operating model, regulatory framework, and reference implementations.
 slug: cx-jupiter
 date: 2024-08-05
 tags: [release, jupiter]
 ---
 
-# CX-Jupiter Release Notes
-
-### Catena-X Standards
+## Catena-X Standards
 
 - 13 new standards, completing the set of Catena-X' initial use cases
 - 35 updated standards to ensure quality, coherence and the implementation of our "breaking change" via SSI
@@ -17,13 +15,13 @@ tags: [release, jupiter]
 
 details to be found [here](/docs/standards/changelog)
 
-### Catena-X Operating Model
+## Catena-X Operating Model
 
 - updated to version 3.0 enabling many new ecosystem components such as the OSP role, Catena-X Sandboxes and an overhaul to release management focused on stability and reliability
 
 details to be found [here](/docs/operating-model/changelog)
 
-### Catena-X Regulatory Framework
+## Catena-X Regulatory Framework
 
 - introduced the official Catena-X ODRL profile including standardized Catena-X policies.
 - adding various pre-defined use case frameworks, e.g. Circular Economy, Demand and Capacity Management, etc.
@@ -31,7 +29,7 @@ details to be found [here](/docs/operating-model/changelog)
 
 details to be found [here](/docs/regulatory-framework/changelog)
 
-### Tractus-X reference implementations
+## Tractus-X reference implementations
 
 A comprehensive, coherent and compatible set of development artefacts. Highlights include:
 
@@ -42,11 +40,11 @@ A comprehensive, coherent and compatible set of development artefacts. Highlight
 
 details to be found [here](https://eclipse-tractusx.github.io/CHANGELOG/#2408---2024-08-05)
 
-#### Details on compatible and non-compatible versions
+### Details on compatible and non-compatible versions
 
 By default, the versions listed in the [Tractus-X changelog](https://eclipse-tractusx.github.io/CHANGELOG/#2408---2024-08-05) are the recommended versions. Non-compatible or other compatible versions of the Tractus-X release or the apps are listed below. If a version is interoperable with the initial release version and those features and with all other listed versions its listed as compatible.
 
-#### Compatible versions
+### Compatible versions
 
 | Component                                           | Versions                                                                                                                                                                                                                                                                                                                                                                                                                                    | Comments                                                                                                                      |
 |-----------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|
@@ -55,13 +53,13 @@ By default, the versions listed in the [Tractus-X changelog](https://eclipse-tra
 [Latest] – latest released version  
 [Recommended] – recommended by the Catena-X association (Compatible with the [Catena-X Standards](/docs/standards/overview) and [End-to-End] tested)
 
-#### Non-compatible versions
+### Non-compatible versions
 
 | Component | Versions |
 |-----------|----------|
 | N/A       | N/A      |
 
-### Further Scope Clarification
+## Further Scope Clarification
 
 To uphold the integrity and reliability of the onboarding process, there will be a temporary change of the standards. This change is in-line with a feature supported in the current reference implementation.
 
