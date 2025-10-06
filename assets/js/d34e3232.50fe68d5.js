@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcatenax_ev_github_io_new=self.webpackChunkcatenax_ev_github_io_new||[]).push([[64285],{19501:e=>{e.exports=JSON.parse('{"metadata":{"permalink":"/blog-releasenotes","page":1,"postsPerPage":10,"totalPages":1,"totalCount":3,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcatenax_ev_github_io_new=self.webpackChunkcatenax_ev_github_io_new||[]).push([[81903],{1912:e=>{e.exports=JSON.parse('{"blogBasePath":"/blog-releasenotes","blogTitle":"Blog","authorsListPath":"/blog-releasenotes/authors"}')}}]);
