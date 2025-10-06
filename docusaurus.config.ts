@@ -52,6 +52,13 @@ const config: Config = {
             }
           },
         },
+        blog: {
+          path: './blog-releasenotes',
+          routeBasePath: 'blog-releasenotes',
+          showReadingTime: true,
+          blogSidebarCount: 'ALL',
+          blogSidebarTitle: 'Release Notes',
+        },
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -136,7 +143,7 @@ const config: Config = {
           items: [
             {
               label: 'Notes',
-              to: '/release-notes'
+              to: '/blog-releasenotes'
             },
             {
               to: '/release-management',
