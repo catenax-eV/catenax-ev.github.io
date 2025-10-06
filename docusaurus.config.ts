@@ -31,7 +31,20 @@ const config: Config = {
     locales: ['en'],
   },
 
-  plugins: [require.resolve("docusaurus-plugin-image-zoom")],
+  plugins: [
+    require.resolve("docusaurus-plugin-image-zoom"),
+    [
+      require.resolve('@docusaurus/plugin-client-redirects'),
+      {
+        redirects: [
+          {
+            to: '/blog-releasenotes',
+            from: ['/release-notes'],
+          },
+        ],
+      },
+    ],
+  ],
 
   presets: [
     [
