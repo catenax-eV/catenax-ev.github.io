@@ -1,6 +1,6 @@
 # Timelines
 
-On this page you will always find the current timelines for the Tractus-X/Catena-X releases. The ecosystem release **Io** will incorporate the reference implementations from Tractus-X 24.12 and 25.03.
+On this page you will always find the current timelines for the Tractus-X/Catena-X releases.
 
 Please have a look at [Release management](/release-management), to get more information.
 
@@ -14,14 +14,6 @@ Please have a look at [Release management](/release-management), to get more inf
 Below are the current timelines for the upcoming releases.
 Milestones marked with the Tractus-X logo are open to all and can be accessed through the [Tractus-X Open Meetings page](https://eclipse-tractusx.github.io/community/open-meetings).
 Milestones featuring the Catena-X logo indicate closed meetings, which are organized by invitation only and facilitated by the Catena-X Association.
-
-### Catena-X Saturn, incl. Eclipse Tractus-X Release 25.06 & 25.09
-
-[![Timeline for Release 25.06](@site//static/img/cx-timeline-25.06.png)](@site//static/img/cx-timeline-25.06.png)
-*Timeline for Release 25.06*
-
-[![Timeline for Release 25.09](@site/static/img/cx-timeline-25.09.png)](@site/static/img/cx-timeline-25.09.png)
-*Timeline for Release 25.09*
 
 ### Catena-X Titan, incl. Eclipse Tractus-X Release 25.12 & 26.03
 
