@@ -36,8 +36,6 @@ tags:
   - UC/Logistics
 ---
 
-# Overview Standards
-
 :::info[Important notification]
 
 **CX-Io** is fully compatible with **CX-Jupiter**. Business Application Providers, however, now need to certify their solutions against the **CX-Io standards**.
@@ -79,6 +77,7 @@ Standards may appear, disappear, or change between releases for several reasons:
 ### Standard Versioning
 
 Each standard follows semantic versioning (e.g., v1.2.0) where:
+
 - **Major version** changes indicate breaking changes
 - **Minor version** changes indicate backward-compatible new features
 - **Patch version** changes indicate backward-compatible bug fixes
@@ -250,6 +249,7 @@ For a comprehensive list of all changes, including new, updated, and deprecated 
 ### Recently Updated
 
 Key updates include:
+
 - Enhanced network services with DSP 2025-1 and DCP 1.0 compliance
 - Improved business partner data management with advanced search capabilities
 - Updated sustainability standards with new aspect models
@@ -276,4 +276,4 @@ To implement Catena-X standards in your organization:
 
 ## Legal
 
-Copyright © 2025 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).
+Copyright © 2025 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit the [Catena-X copyright information](/copyright).
