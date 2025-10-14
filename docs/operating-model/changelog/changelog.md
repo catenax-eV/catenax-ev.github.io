@@ -26,6 +26,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
   - Added that CSP-A, CSP-B, OSP, BAP, AP, DPC must be registered to Catena-X data space.
 - What: Service map
   - The Service Map has been updated with the corresponding services to reflect the current state. In addition, the relevant standards have been assigned to each service.
+- How: Data Space Governance
+  - Update modulare system
 
 ### Removed
 
