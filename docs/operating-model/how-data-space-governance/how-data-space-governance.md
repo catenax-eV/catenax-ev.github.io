@@ -54,7 +54,7 @@ Prerequisite of any certification is the registration / onboarding of the partic
 Certifications and qualifications at Catena-X can be obtained for different types of services or solutions. The certifications are split into different "roles" indicating the type of relationship to Catena-X, as well as the"module", the specific service provided. The roles of certified companies vary between the provision of a key part of infrastructure or service ( Enablement Service Provider or Core Service provider) and complementing further solutions or services to the data space. In line with this role differentiation, the certifications have a different scope and different Catena-X standards associated with them.
  Companies shall always mention the specific role and module they have been awarded the certification in e.g. Connector, Traceability, MaaS... .
 
-![Certification](./assets/certification.svg)  
+![Certification](./assets/modulares_system_overview.svg)  
 *Certification System*
 
  The following figure details the standards applicable to each of the six roles and matching modules.
@@ -62,6 +62,8 @@ Certifications and qualifications at Catena-X can be obtained for different type
 ![Modular System: Use Cases](./assets/modular_system1.svg)
 
 ![Modular System: Data Space Roles](./assets/modular_system2.svg)
+
+![Modular System: Data Space Roles](./assets/modular_system3.svg)
 
 ### Certification updates
 
