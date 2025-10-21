@@ -14,130 +14,130 @@
             <guid>https://catena-x.net/blog-releasenotes/cx-saturn</guid>
             <pubDate>Tue, 25 Nov 2025 00:00:00 GMT</pubDate>
             <description><![CDATA[Details of the CX-Saturn release for Catena-X, including standards, operating model, regulatory framework, and reference implementations.]]></description>
-            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="catena-x-standards">Catena-X Standards<a href="https://catena-x.net/blog-releasenotes/cx-saturn#catena-x-standards" class="hash-link" aria-label="Direct link to Catena-X Standards" title="Direct link to Catena-X Standards" translate="no">​</a></h2>
+            <content:encoded><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="catena-x-standards">Catena-X Standards<a href="https://catena-x.net/blog-releasenotes/cx-saturn#catena-x-standards" class="hash-link" aria-label="Direct link to Catena-X Standards" title="Direct link to Catena-X Standards" translate="no">​</a></h2>
 <ul>
-<li>
+<li class="">
 <p><strong>4 new standards introduced</strong>, expanding the foundation for digital engineering master data, requirements exchange, tariffs, and policy constraints (CX-0154, CX-0155, CX-0153, CX-0152)</p>
 </li>
-<li>
+<li class="">
 <p><strong>15 standards updated</strong> to further improve quality, interoperability, and usability</p>
 </li>
-<li>
+<li class="">
 <p>Improved processes for supply chain disruption and traceability, supporting more robust risk management and transparency (CX-0146, CX-0125)</p>
 </li>
-<li>
+<li class="">
 <p>Enhanced APIs and data models for product carbon footprint, quality management, and circular economy, enabling more efficient and reliable data exchange (CX-0136, CX-0123, CX-0143)</p>
 </li>
-<li>
+<li class="">
 <p>Finalized protocols and clearer policy implementation for dataspace connectivity, including update to the final versions of DSP 2025-1 and DCP 1.0, ensuring secure and future-proof integration (CX-0018, CX-0001, CX-0152)</p>
 </li>
-<li>
+<li class="">
 <p>Extended support for Digital Twins, including update of AAS interfaces based on Release 25-01 of the Specifications of the Asset Administration Shell (IDTA), strengthening asset management and integration (CX-0002)</p>
 </li>
-<li>
+<li class="">
 <p>Improved Business Partner Data Management (BPDM) standards, especially for master data and gate APIs, for better management of business partner data (CX-0012, CX-0074)</p>
 </li>
-<li>
+<li class="">
 <p>Updated identity and credential management with new requirements for wallets and verifiable credentials, now supporting "Bring Your Own Wallet" (CX-0149, CX-0049, CX-0050)</p>
 </li>
-<li>
+<li class="">
 <p><strong>1 standard deprecated</strong> to consolidate the standards landscape and improve user-friendliness (CX-0013)</p>
 </li>
 </ul>
 <div class="theme-admonition theme-admonition-warning admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>warning</div><div class="admonitionContent_BuS1"><p>During the recent Deployment Gate for <strong>CX-Saturn</strong> the proposed standard candidates were reviewed with a strong focus on <strong>backward compatibility with CX-Jupiter</strong> as well as on potential <strong>implementation risks</strong>.</p><p>The following standards were identified as not fully <strong>backward compatibility with CX-Jupiter</strong>  and to fix this they were allowed to apply the required changes through a <strong>fast-track process</strong> to be included in the CX-Saturn release:</p><ul>
-<li><strong>CX-0123 - Quality Use Case (v3.0)</strong></li>
-<li><strong>CX-0136 – Use Case PCF (v2.2)</strong></li>
-<li><strong>CX-0143 – Use Case Circular Economy Digital Product (v1.2)</strong></li>
-<li><strong>CX-0154 – Digital Master Data (v1.0)</strong></li>
-<li><strong>CX-0155 – Requirements Exchange (v1.0)</strong></li>
+<li class=""><strong>CX-0123 - Quality Use Case (v3.0)</strong></li>
+<li class=""><strong>CX-0136 – Use Case PCF (v2.2)</strong></li>
+<li class=""><strong>CX-0143 – Use Case Circular Economy Digital Product (v1.2)</strong></li>
+<li class=""><strong>CX-0154 – Digital Master Data (v1.0)</strong></li>
+<li class=""><strong>CX-0155 – Requirements Exchange (v1.0)</strong></li>
 </ul><p>These standards will be released together with the  <em>CX-Saturn Go-Live</em>* of all other standards on <strong>25.11</strong>.</p></div></div>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="catena-x-operating-model">Catena-X Operating Model<a href="https://catena-x.net/blog-releasenotes/cx-saturn#catena-x-operating-model" class="hash-link" aria-label="Direct link to Catena-X Operating Model" title="Direct link to Catena-X Operating Model" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="catena-x-operating-model">Catena-X Operating Model<a href="https://catena-x.net/blog-releasenotes/cx-saturn#catena-x-operating-model" class="hash-link" aria-label="Direct link to Catena-X Operating Model" title="Direct link to Catena-X Operating Model" translate="no">​</a></h2>
 <p>With the CX-Saturn release, the Operating Model strengthens compliance, clarifies governance rules, enhances lifecycle management, and refreshes the service map. The outlook on Self-Sovereign Identity (SSI) has been realigned, highlighting interoperability and standardization as key priorities.</p>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="roles--compliance">Roles &amp; Compliance<a href="https://catena-x.net/blog-releasenotes/cx-saturn#roles--compliance" class="hash-link" aria-label="Direct link to Roles &amp; Compliance" title="Direct link to Roles &amp; Compliance" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="roles--compliance">Roles &amp; Compliance<a href="https://catena-x.net/blog-releasenotes/cx-saturn#roles--compliance" class="hash-link" aria-label="Direct link to Roles &amp; Compliance" title="Direct link to Roles &amp; Compliance" translate="no">​</a></h3>
 <ul>
-<li>TISAX Requirements<!-- -->
+<li class="">TISAX Requirements<!-- -->
 <ul>
-<li>TISAX Level 2 becomes mandatory for all OSPs, ESPs, and BAPs effective July 2025, with a 12-month grace period.</li>
-<li>TISAX Level 3 becomes mandatory for CSP-A and CSP-B roles.</li>
+<li class="">TISAX Level 2 becomes mandatory for all OSPs, ESPs, and BAPs effective July 2025, with a 12-month grace period.</li>
+<li class="">TISAX Level 3 becomes mandatory for CSP-A and CSP-B roles.</li>
 </ul>
 </li>
-<li>Registration<!-- -->
+<li class="">Registration<!-- -->
 <ul>
-<li>Roles including CSP-A, CSP-B, OSP, BAP, AP, and DPC must be registered in the Catena-X data space.</li>
+<li class="">Roles including CSP-A, CSP-B, OSP, BAP, AP, and DPC must be registered in the Catena-X data space.</li>
 </ul>
 </li>
-<li>New Roles<!-- -->
+<li class="">New Roles<!-- -->
 <ul>
-<li>Digital Clearing House: Defined as the trust anchor for onboarding, legal entity verification, and digital self-descriptions, with support for multiple regional DCHs; clarified prerequisites and current limitations.</li>
-<li>Attestation Provider: Defined as an independent verifier to strengthen trust and assurance within the Catena-X ecosystem.</li>
-</ul>
-</li>
-</ul>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="governance--policies">Governance &amp; Policies<a href="https://catena-x.net/blog-releasenotes/cx-saturn#governance--policies" class="hash-link" aria-label="Direct link to Governance &amp; Policies" title="Direct link to Governance &amp; Policies" translate="no">​</a></h3>
-<ul>
-<li>Internal systems do not need to be listed on the public marketplace.</li>
-<li>Reinforced that all data space participants must comply with governance components such as Trust ID and related mechanisms.</li>
-<li>Removed reference to the deprecated CX-0008 Standard.</li>
-</ul>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="lifecycle-management">Lifecycle Management<a href="https://catena-x.net/blog-releasenotes/cx-saturn#lifecycle-management" class="hash-link" aria-label="Direct link to Lifecycle Management" title="Direct link to Lifecycle Management" translate="no">​</a></h3>
-<ul>
-<li>Introduced an Environments section, including details on the Int environment.</li>
-</ul>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="service-map">Service Map<a href="https://catena-x.net/blog-releasenotes/cx-saturn#service-map" class="hash-link" aria-label="Direct link to Service Map" title="Direct link to Service Map" translate="no">​</a></h3>
-<ul>
-<li>Updated to reflect the current state of services.</li>
-<li>Assigned relevant standards to each service.</li>
-</ul>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="strategic-outlook">Strategic Outlook<a href="https://catena-x.net/blog-releasenotes/cx-saturn#strategic-outlook" class="hash-link" aria-label="Direct link to Strategic Outlook" title="Direct link to Strategic Outlook" translate="no">​</a></h3>
-<ul>
-<li>The chapter on “Further Integration of SSI Technologies” was refocused:<!-- -->
-<ul>
-<li>Shift from purely technical decentralization towards a broader SSI concept.</li>
-<li>Transition from CSP-provided wallets to a bring-your-own-wallet approach.</li>
-<li>Enablement of all entities to issue, present, and verify credentials, regardless of role.</li>
-<li>Increased emphasis on interoperability across data spaces and alignment with global standards.</li>
+<li class="">Digital Clearing House: Defined as the trust anchor for onboarding, legal entity verification, and digital self-descriptions, with support for multiple regional DCHs; clarified prerequisites and current limitations.</li>
+<li class="">Attestation Provider: Defined as an independent verifier to strengthen trust and assurance within the Catena-X ecosystem.</li>
 </ul>
 </li>
 </ul>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="further-information">Further Information<a href="https://catena-x.net/blog-releasenotes/cx-saturn#further-information" class="hash-link" aria-label="Direct link to Further Information" title="Direct link to Further Information" translate="no">​</a></h3>
-<p>Details can be found in the <a href="https://catena-x.net/docs/operating-model/changelog">changelog</a></p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="catena-x-regulatory-framework">Catena-X Regulatory Framework<a href="https://catena-x.net/blog-releasenotes/cx-saturn#catena-x-regulatory-framework" class="hash-link" aria-label="Direct link to Catena-X Regulatory Framework" title="Direct link to Catena-X Regulatory Framework" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="governance--policies">Governance &amp; Policies<a href="https://catena-x.net/blog-releasenotes/cx-saturn#governance--policies" class="hash-link" aria-label="Direct link to Governance &amp; Policies" title="Direct link to Governance &amp; Policies" translate="no">​</a></h3>
+<ul>
+<li class="">Internal systems do not need to be listed on the public marketplace.</li>
+<li class="">Reinforced that all data space participants must comply with governance components such as Trust ID and related mechanisms.</li>
+<li class="">Removed reference to the deprecated CX-0008 Standard.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="lifecycle-management">Lifecycle Management<a href="https://catena-x.net/blog-releasenotes/cx-saturn#lifecycle-management" class="hash-link" aria-label="Direct link to Lifecycle Management" title="Direct link to Lifecycle Management" translate="no">​</a></h3>
+<ul>
+<li class="">Introduced an Environments section, including details on the Int environment.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="service-map">Service Map<a href="https://catena-x.net/blog-releasenotes/cx-saturn#service-map" class="hash-link" aria-label="Direct link to Service Map" title="Direct link to Service Map" translate="no">​</a></h3>
+<ul>
+<li class="">Updated to reflect the current state of services.</li>
+<li class="">Assigned relevant standards to each service.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="strategic-outlook">Strategic Outlook<a href="https://catena-x.net/blog-releasenotes/cx-saturn#strategic-outlook" class="hash-link" aria-label="Direct link to Strategic Outlook" title="Direct link to Strategic Outlook" translate="no">​</a></h3>
+<ul>
+<li class="">The chapter on “Further Integration of SSI Technologies” was refocused:<!-- -->
+<ul>
+<li class="">Shift from purely technical decentralization towards a broader SSI concept.</li>
+<li class="">Transition from CSP-provided wallets to a bring-your-own-wallet approach.</li>
+<li class="">Enablement of all entities to issue, present, and verify credentials, regardless of role.</li>
+<li class="">Increased emphasis on interoperability across data spaces and alignment with global standards.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="further-information">Further Information<a href="https://catena-x.net/blog-releasenotes/cx-saturn#further-information" class="hash-link" aria-label="Direct link to Further Information" title="Direct link to Further Information" translate="no">​</a></h3>
+<p>Details can be found in the <a class="" href="https://catena-x.net/docs/operating-model/changelog">changelog</a></p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="catena-x-regulatory-framework">Catena-X Regulatory Framework<a href="https://catena-x.net/blog-releasenotes/cx-saturn#catena-x-regulatory-framework" class="hash-link" aria-label="Direct link to Catena-X Regulatory Framework" title="Direct link to Catena-X Regulatory Framework" translate="no">​</a></h2>
 <p>The latest update to the Catena-X Regulatory Framework includes adjustments to country clearance lists, the addition of a new contracting chapter, and an updated version of the Data Exchange Governance. These changes ensure that regulatory requirements are accurately reflected and consistently applied.</p>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="updates-to-country-clearance-lists">Updates to Country Clearance Lists<a href="https://catena-x.net/blog-releasenotes/cx-saturn#updates-to-country-clearance-lists" class="hash-link" aria-label="Direct link to Updates to Country Clearance Lists" title="Direct link to Updates to Country Clearance Lists" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="updates-to-country-clearance-lists">Updates to Country Clearance Lists<a href="https://catena-x.net/blog-releasenotes/cx-saturn#updates-to-country-clearance-lists" class="hash-link" aria-label="Direct link to Updates to Country Clearance Lists" title="Direct link to Updates to Country Clearance Lists" translate="no">​</a></h3>
 <ul>
-<li><strong>Ukraine</strong> has been added to the <em>Allow List</em>, including additional country information.</li>
-<li><strong>Mexico</strong> has been added to the <em>Allow List</em>.</li>
-<li><strong>Turkey</strong> has been added to the <em>Allow List</em>.</li>
+<li class=""><strong>Ukraine</strong> has been added to the <em>Allow List</em>, including additional country information.</li>
+<li class=""><strong>Mexico</strong> has been added to the <em>Allow List</em>.</li>
+<li class=""><strong>Turkey</strong> has been added to the <em>Allow List</em>.</li>
 </ul>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="new-chapter">New Chapter<a href="https://catena-x.net/blog-releasenotes/cx-saturn#new-chapter" class="hash-link" aria-label="Direct link to New Chapter" title="Direct link to New Chapter" translate="no">​</a></h4>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="new-chapter">New Chapter<a href="https://catena-x.net/blog-releasenotes/cx-saturn#new-chapter" class="hash-link" aria-label="Direct link to New Chapter" title="Direct link to New Chapter" translate="no">​</a></h4>
 <ul>
-<li><strong>Contracting</strong> has been introduced as a new chapter in the Regulatory Framework.</li>
+<li class=""><strong>Contracting</strong> has been introduced as a new chapter in the Regulatory Framework.</li>
 </ul>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="updated-version-of-data-exchange-governance">Updated Version of Data Exchange Governance<a href="https://catena-x.net/blog-releasenotes/cx-saturn#updated-version-of-data-exchange-governance" class="hash-link" aria-label="Direct link to Updated Version of Data Exchange Governance" title="Direct link to Updated Version of Data Exchange Governance" translate="no">​</a></h4>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="updated-version-of-data-exchange-governance">Updated Version of Data Exchange Governance<a href="https://catena-x.net/blog-releasenotes/cx-saturn#updated-version-of-data-exchange-governance" class="hash-link" aria-label="Direct link to Updated Version of Data Exchange Governance" title="Direct link to Updated Version of Data Exchange Governance" translate="no">​</a></h4>
 <ul>
-<li>A new version of <strong>Data Exchange Governance</strong> (dated <strong>30 September 2025</strong>) has been published.</li>
+<li class="">A new version of <strong>Data Exchange Governance</strong> (dated <strong>30 September 2025</strong>) has been published.</li>
 </ul>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="further-information-1">Further Information<a href="https://catena-x.net/blog-releasenotes/cx-saturn#further-information-1" class="hash-link" aria-label="Direct link to Further Information" title="Direct link to Further Information" translate="no">​</a></h4>
-<p>Details can be found in the <a href="https://catena-x.net/docs/regulatory-framework/changelog">changelog</a>.</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="tractus-x-reference-implementations">Tractus-X reference implementations<a href="https://catena-x.net/blog-releasenotes/cx-saturn#tractus-x-reference-implementations" class="hash-link" aria-label="Direct link to Tractus-X reference implementations" title="Direct link to Tractus-X reference implementations" translate="no">​</a></h2>
-<p>The Saturn release combines the Eclipse Tractus-X releases <a href="https://eclipse-tractusx.github.io/blog-changelog/release-25-06" target="_blank" rel="noopener noreferrer">25.06</a> and <a href="https://eclipse-tractusx.github.io/blog-changelog/release-25-09" target="_blank" rel="noopener noreferrer">25.09</a>.<br>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="further-information-1">Further Information<a href="https://catena-x.net/blog-releasenotes/cx-saturn#further-information-1" class="hash-link" aria-label="Direct link to Further Information" title="Direct link to Further Information" translate="no">​</a></h4>
+<p>Details can be found in the <a class="" href="https://catena-x.net/docs/regulatory-framework/changelog">changelog</a>.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="tractus-x-reference-implementations">Tractus-X reference implementations<a href="https://catena-x.net/blog-releasenotes/cx-saturn#tractus-x-reference-implementations" class="hash-link" aria-label="Direct link to Tractus-X reference implementations" title="Direct link to Tractus-X reference implementations" translate="no">​</a></h2>
+<p>The Saturn release combines the Eclipse Tractus-X releases <a href="https://eclipse-tractusx.github.io/blog-changelog/release-25-06" target="_blank" rel="noopener noreferrer" class="">25.06</a> and <a href="https://eclipse-tractusx.github.io/blog-changelog/release-25-09" target="_blank" rel="noopener noreferrer" class="">25.09</a>.<br>
 <!-- -->This ensures a solid baseline of updated components together with new capabilities for data sovereignty, interoperability, and traceability.
 Non-compatible or other compatible versions of the Tractus-X release or the apps are listed below. If a version is interoperable with the initial release version and those features and with all other listed versions its listed as compatible.</p>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="compatible-versions">Compatible versions<a href="https://catena-x.net/blog-releasenotes/cx-saturn#compatible-versions" class="hash-link" aria-label="Direct link to Compatible versions" title="Direct link to Compatible versions" translate="no">​</a></h3>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="cx-jupiter">CX-Jupiter<a href="https://catena-x.net/blog-releasenotes/cx-saturn#cx-jupiter" class="hash-link" aria-label="Direct link to CX-Jupiter" title="Direct link to CX-Jupiter" translate="no">​</a></h3>
-<table><thead><tr><th>Component</th><th>Versions</th></tr></thead><tbody><tr><td>Tractus-X Connector <br>(<strong>E</strong>clipse <strong>D</strong>ataspace <strong>C</strong>omponents Connector)</td><td><a href="https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.7.7" target="_blank" rel="noopener noreferrer">0.7.7</a> <br> <a href="https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.8.0" target="_blank" rel="noopener noreferrer">0.8.0</a> <br> <a href="https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.8.1" target="_blank" rel="noopener noreferrer">0.8.1</a> <br> <a href="https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.9.0" target="_blank" rel="noopener noreferrer">0.9.0</a>  <br>  <a href="https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.10.0" target="_blank" rel="noopener noreferrer">0.10.0</a></td></tr></tbody></table>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="cx-saturn">CX-Saturn<a href="https://catena-x.net/blog-releasenotes/cx-saturn#cx-saturn" class="hash-link" aria-label="Direct link to CX-Saturn" title="Direct link to CX-Saturn" translate="no">​</a></h3>
-<table><thead><tr><th>Component</th><th>Versions</th></tr></thead><tbody><tr><td>Tractus-X Connector <br>(<strong>E</strong>clipse <strong>D</strong>ataspace <strong>C</strong>omponents Connector)</td><td><a href="https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.11.0" target="_blank" rel="noopener noreferrer">0.11.0</a> [Latest]</td></tr></tbody></table>
-<div class="theme-admonition theme-admonition-warning admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>warning</div><div class="admonitionContent_BuS1"><p>Please ensure that you carefully review the current <a href="https://eclipse-tractusx.github.io/blog-changelog/release-25-09#tractus-x-connector" target="_blank" rel="noopener noreferrer">known knowns</a>, familiarize yourself with the updated policy changes, and adhere to the migration guidelines.</p><p>Important: Please be aware that based on the Catena-X standard CX-0018 you MUST use the Tractus-X Connector version 0.11.0 and higher to be compatible.</p></div></div>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="non-compatible-versions">Non-compatible versions<a href="https://catena-x.net/blog-releasenotes/cx-saturn#non-compatible-versions" class="hash-link" aria-label="Direct link to Non-compatible versions" title="Direct link to Non-compatible versions" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="compatible-versions">Compatible versions<a href="https://catena-x.net/blog-releasenotes/cx-saturn#compatible-versions" class="hash-link" aria-label="Direct link to Compatible versions" title="Direct link to Compatible versions" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="cx-jupiter">CX-Jupiter<a href="https://catena-x.net/blog-releasenotes/cx-saturn#cx-jupiter" class="hash-link" aria-label="Direct link to CX-Jupiter" title="Direct link to CX-Jupiter" translate="no">​</a></h3>
+<table><thead><tr><th>Component</th><th>Versions</th></tr></thead><tbody><tr><td>Tractus-X Connector <br>(<strong>E</strong>clipse <strong>D</strong>ataspace <strong>C</strong>omponents Connector)</td><td><a href="https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.7.7" target="_blank" rel="noopener noreferrer" class="">0.7.7</a> <br> <a href="https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.8.0" target="_blank" rel="noopener noreferrer" class="">0.8.0</a> <br> <a href="https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.8.1" target="_blank" rel="noopener noreferrer" class="">0.8.1</a> <br> <a href="https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.9.0" target="_blank" rel="noopener noreferrer" class="">0.9.0</a>  <br>  <a href="https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.10.0" target="_blank" rel="noopener noreferrer" class="">0.10.0</a></td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="cx-saturn">CX-Saturn<a href="https://catena-x.net/blog-releasenotes/cx-saturn#cx-saturn" class="hash-link" aria-label="Direct link to CX-Saturn" title="Direct link to CX-Saturn" translate="no">​</a></h3>
+<table><thead><tr><th>Component</th><th>Versions</th></tr></thead><tbody><tr><td>Tractus-X Connector <br>(<strong>E</strong>clipse <strong>D</strong>ataspace <strong>C</strong>omponents Connector)</td><td><a href="https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.11.0" target="_blank" rel="noopener noreferrer" class="">0.11.0</a> [Latest]</td></tr></tbody></table>
+<div class="theme-admonition theme-admonition-warning admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>warning</div><div class="admonitionContent_BuS1"><p>Please ensure that you carefully review the current <a href="https://eclipse-tractusx.github.io/blog-changelog/release-25-09#tractus-x-connector" target="_blank" rel="noopener noreferrer" class="">known knowns</a>, familiarize yourself with the updated policy changes, and adhere to the migration guidelines.</p><p>Important: Please be aware that based on the Catena-X standard CX-0018 you MUST use the Tractus-X Connector version 0.11.0 and higher to be compatible.</p></div></div>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="non-compatible-versions">Non-compatible versions<a href="https://catena-x.net/blog-releasenotes/cx-saturn#non-compatible-versions" class="hash-link" aria-label="Direct link to Non-compatible versions" title="Direct link to Non-compatible versions" translate="no">​</a></h3>
 <table><thead><tr><th>Component</th><th>Versions</th></tr></thead><tbody><tr><td>N/A</td><td>N/A</td></tr></tbody></table>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="further-scope-clarification">Further Scope Clarification<a href="https://catena-x.net/blog-releasenotes/cx-saturn#further-scope-clarification" class="hash-link" aria-label="Direct link to Further Scope Clarification" title="Direct link to Further Scope Clarification" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="further-scope-clarification">Further Scope Clarification<a href="https://catena-x.net/blog-releasenotes/cx-saturn#further-scope-clarification" class="hash-link" aria-label="Direct link to Further Scope Clarification" title="Direct link to Further Scope Clarification" translate="no">​</a></h2>
 <p>To uphold the integrity and reliability of the onboarding process, there will be a temporary change of the standards. This change is in-line with a feature supported in the current reference implementation.</p>
-<p>Impact: <a href="https://catena-x.net/docs/operating-model/who-roles-in-the-catena-x-ecosystem#core-service-provider-b">CSP-B</a> &amp; <a href="https://catena-x.net/docs/operating-model/who-roles-in-the-catena-x-ecosystem#onboarding-service-provider">OSP</a> roles:</p>
+<p>Impact: <a class="" href="https://catena-x.net/docs/operating-model/who-roles-in-the-catena-x-ecosystem#core-service-provider-b">CSP-B</a> &amp; <a class="" href="https://catena-x.net/docs/operating-model/who-roles-in-the-catena-x-ecosystem#onboarding-service-provider">OSP</a> roles:</p>
 <ul>
-<li><a href="https://catena-x.net/docs/standards/CX-0006-RegistrationAndInitialOnboarding#238-gaia-x">CX-0006</a>.<!-- -->
+<li class=""><a class="" href="https://catena-x.net/docs/standards/CX-0006-RegistrationAndInitialOnboarding#238-gaia-x">CX-0006</a>.<!-- -->
 <ul>
-<li>The standard has been slightly adjusted. Onboarding service providers and core service providers must continue to support the possibility of creating a Self-Description (SD) of the Legal Person. However, this requirement is no longer strictly tied to the initial registration process; the creation of the SD can now occur at a later stage. For any SDs that are issued, they must be stored in a central location and must comply with GAIA-X standards and guidelines.</li>
+<li class="">The standard has been slightly adjusted. Onboarding service providers and core service providers must continue to support the possibility of creating a Self-Description (SD) of the Legal Person. However, this requirement is no longer strictly tied to the initial registration process; the creation of the SD can now occur at a later stage. For any SDs that are issued, they must be stored in a central location and must comply with GAIA-X standards and guidelines.</li>
 </ul>
 </li>
 </ul>
@@ -151,113 +151,113 @@ Non-compatible or other compatible versions of the Tractus-X release or the apps
             <guid>https://catena-x.net/blog-releasenotes/cx-io</guid>
             <pubDate>Wed, 19 Mar 2025 00:00:00 GMT</pubDate>
             <description><![CDATA[Details of the CX-Io release for Catena-X, including standards, operating model, regulatory framework, and reference implementations.]]></description>
-            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="catena-x-standards">Catena-X Standards<a href="https://catena-x.net/blog-releasenotes/cx-io#catena-x-standards" class="hash-link" aria-label="Direct link to Catena-X Standards" title="Direct link to Catena-X Standards" translate="no">​</a></h2>
+            <content:encoded><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="catena-x-standards">Catena-X Standards<a href="https://catena-x.net/blog-releasenotes/cx-io#catena-x-standards" class="hash-link" aria-label="Direct link to Catena-X Standards" title="Direct link to Catena-X Standards" translate="no">​</a></h2>
 <ul>
-<li>2 new standards, completing the set of Catena-X' initial use cases</li>
-<li>12 updated standards to ensure quality</li>
-<li>1 deprecated standards in the course of consolidation to achieve more user-friendliness</li>
-<li>updated modular certification framework (see <a href="https://catenax-ev.github.io/docs/next/operating-model/how-data-space-governance#certification-framework" target="_blank" rel="noopener noreferrer">Operating Model</a>)</li>
+<li class="">2 new standards, completing the set of Catena-X' initial use cases</li>
+<li class="">12 updated standards to ensure quality</li>
+<li class="">1 deprecated standards in the course of consolidation to achieve more user-friendliness</li>
+<li class="">updated modular certification framework (see <a href="https://catenax-ev.github.io/docs/next/operating-model/how-data-space-governance#certification-framework" target="_blank" rel="noopener noreferrer" class="">Operating Model</a>)</li>
 </ul>
-<p>details to be found <a href="https://catena-x.net/docs/standards/changelog">here</a></p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="catena-x-operating-model">Catena-X Operating Model<a href="https://catena-x.net/blog-releasenotes/cx-io#catena-x-operating-model" class="hash-link" aria-label="Direct link to Catena-X Operating Model" title="Direct link to Catena-X Operating Model" translate="no">​</a></h2>
+<p>details to be found <a class="" href="https://catena-x.net/docs/standards/changelog">here</a></p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="catena-x-operating-model">Catena-X Operating Model<a href="https://catena-x.net/blog-releasenotes/cx-io#catena-x-operating-model" class="hash-link" aria-label="Direct link to Catena-X Operating Model" title="Direct link to Catena-X Operating Model" translate="no">​</a></h2>
 <ul>
-<li>updated to version 3.0.5</li>
-<li>only patch changes e.g. clarification of the Sandbox, update modular System covering the new standards and update glossary etc.</li>
+<li class="">updated to version 3.0.5</li>
+<li class="">only patch changes e.g. clarification of the Sandbox, update modular System covering the new standards and update glossary etc.</li>
 </ul>
-<p>details to be found <a href="https://catena-x.net/docs/operating-model/changelog">here</a></p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="catena-x-regulatory-framework">Catena-X Regulatory Framework<a href="https://catena-x.net/blog-releasenotes/cx-io#catena-x-regulatory-framework" class="hash-link" aria-label="Direct link to Catena-X Regulatory Framework" title="Direct link to Catena-X Regulatory Framework" translate="no">​</a></h2>
+<p>details to be found <a class="" href="https://catena-x.net/docs/operating-model/changelog">here</a></p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="catena-x-regulatory-framework">Catena-X Regulatory Framework<a href="https://catena-x.net/blog-releasenotes/cx-io#catena-x-regulatory-framework" class="hash-link" aria-label="Direct link to Catena-X Regulatory Framework" title="Direct link to Catena-X Regulatory Framework" translate="no">​</a></h2>
 <ul>
-<li>only patch changes in comparison to CX-Jupiter</li>
+<li class="">only patch changes in comparison to CX-Jupiter</li>
 </ul>
-<p>details to be found <a href="https://catena-x.net/docs/regulatory-framework/changelog">here</a></p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="tractus-x-reference-implementations">Tractus-X reference implementations<a href="https://catena-x.net/blog-releasenotes/cx-io#tractus-x-reference-implementations" class="hash-link" aria-label="Direct link to Tractus-X reference implementations" title="Direct link to Tractus-X reference implementations" translate="no">​</a></h2>
+<p>details to be found <a class="" href="https://catena-x.net/docs/regulatory-framework/changelog">here</a></p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="tractus-x-reference-implementations">Tractus-X reference implementations<a href="https://catena-x.net/blog-releasenotes/cx-io#tractus-x-reference-implementations" class="hash-link" aria-label="Direct link to Tractus-X reference implementations" title="Direct link to Tractus-X reference implementations" translate="no">​</a></h2>
 <p>A comprehensive, coherent and compatible set of development artefacts. Highlights include:</p>
 <p><strong>Portal</strong></p>
 <ul>
-<li>Enhance the App/Service registration process<!-- -->
+<li class="">Enhance the App/Service registration process<!-- -->
 <ul>
-<li>Reduces necessity of creating multiple services to enable the usage of multiple technical users; leads to more flexibility for the app/service provider</li>
+<li class="">Reduces necessity of creating multiple services to enable the usage of multiple technical users; leads to more flexibility for the app/service provider</li>
 </ul>
 </li>
-<li>Optimization of the Service/App Subscription Process<!-- -->
+<li class="">Optimization of the Service/App Subscription Process<!-- -->
 <ul>
-<li>Enhances security and user experience</li>
+<li class="">Enhances security and user experience</li>
 </ul>
 </li>
-<li>Automatic Setting of the Catena-X Membership Flag<!-- -->
+<li class="">Automatic Setting of the Catena-X Membership Flag<!-- -->
 <ul>
-<li>Automates the flag-setting process, making onboarding more efficient</li>
+<li class="">Automates the flag-setting process, making onboarding more efficient</li>
 </ul>
 </li>
-<li>Integration of the Gaia-X Clearinghouse Interface<!-- -->
+<li class="">Integration of the Gaia-X Clearinghouse Interface<!-- -->
 <ul>
-<li>The new API provides more flexibility from a Gaia-X perspective. The Portal backend must switch to the new API for proper data validation during company onboarding and SD document creation</li>
+<li class="">The new API provides more flexibility from a Gaia-X perspective. The Portal backend must switch to the new API for proper data validation during company onboarding and SD document creation</li>
 </ul>
 </li>
 </ul>
 <p><strong>SSI Credential Issuer</strong></p>
 <ul>
-<li>Support for Bitstring Status List<!-- -->
+<li class="">Support for Bitstring Status List<!-- -->
 <ul>
-<li>Ensures compliance with the updated W3C standard.</li>
+<li class="">Ensures compliance with the updated W3C standard.</li>
 </ul>
 </li>
-<li>Process Status List API<!-- -->
+<li class="">Process Status List API<!-- -->
 <ul>
-<li>Enables the retriggering of failed process steps to improve stability</li>
+<li class="">Enables the retriggering of failed process steps to improve stability</li>
 </ul>
 </li>
 </ul>
 <p><strong>EDC</strong></p>
 <ul>
-<li>Empty Asset Selector<!-- -->
+<li class="">Empty Asset Selector<!-- -->
 <ul>
-<li>Blocks contract definitions with an empty asset selector to prevent erroneous data publication</li>
+<li class="">Blocks contract definitions with an empty asset selector to prevent erroneous data publication</li>
 </ul>
 </li>
-<li>Policy Checks<!-- -->
+<li class="">Policy Checks<!-- -->
 <ul>
-<li>Adds policy validation APIs and validation during policy creation</li>
+<li class="">Adds policy validation APIs and validation during policy creation</li>
 </ul>
 </li>
-<li>Restart Broken Transfers<!-- -->
+<li class="">Restart Broken Transfers<!-- -->
 <ul>
-<li>Automatically restarts an abandoned data transfer, e.g., after a data plane crash</li>
+<li class="">Automatically restarts an abandoned data transfer, e.g., after a data plane crash</li>
 </ul>
 </li>
 </ul>
 <p><strong>IRS</strong></p>
 <ul>
-<li>Efficient Orchestration of EDC Negotiations<!-- -->
+<li class="">Efficient Orchestration of EDC Negotiations<!-- -->
 <ul>
-<li>Reduces unnecessary duplicate negotiations and improves performance</li>
+<li class="">Reduces unnecessary duplicate negotiations and improves performance</li>
 </ul>
 </li>
-<li>Remediation of technical Debt<!-- -->
+<li class="">Remediation of technical Debt<!-- -->
 <ul>
-<li>Improved calculation of order and batch statuses, along with integration of progress indicators.</li>
+<li class="">Improved calculation of order and batch statuses, along with integration of progress indicators.</li>
 </ul>
 </li>
-<li>Limitation of Parallel Job Execution<!-- -->
+<li class="">Limitation of Parallel Job Execution<!-- -->
 <ul>
-<li>Reduces system load and prevents resource exhaustion</li>
+<li class="">Reduces system load and prevents resource exhaustion</li>
 </ul>
 </li>
 </ul>
-<p>details to be found <a href="https://eclipse-tractusx.github.io/CHANGELOG/#2503---2025-03-19" target="_blank" rel="noopener noreferrer">here</a></p>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="details-on-compatible-and-non-compatible-versions">Details on compatible and non-compatible versions<a href="https://catena-x.net/blog-releasenotes/cx-io#details-on-compatible-and-non-compatible-versions" class="hash-link" aria-label="Direct link to Details on compatible and non-compatible versions" title="Direct link to Details on compatible and non-compatible versions" translate="no">​</a></h3>
-<p>By default, the versions listed in the <em><strong><a href="https://eclipse-tractusx.github.io/CHANGELOG/#2503---2025-03-17" target="_blank" rel="noopener noreferrer">Tractus-X changelog</a></strong></em> are the recommended versions. Non-compatible or other compatible versions of the Tractus-X release or the apps are listed below. If a version is interoperable with the initial release version and those features and with all other listed versions its listed as compatible.</p>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="compatible-versions">Compatible versions<a href="https://catena-x.net/blog-releasenotes/cx-io#compatible-versions" class="hash-link" aria-label="Direct link to Compatible versions" title="Direct link to Compatible versions" translate="no">​</a></h3>
-<table><thead><tr><th>Component</th><th>Versions</th><th>Comments</th></tr></thead><tbody><tr><td>Eclipse Data Space Connector <br> (Tractus-X EDC)</td><td><a href="https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.7.7" target="_blank" rel="noopener noreferrer">0.7.7</a> <br> <a href="https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.8.0" target="_blank" rel="noopener noreferrer">0.8.0</a> <br> <a href="https://github.com/eclipse-tractusx/tractusx-edc/releases/%5Btag/0.8.1" target="_blank" rel="noopener noreferrer">0.8.1</a> <br> <a href="https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.9.0" target="_blank" rel="noopener noreferrer">0.9.0</a> [Latest]</td><td></td></tr></tbody></table>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="non-compatible-versions">Non-compatible versions<a href="https://catena-x.net/blog-releasenotes/cx-io#non-compatible-versions" class="hash-link" aria-label="Direct link to Non-compatible versions" title="Direct link to Non-compatible versions" translate="no">​</a></h3>
+<p>details to be found <a href="https://eclipse-tractusx.github.io/CHANGELOG/#2503---2025-03-19" target="_blank" rel="noopener noreferrer" class="">here</a></p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="details-on-compatible-and-non-compatible-versions">Details on compatible and non-compatible versions<a href="https://catena-x.net/blog-releasenotes/cx-io#details-on-compatible-and-non-compatible-versions" class="hash-link" aria-label="Direct link to Details on compatible and non-compatible versions" title="Direct link to Details on compatible and non-compatible versions" translate="no">​</a></h3>
+<p>By default, the versions listed in the <em><strong><a href="https://eclipse-tractusx.github.io/CHANGELOG/#2503---2025-03-17" target="_blank" rel="noopener noreferrer" class="">Tractus-X changelog</a></strong></em> are the recommended versions. Non-compatible or other compatible versions of the Tractus-X release or the apps are listed below. If a version is interoperable with the initial release version and those features and with all other listed versions its listed as compatible.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="compatible-versions">Compatible versions<a href="https://catena-x.net/blog-releasenotes/cx-io#compatible-versions" class="hash-link" aria-label="Direct link to Compatible versions" title="Direct link to Compatible versions" translate="no">​</a></h3>
+<table><thead><tr><th>Component</th><th>Versions</th><th>Comments</th></tr></thead><tbody><tr><td>Eclipse Data Space Connector <br> (Tractus-X EDC)</td><td><a href="https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.7.7" target="_blank" rel="noopener noreferrer" class="">0.7.7</a> <br> <a href="https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.8.0" target="_blank" rel="noopener noreferrer" class="">0.8.0</a> <br> <a href="https://github.com/eclipse-tractusx/tractusx-edc/releases/%5Btag/0.8.1" target="_blank" rel="noopener noreferrer" class="">0.8.1</a> <br> <a href="https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.9.0" target="_blank" rel="noopener noreferrer" class="">0.9.0</a> [Latest]</td><td></td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="non-compatible-versions">Non-compatible versions<a href="https://catena-x.net/blog-releasenotes/cx-io#non-compatible-versions" class="hash-link" aria-label="Direct link to Non-compatible versions" title="Direct link to Non-compatible versions" translate="no">​</a></h3>
 <table><thead><tr><th>Component</th><th>Versions</th></tr></thead><tbody><tr><td>N/A</td><td>N/A</td></tr></tbody></table>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="further-scope-clarification">Further Scope Clarification<a href="https://catena-x.net/blog-releasenotes/cx-io#further-scope-clarification" class="hash-link" aria-label="Direct link to Further Scope Clarification" title="Direct link to Further Scope Clarification" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="further-scope-clarification">Further Scope Clarification<a href="https://catena-x.net/blog-releasenotes/cx-io#further-scope-clarification" class="hash-link" aria-label="Direct link to Further Scope Clarification" title="Direct link to Further Scope Clarification" translate="no">​</a></h2>
 <p>To uphold the integrity and reliability of the onboarding process, there will be a temporary change of the standards. This change is in-line with a feature supported in the current reference implementation.</p>
-<p>Impact: <a href="https://catena-x.net/docs/operating-model/who-roles-in-the-catena-x-ecosystem#core-service-provider-b">CSP-B</a> &amp; <a href="https://catena-x.net/docs/operating-model/who-roles-in-the-catena-x-ecosystem#onboarding-service-provider">OSP</a> roles:</p>
+<p>Impact: <a class="" href="https://catena-x.net/docs/operating-model/who-roles-in-the-catena-x-ecosystem#core-service-provider-b">CSP-B</a> &amp; <a class="" href="https://catena-x.net/docs/operating-model/who-roles-in-the-catena-x-ecosystem#onboarding-service-provider">OSP</a> roles:</p>
 <ul>
-<li><a href="https://catena-x.net/docs/standards/CX-0006-RegistrationAndInitialOnboarding#238-gaia-x">CX-0006</a>.<!-- -->
+<li class=""><a class="" href="https://catena-x.net/docs/standards/CX-0006-RegistrationAndInitialOnboarding#238-gaia-x">CX-0006</a>.<!-- -->
 <ul>
-<li>The standard has been slightly adjusted. Onboarding service providers and core service providers must continue to support the possibility of creating a Self-Description (SD) of the Legal Person. However, this requirement is no longer strictly tied to the initial registration process; the creation of the SD can now occur at a later stage. For any SDs that are issued, they must be stored in a central location and must comply with GAIA-X standards and guidelines.</li>
+<li class="">The standard has been slightly adjusted. Onboarding service providers and core service providers must continue to support the possibility of creating a Self-Description (SD) of the Legal Person. However, this requirement is no longer strictly tied to the initial registration process; the creation of the SD can now occur at a later stage. For any SDs that are issued, they must be stored in a central location and must comply with GAIA-X standards and guidelines.</li>
 </ul>
 </li>
 </ul>
@@ -271,50 +271,50 @@ Non-compatible or other compatible versions of the Tractus-X release or the apps
             <guid>https://catena-x.net/blog-releasenotes/cx-jupiter</guid>
             <pubDate>Mon, 05 Aug 2024 00:00:00 GMT</pubDate>
             <description><![CDATA[Details of the CX-Jupiter release for Catena-X, including standards, operating model, regulatory framework, and reference implementations.]]></description>
-            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="catena-x-standards">Catena-X Standards<a href="https://catena-x.net/blog-releasenotes/cx-jupiter#catena-x-standards" class="hash-link" aria-label="Direct link to Catena-X Standards" title="Direct link to Catena-X Standards" translate="no">​</a></h2>
+            <content:encoded><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="catena-x-standards">Catena-X Standards<a href="https://catena-x.net/blog-releasenotes/cx-jupiter#catena-x-standards" class="hash-link" aria-label="Direct link to Catena-X Standards" title="Direct link to Catena-X Standards" translate="no">​</a></h2>
 <ul>
-<li>13 new standards, completing the set of Catena-X' initial use cases</li>
-<li>35 updated standards to ensure quality, coherence and the implementation of our "breaking change" via SSI</li>
-<li>67 deprecated standards in the course of consolidation to achieve more user-friendliness</li>
-<li>updated modular certification framework</li>
+<li class="">13 new standards, completing the set of Catena-X' initial use cases</li>
+<li class="">35 updated standards to ensure quality, coherence and the implementation of our "breaking change" via SSI</li>
+<li class="">67 deprecated standards in the course of consolidation to achieve more user-friendliness</li>
+<li class="">updated modular certification framework</li>
 </ul>
-<p>details to be found <a href="https://catena-x.net/docs/standards/changelog">here</a></p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="catena-x-operating-model">Catena-X Operating Model<a href="https://catena-x.net/blog-releasenotes/cx-jupiter#catena-x-operating-model" class="hash-link" aria-label="Direct link to Catena-X Operating Model" title="Direct link to Catena-X Operating Model" translate="no">​</a></h2>
+<p>details to be found <a class="" href="https://catena-x.net/docs/standards/changelog">here</a></p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="catena-x-operating-model">Catena-X Operating Model<a href="https://catena-x.net/blog-releasenotes/cx-jupiter#catena-x-operating-model" class="hash-link" aria-label="Direct link to Catena-X Operating Model" title="Direct link to Catena-X Operating Model" translate="no">​</a></h2>
 <ul>
-<li>updated to version 3.0 enabling many new ecosystem components such as the OSP role, Catena-X Sandboxes and an overhaul to release management focused on stability and reliability</li>
+<li class="">updated to version 3.0 enabling many new ecosystem components such as the OSP role, Catena-X Sandboxes and an overhaul to release management focused on stability and reliability</li>
 </ul>
-<p>details to be found <a href="https://catena-x.net/docs/operating-model/changelog">here</a></p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="catena-x-regulatory-framework">Catena-X Regulatory Framework<a href="https://catena-x.net/blog-releasenotes/cx-jupiter#catena-x-regulatory-framework" class="hash-link" aria-label="Direct link to Catena-X Regulatory Framework" title="Direct link to Catena-X Regulatory Framework" translate="no">​</a></h2>
+<p>details to be found <a class="" href="https://catena-x.net/docs/operating-model/changelog">here</a></p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="catena-x-regulatory-framework">Catena-X Regulatory Framework<a href="https://catena-x.net/blog-releasenotes/cx-jupiter#catena-x-regulatory-framework" class="hash-link" aria-label="Direct link to Catena-X Regulatory Framework" title="Direct link to Catena-X Regulatory Framework" translate="no">​</a></h2>
 <ul>
-<li>introduced the official Catena-X ODRL profile including standardized Catena-X policies.</li>
-<li>adding various pre-defined use case frameworks, e.g. Circular Economy, Demand and Capacity Management, etc.</li>
-<li>moving China to White List, allowing onboarding of Chinese companies to the Catena-X network</li>
+<li class="">introduced the official Catena-X ODRL profile including standardized Catena-X policies.</li>
+<li class="">adding various pre-defined use case frameworks, e.g. Circular Economy, Demand and Capacity Management, etc.</li>
+<li class="">moving China to White List, allowing onboarding of Chinese companies to the Catena-X network</li>
 </ul>
-<p>details to be found <a href="https://catena-x.net/docs/regulatory-framework/changelog">here</a></p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="tractus-x-reference-implementations">Tractus-X reference implementations<a href="https://catena-x.net/blog-releasenotes/cx-jupiter#tractus-x-reference-implementations" class="hash-link" aria-label="Direct link to Tractus-X reference implementations" title="Direct link to Tractus-X reference implementations" translate="no">​</a></h2>
+<p>details to be found <a class="" href="https://catena-x.net/docs/regulatory-framework/changelog">here</a></p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="tractus-x-reference-implementations">Tractus-X reference implementations<a href="https://catena-x.net/blog-releasenotes/cx-jupiter#tractus-x-reference-implementations" class="hash-link" aria-label="Direct link to Tractus-X reference implementations" title="Direct link to Tractus-X reference implementations" translate="no">​</a></h2>
 <p>A comprehensive, coherent and compatible set of development artefacts. Highlights include:</p>
 <ul>
-<li>an update to the Multi-OpCo solutions</li>
-<li>the full implementation of the Industry Core KIT</li>
-<li>the advancement of Self Sovereign Identity concepts</li>
-<li>several improvements to the user-friendliness of KITs based on feedback received to date, making Tractus-X overall more accessible and welcoming to newcomers and veterans alike.</li>
+<li class="">an update to the Multi-OpCo solutions</li>
+<li class="">the full implementation of the Industry Core KIT</li>
+<li class="">the advancement of Self Sovereign Identity concepts</li>
+<li class="">several improvements to the user-friendliness of KITs based on feedback received to date, making Tractus-X overall more accessible and welcoming to newcomers and veterans alike.</li>
 </ul>
-<p>details to be found <a href="https://eclipse-tractusx.github.io/CHANGELOG/#2408---2024-08-05" target="_blank" rel="noopener noreferrer">here</a></p>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="details-on-compatible-and-non-compatible-versions">Details on compatible and non-compatible versions<a href="https://catena-x.net/blog-releasenotes/cx-jupiter#details-on-compatible-and-non-compatible-versions" class="hash-link" aria-label="Direct link to Details on compatible and non-compatible versions" title="Direct link to Details on compatible and non-compatible versions" translate="no">​</a></h3>
-<p>By default, the versions listed in the <a href="https://eclipse-tractusx.github.io/CHANGELOG/#2408---2024-08-05" target="_blank" rel="noopener noreferrer">Tractus-X changelog</a> are the recommended versions. Non-compatible or other compatible versions of the Tractus-X release or the apps are listed below. If a version is interoperable with the initial release version and those features and with all other listed versions its listed as compatible.</p>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="compatible-versions">Compatible versions<a href="https://catena-x.net/blog-releasenotes/cx-jupiter#compatible-versions" class="hash-link" aria-label="Direct link to Compatible versions" title="Direct link to Compatible versions" translate="no">​</a></h3>
-<table><thead><tr><th>Component</th><th>Versions</th><th>Comments</th></tr></thead><tbody><tr><td>Eclipse Data Space Connector <br> (Tractus-X EDC)</td><td><a href="https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.7.3" target="_blank" rel="noopener noreferrer">0.7.3</a> <br> <a href="https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.7.4" target="_blank" rel="noopener noreferrer">0.7.4</a> <br>   <a href="https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.7.5" target="_blank" rel="noopener noreferrer">0.7.5</a> <br>   <a href="https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.7.6" target="_blank" rel="noopener noreferrer">0.7.6</a> <br>   <a href="https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.7.7" target="_blank" rel="noopener noreferrer">0.7.7</a> [Latest]</td><td>Versions ≤ 0.7.5 are effected by a security issue details <a href="https://github.com/eclipse-tractusx/tractusx-edc/pull/1584" target="_blank" rel="noopener noreferrer">here</a>.</td></tr></tbody></table>
+<p>details to be found <a href="https://eclipse-tractusx.github.io/CHANGELOG/#2408---2024-08-05" target="_blank" rel="noopener noreferrer" class="">here</a></p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="details-on-compatible-and-non-compatible-versions">Details on compatible and non-compatible versions<a href="https://catena-x.net/blog-releasenotes/cx-jupiter#details-on-compatible-and-non-compatible-versions" class="hash-link" aria-label="Direct link to Details on compatible and non-compatible versions" title="Direct link to Details on compatible and non-compatible versions" translate="no">​</a></h3>
+<p>By default, the versions listed in the <a href="https://eclipse-tractusx.github.io/CHANGELOG/#2408---2024-08-05" target="_blank" rel="noopener noreferrer" class="">Tractus-X changelog</a> are the recommended versions. Non-compatible or other compatible versions of the Tractus-X release or the apps are listed below. If a version is interoperable with the initial release version and those features and with all other listed versions its listed as compatible.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="compatible-versions">Compatible versions<a href="https://catena-x.net/blog-releasenotes/cx-jupiter#compatible-versions" class="hash-link" aria-label="Direct link to Compatible versions" title="Direct link to Compatible versions" translate="no">​</a></h3>
+<table><thead><tr><th>Component</th><th>Versions</th><th>Comments</th></tr></thead><tbody><tr><td>Eclipse Data Space Connector <br> (Tractus-X EDC)</td><td><a href="https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.7.3" target="_blank" rel="noopener noreferrer" class="">0.7.3</a> <br> <a href="https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.7.4" target="_blank" rel="noopener noreferrer" class="">0.7.4</a> <br>   <a href="https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.7.5" target="_blank" rel="noopener noreferrer" class="">0.7.5</a> <br>   <a href="https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.7.6" target="_blank" rel="noopener noreferrer" class="">0.7.6</a> <br>   <a href="https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.7.7" target="_blank" rel="noopener noreferrer" class="">0.7.7</a> [Latest]</td><td>Versions ≤ 0.7.5 are effected by a security issue details <a href="https://github.com/eclipse-tractusx/tractusx-edc/pull/1584" target="_blank" rel="noopener noreferrer" class="">here</a>.</td></tr></tbody></table>
 <p>[Latest] – latest released version<br>
-<!-- -->[Recommended] – recommended by the Catena-X association (Compatible with the <a href="https://catena-x.net/docs/standards/overview">Catena-X Standards</a> and [End-to-End] tested)</p>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="non-compatible-versions">Non-compatible versions<a href="https://catena-x.net/blog-releasenotes/cx-jupiter#non-compatible-versions" class="hash-link" aria-label="Direct link to Non-compatible versions" title="Direct link to Non-compatible versions" translate="no">​</a></h3>
+<!-- -->[Recommended] – recommended by the Catena-X association (Compatible with the <a class="" href="https://catena-x.net/docs/standards/overview">Catena-X Standards</a> and [End-to-End] tested)</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="non-compatible-versions">Non-compatible versions<a href="https://catena-x.net/blog-releasenotes/cx-jupiter#non-compatible-versions" class="hash-link" aria-label="Direct link to Non-compatible versions" title="Direct link to Non-compatible versions" translate="no">​</a></h3>
 <table><thead><tr><th>Component</th><th>Versions</th></tr></thead><tbody><tr><td>N/A</td><td>N/A</td></tr></tbody></table>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="further-scope-clarification">Further Scope Clarification<a href="https://catena-x.net/blog-releasenotes/cx-jupiter#further-scope-clarification" class="hash-link" aria-label="Direct link to Further Scope Clarification" title="Direct link to Further Scope Clarification" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="further-scope-clarification">Further Scope Clarification<a href="https://catena-x.net/blog-releasenotes/cx-jupiter#further-scope-clarification" class="hash-link" aria-label="Direct link to Further Scope Clarification" title="Direct link to Further Scope Clarification" translate="no">​</a></h2>
 <p>To uphold the integrity and reliability of the onboarding process, there will be a temporary change of the standards. This change is in-line with a feature supported in the current reference implementation.</p>
-<p>Impact: <a href="https://catena-x.net/docs/operating-model/who-roles-in-the-catena-x-ecosystem#core-service-provider-b">CSP-B</a> &amp; <a href="https://catena-x.net/docs/operating-model/who-roles-in-the-catena-x-ecosystem#onboarding-service-provider">OSP</a> roles:</p>
+<p>Impact: <a class="" href="https://catena-x.net/docs/operating-model/who-roles-in-the-catena-x-ecosystem#core-service-provider-b">CSP-B</a> &amp; <a class="" href="https://catena-x.net/docs/operating-model/who-roles-in-the-catena-x-ecosystem#onboarding-service-provider">OSP</a> roles:</p>
 <ul>
-<li><a href="https://catena-x.net/docs/standards/CX-0006-RegistrationAndInitialOnboarding#238-gaia-x">CX-0006</a>.<!-- -->
+<li class=""><a class="" href="https://catena-x.net/docs/standards/CX-0006-RegistrationAndInitialOnboarding#238-gaia-x">CX-0006</a>.<!-- -->
 <ul>
-<li>The standard has been slightly adjusted. Onboarding service providers and core service providers must continue to support the possibility of creating a Self-Description (SD) of the Legal Person. However, this requirement is no longer strictly tied to the initial registration process; the creation of the SD can now occur at a later stage. For any SDs that are issued, they must be stored in a central location and must comply with GAIA-X standards and guidelines.</li>
+<li class="">The standard has been slightly adjusted. Onboarding service providers and core service providers must continue to support the possibility of creating a Self-Description (SD) of the Legal Person. However, this requirement is no longer strictly tied to the initial registration process; the creation of the SD can now occur at a later stage. For any SDs that are issued, they must be stored in a central location and must comply with GAIA-X standards and guidelines.</li>
 </ul>
 </li>
 </ul>
