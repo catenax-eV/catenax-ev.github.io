@@ -18,9 +18,6 @@ const config: Config = {
   organizationName: 'catenax-eV', // Usually your GitHub org/user name.
   projectName: 'catenax-ev.github.io', // Usually your repo name.
 
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
-
   trailingSlash: false,
 
   // Even if you don't use internationalization, you can use this field to set
@@ -80,6 +77,10 @@ const config: Config = {
   ],
   markdown: {
     mermaid: true,
+    hooks: {
+      onBrokenMarkdownLinks: 'throw',
+      onBrokenMarkdownImages: 'throw',
+    },
   },
   themes: [
     [
@@ -124,13 +125,13 @@ const config: Config = {
             },
           ],
         },
-       /* {
-          type: "docSidebar",
-          sidebarId: "sidebar_certification",
-          position: "left",
-          label: "Conformity Assessment",
-        },
-        */
+        /* {
+           type: "docSidebar",
+           sidebarId: "sidebar_certification",
+           position: "left",
+           label: "Conformity Assessment",
+         },
+         */
         {
           type: "docSidebar",
           sidebarId: "sidebar_regulatory_framework",
@@ -174,14 +175,14 @@ const config: Config = {
         },
         {
           to: 'https://catena-x.net',
-          'aria-label':'Catena-X Automotive Network e.V.',
+          'aria-label': 'Catena-X Automotive Network e.V.',
           position: 'right',
           target: '_blank',
           className: 'header-catena-link',
         },
         {
           to: 'https://eclipse-tractusx.github.io/',
-          'aria-label':'Eclipse Tractus-X',
+          'aria-label': 'Eclipse Tractus-X',
           position: 'right',
           target: '_blank',
           className: 'header-tractus-link',
@@ -191,7 +192,7 @@ const config: Config = {
           position: 'right',
           className: 'header-github-link',
           target: '_blank',
-          'aria-label':'GitHub',
+          'aria-label': 'GitHub',
         },
       ],
     },
