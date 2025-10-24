@@ -7,7 +7,7 @@ This chapter provides an overview of the key processes and compliance requiremen
 
 ## Onboarding Process
 
-The onboarding process consists of the (i) registration process and (ii) registration approval process and can be extended by the (iii) technical integration process in accordance with the CX-0006 standard (see Figure [Onboarding Process](./how-data-space-operations.md#general-onboarding)). To join the data space, all participants must complete the registration process. To exchange data with partners, participants must also complete the technical integration process and sign the General Data Exchange Framework.
+The onboarding process consists of the (i) registration process and (ii) registration approval process and can be extended by the (iii) technical integration process in accordance with the CX-0006 standard (see Figure [Onboarding Process](./how-data-space-operations.md#onboarding-process)). To join the data space, all participants must complete the registration process. To exchange data with partners, participants must also complete the technical integration process and sign the General Data Exchange Framework.
 
 ![Onboarding Process](./assets/onboarding-process.png)
 *Onboarding Process*
@@ -120,7 +120,7 @@ The figure shows a generic section of the value chain. The basic principle - one
 
 Besides this implementation suppliers and customers have to agree on how the 1U1D-Rule applies to their specific contractual agreement and use case. For example, if there are agreements in place to handle directed parts or ad-hoc agreements to handle a critical supply situation, supply chain visibility may be extended.
 
-The default standard for part relationships is defined in Catena-X Standards [CX-0126](../../standards/CX-0126-IndustryCorePartType/CX-0126-IndustryCorePartType.md) and [CX-0127](../../standards/CX-0127-IndustryCorePartInstance/CX-0127-IndustryCorePartInstance.md). An overarching explanation can be found in the [Tractus-X KITS](https://eclipse-tractusx.github.io/docs-kits/24.08/kits/Industry%20Core%20Kit/Business%20View%20Industry%20Core%20Kit).
+The default standard for part relationships is defined in Catena-X Standards [CX-0126](../../standards/CX-0126-IndustryCorePartType/CX-0126-IndustryCorePartType.md) and [CX-0127](../../standards/CX-0127-IndustryCorePartInstance/CX-0127-IndustryCorePartInstance.md). An overarching explanation can be found in the [Tractus-X KITS](https://eclipse-tractusx.github.io/docs-kits/category/industry-core-kit).
 
 ### Part-based visibility
 

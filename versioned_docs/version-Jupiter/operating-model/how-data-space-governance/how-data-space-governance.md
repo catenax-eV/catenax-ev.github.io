@@ -19,7 +19,7 @@ The Catena-X Association publishes standards for generic core and enabling servi
 
 ### How do we standardize?
 
-Based on [Catena-X’s Intellectual Property(IP)-Regulations](https://catena-x.net/fileadmin/user_upload/Vereinsdokumente/Catena-X_IP_Regelwerk_IP_Regulations.pdf) and in compliance with applicable antitrust law, the Catena-X standardization process aims to develop and implement uniform standards for networking and data exchange in the automotive sector. A general overview of the process is depicted in Figure [Catena-X Standardization Process](./how-data-space-governance.md#how-do-we-standardize):
+Based on [Catena-X’s Intellectual Property(IP)-Regulations](https://catena-x.net/wp-content/uploads/2025/03/Catena-X_IP_Regelwerk_IP_Regulations.pdf) and in compliance with applicable antitrust law, the Catena-X standardization process aims to develop and implement uniform standards for networking and data exchange in the automotive sector. A general overview of the process is depicted in Figure [Catena-X Standardization Process](./how-data-space-governance.md#how-do-we-standardize):
 
 ![Catena-X Standardization Process](./assets/catena-x-standardization-process.png)
 *Catena-X Standardization Process*
@@ -194,7 +194,7 @@ A general overview of the process is depicted in Figure [Catena-X process for No
 
 ### Country Clearance List
 
-The Catena-X association issues a [country clearance list](https://catena-x.net/fileadmin/user_upload/04_Einfuehren_und_umsetzen/Governance_Framework/Catena-X_-_Country_Clearance_list.pdf) that specifies countries, in which companies can be onboarded to the Catena-X data space. This list acts as mandatory guidance to all OSPs for registering participants in the Catena-X data space.
+The Catena-X association issues a [country clearance list](https://catenax-ev.github.io/docs/Jupiter/regulatory-framework/30000ft/country-clearance-list) that specifies countries, in which companies can be onboarded to the Catena-X data space. This list acts as mandatory guidance to all OSPs for registering participants in the Catena-X data space.
 
 In the same document, the Catena-X association includes countries currently under clearance review. An onboarding of companies from this category is only possible after a due diligence check, followed by separate approval by the Catena-X association. A request for such a due diligence check can be requested by any OSP to the Catena-X association under [info@catena-x.net](mailto:info@catena-x.net).
 

@@ -100,7 +100,7 @@ OSPs are responsible for deploying, operating, and maintaining onboarding servic
 
 **Current Limitations:**
 
-- The OSP currently covers only part of the registration process in the Catena-X data space. The currently available process is depicted in figure [General Onboarding Process](./../how-data-space-operations/how-data-space-operations.md#general-onboarding).
+- The OSP currently covers only part of the registration process in the Catena-X data space. The currently available process is depicted in figure [General Onboarding Process](./../how-data-space-operations/how-data-space-operations.md#onboarding-process).
 - Offboarding Processes Under Development: Comprehensive offboarding processes are currently in development to ensure that they are as robust as onboarding processes and will be included in future updates. Simple and manual offboarding processes are already available.
 
 ### Enablement Service Provider
@@ -199,7 +199,7 @@ solution). Alternatively, a DPC can certify and operate its own business applica
 
 **Prerequisites:**
 
-- A DPC **must** use certified enablement services or business applications. Alternatively, a DPC **must** certify its own enablement services and/or business applications by one of the CABs (as outlined in Chapter [Conformity Assessment](./../how-data-space-governance/how-data-space-governance.md#conformity-assessment)).
+- A DPC **must** use certified enablement services or business applications. Alternatively, a DPC **must** certify its own enablement services and/or business applications by one of the CABs (as outlined in Chapter [Conformity Assessment](./../how-data-space-governance/how-data-space-governance.md#conformity-assessment-and-certification)).
 - A DPC **must** accept and comply with the Catena-X regulatory framework during onboarding via one of the OSPs
 
 **Current Limitations:**
