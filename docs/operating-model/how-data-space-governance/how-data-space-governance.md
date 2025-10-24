@@ -130,7 +130,7 @@ Certified operating companies are companies certified for operating core service
 **Certified Provider**  
 ![Certified Provider](./assets/CX_Logo_Certified-Provider_CLR_RGB_pos_16x9@300.jpg)
 
-Certified Providers are companies that have been certified to deliver or operate services as defined in the [Service Map](.././what-service-map/what-service-map.md) for the general participation in the data ecosystem depending on their role.
+Certified Providers are companies that have been certified to deliver or operate services as defined in the [Service Map](../what-service-map/what-service-map.md) for the general participation in the data ecosystem depending on their role.
 
 **Certified Solution**  
 ![Certified Solution](./assets/CX_Logo_Certified-Solution_CLR_RGB_pos_16x9@300.jpg)
