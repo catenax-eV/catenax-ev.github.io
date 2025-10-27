@@ -22,7 +22,7 @@ After confirmation, a BPNL (if not yet available) and an identity wallet with th
 
 ### Technical Integration
 
-After registration, participants can start the technical integration process (e.g., create technical users, regsiter connectors) to enable technical interaction with other participants. The technical user enables a company to link their connectors to its identity wallet. The connector registration is required to ensure that a connector can be searched and discoverd by other participants within the data space.
+After registration, participants can start the technical integration process (e.g., create technical users, regsiter connectors) to enable technical interaction with other participants. The technical user enables a company to link their connectors to its identity wallet. The connector registration is required to ensure that a connector can be searched and discovered by other participants within the data space.
 
 ### Managing Company Hierarchies
 
