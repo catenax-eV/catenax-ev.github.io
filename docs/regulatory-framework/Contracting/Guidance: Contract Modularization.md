@@ -1,4 +1,10 @@
-# Guidance on Contract Modularization in Catena-X
+---
+title: Contracting
+pagination_prev: null
+pagination_next: null
+---
+
+## Guidance on Contract Modularization in Catena-X
 
 :::info
 
