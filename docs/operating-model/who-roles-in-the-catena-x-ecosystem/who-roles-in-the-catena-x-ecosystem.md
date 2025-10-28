@@ -115,7 +115,7 @@ OSPs are responsible for deploying, operating, and maintaining onboarding servic
 
 **Current Limitations:**
 
-- The OSP currently covers only part of the registration process in the Catena-X data space. The currently available process is depicted in figure [General Onboarding Process](./../how-data-space-operations/how-data-space-operations.md#general-onboarding).
+- The OSP currently covers only part of the registration process in the Catena-X data space. The currently available process is depicted in figure [General Onboarding Process](./../how-data-space-operations/how-data-space-operations.md#onboarding-process).
 - Offboarding Processes Under Development: Comprehensive offboarding processes are currently in development to ensure that they are as robust as onboarding processes and will be included in future updates. Simple and manual offboarding processes are already available.
 - Until the OSP role is fully established and utilized, the connection between DCH and OSP is only partially implemented in practice. Consequently, registration and identity verification processes are currently handled by a CSP-B
 
@@ -135,7 +135,7 @@ Since most of these sources cannot issue digital identities themselves, this tas
 
 To address regional regulatory and technical requirements, there may be multiple regional DCHs (e.g., EU, Asia-Pacific). These DCHs operate in a mutually exclusive and collectively exhaustive manner, meaning each DCH is responsible for a specific regional scope without overlap, while together ensuring a globally consistent and interoperable trust and onboarding process.
 
-A DCH is an organization that has been officially nominated by the Catena-X Association and acts on behalf of the Association in defined governance processes. The nomination of DCH follows the formal [nomination procedure](https://catenax-ev.github.io/docs/next/operating-model/how-data-space-governance#nomination-process-for-unique-roles-eg-csp-b) led by the Catena-X Association.
+A DCH is an organization that has been officially nominated by the Catena-X Association and acts on behalf of the Association in defined governance processes. The nomination of DCH follows the formal [nomination procedure](./../how-data-space-governance/how-data-space-governance.md#nomination-process-for-unique-roles-eg-csp-b) led by the Catena-X Association.
 
 **Relationships:**
 
@@ -223,7 +223,7 @@ n/a
 
 An AP offers advisory services in various areas, from strategy to operations to technology or business use cases, for those interested in the Catena-X data space. Providing advisory services includes topics such as onboarding guidance, business value assessment, organizational and technical enablement, but does not include the operation of technical services.
 
-An Advisory Provider can be an organization or individual that has proven their competence through a formal qualification or testing process via the [Catena-X Campus](https://catena-x.academy/de/). The qualification of an AP follows the formal [qualification procedure](https://catenax-ev.github.io/docs/operating-model/how-data-space-governance#qualification-process) led by the Catena-X Association.
+An Advisory Provider can be an organization or individual that has proven their competence through a formal qualification or testing process via the [Catena-X Campus](https://catena-x.academy/de/). The qualification of an AP follows the formal [qualification procedure](./../how-data-space-governance/how-data-space-governance.md#qualification-process) led by the Catena-X Association.
 
 **Relationships:**
 
@@ -251,7 +251,7 @@ n/a
 
 An Attestation Provider offers attestation services in various areas, ensuring that data, processes, or claims made by organizations are accurate, reliable, and verifiable. This is typically done through an independent review based on defined criteria or standards. By issuing an attestation, the provider takes professional responsibility for the trustworthiness of the information assessed. This builds trust among stakeholders who rely on that information.
 
-An Attestation Provider can be an organization or individual that has proven their competence through a formal qualification or testing process via the [Catena-X Campus](https://catena-x.academy/de/). The qualification of an AtP follows the formal [qualification procedure](https://catenax-ev.github.io/docs/operating-model/how-data-space-governance#qualification-process) led by the Catena-X Association.
+An Attestation Provider can be an organization or individual that has proven their competence through a formal qualification or testing process via the [Catena-X Campus](https://catena-x.academy/de/). The qualification of an AtP follows the formal [qualification procedure](./../how-data-space-governance/how-data-space-governance.md#qualification-process) led by the Catena-X Association.
 
 **Relationships:**
 
@@ -293,7 +293,7 @@ solution). Alternatively, a DPC can certify and operate its own business applica
 
 **Prerequisites:**
 
-- A DPC **must** use certified enablement services or business applications. Alternatively, a DPC **must** certify its own enablement services and/or business applications by one of the CABs (as outlined in Chapter [Conformity Assessment](./../how-data-space-governance/how-data-space-governance.md#conformity-assessment)).
+- A DPC **must** use certified enablement services or business applications. Alternatively, a DPC **must** certify its own enablement services and/or business applications by one of the CABs (as outlined in Chapter [Conformity Assessment](./../how-data-space-governance/how-data-space-governance.md#conformity-assessment-and-certification)).
 - A DPC **must** accept and comply with the Catena-X regulatory framework during onboarding via one of the OSPs
 - A DPC **must** prove compliance with TISAX Level 2.
 - A DPC **must** be registered to Catena-X data space.
@@ -329,7 +329,7 @@ n/a
 
 **Current Limitations:**
 
-For the upcoming releases, there will be a dedicated issuer concept in place. As of now, the Association defines the Issuer (CSP-B). Further details can be found in Chapter [SSI Issuer Concept](./../how-data-space-operations/how-data-space-operations.md#implementation-of-the-self-sovereign-identity-concept). An outlook can be found in Chapter [Further Integration of SSI Technologies](./../outlook/outlook.md#further-integration-of-ssi-technologies).
+For the upcoming releases, there will be a dedicated issuer concept in place. As of now, the Association defines the Issuer (CSP-B). Further details can be found in Chapter [SSI Issuer Concept](./../how-data-space-operations/how-data-space-operations.md#implementation-of-the-self-sovereign-identity-concept). An outlook can be found in Chapter [Further Integration of SSI Technologies](./../outlook/outlook.md#further-integration-of-self-sovereign-identity).
 
 ------
 
