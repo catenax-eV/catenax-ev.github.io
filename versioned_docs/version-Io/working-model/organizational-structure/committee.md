@@ -17,7 +17,7 @@ Committees serve as the sole strategic owners of a business domain, meaning they
 
 - **Standards management**: Committees own dedicated [standards](https://bcgcatenax.sharepoint.com/:x:/r/sites/MitgliederbereichMemberArea_Catena-XAutomotiveNetworke.V/_layouts/15/Doc2.aspx?action=edit&sourcedoc=%7B9f834319-f51e-468c-8e69-1da76f8b50c6%7D&wdOrigin=TEAMS-MAGLEV.teamsSdk_ns.rwc&wdExp=TEAMS-TREATMENT&wdhostclicktime=1720772259595&web=1). Each change of an owned standard must be approved by the Committee as part of the [standardization process](../process-structure/process-normative-documents.md).
 
-- **KITs management**: Committees have a dedicated responsibility for [Tractus-X KITs](https://eclipse-tractusx.github.io/Kits). Committees must check during the [planning process](../process-structure/process-tractus-x.md#phase-2-planning) that all features a strategically aligned to the Associations goals.
+- **KITs management**: Committees have a dedicated responsibility for [Tractus-X KITs](https://eclipse-tractusx.github.io/Kits). Committees must check during the [planning process](../process-structure/process-tractus-x.md#1planning) that all features a strategically aligned to the Associations goals.
 
 ## Committee and the Association
 
