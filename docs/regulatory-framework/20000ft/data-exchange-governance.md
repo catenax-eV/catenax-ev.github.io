@@ -76,7 +76,7 @@ Participants are free to agree individually, unless the Repository specifies man
 
 ##### 2.5 HOW LONG?
 
-[Term of data exchange contract, including duration of (i) Data Provider's obligation to provide data and (ii) usage right(s)]
+\[Term of data exchange contract, including duration of (i) Data Provider's obligation to provide data and (ii) usage right(s)\]
 
 >Participants are free to agree individually, unless the Repository specifies mandatory requirements.
 
