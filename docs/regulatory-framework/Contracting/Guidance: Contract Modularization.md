@@ -12,22 +12,6 @@ pagination_next: null
 
  :::
 
-- [Introduction and objectives](#1-introduction-and-objective)
-- [Structure and interpretation of contract clauses](#2-structure-and-interpretation-of-the-contractual-clauses)
-  - [Explanation of the columns](#a-explanation-of-the-columns)
-  - [Link to ODRL](#b-link-to-odrl)
-- [Classification in the contract context and standard CX-0152](#3-classification-in-contractual-contexts-and-standard-cx-0152)
-  - [DEG context](#a-deg-context)
-  - [ODRL context](#b-odrl-context)
-  - [Interaction between DEG and ODRL](#c-interaction-between-deg-and-odrl)
-  - [Catena-X standard CX-0152 ("Policy Constraints for Data Exchange")](#d-catena-x-standard-cx-0152-policy-constraints-for-data-exchange)
-- [Application scenarios](#4-application-scenarios)
-  - [Example usage policy for regulating the transfer of PCF data](#a-example-usage-policy-for-regulating-the-transfer-of-pcf-data)
-  - [Resulting contract](#b-resulting-contract)
-  - [Handling conflicting contract clauses](#c-handling-of-conflicting-contract-clauses)
-- [Glossary](#5-glossary)
-- [Appendix](#6-appendix)
-
 ## 1. Introduction and objective
 
 This guidance has been developed to support all parties involved in the introduction and application of the new contract components. It responds to the need to make contractual provisions within the Catena-X data space clearer, more uniform, and better linked both technically and legally. The new contract modules entail both content-related and structural adjustments that must be implemented in existing processes and systems.
