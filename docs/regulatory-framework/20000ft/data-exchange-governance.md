@@ -116,7 +116,7 @@ Unless otherwise set out hereunder, the defined terms under the Governance Frame
 
 ##### 2.1 WHO WITH WHOM?
 
-[Participants may tie certain access authorizations ***("Access Policies")*** to their data or service offers for one or several Participants. By limiting access to certain Participants, Data Provider maintains control over its data when sharing data (including compliance with anti-trust obligations). In particular, Data Provider may apply Access Policies to restrict access to a particular data offer for only one Participant identified by a specific business partner number.]
+\[Participants may tie certain access authorizations ***("Access Policies")*** to their data or service offers for one or several Participants. By limiting access to certain Participants, Data Provider maintains control over its data when sharing data (including compliance with anti-trust obligations). In particular, Data Provider may apply Access Policies to restrict access to a particular data offer for only one Participant identified by a specific business partner number.\]
 
 >Participants are companies involved in a multi-stage network of value chains leading to an end product. Participants who are in a customer or supplier relationship within the same product-specific value chain may assume both the role of Data Provider and the role of Data Consumer.
 Participants may only exchange data within an existing customer or supplier relationship (one-up/one-down), unless specified otherwise in the Contractual Constraints and provided that each Party concerned has made a respective case-by-case assessment on the legal feasibility of such data exchange.
