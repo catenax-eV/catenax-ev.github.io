@@ -36,21 +36,21 @@ An [Association Member](#association-member) can acquire additional roles by joi
 
 |  |  | Management board |  | Committee |  |  | Expert Group |  | [Catena-X office](catena-x-office.md) |
 |---|---|---|---|---|---|---|---|---|---|
-|  |  | Member | [Sponsor](management-board.md#board-sponsor) | [Lead](committee.md#lead-and-co-lead) | Member | [Mentor](committee.md#mentor-for-expert-groups-optional) | Lead | Member |  |
+|  |  | Member | [Sponsor](management-board.md#board-sponsor) | [Lead](committee.md#lead-and-co-lead) | Member | [Mentor](committee.md#mentor-for-expert-groups) | Lead | Member |  |
 | Strategy | [Develop and maintain the Association strategy](management-board.md#association-strategy) | A | D | I |  |  | I |  | C |
-|  | [Develop and maintain the business domain strategy](committee.md#business-domain-strategy) | I | A | D | C |  | I | I | C |
-|  | [Develop and maintain a strategy on functional level](expert-group.md#functional-level-strategy)  |  | I | A |  | C | D | C | C |
+|  | [Develop and maintain the business domain strategy](committee.md#business-domain-ownership) | I | A | D | C |  | I | I | C |
+|  | [Develop and maintain a strategy on functional level](expert-group.md#expert-group-life-cycle)  |  | I | A |  | C | D | C | C |
 | Mgmt. of association bodies | Setup Committees | D, A |  |  |  |  |  |  | C |
 |  | Close Committees | A | D | C | I |  |  |  |  |
 |  | Setup Expert Groups |  | I | A | A | D |  |  | C |
-|  | [Close Expert Groups](expert-group.md#closing-of-expert-groups) |  | I | A |  | D | A | A | C |
+|  | [Close Expert Groups](expert-group.md#iii-closing) |  | I | A |  | D | A | A | C |
 | Development | Propose new feature requests |  |  | C  | C | C | A | D |  |
-|  | Approve features requests) |  |  |  | I | I | D | A,C |  |
-|  | Track the progress of the feature) |  |  |  | I | I | D | A,C |  |
-|  | Test and Feedback of the delivered feature) |  |  |  | I | I | D | A,C |  |
+|  | Approve features requests |  |  |  | I | I | D | A,C |  |
+|  | Track the progress of the feature |  |  |  | I | I | D | A,C |  |
+|  | Test and Feedback of the delivered feature |  |  |  | I | I | D | A,C |  |
 | Promote | [Promote use cases](committee.md#communication) | C | C |  | D | A |  |  | C |
 
-The DACI should provide an overview of the tasks the Association bodies are engaging in. Each individual in the management board, a committee or an expert group is at least a "member". If one takes over additional roles, *e.g.*, as "Lead", the responsibilities of that role are added to those as member. In detail, the responsibilities for specific individual aspects may differ slightly (but always in alignment with this overarching DACI.
+The DACI should provide an overview of the tasks the Association bodies are engaging in. Each individual in the management board, a committee or an expert group is at least a "member". If one takes over additional roles, *e.g.*, as "Lead", the responsibilities of that role are added to those as member. In detail, the responsibilities for specific individual aspects may differ slightly (but always in alignment with this overarching DACI).
 
 ## Escalation path
 

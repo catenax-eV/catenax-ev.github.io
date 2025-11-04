@@ -7,7 +7,7 @@ This chapter provides an overview of the key processes and compliance requiremen
 
 ## Onboarding Process
 
-The onboarding process consists of the (i) registration process and (ii) registration approval process and can be extended by the (iii) technical integration process in accordance with the CX-0006 standard (see Figure [Onboarding Process](./how-data-space-operations.md#general-onboarding)). To join the data space, all participants must complete the registration process. To exchange data with partners, participants must also complete the technical integration process and sign the General Data Exchange Framework.
+The onboarding process consists of the (i) registration process and (ii) registration approval process and can be extended by the (iii) technical integration process in accordance with the CX-0006 standard (see Figure [Onboarding Process](./how-data-space-operations.md#onboarding-process)). To join the data space, all participants must complete the registration process. To exchange data with partners, participants must also complete the technical integration process and sign the General Data Exchange Framework.
 
 ![Onboarding Process](./assets/onboarding-process.png)
 *Onboarding Process*
@@ -18,15 +18,15 @@ During the registration process, all participants must add their company data, s
 
 ### Registration Approval
 
-After confirmation, a BPNL (if not yet available) and an identity wallet with the "BPNL" and "Catena-X Membership" credentials are created by the CSP-B as part of the registration approval step. Each participant can collect their proof of identity, credentials and other verifiable information (e.g., roles, rights, services) in their identity wallet. The self-descriptions (SD) of newly registered legal entities and connectors are validated by the GXDCH (see Chapter [Gaia-X Compliance](./how-data-space-operations.md#gaia-x-compliance)). This includes the signing and issuing of credentials to the identity wallet of a DPC, providing proof of Gaia-X compliance and notarization of the legal entity.
+After confirmation, a BPNL (if not yet available) and an identity wallet with the "BPNL" and "Catena-X Membership" credentials are created by the CSP-B as part of the registration approval step. Each participant can collect their proof of identity, credentials and other verifiable information (e.g., roles, rights, services) in their identity wallet. The self-descriptions (SD) of newly registered legal entities and connectors are validated by the Digital Clearing House (see Chapter [Clearing House as a trust anchor](./how-data-space-operations.md#clearing-house-as-a-trust-anchor)). This includes the signing and issuing of credentials to the identity wallet of a DPC, providing proof of Gaia-X compliance and notarization of the legal entity.
 
 ### Technical Integration
 
-After registration, participants can start the technical integration process (e.g., create technical users, regsiter connectors) to enable technical interaction with other participants. The technical user enables a company to link their connectors to its identity wallet. The connector registration is required to ensure that a connector can be searched and discoverd by other participants within the data space.
+After registration, participants can start the technical integration process (e.g., create technical users, regsiter connectors) to enable technical interaction with other participants. The technical user enables a company to link their connectors to its identity wallet. The connector registration is required to ensure that a connector can be searched and discovered by other participants within the data space.
 
 ### Managing Company Hierarchies
 
-After successful registration, participants can create and manage their company hierarchies. Catena-X Business Partner Data Management allows you to create and manage sites and additional addresses for your legal entities. In a future version, it will also be possible to create and manage relationships between two legal entities (e.g., subsidiaries). This is relevant, for example, for the various connector usage scenarios as described [here](https://catenax-ev.github.io/docs/next/operating-model/how-data-space-operations#edc-deployment-and-usage-premises).
+After successful registration, participants can create and manage their company hierarchies. Catena-X Business Partner Data Management allows you to create and manage sites and additional addresses for your legal entities. In a future version, it will also be possible to create and manage relationships between two legal entities (e.g., subsidiaries). This is relevant, for example, for the various connector usage scenarios as described in chapter [EDC Deployment and Usage Premises](./how-data-space-operations.md#edc-deployment-and-usage-premises).
 
 ## Clearing House as a trust anchor
 
@@ -120,7 +120,7 @@ The figure shows a generic section of the value chain. The basic principle - one
 
 Besides this implementation suppliers and customers have to agree on how the 1U1D-Rule applies to their specific contractual agreement and use case. For example, if there are agreements in place to handle directed parts or ad-hoc agreements to handle a critical supply situation, supply chain visibility may be extended.
 
-The default standard for part relationships is defined in Catena-X Standards [CX-0126](https://catenax-ev.github.io/docs/next/standards/CX-0126-IndustryCorePartType) and [CX-0127](https://catenax-ev.github.io/docs/next/standards/CX-0127-IndustryCorePartInstance). An overarching explanation can be found in the [Tractus-X KITS](https://eclipse-tractusx.github.io/docs-kits/kits/Industry%20Core%20Kit/Business%20View%20Industry%20Core%20Kit).
+The default standard for part relationships is defined in Catena-X Standards [CX-0126](https://catenax-ev.github.io/docs/next/standards/CX-0126-IndustryCorePartType) and [CX-0127](https://catenax-ev.github.io/docs/next/standards/CX-0127-IndustryCorePartInstance). An overarching explanation can be found in the [Tractus-X KITS](https://eclipse-tractusx.github.io/docs-kits/category/industry-core-kit).
 
 ### Part-based visibility
 

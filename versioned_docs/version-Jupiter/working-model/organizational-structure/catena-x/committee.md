@@ -24,7 +24,7 @@ Committees serve as the sole strategic owners of a business domain, meaning they
 
 Committees act as representatives of all members within an association, ensuring that the interests and needs of the broader membership are reflected in their decisions. As such, committees must be transparent about their work and incorporate feedback into their decissions. The measures to do so are:
 
-- **Regualar sounding**: Committees must organize a regular [sounding](../../process-structure/association-general.md#committee-sounding) event at least every 6 month.
+- **Regualar sounding**: Committees must organize a regular [sounding](../../process-structure/association-general.md#sounding) event at least every 6 month.
 
 - **Feedback channel**: In order to receive feedback and input from other association member a feedback channel must be kept and communicated.
 
