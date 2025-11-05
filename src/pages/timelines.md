@@ -3,8 +3,6 @@
 Welcome to the **Release Timelines** overview page.
 Here you can always find the **most up-to-date release schedules** for both **Eclipse Tractus-X** and **Catena-X**.
 
-For a detailed explanation of the overall process and the release cycle, please refer to the [Release management](./release-management.md) section.
-
 ## Overview of further upcoming releases
 
 This overview provides a high-level view of all planned releases.
