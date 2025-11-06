@@ -59,7 +59,7 @@ This release sets the stage for wider adoption and deeper technical alignment wi
 Proteus is another minor release and serves as the pendant  to the major release CX-Neptune.
 It focuses on incremental improvements and the stabilization of the existing ecosystem.
 Key objectives include refining previously introduced components, enhancing interoperability, and addressing technical feedback from earlier releases.
-This cycle ensures continuity, strengthens system quality, and lays the foundation for upcoming major milestones
+This cycle ensures continuity, strengthens system quality, and lays the foundation for upcoming major milestones.
 
 [![Timeline for Release 26.12](@site/static/img/timelines/cx-timeline-26.12.png)](@site/static/img/timelines/cx-timeline-26.12.png)
 *Timeline for Release 26.12*
