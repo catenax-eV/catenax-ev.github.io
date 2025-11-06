@@ -147,5 +147,5 @@ This phase ensures transparency, traceability, and quality assurance, providing 
 | **Name** | **Category** | **Description** |
 |----------|--------------|-----------------|
 | **Release Finalization** | Phase | During this phase, all necessary activities to ensure a smooth and transparent release are carried out. For Tractus-X, this includes the preparation of the **changelog** and a **review** of the **Release Check Issues**. Any outstanding questions are clarified directly with the respective product teams. In the Catena-X context, detailed Release Notes are created, and the Deployment Gate is executed to formally authorize the release for deployment. |
-| **Publish Release** | Milestone | The release will be published |
+| **Publish Release** | Milestone | The release will be published. |
 | **Recap Release** | Milestone | This meeting provides a comprehensive **presentation of the release outcomes**, including a live system demonstration to showcase the functional and technical progress achieved. |
