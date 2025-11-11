@@ -85,7 +85,7 @@ The Planning Phase ensures that all participating teams share a common understan
 
 | **Name** | **Category** | **Description** |
 |----------|--------------|-----------------|
-| **Kick-off Release** | Milestone/Meeting | Internal communication **meeting** of the **vision** for the upcoming release. The aim is to create a **common understanding**, generate enthusiasm, and engage everyone at an early stage. |
+| **Kick-off Release** | Milestone/Meeting | Internal communication **meeting** of the **vision** for the upcoming release. The aim is to create a **common understanding** of the release scope, objectives, and priorities, and to encourage early engagement with other Expert Groups on intersecting topics and relevant dependencies.|
 | **Refinement Phase** | Phase | During this phase, the necessary people and groups collaborate to **refine the future roadmap items and features**. Roadmap item/feature authors organize appointments and communicate with the relevant contacts directly. |
 | **Internal Roadmap Review** | Milestone/internal Meeting | The Catena-X association **reviews the existing roadmap items** and provides feedback on whether the items are properly defined, whether they truly qualify as roadmap items or are rather individual tasks and leave comments to ensure further refinement where necessary. |
 | **CX-Roadmap Item Proposal** | Milestone/Meeting | In this **meeting committee's** and **expert groups share their ideas and topics** with others. Get an **overview of topics**. **Identify and discuss dependencies** between topics. Gain insights into the overall roadmap for the whole year. |
