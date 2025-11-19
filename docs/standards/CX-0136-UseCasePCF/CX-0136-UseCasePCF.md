@@ -4,7 +4,7 @@ tags:
   - UC/PCF
 ---
 
-# CX-0136 Use Case PCF 2.2.1
+# CX-0136 Use Case PCF 2.2.0
 
 :::warning
 
