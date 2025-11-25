@@ -9,9 +9,9 @@ tags:
 
 ## Product Carbon Footprint
 
-| PCF-Rulebook v4.0 | PCF-Verification Framework v2.0 |
+| PCF-Rulebook v4.0 | PCF Verification and Certification Framework v2.0 |
 |:---:|:---:|
-| [![CX-NFR-PCF-Rulebook_v.4.0.png](./assets/images/CX-NFR-PCF-Rulebook.png)](./assets/files/CX-NFR-PCF-Rulebook_v.4.0.pdf) | [![CX-NFR-PCF_TFS-verification_v.2.0.png](./assets/images/CX-NFR-PCF_TFS-verification.png)](./assets/files/CX-NFR-PCF_TFS-verification_v.2.0.pdf)  |
+| [![CX-NFR-PCF-Rulebook_v.4.0.png](./assets/images/CX-NFR-PCF-Rulebook.png)](./assets/files/CX-NFR-PCF-Rulebook_v.4.0.pdf) | [![CX-NFR-PCF-TFS Verification Program.png](./assets/images/CX-NFR-PCF-TFS-Verification-Program.png)](./assets/files/CX-NFR-PCF_TFS-verification_v.2.0.pdf)  |
 
 ## ESS Code of Conduct
 
