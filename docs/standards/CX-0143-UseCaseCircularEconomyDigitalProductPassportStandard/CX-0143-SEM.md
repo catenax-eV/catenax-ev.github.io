@@ -4,15 +4,6 @@ sidebar_position: 3
 
 # 2. Aspect Models
 
-:::warning
-
-The following standards was identified as not fully **backward compatibility with CX-Jupiter**  and was allowed to apply the required changes through a **fast-track process** to be included in the CX-Saturn release.
-These exceptions will be released together with the  *CX-Saturn Go-Live** of all other standards on **25.11**.
-
-**Therefore, this version of the standard is not eligible for certification yet**
-
-:::
-
 > *This section is normative*
 
 To ensure interoperability and semantic consistency across supply chain partners and their systems, within the Catena-X ecosystem, Digital Product Passports are implemented as Aspect Model - data structures that describe specific characteristics or lifecycle stages of a product. Such a Digital Product Passport Aspect Model is attached to a digital representation of a physical product or good - its Digital Twin. Catena-X has adopted the Semantic Aspect Meta Model (SAMM) as the foundation for defining and exchanging the format of Digital Product Passports Aspect Models.

@@ -7,15 +7,6 @@ tags:
 
 # CX-0123 Quality Use Case Standard v3.0.1
 
-:::warning
-
-The following standards was identified as not fully **backward compatibility with CX-Jupiter**  and was allowed to apply the required changes through a **fast-track process** to be included in the CX-Saturn release.
-These exceptions will be released together with the  *CX-Saturn Go-Live** of all other standards on **25.11**.
-
-**Therefore, this version of the standard is not eligible for certification yet**
-
-:::
-
 ## ABSTRACT
 
 The Catena-X use case "Quality" provides the ability to detect
