@@ -9,7 +9,7 @@ tags:
 :::warning
 
 The following standards was identified as not fully **backward compatibility with CX-Jupiter**  and was allowed to apply the required changes through a **fast-track process** to be included in the CX-Saturn release.
-These exceptions will be released on the **04th of January 2026**.
+These exceptions will be released on the **05th of January 2026**.
 
 **Therefore, this version of the standard is not eligible for certification yet**
 
