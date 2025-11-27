@@ -335,3 +335,5 @@ Only a, b, or c of the following contract clauses may appear in a contract concl
 ## 6. Appendix
 
 - PDF-Version: [Catena-X New Contract Components](./assets/New_Contract_Components.pdf)
+- Word-Version: [Template for a Data Licensing Agreement English Version](./assets/DATA_LICENSING_AGREEMENT.docx)
+- Word-Version: [Template for a Data Licensing Agreement German Version](./assets/VERTRAG_ZUR_ZEITWEISEN_UEBERLASSUNG_VON_DATEN.docx)
