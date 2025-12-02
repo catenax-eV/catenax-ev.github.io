@@ -248,6 +248,7 @@ The following data assets **MUST** be registered at the Core Service Provider so
 | ------------------------------------ | -------- | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | UploadAccessSWDForSharingMember  | SWD | 1.0         | Grants the Sharing Member upload access to the SWD Admin function, SWD database and SWD changelog. This contains create / update SWD admin settings by Sharing Member role by SWD function, activate and deactivate the usage of external data sources via defined APIs and license keys. |
 | ReadAccessSWDForSharingMember  | SWD | 1.0         | Grants the Sharing Member read access of the SWD changelog.                                                                                                                         |
+
 The OAuth2 client permissions **MUST** be configured to solely allow access to the API resources defined in the corresponding asset, checking HTTP method (read vs. full access), path, query parameters and body of the HTTP request.
 
 ### 3.6 **POLICY CONSTRAINTS FOR DATA EXCHANGE**
@@ -295,8 +296,8 @@ HTTP Status Code Registry MUST be adhered to in the implementation for the decis
 
 Intentionally left blank.
 
-[^1]: https://catena-x.net/fileadmin/user_upload/Vereinsdokumente/Catena-X_IP_Regelwerk_IP_Regulations.pdf
-[^2]: https://catena-x.net/de/standardisierung/catena-x-einfuehren-umsetzen/standardisierung/standard-library
+- [https://catena-x.net/fileadmin/user_upload/Vereinsdokumente/Catena-X_IP_Regelwerk_IP_Regulations.pdf](https://catena-x.net/fileadmin/user_upload/Vereinsdokumente/Catena-X_IP_Regelwerk_IP_Regulations.pdf)
+- [https://catena-x.net/de/standardisierung/catena-x-einfuehren-umsetzen/standardisierung/standard-library](https://catena-x.net/de/standardisierung/catena-x-einfuehren-umsetzen/standardisierung/standard-library)
 
 ## Legal
 

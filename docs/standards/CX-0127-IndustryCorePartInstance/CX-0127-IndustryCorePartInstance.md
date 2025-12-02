@@ -1078,17 +1078,14 @@ There is no prcoess defintion in this standard version available.
 > *This section is non-normative*
 
 \[SMT\] How to create a submodel template specification. Guideline.
-Download from:
+Download from: [https://industrialdigitaltwin.org/wp-content/uploads/2022/12/I40-IDTA-WS-Process-How-to-write-a-SMT-FINAL-.pdf](https://industrialdigitaltwin.org/wp-content/uploads/2022/12/I40-IDTA-WS-Process-How-to-write-a-SMT-FINAL-.pdf)
 
-https://industrialdigitaltwin.org/wp-content/uploads/2022/12/I40-IDTA-WS-Process-How-to-write-a-SMT-FINAL-.pdf
-
-[^1]: https://github.com/eclipse-tractusx/sldt-semantic-models
+- [https://github.com/eclipse-tractusx/sldt-semantic-models](https://github.com/eclipse-tractusx/sldt-semantic-models)
+- [https://catenax-ev.github.io/docs/next/operating-model/why-introduction](https://catenax-ev.github.io/docs/next/operating-model/why-introduction)
 
 [^2]: https://creativecommons.org/licenses/by/4.0/legalcode
 
 [^3]: https://github.com/eclipse-esmf/esmf-sdk
-
-[^4]: https://catenax-ev.github.io/docs/next/operating-model/why-introduction
 
 ### 6.3 REFERENCE IMPLEMENTATIONS
 

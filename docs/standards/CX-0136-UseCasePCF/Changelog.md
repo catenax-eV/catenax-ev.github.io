@@ -24,7 +24,7 @@ All notable changes to **CX-0136 (Use Case PCF)** will be documented in this fil
   - Enhanced metadata and descriptions for parameters
   - Improved tagging and overall documentation
 - Sequence diagrams reflecting endpoint calls have been adapted accordingly
-- Section 4.1.2 was updated to reflect the endpoint modifications ([4.1.2.1 API Endpoints & resources, in CX-0136-UseCasePCF.md](#api-specification))
+- Section 4.1.2 was updated to reflect the endpoint modifications ([4.1.2.1 API Endpoints & resources, in CX-0136-UseCasePCF](./#4121-api-endpoints--resources))
 - Replaced listing of conventions for policies and policy constraints by the reference to standard CX-0152. This is not a change in normativity, but merely removes the duplicate listing of general conventions.
 
 ## Legal

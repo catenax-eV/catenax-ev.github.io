@@ -22,9 +22,9 @@ BDV has to contain a user and authorization management capability aligned with t
 
 | **Version** | **Publishing Date** | **Description of Change**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | ----------- | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-|1.2.0       | 2024-03-24          | Corrected 2.3. - country list, Added chapter 3.4 Data Types and 3.5 Data Attributes, Added chapter 3.6 for data sovereignty as additional requirement.
-1.2.0       | 2024-04-09         | Corrected 2.3. - Enhanced usage policies of BDV API
-|1.2.1       | 2024-09-04         | Moved BDV Style Guide reference from Normative Section to Non-Normative Section
+| 1.2.0       | 2024-03-24          | Corrected 2.3. - country list, Added chapter 3.4 Data Types and 3.5 Data Attributes, Added chapter 3.6 for data sovereignty as additional requirement. |
+| 1.2.0       | 2024-04-09         | Corrected 2.3. - Enhanced usage policies of BDV API |
+| 1.2.1       | 2024-09-04         | Moved BDV Style Guide reference from Normative Section to Non-Normative Section |
 
 ## 1 INTRODUCTION
 
@@ -165,7 +165,7 @@ The BDV rule set MUST use the ISO Norm 3166-1 related codes for at least 117 cou
 |AM |CR |GP |JP |MK |QA |TR |
 |AR |CU |GR |KE |MT |RO |TT |
 |AT |CY |GT |KG |MX |RS |TW |
-|AU |CZ |HK |MY |RU |UA |
+|AU |CZ |HK |MY |RU |UA |   |
 |AZ |DE |HN |KR |NA |SA |UK\* |
 |BA |DK |HR |KW |NI |SE |US\*\* |
 |BE |DZ |HT |KZ |NL |SG |UY |

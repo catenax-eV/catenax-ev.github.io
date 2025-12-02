@@ -526,7 +526,7 @@ Example JSON Payload: Submodel "SpecialCharacteristicMeasurement" for a qualitat
 
 > *This section is normative*
 
-### 4.1 QUALITY NOTIFICATION API  
+### 4.1 QUALITY NOTIFICATION API
 
 Notifications are - in contrast to classical data offers in Catena-X - a way to push data from a sender to a receiver. For now, this notification API is limited to the sending and receiving of quality notifications as well as the update of the notification status (following a predefined [State Model](#5121-notification-state-model)). The API is used as part of the notification process of traceability.
 
@@ -1106,21 +1106,16 @@ In addition to the above-mentioned general remarks, the following remark has to 
 - CX-0127 Industry Core - Part Instance 2.0.0
 - CX-0152 Policy Constraints For Data Exchange v1.0.0
 
-[^1]: https://catena-x.net/fileadmin/user_upload/Vereinsdokumente/Catena-X_IP_Regelwerk_IP_Regulations.pdf
-
-[^2]: https://catena-x.net/de/standard-library
-
 ### 6.2 NON-NORMATIVE REFERENCES
 
 > *This section is non-normative*
 
 - The Traceability KIT and sub-KITs will include further information on data asset structures, Digital Twin Submodel examples and API calls to be made.
-
 - Tractus-X EDC Reference Implementation - https://github.com/eclipse-tractusx/tractusx-edc
-
 - [SMT] How to create a submodel template specification. Guideline. Download from: https://industrialdigitaltwin.org/wp-content/uploads/2022/12/I40-IDTA-WS-Process-How-to-write-a-SMT-FINAL-.pdf
-
 - [CX Operating Model](https://catenax-ev.github.io/docs/next/operating-model/why-introduction)
+- [Catena-X IP Regulations](https://catena-x.net/fileadmin/user_upload/Vereinsdokumente/Catena-X_IP_Regelwerk_IP_Regulations.pdf)
+- [Catena-X Standards Library](https://catena-x.net/fileadmin/user_upload/Vereinsdokumente/Catena-X_IP_Regelwerk_IP_Regulations.pdf)
 
 ### 6.3 REFERENCE IMPLEMENTATIONS
 

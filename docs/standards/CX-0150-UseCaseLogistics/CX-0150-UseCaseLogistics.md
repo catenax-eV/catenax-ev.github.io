@@ -80,7 +80,7 @@ In terms of conformity the openAPI specification of the application or endpoints
 
 Examples of data assets and contract offer structure in the Tractus-X EDC or any other CX-0018 compliant connector **MUST** correspond to the described structure.
 
-The versions of the standardization documents valid for this standard are mentioned in sections where the [standalone standards](#211-list-of-standalone-standards), [normative references](#61-normative-references) and [non-normative references](#62-non-normative-references) are listed. The valid versions are not specifically mentioned in the body text.
+The versions of the standardization documents valid for this standard are mentioned in sections where the [normative references](#61-normative-references) and [non-normative references](#62-non-normative-references) are listed. The valid versions are not specifically mentioned in the body text.
 
 **Disclaimer: The operating model released by the Catena-X association will define the roadmap, content and scope for the certification process. This will include the roles, certification and further assessment procedures as well as the rollout phases.*
 
@@ -421,8 +421,8 @@ There is no prcoess defintion in this standard version available.
 - CX-0127 Industry Core - Part Instance 2.0
 - CX-0152 Policy Constraints For Data Exchange 1.0
 
-[^1]: [https://catena-x.net/fileadmin/user_upload/Vereinsdokumente/Catena-X_IP_Regelwerk_IP_Regulations.pdf](https://catena-x.net/fileadmin/user_upload/Vereinsdokumente/Catena-X_IP_Regelwerk_IP_Regulations.pdf)
-[^2]: [https://catenax-ev.github.io/docs/standards/overview](https://catenax-ev.github.io/docs/standards/overview)
+- [Catena-X IP Regulations](https://catena-x.net/fileadmin/user_upload/Vereinsdokumente/Catena-X_IP_Regelwerk_IP_Regulations.pdf)
+- [Catena-X Standards Library](https://catenax-ev.github.io/docs/standards/overview)
 
 ### 6.2 NON-NORMATIVE REFERENCES
 

@@ -261,12 +261,12 @@ The following example shows a value-only JSON serialization of the Bill of Proce
 
 > *This section is non-normative*
 
-| Term | Description
-| --- | ---
-| Manufacturer | Organization providing a manufacturing service to others, such as milling or drilling.
-| RFQ | Request for Quotation
-| ODM | On demand manufacturing platform
-| Product | A Product is a material good or an (immaterial) service offering which is an outcome (output product) or an input (input product) of a Process. Inherits relations from Entity and Asset.
+| Term | Description |
+| --- | --- |
+| Manufacturer | Organization providing a manufacturing service to others, such as milling or drilling. |
+| RFQ | Request for Quotation |
+| ODM | On demand manufacturing platform |
+| Product | A Product is a material good or an (immaterial) service offering which is an outcome (output product) or an input (input product) of a Process. Inherits relations from Entity and Asset. |
 
 Additional terminology used in this standard can be looked up in the glossary on the association homepage.
 
@@ -281,13 +281,13 @@ Additional terminology used in this standard can be looked up in the glossary on
 The following Catena-X standards are prerequisite for the implementation of this standard and therefore
 **MUST** be considered / implemented by the relevant parties specified in each of them.
 
-| **Number** | **Standard** | **Version**
-| --- | --- | ---
-| [[CX-0001]](#61-normative-references) | EDC Discovery API | 1.0.2
-| [[CX-0003]](#61-normative-references) | SAMM Aspect Meta Model | 1.1.0
-| [[CX-0006]](#61-normative-references) | Registration and initial onboarding | 2.0.0
-| [[CX-0010]](#61-normative-references) | Business Partner Number (BPN) | 2.0.0
-| [[CX-0018]](#61-normative-references) | Dataspace Connectivity | 3.0.0
+| **Number** | **Standard** | **Version** |
+| --- | --- | --- |
+| [[CX-0001]](#61-normative-references) | EDC Discovery API | 1.0.2 |
+| [[CX-0003]](#61-normative-references) | SAMM Aspect Meta Model | 1.1.0 |
+| [[CX-0006]](#61-normative-references) | Registration and initial onboarding | 2.0.0 |
+| [[CX-0010]](#61-normative-references) | Business Partner Number (BPN) | 2.0.0 |
+| [[CX-0018]](#61-normative-references) | Dataspace Connectivity | 3.0.0 |
 
 #### 2.1.2 DATA REQUIRED
 
@@ -434,34 +434,34 @@ For more detailed information, including specific JSON examples for different ca
 
 The following table provides an overview of all fields, their properties and example values:
 
-|Field|Level|REQUIRED|Purpose|Data Type|Example Value (JSON)
-|--- |--- |--- |--- |--- |---
-|version|BillOfProcess|mandatory|version of the bill of process model used for compatibility checks|VersionCharacteristic|`"version": "1.0.0"`
-|billOfProcessIdentifier|BillOfProcess|mandatory|unique identifier for a bill of process that can be used to reference instances|String|`"billOfProcessIdentifier": "www.1234-bar-chair-billOfProcess.de"`
-|productName|BillOfProcess|mandatory|name of the product whose production steps are specified within the bill of process|String|`"productName": "Bar Chair"`
-|productVersion|BillOfProcess|mandatory|version of the product whose manufacturing steps are specified with the bill of process|String|`"productVerseion": "bar_chair_1.0.0"`
-|process|BillOfProcess|mandatory|list that contains all manufacturing steps of a product, where each manufacturing step refers to exactly one capability. This list contains all process steps that are required to manufacture the product|ProcessStep|Due to limited space refer to [Chapter 1.4](#14-examples)
-|processStepIdentifier|ProcessStep|mandatory|unique identifier for a specific process step|String|`"processStepIdentifier": "1234-transport"`
-|capabilityReference|ProcessStep|mandatory|reference that points to a manufacturing capability that must be performed on a product to accomplish the corresponding process step|String|`"capabilityReference": "urn:manufacturing-capability:capability:42"`
-|inputParameters|ProcessStep|optional|list of parameters that are required to execute the corresponding process step|Parameter|Due to limited space refer to [Chapter 1.4](#14-examples)
-|outputParameters|ProcessStep|optional|list of parameters that are returned from the process step and can be used as inputParameters for subsequent steps|Parameter|Due to limited space refer to [Chapter 1.4](#14-examples)
-|processStepType|ProcessStep|mandatory|distinguishes process steps based on whether there are the first or last process step to be executed, a regular process step or if they are a subprocess step, which subdivides a higher-level process step into smaller process steps. Possibile values: IsFirstElement, IsLastElement, IsProcessElement, IsSubProcessElement.|Enum|`"processStepType": "IsFirstElement"`
-|precedenceRelation|ProcessStep|optional|list of alternative process steps from which the manufacturer has to select exactly one step to be executed. In case there are no alternative process steps, the list features only one element. In case of the last element, the property is not used, since the process step has no successor.|PrecedenceElements|JSON-Examples for Precedence Relations
-|childProcessStep|ProcessStep|optional|list of child processes that need to be executed to complete the parent process step. It enables the expression of hierarchies between capabilities, e.g. a transport capability needs to execute at least a pick, a move and a place capability.|processStepIdentifier|`"childProcessSteps": [            "pick", "move", "place" ]`
-|precedenceElements|PrecedenceElements|mandatory|list of process steps that must be executed in parallel|PrecedenceElement|JSON-Examples for Precedence Relations
-|successor|PrecedenceElement|mandatory|list of subsequent process step which can be executed in any order|processStepIdentifier|`"successor" : [ "5678-milling" ]`
-|name|Parameter|mandatory|name of the parameter|String|`"name": "volume"`
-|value|Parameter|optional|value of the parameter|String|`"value": "{\"height\" : \"5\", \"length\" : \"3\", \"width\" : \"7\"}"`
-|semanticReference|Parameter|mandatory|reference to a semantic namespace in which the type of the parameter is defined|String|`"semanticReference": [ "0173-1#02-AAZ883#001" ]`
-|valueRangeList|Parameter|optional|list with value ranges for a parameter|ValueRange|Due to limited space refer to [Chapter 1.4](#14-examples)
-|tolerances|Parameter|optional|list with tolerances for a parameter|TolerancesEntity|Due to limited space refer to [Chapter 1.4](#14-examples)
-|parameterKey|Parameter|mandatory|enumeration that is used to distinguish whether the parameter has no value, has a value, has a value range or has a value with tolerances. Possible values: HasValue, HasNoValue, HasValueRange, HasTolerances.|Enum|`"parameterKey": "HasNoValue"`
-|name|ValueRange|optional|name of the (sub-)parameter to which the value range applies|String|`"name": "height"`
-|lowerValue|ValueRange|mandatory|lower boundary of a value range item|String|`"lowerValue": "12"`
-|upperValue|ValueRange|mandatory|upper boundary for a value range item|String|`"upperValue": "36"`
-|name|TolerancesEntity|optional|name of the (sub-)parameter to which the tolerances apply|String|`"name": "height"`
-|lowerLimit|TolerancesEntity|mandatory|lower direct limit of the tolerance|String|`"lowerLimit": "4.9"`
-|upperLimit|TolerancesEntity|mandatory|upper direct limit of the tolerance|String|`"upperLimit": "5.1"`
+|Field|Level|REQUIRED|Purpose|Data Type|Example Value (JSON) |
+|--- |--- |--- |--- |--- |--- |
+|version|BillOfProcess|mandatory|version of the bill of process model used for compatibility checks|VersionCharacteristic|`"version": "1.0.0"` |
+|billOfProcessIdentifier|BillOfProcess|mandatory|unique identifier for a bill of process that can be used to reference instances|String|`"billOfProcessIdentifier": "www.1234-bar-chair-billOfProcess.de"` |
+|productName|BillOfProcess|mandatory|name of the product whose production steps are specified within the bill of process|String|`"productName": "Bar Chair"` |
+|productVersion|BillOfProcess|mandatory|version of the product whose manufacturing steps are specified with the bill of process|String|`"productVerseion": "bar_chair_1.0.0"` |
+|process|BillOfProcess|mandatory|list that contains all manufacturing steps of a product, where each manufacturing step refers to exactly one capability. This list contains all process steps that are required to manufacture the product|ProcessStep|Due to limited space refer to [Chapter 1.4](#14-examples) |
+|processStepIdentifier|ProcessStep|mandatory|unique identifier for a specific process step|String|`"processStepIdentifier": "1234-transport"` |
+|capabilityReference|ProcessStep|mandatory|reference that points to a manufacturing capability that must be performed on a product to accomplish the corresponding process step|String|`"capabilityReference": "urn:manufacturing-capability:capability:42"` |
+|inputParameters|ProcessStep|optional|list of parameters that are required to execute the corresponding process step|Parameter|Due to limited space refer to [Chapter 1.4](#14-examples) |
+|outputParameters|ProcessStep|optional|list of parameters that are returned from the process step and can be used as inputParameters for subsequent steps|Parameter|Due to limited space refer to [Chapter 1.4](#14-examples) |
+|processStepType|ProcessStep|mandatory|distinguishes process steps based on whether there are the first or last process step to be executed, a regular process step or if they are a subprocess step, which subdivides a higher-level process step into smaller process steps. Possibile values: IsFirstElement, IsLastElement, IsProcessElement, IsSubProcessElement.|Enum|`"processStepType": "IsFirstElement"` |
+|precedenceRelation|ProcessStep|optional|list of alternative process steps from which the manufacturer has to select exactly one step to be executed. In case there are no alternative process steps, the list features only one element. In case of the last element, the property is not used, since the process step has no successor.|PrecedenceElements|JSON-Examples for Precedence Relations |
+|childProcessStep|ProcessStep|optional|list of child processes that need to be executed to complete the parent process step. It enables the expression of hierarchies between capabilities, e.g. a transport capability needs to execute at least a pick, a move and a place capability.|processStepIdentifier|`"childProcessSteps": [            "pick", "move", "place" ]` |
+|precedenceElements|PrecedenceElements|mandatory|list of process steps that must be executed in parallel|PrecedenceElement|JSON-Examples for Precedence Relations |
+|successor|PrecedenceElement|mandatory|list of subsequent process step which can be executed in any order|processStepIdentifier|`"successor" : [ "5678-milling" ]` |
+|name|Parameter|mandatory|name of the parameter|String|`"name": "volume"` |
+|value|Parameter|optional|value of the parameter|String|`"value": "{\"height\" : \"5\", \"length\" : \"3\", \"width\" : \"7\"}"` |
+|semanticReference|Parameter|mandatory|reference to a semantic namespace in which the type of the parameter is defined|String|`"semanticReference": [ "0173-1#02-AAZ883#001" ]` |
+|valueRangeList|Parameter|optional|list with value ranges for a parameter|ValueRange|Due to limited space refer to [Chapter 1.4](#14-examples) |
+|tolerances|Parameter|optional|list with tolerances for a parameter|TolerancesEntity|Due to limited space refer to [Chapter 1.4](#14-examples) |
+|parameterKey|Parameter|mandatory|enumeration that is used to distinguish whether the parameter has no value, has a value, has a value range or has a value with tolerances. Possible values: HasValue, HasNoValue, HasValueRange, HasTolerances.|Enum|`"parameterKey": "HasNoValue"` |
+|name|ValueRange|optional|name of the (sub-)parameter to which the value range applies|String|`"name": "height"` |
+|lowerValue|ValueRange|mandatory|lower boundary of a value range item|String|`"lowerValue": "12"` |
+|upperValue|ValueRange|mandatory|upper boundary for a value range item|String|`"upperValue": "36"` |
+|name|TolerancesEntity|optional|name of the (sub-)parameter to which the tolerances apply|String|`"name": "height"` |
+|lowerLimit|TolerancesEntity|mandatory|lower direct limit of the tolerance|String|`"lowerLimit": "4.9"` |
+|upperLimit|TolerancesEntity|mandatory|upper direct limit of the tolerance|String|`"upperLimit": "5.1"` |
 
 ##### 3.2.5.2 JSON SCHEMA
 
@@ -524,24 +524,24 @@ The endpoint introduced in [Chapter 4.1.2](#412-api-specification) **MUST NOT** 
 a connector data asset. To make this assets easily identifiable in the connector's catalog, it **MUST** be
 configured with a set of properties as defined in the table below.
 
-| Object | Property | Purpose | Usage & Constraints
-| --- | --- | --- | ---
-| |***@id*** | Identifier of the asset.  | The asset ID **MUST** be unique and therefore **MUST NOT** be reused elsewhere.
-| properties | **`http://purl.org/dc/terms/type`** | Defines the "Request for Quotation API Endpoint" according to the Catena-X taxonomy.| **MUST** be set to `{"@id": "https://w3id.org/catenax/taxonomy#RequestForQuotationApi"}` to allow filtering the data assets catalog for the respective Request for Quotation API endpoint .
-| properties | **`https://w3id.org/catenax/ontology/common#version`**| The version of the standard defining the implemented API.| **MUST** correspond to the version of the standard defining the "Request for Quotation API". The value **MUST** be set to `2.0` for APIs implementing this standard.
-| dataAddress | **@type** | Type of the DataAddress node.| **MUST** be set to "`DataAddress`".
-| dataAddress | ***baseUrl*** | Defines the HTTPS endpoint of the corresponding "Request for Quotation API Endpoint". | The `{{REQUEST_FOR_QUOTATION_API_ENDPOINT}}` refers to an URL under which the API endpoint is available. HTTPS transport protocol **MUST** be used.
-| dataAddress | ***proxyBody*** | Defines whether the endpoint allows to proxy the HTTPS body.| **MUST** be set to `"true"` to allow the API endpoint to receive a HTTPS body via the HTTPS request.
-| dataAddress | ***proxyMethod*** | Defines whether the endpoint allows to proxy the HTTPS method.| **MUST** be set to `"true"` to allow the API endpoint to also receive POST requests.
-| dataAddress | ***type*** | Defines the type of data plane extension handling the data exchange.| **MUST** be set to `"HttpData"` to provide an API via an HTTPS proxy endpoint.
+| Object | Property | Purpose | Usage & Constraints |
+| --- | --- | --- | --- |
+| |***@id*** | Identifier of the asset.  | The asset ID **MUST** be unique and therefore **MUST NOT** be reused elsewhere. |
+| properties | **`http://purl.org/dc/terms/type`** | Defines the "Request for Quotation API Endpoint" according to the Catena-X taxonomy.| **MUST** be set to `{"@id": "https://w3id.org/catenax/taxonomy#RequestForQuotationApi"}` to allow filtering the data assets catalog for the respective Request for Quotation API endpoint. |
+| properties | **`https://w3id.org/catenax/ontology/common#version`**| The version of the standard defining the implemented API.| **MUST** correspond to the version of the standard defining the "Request for Quotation API". The value **MUST** be set to `2.0` for APIs implementing this standard. |
+| dataAddress | **@type** | Type of the DataAddress node.| **MUST** be set to "`DataAddress`". |
+| dataAddress | ***baseUrl*** | Defines the HTTPS endpoint of the corresponding "Request for Quotation API Endpoint". | The `{{REQUEST_FOR_QUOTATION_API_ENDPOINT}}` refers to an URL under which the API endpoint is available. HTTPS transport protocol **MUST** be used. |
+| dataAddress | ***proxyBody*** | Defines whether the endpoint allows to proxy the HTTPS body.| **MUST** be set to `"true"` to allow the API endpoint to receive a HTTPS body via the HTTPS request. |
+| dataAddress | ***proxyMethod*** | Defines whether the endpoint allows to proxy the HTTPS method.| **MUST** be set to `"true"` to allow the API endpoint to also receive POST requests. |
+| dataAddress | ***type*** | Defines the type of data plane extension handling the data exchange.| **MUST** be set to `"HttpData"` to provide an API via an HTTPS proxy endpoint. |
 
 When searching the data assets catalog of a data consumer (MaaS supplier), a data provider (MaaS buyer)
 **SHOULD** use the following properties AND their values to identify the data asset specifying the
 Request for Quotation API endpoint described in [Chapter 4.1.2](#412-api-specification).
 
-| Property                                 | Value
-| ---------------------------------------- | ---------------------------------
-| properties.***dct:type***   | `{"@id": "https://w3id.org/catenax/taxonomy#RequestForQuotationApi"}`
+| Property                                 | Value |
+| ---------------------------------------- | --------------------------------- |
+| properties.***dct:type***   | `{"@id": "https://w3id.org/catenax/taxonomy#RequestForQuotationApi"}` |
 
 The API version described in this standard document **MUST** be published in the in the property
 `https://w3id.org/catenax/ontology/common#version` as version `2.0` in the asset. The requester of an
@@ -587,16 +587,16 @@ codes as described in [RFC9110](#62-non-normative-references). All of the follow
 `201`, **MUST** be interpreted as failures. Therefore, it may be sufficient for a business
 application to simply check if the status code is `200` or `201` or not. If not, the request failed.
 
-| HTTP Status Code | HTTP Status Message  | Description
-| --- | --- | ---
-| 200| OK| The request has succeeded. The RequestForQuotation has been successfully processed in the backend system.
-| 201| Created| The request has succeeded and has led to the creation of a new RequestForQuotation in the backend system.
-| 400| Bad request| The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).
-| 401| Unauthorized||
-| 403| Forbidden| The RequestForQuotation in question is not available for the client (e.g. it belongs to a different company)
-| 405| Method not allowed   | The method used to request the data was not POST
-| 422| Unprocessable Entity | The request was well-formed but was unable to be followed due to semantic errors, e.g. the JSON payload could not be parsed.
-| 502| Service Unavailable  ||
+| HTTP Status Code | HTTP Status Message | Description |
+| --- | --- | --- |
+| 200 | OK | The request has succeeded. The RequestForQuotation has been successfully processed in the backend system. |
+| 201 | Created | The request has succeeded and has led to the creation of a new RequestForQuotation in the backend system. |
+| 400 | Bad request | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). |
+| 401 | Unauthorized | |
+| 403 | Forbidden | The RequestForQuotation in question is not available for the client (e.g. it belongs to a different company) |
+| 405 | Method not allowed | The method used to request the data was not POST |
+| 422 | Unprocessable Entity | The request was well-formed but was unable to be followed due to semantic errors, e.g. the JSON payload could not be parsed. |
+| 502 | Service Unavailable | |
 
 If one `RequestForQuotation` aspect is transmitted in one HTTP request, the return codes **MUST** be
 used as stated in the table above.
@@ -649,29 +649,29 @@ Not applicable.
 
 > *This section is* *normative*
 
-| **Number** | **Standard** | **Version**
-| --- | --- | ---
-| [CX-0001] | EDC Discovery API | 1.0.2
-| [CX-0003] | SAMM Aspect Meta Model | 1.1.0
-| [CX-0006] | Registration and initial onboarding | 2.0.0
-| [CX-0010] | Business Partner Number (BPN) | 2.0.0
-| [CX-0018] | Dataspace Connectivity | 3.0.0
-| [CX-0115] | Manufacturing Capability Exchange | 1.0.0
-| [CX-0142] | Shop Floor Information Service  | 1.0.0
+| **Number** | **Standard** | **Version** |
+| --- | --- | --- |
+| [CX-0001] | EDC Discovery API | 1.0.2 |
+| [CX-0003] | SAMM Aspect Meta Model | 1.1.0 |
+| [CX-0006] | Registration and initial onboarding | 2.0.0 |
+| [CX-0010] | Business Partner Number (BPN) | 2.0.0 |
+| [CX-0018] | Dataspace Connectivity | 3.0.0 |
+| [CX-0115] | Manufacturing Capability Exchange | 1.0.0 |
+| [CX-0142] | Shop Floor Information Service  | 1.0.0 |
 | [CX-0152] | Policy Constraints For Data Exchange | 1.0.0 |
 
 ### 6.2 NON-NORMATIVE REFERENCES
 
 > *This section is non-normative*
 
-| **Context** | **Link**
-| --- | ---
-| [CX-OMW] | Catena-X Operating Model Whitepaper. Download from: https://catena-x.net/fileadmin/user_upload/Publikationen_und_WhitePaper_des_Vereins/CX_Operating_Model_Whitepaper_02_12_22.pdf
-| [ISO8601] | ISO 8601: Date and time format
-| [RFC2119] | Bradner, S. Key words for use in RFCs to Indicate Requirement Levels. Available online: https://datatracker.ietf.org/doc/html/rfc2119
-| [RFC8174] | Leiba, B. Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words. Available online: https://datatracker.ietf.org/doc/html/rfc8174
-| [RFC9110] | HTTP Semantics (https://www.rfc-editor.org/rfc/rfc9110)
-| [SMT] | How to create a submodel template specification. Guideline. Download from: https://industrialdigitaltwin.org/wp-content/uploads/2022/12/I40-IDTA-WS-Process-How-to-write-a-SMT-FINAL-.pdf
+| **Context** | **Link** |
+| --- | --- |
+| [CX-OMW] | Catena-X Operating Model Whitepaper. Download from: https://catena-x.net/fileadmin/user_upload/Publikationen_und_WhitePaper_des_Vereins/CX_Operating_Model_Whitepaper_02_12_22.pdf |
+| [ISO8601] | ISO 8601: Date and time format |
+| [RFC2119] | Bradner, S. Key words for use in RFCs to Indicate Requirement Levels. Available online: https://datatracker.ietf.org/doc/html/rfc2119 |
+| [RFC8174] | Leiba, B. Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words. Available online: https://datatracker.ietf.org/doc/html/rfc8174 |
+| [RFC9110] | HTTP Semantics (https://www.rfc-editor.org/rfc/rfc9110) |
+| [SMT] | How to create a submodel template specification. Guideline. Download from: https://industrialdigitaltwin.org/wp-content/uploads/2022/12/I40-IDTA-WS-Process-How-to-write-a-SMT-FINAL-.pdf |
 
 ### 6.3 REFERENCE IMPLEMENTATIONS
 

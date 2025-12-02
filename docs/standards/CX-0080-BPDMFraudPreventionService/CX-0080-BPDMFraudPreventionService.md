@@ -27,7 +27,7 @@ This standard is designed for Business Application Provider.
 
 | **Version** | **Publishing Date** | **Description of Change**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | ----------- | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-|1.1.0       | 2024-03-13          | Updated to template v2.0.0. Added chapter 2.6 Data Types and 2.8 Data Attributes, Added chapter 2.7 for data sovereignty as additional requirement.
+|1.1.0       | 2024-03-13          | Updated to template v2.0.0. Added chapter 2.6 Data Types and 2.8 Data Attributes, Added chapter 2.7 for data sovereignty as additional requirement. |
 
 ## 1 INTRODUCTION
 
@@ -230,6 +230,7 @@ The following data assets **MUST** be registered at the Core Service Provider so
 | UploadAccessForSharingMember  | FPD | 1.0         | Grants the Sharing Member full access to the FPD Admin function, FPD database and FPD changelog. This contains create / update FPD admin settings by Sharing Member role by FPD function, activate and deactivate the usage of external data sources via defined APIs and license keys. |
 | UploadBankingDataAccessForSharingMember  | FPD | 1.0         | Grants the Sharing Member full access to create / update Banking data records from Sharing Member|
 | ReadAccessFPDOutputForSharingMember  | FPD | 1.0         | Grants the Sharing Member read access of the FPD changelog.                                                                                                                         |
+
 The OAuth2 client permissions **MUST** be configured to solely allow access to the API resources defined in the corresponding asset, checking HTTP method (read vs. full access), path, query parameters and body of the HTTP request.
 
 ### 2.8 POLICY CONSTRAINTS FOR DATA EXCHANGE
@@ -268,8 +269,8 @@ HTTP Status Code Registry MUST be adhered to in the implementation for the decis
 - The Business Identifier Code (BIC) provided in the fraud reporting template shall be according to ISO 9362.
 - The International Bank Account Number provided in the fraud reporting template shall be according to ISO 13616.
 
-[^1]: https://catena-x.net/fileadmin/user_upload/Vereinsdokumente/Catena-X_IP_Regelwerk_IP_Regulations.pdf
-[^2]: https://catena-x.net/de/standardisierung/catena-x-einfuehren-umsetzen/standardisierung/standard-library
+- [Catena-X IP Regulations](https://catena-x.net/fileadmin/user_upload/Vereinsdokumente/Catena-X_IP_Regelwerk_IP_Regulations.pdf)
+- [Catena-X Standards Library](https://catena-x.net/de/standardisierung/catena-x-einfuehren-umsetzen/standardisierung/standard-library)
 
 ### 3.3 REFERENCE IMPLEMENTATIONS
 

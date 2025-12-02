@@ -4,7 +4,6 @@ tags:
   - CAT/Connector
   - CAT/Enablement Service Provider
   - CAT/Connector as a Service
-  - CAT/Sandbox Services
 ---
 
 # CX-0018 Dataspace Connectivity v.4.1.1

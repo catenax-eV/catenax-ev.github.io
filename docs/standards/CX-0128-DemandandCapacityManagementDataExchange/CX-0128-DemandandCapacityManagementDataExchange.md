@@ -73,7 +73,7 @@ If a participant or application only implements either the business role custome
 
 Conformity assessment criteria are found only in the following chapters:
 
-- [2.3 Additional Requirements](#23-additional-requirements)
+- [2.3 Policy Constraints for data exchange](#23-policy-constraints-for-data-exchange)
 - [3.1 Aspect Model WeekBasedMaterialDemand](#31-aspect-model-weekbasedmaterialdemand)
 - [3.2 Aspect Model WeekBasedCapacityGroup](#32-aspect-model-weekbasedcapacitygroup)
 - [3.3 Aspect Model IdBasedRequestForUpdate](#33-aspect-model-idbasedrequestforupdate)
@@ -810,7 +810,7 @@ This standard utilizes Supply Chain Disruption Notifications. Supply Chain Disru
 
 ### 2.3 POLICY CONSTRAINTS FOR DATA EXCHANGE
 
-In alignment with our commitment to data sovereignty, a specific framework governing the utilization of data within the Catena-X use cases has been outlined.  As part of this data sovereignty framework, conventions for access policies, for usage policies and for the constraints contained in the policies have been specified in standard 'CX-0152 Policy Constraints for Data Exchange'. This standard document CX-0152 **MUST** be followed when providing services or apps for data sharing/consuming and when sharing or consuming data in the Catena-X ecosystem. What conventions are relevant for what roles named in [1.1 AUDIENCE & SCOPE](#11-audience--scope) is specified in the CX-0152 standard document as well. CX-0152 can be found in the [standard library](https://catenax-ev.github.io/docs/standards/overview).
+In alignment with our commitment to data sovereignty, a specific framework governing the utilization of data within the Catena-X use cases has been outlined.  As part of this data sovereignty framework, conventions for access policies, for usage policies and for the constraints contained in the policies have been specified in standard 'CX-0152 Policy Constraints for Data Exchange'. This standard document CX-0152 **MUST** be followed when providing services or apps for data sharing/consuming and when sharing or consuming data in the Catena-X ecosystem. What conventions are relevant for what roles named in [1.1 AUDIENCE and SCOPE](#11-audience-and-scope) is specified in the CX-0152 standard document as well. CX-0152 can be found in the [standard library](https://catenax-ev.github.io/docs/standards/overview).
 
 ## 3 ASPECT MODELS
 
@@ -2446,7 +2446,7 @@ Access and usage policy can be crafted using zero, one or multiple constraints.
 
 Both customers and suppliers MUST implement and uphold access and usage policies in order to guarantee a secure and collaborative data exchange.
 
-In accordance to the conventions defined in CX-0152 as referenced in [paragraph Policy Constraints for Data Exchange](#policy-constraints-for-data-exchange) following constraints can be used to create access and usage policies.
+In accordance to the conventions defined in CX-0152 as referenced in paragraph [Policy Constraints for Data Exchange](#23-policy-constraints-for-data-exchange) following constraints can be used to create access and usage policies.
 Constraints that are marked as mandatory in the column **Usage Requirement** MUST be used to create the respective policy.
 
 | Policy Type      | Constraint               | leftOperand ("@context": ["https://w3id.org/catenax/2025/9/policy/context.jsonld"])  | operator | right Operand              | Usage Requirement |
@@ -2458,7 +2458,7 @@ Constraints that are marked as mandatory in the column **Usage Requirement** MUS
 | **Usage Policy** | Usage Purpose            | UsagePurpose              | isAnyOf       | cx.dcm.base:1              | mandatory         |
 | Usage Policy     | Contract Reference       | ContractReference         | isAllOf       | `{{ Contract References }}`   | optional          |
 
-Please note, that the access policy can be created without any constraints. In this case only the MembershipCredential is verified. Further details how to define policies and policy constraints can be found in CX-0152 as referenced in [paragraph Policy Constraints for Data Exchange](#policy-constraints-for-data-exchange).  
+Please note, that the access policy can be created without any constraints. In this case only the MembershipCredential is verified. Further details how to define policies and policy constraints can be found in CX-0152 as referenced in paragraph [Policy Constraints for Data Exchange](#23-policy-constraints-for-data-exchange).  
 
 ## 7 REFERENCES
 

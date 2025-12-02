@@ -3,7 +3,6 @@ tags:
   - CAT/SSI
   - CAT/Core Service Provider
   - CAT/Identity Wallet
-  - CAT/Sandbox Services
 ---
 
 # CX-0149 Wallet Requirements v2.0.0

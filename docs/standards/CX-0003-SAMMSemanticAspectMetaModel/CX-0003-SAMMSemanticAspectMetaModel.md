@@ -172,7 +172,7 @@ Note 2 to entry: Aspects are registered (incl. their "API endpoint"
 information) with the Digital Twin to which they belong in the
 Digital Twin Registry.
 
-Note 3 to entry: an aspect corresponds to a [*Submodel*](#submodel) in the [*Asset Administration Shell*](#asset-administration-shell)
+Note 3 to entry: an aspect corresponds to a [*Submodel*](#submodel) in the [*Asset Administration Shell*](#asset-administration-shell-aas)
 
 *\[SOURCE: [Eclipse Semantic Modeling Framework (ESMF)](https://eclipse-esmf.github.io/samm-specification/snapshot/index.html), editorial changes and notes added \]*
 
@@ -200,7 +200,7 @@ Note 1 to entry: Asset Administration Shell and Administration Shell are used sy
 #### Submodel Template
 
 > guides the creation of a [*Submodel*](#submodel) conformant
-to the [*Aspect Model*](#aspect-model) and the [*Asset Administration Shell*](#asset-administration-shell).
+to the [*Aspect Model*](#aspect-model) and the [*Asset Administration Shell*](#asset-administration-shell-aas).
 
 *\[SOURCE: IEC 63278-1, extracted from text plus correlation with aspect model added \]*
 
@@ -252,7 +252,7 @@ Model"](#aspect-model), the ESMF also includes an editor, SDKs in different prog
 languages, a command line tool for validation, generating documentation
 and different serializations and other functionality easing its usage
 and implementation in digital twin projects. Also, aasx generators for
-support of ["Asset Administration Shell"](#asset-administration-shell) are in scope.
+support of ["Asset Administration Shell"](#asset-administration-shell-aas) are in scope.
 
 Aspect Models express a schema with a defined Resource Description
 Framework ([RDF](http://www.w3.org/TR/rdf11-concepts/)) vocabulary and are validated by a comprehensive
@@ -267,11 +267,10 @@ The Semantic Aspect Meta Model (SAMM) provides a set of predefined
 objects that allow a domain expert to define aspect models and
 complement a digital twin with a semantic foundation.
 
-![SAMM 2.1.0](./assets/CX-0003-aspect-meta-model.jpg "Predefined SAMM Objects for Aspect Model Definition (Version
-2.1.0)")
+![SAMM 2.1.0](./assets/CX-0003-aspect-meta-model.jpg "Predefined SAMM Objects for Aspect Model Definition (Version 2.1.0)")
 
 The complete specification and further information about its
-implementation and requirements can be accessed via the [Eclipse Semantic Modeling Framework (ESMF)][https://eclipse-esmf.github.io/samm-specification/snapshot/index.html](https://eclipse-esmf.github.io/samm-specification/snapshot/index.html).
+implementation and requirements can be accessed via the [Eclipse Semantic Modeling Framework (ESMF)](https://eclipse-esmf.github.io/samm-specification/snapshot/index.html).
 
 Every aspect model within the Eclipse Tractus-X repository [SLDT-Semantic-Models](https://github.com/eclipse-tractusx/sldt-semantic-models) that has status "released" **MUST** be conformant to the Semantic Aspect Meta Model.
 

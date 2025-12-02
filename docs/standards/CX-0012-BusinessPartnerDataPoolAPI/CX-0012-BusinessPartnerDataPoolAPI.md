@@ -2,7 +2,6 @@
 tags:
   - CAT/BPDM
   - CAT/Core Service Provider
-  - CAT/Sandbox Services
   - CAT/Sandbox Service Provider
 ---
 
@@ -557,7 +556,7 @@ The API **MUST** use JSON as the payload format transported via HTTP. Other for
 
 The following data assets **MUST** be registered at the Core Service Provider so that the data space participant can negotiate an API usage contract based on the mentioned usage purpose with the Core Service Provider and access the Pool API (hosted by the Core Service Provider) through these assets [^5]:
 
-| **Type**         | **Subject**                                   | **Version** | **Description** | **Usage Purpose**
+| **Type**         | **Subject**                                   | **Version** | **Description** | **Usage Purpose** |
 | ---------------- | --------------------------------------------- | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------- |
 | cx-taxo:BPDMPool | cx-taxo:ReadAccessPoolForDataSpaceParticipant | 7           | Grants the data space participant read access to the Pool API. This can be used to read legal entity, site, address, legal form, identifier type and administrative area level 1 data. To that end, it also grants read access to the respective changelog and identifier mappings, as well as relational data. | cx.bpdm.pool:1    |
 

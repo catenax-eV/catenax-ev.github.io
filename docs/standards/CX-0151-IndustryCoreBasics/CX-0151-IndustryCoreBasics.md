@@ -239,7 +239,7 @@ A use case defining a notification API as part of its standard MUST document the
 - All notification data formats MUST be documented either as separate JSON schema or (also in JSON schema) as part of the notification API's OpenAPI specification.
 - The notification API MUST be documented with an OpenAPI specification that MUST be published on the Tractus-X Swagger space.
 - For a standardized use case, the name of the notification API (used in property `http://purl.org/dc/terms/type`) MUST be defined in the Catena-X taxonomy published under https://w3id.org/catenax/taxonomy.
-- The notification API asset in the connector MUST define the property `http://purl.org/dc/terms/type` as defined in [4.1.3 EDC DATA ASSET STRUCTURE](#413-edc-data-asset-structure).
+- The notification API asset in the connector MUST define the property `http://purl.org/dc/terms/type` as defined in [4.1.4 CONNECTOR DATA ASSET STRUCTURE](#414-connector-data-asset-structure).
 
 ## 3 ASPECT MODELS
 
@@ -356,7 +356,7 @@ A response body MAY also be defined (e.g., see Feedback notification operation i
 
 These error codes are currently optional as the Catena-X connector does not yet return correct error messages from backend services. These error codes will become mandatory once the connector returns correct error messages from backend services.
 
-#### 4.1.4 CONNECTOR ASSET STRUCTURE
+#### 4.1.4 CONNECTOR DATA ASSET STRUCTURE
 
 For a notification API, exactly one asset in the connector MUST be defined. All notifications operations of the API must be invoked through this asset.
 
@@ -429,15 +429,13 @@ A notification is sent from one Catena-X partner - called sender - to another Ca
 
 > *This section is non-normative*
 
-[SMT] How to create a submodel template specification. Guideline. Download from: https://industrialdigitaltwin.org/wp-content/uploads/2022/12/I40-IDTA-WS-Process-How-to-write-a-SMT-FINAL-.pdf
+- [SMT] How to create a submodel template specification. Guideline. Download from: https://industrialdigitaltwin.org/wp-content/uploads/2022/12/I40-IDTA-WS-Process-How-to-write-a-SMT-FINAL-.pdf
+- [Semantic Models](https://github.com/eclipse-tractusx/sldt-semantic-models)
+- [Operating Model](https://catenax-ev.github.io/docs/operating-model/why-introduction)
 
-[^1]: ![https://github.com/eclipse-tractusx/sldt-semantic-models](https://github.com/eclipse-tractusx/sldt-semantic-models)
+[^2]: [https://creativecommons.org/licenses/by/4.0/legalcode](https://creativecommons.org/licenses/by/4.0/legalcode)
 
-[^2]: ![https://creativecommons.org/licenses/by/4.0/legalcode](https://creativecommons.org/licenses/by/4.0/legalcode)
-
-[^3]: ![https://github.com/eclipse-esmf/esmf-sdk](https://github.com/eclipse-esmf/esmf-sdk)
-
-[^4]: ![https://catenax-ev.github.io/docs/operating-model/why-introduction](https://catenax-ev.github.io/docs/operating-model/why-introduction)
+[^3]: [https://github.com/eclipse-esmf/esmf-sdk](https://github.com/eclipse-esmf/esmf-sdk)
 
 <!-- ### 6.3 REFERENCE IMPLEMENTATIONS
 

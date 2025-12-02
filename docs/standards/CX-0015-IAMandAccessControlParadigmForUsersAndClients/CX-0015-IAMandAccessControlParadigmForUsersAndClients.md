@@ -2,7 +2,6 @@
 tags:
   - CAT/Portal
   - CAT/Core Service Provider
-  - CAT/Sandbox Services
 ---
 
 # CX-0015 IAM & Access Control Paradigm for Users and Clients v1.0.1

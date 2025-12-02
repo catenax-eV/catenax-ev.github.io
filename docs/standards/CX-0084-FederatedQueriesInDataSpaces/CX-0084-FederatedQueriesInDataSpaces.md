@@ -1233,7 +1233,7 @@ Skill assets also use the "privateProperties" section of the "asset" definition 
 
 | Property Key | Mandatory | Description                | RDF Representation                                     |  Example Property Value                                |
 |--------------|-----|----------------------------------|--------------------------------------------|------------------------------------------------------|
-| cx-common:query | yes | A valid KA-MATCH SPARQL query | SELECT ?s WHERE \{ ?s a \<https://w3id.org/catenax/ontology/vehicle#Vehicle\>. \} |
+| cx-common:query | yes | A valid KA-MATCH SPARQL query | SELECT ?s WHERE \{ ?s a \<https://w3id.org/catenax/ontology/vehicle#Vehicle\>. \} | |
 
 The "dataAddress" part for Skill Assets consists of the following properties.
 

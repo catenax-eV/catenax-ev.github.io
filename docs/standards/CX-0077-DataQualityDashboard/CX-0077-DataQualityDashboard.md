@@ -32,7 +32,7 @@ The standard enables software and service companies to develop business partner 
 | **Version** | **Publishing Date** | **Author** | **Description of Change**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | ----------- | ------------------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | 1.1.0       |           |   SR         | Added chapter 3 for DQD API. |
-| 1.2.0       | 2024-03-13          |     SR      | Corrected 2.3.3 - country list, Added chapter 3.5 Data Types and 3.6 Data Attributes, Added chapter 3.7 for data sovereignty as additional requirement.
+| 1.2.0       | 2024-03-13          |     SR      | Corrected 2.3.3 - country list, Added chapter 3.5 Data Types and 3.6 Data Attributes, Added chapter 3.7 for data sovereignty as additional requirement. |
 |1.2.1       | 2024-09-04          |     SR      | Moved DQD Dashboard Style Guide Reference from Normative Section to Non-Normative Section                                                                                          |
 
 ## 1 INTRODUCTION
@@ -191,7 +191,7 @@ The DQD rule set** MUST use the ISO 3166-1 related codes for at least 116 countr
 |AM |CR |GP |JP |MK |QA |TR |
 |AR |CU |GR |KE |MT |RO |TT |
 |AT |CY |GT |KG |MX |RS |TW |
-|AU |CZ |HK |MY |RU |UA |
+|AU |CZ |HK |MY |RU |UA |   |
 |AZ |DE |HN |KR |NA |SA |UK |
 |BA |DK |HR |KW |NI |SE |US |
 |BE |DZ |HT |KZ |NL |SG |UY |
@@ -288,13 +288,14 @@ The API **MUST** use JSON as the payload format transported via HTTP. Other for
 
 ### 3.6 **DATA ASSET STRUCTURE**
 
-The following data assets **MUST** be registered at the Core Service Provider so that the Sharing Member can negotiate an API usage contract with the Core Service Provider and access its dedicated BPDM Gate (hosted by the Core Service Provider) through these data assets[^6]:
+The following data assets **MUST** be registered at the Core Service Provider so that the Sharing Member can negotiate an API usage contract with the Core Service Provider and access its dedicated BPDM Gate (hosted by the Core Service Provider) through these data assets:
 
 | **Name**                             | **Type** | **Version** | **Description**                                                                                                                                                                                                                                                                                                                                                                   |
 | ------------------------------------ | -------- | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | UploadAccessSharingMemberDataforDQD  | DQD | 1.0         | Grants the Sharing Member full access to the DQD Admin function, DQD database and DQD changelog. This contains create / update DQD admin settings by Sharing Member role by DQD function, activating and deactivating the usage of external data sources via defined APIs and license keys. |
 | UploadAccess3rdpartyDataforDQD  | DQD | 1.0         | Grants the Sharing Member full access to upload 3rd party data for DQD rule execution|
 | ReadAccessDQDOutputForSharingMember  | DQD | 1.0         | Grants the Sharing Member read access of the DQD changelog.                                                                                                                         |
+
 The OAuth2 client permissions **MUST** be configured to solely allow access to the API resources defined in the corresponding asset, checking HTTP method (read vs. full access), path, query parameters and body of the HTTP request.
 
 ### 3.7 **POLICY CONSTRAINTS FOR DATA EXCHANGE**
@@ -334,9 +335,9 @@ HTTP Status Code Registry MUST be adhered to in the implementation for the decis
 
 > *This section is non-normative*
 
-Intentionally left blank.
-
-[BPDM Catena-X Website](https://catena-x.net/en/offers-standards/bpdm)
+- [BPDM Catena-X Website](https://catena-x.net/en/offers-standards/bpdm)
+- [Catena-X IP Regulations](https://catena-x.net/fileadmin/user_upload/Vereinsdokumente/Catena-X_IP_Regelwerk_IP_Regulations.pdf)
+- [Catena-X Standards Library](https://catena-x.net/fileadmin/user_upload/Vereinsdokumente/Catena-X_IP_Regelwerk_IP_Regulations.pdf)
 
 ### 4.3 REFERENCE IMPLEMENTATIONS
 
@@ -383,9 +384,6 @@ Intentionally left blank.
 > *This section is non-normative*
 
 Intentionally left blank.
-
-[^1]: https://catena-x.net/fileadmin/user_upload/Vereinsdokumente/Catena-X_IP_Regelwerk_IP_Regulations.pdf
-[^2]: https://catena-x.net/de/standardisierung/catena-x-einfuehren-umsetzen/standardisierung/standard-library
 
 ## Legal
 

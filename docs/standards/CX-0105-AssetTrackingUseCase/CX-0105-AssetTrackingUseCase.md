@@ -1212,7 +1212,7 @@ There are two relevant data models provided as a data asset:
 | altitude              | number (double)   |Antenna Altitude above/below mean-sea-level (geoid). |
 | latitude              | number (double)   | Latitude value. The angle between zenith and a plane parallel to the equator. |
 | longitude             | number (double)   | Longitude value. Geographic coordinate that specifies the east-west position of a point on the Earth's surface. |
-| geoDataTimestamp       |string | geoDataTimestamp | The timestamp of the latest sensor reading of the geo data.|
+| geoDataTimestamp       |string | The timestamp of the latest sensor reading of the geo data. |
 | batteryLevel          |  integer          | The battery level displays how much charge of the battery has been left. |
 | transmissionMethod    | string            | The method under which the sensing data is transmitted from the source to the remote node. |
 

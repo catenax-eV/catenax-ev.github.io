@@ -4,16 +4,7 @@ tags:
   - UC/PCF
 ---
 
-# CX-0136 Use Case PCF 2.2.0
-
-:::warning
-
-The following standards was identified as not fully **backward compatibility with CX-Jupiter**  and was allowed to apply the required changes through a **fast-track process** to be included in the CX-Saturn release.
-These exceptions will be released on the **05th of January 2026**.
-
-**Therefore, this version of the standard is not eligible for certification yet**
-
-:::
+# CX-0136 Use Case PCF 2.2.1
 
 ## ABSTRACT
 
@@ -383,7 +374,7 @@ Contract definitions of data providers MUST follow the structure below (also def
 
 ##### 2.1.2.8 Data Exchange
 
-The PCF use case supports synchronous and asynchronous data exchange. In case an asynchronous data exchange is needed, app provider MUST follow the API definition specification in [4.1 PCF EXCHANGE API](#41-pcf-exchange-api). The exchanged data follows the standardized data model defind in [3.1 ASPECT MODEL PCF](#31-aspect-model-pcf).
+The PCF use case supports synchronous and asynchronous data exchange. In case an asynchronous data exchange is needed, app provider MUST follow the API definition specification in [4.1 PCF EXCHANGE API](#41-pcf-exchange-api-for-asynchronous-data-exchange). The exchanged data follows the standardized data model defind in [3.1 ASPECT MODEL PCF](#31-aspect-model-pcf).
 
 #### 2.1.3 POLICY CONSTRAINTS FOR DATA EXCHANGE
 
@@ -692,3 +683,7 @@ Currently there is no reference FOSS implementation. For information about avail
 ### TABLES
 
 > *This section is non-normative*
+
+## Legal
+
+Copyright © 2025 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

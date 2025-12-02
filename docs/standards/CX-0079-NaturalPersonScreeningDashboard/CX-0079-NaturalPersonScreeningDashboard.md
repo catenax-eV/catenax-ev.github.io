@@ -206,6 +206,7 @@ The NPS rule set MUST use the following ISO Norms:
 The NPS rule set MUST use the ISO Norm 3166-1 related codes for at least 112 countries as listed below
 
 **Country List based on ISO 3166-1**
+
 |  |  |  |  |  |  |  |
 | :- | :- | :- | :- | :- | :- | :- |
 |AD |CL |GE |IS |MC |PL |TJ |
@@ -214,7 +215,7 @@ The NPS rule set MUST use the ISO Norm 3166-1 related codes for at least 112 cou
 |AM |CR |GP |JP |MK |QA |TR |
 |AR |CU |GR |KE |MT |RO |TT |
 |AT |CY |GT |KG |MX |RS |TW |
-|AU |CZ |HK |MY |RU |UA |
+|AU |CZ |HK |MY |RU |UA |   |
 |AZ |DE |HN |KR |NA |SA |UK |
 |BA |DK |HR |KW |NI |SE |US |
 |BE |DZ |HT |KZ |NL |SG |UY |
@@ -318,6 +319,7 @@ The following data assets **MUST** be registered at the Core Service Provider so
 | ------------------------------------ | -------- | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | FullAccessNPSInputOutputForSharingMember  | NPS | 1.0         | Grants the Sharing Member full access to the NPS Admin function, NPS database and NPS changelog. This can be used to read business partner NPS rule status in the NPS changelog,  create / update NPS admin settings by Sharing Member role by NPS function, activate and deactivate the usage of external data sourves via defined APIs and license keys. |
 | ReadAccessNPSOutputForSharingMember  | NPS | 1.0         | Grants the Sharing Member read access of the NPS changelog.                                                                                                                         |
+
 The OAuth2 client permissions **MUST** be configured to solely allow access to the API resources defined in the corresponding asset, checking HTTP method (read vs. full access), path, query parameters and body of the HTTP request.
 
 ### **3.8 POLICY CONSTRAINTS FOR DATA EXCHANGE**
