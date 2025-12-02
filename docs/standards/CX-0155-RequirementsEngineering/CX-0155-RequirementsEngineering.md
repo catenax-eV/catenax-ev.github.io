@@ -241,7 +241,7 @@ This standard completely and solely builds upon the standard [CX-0002](https://c
 
 The Data Assets need to be registered in the EDC as follows:
 
-> Note: Expressions in double curly braces {{}} must be substituted with a corresponding value.
+> Note: Expressions in double curly braces \{\{\}\} must be substituted with a corresponding value.
 
 ```json
 {
