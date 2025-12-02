@@ -6,6 +6,15 @@ tags:
 
 # CX-0136 Use Case PCF 2.2.1
 
+:::warning
+
+The following standard was identified as not fully **backward compatibility with CX-Jupiter**  and was allowed to apply the required changes through a **fast-track process** to be included in the CX-Saturn release.
+These exceptions will be released on the **05th of January 2026**.
+
+**Therefore, this version of the standard is not eligible for certification yet**
+
+:::
+
 ## ABSTRACT
 
 This standard focuses on the PCF (Product Carbon Footprint) exchange use case. This includes relevant requirements for:
