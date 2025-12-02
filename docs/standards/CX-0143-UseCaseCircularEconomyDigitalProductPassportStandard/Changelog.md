@@ -4,6 +4,18 @@ title: "Changelog"
 
 All notable changes to CX-0143 will be documented in this file.
 
+## [1.3.0] - 25.12 (CX-Titan)
+
+### Added
+
+- Added [CX-0143-BackwardCompatibility.md](./CX-0143-BackwardCompatibility)
+
+### Changed
+
+- Updated ``urn:samm:io.catenax.generic.digital_product_passport`` to ``6.1.0``.
+- Updated ``urn:samm:io.catenax.transmission.transmission_pass`` to ``3.1.0``.
+- Updated ``urn:samm:io.catenax.battery.battery_pass`` to ``6.1.0``.
+
 ## [1.2.0] - 25.09 (CX-Saturn)
 
 ### Added

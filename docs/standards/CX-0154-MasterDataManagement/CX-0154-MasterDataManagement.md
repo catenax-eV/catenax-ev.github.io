@@ -313,6 +313,23 @@ Specific asset IDs are used to identify digital twins when looking up or searchi
 
 In alignment with our commitment to data sovereignty, a specific framework governing the utilization of data within the Catena-X use cases has been outlined.  As part of this data sovereignty framework, conventions for access policies, for usage policies and for the constraints contained in the policies have been specified in standard 'CX-0152 Policy Constraints for Data Exchange'. This standard document CX-0152 **MUST** be followed when providing services or apps for data sharing/consuming and when sharing or consuming data in the Catena-X ecosystem. What conventions are relevant for what roles named in [1.1 AUDIENCE & SCOPE](#11-audience--scope) is specified in the CX-0152 standard document as well. CX-0152 can be found in the [standard library](https://catenax-ev.github.io/docs/standards/overview).
 
+The following usage purpose **MUST** be registered for data exchange in the use case:
+
+|Type | Subject | Description | Version | Usage Purpose |
+|---| ----| ---- |----| ---|
+|cx-taxo:Engineering | cx-taxo:ReadAccessEngineering | Data consumer are allowed to use the data for <br /> • Collaborative engineering of products (e.g., 3D Designs, Simulations) <br /> • regulatory compliance use cases (e.g., material information in master data for secondar material content checks) <br />• Mock-Up and integration (e.g., collision checks in 3D) <br /> • versioning & release notifications of products (e.g., new product version that shall be used in a new product generation) <br /> • interface alignments (e.g., between interacting systems on physical, logical and functional level) <br /> They explicitly **MUST not** use the data for reverse engineering, e.g., by using material classifications for building the product themselves. | 1 | cx.enginnering:1 |
+
+<!---
+Data consumer are allowed to use the data for
+• Collaborative engineering of products (e.g., 3D Designs, Simulations)
+• regulatory compliance use cases (e.g., material information in master data for secondar material content checks)
+• Mock-Up and integration (e.g., collision checks in 3D)
+• versioning & release notifications of products (e.g., new product version that shall be used in a new product generation)
+• interface alignments (e.g., between interacting systems on physical, logical and functional level)
+They explicitly MUST not use the data for reverse engineering, e.g., by using material classifications for building the product themselves.
+
+-->
+
 ## 3 ASPECT MODELS
 
 > *This section is normative*
@@ -365,6 +382,43 @@ This model MUST be applied for the usage of the API.
 ### 4.1 APIs ASSOCIATED WITH DIGITAL TWINS
 
 This standard completely and solely builds upon the standard [CX-0002](https://catenax-ev.github.io/docs/next/standards/CX-0002-DigitalTwinsInCatenaX) Digital Twins in Catena-X.
+
+#### DATA ASSET STRUCTURE
+
+The Data Assets need to be registered in the EDC as follows:
+
+> Note: Expressions in double curly braces {{}} must be substituted with a corresponding value.
+
+```json
+{
+   "@context": {
+      "dct": "http://purl.org/dc/terms/",
+      "cx-taxo": "https://w3id.org/catenax/taxonomy#",
+      "cx-common": "https://w3id.org/catenax/ontology/common#"
+   },
+   "@type": "Asset", 
+   "@id": "{{CONNECTOR_ASSET_ID}}",
+   "properties": {
+      "dct:type": {"@id": "cx-taxo:Engineering"},
+      "cx-common:version": "1.0",
+      "aas-semantics:semanticId": {"@id":  "urn:samm: io.catenax.digital_engineering_master_data:1.0.0#DigitalEngineeringMasterData"}   
+   },
+   "dataAddress": {
+      "@type": "DataAddress",
+      "type": "HttpData",
+      "baseUrl": "{{ SUBMODEL_ENDPOINT }}",
+      "proxyQueryParams": "false",
+      "proxyBody": "false",
+      "proxyPath": "true",
+      "proxyMethod": "false",
+   }
+}
+```
+
+The data asset MUST contain the following properties with the corresponding values from the table above:
+
+- ``dct:type`` for type (as @id reference), see also CX-0018
+- ``cx-common:version`` for version, see also CX-0018
 
 ### 4.2 NOTIFICATIONS
 

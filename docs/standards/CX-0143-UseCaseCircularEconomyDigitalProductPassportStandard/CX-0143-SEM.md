@@ -36,7 +36,7 @@ In case of doubt the license, copyright and authors information in github overwr
 This semantic model has the unique identifier:
 
 ```
-urn:samm:io.catenax.generic.digital_product_passport:6.0.0#
+urn:samm:io.catenax.generic.digital_product_passport:6.1.0#
 ```
 
 ### 2.1.5 FORMATS OF SEMANTIC MODEL
@@ -48,7 +48,7 @@ All formats can be generated through the turtle file and the [SAMM command line 
 The rdf turtle file, an instance of the Semantic Aspect Meta Model, is the master for generating additional file formats and serializations. It can be found in the current version in the github repository.
 
 ```
-https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.generic.digital_product_passport/6.0.0/DigitalProductPassport.ttl
+https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.generic.digital_product_passport/6.1.0/DigitalProductPassport.ttl
 ```
 
 #### 2.1.5.2 JSON SCHEMA
@@ -56,7 +56,7 @@ https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.ge
 A JSON Schema can be generated from the RDF Turtle file. The JSON Schema defines the Value-Only payload of the Asset Administration Shell for the API operation "GetSubmodel". It can be found in the current version in the "gen" subfolder in the github repository.
 
 ```
-https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.generic.digital_product_passport/6.0.0/gen
+https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.generic.digital_product_passport/6.1.0/gen
 ```
 
 #### 2.1.5.3 AASX
@@ -64,7 +64,7 @@ https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.ge
 An AASX file can be generated from the RDF Turtle file. The AASX file defines one of the requested artifacts for a Submodel Template Specification. It can be found in the current version in the "gen" subfolder in the github repository.
 
 ```
-https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.generic.digital_product_passport/6.0.0/gen
+https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.generic.digital_product_passport/6.1.0/gen
 ```
 
 ## 2.2 ASPECT MODEL "BATTERY PASS"
@@ -89,7 +89,7 @@ In case of doubt the license, copyright and authors information in github overwr
 This semantic model has the unique identifier:
 
 ```
-urn:samm:io.catenax.battery.battery_pass:6.0.0#
+urn:samm:io.catenax.battery.battery_pass:6.1.0#
 ```
 
 ### 2.2.5 FORMATS OF SEMANTIC MODEL
@@ -101,7 +101,7 @@ All formats can be generated through the turtle file and the [SAMM command line 
 The rdf turtle file, an instance of the Semantic Aspect Meta Model, is the master for generating additional file formats and serializations. It can be found in the current version in the github repository.
 
 ```
-https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.battery.battery_pass/6.0.0/BatteryPass.ttl
+https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.battery.battery_pass/6.1.0/BatteryPass.ttl
 ```
 
 #### 2.2.5.2 JSON SCHEMA
@@ -109,7 +109,7 @@ https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.ba
 A JSON Schema can be generated from the RDF Turtle file. The JSON Schema defines the Value-Only payload of the Asset Administration Shell for the API operation "GetSubmodel". It can be found in the current version in the "gen" subfolder in the github repository.
 
 ```
-https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.battery.battery_pass/6.0.0/gen
+https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.battery.battery_pass/6.1.0/gen
 ```
 
 #### 2.2.5.3 AASX
@@ -117,7 +117,7 @@ https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.ba
 An AASX file can be generated from the RDF Turtle file. The AASX file defines one of the requested artifacts for a Submodel Template Specification. It can be found in the current version in the "gen" subfolder in the github repository.
 
 ```
-https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.battery.battery_pass/6.0.0/gen
+https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.battery.battery_pass/6.1.0/gen
 ```
 
 ## 2.3 ASPECT MODEL "TRANSMISSION PASS"
@@ -128,7 +128,7 @@ The Transmission Pass in the Catena-X ecosystem is a specialized Aspect Model de
 
 The Transmission Pass describes the data that is collected and available during the lifespan of a transmission. It captures essential data about the transmission system, including manufacturing details, material composition, performance characteristics
 
-Based on the [Generic Digital Product Passport](#31-aspect-model-digital-product-passport), it supports compliance with EU sustainability regulations, such as the Ecodesign for Sustainable Products Regulation (ESPR), by enabling structured reporting on environmental impact, durability, and recyclability.
+Based on the [Generic Digital Product Passport](./CX-0143-SEM/#21-aspect-model-digital-product-passport), it supports compliance with EU sustainability regulations, such as the Ecodesign for Sustainable Products Regulation (ESPR), by enabling structured reporting on environmental impact, durability, and recyclability.
 
 ### 2.3.2 SPECIFICATIONS ARTIFACTS
 
@@ -146,7 +146,7 @@ In case of doubt the license, copyright and authors information in github overwr
 This semantic model has the unique identifier:
 
 ```
-urn:samm:io.catenax.transmission.transmission_pass:3.0.0#
+urn:samm:io.catenax.transmission.transmission_pass:3.1.0#
 ```
 
 ### 2.3.5 FORMATS OF SEMANTIC MODEL
@@ -158,7 +158,7 @@ All formats can be generated through the turtle file and the [SAMM command line 
 The rdf turtle file, an instance of the Semantic Aspect Meta Model, is the master for generating additional file formats and serializations. It can be found in the current version in the github repository.
 
 ```
-https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.transmission.transmission_pass/3.0.0/TransmissionPass.ttl
+https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.transmission.transmission_pass/3.1.0/TransmissionPass.ttl
 ```
 
 #### 2.3.5.2 JSON SCHEMA
@@ -166,7 +166,7 @@ https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.tr
 A JSON Schema can be generated from the RDF Turtle file. The JSON Schema defines the Value-Only payload of the Asset Administration Shell for the API operation "GetSubmodel". It can be found in the current version in the "gen" subfolder in the github repository.
 
 ```
-https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.transmission.transmission_pass/3.0.0/gen
+https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.transmission.transmission_pass/3.1.0/gen
 ```
 
 #### 2.3.5.3 AASX
@@ -174,7 +174,7 @@ https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.tr
 An AASX file can be generated from the RDF Turtle file. The AASX file defines one of the requested artifacts for a Submodel Template Specification.
 
 ```
-https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.transmission.transmission_pass/3.0.0/gen
+https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.transmission.transmission_pass/3.1.0/gen
 ```
 
 ## Legal

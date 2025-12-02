@@ -4,6 +4,13 @@ title: "Changelog"
 
 All notable changes to CX-0154 will be documented in this file.
 
+## [1.1.0] - CX-Saturn (25.12)
+
+### Added
+
+- Usage Purpose (in 2.2)
+- Data asset structure (in 4.1)
+
 ## [1.0.0] - CX-Saturn (25.09)
 
 ### Added

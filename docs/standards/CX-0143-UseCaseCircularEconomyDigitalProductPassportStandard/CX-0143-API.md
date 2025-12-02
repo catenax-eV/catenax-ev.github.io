@@ -8,7 +8,7 @@ sidebar_position: 4
 
 ## 3.1 EDC DATA ASSET STRUCTURE
 
-The general asset structure **MUST** follow the [CX-0018](#211-list-of-standalone-standards).
+The general asset structure **MUST** follow the [CX-0018](./CX-0143-UC/#111-list-of-standalone-standards).
 Examples are in the official [Connector Kit](https://eclipse-tractusx.github.io/docs-kits/kits/Connector%20Kit/Adoption%20View/connector_kit_adoption_view).
 The following subchapters define the specifics for this standard.
 
@@ -64,7 +64,7 @@ CX-0152 can be found in the [standard library](https://catenax-ev.github.io/docs
 
 ### 3.1.3 Contract Definition
 
-Contract definitions of data providers **MUST** follow this structure (also defined in [CX-0018](#211-list-of-standalone-standards)):
+Contract definitions of data providers **MUST** follow this structure (also defined in [CX-0018](./CX-0143-UC/#111-list-of-standalone-standards)):
 
 ```json
 {

@@ -5,7 +5,7 @@ tags:
   - UC/Quality
 ---
 
-# CX-0123 Quality Use Case Standard v3.0.1
+# CX-0123 Quality Use Case Standard v3.0.2
 
 ## ABSTRACT
 
@@ -1193,8 +1193,22 @@ depicted. This is the same as updating a quality notification.
 
 ## 6 Backward compatibility to previous version CX-0123 v.2.1.0
 
-To allow backward compatibility, CX-0123 v.2.1.0 is allowed to use until CX2609 (Neptun release).
-Therefore it is a **MUST** that certified Catena-X quality apps are also able to read at least 2 semantic models as defined in CX-0123 v.2.1.0.
+To allow backward compatibility, data models from previous standard version CX-0123 v.2.1.0 are still allowed to use until the CX-Neptun release in 26.09. A certified Catena-X quality app MUST support the previous version of every data model defined in this standard:
+
+- urn:samm:io.catenax.quality_task:2.0.0
+- urn:samm:io.catenax.fleet.claim_data:2.0.0
+- urn:samm:io.catenax.fleet.diagnostic_data:2.0.0
+- urn:samm:io.catenax.fleet.vehicles:3.0.0
+- urn:samm:io.catenax.manufactured_parts_quality_information:2.1.0
+- urn:samm:io.catenax.parts_analyses:3.0.0
+- urn:samm:io.catenax.quality_task_attachment:2.0.0
+- urn:samm:io.catenax.failure_pattern:1.0.0
+
+:::note
+
+Example: If the app provides `urn:samm:io.catenax.quality_task:3.0.0`, it must also support `urn:samm:io.catenax.quality_task:2.0.0` within the current standard.
+
+:::
 
 ## 7 REFERENCES
 
@@ -1210,13 +1224,11 @@ Therefore it is a **MUST** that certified Catena-X quality apps are also able to
 
 ### 7.2 NON-NORMATIVE REFERENCES
 
+Not applicable.
+
 ### 7.3 REFERENCE IMPLEMENTATIONS
 
-## ANNEXES
-
-### FIGURES
-
-### TABLES
+Not applicable.
 
 ## Legal
 

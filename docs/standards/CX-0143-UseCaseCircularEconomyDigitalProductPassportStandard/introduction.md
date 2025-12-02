@@ -7,7 +7,7 @@ tags:
 
 # Introduction
 
-CX-0143 Use Case Circular Economy - Digital Product Passport v1.2.1
+CX-0143 Use Case Circular Economy - Digital Product Passport v1.3.0
 
 ## ABSTRACT
 
@@ -24,7 +24,7 @@ submodels are defined.
 
 ## FOR WHOM IS THE STANDARD DESIGNED
 
-See the audience and scope [1.1](#11-audience--scope)
+See the [audience and scope](#audience--scope) section.
 
 ## Scope
 
@@ -32,7 +32,7 @@ The Digital Product Passport (DPP) is a cornerstone of the European Union’s st
 
 Designed with interoperability and scalability in mind, the DPP fosters seamless data exchange between economic actors - particularly small and medium-sized enterprises - while ensuring that regulatory measures remain proportionate and manageable. It plays a vital role in integrating circularity into product design, manufacturing, and lifecycle management. Beyond regulatory compliance, the DPP serves as a strategic tool for efficiency gains by digitizing data exchange between partners and enabling continuous improvement of sustainability standards and policy refinement.
 
-The concept of the Digital Product Passport (DPP) was first introduced through the EU Battery Regulation, which came into force in 2023. This regulation mandated DPPs for batteries used in electric vehicles, industrial applications, and portable electronics. Building on the foundational framework of the Battery Regulation, the European Union expanded the scope of DPPs through the Ecodesign for Sustainable Products Regulation (ESPR), which entered into force in July 2024 (see chapter [References](references#normative-references) ).
+The concept of the Digital Product Passport (DPP) was first introduced through the EU Battery Regulation, which came into force in 2023. This regulation mandated DPPs for batteries used in electric vehicles, industrial applications, and portable electronics. Building on the foundational framework of the Battery Regulation, the European Union expanded the scope of DPPs through the Ecodesign for Sustainable Products Regulation (ESPR), which entered into force in July 2024 (see chapter [References](./references#normative-references) ).
 
 ### AUDIENCE & SCOPE
 
@@ -59,7 +59,7 @@ as well as the owner of the product in sense of public persons. This standards d
 
 This image depicts an overall image of the architecture this standard relates to. Further information can be read in the [Eco Pass KIT](https://eclipse-tractusx.github.io/docs-kits/kits/eco-pass-kit/adoption-view).
 The standards related to these components are mentioned in more detail in
-[2.1.1 LIST OF STANDALONE STANDARDS](#211-list-of-standalone-standards).
+[1.1.1 LIST OF STANDALONE STANDARDS](CX-0143-UC#111-list-of-standalone-standards).
 
 ![Architectural Overview](./assets/img/digitalProductPassContext.jpg)
 
@@ -79,18 +79,18 @@ To validate that the standards are applied correctly, Catena-X employs Conformit
 
 All participants and their solutions will need to proof, that they are conform with the Catena-X standards.
 To validate that the standards are applied correctly, Catena-X employs Conformity Assessment Bodies (CABs).
-Since this standard document describes a set of standards to be fulfilled, participants MUST fulfill all mentioned standards listed at [2.1.1 LIST OF STANDALONE STANDARDS](#211-list-of-standalone-standards) and the respective conformity assessment criteria in addition to the specific criteria mentioned in this document. The specific criteria described in this document are describing the usage of the central tools as well as common tools described in the linked standardization documents and therefore compliance should be checked with the tools provided for these components.
+Since this standard document describes a set of standards to be fulfilled, participants MUST fulfill all mentioned standards listed at [1.1.1 LIST OF STANDALONE STANDARDS](./CX-0143-UC/#111-list-of-standalone-standards) and the respective conformity assessment criteria in addition to the specific criteria mentioned in this document. The specific criteria described in this document are describing the usage of the central tools as well as common tools described in the linked standardization documents and therefore compliance should be checked with the tools provided for these components.
 
 In order to proof conformity with this use case digital product pass standard as a
 data consumer or app provider demonstrate that you
 
 - can find digital twins containing passport information in the Catena-X data space
 - can distinguish the passport submodel information from other submodels within the digital twin
-- are compliant with the consuming conditions in [ADDITIONAL REQUIREMENTS](#213-additional-requirements), [APPLICATION PROGRAMMING INTERFACES](#4-application-programming-interfaces) and [DIGITAL TWINS AND SPECIFIC ASSET IDs](#214-digital-twins-and-specific-asset-ids)
+- are compliant with the consuming conditions in [ADDITIONAL REQUIREMENTS](./CX-0143-UC/#113-additional-requirements), [APPLICATION PROGRAMMING INTERFACES](./CX-0143-API/#3-application-programming-interfaces) and [DIGITAL TWINS AND SPECIFIC ASSET IDs](./CX-0143-UC/#114-digital-twins-and-specific-asset-ids)
 
 In order to proof conformity with this use case digital product pass standard as data provider show that you
 
-- are conform with the provisioning conditions in [ADDITIONAL REQUIREMENTS](#213-additional-requirements), [APPLICATION PROGRAMMING INTERFACES](#4-application-programming-interfaces) and [DIGITAL TWINS AND SPECIFIC ASSET IDs](#214-digital-twins-and-specific-asset-ids)
+- are conform with the provisioning conditions in [ADDITIONAL REQUIREMENTS](./CX-0143-UC/#113-additional-requirements), [APPLICATION PROGRAMMING INTERFACES](./CX-0143-API/#3-application-programming-interfaces) and [DIGITAL TWINS AND SPECIFIC ASSET IDs](./CX-0143-UC/#114-digital-twins-and-specific-asset-ids)
 
 ### EXAMPLES
 
@@ -99,7 +99,7 @@ In order to proof conformity with this use case digital product pass standard as
 The following examples can be checked as they offer further explanations and guidance how to stay compliant with the standard:
 
 - [Eco Pass KIT](https://eclipse-tractusx.github.io/docs-kits/kits/eco-pass-kit/adoption-view)
-- [Tractus-X Digital Product Pass Reference Application](#63-reference-implementations)
+- [Tractus-X Digital Product Pass Reference Application](./references#reference-implementations)
 
 ### TERMINOLOGY
 

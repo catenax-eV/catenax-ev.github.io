@@ -2,6 +2,12 @@
 title: "Changelog"
 ---
 
+## [3.0.2] - CX-Saturn (25.09)
+
+### Added
+
+- backward compatibility requirements
+
 ## [3.0.0] - CX-Saturn (25.09)
 
 ### Added
