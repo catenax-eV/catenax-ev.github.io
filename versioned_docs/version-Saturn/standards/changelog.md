@@ -19,7 +19,7 @@ Note: Detailed information regarding the changes can be found in the standard do
 
 | CX-Nr.  | Standard Name                | Version | Management Summary |
 |---------|-----------------------------|---------|--------------------|
-| CX-0018 | Dataspace Connectivity      | 4.1.0   | - Specified default credential context for catalog requests<br />- Updated to final versions of DSP 2025-1 and DCP 1.0<br />- Finalized discovery, protocol handling, and backward compatibility<br />- Policy constraints now covered in a separate standard |
+| CX-0018 | Dataspace Connectivity      | 4.1.1   | - Specified default credential context for catalog requests<br />- Updated to final versions of DSP 2025-1 and DCP 1.0<br />- Finalized discovery, protocol handling, and backward compatibility<br />- Policy constraints now covered in a separate standard |
 | CX-0001 | EDC Discovery API           | 1.2.0   | - Deprecated EDC Discovery API (moved to backward compatibility section)<br />- Changed purpose: now specifies Participant Agent registration<br />- Title and terminology updated to "Participant Agent" |
 | CX-0049 | DID Document                | 2.2.0   | - Added JSON schema for validation<br />- Added DataService and CredentialService to service array<br />- Rewrote introduction and removed CatalogService field |
 | CX-0149 | Verified Company Identity   | 2.0.0   | - Added requirements for wallets and guidance on obtaining them<br />- Scope now covers wallet requirements and acquisition<br />- Credential descriptions moved to CX-0050; OIDC references removed |
