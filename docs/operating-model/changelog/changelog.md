@@ -5,6 +5,24 @@ sidebar_position: 1
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [3.1.1]
+
+### Changed
+
+- Why: Introduction
+  - Remove references to the Whitepaper, as the Library is now available and serves as the primary reference.
+- Why: Understanding the Catena-X Data Space  
+  - Updated the arrow from *Association → Tractus-X* from “Governance” to “sponsors, promotes, and coordinates”.  
+    The image previously indicated that the Association *governs* Tractus-X, but it should correctly state that it *sponsors, promotes, and coordinates* Tractus-X.
+- How: Life Cycle Management
+  - Removed the term 'breaking change' from the operating model. The term was previously used in the lifecycle section to indicate when incompatible changes were allowed (only in major releases). However, as the operating model follows the 1+1 principle—where old and new versions must coexist—no change should actually break the dataspace. The documentation has been updated to clarify this intention and remove the misleading term.
+  - Add Name Versioning for Catena-X ecosystem releases.
+  - Remove the dates from release schedule to make it generic.
+- Who: Roles in the Catena-X ecosystem
+  - Update the roles defined in the Operating Model to be consistent with the standard terminology used in specifications, applying the values MUST, SHOULD, MAY to indicate requirements and recommendations
+  - Additionally, create a reference table that clearly defines the meaning of each term (MUST, SHOULD, MAY) and how they apply to roles.
+  - Add the missing label to the arrow from Sandbox Provider → Association to ensure all relationship arrows are consistently and fully labeled, enhancing the clarity and overall coherence of the graphic
+
 ## [3.1.0]
 
 ### Added
@@ -148,7 +166,3 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Certification process: reference provided to Conformity Assessment Framework that details the Catena-X certification process further
 - Labels: Removed distinguishing factors between Certified Operating Company and Certified Partner
 - Outlook: updated according to release 23.09
-
-## Legal
-
-Copyright © 2025 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).
