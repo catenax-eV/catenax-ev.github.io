@@ -54,8 +54,7 @@ const config: Config = {
               label: 'CX-Titan (Preview)',
             },
             'Saturn': {
-              label: 'CX-Saturn (Current)',
-              banner: 'unmaintained'
+              label: 'CX-Saturn (Current)'
             },
             'Io': {
               label: 'CX-Io',
