@@ -114,13 +114,13 @@ Non-compatible or other compatible versions of the Tractus-X release or the apps
 
 | Component                                                                      | Versions                                                                                |
 |--------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------|
-| Tractus-X Connector <br />(**E**clipse **D**ataspace **C**omponents Connector) | [0.11.0](https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.11.0) [Latest] |
+| Tractus-X Connector <br />(**E**clipse **D**ataspace **C**omponents Connector) | [0.11.1](https://github.com/eclipse-tractusx/tractusx-edc/releases/tag/0.11.1) [Latest] |
 
 :::warning
 
 Please ensure that you carefully review the current [known knowns](https://eclipse-tractusx.github.io/blog-changelog/release-25-09#tractus-x-connector), familiarize yourself with the updated policy changes, and adhere to the migration guidelines.
 
-Important: Please be aware that based on the Catena-X standard CX-0018 you MUST use the Tractus-X Connector version 0.11.0 and higher to be compatible.
+Important: Please be aware that based on the Catena-X standard CX-0018 you MUST use the Tractus-X Connector version 0.11.1 and higher to be compatible.
 
 :::
 
