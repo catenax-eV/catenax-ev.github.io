@@ -1,0 +1,255 @@
+{
+  "CX-0128": {
+    "cxId": "CX-0128",
+    "name": "Demand and Capacity Management Data Exchange",
+    "version": "2.2.0",
+    "type": "Demand and Capacity",
+    "cac": [
+      {
+        "id": "CX-0128-CAC-001",
+        "requirement": "Policies within Catena-X MUST be aligned with the example usage policy in the CX ODRL Profile and with all subsections of [2.3 Additional Requirements](#23-additional-requirements).",
+        "info": "Policies",
+        "assessmentBy": "Confirmation",
+        "priority": {}
+      },
+      {
+        "id": "CX-0128-CAC-002",
+        "requirement": "The [unique identifier](#314-identifier-of-semantic-model) for the semantic model, as specified in this standard, MUST be used to define the meaning of the data being transferred.",
+        "info": "Aspect Model WeekBasedMaterialDemand",
+        "assessmentBy": "Confirmation",
+        "priority": {}
+      },
+      {
+        "id": "CX-0128-CAC-003",
+        "requirement": "The JSON payload provided by data providers MUST comply with the [JSON schema](#3152-json-schema) as specified in this standard and MUST be validated against the same JSON schema by data consumers.",
+        "info": "Aspect Model WeekBasedMaterialDemand",
+        "assessmentBy": "Confirmation",
+        "priority": {}
+      },
+      {
+        "id": "CX-0128-CAC-004",
+        "requirement": "Within the Catena-X data space `WeekBasedMaterialDemand` data MUST be requested and exchanged using a connector, conforming to the standards [[CX-0018](#71-normative-references)] and [[CX-0002](#71-normative-references)]. It MUST be transferred using the [WeekBasedMaterialDemand API](#41-weekbasedmaterialdemand-api)",
+        "info": "Aspect Model WeekBasedMaterialDemand",
+        "assessmentBy": "Confirmation",
+        "priority": {}
+      },
+      {
+        "id": "CX-0128-CAC-005",
+        "requirement": "The [unique identifier](#324-identifier-of-semantic-model) for the semantic model, as specified in this standard, MUST be used to define the meaning of the data being transferred.",
+        "info": "Aspect Model WeekBasedCapacityGroup",
+        "assessmentBy": "Confirmation",
+        "priority": {}
+      },
+      {
+        "id": "CX-0128-CAC-006",
+        "requirement": "The JSON payload provided by data providers MUST comply with the [JSON schema](#3252-json-schema) as specified in this standard and MUST be validated against the same JSON schema by data consumers.",
+        "info": "Aspect Model WeekBasedCapacityGroup",
+        "assessmentBy": "Confirmation",
+        "priority": {}
+      },
+      {
+        "id": "CX-0128-CAC-007",
+        "requirement": "Within the Catena-X data space `WeekBasedMaterialCapacityGroup` data MUST be requested and exchanged using a connector, conforming to the standards [[CX-0018](#71-normative-references)] and [[CX-0002](#71-normative-references)]. It MUST be transferred using the [WeekBasedCapacityGroup API](#42-weekbasedcapacitygroup-api)",
+        "info": "Aspect Model WeekBasedCapacityGroup",
+        "assessmentBy": "Confirmation",
+        "priority": {}
+      },
+      {
+        "id": "CX-0128-CAC-008",
+        "requirement": "The [unique identifier](#324-identifier-of-semantic-model) for the semantic model, as specified in this standard, MUST be used to define the meaning of the data being transferred.",
+        "info": "Aspect Model IdBasedRequestForUpdate",
+        "assessmentBy": "Confirmation",
+        "priority": {}
+      },
+      {
+        "id": "CX-0128-CAC-009",
+        "requirement": "The JSON payload provided by data providers MUST comply with the [JSON schema](#3352-json-schema) as specified in this standard and MUST be validated against the same JSON schema by data consumers.",
+        "info": "Aspect Model IdBasedRequestForUpdate",
+        "assessmentBy": "Confirmation",
+        "priority": {}
+      },
+      {
+        "id": "CX-0128-CAC-010",
+        "requirement": "Within the Catena-X data space `IdBasedRequestForUpdate` data MUST be requested and exchanged using a connector, conforming to the standards [[CX-0018](#71-normative-references)] and [[CX-0002](#71-normative-references)]. It MUST be transferred using the [RequestForUpdate API](#43-requestforupdate-api).",
+        "info": "Aspect Model IdBasedRequestForUpdate",
+        "assessmentBy": "Confirmation",
+        "priority": {}
+      },
+      {
+        "id": "CX-0128-CAC-011",
+        "requirement": "The [unique identifier](#344-identifier-of-semantic-model) for the semantic model, as specified in this standard, MUST be used to define the meaning of the data being transferred.",
+        "info": "Aspect Model IdBasedComment",
+        "assessmentBy": "Confirmation",
+        "priority": {}
+      },
+      {
+        "id": "CX-0128-CAC-012",
+        "requirement": "The JSON Payload provided by data providers MUST comply with the [JSON schema](#3452-json-schema) as specified in this standard and MUST be validated against the same JSON schema by data consumers.",
+        "info": "Aspect Model IdBasedComment",
+        "assessmentBy": "Confirmation",
+        "priority": {}
+      },
+      {
+        "id": "CX-0128-CAC-013",
+        "requirement": "Within the Catena-X data space `IdBasedComment` data MUST be requested and exchanged using a connector, conforming to the standards [[CX-0018](#71-normative-references)] and [[CX-0002](#71-normative-references)]. It must be transferred using the [IdBasedComment API](#44-idbasedcomment-api).",
+        "info": "Aspect Model IdBasedComment",
+        "assessmentBy": "Confirmation",
+        "priority": {}
+      },
+      {
+        "id": "CX-0128-CAC-014",
+        "requirement": "When exchanging data with a DCM partner, the POST request payload MUST be structured as follows:",
+        "info": "Payload Structure",
+        "assessmentBy": "Confirmation",
+        "priority": {}
+      },
+      {
+        "id": "CX-0128-CAC-015",
+        "requirement": "Within the Catena-X data space APIs MUST only be accessible via a connector, conforming to the standard [[CX-0018](#71-normative-references)].",
+        "info": "API WeekBasedMaterialDemand",
+        "assessmentBy": "Confirmation",
+        "priority": {}
+      },
+      {
+        "id": "CX-0128-CAC-016",
+        "requirement": "The API MUST be registered as a data asset as defined in [Section 4.1.2.5](#4125-data-asset-structure).",
+        "info": "API WeekBasedMaterialDemand",
+        "assessmentBy": "Confirmation",
+        "priority": {}
+      },
+      {
+        "id": "CX-0128-CAC-017",
+        "requirement": "The API MUST be implemented as defined in [Section 4.1.2](#412-api-specification).",
+        "info": "API WeekBasedMaterialDemand",
+        "assessmentBy": "Confirmation",
+        "priority": {}
+      },
+      {
+        "id": "CX-0128-CAC-018",
+        "requirement": "Within the Catena-X data space APIs MUST only be accessible via a connector, conforming to the standard [[CX-0018](#71-normative-references)].",
+        "info": "API WeekBasedCapacityGroup",
+        "assessmentBy": "Confirmation",
+        "priority": {}
+      },
+      {
+        "id": "CX-0128-CAC-019",
+        "requirement": "The API MUST be registered as a data asset as defined in [Section 4.2.2.5](#4225-data-asset-structure).",
+        "info": "API WeekBasedCapacityGroup",
+        "assessmentBy": "Confirmation",
+        "priority": {}
+      },
+      {
+        "id": "CX-0128-CAC-020",
+        "requirement": "The API MUST be implemented as defined in [Section 4.2.2](#422-api-specification).",
+        "info": "API WeekBasedCapacityGroup",
+        "assessmentBy": "Confirmation",
+        "priority": {}
+      },
+      {
+        "id": "CX-0128-CAC-021",
+        "requirement": "Within the Catena-X data space APIs MUST only be accessible via a connector, conforming to the standard [[CX-0018](#71-normative-references)].",
+        "info": "API IdBasedRequestForUpdate",
+        "assessmentBy": "Confirmation",
+        "priority": {}
+      },
+      {
+        "id": "CX-0128-CAC-022",
+        "requirement": "The API MUST be registered as a data asset as defined in [Section 4.3.2.4](#4324-data-asset-structure).",
+        "info": "API IdBasedRequestForUpdate",
+        "assessmentBy": "Confirmation",
+        "priority": {}
+      },
+      {
+        "id": "CX-0128-CAC-023",
+        "requirement": "The API MUST be implemented as defined in [Section 4.3.2](#432-api-specification).",
+        "info": "API IdBasedRequestForUpdate",
+        "assessmentBy": "Confirmation",
+        "priority": {}
+      },
+      {
+        "id": "CX-0128-CAC-024",
+        "requirement": "Within the Catena-X data space APIs MUST only be accessible via a connector, conforming to the standard [[CX-0018](#71-normative-references)].",
+        "info": "API IdBasedComment",
+        "assessmentBy": "Confirmation",
+        "priority": {}
+      },
+      {
+        "id": "CX-0128-CAC-025",
+        "requirement": "The API MUST be registered as a data asset as defined in [Section 4.4.2.5](#4425-data-asset-structure).",
+        "info": "API IdBasedComment",
+        "assessmentBy": "Confirmation",
+        "priority": {}
+      },
+      {
+        "id": "CX-0128-CAC-026",
+        "requirement": "The API MUST be implemented as defined in [Section 4.4.2](#442-api-specification).",
+        "info": "API IdBasedComment",
+        "assessmentBy": "Confirmation",
+        "priority": {}
+      },
+      {
+        "id": "CX-0128-CAC-027",
+        "requirement": "Data providers MAY adopt the DCM AAS API. If they choose otherwise, none of the obligations of this section apply.",
+        "info": "API DCM AAS",
+        "assessmentBy": "Confirmation",
+        "priority": {}
+      },
+      {
+        "id": "CX-0128-CAC-028",
+        "requirement": "Within the Catena-X data space APIs MUST only be accessible via a connector, conforming to the standard [[CX-0018](#71-normative-references)].",
+        "info": "API DCM AAS",
+        "assessmentBy": "Confirmation",
+        "priority": {}
+      },
+      {
+        "id": "CX-0128-CAC-029",
+        "requirement": "The API MUST be implemented as defined in [Section 4.5.2](#452-api-specification).",
+        "info": "API DCM AAS",
+        "assessmentBy": "Confirmation",
+        "priority": {}
+      },
+      {
+        "id": "CX-0128-CAC-030",
+        "requirement": "Companies adopting demand and capacity management in Catena-X MUST conform to the processes and guidelies defined in [Chapter 5](#5-processes) and all its subsections.",
+        "info": "Processes",
+        "assessmentBy": "Confirmation",
+        "priority": {}
+      },
+      {
+        "id": "CX-0128-CAC-031",
+        "requirement": "The following sections describe capabilities, that are REQUIRED (except for subsections that are defined as optional):",
+        "info": "Capabilities",
+        "assessmentBy": "Confirmation",
+        "priority": {}
+      },
+      {
+        "id": "CX-0128-CAC-032",
+        "requirement": "The following sections describe capabilities, that are OPTIONAL:",
+        "info": "Capabilities",
+        "assessmentBy": "Confirmation",
+        "priority": {}
+      },
+      {
+        "id": "CX-0128-CAC-033",
+        "requirement": "Software solutions implementing demand and capacity management in Catena-X MUST conform to the data formats and processes defined in the following sections, for every capability they intend to offer:",
+        "info": "Capabilities",
+        "assessmentBy": "Confirmation",
+        "priority": {}
+      },
+      {
+        "id": "CX-0128-CAC-034",
+        "requirement": "All participants involved in the Catena-X DCM use case MUST consent to the *Data Exchange Governance* framework agreement.",
+        "info": "Framework",
+        "assessmentBy": "Confirmation",
+        "priority": {}
+      },
+      {
+        "id": "CX-0128-CAC-035",
+        "requirement": "A key aspect of managing business partner relationships within Catena-X involves defining and applying policies that facilitate and protect data exchange. Both customers and suppliers MUST implement and uphold these policies in order to guarantee a secure and collaborative data exchange:",
+        "info": "Policies",
+        "assessmentBy": "Confirmation",
+        "priority": {}
+      }
+    ]
+  }
+}
