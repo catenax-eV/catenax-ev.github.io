@@ -43,6 +43,7 @@ pagination_next: null
 | Poland | PL |
 | Portugal | PT |
 | Romania | RO |
+| Serbia | RS |
 | Singapore | SG |
 | Slovakia | SK |
 | Slovenia | SI |
@@ -107,7 +108,6 @@ pagination_next: null
 | São Tomé and Príncipe | ST |
 | Saudi Arabia | SA |
 | Senegal | SN |
-| Serbia | RS |
 | Seychelles | SC |
 | Solomon Islands | SB |
 | Suriname | SR |
