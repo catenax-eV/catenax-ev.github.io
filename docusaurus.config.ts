@@ -2,6 +2,8 @@ import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
+const glossaryPlugin = require('docusaurus-plugin-glossary');
+
 const config: Config = {
   title: 'Catena-X - Library',
   tagline: 'If you are interested in joining the Catena-X ecosystem, you need to prove compliance. Right here you will find the complete normative documentation for everything you need for doing so.',
@@ -41,6 +43,14 @@ const config: Config = {
         ],
       },
     ],
+    // glossary plugin: serves glossary content from /glossary at site route /glossary
+    [
+      require.resolve('docusaurus-plugin-glossary'),
+      {
+        glossaryPath: 'glossary/glossary.json',
+        routePath: '/glossary',
+      },
+    ],
   ],
 
   presets: [
@@ -48,6 +58,16 @@ const config: Config = {
       'classic',
       {
         docs: {
+          // Add the remark plugin to enable auto-linking in pages
+          remarkPlugins: [
+            glossaryPlugin.getRemarkPlugin(
+                {
+                  glossaryPath: 'glossary/glossary.json',
+                  routePath: '/glossary',
+                },
+                { siteDir: __dirname }
+            ),
+          ],
           sidebarPath: './sidebars.ts',
           versions: {
             current: {
@@ -77,7 +97,7 @@ const config: Config = {
           customCss: './src/css/custom.css',
         },
       } satisfies Preset.Options,
-    ],
+    ]
   ],
   markdown: {
     mermaid: true,
@@ -119,6 +139,10 @@ const config: Config = {
           label: 'Standards',
           position: 'left',
           items: [
+            {
+              to: '/glossary/',
+              label: 'Glossary',
+            },
             {
               to: '/docs/standards/overview/',
               label: 'Standards',
