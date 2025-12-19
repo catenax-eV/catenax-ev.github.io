@@ -1,0 +1,166 @@
+@startuml address
+
+skinparam dpi 50
+
+package "Address and References" {
+  entity LegalEntity {
+    BPNL
+    ...
+  }
+  
+  entity Site {
+    BPNS
+    ...
+  }
+  
+  entity Address {
+    BPNA
+    Name
+    IsParticipantData
+    CreatedAt
+    UpdateAt
+  }
+
+  enum AddressType {
+    LegalAddress
+    SiteMainAddress
+    LegalAndSiteMainAddress
+    AdditionalAddress
+  }
+
+  class AddressState {
+    ValidFrom
+    ValidTo
+  }
+
+  enum AddressStateType{
+    ACTIVE
+    INACTIVE
+  }
+
+  class AddressIdentifier{
+    Value
+  }
+
+  entity IdentifierType {
+    TechnicalKey
+    Name
+    ...
+  }
+
+  class AlternativePostalAddress{
+    DeliveryServiceQualifier
+    DeliveryServiceNumber
+  }
+
+  enum DeliveryServiceType {
+    PO_BOX
+    PRIVATE_BAG
+    BOITE_POSTALE
+  }
+
+  class PhysicalPostalAddress{
+    AdministrativeAreaLevel2
+    AdministrativeAreaLevel3
+    District
+    CompanyPostalCode
+    TaxJurisdictionCode
+    IndustrialZone
+    Building
+    Floor
+    Door 
+  }
+
+  abstract class PostalAddress{
+    PostalCode
+    City
+  }
+
+  enum Country {
+    DE
+    FR
+    US
+    ...
+  }
+
+  entity AdministrativeAreaLevel1{
+    Code
+    Name
+    ...
+  }
+
+  class GeographicCoordinates {
+    Latitude
+    Longitude
+    Altitude
+  }
+
+  class Street {
+    NamePrefix
+    AdditionalNamePrefix
+    Name
+    NameSuffix
+    AdditionalNameSuffix
+    HouseNumber
+    HouseNumberSupplement
+  }
+
+  ' not standardized yet
+  ' class ConfidenceCriteria {
+  '   SharedByOwner
+  '   CheckedByExternalSource
+  '   NumberOfSharingMembers
+  '   LastConfidenceCheckAt
+  '   NextConfidenceCheckAt
+  '   ConfidenceLevel
+  ' }
+
+  ' not implemented / standardized yet
+  ' class AddressScriptVariant {
+  '   Name
+  ' }
+
+  ' enum ScriptCode {
+  '   Arab
+  '   Cyrl
+  '   Hans
+  '   Jpan
+  '   Latn
+  '   ...
+  ' }
+
+  Address "1..*" -u-o "1" LegalEntity : LegalEntityBPN
+  Address "1..*" -u-o "0..1" Site: SiteBPN
+
+  Address "*" -u-o "1" AddressType : Type
+
+  Address "1" *-l-> "*" AddressState : States
+  AddressState "*" -d-o "1" AddressStateType : Type
+
+  Address "1" *-r-> "*" AddressIdentifier : Identifiers
+  AddressIdentifier "*" -d-o "1" IdentifierType : Type
+  
+  Address "1" -d-> "0..1" AlternativePostalAddress : AlternativePostalAddress
+  AlternativePostalAddress "*" -d-o "1" DeliveryServiceType : DeliveryServiceType
+  AlternativePostalAddress -d-|> PostalAddress
+  
+  Address "1" -d-> "1" PhysicalPostalAddress : PhysicalPostalAddress
+  PhysicalPostalAddress "1" -d-> "0..1" Street : Street
+  PhysicalPostalAddress -d-|> PostalAddress
+  
+  PostalAddress "*" -d-o "1" Country : Country
+  PostalAddress "*" -d-o "0..1" AdministrativeAreaLevel1 : AdministrativeAreaLevel1
+  PostalAddress "1" -d-> "0..1" GeographicCoordinates : GeographicCoordinates
+
+  ' not standardized yet
+  ' Address "1" -u-> "1" ConfidenceCriteria : ConfidenceCriteria
+
+  ' not implemented / standardized yet
+  ' Address "1" *--> "*" AddressScriptVariant : ScriptVariants
+  ' AddressScriptVariant "*" --o "1" ScriptCode : ScriptCode
+  ' AddressScriptVariant "1" -d-> "1" PhysicalPostalAddress : PhysicalPostalAddress
+  ' AddressScriptVariant "1" -d-> "0..1" AlternativePostalAddress : AlternativePostalAddress
+}
+
+hide methods
+@enduml

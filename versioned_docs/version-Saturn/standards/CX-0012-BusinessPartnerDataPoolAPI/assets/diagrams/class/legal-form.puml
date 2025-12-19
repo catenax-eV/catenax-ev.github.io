@@ -1,0 +1,44 @@
+@startuml legal-form
+
+skinparam dpi 50
+
+package "Legal Form and References" {
+
+' TechnicalKey should be Code
+' Abbreviation should be Abbreviations
+ entity LegalForm {
+    TechnicalKey
+    Name
+    Abbreviations
+    TransliteratedName
+    TransliteratedAbbreviations
+    IsActive
+  }
+
+  enum Language {
+    DE
+    FR
+    EN
+    ...
+  }
+
+  enum Country {
+    DE
+    FR
+    US
+    ...
+  }
+  
+  entity AdministrativeAreaLevel1 {
+    Code
+    Name
+  }
+
+  LegalForm "*" -d-o "0..1" Language : Language
+  LegalForm "*" -d-o "0..1" Country : Country
+  LegalForm "*" -d-o "0..1" AdministrativeAreaLevel1 : AdministrativeAreaLevel1
+  AdministrativeAreaLevel1 "*" -d-o "0..1" Country : Country
+}
+
+hide methods
+@enduml

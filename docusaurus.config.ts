@@ -51,10 +51,14 @@ const config: Config = {
           sidebarPath: './sidebars.ts',
           versions: {
             current: {
-              label: 'CX-Saturn (Preview)',
+              label: 'CX-Titan (Preview)',
+            },
+            'Saturn': {
+              label: 'CX-Saturn (Current)'
             },
             'Io': {
-              label: 'CX-Io (Current)',
+              label: 'CX-Io',
+              banner: 'unmaintained'
             },
             'Jupiter': {
               label: 'CX-Jupiter',
