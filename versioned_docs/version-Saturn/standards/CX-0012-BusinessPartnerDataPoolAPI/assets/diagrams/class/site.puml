@@ -1,0 +1,79 @@
+@startuml site
+
+skinparam dpi 50
+
+package "Site and References" {
+  entity LegalEntity {
+    BPNL
+    ...
+  }
+  
+  entity Site {
+    BPNS
+    Name
+    IsParticipantData
+    CreatedAt
+    UpdateAt
+  }
+
+  entity Address {
+      BPNA
+      ...
+  }
+
+  class SiteState {
+    ValidFrom
+    ValidTo
+  }
+
+  enum SiteStateType{
+      ACTIVE
+      INACTIVE
+    }
+
+  class MainAddress {}
+
+  ' not standardized yet
+  ' class ConfidenceCriteria {
+  '   SharedByOwner
+  '   CheckedByExternalSource
+  '   NumberOfSharingMembers
+  '   LastConfidenceCheckAt
+  '   NextConfidenceCheckAt
+  '   ConfidenceLevel
+  ' }
+
+  ' not implemented / standardized yet
+  ' class SiteScriptVariant {
+  '   Name
+  ' }
+
+  ' enum ScriptCode {
+  '   Arab
+  '   Cyrl
+  '   Hans
+  '   Jpan
+  '   Latn
+  '   ...
+  ' }
+
+  Site "*" -u-o "1" LegalEntity : LegalEntityBPN
+  Address "1..*" -d-o "0..1" Site: SiteBPN
+  
+  Site "1" *-l-> "*" SiteState : States
+  SiteState "*" -d-o "1" SiteStateType : Type
+  
+  Site "1" -r-> "1" MainAddress : MainAddress    
+  MainAddress -u-|> Address
+
+  ' not standardized yet
+  ' Site "1" -u-> "1" ConfidenceCriteria : ConfidenceCriteria
+
+  ' not implemented / standardized yet
+  ' Site "1" *--> "*" SiteScriptVariant : ScriptVariants
+  ' SiteScriptVariant "*" --o "1" ScriptCode : ScriptCode
+}
+
+hide methods
+hide MainAddress members
+@enduml

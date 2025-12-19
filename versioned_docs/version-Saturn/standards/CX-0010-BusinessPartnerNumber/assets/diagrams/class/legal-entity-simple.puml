@@ -1,0 +1,28 @@
+@startuml legal-entity-simple
+
+skinparam dpi 50
+
+package "Legal Entity and References" {
+  entity LegalEntity {
+    BPNL
+    ...
+  }
+
+  entity Site {}
+
+  entity Address {}
+
+  class LegalAddress {}
+
+  Address "1..*" -d-o "1" LegalEntity : LegalEntityBPN
+  Site "*" -d-o "1" LegalEntity : LegalEntityBPN
+
+  LegalEntity "1" -r-> "1" LegalAddress : LegalAddress
+  LegalAddress -u-|> Address
+}
+
+hide methods
+hide LegalAddress members
+hide Site members
+hide Address members
+@enduml
