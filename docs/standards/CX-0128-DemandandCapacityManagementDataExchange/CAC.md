@@ -1,3 +1,75 @@
+---
+title: "Conformity Assessment Criteria: CX-0129 Request for Quotation Exchange"
+---
+
+## General Information
+
+- cxId: CX-0128
+- name: Demand and Capacity Management Data Exchange
+- version: 2.2.0
+- release: 25.09
+
+## Conformity Assessment Criteria
+
+### CX-0128-CAC-001
+
+- type: MUST
+- assessmentBy:
+    - Inspection: false
+    - Observation: false
+    - Self-Assessment: false
+    - Inquiry: false
+    - Confirmation: true
+    - Recalculation: false
+    - Reperformance: false
+    - Analytical: false
+    - Procedures: false
+
+#### Requirement
+
+Policies within Catena-X MUST be aligned with the example usage policy in the CX ODRL Profile and with all subsections of [2.3 Additional Requirements](#23-additional-requirements).
+
+#### Proof of Confirmity
+
+Customer and Supplier: Contract Definitions, Policies and Assets used by the EDC for the respective APIs.
+
+#### Information
+
+Policies
+
+### CX-0128-CAC-002
+
+- type: MUST
+- assessmentBy:
+    - Inspection: false
+    - Observation: false
+    - Self-Assessment: false
+    - Inquiry: false
+    - Confirmation: true
+    - Recalculation: false
+    - Reperformance: false
+    - Analytical: false
+    - Procedures: false
+
+#### Requirement
+
+The [unique identifier](#314-identifier-of-semantic-model) for the semantic model, as specified in this standard, MUST be used to define the meaning of the data being transferred.
+
+#### Proof of Confirmity
+
+Customer: Egest of Aspect Model.
+
+#### Information
+
+Aspect Model WeekBasedMaterialDemand
+
+
+
+
+---
+
+## Not part, ...
+
 | CAC - ID NR. | Standard | Standard Version | Category | Status | Platform Capability | Standard title | Requirement (CAC) | Add Info | MUST/ SHOULD  | Proof of Conformity  | Inspection | Observation | Self-Assessment | Inquiry | Confirmation | Recalculation | Reperformance | Analytical Procedures | Priority for testing (Y/N) |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | CX-0128-CAC-001 | CX-0128 | 2.2.0 | Triangle | Release 25.09 | Demand and Capacity | Demand and Capacity Management Data Exchange | Policies within Catena-X MUST be aligned with the example usage policy in the CX ODRL Profile and with all subsections of [2.3 Additional Requirements](#23-additional-requirements). | Policies | MUST | Customer and Supplier: Contract Definitions, Policies and Assets used by the EDC for the respective APIs |  |  |  |  | x |  |  |  |  |
