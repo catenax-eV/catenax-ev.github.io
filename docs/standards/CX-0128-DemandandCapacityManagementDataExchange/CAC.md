@@ -1,6 +1,4 @@
----
-title: "Conformity Assessment Criteria: CX-0129 Request for Quotation Exchange"
----
+# Conformity Assessment Criteria
 
 ## General Information
 
