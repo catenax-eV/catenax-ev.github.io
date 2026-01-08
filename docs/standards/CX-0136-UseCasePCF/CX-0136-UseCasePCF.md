@@ -525,7 +525,7 @@ Furthermore, the participants of these use case MUST follow the [CX-0001 EDC Dis
 ##### 4.1.2.1 API Endpoints & resources
 
 The PCF exchange API MUST be implemented as specified in the openAPI
-documentation as stated [here](./assets/catena-x-pcf-endpoint-1_1_2.yaml)
+documentation as stated [here](./assets/catena-x-pcf-endpoint-1_2_0.yaml)
 
 The following two API SHOULD be provided as they reflect a revised version of requesting and responding to PCF exchange requests:
 
