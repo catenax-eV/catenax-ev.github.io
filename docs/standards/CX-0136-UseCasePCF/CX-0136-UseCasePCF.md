@@ -594,7 +594,6 @@ defined PCF dataset back to the quested consumer.
 
 Synchronous data exchange for PCF MUST be implemented according to Industry Core Standard CX-0151 [here](https://github.com/catenax-eV/product-standardization-prod/blob/main/standards/CX-0151-IndustryCoreBasics/CX-0151-IndustryCoreBasics.md#4-application-programming-interfaces).
 
-
 #### 4.2.2 API SPECIFICATION (SYNCHRONOUS)
 
 ##### 4.2.2.1 Submodel registration in the Digital Twin
@@ -606,15 +605,13 @@ For **Synchronous PCF Data Exchange**, the **Data Provider MUST register an addi
 - The submodel endpoint **MUST** advertise:
   - `interface = "SUBMODEL-3.0"`
   - `subprotocol = "DSP"`
-  - `subprotocolBody` in the following form (semicolon-separated key/value pairs):
-    ```
-    id=AssetId_of_EDCasset;dspEndpoint=https://some.controlplane.url/api/v1/dsp
-    ```
+  - `subprotocolBody` in the following form (semicolon-separated key/value pairs): `id=AssetId_of_EDCasset;dspEndpoint=https://some.controlplane.url/api/v1/dsp`
     - `id` **SHOULD** be a **UUIDv4 or UUIDv7** (the EDC Asset ID used during DSP negotiation).
     - `dspEndpoint` **MUST** point to the **provider’s EDC Control Plane** DSP endpoint (HTTPS, no explicit port).
 - The submodel endpoint’s `href` **MUST** follow **CX-0002 Digital Twins in Catena-X v2.2.0** and contain the **exact Data Plane URL** used to **synchronously** fetch the PCF values (value-only JSON) for the material.
 
 **Illustrative submodel descriptor (excerpt):**
+
 ```json
 {
   "idShort": "SynchronousPCFExchangeEndpoint",
@@ -753,7 +750,7 @@ Dual Interpretation Capability
 - Applications MUST be able to retrieve submodels of type io.catenax.pcf for both v7 and v9 data model versions.
 - Applications MUST be able to publish submodels of type io.catenax.pcf for both v7 and v9 data model versions.
 - The aspect model version MUST be explicitly stated in the metadata of the payload to allow correct schema identification and parsing.
- 
+
 PCF API Flexibility
 
 - Applications MUST expose a PCF API v1.2.0
