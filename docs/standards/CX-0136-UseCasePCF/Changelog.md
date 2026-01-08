@@ -25,7 +25,7 @@ All notable changes to **CX-0136 (Use Case PCF)** will be documented in this fil
 
 ### Changed
 
-- API improvements (request/response/update in [catena-x-pcf-endpoint-1_1_2.yaml](./assets/catena-x-pcf-endpoint-1_1_2.yaml):
+- API improvements (request/response/update in [catena-x-pcf-endpoint-1_1_2.yaml](./assets/catena-x-pcf-endpoint-1_2_0.yaml):
   - Added footprintExchange/\{requestId\} endpoint for both PCF Response/Update and PCF Request.
   - PUT for PCF Response/Update and GET for PCF Request
   - requestId is the mandatory parameter used in the communication. Additionally, either customerPartId or manufacturerPartId should be given when requesting a footprint (GET)
