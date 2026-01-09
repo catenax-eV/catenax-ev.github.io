@@ -1,7 +1,7 @@
 openapi: "3.1.0"
 info:
   title: "PCF Data Exchange API"
-  version: 1.1.2
+  version: 1.2.0
 paths:
   /footprintExchange/{requestId}:
     put:
@@ -41,7 +41,7 @@ paths:
           application/json:
             schema: {}
         required: true
-        description: "PCF data that matches the <a href=\"https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.pcf/7.0.0/gen/Pcf-schema.json\">Catena-X aspect model urn:samm:io.catenax.pcf:7.0.0#Pcf</a>"
+        description: "PCF data that matches the <a href=\"https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.pcf/9.0.0/gen/Pcf-schema.json\">Catena-X aspect model urn:samm:io.catenax.pcf:9.0.0#Pcf</a>"
       responses:
         "200":
           description: "OK"
@@ -155,7 +155,7 @@ paths:
           schema:
             type: string
       requestBody:
-        description: The requested PCF in WBCSD format
+        description: PCF data that matches the <a href=\"https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.pcf/7.0.0/gen/Pcf-schema.json\">Catena-X aspect model urn:samm:io.catenax.pcf:7.0.0#Pcf</a>
         required: true
         content:
           application/json:
