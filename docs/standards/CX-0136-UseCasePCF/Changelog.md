@@ -1,8 +1,18 @@
----
-title: "Changelog"
----
+# Changelog
 
 All notable changes to **CX-0136 (Use Case PCF)** will be documented in this file.
+
+## [2.2.1] - CX-Saturn (25.09)
+
+### Added
+
+- Chapter 6 for backward compatibility
+
+### Changed
+
+- Enhanced chapter 4.2 SYNCHRONOUS PCF DATA EXCHANGE with details abut API specifications
+- Replaced `urn:samm:io.catenax.pcf:8.0.0` with `urn:samm:io.catenax.pcf:9.0.0`
+- [catena-x-pcf-endpoint-1_2_0.yaml](./assets/catena-x-pcf-endpoint-1_2_0.yaml) adjusted to `urn:samm:io.catenax.pcf:9.0.0`
 
 ## [2.2.0] - CX-Saturn (25.09)
 
@@ -15,7 +25,7 @@ All notable changes to **CX-0136 (Use Case PCF)** will be documented in this fil
 
 ### Changed
 
-- API improvements (request/response/update in [catena-x-pcf-endpoint-1_1_2.yaml](./assets/catena-x-pcf-endpoint-1_1_2.yaml):
+- API improvements (request/response/update in [catena-x-pcf-endpoint-1_1_2.yaml](./assets/catena-x-pcf-endpoint-1_2_0.yaml):
   - Added footprintExchange/\{requestId\} endpoint for both PCF Response/Update and PCF Request.
   - PUT for PCF Response/Update and GET for PCF Request
   - requestId is the mandatory parameter used in the communication. Additionally, either customerPartId or manufacturerPartId should be given when requesting a footprint (GET)
