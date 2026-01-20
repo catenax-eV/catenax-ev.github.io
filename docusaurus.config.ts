@@ -179,6 +179,18 @@ const config: Config = {
           label: "Working Model",
         },
         {
+          type: "docSidebar",
+          sidebarId: "sidebar_architecture_guardrails",
+          position: "left",
+          label: "Architecture Guardrails",
+        },
+        {
+          type: "docSidebar",
+          sidebarId: "sidebar_cx_bok",
+          position: "left",
+          label: "CX BOK",
+        },
+        {
           type: 'dropdown',
           label: 'Releases',
           position: 'left',
