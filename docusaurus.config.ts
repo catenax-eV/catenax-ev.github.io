@@ -151,14 +151,6 @@ const config: Config = {
               to: '/docs/non-functional/overview/',
               label: 'Non-functional requirements',
             },
-            {
-              to: '/docs/architecture-guardrails/overview/',
-              label: 'Architecture Guardrails',
-            },
-            {
-              to: '/docs/cx-bok/overview/',
-              label: 'CX Body of Knowledge',
-            },
           ],
         },
         /* {

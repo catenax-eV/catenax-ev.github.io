@@ -415,8 +415,8 @@ Always verify:
 ## References
 
 ### Related Standards
-- [CX-0013 Identity and Access Management](../standards/) - IAM requirements
-- [CX-0015 IAM & Access Control Paradigm](../standards/) - Access control model
+- CX-0013 Identity and Access Management - IAM requirements *(See [Standards](../standards/overview.md))*
+- CX-0015 IAM & Access Control Paradigm - Access control model *(See [Standards](../standards/overview.md))*
 
 ### External Resources
 - [W3C DID Core Specification](https://www.w3.org/TR/did-core/)

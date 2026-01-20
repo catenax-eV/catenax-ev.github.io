@@ -116,10 +116,10 @@ _How can compliance with this guardrail be verified?_
 ## References
 
 ### Related Guardrails
-- [AGR-X.XX](./link-to-related-guardrail) - [Related guardrail title]
+- AGR-X.XX - [Related guardrail title] *(Add link to related guardrail)*
 
 ### Standards
-- [CX-XXXX](../standards/link-to-standard) - [Standard name]
+- CX-XXXX - [Standard name] *(Add link to relevant standard)*
 
 ### External Resources
 - [Resource name](https://example.com) - [Description]

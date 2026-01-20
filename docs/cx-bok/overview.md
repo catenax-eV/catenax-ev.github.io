@@ -15,7 +15,7 @@ The CX BOK provides in-depth knowledge about key concepts, workflows, and archit
 
 ## What is the CX BOK?
 
-While [Standards](/docs/standards/overview) define **what must be implemented**, and [Architecture Guardrails](/docs/architecture-guardrails/overview) define **how to structure solutions**, the CX BOK explains **why things work the way they do** and provides the **conceptual foundation** for the ecosystem.
+While [Standards](/docs/standards/overview) define **what must be implemented**, and [Architecture Guardrails](../architecture-guardrails/overview.md) define **how to structure solutions**, the CX BOK explains **why things work the way they do** and provides the **conceptual foundation** for the ecosystem.
 
 ### CX BOK vs. Standards
 
@@ -148,7 +148,7 @@ Cross-references link related concepts, standards, and guardrails.
 
 ## Related Resources
 
-- [Architecture Guardrails](/docs/architecture-guardrails/overview) - Rules and best practices
+- [Architecture Guardrails](../architecture-guardrails/overview.md) - Rules and best practices
 - [Standards](/docs/standards/overview) - Normative specifications
 - [Glossary](/glossary) - Term definitions
 - [Working Model](/docs/working-model/overview) - Governance and processes
