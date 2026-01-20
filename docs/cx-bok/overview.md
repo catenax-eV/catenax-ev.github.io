@@ -170,5 +170,5 @@ The CX BOK is continuously expanding. Check back regularly for new topics and up
 
 ---
 
-**Last Updated**: January 2026  
+**Last Updated**: January 2025  
 **Current Topics**: 2 (growing)
