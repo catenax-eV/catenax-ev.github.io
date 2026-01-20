@@ -151,6 +151,14 @@ const config: Config = {
               to: '/docs/non-functional/overview/',
               label: 'Non-functional requirements',
             },
+            {
+              to: '/docs/architecture-guardrails/overview/',
+              label: 'Architecture Guardrails',
+            },
+            {
+              to: '/docs/cx-bok/overview/',
+              label: 'CX Body of Knowledge',
+            },
           ],
         },
         /* {
@@ -177,18 +185,6 @@ const config: Config = {
           sidebarId: "sidebar_working_model",
           position: "left",
           label: "Working Model",
-        },
-        {
-          type: "docSidebar",
-          sidebarId: "sidebar_architecture_guardrails",
-          position: "left",
-          label: "Architecture Guardrails",
-        },
-        {
-          type: "docSidebar",
-          sidebarId: "sidebar_cx_bok",
-          position: "left",
-          label: "CX BOK",
         },
         {
           type: 'dropdown',
