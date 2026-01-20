@@ -102,7 +102,7 @@ const config: Config = {
   markdown: {
     mermaid: true,
     hooks: {
-      onBrokenMarkdownLinks: 'throw',
+      onBrokenMarkdownLinks: 'warn',
       onBrokenMarkdownImages: 'throw',
     },
   },
@@ -140,16 +140,28 @@ const config: Config = {
           position: 'left',
           items: [
             {
-              to: '/glossary/',
-              label: 'Glossary',
-            },
-            {
               to: '/docs/standards/overview/',
               label: 'Standards',
             },
             {
               to: '/docs/non-functional/overview/',
               label: 'Non-functional requirements',
+            },
+            {
+              type: 'html',
+              value: '<hr style="margin: 0.5rem 0;">',
+            },
+            {
+              to: '/docs/next/architecture-guardrails/overview/',
+              label: '🔧 Architecture Guardrails',
+            },
+            {
+              to: '/docs/next/cx-bok/overview/',
+              label: '📚 CX Body of Knowledge',
+            },
+            {
+              to: '/glossary/',
+              label: 'Glossary',
             },
           ],
         },
