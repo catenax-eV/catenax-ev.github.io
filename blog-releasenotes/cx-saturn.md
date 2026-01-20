@@ -20,18 +20,6 @@ tags: [release, saturn]
 
 - **1 standard deprecated** to consolidate the standards landscape and improve user-friendliness (CX-0013)
 
-:::warning
-
-During the recent Deployment Gate for **CX-Saturn** the proposed standard candidates were reviewed with a strong focus on **backward compatibility with CX-Jupiter** as well as on potential **implementation risks**.
-
-The following standard was identified as not fully backward compatibility with CX-Jupiter and to fix this, it was allowed to apply the required changes through a fast-track process to be included in the CX-Saturn release:
-
-- **CX-0136 – Use Case PCF (v2.2)**
-
-This standard will be released seperated on **January, 5th 2026**.
-
-:::
-
 ## Catena-X Operating Model
 
 With the CX-Saturn release, the Operating Model strengthens compliance, clarifies governance rules, enhances lifecycle management, and refreshes the service map. The outlook on Self-Sovereign Identity (SSI) has been realigned, highlighting interoperability and standardization as key priorities.
