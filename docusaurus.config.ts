@@ -140,10 +140,6 @@ const config: Config = {
           position: 'left',
           items: [
             {
-              to: '/glossary/',
-              label: 'Glossary',
-            },
-            {
               to: '/docs/standards/overview/',
               label: 'Standards',
             },
@@ -162,6 +158,10 @@ const config: Config = {
             {
               to: '/docs/next/cx-bok/overview/',
               label: '📚 CX Body of Knowledge',
+            },
+            {
+              to: '/glossary/',
+              label: 'Glossary',
             },
           ],
         },
