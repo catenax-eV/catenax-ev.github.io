@@ -30,7 +30,7 @@ A business application provider is a Participant that (i) facilitates data excha
 
 App Provider may process data only (i) for the Predefined Purposes and Individual Purposes determined by Data Provider and/or Data Consumer, as applicable (including data storage as required) in order to facilitate the relevant data exchange and/or (ii) to develop and provide data-related services within the Catena-X Data Space and in accordance with the Governance Framework.
 
-Participants are generally free to agree from where the Data Provider provides and where the Data Consumer processes data under this Data Exchange Governance, provided that they observe the geographical limitations specified in the "Country Clearance List" as updated from time to time by the Association [Country Clearance List](https://catenax-ev.github.io/docs/next/regulatory-framework/30000ft/country-clearance-list).
+Participants are generally free to agree from where the Data Provider provides and where the Data Consumer processes data under this Data Exchange Governance, provided that they observe the geographical limitations specified in the "Country Clearance List" as updated from time to time by the Association [Country Clearance List](../30000ft/country-clearance-list.md).
 
 Unless otherwise set out hereunder, the defined terms under the Governance Framework as referenced in the 10 Golden Rules shall apply to this Data Exchange Governance.
 
