@@ -5,6 +5,7 @@
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
+    "prebuild": "node ./src/scripts/convert-csv-to-json.js",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
@@ -26,8 +27,10 @@
     "@mdx-js/react": "^3.0.0",
     "@mermaid-js/layout-elk": "^0.1.9",
     "clsx": "^2.0.0",
+    "csv-parser": "^3.2.0",
     "docusaurus-plugin-image-zoom": "^2.0.0",
     "elkjs": "^0.11.0",
+    "papaparse": "^5.5.3",
     "prism-react-renderer": "^2.3.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
@@ -39,6 +42,7 @@
     "husky": "^7.0.4",
     "markdownlint": "^0.25.1",
     "markdownlint-cli": "^0.31.1",
+    "raw-loader": "^4.0.2",
     "typescript": "~5.2.2"
   },
   "browserslist": {
