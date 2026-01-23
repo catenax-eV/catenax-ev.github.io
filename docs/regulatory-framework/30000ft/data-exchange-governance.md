@@ -7,4 +7,4 @@ Compliance with ***Data Exchange Governance*** is mandatory for all data space p
 
 :::
 
-PDF-Version: [Catena-X_Data_Exchange_Governance.pdf](./assets/2025_09_DataExchangeGovernance_1.0.pdf)
+PDF-Version: [Catena-X_Data_Exchange_Governance.pdf](./assets/2025_09_DataExchangeGovernance.pdf)
