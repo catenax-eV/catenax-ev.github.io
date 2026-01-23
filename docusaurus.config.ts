@@ -155,6 +155,12 @@ const config: Config = {
           label: "Working Model",
         },
         {
+          type: "docSidebar",
+          sidebarId: "sidebar_architecture",
+          position: "left",
+          label: "Architecture",
+        },
+        {
           type: 'dropdown',
           label: 'Releases',
           position: 'left',
