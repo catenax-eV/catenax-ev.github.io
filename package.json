@@ -14,7 +14,11 @@
     "write-heading-ids": "docusaurus write-heading-ids",
     "typecheck": "tsc",
     "lint": "markdownlint --ignore node_modules --config .markdownlint.json '**/*.md'",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "generate:adrs-index": "node scripts/generate-adr-index.js"
+  },
+  "adrs": {
+    "generatePdfScript": "scripts/generate-adrs-pdfs.sh"
   },
   "dependencies": {
     "@docusaurus/core": "^3.9.2",
@@ -56,4 +60,5 @@
   "engines": {
     "node": ">=18.0"
   }
+ 
 }
