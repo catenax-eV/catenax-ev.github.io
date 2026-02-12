@@ -1,0 +1,174 @@
+{
+  "description": "A collection of technical terms and their definitions",
+  "terms": [
+    {
+      "term": "API",
+      "abbreviation": "Application Programming Interface",
+      "definition": "An API is a way for two or more computer programs to communicate with each other.",
+      "relatedTerms": ["REST", "GraphQL"]
+    },
+    {
+      "term": "REST",
+      "abbreviation": "Representational State Transfer",
+      "definition": "An architectural style for designing networked applications.",
+      "relatedTerms": ["API", "HTTP"]
+    },
+    {
+      "term": "BPN",
+      "abbreviation": "Business Partner Number",
+      "definition": "A BPN is the unique identifier of a partner within Catena-X.",
+      "relatedTerms": ["BPNL", "BPNS"]
+    },
+    {
+      "term": "BPNL",
+      "abbreviation": "Business Partner Number (Legal Entity)",
+      "definition": "The unique identifier of a legal entity of a partner within Catena-X (e.g., a company).",
+      "relatedTerms": ["BPN"]
+    },
+    {
+      "term": "BPNS",
+      "abbreviation": "Business Partner Number (Site)",
+      "definition": "The unique identifier of a partner site within Catena-X (e.g., a specific factory).",
+      "relatedTerms": ["BPN"]
+    },
+    {
+      "term": "Aspect Model",
+      "definition": "A formal, machine-readable semantic description (expressed with RDF/Turtle) of data accessible from an aspect. Note 1: An Aspect Model must adhere to the Semantic Aspect Meta Model (SAMM) and be compliant with its validity rules. Note 2: Aspect Models are logical data models that can be used to detail a conceptual model to describe the semantics of runtime data related to a concept; elements of an Aspect Model can/should refer to terms of a standardized Business Glossary (if existing).",
+      "relatedTerms": ["SAMM", "Semantic Aspect Meta Model"]
+    },
+    {
+      "term": "Asset",
+      "definition": "On the Data Provider side, an Asset describes the data set which will be shared or can be consumed by a Data Consumer.",
+      "relatedTerms": ["Asset Administration Shell (AAS)"]
+    },
+    {
+      "term": "Asset Administration Shell",
+      "abbreviation": "AAS",
+      "definition": "The AAS is a digital representation of an asset; it is a form of a digital twin.",
+      "relatedTerms": ["Asset", "Digital Twin"]
+    },
+    {
+      "term": "Bill of Material",
+      "abbreviation": "BoM",
+      "definition": "A Bill of Material (BoM) represents the structure of a product: a list of raw materials, sub-assemblies and sub-components needed to manufacture the end product. In Catena-X Traceability more than one BoM is considered, since the BoM can change during the lifecycle (different BoMs for different lifecycles).",
+      "relatedTerms": ["Part Instance", "Subcomponent"]
+    },
+    {
+      "term": "Tractus-X EDC",
+      "abbreviation": "Tractus-X EDC",
+      "definition": "The Tractus-X Eclipse Dataspace Connector (Tractus-X EDC) is a reference implementation for a connector conformant to CX-0018 and acts as a de-facto standard/reference implementation within Catena-X; other CX-0018-conformant connectors are also valid options.",
+      "relatedTerms": ["EDC", "CX-0018"]
+    },
+    {
+      "term": "HTTP",
+      "abbreviation": "Hypertext Transfer Protocol",
+      "definition": "HTTP is an application-layer protocol for transmitting hypermedia documents (such as HTML). It was designed for communication between web browsers and web servers, but can also be used for other purposes.",
+      "relatedTerms": ["REST", "API"]
+    },
+    {
+      "term": "IDSA",
+      "abbreviation": "International Data Space Association",
+      "definition": "The IDSA is an organization working to create the future of the global digital economy with International Data Spaces (IDS): a secure, sovereign system of data sharing where participants can realize the full value of their data.",
+      "relatedTerms": ["IDS", "IDSA Protocol"]
+    },
+    {
+      "term": "IDS",
+      "abbreviation": "International Data Space",
+      "definition": "The International Data Space enables 'smart services' and business processes across companies and industries while ensuring data sovereignty and self-determined control of data use.",
+      "relatedTerms": ["IDSA", "IDSA Protocol"]
+    },
+    {
+      "term": "IDSA Protocol",
+      "definition": "The protocol used for data exchange in an International Dataspace; this includes contract negotiation.",
+      "relatedTerms": ["IDS", "IDSA"]
+    },
+    {
+      "term": "Part Instance",
+      "definition": "A Part Instance is a physically produced instance (e.g., serialized part, batch, just-in-sequence part) of a Part Type.",
+      "relatedTerms": ["Serialized part", "VAN", "VIN"]
+    },
+    {
+      "term": "Serialized part",
+      "definition": "An instance of a part which can be uniquely identified by means of a serial number, a similar identifier (e.g., VAN), or a combination of identifiers (e.g., manufacturer + date + number).",
+      "relatedTerms": ["Part Instance", "VAN", "VIN"]
+    },
+    {
+      "term": "Subcomponent",
+      "definition": "A Subcomponent is a separate product that can be assembled into a customer product.",
+      "relatedTerms": ["Part Instance", "BoM"]
+    },
+    {
+      "term": "Transport/Handling Unit",
+      "definition": "A bundle of goods inside a closed transport packing which will not be split up or added to with additional goods on the route of transport until its final destination at the receiving company.",
+      "relatedTerms": ["Logistician"]
+    },
+    {
+      "term": "UML",
+      "abbreviation": "Unified Modeling Language",
+      "definition": "UML is a general-purpose visual modeling language providing a standard way to visualize the design of a system. It includes standard notations for behavior, interaction, and structure diagrams.",
+      "relatedTerms": []
+    },
+    {
+      "term": "VAN",
+      "abbreviation": "Vehicle Anonymised Number",
+      "definition": "A number mapped 1:1 to a VIN but pseudonymised to protect vehicle identity.",
+      "relatedTerms": ["VIN"]
+    },
+    {
+      "term": "VIN",
+      "abbreviation": "Vehicle Identification Number",
+      "definition": "A VIN is a 17-character code assigned by the manufacturer to every vehicle; it encodes the vehicle's make, model, year of manufacture and other identifying features and serves as a unique identifier throughout the vehicle's lifespan.",
+      "relatedTerms": ["VAN"]
+    },
+    {
+      "term": "Supplier",
+      "definition": "In the context of OSim, the producer of goods.",
+      "relatedTerms": ["Customer", "Logistician"]
+    },
+    {
+      "term": "Customer",
+      "definition": "In the context of OSim, the receiver of produced goods from a supplier.",
+      "relatedTerms": ["Supplier"]
+    },
+    {
+      "term": "Logistician",
+      "definition": "In the context of OSim, the organization that transports produced goods from supplier to customer.",
+      "relatedTerms": ["Supplier", "Customer"]
+    },
+    {
+      "term": "Lower tier level",
+      "definition": "Direction in the network toward suppliers of raw materials (also called 'Previous level', 'Previous tier level', 'Lower level').",
+      "relatedTerms": ["Higher tier level"]
+    },
+    {
+      "term": "Higher tier level",
+      "definition": "Direction in the network toward the OEM; Tier-1 is the highest tier level followed by the OEM (also called 'Next level', 'Next tier level', 'Higher level').",
+      "relatedTerms": ["Lower tier level"]
+    },
+    {
+      "term": "Basic flow",
+      "definition": "The exchange of material flow simulation results over the OSim network from lower to higher tiers.",
+      "relatedTerms": ["Scenario flow", "MaterialFlowSimulationResult"]
+    },
+    {
+      "term": "Scenario flow",
+      "definition": "The exchange of material flow simulation results related to 'What-If' scenarios.",
+      "relatedTerms": ["Basic flow", "What-If scenario"]
+    },
+    {
+      "term": "What-If scenario",
+      "definition": "A description of potentially changed situations in production or changed requirements; also used interchangeably with 'scenario'.",
+      "relatedTerms": ["Scenario flow"]
+    },
+    {
+      "term": "MaterialFlowSimulationResult",
+      "definition": "The data model that describes the structure of simulation result data exchanged between OSim partners.",
+      "relatedTerms": ["simulationRunID", "Basic flow"]
+    },
+    {
+      "term": "simulationRunID",
+      "definition": "The unique identifier of a simulation result.",
+      "relatedTerms": ["MaterialFlowSimulationResult"]
+    }
+  ]
+}
