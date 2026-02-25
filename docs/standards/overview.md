@@ -38,5 +38,5 @@ tags:
 
 :::info[Important notification]
 
-**CX-Io** is fully compatible with **CX-Jupiter**. Business Application Providers, however, now need to certify their solutions against the **CX-Io standards**.
+**CX-Saturn** is fully compatible with **CX-Io**. Business Application Providers, however, now need to certify their solutions against the **CX-Saturn standards**.
 :::
