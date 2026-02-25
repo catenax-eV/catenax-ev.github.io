@@ -38,5 +38,5 @@ tags:
 
 :::info[Important notification]
 
-**CX-Saturn** is fully compatible with **CX-Io**. Business Application Providers, however, now need to certify their solutions against the **CX-Saturn standards**.
+**CX-Titan** is fully compatible with **CX-Saturn**. Business Application Providers, however, now need to certify their solutions against the **CX-Saturn standards**.
 :::
