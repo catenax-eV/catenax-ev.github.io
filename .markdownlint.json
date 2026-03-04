@@ -16,5 +16,6 @@
   "MD040": false,
   "MD048": {"style": "backtick"},
   "MD049": {"style": "asterisk"},
-  "MD059": false
+  "MD059": false,
+  "MD060": false
 }
