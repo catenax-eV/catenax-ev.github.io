@@ -36,7 +36,7 @@ const FeatureList: FeatureItem[] = [
     path: '/docs/operating-model/why-introduction',
     description: (
       <>
-          Our Catena-X <a href="/docs/operating-model/why-introduction">Operating Model</a> describes the entire Catena-X ecosystem, focusing on a comprehensive definition of our operating environment and its roles, processes, and solutions, and how they interact.
+          Our Catena-X <a href="/docs/operating-model/why-introduction">Operating Model</a> establishes the overall rules for the entire Catena-X ecosystem, focusing on a comprehensive definition of our operating environment and its roles, processes, and solutions, and how they interact.
       </>
     ),
   },
