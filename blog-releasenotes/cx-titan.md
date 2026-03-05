@@ -12,7 +12,7 @@ tags: [release, titan]
 
 ## Catena-X Operating Model
 
-With the CX-Titan release, the Operating Model strengthens 
+With the CX-Titan release, the Operating Model strengthens
 
 ### Further Information
 
@@ -20,7 +20,7 @@ Details can be found in the [changelog](/docs/operating-model/changelog)
 
 ## Catena-X Regulatory Framework
 
-The latest update to the Catena-X Regulatory Framework includes 
+The latest update to the Catena-X Regulatory Framework includes
 
 ### Updates to Country Clearance Lists
 
