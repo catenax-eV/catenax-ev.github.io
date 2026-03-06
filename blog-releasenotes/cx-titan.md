@@ -72,10 +72,6 @@ To view the Titan version of the Operating Model, please refer to the [Operating
 
 ---
 
-## Catena-X Working Model
-
----
-
 ## Tractus-X reference implementations
 
 The CX-Titan release combines the Eclipse Tractus-X releases [25.12](https://eclipse-tractusx.github.io/blog-changelog/release-25-12) and [26.03](https://eclipse-tractusx.github.io/blog-changelog/release-26-03).
