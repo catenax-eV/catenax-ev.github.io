@@ -68,31 +68,40 @@ Details can be found in the [changelog](/docs/operating-model/changelog)
 
 To view the Titan version of the Operating Model, please refer to the [Operating Model documentation](https://catenax-ev.github.io/docs/operating-model/why-introduction) and select CX-Titan.
 
-## Catena-X Regulatory Framework
-
-The latest update to the Catena-X Regulatory Framework includes
-
-### Updates to Country Clearance Lists
-
--
-
-#### Further Information
-
-Details can be found in the [changelog](/docs/regulatory-framework/changelog).
-
 ## Catena-X Working Model
 
 ## Tractus-X reference implementations
 
-The CX-Titan release combines the Eclipse Tractus-X releases [25.12](https://eclipse-tractusx.github.io/blog-changelog/release-25-12) and [26.03](https://eclipse-tractusx.github.io/blog-changelog/release-26-03).  
+The CX-Titan release combines the Eclipse Tractus-X releases [25.12](https://eclipse-tractusx.github.io/blog-changelog/release-25-12) and [26.03](https://eclipse-tractusx.github.io/blog-changelog/release-26-03).
 
-## Further Scope Clarification
+These two release were made possible by 53 contributors and 32 committers across the Eclipse Tractus-X repositories, contributing code, documentation, reviews, issue reports, and discussions.
+
+### Highlights
+
+#### KIT 2.0 Architecture
+
+A major redesign of how the KIT ecosystem is visualized and structured has been introduced. The KIT 2.0 Architecture provides a clearer layered representation of the Eclipse Tractus-X ecosystem, improving discoverability and navigation across the growing collection of KITs.
+
+For further information, please refer to the [following link](https://eclipse-tractusx.github.io/blog/kit-2.0-architecture/).
 
 ## General Website improvements
 
-- Update Navigation (clear structure between normative / non-normative)
-- Introduce Glossary
-- Introduce BoK
-- Introduce Architecture Guardrails
-- Introduce PDF-Export feature
-- Add Certification Framework to non-functional requirements
+The CX-Titan release introduces several enhancements to the Catena-X website, aimed at improving navigation, usability, and accessibility of information for all ecosystem participants.These updates make the website more intuitive, informative, and aligned with the evolving needs of the Catena-X community.
+
+### Navigation & Structure
+
+The main navigation was updated to clearly separate normative and non-normative content, making it easier to find official specifications versus supporting information.
+
+### New Knowledge Resources
+
+- Glossary: Provides standardized definitions for key terms used across the Catena-X ecosystem.
+- Body of Knowledge (BoK): A document of guidance, best practices, and reference materials.It is non-normative.
+- Architecture Guardrails: Introduced to support consistent design and implementation practices across the ecosystem.
+
+### Usability Enhancements
+
+PDF Export: Allows users to export content from the website for offline reference or documentation purposes.
+
+### Non-Functional Requirements
+
+Previously only available on the website, the Certification Framework has now been integrated into the non-functional requirements. This improves clarity on compliance and evaluation expectations for ecosystem participants.
