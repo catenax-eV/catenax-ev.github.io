@@ -10,6 +10,8 @@ tags: [release, titan]
 
 -
 
+---
+
 ## Catena-X Operating Model
 
 With the release of version 3.1.1, the Operating Model introduces improvements to clarity and consistency across governance, roles, lifecycle management, and service descriptions. The update mainly includes minor refinements, such as clearer terminology, alignment with normative specification language, and the removal of outdated or misleading references
@@ -68,7 +70,11 @@ Details can be found in the [changelog](/docs/operating-model/changelog)
 
 To view the Titan version of the Operating Model, please refer to the [Operating Model documentation](https://catenax-ev.github.io/docs/operating-model/why-introduction) and select CX-Titan.
 
+---
+
 ## Catena-X Working Model
+
+---
 
 ## Tractus-X reference implementations
 
@@ -83,6 +89,8 @@ These two release were made possible by 53 contributors and 32 committers across
 A major redesign of how the KIT ecosystem is visualized and structured has been introduced. The KIT 2.0 Architecture provides a clearer layered representation of the Eclipse Tractus-X ecosystem, improving discoverability and navigation across the growing collection of KITs.
 
 For further information, please refer to the [following link](https://eclipse-tractusx.github.io/blog/kit-2.0-architecture/).
+
+---
 
 ## General Website improvements
 
