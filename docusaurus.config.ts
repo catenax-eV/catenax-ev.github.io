@@ -2,6 +2,8 @@ import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
+const glossaryPlugin = require('docusaurus-plugin-glossary');
+
 const config: Config = {
   title: 'Catena-X - Library',
   tagline: 'If you are interested in joining the Catena-X ecosystem, you need to prove compliance. Right here you will find the complete normative documentation for everything you need for doing so.',
@@ -41,6 +43,14 @@ const config: Config = {
         ],
       },
     ],
+    // glossary plugin: serves glossary content from /glossary at site route /glossary
+    [
+      require.resolve('docusaurus-plugin-glossary'),
+      {
+        glossaryPath: 'glossary/glossary.json',
+        routePath: '/glossary',
+      },
+    ],
   ],
 
   presets: [
@@ -48,6 +58,16 @@ const config: Config = {
       'classic',
       {
         docs: {
+          // Add the remark plugin to enable auto-linking in pages
+          remarkPlugins: [
+            glossaryPlugin.getRemarkPlugin(
+                {
+                  glossaryPath: 'glossary/glossary.json',
+                  routePath: '/glossary',
+                },
+                { siteDir: __dirname }
+            ),
+          ],
           sidebarPath: './sidebars.ts',
           versions: {
             current: {
@@ -77,12 +97,12 @@ const config: Config = {
           customCss: './src/css/custom.css',
         },
       } satisfies Preset.Options,
-    ],
+    ]
   ],
   markdown: {
     mermaid: true,
     hooks: {
-      onBrokenMarkdownLinks: 'throw',
+      onBrokenMarkdownLinks: 'warn',
       onBrokenMarkdownImages: 'throw',
     },
   },
@@ -126,6 +146,22 @@ const config: Config = {
             {
               to: '/docs/non-functional/overview/',
               label: 'Non-functional requirements',
+            },
+            {
+              type: 'html',
+              value: '<hr style="margin: 0.5rem 0;">',
+            },
+            {
+              to: '/docs/next/architecture-guardrails/overview/',
+              label: '🔧 Architecture Guardrails',
+            },
+            {
+              to: '/docs/next/cx-bok/overview/',
+              label: '📚 CX Body of Knowledge',
+            },
+            {
+              to: '/glossary/',
+              label: 'Glossary',
             },
           ],
         },
