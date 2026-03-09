@@ -8,7 +8,77 @@ tags: [release, titan]
 
 ## Catena-X Standards
 
--
+With the CX-Titan release, several Catena-X standards have been updated and new standards have been introduced across multiple domains. Updates focus on refining existing specifications, while newly introduced standards extend the ecosystem with additional use cases and capabilities.
+
+### Engineering
+
+The Engineering domain has been extended with new standards that strengthen requirements management and software transparency across the ecosystem.
+
+| Standard                                                     | Status   |
+| -------------------------------------------------------------| -------- |
+| CX-0154 Digital Master Data                                  | Updated  |
+| CX-0155 Requirements Engineering                             | Added    |
+| CX-XXXX Car SBOM                                             | Added    |
+
+### Industry Core
+
+The Industry Core standards continue to evolve to support the core digital twin concepts and foundational capabilities of the Catena-X ecosystem.
+
+| Standard                                                     | Status   |
+| -------------------------------------------------------------| -------- |
+| CX-0002 Digital Twins in Catena-X                            | Updated  |
+| CX-0151 Industry Core: Basics                                | Updated  |
+
+### Network Service
+
+Updates in the Network Services domain improve onboarding, identity management, and connectivity mechanisms within the Catena-X dataspace. A new standard introduces additional capabilities for identity verification.
+
+| Standard                                                     | Status   |
+| -------------------------------------------------------------| -------- |
+| CX-0001 Participant Agent Registration                       | Updated  |
+| CX-0006 Registration and Initial Onboarding                  | Updated  |
+| CX-0018 Dataspace Connectivity                               | Updated  |
+| CX-0049 DID Document                                         | Updated  |
+| CX-0050 CX-Specific Credentials                              | Updated  |
+| CX-0135 Business Partner Company Certificate Management      | Updated  |
+| CX-XXXX Identity Proofing                                    | Added    |
+
+### Supply Chain and Quality
+
+The Supply Chain & Quality domain introduces new functionality while updating several existing standards to further support data exchange across operational supply chain processes.
+
+| Standard                                                     | Status   |
+| -------------------------------------------------------------| -------- |
+| CX-0123 Quality Use Case                                     | Updated  |
+| CX-0125 Traceability Use Case                                | Updated  |
+| CX-0128 Demand and Capacity Management Data Exchange         | Updated  |
+| CX-0150 Logistics Use Case                                   | Updated  |
+| CX-0153 Tariffs Use Case                                     | Updated  |
+| CX-0156 Geometry                                             | Updated  |
+| CX-XXXX PURIS                                                | Added    |
+
+### Sustainability
+
+The Sustainability domain continues to expand with additional standards supporting transparency and circular economy initiatives.
+
+| Standard                                                     | Status   |
+| -------------------------------------------------------------| -------- |
+| CX-0143 Use Case Circular Economy – Digital Product Passport | Updated  |
+| CX-XXXX Material Accounting                                  | Added    |
+
+### Semantic Modelling
+
+The semantic modelling foundation of Catena-X has been further refined with an update to the core modelling framework.
+
+| Standard                                                     | Status   |
+| -------------------------------------------------------------| -------- |
+| CX-0003 SAMM Aspect Meta Model                               | Updated  |
+
+### Further Information
+
+Details can be found in the [changelog](https://catenax-ev.github.io/docs/next/standards/changelog)
+
+To view the Titan version of the Standards, please refer to the [Overview Page of the standards](https://catenax-ev.github.io/docs/next/standards/overview) and select CX-Titan.
 
 ---
 
