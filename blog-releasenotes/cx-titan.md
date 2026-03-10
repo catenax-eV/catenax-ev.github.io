@@ -20,15 +20,6 @@ The Engineering domain has been extended with new standards that strengthen requ
 | CX-0155 Requirements Engineering                             | Added    |
 | CX-XXXX Car SBOM                                             | Added    |
 
-### Industry Core
-
-The Industry Core standards continue to evolve to support the core digital twin concepts and foundational capabilities of the Catena-X ecosystem.
-
-| Standard                                                     | Status   |
-| -------------------------------------------------------------| -------- |
-| CX-0002 Digital Twins in Catena-X                            | Updated  |
-| CX-0151 Industry Core: Basics                                | Updated  |
-
 ### Network Service
 
 Updates in the Network Services domain improve onboarding, identity management, and connectivity mechanisms within the Catena-X dataspace. A new standard introduces additional capabilities for identity verification.
@@ -38,7 +29,6 @@ Updates in the Network Services domain improve onboarding, identity management, 
 | CX-0001 Participant Agent Registration                       | Updated  |
 | CX-0006 Registration and Initial Onboarding                  | Updated  |
 | CX-0018 Dataspace Connectivity                               | Updated  |
-| CX-0049 DID Document                                         | Updated  |
 | CX-0050 CX-Specific Credentials                              | Updated  |
 | CX-0135 Business Partner Company Certificate Management      | Updated  |
 | CX-XXXX Identity Proofing                                    | Added    |
@@ -50,7 +40,6 @@ The Supply Chain & Quality domain introduces new functionality while updating se
 | Standard                                                     | Status   |
 | -------------------------------------------------------------| -------- |
 | CX-0123 Quality Use Case                                     | Updated  |
-| CX-0125 Traceability Use Case                                | Updated  |
 | CX-0128 Demand and Capacity Management Data Exchange         | Updated  |
 | CX-0150 Logistics Use Case                                   | Updated  |
 | CX-0153 Tariffs Use Case                                     | Updated  |
@@ -63,7 +52,6 @@ The Sustainability domain continues to expand with additional standards supporti
 
 | Standard                                                     | Status   |
 | -------------------------------------------------------------| -------- |
-| CX-0143 Use Case Circular Economy – Digital Product Passport | Updated  |
 | CX-XXXX Material Accounting                                  | Added    |
 
 ### Semantic Modelling
