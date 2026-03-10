@@ -52,6 +52,7 @@ The Sustainability domain continues to expand with additional standards supporti
 
 | Standard                                                     | Status   |
 | -------------------------------------------------------------| -------- |
+| CX-0143 Use Case Circular Economy – Digital Product Passport | Updated  |
 | CX-XXXX Material Accounting                                  | Added    |
 
 ### Semantic Modelling
