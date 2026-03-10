@@ -21,7 +21,7 @@ sidebar_position: 1
 | DCP                   | Decentralized Claims Protocol                                    |
 | DCH                   | Digital Clearing House                                           |
 | DDTR                  | Decentralized Digital Twin Registry                              |
-| DSP                   | Data Space Protocol                                               |
+| DSP                   | Data Space Protocol                                              |
 | DSSC                  | Data Space Support Center                                        |
 | EDC                   | Eclipse Data Space Components                                    |
 | EDWG                  | Eclipse Data Space Working Group                                 |

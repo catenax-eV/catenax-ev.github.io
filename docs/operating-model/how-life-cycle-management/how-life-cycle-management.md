@@ -145,13 +145,13 @@ Closely connected with the release schedule, there is also the landscape of envi
 
 To validate the upcoming releases, the association provides an INT environment for multiple aspects:
 
-| Aspect | INT Environment |
-| ------ | --------------- |
-| Primary Purpose | End-to-End Integration Testing, System-level tests |
-| Release Version | Upcoming Tractus-X Release |
-| Test Types Supported | Functional Tests, End-to-End Integration Tests, User Journey Tests |
-| Data | Synthetic test data (structurally realistic) of onboarded test companies |
-| Participants | Product team devs (committers, leads) and testers, Catena-X test management |
-| System Components |Tractus-X Core and Enablement Services (Connected to External Shared Services) and Open Source Applications (FOSS) |
-| Access Control | Controlled (open to Tractus-X community / Catena-X members for continous testing during release cycles) |
-| Update Frequency | Minimum once per testing cycle, usually multiple release candidates |
+| Aspect               | INT Environment                                                                                                     |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| Primary Purpose      | End-to-End Integration Testing, System-level tests                                                                  |
+| Release Version      | Upcoming Tractus-X Release                                                                                          |
+| Test Types Supported | Functional Tests, End-to-End Integration Tests, User Journey Tests                                                  |
+| Data                 | Synthetic test data (structurally realistic) of onboarded test companies                                            |
+| Participants         | Product team devs (committers, leads) and testers, Catena-X test management                                         |
+| System Components    |Tractus-X Core and Enablement Services (Connected to External Shared Services) and Open Source Applications (FOSS)   |
+| Access Control       | Controlled (open to Tractus-X community / Catena-X members for continous testing during release cycles)             |
+| Update Frequency     | Minimum once per testing cycle, usually multiple release candidates                                                 |

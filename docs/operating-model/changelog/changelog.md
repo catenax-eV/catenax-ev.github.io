@@ -7,6 +7,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [3.1.1]
 
+### Added
+
+- Who: Roles in the Catena-X ecosystem
+  - Add clarification for ESPs that an ESP MUST list standalone enablement services on the marketplace but they can bundle its enablement services with other offerings. In such cases, the enablement service MAY not be listed separately on the marketplace.
+
 ### Changed
 
 - Why: Introduction
@@ -22,6 +27,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
   - Update the roles defined in the Operating Model to be consistent with the standard terminology used in specifications, applying the values MUST, SHOULD, MAY to indicate requirements and recommendations
   - Additionally, create a reference table that clearly defines the meaning of each term (MUST, SHOULD, MAY) and how they apply to roles.
   - Add the missing label to the arrow from Sandbox Provider → Association to ensure all relationship arrows are consistently and fully labeled, enhancing the clarity and overall coherence of the graphic
+  - AtP: Explain that details for AtP roles and their qualification is detailed out in specific domains normative documents and reference the lis where the Association published the accredited AtPs.
+  - Simplifying the Digital Clearing House Role
+
+### Removed
+
+- What: Service map
+  - Remove Policy Hub from Core Services A as there is no existing standard.
+- Who: Roles in the Catena-X ecosystem
+  - DPC: Remove MUST requirement that 'forces' Consumer and Provider to create value with their data exchange. This cannot and will not be checked anyway. It's furthermore the whole idea behind a Dataspace and doesn't need to be described here.
+- How: Modular System
+  - The modular system diagrams have been removed with a reference to the external source and how it is governed
 
 ## [3.1.0]
 
@@ -166,7 +182,3 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Certification process: reference provided to Conformity Assessment Framework that details the Catena-X certification process further
 - Labels: Removed distinguishing factors between Certified Operating Company and Certified Partner
 - Outlook: updated according to release 23.09
-
-## Legal
-
-Copyright © 2025 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

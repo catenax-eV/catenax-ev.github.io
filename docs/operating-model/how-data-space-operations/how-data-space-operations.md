@@ -18,7 +18,8 @@ During the registration process, all participants must add their company data, s
 
 ### Registration Approval
 
-After confirmation, a BPNL (if not yet available) and an identity wallet with the "BPNL" and "Catena-X Membership" credentials are created by the CSP-B as part of the registration approval step. Each participant can collect their proof of identity, credentials and other verifiable information (e.g., roles, rights, services) in their identity wallet. The self-descriptions (SD) of newly registered legal entities and connectors are validated by the Digital Clearing House (see Chapter [Clearing House as a trust anchor](./how-data-space-operations.md#clearing-house-as-a-trust-anchor)). This includes the signing and issuing of credentials to the identity wallet of a DPC, providing proof of Gaia-X compliance and notarization of the legal entity.
+After confirmation, a BPNL (if not yet available) and an identity wallet with the "BPNL" and "Catena-X Membership" credentials are created by the CSP-B as part of the registration approval step. Each participant can collect their proof of identity, credentials and other verifiable information (e.g., roles, rights, services) in their identity wallet. The self-descriptions (SD) of newly registered legal entities and connectors are validated by the Digital Clearing House (see Chapter [Clearing House as a trust anchor](./how-data-space-operations.md#clearing-house-as-a-trust-anchor)).
+This validation process includes the verification, signing, and issuance of credentials to the identity wallet of the [Data Provider and Consumer (DPC)](../who-roles-in-the-catena-x-ecosystem/who-roles-in-the-catena-x-ecosystem.md#data-providerconsumer), thereby providing a trusted attestation of the legal entity and its eligibility to participate in the Catena-X data space.
 
 ### Technical Integration
 
@@ -27,10 +28,6 @@ After registration, participants can start the technical integration process (e.
 ### Managing Company Hierarchies
 
 After successful registration, participants can create and manage their company hierarchies. Catena-X Business Partner Data Management allows you to create and manage sites and additional addresses for your legal entities. In a future version, it will also be possible to create and manage relationships between two legal entities (e.g., subsidiaries). This is relevant, for example, for the various connector usage scenarios as described in chapter [EDC Deployment and Usage Premises](./how-data-space-operations.md#edc-deployment-and-usage-premises).
-
-## Clearing House as a trust anchor
-
-The Digital Clearing House, currently the Gaia-X Digital Clearing House (GXDCH), is an external service that maximizes trust within the Catena-X data space, and data space interoperability with other initiatives based on the (Gaia-X) Trust Framework. The Clearing House enables the validation of legal entities, ensures Gaia-X compliance, and creates an eIDAS conform digital signature (self-description) for all data space participants. There is one GXDCH provider for the Catena-X data space, which is nominated and managed by the Catena-X Association. To ensure compliance with the Catena-X onboarding process, the CSP-B must connect to the GXDCH.
 
 ## Implementation of the Self Sovereign Identity Concept
 

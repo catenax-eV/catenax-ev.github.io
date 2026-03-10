@@ -14,13 +14,13 @@ The Catena-X ecosystem operates on the principle of multiple distinct roles, des
 
 Below, each role that a participant can assume in the Catena-X data spaces is described in detail, along with its assigned description, responsibilities, relationships, prerequisites, and complements. Please refer to Chapter  [What: Service Map](./../what-service-map/what-service-map.md) for an overview of the Service Map.
 
-| Keyword | Meaning / Description |
-|---------|-----------------------|
-| **MUST** | This word indicates an absolute requirement for this role. |
-| **MUST NOT** | This phrase indicates an absolute prohibition of this role. |
-| **SHOULD** | There may exist valid reasons in particular circumstances to ignore this item, but the full implications **MUST** be understood and carefully weighed before choosing a different course. |
+| Keyword.       | Meaning / Description                                                                                                                                                                        |
+|----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **MUST**       | This word indicates an absolute requirement for this role.                                                                                                                                   |
+| **MUST NOT**   | This phrase indicates an absolute prohibition of this role.                                                                                                                                  |
+| **SHOULD**     | There may exist valid reasons in particular circumstances to ignore this item, but the full implications **MUST** be understood and carefully weighed before choosing a different course.    |
 | **SHOULD NOT** | There may exist valid reasons in particular circumstances when the behavior is acceptable or useful, but the implications should be understood and carefully weighed before implementing it. |
-| **MAY** | This word means that an item is truly optional. Implementations that include or omit the option **MUST** be prepared to interoperate, though possibly with reduced functionality. |
+| **MAY**        | This word means that an item is truly optional. Implementations that include or omit the option **MUST** be prepared to interoperate, though possibly with reduced functionality.            |
 
 ------
 
@@ -134,25 +134,16 @@ OSPs are responsible for deploying, operating, and maintaining onboarding servic
 
 **Description/Responsibilities:**
 
-The Digital Clearing House (DCH) acts as a trusted external service within the Catena-X Data Space to ensure reliable and secure onboarding of participants. Its primary responsibilities are to verify the legal identity of organizations and, where applicable, issue digitally signed self-descriptions.
-
-To fulfill its role, the DCH works with two complementary concepts. Trusted Data Sources are authoritative institutions such as tax authorities, business registers, or independent registries. They provide the verified information needed to confirm an organization’s legal identity.
-The DCH **MUST** be transparent toward the Catena-X Association about which sources it uses in each country or jurisdiction.
-Since most of these sources cannot issue digital identities themselves, this task falls to Trust Anchors, which create secure digital identities based on validated data. Depending on the country or jurisdiction, the DCH may act directly as a Trust Anchor or connect to an existing one. In both cases, the result is a consistent and reliable identity framework that participants across the Catena-X ecosystem can trust, even when regional regulations differ.
-
-To address regional regulatory and technical requirements, there may be multiple regional DCHs (e.g., EU, Asia-Pacific). These DCHs operate in a mutually exclusive and collectively exhaustive manner, meaning each DCH is responsible for a specific regional scope without overlap, while together ensuring a globally consistent and interoperable trust and onboarding process.
-
-A DCH is an organization that has been officially nominated by the Catena-X Association and acts on behalf of the Association in defined governance processes. The nomination of DCH follows the formal [nomination procedure](./../how-data-space-governance/how-data-space-governance.md#nomination-process-for-unique-roles-eg-csp-b) led by the Catena-X Association.
+The DCH provides services that validate the authenticity of legal entities by ensuring that the provided data matches the data in a trusted source (e.g. in an official tax or business registry).
 
 **Relationships:**
 
-- Each region **has exactly one** DCH responsible for its defined scope. Regional DCHs are therefore mutually exclusive and **MUST NOT** overlap.
-- DCHs interact with Trusted Data Sources and Trust Anchors in accordance with country- and region-specific requirements.
+- A CSP-B **MAY** use a DCH's services to validate self-provided data from prospective participants during onboarding.
+- A CSP-B **MUST** use at least one Catena-X approved process to validate the prospective Participant's data.
 
 **Prerequisites:**
 
 - A DCH **MUST** be nominated by the Catena-X Association.
-- Business model supporting adoption and offering non-discriminating access, esp. by small and medium businesses.
 
 **Current Limitations:**
 
@@ -181,6 +172,8 @@ In addition, ESPs can also offer non-standardized services such as automated dat
 **Prerequisites:**
 
 - An ESP and its services **MUST** be certified by a CAB.
+- An ESP **MUST** list its standalone enablement services in at least one marketplace provided by a CSP-A.
+- An ESP **MAY** bundle its enablement services with other offerings. In such cases, the enablement service **MAY** not be listed separately on the marketplace.
 - An ESP **MUST** accept and comply with the Catena-X regulatory framework during onboarding via one of the OSPs.
 - An ESP **MUST** prove compliance with TISAX Level 2.
 - An ESP **MUST** be registered to Catena-X data space.
@@ -260,6 +253,8 @@ An Attestation Provider offers attestation services in various areas, ensuring t
 
 An Attestation Provider can be an organization or individual that has proven their competence through a formal qualification or testing process via the [Catena-X Campus](https://catena-x.academy/de/). The qualification of an AtP follows the formal [qualification procedure](./../how-data-space-governance/how-data-space-governance.md#qualification-process) led by the Catena-X Association.
 
+The Catena-X Association publishes a list of approved AtPs and their respective trusted domains under: [List of CX qualified Attestation Providers](https://catena-x.academy/de/catena-x-qualified-attestation-provider/)
+
 **Relationships:**
 
 - An AtP **MAY** use one or more CSP-As if it intends to utilize specific CSP-A services such as listing an offer on a marketplace.
@@ -268,7 +263,7 @@ An Attestation Provider can be an organization or individual that has proven the
 
 **Prerequisites:**
 
-- An AtP **MUST** be qualified by the Catena-X Association via the Catena-X Campus.
+- An AtP **MUST** be qualified by the Catena-X Association via the Catena-X Campus, which details are outlined in the respective domain specific normative document.
 - An AtP **MUST** accept and comply with the Catena-X regulatory framework during onboarding via one of the OSPs.
 - An AtP **MUST** be registered to the Catena-X data space.
 
@@ -291,7 +286,6 @@ A DPC provides, consumes, and processes data to collaborate with other data spac
 - A DPC **MAY** use the services of a CSP-A (e.g., marketplace).
 - A DPC **MUST** integrate and use CSP-B services to access his identity (e.g., identity wallet) and enable data exchange.
 - A DPC **MUST** use the services of one of the OSPs to register and onboard itself to the data space (e.g., registration service). This can be delegated to a BAP or ESP
-- A DPC **MUST** connect with another DPC to exchange data and create value.
 - A DPC **MAY** use advisory services from a qualified AP.
 
 - A DPC **MAY** use certified enablement services from a commercial ESP (e.g., a SaaS solution). Alternatively, a DPC can certify and operate its own enablement services.

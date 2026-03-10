@@ -5,7 +5,7 @@ sidebar_position: 1
 
 ## Relevance
 
-The Catena-X Operating Model is a normative document of the Catena-X Association. Normative documents outline rules, guidelines, and characteristics for activities and results for all participants within the Catena-X ecosystem. The Catena-X ecosystem includes Governance, Standardization, Certification, Development and Operations. These are established by consensus among the working groups and approved by the executive board of the Catena-X Association. As part of the Catena-X regulatory framework, this document is binding for all participants of the Catena-X ecosystem. This normative document is a foundational building block, allowing all participants to collaborate within a global ecosystem.
+The Catena-X Operating Model is a normative document of the Catena-X Association. Normative documents outline rules, guidelines, and characteristics for activities and results for all participants within the Catena-X ecosystem. The Catena-X ecosystem includes Governance, Standardization, Certification, Development and Operations. These are established by consensus among the working groups and approved by the executive board of the Catena-X Association. As part of the Catena-X regulatory framework, **this document is binding for all participants** of the Catena-X ecosystem. This normative document is a foundational building block, allowing all participants to collaborate within a global ecosystem.
 
 ## Executive Summary
 
@@ -15,7 +15,7 @@ With Catena-X, the automotive industry is creating targets for a trustworthy, co
 
 ### Objectives
 
-This document defines the operating model and processes required within the Catena-X ecosystem. The operating model is linked to the concepts and values of Gaia-X and the International Data Space Association (IDSA) to create the first open and collaborative data ecosystem for the automotive value chain. Thereby, Catena-X applies these concepts and extends them by integrating automotive-specific requirements for compliance, interoperability, and security. The operating model lays the foundation and is the pre-requisite for further standardization, certification, implementation, and operations of software components and partners in the Catena-X data space. The operating model is continuously updated to reflect the evolution of business and regulatory requirements, as well as emerging technologies.
+This document defines the operating model and processes required within the Catena-X ecosystem. The operating model establishes the foundation for an open and collaborative data ecosystem for the automotive value chain, building on internationally recognized principles for data sovereignty, interoperability, and security. Catena-X applies these principles and extends them by integrating automotive-specific requirements related to compliance, interoperability, and security. The operating model lays the foundation and is the pre-requisite for further standardization, certification, implementation, and operations of software components and partners in the Catena-X data space. It is continuously updated to reflect the evolution of business and regulatory requirements, as well as emerging technologies.
 
 ### Scope
 
