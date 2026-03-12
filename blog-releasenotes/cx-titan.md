@@ -49,6 +49,7 @@ The Supply Chain & Quality domain introduces new functionality while updating se
 | Standard                                                     | Status   |
 | -------------------------------------------------------------| -------- |
 | CX-0123 Quality Use Case                                     | Updated  |
+| CX-0125 Traceability Use Case                                | Updated  |
 | CX-0128 Demand and Capacity Management Data Exchange         | Updated  |
 | CX-0150 Logistics Use Case                                   | Updated  |
 | CX-0153 Tariffs Use Case                                     | Updated  |
