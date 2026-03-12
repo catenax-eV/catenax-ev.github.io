@@ -37,6 +37,7 @@ Updates in the Network Services domain improve onboarding, identity management, 
 | CX-0001 Participant Agent Registration                       | Updated  |
 | CX-0006 Registration and Initial Onboarding                  | Updated  |
 | CX-0018 Dataspace Connectivity                               | Updated  |
+| CX-0049 DID Document                                         | Updated  |
 | CX-0050 CX-Specific Credentials                              | Updated  |
 | CX-0135 Business Partner Company Certificate Management      | Updated  |
 | CX-XXXX Identity Proofing                                    | Added    |
