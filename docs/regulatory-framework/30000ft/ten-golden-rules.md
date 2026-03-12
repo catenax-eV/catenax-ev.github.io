@@ -9,15 +9,17 @@ The Catena-X Data Space ("**CX Data Space**") is a trustworthy, collaborative, d
 for the automotive industry. Catena-X Automotive Network e.V. ("**Association**") is the custodian of the CX Data Space. The following ten
 principles ("**10 Golden Rules**") apply to any participant within the CX Data Space ("**Participant**"):
 
-- i) ***Values of Gaia-X and IDSA***
+- i) ***Core Values***
 
-    The concepts and values of Gaia-X and the International Data Spaces Association are the guiding principles for the implementation of the CX Data Space and the execution of (decentralized) data exchange transactions in the CX Data Space.
+    The core values of **trusted digital ID**, **interoperability**, **self-sovereignty** and **industry governance** form the foundation for the implementation of the Catena-X Data Space.
+    All participating actors are obliged to understand and internalise these core values and to consistently take them into account in their actions.
 
 - ii) ***Data Sovereignty***
 
     The CX Data Space is designed as a sustainable solution for the digitalization of value chains, including in particular mediumsized and small companies, supporting cooperation and collaboration across enterprise boundaries. All Participants shall be able to participate on equal terms and have sovereign control over their data. They shall ensure that the services they provide or make use of remain open and fair, and are absent of discrimination and undesired lock-in effects.
 
 - iii) ***Governance Framework***
+
     The Association defines and sets out the governance framework in its operating model as required to facilitate (decentralised) data exchange transactions in the CX Data Space ("**Governance Framework**"). The Association can define technical standards (“**Standards**”), non-technical requirements (“**Non-Technical Requirements**”) and other policies for Participants and the products and services they make available within the CX Data Space. The Association can use certifications and other legal instruments to give effect to the Governance Framework.
 
 - iv) ***Freedom of Contract***
@@ -49,3 +51,7 @@ principles ("**10 Golden Rules**") apply to any participant within the CX Data S
     These 10 Golden Rules shall be in effect as part of the Governance Framework, until they are modified or replaced by the Association. They shall be binding for each Participant based on the related registration process. They shall only establish or be part of a contractual relationship with the Association if expressly agreed between the Association and such Participant. The Association is not responsible for data exchange transactions concluded between Participants. Each Participant acts at its own risk and responsibility, in accordance with the terms agreed with other Participants.
 
 These 10 Golden Rules are subject to German substantive law; the exclusive venue for any disputes in relation to the Association is Berlin.
+
+## Legal
+
+Copyright © 2026 Catena-X Automotive Network e.V. All rights reserved. For more information, please see [Catena-X Copyright Notice](https://catenax-ev.github.io/copyright).

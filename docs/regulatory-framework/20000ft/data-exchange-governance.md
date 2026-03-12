@@ -156,3 +156,7 @@ Participants are free to agree individually, unless the Repository specifies man
 \[Term of data exchange contract, including duration of (i) Data Provider's obligation to provide data and (ii) usage right(s)\]
 
 >Participants are free to agree individually, unless the Repository specifies mandatory requirements.
+
+## Legal
+
+Copyright © 2026 Catena-X Automotive Network e.V. All rights reserved. For more information, please see [Catena-X Copyright Notice](https://catenax-ev.github.io/copyright).
