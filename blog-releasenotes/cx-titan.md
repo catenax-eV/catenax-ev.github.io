@@ -20,6 +20,14 @@ The Engineering domain has been extended with new standards that strengthen requ
 | CX-0155 Requirements Engineering                             | Added    |
 | CX-XXXX Car SBOM                                             | Added    |
 
+### Industry Core
+
+The Industry Core standards continue to evolve to support the core digital twin concepts and foundational capabilities of the Catena-X ecosystem.
+
+| Standard                                                     | Status   |
+| -------------------------------------------------------------| -------- |
+| CX-0002 Digital Twins in Catena-X                            | Updated  |
+
 ### Network Service
 
 Updates in the Network Services domain improve onboarding, identity management, and connectivity mechanisms within the Catena-X dataspace. A new standard introduces additional capabilities for identity verification.
