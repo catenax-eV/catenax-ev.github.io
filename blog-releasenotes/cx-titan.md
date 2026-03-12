@@ -27,6 +27,7 @@ The Industry Core standards continue to evolve to support the core digital twin 
 | Standard                                                     | Status   |
 | -------------------------------------------------------------| -------- |
 | CX-0002 Digital Twins in Catena-X                            | Updated  |
+| CX-0151 Industry Core: Basics                                | Updated  |
 
 ### Network Service
 
