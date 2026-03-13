@@ -146,7 +146,7 @@ To view the Titan version of the Operating Model, please refer to the [Operating
 
 The CX-Titan release combines the Eclipse Tractus-X releases [25.12](https://eclipse-tractusx.github.io/blog-changelog/release-25-12) and [26.03](https://eclipse-tractusx.github.io/blog-changelog/release-26-03).
 
-These two releases were made possible by 53 contributors and 32 committers across the Eclipse Tractus-X repositories, contributing code, documentation, reviews, issue reports, and discussions.
+These two releases were made possible by 56 contributors and 32 committers across the Eclipse Tractus-X repositories, contributing code, documentation, reviews, issue reports, and discussions.
 
 ### Highlights
 
@@ -160,7 +160,7 @@ For further information, please refer to the [following link](https://eclipse-tr
 
 ## General Website improvements
 
-The CX-Titan release introduces several enhancements to the Catena-X website, aimed at improving navigation, usability, and accessibility of information for all ecosystem participants.These updates make the website more intuitive, informative, and aligned with the evolving needs of the Catena-X community.
+The CX-Titan release introduces several enhancements to the Catena-X website, aimed at improving navigation, usability, and accessibility of information for all ecosystem participants. These updates make the website more intuitive, informative, and aligned with the evolving needs of the Catena-X community.
 
 ### Navigation & Structure
 
