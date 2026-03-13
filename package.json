@@ -55,8 +55,5 @@
   },
   "engines": {
     "node": ">=18.0"
-  },
-  "overrides": {
-    "svgo": "3.3.2"
   }
 }
