@@ -98,7 +98,7 @@ The diagram *Catena-X Ecosystem* has been updated. The relationship between the 
 
 #### Normative Terminology
 
-The roles defined in the Operating Model have been updated to aligne with the terminology used in Catena-X standards. Normative language (MUST, SHOULD, MAY) is now consistently applied to express requirements and recommendations. These adjustments clarify the wording and ensure alignment without introducing changes to the underlying governance structure or role responsibilities. In addition, a reference table has been added to explain the meaning and usage of the terms MUST, SHOULD, and MAY, supporting a consistent interpretation across the Operating Model.
+The roles defined in the Operating Model have been updated to align with the terminology used in Catena-X standards. Normative language (MUST, SHOULD, MAY) is now consistently applied to express requirements and recommendations. These adjustments clarify the wording and ensure alignment without introducing changes to the underlying governance structure or role responsibilities. In addition, a reference table has been added to explain the meaning and usage of the terms MUST, SHOULD, and MAY, supporting a consistent interpretation across the Operating Model.
 
 #### Enablement Service Provider (ESP)
 
