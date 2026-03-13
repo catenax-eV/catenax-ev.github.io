@@ -123,13 +123,11 @@ const config: Config = {
               to: '/docs/standards/overview/',
               label: 'Standards',
             },
+            {
+              to: '/docs/non-functional/overview/',
+              label: 'Non-functional requirements',
+            },
           ],
-        },
-        {
-          type: "docSidebar",
-          sidebarId: "sidebar_non_functional",
-          position: "left",
-          label: "Non-functional Requirements",
         },
         /* {
            type: "docSidebar",
