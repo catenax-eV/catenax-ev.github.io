@@ -1,10 +1,5 @@
----
-title: Contracting
-pagination_prev: null
-pagination_next: null
----
 
-## Guidance on Contract Modularization in Catena-X
+# Guidance on Contract Modularization in Catena-X
 
 :::info
 
@@ -338,3 +333,7 @@ Only a, b, or c of the following contract clauses may appear in a contract concl
 - Word-Version: [Template for a Data Licensing Agreement English Version](./assets/DATA_LICENSING_AGREEMENT.docx)
 - Word-Version: [Template for a Data Licensing Agreement German Version](./assets/VERTRAG_ZUR_ZEITWEISEN_UEBERLASSUNG_VON_DATEN.docx)
 - Catena-X Policy Builder: [Link to Catena-X Policy Builder](https://eclipse-tractusx.github.io/tractusx-edc-dashboard/policy-builder/)
+
+## Legal
+
+Copyright © 2026 Catena-X Automotive Network e.V. All rights reserved. For more information, please see [Catena-X Copyright Notice](https://catenax-ev.github.io/copyright).

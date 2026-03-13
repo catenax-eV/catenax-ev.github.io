@@ -3,7 +3,7 @@ sidebar_position: 1
 ---
 # What: Service Map
 
-The architecture of the Catena-X Operating System (cxOS) is derived from the reference architectures of the International Data Spaces Association (IDSA) and Gaia-X. The cxOS consists of three areas: Core, Onboarding, and Enablement Services shown in Figure [Service Map](./what-service-map.md).
+The architecture of the Catena-X Operating System is based on established reference architectures for sovereign and interoperable data spaces and is structured into four main areas: Core Services, Onboarding Services, Enablement Services and External Services as illustrated in Figure [Service Map](./what-service-map.md).
 
 ![Service Map (Deployment View)](./assets/service-map.png)  
 *Service Map (Deployment View)*
@@ -65,10 +65,6 @@ The marketplace is a core component to support application discovery for Catena-
 
 The Semantic Hub is a core component of Catena-X that functions as a knowledge hub for aspect models released in the dataspace. It stores all standardized Catena‑X aspect models. These models describe the semantics (meaning and structure) of data elements used in the network.
 
-#### Policy Hub
-
-The policy Hub is created to enable data providers, consumers as well as app provider to obtain, via a single-point-of-truth, a statement of the current CX existing policies, their attributes as well as the policy key and structure.
-
 ### Core Services B
 
 Core Services B lists Core Services that can only be operated once in the Catena-X dataspace due to business reasons or technical limitations. A [CSP-B](./../who-roles-in-the-catena-x-ecosystem/who-roles-in-the-catena-x-ecosystem.md#core-service-provider-b) **must** deploy, operate, and maintain all Core Services B.
@@ -84,8 +80,8 @@ The Registration Orchestration Service automates the orchestration of various st
 
 #### SD Factory
 
-During onboarding, the Self-Description (SD) Factory is responsible for transforming company data into the format required by the Gaia-X Clearing House.
-It acts as a mapping layer between the Portal Backend and the Gaia-X Digital Clearing House.
+During onboarding, the Self-Description (SD) Factory is responsible for transforming company data into the format required by the Digital Clearing House.
+It acts as a mapping layer between the Portal Backend and the Digital Clearing House.
 
 #### Discovery Finder
 
@@ -159,7 +155,7 @@ Trust Partners list the services that [CSP-B](./../who-roles-in-the-catena-x-eco
 
 ### Notarization Service
 
-The notarization service is a basic service ensuring that no one moves around an ecosystem like Gaia-X with a false or stolen company identity. To do this, the service checks their validity (e.g. using the commercial register number) and issues corresponding verifiable credentials.
+The notarization service is a basic service ensuring that no one moves around an ecosystem with a false or stolen company identity. To do this, the service checks their validity (e.g. using the commercial register number) and issues corresponding verifiable credentials.
 
 ### Compliance Service
 
@@ -247,3 +243,7 @@ The following conditions apply to any Catena-X Sandbox:
 - Data: limited to test data
 - Apps & Solutions offered:  Catena-X certified, if  standardized Catena-X services are offered; Non-certified if no Catena-X standards exist (see *Direct collaboration (no multi-tier approach*))
 - Users: registered Catena-X dataspace participants only
+
+## Legal
+
+Copyright © 2026 Catena-X Automotive Network e.V. All rights reserved. For more information, please see [Catena-X Copyright Notice](https://catenax-ev.github.io/copyright).

@@ -15,6 +15,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
   - add **Mexico** to "Allow List"
   - add **Turkey** to "Allow List"
 - Contracting as a new chapter
+  - add **Catena-X Policy Builder** to the Guidance of Contracting
 - New Version of Data Exchange Governance (Version of 30 SEPTEMBER 2025)
 
 ## [2.0.1]
@@ -64,3 +65,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Changed
 
 - Moved China from Yellow List to White List, allowing onboarding of Chinese companies to the Catena-X network
+
+## Legal
+
+Copyright © 2026 Catena-X Automotive Network e.V. All rights reserved. For more information, please see [Catena-X Copyright Notice](https://catenax-ev.github.io/copyright).

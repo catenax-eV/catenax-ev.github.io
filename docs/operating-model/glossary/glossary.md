@@ -21,7 +21,7 @@ sidebar_position: 1
 | DCP                   | Decentralized Claims Protocol                                    |
 | DCH                   | Digital Clearing House                                           |
 | DDTR                  | Decentralized Digital Twin Registry                              |
-| DSP                   | Data Space Protocol                                               |
+| DSP                   | Data Space Protocol                                              |
 | DSSC                  | Data Space Support Center                                        |
 | EDC                   | Eclipse Data Space Components                                    |
 | EDWG                  | Eclipse Data Space Working Group                                 |
@@ -41,3 +41,7 @@ sidebar_position: 1
 | VC                    | Verifiable Credential                                            |
 | VP                    | Verifiable Presentation                                          |
 | STS                   | Secure Token Service                                             |
+
+## Legal
+
+Copyright © 2026 Catena-X Automotive Network e.V. All rights reserved. For more information, please see [Catena-X Copyright Notice](https://catenax-ev.github.io/copyright).
