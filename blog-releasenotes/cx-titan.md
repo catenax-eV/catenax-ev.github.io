@@ -146,7 +146,7 @@ To view the Titan version of the Operating Model, please refer to the [Operating
 
 The CX-Titan release combines the Eclipse Tractus-X releases [25.12](https://eclipse-tractusx.github.io/blog-changelog/release-25-12) and [26.03](https://eclipse-tractusx.github.io/blog-changelog/release-26-03).
 
-These two release were made possible by 53 contributors and 32 committers across the Eclipse Tractus-X repositories, contributing code, documentation, reviews, issue reports, and discussions.
+These two releases were made possible by 53 contributors and 32 committers across the Eclipse Tractus-X repositories, contributing code, documentation, reviews, issue reports, and discussions.
 
 ### Highlights
 
