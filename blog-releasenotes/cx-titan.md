@@ -282,7 +282,6 @@ The main navigation was updated to clearly separate normative and non-normative 
 ### New Knowledge Resources
 
 - Glossary: Provides standardized definitions for key terms used across the Catena-X ecosystem.
-- Architecture Guardrails: Introduced to support consistent design and implementation practices across the ecosystem.
 
 ### Usability Enhancements
 
