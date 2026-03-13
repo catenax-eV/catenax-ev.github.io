@@ -233,11 +233,41 @@ We would like to sincerely thank the community for their outstanding collaborati
 
 ### Highlights
 
+These are just a few highlights from the 25.12 and 26.03 releases.
+
 #### KIT 2.0 Architecture
 
 A major redesign of how the KIT ecosystem is visualized and structured has been introduced. The KIT 2.0 Architecture provides a clearer layered representation of the Eclipse Tractus-X ecosystem, improving discoverability and navigation across the growing collection of KITs.
 
 For further information, please refer to the [following link](https://eclipse-tractusx.github.io/blog/kit-2.0-architecture/).
+
+#### Golden Record Business Partner Number (BPN) Service
+
+Enhancements improve the reliability and governance of shared business partner data. Immutable history for management relations protects historical accuracy, while automated confidence calculations and contributor metrics increase transparency and trust in Golden Records. Support for relation validity periods allows more accurate modeling of changing business relationships.
+
+#### Industry Core Hub
+
+New capabilities enhance digital twin and digital product passport management. Improved submodel handling, EcoPass and DPP support, and Notification API integration enable more efficient data exchange and event-driven communication between ecosystem services. Security and architecture improvements further strengthen platform stability.
+
+#### Tractus-X SDK
+
+SDK updates improve developer experience and ecosystem interoperability. Notification services, alignment with the latest EDC and DSP standards, improved documentation, and security updates simplify the development of Tractus-X compatible applications.
+
+#### Tractus-X Connector
+
+Connector improvements strengthen the core data exchange infrastructure. Enhanced discovery mechanisms, credential caching, and preparation for multi-tenant architectures improve scalability, performance, and interoperability across dataspace participants.
+
+#### Identity Hub
+
+Identity Hub enhancements improve decentralized identity and credential management in the ecosystem. Configurable integration options, improved documentation, and demonstration flows simplify the implementation of credential issuance and verification processes.
+
+#### PURIS
+
+Operational improvements and enhanced error handling increase the stability and reliability of supply chain data exchange workflows.
+
+### Further Information
+
+Details can be found in the [changelog](https://eclipse-tractusx.github.io/blog-changelog)
 
 ---
 
