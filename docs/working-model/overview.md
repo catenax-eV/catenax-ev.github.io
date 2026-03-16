@@ -27,3 +27,7 @@ If you have any questions, want to share feedback or want to contribute to the w
 :::warning[NOTE]
 This is not a normative Document!!
 :::
+
+## Legal
+
+Copyright © 2026 Catena-X Automotive Network e.V. All rights reserved. For more information, please see [Catena-X Copyright Notice](https://catenax-ev.github.io/copyright).

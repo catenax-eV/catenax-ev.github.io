@@ -20,3 +20,7 @@ The Catena-X office plays a pivotal role in orchestrating the operations of the 
 - **Content Decisions**: It is essential to emphasize that the Catena-X office does not have the authority to make decisions regarding the content of standards and KITs. These decisions are the responsibility of the association members, who bring their expertise and consensus to shape the content.
 
 - **Provision of Resources**: The office is not responsible for providing the necessary resources for the development of standards and KITs. These resources must be sourced and provided by the association members themselves, ensuring that those directly involved in content creation have the requisite tools and support.
+
+## Legal
+
+Copyright © 2026 Catena-X Automotive Network e.V. All rights reserved. For more information, please see [Catena-X Copyright Notice](https://catenax-ev.github.io/copyright).

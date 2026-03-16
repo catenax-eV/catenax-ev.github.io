@@ -36,3 +36,7 @@ Board sponsors ensure that the Committees strategy and initiatives align with th
 ### Mediation board member
 
 The mediation board member is elected by from and by the management board. The mediation board member serves as the ultimate decision-maker when conflicts or disputes cannot be resolved at lower levels within the association. He or she provides a final, binding resolution to escalated issues, ensuring that decisions are fair and just.
+
+## Legal
+
+Copyright © 2026 Catena-X Automotive Network e.V. All rights reserved. For more information, please see [Catena-X Copyright Notice](https://catenax-ev.github.io/copyright).

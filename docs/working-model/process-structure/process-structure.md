@@ -22,3 +22,7 @@ Regardless of the specific tasks involved, every release is structured into thre
 - **Planning**: Establish the scope, objectives, and deliverables by defining roadmap items.
 - **Refinement**: Finalize requirements and design, develop detailed implementation plans, and break down roadmap items to ensure readiness.
 - **Implementation**: Execute actionable items, maintain quality standards, and prepare for post-release activities.
+
+## Legal
+
+Copyright © 2026 Catena-X Automotive Network e.V. All rights reserved. For more information, please see [Catena-X Copyright Notice](https://catenax-ev.github.io/copyright).

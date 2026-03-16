@@ -4,7 +4,7 @@ title: Release of Standards
 ---
 
 :::warning[NOTE]
-This page contains a summary of the standardization process. The normative description of the process can be found [here](https://catena-x.net/wp-content/uploads/2025/03/Catena-X_IP_Regelwerk_IP_Regulations.pdf).
+ This page contains a summary of the standardization process. The normative description of the process can be found [here](https://catena-x.net/wp-content/uploads/2026/02/260128_Catena-X_IP-Regulations.pdf).
 :::
 
 Every Standard that is officially released under the umbrella of Catena-X MUST follow a specific process comprised out of four stages:
@@ -103,3 +103,7 @@ The responsibilities of the TC4S (Technical Committee for Standardization) are a
 - **Independent Operation**: The TC4S acts independently based on a defined standardization process, ensuring unbiased decision-making.
 - **Guiding Expert Groups**: The TC4S leads expert groups and subcommittees throughout the standardization process.
 - **Supporting the Catena-X Board**: The TC4S assists the Management Board in evaluating and assessing standardization requests.
+
+## Legal
+
+Copyright © 2026 Catena-X Automotive Network e.V. All rights reserved. For more information, please see [Catena-X Copyright Notice](https://catenax-ev.github.io/copyright).

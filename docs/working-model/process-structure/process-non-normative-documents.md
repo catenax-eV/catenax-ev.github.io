@@ -30,3 +30,7 @@ Once approved, the document must be officially published by the Expert Group. At
 :::warning[NOTE]
 Although Non-Normative Documents are not binding standards, they still require careful review. Their content can significantly influence the association's reputation if published, making accuracy, clarity, and alignment with the association's values crucial during the review process.
 :::
+
+## Legal
+
+Copyright © 2026 Catena-X Automotive Network e.V. All rights reserved. For more information, please see [Catena-X Copyright Notice](https://catenax-ev.github.io/copyright).

@@ -14,3 +14,7 @@ Work items may include tasks such as:
 - coordinating collaboration with external stakeholders.
 
 Ensuring the quality of a work item is the responsibility of the respective group, which may define its own processes and quality measures as needed.
+
+## Legal
+
+Copyright © 2026 Catena-X Automotive Network e.V. All rights reserved. For more information, please see [Catena-X Copyright Notice](https://catenax-ev.github.io/copyright).

@@ -131,3 +131,7 @@ This is the **first announcement** of intended activities for the upcoming relea
 - **Invitation:** Managed by the CX-Release Management and sent to all association members active in an association body.
 - **GitHub:** Specific access to the roadmap board is required – managed by the [Association Office](../organizational-structure/catena-x-office.md).
 - **Access:** Only Catena-X e.V. members are allowed to get access.
+
+## Legal
+
+Copyright © 2026 Catena-X Automotive Network e.V. All rights reserved. For more information, please see [Catena-X Copyright Notice](https://catenax-ev.github.io/copyright).
