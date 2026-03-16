@@ -119,3 +119,7 @@ Core Group members are expected to regularly reaffirm their commitment to their 
 Review group members are experts in the specific field of the respective group. They serve as sparring partners to the core team, providing critical feedback, guidance, and support. To fulfill this role effectively, they must immerse themselves in the topic and closely monitor the latest progress of the expert group. Additionally, review group members may take over work packages from the core team and participate in workshops, further contributing to the group's efforts and outcomes.
 
 Companies also have the option to add additional resources to the Expert Group that are not part of the Core Group. These resources, such as developers, can take on dedicated tasks for a specific release and leave the group once the task is completed. This flexible contribution model helps enhance the group's capacity and efficiency.
+
+## Legal
+
+Copyright © 2026 Catena-X Automotive Network e.V. All rights reserved. For more information, please see [Catena-X Copyright Notice](https://catenax-ev.github.io/copyright).
