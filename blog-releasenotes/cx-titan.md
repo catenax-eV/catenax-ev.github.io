@@ -261,10 +261,6 @@ Connector improvements strengthen the core data exchange infrastructure. Enhance
 
 Identity Hub enhancements improve decentralized identity and credential management in the ecosystem. Configurable integration options, improved documentation, and demonstration flows simplify the implementation of credential issuance and verification processes.
 
-#### PURIS
-
-Operational improvements and enhanced error handling increase the stability and reliability of supply chain data exchange workflows.
-
 ### Further Information
 
 Details can be found in the [changelog](https://eclipse-tractusx.github.io/blog-changelog)
