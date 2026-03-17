@@ -1,4 +1,4 @@
-# CX-0128 - Demand and Capacity Management Data Exchange v2.2.1
+# CX-0128 - Demand and Capacity Management Data Exchange v2.3.0
 
 ## ABSTRACT
 
@@ -765,7 +765,7 @@ This section provides JSON examples for data asset, policy and contract definiti
 | Term                                        | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 | :------------------------------------------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Actual Capacity                             | This is the capacity a supplier realistically plans to have available to produce a certain amount of material per week for a customer. It takes into account the supplier's own assessment of their capabilities, inventory and existing commitments.                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| Agreed Capacity                             | May be coordinated between customer and supplier. The agreed capacity must not constitute a legal obligation to deliver. Using the agreed capacity is optional and has purely informative character. The agreed capacity may be greater than, less than or equal to the actual or maximum capacity of the supplier. It may be used for a time frame shorter than the whole time series.                                                                                                                                                                                                                                                                                                                                   |
+| Agreed Capacity                             | May be coordinated between customer and supplier. Can be used to document a capacity agreed in a contract. The agreed capacity must not constitute a legal obligation to deliver (as this would need to be done e.g. in a contract outside Catena-X DCM). Using the agreed capacity is optional and has purely informative character. The agreed capacity may be greater than, less than or equal to the actual or maximum capacity of the supplier. It may be used for a time frame shorter than the whole time series.                                                                                                                                                                                         |
 | Aspect Model                                | An Aspect model is a structured, machine-readable description of data. It utilizes the Turtle file format to serialize a Resource Description Framework (RDF) graph, that relates to a specific aspect. It must follow the Semantic Aspect Meta Model (SAMM) guidelines, meaning it uses defined elements and rules from SAMM. Aspect models help to clarify the meaning of data at runtime and should link to standardized business glossary terms, if available.                                                                                                                                                                                                                                                        |
 | Bottleneck                                  | A facility, function, department, or resource whose capacity is less than the demand placed upon it. For example, a bottleneck machine or work center exists where jobs are processed at a slower rate than they are demanded (Source: ASCM Supply Chain Dictionary, 17th edition).                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 | Business application provider               | Offers tools for demand and capacity management that conform to the core business logic, data models and APIs described in this standard.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
@@ -1211,6 +1211,9 @@ If a week's demand is zero (value = `0`), it must be explicitly stated and inclu
 The customer may define a `WeekBasedMaterialDemand` as inactive by setting and transferring the `materialDemandIsInactive` flag to the supplier. The inactive `WeekBasedMaterialDemand` and their related `demandSeries` data must be ignored during the demand-capacity matching over the whole horizon, i.e. must be considered in the same way as not existing data for the demand-capacity matching. Inactivating a `WeekBasedMaterialDemand` may trigger their archiving or deletion in the local DCM application of the business partner.
 Once a `WeekBasedMaterialDemand` has been set as inactive, this may be undone by the customer by reverting the `materialDemandIsInactive` flag. In this case, the `WeekBasedMaterialDemand` must again be considered during the demand-capacity matching. The reverting of the inactive flag of a `WeekBasedMaterialDemand` may correspond to a newly created and initially transferred or to an updated `WeekBasedMaterialDemand`.
 
+The customer may include a `customerLocation` where the BPNS of the location is not a site directly belonging to the BPNL sending the demand. This can be the case for example when the `customerLocation` is owned by a subsidiary of the BPNL, for example.
+A similar situation applies in case customer-supplied material is used; here the parts are planned and paid for by the BPNL sending the demand but are to be delivered to another party directly, referred to by the other parties BPNS and used in the property customerLocation. Special caution needs to be applied when using BPNS outside the own organization, as any duplication of demands must be avoided. Note that a BPNS outside the organization of the BPNL must not be used in any situation where the parts need to be ordered by the supplier itself (e.g. directed buy). Any duplication of demand must be avoided (demand sent by OEM and supplier in parallel). The demands provided must be in line with the actual orders, therefore only the company that will order the parts can provide the demand.
+
 ##### 4.1.2.3 UUID generation and handling
 
 UUIDv4 is required for exchanging demand data to ensure uniqueness and security. The UUID must be generated conforming to [[RFC4122](#72-non-normative-references)] and must be treated as unique within the supplier-customer relationship.
@@ -1390,6 +1393,8 @@ The `linkedDemandSeries` property specifies which particular `WeekBasedMaterialD
 
 The supplier may define a `WeekBasedCapacityGroup` as inactive by setting and transferring the `capacityGroupIsInactive` flag to the customer. The inactive `WeekBasedCapacityGroup` must be ignored during the demand-capacity matching over the whole horizon, i.e. must be considered in the same way as not existing data for the demand-capacity matching. Inactivating data may trigger their archiving or deletion in the local DCM application of the business partner. The inactive flag of a `WeekBasedCapacityGroup` must not affect linked `WeekBasedMaterialDemand` objects or other linked `WeekBasedCapacityGroup`. The inactivation of a `WeekBasedCapacityGroup` may result in the situation that its linked active `WeekBasedMaterialDemand` objects have to be newly linked to other active `WeekBasedCapacityGroup`. Once a `WeekBasedCapacityGroup` has been set as inactive, this may be undone by reverting the `capacityGroupIsInactive` flag. In this case, the `WeekBasedCapacityGroup` must again be considered during the demand-capacity matching. The reverting of the inactive flag of a `WeekBasedCapacityGroup` may correspond to a newly created and initially transferred or to an updated `WeekBasedCapacityGroup`.
 
+In the WeekbasedCapacityGroup, the supplier can refer to any `customerLocation` BPNS that was used by the customer in the according `WeekBasedMaterialDemand`, no matter what BPNL they belong to. The supplier should assume that all the parts requested will be delivered based on an existing contract and paid for by the organization of the BPNL where the demand has been generated.
+
 Suppliers may use demand volatility metrics, including the optional entity `demandVolatilityParameters` within the JSON payload.
 
 The following properties are used by demand volatility metrics:
@@ -1564,7 +1569,7 @@ The `IdBasedRequestForUpdate` object (RfU) is used to request updates of some or
 
 Customers and Supplier must be able to consume and process a RfU. Being able to provide a RfU is recommended.
 
-To properly proccess a RfU, the following steps must be executed:
+To properly process a RfU, the following steps must be executed:
 
 1. Response: Answering with the appropriate HTTP status code
 2. Action: If that status code is `200 OK`: Providing the requested material demands and capacity groups via `WeekBasedMaterialDemand` API or `WeekBasedCapacityGroup` API respectively.
@@ -1947,7 +1952,7 @@ Examples for data asset, policy and contract definition as well as catalog reque
 
 > *This section and all its subsections are normative*
 
-Companies adopting demand and capacity management in Catena-X MUST conform to the processes and guidelies defined in [Chapter 5](#5-processes) and all its subsections.
+Companies adopting demand and capacity management in Catena-X MUST conform to the processes and guidelines defined in [Chapter 5](#5-processes) and all its subsections.
 
 The following sections describe capabilities, that are REQUIRED (except for subsections that are defined as optional):
 
@@ -2442,7 +2447,7 @@ The usage policy defines which terms the business partner has to agree to, if he
 Access and usage policy can be crafted using zero, one or multiple constraints.
 
 ![Visualized relation between contract defnition, asset and policies](./assets/DCM_Example_CatalogOffer_Structure.svg)
-*Figure 12: Visualized relation between contract defnition, asset and policies*
+*Figure 12: Visualized relation between contract definition, asset and policies*
 
 Both customers and suppliers MUST implement and uphold access and usage policies in order to guarantee a secure and collaborative data exchange.
 
@@ -2568,4 +2573,4 @@ Below are illustrative figures that depict the DCM process from the viewpoints o
 
 ## Legal
 
-Copyright © 2025 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).
+Copyright © 2026 Catena-X Automotive Network e.V. All rights reserved. For more information, please see [Catena-X Copyright Notice](https://catenax-ev.github.io/copyright).

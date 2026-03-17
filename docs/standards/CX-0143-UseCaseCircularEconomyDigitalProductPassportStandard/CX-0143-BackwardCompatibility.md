@@ -1,8 +1,12 @@
+---
+sidebar_position: 7
+---
+
 # Backward compatibility requirements
 
 > *This section is normative*
 
-## 5.1 Context
+## Context
 
 The previous standard supports:
 
@@ -26,7 +30,7 @@ The new release introduces:
 
 Releases must remain interoperable with those built on the previous version to ensure seamless data exchange across the ecosystem.
 
-## 5.2 Requirements for Backward Compatibility
+## Requirements for Backward Compatibility
 
 1. Dual Interpretation Capability
 
@@ -43,7 +47,7 @@ Releases must remain interoperable with those built on the previous version to e
 2. Version Tagging
     - Payloads must include a version tag (``specVersion``) that refers to the schema version (not just the instance version) to ensure correct interpretation
 
-## 5.3 Use Cases Requiring Backward Compatibility
+## Use Cases Requiring Backward Compatibility
 
 1. Mixed Ecosystem Communication
     - When a new application (e.g. version ``6.1.0`` for ``generic.digital_product_passport``) communicates with legacy systems (e.g. version ``4.0.0`` of ``generic.digital_product_passport``), it must fallback gracefully to the older data model and API format.
@@ -52,7 +56,7 @@ Releases must remain interoperable with those built on the previous version to e
 3. Digital Twin Registries
     - Registries must support entries from both versions and allow search and retrieval based on passportIdentifier.
 
-## 5.4 Recommended Application Logic for Compatibility
+## Recommended Application Logic for Compatibility
 
 1. Schema Detection and Routing
     - Implement logic to detect the aspect model version from the payload metadata and route it to the appropriate parser.
@@ -63,4 +67,4 @@ Releases must remain interoperable with those built on the previous version to e
 
 ## Legal
 
-Copyright © 2025 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).
+Copyright © 2026 Catena-X Automotive Network e.V. All rights reserved. For more information, please see [Catena-X Copyright Notice](https://catenax-ev.github.io/copyright).

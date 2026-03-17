@@ -1,4 +1,4 @@
-# CX-0153 Tariffs Use Case v.1.0.2
+# CX-0153 Tariffs Use Case v.2.0.0
 
 ## FOR WHOM IS THE STANDARD DESIGNED
 
@@ -158,7 +158,7 @@ This Catena-X data model is made available under the terms of the Creative Commo
 
 The semantic model has the unique identifier:
 
-> urn:samm:io.catenax.us_tariff_information:1.0.0
+> urn:samm:io.catenax.us_tariff_information:2.0.0
 
 #### 3.1.5 FORMATS OF SEMANTIC MODEL
 
@@ -166,7 +166,7 @@ The semantic model has the unique identifier:
 
 The rdf turtle file, an instance of the Semantic Aspect Meta Model, is the master for generating additional file formats and serializations.
 
-> [UsTariffInformation v1.0.0](https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.us_tariff_information/1.0.0/gen)
+> [UsTariffInformation v2.0.0](https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.us_tariff_information/2.0.0/gen)
 
 The open source command line tool of the Eclipse Semantic Modeling Framework is used for generation of other file formats like for example a JSON Schema, AASX for Asset Administration Shell Submodel Template or a HTML documentation.
 
@@ -182,71 +182,44 @@ An AASX file can be generated from the RDF Turtle file. The AASX file defines on
 
 ```json
 {
-  "catenaxId": "580d3adf-1981-44a0-a214-13d6ceed9379",
+  "partWeight": "1000",
+  "referenceNumber": "774773he878",
   "materialList": [
     {
-      "material": {
-        "classificationType": "IMDS",
-        "classificationId": "1.1",
-        "materialName": "Steels / cast steel / sintered steel"
-      },
-      "partWeight": {
-        "value": 100,
-        "unit": "unit:kilogram"
-      },
-      "referenceNumber": "774773he878",
-      "hts": "1234.56.7890",
-      "origin": [
+      "materialOrigin": [
         {
-          "originCountry": "US",
+          "materialOriginCountry": "USA",
           "valuePercentage": 80,
-          "originWeight": {
-            "value": 20,
-            "unit": "unit:kilogram"
-          }
-        },
-        {
-          "originCountry": "MX",
-          "valuePercentage": 20,
-          "originWeight": {
-            "value": 80,
-            "unit": "unit:kilogram"
-          }
+          "originWeight": "300"
         }
       ],
+      "materialValue": {
+        "amount": 50
+      },
       "processing": [
         {
-          "processingCountry": "US",
-          "successor": [
-            {
-              "successorId": 2,
-                "successorId": 3
-            }
-          ],
-          "processingType": "Pourring",
-          "processingId": 1,
-          "certificateId": "djhsoi918734627"
-        },
-        {
-          "processingCountry": "US",
-          "successor": [
-          ],
-          "processingType": "Melting",
-          "processingId": 2,
-          "certificateId": "djhsoi875688655"
-        },
-        {
-          "processingCountry": "MX",
-          "successor": [],
-          "processingType": "Pourring",
-          "processingId": 3,
-          "certificateId": "djhsoi009865335"
+          "documentID": "UUID--123456789",
+          "processingCountry": "USA",
+          "processingType": "Smelting"
         }
       ],
-      "currency": "USD",
-      "value": 500
+      "customsClassification": {
+        "customClassificationCode": "1234.56.7890",
+        "customClassificationCodingSystem": "HS"
+      }
     }
-  ]
+  ],
+  "active": true,
+  "partNumber": "123523423423",
+  "partValue": {
+    "amount": 50
+  },
+  "customsClassification": {
+    "customClassificationCode": "1234.56.7890",
+    "customClassificationCodingSystem": "HS"
+  },
+  "partName": "Mirror left",
+  "partOriginCountry": "USA"
 }
 ```
 
@@ -282,4 +255,4 @@ N/A
 
 ## Legal
 
-Copyright © 2025 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).
+Copyright © 2026 Catena-X Automotive Network e.V. All rights reserved. For more information, please see [Catena-X Copyright Notice](https://catenax-ev.github.io/copyright).

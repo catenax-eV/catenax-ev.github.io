@@ -4,7 +4,7 @@ tags:
   - UC/Traceability
 ---
 
-# CX-0125 Traceability Use Case v2.2.1
+# CX-0125 Traceability Use Case v2.3.0
 
 ## ABSTRACT
 
@@ -208,12 +208,13 @@ The described [Block Notification API](#42-block-notification-api) **MAY** be pr
 
 ### 2.2 SPECIAL DIGITAL TWINS FOR TRACEABILITY AND SPECIFIC ASSET IDS
 
-The described concept of DT qualityTask **MUST** be supported.
+The described concept of DT qualityTask **MUST** be supported. Data models of the industry core which identify the physical assets, like "SerialPart" and "Batch" as well as "SingleLevelBomAsBuilt" **MUST**, further data models, like "ZeroKmFailure" (Traceability), "packingList" (Logistics) and "IotSensorData" (AssetTracking) and Notifications (Industry Core), especially Block Notifications (Traceability), **Should** be supported.
+
 Basics about digital twins, which you should be familiar with to understand this section, are described in the Standard of Digital Twins (CX - 0002 Digital Twins in Catena-X).
 
 #### Digital Twin “qualityTask”
 
-The Digital Twin (DT) qualityTask represents the quality issue or quality claim itself as a case or kind of a file. It is NOT a virtual representation of a physical asset (IDTA conformaty of DT; asset kind: not applicable). It provides the overarching bracket in case of abnormalities or a concrete quality claim which needs to be clarified (or wants to be studied), especially if affected parts are not identified and the root cause is unknown. All data which is available/provided and received/consumed refers to this DT. By using unique ID push (please see CX-0151 Industry Core, chapter 4.1.2 API SPECIFICATION) involved partners in the supply chain can be informed about an existing DT qualityTask and have the ability to pull provided data refering to the quality claim. As soon as parts are identified as nok-parts (and therefore part of the root cause) their DTs (part instances or batches) shall be linked to the DT qualityTask.
+The Digital Twin (DT) qualityTask represents the quality issue or quality claim itself as a case or kind of a file. It is NOT a virtual representation of a physical asset (IDTA conformaty of DT; asset kind: not applicable). It provides the overarching bracket in case of abnormalities or a concrete quality claim which needs to be clarified (or wants to be studied), especially if affected parts are not identified and the root cause is unknown. All data which is available/provided and received/consumed refers to this DT. By using unique ID push (please see CX-0151 Industry Core, chapter 4.1.2 API SPECIFICATION) involved partners in the supply chain can be informed about an existing DT qualityTask and have the ability to pull provided data refering to the quality claim. As soon as parts are identified as nok-parts (and therefore part of the root cause) their DTs (part instances or batches) shall be linked to the DT qualityTask (mechanism please see BoM AsBuilt parent-child connection, CX-0127-IndustryCorePartInstance, chapter 3.4 ASPECT MODEL "SingleLevelBomAsBuilt" and Industry Core KIT chapter "Bill of Material (BoM)").
 
 After detecting the root cause and solving the problem all data can be analysed holistically, insights may be used for preventive measures.
 
@@ -221,20 +222,23 @@ Here an example of using a DT qualityTask from a **Tier1 perspective**:
 
 ![DT QualityTask Catena-X Traceability Standard](./assets/dt-quality-task-cx-traceability-standard.png)
 
+The figure shows an example of a physical supply chain, the physical assets (grey/red) and their digital twins (blue). The affected components of a quality issue are marked in red. The Tier 1 is in charge of root cause analysis and uses a DT qualityTask to correspond with OEM and Tier 2 (regarding the one-up/one-down principle) to gain speed in communication and solve the quality issue (received data from Tier 2 must not be shared with the OEM and vice versa).
+
 The following conventions for **specific asset IDs** apply to DT qualityTask:
 
 |  Key                            |  Availability  |  Description                                                                                                                                                     |  Type    |
-|---------------------------------|----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
 |  manufacturerId                 |  Mandatory     |  The Business Partner Number (BPNL) of the manufacturer of the part.                                                                                             |  BPNL    |
 |  customerId                     |  Mandatory     |  The Business Partner Number (BPNA) of the customer                                                                                                              |  BPNA  |
-|  digitalTwinType                |  Mandatory     |  qualityTask<br />   |  String                                                                                                                                      |
+|  digitalTwinType                |  Mandatory     |  not applicable<br />   |  String                                                                                                                                      |
 |  qualityTaskID                  |  Mandatory     |  A fully anonymous and unique Catena-X ID to reference an existing early warning project or a quality issue (which wants to be analysed) and its data (example)  |  String  |
-|  ManufacturerQualityTaskNumber  |  Optional      |  Internal tool or process specific case number, case file of DT qualityTask owner                                                                                |  String  |
-|  CustomerProblemID      |  Optional      |  Internal tool or process specific case number, case file of customer                                                                  |  String  |
-|  SupplierQualityTaskNumber      |  Optional      |  Internal tool or process specific case number, case file of supplier                                                                                            |  String  |
-|  globalAssetID                  |  Mandatory     |  The globalAssetId MUST be equal to the unique id used in Catena-X  (UUIDv4)                                                                                             |  String  |
+|  *ManufacturerQualityTaskNumber*  |  Optional      |  Internal tool or process specific case number, case file of DT qualityTask owner                                                                                |  String  |
+|  *CustomerProblemID*      |  Optional      |  Internal tool or process specific case number, case file of customer                                                                  |  String  |
+|  SupplierQualityTaskNumber*      |  Optional      |  Internal tool or process specific case number, case file of supplier                                                                                            |  String  |
+|  globalAssetID                  |  Mandatory     |  The Catena-X ID (UUIDv4/7)                                                                                             |  String  |
 
-The DT qualityTask is created and registrated in the dDTR (decentral Digital Twin Registry) due to a trigger of abnormaties or a quality issue by the OEM. The DT qualityTask can be created at the OEM, Tier1 and/or Tier2 as well for the same claim. By using different CX-ID the DTs are unique although the same qualityTaskID is used. The specific asset IDs needs to be selected according of the DT owner role.
+*a quality task number or a problem id is a company specific identifier generated from internal used quality tools to document a quality issue and define corrective actions.
+
+The DT qualityTask is created and registrated in the dDTR (decentral Digital Twin Registry) due to a trigger of abnormaties or a quality issue by the OEM or a supplier. The DT qualityTask can be created at the OEM, Tier1 and/or Tier2 as well for the same claim. By using different CX-ID the DTs are unique although the same qualityTaskID is used. The specific asset IDs needs to be selected according of the DT owner role.
 
 **Note: The DT qualityTask MUST NOT be registrated at the central CX discovery service. Otherwise the supply chain can be visible for the whole involved partners which violates the one-up/one-down principle. In case of handling the DT qualityTask as a "shared twin" between two partners (one-up AND one-down), care has to be taken, that the used specific asset ID are anonymised**.
 
@@ -522,6 +526,210 @@ Example JSON Payload: Submodel "SpecialCharacteristicMeasurement" for a qualitat
 }
 ```
 
+### 3.3 ASPECT MODEL "Certificate of Analysis" (CoA)
+
+#### 3.3.1 INTRODUCTION
+
+In their daily operations, companies receive materials intended for further use in the production of other goods, such as bi-component adhesives, glues, or plastic granulates. These deliveries are typically accompanied by documentation, including a formal document known as a Certificate of Analysis (CoA). This certificate confirms the quality of a material batch through analytical characterization and provides detailed information about specific properties or performance aspects, such as curing conditions.
+The Certificate of Analysis is usually provided as a PDF file containing key details about the supplier, the material (name and identification number), the batch or lot number, and, in a tabular format, a list of tests performed according to defined test methods (codes). Each test result is presented alongside the corresponding specification limits to ensure compliance.
+Upon delivery, the conformity of the supplied batch is verified by entering the analytical results from the certificate into a system that enables formal checks and decision-making regarding the acceptance of the goods.
+Implementing a new aspect model for Certificate of Analysis data, designed to be applicable across multiple product categories (plastics, adhesives, coatings, etc.), will establish the foundation for a standardized digital solution for CoA data exchange. This solution will be machine-readable and interoperable within the Catena-X context, best practice: leveraging digital twins for seamless data sharing.
+
+#### 3.3.2 SPECIFICATIONS ARTIFACTS
+
+The modeling of the semantic model specified in this document was done in accordance to the "semantic driven workflow" to create a submodel template specification SMT.
+This aspect model is written in SAMM (current version please see CX-0003) as a modeling language conformant to CX-0003 as input for the semantic driven workflow.
+Like all Catena-X data models, this model is available in a machine-readable format on GitHub conformant to CX-0003.
+
+#### 3.3.3 LICENSE
+
+This Catena-X data model is made available under the terms of the Creative Commons Attribution 4.0 International (CC-BY-4.0) license, which is available at Creative Commons.
+
+#### 3.3.4 IDENTIFIER OF SEMANTIC MODEL
+
+The semantic model has the unique identifier:
+
+urn:samm:io.catenax.certificate_of_analysis:2.0.0#CertificateOfAnalysis
+
+#### 3.3.5 FORMATS OF SEMANTIC MODEL
+
+##### 3.3.5.1 RDF TURTLE
+
+The rdf turtle file, an instance of the Semantic Aspect Meta Model, is the master for generating additional file formats and serializations.
+certificateOfAnalysis v2.0.0 (optional)
+
+[https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.certificate_of_analysis/2.0.0/CertificateOfAnalysis.ttl](https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.certificate_of_analysis/2.0.0/CertificateOfAnalysis.ttl)
+
+The open source command line tool of the Eclipse Semantic Modeling Framework is used for generation of other file formats like for example a JSON Schema, AASX for Asset Administration Shell Submodel Template or a HTML documentation.
+
+##### 3.3.5.2 JSON SCHEMA
+
+A JSON Schema can be generated from the RDF Turtle file. The JSON Schema defines the Value-Only payload of the Asset Administration Shell for the API operation "GetSubmodel".
+
+##### 3.3.5.3 AASX
+
+An AASX file can be generated from the RDF Turtle file. The AASX file defines one of the requested artifacts for a Submodel Template Specification conformant to [SMT].
+
+#### 3.3.6 EXAMPLES
+
+Example JSON Payload: Submodel "certificateOfAnalysis"
+
+```json
+{
+  "certificateMetaData" : {
+    "supplierOrderId" : "M-Nbr-4711",
+    "issueDate" : "2025-12-19T13:23:03.138+01:00",
+    "isConformWithSpecification" : true,
+    "customerOrderId" : "C-Nbr-4711"
+  },
+  "productInstanceInformation" : {
+    "localIdentifiers" : [ {
+      "value" : "BID12345678",
+      "key" : "batchId"
+    } ],
+    "manufacturingInformation" : {
+      "date" : "2025-09-26",
+      "country" : "HUR",
+      "sites" : [ {
+        "catenaXsiteId" : "BPNS1234567890ZZ",
+        "function" : "production"
+      } ]
+    },
+    "expiryDate" : "2025-12-19",
+    "catenaXId" : "580d3adf-1981-44a0-a214-13d6ceed9379"
+  },
+  "materialProperties" : [ {
+    "unit" : "unit:kilogramPerCubicMetre",
+    "dataType" : "xsd:string",
+    "name" : "density",
+    "description" : "according DIN ISO 4711",
+    "upperLimit" : "2400.0",
+    "lowerLimit" : "2200.0",
+    "value" : "2310.0"
+  } ],
+  "documentType" : "Created digitally, valid without signature",
+  "supplier" : "BPNLW8IRwvrdSk1M",
+  "productTypeInformation" : {
+    "manufacturerPartId" : "123-0.740-3434-A",
+    "customerPartId" : "B19764234512",
+    "nameAtManufacturer" : "Mirror left"
+  },
+  "disclaimer" : {
+    "disclaimerMetadata" : "This is a computer-generated document. A signature is not required.",
+    "disclaimerRequirement" : "The above information describes the relevant parameters of the product at the time of issuance of this certificate of analysis. The data are regularly checked as part of our quality assurance and are provided for reference purposes only. The contractual quality of the product at the time of transfer of risk is determined solely by our product specification. Unless the parties have expressly agreed otherwise in writing and signed by authorized representatives, no suitability of the product for any particular purpose is assumed or implied. The customer is solely responsible for verifying the suitability of the product for any specific use."
+  },
+  "customer" : "BPNLzwoqHiEE6xER"
+}
+```
+
+### 3.4 ASPECT MODEL "Zero Km Failure"
+
+#### 3.4.1 INTRODUCTION
+
+The use case and aspect model “ZeroKmFailure” supports data provisioning in case of defect components at the time of assembling to speed up clarifying the root cause of nok components. The vehicle is not yet in the field, which provides the basis for the name 'Zero-Km-Failure'.
+During the assembly process of a component into a vehicle, anomalies or defects can occur. The component doesn’t show the expected performance or in an advanced stage of assembling a control unit is generating error codes/diagnostic trouble codes (DTCs).
+To enable fast intervention for OEM and supplier, identification of the root cause, and precise isolation of defective parts, it is essential to provide the supplier with a comprehensive information setup. This setup facilitates the prioritization, narrowing down, and eliminate the root cause of the anomalies/defects. For this purpose, the necessary data for a data pull, preferably via a Digital Twin (DT) qualityTask (alternative via DT vehicle), will be provided by the semantic model "zeroKmFailure". The DT qualityTask serves as a digital representation of the quality issue, consolidating data from various domains to streamline a holistic data analysis and root cause identification.
+Once the defect parts can be precisely identified, for example, by correlating assembly times with the production period of the components, these parts can be specifically localized, blocked or recalled.
+
+Note: the aspect model is optional.
+
+#### 3.4.2 SPECIFICATIONS ARTIFACTS
+
+The modeling of the semantic model specified in this document was done in accordance to the "semantic driven workflow" to create a submodel template specification SMT.
+This aspect model is written in SAMM (current version please see CX-0003) as a modeling language conformant to CX-0003 as input for the semantic driven workflow.
+Like all Catena-X data models, this model is available in a machine-readable format on GitHub conformant to CX-0003.
+
+#### 3.4.3 LICENSE
+
+This Catena-X data model is made available under the terms of the Creative Commons Attribution 4.0 International (CC-BY-4.0) license, which is available at Creative Commons.
+
+#### 3.4.4 IDENTIFIER OF SEMANTIC MODEL
+
+The semantic model has the unique identifier:
+urn:samm:io.catenax.zero_km_failure:1.0.0#ZeroKmFailure
+
+#### 3.4.5 FORMATS OF SEMANTIC MODEL
+
+##### 3.4.5.1 RDF TURTLE
+
+The rdf turtle file, an instance of the Semantic Aspect Meta Model, is the master for generating additional file formats and serializations.
+ZeroKmFailure v1.0.0 (optional)
+
+[https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.zero_km_failure/1.0.0/ZeroKmFailure.ttl](https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.zero_km_failure/1.0.0/ZeroKmFailure.ttl)
+
+The open source command line tool of the Eclipse Semantic Modeling Framework is used for generation of other file formats like for example a JSON Schema, AASX for Asset Administration Shell Submodel Template or a HTML documentation.
+
+##### 3.4.5.2 JSON SCHEMA
+
+A JSON Schema can be generated from the RDF Turtle file. The JSON Schema defines the Value-Only payload of the Asset Administration Shell for the API operation "GetSubmodel".
+
+##### 3.4.5.3 AASX
+
+An AASX file can be generated from the RDF Turtle file. The AASX file defines one of the requested artifacts for a Submodel Template Specification conformant to [SMT].
+
+#### 3.4.6 EXAMPLES
+
+Example JSON Payload: Submodel "ZeroKmFailure"
+
+```json
+{
+  "defect" : {
+    "description" : {
+      "en" : "Stuck in bootstrap mode."
+    },
+    "parentItems" : [ "urn:uuid:48878d48-6f1d-47f5-8ded-a441d0d879df" ],
+    "dtcs" : [ {
+      "envConditions" : [ {
+        "conditionId" : "DTC1_EnvCond1",
+        "conditionNumericValue" : 2000.0,
+        "conditionTextValue" : "ECU has reached abnormal status.",
+        "conditionHexValue" : "0x46346347af",
+        "conditionCreationTimeStamp" : "2022-01-28T14:48:54",
+        "conditionDescription" : "RPM",
+        "measurementUnit" : "rpm"
+      } ],
+      "dtcHexValue" : "4337499FF",
+      "faultPath" : "1000761",
+      "fullName" : "P0573-00",
+      "faultPathDescription" : "shortage to plus",
+      "fullDescription" : "Brake Switch \"A\" Circuit High-no sub type information",
+      "type" : "Error",
+      "occurenceTimeStamp" : "2022-01-30T14:48:54",
+      "occurenceMileageUnit" : "km",
+      "occurenceMileage" : 15000,
+      "state" : "permanent",
+      "freezeFrame" : "100148340349340",
+      "occurenceCounterTotal" : 10,
+      "isMilOn" : true
+    } ]
+  },
+  "partInformation" : {
+    "localIdentifiers" : [ {
+      "value" : "SN12345678",
+      "key" : "partInstanceId"
+    } ],
+    "customerPartId" : "PRT-12345",
+    "catenaXId" : "urn:uuid:580d3adf-1981-44a0-a214-13d6ceed9379",
+    "dataMatrixCode" : "3#5ZZ9454554CE#2024-07-10#BR11",
+    "nameAtManufacturer" : "Mirror left"
+  },
+  "plantInformation" : {
+    "assemblyLineName" : "Line 6",
+    "defectPartsPerShift" : {
+      "value" : 20,
+      "unit" : "unit:piece"
+    },
+    "siteIdentifier" : "BPNS0123456789ZZ",
+    "assemblyTimestamp" : "2025-12-19T09:58:28.047+01:00"
+  },
+  "vehicle" : {
+    "anonymizedVIN" : "3747429FGH382923974682",
+    "modelIdentifier" : "689-G8",
+    "engineId" : "CKBY"
+  }
+}
+```
+
 ## 4 APPLICATION PROGRAMMING INTERFACES
 
 > *This section is normative*
@@ -583,7 +791,7 @@ When using the Tractus-X EDC, the following asset **MUST** be registered. Other 
   "@context": {
     "cx-common": "https://w3id.org/catenax/ontology/common#",
     "cx-taxo": "https://w3id.org/catenax/taxonomy#",
-    "dct": "https://purl.org/dc/terms/"
+    "dct": "http://purl.org/dc/terms/"
   },
   "@type": "Asset",
   "@id": "qualityinvestigationnotification-receive",
@@ -596,7 +804,7 @@ When using the Tractus-X EDC, the following asset **MUST** be registered. Other 
   "dataAddress": {
     ...
   }
-}  
+}
 ````
 
 The variable \{\{httpServerWhichOffersTheHttpEndpoint\}\} **MUST** be set to the HTTP server that offers the endpoint. The path /qualityinvestigations/receive **MAY** align with the HTTP POST path as stated in Section 4.1.2.1. In that sense it can change dependent on the traceability application.
@@ -610,7 +818,7 @@ When using the Tractus-X EDC, the following asset **MUST** be registered. Other 
   "@context": {
     "cx-common": "https://w3id.org/catenax/ontology/common#",
     "cx-taxo": "https://w3id.org/catenax/taxonomy#",
-    "dct": "https://purl.org/dc/terms/"
+    "dct": "http://purl.org/dc/terms/"
   },
   "@type": "Asset",
   "@id": "qualityalertnotification-receipt",
@@ -637,7 +845,7 @@ When using the Tractus-X EDC the following asset **MUST** be registered. Other c
   "@context": {
     "cx-common": "https://w3id.org/catenax/ontology/common#",
     "cx-taxo": "https://w3id.org/catenax/taxonomy#",
-    "dct": "https://purl.org/dc/terms/"
+    "dct": "http://purl.org/dc/terms/"
   },
   "@type": "Asset",
   "@id": "qualityinvestigationnotification-update",
@@ -650,7 +858,7 @@ When using the Tractus-X EDC the following asset **MUST** be registered. Other c
   "dataAddress": {
     ...
   }
-}   
+}
 
 ```
 
@@ -665,7 +873,7 @@ When using the Tractus-X EDC the following asset **MUST** be registered. Other c
   "@context": {
     "cx-common": "https://w3id.org/catenax/ontology/common#",
     "cx-taxo": "https://w3id.org/catenax/taxonomy#",
-    "dct": "https://purl.org/dc/terms/"
+    "dct": "http://purl.org/dc/terms/"
   },
   "@type": "Asset",
   "@id": "qualityalertnotification-update",
@@ -753,7 +961,7 @@ When using the Tractus-X EDC, the following asset **MUST** be registered. Other 
   "@context": {
     "cx-common": "https://w3id.org/catenax/ontology/common#",
     "cx-taxo": "https://w3id.org/catenax/taxonomy#",
-    "dct": "https://purl.org/dc/terms/"
+    "dct": "http://purl.org/dc/terms/"
   },
   "@type": "Asset",
   "@id": "blocknotification-receive",
@@ -780,7 +988,7 @@ When using the Tractus-X EDC the following asset **MUST** be registered. Other c
   "@context": {
     "cx-common": "https://w3id.org/catenax/ontology/common#",
     "cx-taxo": "https://w3id.org/catenax/taxonomy#",
-    "dct": "https://purl.org/dc/terms/"
+    "dct": "http://purl.org/dc/terms/"
   },
   "@type": "Asset",
   "@id": "blocknotification-update",
@@ -1133,4 +1341,4 @@ In addition to the above-mentioned general remarks, the following remark has to 
 
 ## Legal
 
-Copyright © 2025 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).
+Copyright © 2026 Catena-X Automotive Network e.V. All rights reserved. For more information, please see [Catena-X Copyright Notice](https://catenax-ev.github.io/copyright).

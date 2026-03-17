@@ -4,6 +4,13 @@ title: "Changelog"
 
 All notable changes to CX-0128 will be documented in this file.
 
+## [2.3.0] - CX-Titan (26.03)
+
+### Changed
+
+- Updated [Chapter 4.1.2](./#412-api-specification) and [4.2.2](./#422-api-specification) to allow the usage of BPNS of subsidiaries or suppliers in 'customerlocation' in order to have more flexibility when providing a 'WeekbasedMaterialDemand'
+- Updated definition of 'Agreed Capacity'
+
 ## [2.2.0] - CX-Saturn (25.09)
 
 ### Added
@@ -74,4 +81,4 @@ All notable changes to CX-0128 will be documented in this file.
 
 ## Legal
 
-Copyright © 2025 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).
+Copyright © 2026 Catena-X Automotive Network e.V. All rights reserved. For more information, please see [Catena-X Copyright Notice](https://catenax-ev.github.io/copyright).

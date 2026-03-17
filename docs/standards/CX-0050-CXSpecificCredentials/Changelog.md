@@ -4,6 +4,14 @@ title: "Changelog"
 
 All notable changes to CX-0050 will be documented in this file.
 
+## [2.2.1] - R26.03
+
+### Changed
+
+- clarified role terminology
+- added normative reference
+- formatting
+
 ## [2.2.0] - R25.09 (CX-Saturn)
 
 ### Added
@@ -21,4 +29,4 @@ All notable changes to CX-0050 will be documented in this file.
 
 ## Legal
 
-Copyright © 2025 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).
+Copyright © 2026 Catena-X Automotive Network e.V. All rights reserved. For more information, please see [Catena-X Copyright Notice](https://catenax-ev.github.io/copyright).

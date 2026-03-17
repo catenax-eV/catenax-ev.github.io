@@ -532,6 +532,6 @@ Intentionally left blank.
 
 [^7]: The term "legally secure" describes a state of compliance with legal requirements that ensures clarity, reliability, and protection from legal disputes. It guarantees that actions, documents, or agreements are structured in a way that minimizes legal risks and can withstand legal scrutiny.
 
-### LEGAL
+### Legal
 
-Copyright © 2025 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).
+Copyright © 2026 Catena-X Automotive Network e.V. All rights reserved. For more information, please see [Catena-X Copyright Notice](https://catenax-ev.github.io/copyright).

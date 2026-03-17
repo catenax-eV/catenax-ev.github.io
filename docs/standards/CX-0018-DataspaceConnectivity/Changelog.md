@@ -4,6 +4,27 @@ title: "Changelog"
 
 All notable changes to CX-0018 will be documented in this file.
 
+## [4.2.0] - 26/03
+
+### Added
+
+- Added a transferType for AzureStorage.
+
+### Changed
+
+- Updated description of transfer types to correct errors in the various transfer type attributes.
+- Updated references to artifacts defined by the DSP standard by referring to the context defined by the latest DSP
+  standard
+- Corrected section 2.4 as the previous description did not reflect the needs within the dataspace.
+- Updated the requirement concerning a service reference in the DID document.
+- Updated the requirement concerning the use of the latest protocol used by provider and consumer.
+- Updated the requirement concerning the use of the DSP version 0.8 in case of missing version support information.
+- Minor clarifications in certain statements without changing the intention of the original requirement.
+
+### Removed
+
+- n/a
+
 ## [4.1.1] - 25/09
 
 ### Added
@@ -39,4 +60,4 @@ All notable changes to CX-0018 will be documented in this file.
 
 ## Legal
 
-Copyright © 2025 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).
+Copyright © 2026 Catena-X Automotive Network e.V. All rights reserved. For more information, please see [Catena-X Copyright Notice](https://catenax-ev.github.io/copyright).

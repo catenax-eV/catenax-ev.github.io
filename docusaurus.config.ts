@@ -144,8 +144,8 @@ const config: Config = {
               label: 'Standards',
             },
             {
-              to: '/docs/non-functional/overview/',
-              label: 'Non-functional requirements',
+              to: '/docs/next/rulebooks/overview/',
+              label: 'Rulebooks',
             },
             {
               type: 'html',
@@ -245,11 +245,7 @@ const config: Config = {
             {
               label: "Markdown Guidelines",
               href: "/markdown-guidelines",
-            },
-            {
-              label: "Modeling Governance",
-              href: "/modeling-governance",
-            },
+            }
           ],
         },
         {

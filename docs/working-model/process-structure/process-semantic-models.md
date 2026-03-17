@@ -2,7 +2,6 @@
 
 - *Platform Capability*: Semantics
 - *Version*: 1.0
-- *Date*: 18.02.2025
 
 ## Abstract
 

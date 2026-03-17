@@ -4,6 +4,21 @@ title: "Changelog"
 
 All notable changes to CX-0143 will be documented in this file.
 
+## [1.4.0] - 26.03 (CX-Titan)
+
+### Added
+
+- CAC document
+
+### Changed
+
+- Scoped regarding ESPR and added links to battery standard
+- Aligned headings with Template version 2.1.2
+
+### Removed
+
+- Batterypass related elements (now in CX-XXXX-BatteryPassport)
+
 ## [1.3.0] - 25.12 (CX-Titan)
 
 ### Added
@@ -36,4 +51,4 @@ All notable changes to CX-0143 will be documented in this file.
 
 ## Legal
 
-Copyright © 2025 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).
+Copyright © 2026 Catena-X Automotive Network e.V. All rights reserved. For more information, please see [Catena-X Copyright Notice](https://catenax-ev.github.io/copyright).
