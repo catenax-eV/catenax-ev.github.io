@@ -40,6 +40,7 @@ pagination_next: null
 | Malta | MT |
 | Mexico | MX |
 | Netherlands | NL |
+| Norway | NOK |
 | Poland | PL |
 | Portugal | PT |
 | Romania | RO |
@@ -53,6 +54,7 @@ pagination_next: null
 | Sweden | SE |
 | Switzerland | CH |
 | Turkey | TR |
+| Tunisia | TN |
 | Ukraine[^1] | UA |
 | United Arab Emirates | AE |
 | United Kingdom | GB |
