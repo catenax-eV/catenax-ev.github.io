@@ -26,7 +26,7 @@ tags:
   - CAT/Business Application Provider
   - UC/Quality
   - UC/Traceability
-  - UC/Behaviroal Twin
+  - UC/Behavioral Twin
   - UC/Circularity
   - UC/Ecopass
   - UC/ESS

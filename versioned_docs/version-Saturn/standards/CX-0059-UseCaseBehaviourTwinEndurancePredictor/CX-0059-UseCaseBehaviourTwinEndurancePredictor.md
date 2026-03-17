@@ -1,7 +1,7 @@
 ---
 tags:
   - CAT/Business Application Provider
-  - UC/Behaviroal Twin
+  - UC/Behavioral Twin
 ---
 
 # CX-0059 Use Case Behaviour Twin Endurance Predictor v2.0.1

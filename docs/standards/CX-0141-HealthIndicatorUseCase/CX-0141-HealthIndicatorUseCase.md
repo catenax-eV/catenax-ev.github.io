@@ -1,7 +1,7 @@
 ---
 tags:
   - CAT/Business Application Provider
-  - UC/Behaviroal Twin
+  - UC/Behavioral Twin
 ---
 
 # CX-0141 Use Case Behaviour Twin Health Indicator v1.0.1
