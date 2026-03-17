@@ -1312,7 +1312,7 @@ This procedure takes in consideration the following aspects:
   - the actual *Item Stock* of its products at the customer's site (covered in this chapter)
 
 - The supplier may share with the customers the following information on a daily basis:
-  - the supply volumes delivered in response to the customer's call-off (covered by [[Chapter 5.1]](#delivery-information-exchange))
+  - the supply volumes delivered in response to the customer's call-off (covered by [[Chapter 5.1]](#51-delivery-information-exchange))
   - the production output allocated to the customer's material or products (covered [[Chapter 5.3]](#53-planned-production-output-exchange))
   - the actual *Item Stock* of its material or products at the supplier site (covered in this chapter)
 

@@ -3,8 +3,6 @@ sidebar_position: 5
 title: Identity Proofing v1.0
 ---
 
-# CX-NFR-IdP: Identity Proofing v.1.0.0
-
 ## Abstract
 
 A crucial step during the onboarding of a new participant is the verification of the new participant's identity.

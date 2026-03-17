@@ -1,2 +1,4 @@
 # Ignore all of:
 versioned_docs
+docs/cx-bok
+docs/architecture-guardrails
