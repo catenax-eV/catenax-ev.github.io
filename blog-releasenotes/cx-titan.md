@@ -18,7 +18,7 @@ The Engineering domain has been extended with new standards that strengthen requ
 | -------------------------------------------------------------| -------- |
 | CX-0154 Digital Master Data                                  | Updated  |
 | CX-0155 Requirements Engineering                             | Added    |
-| CX-XXXX Car SBOM                                             | Added    |
+| CX-0158 Car SBOM                                             | Added    |
 
 ### Industry Core
 
@@ -41,7 +41,7 @@ Updates in the Network Services domain improve onboarding, identity management, 
 | CX-0049 DID Document                                         | Updated  |
 | CX-0050 CX-Specific Credentials                              | Updated  |
 | CX-0135 Business Partner Company Certificate Management      | Updated  |
-| CX-XXXX Identity Proofing                                    | Added    |
+| CX-NFR-IdP Identity Proofing                                 | Added    |
 
 ### Supply Chain and Quality
 
@@ -55,7 +55,7 @@ The Supply Chain & Quality domain introduces new functionality while updating se
 | CX-0150 Logistics Use Case                                   | Updated  |
 | CX-0153 Tariffs Use Case                                     | Updated  |
 | CX-0156 Geometry                                             | Updated  |
-| CX-XXXX PURIS                                                | Added    |
+| CX-0157 PURIS                                                | Added    |
 
 ### Sustainability
 
@@ -64,7 +64,7 @@ The Sustainability domain continues to expand with additional standards supporti
 | Standard                                                     | Status   |
 | -------------------------------------------------------------| -------- |
 | CX-0143 Use Case Circular Economy – Digital Product Passport | Updated  |
-| CX-XXXX Material Accounting                                  | Added    |
+| CX-0159 Material Accounting                                  | Added    |
 
 ### Semantic Modelling
 
