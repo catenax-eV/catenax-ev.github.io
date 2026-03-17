@@ -1,4 +1,4 @@
-# Catena-X Governance Process for the Creation and Standardization of Semantic Models
+# Process for the Creation of Semantic Models
 
 - *Platform Capability*: Semantics
 - *Version*: 1.0

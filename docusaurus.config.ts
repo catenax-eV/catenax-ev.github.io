@@ -141,7 +141,7 @@ const config: Config = {
           items: [
             {
               to: '/docs/standards/overview/',
-              label: 'Standards',
+              label: 'Technical Standards',
             },
             {
               to: '/docs/next/rulebooks/overview/',
