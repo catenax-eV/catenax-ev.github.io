@@ -1,9 +1,9 @@
 ---
 sidebar_position: 5
-title: CX-NFR-IdP Identity Proofing v1.0
+title: Identity Proofing v1.0
 ---
 
-# CX-NFR-IdP Identity Proofing v.1.0.0
+# CX-NFR-IdP: Identity Proofing v.1.0.0
 
 ## Abstract
 
