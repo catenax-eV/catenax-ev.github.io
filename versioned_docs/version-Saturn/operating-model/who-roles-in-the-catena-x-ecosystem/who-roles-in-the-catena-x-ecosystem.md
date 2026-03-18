@@ -295,7 +295,6 @@ solution). Alternatively, a DPC can certify and operate its own business applica
 
 - A DPC **must** use certified enablement services or business applications. Alternatively, a DPC **must** certify its own enablement services and/or business applications by one of the CABs (as outlined in Chapter [Conformity Assessment](./../how-data-space-governance/how-data-space-governance.md#conformity-assessment-and-certification)).
 - A DPC **must** accept and comply with the Catena-X regulatory framework during onboarding via one of the OSPs
-- A DPC **must** prove compliance with TISAX Level 2.
 - A DPC **must** be registered to Catena-X data space.
 
 **Current Limitations:**
