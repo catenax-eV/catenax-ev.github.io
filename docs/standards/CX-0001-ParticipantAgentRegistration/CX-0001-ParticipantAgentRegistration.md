@@ -5,22 +5,13 @@ tags:
   - CAT/Sandbox Service Provider
 ---
 
-# CX-0001 Participant Agent Registration v1.2
+# CX-0001 Participant Agent Registration v1.2.1
 
 ## 1. Introduction
 
 This standard solves a requirement towards GAIA-X compliance. It is necessary that each Participant Agent must
 provide a Self Description (SD) of type `ServiceOffering`. This requires a registration of a Participant Agent
 at the Core Service Provider B.
-
-NOTE: This standard has been renamed as the original name `EDC Discovery API` is obsolete for several reasons:
-
-1. The name `EDC` is obsolete. The correct term as defined in the [Data Space Protocol](#data-space-protocol)
-   is `Participant Agent`.
-2. The discovery API is a deprecated feature that is only necessary for backward compatibility reasons, connector
-   discovery is from now on done using the DID document as specified in [CX-0018](#cx-0018-dataspace-connectivity).
-3. Therefore, the only normative aspect of this standard left is the registration to fulfil the GAIA-X compliance
-   requirements. This is reflected in the new standard name.
 
 ### 1.1 Audience & Scope
 
@@ -29,10 +20,9 @@ NOTE: This standard has been renamed as the original name `EDC Discovery API` is
 This standard is relevant for the following roles:
 
 - Data Provider / Consumer
-- Business Application Provider
-- Core Service Provider
-- Onboarding Service Provider
+- Core Service Provider B
 - Enablement Service Provider
+- Application Service Provider
 
 ### 1.2 Conformance
 
@@ -43,25 +33,7 @@ The key words **MAY**, **MUST**, **MUST NOT**, **OPTIONAL**, **RECOMMENDED**, **
 in this document are to be interpreted as described in BCP 14 RFC2119, RFC8174 when, and only when, they
 appear in all capitals, as shown here.
 
-### 1.3 Proof of conformity
-
-All participants and their solutions will need to proof, that they are
-conform with the Catena-X standards. To validate that the standards are
-applied correctly, Catena-X employs Conformity Assessment Bodies
-(CABs).
-
-- The Service Operator MUST provide an onboarding process for
-  participants and participant agent instances. This has to be provided in
-  accordance to
-  [CX-0006](#cx-0006-registration-and-initial-onboarding)
-
-- The implemented service MUST use an SD storage like SD-Hub for storing the SD documents
-  provided during the onboarding process.
-
-- The provided SD documents MUST be GAIA-X compliant, i.e. MUST provide a compliance credential issued
-  from GAIA-X AISBL.
-
-### 1.4 Examples
+### 1.3 Examples
 
 **SD for ServiceOffering**
 
@@ -181,22 +153,18 @@ glossary on the association homepage.
 > *This section is normative*
 
 - The Core Service Provider B MUST offer a process/workflow to register Participant Agents; Enablement Service
-  Provider as well as Application Service Provider MUST run the Participant Agent registration for their service
-  customers. The provided url endpoint for the participant agent service must be in accordance to
-  [CX-0018](#cx-0018-dataspace-connectivity).
+  Provider as well as Application Service Provider (if they bundle a Participant Agent with their offer)
+  MUST run the Participant Agent registration for their service customers. The provided url endpoint for the
+  Participant Agent service must be in accordance to [CX-0018](#cx-0018-dataspace-connectivity).
 
 - SD documents MUST be created for every Participant Agent registered by the Participants.
   The Core Service Provider B make them available.
 
-- The self-description documents used as data source MUST be GAIA-X compliant, i.e. adhering to the
+- The SD documents used as data source MUST be GAIA-X compliant, i.e. adhering to the
   [GAIA-X Trustframework](#gaia-x-trustframework) in the currently supported version in Catena-X. It
   MUST provide a compliance credential issued from GAIA-X AISBL.
   
 - In addition, these SD documents MUST be registered at an SD storage like SD-Hub.
-
-A test case will be, that a Participant Agent instance has to be onboarded for a
-specific participant identified by a BPN. The SD for the EDC has to be
-visible in the supported SD storage.
 
 ## 3.0 Backward Compatibility
 
@@ -204,15 +172,11 @@ visible in the supported SD storage.
 > standard version.*
 
 The `EDC Discovery API` service MUST be offered as central available endpoint by the Core Service Provider B.
-Every Participant Agent operated in the dataspace MUST be registered. The Core Service Provider B MUST offer each
-registered Participant Agent via the `EDC Discovery API`.
+The Core Service Provider B MUST offer each registered Participant Agent via the `EDC Discovery API`.
 
 The `EDC Discovery API` can get triggered via technical as well as real users, if relevant roles are available.
 
 For technical user, a company can request the user creation with the technical user creation feature inside the portal.
-
-A test case will be, that the query against a registered participant agent instance for the given BPN
-SHOULD provide the connector url as stated in the SD document which is the same as used during registration.
 
 ### 3.1 API Endpoints & resources
 
@@ -253,8 +217,6 @@ with one or multiple BPNs to retrieve a list of registered Participant Agent end
 For each BPN an own response object is provided. In case of multiple Participant Agent
 instances for one BPN an array is returned (first result set) otherwise
 a single value (second result set)
-
-<!-- TODO: Make the reponse more precise according to the schema: https://<hostname>/<path-to-root>/<version-path>/<dsp-endpoint> -->
 
 ### 3.2 Available Data Types
 
@@ -305,4 +267,4 @@ Following Standards are used within this standard:
 
 ## Legal
 
-Copyright © 2025 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).
+Copyright © 2026 Catena-X Automotive Network e.V. All rights reserved. For more information, please see [Catena-X Copyright Notice](https://catenax-ev.github.io/copyright).

@@ -4,6 +4,22 @@ title: "Changelog"
 
 All notable changes to CX-0001 will be documented in this file.
 
+## [1.2.1] - 2026-01-14
+
+### Changed
+
+- Clarification on relevant roles
+- Removal of some obsolete parts in the standard
+- Minor improvements of precision of expressions
+
+### Added
+
+n/a
+
+### Removed
+
+n/a
+
 ## [1.2.0] - 2025-06-23
 
 ### Changed
@@ -26,4 +42,4 @@ n/a
 
 ## Legal
 
-Copyright © 2025 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).
+Copyright © 2026 Catena-X Automotive Network e.V. All rights reserved. For more information, please see [Catena-X Copyright Notice](https://catenax-ev.github.io/copyright).

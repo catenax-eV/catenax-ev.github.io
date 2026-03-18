@@ -233,4 +233,6 @@ Providers of solutions for IT-System integration MUST prove that they are able t
 - CX-0067 Ontology Models to realize federated query in Catena-X v.1.1.0
 - CX-0084 Federated Queries in Data Spaces v1.2.0
 
-## ANNEXES
+## Legal
+
+Copyright © 2026 Catena-X Automotive Network e.V. All rights reserved. For more information, please see [Catena-X Copyright Notice](https://catenax-ev.github.io/copyright).

@@ -71,3 +71,7 @@ All Committee Member play an active role in shaping decisions, offering input, a
   - Review each feature's "Definition of Entry" (feature template defining acceptance criteria)
   - Review each feature's "Definition of Done" (Quality Gate GIT Issue)
 -->
+
+## Legal
+
+Copyright © 2026 Catena-X Automotive Network e.V. All rights reserved. For more information, please see [Catena-X Copyright Notice](https://catenax-ev.github.io/copyright).

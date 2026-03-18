@@ -67,3 +67,7 @@ title: "Appendix"
 - [warranty-constraint-sample.json](./assets/samples/warranty-constraint-sample.json)
 - [warranty-definition-constraint-sample.json](./assets/samples/warranty-definition-constraint-sample.json)
 - [warranty-duration-constraint-sample.json](./assets/samples/warranty-duration-constraint-sample.json)
+
+## Legal
+
+Copyright © 2026 Catena-X Automotive Network e.V. All rights reserved. For more information, please see [Catena-X Copyright Notice](https://catenax-ev.github.io/copyright).

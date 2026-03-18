@@ -174,7 +174,7 @@ Not needed for PCF as the BPN is known by the application.
 The PCF use case utilizes Asset Administration Shell (AAS) logic and Material Twins. Therefore Digital Twins SHOULD be registered in the decentralized Digital Twin Registry (DTR). In order to look up the twin ID, the data provider MUST register the twins with digitalTwinType=PartType, and MUST include either the ``manufacturerPartId``, the ``customerPartId``, or both, in the ``specificAssetIds``.
 
 > **Note**
-> The following JSON snippet only illustrates which specificAssetIds have to be used. It *cannot* be used as a copy paste template for twin creation! When setting up a digital twin the data provider has to ensure that these entries are visible to all consumers he wants to address by using the corresponding security mechanisms provided with the digital twin registry. For more information, please refer to [CX-0118 Delivery Information Exchange](../CX-0118-ActualDeliveryInformationExchange/CX-0118-ActualDeliveryInformationExchange.md).
+> The following JSON snippet only illustrates which specificAssetIds have to be used. It *cannot* be used as a copy paste template for twin creation! When setting up a digital twin the data provider has to ensure that these entries are visible to all consumers he wants to address by using the corresponding security mechanisms provided with the digital twin registry.
 
 ```json
     "specificAssetIds": [

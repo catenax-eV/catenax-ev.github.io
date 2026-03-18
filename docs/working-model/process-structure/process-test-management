@@ -71,8 +71,8 @@ Infrastructure covers the deployment, provisioning of virtual environments, and 
 | Environment     | Tools & URLs                                                                                  |  
 |-----------------|----------------------------------------------------------------------------------------------|  
 | **Core**        | Vault: [https://vault.core.catena-x.net](https://vault.core.catena-x.net)                    |  
-| **Integration** | ArgoCD: [https://argocd.int.catena-x.net](https://argocd.int.catena-x.net) <br> Grafana: [https://grafana.int.catena-x.net](https://grafana.int.catena-x.net) <br> Goldilocks: [https://goldilocks.int.catena-x.net](https://goldilocks.int.catena-x.net) |  
-| **Stable**      | ArgoCD: [https://argocd.stable.catena-x.net](https://argocd.stable.catena-x.net) <br> Grafana: [https://grafana.stable.catena-x.net](https://grafana.stable.catena-x.net) <br> Goldilocks: [https://goldilocks.stable.catena-x.net](https://goldilocks.stable.catena-x.net) |
+| **Integration** | ArgoCD: [https://argocd.int.catena-x.net](https://argocd.int.catena-x.net) <br /> Grafana: [https://grafana.int.catena-x.net](https://grafana.int.catena-x.net) <br /> Goldilocks: [https://goldilocks.int.catena-x.net](https://goldilocks.int.catena-x.net) |  
+| **Stable**      | ArgoCD: [https://argocd.stable.catena-x.net](https://argocd.stable.catena-x.net) <br /> Grafana: [https://grafana.stable.catena-x.net](https://grafana.stable.catena-x.net) <br /> Goldilocks: [https://goldilocks.stable.catena-x.net](https://goldilocks.stable.catena-x.net) |
 
 ### 2.3 Environment Setup
 
@@ -193,3 +193,7 @@ Ensures equitable access to shared resources, prevents misuse, and maintains a c
 By integrating robust test management practices with a secure, scalable infrastructure, Catena-X ensures the delivery of high-quality, reliable software. Adherence to fair usage policies and standardized deployment processes is mandatory for all product teams.
 
 For further details, refer to the respective tool documentation or contact the system team.  
+
+## Legal
+
+Copyright © 2026 Catena-X Automotive Network e.V. All rights reserved. For more information, please see [Catena-X Copyright Notice](https://catenax-ev.github.io/copyright).

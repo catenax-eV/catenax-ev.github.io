@@ -1,7 +1,7 @@
 ---
 tags:
   - CAT/Business Application Provider
-  - UC/Behaviroal Twin
+  - UC/Behavioral Twin
 ---
 
 # CX-0141 Use Case Behaviour Twin Health Indicator v1.0.1
@@ -169,4 +169,4 @@ As the Health Indicator use case is using the Knowledge Agent technology, it pro
 
 ## Legal
 
-Copyright © 2025 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).
+Copyright © 2026 Catena-X Automotive Network e.V. All rights reserved. For more information, please see [Catena-X Copyright Notice](https://catenax-ev.github.io/copyright).

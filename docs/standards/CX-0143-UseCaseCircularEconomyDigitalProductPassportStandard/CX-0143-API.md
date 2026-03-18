@@ -2,17 +2,17 @@
 sidebar_position: 4
 ---
 
-# 3. Application Programming Interfaces
+# 4 APPLICATION PROGRAMMING INTERFACES
 
 > *This section is normative*
 
-## 3.1 EDC DATA ASSET STRUCTURE
+## 4.1 EDC DATA ASSET STRUCTURE
 
 The general asset structure **MUST** follow the [CX-0018](./CX-0143-UC/#111-list-of-standalone-standards).
 Examples are in the official [Connector Kit](https://eclipse-tractusx.github.io/docs-kits/kits/Connector%20Kit/Adoption%20View/connector_kit_adoption_view).
 The following subchapters define the specifics for this standard.
 
-### 3.1.1 EDC Data Asset
+### 4.1.1 EDC Data Asset
 
 The EDC assets for product passports **MUST** follow the JSON.
 
@@ -46,7 +46,7 @@ The EDC assets for product passports **MUST** follow the JSON.
 }
 ```
 
-### 3.1.2 Policy Constraints For Data Exchange
+### 4.1.2 Policy Constraints For Data Exchange
 
 In alignment with our commitment to data sovereignty, a specific framework governing the utilization of data within the Catena-X use cases has been outlined.  
 
@@ -62,7 +62,7 @@ Have also a look at example policies in CX-0152.
 
 CX-0152 can be found in the [standard library](https://catenax-ev.github.io/docs/standards/overview).
 
-### 3.1.3 Contract Definition
+### 4.1.3 Contract Definition
 
 Contract definitions of data providers **MUST** follow this structure (also defined in [CX-0018](./CX-0143-UC/#111-list-of-standalone-standards)):
 
@@ -84,6 +84,12 @@ Contract definitions of data providers **MUST** follow this structure (also defi
 }
 ```
 
+## 5 PROCESSES
+
+> *This section is normative*
+
+There is currently no normative process.
+
 ## Legal
 
-Copyright © 2025 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).
+Copyright © 2026 Catena-X Automotive Network e.V. All rights reserved. For more information, please see [Catena-X Copyright Notice](https://catenax-ev.github.io/copyright).

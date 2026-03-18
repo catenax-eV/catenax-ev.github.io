@@ -132,7 +132,7 @@ A formal, machine-readable semantic description (expressed with RDF/turtle) of d
 
 To participate in the CO2 use-case, the following standard MUST be fulfilled:
 
-- [Product Carbon Footprint Rulebook v3.0.0](https://catenax-ev.github.io/docs/non-functional/overview)
+- [Product Carbon Footprint Rulebook v3.0.0](https://catenax-ev.github.io/docs/rulebooks/overview)
 
 In addition, the following standards are used to support the PCF usecase. Athough they are NOT part of this specification, they are mentioned here, as APIs or other assets provided by them are used within the PCF usecase:
 

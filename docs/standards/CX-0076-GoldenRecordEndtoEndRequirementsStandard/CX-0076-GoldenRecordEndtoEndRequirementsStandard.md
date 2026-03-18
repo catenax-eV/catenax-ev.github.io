@@ -502,6 +502,6 @@ Intentionally left blank.
 [^7]: Numbers (values) are to be seen as examples to make the calculation easier to understand.
 [^8]: This rule MUST be applied unless local law or tax regulations do not require the existence / assignment of a tax number, e.g., for associations, small businesses, educational institutions.
 
-### LEGAL
+### Legal
 
-Copyright © 2025 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).
+Copyright © 2026 Catena-X Automotive Network e.V. All rights reserved. For more information, please see [Catena-X Copyright Notice](https://catenax-ev.github.io/copyright).

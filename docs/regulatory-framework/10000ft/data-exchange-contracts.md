@@ -105,3 +105,7 @@ In step 10, DC requests access to DP's data from DP. DP sends an access token to
 The Association will develop further automation and scalability of the RC Data Exchange Process. The RC will enable Participants to choose from a range of text modules when negotiating and agreeing on terms within the Data Exchange Governance (e.g. liability/dispute resolution/choice of law etc.).
 
 Also, Participants will be able to define conditions for automated acceptances (via their RC) in response to offers from other Participants within the Predefined Policies.
+
+## Legal
+
+Copyright © 2026 Catena-X Automotive Network e.V. All rights reserved. For more information, please see [Catena-X Copyright Notice](https://catenax-ev.github.io/copyright).

@@ -4,6 +4,24 @@ title: "Changelog"
 
 All notable changes to CX-0002 will be documented in this file.
 
+## [2.4.0] - CX-Titan (26.03)
+
+### Changed (normative)
+
+- consideration of Release 26-01 of the Specifications of the Asset Administration Shell
+  - support of Digital Product Passport System as defined by JTC24
+- policy handling is defined in CX-0152 and not in CX-0018
+- comply to changes in CX-0018: it is not 'dcat:' any longer but 'dspace:', used more generic formulation
+  
+### Changed (non-normative)
+
+- terms adapted to IEC 63278-1:2023 (Submodel, SubmodelElement)
+- notes reflecting SUBMODEL-VALUE endpoint interface
+- chapter on context and architecture fit (removed: "By using Aspects, a DT can reference other DTs to express "part of" or "consists of" relations.")
+- removed CX-0001 from References since not referenced any longer
+- Conformity Assessment Criteria (CAC) extracted into separate file in new format
+- editorial changes
+
 ## [2.3.0] - CX-Saturn (25.09)
 
 ### Added
@@ -50,4 +68,4 @@ All notable changes to CX-0002 will be documented in this file.
 
 ## Legal
 
-Copyright © 2025 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).
+Copyright © 2026 Catena-X Automotive Network e.V. All rights reserved. For more information, please see [Catena-X Copyright Notice](https://catenax-ev.github.io/copyright).

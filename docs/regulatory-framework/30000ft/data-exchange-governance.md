@@ -8,3 +8,7 @@ Compliance with ***Data Exchange Governance*** is mandatory for all data space p
 :::
 
 PDF-Version: [Catena-X_Data_Exchange_Governance.pdf](./assets/2025_09_DataExchangeGovernance.pdf)
+
+## Legal
+
+Copyright © 2026 Catena-X Automotive Network e.V. All rights reserved. For more information, please see [Catena-X Copyright Notice](https://catenax-ev.github.io/copyright).

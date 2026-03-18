@@ -38,3 +38,7 @@ To achieve this in areas such as APIs, semantic models, and procedural specifica
 The Catena-X data space will grow in participants and complexity. Consequently, ensuring compliance of all participants with established rules, regulations, and standards becomes increasingly relevant.
 
 As outlined in the main chapter, we are currently laying the foundational elements to be utilized later in the various processes still being developed for productive operations. This development of multiple processes is iterative and will be published in a forthcoming operating model. In addition to the general process that needs to be developed, the association is also investigating the possibility of imposing other consequences such as fines in the event of non-compliance.
+
+## Legal
+
+Copyright © 2026 Catena-X Automotive Network e.V. All rights reserved. For more information, please see [Catena-X Copyright Notice](https://catenax-ev.github.io/copyright).

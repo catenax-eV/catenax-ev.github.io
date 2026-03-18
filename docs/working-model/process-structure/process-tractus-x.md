@@ -83,3 +83,7 @@ See the [Getting Started Guide](https://eclipse-tractusx.github.io/docs/getting-
 - The maturity of features is jointly decided in open refinement meetings.
 
 For further details, refer to the Tractus-X documentation or contact the relevant association body.
+
+## Legal
+
+Copyright © 2026 Catena-X Automotive Network e.V. All rights reserved. For more information, please see [Catena-X Copyright Notice](https://catenax-ev.github.io/copyright).

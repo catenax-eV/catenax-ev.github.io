@@ -1,5 +1,5 @@
 
-# Conformity Assessment Criteria (CaC) – CX-0156 Geometry
+# Conformity Assessment Criteria (CaC) – CX-0156-Geometry
 
 This table defines the conformity assessment criteria for the Catena-X Geometry Standard (CX-0156-Geometry v1.0.0), following the structure described in the Guidance CAC Consolidation document. The test procedure columns are marked with 'X' where applicable for each criterion.
 
@@ -14,4 +14,4 @@ This table defines the conformity assessment criteria for the Catena-X Geometry 
 
 ## Legal
 
-Copyright © 2025 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).
+Copyright © 2026 Catena-X Automotive Network e.V. All rights reserved. For more information, please see [Catena-X Copyright Notice](https://catenax-ev.github.io/copyright).

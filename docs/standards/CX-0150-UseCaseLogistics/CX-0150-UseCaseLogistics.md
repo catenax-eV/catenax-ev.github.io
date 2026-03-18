@@ -123,10 +123,7 @@ The Tractus-X EDC is a reference implementation for a connector conformant to CX
 Hypertext Transfer Protocol (HTTP) is an application-layer protocol for transmitting hypermedia documents, such as HTML. It was designed for communication between web browsers and web servers, but it can also be used for other purposes.
 
 **International Data Space Association (IDSA):**
-The IDSA is on a mission to create the future of the global, digital economy with International Data Spaces (IDS), a secure, sovereign system of data sharing in which all participants can realize the full value of their data.
-
-**International Data Space (IDS):**
-The International Data Space enables new "smart services" and innovative business processes to work across companies and industries while ensuring that the self-determined control of data use (data sovereignty) remains in the hands of data providers.
+The IDSA is on a mission to create the future of the global, digital economy with International Data Spaces, a secure, sovereign system of data sharing in which all participants can realize the full value of their data.
 
 **IDSA Protocol:**
 The IDSA Protocol being used for data exchange in an International Dataspace. This includes contract negotiation.
@@ -450,4 +447,4 @@ There is no prcoess defintion in this standard version available.
 
 ## Legal
 
-Copyright © 2025 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).
+Copyright © 2026 Catena-X Automotive Network e.V. All rights reserved. For more information, please see [Catena-X Copyright Notice](https://catenax-ev.github.io/copyright).

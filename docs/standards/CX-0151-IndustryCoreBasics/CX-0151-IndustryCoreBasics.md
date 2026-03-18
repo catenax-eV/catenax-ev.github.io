@@ -1,4 +1,4 @@
-# CX-0151 Industry Core: Basics v.1.0.0
+# CX-0151 Industry Core: Basics v.1.1.0
 
 ## ABSTRACT
 
@@ -40,7 +40,8 @@ This document is targeting subsets of the following roles:
 
 #### 1.2.1 Notifications
 
-This standard defines a message-based data exchange within Catena-X. The message is sent from one Catena-X partner - called sender - to another Catena-X partner - called receiver - using simple messages in JSON format via Catena-X connector, as shown in the following figure:
+This standard defines a message-based data exchange within Catena-X.
+The message is sent from one Catena-X partner - called sender - to another Catena-X partner - called receiver - using simple messages in JSON format via Catena-X connector, as shown in the following figure:
 
 ![Notifications Flow](./assets/notifications_architecture_view.svg)
 
@@ -50,13 +51,15 @@ This standard defines a message-based data exchange within Catena-X. The message
 
 Together, these artifacts define the message-based data exchange, called notification API. Industry Core: Basics also defines a standardized way to document all these artifacts of a notification API in Catena-X standard documents and KITs.
 
-Use cases can define and standardize their own notification APIs. They need to extend the Industry Core notification API by adding their own business content.
+Use cases can define and standardize their own notification APIs.
+They need to extend the Industry Core notification API by adding their own business content.
 
 - They must extend the content part of the notification data format with their own business content.
 - They must define a set of operations that should be supported with the use case specific notification API.
 - They also must define a name for their notification API which is, for example, used in the `dct:type` property of the connector asset.
 
-As all use cases use the same underlying notification technology based on Industry Core, use cases still are interoperable. Data and app providers only need to implement one notification technology that is jointly used by all use cases and do not need to implement several different technologies for message-based data exchange.
+As all use cases use the same underlying notification technology based on Industry Core, use cases still are interoperable.
+Data and app providers only need to implement one notification technology that is jointly used by all use cases and do not need to implement several different technologies for message-based data exchange.
 
 To participate in the Industry Core, the following single standards must be fulfilled by all participants for which the standard is relevant:
 
@@ -65,7 +68,8 @@ To participate in the Industry Core, the following single standards must be fulf
 
 #### 1.2.2 Digital Twin - Asset Administration Shell
 
-This section provides guidance on the consideration of digital twins as a basis for data structuring and data discovery within Catena-X. As this section is intended for guidance, it is non-normative.
+This section provides guidance on the consideration of digital twins as a basis for data structuring and data discovery within Catena-X.
+As this section is intended for guidance, it is non-normative.
 
 Details on the exact usage of AAS and Digital Twins can be obtained in CX-0002 Digital Twins in CatenaX and CX-0003 SAMM Aspect Meta Model.
 
@@ -74,11 +78,13 @@ Details on the exact usage of AAS and Digital Twins can be obtained in CX-0002 D
 Digital twins and their technical representation as an Asset Administration Shell within Catena-X are a crucial element for interoperability and reusability.
 By leveraging an AAS-compliant Digital Twin Registry, the provisioning and publishing of object-related data via standardized submodel templates through the standardized API enables reusable data discovery and consumption mechanisms across various use cases.
 
-However, the provisioning of a digital twin incurs certain costs. Therefore, the Industry Core provides the following guidance and highlights potential benefits:
+However, the provisioning of a digital twin incurs certain costs.
+Therefore, the Industry Core provides the following guidance and highlights potential benefits:
 
 ##### Discrete Nature of Digital Twins
 
-Digital twins should be associated with an underlying object (real or virtual) to which data will be attached. Creating a digital twin for a pure set of mass data (e.g., generic usage data) not related to a specific discrete object may be unnecessary, as it might already be represented by a data asset in dataspace terms according to CX-0018 Dataspace Connectivity.
+Digital twins should be associated with an underlying object (real or virtual) to which data will be attached.
+Creating a digital twin for a pure set of mass data (e.g., generic usage data) not related to a specific discrete object may be unnecessary, as it might already be represented by a data asset in dataspace terms according to CX-0018 Dataspace Connectivity.
 
 Examples of Discrete Objects in the automotive context:
 
@@ -90,46 +96,63 @@ Examples of Discrete Objects in the automotive context:
 - serialized production equipment
 - ...
 
-Even with an underlying object, the usage of a digital twin might still not be necessary based on the predefined exclusive utilization of the data within a use-case. Therefore the following questions should be answered:
+Even with an underlying object, the usage of a digital twin might still not be necessary based on the predefined exclusive utilization of the data within a use-case.
+Therefore the following questions should be answered:
 
-- Is the object and especially the data linked to it shared or likely to be shared between different use cases ?
-- Is the object itself linked to different sets of data (submodels), that are individually accessed ?
-- Is the object identified by different identifiers, requiring the use or translation of these identifiers for discovery mechanisms ?
-- Is the object commonly accessed individually and not via mass data requests ?
-- Is the data intended to be used more than once and therefore worth to be discovered ?
+- is the object and especially the data linked to it shared or likely to be shared between different use cases ?
+- is the object itself linked to different sets of data (submodels), that are individually accessed ?
+- is the object identified by different identifiers, requiring the use or translation of these identifiers for discovery mechanisms ?
+- is the object commonly accessed individually and not via mass data requests ?
+- is the data intended to be used more than once and therefore worth to be discovered ?
 
 If all of the above questions are answered with a clear "No", a twin might be overhead for an object or data to be shared within one specific use-case.
 Examples include:
 
 - the data to be shared is a set of mass data not linked to a specific instance of an object
 - the data is only being used and intended to be used by a single use-case and there is no cross-use-case relevancy anticipated
-
+- ...
+  
 ##### 1.2.2.2 Additional Recommendations and Comments
 
-If mass data is used for analysis to generate new data applicable to a specific object (e.g., material, serialized part, batch), this data should be linked to a digital twin at that level, while the originating mass data sets are not required to be linked. For example, analytics use cases leveraging mass data sets regarding multiple objects could feed their outcome back into the digital twins of the known objects, while the potentially use-case proprietary mass data sets are not necessarily represented by digital twins or submodels.
+If mass data is used for analysis to generate new data applicable to a specific object (e.g., material, serialized part, batch), this data should be linked to a digital twin at that level, while the originating mass data sets are not required to be linked.
+For example, analytics use cases leveraging mass data sets regarding multiple objects could feed their outcome back into the digital twins of the known objects, while the potentially use-case proprietary mass data sets are not necessarily represented by digital twins or submodels.
 
 Data that is exchanged via request and answer schemes, due to the need of additional processes to generate, may also be attached -once generated- in addition to the direct exchange.
 
 The AAS does not alter data structures; it defines a method to link data (submodels) to objects and establishes a standardized path for data discovery.
 Data Structures and Semantics should be described by semantic models to support easy consumption.
 
-Linking data to multiple twins does not increase its persistence footprint. The Digital Twin Registry merely points to the actual data sources.
+Linking data to multiple twins does not increase its persistence footprint.
+The Digital Twin Registry merely points to the actual data sources.
+
+The Aspect Model with the following identifier SHOULD be used for binary data exchange:
+
+```
+urn:samm:io.catenax.binary_exchange:1.0.0#BinaryExchange
+```
 
 ### 1.3 CONFORMANCE AND PROOF OF CONFORMITY
 
 > *This section is non-normative*
 
-In addition to all sections marked as non-normative, all authoring guidelines, diagrams, examples, and notes in this specification are non-normative. Everything else in this specification is normative.
+In addition to all sections marked as non-normative, all authoring guidelines, diagrams, examples, and notes in this specification are non-normative.
+Everything else in this specification is normative.
 
 The key words **MAY**, **MUST**, **MUST NOT**, **OPTIONAL**, **RECOMMENDED**, **REQUIRED**, **SHOULD** and **SHOULD NOT** in this document are to be interpreted as described in BCP 14 [RFC2119] [RFC8174] when, and only when, they appear in all capitals, as shown here.
 
-> **Note:** With Catena-X release 25.03, it is optional for use cases to use this standard. Our goal is to introduce this standard as optional, so that use cases have enough time to adjust their standards. Therefore, Industry Core: Basis will only become mandatory with the next major release after 25.03. This gives use cases as well as Catena-X participants enough time to adjust to this new standard as - even with Industry Core: Basics becoming mandatory with the next major release - the previous major release will still be valid for one year.
+> **Note:** With Catena-X release 25.03, it is optional for use cases to use this standard.
+Our goal is to introduce this standard as optional, so that use cases have enough time to adjust their standards.
+Therefore, Industry Core: Basics will only become mandatory with the next major release after 25.03.
+This gives use cases as well as Catena-X participants enough time to adjust to this new standard as - even with Industry Core: Basics becoming mandatory with the next major release - the previous major release will still be valid for one year.
 
-All participants and their solutions will need to prove, that they are conform with the Catena-X standards. To validate that the standards are applied correctly, Catena-X employs Conformity Assessment Bodies (CABs).
+All participants and their solutions will need to prove, that they are conform with the Catena-X standards.
+To validate that the standards are applied correctly, Catena-X employs Conformity Assessment Bodies (CABs).
 
-- To prove conformity with the notification data format, create a JSON schema of the data format that will be used for notifications. The notification must be in JSON format, the data format must be compliant with the notification data format defined in [2.1 NOTIFICATION DATA FORMAT](#21-notification-data-format). This includes that the header must be compliant with the MessageHeader aspect model. Hand in the JSON schema to a conformity assessment body.
-- To prove conformity with the mapping of the notification API to the Catena-X connector, export the asset definition from the connector. Hand in the asset definition to a conformity assessment body.
-- To prove conformity with the notification API, create an OpenAPI specification for the notification API that is exposed via a connector to Catena-X. Hand in the OpenAPI specification to a conformity assessment body.
+- to prove conformity with the notification data format, create a JSON schema of the data format that will be used for notifications. The notification must be in JSON format, the data format must be compliant with the notification data format defined in [2.1 NOTIFICATION DATA FORMAT](#21-notification-data-format). This includes that the header must be compliant with the MessageHeader aspect model.
+Hand in the JSON schema to a conformity assessment body.
+- to prove conformity with the mapping of the notification API to the Catena-X connector, export the asset definition from the connector.
+Hand in the asset definition to a conformity assessment body.
+- to prove conformity with the notification API, create an OpenAPI specification for the notification API that is exposed via a connector to Catena-X. Hand in the OpenAPI specification to a conformity assessment body.
 
 ### 1.4 EXAMPLES
 
@@ -187,7 +210,12 @@ The following terms are especially relevant for the understanding of the standar
 
 **Notification API**: A message-based data exchange within Catena-X that supports a set of operations.
 
-**Unique ID / Catena-X ID**: A Unique ID uniquely identifies a particular real-world asset. In Industry Core, these are: serialized parts (including vehicles), batches, JIS parts (Just-in-Sequence) and catalog parts. A Unique ID is a URN and has the following format: urn:uuid:\<UUIDv4\>, i.e., the NID is "uuid" and the NSS is an UUID Version 4 (as described here: https://en.wikipedia.org/wiki/Universally_unique_identifier). Unique IDs are used in several places in Industry Core, e.g., as globalAssetId for digital twins. Although they share the same format with other identifiers like, e.g., the AAS identifier, they are separate identifiers that identify different resources and should not be mistaken with these other identifiers.
+**Unique ID / Catena-X ID**:
+A Unique ID uniquely identifies a particular real-world asset.
+In Industry Core, these are: serialized parts (including vehicles), batches, JIS parts (Just-in-Sequence) and catalog parts.
+A Unique ID is a URN and has the following format: urn:uuid:\<UUIDv4\>, i.e., the NID is "uuid" and the NSS is an UUID Version 4 (as described here: https://en.wikipedia.org/wiki/Universally_unique_identifier).
+Unique IDs are used in several places in Industry Core, e.g., as globalAssetId for digital twins.
+Although they share the same format with other identifiers like, e.g., the AAS identifier, they are separate identifiers that identify different resources and should not be mistaken with these other identifiers.
 
 ## 2 RELEVANT PARTS OF THE STANDARD FOR SPECIFIC USE CASES
 
@@ -217,16 +245,21 @@ This section defines the data format of notifications:
   }
 ```
 
-- The JSON schema for this schema is available [here](./assets/notification.schema.json).
-- The property `header` MUST be compliant to the aspect model [MessageHeaderAspect](#31-aspect-model-messageheaderaspect).
-  - The `messageId` of a notification MUST uniquely identify a single message, therefore it MUST not be reused. No two notifications MUST share the same `messageId`. Only if a notification could not be sent because of data transfer errors, it MAY be re-sent with the same `messageId`.
-  - It is RECOMMENDED to use the following format (defined in the MessageHeaderAspect aspect model) for property `context`: `<domain>-<subdomain>-<object>:<[major] version>`
+- the JSON schema for this schema is available [here](./assets/notification.schema.json).
+- the property `header` MUST be compliant to the aspect model [MessageHeaderAspect](#31-aspect-model-messageheaderaspect).
+  - the `messageId` of a notification MUST uniquely identify a single message, therefore it MUST not be reused.
+  No two notifications MUST share the same `messageId`.
+  Only if a notification could not be sent because of data transfer errors, it MAY be re-sent with the same `messageId`.
+  - it is RECOMMENDED to use the following format (defined in the MessageHeaderAspect aspect model) for property `context`:`<domain>-<subdomain>-<object>:<[major] version>`
     - `<domain>` SHOULD be the name of the use case that defines the notification, e.g., `IndustryCore`.
     - `<subdomain>` SHOULD be the name of the notification API, e.g., `DigitalTwinEventAPI`.
     - `<object>` SHOULD be the name of the operation for which the notification is used, e.g., `ConnectToParent`.
     - Versioning only refers to major versions in both default and fallback cases.
-    - This is recommended as it allows the notification receiver to freely choose what technology to use for the backend service. If this information is not encoded into the notifcation's `context` propoerty, a backend service like a message-queue technology will not know which notification operation was invoked by the sender as the endpoint information is not available in this case (compared to a REST API backend service).
-- Content and structure of the property `content` are not stanardized and MUST be defined by the use case defining the notifications API. A schema for this property MUST be defined as part of the OpenAPI specification of the notification API of the use case.
+    - This is recommended as it allows the notification receiver to freely choose what technology to use for the backend service.
+  - If this information is not encoded into the notifcation's `context` propoerty, a backend service like a message-queue technology will not know which notification operation was invoked by the sender as the endpoint information is not available in this case (compared to a REST API backend service).
+- content and structure of the property `content` are not stanardized and MUST be defined by the use case defining the notifications API.
+
+A schema for this property MUST be defined as part of the OpenAPI specification of the notification API of the use case.
 
 #### 2.1.2 ADDITIONAL REQUIREMENTS
 
@@ -249,7 +282,8 @@ A use case defining a notification API as part of its standard MUST document the
 
 #### 3.1.1 INTRODUCTION
 
-The Catena-X Message Header contains standardized attributes for message processing that are common across several use cases. It targets a minimal set of aspects that are required for overall message handling, but not for the processing of the business related payload part. By standardizing the message header structure, we support a harmonized modelling approach and re-use of concepts.
+The Catena-X Message Header contains standardized attributes for message processing that are common across several use cases.It targets a minimal set of aspects that are required for overall message handling, but not for the processing of the business related payload part.
+By standardizing the message header structure, we support a harmonized modelling approach and re-use of concepts.
 
 #### 3.1.2 SPECIFICATIONS ARTIFACTS
 
@@ -261,7 +295,8 @@ Like all Catena-X aspect models, this model is available in a machine-readable f
 
 #### 3.1.3 LICENSE
 
-This Catena-X data model is an outcome of Catena-X use case group Industry Core. This Catena-X data model is made available under the terms of the Creative Commons Attribution 4.0 International (CC-BY-4.0) license, which is available at Creative Commons[^2].
+This Catena-X data model is an outcome of Catena-X use case group Industry Core.
+This Catena-X data model is made available under the terms of the Creative Commons Attribution 4.0 International (CC-BY-4.0) license, which is available at Creative Commons[^2].
 
 The license information is available in GitHub.
 
@@ -277,7 +312,8 @@ urn:samm:io.catenax.shared.message_header:3.0.0#MessageHeaderAspect
 
 ##### 3.1.5.1 RDF TURTLE
 
-The RDF turtle file, an instance of the Semantic Aspect Meta Model, is the master for generating additional file formats and serializations.  These can be viewed by following link: https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.shared.message_header/3.0.0/MessageHeaderAspect.ttl
+The RDF turtle file, an instance of the Semantic Aspect Meta Model, is the master for generating additional file formats and serializations.
+These can be viewed by following link: https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.shared.message_header/3.0.0/MessageHeaderAspect.ttl
 
 The open source command line tool of the Eclipse Semantic Modeling Framework[^3] is used for generation of other file formats like for example a JSON Schema, aasx for Asset Administration Shell Submodel Template or a HTML documentation.
 
@@ -291,21 +327,28 @@ A JSON Schema can be generated from the RDF Turtle file.
 
 ### 4.1 NOTIFICATION API
 
-The notification API of a use case MUST be defined with an OpenAPI specification. In this specification, all artefacts of the API are defined, e.g., name of the API, operation names, and notification data formats.
+The notification API of a use case MUST be defined with an OpenAPI specification.
+In this specification, all artefacts of the API are defined, e.g., name of the API, operation names, and notification data formats.
 
 #### 4.1.1 PRECONDITIONS AND DEPENDENCIES
 
-- The use case MUST standardize the notification API's name. The name of the notification API (used in property `http://purl.org/dc/terms/type`) MUST be defined in the Catena-X taxonomy published under https://w3id.org/catenax/taxonomy.
+- The use case MUST standardize the notification API's name.
+The name of the notification API (used in property `http://purl.org/dc/terms/type`) MUST be defined in the Catena-X taxonomy published under https://w3id.org/catenax/taxonomy.
 - For a notification API, only the HTTP method POST is allowed.
 
 #### 4.1.2 API SPECIFICATION
 
-- Notification operations are modelled as endpoints (resources). For every operation, exactly one endpoint MUST be defined. This endpoint only supports the HTTP POST method.
-- The path URL SHOULD be the operation name with optional "-" as word separator.
-- The operationId MUST be the notification operation name. The same name SHOULD be used as `<object>` in the `context` property of the notification header. This redundancy is RECOMMENDED to allow the notification receiver to freely choose what technology to use for the backend service, e.g, a REST API or message-queue technology.
-- The notification is the actual request body of the HTTP POST method. Its schema MUST also be defined in the specification.
+- notification operations are modelled as endpoints (resources).
+For every operation, exactly one endpoint MUST be defined.
+This endpoint only supports the HTTP POST method.
+- the path URL SHOULD be the operation name with optional "-" as word separator.
+- the operationId MUST be the notification operation name.
+The same name SHOULD be used as `<object>` in the `context` property of the notification header.
+This redundancy is RECOMMENDED to allow the notification receiver to freely choose what technology to use for the backend service, e.g, a REST API or message-queue technology.
+- the notification is the actual request body of the HTTP POST method.
+Its schema MUST also be defined in the specification.
   
-**Example:** [OpenAPI specification for Digital Twin Event API](./assets/example-digital-twin-event-api.yaml) - Excerpt:
+[OpenAPI specification for Digital Twin Event API](./assets/example-digital-twin-event-api.yaml) - Excerpt:
 
 ```yaml
 openapi: 3.0.1
@@ -347,20 +390,21 @@ paths:
 The following HTTP response codes SHOULD be defined for all notification operations:
 
 | Code | Description | |
-|------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---|
 | 200  | OK | Indicates that the request has succeeded. |
 | 4xx  | ERROR | The notification cannot be processed. |
 | 5xx  | ERROR | The notification cannot be processed. |
 
 A response body MAY also be defined (e.g., see Feedback notification operation in the example above).
 
-These error codes are currently optional as the Catena-X connector does not yet return correct error messages from backend services. These error codes will become mandatory once the connector returns correct error messages from backend services.
+These error codes are currently optional as the Catena-X connector does not yet return correct error messages from backend services.
+These error codes will become mandatory once the connector returns correct error messages from backend services.
 
 #### 4.1.4 CONNECTOR DATA ASSET STRUCTURE
 
-For a notification API, exactly one asset in the connector MUST be defined. All notifications operations of the API must be invoked through this asset.
+For a notification API, exactly one asset in the connector MUST be defined.
+All notifications operations of the API must be invoked through this asset.
 
-- The property `http://purl.org/dc/terms/type` MUST reference the name of the notification API as defined in the Catena-X taxonomy published under https://w3id.org/catenax/taxonomy.
+- the property `http://purl.org/dc/terms/type` MUST reference the name of the notification API as defined in the Catena-X taxonomy published under https://w3id.org/catenax/taxonomy.
 
 **Example of an asset definition for a notification API:**
 
@@ -385,7 +429,9 @@ For a notification API, exactly one asset in the connector MUST be defined. All 
 
 #### 4.1.5 VERSIONING
 
-Versioning of the notification API MUST follow the Catena-X guidelines for versioning. For every new major version of a notification API, a new connector asset MUST be created. If, e.g., a REST API is used as backend notification receiver, the incoming notifications can be fowarded to the correct REST API version via the corresponding connector asset, as depicted in the following figure:
+Versioning of the notification API MUST follow the Catena-X guidelines for versioning.
+For every new major version of a notification API, a new connector asset MUST be created.
+If, e.g., a REST API is used as backend notification receiver, the incoming notifications can be fowarded to the correct REST API version via the corresponding connector asset, as depicted in the following figure:
 
 ![Notifications Flow](./assets/notifications_connector_versioning.svg)
 
@@ -401,18 +447,20 @@ A notification is sent from one Catena-X partner - called sender - to another Ca
 
 ![Notifications Flow](./assets/notifications_process.svg)
 
-- The receiver provides an asset in the connector to which notifications can be sent.
-- The sender initiates a contract negotiation for this asset to get a contract agreement and dataplane endpoint.
-- After a successful contract negotiation, the sender sends the notification via a HTTP POST request to the receiver via the dataplane endpoint from the contract agreement.
-- All notification operations are sent via the same asset using the same contract agreement.
+- the receiver provides an asset in the connector to which notifications can be sent.
+- the sender initiates a contract negotiation for this asset to get a contract agreement and dataplane endpoint.
+- after a successful contract negotiation, the sender sends the notification via a HTTP POST request to the receiver via the dataplane endpoint from the contract agreement.
+- all notification operations are sent via the same asset using the same contract agreement.
 
 #### 5.1.1 ACTORS AND ROLES
 
-**Catena-X Partner:** A company participating in the Catena-X network. A partner can act as both, a notification sender or notification receiver.
+**Catena-X Partner:** A company participating in the Catena-X network.
+A partner can act as both, a notification sender or notification receiver.
 
 **Notification Sender:** The sender of a Catena-X notification
 
-**Notification Receiver:** The receiver of a Catena-X notification. The receiver provides an asset in the connector to which notifications can be sent.
+**Notification Receiver:** The receiver of a Catena-X notification.
+The receiver provides an asset in the connector to which notifications can be sent.
 
 <!-- #### 5.1.2 PROCESS REPRESENTATION -->
 
@@ -422,14 +470,15 @@ A notification is sent from one Catena-X partner - called sender - to another Ca
 
 > *This section is normative*
 
-- CX-0018:3.3 Dataspace Connectivity
-- CX-0003:1.2 SAMM Aspect Meta Model
+- CX-0018: 3.3 Dataspace Connectivity or bugfixes
+- CX-0003: 1.2 SAMM Aspect Meta Model or bugfixes
 
 ### 6.2 NON-NORMATIVE REFERENCES
 
 > *This section is non-normative*
 
-- [SMT] How to create a submodel template specification. Guideline. Download from: https://industrialdigitaltwin.org/wp-content/uploads/2022/12/I40-IDTA-WS-Process-How-to-write-a-SMT-FINAL-.pdf
+- [SMT] How to create a submodel template specification. Guideline. Publisher: Industrial Digital Twin Association.
+Download from: https://industrialdigitaltwin.org/wp-content/uploads/2025/06/IDTA_How-to-write-a-SMT-v1.1.pdf
 - [Semantic Models](https://github.com/eclipse-tractusx/sldt-semantic-models)
 - [Operating Model](https://catenax-ev.github.io/docs/operating-model/why-introduction)
 
@@ -437,47 +486,6 @@ A notification is sent from one Catena-X partner - called sender - to another Ca
 
 [^3]: [https://github.com/eclipse-esmf/esmf-sdk](https://github.com/eclipse-esmf/esmf-sdk)
 
-<!-- ### 6.3 REFERENCE IMPLEMENTATIONS
+## Legal
 
-> *This section is non-normative*
-
-```text
-    [Mandatory] - List reference implementations that implement the standard. 
-
-    Example: The code found at https://github.com/eclipse-tractusx/item-relationship-service 
-    presents a reference implementation that implements this standard.
-
-    The code found at XX implements the standard.
-``` -->
-
-<!-- ## ANNEXES
-
-### FIGURES
-
-> *This section is non-normative*
-
-```text
-    [OPTIONAL] Add figures here if necessary. Please delete if no figures are provided
-```
-
-### TABLES
-
-> *This section is non-normative*
-
-```text
-    [OPTIONAL] Add Tables here if necessary. Please delete if no tables are provided
-``` -->
-
-<!-- ## ABOUT THIS DOCUMENT & MOTIVATION
-
-## DISCLAIMER & LIABILITY -->
-
-## REVISIONS & UPDATES
-
-| Version | Catena-X Release | Date | Changes |
-| :--: | :--: | :--: | -- |
-| 1.0.0  | 25.03 | 17.03.2025 | Inital creation of this standard to standardize the Notifcations API. |
-
-## COPYRIGHT & TRADEMARKS
-
-Copyright © 2025 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).
+Copyright © 2026 Catena-X Automotive Network e.V. All rights reserved. For more information, please see [Catena-X Copyright Notice](https://catenax-ev.github.io/copyright).

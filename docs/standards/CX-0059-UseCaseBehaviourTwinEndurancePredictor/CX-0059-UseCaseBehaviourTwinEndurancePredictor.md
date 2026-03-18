@@ -1,7 +1,7 @@
 ---
 tags:
   - CAT/Business Application Provider
-  - UC/Behaviroal Twin
+  - UC/Behavioral Twin
 ---
 
 # CX-0059 Use Case Behaviour Twin Endurance Predictor v2.0.1
@@ -767,4 +767,4 @@ The following http response codes MUST be defined for HTTP POST endpoint for the
 
 ## Legal
 
-Copyright © 2025 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).
+Copyright © 2026 Catena-X Automotive Network e.V. All rights reserved. For more information, please see [Catena-X Copyright Notice](https://catenax-ev.github.io/copyright).

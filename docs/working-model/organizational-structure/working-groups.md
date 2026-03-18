@@ -44,3 +44,7 @@ The focus of the Working Group is on the results defined in the application acco
 Once a Working Group reaches its defined goal, the results must be presented to the Management Board. It is mandatory to provide final documentation of the work, with every member required to contribute. This documentation will be made accessible to all members, coordinated through the Catena-X office.
 
 Based on the Working Group's results, the establishment of a new [Committee](./committee.md) or [Expert Group](./expert-group.md#1-initiation) may be requested to further advance the topic or implement next steps.
+
+## Legal
+
+Copyright © 2026 Catena-X Automotive Network e.V. All rights reserved. For more information, please see [Catena-X Copyright Notice](https://catenax-ev.github.io/copyright).

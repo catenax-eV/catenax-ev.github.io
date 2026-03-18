@@ -144,7 +144,6 @@ In addition, the following standards are used to support the PCF usecase. Athoug
 - [CX-0002 Digital Twins in Catena-X v2.3](https://catenax-ev.github.io/docs/standards/overview)
 - [CX-0003 SAMM Aspect Meta Model v1.2](https://catenax-ev.github.io/docs/standards/overview)
 - [CX-0018 Dataspace Connectivity v4.1](https://catenax-ev.github.io/docs/standards/overview)
-- [CX-0118 Delivery Information Exchange v2.0](https://catenax-ev.github.io/docs/standards/overview)
 - [CX-0126 Industry Core: Part Type v2.1](https://catenax-ev.github.io/docs/standards/overview)
 - [CX-0151 Industry Core: Basics v1.0](https://catenax-ev.github.io/docs/standards/overview)
 
@@ -174,7 +173,7 @@ Not needed for PCF as the BPN is known by the application.
 The PCF use case utilizes Asset Administration Shell (AAS) logic and Material Twins. Therefore Digital Twins SHOULD be registered in the decentralized Digital Twin Registry (DTR). In order to look up the twin ID, the data provider MUST register the twins with digitalTwinType=PartType, and MUST include either the ``manufacturerPartId``, the ``customerPartId``, or both, in the ``specificAssetIds``.
 
 > **Note**
-> The following JSON snippet only illustrates which specificAssetIds have to be used. It *cannot* be used as a copy paste template for twin creation! When setting up a digital twin the data provider has to ensure that these entries are visible to all consumers he wants to address by using the corresponding security mechanisms provided with the digital twin registry. For more information, please refer to [CX-0118 Delivery Information Exchange](../CX-0118-ActualDeliveryInformationExchange/CX-0118-ActualDeliveryInformationExchange.md).
+> The following JSON snippet only illustrates which specificAssetIds have to be used. It *cannot* be used as a copy paste template for twin creation! When setting up a digital twin the data provider has to ensure that these entries are visible to all consumers he wants to address by using the corresponding security mechanisms provided with the digital twin registry.
 
 ```json
     "specificAssetIds": [
@@ -493,7 +492,7 @@ https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.pc
 
 ##### 3.1.5.3 AASX
 
-An AASX file can be generated from the RDF Turtle file. The AASX file defines one of the requested artifacts for a Submodel Template Specification conformant to [SMT](#62-non-normative-references).
+An AASX file can be generated from the RDF Turtle file. The AASX file defines one of the requested artifacts for a Submodel Template Specification conformant to [SMT](#72-non-normative-references).
 
 https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.pcf/9.0.0/gen/Pcf.aasx
 
@@ -605,7 +604,8 @@ For **Synchronous PCF Data Exchange**, the **Data Provider MUST register an addi
 - The submodel endpoint **MUST** advertise:
   - `interface = "SUBMODEL-3.0"`
   - `subprotocol = "DSP"`
-  - `subprotocolBody` in the following form (semicolon-separated key/value pairs): `id=AssetId_of_EDCasset;dspEndpoint=https://some.controlplane.url/api/v1/dsp`
+  - `subprotocolBody` in the following form (semicolon-separated key/value pairs):
+    `id=AssetId_of_EDCasset;dspEndpoint=https://some.controlplane.url/api/v1/dsp`
     - `id` **SHOULD** be a **UUIDv4 or UUIDv7** (the EDC Asset ID used during DSP negotiation).
     - `dspEndpoint` **MUST** point to the **provider’s EDC Control Plane** DSP endpoint (HTTPS, no explicit port).
 - The submodel endpoint’s `href` **MUST** follow **CX-0002 Digital Twins in Catena-X v2.2.0** and contain the **exact Data Plane URL** used to **synchronously** fetch the PCF values (value-only JSON) for the material.
@@ -795,4 +795,4 @@ Currently there is no reference FOSS implementation. For information about avail
 
 ## Legal
 
-Copyright © 2025 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).
+Copyright © 2026 Catena-X Automotive Network e.V. All rights reserved. For more information, please see [Catena-X Copyright Notice](https://catenax-ev.github.io/copyright).
