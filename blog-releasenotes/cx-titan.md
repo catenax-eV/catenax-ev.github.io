@@ -286,3 +286,7 @@ PDF Export: Allows users to export content from the website for offline referenc
 ### Non-Functional Requirements
 
 Previously only available on the website, the Certification Framework has now been integrated into the non-functional requirements. This improves clarity on compliance and evaluation expectations for ecosystem participants.
+
+## Legal
+
+Copyright © 2026 Catena-X Automotive Network e.V. All rights reserved. For more information, please see [Catena-X Copyright Notice](https://catenax-ev.github.io/copyright).
