@@ -16,8 +16,6 @@ The Engineering domain has been extended with new standards that strengthen requ
 
 | Standard                                                     | Status   |
 | -------------------------------------------------------------| -------- |
-| CX-0154 Digital Master Data                                  | Updated  |
-| CX-0155 Requirements Engineering                             | Added    |
 | CX-0158 Car SBOM                                             | Added    |
 
 ### Industry Core
