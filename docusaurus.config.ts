@@ -146,18 +146,14 @@ const config: Config = {
             {
               to: '/docs/next/rulebooks/overview/',
               label: 'Rulebooks',
-            },
-            {
-              type: 'html',
-              value: '<hr style="margin: 0.5rem 0;">',
             }
           ],
         },
         /* 
           {
-            to: '/docs/next/architecture-guardrails/overview/',
-            label: '🔧 Architecture Guardrails',
-          },
+            type: 'html',
+            value: '<hr style="margin: 0.5rem 0;">',
+          }
 
         {       
            type: "docSidebar",
