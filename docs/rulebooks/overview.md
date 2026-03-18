@@ -19,6 +19,12 @@ tags:
 |:---:|:---:|
 | [![CX-NFR-ESS-Codex_v.1.0_DE.png](./assets/images/CX-NFR-ESS-Codex_v.1.0_DE.png)](./CX-NFR-ESS/CX-NFR-ESS-Codex_v.1.0_DE.pdf) | [![CX-NFR-ESS-Codex_v.1.0_EN.png](./assets/images/CX-NFR-ESS-Codex_v.1.0_EN.png)](./CX-NFR-ESS/CX-NFR-ESS-Codex_v.1.0_EN.pdf) |
 
+## Conformity Assessment Framework
+
+| Conformity Assessment Framework Handbook | |
+|:---:|:---:|
+| [![CX-NFR-CAF.png](./assets/images/CX-NFR-CAF.png)](./CX-NFR-CAF/CatenaX_CAF_Handbook.pdf) | |
+
 ## Legal
 
 Copyright © 2025 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).
