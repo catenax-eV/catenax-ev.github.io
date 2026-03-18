@@ -279,10 +279,6 @@ The main navigation was updated to clearly separate normative and non-normative 
 
 - Glossary: Provides standardized definitions for key terms used across the Catena-X ecosystem.
 
-### Usability Enhancements
-
-PDF Export: Allows users to export content from the website for offline reference or documentation purposes.
-
 ### Non-Functional Requirements
 
 Previously only available on the website, the Certification Framework has now been integrated into the non-functional requirements. This improves clarity on compliance and evaluation expectations for ecosystem participants.
