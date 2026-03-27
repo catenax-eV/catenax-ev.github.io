@@ -9,7 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-    # Only run for branch deletions (not tag deletions)
+    # Only run for branch deletions (not tag deletions).
+    # In the `delete` event, github.event.ref is the bare branch name (e.g. "main"),
+    # not the full ref like "refs/heads/main".
     if: github.event.ref_type == 'branch' && github.event.ref != 'main'
     steps:
       - name: Checkout gh-pages branch

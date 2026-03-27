@@ -4,6 +4,13 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const glossaryPlugin = require('docusaurus-plugin-glossary');
 
+const baseUrl = process.env.BASE_URL ?? '/';
+// The glossary plugin registers its own Docusaurus route and does not
+// automatically prepend the site's baseUrl. We therefore compute the
+// full path here so that it is consistent across the root deployment
+// ("/glossary") and preview deployments ("/preview/<branch>/glossary").
+const glossaryRoutePath = `${baseUrl.replace(/\/?$/, '/')}glossary`;
+
 const config: Config = {
   title: 'Catena-X - Library',
   tagline: 'If you are interested in joining the Catena-X ecosystem, you need to prove compliance. Right here you will find the complete normative documentation for everything you need for doing so.',
@@ -43,12 +50,12 @@ const config: Config = {
         ],
       },
     ],
-    // glossary plugin: serves glossary content from /glossary at site route /glossary
+    // glossary plugin: serves glossary content from /glossary at site route
     [
       require.resolve('docusaurus-plugin-glossary'),
       {
         glossaryPath: 'glossary/glossary.json',
-        routePath: '/glossary',
+        routePath: glossaryRoutePath,
       },
     ],
   ],
@@ -63,7 +70,7 @@ const config: Config = {
             glossaryPlugin.getRemarkPlugin(
                 {
                   glossaryPath: 'glossary/glossary.json',
-                  routePath: '/glossary',
+                  routePath: glossaryRoutePath,
                 },
                 { siteDir: __dirname }
             ),
