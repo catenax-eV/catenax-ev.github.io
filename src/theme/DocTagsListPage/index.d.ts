@@ -6,5 +6,6 @@
  */
 /// <reference types="@docusaurus/plugin-content-docs" />
 /// <reference types="react" />
+import type {ReactNode} from 'react';
 import type { Props } from '@theme/DocTagsListPage';
-export default function DocTagsListPage(props: Props): JSX.Element;
+export default function DocTagsListPage(props: Props): ReactNode;
