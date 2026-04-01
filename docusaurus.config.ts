@@ -47,6 +47,18 @@ const config: Config = {
             to: '/blog-releasenotes',
             from: ['/release-notes'],
           },
+          {
+            to: '/docs/rulebooks/overview',
+            from: [
+              '/docs/non-functional',
+            ],
+          },
+          {
+            to: '/docs/next/rulebooks/overview',
+            from: [
+              '/docs/next/non-functional',
+            ],
+          },
         ],
       },
     ],
