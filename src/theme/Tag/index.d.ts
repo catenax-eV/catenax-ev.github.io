@@ -4,7 +4,13 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-/// <reference path="../../../src/theme-classic.d.ts" />
 /// <reference types="react" />
-import type { Props } from '@theme/Tag';
-export default function Tag({ permalink, label, count, description, type, }: Props): JSX.Element;
+import type {ReactNode} from 'react';
+type Props = {
+  permalink: string;
+  label: string;
+  count?: number;
+  description?: string;
+  type?: string;
+};
+export default function Tag({ permalink, label, count, description, type, }: Props): ReactNode;

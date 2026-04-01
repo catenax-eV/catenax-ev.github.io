@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import type {ComponentType, ReactNode, SVGProps} from 'react';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
@@ -7,8 +8,15 @@ import Heading from '@theme/Heading';
 
 import styles from './index.module.css';
 
+type OptionItem = {
+  title: string;
+  Svg: ComponentType<SVGProps<SVGSVGElement>>;
+  link: string;
+  text: string;
+  description: ReactNode;
+};
 
-const OptionList = [
+const OptionList: OptionItem[] = [
   {
     title: 'Catena-x Automotive Network e.V.',
     Svg: require('@site/static/img/logo.svg').default,
@@ -33,7 +41,7 @@ const OptionList = [
   },
 ];
 
-function Option({Svg, title, description, link, text}) {
+function Option({Svg, title, description, link, text}: OptionItem) {
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">
@@ -84,7 +92,7 @@ function HomepageContributingOptions() {
    );
 }
 
-export default function Home(): JSX.Element {
+export default function Home(): ReactNode {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
