@@ -1,5 +1,0 @@
-{
-    "leftOperand": "Membership",
-    "operator": "eq",
-    "rightOperand": "active"
-}
