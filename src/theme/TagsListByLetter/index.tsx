@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import React from 'react';
+import React, {type ReactNode} from 'react';
 import {listTagsByLetters, type TagLetterEntry} from '@docusaurus/theme-common';
 import Tag from '@theme/Tag';
 import type {Props} from '@theme/TagsListByLetter';
@@ -29,7 +29,7 @@ function TagLetterEntryItem({letterEntry}: {letterEntry: TagLetterEntry}) {
   );
 }
 
-export default function TagsListByLetter({tags}: Props): JSX.Element {
+export default function TagsListByLetter({tags}: Props): ReactNode {
 
   const letterList = listTagsByLetters(tags);
   return (

@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import React from 'react';
+import React, {type ReactNode} from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import {
@@ -21,8 +21,8 @@ import Unlisted from '@theme/ContentVisibility/Unlisted';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
 
-function getCleanedTag(str){
-  return str.split('/').pop();
+function getCleanedTag(str: string): string {
+  return str.split('/').pop() ?? str;
 }
 
 // Very simple pluralization: probably good enough for now
@@ -55,7 +55,7 @@ function usePageTitle(props: Props): string {
   );
 }
 
-function DocItem({doc}: {doc: Props['tag']['items'][number]}): JSX.Element {
+function DocItem({doc}: {doc: Props['tag']['items'][number]}): ReactNode {
   return (
     <article className={styles.article_tag_overview}>
       <Link to={doc.permalink}>
@@ -69,7 +69,7 @@ function DocItem({doc}: {doc: Props['tag']['items'][number]}): JSX.Element {
 function DocTagDocListPageMetadata({
   title,
   tag,
-}: Props & {title: string}): JSX.Element {
+}: Props & {title: string}): ReactNode {
   return (
     <>
       <PageMetadata title={title} description={tag.description} />
@@ -81,7 +81,7 @@ function DocTagDocListPageMetadata({
 function DocTagDocListPageContent({
   tag,
   title,
-}: Props & {title: string}): JSX.Element {
+}: Props & {title: string}): ReactNode {
   return (
     <HtmlClassNameProvider
       className={clsx(ThemeClassNames.page.docsTagDocListPage)}>
@@ -108,7 +108,7 @@ function DocTagDocListPageContent({
   );
 }
 
-export default function DocTagDocListPage(props: Props): JSX.Element {
+export default function DocTagDocListPage(props: Props): ReactNode {
   const title = usePageTitle(props);
   return (
     <>

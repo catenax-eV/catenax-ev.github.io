@@ -1,12 +1,13 @@
 import clsx from 'clsx';
+import type {ComponentType, ReactNode, SVGProps} from 'react';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
 
 type FeatureItem = {
   title: string;
-  Svg: React.ComponentType<React.ComponentProps<'svg'>>;
+  Svg: ComponentType<SVGProps<SVGSVGElement>>;
   path: string;
-  description: JSX.Element;
+  description: ReactNode;
 };
 
 const FeatureList: FeatureItem[] = [
