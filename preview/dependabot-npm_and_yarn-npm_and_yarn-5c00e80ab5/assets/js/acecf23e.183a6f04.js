@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkcatenax_ev_github_io_new=globalThis.webpackChunkcatenax_ev_github_io_new||[]).push([[81903],{1912(e){e.exports=JSON.parse('{"blogBasePath":"/preview/dependabot-npm_and_yarn-npm_and_yarn-5c00e80ab5/blog-releasenotes","blogTitle":"Blog","authorsListPath":"/preview/dependabot-npm_and_yarn-npm_and_yarn-5c00e80ab5/blog-releasenotes/authors"}')}}]);
