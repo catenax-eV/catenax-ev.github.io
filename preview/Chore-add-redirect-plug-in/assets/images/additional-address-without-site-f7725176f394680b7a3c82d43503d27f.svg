@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="260.9375px" preserveAspectRatio="none" style="width:377px;height:260px;background:#FFFFFF;" version="1.1" viewBox="0 0 377 260" width="377.6042px" zoomAndPan="magnify"><defs/><g><!--MD5=[9ae63dfd41d179cc05e213b0434c7f36]
+cluster Business Parter (Additional Address) w/o Site--><g id="cluster_Business Parter (Additional Address) w/o Site"><path d="M4.4271,3.125 L170.0521,3.125 A1.9531,1.9531 0 0 1 171.3542,4.4271 L175,15.4215 L372.6563,15.4215 A1.3021,1.3021 0 0 1 373.9583,16.7236 L373.9583,255.9896 A1.3021,1.3021 0 0 1 372.6563,257.2917 L4.4271,257.2917 A1.3021,1.3021 0 0 1 3.125,255.9896 L3.125,4.4271 A1.3021,1.3021 0 0 1 4.4271,3.125 " style="stroke:#000000;stroke-width:0.78125;fill:none;"/><line style="stroke:#000000;stroke-width:0.78125;fill:none;" x1="3.125" x2="175" y1="15.4215" y2="15.4215"/><text fill="#000000" font-family="sans-serif" font-size="7.2917" font-weight="bold" lengthAdjust="spacing" textLength="165.1042" x="5.2083" y="11.736">Business Parter (Additional Address) w/o Site</text></g><g id="elem_LegalEntity"><rect fill="#F1F1F1" height="33.7646" style="stroke:#181818;stroke-width:0.2604166666666667;" width="194.2708" x="171.0938" y="63.0208"/><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="36.4583" x="250" y="71.6319">LegalEntity</text><line style="stroke:#181818;stroke-width:0.2604166666666667;" x1="171.6146" x2="364.8438" y1="74.2757" y2="74.2757"/><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="188.0208" x="174.2188" y="83.9284">LegalName = "Dr. Ing. h.c. F. Porsche Aktiengesellschaft"</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="89.5833" x="174.2188" y="93.1">ShortName = "Porsche AG"</text></g><g id="elem_Address1"><rect fill="#F1F1F1" height="70.4508" style="stroke:#181818;stroke-width:0.2604166666666667;" width="81.7708" x="249.2188" y="178.6458"/><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="31.25" x="274.4792" y="187.2569">Address1</text><line style="stroke:#181818;stroke-width:0.2604166666666667;" x1="249.7396" x2="330.4688" y1="189.9007" y2="189.9007"/><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="32.2917" x="252.3438" y="199.5534">Name = ""</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="49.4792" x="252.3438" y="208.725">Country = "DE"</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="54.1667" x="252.3438" y="217.8965">City = "Stuttgart"</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="72.3958" x="252.3438" y="227.0681">PostalCode = "70435"</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="75.5208" x="252.3438" y="236.2396">Street = "Porscheplatz"</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="64.0625" x="252.3438" y="245.4112">HouseNumber = "1"</text></g><g id="elem_Address2"><rect fill="#F1F1F1" height="70.4508" style="stroke:#181818;stroke-width:0.2604166666666667;" width="135.9375" x="64.3229" y="178.6458"/><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="31.25" x="116.6667" y="187.2569">Address2</text><line style="stroke:#181818;stroke-width:0.2604166666666667;" x1="64.8438" x2="199.7396" y1="189.9007" y2="189.9007"/><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="129.6875" x="67.4479" y="199.5534">Name = "Lieferantenpforte zum Werk 2"</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="49.4792" x="67.4479" y="208.725">Country = "DE"</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="54.1667" x="67.4479" y="217.8965">City = "Stuttgart"</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="72.3958" x="67.4479" y="227.0681">PostalCode = "70435"</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="101.5625" x="67.4479" y="236.2396">Street = "Schwieberdinger Str."</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="72.3958" x="67.4479" y="245.4112">HouseNumber = "130"</text></g><g id="elem_BusinessPartner"><rect fill="#F1F1F1" height="116.3086" style="stroke:#181818;stroke-width:0.2604166666666667;" width="122.9167" x="11.4583" y="21.875"/><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="54.1667" x="45.8333" y="30.486">BusinessPartner</text><line style="stroke:#181818;stroke-width:0.2604166666666667;" x1="11.9792" x2="133.8542" y1="33.1299" y2="33.1299"/><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="116.6667" x="14.5833" y="42.7826">AddressType = "AdditionalAddress"</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="46.3542" x="14.5833" y="51.9541">NameParts = [</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="83.3333" x="14.5833" y="61.1257">"Dr. Ing. h.c. F. Porsche",</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="66.6667" x="14.5833" y="70.2972">"Aktiengesellschaft",</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="7.2917" x="14.5833" y="79.4688">"",</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="104.6875" x="14.5833" y="88.6403">"Lieferantenpforte zum Werk 2"]</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="49.4792" x="14.5833" y="97.8119">Country = "DE"</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="54.1667" x="14.5833" y="106.9834">City = "Stuttgart"</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="72.3958" x="14.5833" y="116.155">PostalCode = "70435"</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="101.5625" x="14.5833" y="125.3265">Street = "Schwieberdinger Str."</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="72.3958" x="14.5833" y="134.4981">HouseNumber = "130"</text></g><!--MD5=[96986fab4dec4c1247d27bbda68ef4ba]
+link BusinessPartner to LegalEntity--><g id="link_BusinessPartner_LegalEntity"><path codeLine="42" d="M134.4479,79.9479 C145.2604,79.9479 156.7552,79.9479 168.2969,79.9479 " fill="none" id="BusinessPartner-to-LegalEntity" style="stroke:#181818;stroke-width:0.5208333333333334;"/><polygon fill="#181818" points="170.9167,79.9479,166.2292,77.8646,168.3125,79.9479,166.2292,82.0313,170.9167,79.9479" style="stroke:#181818;stroke-width:0.5208333333333334;"/><text fill="#000000" font-family="sans-serif" font-size="6.7708" lengthAdjust="spacing" textLength="17.7083" x="143.8802" y="76.56">BPNL</text></g><!--MD5=[a4463e794b2e7331b2d74f593a6f7232]
+link BusinessPartner to Address2--><g id="link_BusinessPartner_Address2"><path codeLine="43" d="M98.6979,138.1406 C104.4583,151.0156 110.4115,164.3385 115.6823,176.125 " fill="none" id="BusinessPartner-to-Address2" style="stroke:#181818;stroke-width:0.5208333333333334;"/><polygon fill="#181818" points="116.7917,178.6146,116.7753,173.485,115.7264,176.2383,112.9732,175.1894,116.7917,178.6146" style="stroke:#181818;stroke-width:0.5208333333333334;"/><text fill="#000000" font-family="sans-serif" font-size="6.7708" lengthAdjust="spacing" textLength="18.75" x="110.4167" y="161.1954">BPNA</text></g><!--MD5=[af6cf9e63aa1bfd07816bd3967d9cf63]
+link LegalEntity to Address1--><g id="link_LegalEntity_Address1"><path codeLine="44" d="M253.5885,96.8906 C240.5156,113.6406 224.8698,140.3281 234.8958,163.0208 C237.8802,169.776 242.276,176.0208 247.3021,181.6354 " fill="none" id="LegalEntity-to-Address1" style="stroke:#181818;stroke-width:0.5208333333333334;stroke-dasharray:7.0,7.0;"/><polygon fill="#181818" points="249.1823,183.6771,247.5455,178.8156,247.4206,181.7593,244.4769,181.6344,249.1823,183.6771" style="stroke:#181818;stroke-width:0.5208333333333334;"/><text fill="#000000" font-family="sans-serif" font-size="6.7708" lengthAdjust="spacing" textLength="41.1458" x="235.4167" y="161.1954">LegalAddress</text></g><!--MD5=[baed0c870c0237595c62c9127b8abe4c]
+reverse link LegalEntity to Address1--><g id="link_LegalEntity_Address1"><path codeLine="45" d="M271.3802,99.5833 C274.7708,120.1875 280.2448,153.4115 284.401,178.6406 " fill="none" id="LegalEntity-backto-Address1" style="stroke:#181818;stroke-width:0.5208333333333334;"/><polygon fill="#181818" points="270.9323,96.8854,269.6409,101.8498,271.3568,99.4548,273.7519,101.1706,270.9323,96.8854" style="stroke:#181818;stroke-width:0.5208333333333334;"/><text fill="#000000" font-family="sans-serif" font-size="6.7708" lengthAdjust="spacing" textLength="17.7083" x="281.7708" y="161.1954">BPNL</text></g><!--MD5=[5548c8bbe09f2f72901671bd63ee72eb]
+reverse link LegalEntity to Address2--><g id="link_LegalEntity_Address2"><path codeLine="46" d="M249.4323,98.8333 C228.4115,119.375 193.8854,153.1042 167.75,178.6406 " fill="none" id="LegalEntity-backto-Address2" style="stroke:#181818;stroke-width:0.5208333333333334;"/><polygon fill="#181818" points="251.4219,96.8854,246.6122,98.6686,249.5582,98.7043,249.5224,101.6504,251.4219,96.8854" style="stroke:#181818;stroke-width:0.5208333333333334;"/><text fill="#000000" font-family="sans-serif" font-size="6.7708" lengthAdjust="spacing" textLength="17.7083" x="192.1875" y="161.1954">BPNL</text></g><!--MD5=[42476bfc480d4dd49b727066fa2e98e7]
+@startuml additional-address-without-site
+
+skinparam dpi 50
+
+package "Business Parter (Additional Address) w/o Site" {
+  object LegalEntity {
+    LegalName = "Dr. Ing. h.c. F. Porsche Aktiengesellschaft"
+    ShortName = "Porsche AG"
+  }
+
+  object Address1 {
+    Name = ""
+    Country = "DE"
+    City = "Stuttgart"
+    PostalCode = "70435"
+    Street = "Porscheplatz"
+    HouseNumber = "1"
+  }
+
+  object Address2 {
+    Name = "Lieferantenpforte zum Werk 2"
+    Country = "DE"
+    City = "Stuttgart"
+    PostalCode = "70435"
+    Street = "Schwieberdinger Str."
+    HouseNumber = "130"
+  }
+
+  object BusinessPartner {
+    AddressType = "AdditionalAddress"
+    NameParts = [
+      "Dr. Ing. h.c. F. Porsche", 
+      "Aktiengesellschaft", 
+      "", 
+      "Lieferantenpforte zum Werk 2"]
+    Country = "DE"
+    City = "Stuttgart"
+    PostalCode = "70435"
+    Street = "Schwieberdinger Str."
+    HouseNumber = "130"
+  }
+
+  BusinessPartner -r-> LegalEntity : BPNL
+  BusinessPartner -r-> Address2 : BPNA
+  LegalEntity .d.> Address1 : LegalAddress
+  Address1 -u-> LegalEntity : BPNL
+  Address2 -u-> LegalEntity : BPNL
+}
+
+@enduml
+
+PlantUML version 1.2022.5(Sat Apr 30 12:55:52 CEST 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: Cp1252
+Language: en
+Country: GB
+--></g></svg>
