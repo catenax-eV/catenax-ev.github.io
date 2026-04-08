@@ -60,6 +60,12 @@ const config: Config = {
             ],
           },
         ],
+        createRedirects(existingPath: string) {
+          if (existingPath.includes('/rulebooks/')) {
+            return existingPath.replace('/rulebooks/', '/non-functional/');
+          }
+          return undefined;
+        },
       },
     ],
     // glossary plugin: serves glossary content from /glossary at site route
