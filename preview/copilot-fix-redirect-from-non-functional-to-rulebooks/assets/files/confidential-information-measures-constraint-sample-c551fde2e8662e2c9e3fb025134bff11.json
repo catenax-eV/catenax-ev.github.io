@@ -1,0 +1,5 @@
+{
+  "leftOperand": "ConfidentialInformationMeasures",
+  "operator": "eq",
+  "rightOperand": "cx.confidentiality.measures:1"
+}

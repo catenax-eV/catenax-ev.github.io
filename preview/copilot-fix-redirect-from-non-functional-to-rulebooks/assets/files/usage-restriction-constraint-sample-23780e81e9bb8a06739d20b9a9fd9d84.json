@@ -1,0 +1,8 @@
+{
+    "leftOperand": "UsageRestriction",
+    "operator": "isAllOf",
+    "rightOperand": [
+        "cx.thirdParty.forbidden:1",
+        "cx.manipulation.forbidden:1"
+    ]
+}
