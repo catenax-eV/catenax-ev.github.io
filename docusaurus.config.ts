@@ -8,7 +8,7 @@ const baseUrl = process.env.BASE_URL ?? '/';
 // The glossary plugin registers its own Docusaurus route and does not
 // automatically prepend the site's baseUrl. We therefore compute the
 // full path here so that it is consistent across the root deployment
-// ("/glossary") and preview deployments ("/preview/<branch>/glossary").
+// ("/glossary") and branch deployments ("/branch/<branch>/glossary").
 const glossaryRoutePath = `${baseUrl.replace(/\/?$/, '/')}glossary`;
 
 const config: Config = {
