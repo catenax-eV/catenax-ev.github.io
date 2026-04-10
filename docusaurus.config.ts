@@ -47,22 +47,22 @@ const config: Config = {
             to: '/blog-releasenotes',
             from: ['/release-notes'],
           },
-          {
-            to: '/docs/rulebooks/overview',
-            from: [
-              '/docs/non-functional',
-            ],
-          },
-          {
-            to: '/docs/next/rulebooks/overview',
-            from: [
-              '/docs/next/non-functional',
-            ],
-          },
         ],
         createRedirects(existingPath: string) {
-          if (existingPath.includes('/rulebooks/')) {
-            return existingPath.replace('/rulebooks/', '/non-functional/');
+          if (existingPath.endsWith('/rulebooks/overview')) {
+            const versionPrefix = existingPath.replace('/rulebooks/overview', '');
+            return [
+              `${versionPrefix}/non-functional`,
+              `${versionPrefix}/non-functional/overview`,
+              `${versionPrefix}/non-functional/CX-NFR-PCF`,
+              `${versionPrefix}/non-functional/CX-NFR-VF`,
+              `${versionPrefix}/non-functional/CX-NFR-ESS`,
+              `${versionPrefix}/non-functional/CX-NFR-ESS/ess-codex-de`,
+              `${versionPrefix}/non-functional/CX-NFR-ESS/ess-codex-en`,
+              `${versionPrefix}/non-functional/CX-NFR-CAF`,
+              `${versionPrefix}/non-functional/CX-NFR-IdP`,
+              `${versionPrefix}/non-functional/CX-NFR-IdP/Changelog`,
+            ];
           }
           return undefined;
         },
