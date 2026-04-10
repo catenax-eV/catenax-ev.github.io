@@ -30,8 +30,8 @@ jobs:
             echo "base_url=/" >> $GITHUB_OUTPUT
           else
             BRANCH=$(echo "${{ github.ref_name }}" | sed 's/[^a-zA-Z0-9._-]/-/g')
-            echo "dir=preview/${BRANCH}" >> $GITHUB_OUTPUT
-            echo "base_url=/preview/${BRANCH}/" >> $GITHUB_OUTPUT
+            echo "dir=branch/${BRANCH}" >> $GITHUB_OUTPUT
+            echo "base_url=/branch/${BRANCH}/" >> $GITHUB_OUTPUT
           fi
 
       - name: Build website
@@ -57,12 +57,12 @@ jobs:
           user_name: github-actions[bot]
           user_email: 41898282+github-actions[bot]@users.noreply.github.com
 
-      - name: Comment preview URL on PR
+      - name: Comment branch URL on PR
         if: github.ref_name != 'main'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          PREVIEW_URL="https://catenax-ev.github.io${{ steps.dest.outputs.base_url }}"
+          BRANCH_URL="https://catenax-ev.github.io${{ steps.dest.outputs.base_url }}"
           PR_NUMBER=$(gh pr list --head "${{ github.ref_name }}" --json number --jq '.[0].number')
 
           if [ -z "$PR_NUMBER" ]; then
@@ -70,13 +70,13 @@ jobs:
             exit 0
           fi
 
-          COMMENT_MARKER="<!-- preview-url-comment -->"
+          COMMENT_MARKER="<!-- branch-url-comment -->"
           COMMENT_BODY="${COMMENT_MARKER}
-          ## 🔍 Preview Deployment
+          ## 🌿 Branch Deployment
 
-          Your changes have been deployed to the preview environment:
+          Your changes have been deployed to the branch environment:
 
-          🌐 **Preview URL:** ${PREVIEW_URL}
+          🌐 **Branch URL:** ${BRANCH_URL}
 
           > This comment is updated automatically on every push to this branch."
 
