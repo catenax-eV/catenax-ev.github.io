@@ -134,7 +134,7 @@ The issuance of the Membership Credential from the CSP-B to the prospective part
 - [CX-0010 Business Partner Number](https://catenax-ev.github.io/docs/standards/CX-0010-BusinessPartnerNumber)
 - [CX-0050 Catena-X Specific Credentials](https://catenax-ev.github.io/docs/standards/CX-0050-CXSpecificCredentials)
 - [CX-0149 Wallet Requirements](https://catenax-ev.github.io/docs/standards/CX-0149-WalletRequirements)
-- CX-XXXX: Identity Proofing
+- [CX-NFR-IdP: Identity Proofing](https://catenax-ev.github.io/docs/next/rulebooks/CX-NFR-IdP)
 
 ### Non-normative
 
