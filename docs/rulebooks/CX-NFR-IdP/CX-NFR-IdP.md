@@ -103,7 +103,7 @@ The process is considered successful when the Gaia-X Compliance Service has retu
 
 ### 3.1 Normative references
 
-- [CX-0006](https://catenax-ev.github.io/docs/standards/CX-0006-RegistrationAndInitialOnboarding)
+- [CX-0006: Registration and Initial Onboarding](https://catenax-ev.github.io/docs/standards/CX-0006-RegistrationAndInitialOnboarding)
 - [Gaia-X Trust Framework v22.10](https://docs.gaia-x.eu/policy-rules-committee/trust-framework/22.10/participant/).
 - [Gaia-X Architecture Document v23.10](https://docs.gaia-x.eu/technical-committee/architecture-document/23.10/gx_services/)
 
