@@ -41,6 +41,7 @@ pagination_next: null
 | Mexico | MX |
 | Netherlands | NL |
 | Norway | NOK |
+| Philippines | PH |
 | Poland | PL |
 | Portugal | PT |
 | Romania | RO |
@@ -102,7 +103,6 @@ pagination_next: null
 | North Macedonia | MP |
 | Norway | NO |
 | Oman | OM |
-| Philippines | PH |
 | Qatar | QA |
 | Rwanda | RW |
 | Saint Lucia | LC |
