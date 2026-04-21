@@ -1,0 +1,5 @@
+{
+  "leftOperand": "ContractTermination",
+  "operator": "eq",
+  "rightOperand": "cx.data.keeping"
+}
