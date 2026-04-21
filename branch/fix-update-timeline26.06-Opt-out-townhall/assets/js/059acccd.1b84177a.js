@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkcatenax_ev_github_io_new=globalThis.webpackChunkcatenax_ev_github_io_new||[]).push([[58135],{76736(e){e.exports=JSON.parse('{"metadata":{"permalink":"/branch/fix-update-timeline26.06-Opt-out-townhall/blog-releasenotes","page":1,"postsPerPage":10,"totalPages":1,"totalCount":4,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);

@@ -1,0 +1,5 @@
+{
+    "leftOperand": "WarrantyDurationMonths",
+    "operator": "eq",
+    "rightOperand": 12
+}
