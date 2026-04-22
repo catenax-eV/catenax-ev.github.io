@@ -73,7 +73,8 @@ function extractTitleFromMarkdown(markdown, frontmatterTitle, slug) {
   const h1Match = markdown.match(/^#\s+(.+)$/m);
   if (h1Match) {
     return h1Match[1]
-      .replace(/^CX-\d+\s+/i, '')
+      .replace(/^CX-\d+\s*/i, '')
+      .replace(/^[-–]\s*/, '')
       .replace(/\s+v[\d.]+$/i, '')
       .trim();
   }
