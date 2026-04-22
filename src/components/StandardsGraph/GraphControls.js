@@ -1,9 +1,15 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import styles from './StandardsGraph.module.css';
 
 const CATEGORY_CONFIG = {
   usecase: { label: 'Use Case Standards', color: '#27AE60' },
   component: { label: 'Component Standards', color: '#386FB3' },
+};
+
+// Maps the prefix before "/" to a human-readable group name
+const TAG_GROUP_LABELS = {
+  CAT: 'Category',
+  UC: 'Use Case',
 };
 
 export default function GraphControls({
@@ -14,9 +20,25 @@ export default function GraphControls({
   allVersions = [],
   currentVersion = 'current',
   onVersionChange,
+  availableTags = [],
+  selectedTags = [],
+  onTagFilterChange,
 }) {
   const [searchValue, setSearchValue] = useState('');
   const [isExpanded, setIsExpanded] = useState(true);
+
+  // Group tags by their prefix (e.g. "CAT" or "UC")
+  const tagGroups = useMemo(() => {
+    const groups = {};
+    for (const tag of availableTags) {
+      const slashIdx = tag.indexOf('/');
+      const prefix = slashIdx !== -1 ? tag.slice(0, slashIdx) : 'Other';
+      const label = slashIdx !== -1 ? tag.slice(slashIdx + 1) : tag;
+      if (!groups[prefix]) groups[prefix] = [];
+      groups[prefix].push({ tag, label });
+    }
+    return groups;
+  }, [availableTags]);
 
   const handleCategoryChange = category => {
     const newSelected = selectedCategories.includes(category)
@@ -35,10 +57,18 @@ export default function GraphControls({
     onVersionChange(e.target.value);
   };
 
+  const handleTagChange = tag => {
+    const newSelected = selectedTags.includes(tag)
+      ? selectedTags.filter(t => t !== tag)
+      : [...selectedTags, tag];
+    onTagFilterChange(newSelected);
+  };
+
   const clearAllFilters = () => {
     setSearchValue('');
     onCategoryFilterChange(['usecase', 'component']);
     onSearchChange('');
+    onTagFilterChange([]);
   };
 
   return (
@@ -106,6 +136,41 @@ export default function GraphControls({
                   );
                 })}
               </div>
+            </div>
+          )}
+
+          {availableTags.length > 0 && (
+            <div className={styles.controlSection}>
+              <label className={styles.controlLabel}>
+                Tags
+                {selectedTags.length > 0 && (
+                  <button
+                    className={styles.tagClearButton}
+                    onClick={() => onTagFilterChange([])}
+                  >
+                    Clear
+                  </button>
+                )}
+              </label>
+              {Object.entries(tagGroups).map(([prefix, items]) => (
+                <div key={prefix} className={styles.tagGroup}>
+                  <div className={styles.tagGroupLabel}>
+                    {TAG_GROUP_LABELS[prefix] ?? prefix}
+                  </div>
+                  <div className={styles.checkboxGroup}>
+                    {items.map(({ tag, label }) => (
+                      <label key={tag} className={styles.checkbox}>
+                        <input
+                          type="checkbox"
+                          checked={selectedTags.includes(tag)}
+                          onChange={() => handleTagChange(tag)}
+                        />
+                        <span>{label}</span>
+                      </label>
+                    ))}
+                  </div>
+                </div>
+              ))}
             </div>
           )}
 

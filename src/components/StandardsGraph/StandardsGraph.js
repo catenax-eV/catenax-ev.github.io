@@ -321,6 +321,7 @@ export default function StandardsGraph() {
   }
 
   const availableCategories = [...new Set(graphData.nodes.map(n => n.category))];
+  const availableTags = [...new Set(graphData.nodes.flatMap(n => n.tags || []))].sort();
 
   return (
     <div className={styles.container}>
@@ -332,6 +333,9 @@ export default function StandardsGraph() {
         allVersions={allVersions}
         currentVersion={currentVersion}
         onVersionChange={handleVersionChange}
+        availableTags={availableTags}
+        selectedTags={selectedTags}
+        onTagFilterChange={handleTagFilterChange}
       />
       <ReactFlow
         nodes={nodes}

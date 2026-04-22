@@ -321,6 +321,38 @@
   border-color: var(--ifm-color-emphasis-400);
 }
 
+.tagGroup {
+  margin-top: 10px;
+}
+
+.tagGroupLabel {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--ifm-color-emphasis-500);
+  margin-bottom: 6px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.tagClearButton {
+  float: right;
+  font-size: 0.65rem;
+  font-weight: 600;
+  background: none;
+  border: none;
+  color: var(--ifm-color-primary);
+  cursor: pointer;
+  padding: 0;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.tagClearButton:hover {
+  text-decoration: underline;
+}
+
 .legend {
   margin-top: 16px;
   padding-top: 16px;
