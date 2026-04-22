@@ -61,6 +61,7 @@ export default function StandardsGraph() {
   const [edges, setEdges, onEdgesChange] = useEdgesState([]);
   const [filteredCategories, setFilteredCategories] = useState(['usecase', 'component']);
   const [searchTerm, setSearchTerm] = useState('');
+  const [selectedTags, setSelectedTags] = useState([]);
   const [loading, setLoading] = useState(true);
   const [currentVersion, setCurrentVersion] = useState(null);
   const [hoveredNodeId, setHoveredNodeId] = useState(null);
@@ -141,7 +142,10 @@ export default function StandardsGraph() {
         searchTerm === '' ||
         node.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
         node.number.includes(searchTerm);
-      return categoryMatch && searchMatch;
+      const tagMatch =
+        selectedTags.length === 0 ||
+        (node.tags && node.tags.some(t => selectedTags.includes(t)));
+      return categoryMatch && searchMatch && tagMatch;
     });
 
     const filteredNodeIds = new Set(filteredNodes.map(n => n.id));
@@ -229,7 +233,7 @@ export default function StandardsGraph() {
 
     setNodes(layoutedNodes);
     setEdges(layoutedEdges);
-  }, [graphData, filteredCategories, searchTerm, colorMode, currentVersion, latestVersion, baseUrl]);
+  }, [graphData, filteredCategories, searchTerm, selectedTags, colorMode, currentVersion, latestVersion, baseUrl]);
 
   // Focus impact analysis — driven by click (pinned) or hover (transient)
   useEffect(() => {
@@ -278,6 +282,10 @@ export default function StandardsGraph() {
 
   const handleSearchChange = useCallback(term => {
     setSearchTerm(term);
+  }, []);
+
+  const handleTagFilterChange = useCallback(tags => {
+    setSelectedTags(tags);
   }, []);
 
   const onNodeMouseEnter = useCallback((_, node) => {
