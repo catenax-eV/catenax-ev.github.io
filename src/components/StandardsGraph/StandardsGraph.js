@@ -76,7 +76,8 @@ export default function StandardsGraph() {
 
   const { preferredVersion } = useDocsPreferredVersion('default');
 
-  // Determine which version's graph data to load
+  // Determine which version's graph data to load.
+  // URL param wins; otherwise fall back to the Docusaurus preferred version.
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     const versionParam = params.get('version');
@@ -86,6 +87,10 @@ export default function StandardsGraph() {
     }
     setCurrentVersion(preferredVersion ? preferredVersion.name : 'current');
   }, [location.search, preferredVersion]);
+
+  const handleVersionChange = useCallback(version => {
+    setCurrentVersion(version);
+  }, []);
 
   // Load graph data based on docs version
   useEffect(() => {
@@ -305,6 +310,9 @@ export default function StandardsGraph() {
         selectedCategories={filteredCategories}
         onCategoryFilterChange={handleCategoryFilterChange}
         onSearchChange={handleSearchChange}
+        allVersions={allVersions}
+        currentVersion={currentVersion}
+        onVersionChange={handleVersionChange}
       />
       <ReactFlow
         nodes={nodes}

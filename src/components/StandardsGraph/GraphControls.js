@@ -11,6 +11,9 @@ export default function GraphControls({
   selectedCategories = [],
   onCategoryFilterChange,
   onSearchChange,
+  allVersions = [],
+  currentVersion = 'current',
+  onVersionChange,
 }) {
   const [searchValue, setSearchValue] = useState('');
   const [isExpanded, setIsExpanded] = useState(true);
@@ -26,6 +29,10 @@ export default function GraphControls({
     const value = e.target.value;
     setSearchValue(value);
     onSearchChange(value);
+  };
+
+  const handleVersionChange = e => {
+    onVersionChange(e.target.value);
   };
 
   const clearAllFilters = () => {
@@ -52,6 +59,23 @@ export default function GraphControls({
 
       {isExpanded && (
         <div className={styles.controlsContent}>
+          {allVersions.length > 0 && (
+            <div className={styles.controlSection}>
+              <label className={styles.controlLabel}>Version</label>
+              <select
+                value={currentVersion ?? 'current'}
+                onChange={handleVersionChange}
+                className={styles.versionSelect}
+              >
+                {allVersions.map(v => (
+                  <option key={v.name} value={v.name}>
+                    {v.label}
+                  </option>
+                ))}
+              </select>
+            </div>
+          )}
+
           <div className={styles.controlSection}>
             <label className={styles.controlLabel}>Search</label>
             <input
