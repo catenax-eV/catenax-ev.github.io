@@ -39,6 +39,7 @@ const config: Config = {
 
   plugins: [
     require.resolve("docusaurus-plugin-image-zoom"),
+    require.resolve('./plugins/docusaurus-standards-graph-plugin'),
     [
       require.resolve('@docusaurus/plugin-client-redirects'),
       {
@@ -167,6 +168,10 @@ const config: Config = {
             {
               to: '/docs/standards/overview/',
               label: 'Technical Standards',
+            },
+            {
+              to: '/standards-graph',
+              label: 'Standards Graph',
             },
             {
               to: '/docs/next/rulebooks/overview/',
