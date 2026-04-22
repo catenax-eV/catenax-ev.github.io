@@ -64,6 +64,7 @@ export default function StandardsGraph() {
   const [loading, setLoading] = useState(true);
   const [currentVersion, setCurrentVersion] = useState(null);
   const [hoveredNodeId, setHoveredNodeId] = useState(null);
+  const [selectedNodeId, setSelectedNodeId] = useState(null);
   const { colorMode } = useColorMode();
   const location = useLocation();
 
@@ -100,6 +101,7 @@ export default function StandardsGraph() {
     const { signal } = controller;
 
     setLoading(true);
+    setSelectedNodeId(null);
 
     const dataFile =
       currentVersion === 'current'
@@ -229,16 +231,17 @@ export default function StandardsGraph() {
     setEdges(layoutedEdges);
   }, [graphData, filteredCategories, searchTerm, colorMode, currentVersion, latestVersion, baseUrl]);
 
-  // Hover impact analysis — lightweight style-only update
+  // Focus impact analysis — driven by click (pinned) or hover (transient)
   useEffect(() => {
     if (!graphData.edges) return;
 
+    const activeNodeId = selectedNodeId ?? hoveredNodeId;
     const connectedNodeIds = new Set();
-    if (hoveredNodeId) {
-      connectedNodeIds.add(hoveredNodeId);
+    if (activeNodeId) {
+      connectedNodeIds.add(activeNodeId);
       for (const edge of graphData.edges) {
-        if (edge.source === hoveredNodeId) connectedNodeIds.add(edge.target);
-        if (edge.target === hoveredNodeId) connectedNodeIds.add(edge.source);
+        if (edge.source === activeNodeId) connectedNodeIds.add(edge.target);
+        if (edge.target === activeNodeId) connectedNodeIds.add(edge.source);
       }
     }
 
@@ -247,7 +250,7 @@ export default function StandardsGraph() {
         ...node,
         style: {
           ...node.style,
-          opacity: hoveredNodeId && !connectedNodeIds.has(node.id) ? 0.2 : 1,
+          opacity: activeNodeId && !connectedNodeIds.has(node.id) ? 0.2 : 1,
         },
       }))
     );
@@ -255,19 +258,19 @@ export default function StandardsGraph() {
     setEdges(eds =>
       eds.map(edge => {
         const isConnected =
-          hoveredNodeId &&
-          (edge.source === hoveredNodeId || edge.target === hoveredNodeId);
+          activeNodeId &&
+          (edge.source === activeNodeId || edge.target === activeNodeId);
         return {
           ...edge,
           style: {
             ...edge.style,
-            opacity: hoveredNodeId && !isConnected ? 0.1 : 1,
+            opacity: activeNodeId && !isConnected ? 0.1 : 1,
             strokeWidth: isConnected ? 5 : 3,
           },
         };
       })
     );
-  }, [hoveredNodeId, graphData.edges]);
+  }, [hoveredNodeId, selectedNodeId, graphData.edges]);
 
   const handleCategoryFilterChange = useCallback(categories => {
     setFilteredCategories(categories);
@@ -283,6 +286,14 @@ export default function StandardsGraph() {
 
   const onNodeMouseLeave = useCallback(() => {
     setHoveredNodeId(null);
+  }, []);
+
+  const onNodeClick = useCallback((_, node) => {
+    setSelectedNodeId(prev => (prev === node.id ? null : node.id));
+  }, []);
+
+  const onPaneClick = useCallback(() => {
+    setSelectedNodeId(null);
   }, []);
 
   if (loading) {
@@ -321,6 +332,8 @@ export default function StandardsGraph() {
         onEdgesChange={onEdgesChange}
         onNodeMouseEnter={onNodeMouseEnter}
         onNodeMouseLeave={onNodeMouseLeave}
+        onNodeClick={onNodeClick}
+        onPaneClick={onPaneClick}
         nodeTypes={nodeTypes}
         fitView
         minZoom={0.1}

@@ -3,7 +3,7 @@ import { Handle, Position } from 'reactflow';
 import styles from './StandardsGraph.module.css';
 
 function CustomNode({ data }) {
-  const { number, title, path, isHighlighted } = data;
+  const { number, title, isHighlighted } = data;
 
   return (
     <div className={`${styles.bubbleNode} ${isHighlighted ? styles.highlighted : ''}`}>
@@ -11,7 +11,7 @@ function CustomNode({ data }) {
       <Handle type="target" position={Position.Left} className={styles.handle} />
       <Handle type="target" position={Position.Right} className={styles.handle} />
 
-      <a href={path} className={styles.bubbleContent} title={title}>
+      <div className={styles.bubbleContent} title={title}>
         <div className={styles.bubbleCenter}>
           <div className={styles.cxNumberBubble}>
             CX-{number}
@@ -20,7 +20,7 @@ function CustomNode({ data }) {
         <div className={styles.bubbleTitle}>
           {title}
         </div>
-      </a>
+      </div>
 
       <Handle type="source" position={Position.Bottom} className={styles.handle} />
       <Handle type="source" position={Position.Left} className={styles.handle} />
