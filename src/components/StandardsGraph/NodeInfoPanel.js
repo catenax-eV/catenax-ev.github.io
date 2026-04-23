@@ -26,6 +26,7 @@ export default function NodeInfoPanel({
   graphData,
   currentVersion,
   onSelectNode,
+  ownerData = null,
 }) {
   const [isExpanded, setIsExpanded] = useState(true);
   const baseUrl = useBaseUrl('/');
@@ -164,6 +165,47 @@ export default function NodeInfoPanel({
               </div>
             </div>
           )}
+
+          {ownerData && (() => {
+            const owner = ownerData.standards?.[selectedNode.number];
+            if (!owner) return null;
+            const committee = owner.committeeId ? ownerData.committees?.[owner.committeeId] : null;
+            const expertGroup = owner.expertGroupId ? ownerData.expertGroups?.[owner.expertGroupId] : null;
+            return (
+              <>
+                <div className={styles.controlSection}>
+                  <label className={styles.controlLabel}>Committee</label>
+                  {committee ? (
+                    committee.url ? (
+                      <a href={committee.url} target="_blank" rel="noopener noreferrer" className={styles.ownerLink}>
+                        {committee.label}
+                      </a>
+                    ) : (
+                      <span className={styles.ownerLabel}>{committee.label}</span>
+                    )
+                  ) : (
+                    <span className={styles.ownerNone}>—</span>
+                  )}
+                </div>
+                <div className={styles.controlSection}>
+                  <label className={styles.controlLabel}>Expert Group</label>
+                  {expertGroup ? (
+                    expertGroup.url ? (
+                      <a href={expertGroup.url} target="_blank" rel="noopener noreferrer" className={styles.ownerLink}>
+                        {expertGroup.label}
+                      </a>
+                    ) : (
+                      <span className={styles.ownerLabel}>{expertGroup.label}</span>
+                    )
+                  ) : owner.expertGroupNote ? (
+                    <span className={styles.ownerNote}>{owner.expertGroupNote}</span>
+                  ) : (
+                    <span className={styles.ownerNone}>—</span>
+                  )}
+                </div>
+              </>
+            );
+          })()}
 
           <div className={styles.controlSection}>
             <label className={styles.controlLabel}>

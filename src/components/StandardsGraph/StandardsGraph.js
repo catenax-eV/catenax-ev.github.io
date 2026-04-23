@@ -58,11 +58,14 @@ const getBubbleDimensions = (referenceCount) => {
 
 export default function StandardsGraph() {
   const [graphData, setGraphData] = useState({ nodes: [], edges: [] });
+  const [ownerData, setOwnerData] = useState(null);
   const [nodes, setNodes, onNodesChange] = useNodesState([]);
   const [edges, setEdges, onEdgesChange] = useEdgesState([]);
   const [filteredCategories, setFilteredCategories] = useState(['usecase', 'component']);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedTags, setSelectedTags] = useState([]);
+  const [selectedCommittees, setSelectedCommittees] = useState([]);
+  const [selectedExpertGroups, setSelectedExpertGroups] = useState([]);
   const [loading, setLoading] = useState(true);
   const [currentVersion, setCurrentVersion] = useState(null);
   const [selectedNodeId, setSelectedNodeId] = useState(null);
@@ -70,6 +73,14 @@ export default function StandardsGraph() {
   const location = useLocation();
 
   const baseUrl = useBaseUrl('/');
+
+  // Load standard-owners data once
+  useEffect(() => {
+    fetch(`${baseUrl}standard-owners.json`)
+      .then(r => r.ok ? r.json() : null)
+      .then(data => setOwnerData(data))
+      .catch(() => setOwnerData(null));
+  }, [baseUrl]);
 
   // Get versions and user preference from Docusaurus plugin
   const allVersions = useVersions('default');
@@ -145,7 +156,14 @@ export default function StandardsGraph() {
       const tagMatch =
         selectedTags.length === 0 ||
         (node.tags && node.tags.some(t => selectedTags.includes(t)));
-      return categoryMatch && searchMatch && tagMatch;
+      const nodeOwner = ownerData?.standards?.[node.number];
+      const committeeMatch =
+        selectedCommittees.length === 0 ||
+        selectedCommittees.includes(nodeOwner?.committeeId ?? null);
+      const expertGroupMatch =
+        selectedExpertGroups.length === 0 ||
+        selectedExpertGroups.includes(nodeOwner?.expertGroupId ?? null);
+      return categoryMatch && searchMatch && tagMatch && committeeMatch && expertGroupMatch;
     });
 
     const filteredNodeIds = new Set(filteredNodes.map(n => n.id));
@@ -233,7 +251,7 @@ export default function StandardsGraph() {
 
     setNodes(layoutedNodes);
     setEdges(layoutedEdges);
-  }, [graphData, filteredCategories, searchTerm, selectedTags, colorMode, currentVersion, latestVersion, baseUrl]);
+  }, [graphData, filteredCategories, searchTerm, selectedTags, selectedCommittees, selectedExpertGroups, ownerData, colorMode, currentVersion, latestVersion, baseUrl]);
 
   // Focus impact analysis — driven by click (pinned)
   useEffect(() => {
@@ -287,6 +305,14 @@ export default function StandardsGraph() {
     setSelectedTags(tags);
   }, []);
 
+  const handleCommitteeFilterChange = useCallback(committees => {
+    setSelectedCommittees(committees);
+  }, []);
+
+  const handleExpertGroupFilterChange = useCallback(expertGroups => {
+    setSelectedExpertGroups(expertGroups);
+  }, []);
+
   const onNodeClick = useCallback((_, node) => {
     setSelectedNodeId(prev => (prev === node.id ? null : node.id));
   }, []);
@@ -314,6 +340,22 @@ export default function StandardsGraph() {
   const availableCategories = [...new Set(graphData.nodes.map(n => n.category))];
   const availableTags = [...new Set(graphData.nodes.flatMap(n => n.tags || []))].sort();
 
+  // Derive available committees/expert-groups from nodes present in the current graph
+  const availableCommittees = ownerData
+    ? [...new Set(
+        graphData.nodes
+          .map(n => ownerData.standards?.[n.number]?.committeeId)
+          .filter(Boolean)
+      )].sort()
+    : [];
+  const availableExpertGroups = ownerData
+    ? [...new Set(
+        graphData.nodes
+          .map(n => ownerData.standards?.[n.number]?.expertGroupId)
+          .filter(Boolean)
+      )].sort()
+    : [];
+
   return (
     <div className={styles.container}>
       <GraphControls
@@ -327,6 +369,13 @@ export default function StandardsGraph() {
         availableTags={availableTags}
         selectedTags={selectedTags}
         onTagFilterChange={handleTagFilterChange}
+        ownerData={ownerData}
+        availableCommittees={availableCommittees}
+        selectedCommittees={selectedCommittees}
+        onCommitteeFilterChange={handleCommitteeFilterChange}
+        availableExpertGroups={availableExpertGroups}
+        selectedExpertGroups={selectedExpertGroups}
+        onExpertGroupFilterChange={handleExpertGroupFilterChange}
       />
       <ReactFlow
         nodes={nodes}
@@ -358,6 +407,7 @@ export default function StandardsGraph() {
         graphData={graphData}
         currentVersion={currentVersion}
         onSelectNode={setSelectedNodeId}
+        ownerData={ownerData}
       />
     </div>
   );

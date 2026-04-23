@@ -525,6 +525,34 @@
   border: 1px solid var(--ifm-color-emphasis-300);
 }
 
+.ownerLink {
+  font-size: 0.82rem;
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.ownerLink:hover {
+  text-decoration: underline;
+}
+
+.ownerLabel {
+  font-size: 0.82rem;
+  color: var(--ifm-font-color-base);
+  font-weight: 500;
+}
+
+.ownerNote {
+  font-size: 0.78rem;
+  color: var(--ifm-color-emphasis-600);
+  font-style: italic;
+}
+
+.ownerNone {
+  font-size: 0.82rem;
+  color: var(--ifm-color-emphasis-500);
+}
+
 /* Mobile Responsive */
 @media (max-width: 768px) {
   .container {
