@@ -432,10 +432,12 @@
 }
 
 .nodeListItem {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 2px;
-  padding: 6px 8px;
+  padding: 6px 8px 6px 8px;
+  padding-right: 72px;
   border-radius: 6px;
   background: var(--ifm-color-emphasis-100);
   transition: background 0.15s ease;
@@ -444,6 +446,20 @@
 
 .nodeListItem:hover {
   background: var(--ifm-color-emphasis-200);
+}
+
+.nodeListCategoryIndicator {
+  position: absolute;
+  top: 5px;
+  right: 6px;
+  padding: 1px 6px;
+  border-radius: 8px;
+  font-size: 0.6rem;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+  pointer-events: none;
 }
 
 .nodeListNumber {

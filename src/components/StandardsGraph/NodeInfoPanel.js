@@ -8,6 +8,19 @@ const CATEGORY_CONFIG = {
   component: { label: 'Component', color: '#386FB3' },
 };
 
+function CategoryPillar({ category }) {
+  const cfg = CATEGORY_CONFIG[category] || { label: category || 'Unknown', color: '#666' };
+  return (
+    <span
+      className={styles.nodeListCategoryIndicator}
+      style={{ background: cfg.color }}
+      aria-hidden="true"
+    >
+      {cfg.label}
+    </span>
+  );
+}
+
 export default function NodeInfoPanel({
   selectedNodeId,
   graphData,
@@ -82,6 +95,7 @@ export default function NodeInfoPanel({
                       onClick={() => onSelectNode && onSelectNode(node.id)}
                       title="Click to select this node in the graph"
                     >
+                      <CategoryPillar category={node.category} />
                       <a
                         href={buildPath(node)}
                         className={styles.nodeListNumber}
@@ -166,6 +180,7 @@ export default function NodeInfoPanel({
                       onClick={() => onSelectNode && onSelectNode(node.id)}
                       title="Click to select this node in the graph"
                     >
+                      <CategoryPillar category={node.category} />
                       <a
                         href={buildPath(node)}
                         className={styles.nodeListNumber}
@@ -197,6 +212,7 @@ export default function NodeInfoPanel({
                       onClick={() => onSelectNode && onSelectNode(node.id)}
                       title="Click to select this node in the graph"
                     >
+                      <CategoryPillar category={node.category} />
                       <a
                         href={buildPath(node)}
                         className={styles.nodeListNumber}
