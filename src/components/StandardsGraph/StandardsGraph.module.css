@@ -437,7 +437,7 @@
   flex-direction: column;
   gap: 2px;
   padding: 6px 8px 6px 8px;
-  padding-right: 72px;
+  padding-right: 58px;
   border-radius: 6px;
   background: var(--ifm-color-emphasis-100);
   transition: background 0.15s ease;
@@ -451,13 +451,13 @@
 .nodeListCategoryIndicator {
   position: absolute;
   top: 5px;
-  right: 6px;
-  padding: 1px 6px;
-  border-radius: 8px;
-  font-size: 0.6rem;
+  right: 5px;
+  padding: 0px 4px;
+  border-radius: 6px;
+  font-size: 0.5rem;
   font-weight: 600;
   color: #fff;
-  letter-spacing: 0.2px;
+  letter-spacing: 0.1px;
   white-space: nowrap;
   pointer-events: none;
 }
