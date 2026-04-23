@@ -12,6 +12,7 @@ export default function NodeInfoPanel({
   selectedNodeId,
   graphData,
   currentVersion,
+  onSelectNode,
 }) {
   const [isExpanded, setIsExpanded] = useState(true);
   const baseUrl = useBaseUrl('/');
@@ -107,10 +108,21 @@ export default function NodeInfoPanel({
               <ul className={styles.nodeList}>
                 {references.map(node => (
                   <li key={node.id}>
-                    <a href={buildPath(node)} className={styles.nodeListLink}>
-                      <span className={styles.nodeListNumber}>CX-{node.number}</span>
+                    <div
+                      className={styles.nodeListItem}
+                      onClick={() => onSelectNode && onSelectNode(node.id)}
+                      title="Click to select this node in the graph"
+                    >
+                      <a
+                        href={buildPath(node)}
+                        className={styles.nodeListNumber}
+                        onClick={e => e.stopPropagation()}
+                        title="Open standard document"
+                      >
+                        CX-{node.number}
+                      </a>
                       <span className={styles.nodeListTitle}>{node.title}</span>
-                    </a>
+                    </div>
                   </li>
                 ))}
               </ul>
@@ -127,10 +139,21 @@ export default function NodeInfoPanel({
               <ul className={styles.nodeList}>
                 {referencedBy.map(node => (
                   <li key={node.id}>
-                    <a href={buildPath(node)} className={styles.nodeListLink}>
-                      <span className={styles.nodeListNumber}>CX-{node.number}</span>
+                    <div
+                      className={styles.nodeListItem}
+                      onClick={() => onSelectNode && onSelectNode(node.id)}
+                      title="Click to select this node in the graph"
+                    >
+                      <a
+                        href={buildPath(node)}
+                        className={styles.nodeListNumber}
+                        onClick={e => e.stopPropagation()}
+                        title="Open standard document"
+                      >
+                        CX-{node.number}
+                      </a>
                       <span className={styles.nodeListTitle}>{node.title}</span>
-                    </a>
+                    </div>
                   </li>
                 ))}
               </ul>

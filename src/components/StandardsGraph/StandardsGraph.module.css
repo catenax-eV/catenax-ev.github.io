@@ -423,10 +423,31 @@
   text-decoration: none;
 }
 
+.nodeListItem {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 6px 8px;
+  border-radius: 6px;
+  background: var(--ifm-color-emphasis-100);
+  transition: background 0.15s ease;
+  cursor: pointer;
+}
+
+.nodeListItem:hover {
+  background: var(--ifm-color-emphasis-200);
+}
+
 .nodeListNumber {
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 700;
   color: var(--ifm-color-primary);
+  text-decoration: none;
+  width: fit-content;
+}
+
+.nodeListNumber:hover {
+  text-decoration: underline;
 }
 
 .nodeListTitle {
@@ -455,12 +476,12 @@
 
 .categoryBadge {
   display: inline-block;
-  padding: 3px 10px;
-  border-radius: 12px;
-  font-size: 0.75rem;
+  padding: 1px 7px;
+  border-radius: 10px;
+  font-size: 0.65rem;
   font-weight: 600;
   color: #fff;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.2px;
 }
 
 .tagsList {
@@ -471,9 +492,9 @@
 
 .tagPill {
   display: inline-block;
-  padding: 2px 8px;
-  border-radius: 10px;
-  font-size: 0.72rem;
+  padding: 1px 6px;
+  border-radius: 8px;
+  font-size: 0.65rem;
   font-weight: 500;
   background: var(--ifm-color-emphasis-200);
   color: var(--ifm-font-color-base);

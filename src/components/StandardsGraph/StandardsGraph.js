@@ -357,6 +357,7 @@ export default function StandardsGraph() {
         selectedNodeId={selectedNodeId}
         graphData={graphData}
         currentVersion={currentVersion}
+        onSelectNode={setSelectedNodeId}
       />
     </div>
   );
