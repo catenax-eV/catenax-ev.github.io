@@ -170,8 +170,9 @@ const config: Config = {
               label: 'Technical Standards',
             },
             {
-              type: 'html',
-              value: '<a class="dropdown__link" href="/standards-graph">Dependency Graph\u00a0<span style="background:#f97316;color:#fff;font-size:0.6rem;font-weight:700;padding:1px 5px;border-radius:5px;vertical-align:middle;letter-spacing:0.3px;">DRAFT</span></a>',
+              to: '/standards-graph',
+              label: 'Dependency Graph',
+              className: 'navbar-dependency-graph-link',
             },
             {
               to: '/docs/next/rulebooks/overview/',
