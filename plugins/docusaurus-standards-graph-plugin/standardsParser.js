@@ -119,7 +119,7 @@ function parseStandardFile(filePath) {
     category,
     tags: frontmatter.tags || [],
     references: Array.from(references),
-    path: `/standards/${slug}/${slug}`,
+    path: `/standards/${slug}`,
   };
 }
 

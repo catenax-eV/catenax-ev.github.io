@@ -10,7 +10,7 @@
         "CAT/Core Service Provider",
         "CAT/Sandbox Service Provider"
       ],
-      "path": "/standards/CX-0001-ParticipantAgentRegistration/CX-0001-ParticipantAgentRegistration",
+      "path": "/standards/CX-0001-ParticipantAgentRegistration",
       "referenceCount": 26
     },
     {
@@ -25,7 +25,7 @@
         "CAT/Semantic",
         "CAT/Digital Twin"
       ],
-      "path": "/standards/CX-0002-DigitalTwinsInCatenaX/CX-0002-DigitalTwinsInCatenaX",
+      "path": "/standards/CX-0002-DigitalTwinsInCatenaX",
       "referenceCount": 26
     },
     {
@@ -36,7 +36,7 @@
       "tags": [
         "CAT/Semantic"
       ],
-      "path": "/standards/CX-0003-SAMMSemanticAspectMetaModel/CX-0003-SAMMSemanticAspectMetaModel",
+      "path": "/standards/CX-0003-SAMMSemanticAspectMetaModel",
       "referenceCount": 32
     },
     {
@@ -45,7 +45,7 @@
       "title": "Item Relationship Service API 2.2.0",
       "category": "component",
       "tags": [],
-      "path": "/standards/CX-0005-ItemRelationshipServiceAPI/CX-0005-ItemRelationshipServiceAPI",
+      "path": "/standards/CX-0005-ItemRelationshipServiceAPI",
       "referenceCount": 1
     },
     {
@@ -58,7 +58,7 @@
         "CAT/Core Service Provider-B",
         "CAT/Onboarding Service Provider"
       ],
-      "path": "/standards/CX-0006-RegistrationAndInitialOnboarding/CX-0006-RegistrationAndInitialOnboarding",
+      "path": "/standards/CX-0006-RegistrationAndInitialOnboarding",
       "referenceCount": 10
     },
     {
@@ -67,7 +67,7 @@
       "title": "Minimal Data Provider Service Offering",
       "category": "component",
       "tags": [],
-      "path": "/standards/CX-0007-MinimalDataProviderServicesOffering/CX-0007-MinimalDataProviderServicesOffering",
+      "path": "/standards/CX-0007-MinimalDataProviderServicesOffering",
       "referenceCount": 0
     },
     {
@@ -81,7 +81,7 @@
         "CAT/Sandbox Service Provider",
         "CAT/Onboarding Service Provider"
       ],
-      "path": "/standards/CX-0009-CXRegistrationAPI/CX-0009-CXRegistrationAPI",
+      "path": "/standards/CX-0009-CXRegistrationAPI",
       "referenceCount": 1
     },
     {
@@ -94,7 +94,7 @@
         "CAT/Core Service Provider",
         "CAT/Sandbox Service Provider"
       ],
-      "path": "/standards/CX-0010-BusinessPartnerNumber/CX-0010-BusinessPartnerNumber",
+      "path": "/standards/CX-0010-BusinessPartnerNumber",
       "referenceCount": 25
     },
     {
@@ -107,7 +107,7 @@
         "CAT/Core Service Provider",
         "CAT/Sandbox Service Provider"
       ],
-      "path": "/standards/CX-0012-BusinessPartnerDataPoolAPI/CX-0012-BusinessPartnerDataPoolAPI",
+      "path": "/standards/CX-0012-BusinessPartnerDataPoolAPI",
       "referenceCount": 9
     },
     {
@@ -121,7 +121,7 @@
         "CAT/Enablement Service Provider",
         "CAT/Connector as a Service"
       ],
-      "path": "/standards/CX-0018-DataspaceConnectivity/CX-0018-DataspaceConnectivity",
+      "path": "/standards/CX-0018-DataspaceConnectivity",
       "referenceCount": 45
     },
     {
@@ -130,7 +130,7 @@
       "title": "ECLASS",
       "category": "component",
       "tags": [],
-      "path": "/standards/CX-0044-ECLASS/CX-0044-ECLASS",
+      "path": "/standards/CX-0044-ECLASS",
       "referenceCount": 1
     },
     {
@@ -139,7 +139,7 @@
       "title": "Aspect Model Data Chain Template",
       "category": "component",
       "tags": [],
-      "path": "/standards/CX-0045-AspectModelDataChainTemplate/CX-0045-AspectModelDataChainTemplate",
+      "path": "/standards/CX-0045-AspectModelDataChainTemplate",
       "referenceCount": 3
     },
     {
@@ -152,7 +152,7 @@
         "CAT/Core Service Provider-B",
         "CAT/Identity Wallet"
       ],
-      "path": "/standards/CX-0049-DIDDocumentSchema/CX-0049-DIDDocumentSchema",
+      "path": "/standards/CX-0049-DIDDocumentSchema",
       "referenceCount": 5
     },
     {
@@ -164,7 +164,7 @@
         "CAT/Portal",
         "CAT/Core Service Provider"
       ],
-      "path": "/standards/CX-0053-BPNDiscoveryServiceAPIs/CX-0053-BPNDiscoveryServiceAPIs",
+      "path": "/standards/CX-0053-BPNDiscoveryServiceAPIs",
       "referenceCount": 7
     },
     {
@@ -176,7 +176,7 @@
         "CAT/Marketplace",
         "CAT/Core Service Provider"
       ],
-      "path": "/standards/CX-0054-ApplicationServiceRelease/CX-0054-ApplicationServiceRelease",
+      "path": "/standards/CX-0054-ApplicationServiceRelease",
       "referenceCount": 0
     },
     {
@@ -185,7 +185,7 @@
       "title": "Data Processing Patterns for IT System Integration",
       "category": "component",
       "tags": [],
-      "path": "/standards/CX-0055-DataProcessingPatternsforITSystemIntegration/CX-0055-DataProcessingPatternsforITSystemIntegration",
+      "path": "/standards/CX-0055-DataProcessingPatternsforITSystemIntegration",
       "referenceCount": 1
     },
     {
@@ -197,7 +197,7 @@
         "CAT/Business Application Provider",
         "UC/Behavioral Twin"
       ],
-      "path": "/standards/CX-0059-UseCaseBehaviourTwinEndurancePredictor/CX-0059-UseCaseBehaviourTwinEndurancePredictor",
+      "path": "/standards/CX-0059-UseCaseBehaviourTwinEndurancePredictor",
       "referenceCount": 1
     },
     {
@@ -206,7 +206,7 @@
       "title": "Ontology Models to realize federated query in Catena-X",
       "category": "component",
       "tags": [],
-      "path": "/standards/CX-0067-OntologyModelsToRealizeFederatedQueryInCatenaX/CX-0067-OntologyModelsToRealizeFederatedQueryInCatenaX",
+      "path": "/standards/CX-0067-OntologyModelsToRealizeFederatedQueryInCatenaX",
       "referenceCount": 5
     },
     {
@@ -219,7 +219,7 @@
         "CAT/Core Service Provider",
         "CAT/BPDM"
       ],
-      "path": "/standards/CX-0074-BusinessPartnerGateAPI/CX-0074-BusinessPartnerGateAPI",
+      "path": "/standards/CX-0074-BusinessPartnerGateAPI",
       "referenceCount": 8
     },
     {
@@ -230,7 +230,7 @@
       "tags": [
         "CAT/Value Added Services"
       ],
-      "path": "/standards/CX-0076-GoldenRecordEndtoEndRequirementsStandard/CX-0076-GoldenRecordEndtoEndRequirementsStandard",
+      "path": "/standards/CX-0076-GoldenRecordEndtoEndRequirementsStandard",
       "referenceCount": 4
     },
     {
@@ -241,7 +241,7 @@
       "tags": [
         "CAT/Value Added Services"
       ],
-      "path": "/standards/CX-0077-DataQualityDashboard/CX-0077-DataQualityDashboard",
+      "path": "/standards/CX-0077-DataQualityDashboard",
       "referenceCount": 0
     },
     {
@@ -252,7 +252,7 @@
       "tags": [
         "CAT/Value Added Services"
       ],
-      "path": "/standards/CX-0078-BankDataVerificationDashboard/CX-0078-BankDataVerificationDashboard",
+      "path": "/standards/CX-0078-BankDataVerificationDashboard",
       "referenceCount": 0
     },
     {
@@ -263,7 +263,7 @@
       "tags": [
         "CAT/Value Added Services"
       ],
-      "path": "/standards/CX-0079-NaturalPersonScreeningDashboard/CX-0079-NaturalPersonScreeningDashboard",
+      "path": "/standards/CX-0079-NaturalPersonScreeningDashboard",
       "referenceCount": 0
     },
     {
@@ -274,7 +274,7 @@
       "tags": [
         "CAT/Value Added Services"
       ],
-      "path": "/standards/CX-0080-BPDMFraudPreventionService/CX-0080-BPDMFraudPreventionService",
+      "path": "/standards/CX-0080-BPDMFraudPreventionService",
       "referenceCount": 0
     },
     {
@@ -285,7 +285,7 @@
       "tags": [
         "CAT/Value Added Services"
       ],
-      "path": "/standards/CX-0081-BPDMCountryRisk/CX-0081-BPDMCountryRisk",
+      "path": "/standards/CX-0081-BPDMCountryRisk",
       "referenceCount": 0
     },
     {
@@ -296,7 +296,7 @@
       "tags": [
         "CAT/Semantic"
       ],
-      "path": "/standards/CX-0084-FederatedQueriesInDataSpaces/CX-0084-FederatedQueriesInDataSpaces",
+      "path": "/standards/CX-0084-FederatedQueriesInDataSpaces",
       "referenceCount": 5
     },
     {
@@ -308,7 +308,7 @@
         "CAT/Business Application Provider",
         "UC/Circularity"
       ],
-      "path": "/standards/CX-0105-AssetTrackingUseCase/CX-0105-AssetTrackingUseCase",
+      "path": "/standards/CX-0105-AssetTrackingUseCase",
       "referenceCount": 1
     },
     {
@@ -320,7 +320,7 @@
         "CAT/Business Application Provider",
         "UC/MaaS"
       ],
-      "path": "/standards/CX-0115-ManufacturingCapabilityExchange/CX-0115-ManufacturingCapabilityExchange",
+      "path": "/standards/CX-0115-ManufacturingCapabilityExchange",
       "referenceCount": 1
     },
     {
@@ -331,7 +331,7 @@
       "tags": [
         "CAT/Value Added Services"
       ],
-      "path": "/standards/CX-0116-SanctionWatchlistDashboard/CX-0116-SanctionWatchlistDashboard",
+      "path": "/standards/CX-0116-SanctionWatchlistDashboard",
       "referenceCount": 0
     },
     {
@@ -343,7 +343,7 @@
         "CAT/Business Application Provider",
         "UC/Circularity"
       ],
-      "path": "/standards/CX-0117-UseCaseCircularEconomySecondaryMarketplace/CX-0117-UseCaseCircularEconomySecondaryMarketplace",
+      "path": "/standards/CX-0117-UseCaseCircularEconomySecondaryMarketplace",
       "referenceCount": 1
     },
     {
@@ -356,7 +356,7 @@
         "CAT/Business Application Provider",
         "UC/Quality"
       ],
-      "path": "/standards/CX-0123-QualityUseCaseStandard/CX-0123-QualityUseCaseStandard",
+      "path": "/standards/CX-0123-QualityUseCaseStandard",
       "referenceCount": 0
     },
     {
@@ -368,7 +368,7 @@
         "CAT/Business Application Provider",
         "UC/Traceability"
       ],
-      "path": "/standards/CX-0125-TraceabilityUseCase/CX-0125-TraceabilityUseCase",
+      "path": "/standards/CX-0125-TraceabilityUseCase",
       "referenceCount": 4
     },
     {
@@ -380,7 +380,7 @@
         "CAT/Semantic",
         "CAT/Industry Core"
       ],
-      "path": "/standards/CX-0126-IndustryCorePartType/CX-0126-IndustryCorePartType",
+      "path": "/standards/CX-0126-IndustryCorePartType",
       "referenceCount": 14
     },
     {
@@ -392,7 +392,7 @@
         "CAT/Semantic",
         "CAT/Industry Core"
       ],
-      "path": "/standards/CX-0127-IndustryCorePartInstance/CX-0127-IndustryCorePartInstance",
+      "path": "/standards/CX-0127-IndustryCorePartInstance",
       "referenceCount": 10
     },
     {
@@ -401,7 +401,7 @@
       "title": "Demand and Capacity Management Data Exchange",
       "category": "component",
       "tags": [],
-      "path": "/standards/CX-0128-DemandandCapacityManagementDataExchange/CX-0128-DemandandCapacityManagementDataExchange",
+      "path": "/standards/CX-0128-DemandandCapacityManagementDataExchange",
       "referenceCount": 2
     },
     {
@@ -413,7 +413,7 @@
         "CAT/Business Application Provider",
         "UC/MaaS"
       ],
-      "path": "/standards/CX-0129-RequestforQuotationExchange/CX-0129-RequestforQuotationExchange",
+      "path": "/standards/CX-0129-RequestforQuotationExchange",
       "referenceCount": 0
     },
     {
@@ -425,7 +425,7 @@
         "CAT/Business Application Provider",
         "UC/Quality"
       ],
-      "path": "/standards/CX-0131-CircularityCore/CX-0131-CircularityCore",
+      "path": "/standards/CX-0131-CircularityCore",
       "referenceCount": 1
     },
     {
@@ -437,7 +437,7 @@
         "CAT/Business Application Provider",
         "UC/OSIM"
       ],
-      "path": "/standards/CX-0133-OnlineControlandSimulation/CX-0133-OnlineControlandSimulation",
+      "path": "/standards/CX-0133-OnlineControlandSimulation",
       "referenceCount": 0
     },
     {
@@ -448,7 +448,7 @@
       "tags": [
         "CAT/Value Added Services"
       ],
-      "path": "/standards/CX-0135-CompanyCertificateManagement/CX-0135-CompanyCertificateManagement",
+      "path": "/standards/CX-0135-CompanyCertificateManagement",
       "referenceCount": 0
     },
     {
@@ -460,7 +460,7 @@
         "CAT/Business Application Provider",
         "UC/PCF"
       ],
-      "path": "/standards/CX-0136-UseCasePCF/CX-0136-UseCasePCF",
+      "path": "/standards/CX-0136-UseCasePCF",
       "referenceCount": 1
     },
     {
@@ -472,7 +472,7 @@
         "CAT/Business Application Provider",
         "UC/Behavioral Twin"
       ],
-      "path": "/standards/CX-0138-UseCaseBehaviourTwinEnduranceEstimator/CX-0138-UseCaseBehaviourTwinEnduranceEstimator",
+      "path": "/standards/CX-0138-UseCaseBehaviourTwinEnduranceEstimator",
       "referenceCount": 1
     },
     {
@@ -484,7 +484,7 @@
         "CAT/Business Application Provider",
         "UC/Behavioral Twin"
       ],
-      "path": "/standards/CX-0141-HealthIndicatorUseCase/CX-0141-HealthIndicatorUseCase",
+      "path": "/standards/CX-0141-HealthIndicatorUseCase",
       "referenceCount": 0
     },
     {
@@ -496,7 +496,7 @@
         "CAT/Business Application Provider",
         "UC/Modular Production"
       ],
-      "path": "/standards/CX-0142-ShopFloorInformationService/CX-0142-ShopFloorInformationService",
+      "path": "/standards/CX-0142-ShopFloorInformationService",
       "referenceCount": 1
     },
     {
@@ -507,7 +507,7 @@
       "tags": [
         "UC/ESS"
       ],
-      "path": "/standards/CX-0144-ESSUseCaseStandard/CX-0144-ESSUseCaseStandard",
+      "path": "/standards/CX-0144-ESSUseCaseStandard",
       "referenceCount": 0
     },
     {
@@ -516,7 +516,7 @@
       "title": "Supply Chain Disruption Notifications 2.0.1",
       "category": "component",
       "tags": [],
-      "path": "/standards/CX-0146-SupplyChainDisruptionNotifications/CX-0146-SupplyChainDisruptionNotifications",
+      "path": "/standards/CX-0146-SupplyChainDisruptionNotifications",
       "referenceCount": 2
     },
     {
@@ -529,7 +529,7 @@
         "CAT/Core Service Provider",
         "CAT/Identity Wallet"
       ],
-      "path": "/standards/CX-0149-WalletRequirements/CX-0149-WalletRequirements",
+      "path": "/standards/CX-0149-WalletRequirements",
       "referenceCount": 3
     },
     {
@@ -541,7 +541,7 @@
         "CAT/Business Application Provider",
         "UC/Logistics"
       ],
-      "path": "/standards/CX-0150-UseCaseLogistics/CX-0150-UseCaseLogistics",
+      "path": "/standards/CX-0150-UseCaseLogistics",
       "referenceCount": 0
     },
     {
@@ -550,7 +550,7 @@
       "title": "Industry Core: Basics",
       "category": "component",
       "tags": [],
-      "path": "/standards/CX-0151-IndustryCoreBasics/CX-0151-IndustryCoreBasics",
+      "path": "/standards/CX-0151-IndustryCoreBasics",
       "referenceCount": 8
     },
     {
@@ -564,7 +564,7 @@
         "CAT/Policy",
         "CAT/Constraint"
       ],
-      "path": "/standards/CX-0152-PolicyConstrainsForDataExchange/CX-0152-PolicyConstrainsForDataExchange",
+      "path": "/standards/CX-0152-PolicyConstrainsForDataExchange",
       "referenceCount": 33
     },
     {
@@ -573,7 +573,7 @@
       "title": "Tariffs Use Case",
       "category": "component",
       "tags": [],
-      "path": "/standards/CX-0153-TariffsUseCase/CX-0153-TariffsUseCase",
+      "path": "/standards/CX-0153-TariffsUseCase",
       "referenceCount": 0
     },
     {
@@ -582,7 +582,7 @@
       "title": "Digital Master Data",
       "category": "component",
       "tags": [],
-      "path": "/standards/CX-0154-MasterDataManagement/CX-0154-MasterDataManagement",
+      "path": "/standards/CX-0154-MasterDataManagement",
       "referenceCount": 1
     },
     {
@@ -591,7 +591,7 @@
       "title": "Requirements Engineering",
       "category": "component",
       "tags": [],
-      "path": "/standards/CX-0155-RequirementsEngineering/CX-0155-RequirementsEngineering",
+      "path": "/standards/CX-0155-RequirementsEngineering",
       "referenceCount": 0
     },
     {
@@ -600,7 +600,7 @@
       "title": "Geometry",
       "category": "component",
       "tags": [],
-      "path": "/standards/CX-0156-Geometry/CX-0156-Geometry",
+      "path": "/standards/CX-0156-Geometry",
       "referenceCount": 0
     },
     {
@@ -609,7 +609,7 @@
       "title": "Predictive Unit Real-Time Information Service (PURIS)",
       "category": "component",
       "tags": [],
-      "path": "/standards/CX-0157-PURIS/CX-0157-PURIS",
+      "path": "/standards/CX-0157-PURIS",
       "referenceCount": 0
     },
     {
@@ -618,7 +618,7 @@
       "title": "Car SBOM",
       "category": "component",
       "tags": [],
-      "path": "/standards/CX-0158-CarSBOM/CX-0158-CarSBOM",
+      "path": "/standards/CX-0158-CarSBOM",
       "referenceCount": 0
     },
     {
@@ -627,7 +627,7 @@
       "title": "Material Accounting",
       "category": "component",
       "tags": [],
-      "path": "/standards/CX-0159-Material-Accounting/CX-0159-Material-Accounting",
+      "path": "/standards/CX-0159-Material-Accounting",
       "referenceCount": 0
     }
   ],
