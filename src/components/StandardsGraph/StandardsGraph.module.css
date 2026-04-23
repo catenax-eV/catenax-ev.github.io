@@ -173,6 +173,14 @@
   color: var(--ifm-font-color-base);
 }
 
+.panelTitleEmpty {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ifm-color-emphasis-600);
+  font-style: italic;
+}
+
 .panelTitle p {
   margin: 4px 0 0 0;
   font-size: 0.75rem;

@@ -47,7 +47,60 @@ export default function NodeInfoPanel({
     };
   }, [selectedNodeId, graphData]);
 
-  if (!selectedNodeId || !selectedNode) return null;
+  if (!selectedNodeId || !selectedNode) {
+    const allNodes = [...(graphData.nodes || [])].sort((a, b) =>
+      (a.number || '').localeCompare(b.number || '', undefined, { numeric: true })
+    );
+
+    return (
+      <div className={styles.nodeInfoPanel}>
+        <div className={styles.panelHeader}>
+          <div className={styles.panelTitle}>
+            <h2 className={styles.panelTitleEmpty}>No standard selected</h2>
+            <p>Click a node in the graph or select one below</p>
+          </div>
+          <button
+            className={styles.toggleButton}
+            onClick={() => setIsExpanded(!isExpanded)}
+            aria-label="Toggle info panel"
+          >
+            {isExpanded ? '−' : '+'}
+          </button>
+        </div>
+
+        {isExpanded && (
+          <div className={styles.controlsContent}>
+            <div className={styles.controlSection}>
+              <label className={styles.controlLabel}>
+                All Standards ({allNodes.length})
+              </label>
+              <ul className={styles.nodeList}>
+                {allNodes.map(node => (
+                  <li key={node.id}>
+                    <div
+                      className={styles.nodeListItem}
+                      onClick={() => onSelectNode && onSelectNode(node.id)}
+                      title="Click to select this node in the graph"
+                    >
+                      <a
+                        href={buildPath(node)}
+                        className={styles.nodeListNumber}
+                        onClick={e => e.stopPropagation()}
+                        title="Open standard document"
+                      >
+                        CX-{node.number}
+                      </a>
+                      <span className={styles.nodeListTitle}>{node.title}</span>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        )}
+      </div>
+    );
+  }
 
   const categoryConfig = CATEGORY_CONFIG[selectedNode.category] || { label: selectedNode.category, color: '#666' };
 
