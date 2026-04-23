@@ -10,6 +10,7 @@ import ReactFlow, {
 import 'reactflow/dist/style.css';
 import CustomNode from './CustomNode';
 import GraphControls from './GraphControls';
+import NodeInfoPanel from './NodeInfoPanel';
 import styles from './StandardsGraph.module.css';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import { useColorMode } from '@docusaurus/theme-common';
@@ -352,6 +353,13 @@ export default function StandardsGraph() {
           }
         />
       </ReactFlow>
+      <NodeInfoPanel
+        selectedNodeId={selectedNodeId}
+        graphData={graphData}
+        baseUrl={baseUrl}
+        currentVersion={currentVersion}
+        latestVersion={latestVersion}
+      />
     </div>
   );
 }

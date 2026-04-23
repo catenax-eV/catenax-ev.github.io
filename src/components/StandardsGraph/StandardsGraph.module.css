@@ -384,6 +384,64 @@
   flex-shrink: 0;
 }
 
+/* Node Info Panel (right side) */
+.nodeInfoPanel {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: var(--ifm-background-surface-color);
+  border-radius: var(--ifm-card-border-radius);
+  box-shadow: var(--ifm-global-shadow-lw);
+  z-index: 10;
+  width: 280px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  overflow: hidden;
+}
+
+.nodeList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.nodeListLink {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 6px 8px;
+  border-radius: 6px;
+  text-decoration: none;
+  background: var(--ifm-color-emphasis-100);
+  transition: background 0.15s ease;
+}
+
+.nodeListLink:hover {
+  background: var(--ifm-color-emphasis-200);
+  text-decoration: none;
+}
+
+.nodeListNumber {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--ifm-color-primary);
+}
+
+.nodeListTitle {
+  font-size: 0.8rem;
+  color: var(--ifm-font-color-base);
+  line-height: 1.3;
+}
+
+.emptyList {
+  font-size: 0.8rem;
+  color: var(--ifm-color-emphasis-500);
+  font-style: italic;
+  margin: 4px 0 0 0;
+}
+
 /* Mobile Responsive */
 @media (max-width: 768px) {
   .container {
@@ -403,6 +461,10 @@
     max-height: 30vh;
   }
 
+  .nodeInfoPanel {
+    display: none;
+  }
+
   .cxNumberBubble {
     font-size: 1.3rem;
   }
@@ -418,6 +480,10 @@
 
 /* Dark Mode */
 [data-theme='dark'] .controlPanel {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme='dark'] .nodeInfoPanel {
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
 }
 
