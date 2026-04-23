@@ -1,14 +1,22 @@
 import React, { useMemo, useState } from 'react';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import { useVersions } from '@docusaurus/plugin-content-docs/client';
 import styles from './StandardsGraph.module.css';
+
+const CATEGORY_CONFIG = {
+  usecase: { label: 'Use Case', color: '#27AE60' },
+  component: { label: 'Component', color: '#386FB3' },
+};
 
 export default function NodeInfoPanel({
   selectedNodeId,
   graphData,
-  baseUrl,
   currentVersion,
-  latestVersion,
 }) {
   const [isExpanded, setIsExpanded] = useState(true);
+  const baseUrl = useBaseUrl('/');
+  const allVersions = useVersions('default');
+  const latestVersion = allVersions.find(v => v.isLast)?.name ?? null;
 
   const selectedNode = useMemo(
     () => (graphData.nodes || []).find(n => n.id === selectedNodeId),
@@ -40,11 +48,17 @@ export default function NodeInfoPanel({
 
   if (!selectedNodeId || !selectedNode) return null;
 
+  const categoryConfig = CATEGORY_CONFIG[selectedNode.category] || { label: selectedNode.category, color: '#666' };
+
   return (
     <div className={styles.nodeInfoPanel}>
       <div className={styles.panelHeader}>
         <div className={styles.panelTitle}>
-          <h2>CX-{selectedNode.number}</h2>
+          <h2>
+            <a href={buildPath(selectedNode)} className={styles.panelTitleLink}>
+              CX-{selectedNode.number}
+            </a>
+          </h2>
           <p>{selectedNode.title}</p>
         </div>
         <button
@@ -58,6 +72,31 @@ export default function NodeInfoPanel({
 
       {isExpanded && (
         <div className={styles.controlsContent}>
+          <div className={styles.controlSection}>
+            <label className={styles.controlLabel}>Category</label>
+            <span
+              className={styles.categoryBadge}
+              style={{ background: categoryConfig.color }}
+            >
+              {categoryConfig.label}
+            </span>
+          </div>
+
+          {selectedNode.tags && selectedNode.tags.length > 0 && (
+            <div className={styles.controlSection}>
+              <label className={styles.controlLabel}>Tags</label>
+              <div className={styles.tagsList}>
+                {selectedNode.tags.map(tag => {
+                  const slashIdx = tag.indexOf('/');
+                  const label = slashIdx !== -1 ? tag.slice(slashIdx + 1) : tag;
+                  return (
+                    <span key={tag} className={styles.tagPill}>{label}</span>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+
           <div className={styles.controlSection}>
             <label className={styles.controlLabel}>
               References ({references.length})

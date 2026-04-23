@@ -356,9 +356,7 @@ export default function StandardsGraph() {
       <NodeInfoPanel
         selectedNodeId={selectedNodeId}
         graphData={graphData}
-        baseUrl={baseUrl}
         currentVersion={currentVersion}
-        latestVersion={latestVersion}
       />
     </div>
   );
