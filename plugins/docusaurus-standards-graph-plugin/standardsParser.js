@@ -87,14 +87,16 @@ function extractTitleFromMarkdown(markdown, frontmatterTitle, slug) {
 }
 
 /**
- * Extract the combined content of sections 5.1 and/or 6.1 from the markdown.
+ * Extract the combined content of the normative-references sections (4.1, 5.1, or 6.1)
+ * from the markdown.  Only headings whose title contains "normative references"
+ * (case-insensitive) are considered.
  * A section starts at its heading and ends at the next heading of the same or higher level.
  */
-function extractSections51And61(markdown) {
+function extractNormativeReferenceSections(markdown) {
   const lines = markdown.split('\n');
   const sections = [];
 
-  const sectionStartPattern = /^(#{1,6})\s+(?:5\.1|6\.1)\b/;
+  const sectionStartPattern = /^(#{1,6})\s+(?:4\.1|5\.1|6\.1)\b.*normative\s+references/i;
 
   let inSection = false;
   let sectionLevel = 0;
@@ -157,8 +159,8 @@ function parseStandardFile(filePath) {
   const slug = extractStandardSlug(filePath);
   const title = extractTitleFromMarkdown(markdown, frontmatter.title, slug);
 
-  // Extract CX-XXXX references only from sections 5.1 and/or 6.1
-  const sectionContent = extractSections51And61(markdown);
+  // Extract CX-XXXX references only from normative-references sections (4.1/5.1/6.1)
+  const sectionContent = extractNormativeReferenceSections(markdown);
   const references = new Set();
   CX_REF_PATTERN.lastIndex = 0;
   let match;

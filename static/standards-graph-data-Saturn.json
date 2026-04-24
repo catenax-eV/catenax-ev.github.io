@@ -11,7 +11,7 @@
         "CAT/Sandbox Service Provider"
       ],
       "path": "/standards/CX-0001-ParticipantAgentRegistration",
-      "referenceCount": 18
+      "referenceCount": 17
     },
     {
       "id": "cx0002",
@@ -37,7 +37,7 @@
         "CAT/Semantic"
       ],
       "path": "/standards/CX-0003-SAMMSemanticAspectMetaModel",
-      "referenceCount": 19
+      "referenceCount": 20
     },
     {
       "id": "cx0005",
@@ -60,7 +60,7 @@
         "CAT/Onboarding Service Provider"
       ],
       "path": "/standards/CX-0006-RegistrationAndInitialOnboarding",
-      "referenceCount": 9
+      "referenceCount": 10
     },
     {
       "id": "cx0007",
@@ -83,7 +83,7 @@
         "CAT/Onboarding Service Provider"
       ],
       "path": "/standards/CX-0009-CXRegistrationAPI",
-      "referenceCount": 0
+      "referenceCount": 1
     },
     {
       "id": "cx0010",
@@ -96,7 +96,7 @@
         "CAT/Sandbox Service Provider"
       ],
       "path": "/standards/CX-0010-BusinessPartnerNumber",
-      "referenceCount": 11
+      "referenceCount": 16
     },
     {
       "id": "cx0012",
@@ -147,7 +147,7 @@
         "CAT/Connector as a Service"
       ],
       "path": "/standards/CX-0018-DataspaceConnectivity",
-      "referenceCount": 21
+      "referenceCount": 22
     },
     {
       "id": "cx0044",
@@ -178,7 +178,7 @@
         "CAT/Identity Wallet"
       ],
       "path": "/standards/CX-0049-DIDDocumentSchema",
-      "referenceCount": 1
+      "referenceCount": 2
     },
     {
       "id": "cx0050",
@@ -192,7 +192,7 @@
         "CAT/Identity Wallet"
       ],
       "path": "/standards/CX-0050-CXSpecificCredentials",
-      "referenceCount": 1
+      "referenceCount": 2
     },
     {
       "id": "cx0053",
@@ -658,7 +658,7 @@
       "category": "component",
       "tags": [],
       "path": "/standards/CX-0151-IndustryCoreBasics",
-      "referenceCount": 3
+      "referenceCount": 4
     },
     {
       "id": "cx0152",
@@ -672,7 +672,7 @@
         "CAT/Constraint"
       ],
       "path": "/standards/CX-0152-PolicyConstrainsForDataExchange",
-      "referenceCount": 21
+      "referenceCount": 23
     },
     {
       "id": "cx0153",
@@ -704,6 +704,60 @@
   ],
   "edges": [
     {
+      "id": "cx0001-cx0006",
+      "source": "cx0001",
+      "target": "cx0006",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0001-cx0010",
+      "source": "cx0001",
+      "target": "cx0010",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0001-cx0018",
+      "source": "cx0001",
+      "target": "cx0018",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0006-cx0009",
+      "source": "cx0006",
+      "target": "cx0009",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0006-cx0010",
+      "source": "cx0006",
+      "target": "cx0010",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0018-cx0050",
+      "source": "cx0018",
+      "target": "cx0050",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0018-cx0049",
+      "source": "cx0018",
+      "target": "cx0049",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0018-cx0152",
+      "source": "cx0018",
+      "target": "cx0152",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0053-cx0010",
+      "source": "cx0053",
+      "target": "cx0010",
+      "type": "smoothstep"
+    },
+    {
       "id": "cx0059-cx0067",
       "source": "cx0059",
       "target": "cx0067",
@@ -719,6 +773,12 @@
       "id": "cx0059-cx0152",
       "source": "cx0059",
       "target": "cx0152",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0079-cx0018",
+      "source": "cx0079",
+      "target": "cx0018",
       "type": "smoothstep"
     },
     {
@@ -779,6 +839,12 @@
       "id": "cx0115-cx0152",
       "source": "cx0115",
       "target": "cx0152",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0116-cx0010",
+      "source": "cx0116",
+      "target": "cx0010",
       "type": "smoothstep"
     },
     {
@@ -1046,12 +1112,6 @@
       "type": "smoothstep"
     },
     {
-      "id": "cx0122-cx0128",
-      "source": "cx0122",
-      "target": "cx0128",
-      "type": "smoothstep"
-    },
-    {
       "id": "cx0122-cx0001",
       "source": "cx0122",
       "target": "cx0001",
@@ -1118,6 +1178,12 @@
       "type": "smoothstep"
     },
     {
+      "id": "cx0122-cx0128",
+      "source": "cx0122",
+      "target": "cx0128",
+      "type": "smoothstep"
+    },
+    {
       "id": "cx0122-cx0145",
       "source": "cx0122",
       "target": "cx0145",
@@ -1136,24 +1202,6 @@
       "type": "smoothstep"
     },
     {
-      "id": "cx0123-cx0018",
-      "source": "cx0123",
-      "target": "cx0018",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0123-cx0001",
-      "source": "cx0123",
-      "target": "cx0001",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0125-cx0018",
-      "source": "cx0125",
-      "target": "cx0018",
-      "type": "smoothstep"
-    },
-    {
       "id": "cx0125-cx0001",
       "source": "cx0125",
       "target": "cx0001",
@@ -1169,6 +1217,12 @@
       "id": "cx0125-cx0003",
       "source": "cx0125",
       "target": "cx0003",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0125-cx0018",
+      "source": "cx0125",
+      "target": "cx0018",
       "type": "smoothstep"
     },
     {
@@ -1330,6 +1384,30 @@
     {
       "id": "cx0133-cx0152",
       "source": "cx0133",
+      "target": "cx0152",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0135-cx0003",
+      "source": "cx0135",
+      "target": "cx0003",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0135-cx0010",
+      "source": "cx0135",
+      "target": "cx0010",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0135-cx0151",
+      "source": "cx0135",
+      "target": "cx0151",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0135-cx0152",
+      "source": "cx0135",
       "target": "cx0152",
       "type": "smoothstep"
     },
@@ -1574,12 +1652,6 @@
       "type": "smoothstep"
     },
     {
-      "id": "cx0146-cx0126",
-      "source": "cx0146",
-      "target": "cx0126",
-      "type": "smoothstep"
-    },
-    {
       "id": "cx0146-cx0001",
       "source": "cx0146",
       "target": "cx0001",
@@ -1613,6 +1685,12 @@
       "id": "cx0146-cx0018",
       "source": "cx0146",
       "target": "cx0018",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0146-cx0126",
+      "source": "cx0146",
+      "target": "cx0126",
       "type": "smoothstep"
     },
     {
