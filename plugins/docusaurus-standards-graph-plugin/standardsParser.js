@@ -4,7 +4,8 @@ const matter = require('gray-matter');
 
 // Regex pattern for CX standard references.
 // Handles standard form (CX-0018) as well as variants with spaces and/or
-// unicode dashes (CX - 0018, CX–0018, CX – 0018).
+// unicode dashes: hyphen (CX-0018), en-dash (CX–0018), em-dash (CX—0018),
+// and any of those with surrounding spaces (e.g. CX - 0018, CX – 0018).
 const CX_REF_PATTERN = /CX\s*[-–—]\s*(\d{4})\b/g;
 
 /**
