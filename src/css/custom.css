@@ -79,3 +79,16 @@
 .separator-bottom{
   border-bottom: 1px solid #CCC;
 }
+
+.navbar-dependency-graph-link::after {
+  content: 'DRAFT';
+  background: #f97316;
+  color: #fff;
+  font-size: 0.55rem;
+  font-weight: 700;
+  padding: 1px 5px;
+  border-radius: 5px;
+  vertical-align: middle;
+  letter-spacing: 0.3px;
+  margin-left: 6px;
+}

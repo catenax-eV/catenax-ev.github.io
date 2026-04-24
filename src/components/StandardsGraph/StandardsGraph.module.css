@@ -1,0 +1,636 @@
+/* Container */
+.container {
+  width: 100%;
+  height: calc(100vh - 60px);
+  position: relative;
+  background: var(--ifm-background-color);
+}
+
+.reactFlow {
+  width: 100%;
+  height: 100%;
+  background: var(--ifm-background-color);
+}
+
+/* Loading and Error States */
+.loading,
+.error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  font-size: 1rem;
+  color: var(--ifm-color-emphasis-600);
+  gap: 0.75rem;
+}
+
+.loading::before {
+  content: '';
+  width: 24px;
+  height: 24px;
+  border: 3px solid var(--ifm-color-emphasis-300);
+  border-top-color: var(--ifm-color-primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.error {
+  color: var(--ifm-color-danger);
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Modern Bubble Node Design */
+.bubbleNode {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: visible;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.bubbleNode:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+}
+
+.bubbleNode.highlighted {
+  animation: highlightPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes highlightPulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); }
+  50% { transform: scale(1.05); box-shadow: 0 8px 40px rgba(255, 68, 68, 0.4); }
+}
+
+.bubbleContent {
+  width: 85%;
+  height: 85%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+  padding: 20px 16px;
+  position: relative;
+}
+
+.bubbleContent:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.bubbleCenter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  flex-shrink: 0;
+}
+
+.cxNumberBubble {
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+  font-family: var(--ifm-font-family-base);
+  color: white;
+  line-height: 1;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.bubbleTitle {
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.35;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+  max-width: 100%;
+  color: white;
+  font-family: var(--ifm-font-family-base);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+/* Connection Handles */
+.handle {
+  width: 8px;
+  height: 8px;
+  background: var(--ifm-color-primary);
+  border: 2px solid white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.15s ease;
+  opacity: 0;
+}
+
+.bubbleNode:hover .handle {
+  opacity: 1;
+}
+
+.handle:hover {
+  transform: scale(1.3);
+}
+
+/* Control Panel */
+.controlPanel {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: var(--ifm-background-surface-color);
+  border-radius: var(--ifm-card-border-radius);
+  box-shadow: var(--ifm-global-shadow-lw);
+  z-index: 10;
+  width: 280px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  overflow: hidden;
+}
+
+.panelHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 16px;
+  background: var(--ifm-background-surface-color);
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.panelTitle h2 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ifm-font-color-base);
+}
+
+.panelTitleEmpty {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ifm-color-emphasis-600);
+  font-style: italic;
+}
+
+.panelTitle p {
+  margin: 4px 0 0 0;
+  font-size: 0.75rem;
+  color: var(--ifm-color-emphasis-600);
+  line-height: 1.4;
+}
+
+.toggleButton {
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  background: var(--ifm-color-emphasis-100);
+  color: var(--ifm-font-color-base);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1.1rem;
+  line-height: 1;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.toggleButton:hover {
+  background: var(--ifm-color-emphasis-200);
+  border-color: var(--ifm-color-emphasis-400);
+}
+
+.controlsContent {
+  padding: 16px;
+  max-height: 50vh;
+  overflow-y: auto;
+}
+
+.controlSection {
+  margin-bottom: 16px;
+}
+
+.controlSection:last-of-type {
+  margin-bottom: 12px;
+}
+
+.versionSelect {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: var(--ifm-button-border-radius);
+  font-size: 0.85rem;
+  font-weight: 600;
+  background: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.versionSelect:hover {
+  border-color: var(--ifm-color-primary);
+}
+
+.versionSelect:focus {
+  outline: none;
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 0 0 2px var(--ifm-color-primary-lightest);
+}
+
+.controlLabel {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--ifm-font-color-base);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: var(--ifm-button-border-radius);
+  font-size: 0.85rem;
+  background: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 0 0 3px var(--ifm-color-primary-lightest);
+}
+
+.searchInput::placeholder {
+  color: var(--ifm-color-emphasis-500);
+}
+
+.checkboxGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: var(--ifm-font-color-base);
+  padding: 2px 0;
+  transition: color 0.15s ease;
+}
+
+.checkbox:hover {
+  color: var(--ifm-color-primary);
+}
+
+.checkbox input[type="checkbox"] {
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  accent-color: var(--ifm-color-primary);
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.clearButton {
+  width: 100%;
+  padding: 8px;
+  background: var(--ifm-color-emphasis-100);
+  color: var(--ifm-font-color-base);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: var(--ifm-button-border-radius);
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.75rem;
+  transition: all 0.2s ease;
+  margin-top: 8px;
+}
+
+.clearButton:hover {
+  background: var(--ifm-color-emphasis-200);
+  border-color: var(--ifm-color-emphasis-400);
+}
+
+.tagGroup {
+  margin-top: 10px;
+}
+
+.tagGroupLabel {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--ifm-color-emphasis-500);
+  margin-bottom: 6px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.tagClearButton {
+  float: right;
+  font-size: 0.65rem;
+  font-weight: 600;
+  background: none;
+  border: none;
+  color: var(--ifm-color-primary);
+  cursor: pointer;
+  padding: 0;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.tagClearButton:hover {
+  text-decoration: underline;
+}
+
+.legend {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.legend h4 {
+  margin: 0 0 10px 0;
+  font-size: 0.75rem;
+  color: var(--ifm-font-color-base);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 6px 0;
+  font-size: 0.8rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.legendDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Node Info Panel (right side) */
+.nodeInfoPanel {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: var(--ifm-background-surface-color);
+  border-radius: var(--ifm-card-border-radius);
+  box-shadow: var(--ifm-global-shadow-lw);
+  z-index: 10;
+  width: 280px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  overflow: hidden;
+}
+
+.nodeList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.nodeListLink {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 6px 8px;
+  border-radius: 6px;
+  text-decoration: none;
+  background: var(--ifm-color-emphasis-100);
+  transition: background 0.15s ease;
+}
+
+.nodeListLink:hover {
+  background: var(--ifm-color-emphasis-200);
+  text-decoration: none;
+}
+
+.nodeListItem {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 6px 8px 6px 8px;
+  padding-right: 58px;
+  border-radius: 6px;
+  background: var(--ifm-color-emphasis-100);
+  transition: background 0.15s ease;
+  cursor: pointer;
+}
+
+.nodeListItem:hover {
+  background: var(--ifm-color-emphasis-200);
+}
+
+.nodeListCategoryIndicator {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  padding: 0px 4px;
+  border-radius: 6px;
+  font-size: 0.5rem;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 0.1px;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.nodeListNumber {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+  width: fit-content;
+}
+
+.nodeListNumber:hover {
+  text-decoration: underline;
+}
+
+.nodeListTitle {
+  font-size: 0.8rem;
+  color: var(--ifm-font-color-base);
+  line-height: 1.3;
+}
+
+.emptyList {
+  font-size: 0.8rem;
+  color: var(--ifm-color-emphasis-500);
+  font-style: italic;
+  margin: 4px 0 0 0;
+}
+
+.panelTitleLink {
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.panelTitleLink:hover {
+  text-decoration: underline;
+}
+
+.categoryBadge {
+  display: inline-block;
+  padding: 1px 7px;
+  border-radius: 10px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 0.2px;
+}
+
+.tagsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tagPill {
+  display: inline-block;
+  padding: 1px 6px;
+  border-radius: 8px;
+  font-size: 0.65rem;
+  font-weight: 500;
+  background: var(--ifm-color-emphasis-200);
+  color: var(--ifm-font-color-base);
+  border: 1px solid var(--ifm-color-emphasis-300);
+}
+
+.ownerLink {
+  font-size: 0.82rem;
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.ownerLink:hover {
+  text-decoration: underline;
+}
+
+.ownerLabel {
+  font-size: 0.82rem;
+  color: var(--ifm-font-color-base);
+  font-weight: 500;
+}
+
+.ownerNote {
+  font-size: 0.78rem;
+  color: var(--ifm-color-emphasis-600);
+  font-style: italic;
+}
+
+.ownerNone {
+  font-size: 0.82rem;
+  color: var(--ifm-color-emphasis-500);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .container {
+    height: calc(100vh - 60px);
+  }
+
+  .controlPanel {
+    width: calc(100% - 32px);
+    left: 16px;
+    right: 16px;
+    top: auto;
+    bottom: 16px;
+    max-height: 50vh;
+  }
+
+  .controlsContent {
+    max-height: 30vh;
+  }
+
+  .nodeInfoPanel {
+    display: none;
+  }
+
+  .cxNumberBubble {
+    font-size: 1.3rem;
+  }
+
+  .bubbleTitle {
+    font-size: 0.8rem;
+  }
+
+  .bubbleContent {
+    padding: 14px 12px;
+  }
+}
+
+/* Dark Mode */
+[data-theme='dark'] .controlPanel {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme='dark'] .nodeInfoPanel {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme='dark'] .bubbleNode {
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme='dark'] .bubbleNode:hover {
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* React Flow Overrides */
+.reactFlow :global(.react-flow__controls) {
+  box-shadow: var(--ifm-global-shadow-lw);
+  border-radius: var(--ifm-button-border-radius);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  overflow: hidden;
+}
+
+.reactFlow :global(.react-flow__controls-button) {
+  background: var(--ifm-background-surface-color);
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  fill: var(--ifm-font-color-base);
+}
+
+.reactFlow :global(.react-flow__controls-button:hover) {
+  background: var(--ifm-color-emphasis-100);
+}
+
+.reactFlow :global(.react-flow__minimap) {
+  background: var(--ifm-background-surface-color);
+  border-radius: var(--ifm-card-border-radius);
+  box-shadow: var(--ifm-global-shadow-lw);
+  border: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.reactFlow :global(.react-flow__background) {
+  background: var(--ifm-background-color);
+}
