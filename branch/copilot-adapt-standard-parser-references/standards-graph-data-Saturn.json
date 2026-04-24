@@ -147,7 +147,7 @@
         "CAT/Connector as a Service"
       ],
       "path": "/standards/CX-0018-DataspaceConnectivity",
-      "referenceCount": 22
+      "referenceCount": 25
     },
     {
       "id": "cx0044",
@@ -758,6 +758,12 @@
       "type": "smoothstep"
     },
     {
+      "id": "cx0059-cx0018",
+      "source": "cx0059",
+      "target": "cx0018",
+      "type": "smoothstep"
+    },
+    {
       "id": "cx0059-cx0067",
       "source": "cx0059",
       "target": "cx0067",
@@ -1298,6 +1304,12 @@
       "type": "smoothstep"
     },
     {
+      "id": "cx0127-cx0018",
+      "source": "cx0127",
+      "target": "cx0018",
+      "type": "smoothstep"
+    },
+    {
       "id": "cx0127-cx0045",
       "source": "cx0127",
       "target": "cx0045",
@@ -1409,6 +1421,12 @@
       "id": "cx0135-cx0152",
       "source": "cx0135",
       "target": "cx0152",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0138-cx0018",
+      "source": "cx0138",
+      "target": "cx0018",
       "type": "smoothstep"
     },
     {

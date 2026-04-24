@@ -12,7 +12,7 @@
         "CAT/Sandbox Service Provider"
       ],
       "path": "/standards/CX-0001-EDCDiscoveryAPI",
-      "referenceCount": 14
+      "referenceCount": 15
     },
     {
       "id": "cx0002",
@@ -38,7 +38,7 @@
         "CAT/Semantic"
       ],
       "path": "/standards/CX-0003-SAMMSemanticAspectMetaModel",
-      "referenceCount": 15
+      "referenceCount": 16
     },
     {
       "id": "cx0005",
@@ -169,7 +169,7 @@
         "CAT/Sandbox Services (Beta)"
       ],
       "path": "/standards/CX-0018-DataspaceConnectivity",
-      "referenceCount": 16
+      "referenceCount": 20
     },
     {
       "id": "cx0029",
@@ -537,7 +537,7 @@
         "UC/Traceability"
       ],
       "path": "/standards/CX-0125-TraceabilityUseCase",
-      "referenceCount": 0
+      "referenceCount": 1
     },
     {
       "id": "cx0126",
@@ -748,6 +748,12 @@
       "id": "cx0053-cx0010",
       "source": "cx0053",
       "target": "cx0010",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0059-cx0018",
+      "source": "cx0059",
+      "target": "cx0018",
       "type": "smoothstep"
     },
     {
@@ -1159,6 +1165,30 @@
       "type": "smoothstep"
     },
     {
+      "id": "cx0123-cx0001",
+      "source": "cx0123",
+      "target": "cx0001",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0123-cx0003",
+      "source": "cx0123",
+      "target": "cx0003",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0123-cx0018",
+      "source": "cx0123",
+      "target": "cx0018",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0123-cx0125",
+      "source": "cx0123",
+      "target": "cx0125",
+      "type": "smoothstep"
+    },
+    {
       "id": "cx0125-cx0001",
       "source": "cx0125",
       "target": "cx0001",
@@ -1243,6 +1273,12 @@
       "type": "smoothstep"
     },
     {
+      "id": "cx0127-cx0018",
+      "source": "cx0127",
+      "target": "cx0018",
+      "type": "smoothstep"
+    },
+    {
       "id": "cx0127-cx0045",
       "source": "cx0127",
       "target": "cx0045",
@@ -1311,6 +1347,12 @@
     {
       "id": "cx0133-cx0018",
       "source": "cx0133",
+      "target": "cx0018",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0138-cx0018",
+      "source": "cx0138",
       "target": "cx0018",
       "type": "smoothstep"
     },
