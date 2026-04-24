@@ -2,8 +2,10 @@ const fs = require('fs');
 const path = require('path');
 const matter = require('gray-matter');
 
-// Regex pattern for CX standard references (e.g. CX-0018, CX-0001)
-const CX_REF_PATTERN = /CX-(\d{4})\b/g;
+// Regex pattern for CX standard references.
+// Handles standard form (CX-0018) as well as variants with spaces and/or
+// unicode dashes (CX - 0018, CX–0018, CX – 0018).
+const CX_REF_PATTERN = /CX\s*[-–—]\s*(\d{4})\b/g;
 
 /**
  * Recursively find all standard files (CX-XXXX-Name/CX-XXXX-Name.md)
