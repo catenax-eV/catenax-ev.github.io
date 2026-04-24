@@ -2,8 +2,11 @@ const fs = require('fs');
 const path = require('path');
 const matter = require('gray-matter');
 
-// Regex pattern for CX standard references (e.g. CX-0018, CX-0001)
-const CX_REF_PATTERN = /CX-(\d{4})\b/g;
+// Regex pattern for CX standard references.
+// Handles standard form (CX-0018) as well as variants with spaces and/or
+// unicode dashes: hyphen (CX-0018), en-dash (CX–0018), em-dash (CX—0018),
+// and any of those with surrounding spaces (e.g. CX - 0018, CX – 0018).
+const CX_REF_PATTERN = /CX\s*[-–—]\s*(\d{4})\b/g;
 
 /**
  * Recursively find all standard files (CX-XXXX-Name/CX-XXXX-Name.md)
@@ -87,6 +90,66 @@ function extractTitleFromMarkdown(markdown, frontmatterTitle, slug) {
 }
 
 /**
+ * Extract the combined content of the normative-references sections (4.1, 5.1, or 6.1)
+ * from the markdown.  Only headings whose title contains "normative references"
+ * (case-insensitive) are considered.
+ * A section starts at its heading and ends at the next heading of the same or higher level.
+ */
+function extractNormativeReferenceSections(markdown) {
+  const lines = markdown.split('\n');
+  const sections = [];
+
+  const sectionStartPattern = /^(#{1,6})\s+(?:4\.1|5\.1|6\.1)\b.*normative\s+references/i;
+
+  let inSection = false;
+  let sectionLevel = 0;
+  let sectionContent = [];
+
+  for (const line of lines) {
+    const headingMatch = line.match(/^(#{1,6})\s/);
+
+    if (inSection) {
+      if (headingMatch) {
+        const currentLevel = headingMatch[1].length;
+        if (currentLevel <= sectionLevel) {
+          // End of current section
+          sections.push(sectionContent.join('\n'));
+          sectionContent = [];
+          inSection = false;
+
+          // Check if this line starts another target section
+          const startMatch = line.match(sectionStartPattern);
+          if (startMatch) {
+            inSection = true;
+            sectionLevel = startMatch[1].length;
+            sectionContent.push(line);
+          }
+        } else {
+          // Sub-heading within the section
+          sectionContent.push(line);
+        }
+      } else {
+        sectionContent.push(line);
+      }
+    } else {
+      const startMatch = line.match(sectionStartPattern);
+      if (startMatch) {
+        inSection = true;
+        sectionLevel = startMatch[1].length;
+        sectionContent.push(line);
+      }
+    }
+  }
+
+  // If we were still in a section at the end of the file
+  if (inSection && sectionContent.length > 0) {
+    sections.push(sectionContent.join('\n'));
+  }
+
+  return sections.join('\n');
+}
+
+/**
  * Parse a single standard file.
  */
 function parseStandardFile(filePath) {
@@ -99,11 +162,12 @@ function parseStandardFile(filePath) {
   const slug = extractStandardSlug(filePath);
   const title = extractTitleFromMarkdown(markdown, frontmatter.title, slug);
 
-  // Extract all CX-XXXX references from the markdown body
+  // Extract CX-XXXX references only from normative-references sections (4.1/5.1/6.1)
+  const sectionContent = extractNormativeReferenceSections(markdown);
   const references = new Set();
   CX_REF_PATTERN.lastIndex = 0;
   let match;
-  while ((match = CX_REF_PATTERN.exec(markdown)) !== null) {
+  while ((match = CX_REF_PATTERN.exec(sectionContent)) !== null) {
     const refNumber = match[1];
     if (refNumber !== number) {
       references.add(refNumber);
