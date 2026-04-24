@@ -87,6 +87,64 @@ function extractTitleFromMarkdown(markdown, frontmatterTitle, slug) {
 }
 
 /**
+ * Extract the combined content of sections 5.1 and/or 6.1 from the markdown.
+ * A section starts at its heading and ends at the next heading of the same or higher level.
+ */
+function extractSections51And61(markdown) {
+  const lines = markdown.split('\n');
+  const sections = [];
+
+  const sectionStartPattern = /^(#{1,6})\s+(?:5\.1|6\.1)\b/;
+
+  let inSection = false;
+  let sectionLevel = 0;
+  let sectionContent = [];
+
+  for (const line of lines) {
+    const headingMatch = line.match(/^(#{1,6})\s/);
+
+    if (inSection) {
+      if (headingMatch) {
+        const currentLevel = headingMatch[1].length;
+        if (currentLevel <= sectionLevel) {
+          // End of current section
+          sections.push(sectionContent.join('\n'));
+          sectionContent = [];
+          inSection = false;
+
+          // Check if this line starts another target section
+          const startMatch = line.match(sectionStartPattern);
+          if (startMatch) {
+            inSection = true;
+            sectionLevel = startMatch[1].length;
+            sectionContent.push(line);
+          }
+        } else {
+          // Sub-heading within the section
+          sectionContent.push(line);
+        }
+      } else {
+        sectionContent.push(line);
+      }
+    } else {
+      const startMatch = line.match(sectionStartPattern);
+      if (startMatch) {
+        inSection = true;
+        sectionLevel = startMatch[1].length;
+        sectionContent.push(line);
+      }
+    }
+  }
+
+  // If we were still in a section at the end of the file
+  if (inSection && sectionContent.length > 0) {
+    sections.push(sectionContent.join('\n'));
+  }
+
+  return sections.join('\n');
+}
+
+/**
  * Parse a single standard file.
  */
 function parseStandardFile(filePath) {
@@ -99,11 +157,12 @@ function parseStandardFile(filePath) {
   const slug = extractStandardSlug(filePath);
   const title = extractTitleFromMarkdown(markdown, frontmatter.title, slug);
 
-  // Extract all CX-XXXX references from the markdown body
+  // Extract CX-XXXX references only from sections 5.1 and/or 6.1
+  const sectionContent = extractSections51And61(markdown);
   const references = new Set();
   CX_REF_PATTERN.lastIndex = 0;
   let match;
-  while ((match = CX_REF_PATTERN.exec(markdown)) !== null) {
+  while ((match = CX_REF_PATTERN.exec(sectionContent)) !== null) {
     const refNumber = match[1];
     if (refNumber !== number) {
       references.add(refNumber);
