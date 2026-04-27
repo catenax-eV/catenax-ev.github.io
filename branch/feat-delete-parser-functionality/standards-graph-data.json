@@ -11,7 +11,7 @@
         "CAT/Sandbox Service Provider"
       ],
       "path": "/standards/CX-0001-ParticipantAgentRegistration",
-      "referenceCount": 16
+      "referenceCount": 23
     },
     {
       "id": "cx0002",
@@ -26,7 +26,7 @@
         "CAT/Digital Twin"
       ],
       "path": "/standards/CX-0002-DigitalTwinsInCatenaX",
-      "referenceCount": 13
+      "referenceCount": 20
     },
     {
       "id": "cx0003",
@@ -37,7 +37,7 @@
         "CAT/Semantic"
       ],
       "path": "/standards/CX-0003-SAMMSemanticAspectMetaModel",
-      "referenceCount": 18
+      "referenceCount": 26
     },
     {
       "id": "cx0005",
@@ -59,7 +59,7 @@
         "CAT/Onboarding Service Provider"
       ],
       "path": "/standards/CX-0006-RegistrationAndInitialOnboarding",
-      "referenceCount": 6
+      "referenceCount": 11
     },
     {
       "id": "cx0007",
@@ -95,7 +95,7 @@
         "CAT/Sandbox Service Provider"
       ],
       "path": "/standards/CX-0010-BusinessPartnerNumber",
-      "referenceCount": 12
+      "referenceCount": 19
     },
     {
       "id": "cx0012",
@@ -122,7 +122,7 @@
         "CAT/Connector as a Service"
       ],
       "path": "/standards/CX-0018-DataspaceConnectivity",
-      "referenceCount": 22
+      "referenceCount": 33
     },
     {
       "id": "cx0044",
@@ -165,7 +165,7 @@
         "CAT/Core Service Provider"
       ],
       "path": "/standards/CX-0053-BPNDiscoveryServiceAPIs",
-      "referenceCount": 4
+      "referenceCount": 9
     },
     {
       "id": "cx0054",
@@ -381,7 +381,7 @@
         "CAT/Industry Core"
       ],
       "path": "/standards/CX-0126-IndustryCorePartType",
-      "referenceCount": 7
+      "referenceCount": 12
     },
     {
       "id": "cx0127",
@@ -402,7 +402,7 @@
       "category": "component",
       "tags": [],
       "path": "/standards/CX-0128-DemandandCapacityManagementDataExchange",
-      "referenceCount": 0
+      "referenceCount": 4
     },
     {
       "id": "cx0129",
@@ -517,7 +517,7 @@
       "category": "component",
       "tags": [],
       "path": "/standards/CX-0146-SupplyChainDisruptionNotifications",
-      "referenceCount": 1
+      "referenceCount": 6
     },
     {
       "id": "cx0149",
@@ -565,7 +565,7 @@
         "CAT/Constraint"
       ],
       "path": "/standards/CX-0152-PolicyConstrainsForDataExchange",
-      "referenceCount": 19
+      "referenceCount": 24
     },
     {
       "id": "cx0153",
@@ -629,6 +629,772 @@
       "tags": [],
       "path": "/standards/CX-0159-Material-Accounting",
       "referenceCount": 0
+    },
+    {
+      "id": "cx0004",
+      "number": "0004",
+      "title": "Governance Process for Aspect models",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0004-GovernanceProcess",
+      "referenceCount": 1
+    },
+    {
+      "id": "cx0011",
+      "number": "0011",
+      "title": "Issuing Agency",
+      "category": "component",
+      "tags": [
+        "CAT/BPDM",
+        "CAT/Core Service Provider",
+        "CAT/Sandbox Services (Beta)",
+        "CAT/Sandbox Service Provider"
+      ],
+      "path": "/standards/CX-0011-IssuingAgency",
+      "referenceCount": 0
+    },
+    {
+      "id": "cx0014",
+      "number": "0014",
+      "title": "Employees and Technical Users",
+      "category": "component",
+      "tags": [
+        "CAT/Portal",
+        "CAT/Core Service Provider"
+      ],
+      "path": "/standards/CX-0014-EmployeesAndTechnicalUsers",
+      "referenceCount": 1
+    },
+    {
+      "id": "cx0015",
+      "number": "0015",
+      "title": "IAM & Access Control Paradigm for Users and Clients",
+      "category": "component",
+      "tags": [
+        "CAT/Portal",
+        "CAT/Core Service Provider"
+      ],
+      "path": "/standards/CX-0015-IAMandAccessControlParadigmForUsersAndClients",
+      "referenceCount": 1
+    },
+    {
+      "id": "cx0016",
+      "number": "0016",
+      "title": "Company Attribute Verification",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0016-CompanyAttributeVerification",
+      "referenceCount": 1
+    },
+    {
+      "id": "cx0017",
+      "number": "0017",
+      "title": "Company Role by the Connector",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0017-CompanyRoleByTheConnector",
+      "referenceCount": 1
+    },
+    {
+      "id": "cx0019",
+      "number": "0019",
+      "title": "Aspect Model: Serial Part Typization",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0019-AspectModelSerialPartTypization",
+      "referenceCount": 0
+    },
+    {
+      "id": "cx0021",
+      "number": "0021",
+      "title": "Aspect Model: Batch",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0021-AspectModelBatch",
+      "referenceCount": 0
+    },
+    {
+      "id": "cx0022",
+      "number": "0022",
+      "title": "Notification Process",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0022-NotificationProcess",
+      "referenceCount": 0
+    },
+    {
+      "id": "cx0023",
+      "number": "0023",
+      "title": "Notification API",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0023-NotificationAPI",
+      "referenceCount": 2
+    },
+    {
+      "id": "cx0026",
+      "number": "0026",
+      "title": "Product Carbon Footprint Data Model",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0026-ProductCarbonFootprintDataModel",
+      "referenceCount": 0
+    },
+    {
+      "id": "cx0027",
+      "number": "0027",
+      "title": "Product Carbon Footprint Aspect Model",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0027-ProductCarbonFootprintAspectModel",
+      "referenceCount": 0
+    },
+    {
+      "id": "cx0028",
+      "number": "0028",
+      "title": "Product Carbon Footprint Request API",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0028-ProductCarbonFootprintRequestAPI",
+      "referenceCount": 0
+    },
+    {
+      "id": "cx0029",
+      "number": "0029",
+      "title": "Product Carbon Footprint Rulebook",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0029-ProductCarbonFootprintRulebook",
+      "referenceCount": 0
+    },
+    {
+      "id": "cx0030",
+      "number": "0030",
+      "title": "Aspect Model BoM As Specified",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0030-DataModelBoMAsSpecified",
+      "referenceCount": 0
+    },
+    {
+      "id": "cx0031",
+      "number": "0031",
+      "title": "Data Model: Material For Homologation",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0031-DataModelMaterialForHomologation",
+      "referenceCount": 0
+    },
+    {
+      "id": "cx0032",
+      "number": "0032",
+      "title": "Data Model: Part As Specified",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0032-DataModelPartAsSpecified",
+      "referenceCount": 0
+    },
+    {
+      "id": "cx0033",
+      "number": "0033",
+      "title": "Data Model: Return Request",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0033-DataModelReturnRequest",
+      "referenceCount": 0
+    },
+    {
+      "id": "cx0034",
+      "number": "0034",
+      "title": "Data Model Battery Pass",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0034-DataModelBatteryPass",
+      "referenceCount": 0
+    },
+    {
+      "id": "cx0035",
+      "number": "0035",
+      "title": "Data Model: Marketplace offer",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0035-DataModelMarketplaceoffer",
+      "referenceCount": 0
+    },
+    {
+      "id": "cx0036",
+      "number": "0036",
+      "title": "Aspect Model: Quality Task",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0036-AspectModelQualityTask",
+      "referenceCount": 0
+    },
+    {
+      "id": "cx0037",
+      "number": "0037",
+      "title": "Aspect Model: Vehicle Product Description",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0037-AspectModelVehicleProductDescription",
+      "referenceCount": 0
+    },
+    {
+      "id": "cx0038",
+      "number": "0038",
+      "title": "Aspect Model: Fleet Diagnostic Data",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0038-AspectModelFleetDiagnosticData",
+      "referenceCount": 0
+    },
+    {
+      "id": "cx0039",
+      "number": "0039",
+      "title": "Aspect Model: Fleet Claim Data",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0039-AspectModelFleetClaimData",
+      "referenceCount": 0
+    },
+    {
+      "id": "cx0040",
+      "number": "0040",
+      "title": "Aspect Model: Part Analyses",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0040-AspectModelPartAnalyses",
+      "referenceCount": 0
+    },
+    {
+      "id": "cx0041",
+      "number": "0041",
+      "title": "Acpect Model: Manufactured Parts Quality Information",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0041-AspectModelManufacturedPartsQualityInformation",
+      "referenceCount": 0
+    },
+    {
+      "id": "cx0042",
+      "number": "0042",
+      "title": "Aspect Model SingleLevelBomAsPlanned",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0042-AspectModelSingleLevelBoMasPlanned",
+      "referenceCount": 0
+    },
+    {
+      "id": "cx0043",
+      "number": "0043",
+      "title": "Aspect Model: Part As Planned",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0043-AspectModelPartAsPlanned",
+      "referenceCount": 0
+    },
+    {
+      "id": "cx0046",
+      "number": "0046",
+      "title": "CX - 0046 Demand and Capacity Management Process and Core Business Logic",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0046-DemandAndCapacityManagementProcessAndCoreBusinessLogic",
+      "referenceCount": 2
+    },
+    {
+      "id": "cx0047",
+      "number": "0047",
+      "title": "Demand and Capacity Management Data Model Material Demand and Capacity Group",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0047-DemandAndCapacityManagementDataModelMaterialDemandAndCapacityGroup",
+      "referenceCount": 1
+    },
+    {
+      "id": "cx0048",
+      "number": "0048",
+      "title": "Demand and Capacity Management API Material Demand and Capacity Group",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0048-DemandAndCapacityManagementAPIMaterialDemandAndCapacityGroup",
+      "referenceCount": 1
+    },
+    {
+      "id": "cx0051",
+      "number": "0051",
+      "title": "Summary Credential",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0051-SummaryCredential",
+      "referenceCount": 0
+    },
+    {
+      "id": "cx0052",
+      "number": "0052",
+      "title": "CX - 0052 Aspect Model \"ManufacturingCapability\"",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0052-AspectModelManufacturingCapability",
+      "referenceCount": 0
+    },
+    {
+      "id": "cx0056",
+      "number": "0056",
+      "title": "Semantic Model: Classified Load Spectrum",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0056-SemanticModelClassifiedLoadSpectrum",
+      "referenceCount": 0
+    },
+    {
+      "id": "cx0057",
+      "number": "0057",
+      "title": "Semantic Model: Remaining Useful Life",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0057-SemanticModelRemainingUsefulLife",
+      "referenceCount": 0
+    },
+    {
+      "id": "cx0058",
+      "number": "0058",
+      "title": "API: Endurance Predictor",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0058-APIEndurancePredictor",
+      "referenceCount": 0
+    },
+    {
+      "id": "cx0060",
+      "number": "0060",
+      "title": "Triangle Traceability Digital Twin Built",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0060-TriangleTraceabilityDigitalTwinAsBuilt",
+      "referenceCount": 0
+    },
+    {
+      "id": "cx0061",
+      "number": "0061",
+      "title": "Triangle Traceability Data Provisioning Digital Twin As Planned",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0061-TriangleTraceabilityDataProvisioningDigitalTwinAsPlanned",
+      "referenceCount": 0
+    },
+    {
+      "id": "cx0062",
+      "number": "0062",
+      "title": "CX - 0062 Triangle Traceability Notifications",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0062-TriangleTraceabilityNotifications",
+      "referenceCount": 0
+    },
+    {
+      "id": "cx0063",
+      "number": "0063",
+      "title": "Triangle for Product Carbon Footprint Request",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0063-TriangleForProductCarbonFootprintRequest",
+      "referenceCount": 0
+    },
+    {
+      "id": "cx0065",
+      "number": "0065",
+      "title": "Triangle for Dismantling Service",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0065-TriangleForDismantlingService",
+      "referenceCount": 0
+    },
+    {
+      "id": "cx0066",
+      "number": "0066",
+      "title": "Aspect Model: End of Life of Vehicle Compliance",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0066-AspectModelEndofLifeofVehicleCompliance",
+      "referenceCount": 0
+    },
+    {
+      "id": "cx0068",
+      "number": "0068",
+      "title": "MP Shop Floor Information Service API 1.0.0",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0068-MPShopFloorInformationServiceAPI",
+      "referenceCount": 1
+    },
+    {
+      "id": "cx0069",
+      "number": "0069",
+      "title": "Shop-Floor-Information-Service Aspect Model",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0069-AspectModelMPShopFloorInformationService",
+      "referenceCount": 0
+    },
+    {
+      "id": "cx0070",
+      "number": "0070",
+      "title": "Asset Tracking Platform API Standardization 1.0.0",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0070-AssetTrackingPlatformAPIStandardization",
+      "referenceCount": 1
+    },
+    {
+      "id": "cx0071",
+      "number": "0071",
+      "title": "Triangle Quality Early Warning Field and Root Cause",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0071-TriangleQualityEarlyWarningFieldandRootCause",
+      "referenceCount": 0
+    },
+    {
+      "id": "cx0072",
+      "number": "0072",
+      "title": "OSim Process & Core Business Logic",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0072-OSimProcessAndCoreBusinessLogic",
+      "referenceCount": 1
+    },
+    {
+      "id": "cx0073",
+      "number": "0073",
+      "title": "OSim API",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0073-OSimAPI",
+      "referenceCount": 0
+    },
+    {
+      "id": "cx0075",
+      "number": "0075",
+      "title": "Shop-Floor-Information-Service Process",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0075-MPShopFloorInformationServiceProcessandCoreBusinessLogic",
+      "referenceCount": 1
+    },
+    {
+      "id": "cx0083",
+      "number": "0083",
+      "title": "Aspect Model IotSensorDeviceDefinition",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0083-AspectModelIoTSensorDeviceDefinition",
+      "referenceCount": 1
+    },
+    {
+      "id": "cx0085",
+      "number": "0085",
+      "title": "PURIS Aspect Model: Product Stock",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0085-PurisAspectModelProductStock",
+      "referenceCount": 0
+    },
+    {
+      "id": "cx0086",
+      "number": "0086",
+      "title": "PURIS Product Stock Exchange API",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0086-PurisProductStockExchangeAPI",
+      "referenceCount": 0
+    },
+    {
+      "id": "cx0087",
+      "number": "0087",
+      "title": "OSim Data Model: Materialflow Simulation Result",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0087-OSimDataModelMaterialFlowSimulationResult",
+      "referenceCount": 1
+    },
+    {
+      "id": "cx0088",
+      "number": "0088",
+      "title": "Aspect Model: User Estimated Loading",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0088-AspectModelUserEstimatedLoading",
+      "referenceCount": 0
+    },
+    {
+      "id": "cx0089",
+      "number": "0089",
+      "title": "Triangle Behavioral Twin Endurance Estimator Service -",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0089-TriangleBehavioralTwinEnduranceEstimatorService",
+      "referenceCount": 0
+    },
+    {
+      "id": "cx0090",
+      "number": "0090",
+      "title": "API Endurance Estimator",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0090-APIEnduranceEstimator",
+      "referenceCount": 0
+    },
+    {
+      "id": "cx0091",
+      "number": "0091",
+      "title": "Aspect Model: Fleet Vehicles",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0091-AspectModelFleetVehicles",
+      "referenceCount": 0
+    },
+    {
+      "id": "cx0092",
+      "number": "0092",
+      "title": "Aspect Model: Quality Task Attachment",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0092-AspectModelQualityTaskAttachment",
+      "referenceCount": 0
+    },
+    {
+      "id": "cx0093",
+      "number": "0093",
+      "title": "Aspect Model: Traction Battery Code",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0093-AspectModelTractionBatteryCode",
+      "referenceCount": 0
+    },
+    {
+      "id": "cx0094",
+      "number": "0094",
+      "title": "Aspect Model: Part Site In Formation As Planned",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0094-AspectModelPartSiteInformationAsPlanned",
+      "referenceCount": 0
+    },
+    {
+      "id": "cx0095",
+      "number": "0095",
+      "title": "Data Model: Transmission Pass",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0095-DataModelTransmissionPass",
+      "referenceCount": 0
+    },
+    {
+      "id": "cx0096",
+      "number": "0096",
+      "title": "Triangle For Digital Product Pass",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0096-TriangleForDigitalProductPass",
+      "referenceCount": 0
+    },
+    {
+      "id": "cx0098",
+      "number": "0098",
+      "title": "Aspect Model Secondary Material Content",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0098-AspectModelSecondaryMaterialContent",
+      "referenceCount": 0
+    },
+    {
+      "id": "cx0099",
+      "number": "0099",
+      "title": "Data Model: Certificate of Decommissioning",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0099-DataModelCertificateofDecommissioning",
+      "referenceCount": 0
+    },
+    {
+      "id": "cx0100",
+      "number": "0100",
+      "title": "Triangle for Secondary Marketplace",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0100-TriangleForSecondaryMarketplace",
+      "referenceCount": 0
+    },
+    {
+      "id": "cx0102",
+      "number": "0102",
+      "title": "Functional Mock Up",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0102-Functional-Mock-Up",
+      "referenceCount": 0
+    },
+    {
+      "id": "cx0103",
+      "number": "0103",
+      "title": "Digital Product Passport",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0103-AspectModelDigitalProductPassport",
+      "referenceCount": 0
+    },
+    {
+      "id": "cx0104",
+      "number": "0104",
+      "title": "CX - 0104 Aspect Model AssetTrackerLinks",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0104-AspectModelAssetTrackerLinks",
+      "referenceCount": 1
+    },
+    {
+      "id": "cx0106",
+      "number": "0106",
+      "title": "Aspect Model IotSensorData",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0106-AspectModelIoTSensorData",
+      "referenceCount": 1
+    },
+    {
+      "id": "cx0107",
+      "number": "0107",
+      "title": "AspectModelReuseCertificate",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0107-AspectModelReuseCertificate",
+      "referenceCount": 0
+    },
+    {
+      "id": "cx0108",
+      "number": "0108",
+      "title": "CX - 0108 Waste Certificate",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0108-AspectModelWasteCertificate",
+      "referenceCount": 0
+    },
+    {
+      "id": "cx0109",
+      "number": "0109",
+      "title": "Aspect Model Refurbishing Certificate",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0109-AspectModelRefrubishingCertificate",
+      "referenceCount": 0
+    },
+    {
+      "id": "cx0111",
+      "number": "0111",
+      "title": "Aspect Model RemanufacturingCertificate",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0111-AspectModelRemanufacturingCertificate",
+      "referenceCount": 0
+    },
+    {
+      "id": "cx0112",
+      "number": "0112",
+      "title": "Aspect Model MaterialRecyclingCertificate",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0112-AspectModelMaterialRecyclingCertificate",
+      "referenceCount": 0
+    },
+    {
+      "id": "cx0113",
+      "number": "0113",
+      "title": "Aspect Model ESS Incident Data Model",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0113-AspectModelESSDatamodel",
+      "referenceCount": 0
+    },
+    {
+      "id": "cx0118",
+      "number": "0118",
+      "title": "Delivery Information Exchange 2.0.1",
+      "category": "usecase",
+      "tags": [
+        "CAT/Business Application Provider",
+        "UC/PURIS"
+      ],
+      "path": "/standards/CX-0118-ActualDeliveryInformationExchange",
+      "referenceCount": 4
+    },
+    {
+      "id": "cx0120",
+      "number": "0120",
+      "title": "Short-Term Material Demand Exchange 2.0.1",
+      "category": "usecase",
+      "tags": [
+        "CAT/Business Application Provider",
+        "UC/PURIS"
+      ],
+      "path": "/standards/CX-0120-ShortTermMaterialDemandExchange",
+      "referenceCount": 4
+    },
+    {
+      "id": "cx0121",
+      "number": "0121",
+      "title": "Planned Production Output Exchange 1.0.1",
+      "category": "usecase",
+      "tags": [
+        "CAT/Business Application Provider",
+        "UC/PURIS"
+      ],
+      "path": "/standards/CX-0121-PlannedProductionOutputExchange",
+      "referenceCount": 4
+    },
+    {
+      "id": "cx0122",
+      "number": "0122",
+      "title": "Item Stock Exchange 2.0.1",
+      "category": "usecase",
+      "tags": [
+        "UC/PURIS"
+      ],
+      "path": "/standards/CX-0122-ItemStockExchange",
+      "referenceCount": 4
+    },
+    {
+      "id": "cx0134",
+      "number": "0134",
+      "title": "Product Carbon Footprint Calculation Integration",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0134-ProductCarbonFootprintCalculationIntegration",
+      "referenceCount": 0
+    },
+    {
+      "id": "cx0139",
+      "number": "0139",
+      "title": "Information as a Service - External Data Provider",
+      "category": "component",
+      "tags": [
+        "CAT/Information as a Service",
+        "CAT/Third Party Information Provider"
+      ],
+      "path": "/standards/CX-0139-InformationasaServiceExternalDataProvider",
+      "referenceCount": 0
+    },
+    {
+      "id": "cx0145",
+      "number": "0145",
+      "title": "Days of supply Exchange 1.0.1",
+      "category": "usecase",
+      "tags": [
+        "CAT/Business Application Provider",
+        "UC/PURIS"
+      ],
+      "path": "/standards/CX-0145-DaysofsupplyExchange",
+      "referenceCount": 4
     }
   ],
   "edges": [
@@ -666,6 +1432,18 @@
       "id": "cx0053-cx0010",
       "source": "cx0053",
       "target": "cx0010",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0059-cx0018",
+      "source": "cx0059",
+      "target": "cx0018",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0059-cx0023",
+      "source": "cx0059",
+      "target": "cx0023",
       "type": "smoothstep"
     },
     {
@@ -708,6 +1486,30 @@
       "id": "cx0105-cx0045",
       "source": "cx0105",
       "target": "cx0045",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0105-cx0083",
+      "source": "cx0105",
+      "target": "cx0083",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0105-cx0106",
+      "source": "cx0105",
+      "target": "cx0106",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0105-cx0104",
+      "source": "cx0105",
+      "target": "cx0104",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0105-cx0070",
+      "source": "cx0105",
+      "target": "cx0070",
       "type": "smoothstep"
     },
     {
@@ -855,6 +1657,12 @@
       "type": "smoothstep"
     },
     {
+      "id": "cx0127-cx0018",
+      "source": "cx0127",
+      "target": "cx0018",
+      "type": "smoothstep"
+    },
+    {
       "id": "cx0127-cx0045",
       "source": "cx0127",
       "target": "cx0045",
@@ -963,6 +1771,18 @@
       "type": "smoothstep"
     },
     {
+      "id": "cx0138-cx0018",
+      "source": "cx0138",
+      "target": "cx0018",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0138-cx0023",
+      "source": "cx0138",
+      "target": "cx0023",
+      "type": "smoothstep"
+    },
+    {
       "id": "cx0138-cx0003",
       "source": "cx0138",
       "target": "cx0003",
@@ -1056,6 +1876,30 @@
       "id": "cx0144-cx0010",
       "source": "cx0144",
       "target": "cx0010",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0144-cx0014",
+      "source": "cx0144",
+      "target": "cx0014",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0144-cx0015",
+      "source": "cx0144",
+      "target": "cx0015",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0144-cx0016",
+      "source": "cx0144",
+      "target": "cx0016",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0144-cx0017",
+      "source": "cx0144",
+      "target": "cx0017",
       "type": "smoothstep"
     },
     {
@@ -1487,6 +2331,576 @@
     {
       "id": "cx0159-cx0152",
       "source": "cx0159",
+      "target": "cx0152",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0047-cx0002",
+      "source": "cx0047",
+      "target": "cx0002",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0047-cx0003",
+      "source": "cx0047",
+      "target": "cx0003",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0047-cx0010",
+      "source": "cx0047",
+      "target": "cx0010",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0047-cx0018",
+      "source": "cx0047",
+      "target": "cx0018",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0047-cx0046",
+      "source": "cx0047",
+      "target": "cx0046",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0047-cx0048",
+      "source": "cx0047",
+      "target": "cx0048",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0048-cx0046",
+      "source": "cx0048",
+      "target": "cx0046",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0048-cx0047",
+      "source": "cx0048",
+      "target": "cx0047",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0069-cx0001",
+      "source": "cx0069",
+      "target": "cx0001",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0069-cx0003",
+      "source": "cx0069",
+      "target": "cx0003",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0069-cx0018",
+      "source": "cx0069",
+      "target": "cx0018",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0069-cx0068",
+      "source": "cx0069",
+      "target": "cx0068",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0069-cx0075",
+      "source": "cx0069",
+      "target": "cx0075",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0073-cx0002",
+      "source": "cx0073",
+      "target": "cx0002",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0073-cx0003",
+      "source": "cx0073",
+      "target": "cx0003",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0073-cx0004",
+      "source": "cx0073",
+      "target": "cx0004",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0073-cx0018",
+      "source": "cx0073",
+      "target": "cx0018",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0073-cx0001",
+      "source": "cx0073",
+      "target": "cx0001",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0073-cx0010",
+      "source": "cx0073",
+      "target": "cx0010",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0073-cx0087",
+      "source": "cx0073",
+      "target": "cx0087",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0073-cx0072",
+      "source": "cx0073",
+      "target": "cx0072",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0118-cx0001",
+      "source": "cx0118",
+      "target": "cx0001",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0118-cx0002",
+      "source": "cx0118",
+      "target": "cx0002",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0118-cx0003",
+      "source": "cx0118",
+      "target": "cx0003",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0118-cx0006",
+      "source": "cx0118",
+      "target": "cx0006",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0118-cx0010",
+      "source": "cx0118",
+      "target": "cx0010",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0118-cx0018",
+      "source": "cx0118",
+      "target": "cx0018",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0118-cx0053",
+      "source": "cx0118",
+      "target": "cx0053",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0118-cx0120",
+      "source": "cx0118",
+      "target": "cx0120",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0118-cx0121",
+      "source": "cx0118",
+      "target": "cx0121",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0118-cx0122",
+      "source": "cx0118",
+      "target": "cx0122",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0118-cx0126",
+      "source": "cx0118",
+      "target": "cx0126",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0118-cx0145",
+      "source": "cx0118",
+      "target": "cx0145",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0118-cx0146",
+      "source": "cx0118",
+      "target": "cx0146",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0118-cx0152",
+      "source": "cx0118",
+      "target": "cx0152",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0120-cx0001",
+      "source": "cx0120",
+      "target": "cx0001",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0120-cx0002",
+      "source": "cx0120",
+      "target": "cx0002",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0120-cx0003",
+      "source": "cx0120",
+      "target": "cx0003",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0120-cx0006",
+      "source": "cx0120",
+      "target": "cx0006",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0120-cx0010",
+      "source": "cx0120",
+      "target": "cx0010",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0120-cx0018",
+      "source": "cx0120",
+      "target": "cx0018",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0120-cx0053",
+      "source": "cx0120",
+      "target": "cx0053",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0120-cx0118",
+      "source": "cx0120",
+      "target": "cx0118",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0120-cx0121",
+      "source": "cx0120",
+      "target": "cx0121",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0120-cx0122",
+      "source": "cx0120",
+      "target": "cx0122",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0120-cx0126",
+      "source": "cx0120",
+      "target": "cx0126",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0120-cx0128",
+      "source": "cx0120",
+      "target": "cx0128",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0120-cx0145",
+      "source": "cx0120",
+      "target": "cx0145",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0120-cx0146",
+      "source": "cx0120",
+      "target": "cx0146",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0120-cx0152",
+      "source": "cx0120",
+      "target": "cx0152",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0121-cx0001",
+      "source": "cx0121",
+      "target": "cx0001",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0121-cx0002",
+      "source": "cx0121",
+      "target": "cx0002",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0121-cx0003",
+      "source": "cx0121",
+      "target": "cx0003",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0121-cx0006",
+      "source": "cx0121",
+      "target": "cx0006",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0121-cx0010",
+      "source": "cx0121",
+      "target": "cx0010",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0121-cx0018",
+      "source": "cx0121",
+      "target": "cx0018",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0121-cx0053",
+      "source": "cx0121",
+      "target": "cx0053",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0121-cx0118",
+      "source": "cx0121",
+      "target": "cx0118",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0121-cx0120",
+      "source": "cx0121",
+      "target": "cx0120",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0121-cx0122",
+      "source": "cx0121",
+      "target": "cx0122",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0121-cx0126",
+      "source": "cx0121",
+      "target": "cx0126",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0121-cx0128",
+      "source": "cx0121",
+      "target": "cx0128",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0121-cx0145",
+      "source": "cx0121",
+      "target": "cx0145",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0121-cx0146",
+      "source": "cx0121",
+      "target": "cx0146",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0121-cx0152",
+      "source": "cx0121",
+      "target": "cx0152",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0122-cx0001",
+      "source": "cx0122",
+      "target": "cx0001",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0122-cx0002",
+      "source": "cx0122",
+      "target": "cx0002",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0122-cx0003",
+      "source": "cx0122",
+      "target": "cx0003",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0122-cx0006",
+      "source": "cx0122",
+      "target": "cx0006",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0122-cx0010",
+      "source": "cx0122",
+      "target": "cx0010",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0122-cx0018",
+      "source": "cx0122",
+      "target": "cx0018",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0122-cx0053",
+      "source": "cx0122",
+      "target": "cx0053",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0122-cx0118",
+      "source": "cx0122",
+      "target": "cx0118",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0122-cx0120",
+      "source": "cx0122",
+      "target": "cx0120",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0122-cx0121",
+      "source": "cx0122",
+      "target": "cx0121",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0122-cx0126",
+      "source": "cx0122",
+      "target": "cx0126",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0122-cx0128",
+      "source": "cx0122",
+      "target": "cx0128",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0122-cx0145",
+      "source": "cx0122",
+      "target": "cx0145",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0122-cx0146",
+      "source": "cx0122",
+      "target": "cx0146",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0122-cx0152",
+      "source": "cx0122",
+      "target": "cx0152",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0145-cx0001",
+      "source": "cx0145",
+      "target": "cx0001",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0145-cx0002",
+      "source": "cx0145",
+      "target": "cx0002",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0145-cx0003",
+      "source": "cx0145",
+      "target": "cx0003",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0145-cx0006",
+      "source": "cx0145",
+      "target": "cx0006",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0145-cx0010",
+      "source": "cx0145",
+      "target": "cx0010",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0145-cx0018",
+      "source": "cx0145",
+      "target": "cx0018",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0145-cx0053",
+      "source": "cx0145",
+      "target": "cx0053",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0145-cx0118",
+      "source": "cx0145",
+      "target": "cx0118",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0145-cx0120",
+      "source": "cx0145",
+      "target": "cx0120",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0145-cx0121",
+      "source": "cx0145",
+      "target": "cx0121",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0145-cx0122",
+      "source": "cx0145",
+      "target": "cx0122",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0145-cx0126",
+      "source": "cx0145",
+      "target": "cx0126",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0145-cx0128",
+      "source": "cx0145",
+      "target": "cx0128",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0145-cx0146",
+      "source": "cx0145",
+      "target": "cx0146",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0145-cx0152",
+      "source": "cx0145",
       "target": "cx0152",
       "type": "smoothstep"
     }
