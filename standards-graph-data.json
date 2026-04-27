@@ -11,7 +11,7 @@
         "CAT/Sandbox Service Provider"
       ],
       "path": "/standards/CX-0001-ParticipantAgentRegistration",
-      "referenceCount": 16
+      "referenceCount": 17
     },
     {
       "id": "cx0002",
@@ -26,7 +26,7 @@
         "CAT/Digital Twin"
       ],
       "path": "/standards/CX-0002-DigitalTwinsInCatenaX",
-      "referenceCount": 13
+      "referenceCount": 17
     },
     {
       "id": "cx0003",
@@ -37,7 +37,7 @@
         "CAT/Semantic"
       ],
       "path": "/standards/CX-0003-SAMMSemanticAspectMetaModel",
-      "referenceCount": 18
+      "referenceCount": 20
     },
     {
       "id": "cx0005",
@@ -95,7 +95,7 @@
         "CAT/Sandbox Service Provider"
       ],
       "path": "/standards/CX-0010-BusinessPartnerNumber",
-      "referenceCount": 12
+      "referenceCount": 14
     },
     {
       "id": "cx0012",
@@ -108,7 +108,7 @@
         "CAT/Sandbox Service Provider"
       ],
       "path": "/standards/CX-0012-BusinessPartnerDataPoolAPI",
-      "referenceCount": 0
+      "referenceCount": 2
     },
     {
       "id": "cx0018",
@@ -122,7 +122,7 @@
         "CAT/Connector as a Service"
       ],
       "path": "/standards/CX-0018-DataspaceConnectivity",
-      "referenceCount": 22
+      "referenceCount": 29
     },
     {
       "id": "cx0044",
@@ -165,7 +165,7 @@
         "CAT/Core Service Provider"
       ],
       "path": "/standards/CX-0053-BPNDiscoveryServiceAPIs",
-      "referenceCount": 4
+      "referenceCount": 5
     },
     {
       "id": "cx0054",
@@ -207,7 +207,7 @@
       "category": "component",
       "tags": [],
       "path": "/standards/CX-0067-OntologyModelsToRealizeFederatedQueryInCatenaX",
-      "referenceCount": 3
+      "referenceCount": 5
     },
     {
       "id": "cx0074",
@@ -220,7 +220,7 @@
         "CAT/BPDM"
       ],
       "path": "/standards/CX-0074-BusinessPartnerGateAPI",
-      "referenceCount": 0
+      "referenceCount": 1
     },
     {
       "id": "cx0076",
@@ -297,7 +297,7 @@
         "CAT/Semantic"
       ],
       "path": "/standards/CX-0084-FederatedQueriesInDataSpaces",
-      "referenceCount": 3
+      "referenceCount": 5
     },
     {
       "id": "cx0105",
@@ -369,7 +369,7 @@
         "UC/Traceability"
       ],
       "path": "/standards/CX-0125-TraceabilityUseCase",
-      "referenceCount": 1
+      "referenceCount": 2
     },
     {
       "id": "cx0126",
@@ -530,7 +530,7 @@
         "CAT/Identity Wallet"
       ],
       "path": "/standards/CX-0149-WalletRequirements",
-      "referenceCount": 0
+      "referenceCount": 2
     },
     {
       "id": "cx0150",
@@ -651,6 +651,42 @@
       "type": "smoothstep"
     },
     {
+      "id": "cx0003-cx0002",
+      "source": "cx0003",
+      "target": "cx0002",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0005-cx0002",
+      "source": "cx0005",
+      "target": "cx0002",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0005-cx0018",
+      "source": "cx0005",
+      "target": "cx0018",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0005-cx0125",
+      "source": "cx0005",
+      "target": "cx0125",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0007-cx0018",
+      "source": "cx0007",
+      "target": "cx0018",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0007-cx0149",
+      "source": "cx0007",
+      "target": "cx0149",
+      "type": "smoothstep"
+    },
+    {
       "id": "cx0018-cx0049",
       "source": "cx0018",
       "target": "cx0049",
@@ -663,9 +699,87 @@
       "type": "smoothstep"
     },
     {
+      "id": "cx0045-cx0002",
+      "source": "cx0045",
+      "target": "cx0002",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0045-cx0003",
+      "source": "cx0045",
+      "target": "cx0003",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0045-cx0010",
+      "source": "cx0045",
+      "target": "cx0010",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0049-cx0149",
+      "source": "cx0049",
+      "target": "cx0149",
+      "type": "smoothstep"
+    },
+    {
       "id": "cx0053-cx0010",
       "source": "cx0053",
       "target": "cx0010",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0055-cx0001",
+      "source": "cx0055",
+      "target": "cx0001",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0055-cx0002",
+      "source": "cx0055",
+      "target": "cx0002",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0055-cx0003",
+      "source": "cx0055",
+      "target": "cx0003",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0055-cx0012",
+      "source": "cx0055",
+      "target": "cx0012",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0055-cx0018",
+      "source": "cx0055",
+      "target": "cx0018",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0055-cx0053",
+      "source": "cx0055",
+      "target": "cx0053",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0055-cx0067",
+      "source": "cx0055",
+      "target": "cx0067",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0055-cx0084",
+      "source": "cx0055",
+      "target": "cx0084",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0059-cx0018",
+      "source": "cx0059",
+      "target": "cx0018",
       "type": "smoothstep"
     },
     {
@@ -687,9 +801,45 @@
       "type": "smoothstep"
     },
     {
+      "id": "cx0067-cx0084",
+      "source": "cx0067",
+      "target": "cx0084",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0076-cx0010",
+      "source": "cx0076",
+      "target": "cx0010",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0076-cx0012",
+      "source": "cx0076",
+      "target": "cx0012",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0076-cx0074",
+      "source": "cx0076",
+      "target": "cx0074",
+      "type": "smoothstep"
+    },
+    {
       "id": "cx0079-cx0018",
       "source": "cx0079",
       "target": "cx0018",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0084-cx0018",
+      "source": "cx0084",
+      "target": "cx0018",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0084-cx0067",
+      "source": "cx0084",
+      "target": "cx0067",
       "type": "smoothstep"
     },
     {
@@ -855,6 +1005,12 @@
       "type": "smoothstep"
     },
     {
+      "id": "cx0127-cx0018",
+      "source": "cx0127",
+      "target": "cx0018",
+      "type": "smoothstep"
+    },
+    {
       "id": "cx0127-cx0045",
       "source": "cx0127",
       "target": "cx0045",
@@ -960,6 +1116,12 @@
       "id": "cx0135-cx0152",
       "source": "cx0135",
       "target": "cx0152",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0138-cx0018",
+      "source": "cx0138",
+      "target": "cx0018",
       "type": "smoothstep"
     },
     {
