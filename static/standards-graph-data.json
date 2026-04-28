@@ -11,7 +11,7 @@
         "CAT/Sandbox Service Provider"
       ],
       "path": "/standards/CX-0001-ParticipantAgentRegistration",
-      "referenceCount": 17
+      "referenceCount": 19
     },
     {
       "id": "cx0002",
@@ -26,7 +26,7 @@
         "CAT/Digital Twin"
       ],
       "path": "/standards/CX-0002-DigitalTwinsInCatenaX",
-      "referenceCount": 17
+      "referenceCount": 18
     },
     {
       "id": "cx0003",
@@ -37,7 +37,7 @@
         "CAT/Semantic"
       ],
       "path": "/standards/CX-0003-SAMMSemanticAspectMetaModel",
-      "referenceCount": 20
+      "referenceCount": 22
     },
     {
       "id": "cx0005",
@@ -95,7 +95,7 @@
         "CAT/Sandbox Service Provider"
       ],
       "path": "/standards/CX-0010-BusinessPartnerNumber",
-      "referenceCount": 14
+      "referenceCount": 15
     },
     {
       "id": "cx0012",
@@ -122,7 +122,7 @@
         "CAT/Connector as a Service"
       ],
       "path": "/standards/CX-0018-DataspaceConnectivity",
-      "referenceCount": 29
+      "referenceCount": 31
     },
     {
       "id": "cx0044",
@@ -369,7 +369,7 @@
         "UC/Traceability"
       ],
       "path": "/standards/CX-0125-TraceabilityUseCase",
-      "referenceCount": 2
+      "referenceCount": 3
     },
     {
       "id": "cx0126",
@@ -381,7 +381,7 @@
         "CAT/Industry Core"
       ],
       "path": "/standards/CX-0126-IndustryCorePartType",
-      "referenceCount": 7
+      "referenceCount": 8
     },
     {
       "id": "cx0127",
@@ -517,7 +517,7 @@
       "category": "component",
       "tags": [],
       "path": "/standards/CX-0146-SupplyChainDisruptionNotifications",
-      "referenceCount": 1
+      "referenceCount": 2
     },
     {
       "id": "cx0149",
@@ -565,7 +565,7 @@
         "CAT/Constraint"
       ],
       "path": "/standards/CX-0152-PolicyConstrainsForDataExchange",
-      "referenceCount": 19
+      "referenceCount": 21
     },
     {
       "id": "cx0153",
@@ -909,6 +909,36 @@
       "type": "smoothstep"
     },
     {
+      "id": "cx0123-cx0001",
+      "source": "cx0123",
+      "target": "cx0001",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0123-cx0003",
+      "source": "cx0123",
+      "target": "cx0003",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0123-cx0018",
+      "source": "cx0123",
+      "target": "cx0018",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0123-cx0125",
+      "source": "cx0123",
+      "target": "cx0125",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0123-cx0152",
+      "source": "cx0123",
+      "target": "cx0152",
+      "type": "smoothstep"
+    },
+    {
       "id": "cx0125-cx0001",
       "source": "cx0125",
       "target": "cx0001",
@@ -1025,6 +1055,54 @@
     {
       "id": "cx0127-cx0152",
       "source": "cx0127",
+      "target": "cx0152",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0128-cx0001",
+      "source": "cx0128",
+      "target": "cx0001",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0128-cx0002",
+      "source": "cx0128",
+      "target": "cx0002",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0128-cx0003",
+      "source": "cx0128",
+      "target": "cx0003",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0128-cx0010",
+      "source": "cx0128",
+      "target": "cx0010",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0128-cx0018",
+      "source": "cx0128",
+      "target": "cx0018",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0128-cx0126",
+      "source": "cx0128",
+      "target": "cx0126",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0128-cx0146",
+      "source": "cx0128",
+      "target": "cx0146",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0128-cx0152",
+      "source": "cx0128",
       "target": "cx0152",
       "type": "smoothstep"
     },
