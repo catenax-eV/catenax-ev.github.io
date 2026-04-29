@@ -285,7 +285,7 @@ A DPC provides, consumes, and processes data to collaborate with other data spac
 
 - A DPC **MAY** use the services of a CSP-A (e.g., marketplace).
 - A DPC **MUST** integrate and use CSP-B services to access his identity (e.g., identity wallet) and enable data exchange.
-- A DPC **MUST** use the services of one of the OSPs to register and onboard itself to the data space (e.g., registration service). This can be delegated to a BAP or ESP
+- A DPC **MUST** use the services of one of the OSPs to register and onboard itself to the data space (e.g., registration service).
 - A DPC **MAY** use advisory services from a qualified AP.
 
 - A DPC **MAY** use certified enablement services from a commercial ESP (e.g., a SaaS solution). Alternatively, a DPC can certify and operate its own enablement services.
