@@ -1,1 +1,0 @@
-"use strict";(globalThis.webpackChunkcatenax_ev_github_io_new=globalThis.webpackChunkcatenax_ev_github_io_new||[]).push([[45841],{73293(e){e.exports=JSON.parse('{"metadata":{"permalink":"/branch/fix-update-release-notes_contribnutor/blog-releasenotes","page":1,"postsPerPage":10,"totalPages":1,"totalCount":4,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);
