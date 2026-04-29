@@ -30,6 +30,7 @@ pagination_next: null
 | Hungary | HU |
 | India | IN |
 | Ireland | IE |
+| Israel | IL |
 | Italy | IT |
 | Japan | JP |
 | Latvia | LV |
@@ -91,7 +92,6 @@ pagination_next: null
 | Guyana | GY |
 | Iceland | IS |
 | Indonesia | ID |
-| Israel | IL |
 | Jamaica | JM |
 | Jordan | JO |
 | Kuwait | KW |
