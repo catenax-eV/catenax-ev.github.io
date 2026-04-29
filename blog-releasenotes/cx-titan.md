@@ -146,7 +146,7 @@ The CX-Titan release combines the Eclipse Tractus-X releases [25.12](https://ecl
 
 ### Community Contribution
 
-As with all Tractus-X releases, Titan was made possible through the contributions of a broad community of developers, architects, documentation authors, and reviewers across the Eclipse Tractus-X project. The combined releases include contributions from over 50 contributors and more than 25 committers, reflecting the collaborative nature of the project.
+As with all Tractus-X releases, Titan was made possible through the contributions of a broad community of developers, architects, documentation authors, and reviewers across the Eclipse Tractus-X project. The combined releases include contributions from over 199 contributors and more than 29 committers, reflecting the collaborative nature of the project.
 
 We would like to sincerely thank the community for their outstanding collaboration. Contributors from many organizations worked together. We highly appreciate everyone’s contributions and look forward to continuing this journey together with the community.
 
