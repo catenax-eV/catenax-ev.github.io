@@ -30,6 +30,8 @@ export default function GraphControls({
   availableExpertGroups = [],
   selectedExpertGroups = [],
   onExpertGroupFilterChange,
+  filterDeprecatedModels = false,
+  onFilterDeprecatedModelsChange,
 }) {
   const [searchValue, setSearchValue] = useState('');
   const [isExpanded, setIsExpanded] = useState(true);
@@ -92,6 +94,7 @@ export default function GraphControls({
     onTagFilterChange([]);
     onCommitteeFilterChange([]);
     onExpertGroupFilterChange([]);
+    if (onFilterDeprecatedModelsChange) onFilterDeprecatedModelsChange(false);
   };
 
   return (
@@ -260,6 +263,19 @@ export default function GraphControls({
               </div>
             </div>
           )}
+
+          <div className={styles.controlSection}>
+              <div className={styles.checkboxGroup}>
+                <label className={styles.checkbox}>
+                  <input
+                    type="checkbox"
+                    checked={filterDeprecatedModels}
+                    onChange={() => onFilterDeprecatedModelsChange && onFilterDeprecatedModelsChange(!filterDeprecatedModels)}
+                  />
+                  <span>⚠ Has deprecated model versions</span>
+                </label>
+              </div>
+            </div>
 
           <button onClick={clearAllFilters} className={styles.clearButton}>
             Reset Filters

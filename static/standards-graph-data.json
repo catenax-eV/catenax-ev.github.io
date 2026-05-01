@@ -26,7 +26,19 @@
         "CAT/Digital Twin"
       ],
       "path": "/standards/CX-0002-DigitalTwinsInCatenaX",
-      "referenceCount": 18
+      "referenceCount": 18,
+      "semanticModels": [
+        {
+          "urn": "urn:samm:io.catenax.material_demand:1.0.0",
+          "modelName": "io.catenax.material_demand",
+          "referencedVersion": "1.0.0",
+          "status": "release",
+          "latestVersion": "1.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.material_demand/1.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.material_demand/1.0.0"
+        }
+      ]
     },
     {
       "id": "cx0003",
@@ -37,7 +49,29 @@
         "CAT/Semantic"
       ],
       "path": "/standards/CX-0003-SAMMSemanticAspectMetaModel",
-      "referenceCount": 22
+      "referenceCount": 22,
+      "semanticModels": [
+        {
+          "urn": "urn:samm:io.catenax.example:1.0.0",
+          "modelName": "io.catenax.example",
+          "referencedVersion": "1.0.0",
+          "status": "unknown",
+          "latestVersion": null,
+          "latestStatus": null,
+          "githubUrl": null,
+          "latestGithubUrl": null
+        },
+        {
+          "urn": "urn:samm:io.catenax.example:3.0.0",
+          "modelName": "io.catenax.example",
+          "referencedVersion": "3.0.0",
+          "status": "unknown",
+          "latestVersion": null,
+          "latestStatus": null,
+          "githubUrl": null,
+          "latestGithubUrl": null
+        }
+      ]
     },
     {
       "id": "cx0005",
@@ -46,7 +80,49 @@
       "category": "component",
       "tags": [],
       "path": "/standards/CX-0005-ItemRelationshipServiceAPI",
-      "referenceCount": 1
+      "referenceCount": 1,
+      "semanticModels": [
+        {
+          "urn": "urn:samm:io.catenax.just_in_sequence_part:3.0.0",
+          "modelName": "io.catenax.just_in_sequence_part",
+          "referencedVersion": "3.0.0",
+          "status": "release",
+          "latestVersion": "4.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.just_in_sequence_part/3.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.just_in_sequence_part/4.0.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.shared.part_site_information_as_built:2.0.0",
+          "modelName": "io.catenax.shared.part_site_information_as_built",
+          "referencedVersion": "2.0.0",
+          "status": "deprecated",
+          "latestVersion": "2.0.0",
+          "latestStatus": "deprecated",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.shared.part_site_information_as_built/2.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.shared.part_site_information_as_built/2.0.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.single_level_usage_as_built:3.0.0",
+          "modelName": "io.catenax.single_level_usage_as_built",
+          "referencedVersion": "3.0.0",
+          "status": "release",
+          "latestVersion": "4.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.single_level_usage_as_built/3.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.single_level_usage_as_built/4.0.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.single_level_usage_as_planned:2.0.0",
+          "modelName": "io.catenax.single_level_usage_as_planned",
+          "referencedVersion": "2.0.0",
+          "status": "release",
+          "latestVersion": "3.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.single_level_usage_as_planned/2.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.single_level_usage_as_planned/3.0.0"
+        }
+      ]
     },
     {
       "id": "cx0006",
@@ -309,7 +385,39 @@
         "UC/Circularity"
       ],
       "path": "/standards/CX-0105-AssetTrackingUseCase",
-      "referenceCount": 1
+      "referenceCount": 1,
+      "semanticModels": [
+        {
+          "urn": "urn:samm:io.catenax.asset_tracker_links:2.0.0",
+          "modelName": "io.catenax.asset_tracker_links",
+          "referencedVersion": "2.0.0",
+          "status": "release",
+          "latestVersion": "2.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.asset_tracker_links/2.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.asset_tracker_links/2.0.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.iot_sensor_data:2.0.0",
+          "modelName": "io.catenax.iot_sensor_data",
+          "referencedVersion": "2.0.0",
+          "status": "release",
+          "latestVersion": "2.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.iot_sensor_data/2.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.iot_sensor_data/2.0.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.iot_sensor_device_definition:2.0.0",
+          "modelName": "io.catenax.iot_sensor_device_definition",
+          "referencedVersion": "2.0.0",
+          "status": "release",
+          "latestVersion": "2.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.iot_sensor_device_definition/2.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.iot_sensor_device_definition/2.0.0"
+        }
+      ]
     },
     {
       "id": "cx0115",
@@ -321,7 +429,19 @@
         "UC/MaaS"
       ],
       "path": "/standards/CX-0115-ManufacturingCapabilityExchange",
-      "referenceCount": 1
+      "referenceCount": 1,
+      "semanticModels": [
+        {
+          "urn": "urn:samm:io.catenax.manufacturing_capability:3.1.0",
+          "modelName": "io.catenax.manufacturing_capability",
+          "referencedVersion": "3.1.0",
+          "status": "release",
+          "latestVersion": "3.1.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.manufacturing_capability/3.1.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.manufacturing_capability/3.1.0"
+        }
+      ]
     },
     {
       "id": "cx0116",
@@ -344,7 +464,39 @@
         "UC/Circularity"
       ],
       "path": "/standards/CX-0117-UseCaseCircularEconomySecondaryMarketplace",
-      "referenceCount": 0
+      "referenceCount": 0,
+      "semanticModels": [
+        {
+          "urn": "urn:samm:io.catenax.battery.battery_pass:5.0.0",
+          "modelName": "io.catenax.battery.battery_pass",
+          "referencedVersion": "5.0.0",
+          "status": "release",
+          "latestVersion": "6.1.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.battery.battery_pass/5.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.battery.battery_pass/6.1.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.market_place_offer:2.0.0",
+          "modelName": "io.catenax.market_place_offer",
+          "referencedVersion": "2.0.0",
+          "status": "release",
+          "latestVersion": "2.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.market_place_offer/2.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.market_place_offer/2.0.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.return_request:2.0.0",
+          "modelName": "io.catenax.return_request",
+          "referencedVersion": "2.0.0",
+          "status": "release",
+          "latestVersion": "2.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.return_request/2.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.return_request/2.0.0"
+        }
+      ]
     },
     {
       "id": "cx0123",
@@ -357,7 +509,289 @@
         "UC/Quality"
       ],
       "path": "/standards/CX-0123-QualityUseCaseStandard",
-      "referenceCount": 0
+      "referenceCount": 0,
+      "semanticModels": [
+        {
+          "urn": "urn:samm:io.catenax.early_warning_notification:1.0.0",
+          "modelName": "io.catenax.early_warning_notification",
+          "referencedVersion": "1.0.0",
+          "status": "release",
+          "latestVersion": "1.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.early_warning_notification/1.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.early_warning_notification/1.0.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.failure_pattern:1.0.0",
+          "modelName": "io.catenax.failure_pattern",
+          "referencedVersion": "1.0.0",
+          "status": "release",
+          "latestVersion": "1.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.failure_pattern/1.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.failure_pattern/1.0.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.failure_pattern:1.1.0",
+          "modelName": "io.catenax.failure_pattern",
+          "referencedVersion": "1.1.0",
+          "status": "unknown",
+          "latestVersion": "1.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.failure_pattern/1.1.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.failure_pattern/1.0.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.fleet.claim_data:2.0.0",
+          "modelName": "io.catenax.fleet.claim_data",
+          "referencedVersion": "2.0.0",
+          "status": "release",
+          "latestVersion": "3.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.fleet.claim_data/2.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.fleet.claim_data/3.0.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.fleet.claim_data:2.1.0",
+          "modelName": "io.catenax.fleet.claim_data",
+          "referencedVersion": "2.1.0",
+          "status": "unknown",
+          "latestVersion": "3.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.fleet.claim_data/2.1.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.fleet.claim_data/3.0.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.fleet.claim_data:3.0.0",
+          "modelName": "io.catenax.fleet.claim_data",
+          "referencedVersion": "3.0.0",
+          "status": "release",
+          "latestVersion": "3.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.fleet.claim_data/3.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.fleet.claim_data/3.0.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0",
+          "modelName": "io.catenax.fleet.diagnostic_data",
+          "referencedVersion": "2.0.0",
+          "status": "release",
+          "latestVersion": "3.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.fleet.diagnostic_data/2.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.fleet.diagnostic_data/3.0.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.fleet.diagnostic_data:2.1.0",
+          "modelName": "io.catenax.fleet.diagnostic_data",
+          "referencedVersion": "2.1.0",
+          "status": "unknown",
+          "latestVersion": "3.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.fleet.diagnostic_data/2.1.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.fleet.diagnostic_data/3.0.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.fleet.diagnostic_data:3.0.0",
+          "modelName": "io.catenax.fleet.diagnostic_data",
+          "referencedVersion": "3.0.0",
+          "status": "release",
+          "latestVersion": "3.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.fleet.diagnostic_data/3.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.fleet.diagnostic_data/3.0.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.fleet.vehicles:3.0.0",
+          "modelName": "io.catenax.fleet.vehicles",
+          "referencedVersion": "3.0.0",
+          "status": "release",
+          "latestVersion": "4.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.fleet.vehicles/3.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.fleet.vehicles/4.0.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.fleet.vehicles:3.1.0",
+          "modelName": "io.catenax.fleet.vehicles",
+          "referencedVersion": "3.1.0",
+          "status": "unknown",
+          "latestVersion": "4.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.fleet.vehicles/3.1.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.fleet.vehicles/4.0.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.fleet.vehicles:4.0.0",
+          "modelName": "io.catenax.fleet.vehicles",
+          "referencedVersion": "4.0.0",
+          "status": "release",
+          "latestVersion": "4.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.fleet.vehicles/4.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.fleet.vehicles/4.0.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.manufactured_parts_quality_information:2.1.0",
+          "modelName": "io.catenax.manufactured_parts_quality_information",
+          "referencedVersion": "2.1.0",
+          "status": "release",
+          "latestVersion": "3.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.manufactured_parts_quality_information/2.1.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.manufactured_parts_quality_information/3.0.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.manufactured_parts_quality_information:2.2.0",
+          "modelName": "io.catenax.manufactured_parts_quality_information",
+          "referencedVersion": "2.2.0",
+          "status": "unknown",
+          "latestVersion": "3.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.manufactured_parts_quality_information/2.2.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.manufactured_parts_quality_information/3.0.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.manufactured_parts_quality_information:3.0.0",
+          "modelName": "io.catenax.manufactured_parts_quality_information",
+          "referencedVersion": "3.0.0",
+          "status": "release",
+          "latestVersion": "3.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.manufactured_parts_quality_information/3.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.manufactured_parts_quality_information/3.0.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.parts_analyses:3.0.0",
+          "modelName": "io.catenax.parts_analyses",
+          "referencedVersion": "3.0.0",
+          "status": "release",
+          "latestVersion": "4.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.parts_analyses/3.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.parts_analyses/4.0.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.parts_analyses:3.1.0",
+          "modelName": "io.catenax.parts_analyses",
+          "referencedVersion": "3.1.0",
+          "status": "unknown",
+          "latestVersion": "4.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.parts_analyses/3.1.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.parts_analyses/4.0.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.parts_analyses:4.0.0",
+          "modelName": "io.catenax.parts_analyses",
+          "referencedVersion": "4.0.0",
+          "status": "release",
+          "latestVersion": "4.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.parts_analyses/4.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.parts_analyses/4.0.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.quality_task:2.0.0",
+          "modelName": "io.catenax.quality_task",
+          "referencedVersion": "2.0.0",
+          "status": "release",
+          "latestVersion": "3.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.quality_task/2.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.quality_task/3.0.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.quality_task:2.1.0",
+          "modelName": "io.catenax.quality_task",
+          "referencedVersion": "2.1.0",
+          "status": "unknown",
+          "latestVersion": "3.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.quality_task/2.1.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.quality_task/3.0.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.quality_task:3.0.0",
+          "modelName": "io.catenax.quality_task",
+          "referencedVersion": "3.0.0",
+          "status": "release",
+          "latestVersion": "3.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.quality_task/3.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.quality_task/3.0.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.quality_task_attachment:2.0.0",
+          "modelName": "io.catenax.quality_task_attachment",
+          "referencedVersion": "2.0.0",
+          "status": "release",
+          "latestVersion": "3.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.quality_task_attachment/2.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.quality_task_attachment/3.0.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.quality_task_attachment:2.1.0",
+          "modelName": "io.catenax.quality_task_attachment",
+          "referencedVersion": "2.1.0",
+          "status": "unknown",
+          "latestVersion": "3.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.quality_task_attachment/2.1.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.quality_task_attachment/3.0.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.quality_task_attachment:3.0.0",
+          "modelName": "io.catenax.quality_task_attachment",
+          "referencedVersion": "3.0.0",
+          "status": "release",
+          "latestVersion": "3.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.quality_task_attachment/3.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.quality_task_attachment/3.0.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.report_8d:1.0.0",
+          "modelName": "io.catenax.report_8d",
+          "referencedVersion": "1.0.0",
+          "status": "release",
+          "latestVersion": "1.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.report_8d/1.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.report_8d/1.0.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.shared.quality_core:1.0.0",
+          "modelName": "io.catenax.shared.quality_core",
+          "referencedVersion": "1.0.0",
+          "status": "release",
+          "latestVersion": "1.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.shared.quality_core/1.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.shared.quality_core/1.0.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.warranty_claim_request:1.0.0",
+          "modelName": "io.catenax.warranty_claim_request",
+          "referencedVersion": "1.0.0",
+          "status": "release",
+          "latestVersion": "1.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.warranty_claim_request/1.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.warranty_claim_request/1.0.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.warranty_claim_request_verification:1.0.0",
+          "modelName": "io.catenax.warranty_claim_request_verification",
+          "referencedVersion": "1.0.0",
+          "status": "release",
+          "latestVersion": "1.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.warranty_claim_request_verification/1.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.warranty_claim_request_verification/1.0.0"
+        }
+      ]
     },
     {
       "id": "cx0125",
@@ -369,7 +803,49 @@
         "UC/Traceability"
       ],
       "path": "/standards/CX-0125-TraceabilityUseCase",
-      "referenceCount": 3
+      "referenceCount": 3,
+      "semanticModels": [
+        {
+          "urn": "urn:samm:io.catenax.certificate_of_analysis:2.0.0",
+          "modelName": "io.catenax.certificate_of_analysis",
+          "referencedVersion": "2.0.0",
+          "status": "unknown",
+          "latestVersion": "1.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.certificate_of_analysis/2.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.certificate_of_analysis/1.0.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.special_characteristics:1.0.0",
+          "modelName": "io.catenax.special_characteristics",
+          "referencedVersion": "1.0.0",
+          "status": "unknown",
+          "latestVersion": null,
+          "latestStatus": null,
+          "githubUrl": null,
+          "latestGithubUrl": null
+        },
+        {
+          "urn": "urn:samm:io.catenax.traction_battery_code:2.0.0",
+          "modelName": "io.catenax.traction_battery_code",
+          "referencedVersion": "2.0.0",
+          "status": "release",
+          "latestVersion": "2.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.traction_battery_code/2.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.traction_battery_code/2.0.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.zero_km_failure:1.0.0",
+          "modelName": "io.catenax.zero_km_failure",
+          "referencedVersion": "1.0.0",
+          "status": "unknown",
+          "latestVersion": null,
+          "latestStatus": null,
+          "githubUrl": null,
+          "latestGithubUrl": null
+        }
+      ]
     },
     {
       "id": "cx0126",
@@ -381,7 +857,39 @@
         "CAT/Industry Core"
       ],
       "path": "/standards/CX-0126-IndustryCorePartType",
-      "referenceCount": 8
+      "referenceCount": 8,
+      "semanticModels": [
+        {
+          "urn": "urn:samm:io.catenax.part_type_information:1.0.0",
+          "modelName": "io.catenax.part_type_information",
+          "referencedVersion": "1.0.0",
+          "status": "release",
+          "latestVersion": "2.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.part_type_information/1.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.part_type_information/2.0.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.single_level_bom_as_planned:3.0.0",
+          "modelName": "io.catenax.single_level_bom_as_planned",
+          "referencedVersion": "3.0.0",
+          "status": "release",
+          "latestVersion": "4.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.single_level_bom_as_planned/3.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.single_level_bom_as_planned/4.0.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.single_level_usage_as_planned:2.0.0",
+          "modelName": "io.catenax.single_level_usage_as_planned",
+          "referencedVersion": "2.0.0",
+          "status": "release",
+          "latestVersion": "3.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.single_level_usage_as_planned/2.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.single_level_usage_as_planned/3.0.0"
+        }
+      ]
     },
     {
       "id": "cx0127",
@@ -393,7 +901,59 @@
         "CAT/Industry Core"
       ],
       "path": "/standards/CX-0127-IndustryCorePartInstance",
-      "referenceCount": 3
+      "referenceCount": 3,
+      "semanticModels": [
+        {
+          "urn": "urn:samm:io.catenax.batch:3.0.0",
+          "modelName": "io.catenax.batch",
+          "referencedVersion": "3.0.0",
+          "status": "release",
+          "latestVersion": "4.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.batch/3.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.batch/4.0.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.just_in_sequence_part:3.0.0",
+          "modelName": "io.catenax.just_in_sequence_part",
+          "referencedVersion": "3.0.0",
+          "status": "release",
+          "latestVersion": "4.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.just_in_sequence_part/3.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.just_in_sequence_part/4.0.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.serial_part:3.0.0",
+          "modelName": "io.catenax.serial_part",
+          "referencedVersion": "3.0.0",
+          "status": "release",
+          "latestVersion": "4.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.serial_part/3.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.serial_part/4.0.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.single_level_bom_as_built:3.0.0",
+          "modelName": "io.catenax.single_level_bom_as_built",
+          "referencedVersion": "3.0.0",
+          "status": "release",
+          "latestVersion": "4.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.single_level_bom_as_built/3.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.single_level_bom_as_built/4.0.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.single_level_usage_as_built:3.0.0",
+          "modelName": "io.catenax.single_level_usage_as_built",
+          "referencedVersion": "3.0.0",
+          "status": "release",
+          "latestVersion": "4.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.single_level_usage_as_built/3.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.single_level_usage_as_built/4.0.0"
+        }
+      ]
     },
     {
       "id": "cx0128",
@@ -402,7 +962,59 @@
       "category": "component",
       "tags": [],
       "path": "/standards/CX-0128-DemandandCapacityManagementDataExchange",
-      "referenceCount": 0
+      "referenceCount": 0,
+      "semanticModels": [
+        {
+          "urn": "urn:samm:io.catenax.id_based_comment:1.0.0",
+          "modelName": "io.catenax.id_based_comment",
+          "referencedVersion": "1.0.0",
+          "status": "release",
+          "latestVersion": "1.1.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.id_based_comment/1.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.id_based_comment/1.1.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.id_based_request_for_update:3.0.0",
+          "modelName": "io.catenax.id_based_request_for_update",
+          "referencedVersion": "3.0.0",
+          "status": "release",
+          "latestVersion": "3.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.id_based_request_for_update/3.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.id_based_request_for_update/3.0.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.week_based_capacity_group:2.0.0",
+          "modelName": "io.catenax.week_based_capacity_group",
+          "referencedVersion": "2.0.0",
+          "status": "deprecated",
+          "latestVersion": "3.0.1",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.week_based_capacity_group/2.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.week_based_capacity_group/3.0.1"
+        },
+        {
+          "urn": "urn:samm:io.catenax.week_based_capacity_group:3.0.1",
+          "modelName": "io.catenax.week_based_capacity_group",
+          "referencedVersion": "3.0.1",
+          "status": "release",
+          "latestVersion": "3.0.1",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.week_based_capacity_group/3.0.1",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.week_based_capacity_group/3.0.1"
+        },
+        {
+          "urn": "urn:samm:io.catenax.week_based_material_demand:3.0.1",
+          "modelName": "io.catenax.week_based_material_demand",
+          "referencedVersion": "3.0.1",
+          "status": "release",
+          "latestVersion": "3.0.1",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.week_based_material_demand/3.0.1",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.week_based_material_demand/3.0.1"
+        }
+      ]
     },
     {
       "id": "cx0129",
@@ -414,7 +1026,39 @@
         "UC/MaaS"
       ],
       "path": "/standards/CX-0129-RequestforQuotationExchange",
-      "referenceCount": 0
+      "referenceCount": 0,
+      "semanticModels": [
+        {
+          "urn": "urn:samm:io.catenax.request_for_quotation:3.0.0",
+          "modelName": "io.catenax.request_for_quotation",
+          "referencedVersion": "3.0.0",
+          "status": "release",
+          "latestVersion": "3.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.request_for_quotation/3.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.request_for_quotation/3.0.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.shared.bill_of_process:1.1.0",
+          "modelName": "io.catenax.shared.bill_of_process",
+          "referencedVersion": "1.1.0",
+          "status": "release",
+          "latestVersion": "1.1.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.shared.bill_of_process/1.1.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.shared.bill_of_process/1.1.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.shared.message_header:3.0.0",
+          "modelName": "io.catenax.shared.message_header",
+          "referencedVersion": "3.0.0",
+          "status": "release",
+          "latestVersion": "3.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.shared.message_header/3.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.shared.message_header/3.0.0"
+        }
+      ]
     },
     {
       "id": "cx0131",
@@ -426,7 +1070,199 @@
         "UC/Quality"
       ],
       "path": "/standards/CX-0131-CircularityCore",
-      "referenceCount": 0
+      "referenceCount": 0,
+      "semanticModels": [
+        {
+          "urn": "urn:samm:io.catenax.battery.battery_pass:5.0.0",
+          "modelName": "io.catenax.battery.battery_pass",
+          "referencedVersion": "5.0.0",
+          "status": "release",
+          "latestVersion": "6.1.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.battery.battery_pass/5.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.battery.battery_pass/6.1.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.fleet.claim_data:2.0.0",
+          "modelName": "io.catenax.fleet.claim_data",
+          "referencedVersion": "2.0.0",
+          "status": "release",
+          "latestVersion": "3.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.fleet.claim_data/2.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.fleet.claim_data/3.0.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0",
+          "modelName": "io.catenax.fleet.diagnostic_data",
+          "referencedVersion": "2.0.0",
+          "status": "release",
+          "latestVersion": "3.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.fleet.diagnostic_data/2.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.fleet.diagnostic_data/3.0.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.fleet.vehicles:2.1.0",
+          "modelName": "io.catenax.fleet.vehicles",
+          "referencedVersion": "2.1.0",
+          "status": "deprecated",
+          "latestVersion": "4.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.fleet.vehicles/2.1.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.fleet.vehicles/4.0.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.manufactured_parts_quality_information:2.1.0",
+          "modelName": "io.catenax.manufactured_parts_quality_information",
+          "referencedVersion": "2.1.0",
+          "status": "release",
+          "latestVersion": "3.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.manufactured_parts_quality_information/2.1.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.manufactured_parts_quality_information/3.0.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.market_place_offer:2.0.0",
+          "modelName": "io.catenax.market_place_offer",
+          "referencedVersion": "2.0.0",
+          "status": "release",
+          "latestVersion": "2.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.market_place_offer/2.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.market_place_offer/2.0.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.material_recycling_certificate:1.0.0",
+          "modelName": "io.catenax.material_recycling_certificate",
+          "referencedVersion": "1.0.0",
+          "status": "release",
+          "latestVersion": "1.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.material_recycling_certificate/1.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.material_recycling_certificate/1.0.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.parts_analyses:3.0.0",
+          "modelName": "io.catenax.parts_analyses",
+          "referencedVersion": "3.0.0",
+          "status": "release",
+          "latestVersion": "4.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.parts_analyses/3.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.parts_analyses/4.0.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.quality_task:2.0.0",
+          "modelName": "io.catenax.quality_task",
+          "referencedVersion": "2.0.0",
+          "status": "release",
+          "latestVersion": "3.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.quality_task/2.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.quality_task/3.0.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.quality_task_attachment:2.0.0",
+          "modelName": "io.catenax.quality_task_attachment",
+          "referencedVersion": "2.0.0",
+          "status": "release",
+          "latestVersion": "3.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.quality_task_attachment/2.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.quality_task_attachment/3.0.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.refurbishing_certificate:3.0.0",
+          "modelName": "io.catenax.refurbishing_certificate",
+          "referencedVersion": "3.0.0",
+          "status": "release",
+          "latestVersion": "3.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.refurbishing_certificate/3.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.refurbishing_certificate/3.0.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.remanufacturing_certificate:3.0.0",
+          "modelName": "io.catenax.remanufacturing_certificate",
+          "referencedVersion": "3.0.0",
+          "status": "release",
+          "latestVersion": "3.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.remanufacturing_certificate/3.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.remanufacturing_certificate/3.0.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.repair_certificate:1.0.0",
+          "modelName": "io.catenax.repair_certificate",
+          "referencedVersion": "1.0.0",
+          "status": "release",
+          "latestVersion": "1.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.repair_certificate/1.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.repair_certificate/1.0.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.return_request:2.0.0",
+          "modelName": "io.catenax.return_request",
+          "referencedVersion": "2.0.0",
+          "status": "release",
+          "latestVersion": "2.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.return_request/2.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.return_request/2.0.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.reuse_certificate:3.0.0",
+          "modelName": "io.catenax.reuse_certificate",
+          "referencedVersion": "3.0.0",
+          "status": "release",
+          "latestVersion": "3.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.reuse_certificate/3.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.reuse_certificate/3.0.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.secondary_material_content:1.0.0",
+          "modelName": "io.catenax.secondary_material_content",
+          "referencedVersion": "1.0.0",
+          "status": "deprecated",
+          "latestVersion": "1.0.0",
+          "latestStatus": "deprecated",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.secondary_material_content/1.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.secondary_material_content/1.0.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0",
+          "modelName": "io.catenax.single_level_bom_as_specified",
+          "referencedVersion": "2.0.0",
+          "status": "release",
+          "latestVersion": "2.0.1",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.single_level_bom_as_specified/2.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.single_level_bom_as_specified/2.0.1"
+        },
+        {
+          "urn": "urn:samm:io.catenax.vehicle.product_description:3.0.0",
+          "modelName": "io.catenax.vehicle.product_description",
+          "referencedVersion": "3.0.0",
+          "status": "release",
+          "latestVersion": "3.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.vehicle.product_description/3.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.vehicle.product_description/3.0.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.waste_certificate:1.0.0",
+          "modelName": "io.catenax.waste_certificate",
+          "referencedVersion": "1.0.0",
+          "status": "release",
+          "latestVersion": "1.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.waste_certificate/1.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.waste_certificate/1.0.0"
+        }
+      ]
     },
     {
       "id": "cx0133",
@@ -438,7 +1274,19 @@
         "UC/OSIM"
       ],
       "path": "/standards/CX-0133-OnlineControlandSimulation",
-      "referenceCount": 0
+      "referenceCount": 0,
+      "semanticModels": [
+        {
+          "urn": "urn:samm:io.catenax.material_flow_scenario_request:2.0.0",
+          "modelName": "io.catenax.material_flow_scenario_request",
+          "referencedVersion": "2.0.0",
+          "status": "release",
+          "latestVersion": "2.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.material_flow_scenario_request/2.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.material_flow_scenario_request/2.0.0"
+        }
+      ]
     },
     {
       "id": "cx0135",
@@ -449,7 +1297,19 @@
         "CAT/Value Added Services"
       ],
       "path": "/standards/CX-0135-CompanyCertificateManagement",
-      "referenceCount": 0
+      "referenceCount": 0,
+      "semanticModels": [
+        {
+          "urn": "urn:samm:io.catenax.business_partner_certificate:3.1.0",
+          "modelName": "io.catenax.business_partner_certificate",
+          "referencedVersion": "3.1.0",
+          "status": "release",
+          "latestVersion": "3.1.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.business_partner_certificate/3.1.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.business_partner_certificate/3.1.0"
+        }
+      ]
     },
     {
       "id": "cx0136",
@@ -461,7 +1321,39 @@
         "UC/PCF"
       ],
       "path": "/standards/CX-0136-UseCasePCF",
-      "referenceCount": 0
+      "referenceCount": 0,
+      "semanticModels": [
+        {
+          "urn": "urn:samm:io.catenax.pcf:7.0.0",
+          "modelName": "io.catenax.pcf",
+          "referencedVersion": "7.0.0",
+          "status": "release",
+          "latestVersion": "9.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.pcf/7.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.pcf/9.0.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.pcf:8.0.0",
+          "modelName": "io.catenax.pcf",
+          "referencedVersion": "8.0.0",
+          "status": "release",
+          "latestVersion": "9.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.pcf/8.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.pcf/9.0.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.pcf:9.0.0",
+          "modelName": "io.catenax.pcf",
+          "referencedVersion": "9.0.0",
+          "status": "release",
+          "latestVersion": "9.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.pcf/9.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.pcf/9.0.0"
+        }
+      ]
     },
     {
       "id": "cx0138",
@@ -497,7 +1389,59 @@
         "UC/Modular Production"
       ],
       "path": "/standards/CX-0142-ShopFloorInformationService",
-      "referenceCount": 1
+      "referenceCount": 1,
+      "semanticModels": [
+        {
+          "urn": "urn:samm:io.catenax.shared.shopfloor_information_types:2.0.0",
+          "modelName": "io.catenax.shared.shopfloor_information_types",
+          "referencedVersion": "2.0.0",
+          "status": "release",
+          "latestVersion": "2.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.shared.shopfloor_information_types/2.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.shared.shopfloor_information_types/2.0.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.shopfloor_information.get_production_forecast:2.0.0",
+          "modelName": "io.catenax.shopfloor_information.get_production_forecast",
+          "referencedVersion": "2.0.0",
+          "status": "release",
+          "latestVersion": "2.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.shopfloor_information.get_production_forecast/2.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.shopfloor_information.get_production_forecast/2.0.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0",
+          "modelName": "io.catenax.shopfloor_information.get_production_tracking",
+          "referencedVersion": "1.0.0",
+          "status": "release",
+          "latestVersion": "1.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.shopfloor_information.get_production_tracking/1.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.shopfloor_information.get_production_tracking/1.0.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.shopfloor_information.provide_production_forecast:2.0.0",
+          "modelName": "io.catenax.shopfloor_information.provide_production_forecast",
+          "referencedVersion": "2.0.0",
+          "status": "release",
+          "latestVersion": "2.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.shopfloor_information.provide_production_forecast/2.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.shopfloor_information.provide_production_forecast/2.0.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.shopfloor_information.provide_production_tracking:1.0.0",
+          "modelName": "io.catenax.shopfloor_information.provide_production_tracking",
+          "referencedVersion": "1.0.0",
+          "status": "release",
+          "latestVersion": "1.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.shopfloor_information.provide_production_tracking/1.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.shopfloor_information.provide_production_tracking/1.0.0"
+        }
+      ]
     },
     {
       "id": "cx0144",
@@ -517,7 +1461,19 @@
       "category": "component",
       "tags": [],
       "path": "/standards/CX-0146-SupplyChainDisruptionNotifications",
-      "referenceCount": 2
+      "referenceCount": 2,
+      "semanticModels": [
+        {
+          "urn": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0",
+          "modelName": "io.catenax.demand_and_capacity_notification",
+          "referencedVersion": "3.0.0",
+          "status": "release",
+          "latestVersion": "3.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.demand_and_capacity_notification/3.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.demand_and_capacity_notification/3.0.0"
+        }
+      ]
     },
     {
       "id": "cx0149",
@@ -542,7 +1498,19 @@
         "UC/Logistics"
       ],
       "path": "/standards/CX-0150-UseCaseLogistics",
-      "referenceCount": 0
+      "referenceCount": 0,
+      "semanticModels": [
+        {
+          "urn": "urn:samm:io.catenax.packing_list:1.0.0",
+          "modelName": "io.catenax.packing_list",
+          "referencedVersion": "1.0.0",
+          "status": "release",
+          "latestVersion": "1.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.packing_list/1.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.packing_list/1.0.0"
+        }
+      ]
     },
     {
       "id": "cx0151",
@@ -551,7 +1519,29 @@
       "category": "component",
       "tags": [],
       "path": "/standards/CX-0151-IndustryCoreBasics",
-      "referenceCount": 6
+      "referenceCount": 6,
+      "semanticModels": [
+        {
+          "urn": "urn:samm:io.catenax.binary_exchange:1.0.0",
+          "modelName": "io.catenax.binary_exchange",
+          "referencedVersion": "1.0.0",
+          "status": "release",
+          "latestVersion": "1.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.binary_exchange/1.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.binary_exchange/1.0.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.shared.message_header:3.0.0",
+          "modelName": "io.catenax.shared.message_header",
+          "referencedVersion": "3.0.0",
+          "status": "release",
+          "latestVersion": "3.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.shared.message_header/3.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.shared.message_header/3.0.0"
+        }
+      ]
     },
     {
       "id": "cx0152",
@@ -574,7 +1564,19 @@
       "category": "component",
       "tags": [],
       "path": "/standards/CX-0153-TariffsUseCase",
-      "referenceCount": 0
+      "referenceCount": 0,
+      "semanticModels": [
+        {
+          "urn": "urn:samm:io.catenax.us_tariff_information:2.0.0",
+          "modelName": "io.catenax.us_tariff_information",
+          "referencedVersion": "2.0.0",
+          "status": "release",
+          "latestVersion": "2.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.us_tariff_information/2.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.us_tariff_information/2.0.0"
+        }
+      ]
     },
     {
       "id": "cx0154",
@@ -583,7 +1585,29 @@
       "category": "component",
       "tags": [],
       "path": "/standards/CX-0154-MasterDataManagement",
-      "referenceCount": 0
+      "referenceCount": 0,
+      "semanticModels": [
+        {
+          "urn": "urn:samm:io.catenax.masterdatamanagement:1.0.0",
+          "modelName": "io.catenax.masterdatamanagement",
+          "referencedVersion": "1.0.0",
+          "status": "unknown",
+          "latestVersion": null,
+          "latestStatus": null,
+          "githubUrl": null,
+          "latestGithubUrl": null
+        },
+        {
+          "urn": "urn:samm:io.catenax.shared.message_header:3.0.0",
+          "modelName": "io.catenax.shared.message_header",
+          "referencedVersion": "3.0.0",
+          "status": "release",
+          "latestVersion": "3.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.shared.message_header/3.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.shared.message_header/3.0.0"
+        }
+      ]
     },
     {
       "id": "cx0155",
@@ -592,7 +1616,19 @@
       "category": "component",
       "tags": [],
       "path": "/standards/CX-0155-RequirementsEngineering",
-      "referenceCount": 0
+      "referenceCount": 0,
+      "semanticModels": [
+        {
+          "urn": "urn:samm:io.catenax.requirement:1.0.0",
+          "modelName": "io.catenax.requirement",
+          "referencedVersion": "1.0.0",
+          "status": "release",
+          "latestVersion": "1.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.requirement/1.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.requirement/1.0.0"
+        }
+      ]
     },
     {
       "id": "cx0156",
@@ -601,7 +1637,19 @@
       "category": "component",
       "tags": [],
       "path": "/standards/CX-0156-Geometry",
-      "referenceCount": 0
+      "referenceCount": 0,
+      "semanticModels": [
+        {
+          "urn": "urn:samm:io.catenax.single_level_scene_node:1.0.0",
+          "modelName": "io.catenax.single_level_scene_node",
+          "referencedVersion": "1.0.0",
+          "status": "release",
+          "latestVersion": "1.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.single_level_scene_node/1.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.single_level_scene_node/1.0.0"
+        }
+      ]
     },
     {
       "id": "cx0157",
@@ -610,7 +1658,59 @@
       "category": "component",
       "tags": [],
       "path": "/standards/CX-0157-PURIS",
-      "referenceCount": 0
+      "referenceCount": 0,
+      "semanticModels": [
+        {
+          "urn": "urn:samm:io.catenax.days_of_supply:2.0.0",
+          "modelName": "io.catenax.days_of_supply",
+          "referencedVersion": "2.0.0",
+          "status": "release",
+          "latestVersion": "2.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.days_of_supply/2.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.days_of_supply/2.0.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.delivery_information:2.0.0",
+          "modelName": "io.catenax.delivery_information",
+          "referencedVersion": "2.0.0",
+          "status": "release",
+          "latestVersion": "2.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.delivery_information/2.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.delivery_information/2.0.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.item_stock:2.0.0",
+          "modelName": "io.catenax.item_stock",
+          "referencedVersion": "2.0.0",
+          "status": "release",
+          "latestVersion": "2.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.item_stock/2.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.item_stock/2.0.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.planned_production_output:2.0.0",
+          "modelName": "io.catenax.planned_production_output",
+          "referencedVersion": "2.0.0",
+          "status": "release",
+          "latestVersion": "2.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.planned_production_output/2.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.planned_production_output/2.0.0"
+        },
+        {
+          "urn": "urn:samm:io.catenax.short_term_material_demand:1.0.0",
+          "modelName": "io.catenax.short_term_material_demand",
+          "referencedVersion": "1.0.0",
+          "status": "release",
+          "latestVersion": "1.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.short_term_material_demand/1.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.short_term_material_demand/1.0.0"
+        }
+      ]
     },
     {
       "id": "cx0158",
@@ -619,7 +1719,19 @@
       "category": "component",
       "tags": [],
       "path": "/standards/CX-0158-CarSBOM",
-      "referenceCount": 0
+      "referenceCount": 0,
+      "semanticModels": [
+        {
+          "urn": "urn:samm:io.catenax.sbom:1.0.0",
+          "modelName": "io.catenax.sbom",
+          "referencedVersion": "1.0.0",
+          "status": "release",
+          "latestVersion": "1.0.0",
+          "latestStatus": "release",
+          "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.sbom/1.0.0",
+          "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.sbom/1.0.0"
+        }
+      ]
     },
     {
       "id": "cx0159",
@@ -1730,5 +2842,724 @@
       "target": "cx0152",
       "type": "smoothstep"
     }
-  ]
+  ],
+  "semanticModelIndex": {
+    "io.catenax.asset_tracker_links": {
+      "latestVersion": "2.0.0",
+      "latestStatus": "release",
+      "versions": {
+        "2.0.0": "release"
+      },
+      "referencedByStandards": [
+        "cx0105"
+      ]
+    },
+    "io.catenax.batch": {
+      "latestVersion": "4.0.0",
+      "latestStatus": "release",
+      "versions": {
+        "3.0.0": "release",
+        "4.0.0": "release"
+      },
+      "referencedByStandards": [
+        "cx0127"
+      ]
+    },
+    "io.catenax.battery.battery_pass": {
+      "latestVersion": "6.1.0",
+      "latestStatus": "release",
+      "versions": {
+        "5.0.0": "release",
+        "6.1.0": "release"
+      },
+      "referencedByStandards": [
+        "cx0117",
+        "cx0131"
+      ]
+    },
+    "io.catenax.binary_exchange": {
+      "latestVersion": "1.0.0",
+      "latestStatus": "release",
+      "versions": {
+        "1.0.0": "release"
+      },
+      "referencedByStandards": [
+        "cx0151"
+      ]
+    },
+    "io.catenax.business_partner_certificate": {
+      "latestVersion": "3.1.0",
+      "latestStatus": "release",
+      "versions": {
+        "3.1.0": "release"
+      },
+      "referencedByStandards": [
+        "cx0135"
+      ]
+    },
+    "io.catenax.certificate_of_analysis": {
+      "latestVersion": "1.0.0",
+      "latestStatus": "release",
+      "versions": {
+        "1.0.0": "release"
+      },
+      "referencedByStandards": [
+        "cx0125"
+      ]
+    },
+    "io.catenax.days_of_supply": {
+      "latestVersion": "2.0.0",
+      "latestStatus": "release",
+      "versions": {
+        "2.0.0": "release"
+      },
+      "referencedByStandards": [
+        "cx0157"
+      ]
+    },
+    "io.catenax.delivery_information": {
+      "latestVersion": "2.0.0",
+      "latestStatus": "release",
+      "versions": {
+        "2.0.0": "release"
+      },
+      "referencedByStandards": [
+        "cx0157"
+      ]
+    },
+    "io.catenax.demand_and_capacity_notification": {
+      "latestVersion": "3.0.0",
+      "latestStatus": "release",
+      "versions": {
+        "3.0.0": "release"
+      },
+      "referencedByStandards": [
+        "cx0146"
+      ]
+    },
+    "io.catenax.early_warning_notification": {
+      "latestVersion": "1.0.0",
+      "latestStatus": "release",
+      "versions": {
+        "1.0.0": "release"
+      },
+      "referencedByStandards": [
+        "cx0123"
+      ]
+    },
+    "io.catenax.failure_pattern": {
+      "latestVersion": "1.0.0",
+      "latestStatus": "release",
+      "versions": {
+        "1.0.0": "release"
+      },
+      "referencedByStandards": [
+        "cx0123"
+      ]
+    },
+    "io.catenax.fleet.claim_data": {
+      "latestVersion": "3.0.0",
+      "latestStatus": "release",
+      "versions": {
+        "2.0.0": "release",
+        "3.0.0": "release"
+      },
+      "referencedByStandards": [
+        "cx0123",
+        "cx0131"
+      ]
+    },
+    "io.catenax.fleet.diagnostic_data": {
+      "latestVersion": "3.0.0",
+      "latestStatus": "release",
+      "versions": {
+        "2.0.0": "release",
+        "3.0.0": "release"
+      },
+      "referencedByStandards": [
+        "cx0123",
+        "cx0131"
+      ]
+    },
+    "io.catenax.fleet.vehicles": {
+      "latestVersion": "4.0.0",
+      "latestStatus": "release",
+      "versions": {
+        "2.1.0": "deprecated",
+        "3.0.0": "release",
+        "4.0.0": "release"
+      },
+      "referencedByStandards": [
+        "cx0123",
+        "cx0131"
+      ]
+    },
+    "io.catenax.id_based_comment": {
+      "latestVersion": "1.1.0",
+      "latestStatus": "release",
+      "versions": {
+        "1.0.0": "release",
+        "1.1.0": "release"
+      },
+      "referencedByStandards": [
+        "cx0128"
+      ]
+    },
+    "io.catenax.id_based_request_for_update": {
+      "latestVersion": "3.0.0",
+      "latestStatus": "release",
+      "versions": {
+        "3.0.0": "release"
+      },
+      "referencedByStandards": [
+        "cx0128"
+      ]
+    },
+    "io.catenax.iot_sensor_data": {
+      "latestVersion": "2.0.0",
+      "latestStatus": "release",
+      "versions": {
+        "2.0.0": "release"
+      },
+      "referencedByStandards": [
+        "cx0105"
+      ]
+    },
+    "io.catenax.iot_sensor_device_definition": {
+      "latestVersion": "2.0.0",
+      "latestStatus": "release",
+      "versions": {
+        "2.0.0": "release"
+      },
+      "referencedByStandards": [
+        "cx0105"
+      ]
+    },
+    "io.catenax.item_stock": {
+      "latestVersion": "2.0.0",
+      "latestStatus": "release",
+      "versions": {
+        "2.0.0": "release"
+      },
+      "referencedByStandards": [
+        "cx0157"
+      ]
+    },
+    "io.catenax.just_in_sequence_part": {
+      "latestVersion": "4.0.0",
+      "latestStatus": "release",
+      "versions": {
+        "3.0.0": "release",
+        "4.0.0": "release"
+      },
+      "referencedByStandards": [
+        "cx0005",
+        "cx0127"
+      ]
+    },
+    "io.catenax.manufactured_parts_quality_information": {
+      "latestVersion": "3.0.0",
+      "latestStatus": "release",
+      "versions": {
+        "2.1.0": "release",
+        "3.0.0": "release"
+      },
+      "referencedByStandards": [
+        "cx0123",
+        "cx0131"
+      ]
+    },
+    "io.catenax.manufacturing_capability": {
+      "latestVersion": "3.1.0",
+      "latestStatus": "release",
+      "versions": {
+        "3.1.0": "release"
+      },
+      "referencedByStandards": [
+        "cx0115"
+      ]
+    },
+    "io.catenax.market_place_offer": {
+      "latestVersion": "2.0.0",
+      "latestStatus": "release",
+      "versions": {
+        "2.0.0": "release"
+      },
+      "referencedByStandards": [
+        "cx0117",
+        "cx0131"
+      ]
+    },
+    "io.catenax.material_demand": {
+      "latestVersion": "1.0.0",
+      "latestStatus": "release",
+      "versions": {
+        "1.0.0": "release"
+      },
+      "referencedByStandards": [
+        "cx0002"
+      ]
+    },
+    "io.catenax.material_flow_scenario_request": {
+      "latestVersion": "2.0.0",
+      "latestStatus": "release",
+      "versions": {
+        "2.0.0": "release"
+      },
+      "referencedByStandards": [
+        "cx0133"
+      ]
+    },
+    "io.catenax.material_recycling_certificate": {
+      "latestVersion": "1.0.0",
+      "latestStatus": "release",
+      "versions": {
+        "1.0.0": "release"
+      },
+      "referencedByStandards": [
+        "cx0131"
+      ]
+    },
+    "io.catenax.packing_list": {
+      "latestVersion": "1.0.0",
+      "latestStatus": "release",
+      "versions": {
+        "1.0.0": "release"
+      },
+      "referencedByStandards": [
+        "cx0150"
+      ]
+    },
+    "io.catenax.part_type_information": {
+      "latestVersion": "2.0.0",
+      "latestStatus": "release",
+      "versions": {
+        "1.0.0": "release",
+        "2.0.0": "release"
+      },
+      "referencedByStandards": [
+        "cx0126"
+      ]
+    },
+    "io.catenax.parts_analyses": {
+      "latestVersion": "4.0.0",
+      "latestStatus": "release",
+      "versions": {
+        "3.0.0": "release",
+        "4.0.0": "release"
+      },
+      "referencedByStandards": [
+        "cx0123",
+        "cx0131"
+      ]
+    },
+    "io.catenax.pcf": {
+      "latestVersion": "9.0.0",
+      "latestStatus": "release",
+      "versions": {
+        "7.0.0": "release",
+        "8.0.0": "release",
+        "9.0.0": "release"
+      },
+      "referencedByStandards": [
+        "cx0136"
+      ]
+    },
+    "io.catenax.planned_production_output": {
+      "latestVersion": "2.0.0",
+      "latestStatus": "release",
+      "versions": {
+        "2.0.0": "release"
+      },
+      "referencedByStandards": [
+        "cx0157"
+      ]
+    },
+    "io.catenax.quality_task": {
+      "latestVersion": "3.0.0",
+      "latestStatus": "release",
+      "versions": {
+        "2.0.0": "release",
+        "3.0.0": "release"
+      },
+      "referencedByStandards": [
+        "cx0123",
+        "cx0131"
+      ]
+    },
+    "io.catenax.quality_task_attachment": {
+      "latestVersion": "3.0.0",
+      "latestStatus": "release",
+      "versions": {
+        "2.0.0": "release",
+        "3.0.0": "release"
+      },
+      "referencedByStandards": [
+        "cx0123",
+        "cx0131"
+      ]
+    },
+    "io.catenax.refurbishing_certificate": {
+      "latestVersion": "3.0.0",
+      "latestStatus": "release",
+      "versions": {
+        "3.0.0": "release"
+      },
+      "referencedByStandards": [
+        "cx0131"
+      ]
+    },
+    "io.catenax.remanufacturing_certificate": {
+      "latestVersion": "3.0.0",
+      "latestStatus": "release",
+      "versions": {
+        "3.0.0": "release"
+      },
+      "referencedByStandards": [
+        "cx0131"
+      ]
+    },
+    "io.catenax.repair_certificate": {
+      "latestVersion": "1.0.0",
+      "latestStatus": "release",
+      "versions": {
+        "1.0.0": "release"
+      },
+      "referencedByStandards": [
+        "cx0131"
+      ]
+    },
+    "io.catenax.report_8d": {
+      "latestVersion": "1.0.0",
+      "latestStatus": "release",
+      "versions": {
+        "1.0.0": "release"
+      },
+      "referencedByStandards": [
+        "cx0123"
+      ]
+    },
+    "io.catenax.request_for_quotation": {
+      "latestVersion": "3.0.0",
+      "latestStatus": "release",
+      "versions": {
+        "3.0.0": "release"
+      },
+      "referencedByStandards": [
+        "cx0129"
+      ]
+    },
+    "io.catenax.requirement": {
+      "latestVersion": "1.0.0",
+      "latestStatus": "release",
+      "versions": {
+        "1.0.0": "release"
+      },
+      "referencedByStandards": [
+        "cx0155"
+      ]
+    },
+    "io.catenax.return_request": {
+      "latestVersion": "2.0.0",
+      "latestStatus": "release",
+      "versions": {
+        "2.0.0": "release"
+      },
+      "referencedByStandards": [
+        "cx0117",
+        "cx0131"
+      ]
+    },
+    "io.catenax.reuse_certificate": {
+      "latestVersion": "3.0.0",
+      "latestStatus": "release",
+      "versions": {
+        "3.0.0": "release"
+      },
+      "referencedByStandards": [
+        "cx0131"
+      ]
+    },
+    "io.catenax.sbom": {
+      "latestVersion": "1.0.0",
+      "latestStatus": "release",
+      "versions": {
+        "1.0.0": "release"
+      },
+      "referencedByStandards": [
+        "cx0158"
+      ]
+    },
+    "io.catenax.secondary_material_content": {
+      "latestVersion": "1.0.0",
+      "latestStatus": "deprecated",
+      "versions": {
+        "1.0.0": "deprecated"
+      },
+      "referencedByStandards": [
+        "cx0131"
+      ]
+    },
+    "io.catenax.serial_part": {
+      "latestVersion": "4.0.0",
+      "latestStatus": "release",
+      "versions": {
+        "3.0.0": "release",
+        "4.0.0": "release"
+      },
+      "referencedByStandards": [
+        "cx0127"
+      ]
+    },
+    "io.catenax.shared.bill_of_process": {
+      "latestVersion": "1.1.0",
+      "latestStatus": "release",
+      "versions": {
+        "1.1.0": "release"
+      },
+      "referencedByStandards": [
+        "cx0129"
+      ]
+    },
+    "io.catenax.shared.message_header": {
+      "latestVersion": "3.0.0",
+      "latestStatus": "release",
+      "versions": {
+        "3.0.0": "release"
+      },
+      "referencedByStandards": [
+        "cx0129",
+        "cx0151",
+        "cx0154"
+      ]
+    },
+    "io.catenax.shared.part_site_information_as_built": {
+      "latestVersion": "2.0.0",
+      "latestStatus": "deprecated",
+      "versions": {
+        "2.0.0": "deprecated"
+      },
+      "referencedByStandards": [
+        "cx0005"
+      ]
+    },
+    "io.catenax.shared.quality_core": {
+      "latestVersion": "1.0.0",
+      "latestStatus": "release",
+      "versions": {
+        "1.0.0": "release"
+      },
+      "referencedByStandards": [
+        "cx0123"
+      ]
+    },
+    "io.catenax.shared.shopfloor_information_types": {
+      "latestVersion": "2.0.0",
+      "latestStatus": "release",
+      "versions": {
+        "2.0.0": "release"
+      },
+      "referencedByStandards": [
+        "cx0142"
+      ]
+    },
+    "io.catenax.shopfloor_information.get_production_forecast": {
+      "latestVersion": "2.0.0",
+      "latestStatus": "release",
+      "versions": {
+        "2.0.0": "release"
+      },
+      "referencedByStandards": [
+        "cx0142"
+      ]
+    },
+    "io.catenax.shopfloor_information.get_production_tracking": {
+      "latestVersion": "1.0.0",
+      "latestStatus": "release",
+      "versions": {
+        "1.0.0": "release"
+      },
+      "referencedByStandards": [
+        "cx0142"
+      ]
+    },
+    "io.catenax.shopfloor_information.provide_production_forecast": {
+      "latestVersion": "2.0.0",
+      "latestStatus": "release",
+      "versions": {
+        "2.0.0": "release"
+      },
+      "referencedByStandards": [
+        "cx0142"
+      ]
+    },
+    "io.catenax.shopfloor_information.provide_production_tracking": {
+      "latestVersion": "1.0.0",
+      "latestStatus": "release",
+      "versions": {
+        "1.0.0": "release"
+      },
+      "referencedByStandards": [
+        "cx0142"
+      ]
+    },
+    "io.catenax.short_term_material_demand": {
+      "latestVersion": "1.0.0",
+      "latestStatus": "release",
+      "versions": {
+        "1.0.0": "release"
+      },
+      "referencedByStandards": [
+        "cx0157"
+      ]
+    },
+    "io.catenax.single_level_bom_as_built": {
+      "latestVersion": "4.0.0",
+      "latestStatus": "release",
+      "versions": {
+        "3.0.0": "release",
+        "4.0.0": "release"
+      },
+      "referencedByStandards": [
+        "cx0127"
+      ]
+    },
+    "io.catenax.single_level_bom_as_planned": {
+      "latestVersion": "4.0.0",
+      "latestStatus": "release",
+      "versions": {
+        "3.0.0": "release",
+        "4.0.0": "release"
+      },
+      "referencedByStandards": [
+        "cx0126"
+      ]
+    },
+    "io.catenax.single_level_bom_as_specified": {
+      "latestVersion": "2.0.1",
+      "latestStatus": "release",
+      "versions": {
+        "2.0.0": "release",
+        "2.0.1": "release"
+      },
+      "referencedByStandards": [
+        "cx0131"
+      ]
+    },
+    "io.catenax.single_level_scene_node": {
+      "latestVersion": "1.0.0",
+      "latestStatus": "release",
+      "versions": {
+        "1.0.0": "release"
+      },
+      "referencedByStandards": [
+        "cx0156"
+      ]
+    },
+    "io.catenax.single_level_usage_as_built": {
+      "latestVersion": "4.0.0",
+      "latestStatus": "release",
+      "versions": {
+        "3.0.0": "release",
+        "4.0.0": "release"
+      },
+      "referencedByStandards": [
+        "cx0005",
+        "cx0127"
+      ]
+    },
+    "io.catenax.single_level_usage_as_planned": {
+      "latestVersion": "3.0.0",
+      "latestStatus": "release",
+      "versions": {
+        "2.0.0": "release",
+        "3.0.0": "release"
+      },
+      "referencedByStandards": [
+        "cx0005",
+        "cx0126"
+      ]
+    },
+    "io.catenax.traction_battery_code": {
+      "latestVersion": "2.0.0",
+      "latestStatus": "release",
+      "versions": {
+        "2.0.0": "release"
+      },
+      "referencedByStandards": [
+        "cx0125"
+      ]
+    },
+    "io.catenax.us_tariff_information": {
+      "latestVersion": "2.0.0",
+      "latestStatus": "release",
+      "versions": {
+        "2.0.0": "release"
+      },
+      "referencedByStandards": [
+        "cx0153"
+      ]
+    },
+    "io.catenax.vehicle.product_description": {
+      "latestVersion": "3.0.0",
+      "latestStatus": "release",
+      "versions": {
+        "3.0.0": "release"
+      },
+      "referencedByStandards": [
+        "cx0131"
+      ]
+    },
+    "io.catenax.warranty_claim_request": {
+      "latestVersion": "1.0.0",
+      "latestStatus": "release",
+      "versions": {
+        "1.0.0": "release"
+      },
+      "referencedByStandards": [
+        "cx0123"
+      ]
+    },
+    "io.catenax.warranty_claim_request_verification": {
+      "latestVersion": "1.0.0",
+      "latestStatus": "release",
+      "versions": {
+        "1.0.0": "release"
+      },
+      "referencedByStandards": [
+        "cx0123"
+      ]
+    },
+    "io.catenax.waste_certificate": {
+      "latestVersion": "1.0.0",
+      "latestStatus": "release",
+      "versions": {
+        "1.0.0": "release"
+      },
+      "referencedByStandards": [
+        "cx0131"
+      ]
+    },
+    "io.catenax.week_based_capacity_group": {
+      "latestVersion": "3.0.1",
+      "latestStatus": "release",
+      "versions": {
+        "2.0.0": "deprecated",
+        "3.0.1": "release"
+      },
+      "referencedByStandards": [
+        "cx0128"
+      ]
+    },
+    "io.catenax.week_based_material_demand": {
+      "latestVersion": "3.0.1",
+      "latestStatus": "release",
+      "versions": {
+        "3.0.1": "release"
+      },
+      "referencedByStandards": [
+        "cx0128"
+      ]
+    }
+  }
 }

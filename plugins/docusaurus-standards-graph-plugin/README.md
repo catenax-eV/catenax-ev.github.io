@@ -18,6 +18,7 @@ The interactive graph renders entirely in the browser via the [`StandardsGraph`]
 |------|---------|
 | `index.js` | Minimal Docusaurus plugin entry point — registers the plugin with the name `docusaurus-standards-graph-plugin`. |
 | `standardsParser.js` | Utility library that parses Catena-X standard markdown files and builds the graph data structure. Used by the data-generation pipeline in the **upstream repository**. |
+| `semanticModelEnricher.js` | Standalone Node.js script that enriches `standards-graph-data*.json` files with semantic model metadata fetched from `eclipse-tractusx/sldt-semantic-models` via `raw.githubusercontent.com`. Run once after graph data is generated (see below). |
 
 ---
 
@@ -67,6 +68,56 @@ Each JSON file has the following top-level structure:
 | `tags` | Frontmatter tags from the standard document. |
 | `path` | URL path relative to the version prefix (e.g. `/standards/CX-0018-…`). |
 | `referenceCount` | Number of other standards that reference this one (drives bubble size in the graph). |
+| `semanticModels` | Array of semantic model references found in the standard document (see below). May be absent if no URNs are found. |
+
+### Semantic model entry (within `semanticModels`)
+
+Each entry represents one unique `urn:samm:io.catenax.*` URN referenced by the standard:
+
+```json
+{
+  "urn": "urn:samm:io.catenax.week_based_capacity_group:2.0.0",
+  "modelName": "io.catenax.week_based_capacity_group",
+  "referencedVersion": "2.0.0",
+  "status": "deprecated",
+  "latestVersion": "3.0.1",
+  "latestStatus": "release",
+  "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.week_based_capacity_group/2.0.0",
+  "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.week_based_capacity_group/3.0.1"
+}
+```
+
+| Field | Description |
+|-------|-------------|
+| `urn` | Full URN as written in the standard document. |
+| `modelName` | Namespace identifier matching the directory name in `eclipse-tractusx/sldt-semantic-models`. |
+| `referencedVersion` | Specific version the standard pins. |
+| `status` | Status of the *referenced* version from its `metadata.json` (`"release"`, `"deprecated"`, or `"unknown"`). |
+| `latestVersion` | Highest semver folder in the model's directory (`null` if the model is not found in sldt-semantic-models). |
+| `latestStatus` | Status of the latest version (`null` if not found). |
+| `githubUrl` | Direct link to the specific version folder on GitHub (`null` if model not found). |
+| `latestGithubUrl` | Direct link to the latest version folder on GitHub (`null` if model not found). |
+
+Models absent from `eclipse-tractusx/sldt-semantic-models` (e.g. internal test models) will have `status: "unknown"` and `null` URLs.
+
+### Top-level `semanticModelIndex`
+
+A companion lookup map keyed by model name, useful for "which standards use this model" queries:
+
+```json
+{
+  "semanticModelIndex": {
+    "io.catenax.batch": {
+      "latestVersion": "4.0.0",
+      "latestStatus": "release",
+      "versions": { "1.0.2": "deprecated", "4.0.0": "release" },
+      "referencedByStandards": ["cx0151", "cx0158"]
+    }
+  }
+}
+```
+
+The `versions` map contains only the versions that were actually fetched (referenced versions + the latest version) — not necessarily every version that exists in the repository.
 
 ### Edge object
 
@@ -99,5 +150,20 @@ If the version-specific file is not found (HTTP 4xx), the component falls back t
 ## Adding a new release version
 
 1. Generate `standards-graph-data-{NewVersion}.json` using `standardsParser.js` in the upstream repository.
-2. Commit the generated file to `static/` in this repository.
-3. The version will automatically appear in the graph's version selector once it is listed in `versions.json`.
+2. Run `semanticModelEnricher.js` to enrich the new JSON with semantic model metadata.
+3. Commit the generated file to `static/` in this repository.
+4. The version will automatically appear in the graph's version selector once it is listed in `versions.json`.
+
+---
+
+## Refreshing semantic model data
+
+The `semanticModelEnricher.js` script enriches all graph data files in-place. It uses a hardcoded version registry (collected from `eclipse-tractusx/sldt-semantic-models`) and fetches `metadata.json` for each referenced model version from `raw.githubusercontent.com`:
+
+```sh
+node plugins/docusaurus-standards-graph-plugin/semanticModelEnricher.js
+```
+
+The script processes all four JSON files (`standards-graph-data.json`, `standards-graph-data-Saturn.json`, `standards-graph-data-Jupiter.json`, `standards-graph-data-Io.json`) and writes the enriched data back to each file.
+
+When new semantic model versions are released in `sldt-semantic-models`, update the `MODEL_VERSIONS` map at the top of `semanticModelEnricher.js` and re-run the script.

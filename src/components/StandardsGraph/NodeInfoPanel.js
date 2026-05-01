@@ -3,6 +3,82 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import { useVersions } from '@docusaurus/plugin-content-docs/client';
 import styles from './StandardsGraph.module.css';
 
+function SemanticModelStatusBadge({ status }) {
+  if (status === 'release') {
+    return <span className={styles.smStatusRelease}>release</span>;
+  }
+  if (status === 'deprecated') {
+    return <span className={styles.smStatusDeprecated}>deprecated</span>;
+  }
+  return <span className={styles.smStatusUnknown}>{status || 'unknown'}</span>;
+}
+
+function SemanticModelsSection({ semanticModels }) {
+  if (!semanticModels || semanticModels.length === 0) return null;
+
+  const hasDeprecated = semanticModels.some(m => m.status === 'deprecated');
+
+  return (
+    <div className={styles.controlSection}>
+      <label className={styles.controlLabel}>
+        Semantic Models ({semanticModels.length})
+        {hasDeprecated && (
+          <span className={styles.smDeprecatedAlert} title="This standard references deprecated model versions">
+            ⚠ deprecated
+          </span>
+        )}
+      </label>
+      <ul className={styles.smList}>
+        {semanticModels.map(m => {
+          const isDeprecated = m.status === 'deprecated';
+          const hasNewer = m.latestVersion && m.referencedVersion !== m.latestVersion;
+          return (
+            <li key={m.urn} className={`${styles.smItem} ${isDeprecated ? styles.smItemDeprecated : ''}`}>
+              <div className={styles.smHeader}>
+                {m.githubUrl ? (
+                  <a
+                    href={m.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.smModelName}
+                    title={`Open ${m.modelName} v${m.referencedVersion} on GitHub`}
+                  >
+                    {m.modelName}
+                  </a>
+                ) : (
+                  <span className={styles.smModelName}>{m.modelName}</span>
+                )}
+                <SemanticModelStatusBadge status={m.status} />
+              </div>
+              <div className={styles.smMeta}>
+                <span className={styles.smVersion}>v{m.referencedVersion}</span>
+                {hasNewer && (
+                  <span className={styles.smNewerHint}>
+                    {' '}⬆{' '}
+                    {m.latestGithubUrl ? (
+                      <a
+                        href={m.latestGithubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.smNewerLink}
+                      >
+                        v{m.latestVersion}
+                      </a>
+                    ) : (
+                      <span>v{m.latestVersion}</span>
+                    )}
+                    {' '}available
+                  </span>
+                )}
+              </div>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
+}
+
 const CATEGORY_CONFIG = {
   usecase: { label: 'Use Case', color: '#27AE60' },
   component: { label: 'Component', color: '#386FB3' },
@@ -270,6 +346,8 @@ export default function NodeInfoPanel({
               </ul>
             )}
           </div>
+
+          <SemanticModelsSection semanticModels={selectedNode.semanticModels} />
         </div>
       )}
     </div>
