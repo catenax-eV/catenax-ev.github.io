@@ -66,6 +66,7 @@ export default function StandardsGraph() {
   const [selectedTags, setSelectedTags] = useState([]);
   const [selectedCommittees, setSelectedCommittees] = useState([]);
   const [selectedExpertGroups, setSelectedExpertGroups] = useState([]);
+  const [filterDeprecatedModels, setFilterDeprecatedModels] = useState(false);
   const [loading, setLoading] = useState(true);
   const [currentVersion, setCurrentVersion] = useState(null);
   const [selectedNodeId, setSelectedNodeId] = useState(null);
@@ -163,7 +164,10 @@ export default function StandardsGraph() {
       const expertGroupMatch =
         selectedExpertGroups.length === 0 ||
         selectedExpertGroups.includes(nodeOwner?.expertGroupId ?? null);
-      return categoryMatch && searchMatch && tagMatch && committeeMatch && expertGroupMatch;
+      const deprecatedModelsMatch =
+        !filterDeprecatedModels ||
+        (node.semanticModels && node.semanticModels.some(m => m.status === 'deprecated'));
+      return categoryMatch && searchMatch && tagMatch && committeeMatch && expertGroupMatch && deprecatedModelsMatch;
     });
 
     const filteredNodeIds = new Set(filteredNodes.map(n => n.id));
@@ -251,7 +255,7 @@ export default function StandardsGraph() {
 
     setNodes(layoutedNodes);
     setEdges(layoutedEdges);
-  }, [graphData, filteredCategories, searchTerm, selectedTags, selectedCommittees, selectedExpertGroups, ownerData, colorMode, currentVersion, latestVersion, baseUrl]);
+  }, [graphData, filteredCategories, searchTerm, selectedTags, selectedCommittees, selectedExpertGroups, filterDeprecatedModels, ownerData, colorMode, currentVersion, latestVersion, baseUrl]);
 
   // Focus impact analysis — driven by click (pinned)
   useEffect(() => {
@@ -311,6 +315,10 @@ export default function StandardsGraph() {
 
   const handleExpertGroupFilterChange = useCallback(expertGroups => {
     setSelectedExpertGroups(expertGroups);
+  }, []);
+
+  const handleFilterDeprecatedModelsChange = useCallback(value => {
+    setFilterDeprecatedModels(value);
   }, []);
 
   const onNodeClick = useCallback((_, node) => {
@@ -376,6 +384,8 @@ export default function StandardsGraph() {
         availableExpertGroups={availableExpertGroups}
         selectedExpertGroups={selectedExpertGroups}
         onExpertGroupFilterChange={handleExpertGroupFilterChange}
+        filterDeprecatedModels={filterDeprecatedModels}
+        onFilterDeprecatedModelsChange={handleFilterDeprecatedModelsChange}
       />
       <ReactFlow
         nodes={nodes}

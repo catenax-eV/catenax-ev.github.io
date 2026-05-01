@@ -2,362 +2,265 @@
 'use strict';
 
 /**
- * semanticModelEnricher.js
- *
- * Enriches a standards-graph-data JSON file with semantic model dependency information
- * from the eclipse-tractusx/sldt-semantic-models GitHub repository.
- *
- * Usage:
- *   node semanticModelEnricher.js <json-file> <docs-dir>
- *
- * Example (from repo root):
- *   node plugins/docusaurus-standards-graph-plugin/semanticModelEnricher.js \
- *     static/standards-graph-data.json \
- *     docs/standards
- *
- * Environment variables:
- *   GITHUB_TOKEN  – optional but recommended; raises the API rate limit from
- *                   60 to 5 000 requests per hour.
- *
- * What it does:
- *   1. Reads the target graph-data JSON file.
- *   2. Scans every standard markdown file in <docs-dir> for
- *      "urn:samm:io.catenax.<model>:<version>" patterns.
- *   3. For every unique model name fetches version list + metadata.json from
- *      eclipse-tractusx/sldt-semantic-models via the GitHub Contents API.
- *   4. Adds a `semanticModels` array to each graph node and a top-level
- *      `semanticModelIndex` map to the JSON file.
- *   5. Writes the enriched data back to the same file.
+ * Self-contained semantic model enricher using raw.githubusercontent.com
+ * Uses pre-collected version directory data + live metadata.json fetching
  */
 
 const fs = require('fs');
 const path = require('path');
 
-const GITHUB_API_BASE = 'https://api.github.com';
-const SLDT_OWNER = 'eclipse-tractusx';
-const SLDT_REPO = 'sldt-semantic-models';
-const SLDT_GITHUB_BASE = `https://github.com/${SLDT_OWNER}/${SLDT_REPO}/tree/main`;
+// Pre-collected version data from github.com/eclipse-tractusx/sldt-semantic-models
+// Collected 2026-05-01 via GitHub MCP tool
+const MODEL_VERSIONS = {
+  "io.catenax.asset_tracker_links": ["1.0.0","2.0.0"],
+  "io.catenax.batch": ["1.0.2","2.0.0","2.0.1","3.0.0","3.0.1","4.0.0"],
+  "io.catenax.battery.battery_pass": ["3.0.0","3.0.1","4.0.0","5.0.0","6.0.0","6.1.0"],
+  "io.catenax.binary_exchange": ["1.0.0"],
+  "io.catenax.business_partner_certificate": ["1.0.0","2.0.0","3.0.0","3.1.0"],
+  "io.catenax.certificate_of_analysis": ["1.0.0"],
+  "io.catenax.days_of_supply": ["1.0.0","2.0.0"],
+  "io.catenax.delivery_information": ["1.0.0","2.0.0"],
+  "io.catenax.demand_and_capacity_notification": ["1.0.0","2.0.0","3.0.0"],
+  "io.catenax.early_warning_notification": ["1.0.0"],
+  // io.catenax.example: NOT FOUND in repo
+  "io.catenax.failure_pattern": ["1.0.0"],
+  "io.catenax.fleet.claim_data": ["1.0.0","2.0.0","3.0.0"],
+  "io.catenax.fleet.diagnostic_data": ["1.0.0","2.0.0","3.0.0"],
+  "io.catenax.fleet.vehicles": ["1.0.0","2.0.0","2.1.0","3.0.0","4.0.0"],
+  "io.catenax.generic.digital_product_passport": ["2.0.0","3.0.0","4.0.0","5.0.0","6.0.0","6.1.0","7.0.0"],
+  "io.catenax.id_based_comment": ["1.0.0","1.1.0"],
+  "io.catenax.id_based_request_for_update": ["1.0.0","2.0.0","3.0.0"],
+  "io.catenax.iot_sensor_data": ["1.0.0","2.0.0"],
+  "io.catenax.iot_sensor_device_definition": ["1.0.0","2.0.0"],
+  "io.catenax.item_stock": ["1.0.0","2.0.0"],
+  "io.catenax.just_in_sequence_part": ["1.0.0","2.0.0","3.0.0","4.0.0"],
+  "io.catenax.manufactured_parts_quality_information": ["1.0.0","2.0.0","2.1.0","3.0.0"],
+  "io.catenax.manufacturing_capability": ["1.0.0","2.0.0","3.0.0","3.1.0"],
+  "io.catenax.market_place_offer": ["1.2.0","1.4.0","2.0.0"],
+  // io.catenax.masterdatamanagement: NOT FOUND in repo
+  "io.catenax.material_demand": ["1.0.0"],
+  "io.catenax.material_flow_scenario_request": ["1.0.0","2.0.0"],
+  // io.catenax.material_for_recycling: has RELEASE_NOTES only, no versioned dirs
+  "io.catenax.material_recycling_certificate": ["1.0.0"],
+  "io.catenax.packing_list": ["1.0.0"],
+  "io.catenax.part_type_information": ["1.0.0","2.0.0"],
+  "io.catenax.parts_analyses": ["2.0.0","3.0.0","4.0.0"],
+  "io.catenax.pcf": ["2.0.0","3.0.0","4.0.0","4.0.1","5.0.0","6.0.0","7.0.0","8.0.0","9.0.0"],
+  "io.catenax.planned_production_output": ["1.0.0","2.0.0"],
+  "io.catenax.quality_task": ["1.0.0","2.0.0","3.0.0"],
+  "io.catenax.quality_task_attachment": ["1.0.0","2.0.0","3.0.0"],
+  "io.catenax.refurbishing_certificate": ["1.0.0","2.0.0","3.0.0"],
+  "io.catenax.remanufacturing_certificate": ["1.0.0","2.0.0","3.0.0"],
+  "io.catenax.repair_certificate": ["1.0.0"],
+  "io.catenax.report_8d": ["1.0.0"],
+  "io.catenax.request_for_quotation": ["1.0.0","2.0.0","3.0.0"],
+  "io.catenax.requirement": ["1.0.0"],
+  "io.catenax.return_request": ["1.1.1","1.1.2","2.0.0"],
+  "io.catenax.reuse_certificate": ["1.0.0","2.0.0","3.0.0"],
+  "io.catenax.sbom": ["1.0.0"],
+  "io.catenax.secondary_material_content": ["1.0.0"],
+  "io.catenax.serial_part": ["1.0.1","2.0.0","3.0.0","3.0.1","4.0.0"],
+  "io.catenax.shared.bill_of_process": ["1.0.0","1.1.0"],
+  "io.catenax.shared.business_partner_number": ["1.0.0","2.0.0"],
+  "io.catenax.shared.message_header": ["1.0.0","2.0.0","3.0.0"],
+  "io.catenax.shared.part_classification": ["1.0.0"],
+  "io.catenax.shared.part_site_information_as_built": ["1.0.0","2.0.0"],
+  "io.catenax.shared.quality_core": ["1.0.0"],
+  "io.catenax.shared.quantity": ["1.0.0","2.0.0","3.0.0"],
+  "io.catenax.shared.shopfloor_information_types": ["1.0.0","2.0.0"],
+  "io.catenax.shared.uuid": ["1.0.0","2.0.0"],
+  "io.catenax.shopfloor_information.get_production_forecast": ["1.0.0","2.0.0"],
+  "io.catenax.shopfloor_information.get_production_tracking": ["1.0.0"],
+  "io.catenax.shopfloor_information.provide_production_forecast": ["1.0.0","2.0.0"],
+  "io.catenax.shopfloor_information.provide_production_tracking": ["1.0.0"],
+  "io.catenax.short_term_material_demand": ["1.0.0"],
+  "io.catenax.single_level_bom_as_built": ["1.0.0","2.0.0","3.0.0","4.0.0"],
+  "io.catenax.single_level_bom_as_planned": ["2.0.0","3.0.0","4.0.0"],
+  "io.catenax.single_level_bom_as_specified": ["1.0.0","2.0.0","2.0.1"],
+  "io.catenax.single_level_scene_node": ["1.0.0"],
+  "io.catenax.single_level_usage_as_built": ["2.0.0","3.0.0","4.0.0"],
+  "io.catenax.single_level_usage_as_planned": ["1.1.0","2.0.0","3.0.0"],
+  // io.catenax.special_characteristics: NOT FOUND in repo
+  "io.catenax.traction_battery_code": ["1.0.0","2.0.0"],
+  "io.catenax.transmission.transmission_pass": ["1.0.0","2.0.0","3.0.0","3.1.0"],
+  "io.catenax.us_tariff_information": ["1.0.0","2.0.0"],
+  "io.catenax.vehicle.product_description": ["1.0.0","2.0.0","3.0.0"],
+  "io.catenax.warranty_claim_request": ["1.0.0"],
+  "io.catenax.warranty_claim_request_verification": ["1.0.0"],
+  "io.catenax.waste_certificate": ["1.0.0"],
+  "io.catenax.week_based_capacity_group": ["1.0.1","2.0.0","3.0.0","3.0.1"],
+  "io.catenax.week_based_material_demand": ["1.0.0","1.0.1","2.0.0","3.0.0","3.0.1"],
+  // io.catenax.zero_km_failure: NOT FOUND in repo
+};
 
-// Matches: urn:samm:io.catenax.<model>:<major>.<minor>.<patch>
-// Using a non-global version and calling it repeatedly.
-const URN_REGEX_SOURCE = /urn:samm:(io\.catenax\.[a-zA-Z0-9_.]+):(\d+\.\d+\.\d+)/g;
+const RAW_BASE = 'https://raw.githubusercontent.com/eclipse-tractusx/sldt-semantic-models/main';
+const GITHUB_TREE_BASE = 'https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main';
 
-let requestCount = 0;
+// Status metadata cache to avoid re-fetching
+const statusCache = new Map();
 
-// ---------------------------------------------------------------------------
-// GitHub API helpers
-// ---------------------------------------------------------------------------
+async function fetchStatus(modelName, version) {
+  const key = `${modelName}:${version}`;
+  if (statusCache.has(key)) return statusCache.get(key);
 
-function buildHeaders() {
-  const headers = {
-    Accept: 'application/vnd.github.v3+json',
-    'User-Agent': 'catenax-standards-graph-enricher',
-  };
-  const token = process.env.GITHUB_TOKEN;
-  if (token) headers.Authorization = `Bearer ${token}`;
-  return headers;
-}
-
-async function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
-
-/**
- * Fetch a GitHub API URL with simple retry + rate-limit handling.
- * Returns the Response object on success, or null on 404.
- */
-async function githubFetch(url, retries = 3) {
-  const headers = buildHeaders();
-
-  for (let attempt = 0; attempt < retries; attempt++) {
-    if (requestCount > 0) await sleep(100); // be polite
-    requestCount++;
-
-    let response;
-    try {
-      response = await fetch(url, { headers });
-    } catch (err) {
-      if (attempt < retries - 1) {
-        console.warn(`  Network error (attempt ${attempt + 1}/${retries}): ${err.message}`);
-        await sleep(1000 * (attempt + 1));
-        continue;
-      }
-      throw err;
-    }
-
-    if (response.status === 404) return null;
-
-    if (response.status === 403 || response.status === 429) {
-      const retryAfter = parseInt(response.headers.get('Retry-After') || '60', 10);
-      console.warn(`  Rate limited. Waiting ${retryAfter}s…`);
-      await sleep(retryAfter * 1000);
-      attempt--; // don't count as a proper attempt
-      continue;
-    }
-
-    if (!response.ok) throw new Error(`HTTP ${response.status} for ${url}`);
-
-    return response;
-  }
-  return null;
-}
-
-/**
- * List semver-named sub-directories for a model in sldt-semantic-models.
- * Returns a string[] of version strings, or null when the model folder is absent.
- */
-async function listModelVersions(modelName) {
-  const url = `${GITHUB_API_BASE}/repos/${SLDT_OWNER}/${SLDT_REPO}/contents/${encodeURIComponent(modelName)}`;
-  const resp = await githubFetch(url);
-  if (!resp) return null;
-
-  const contents = await resp.json();
-  return contents
-    .filter(item => item.type === 'dir' && /^\d+\.\d+\.\d+$/.test(item.name))
-    .map(item => item.name);
-}
-
-/**
- * Fetch the `status` string from metadata.json for one model version.
- * Returns the status string or 'unknown'.
- */
-async function getVersionStatus(modelName, version) {
-  const url =
-    `${GITHUB_API_BASE}/repos/${SLDT_OWNER}/${SLDT_REPO}/contents/` +
-    `${encodeURIComponent(modelName)}/${version}/metadata.json`;
-
-  const resp = await githubFetch(url);
-  if (!resp) return 'unknown';
-
-  const data = await resp.json();
-
-  // GitHub API returns text files base64-encoded in the `content` field.
-  let text;
-  if (data.content) {
-    text = Buffer.from(data.content, 'base64').toString('utf-8').trim();
-  } else if (data.download_url) {
-    const raw = await githubFetch(data.download_url);
-    if (!raw) return 'unknown';
-    text = (await raw.text()).trim();
-  } else {
-    return 'unknown';
-  }
-
+  const url = `${RAW_BASE}/${modelName}/${version}/metadata.json`;
   try {
-    return JSON.parse(text).status || 'unknown';
+    const resp = await fetch(url);
+    if (!resp.ok) {
+      statusCache.set(key, 'unknown');
+      return 'unknown';
+    }
+    const text = await resp.text();
+    const meta = JSON.parse(text.trim());
+    const status = meta.status || 'unknown';
+    statusCache.set(key, status);
+    return status;
   } catch {
+    statusCache.set(key, 'unknown');
     return 'unknown';
   }
-}
-
-// ---------------------------------------------------------------------------
-// Semver helpers
-// ---------------------------------------------------------------------------
-
-function parseSemver(v) {
-  return v.split('.').map(Number);
 }
 
 function compareSemver(a, b) {
-  const [aMaj, aMin, aPat] = parseSemver(a);
-  const [bMaj, bMin, bPat] = parseSemver(b);
+  const [aMaj, aMin, aPat] = a.split('.').map(Number);
+  const [bMaj, bMin, bPat] = b.split('.').map(Number);
   return (aMaj - bMaj) || (aMin - bMin) || (aPat - bPat);
 }
 
-// ---------------------------------------------------------------------------
-// URN extraction from markdown files
-// ---------------------------------------------------------------------------
+// Extract URN references from docs directory
+const URN_REGEX = /urn:samm:(io\.catenax\.[a-zA-Z0-9_.]+):(\d+\.\d+\.\d+)/g;
 
-/**
- * Walk <docsDir> and extract all urn:samm:io.catenax.<model>:<version> refs.
- * Returns Map<standardNumber (zero-padded string), Set<"modelName:version">>.
- */
-function extractUrnsFromDocs(docsDir) {
-  const result = new Map();
-
-  if (!fs.existsSync(docsDir)) {
-    console.warn(`⚠  Docs directory not found: ${docsDir}`);
-    return result;
+function collectUrnsFromDir(dir, urns) {
+  for (const file of fs.readdirSync(dir)) {
+    const fp = path.join(dir, file);
+    if (fs.statSync(fp).isDirectory()) collectUrnsFromDir(fp, urns);
+    else if (file.endsWith('.md')) {
+      const content = fs.readFileSync(fp, 'utf-8');
+      const re = new RegExp(URN_REGEX.source, 'g');
+      let m;
+      while ((m = re.exec(content)) !== null) urns.add(`${m[1]}:${m[2]}`);
+    }
   }
+}
 
+function extractUrns(docsDir) {
+  const result = new Map();
+  if (!fs.existsSync(docsDir)) return result;
   for (const entry of fs.readdirSync(docsDir)) {
     const match = entry.match(/^CX-(\d+)/);
     if (!match) continue;
     const stdNum = match[1];
     const stdPath = path.join(docsDir, entry);
     if (!fs.statSync(stdPath).isDirectory()) continue;
-
     const urns = new Set();
     collectUrnsFromDir(stdPath, urns);
-
     if (urns.size > 0) result.set(stdNum, urns);
   }
-
   return result;
 }
 
-function collectUrnsFromDir(dir, urns) {
-  for (const file of fs.readdirSync(dir)) {
-    const filePath = path.join(dir, file);
-    const stat = fs.statSync(filePath);
-    if (stat.isDirectory()) {
-      collectUrnsFromDir(filePath, urns);
-    } else if (file.endsWith('.md')) {
-      const content = fs.readFileSync(filePath, 'utf-8');
-      // Re-create the regex each time to avoid lastIndex issues
-      const re = new RegExp(URN_REGEX_SOURCE.source, 'g');
-      let m;
-      while ((m = re.exec(content)) !== null) {
-        urns.add(`${m[1]}:${m[2]}`); // "io.catenax.batch:3.0.0"
+async function enrichFile(jsonPath, docsDir) {
+  console.log(`\n📖 ${path.basename(jsonPath)}`);
+  const graphData = JSON.parse(fs.readFileSync(jsonPath, 'utf-8'));
+  const urnsByStandard = extractUrns(docsDir);
+  console.log(`   Found URN references in ${urnsByStandard.size} standards`);
+
+  // Collect all (model, version) pairs we need to fetch status for
+  const neededPairs = new Set();
+  for (const urns of urnsByStandard.values()) {
+    for (const urnKey of urns) {
+      const lastColon = urnKey.lastIndexOf(':');
+      const modelName = urnKey.substring(0, lastColon);
+      const version = urnKey.substring(lastColon + 1);
+      neededPairs.add(`${modelName}:${version}`);
+      // Also add the latest version of this model
+      if (MODEL_VERSIONS[modelName]) {
+        const sortedVers = [...MODEL_VERSIONS[modelName]].sort(compareSemver);
+        const latest = sortedVers[sortedVers.length - 1];
+        neededPairs.add(`${modelName}:${latest}`);
       }
     }
   }
-}
 
-// ---------------------------------------------------------------------------
-// Main
-// ---------------------------------------------------------------------------
+  // Fetch all needed statuses in parallel
+  process.stdout.write(`   Fetching ${neededPairs.size} metadata.json files... `);
+  await Promise.all([...neededPairs].map(pair => {
+    const [model, ver] = pair.split(':');
+    return fetchStatus(model, ver);
+  }));
+  console.log('done');
 
-async function main() {
-  const [, , jsonFile, docsDir] = process.argv;
-
-  if (!jsonFile || !docsDir) {
-    console.error('Usage: node semanticModelEnricher.js <json-file> <docs-dir>');
-    process.exit(1);
-  }
-
-  const jsonPath = path.resolve(jsonFile);
-  const docsDirPath = path.resolve(docsDir);
-
-  console.log(`📖  Reading: ${jsonPath}`);
-  const graphData = JSON.parse(fs.readFileSync(jsonPath, 'utf-8'));
-
-  console.log(`🔍  Extracting URNs from: ${docsDirPath}`);
-  const urnsByStandard = extractUrnsFromDocs(docsDirPath);
-  console.log(`    Found references in ${urnsByStandard.size} standards`);
-
-  // Collect unique model names
-  const allModelNames = new Set();
-  for (const urns of urnsByStandard.values()) {
-    for (const key of urns) allModelNames.add(key.split(':')[0]);
-  }
-
-  console.log(`\n🌐  Fetching metadata for ${allModelNames.size} models from GitHub…`);
-
-  // Cache: modelName → { versions: Map<ver, status>, sortedVersions, latestVersion, latestStatus }
-  //                  or null when not found in sldt-semantic-models
-  const modelCache = new Map();
-
-  for (const modelName of [...allModelNames].sort()) {
-    process.stdout.write(`    ${modelName} … `);
-
-    const versions = await listModelVersions(modelName);
-
-    if (!versions || versions.length === 0) {
-      console.log('not found');
-      modelCache.set(modelName, null);
-      continue;
-    }
-
-    const versionStatuses = new Map();
-    for (const ver of versions) {
-      const status = await getVersionStatus(modelName, ver);
-      versionStatuses.set(ver, status);
-    }
-
-    const sortedVersions = [...versions].sort(compareSemver);
-    const latestVersion = sortedVersions[sortedVersions.length - 1];
-    const latestStatus = versionStatuses.get(latestVersion) || 'unknown';
-
-    modelCache.set(modelName, { versions: versionStatuses, sortedVersions, latestVersion, latestStatus });
-
-    const summary = sortedVersions.map(v => `${v}=${versionStatuses.get(v)}`).join(', ');
-    console.log(summary);
-  }
-
-  // ---------------------------------------------------------------------------
   // Build semanticModelIndex
-  // ---------------------------------------------------------------------------
   const semanticModelIndex = {};
+  for (const [modelName, versions] of Object.entries(MODEL_VERSIONS)) {
+    const sortedVers = [...versions].sort(compareSemver);
+    const latestVersion = sortedVers[sortedVers.length - 1];
+    const versionStatuses = {};
+    for (const v of sortedVers) {
+      const s = statusCache.get(`${modelName}:${v}`);
+      if (s) versionStatuses[v] = s;
+    }
+    const latestStatus = statusCache.get(`${modelName}:${latestVersion}`) || 'unknown';
 
-  for (const [modelName, meta] of modelCache.entries()) {
-    if (!meta) continue;
-
-    const versions = {};
-    for (const [v, s] of meta.versions.entries()) versions[v] = s;
-
-    // Which standard nodes reference this model?
+    // Find which standards reference this model
     const referencedByStandards = [];
     for (const [stdNum, urns] of urnsByStandard.entries()) {
       const refersToModel = [...urns].some(u => u.startsWith(`${modelName}:`));
       if (!refersToModel) continue;
       const node = graphData.nodes.find(n => n.number === stdNum);
-      if (node && !referencedByStandards.includes(node.id)) {
-        referencedByStandards.push(node.id);
-      }
+      if (node && !referencedByStandards.includes(node.id)) referencedByStandards.push(node.id);
     }
 
-    semanticModelIndex[modelName] = {
-      latestVersion: meta.latestVersion,
-      latestStatus: meta.latestStatus,
-      versions,
-      referencedByStandards,
-    };
+    if (referencedByStandards.length > 0) {
+      semanticModelIndex[modelName] = { latestVersion, latestStatus, versions: versionStatuses, referencedByStandards };
+    }
   }
 
-  // ---------------------------------------------------------------------------
   // Enrich nodes
-  // ---------------------------------------------------------------------------
-  let enrichedCount = 0;
-
+  let enriched = 0;
   for (const node of graphData.nodes) {
     const urns = urnsByStandard.get(node.number);
     if (!urns || urns.size === 0) continue;
 
     const semanticModels = [];
-
     for (const urnKey of [...urns].sort()) {
       const lastColon = urnKey.lastIndexOf(':');
       const modelName = urnKey.substring(0, lastColon);
       const referencedVersion = urnKey.substring(lastColon + 1);
-
-      const meta = modelCache.get(modelName) || null;
-
-      const status = meta ? (meta.versions.get(referencedVersion) || 'unknown') : 'unknown';
-      const latestVersion = meta ? meta.latestVersion : null;
-      const latestStatus = meta ? meta.latestStatus : null;
-      const githubUrl = meta ? `${SLDT_GITHUB_BASE}/${modelName}/${referencedVersion}` : null;
-      const latestGithubUrl =
-        meta && latestVersion ? `${SLDT_GITHUB_BASE}/${modelName}/${latestVersion}` : null;
-
-      semanticModels.push({
-        urn: `urn:samm:${urnKey}`,
-        modelName,
-        referencedVersion,
-        status,
-        latestVersion,
-        latestStatus,
-        githubUrl,
-        latestGithubUrl,
-      });
+      const versions = MODEL_VERSIONS[modelName] || null;
+      const status = statusCache.get(`${modelName}:${referencedVersion}`) || 'unknown';
+      let latestVersion = null, latestStatus = null, githubUrl = null, latestGithubUrl = null;
+      if (versions) {
+        const sortedVers = [...versions].sort(compareSemver);
+        latestVersion = sortedVers[sortedVers.length - 1];
+        latestStatus = statusCache.get(`${modelName}:${latestVersion}`) || 'unknown';
+        githubUrl = `${GITHUB_TREE_BASE}/${modelName}/${referencedVersion}`;
+        latestGithubUrl = `${GITHUB_TREE_BASE}/${modelName}/${latestVersion}`;
+      }
+      semanticModels.push({ urn: `urn:samm:${urnKey}`, modelName, referencedVersion, status, latestVersion, latestStatus, githubUrl, latestGithubUrl });
     }
-
     node.semanticModels = semanticModels;
-    enrichedCount++;
+    enriched++;
   }
-
   graphData.semanticModelIndex = semanticModelIndex;
 
-  // ---------------------------------------------------------------------------
-  // Write output
-  // ---------------------------------------------------------------------------
-  console.log(`\n✅  Enriched ${enrichedCount} nodes`);
-  console.log(`💾  Writing: ${jsonPath}`);
   fs.writeFileSync(jsonPath, JSON.stringify(graphData, null, 2) + '\n');
-  console.log(`🎉  Done! (${requestCount} GitHub API requests)`);
+  console.log(`   Enriched ${enriched} nodes ✓`);
 }
 
-main().catch(err => {
-  console.error('Fatal:', err);
-  process.exit(1);
-});
+async function main() {
+  const ROOT = process.argv[2] || '/home/runner/work/catenax-ev.github.io/catenax-ev.github.io';
+  const files = [
+    { json: path.join(ROOT, 'static/standards-graph-data.json'), docs: path.join(ROOT, 'docs/standards') },
+    { json: path.join(ROOT, 'static/standards-graph-data-Saturn.json'), docs: path.join(ROOT, 'versioned_docs/version-Saturn/standards') },
+    { json: path.join(ROOT, 'static/standards-graph-data-Jupiter.json'), docs: path.join(ROOT, 'versioned_docs/version-Jupiter/standards') },
+    { json: path.join(ROOT, 'static/standards-graph-data-Io.json'), docs: path.join(ROOT, 'versioned_docs/version-Io/standards') },
+  ];
+
+  for (const { json, docs } of files) {
+    await enrichFile(json, docs);
+  }
+  console.log(`\n✅ All done! (${statusCache.size} unique statuses fetched)`);
+}
+
+main().catch(err => { console.error('Fatal:', err); process.exit(1); });

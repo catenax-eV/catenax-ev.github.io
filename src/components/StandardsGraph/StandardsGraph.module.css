@@ -553,7 +553,116 @@
   color: var(--ifm-color-emphasis-500);
 }
 
-/* Mobile Responsive */
+/* Semantic Model Section in NodeInfoPanel */
+.smList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.smItem {
+  padding: 7px 9px;
+  border-radius: 6px;
+  background: var(--ifm-color-emphasis-100);
+  border: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.smItemDeprecated {
+  border-color: #e67e22;
+  background: rgba(230, 126, 34, 0.05);
+}
+
+.smHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.smModelName {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+  word-break: break-all;
+  flex: 1;
+}
+
+.smModelName:hover {
+  text-decoration: underline;
+}
+
+.smMeta {
+  margin-top: 3px;
+  font-size: 0.7rem;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.smVersion {
+  font-family: var(--ifm-font-family-monospace);
+}
+
+.smNewerHint {
+  color: #888;
+}
+
+.smNewerLink {
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+  font-family: var(--ifm-font-family-monospace);
+}
+
+.smNewerLink:hover {
+  text-decoration: underline;
+}
+
+.smStatusRelease {
+  display: inline-block;
+  padding: 1px 5px;
+  border-radius: 8px;
+  font-size: 0.6rem;
+  font-weight: 600;
+  background: #27AE60;
+  color: #fff;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.smStatusDeprecated {
+  display: inline-block;
+  padding: 1px 5px;
+  border-radius: 8px;
+  font-size: 0.6rem;
+  font-weight: 600;
+  background: #e67e22;
+  color: #fff;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.smStatusUnknown {
+  display: inline-block;
+  padding: 1px 5px;
+  border-radius: 8px;
+  font-size: 0.6rem;
+  font-weight: 600;
+  background: var(--ifm-color-emphasis-300);
+  color: var(--ifm-font-color-base);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.smDeprecatedAlert {
+  float: right;
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: #e67e22;
+  text-transform: none;
+  letter-spacing: 0;
+}
 @media (max-width: 768px) {
   .container {
     height: calc(100vh - 60px);
