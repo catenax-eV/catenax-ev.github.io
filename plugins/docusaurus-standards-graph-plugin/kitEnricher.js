@@ -31,7 +31,8 @@ const KIT_SITE_BASE  = 'https://eclipse-tractusx.github.io/docs-kits/category';
 const SKIP_DIRS = new Set(['assets', 'images', 'img', 'openapi', 'diagrams', 'static']);
 
 // Regex to detect a CX standard reference — matches e.g. "CX-0018" or "CX-0152"
-const CX_REGEX = /\bCX-(\d{4})\b/g;
+// Note: global flag is NOT set here; it is added when constructing per-file instances.
+const CX_REGEX = /\bCX-(\d{4})\b/;
 
 // ── Helpers ────────────────────────────────────────────────────────────────
 

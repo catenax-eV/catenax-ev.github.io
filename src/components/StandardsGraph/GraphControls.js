@@ -6,6 +6,9 @@ const CATEGORY_CONFIG = {
   component: { label: 'Component Standards', color: '#386FB3' },
 };
 
+// Color must match KIT_NODE_COLOR.light in StandardsGraph.js
+const KIT_COLOR = '#7D3C98';
+
 // Maps the prefix before "/" to a human-readable group name
 const TAG_GROUP_LABELS = {
   CAT: 'Category',
@@ -300,7 +303,7 @@ export default function GraphControls({
                       checked={showKits}
                       onChange={() => onShowKitsChange && onShowKitsChange(!showKits)}
                     />
-                    <span className={styles.legendHexagon} style={{ background: '#7D3C98' }} />
+                    <span className={styles.legendHexagon} style={{ background: KIT_COLOR }} />
                     <span>Show KITs</span>
                   </label>
                 )}
@@ -335,7 +338,7 @@ export default function GraphControls({
             )}
             {showKits && (
               <div className={styles.legendItem}>
-                <span className={styles.legendHexagon} style={{ background: '#7D3C98' }} />
+                <span className={styles.legendHexagon} style={{ background: KIT_COLOR }} />
                 <span>Tractus-X KIT</span>
               </div>
             )}

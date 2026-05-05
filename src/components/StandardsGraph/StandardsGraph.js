@@ -64,6 +64,9 @@ const getForceLayoutedElements = (nodes, edges) => {
   return { nodes, edges };
 };
 
+// Ring spacing between concentric layout rings (pixels)
+const RING_SPACING = 320;
+
 // Multi-ring layout: CX standards on inner ring, optional outer rings (KITs / SMs)
 // outerRings is an array of node-arrays, each placed on its own ring
 const getMultiRingLayoutedElements = (stdNodes, outerRings, allEdges) => {
@@ -85,7 +88,7 @@ const getMultiRingLayoutedElements = (stdNodes, outerRings, allEdges) => {
   const allOuterNodes = [];
   for (const ring of outerRings) {
     if (ring.length === 0) continue;
-    currentRadius += 320;
+    currentRadius += RING_SPACING;
     ring.forEach((node, i) => {
       const angle = startAngle + (i / Math.max(ring.length, 1)) * 2 * Math.PI;
       node.position = {

@@ -809,6 +809,7 @@
   height: 140px;
   top: 10px;
   left: 10px;
+  /* Flat-top hexagon: vertices at (25%,0), (75%,0), (100%,50%), (75%,100%), (25%,100%), (0%,50%) */
   clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.22);
   transition: box-shadow 0.2s ease, transform 0.2s ease;
