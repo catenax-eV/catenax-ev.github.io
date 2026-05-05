@@ -12,7 +12,10 @@
         "CAT/Sandbox Service Provider"
       ],
       "path": "/standards/CX-0001-EDCDiscoveryAPI",
-      "referenceCount": 15
+      "referenceCount": 15,
+      "referencedByKits": [
+        "connector-kit"
+      ]
     },
     {
       "id": "cx0002",
@@ -27,7 +30,12 @@
         "CAT/Digital Twin"
       ],
       "path": "/standards/CX-0002-DigitalTwinsInCatenaX",
-      "referenceCount": 11
+      "referenceCount": 11,
+      "referencedByKits": [
+        "digital-twin-kit",
+        "data-chain-kit",
+        "industry-core-kit"
+      ]
     },
     {
       "id": "cx0003",
@@ -50,6 +58,10 @@
           "githubUrl": null,
           "latestGithubUrl": null
         }
+      ],
+      "referencedByKits": [
+        "digital-twin-kit",
+        "industry-core-kit"
       ]
     },
     {
@@ -59,7 +71,10 @@
       "category": "component",
       "tags": [],
       "path": "/standards/CX-0005-ItemRelationshipServiceAPI",
-      "referenceCount": 1
+      "referenceCount": 1,
+      "referencedByKits": [
+        "data-chain-kit"
+      ]
     },
     {
       "id": "cx0006",
@@ -74,7 +89,10 @@
         "CAT/Onboarding Service Provider"
       ],
       "path": "/standards/CX-0006-RegistrationAndInitialOnboarding",
-      "referenceCount": 9
+      "referenceCount": 9,
+      "referencedByKits": [
+        "connector-kit"
+      ]
     },
     {
       "id": "cx0007",
@@ -112,7 +130,10 @@
         "CAT/Sandbox Service Provider"
       ],
       "path": "/standards/CX-0010-BusinessPartnerNumber",
-      "referenceCount": 13
+      "referenceCount": 13,
+      "referencedByKits": [
+        "business-partner-kit"
+      ]
     },
     {
       "id": "cx0012",
@@ -126,7 +147,10 @@
         "CAT/Sandbox Service Provider"
       ],
       "path": "/standards/CX-0012-BusinessPartnerDataPoolAPI",
-      "referenceCount": 0
+      "referenceCount": 0,
+      "referencedByKits": [
+        "business-partner-kit"
+      ]
     },
     {
       "id": "cx0014",
@@ -167,7 +191,26 @@
         "CAT/Sandbox Services (Beta)"
       ],
       "path": "/standards/CX-0018-DataspaceConnectivity",
-      "referenceCount": 18
+      "referenceCount": 18,
+      "referencedByKits": [
+        "connector-kit",
+        "data-chain-kit",
+        "traceability-kit",
+        "industry-core-kit",
+        "demand-and-capacity-management-kit",
+        "eco-pass-kit",
+        "product-carbon-footprint-exchange-kit",
+        "manufacturing-as-a-service-kit",
+        "puris-kit",
+        "logistics-kit",
+        "supply-chain-disruption-notification-kit",
+        "requirements-kit",
+        "geometry-kit",
+        "behaviour-twin-kit",
+        "online-simulation-kit",
+        "data-driven-quality-management-kit",
+        "circularity-kit"
+      ]
     },
     {
       "id": "cx0030",
@@ -224,7 +267,10 @@
       "category": "component",
       "tags": [],
       "path": "/standards/CX-0045-AspectModelDataChainTemplate",
-      "referenceCount": 3
+      "referenceCount": 3,
+      "referencedByKits": [
+        "data-chain-kit"
+      ]
     },
     {
       "id": "cx0049",
@@ -238,7 +284,10 @@
         "CAT/Sandbox Services (Beta)"
       ],
       "path": "/standards/CX-0049-DIDDocumentSchema",
-      "referenceCount": 1
+      "referenceCount": 1,
+      "referencedByKits": [
+        "connector-kit"
+      ]
     },
     {
       "id": "cx0050",
@@ -267,7 +316,10 @@
         "CAT/BPDM"
       ],
       "path": "/standards/CX-0053-BPNDiscoveryServiceAPIs",
-      "referenceCount": 8
+      "referenceCount": 8,
+      "referencedByKits": [
+        "digital-twin-kit"
+      ]
     },
     {
       "id": "cx0054",
@@ -301,7 +353,10 @@
         "UC/Behavioral Twin"
       ],
       "path": "/standards/CX-0059-UseCaseBehaviourTwinEndurancePredictor",
-      "referenceCount": 0
+      "referenceCount": 0,
+      "referencedByKits": [
+        "behaviour-twin-kit"
+      ]
     },
     {
       "id": "cx0067",
@@ -310,7 +365,10 @@
       "category": "component",
       "tags": [],
       "path": "/standards/CX-0067-OntologyModelsToRealizeFederatedQueryInCatenaX",
-      "referenceCount": 3
+      "referenceCount": 3,
+      "referencedByKits": [
+        "knowledge-agents-kit"
+      ]
     },
     {
       "id": "cx0074",
@@ -324,7 +382,10 @@
         "CAT/BPDM"
       ],
       "path": "/standards/CX-0074-BusinessPartnerGateAPI",
-      "referenceCount": 0
+      "referenceCount": 0,
+      "referencedByKits": [
+        "business-partner-kit"
+      ]
     },
     {
       "id": "cx0076",
@@ -335,7 +396,10 @@
         "CAT/Value Added Services"
       ],
       "path": "/standards/CX-0076-GoldenRecordEndtoEndRequirementsStandard",
-      "referenceCount": 0
+      "referenceCount": 0,
+      "referencedByKits": [
+        "business-partner-kit"
+      ]
     },
     {
       "id": "cx0077",
@@ -401,7 +465,10 @@
         "CAT/Semantic"
       ],
       "path": "/standards/CX-0084-FederatedQueriesInDataSpaces",
-      "referenceCount": 3
+      "referenceCount": 3,
+      "referencedByKits": [
+        "knowledge-agents-kit"
+      ]
     },
     {
       "id": "cx0094",
@@ -487,6 +554,9 @@
           "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.manufacturing_capability/3.1.0",
           "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.manufacturing_capability/3.1.0"
         }
+      ],
+      "referencedByKits": [
+        "manufacturing-as-a-service-kit"
       ]
     },
     {
@@ -751,6 +821,9 @@
           "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.quality_task_attachment/2.0.0",
           "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.quality_task_attachment/3.0.0"
         }
+      ],
+      "referencedByKits": [
+        "data-driven-quality-management-kit"
       ]
     },
     {
@@ -785,6 +858,9 @@
           "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.traction_battery_code/2.0.0",
           "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.traction_battery_code/2.0.0"
         }
+      ],
+      "referencedByKits": [
+        "traceability-kit"
       ]
     },
     {
@@ -829,6 +905,10 @@
           "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.single_level_usage_as_planned/2.0.0",
           "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.single_level_usage_as_planned/3.0.0"
         }
+      ],
+      "referencedByKits": [
+        "traceability-kit",
+        "industry-core-kit"
       ]
     },
     {
@@ -893,6 +973,10 @@
           "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.single_level_usage_as_built/3.0.0",
           "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.single_level_usage_as_built/4.0.0"
         }
+      ],
+      "referencedByKits": [
+        "traceability-kit",
+        "industry-core-kit"
       ]
     },
     {
@@ -954,6 +1038,9 @@
           "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.week_based_material_demand/3.0.1",
           "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.week_based_material_demand/3.0.1"
         }
+      ],
+      "referencedByKits": [
+        "demand-and-capacity-management-kit"
       ]
     },
     {
@@ -1202,6 +1289,10 @@
           "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.waste_certificate/1.0.0",
           "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.waste_certificate/1.0.0"
         }
+      ],
+      "referencedByKits": [
+        "eco-pass-kit",
+        "circularity-kit"
       ]
     },
     {
@@ -1226,6 +1317,9 @@
           "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.material_flow_scenario_request/2.0.0",
           "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.material_flow_scenario_request/2.0.0"
         }
+      ],
+      "referencedByKits": [
+        "online-simulation-kit"
       ]
     },
     {
@@ -1273,6 +1367,10 @@
           "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.pcf/7.0.0",
           "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.pcf/9.0.0"
         }
+      ],
+      "referencedByKits": [
+        "eco-pass-kit",
+        "product-carbon-footprint-exchange-kit"
       ]
     },
     {
@@ -1285,7 +1383,10 @@
         "UC/Behavioral Twin"
       ],
       "path": "/standards/CX-0138-UseCaseBehaviourTwinEnduranceEstimator",
-      "referenceCount": 0
+      "referenceCount": 0,
+      "referencedByKits": [
+        "behaviour-twin-kit"
+      ]
     },
     {
       "id": "cx0141",
@@ -1297,7 +1398,10 @@
         "UC/Behavioral Twin"
       ],
       "path": "/standards/CX-0141-HealthIndicatorUseCase",
-      "referenceCount": 0
+      "referenceCount": 0,
+      "referencedByKits": [
+        "behaviour-twin-kit"
+      ]
     },
     {
       "id": "cx0142",
@@ -1417,6 +1521,9 @@
           "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.demand_and_capacity_notification/2.0.0",
           "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.demand_and_capacity_notification/3.0.0"
         }
+      ],
+      "referencedByKits": [
+        "supply-chain-disruption-notification-kit"
       ]
     },
     {
@@ -1456,6 +1563,9 @@
           "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.packing_list/1.0.0",
           "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.packing_list/1.0.0"
         }
+      ],
+      "referencedByKits": [
+        "logistics-kit"
       ]
     },
     {
@@ -1479,6 +1589,12 @@
           "githubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.shared.message_header/3.0.0",
           "latestGithubUrl": "https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.shared.message_header/3.0.0"
         }
+      ],
+      "referencedByKits": [
+        "digital-twin-kit",
+        "data-chain-kit",
+        "traceability-kit",
+        "industry-core-kit"
       ]
     }
   ],
@@ -2965,6 +3081,184 @@
       },
       "referencedByStandards": [
         "cx0128"
+      ]
+    }
+  },
+  "kitIndex": {
+    "connector-kit": {
+      "displayName": "Connector KIT",
+      "url": "https://eclipse-tractusx.github.io/docs-kits/category/connector-kit",
+      "referencedStandards": [
+        "cx0001",
+        "cx0006",
+        "cx0018",
+        "cx0049"
+      ]
+    },
+    "digital-twin-kit": {
+      "displayName": "Digital Twin KIT",
+      "url": "https://eclipse-tractusx.github.io/docs-kits/category/digital-twin-kit",
+      "referencedStandards": [
+        "cx0002",
+        "cx0003",
+        "cx0053",
+        "cx0151"
+      ]
+    },
+    "data-chain-kit": {
+      "displayName": "Data Chain KIT",
+      "url": "https://eclipse-tractusx.github.io/docs-kits/category/data-chain-kit",
+      "referencedStandards": [
+        "cx0002",
+        "cx0005",
+        "cx0018",
+        "cx0045",
+        "cx0151"
+      ]
+    },
+    "traceability-kit": {
+      "displayName": "Traceability KIT",
+      "url": "https://eclipse-tractusx.github.io/docs-kits/category/traceability-kit",
+      "referencedStandards": [
+        "cx0018",
+        "cx0125",
+        "cx0126",
+        "cx0127",
+        "cx0151"
+      ]
+    },
+    "industry-core-kit": {
+      "displayName": "Industry Core KIT",
+      "url": "https://eclipse-tractusx.github.io/docs-kits/category/industry-core-kit",
+      "referencedStandards": [
+        "cx0002",
+        "cx0003",
+        "cx0018",
+        "cx0126",
+        "cx0127",
+        "cx0151"
+      ]
+    },
+    "business-partner-kit": {
+      "displayName": "Business Partner KIT",
+      "url": "https://eclipse-tractusx.github.io/docs-kits/category/business-partner-kit",
+      "referencedStandards": [
+        "cx0010",
+        "cx0012",
+        "cx0074",
+        "cx0076"
+      ]
+    },
+    "demand-and-capacity-management-kit": {
+      "displayName": "Demand And Capacity Management KIT",
+      "url": "https://eclipse-tractusx.github.io/docs-kits/category/demand-and-capacity-management-kit",
+      "referencedStandards": [
+        "cx0018",
+        "cx0128"
+      ]
+    },
+    "eco-pass-kit": {
+      "displayName": "Eco Pass KIT",
+      "url": "https://eclipse-tractusx.github.io/docs-kits/category/eco-pass-kit",
+      "referencedStandards": [
+        "cx0018",
+        "cx0131",
+        "cx0136"
+      ]
+    },
+    "product-carbon-footprint-exchange-kit": {
+      "displayName": "Product Carbon Footprint Exchange KIT",
+      "url": "https://eclipse-tractusx.github.io/docs-kits/category/product-carbon-footprint-exchange-kit",
+      "referencedStandards": [
+        "cx0018",
+        "cx0136"
+      ]
+    },
+    "knowledge-agents-kit": {
+      "displayName": "Knowledge Agents KIT",
+      "url": "https://eclipse-tractusx.github.io/docs-kits/category/knowledge-agents-kit",
+      "referencedStandards": [
+        "cx0067",
+        "cx0084"
+      ]
+    },
+    "manufacturing-as-a-service-kit": {
+      "displayName": "Manufacturing As A Service KIT",
+      "url": "https://eclipse-tractusx.github.io/docs-kits/category/manufacturing-as-a-service-kit",
+      "referencedStandards": [
+        "cx0018",
+        "cx0115"
+      ]
+    },
+    "puris-kit": {
+      "displayName": "PURIS KIT",
+      "url": "https://eclipse-tractusx.github.io/docs-kits/category/puris-kit",
+      "referencedStandards": [
+        "cx0018"
+      ]
+    },
+    "logistics-kit": {
+      "displayName": "Logistics KIT",
+      "url": "https://eclipse-tractusx.github.io/docs-kits/category/logistics-kit",
+      "referencedStandards": [
+        "cx0018",
+        "cx0150"
+      ]
+    },
+    "supply-chain-disruption-notification-kit": {
+      "displayName": "Supply Chain Disruption Notification KIT",
+      "url": "https://eclipse-tractusx.github.io/docs-kits/category/supply-chain-disruption-notification-kit",
+      "referencedStandards": [
+        "cx0018",
+        "cx0146"
+      ]
+    },
+    "requirements-kit": {
+      "displayName": "Requirements KIT",
+      "url": "https://eclipse-tractusx.github.io/docs-kits/category/requirements-kit",
+      "referencedStandards": [
+        "cx0018"
+      ]
+    },
+    "geometry-kit": {
+      "displayName": "Geometry KIT",
+      "url": "https://eclipse-tractusx.github.io/docs-kits/category/geometry-kit",
+      "referencedStandards": [
+        "cx0018"
+      ]
+    },
+    "behaviour-twin-kit": {
+      "displayName": "Behaviour Twin KIT",
+      "url": "https://eclipse-tractusx.github.io/docs-kits/category/behaviour-twin-kit",
+      "referencedStandards": [
+        "cx0018",
+        "cx0059",
+        "cx0138",
+        "cx0141"
+      ]
+    },
+    "online-simulation-kit": {
+      "displayName": "Online Simulation KIT",
+      "url": "https://eclipse-tractusx.github.io/docs-kits/category/online-simulation-kit",
+      "referencedStandards": [
+        "cx0018",
+        "cx0133"
+      ]
+    },
+    "data-driven-quality-management-kit": {
+      "displayName": "Data Driven Quality Management KIT",
+      "url": "https://eclipse-tractusx.github.io/docs-kits/category/data-driven-quality-management-kit",
+      "referencedStandards": [
+        "cx0018",
+        "cx0123"
+      ]
+    },
+    "circularity-kit": {
+      "displayName": "Circularity KIT",
+      "url": "https://eclipse-tractusx.github.io/docs-kits/category/circularity-kit",
+      "referencedStandards": [
+        "cx0018",
+        "cx0131"
       ]
     }
   }

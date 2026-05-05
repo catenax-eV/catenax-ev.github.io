@@ -10,6 +10,7 @@ import ReactFlow, {
 import 'reactflow/dist/style.css';
 import CustomNode from './CustomNode';
 import SemanticModelNode from './SemanticModelNode';
+import KitNode from './KitNode';
 import GraphControls from './GraphControls';
 import NodeInfoPanel from './NodeInfoPanel';
 import styles from './StandardsGraph.module.css';
@@ -21,6 +22,7 @@ import { useVersions, useDocsPreferredVersion } from '@docusaurus/plugin-content
 const nodeTypes = {
   custom: CustomNode,
   semanticModel: SemanticModelNode,
+  kit: KitNode,
 };
 
 // Category colors for CX standard nodes
@@ -36,9 +38,12 @@ const SM_NODE_COLORS = {
   unknown: { light: '#607D8B', dark: '#78909C' },
 };
 
+// Color for KIT hexagon nodes
+const KIT_NODE_COLOR = { light: '#7D3C98', dark: '#A569BD' };
+
 // ── Layouts ────────────────────────────────────────────────────────────────
 
-// Single-ring layout (used when semantic model nodes are hidden)
+// Single-ring layout (used when no outer-ring nodes are shown)
 const getForceLayoutedElements = (nodes, edges) => {
   const nodeCount = nodes.length;
   const centerX = 600;
@@ -59,14 +64,14 @@ const getForceLayoutedElements = (nodes, edges) => {
   return { nodes, edges };
 };
 
-// Two-ring layout: CX standards on inner ring, semantic model nodes on outer ring
-const getTwoRingLayoutedElements = (stdNodes, smNodes, allEdges) => {
+// Multi-ring layout: CX standards on inner ring, optional outer rings (KITs / SMs)
+// outerRings is an array of node-arrays, each placed on its own ring
+const getMultiRingLayoutedElements = (stdNodes, outerRings, allEdges) => {
   const centerX = 900;
   const centerY = 700;
   const startAngle = -Math.PI / 2; // start at top
 
   const innerRadius = Math.max(400, stdNodes.length * 88);
-  const outerRadius = innerRadius + 380;
 
   stdNodes.forEach((node, i) => {
     const angle = startAngle + (i / stdNodes.length) * 2 * Math.PI;
@@ -76,15 +81,22 @@ const getTwoRingLayoutedElements = (stdNodes, smNodes, allEdges) => {
     };
   });
 
-  smNodes.forEach((node, i) => {
-    const angle = startAngle + (i / Math.max(smNodes.length, 1)) * 2 * Math.PI;
-    node.position = {
-      x: centerX + Math.cos(angle) * outerRadius - 80,
-      y: centerY + Math.sin(angle) * outerRadius - 80,
-    };
-  });
+  let currentRadius = innerRadius;
+  const allOuterNodes = [];
+  for (const ring of outerRings) {
+    if (ring.length === 0) continue;
+    currentRadius += 320;
+    ring.forEach((node, i) => {
+      const angle = startAngle + (i / Math.max(ring.length, 1)) * 2 * Math.PI;
+      node.position = {
+        x: centerX + Math.cos(angle) * currentRadius - 80,
+        y: centerY + Math.sin(angle) * currentRadius - 80,
+      };
+    });
+    allOuterNodes.push(...ring);
+  }
 
-  return { nodes: [...stdNodes, ...smNodes], edges: allEdges };
+  return { nodes: [...stdNodes, ...allOuterNodes], edges: allEdges };
 };
 
 // Calculate bubble diameter based on incoming reference count
@@ -109,15 +121,17 @@ export default function StandardsGraph() {
   const [selectedExpertGroups, setSelectedExpertGroups] = useState([]);
   const [filterDeprecatedModels, setFilterDeprecatedModels] = useState(false);
   const [showSemanticModels, setShowSemanticModels] = useState(false);
+  const [showKits, setShowKits] = useState(false);
   const [loading, setLoading] = useState(true);
   const [currentVersion, setCurrentVersion] = useState(null);
   const [selectedNodeId, setSelectedNodeId] = useState(null);
   const { colorMode } = useColorMode();
   const location = useLocation();
 
-  // SM edges generated during layout — kept in a ref so the focus-analysis
-  // effect can read them without being listed as a state dependency.
+  // SM edges generated during layout
   const smEdgesRef = useRef([]);
+  // KIT edges generated during layout
+  const kitEdgesRef = useRef([]);
 
   const baseUrl = useBaseUrl('/');
 
@@ -196,6 +210,13 @@ export default function StandardsGraph() {
       setSelectedNodeId(prev => (prev?.startsWith('sm:') ? null : prev));
     }
   }, [showSemanticModels]);
+
+  // When KIT nodes are hidden, clear any KIT node that was selected
+  useEffect(() => {
+    if (!showKits) {
+      setSelectedNodeId(prev => (prev?.startsWith('kit:') ? null : prev));
+    }
+  }, [showKits]);
 
   // Process and layout graph data
   useEffect(() => {
@@ -301,12 +322,12 @@ export default function StandardsGraph() {
       };
     });
 
-    // ── Semantic model nodes (Option A) ───────────────────────────────────
-    if (showSemanticModels && graphData.semanticModelIndex) {
-      const smEdgeColor = isDark ? '#26C6DA' : '#0097A7';
-      const newSmEdges = [];
-      const smRFNodes = [];
+    // ── Semantic model nodes ───────────────────────────────────────────────
+    const smEdgeColor = isDark ? '#26C6DA' : '#0097A7';
+    const newSmEdges = [];
+    const smRFNodes = [];
 
+    if (showSemanticModels && graphData.semanticModelIndex) {
       // Collect model names referenced by currently visible standards
       const referencedModelNames = new Set();
       for (const node of filteredNodes) {
@@ -339,7 +360,7 @@ export default function StandardsGraph() {
             border: 'none',
             transition: 'opacity 0.2s ease',
           },
-          position: { x: 0, y: 0 }, // set by layout
+          position: { x: 0, y: 0 },
         });
 
         // One directed edge per visible standard that references this model
@@ -369,19 +390,86 @@ export default function StandardsGraph() {
           }
         }
       }
+    }
+    smEdgesRef.current = newSmEdges;
 
-      // Store for focus-analysis effect
-      smEdgesRef.current = newSmEdges;
+    // ── KIT nodes ──────────────────────────────────────────────────────────
+    const kitEdgeColor = isDark ? '#A569BD' : '#7D3C98';
+    const newKitEdges = [];
+    const kitRFNodes = [];
 
-      const { nodes: layoutedNodes, edges: layoutedEdges } = getTwoRingLayoutedElements(
+    if (showKits && graphData.kitIndex) {
+      const kitBgColor = isDark ? KIT_NODE_COLOR.dark : KIT_NODE_COLOR.light;
+
+      for (const [slug, meta] of Object.entries(graphData.kitIndex).sort((a, b) => a[0].localeCompare(b[0]))) {
+        // Only show KITs that reference at least one currently visible standard
+        const validRefs = (meta.referencedStandards || []).filter(id => filteredNodeIds.has(id));
+        if (validRefs.length === 0) continue;
+
+        const kitNodeId = `kit:${slug}`;
+
+        kitRFNodes.push({
+          id: kitNodeId,
+          type: 'kit',
+          data: {
+            kitName: meta.displayName.replace(/ KIT$/, ''),
+            bgColor: kitBgColor,
+            slug,
+          },
+          style: {
+            width: 160,
+            height: 160,
+            background: 'transparent',
+            border: 'none',
+            transition: 'opacity 0.2s ease',
+          },
+          position: { x: 0, y: 0 },
+        });
+
+        // Edge from KIT node to each CX standard it references
+        for (const stdId of validRefs) {
+          newKitEdges.push({
+            id: `kit:${slug}--${stdId}`,
+            source: kitNodeId,
+            target: stdId,
+            type: 'default',
+            animated: false,
+            style: {
+              stroke: kitEdgeColor,
+              strokeWidth: 1.5,
+              strokeDasharray: '6 3',
+              opacity: 0.6,
+              transition: 'opacity 0.2s ease',
+            },
+            markerEnd: {
+              type: MarkerType.ArrowClosed,
+              color: kitEdgeColor,
+              width: 14,
+              height: 14,
+            },
+          });
+        }
+      }
+    }
+    kitEdgesRef.current = newKitEdges;
+
+    // ── Layout ─────────────────────────────────────────────────────────────
+    const allExtraEdges = [...newSmEdges, ...newKitEdges];
+    const outerRings = [];
+
+    // KIT ring first (closer to standards), then SM ring
+    if (kitRFNodes.length > 0) outerRings.push(kitRFNodes);
+    if (smRFNodes.length > 0)  outerRings.push(smRFNodes);
+
+    if (outerRings.length > 0) {
+      const { nodes: layoutedNodes, edges: layoutedEdges } = getMultiRingLayoutedElements(
         reactFlowNodes,
-        smRFNodes,
-        [...reactFlowEdges, ...newSmEdges]
+        outerRings,
+        [...reactFlowEdges, ...allExtraEdges]
       );
       setNodes(layoutedNodes);
       setEdges(layoutedEdges);
     } else {
-      smEdgesRef.current = [];
       const { nodes: layoutedNodes, edges: layoutedEdges } = getForceLayoutedElements(
         reactFlowNodes,
         reactFlowEdges
@@ -389,7 +477,7 @@ export default function StandardsGraph() {
       setNodes(layoutedNodes);
       setEdges(layoutedEdges);
     }
-  }, [graphData, filteredCategories, searchTerm, selectedTags, selectedCommittees, selectedExpertGroups, filterDeprecatedModels, showSemanticModels, ownerData, colorMode, currentVersion, latestVersion, baseUrl]);
+  }, [graphData, filteredCategories, searchTerm, selectedTags, selectedCommittees, selectedExpertGroups, filterDeprecatedModels, showSemanticModels, showKits, ownerData, colorMode, currentVersion, latestVersion, baseUrl]);
 
   // Focus impact analysis — driven by click (pinned)
   useEffect(() => {
@@ -405,6 +493,11 @@ export default function StandardsGraph() {
       }
       // Standard ↔ semantic-model edges (generated at layout time)
       for (const edge of smEdgesRef.current) {
+        if (edge.source === selectedNodeId) connectedNodeIds.add(edge.target);
+        if (edge.target === selectedNodeId) connectedNodeIds.add(edge.source);
+      }
+      // KIT ↔ standard edges (generated at layout time)
+      for (const edge of kitEdgesRef.current) {
         if (edge.source === selectedNodeId) connectedNodeIds.add(edge.target);
         if (edge.target === selectedNodeId) connectedNodeIds.add(edge.source);
       }
@@ -435,7 +528,7 @@ export default function StandardsGraph() {
         };
       })
     );
-  }, [selectedNodeId, graphData.edges, showSemanticModels]);
+  }, [selectedNodeId, graphData.edges, showSemanticModels, showKits]);
 
   const handleCategoryFilterChange = useCallback(categories => {
     setFilteredCategories(categories);
@@ -463,6 +556,10 @@ export default function StandardsGraph() {
 
   const handleShowSemanticModelsChange = useCallback(value => {
     setShowSemanticModels(value);
+  }, []);
+
+  const handleShowKitsChange = useCallback(value => {
+    setShowKits(value);
   }, []);
 
   const onNodeClick = useCallback((_, node) => {
@@ -533,6 +630,9 @@ export default function StandardsGraph() {
         showSemanticModels={showSemanticModels}
         onShowSemanticModelsChange={handleShowSemanticModelsChange}
         hasSemanticModelData={!!graphData.semanticModelIndex}
+        showKits={showKits}
+        onShowKitsChange={handleShowKitsChange}
+        hasKitData={!!graphData.kitIndex}
       />
       <ReactFlow
         nodes={nodes}
@@ -553,6 +653,9 @@ export default function StandardsGraph() {
           nodeColor={node => {
             if (node.type === 'semanticModel') {
               return colorMode === 'dark' ? '#26C6DA' : '#0097A7';
+            }
+            if (node.type === 'kit') {
+              return colorMode === 'dark' ? KIT_NODE_COLOR.dark : KIT_NODE_COLOR.light;
             }
             const colors = CATEGORY_COLORS[node.data?.category] || CATEGORY_COLORS.component;
             return colorMode === 'dark' ? colors.dark : colors.light;

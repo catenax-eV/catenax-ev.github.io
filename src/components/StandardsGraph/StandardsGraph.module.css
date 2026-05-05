@@ -790,6 +790,131 @@
 
 /* ── end Semantic Model Diamond Node ── */
 
+/* ── KIT Hexagon Node ── */
+/*
+ * The outer wrapper is the ReactFlow node box (160 × 160 px, transparent).
+ * An inner div uses a flat-top hexagon clip-path to form a six-sided shape.
+ * Handles are placed at the four cardinal midpoints (top/bottom/left/right).
+ */
+.kitNodeWrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  cursor: pointer;
+}
+
+.kitNodeHexagon {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  top: 10px;
+  left: 10px;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.22);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.kitNodeWrapper:hover .kitNodeHexagon {
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.32);
+  transform: scale(1.07);
+}
+
+.kitNodeContent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  padding: 28px;
+  text-align: center;
+  pointer-events: none;
+}
+
+.kitNodeName {
+  font-size: 0.58rem;
+  font-weight: 700;
+  color: white;
+  line-height: 1.3;
+  word-break: break-word;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
+}
+
+.kitNodeLabel {
+  font-size: 0.45rem;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.75);
+  margin-top: 3px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+}
+
+.kitHandle {
+  width: 6px !important;
+  height: 6px !important;
+  background: rgba(255, 255, 255, 0.6) !important;
+  border: 1px solid rgba(255, 255, 255, 0.8) !important;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.kitNodeWrapper:hover .kitHandle {
+  opacity: 0.85;
+}
+
+/* Legend hexagon (small flat-top hexagon used in the filter panel) */
+.legendHexagon {
+  width: 12px;
+  height: 12px;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  flex-shrink: 0;
+}
+
+/* KIT section in NodeInfoPanel */
+.kitList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.kitItem {
+  padding: 7px 9px;
+  border-radius: 6px;
+  background: var(--ifm-color-emphasis-100);
+  border: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.kitItemLink {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+}
+
+.kitItemLink:hover {
+  text-decoration: underline;
+}
+
+.kitPanelLabel {
+  font-size: 0.68rem;
+  color: var(--ifm-color-emphasis-600);
+  margin: 2px 0 0 0 !important;
+}
+
+/* ── end KIT Hexagon Node ── */
+
 @media (max-width: 768px) {
   .container {
     height: calc(100vh - 60px);

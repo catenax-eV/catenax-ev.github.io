@@ -210,6 +210,100 @@ function CategoryPillar({ category }) {
   );
 }
 
+// ── KIT detail panel (shown when a hexagon KIT node is clicked) ───────────
+
+function KitNodePanel({ slug, meta, graphData, onSelectNode }) {
+  const [isExpanded, setIsExpanded] = useState(true);
+
+  const stdNodes = (meta.referencedStandards || [])
+    .map(id => graphData.nodes.find(n => n.id === id))
+    .filter(Boolean)
+    .sort((a, b) => (a.number || '').localeCompare(b.number || '', undefined, { numeric: true }));
+
+  return (
+    <div className={styles.nodeInfoPanel}>
+      <div className={styles.panelHeader}>
+        <div className={styles.panelTitle}>
+          <h2>
+            <a href={meta.url} target="_blank" rel="noopener noreferrer" className={styles.panelTitleLink}>
+              {meta.displayName}
+            </a>
+          </h2>
+          <p className={styles.kitPanelLabel}>Tractus-X KIT</p>
+        </div>
+        <button
+          className={styles.toggleButton}
+          onClick={() => setIsExpanded(v => !v)}
+          aria-label="Toggle info panel"
+        >
+          {isExpanded ? '−' : '+'}
+        </button>
+      </div>
+
+      {isExpanded && (
+        <div className={styles.controlsContent}>
+          <div className={styles.controlSection}>
+            <label className={styles.controlLabel}>
+              References {stdNodes.length} Standard{stdNodes.length !== 1 ? 's' : ''}
+            </label>
+            {stdNodes.length === 0 ? (
+              <p className={styles.emptyList}>None in current view</p>
+            ) : (
+              <ul className={styles.nodeList}>
+                {stdNodes.map(node => (
+                  <li key={node.id}>
+                    <div
+                      className={styles.nodeListItem}
+                      onClick={() => onSelectNode && onSelectNode(node.id)}
+                      title="Click to select this standard in the graph"
+                    >
+                      <CategoryPillar category={node.category} />
+                      <span className={styles.nodeListNumber}>CX-{node.number}</span>
+                      <span className={styles.nodeListTitle}>{node.title}</span>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ── "Referenced by KITs" section inside standard node panel ──────────────
+
+function ReferencedByKitsSection({ referencedByKits, kitIndex }) {
+  if (!referencedByKits || referencedByKits.length === 0) return null;
+
+  return (
+    <div className={styles.controlSection}>
+      <label className={styles.controlLabel}>
+        Referenced by KITs ({referencedByKits.length})
+      </label>
+      <ul className={styles.kitList}>
+        {referencedByKits.map(slug => {
+          const meta = kitIndex?.[slug];
+          const name = meta?.displayName ?? slug;
+          const url  = meta?.url;
+          return (
+            <li key={slug} className={styles.kitItem}>
+              {url ? (
+                <a href={url} target="_blank" rel="noopener noreferrer" className={styles.kitItemLink}>
+                  {name}
+                </a>
+              ) : (
+                <span className={styles.kitItemLink}>{name}</span>
+              )}
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
+}
+
 // ── Main panel ────────────────────────────────────────────────────────────
 
 export default function NodeInfoPanel({
@@ -229,9 +323,14 @@ export default function NodeInfoPanel({
   const smModelName = isSmNode ? selectedNodeId.slice(3) : null;
   const smIndexEntry = smModelName ? (graphData.semanticModelIndex?.[smModelName] || null) : null;
 
+  // Detect KIT node selection (IDs start with "kit:")
+  const isKitNode = selectedNodeId?.startsWith('kit:');
+  const kitSlug = isKitNode ? selectedNodeId.slice(4) : null;
+  const kitIndexEntry = kitSlug ? (graphData.kitIndex?.[kitSlug] || null) : null;
+
   const selectedNode = useMemo(
-    () => isSmNode ? null : (graphData.nodes || []).find(n => n.id === selectedNodeId),
-    [graphData.nodes, selectedNodeId, isSmNode]
+    () => (isSmNode || isKitNode) ? null : (graphData.nodes || []).find(n => n.id === selectedNodeId),
+    [graphData.nodes, selectedNodeId, isSmNode, isKitNode]
   );
 
   const buildPath = node => {
@@ -241,7 +340,7 @@ export default function NodeInfoPanel({
   };
 
   const { references, referencedBy } = useMemo(() => {
-    if (!selectedNodeId || !graphData.edges || isSmNode) return { references: [], referencedBy: [] };
+    if (!selectedNodeId || !graphData.edges || isSmNode || isKitNode) return { references: [], referencedBy: [] };
 
     const nodeMap = Object.fromEntries((graphData.nodes || []).map(n => [n.id, n]));
 
@@ -255,7 +354,7 @@ export default function NodeInfoPanel({
         .map(e => nodeMap[e.source])
         .filter(Boolean),
     };
-  }, [selectedNodeId, graphData, isSmNode]);
+  }, [selectedNodeId, graphData, isSmNode, isKitNode]);
 
   // ── Semantic model node selected → show model detail panel ───────────
   if (isSmNode && smIndexEntry) {
@@ -263,6 +362,18 @@ export default function NodeInfoPanel({
       <SmNodePanel
         modelName={smModelName}
         meta={smIndexEntry}
+        graphData={graphData}
+        onSelectNode={onSelectNode}
+      />
+    );
+  }
+
+  // ── KIT node selected → show KIT detail panel ─────────────────────────
+  if (isKitNode && kitIndexEntry) {
+    return (
+      <KitNodePanel
+        slug={kitSlug}
+        meta={kitIndexEntry}
         graphData={graphData}
         onSelectNode={onSelectNode}
       />
@@ -482,6 +593,10 @@ export default function NodeInfoPanel({
           </div>
 
           <SemanticModelsSection semanticModels={selectedNode.semanticModels} />
+          <ReferencedByKitsSection
+            referencedByKits={selectedNode.referencedByKits}
+            kitIndex={graphData.kitIndex}
+          />
         </div>
       )}
     </div>

@@ -35,6 +35,9 @@ export default function GraphControls({
   showSemanticModels = false,
   onShowSemanticModelsChange,
   hasSemanticModelData = false,
+  showKits = false,
+  onShowKitsChange,
+  hasKitData = false,
 }) {
   const [searchValue, setSearchValue] = useState('');
   const [isExpanded, setIsExpanded] = useState(true);
@@ -99,6 +102,7 @@ export default function GraphControls({
     onExpertGroupFilterChange([]);
     if (onFilterDeprecatedModelsChange) onFilterDeprecatedModelsChange(false);
     if (onShowSemanticModelsChange) onShowSemanticModelsChange(false);
+    if (onShowKitsChange) onShowKitsChange(false);
   };
 
   return (
@@ -289,6 +293,17 @@ export default function GraphControls({
                     <span>Show Semantic Models</span>
                   </label>
                 )}
+                {hasKitData && (
+                  <label className={styles.checkbox}>
+                    <input
+                      type="checkbox"
+                      checked={showKits}
+                      onChange={() => onShowKitsChange && onShowKitsChange(!showKits)}
+                    />
+                    <span className={styles.legendHexagon} style={{ background: '#7D3C98' }} />
+                    <span>Show KITs</span>
+                  </label>
+                )}
               </div>
             </div>
 
@@ -317,6 +332,12 @@ export default function GraphControls({
                   <span>Semantic Model (latest deprecated)</span>
                 </div>
               </>
+            )}
+            {showKits && (
+              <div className={styles.legendItem}>
+                <span className={styles.legendHexagon} style={{ background: '#7D3C98' }} />
+                <span>Tractus-X KIT</span>
+              </div>
             )}
           </div>
         </div>
