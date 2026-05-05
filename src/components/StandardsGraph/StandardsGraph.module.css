@@ -663,6 +663,133 @@
   text-transform: none;
   letter-spacing: 0;
 }
+/* ── Semantic Model Diamond Node ── */
+/*
+ * The outer wrapper is the ReactFlow node box (160 × 160 px, transparent).
+ * An inner square (112 × 112 px) is rotated 45° to form a diamond.
+ * 112 / √2 ≈ 79 px radius → the diamond tips land exactly at the midpoints
+ * of the 160 px wrapper edges, which is where ReactFlow places handles.
+ */
+.smNodeWrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  cursor: pointer;
+}
+
+.smNodeDiamond {
+  position: absolute;
+  width: 112px;
+  height: 112px;
+  /* (160 − 112) / 2 = 24 px */
+  top: 24px;
+  left: 24px;
+  transform: rotate(45deg);
+  border-radius: 4px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.22);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.smNodeWrapper:hover .smNodeDiamond {
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.32);
+  transform: rotate(45deg) scale(1.07);
+}
+
+/* Label text, layered above the rotated diamond */
+.smNodeContent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  padding: 32px;
+  text-align: center;
+  pointer-events: none;
+}
+
+.smNodeName {
+  font-size: 0.58rem;
+  font-weight: 700;
+  color: white;
+  line-height: 1.3;
+  word-break: break-all;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
+}
+
+.smNodeVersion {
+  font-size: 0.5rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin-top: 3px;
+  font-family: var(--ifm-font-family-monospace);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+  white-space: nowrap;
+}
+
+.smHandle {
+  width: 6px !important;
+  height: 6px !important;
+  background: rgba(255, 255, 255, 0.6) !important;
+  border: 1px solid rgba(255, 255, 255, 0.8) !important;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.smNodeWrapper:hover .smHandle {
+  opacity: 0.85;
+}
+
+/* Legend diamond (small rotated square used in the filter panel) */
+.legendDiamond {
+  width: 10px;
+  height: 10px;
+  transform: rotate(45deg);
+  flex-shrink: 0;
+  border-radius: 1px;
+}
+
+/* SM model detail panel — version list */
+.smVersionList {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.smVersionRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.smVersionLink {
+  font-size: 0.72rem;
+  font-family: var(--ifm-font-family-monospace);
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+}
+
+.smVersionLink:hover {
+  text-decoration: underline;
+}
+
+.smPanelModelName {
+  font-size: 0.68rem;
+  color: var(--ifm-color-emphasis-600);
+  word-break: break-all;
+  margin: 2px 0 0 0 !important;
+}
+
+/* ── end Semantic Model Diamond Node ── */
+
 @media (max-width: 768px) {
   .container {
     height: calc(100vh - 60px);
@@ -713,6 +840,14 @@
 
 [data-theme='dark'] .bubbleNode:hover {
   box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme='dark'] .smNodeDiamond {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45);
+}
+
+[data-theme='dark'] .smNodeWrapper:hover .smNodeDiamond {
+  box-shadow: 0 8px 36px rgba(0, 0, 0, 0.55);
 }
 
 /* React Flow Overrides */

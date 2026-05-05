@@ -32,6 +32,9 @@ export default function GraphControls({
   onExpertGroupFilterChange,
   filterDeprecatedModels = false,
   onFilterDeprecatedModelsChange,
+  showSemanticModels = false,
+  onShowSemanticModelsChange,
+  hasSemanticModelData = false,
 }) {
   const [searchValue, setSearchValue] = useState('');
   const [isExpanded, setIsExpanded] = useState(true);
@@ -95,6 +98,7 @@ export default function GraphControls({
     onCommitteeFilterChange([]);
     onExpertGroupFilterChange([]);
     if (onFilterDeprecatedModelsChange) onFilterDeprecatedModelsChange(false);
+    if (onShowSemanticModelsChange) onShowSemanticModelsChange(false);
   };
 
   return (
@@ -274,6 +278,17 @@ export default function GraphControls({
                   />
                   <span>⚠ Has deprecated model versions</span>
                 </label>
+                {hasSemanticModelData && (
+                  <label className={styles.checkbox}>
+                    <input
+                      type="checkbox"
+                      checked={showSemanticModels}
+                      onChange={() => onShowSemanticModelsChange && onShowSemanticModelsChange(!showSemanticModels)}
+                    />
+                    <span className={styles.legendDiamond} style={{ background: '#0097A7' }} />
+                    <span>Show Semantic Models</span>
+                  </label>
+                )}
               </div>
             </div>
 
@@ -291,6 +306,18 @@ export default function GraphControls({
               <span className={styles.legendDot} style={{ background: '#386FB3' }} />
               <span>Component Standards (CAT/)</span>
             </div>
+            {showSemanticModels && (
+              <>
+                <div className={styles.legendItem}>
+                  <span className={styles.legendDiamond} style={{ background: '#0097A7' }} />
+                  <span>Semantic Model (released)</span>
+                </div>
+                <div className={styles.legendItem}>
+                  <span className={styles.legendDiamond} style={{ background: '#C0392B' }} />
+                  <span>Semantic Model (latest deprecated)</span>
+                </div>
+              </>
+            )}
           </div>
         </div>
       )}
