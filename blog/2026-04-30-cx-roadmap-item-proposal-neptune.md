@@ -31,7 +31,7 @@ It is intended as a quick onboarding entry point for teams and departments that 
 | [Evaluate and establish a universal event-based notification standard for Catena-X data exchange](https://github.com/catenax-eV/sig-roadmap/issues/699) | Define a shared event-notification baseline for interoperable, cross-company data exchange. | ARC - Committee, IC - Committee, NSC - Company Certificate Management, SCQ - PURIS |
 | [Data Exchange Orchestrator API](https://github.com/catenax-eV/sig-roadmap/issues/676) | Specify a common orchestration API to streamline and standardize data-exchange flows. | C-X Next AP7, IC - Committee |
 | [[CX-Next TAP 7.1] Adapt BaSyx DTR to work within Catena-X dataspace](https://github.com/catenax-eV/sig-roadmap/issues/656) | Align BaSyx DTR behavior and interfaces with Catena-X dataspace constraints and integration needs. | C-X Next AP7 |
-| [[SUS][DPP] Product overview and timeline for DPPs in Catena-X](https://github.com/catenax-eV/sig-roadmap/issues/703) | Build a clear DPP rollout overview and timeline to improve transparency and planning alignment. | SUS - DPP |
+| [SUS DPP Product overview and timeline for DPPs in Catena-X](https://github.com/catenax-eV/sig-roadmap/issues/703) | Build a clear DPP rollout overview and timeline to improve transparency and planning alignment. | SUS - DPP |
 | [[Roadmap Item] Bugfix SCDN (CX-0146) API Schema](https://github.com/catenax-eV/sig-roadmap/issues/712) | Correct schema issues in CX-0146 to reduce ambiguity and improve implementation consistency. | SCQ - PURIS |
 | [Catena-X: overarching business need for contact person/group](https://github.com/catenax-eV/sig-roadmap/issues/659) | Establish a cross-domain standard approach for business contact person/group exchange. | ARC - Committee, NSC - Committee, NSC - Company Certificate Management, SCQ - Committee, SCQ - DCM, SUS - Committee, TC4M - Committee |
 | [[ENG] [MBSE] Credible Simulation Model Exchange](https://github.com/catenax-eV/sig-roadmap/issues/701) | Define trusted, interoperable exchange patterns for simulation models in engineering contexts. | ENG - Committee, ENG - MBSE |
@@ -46,14 +46,14 @@ It is intended as a quick onboarding entry point for teams and departments that 
 | --- | --- | --- |
 | [Digital Twin Registry updates to AAS 3.2 IDTA standard](https://github.com/catenax-eV/sig-roadmap/issues/694) | Upgrade DTR alignment to AAS 3.2 to keep Catena-X interoperable with latest IDTA semantics. | C-X Next AP5, IC - Digital Twin |
 | [OFTP2 Data Plane Extension for Tractus-X EDC](https://github.com/catenax-eV/sig-roadmap/issues/632) | Explore OFTP2 transport support in EDC data plane for broader industrial connectivity use cases. | ENG - Committee, Internationalization Committee, NSC - Dataspace Connectivity |
-| [Deprecate Standards that are not used and/or not supported](https://github.com/catenax-eV/sig-roadmap/issues/704) | Identify low-value standards and prepare structured deprecation decisions for portfolio focus. | _No explicit label listed in source snapshot_ |
+| [Deprecate Standards that are not used and/or not supported](https://github.com/catenax-eV/sig-roadmap/issues/704) | Identify low-value standards and prepare structured deprecation decisions for portfolio focus. | *No explicit label listed in source snapshot* |
 | [Publish standards only with major versions of aspect models](https://github.com/catenax-eV/sig-roadmap/issues/707) | Consider governance rule to publish standards only when linked aspect models reach major version maturity. | ARC - Committee, TC4M - Committee |
 | [Rework of the CX-0136 Standard according to the Guidelines of the Value Booster Program](https://github.com/catenax-eV/sig-roadmap/issues/709) | Reframe CX-0136 to better match Value Booster criteria and practical adoption expectations. | SUS - PCF - Architecture & Interoperability, TC4S - Committee |
 | [(26.06) Material Accounting KIT](https://github.com/catenax-eV/sig-roadmap/issues/710) | Prepare next-step Material Accounting KIT scope to support sustainability reporting use cases. | SUS - Circularity, SUS - Material Accounting |
 | [CX-0135 Standard Enhancements for Neptune Release (26.09)](https://github.com/catenax-eV/sig-roadmap/issues/714) | Define incremental CX-0135 enhancements for Neptune and improve certificate-management fit. | NSC - Company Certificate Management |
 | [Car SBOM for FOSS compliance](https://github.com/catenax-eV/sig-roadmap/issues/716) | Shape SBOM expectations for FOSS compliance in automotive software delivery chains. | ENG - Committee, ENG - Software |
 | [Check adjustments in CX-0158 Car SBOM and CX-XXXX-CarSBOM-ICTS](https://github.com/catenax-eV/sig-roadmap/issues/717) | Validate and align planned adjustments between CX-0158 and related ICTS-oriented SBOM work. | ENG - Committee, ENG - Software |
-| [(26.09) CBAM Data Model Update](https://github.com/catenax-eV/sig-roadmap/issues/721) | Prepare CBAM data-model refinements needed for Neptune sustainability compliance scope. | _No explicit label listed in source snapshot_ |
+| [(26.09) CBAM Data Model Update](https://github.com/catenax-eV/sig-roadmap/issues/721) | Prepare CBAM data-model refinements needed for Neptune sustainability compliance scope. | *No explicit label listed in source snapshot* |
 
 ## Category: Standard item
 
@@ -86,4 +86,3 @@ It is intended as a quick onboarding entry point for teams and departments that 
 - If you own one of the listed labels/committees, please review your related items for scope, dependencies, and implementation feasibility.
 - For cross-domain items, identify one lead committee and one integration counterpart early.
 - Prepare candidate sub-issues with clear acceptance criteria so R26.09 planning can move quickly from proposal to delivery.
-
