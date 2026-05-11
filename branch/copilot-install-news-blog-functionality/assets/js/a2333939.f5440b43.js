@@ -1,1 +1,0 @@
-"use strict";(globalThis.webpackChunkcatenax_ev_github_io_new=globalThis.webpackChunkcatenax_ev_github_io_new||[]).push([[27016],{49472(e){e.exports=JSON.parse('{"name":"docusaurus-plugin-content-blog","id":"news"}')}}]);
