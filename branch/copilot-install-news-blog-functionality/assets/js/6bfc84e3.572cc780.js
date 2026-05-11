@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkcatenax_ev_github_io_new=globalThis.webpackChunkcatenax_ev_github_io_new||[]).push([[32130],{50936(t){t.exports=JSON.parse('{"blogBasePath":"/branch/copilot-install-news-blog-functionality/news","blogTitle":"Blog","authorsListPath":"/branch/copilot-install-news-blog-functionality/news/authors"}')}}]);
