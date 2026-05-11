@@ -41,6 +41,17 @@ const config: Config = {
     require.resolve("docusaurus-plugin-image-zoom"),
     require.resolve('./plugins/docusaurus-standards-graph-plugin'),
     [
+      require.resolve('@docusaurus/plugin-content-blog'),
+      {
+        id: 'news',
+        path: './blog',
+        routeBasePath: 'news',
+        showReadingTime: true,
+        blogSidebarCount: 'ALL',
+        blogSidebarTitle: 'News',
+      },
+    ],
+    [
       require.resolve('@docusaurus/plugin-client-redirects'),
       {
         redirects: [
@@ -229,6 +240,11 @@ const config: Config = {
               label: 'Timelines',
             },
           ],
+        },
+        {
+          to: '/news',
+          label: 'News',
+          position: 'left',
         },
         {
           type: 'docsVersionDropdown',
