@@ -359,7 +359,7 @@ The error message is free text.
 The Certificate Provider notifies the Certificate Consumer about a lifecycle change for a certificate.
 The Certificate Consumer can use the `certificateId` to retrieve the certificate metadata and documents using the pull mechanism.
 
-`POST /certificate-notification/push`
+`POST /certificate-notification`
 
 ```json
 {
@@ -619,7 +619,7 @@ Certificate Provider & Certificate Consumer:
 - Certificate Consumer **MAY** send a notification of acceptance or rejection via `POST /certificate-status`.
   Certificate Provider **MUST** respond according to the [error handling](#212-error-handling).
 
-- Certificate Provider **MUST** send a push notification with `status: CREATED` via `POST /certificate-notification/push` after the referenced company certificate is exposed in their catalog.
+- Certificate Provider **MUST** send a push notification with `status: CREATED` via `POST /certificate-notification` after the referenced company certificate is exposed in their catalog.
   Certificate Consumer **MUST** respond according to the [error handling](#212-error-handling) and **SHOULD** retrieve the new certificate via the pull mechanism.
 - Certificate Consumer **MAY** implement the [push endpoint](#2115-company-certificate-push) for the Certificate Provider to send lifecycle notifications to, but **MUST** set the correct access and usage policy on the offer, when choosing to do so.
 

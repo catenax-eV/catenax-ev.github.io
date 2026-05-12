@@ -627,7 +627,7 @@ paths:
         '500':
           description: Internal server error
 
-  /certificate-notification/push:
+  /certificate-notification:
     post:
       summary: Certificate provider notifies certificate consumer about a lifecycle change for a certificate
       tags:
