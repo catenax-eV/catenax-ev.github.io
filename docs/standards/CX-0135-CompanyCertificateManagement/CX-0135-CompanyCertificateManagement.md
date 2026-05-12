@@ -401,9 +401,9 @@ where a data offer for an asset of type `cx-taxo:CCMAPI` **MUST** be available f
 
 ##### 2.1.1.6 Company Certificate Feedback
 
-`POST /certificate-status`
+`POST /certificate-feedback`
 
-This API is used by the Certificate Consumer to provide feedback on the status to the Certificate Provider, either accepting or rejecting the provided certificate.
+This API is used by the Certificate Consumer to provide feedback on the validation status to the Certificate Provider, either accepting or rejecting the provided certificate.
 This applies regardless of whether the certificate was [pulled](#2152-pull-mechanism) or [pushed](#2151-push-mechanism).
 
 ###### 2.1.1.6.1 Company Certificate Feedback: Received
@@ -412,16 +412,27 @@ Certificate has been received by Certificate Consumer and validation is in progr
 
 ```json
 {
-  "certificateId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-  "certificateStatus": "RECEIVED",
-  "locationBpns": [
-    "BPNS000000000001",
-    "BPNS000000000002",
-    "BPNS000000000003",
-    "BPNA000000000001",
-    "BPNA000000000002",
-    "BPNA000000000003"
-  ]
+  "header": {
+    "messageId": "urn:uuid:e4da568b-8cf1-4f5f-a96a-cf26265b2c72",
+    "context": "CompanyCertificateManagement-CCMAPI-Status:1.0.0",
+    "sentDateTime": "2024-10-07T10:15:00Z",
+    "senderBpn": "BPNL0000000001AB",
+    "receiverBpn": "BPNL0000000002CD",
+    "version": "3.1.0",
+    "senderFeedbackUrl": "https://domain.tld/path/to/edc/api/v1/dsp"
+  },
+  "content": {
+    "certificateId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+    "certificateStatus": "RECEIVED",
+    "locationBpns": [
+      "BPNS000000000001",
+      "BPNS000000000002",
+      "BPNS000000000003",
+      "BPNA000000000001",
+      "BPNA000000000002",
+      "BPNA000000000003"
+    ]
+  }
 }
 ```
 
@@ -433,16 +444,27 @@ The `locationBpns` can be a mix of sites and addresses.
 
 ```json
 {
-  "certificateId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-  "certificateStatus": "ACCEPTED",
-  "locationBpns": [
-    "BPNS000000000001",
-    "BPNS000000000002",
-    "BPNS000000000003",
-    "BPNA000000000001",
-    "BPNA000000000002",
-    "BPNA000000000003"
-  ]
+  "header": {
+    "messageId": "urn:uuid:e4da568b-8cf1-4f5f-a96a-cf26265b2c72",
+    "context": "CompanyCertificateManagement-CCMAPI-Status:1.0.0",
+    "sentDateTime": "2024-10-07T10:15:00Z",
+    "senderBpn": "BPNL0000000001AB",
+    "receiverBpn": "BPNL0000000002CD",
+    "version": "3.1.0",
+    "senderFeedbackUrl": "https://domain.tld/path/to/edc/api/v1/dsp"
+  },
+  "content": {
+    "certificateId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+    "certificateStatus": "ACCEPTED",
+    "locationBpns": [
+      "BPNS000000000001",
+      "BPNS000000000002",
+      "BPNS000000000003",
+      "BPNA000000000001",
+      "BPNA000000000002",
+      "BPNA000000000003"
+    ]
+  }
 }
 ```
 
@@ -452,57 +474,68 @@ Certificate is rejected by the Certificate Consumer with one or multiple reasons
 
 ```json
 {
-  "certificateId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-  "certificateStatus": "REJECTED",
-  "certificateErrors": [
-    {
-      "message": "We do not process certificates on Sunday"
-    },
-    {
-      "message": "Certificate has expired in 2024"
-    },
-    {
-      "message": "Certificate was revoked"
-    },
-    {
-      "message": "Unexpected data format"
-    },
-    {
-      "message": "Unexpected language expected English, received Mandarin"
-    },
-    {
-      "message": "Expected PDF, received JPG"
-    },
-    {
-      "message": "Unknown BPNL000000000000"
-    }
-  ],
-  "locationBpns": [
-    "BPNS000000000001",
-    "BPNS000000000002",
-    "BPNS000000000003",
-    "BPNA000000000001",
-    "BPNA000000000002",
-    "BPNA000000000003"
-  ],
-  "locationErrors": [
-    {
-      "bpn": "BPNS000000000002",
-      "locationErrors": [
-        {
-          "message": "Site BPNS000000000002 has been Rejected"
-        }
-      ]
-    },
-    {
-      "bpn": "BPNS000000000003",
-      "locationErrors": [
-        {
-          "message": "Site BPNS000000000003 is missing"
-        }
-      ]
-    }
-  ]
+  "header": {
+    "messageId": "urn:uuid:e4da568b-8cf1-4f5f-a96a-cf26265b2c72",
+    "context": "CompanyCertificateManagement-CCMAPI-Status:1.0.0",
+    "sentDateTime": "2024-10-07T10:15:00Z",
+    "senderBpn": "BPNL0000000001AB",
+    "receiverBpn": "BPNL0000000002CD",
+    "version": "3.1.0",
+    "senderFeedbackUrl": "https://domain.tld/path/to/edc/api/v1/dsp"
+  },
+  "content": {
+    "certificateId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+    "certificateStatus": "REJECTED",
+    "certificateErrors": [
+      {
+        "message": "We do not process certificates on Sunday"
+      },
+      {
+        "message": "Certificate has expired in 2024"
+      },
+      {
+        "message": "Certificate was revoked"
+      },
+      {
+        "message": "Unexpected data format"
+      },
+      {
+        "message": "Unexpected language expected English, received Mandarin"
+      },
+      {
+        "message": "Expected PDF, received JPG"
+      },
+      {
+        "message": "Unknown BPNL000000000000"
+      }
+    ],
+    "locationBpns": [
+      "BPNS000000000001",
+      "BPNS000000000002",
+      "BPNS000000000003",
+      "BPNA000000000001",
+      "BPNA000000000002",
+      "BPNA000000000003"
+    ],
+    "locationErrors": [
+      {
+        "bpn": "BPNS000000000002",
+        "locationErrors": [
+          {
+            "message": "Site BPNS000000000002 has been Rejected"
+          }
+        ]
+      },
+      {
+        "bpn": "BPNS000000000003",
+        "locationErrors": [
+          {
+            "message": "Site BPNS000000000003 is missing"
+          }
+        ]
+      }
+    ]
+  }
 }
 ```
 
@@ -615,8 +648,8 @@ Certificate Provider & Certificate Consumer:
 
 - Certificate Consumer **MAY** implement the [push endpoint](#2115-company-certificate-push) for the Certificate Provider to send push notifications to, but **MUST** set the correct access and usage policy on the offer, when choosing to do so.
 - Certificate Consumer **MAY** send a certificate request via `POST /certificate-request` which **MUST** be replied to by the Certificate Provider according to the endpoint definitions.
-- Certificate Consumer **MAY** send a notification of reception when the certificate validation has started via `POST /certificate-status`.
-- Certificate Consumer **MAY** send a notification of acceptance or rejection via `POST /certificate-status`.
+- Certificate Consumer **MAY** send a notification of reception when the certificate validation has started via `POST /certificate-feedback`.
+- Certificate Consumer **MAY** send a notification of acceptance or rejection via `POST /certificate-feedback`.
   Certificate Provider **MUST** respond according to the [error handling](#212-error-handling).
 
 - Certificate Provider **MUST** send a push notification with `status: CREATED` via `POST /certificate-notification` after the referenced company certificate is exposed in their catalog.

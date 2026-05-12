@@ -181,6 +181,17 @@ components:
         content:
           $ref: '#/components/schemas/CertificatePushContent'
 
+    CertificateFeedback:
+      type: object
+      required:
+        - header
+        - content
+      properties:
+        header:
+          $ref: '#/components/schemas/FeedbackUrlHeader'
+        content:
+          $ref: '#/components/schemas/CertificateStatus'
+
     CertificatePushContent:
       type: object
       required:
@@ -460,33 +471,60 @@ components:
     CertificateReceivedStatus:
       summary: Consumer received certificate
       value:
-        certificateId: "3fa85f64-5717-4562-b3fc-2c963f66afa6"
-        certificateStatus: "RECEIVED"
-        locationBpns:
-          - "BPNS000000000003"
+        header:
+          messageId: "urn:uuid:e4da568b-8cf1-4f5f-a96a-cf26265b2c72"
+          context: "CompanyCertificateManagement-CCMAPI-Status:1.0.0"
+          sentDateTime: "2024-10-07T10:15:00Z"
+          senderBpn: "BPNL0000000001AB"
+          receiverBpn: "BPNL0000000002CD"
+          version: "3.1.0"
+          senderFeedbackUrl: "https://domain.tld/path/to/edc/api/v1/dsp"
+        content:
+          certificateId: "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+          certificateStatus: "RECEIVED"
+          locationBpns:
+            - "BPNS000000000003"
 
     CertificateAcceptedStatus:
       summary: Consumer accepts received certificate
       value:
-        certificateId: "3fa85f64-5717-4562-b3fc-2c963f66afa6"
-        certificateStatus: "ACCEPTED"
-        locationBpns:
-          - "BPNS000000000003"
+        header:
+          messageId: "urn:uuid:e4da568b-8cf1-4f5f-a96a-cf26265b2c72"
+          context: "CompanyCertificateManagement-CCMAPI-Status:1.0.0"
+          sentDateTime: "2024-10-07T10:15:00Z"
+          senderBpn: "BPNL0000000001AB"
+          receiverBpn: "BPNL0000000002CD"
+          version: "3.1.0"
+          senderFeedbackUrl: "https://domain.tld/path/to/edc/api/v1/dsp"
+        content:
+          certificateId: "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+          certificateStatus: "ACCEPTED"
+          locationBpns:
+            - "BPNS000000000003"
 
     CertificateRejectedStatus:
       summary: Consumer rejected received certificate
       value:
-        certificateId: "3fa85f64-5717-4562-b3fc-2c963f66afa6"
-        certificateStatus: "REJECTED"
-        locationBpns:
-          - "BPNS000000000003"
-        certificateErrors:
-          - message: "We do not process certificates on Sunday"
-          - message: "Can not provide certicate for requested locations"
-        locationErrors:
-          - bpn: "BPNS000000000003"
-            locationErrors:
-              - message: "Site BPNS000000000003 is unknown"
+        header:
+          messageId: "urn:uuid:e4da568b-8cf1-4f5f-a96a-cf26265b2c72"
+          context: "CompanyCertificateManagement-CCMAPI-Status:1.0.0"
+          sentDateTime: "2024-10-07T10:15:00Z"
+          senderBpn: "BPNL0000000001AB"
+          receiverBpn: "BPNL0000000002CD"
+          version: "3.1.0"
+          senderFeedbackUrl: "https://domain.tld/path/to/edc/api/v1/dsp"
+        content:
+          certificateId: "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+          certificateStatus: "REJECTED"
+          locationBpns:
+            - "BPNS000000000003"
+          certificateErrors:
+            - message: "We do not process certificates on Sunday"
+            - message: "Can not provide certificate for requested locations"
+          locationErrors:
+            - bpn: "BPNS000000000003"
+              locationErrors:
+                - message: "Site BPNS000000000003 is unknown"
 
 paths:
   /certificates/{certificateId}:
@@ -646,9 +684,9 @@ paths:
         '501':
           description: The certificate consumer currently does not support processing of notifications
 
-  /certificate-status:
+  /certificate-feedback:
     post:
-      summary: Certificate consumer sends feedback on the status of a consumed certificate to the certificate provider
+      summary: Certificate consumer sends feedback on the validation status of a consumed certificate to the certificate provider
       tags:
         - Certificate Provider
       requestBody:
@@ -656,7 +694,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CertificateStatus'
+              $ref: '#/components/schemas/CertificateFeedback'
             examples:
               Received:
                 $ref: '#/components/examples/CertificateReceivedStatus'
