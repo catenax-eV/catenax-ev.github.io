@@ -1,7 +1,7 @@
 openapi: 3.1.0
 info:
   title: Company Certificate Notification API
-  description: APIs for requesting and accepting company certificates. Note that the Certificate Provider APIs and the Certificate Consumer APIs are available via different EDC assets.
+  description: APIs for requesting and accepting company certificates
   version: 1.0.0
 tags:
   - name: Certificate Provider

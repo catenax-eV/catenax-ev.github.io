@@ -569,7 +569,7 @@ The following section details how the Certificate Management API asset should be
 Please note the depicted examples show `@id` fields with random example UUIDs.
 Every dataspace participant may use their individual random uuid.
 
-##### 2.1.4.1 Notification API
+##### 2.1.4.1 Company Certificate Management API
 
 > *This section is normative*
 
@@ -580,28 +580,28 @@ In turn, the Certificate Consumer **MAY** offer an asset to expose an API for th
 
 The property [[type]](http://purl.org/dc/terms/type) **MUST** reference the name of the certificate management API as defined in the Catena-X taxonomy published under [[taxonomy]](https://w3id.org/catenax/taxonomy).
 
-| **Type**       | **Subject**                                         | **Version** | **Description** |
-|----------------|-----------------------------------------------------|-------------|-----------------|
-| cx-taxo:CCMAPI | cx-taxo:CompanyCertificateManagementNotificationApi | 3.0         | Offers *Certificate Management API* for [retrieving certificates](#2111-retrieve-certificate-metadata), [searching certificates](#2113-search-certificates), [requesting](#2114-company-certificate-request) and [pushing](#2115-company-certificate-push) certificates, as well as sending [feedback](#2116-company-certificate-feedback) on the status for provided certificates. |
+| **Type**       | **Subject**                             | **Version** | **Description** |
+|----------------|-----------------------------------------|-------------|-----------------|
+| cx-taxo:CCMAPI | cx-taxo:CompanyCertificateManagementApi | 3.0         | Offers *Certificate Management API* for [retrieving certificates](#2111-retrieve-certificate-metadata), [searching certificates](#2113-search-certificates), [requesting](#2114-company-certificate-request) and [pushing](#2115-company-certificate-push) certificates, as well as sending [feedback](#2116-company-certificate-feedback) on the status for provided certificates. |
 
 There **MUST** only be one unique asset per API (subject and version) across all connectors of one BPNL.
 
 *Example*: it is possible to have these assets available next to one-another:
 
-- ```{ "dct:subject": { "@id": "cx-taxo:CompanyCertificateManagementNotificationApi" }, "cx-common:version": "3.0" }```,
-- ```{ "dct:subject": { "@id": "cx-taxo:CompanyCertificateManagementNotificationApi" }, "cx-common:version": "2.0" }```
+- ```{ "dct:subject": { "@id": "cx-taxo:CompanyCertificateManagementApi" }, "cx-common:version": "3.0" }```,
+- ```{ "dct:subject": { "@id": "cx-taxo:CompanyCertificateManagementApi" }, "cx-common:version": "2.0" }```
 
 since they either differ in the value of the version or the subject.
 But it would not be possible to have two of the same subject and the same version.
 
 *Example that is not allowed:*
 
-- ```{"dct:subject": { "@id": "cx-taxo:CompanyCertificateManagementNotificationApi" }, "cx-common:version": "3.0" }```,
-- ```{"dct:subject": { "@id": "cx-taxo:CompanyCertificateManagementNotificationApi" }, "cx-common:version": "3.0" }```
+- ```{"dct:subject": { "@id": "cx-taxo:CompanyCertificateManagementApi" }, "cx-common:version": "3.0" }```,
+- ```{"dct:subject": { "@id": "cx-taxo:CompanyCertificateManagementApi" }, "cx-common:version": "3.0" }```
 
 It doesn't matter if the assets are offered in one or in different connectors, as long as they belong to the same BPNL this is not allowed.
 
-**Example Certificate Notification API**
+**Example Company Certificate Management API Asset**
 
 ```json
 {
@@ -612,7 +612,7 @@ It doesn't matter if the assets are offered in one or in different connectors, a
       "@id": "cx-taxo:CCMAPI"
     },
     "dct:subject": {
-      "@id": "cx-taxo:CompanyCertificateManagementNotificationApi"
+      "@id": "cx-taxo:CompanyCertificateManagementApi"
     },
     "dct:description": "Offers Certificate Management API for retrieving, searching, requesting and pushing certificates, as well as sending feedback on the status for provided certificates.",
     "cx-common:version": "3.0"
@@ -666,7 +666,7 @@ Business Application Provider:
 ![PUSH Scenarios](assets/certificate-push.svg)
 
 The Certificate PUSH Diagram describes the lifecycle notification flow from a Backend Certificate Provider to a Backend Certificate Consumer via EDC (Eclipse Data Connector) components.
-The process starts with a contract agreement for a Notification Asset, followed by the provider sending a push notification (containing the `certificateId` and a `status` of CREATED, MODIFIED, or DELETED) to the Consumer's endpoint.
+The process starts with a contract agreement for a Certificate Management API asset, followed by the provider sending a push notification (containing the `certificateId` and a `status` of CREATED, MODIFIED, or DELETED) to the Consumer's endpoint.
 The Certificate Consumer then uses the pull mechanism to retrieve the certificate data, and finalizes the workflow by generating a feedback message sent to the provider.
 
 ##### 2.1.5.2 PULL Mechanism
