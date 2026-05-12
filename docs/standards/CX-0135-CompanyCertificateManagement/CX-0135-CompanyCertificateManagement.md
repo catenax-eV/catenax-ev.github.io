@@ -38,7 +38,7 @@ The following company certificate use cases are supported in this release:
 1. Certificate Provider wants to publish a certificate / Certificate Consumer wants to discover a published certificate.
 2. Certificate Consumer wants to request a certificate from a specific Certificate Provider
 3. Certificate Consumer wants to notify a Certificate Provider of acceptance or rejection of a consumed certificate via a feedback message
-4. Certificate Provider wants to notify a Certificate Consumer of the availability of a new certificate asset
+4. Certificate Provider wants to notify a Certificate Consumer of a certificate lifecycle change via a push notification
 
 For avoidance of the doubt, we are not replacing the existing publication semantic model.
 
@@ -532,7 +532,7 @@ The API **MUST** use JSON formatted data transmitted over HTTPS.
 
 #### 2.1.4 Data asset structure
 
-The following sections detail how notification API and certificate assets should be offered in the dataspace.
+The following section details how the Certificate Management API asset should be offered in the dataspace.
 Please note the depicted examples show `@id` fields with random example UUIDs.
 Every dataspace participant may use their individual random uuid.
 
@@ -604,66 +604,6 @@ It doesn't matter if the assets are offered in one or in different connectors, a
 > The **API assets** are identified by the combination of `dct:subject` and `cx-common:version`.
 > When searching the EDC catalog for a specific API, make use of those properties in the catalog filter.
 
-##### 2.1.4.2 Certificates
-
-- The certificate assets **MUST** be created by the Certificate Provider in their connector catalog to be consumed by the Certificate Consumer when using the pull mechanism.
-- The property certificateType **MUST** reference the type of the certificate as defined in [3.2.2 Certificate Type](#322-certificate-type).
-- The property enclosedSites **MUST** contain all BPNSs and BPNAs for which the certificate is valid.
-- The subject **MUST** reference `cx-taxo:CompanyCertificate`.
-- Additionally, the assets **MUST** contain the type `cx-taxo:Submodel` and the semanticId specified in [3.1.2 IDENTIFIER OF SEMANTIC MODEL](#312-identifier-of-semantic-model).
-
-**Example Certificate EDC Asset:**
-
-```json
-{
-  "@id": "d195fa2f-e6bc-4cd6-94d4-2bb76e4bb548",
-  "@type": "Asset",
-  "properties": {
-    "dct:type": {
-      "@id": "cx-taxo:Submodel"
-    },
-    "aas:semanticId": {
-      "@id": "urn:samm:io.catenax.business_partner_certificate:3.1.0#BusinessPartnerCertificate"
-    },
-    "dct:certificateType": {
-      "@id": "cx-taxo:iso9001"
-    },
-    "dct:enclosedSites": [
-      {
-        "@id": "cx-taxo:BPNS000000000001"
-      },
-      {
-        "@id": "cx-taxo:BPNS000000000002"
-      },
-      {
-        "@id": "cx-taxo:BPNA000000000001"
-      }
-    ],
-    "dct:subject": {
-      "@id": "cx-taxo:CompanyCertificate"
-    },
-    "dct:description": "Business Partner Company Certificate",
-    "cx-common:version": "3.0"
-  },
-  "dataAddress": {
-    "@type": "DataAddress",
-    "type": "HttpData",
-    "baseUrl": "https://backend-base-url/certificate-management-api-base-path",
-    "proxyQueryParams": "false",
-    "proxyPath": "false",
-    "proxyMethod": "false",
-    "proxyBody": "false"
-  },
-  "@context": {
-    "dct": "http://purl.org/dc/terms/",
-    "cx-taxo": "https://w3id.org/catenax/taxonomy#",
-    "cx-common": "https://w3id.org/catenax/ontology/common#"
-  }
-}
-```
-
-> The **certificate assets** are identified by the combination of `dct:subject`, `dct:certificateType` and `dct:enclosedSites`.
-> When searching the EDC catalog for a specific asset for which the assetId is unkown, make use of those properties in the catalog filter.
 
 #### 2.1.5 MESSAGE FLOW EXPECTATIONS
 
@@ -671,7 +611,7 @@ Certificate Provider & Certificate Consumer:
 
 - Certificate Provider **MUST** support at least one of the certificate provision mechanisms (push and/or pull mechanism)
 - Certificate Provider **MUST** expose company certificates in their catalog when using the pull mechanism.
-- Certificate Provider **MUST** set the correct access and usage policy on the certificate offer to allow consumption by Consumer(s) when using the pull mechanism.
+- Certificate Provider **MUST** set the correct access and usage policy on the certificate API offer to allow consumption by Consumer(s) when using the pull mechanism.
 
 - Certificate Consumer **MAY** implement the [push endpoint](#2115-company-certificate-push) for the Certificate Provider to send push notifications to, but **MUST** set the correct access and usage policy on the offer, when choosing to do so.
 - Certificate Consumer **MAY** send a certificate request via `POST /certificate-request` which **MUST** be replied to by the Certificate Provider according to the endpoint definitions.
@@ -700,15 +640,14 @@ The Certificate Consumer then uses the pull mechanism to retrieve the certificat
 
 ![PULL Scenarios](assets/certificate-pull.svg)
 
-The Certificate PULL Diagram describes the process of Consumer retrieving a certificate from a Provider via an EDC.
-It begins with the provider creating a Certificate Asset with corresponding contract definition in the EDC Catalog.
-The Consumer searches the catalog using specific filters, initiates a contract negotiation, and retrieves the Endpoint Data Reference (EDR).
-The Data Plane then facilitates secure data transfer, allowing the consumer to pull the certificate.
+The Certificate PULL Diagram describes the process of a Consumer retrieving a certificate from a Provider via an EDC.
+It begins with the consumer discovering the Certificate Management API asset in the EDC Catalog, initiating a contract negotiation, and retrieving the Endpoint Data Reference (EDR).
+The Data Plane then facilitates secure data transfer, allowing the consumer to retrieve certificate data via the `GET /certificates/{certificateId}` endpoint.
 Once retrieved, the Backend Certificate Consumer processes the certificate and sends a feedback message to confirm the status.
 
 ##### 2.1.5.3 PUSH Notification followed by PULL mechanism
 
-After the Certificate Provider has created a Certificate Asset with the corresponding contract definition in the EDC Catalog, the Certificate Provider sends a push notification with `status: CREATED` to the Certificate Consumer.
+After a new certificate is available via the Certificate Management API, the Certificate Provider sends a push notification with `status: CREATED` to the Certificate Consumer.
 The Certificate Consumer uses the above described PULL mechanism to retrieve the certificate data using the `certificateId` provided in the notification.
 This reduces the Certificate Consumer's need for active checks for missing certificates or certificate updates and enables access to the latest certificate data.
 
@@ -928,7 +867,7 @@ The internal reference id to request a certificate document.
 The entities **Certificate Provider** and **Certificate Consumer** are central to the certificate exchange mechanisms defined in this standard.
 
 **Certificate Provider**: A Certificate Provider is an entity that offers company certificates to other Catena-X participants.
-The Certificate Provider is responsible for creating and maintaining certificate assets in their EDC catalog, responding to certificate requests, and optionally pushing certificates directly to Certificate Consumers or notifying them about certificate availability.
+The Certificate Provider is responsible for offering the Certificate Management API as an EDC asset, managing certificates in their backend, responding to certificate requests, and optionally notifying Certificate Consumers about certificate lifecycle changes via push notifications.
 
 **Certificate Consumer**: A Certificate Consumer is an entity that requests, receives, and validates company certificates from Certificate Providers.
 The Certificate Consumer may actively request certificates, provide feedback on certificate status, and respond to availability notifications.
@@ -937,11 +876,10 @@ The following table illustrates the entities in relation to the supported certif
 
 | Mechanism | Certificate Provider | Certificate Consumer |
 |-----------|----------------------|----------------------|
-| **PULL** | Provider - Creates certificate assets in EDC catalog | Consumer - Discovers certificates in catalog, negotiates contract, retrieves certificate via EDC |
-| **PUSH** | Consumer - Initiates connection to Certificate Consumer's CCMAPI, pushes certificate data directly | Provider - Offers CCMAPI as EDC asset, receives and processes pushed certificates |
+| **PULL** | Provider - Offers CCMAPI as EDC asset, enabling consumers to search and retrieve certificates | Consumer - Discovers CCMAPI in catalog, negotiates contract, retrieves certificates via EDC |
+| **PUSH** | Consumer - Initiates connection to Certificate Consumer's CCMAPI, sends lifecycle notification | Provider - Offers CCMAPI as EDC asset, receives lifecycle notification and retrieves certificate via pull |
 | **REQUEST** | Provider - Offers CCMAPI as EDC asset, processes incoming certificate requests | Consumer - Sends certificate request to Certificate Provider's CCMAPI |
 | **FEEDBACK** | Provider - Offers CCMAPI as EDC asset, receives and processes feedback messages | Consumer - Sends feedback (received, accepted, rejected) to Certificate Provider's CCMAPI |
-| **AVAILABLE** | Consumer - Sends availability notification to Certificate Consumer's CCMAPI | Provider - Offers CCMAPI as EDC asset, receives notification about certificate availability |
 
 > **Note**: The roles of Provider and Consumer in the EDC context may differ from the business entities of Certificate Provider and Certificate Consumer, depending on the mechanism used.
 This is why the standard explicitly uses the terms Certificate Provider and Certificate Consumer to avoid ambiguity.
