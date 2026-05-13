@@ -203,6 +203,11 @@ components:
           format: uuid
         status:
           type: string
+          description: |
+            The type of lifecycle change for the certificate:
+            - `CREATED`: A new certificate has been created and is available for retrieval.
+            - `MODIFIED`: An existing certificate has been updated.
+            - `DELETED`: A certificate has been removed and is no longer available.
           enum: [CREATED, MODIFIED, DELETED]
 
     Error:
@@ -247,6 +252,11 @@ components:
           format: uuid
         certificateStatus:
           type: string
+          description: |
+            The validation status reported by the Certificate Consumer:
+            - `RECEIVED`: Certificate has been received and validation is in progress.
+            - `ACCEPTED`: Certificate has been accepted by the Certificate Consumer.
+            - `REJECTED`: Certificate has been rejected by the Certificate Consumer.
           enum: [ACCEPTED, REJECTED, RECEIVED]
         certificateErrors:
           type: array

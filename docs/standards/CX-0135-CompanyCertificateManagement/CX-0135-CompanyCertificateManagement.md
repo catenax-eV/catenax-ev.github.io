@@ -133,133 +133,19 @@ The Certificate Consumer retrieves the metadata of a certificate by its ID from 
 
 `GET /certificates/{certificateId}`
 
-###### 2.1.1.1.1 HTTP Response Codes
-
-| HTTP Code | Description                    |
-|-----------|--------------------------------|
-| 200       | Certificate metadata returned. |
-| 404       | Certificate not found.         |
-| 500       | Internal Server Error.         |
-
-###### 2.1.1.1.2 HTTP Response Body for HTTP Code 200
-
-The response contains the full certificate metadata including all associated document IDs.
-Use `GET /certificates/{certificateId}/documents/{documentId}` to retrieve each document as a binary PDF.
-
-```json
-{
-  "certificateId": "cert-550e8400-e29b-41d4-a716-446655440000",
-  "certifiedBpn": "BPNL0000000002CD",
-  "type": {
-    "certificateType": "ISO9001",
-    "certificateVersion": "2015"
-  },
-  "registrationNumber": "12 198 54182 TMS",
-  "areaOfApplication": "Development, Marketing and Sales",
-  "locations": [
-    {
-      "locationBpn": "BPNS000000000002",
-      "areaOfApplication": "Development, Marketing and Sales"
-    }
-  ],
-  "validFrom": "2023-01-25",
-  "validUntil": "2026-01-24",
-  "issuer": {
-    "issuerName": "TUEV Sued",
-    "issuerBpn": "BPNL0000000001AB"
-  },
-  "trustLevel": "high",
-  "validator": {
-    "validatorName": "Data service provider X",
-    "validatorBpn": "BPNL0000000003EF"
-  },
-  "uploader": "BPNL0000000001AB",
-  "documents": [
-    "doc-3fa85f64-5717-4562-b3fc-2c963f66afa6"
-  ]
-}
-```
-
 ##### 2.1.1.2 Retrieve Certificate Document
 
 The Certificate Consumer retrieves a specific certificate document by its ID.
 The document is returned as a binary PDF.
-Document IDs are listed in the `documents` array of the certificate metadata (see [2.1.1.1 Retrieve Certificate Metadata](#2111-retrieve-certificate-metadata)).
+Document IDs are listed in the `documents` array of the certificate metadata.
 
 `GET /certificates/{certificateId}/documents/{documentId}`
-
-###### 2.1.1.2.1 HTTP Response Codes
-
-| HTTP Code | Description                          |
-|-----------|--------------------------------------|
-| 200       | Binary PDF document returned.        |
-| 404       | Certificate or document not found.   |
-| 500       | Internal Server Error.               |
 
 ##### 2.1.1.3 Search Certificates
 
 The Certificate Consumer searches for certificates using BPN filters.
-All filter fields are optional and combined with AND logic.
-Omitting all filters returns all accessible certificates.
 
 `POST /certificate-search`
-
-Query parameters:
-
-| Parameter  | Description                          | Default |
-|------------|--------------------------------------|---------|
-| `page`     | Zero-based page number               | 0       |
-| `pageSize` | Number of results per page (max 100) | 10      |
-
-```json
-{
-  "legalEntityBpns": [
-    "BPNL0000000002CD"
-  ],
-  "siteBpns": [
-    "BPNS000000000002"
-  ],
-  "addressBpns": [
-    "BPNA000000000001"
-  ]
-}
-```
-
-###### 2.1.1.3.1 HTTP Response Codes
-
-| HTTP Code | Description                                 |
-|-----------|---------------------------------------------|
-| 200       | Paginated list of matching certificates.    |
-| 400       | Request malformed and can not be processed. |
-| 500       | Internal Server Error.                      |
-
-###### 2.1.1.3.2 HTTP Response Body for HTTP Code 200
-
-```json
-{
-  "totalElements": 42,
-  "totalPages": 5,
-  "page": 0,
-  "pageSize": 10,
-  "content": [
-    {
-      "certificateId": "cert-550e8400-e29b-41d4-a716-446655440000",
-      "certifiedBpn": "BPNL0000000002CD",
-      "type": {
-        "certificateType": "ISO9001",
-        "certificateVersion": "2015"
-      },
-      "registrationNumber": "12 198 54182 TMS",
-      "validFrom": "2023-01-25",
-      "validUntil": "2026-01-24",
-      "trustLevel": "high",
-      "documents": [
-        "doc-3fa85f64-5717-4562-b3fc-2c963f66afa6"
-      ]
-    }
-  ]
-}
-```
 
 ##### 2.1.1.4 Company Certificate Request
 
@@ -269,90 +155,14 @@ The Certificate Consumer requests a specific certificate from the Certificate Pr
 
 `POST /certificate-request`
 
-```json
-{
-  "certifiedBpn": "BPNL00000003AYRE",
-  "certificateType": "iso9001",
-  "locationBpns": [
-    "BPNA000000000001",
-    "BPNA000000000002",
-    "BPNS000000000003"
-  ]
-}
-```
-
 > **`locationBpns` explanation**:
 > When a certificate is requested for multiple locations specified in `locationBpns`, the returned certificate's `enclosedSites` attribute may not cover all requested locations.
 > However, it should include at least one of the specified locations.
-
-###### 2.1.1.4.1 HTTP Response Codes
-
-| HTTP Code | Description                                                               |
-|-----------|---------------------------------------------------------------------------|
-| 200       | OK. Certificate request processing completed (detailed response in body). |
-| 202       | Certificate request accepted and in processing.                           |
-| 400       | Request malformed.                                                        |
-| 500       | Internal Server Error.                                                    |
 
 > **EDC Behavior**:
 > At the moment (standard release 25.09), the open-source EDC will always proxy a `500` internal server error when it encounters a `4xx` or `5xx` HTTP response code from the API.
 > This means that in the case of a malformed request, while the API should return a `400` status code, the final EDC response that the consumer receives will be `500`.
 > Until a future EDC update changes this behavior to proxy all status codes without changes, applications will need to be able to deal with this technical reality.
-
-The detailed response bodies are described in 2.1.1.4.2 and following.
-HTTP Status Codes 202, 400 and 500 do not come with a response body.
-
-###### 2.1.1.4.2 HTTP Response Body for HTTP Code 202
-
-Case: Certificate Request Accepted and In Processing.
-
-```json
-{
-  "requestStatus": "IN_PROGRESS"
-}
-```
-
-###### 2.1.1.4.3 HTTP Response Body for HTTP Code 200, Status: COMPLETED
-
-Finished Processing and Certificate available.
-The `certificateId` can be used to retrieve the certificate via `GET /certificates/{certificateId}`.
-
-```json
-{
-  "requestStatus": "COMPLETED",
-  "certificateId": "3b4edc05-e214-47a1-b0c2-1d831cdd9ba0"
-}
-```
-
-###### 2.1.1.4.4 HTTP Response Body for HTTP Code 200, Status: REJECTED
-
-Finished Processing and Certificate Request Rejected.
-The request errors and location errors SHOULD contain all encountered problems in detail.
-The error message is free text.
-
-```json
-{
-  "requestStatus": "REJECTED",
-  "requestErrors": [
-    {
-      "message": "We do not process certificates on Sunday"
-    },
-    {
-      "message": "Can not provide certificate for requested locations"
-    }
-  ],
-  "locationErrors": [
-    {
-      "bpn": "BPNS000000000003",
-      "locationErrors": [
-        {
-          "message": "Site BPNS000000000003 is unknown"
-        }
-      ]
-    }
-  ]
-}
-```
 
 ##### 2.1.1.5 Company Certificate Push
 
@@ -361,190 +171,19 @@ The Certificate Consumer can use the `certificateId` to retrieve the certificate
 
 `POST /certificate-notification`
 
-```json
-{
-  "header": {
-    "messageId": "urn:uuid:e4da568b-8cf1-4f5f-a96a-cf26265b2c72",
-    "context": "CompanyCertificateManagement-CCMAPI-Push:1.0.0",
-    "sentDateTime": "2024-10-07T10:15:00Z",
-    "senderBpn": "BPNL0000000001AB",
-    "receiverBpn": "BPNL0000000002CD",
-    "version": "3.1.0",
-    "senderFeedbackUrl": "https://domain.tld/path/to/edc/api/v1/dsp"
-  },
-  "content": {
-    "certificateId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-    "status": "CREATED"
-  }
-}
-```
-
-The `status` field indicates the type of lifecycle change:
-
-| Status   | Description                                                        |
-|----------|--------------------------------------------------------------------|
-| CREATED  | A new certificate has been created and is available for retrieval. |
-| MODIFIED | An existing certificate has been updated.                          |
-| DELETED  | A certificate has been removed and is no longer available.         |
-
 The `senderFeedbackUrl` specifies where the Certificate Provider expects feedback on the certificate status from the Certificate Consumer.
 The expected value **MUST** be a concrete path to the version 1 dataspace protocol endpoint,
 where a data offer for an asset of type `cx-taxo:CCMAPI` **MUST** be available for the Certificate Consumer.
 
-###### 2.1.1.5.1 HTTP Response Codes
-
-| HTTP Code | Description                                                                           |
-|-----------|---------------------------------------------------------------------------------------|
-| 200       | Notification processed successfully.                                                  |
-| 500       | Internal Server Error.                                                                |
-| 501       | The Certificate Consumer currently does not support processing of push notifications. |
-
 ##### 2.1.1.6 Company Certificate Feedback
+
+The Certificate Consumer sends feedback on the validation status to the Certificate Provider, either accepting or rejecting the provided certificate.
+This applies regardless of whether the certificate was [pulled](#2152-pull-mechanism) or [pushed](#2151-push-mechanism).
 
 `POST /certificate-feedback`
 
-This API is used by the Certificate Consumer to provide feedback on the validation status to the Certificate Provider, either accepting or rejecting the provided certificate.
-This applies regardless of whether the certificate was [pulled](#2152-pull-mechanism) or [pushed](#2151-push-mechanism).
-
-###### 2.1.1.6.1 Company Certificate Feedback: Received
-
-Certificate has been received by Certificate Consumer and validation is in progress.
-
-```json
-{
-  "header": {
-    "messageId": "urn:uuid:e4da568b-8cf1-4f5f-a96a-cf26265b2c72",
-    "context": "CompanyCertificateManagement-CCMAPI-Status:1.0.0",
-    "sentDateTime": "2024-10-07T10:15:00Z",
-    "senderBpn": "BPNL0000000001AB",
-    "receiverBpn": "BPNL0000000002CD",
-    "version": "3.1.0",
-    "senderFeedbackUrl": "https://domain.tld/path/to/edc/api/v1/dsp"
-  },
-  "content": {
-    "certificateId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-    "certificateStatus": "RECEIVED",
-    "locationBpns": [
-      "BPNS000000000001",
-      "BPNS000000000002",
-      "BPNS000000000003",
-      "BPNA000000000001",
-      "BPNA000000000002",
-      "BPNA000000000003"
-    ]
-  }
-}
-```
-
-###### 2.1.1.6.2 Company Certificate Feedback: Accepted
-
-Certificate is accepted.
 The `certificateId` **MUST** match the `certificateId` communicated by the Certificate Provider.
-The `locationBpns` can be a mix of sites and addresses.
-
-```json
-{
-  "header": {
-    "messageId": "urn:uuid:e4da568b-8cf1-4f5f-a96a-cf26265b2c72",
-    "context": "CompanyCertificateManagement-CCMAPI-Status:1.0.0",
-    "sentDateTime": "2024-10-07T10:15:00Z",
-    "senderBpn": "BPNL0000000001AB",
-    "receiverBpn": "BPNL0000000002CD",
-    "version": "3.1.0",
-    "senderFeedbackUrl": "https://domain.tld/path/to/edc/api/v1/dsp"
-  },
-  "content": {
-    "certificateId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-    "certificateStatus": "ACCEPTED",
-    "locationBpns": [
-      "BPNS000000000001",
-      "BPNS000000000002",
-      "BPNS000000000003",
-      "BPNA000000000001",
-      "BPNA000000000002",
-      "BPNA000000000003"
-    ]
-  }
-}
-```
-
-###### 2.1.1.6.3 Company Certificate Feedback: Rejected
-
-Certificate is rejected by the Certificate Consumer with one or multiple reasons.
-
-```json
-{
-  "header": {
-    "messageId": "urn:uuid:e4da568b-8cf1-4f5f-a96a-cf26265b2c72",
-    "context": "CompanyCertificateManagement-CCMAPI-Status:1.0.0",
-    "sentDateTime": "2024-10-07T10:15:00Z",
-    "senderBpn": "BPNL0000000001AB",
-    "receiverBpn": "BPNL0000000002CD",
-    "version": "3.1.0",
-    "senderFeedbackUrl": "https://domain.tld/path/to/edc/api/v1/dsp"
-  },
-  "content": {
-    "certificateId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-    "certificateStatus": "REJECTED",
-    "certificateErrors": [
-      {
-        "message": "We do not process certificates on Sunday"
-      },
-      {
-        "message": "Certificate has expired in 2024"
-      },
-      {
-        "message": "Certificate was revoked"
-      },
-      {
-        "message": "Unexpected data format"
-      },
-      {
-        "message": "Unexpected language expected English, received Mandarin"
-      },
-      {
-        "message": "Expected PDF, received JPG"
-      },
-      {
-        "message": "Unknown BPNL000000000000"
-      }
-    ],
-    "locationBpns": [
-      "BPNS000000000001",
-      "BPNS000000000002",
-      "BPNS000000000003",
-      "BPNA000000000001",
-      "BPNA000000000002",
-      "BPNA000000000003"
-    ],
-    "locationErrors": [
-      {
-        "bpn": "BPNS000000000002",
-        "locationErrors": [
-          {
-            "message": "Site BPNS000000000002 has been Rejected"
-          }
-        ]
-      },
-      {
-        "bpn": "BPNS000000000003",
-        "locationErrors": [
-          {
-            "message": "Site BPNS000000000003 is missing"
-          }
-        ]
-      }
-    ]
-  }
-}
-```
-
-###### 2.1.1.6.4 HTTP Response Codes
-
-| HTTP Code | Description            |
-|-----------|------------------------|
-| 200       | Status updated.        |
-| 500       | Internal Server Error. |
+The `locationBpns` can be a mix of BPNS sites and BPNA addresses.
 
 #### 2.1.2 ERROR HANDLING
 
