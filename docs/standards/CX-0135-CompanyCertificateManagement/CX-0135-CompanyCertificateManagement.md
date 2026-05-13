@@ -115,6 +115,172 @@ Use case to notify about certificate lifecycle changes (creation, modification, 
 
 This section introduces the certificate management API which is further detailed in the corresponding [OpenAPI specification](assets/openapi-spec.yaml).
 
+The following class diagram provides an overview of the API schema model:
+
+```mermaid
+classDiagram
+  namespace Certificate_Data_Model {
+    class CertificateRetrievalMetadata {
+      +string certificateId
+      +string certifiedBpn
+      +string registrationNumber
+      +string areaOfApplication
+      +date validFrom
+      +date validUntil
+      +TrustLevel trustLevel
+      +string uploader
+      +string[] documents
+      +string language
+    }
+    class CertificateType {
+      +string certificateType
+      +string certificateVersion
+    }
+    class LocationBpn {
+      +string locationBpn
+      +string areaOfApplication
+    }
+    class CertificateIssuer {
+      +string issuerName
+      +string issuerBpn
+    }
+    class CertificateValidator {
+      +string validatorName
+      +string validatorBpn
+    }
+    class TrustLevel {
+      <<enumeration>>
+      none
+      low
+      high
+      trusted
+    }
+  }
+
+  namespace Search {
+    class CertificateSearchRequest {
+      +string[] legalEntityBpns
+      +string[] siteBpns
+      +string[] addressBpns
+    }
+    class PaginatedCertificateList {
+      +int totalElements
+      +int totalPages
+      +int page
+      +int pageSize
+    }
+  }
+
+  namespace Certificate_Request {
+    class CertificateRequest {
+      +string certifiedBpn
+      +string certificateType
+      +string[] locationBpns
+    }
+    class CertificateRequestFinishedResponse {
+      <<union>>
+    }
+    class CertificateRequestInProgressResponse {
+      +RequestStatus requestStatus
+    }
+    class CertificateRequestCompletedResponse {
+      +string requestStatus
+      +string certificateId
+    }
+    class CertificateRequestRejectedResponse {
+      +string requestStatus
+    }
+    class RequestStatus {
+      <<enumeration>>
+      IN_PROGRESS
+      UNDER_CERTIFICATION
+    }
+  }
+
+  namespace Push_and_Feedback {
+    class Header {
+      +string messageId
+      +string context
+      +datetime sentDateTime
+      +string senderBpn
+      +string receiverBpn
+      +string relatedMessageId
+      +string version
+    }
+    class FeedbackUrlHeader {
+      +string senderFeedbackUrl
+    }
+    class CertificatePush
+    class CertificateFeedback
+    class CertificatePushContent {
+      +string certificateId
+      +PushStatus status
+    }
+    class CertificateStatus {
+      +string certificateId
+      +FeedbackStatus certificateStatus
+      +string[] locationBpns
+    }
+    class PushStatus {
+      <<enumeration>>
+      CREATED
+      MODIFIED
+      DELETED
+    }
+    class FeedbackStatus {
+      <<enumeration>>
+      RECEIVED
+      ACCEPTED
+      REJECTED
+    }
+  }
+
+  namespace Errors {
+    class Error {
+      +string message
+    }
+    class LocationErrorCollection {
+      +string bpn
+    }
+    class LocationError {
+      +string message
+    }
+  }
+
+  %% Inheritance
+  FeedbackUrlHeader --|> Header
+
+  %% Certificate Data Model
+  CertificateRetrievalMetadata "1" *-- "1" CertificateType : type
+  CertificateRetrievalMetadata "1" *-- "0..*" LocationBpn : locations
+  CertificateRetrievalMetadata "1" *-- "0..1" CertificateIssuer : issuer
+  CertificateRetrievalMetadata "1" *-- "0..1" CertificateValidator : validator
+  CertificateRetrievalMetadata --> TrustLevel
+
+  %% Search
+  PaginatedCertificateList "1" *-- "0..*" CertificateRetrievalMetadata : content
+
+  %% Certificate Request
+  CertificateRequestFinishedResponse <|-- CertificateRequestCompletedResponse
+  CertificateRequestFinishedResponse <|-- CertificateRequestRejectedResponse
+  CertificateRequestInProgressResponse --> RequestStatus
+  CertificateRequestRejectedResponse "1" *-- "1..*" Error : requestErrors
+  CertificateRequestRejectedResponse "1" *-- "0..*" LocationErrorCollection : locationErrors
+
+  %% Push and Feedback messages
+  CertificatePush "1" *-- "1" FeedbackUrlHeader : header
+  CertificatePush "1" *-- "1" CertificatePushContent : content
+  CertificateFeedback "1" *-- "1" FeedbackUrlHeader : header
+  CertificateFeedback "1" *-- "1" CertificateStatus : content
+  CertificatePushContent --> PushStatus
+  CertificateStatus --> FeedbackStatus
+  CertificateStatus "1" *-- "0..*" Error : certificateErrors
+  CertificateStatus "1" *-- "0..*" LocationErrorCollection : locationErrors
+
+  %% Errors
+  LocationErrorCollection "1" *-- "0..*" LocationError : locationErrors
+```
+
 #### 2.1.1 API endpoints and resources
 
 > [!WARNING]
