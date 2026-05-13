@@ -124,7 +124,7 @@ components:
         requestStatus:
           type: string
           description: The processing status in which the certificate request process is currently in
-          const: "IN_PROGRESS"
+          enum: [IN_PROGRESS, UNDER_CERTIFICATION]
 
     CertificateRequestCompletedResponse:
       type: object
