@@ -393,6 +393,12 @@ components:
             description: The document ID as stored by the data service provider
             examples:
               - "doc-3fa85f64-5717-4562-b3fc-2c963f66afa6"
+        language:
+          type: string
+          description: The language of the certificate document as an ISO 639-1 two-letter language code (e.g. "en" for English, "de" for German)
+          pattern: "^[a-z]{2}$"
+          examples:
+            - "en"
 
     CertificateSearchRequest:
       type: object
