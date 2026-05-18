@@ -10,10 +10,10 @@ The upcoming releases are scheduled in the following order:
 
 | Release    | Publication Date (Normative Documentes e.g. Standards and Certification Available) | Go-Live Date (Standards Become Effective) |
 |------------|----------------------------------------------------------|-------------------------------------------|
-| CX-Jupiter | 05.08.2024.                                                | 23.10.2024.                               |
+| CX-Jupiter | 05.08.2024                                               | 23.10.2024                                |
 | CX-Io      | 17.03.2025                                               | 10.06.2025                                |
 | CX-Saturn  | 08.09.2025                                               | 25.11.2025                                |
-| CX-Titan   | 18.03.2026                                               | Mid of July 2026                          |
+| CX-Titan   | 18.03.2026                                               | 09.06.2026                                |
 | CX-Neptune | 16.09.2026                                               | TBD                                       |
 
 ## Consistency and Compatibility
@@ -32,7 +32,7 @@ for our different stakeholder in the operating environment.
 | Ecosystem Release Cycle | 2 Times / Year|
 | Catena-X Planning Cycle | 4 Times / Year|
 | Eclipse Tractus-X Planning & Release Cycle | 4 Times / Year|
-| Catena-X & Eclipse Tractus-X Artefact Versioning | Calendar Versioning e.g. 25.09|
+| Catena-X & Eclipse Tractus-X Artefact Versioning | Calendar Versioning e.g. 26.09|
 | Ecosystem Release Versioning | Semantic Versioning e.g. CX-Neptune|
 | Grace Period of a ecosystem release | 1 Year|
 | Upgrade Day for [Core Service Provider A](https://catenax-ev.github.io/docs/next/operating-model/who-roles-in-the-catena-x-ecosystem#core-service-provider-a) / [Core Servide Provider B](https://catenax-ev.github.io/docs/next/operating-model/who-roles-in-the-catena-x-ecosystem#core-service-provider-b) / [Onoboarding Service Provider](https://catenax-ev.github.io/docs/next/operating-model/who-roles-in-the-catena-x-ecosystem#onboarding-service-provider) | Synced Upgrade Day (coordinated by Catena-X association) |
