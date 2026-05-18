@@ -41,6 +41,7 @@ for our different stakeholder in the operating environment.
 ## Additional notes
 
 [![Release Timeline](@site/static/img/release-schedule.png)](@site/static/img/release-schedule.png)
+*Overall overview of the current and maintained ecosystem releases, based on the schedule defined in the [operating model](https://catenax-ev.github.io/docs/operating-model/how-life-cycle-management).*
 
 These principles allow all stakeholders to take advantage of quality-assured dependency and compatibility management, and better predictability for the operational deployment and certification phase.
 
