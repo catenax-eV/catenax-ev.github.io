@@ -442,6 +442,15 @@ An identifier mapping entry of a specific identifier (of a specific identifier t
 | Identifier Value | The value of a specific identifier type for which the mapping was returned.                         | String                                    |
 | BPN              | The business partner number for which the mapping was returned. Can be either a BPNL, BPNS or BPNA. | String                                    |
 
+##### 1.5.2.13 SCRIPT CODE
+
+A script code identifies a writing system. Script codes are provided as a read-only reference list of writing systems that are available for use by implementations, for example to carry name and address data in a specific writing system such as Simplified Chinese. The actual codes used are defined by the operator; the standard does not prescribe which specific script codes must be available. ISO 15924 codes (such as `Hans` for Simplified Chinese) are a natural example of what operators may choose to use.
+
+| **Attribute**  | **Description**                               | **(Data) Type / Code List / Enumeration** |
+| -------------- | --------------------------------------------- | ----------------------------------------- |
+| Technical Key  | The unique identifier for the script code (e.g. `Hans` for Simplified Chinese). | String |
+| Description    | The human-readable name of the writing system. | String |
+
 ## 2 BUSINESS PARTNER POOL API \[NORMATIVE\]
 
 The Business Partner Data Pool API enables the access to Golden Record business partner data and provides it to other data space services and consumers. The Pool API **MUST** be implemented based on the [OpenAPI specification (3.1.0)](https://github.com/OAI/OpenAPI-Specification/blob/7acdf61ed4e5c18068e2da18741318adde219c2d/versions/3.1.0.md).
@@ -520,7 +529,7 @@ The address controller **MUST** allow to create, update, or read business partne
 
 ##### 2.2.1.4 METADATA CONTROLLER (CODE LISTS)
 
-The metadata controller **MUST** allow to create or read legal forms, identifier types, and read administrative areas on level 1. It **MUST** have the following resources:
+The metadata controller **MUST** allow to create or read legal forms, identifier types, and read administrative areas on level 1 and script codes. It **MUST** have the following resources:
 
 | **Metadata Controller Resources** | **Description**                                                             |
 | --------------------------------- | --------------------------------------------------------------------------- |
@@ -529,6 +538,7 @@ The metadata controller **MUST** allow to create or read legal forms, identifier
 | GET/legal-forms                   | Returns all legal forms.                                                    |
 | GET/identifier-types              | Returns all identifier types filtered by business partner type and country. |
 | GET/administrative-areas-level1   | Returns all administrative areas on level 1.                                |
+| GET/script-codes                  | Returns all available script codes.                                         |
 
 ##### 2.2.1.5 BPN CONTROLLER (IDENTIFIER MAPPINGS)
 
