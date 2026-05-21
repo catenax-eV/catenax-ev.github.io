@@ -442,6 +442,77 @@ An identifier mapping entry of a specific identifier (of a specific identifier t
 | Identifier Value | The value of a specific identifier type for which the mapping was returned.                         | String                                    |
 | BPN              | The business partner number for which the mapping was returned. Can be either a BPNL, BPNS or BPNA. | String                                    |
 
+##### 1.5.2.13 GENERIC BUSINESS PARTNER (POOL SEARCH RESULT)
+
+A generic business partner is a unified, read-only view of an address together with its business partner type hierarchy, used in the Pool's generic search response. It combines the data of the legal entity that owns the address, the optional site the address belongs to, and the address itself into a single result object. This allows consumers to discover business partners across all types without issuing separate requests to the typed controllers.
+
+This model is derived from the Generic Business Partner output model defined in [CX-0074 Business Partner Data Gate API](https://catenax-ev.github.io/docs/next/standards/CX-0074-BusinessPartnerGateAPI). Attributes specific to the Gate sharing process are not present in the Pool variant: `externalId`, `nameParts`, `roles`, `isOwnCompanyData`, `externalSequenceTimestamp`, `createdAt`, and `updatedAt` are excluded. The Pool adds an `isParticipantData` flag and provides separate identifier lists for the legal entity component (top-level `identifiers`) and the address component (`address.identifiers`).
+
+Each generic business partner result is address-centric: one result per unique BPNA is returned. Because an address can simultaneously be the legal address of a legal entity and the main address of a site, the address type attribute within the address component explicitly marks this combined role. All attributes in the response are classified as public data; the response must not reveal which Catena-X member originally submitted any part of the data.
+
+For additional addresses, legal entity and site attributes are inherited from the parent entities: the legal name and legal form shown in the result are those of the owning legal entity, not properties of the address itself. This means every result is a complete, fully searchable object regardless of address type.
+
+| **Attribute**       | **Description**                                                                                                                                                  | **(Data) Type / Code List / Enumeration**                              |
+| ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| Identifiers         | The list of identifiers of the legal entity, such as the German Handelsregisternummer, a VAT registration / taxpayer identification number, etc.                 | List of [Legal Entity Identifier](#15221-legal-entity-identifier)      |
+| States              | The list of states of the legal entity.                                                                                                                          | List of [Legal Entity State](#15222-legal-entity-state)                |
+| Legal Entity        | The legal entity component containing the attributes of the legal entity that owns the address.                                                                  | [Business Partner Legal Entity](#152131-business-partner-legal-entity) |
+| Site                | The site component containing the attributes of the site the address belongs to. Absent if the address does not belong to a site.                                | [Business Partner Site](#152132-business-partner-site)                 |
+| Address             | The address component containing the attributes of the address.                                                                                                  | [Business Partner Address](#152133-business-partner-address)           |
+| Is Participant Data | Indicates whether the result is provided by a data space participant that either is the owner of the address or is its managing legal entity.                    | Boolean                                                                |
+
+###### 1.5.2.13.1 BUSINESS PARTNER LEGAL ENTITY
+
+The legal entity component within a generic business partner carries the attributes of the legal entity that owns the address. For additional addresses, these attributes are inherited from the parent legal entity.
+
+| **Attribute**       | **Description**                                               | **(Data) Type / Code List / Enumeration**               |
+| ------------------- | ------------------------------------------------------------- | ------------------------------------------------------- |
+| BPNL                | The BPNL of the legal entity.                                 | String                                                  |
+| Legal Name          | The name of the legal entity according to official registers. | String                                                  |
+| Short Name          | The abbreviated name of the legal entity.                     | String                                                  |
+| Legal Form          | The technical key of the legal form of the legal entity.      | String                                                  |
+| States              | The list of states of the legal entity.                       | List of [Legal Entity State](#15222-legal-entity-state) |
+| Confidence Criteria | The confidence criteria for the legal entity data.            | [Confidence Criteria](#152134-confidence-criteria)      |
+
+###### 1.5.2.13.2 BUSINESS PARTNER SITE
+
+The site component within a generic business partner carries the attributes of the site the address belongs to. It is absent if the address is not a site main address or a legal and site main address.
+
+| **Attribute**       | **Description**                            | **(Data) Type / Code List / Enumeration**          |
+| ------------------- | ------------------------------------------ | -------------------------------------------------- |
+| BPNS                | The BPNS of the site.                      | String                                             |
+| Name                | The name of the site.                      | String                                             |
+| States              | The list of states of the site.            | List of [Site State](#15231-site-state)            |
+| Confidence Criteria | The confidence criteria for the site data. | [Confidence Criteria](#152134-confidence-criteria) |
+
+###### 1.5.2.13.3 BUSINESS PARTNER ADDRESS
+
+The address component within a generic business partner carries the attributes of the address itself, including its type, postal data, states, and identifiers.
+
+| **Attribute**              | **Description**                                                                                 | **(Data) Type / Code List / Enumeration**                      |
+| -------------------------- | ----------------------------------------------------------------------------------------------- | -------------------------------------------------------------- |
+| BPNA                       | The BPNA of the address.                                                                        | String                                                         |
+| Name                       | The name of the address.                                                                        | String                                                         |
+| Address Type               | One of the address types, indicating the role of this address within its legal entity and site. | Enum (see [Address](#1524-address))                            |
+| Physical Postal Address    | The physical postal address.                                                                    | [Physical Postal Address](#1526-physical-postal-address)       |
+| Alternative Postal Address | The alternative postal address.                                                                 | [Alternative Postal Address](#1527-alternative-postal-address) |
+| States                     | The list of states of the address.                                                              | List of [Address State](#15242-address-state)                  |
+| Identifiers                | The list of identifiers of the address, such as the Global Location Number (GLN).              | List of [Address Identifier](#15241-address-identifier)        |
+| Confidence Criteria        | The confidence criteria for the address data.                                                   | [Confidence Criteria](#152134-confidence-criteria)             |
+
+###### 1.5.2.13.4 CONFIDENCE CRITERIA
+
+Confidence criteria quantify the reliability of a Golden Record based on the data contributions and validation checks applied to it.
+
+| **Attribute**                   | **Description**                                                                                            | **(Data) Type / Code List / Enumeration** |
+| ------------------------------- | ---------------------------------------------------------------------------------------------------------- | ----------------------------------------- |
+| Shared By Owner                 | Indicates whether the data was shared by the owner of the business partner or its managing legal entity.   | Boolean                                   |
+| Checked By External Data Source | Indicates whether the data has been validated against an external data source.                             | Boolean                                   |
+| Number Of Sharing Members       | The number of data space participants that have shared data for this business partner.                     | Integer                                   |
+| Last Confidence Check At        | The date and time when the confidence of this business partner was last checked.                           | Date / Time                               |
+| Next Confidence Check At        | The date and time when the confidence of this business partner is next scheduled to be checked.            | Date / Time                               |
+| Confidence Level                | The overall confidence level of the business partner data, expressed as an integer score.                  | Integer                                   |
+
 ## 2 BUSINESS PARTNER POOL API \[NORMATIVE\]
 
 The Business Partner Data Pool API enables the access to Golden Record business partner data and provides it to other data space services and consumers. The Pool API **MUST** be implemented based on the [OpenAPI specification (3.1.0)](https://github.com/OAI/OpenAPI-Specification/blob/7acdf61ed4e5c18068e2da18741318adde219c2d/versions/3.1.0.md).
@@ -471,6 +542,7 @@ The following API controllers of the OpenAPI document **MUST** be implemented:
 - Legal entity controller
 - Site controller
 - Address controller
+- Business partner controller
 - Metadata controller (code lists)
 - Changelog controller
 - BPN controller (identifier mappings)
@@ -547,6 +619,52 @@ The changelog controller **MUST** allow to read change log entries of legal enti
 | POST/business-partners/changelog/search | Returns changelog entries of legal entities, sites and addresses as of a specified timestamp, optionally filtered by a list of BPNL, BPNS and BPNA, or business partner types.                                                   |
 | POST/participants/changelog/search      | Returns only changelog entries of legal entities, sites and addresses, which are owned by data space participants, as of a specified timestamp, optionally filtered by a list of BPNL, BPNS and BPNA, or business partner types. |
 |                                         |                                                                                                                                                                                                                                  |
+
+##### 2.2.1.7 BUSINESS PARTNER CONTROLLER
+
+The business partner controller **MUST** allow to search for business partners regardless of their type in a single request, returning [Generic Business Partner (Pool Search Result)](#15213-generic-business-partner-pool-search-result) across legal entities, sites, and additional addresses in a unified, paginated response. It **MUST** have the following resources:
+
+| **Business Partner Controller Resources**          | **Description**                                                                                                                   |
+| -------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| POST/business-partners/search                      | Returns generic business partners matching the given search criteria.                                                             |
+| POST/participants/business-partners/search         | Returns only generic business partners matching the given search criteria which are owned by data space participants.             |
+
+The search request accepts the following fields. All fields are optional, subject to the validation rules below.
+
+| **Field**      | **Matching** | **Description**                                                                             |
+| -------------- | ------------ | ------------------------------------------------------------------------------------------- |
+| `legalName`    | Fuzzy        | Filter by the legal name of the legal entity.                                               |
+| `bpn`          | Exact        | Filter by a Business Partner Number (BPNL, BPNS, or BPNA).                                 |
+| `streetName`   | Fuzzy        | Filter by the street name of the physical postal address.                                   |
+| `postalCode`   | Fuzzy        | Filter by the postal code of the physical postal address.                                   |
+| `city`         | Fuzzy        | Filter by the city of the physical postal address.                                          |
+| `country`      | Exact        | Filter by the country of the physical postal address (ISO 3166-1 two-letter code).          |
+
+Fuzzy matching **MUST** apply the following normalization rules:
+
+- Character equivalences: `ü`↔`ue`, `ö`↔`oe`, `ä`↔`ae`, `ß`↔`ss`, and similar locale-aware substitutions.
+- Case-insensitive matching.
+- Collapsing of consecutive spaces, dots, or similar punctuation.
+- Wildcard placeholders: `*` matches any sequence of characters; `+` matches exactly one alphanumeric character.
+
+The scoring algorithm used to rank results by relevance is not prescribed by this standard.
+
+The implementation **MUST** enforce the following validation rules and return a 400 Bad Request response if any rule is violated:
+
+1. At least one of `bpn` or `legalName` **MUST** be provided and non-blank. Providing only address-level fields (`city`, `streetName`, `postalCode`, `country`) without `bpn` or `legalName` is invalid.
+2. The `searchResultFilter` **MUST** contain at least one value. An empty or absent filter is invalid.
+3. `bpn` and `legalName` **MUST NOT** begin with a whitespace character.
+4. If `legalName` is provided, it **MUST** contain at least 3 characters.
+
+The `searchResultFilter` parameter controls which address types appear in the response. It **MUST** contain one or more of the following values:
+
+1. `IncludeLegalEntities` (value=IncludeLegalEntities): include addresses with type `LegalAddress` or `LegalAndSiteMainAddress`.
+2. `IncludeSites` (value=IncludeSites): include addresses with type `SiteMainAddress` or `LegalAndSiteMainAddress`.
+3. `IncludeAdditionalAddresses` (value=IncludeAdditionalAddresses): include addresses with type `AdditionalAddress`.
+
+An address with type `LegalAndSiteMainAddress` **MUST** be included if either `IncludeLegalEntities` or `IncludeSites` (or both) is present in the filter.
+
+The response **MUST** return at most one result per unique BPNA and **MUST NOT** contain duplicate entries for the same BPNA. Results **MUST** be ordered by descending relevance score. The response is limited to a maximum of 100 results per page. Because each result carries the full legal entity (and optional site) context regardless of address type, all search fields apply to all result types: for example, filtering to `IncludeAdditionalAddresses` combined with a `legalName` value returns additional addresses whose parent legal entity matches that name.
 
 #### 2.2.2 AVAILABLE DATA TYPES
 
