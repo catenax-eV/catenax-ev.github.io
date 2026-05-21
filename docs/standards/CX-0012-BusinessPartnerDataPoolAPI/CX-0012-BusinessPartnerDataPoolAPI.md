@@ -167,18 +167,23 @@ A legal entity state can be classified into **one** of the legal entity state ty
 
 A legal entity relation is a directed relation between two legal entities with a specific type that describes the nature of the relation. Note that the legal entity relation is in the list of legal entity relations of the legal entity if the legal entity is either the source or the target of the relation.
 
-| **Attribute**           | **Description**                                          | **(Data) Type / Code List / Enumeration** |
-| ----------------------- | -------------------------------------------------------- | ----------------------------------------- |
-| Type                    | One of the legal entity relation types.                  | Enum                                      |
-| Legal Entity Source BPN | BPN of the legal entity from which the relation emerges. | String                                    |
-| Legal Entity Target BPN | BPN of the legal entity to which this relation goes.     | String                                    |
+| **Attribute**           | **Description**                                                                                                                    | **(Data) Type / Code List / Enumeration**                                           |
+| ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| Type                    | One of the legal entity relation types.                                                                                            | Enum                                                                                |
+| Legal Entity Source BPN | BPN of the legal entity from which the relation emerges.                                                                           | String                                                                              |
+| Legal Entity Target BPN | BPN of the legal entity to which this relation goes.                                                                               | String                                                                              |
+| Validity Periods        | The non-empty list of time intervals during which the relation holds.                                                              | List of [Relation Validity Period](#15213-relation-validity-period)                 |
+| Reason Code             | An optional technical key referencing a reason code that provides context for why the relation exists.                             | String                                                                              |
 
 A legal entity relation can be classified into **one** of the legal entity relation types:
 
 1. `is alternative headquarter for` (value=IsAlternativeHeadquarterFor): The legal entity source is an alternative headquarter for the legal entity target, where both legal addresses are registered in the official registers with equal rights, representing the same real-world legal entity. Multiple legal entity sources can be the alternative headquarters for one legal entity target, resulting in multiple relations at the legal entity target. The legal entity target cannot be a legal entity source at the same time, so that it cannot be an alternative headquarter for itself and so that only one level of alternative headquarters is possible.
 2. `is managed by` (value=IsManagedBy): Legal entity, site and address data can be managed by the managing legal entity (legal entity target) on behalf of the managed legal entity (legal entity source). Multiple legal entity sources can be the managed legal entities of one managing legal entity (legal entity target), resulting in multiple relations at the legal entity target. The legal entity target cannot be a legal entity source at the same time, so that it cannot be the managing legal entity for itself and so that only one level of managing legal entities is possible.
+3. `is owned by` (value=IsOwnedBy): The legal entity source is majority-owned by the legal entity target, for example a subsidiary owned by a parent company. Multiple legal entity sources can be majority-owned by one legal entity target, resulting in multiple relations at the legal entity target. The legal entity target cannot be a legal entity source at the same time, so that it cannot be an owner of itself and so that only one level of majority ownership is possible.
 
 NOTE: The 'is managed by' relationship has no effect to the data exchange in Catena-X Standard Release 25.09 because the managing legal entities MUST NOT offer data or consume data on behalf of managed legal entities in Catena-X Standard Release 25.09. The 'is managed by' relationship MAY only be used for the hierarchy management as described in this standard and in CX-0074 and CX-0076.
+
+NOTE: The 'is owned by' relationship has no effect to the data exchange in Catena-X Standard Release 25.09. It MAY only be used for hierarchy management as described in this standard.
 
 ##### 1.5.2.3 SITE
 
@@ -232,6 +237,7 @@ An address is owned by a legal entity. Thus, exactly one legal entity is assigne
 | Name                       | The name of the address. This is not according to official registers but according to the name the data space agreed on, such as the name of a gate or any other additional names that designate the address in common parlance.                                                                                                                                                                                                                                        | String                                                         |
 | States                     | The list of (temporal) states of the address.                                                                                                                                                                                                                                                                                                                                                                                                                           | List of [Address State](#15242-address-state)                  |
 | Identifiers                | The list of identifiers of the address.                                                                                                                                                                                                                                                                                                                                                                                                                                 | List of [Address Identifier](#15241-address-identifier)        |
+| Relations                  | The list of directed relations of the address to any other address.                                                                                                                                                                                                                                                                                                                                                                                                     | List of [Address Relation](#15243-address-relation)            |
 | Physical Postal Address    | The physical postal address of the address, such as an office, warehouse, gate, etc.                                                                                                                                                                                                                                                                                                                                                                                    | [Physical Postal Address](#1526-physical-postal-address)       |
 | Alternative Postal Address | The alternative postal address of the address, for example if the goods are to be picked up somewhere else.                                                                                                                                                                                                                                                                                                                                                             | [Alternative Postal Address](#1527-alternative-postal-address) |
 | Legal Entity BPN           | The BPNL of the legal entity owning the address.                                                                                                                                                                                                                                                                                                                                                                                                                        | String                                                         |
@@ -271,6 +277,22 @@ An address state can be classified into **one** of the address state types:
 
 1. `active` (value=ACTIVE): Legal entity or site at the address are still operating and address is still used for operational purposes, such as for delivery of goods or services.
 2. `inactive` (value=INACTIVE): Legal entity or site at the address are not operating anymore, or address is not used anymore for operational purposes. It still exists in the BPDM Pool for historical reasons, such as for auditing purposes.
+
+##### 1.5.2.4.3 ADDRESS RELATION
+
+An address relation is a directed relation between two addresses with a specific type that describes the nature of the relation. Note that the address relation is in the list of address relations of the address if the address is either the source or the target of the relation.
+
+| **Attribute**      | **Description**                                                                                        | **(Data) Type / Code List / Enumeration**                           |
+| ------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------- |
+| Type               | One of the address relation types.                                                                     | Enum                                                                |
+| Address Source BPN | BPNA of the address from which the relation emerges.                                                   | String                                                              |
+| Address Target BPN | BPNA of the address to which this relation goes.                                                       | String                                                              |
+| Validity Periods   | The non-empty list of time intervals during which the relation holds.                                  | List of [Relation Validity Period](#15213-relation-validity-period) |
+| Reason Code        | An optional technical key referencing a reason code that provides context for why the relation exists. | String                                                              |
+
+An address relation can be classified into **one** of the address relation types:
+
+1. `is replaced by` (value=IsReplacedBy): The address source is a former legal address that has been replaced by the address target as the new legal address, due to a headquarter relocation. The address source may remain active as an additional address if the location is still in use; there is no requirement for it to become inactive as a result of this relation. Multiple address sources may be replaced by the same address target.
 
 ##### 1.5.2.5 LEGAL FORM
 
@@ -442,6 +464,32 @@ An identifier mapping entry of a specific identifier (of a specific identifier t
 | Identifier Value | The value of a specific identifier type for which the mapping was returned.                         | String                                    |
 | BPN              | The business partner number for which the mapping was returned. Can be either a BPNL, BPNS or BPNA. | String                                    |
 
+##### 1.5.2.13 RELATION VALIDITY PERIOD
+
+A relation validity period describes a single time interval during which a business partner relation holds.
+
+| **Attribute** | **Description**                                                                    | **(Data) Type / Code List / Enumeration** |
+| ------------- | ---------------------------------------------------------------------------------- | ----------------------------------------- |
+| Valid From    | The date from which the validity interval starts.                                  | Date                                      |
+| Valid To      | The date until which the validity interval ends. Open-ended if absent.             | Date                                      |
+
+The following constraints apply to the validity periods of a relation:
+
+- A relation **MUST** have at least one validity period.
+- Within a single validity period, `Valid From` **MUST NOT** be after `Valid To`.
+- Multiple validity periods of the same relation **MUST NOT** overlap.
+
+##### 1.5.2.14 REASON CODE
+
+A reason code provides a short, reusable label describing why a business partner relation exists. It is part of the Pool's metadata and can be referenced optionally by any relation, regardless of relation type.
+
+| **Attribute** | **Description**                                                              | **(Data) Type / Code List / Enumeration** |
+| ------------- | ---------------------------------------------------------------------------- | ----------------------------------------- |
+| Technical Key | The technical identifier of the reason code, used as a reference in relations. | String                                  |
+| Description   | A human-readable description of the reason the relation exists.              | String                                    |
+
+The standard does not restrict which reason codes are available or mandate different sets of reason codes for different relation types. The content of the reason code catalogue is determined by the Pool implementation and exposed as a read-only reference list via the metadata controller.
+
 ## 2 BUSINESS PARTNER POOL API \[NORMATIVE\]
 
 The Business Partner Data Pool API enables the access to Golden Record business partner data and provides it to other data space services and consumers. The Pool API **MUST** be implemented based on the [OpenAPI specification (3.1.0)](https://github.com/OAI/OpenAPI-Specification/blob/7acdf61ed4e5c18068e2da18741318adde219c2d/versions/3.1.0.md).
@@ -520,7 +568,7 @@ The address controller **MUST** allow to create, update, or read business partne
 
 ##### 2.2.1.4 METADATA CONTROLLER (CODE LISTS)
 
-The metadata controller **MUST** allow to create or read legal forms, identifier types, and read administrative areas on level 1. It **MUST** have the following resources:
+The metadata controller **MUST** allow to create or read legal forms, identifier types, read administrative areas on level 1, and read reason codes. It **MUST** have the following resources:
 
 | **Metadata Controller Resources** | **Description**                                                             |
 | --------------------------------- | --------------------------------------------------------------------------- |
@@ -529,6 +577,7 @@ The metadata controller **MUST** allow to create or read legal forms, identifier
 | GET/legal-forms                   | Returns all legal forms.                                                    |
 | GET/identifier-types              | Returns all identifier types filtered by business partner type and country. |
 | GET/administrative-areas-level1   | Returns all administrative areas on level 1.                                |
+| GET/reason-codes                  | Returns all reason codes.                                                   |
 
 ##### 2.2.1.5 BPN CONTROLLER (IDENTIFIER MAPPINGS)
 

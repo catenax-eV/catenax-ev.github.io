@@ -48,6 +48,23 @@ package "Address and References" {
     ...
   }
 
+  class AddressRelation {
+  }
+
+  enum AddressRelationType {
+    IsReplacedBy
+  }
+
+  class RelationValidityPeriod {
+    ValidFrom
+    ValidTo
+  }
+
+  entity ReasonCode {
+    TechnicalKey
+    Description
+  }
+
   class AlternativePostalAddress{
     DeliveryServiceQualifier
     DeliveryServiceNumber
@@ -139,7 +156,14 @@ package "Address and References" {
 
   Address "1" *-r-> "*" AddressIdentifier : Identifiers
   AddressIdentifier "*" -d-o "1" IdentifierType : Type
-  
+
+  Address "1" *--> "*" AddressRelation : Relations
+  AddressRelation "*" --o "1" AddressRelationType : Type
+  AddressRelation "*" o--> "1" Address : AddressSourceBPN
+  AddressRelation "*" o--> "1" Address : AddressTargetBPN
+  AddressRelation "1" *-d-> "1..*" RelationValidityPeriod : ValidityPeriods
+  AddressRelation "*" -d-o "0..1" ReasonCode : ReasonCode
+
   Address "1" -d-> "0..1" AlternativePostalAddress : AlternativePostalAddress
   AlternativePostalAddress "*" -d-o "1" DeliveryServiceType : DeliveryServiceType
   AlternativePostalAddress -d-|> PostalAddress
@@ -163,4 +187,5 @@ package "Address and References" {
 }
 
 hide methods
+hide AddressRelation members
 @enduml
