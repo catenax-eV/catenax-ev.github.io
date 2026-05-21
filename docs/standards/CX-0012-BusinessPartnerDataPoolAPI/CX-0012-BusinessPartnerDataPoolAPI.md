@@ -444,7 +444,9 @@ An identifier mapping entry of a specific identifier (of a specific identifier t
 
 ##### 1.5.2.13 SCRIPT CODE
 
-A script code identifies a writing system. Script codes are provided as a read-only reference list of writing systems that are available for use by implementations, for example to carry name and address data in a specific writing system such as Simplified Chinese. The actual codes used are defined by the operator; the standard does not prescribe which specific script codes must be available. ISO 15924 codes (such as `Hans` for Simplified Chinese) are a natural example of what operators may choose to use.
+A script code identifies a writing system. Script codes support the script variant feature defined in CX-0074 Business Partner Data Gate API, where legal entities, sites, and addresses can carry name and address fields in multiple writing systems simultaneously. The Pool exposes the available script codes so that Gate consumers can discover which writing systems the operator supports.
+
+Script codes are provided as a read-only reference list; the actual codes used are defined by the operator and the standard does not prescribe which specific codes must be available. ISO 15924 codes (such as `Hans` for Simplified Chinese) are a natural example of what operators may choose to use.
 
 | **Attribute**  | **Description**                               | **(Data) Type / Code List / Enumeration** |
 | -------------- | --------------------------------------------- | ----------------------------------------- |
