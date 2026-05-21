@@ -627,7 +627,6 @@ The business partner controller **MUST** allow to search for business partners r
 | **Business Partner Controller Resources**          | **Description**                                                                                                                   |
 | -------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
 | POST/business-partners/search                      | Returns generic business partners matching the given search criteria.                                                             |
-| POST/participants/business-partners/search         | Returns only generic business partners matching the given search criteria which are owned by data space participants.             |
 
 The search request accepts the following fields. All fields are optional, subject to the validation rules below.
 
