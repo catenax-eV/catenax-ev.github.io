@@ -96,6 +96,17 @@ package "Business Partner and References" {
     ShortName
   }
 
+  class LegalEntityGoldenRecordRelation {
+    SourceBPN
+    TargetBPN
+  }
+
+  enum LegalEntityGoldenRecordRelationType {
+    IsAlternativeHeadquarterFor
+    IsManagedBy
+    IsOwnedBy
+  }
+
   entity Site {
     BPNS
     ...
@@ -114,6 +125,15 @@ package "Business Partner and References" {
     Name
   }
 
+  class AddressGoldenRecordRelation {
+    SourceBPN
+    TargetBPN
+  }
+
+  enum AddressGoldenRecordRelationType {
+    IsReplacedBy
+  }
+
   ' not yet standardized, as not clear if operating company can correctly implement it
   ' class ConfidenceCriteria {
   '   SharedByOwner
@@ -123,8 +143,6 @@ package "Business Partner and References" {
   '   NextConfidenceCheckAt
   '   ConfidenceLevel
   ' }
-
-  class AddressRepresentation { }
 
   enum AddressType {
     LegalAddress
@@ -252,11 +270,17 @@ package "Business Partner and References" {
   LegalEntityRepresentation "1" *-u-> "*" LegalEntityState : States
   LegalEntityState "*" -u-o "1" LegalEntityStateType : Type
 
+  LegalEntityRepresentation "1" *-r-> "*" LegalEntityGoldenRecordRelation : GoldenRecordRelations
+  LegalEntityGoldenRecordRelation "*" -r-o "1" LegalEntityGoldenRecordRelationType : Type
+
   SiteRepresentation "1" *-u-> "*" SiteState : States
   SiteState "*" -u-o "1" SiteStateType : Type
 
   AddressRepresentation "1" *-u-> "*" AddressState : States
   AddressState "*" -u-o "1" AddressStateType : Type
+
+  AddressRepresentation "1" *-r-> "*" AddressGoldenRecordRelation : GoldenRecordRelations
+  AddressGoldenRecordRelation "*" -r-o "1" AddressGoldenRecordRelationType : Type
 
   BusinessPartner "1" *-d-> "*" BusinessPartnerIdentifier : Identifiers
   BusinessPartnerIdentifier "*" -d-o "1" IdentifierType : Type

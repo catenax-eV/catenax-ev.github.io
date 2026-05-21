@@ -204,13 +204,14 @@ A business partner identifier (uniquely) identifies the business partner, such a
 
 A legal entity representation adds context information to the legal entity, on which the business partner provides a view. Additionally, it contains some of the information from the assigned legal entity.
 
-| **Attribute**    | **Description**                                                                                               | **(Data) Type / Code List / Enumeration**               |
-| ---------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------- |
-| Legal Entity BPN | The BPNL of the legal entity, on which the business partner provides a view.                                  | String                                                  |
-| Legal Name       | The name of the legal entity, on which the business partner provides a view, according to official registers. | String                                                  |
-| Short Name       | The abbreviated name of the legal entity, on which the business partner provides a view.                      | String                                                  |
-| States           | The list of (temporary) states of the legal entity.                                                           | List of [Legal Entity State](#15221-legal-entity-state) |
-| Legal Form       | The legal form of the legal entity, on which the business partner provides a view.                            | [Legal Form](#1526-legal-form)                          |
+| **Attribute**           | **Description**                                                                                                                                                                                                     | **(Data) Type / Code List / Enumeration**                                                             |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| Legal Entity BPN        | The BPNL of the legal entity, on which the business partner provides a view.                                                                                                                                        | String                                                                                                |
+| Legal Name              | The name of the legal entity, on which the business partner provides a view, according to official registers.                                                                                                       | String                                                                                                |
+| Short Name              | The abbreviated name of the legal entity, on which the business partner provides a view.                                                                                                                            | String                                                                                                |
+| States                  | The list of (temporary) states of the legal entity.                                                                                                                                                                 | List of [Legal Entity State](#15221-legal-entity-state)                                               |
+| Legal Form              | The legal form of the legal entity, on which the business partner provides a view.                                                                                                                                  | [Legal Form](#1526-legal-form)                                                                        |
+| Golden Record Relations | The complete list of Pool-level Golden Record relations involving this legal entity. Only present in the output stage. The list is refreshed whenever the associated Golden Record or any of its relations changes. | List of [Legal Entity Golden Record Relation](#15222-legal-entity-golden-record-relation)             |
 
 ###### 1.5.2.2.1 LEGAL ENTITY STATE
 
@@ -226,6 +227,22 @@ A legal entity state can be classified into **one** of the legal entity state ty
 
 1. `active` (value=ACTIVE): Legal entity is operating and is registered in the official registers under its legal address.
 2. `inactive` (value=INACTIVE): Legal entity is not operating, may be marked as out of business (or similar) or may not even be registered in the official registers under its legal address anymore. It still exists in the BPDM Pool for historical reasons, such as for auditing purposes.
+
+###### 1.5.2.2.2 LEGAL ENTITY GOLDEN RECORD RELATION
+
+A legal entity golden record relation is a directed Pool-level relation involving the legal entity. It is embedded in the output representation for informational purposes and reflects the current state of the Golden Record in the Pool. These relations are resolved by the golden record process and cannot be set or modified through the Gate relation endpoints.
+
+| **Attribute** | **Description**                                             | **(Data) Type / Code List / Enumeration** |
+| ------------- | ----------------------------------------------------------- | ----------------------------------------- |
+| Relation Type | One of the legal entity golden record relation types.       | Enum                                      |
+| Source BPN    | The BPNL of the source legal entity of the relation.        | String                                    |
+| Target BPN    | The BPNL of the target legal entity of the relation.        | String                                    |
+
+A legal entity golden record relation can be classified into **one** of the following relation types:
+
+1. `is alternative headquarter for` (value=IsAlternativeHeadquarterFor): see [Business Partner Relation](#1525-business-partner-relation).
+2. `is managed by` (value=IsManagedBy): see [Business Partner Relation](#1525-business-partner-relation).
+3. `is owned by` (value=IsOwnedBy): see [Business Partner Relation](#1525-business-partner-relation).
 
 ##### 1.5.2.3 SITE REPRESENTATION
 
@@ -256,14 +273,15 @@ A site state can be classified into **one** of the site state types:
 
 An address representation adds context information to the address, on which the business partner provides a view. Additionally, it contains most of the information from the assigned address.
 
-| **Attribute**              | **Description**                                                                                                                                                                                                                                                                     | **(Data) Type / Code List / Enumeration**                      |
-| -------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------- |
-| Address BPN                | The BPNA of the address, on which the business partner provides a view.                                                                                                                                                                                                             | String                                                         |
-| Name                       | The name of the address, on which the business partner provides a view. This is not according to official registers but according to the name the sharing members agree on, such as the name of a gate or any other additional names that designate the address in common parlance. | String                                                         |
-| States                     | The list of (temporary) states of the address.                                                                                                                                                                                                                                      | List of [Address State](#15241-address-state)                 |
-| Type                       | One of the address types.                                                                                                                                                                                                                                                           | Enum                                                           |
-| Physical Postal Address    | The physical postal address of the address, on which the business partner provides a view, such as an office, warehouse, gate, etc.                                                                                                                                                 | [Physical Postal Address](#1527-physical-postal-address)       |
-| Alternative Postal Address | The alternative postal address of the address, on which the business partner provides a view, for example if the goods are to be picked up somewhere else.                                                                                                                          | [Alternative Postal Address](#1528-alternative-postal-address) |
+| **Attribute**              | **Description**                                                                                                                                                                                                                                                                     | **(Data) Type / Code List / Enumeration**                                                 |
+| -------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| Address BPN                | The BPNA of the address, on which the business partner provides a view.                                                                                                                                                                                                             | String                                                                                    |
+| Name                       | The name of the address, on which the business partner provides a view. This is not according to official registers but according to the name the sharing members agree on, such as the name of a gate or any other additional names that designate the address in common parlance. | String                                                                                    |
+| States                     | The list of (temporary) states of the address.                                                                                                                                                                                                                                      | List of [Address State](#15241-address-state)                                             |
+| Type                       | One of the address types.                                                                                                                                                                                                                                                           | Enum                                                                                      |
+| Physical Postal Address    | The physical postal address of the address, on which the business partner provides a view, such as an office, warehouse, gate, etc.                                                                                                                                                 | [Physical Postal Address](#1527-physical-postal-address)                                  |
+| Alternative Postal Address | The alternative postal address of the address, on which the business partner provides a view, for example if the goods are to be picked up somewhere else.                                                                                                                          | [Alternative Postal Address](#1528-alternative-postal-address)                            |
+| Golden Record Relations    | The complete list of Pool-level Golden Record relations involving this address. Only present in the output stage. The list is refreshed whenever the associated Golden Record or any of its relations changes.                                                                       | List of [Address Golden Record Relation](#15242-address-golden-record-relation)           |
 
 An address can be classified into **one** of the address types:
 
@@ -287,27 +305,56 @@ An address state can be classified into **one** of the address state types:
 1. `active` (value=ACTIVE): Legal entity or site at the address are still operating and address is still used for operational purposes, such as for delivery of goods or services.
 2. `inactive` (value=INACTIVE): Legal entity or site at the address are not operating anymore, or address is not used anymore for operational purposes. It still exists in the BPDM Pool for historical reasons, such as for auditing purposes.
 
+###### 1.5.2.4.2 ADDRESS GOLDEN RECORD RELATION
+
+An address golden record relation is a directed Pool-level relation involving the address. It is embedded in the output representation for informational purposes and reflects the current state of the Golden Record in the Pool. These relations are resolved by the golden record process and cannot be set or modified through the Gate relation endpoints.
+
+| **Attribute** | **Description**                                       | **(Data) Type / Code List / Enumeration** |
+| ------------- | ----------------------------------------------------- | ----------------------------------------- |
+| Relation Type | One of the address golden record relation types.      | Enum                                      |
+| Source BPN    | The BPNA of the source address of the relation.       | String                                    |
+| Target BPN    | The BPNA of the target address of the relation.       | String                                    |
+
+An address golden record relation can be classified into **one** of the following relation types:
+
+1. `is replaced by` (value=IsReplacedBy): see [Business Partner Relation](#1525-business-partner-relation).
+
 ##### 1.5.2.5 BUSINESS PARTNER RELATION
 
 ![Business Partner Relation](./assets/diagrams/class/business-partner-relation.svg)
 
 A business partner relation is a directed relation between two business partners with a specific type that describes the nature of the relation.
 
-| **Attribute**                       | **Description**                                                                                                                  | **(Data) Type / Code List / Enumeration** |
-| ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------- |
-| External ID                         | The identifier which uniquely identifies (in the internal system landscape of the Sharing Member) the business partner relation. | String                                    |
-| Type                                | One of the business partner relation types.                                                                                      | Enum                                      |
-| Business Partner Source External ID | The external ID of the business partner from which the relation emerges.                                                         | String                                    |
-| Business Partner Target External ID | The external ID of the business partner to which this relation goes.                                                             | String                                    |
-| Business Partner Source BPN         | The BPN of the business partner from which the relation emerges.                                                                 | String                                    |
-| Business Partner Target BPN         | The BPN of the business partner to which this relation goes.                                                                     | String                                    |
-| Created At                          | The date and time when the business partner relation data record has been created.                                               | Date / Time                               |
-| Updated At                          | The date and time when the business partner relation data record has been last updated.                                          | Date / Time                               |
+| **Attribute**                       | **Description**                                                                                                                                                                          | **(Data) Type / Code List / Enumeration**                    |
+| ----------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------ |
+| External ID                         | The identifier which uniquely identifies (in the internal system landscape of the Sharing Member) the business partner relation.                                                         | String                                                       |
+| Type                                | One of the business partner relation types.                                                                                                                                              | Enum                                                         |
+| Business Partner Source External ID | The external ID of the business partner from which the relation emerges.                                                                                                                 | String                                                       |
+| Business Partner Target External ID | The external ID of the business partner to which this relation goes.                                                                                                                     | String                                                       |
+| Business Partner Source BPN         | The BPN of the business partner from which the relation emerges.                                                                                                                         | String                                                       |
+| Business Partner Target BPN         | The BPN of the business partner to which this relation goes.                                                                                                                             | String                                                       |
+| Validity Periods                    | The list of time periods during which the relation is valid. An empty list means the relation is asserted without a time restriction.                                                    | List of [Validity Period](#15251-validity-period)            |
+| Reason Code                         | The reason for which the relation was established, selected from the Pool operator's reason code catalogue (see CX-0012). Mandatory for relations of type `IsReplacedBy`, optional otherwise. | String                                                       |
+| Created At                          | The date and time when the business partner relation data record has been created.                                                                                                       | Date / Time                                                  |
+| Updated At                          | The date and time when the business partner relation data record has been last updated.                                                                                                  | Date / Time                                                  |
 
 A business partner entity relation can be classified into **one** of the business partner relation types:
 
 1. `is alternative headquarter for` (value=IsAlternativeHeadquarterFor): The business partner source is an alternative headquarter for the business partner target (both being legal entities), where both legal addresses are registered in the official registers with equal rights, representing the same real-world legal entity. Multiple business partner sources can be the alternative headquarters for one business partner target, resulting in multiple relations at the business partner target. The business partner target cannot be a business partner source at the same time, so that it cannot be an alternative headquarter for itself and so that only one level of alternative headquarters is possible.
 2. `is managed by` (value=IsManagedBy): Legal entity, site and address data can be managed by the Managing Legal Entity (business partner target) on behalf of the Managed Legal Entity (business partner source). Multiple business partner sources can be the managed legal entities of one Managing Legal Entity (business partner target), resulting in multiple relations at the business partner target. The business partner target cannot be a business partner source at the same time, so that it cannot be the Managing Legal Entity for itself and so that only one level of managing legal entities is possible.
+3. `is owned by` (value=IsOwnedBy): The business partner source is majority-owned (more than 50 % of voting rights or shares) by the business partner target (both being legal entities). Multiple ownership links may be submitted independently; multi-level ownership chains are permitted and each link is treated as a standalone relation. The golden record process validates whether the submitted combination corresponds to two legal entities and will reject invalid combinations with a sharing error. The relation is resolved by the Pool as a BPNL-to-BPNL Golden Record relation.
+4. `is replaced by` (value=IsReplacedBy): An existing additional address of a legal entity (the business partner source) is designated as the new legal address, replacing the current legal address of the same legal entity (the business partner target).[^8] Any sharing member may assert this relation; the golden record process validates whether the replacement is correct and will reject it with a sharing error if it cannot be confirmed. When the Pool processes this relation, the replaced address transitions to address type `AdditionalAddress` (or `SiteMainAddress` if it previously held type `LegalAndSiteMainAddress`) and the replacing address transitions to `LegalAddress`; the output records of both business partners are updated accordingly. A `Reason Code` is mandatory for this relation type. The scope of this relation type is planned to extend to all business partner replacement use cases in a future version.
+
+###### 1.5.2.5.1 VALIDITY PERIOD
+
+A validity period describes a time interval during which a business partner relation is asserted to be valid.
+
+| **Attribute** | **Description**                                                                        | **(Data) Type / Code List / Enumeration** |
+| ------------- | -------------------------------------------------------------------------------------- | ----------------------------------------- |
+| Valid From    | The date from which the relation is valid.                                             | Date                                      |
+| Valid To      | The date until which the relation is valid. Absent means the relation is open-ended.   | Date                                      |
+
+A relation can carry multiple non-overlapping validity periods to represent interrupted histories, such as a managing or ownership relationship that was suspended and later resumed. An empty list of validity periods means the relation is asserted without a time restriction.
 
 ##### 1.5.2.6 LEGAL FORM
 
@@ -699,6 +746,8 @@ Intentionally left blank.
 [^6]: Note that the Sharing Member assumes the roles Data Provider on upload and Data Consumer on download of business partner data, while the Core Service Provider assumes the roles Data Consumer on upload and Data Provider on download of business partner data.
 
 [^7]: Note that the definition of the data assets depends on the current implementation state of the reference implementation (Tractus-X Eclipse Dataspace Connector). Therefore the data assets represent permissions on APIs, whereas they should actually only represent APIs.
+
+[^8]: Note that the `IsReplacedBy` relation type currently supports only the headquarter address relocation use case. The scope is planned to extend to all business partner replacement scenarios across all business partner types in a future version of this standard.
 
 ## Legal
 
