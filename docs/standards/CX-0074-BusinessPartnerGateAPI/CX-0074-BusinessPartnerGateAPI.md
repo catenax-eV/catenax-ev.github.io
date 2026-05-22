@@ -184,6 +184,7 @@ These are the attributes of the business partner:
 | Legal Entity        | The legal entity, on which the business partner provides a view.                                                            | [Legal Entity Representation](#1522-legal-entity-representation)          |
 | Site                | The site, on which the business partner provides a view.                                                                    | [Site Representation](#1523-site-representation)                          |
 | Address             | The address, on which the business partner provides a view.                                                                 | [Address Representation](#1524-address-representation)                    |
+| Script Variants     | A list of script variants providing name and address data of the business partner rendered in alternative writing systems.                   | List of [Business Partner Script Variant](#15212-business-partner-script-variant) |
 
 A business partner can assume **one or more** of the business partner roles:
 
@@ -199,6 +200,78 @@ A business partner identifier (uniquely) identifies the business partner, such a
 | Value         | The value of the identifier like “DE123465789”                                                                                                                                               | String                                    |
 | Type          | The type of the identifier.                                                                                                                                                                  | [Identifier Type](#15211-identifier-type)  |
 | Issuing Body  | The name of the official register, where the identifier is registered. For example, a Handelsregisternummer in Germany is only valid with its corresponding Registergericht and Registerart. | String                                    |
+
+###### 1.5.2.1.2 BUSINESS PARTNER SCRIPT VARIANT
+
+![Business Partner Script Variant](./assets/diagrams/class/business-partner-script-variant.svg)
+
+A business partner script variant provides name and address data of the business partner rendered in a specific writing system. This allows sharing members to supply — and receive from the enrichment process — the same data expressed in multiple scripts, such as both in a local script (e.g. Arabic, Chinese, Japanese) and in a transliterated Latin form.
+
+| **Attribute** | **Description**                                                                                                                                                               | **(Data) Type / Code List / Enumeration** |
+| ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------- |
+| Script Code   | The writing system for which this variant is provided, identified from the script code catalogue of the Business Partner Data Pool (see CX-0012 Business Partner Data Pool API). | String                                    |
+| Name Parts    | The list of name parts of the business partner rendered in the given script.                                                                                                  | List of String                            |
+| Legal Entity  | Script-specific renderings of the legal entity name fields.                                                                                                                   | Legal Entity Script Variant               |
+| Site          | Script-specific rendering of the site name.                                                                                                                                   | Site Script Variant                       |
+| Address       | Script-specific renderings of the address name and postal address string fields.                                                                                              | Address Script Variant                    |
+
+The primary attributes on the business partner (such as Name Parts and Legal Entity name) remain the canonical representation; script variants are supplementary.
+
+**Legal Entity Script Variant:**
+
+| **Attribute** | **Description**                                                           | **(Data) Type / Code List / Enumeration** |
+| ------------- | ------------------------------------------------------------------------- | ----------------------------------------- |
+| Legal Name    | The legal name of the business partner rendered in the given script.      | String                                    |
+| Short Name    | The abbreviated name of the business partner rendered in the given script. | String                                    |
+
+**Site Script Variant:**
+
+| **Attribute** | **Description**                              | **(Data) Type / Code List / Enumeration** |
+| ------------- | -------------------------------------------- | ----------------------------------------- |
+| Name          | The site name rendered in the given script.  | String                                    |
+
+**Address Script Variant:**
+
+| **Attribute**       | **Description**                                                                              | **(Data) Type / Code List / Enumeration** |
+| ------------------- | -------------------------------------------------------------------------------------------- | ----------------------------------------- |
+| Name                | The address name rendered in the given script.                                               | String                                    |
+| Physical Address    | Script-specific renderings of selected physical postal address string fields, see below.     | Physical Address Script Variant           |
+| Alternative Address | Script-specific renderings of selected alternative postal address string fields, see below.  | Alternative Address Script Variant        |
+
+**Physical Address Script Variant:**
+
+| **Attribute**                 | **Description**                                                          | **(Data) Type / Code List / Enumeration** |
+| ----------------------------- | ------------------------------------------------------------------------ | ----------------------------------------- |
+| Postal Code                   | The postal code rendered in the given script.                            | String                                    |
+| City                          | The city name rendered in the given script.                              | String                                    |
+| District                      | The district name rendered in the given script.                          | String                                    |
+| Street Name Prefix            | The street name prefix rendered in the given script.                     | String                                    |
+| Street Additional Name Prefix | The additional street name prefix rendered in the given script.          | String                                    |
+| Street Name                   | The street name rendered in the given script.                            | String                                    |
+| Street Name Suffix            | The street name suffix rendered in the given script.                     | String                                    |
+| Street Additional Name Suffix | The additional street name suffix rendered in the given script.          | String                                    |
+| Building                      | The building identifier rendered in the given script.                    | String                                    |
+| Floor                         | The floor designation rendered in the given script.                      | String                                    |
+| Door                          | The door designation rendered in the given script.                       | String                                    |
+| Company Postal Code           | The company postal code rendered in the given script.                    | String                                    |
+| Industrial Zone               | The industrial zone name rendered in the given script.                   | String                                    |
+
+**Alternative Address Script Variant:**
+
+| **Attribute**              | **Description**                                               | **(Data) Type / Code List / Enumeration** |
+| -------------------------- | ------------------------------------------------------------- | ----------------------------------------- |
+| Postal Code                | The postal code rendered in the given script.                 | String                                    |
+| City                       | The city name rendered in the given script.                   | String                                    |
+| Delivery Service Qualifier | The delivery service qualifier rendered in the given script.  | String                                    |
+| Delivery Service Number    | The delivery service number rendered in the given script.     | String                                    |
+
+The following semantics apply to script variants:
+
+1. A sharing member **MAY** supply script variants on input when source data is available in multiple scripts.
+2. Script variants are passed to the enrichment process as part of the business partner data and are processed like any other attribute.
+3. The enrichment process **MAY** add or normalise script variants on output, for example by adding a Latin transliteration for a record submitted in a non-Latin script.
+4. The set of available script codes is operator-defined and published in the Business Partner Data Pool (see CX-0012 Business Partner Data Pool API). The Gate accepts any string value for the script code without validation; unknown codes are resolved by the enrichment process.
+5. The Gate accepts a script variants list containing duplicate script code entries; deduplication is the responsibility of the enrichment process.
 
 ##### 1.5.2.2 LEGAL ENTITY REPRESENTATION
 

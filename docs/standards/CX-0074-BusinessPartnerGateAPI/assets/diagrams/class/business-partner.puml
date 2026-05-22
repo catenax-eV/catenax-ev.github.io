@@ -192,32 +192,11 @@ package "Business Partner and References" {
     Direction
   }
 
-  ' not implemented / standardized yet
-  ' class LegalEntityScriptVariant {
-  '   LegalName
-  '   ShortName
-  ' }
-  
-  ' class SiteScriptVariant {
-  '   Name
-  ' }
-
-  ' class AddressScriptVariant {
-  '   Name
-  ' }
-
-  ' class BusinessPartnerScriptVariant {
-  '   NameParts
-  ' }
-
-  ' enum ScriptCode {
-  '   Arab
-  '   Cyrl
-  '   Hans
-  '   Jpan
-  '   Latn
-  '   ...
-  ' }
+  class BusinessPartnerScriptVariant {
+    ScriptCode
+    NameParts
+    ...
+  }
 
   BusinessPartner "1" -u-> "1" LegalEntityRepresentation : LegalEntity
   BusinessPartner "1" -u-> "0..1" SiteRepresentation : Site
@@ -269,20 +248,7 @@ package "Business Partner and References" {
   
   LegalEntityRepresentation "*" -d-o "0..1" LegalForm : LegalForm
 
-  ' not implemented / standardized yet
-  ' LegalEntityRepresentation "1" *--> "*" LegalEntityScriptVariant : ScriptVariants
-  ' LegalEntityScriptVariant "*" --o "1" ScriptCode : ScriptCode
-
-  ' SiteRepresentation "1" *--> "*" SiteScriptVariant : ScriptVariants
-  ' SiteScriptVariant "*" --o "1" ScriptCode : ScriptCode
-
-  ' AddressRepresentation "1" *--> "*" AddressScriptVariant : ScriptVariants
-  ' AddressScriptVariant "*" --o "1" ScriptCode : ScriptCode
-  ' AddressScriptVariant "1" -d-> "1" PhysicalPostalAddress : PhysicalPostalAddress
-  ' AddressScriptVariant "1" -d-> "0..1" AlternativePostalAddress : AlternativePostalAddress
-
-  ' BusinessPartner "1" *--> "*" BusinessPartnerScriptVariant : ScriptVariants
-  ' BusinessPartnerScriptVariant "*" --o "1" ScriptCode : ScriptCode
+  BusinessPartner "1" *-d-> "*" BusinessPartnerScriptVariant : ScriptVariants
 }
 
 hide methods
