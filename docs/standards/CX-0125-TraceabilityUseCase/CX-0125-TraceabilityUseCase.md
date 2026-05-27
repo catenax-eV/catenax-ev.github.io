@@ -4,7 +4,7 @@ tags:
   - UC/Traceability
 ---
 
-# CX-0125 Traceability Use Case v2.3.0
+# CX-0125 Traceability Use Case v2.3.1
 
 ## ABSTRACT
 
@@ -226,15 +226,16 @@ The figure shows an example of a physical supply chain, the physical assets (gre
 
 The following conventions for **specific asset IDs** apply to DT qualityTask:
 
-|  Key                            |  Availability  |  Description                                                                                                                                                     |  Type    |
-|  manufacturerId                 |  Mandatory     |  The Business Partner Number (BPNL) of the manufacturer of the part.                                                                                             |  BPNL    |
-|  customerId                     |  Mandatory     |  The Business Partner Number (BPNA) of the customer                                                                                                              |  BPNA  |
-|  digitalTwinType                |  Mandatory     |  not applicable<br />   |  String                                                                                                                                      |
-|  qualityTaskID                  |  Mandatory     |  A fully anonymous and unique Catena-X ID to reference an existing early warning project or a quality issue (which wants to be analysed) and its data (example)  |  String  |
-|  *ManufacturerQualityTaskNumber*  |  Optional      |  Internal tool or process specific case number, case file of DT qualityTask owner                                                                                |  String  |
-|  *CustomerProblemID*      |  Optional      |  Internal tool or process specific case number, case file of customer                                                                  |  String  |
-|  SupplierQualityTaskNumber*      |  Optional      |  Internal tool or process specific case number, case file of supplier                                                                                            |  String  |
-|  globalAssetID                  |  Mandatory     |  The Catena-X ID (UUIDv4/7)                                                                                             |  String  |
+| Key | Availability | Description | Type |
+| --- | ------------ | ----------- | ---- |
+| manufacturerId                 |  Mandatory     |  The Business Partner Number (BPNL) of the manufacturer of the part.     |  BPNL    |
+| customerId                     |  Mandatory     |  The Business Partner Number (BPNA) of the customer                      |  BPNA  |
+| digitalTwinType                |  Mandatory     |  not applicable<br />                                                    |  String             |
+| qualityTaskID                  |  Mandatory     |  A fully anonymous and unique Catena-X ID to reference an existing early warning project or a quality issue (which wants to be analysed) and its data (example)  |  String  |
+| *ManufacturerQualityTaskNumber*  |  Optional      |  Internal tool or process specific case number, case file of DT qualityTask owner |  String  |
+| *CustomerProblemID*      |  Optional      |  Internal tool or process specific case number, case file of customer             |  String  |
+| SupplierQualityTaskNumber*      |  Optional      |  Internal tool or process specific case number, case file of supplier      |  String  |
+| globalAssetID                  |  Mandatory     |  The Catena-X ID (UUIDv4/7)                                                 |  String  |
 
 *a quality task number or a problem id is a company specific identifier generated from internal used quality tools to document a quality issue and define corrective actions.
 
