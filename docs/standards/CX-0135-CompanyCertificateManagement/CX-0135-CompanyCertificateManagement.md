@@ -296,7 +296,6 @@ classDiagram
 > A future change is required in that regard, especially when considering the deprecation of the v1 DSP endpoint in favor of an upcoming EDC `.well-known` endpoint that supports multiple DSP versions.
 > This attribute will be deprecated in future releases and it will no longer be possible to use it for specifying the endpoint to receive feedback on.
 
-
 ##### 2.1.1.1 Retrieve Certificate Metadata
 
 The Certificate Consumer retrieves the metadata of a certificate by its ID from the Certificate Provider.
@@ -445,7 +444,6 @@ It doesn't matter if the assets are offered in one or in different connectors, a
 
 > The **API assets** are identified by the combination of `dct:subject` and `cx-common:version`.
 > When searching the EDC catalog for a specific API, make use of those properties in the catalog filter.
-
 
 #### 2.1.5 MESSAGE FLOW EXPECTATIONS
 
