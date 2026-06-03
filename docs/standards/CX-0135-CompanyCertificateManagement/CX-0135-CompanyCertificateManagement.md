@@ -129,8 +129,11 @@ classDiagram
       +date validUntil
       +TrustLevel trustLevel
       +string uploader
-      +string[] documents
+    }
+    class CertificateDocument {
+      +string documentId
       +string language
+      +string mediaType
     }
     class CertificateType {
       +string certificateType
@@ -255,6 +258,7 @@ classDiagram
   CertificateRetrievalMetadata "1" *-- "0..*" LocationBpn : locations
   CertificateRetrievalMetadata "1" *-- "0..1" CertificateIssuer : issuer
   CertificateRetrievalMetadata "1" *-- "0..1" CertificateValidator : validator
+  CertificateRetrievalMetadata "1" *-- "0..*" CertificateDocument : documents
   CertificateRetrievalMetadata --> TrustLevel
 
   %% Search
