@@ -334,6 +334,29 @@ components:
           examples:
             - "BPNL0000000003EF"
 
+    CertificateDocument:
+      type: object
+      required:
+        - documentId
+      properties:
+        documentId:
+          type: string
+          description: The document ID as stored by the data service provider
+          examples:
+            - "doc-3fa85f64-5717-4562-b3fc-2c963f66afa6"
+        language:
+          type: string
+          description: The language of the document as an ISO 639-1 two-letter language code (e.g. "en" for English, "de" for German)
+          pattern: "^[a-z]{2}$"
+          examples:
+            - "en"
+        mediaType:
+          type: string
+          description: The IANA media type of the document
+          examples:
+            - "application/pdf"
+            - "image/png"
+
     CertificateRetrievalMetadata:
       type: object
       required:
@@ -397,18 +420,9 @@ components:
             - "BPNL0000000001AB"
         documents:
           type: array
-          description: IDs of one or more documents associated with the certificate (e.g. main certificate and annexes). Use GET /certificates/{certificateId}/documents/{documentId} to retrieve each document.
+          description: One or more documents associated with the certificate (e.g. main certificate and annexes). Use GET /certificates/{certificateId}/documents/{documentId} to retrieve each document.
           items:
-            type: string
-            description: The document ID as stored by the data service provider
-            examples:
-              - "doc-3fa85f64-5717-4562-b3fc-2c963f66afa6"
-        language:
-          type: string
-          description: The language of the certificate document as an ISO 639-1 two-letter language code (e.g. "en" for English, "de" for German)
-          pattern: "^[a-z]{2}$"
-          examples:
-            - "en"
+            $ref: '#/components/schemas/CertificateDocument'
 
     CertificateSearchRequest:
       type: object
