@@ -6,6 +6,9 @@ const CATEGORY_CONFIG = {
   component: { label: 'Component Standards', color: '#386FB3' },
 };
 
+// Color must match KIT_NODE_COLOR.light in StandardsGraph.js
+const KIT_COLOR = '#7D3C98';
+
 // Maps the prefix before "/" to a human-readable group name
 const TAG_GROUP_LABELS = {
   CAT: 'Category',
@@ -30,6 +33,14 @@ export default function GraphControls({
   availableExpertGroups = [],
   selectedExpertGroups = [],
   onExpertGroupFilterChange,
+  filterDeprecatedModels = false,
+  onFilterDeprecatedModelsChange,
+  showSemanticModels = false,
+  onShowSemanticModelsChange,
+  hasSemanticModelData = false,
+  showKits = false,
+  onShowKitsChange,
+  hasKitData = false,
 }) {
   const [searchValue, setSearchValue] = useState('');
   const [isExpanded, setIsExpanded] = useState(true);
@@ -92,6 +103,9 @@ export default function GraphControls({
     onTagFilterChange([]);
     onCommitteeFilterChange([]);
     onExpertGroupFilterChange([]);
+    if (onFilterDeprecatedModelsChange) onFilterDeprecatedModelsChange(false);
+    if (onShowSemanticModelsChange) onShowSemanticModelsChange(false);
+    if (onShowKitsChange) onShowKitsChange(false);
   };
 
   return (
@@ -261,6 +275,41 @@ export default function GraphControls({
             </div>
           )}
 
+          <div className={styles.controlSection}>
+              <div className={styles.checkboxGroup}>
+                <label className={styles.checkbox}>
+                  <input
+                    type="checkbox"
+                    checked={filterDeprecatedModels}
+                    onChange={() => onFilterDeprecatedModelsChange && onFilterDeprecatedModelsChange(!filterDeprecatedModels)}
+                  />
+                  <span>⚠ Has deprecated model versions</span>
+                </label>
+                {hasSemanticModelData && (
+                  <label className={styles.checkbox}>
+                    <input
+                      type="checkbox"
+                      checked={showSemanticModels}
+                      onChange={() => onShowSemanticModelsChange && onShowSemanticModelsChange(!showSemanticModels)}
+                    />
+                    <span className={styles.legendDiamond} style={{ background: '#0097A7' }} />
+                    <span>Show Semantic Models</span>
+                  </label>
+                )}
+                {hasKitData && (
+                  <label className={styles.checkbox}>
+                    <input
+                      type="checkbox"
+                      checked={showKits}
+                      onChange={() => onShowKitsChange && onShowKitsChange(!showKits)}
+                    />
+                    <span className={styles.legendHexagon} style={{ background: KIT_COLOR }} />
+                    <span>Show KITs</span>
+                  </label>
+                )}
+              </div>
+            </div>
+
           <button onClick={clearAllFilters} className={styles.clearButton}>
             Reset Filters
           </button>
@@ -275,6 +324,24 @@ export default function GraphControls({
               <span className={styles.legendDot} style={{ background: '#386FB3' }} />
               <span>Component Standards (CAT/)</span>
             </div>
+            {showSemanticModels && (
+              <>
+                <div className={styles.legendItem}>
+                  <span className={styles.legendDiamond} style={{ background: '#0097A7' }} />
+                  <span>Semantic Model (released)</span>
+                </div>
+                <div className={styles.legendItem}>
+                  <span className={styles.legendDiamond} style={{ background: '#C0392B' }} />
+                  <span>Semantic Model (latest deprecated)</span>
+                </div>
+              </>
+            )}
+            {showKits && (
+              <div className={styles.legendItem}>
+                <span className={styles.legendHexagon} style={{ background: KIT_COLOR }} />
+                <span>Tractus-X KIT</span>
+              </div>
+            )}
           </div>
         </div>
       )}
