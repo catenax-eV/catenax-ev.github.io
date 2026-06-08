@@ -1,0 +1,5 @@
+{
+  "leftOperand": "DataFrequency",
+  "operator": "eq",
+  "rightOperand": "cx.dataFrequency.once:1"
+}
