@@ -166,7 +166,6 @@ In addition, ESPs can also offer non-standardized services such as automated dat
 **Relationships:**
 
 - An ESP **MAY** use one or more CSP-A services (e.g., semantic hub).
-- An ESP **MUST** integrate and use CSP-B services to access its identity (e.g., identity wallet) and enable data exchange.
 - An ESP **MUST** use the services of one of the OSPs to register and onboard itself to the data space (e.g., registration service).
 
 **Prerequisites:**
@@ -198,7 +197,6 @@ them on one or multiple of the marketplaces
 **Relationships:**
 
 - A BAP **MAY** use one or more CSP-A services (e.g., semantic hub).
-- A BAP **MUST** integrate and use CSP-B services to access his identity (e.g., identity wallet) and enable data exchange.
 - A BAP **MUST** use the services of one of the OSPs to register and onboard itself to the data space (e.g., registration service).
 
 **Prerequisites:**
@@ -233,9 +231,9 @@ An Advisory Provider can be an organization or individual that has proven their 
 
 **Prerequisites:**
 
-- An AP **MUST** be qualified by the Catena-X Association.
+- An AP **MUST** be qualified by the Catena-X Association via the Catena-X Campus.
 - An AP **MUST** accept and comply with the Catena-X regulatory framework during onboarding via one of the OSPs.
-- An AP **MAY** be registered to the Catena-X Data Space.
+- An AP **MAY** be registered to the Catena-X data space.
 
 **Current Limitations:**
 
@@ -284,7 +282,6 @@ A DPC provides, consumes, and processes data to collaborate with other data spac
 **Relationships:**
 
 - A DPC **MAY** use the services of a CSP-A (e.g., marketplace).
-- A DPC **MUST** integrate and use CSP-B services to access his identity (e.g., identity wallet) and enable data exchange.
 - A DPC **MUST** use the services of one of the OSPs to register and onboard itself to the data space (e.g., registration service).
 - A DPC **MAY** use advisory services from a qualified AP.
 
