@@ -864,7 +864,7 @@ To participate in ECU-related data exchange, the following single standards **MU
 
 Reference implementations for the notification-based data exchange pattern can be found in the Traceability KIT and related Tractus-X repositories. The notification infrastructure established for Quality Notifications (CX-0125) can be reused as a technical baseline for the ECU Crypto Material Notification API.
 
-The used API is provided [here](./assets/ECU-API.yml) as a reference implementation.
+The used API is provided [here](./assets/ecu-api.yml) as a reference implementation.
 
 ## Legal
 
