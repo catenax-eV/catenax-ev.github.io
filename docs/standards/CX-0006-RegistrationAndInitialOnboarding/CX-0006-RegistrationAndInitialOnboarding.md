@@ -109,7 +109,7 @@ After successful validation, the CSP-B **MUST** ensure that a BPNL referring to 
 
 > *This section is normative*
 
-The CSP-B **MUST** verify the identity of the prospective participant through an identity proofing process as defined in CX-XXXX Identity Proofing.
+The CSP-B **MUST** verify the identity of the prospective participant through an identity proofing process as defined in CX-NFT-IdP Identity Proofing.
 
 ### 2.5 Participant wallet creation
 
@@ -134,7 +134,7 @@ The issuance of the Membership Credential from the CSP-B to the prospective part
 - [CX-0010 Business Partner Number](https://catenax-ev.github.io/docs/standards/CX-0010-BusinessPartnerNumber)
 - [CX-0050 Catena-X Specific Credentials](https://catenax-ev.github.io/docs/standards/CX-0050-CXSpecificCredentials)
 - [CX-0149 Wallet Requirements](https://catenax-ev.github.io/docs/standards/CX-0149-WalletRequirements)
-- CX-XXXX: Identity Proofing
+- [CX-NFR-IdP Identity Proofing](https://catenax-ev.github.io/docs/rulebooks/CX-NFR-IdP)
 
 ### Non-normative
 
