@@ -1,0 +1,393 @@
+---
+sidebar_position: 1
+---
+# Who: Roles in the Catena-X ecosystem
+
+The Catena-X ecosystem operates on the principle of multiple distinct roles, designed to create an appealing and functional data space (see Figure [Role Overview and Relationships](./who-roles-in-the-catena-x-ecosystem.md#overview-of-roles)). Participants can take on one or more roles in any combination, and multiple participants can fulfill the same role except for the CSP-B role. The CSP-B role can only exist once in the data space due to complexity and technical reasons. Provider roles receive a label through a certification or qualification process to demonstrate that they are trusted partners (see Chapter [How: Life Cycle Management](./../how-life-cycle-management/how-life-cycle-management.md)).
+
+## Overview of roles
+
+![Role Overview and Relationships](./assets/role-overview-and-relationships.png)  
+*Role Overview and Relationships*
+
+## Detailed description of each role
+
+Below, each role that a participant can assume in the Catena-X data spaces is described in detail, along with its assigned description, responsibilities, relationships, prerequisites, and complements. Please refer to Chapter  [What: Service Map](./../what-service-map/what-service-map.md) for an overview of the Service Map.
+
+| Keyword.       | Meaning / Description                                                                                                                                                                        |
+|----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **MUST**       | This word indicates an absolute requirement for this role.                                                                                                                                   |
+| **MUST NOT**   | This phrase indicates an absolute prohibition of this role.                                                                                                                                  |
+| **SHOULD**     | There may exist valid reasons in particular circumstances to ignore this item, but the full implications **MUST** be understood and carefully weighed before choosing a different course.    |
+| **SHOULD NOT** | There may exist valid reasons in particular circumstances when the behavior is acceptable or useful, but the implications should be understood and carefully weighed before implementing it. |
+| **MAY**        | This word means that an item is truly optional. Implementations that include or omit the option **MUST** be prepared to interoperate, though possibly with reduced functionality.            |
+
+------
+
+### Core Service Provider A
+
+**Role:** Core Service Provider A (CSP-A)
+
+**Description/Responsibilities**:
+
+A CSP-A is responsible for deploying, operating, and maintaining Core Services A according to Catena-X standards. Core Services A provides common business functionalities for all data space participants (e.g., managing marketplace offers, semantic models, or searching for business partner information).  
+
+A CSP-A can operate various bundles of Core Services A, whereby the operation of an IAM and a marketplace is mandatory. Note that the synchronization of marketplace offers is at the discretion of a provider, who may submit and list its offer on multiple marketplaces. The CSP-A role can be taken on by multiple participants.  
+
+For smooth operations, the CSP-A **MUST** provide comprehensive technical documentation, along with first, second, and third-level support to facilitate integration with its services. Each CSP-A has freedom of choice regarding their business model towards their potential customers.
+
+**Relationships:**
+
+- A CSP-A **MUST** implement an IAM synchronization and **MUST** integrate with other CSP-As.
+- A CSP-A **MUST** implement an IAM synchronization with an OSP.
+- A CSP-A **MUST** integrate with the CSP-B to be able to offer and operate its services. This includes implementing IAM synchronization and integrating with required Core Services B.
+- A CSP-A **MUST** use the services of one of the OSPs to register and onboard itself to the data space (e.g., registration service).
+- A CSP-A **MUST** accept any certified solution that wants to be listed on its marketplace in accordance with its respective terms and conditions, without discriminating against individual organizations.
+
+**Prerequisites:**
+
+- A CSP-A and its services **MUST** be certified by a CAB.
+- A CSP-A **MUST** accept and comply with the Catena-X regulatory framework during onboarding via one of the OSPs.
+- A CSP-A **MUST** prove compliance with TISAX Level 3.
+- A CSP-A **MUST** be registered to the Catena-X data space.
+
+**Current Limitations:**
+
+- Due to technical limitations, the CSP-A role currently cannot be fully assumed and executed more than once. Further details can be found in Chapter [Increase Decentralization of Core Services](./../outlook/outlook.md#increase-decentralization-of-core-services) or can be requested during the conformity assessment.
+
+------
+
+### Core Service Provider B
+
+**Role:** Core Service Provider B (CSP-B)
+
+**Description/Responsibilities**:
+
+The CSP-B is responsible for deploying, operating, and maintaining all Core Services B according to Catena-X standards. Core Services B include identity and common accessibility and discoverability functionalities for all data space participants.
+
+The CSP-B operates all Core Services B as one bundle to enable trusted participation and sovereign data exchange across all data space participants. The CSP-B role can only be taken on by one participant and is nominated by the Catena-X Association to operate and further develop the services on their behalf.
+
+For smooth operations, the CSP-B **MUST** provide comprehensive technical documentation, along with first, second, and third-level support to facilitate integration with its services.
+
+**Due to its special role, the CSP-B is responsible for:**
+
+- providing non-discriminatory access to Core Services Section B for all data space participants.
+- coordinating the release management of Core Services B in the data space (with affected participants) based on Catena-X Association and Tractus-X releases.
+- marketing Core Services B and managing contractual partners.
+- issuing and revoking access of BPNs to the data space based on the country clearance list by the Catena-X Association.
+- temporarily executing the trust anchor role and issuing verifiable credentials.
+
+**Relationships:**
+
+- The CSP-B **MUST** support the integration of all other data space participants to the Core Services B.
+- A CSP-B **MUST** implement an IAM synchronization with CSP-As and OSPs.
+- A CSP-B **MUST** integrate the GXDCH provided by the Catena-X Association.
+
+**Prerequisites:**
+
+- A CSP-B **MUST** be nominated by the Catena-X Association.
+- A CSP-B **MUST** be a Catena-X Association member.
+- A CSP-B and its services **MUST** be certified by a CAB.
+- A CSP-B **MUST** offer a partnerRegistration API to any OSP requesting it
+- A CSP-B **MUST** accept and comply with the Catena-X regulatory framework via an MoU with the Association.
+- A CSP-B **MUST** prove compliance with TISAX Level 3.
+- A CSP-B **MUST** be registered to Catena-X data space.
+
+**Current Limitations:**
+
+- To ensure complete functionality of the data space, the CSP-B **MUST** also operate the relevant services of both the CSP-A and OSP roles.
+- Further details can be found in Chapter [Increase Decentralization of Core Services](./../outlook/outlook.md#increase-decentralization-of-core-services).
+
+------
+
+### Onboarding Service Provider
+
+**Role:** Onboarding Service Provider (OSP)
+
+**Description/Responsibilities:**
+
+OSPs are responsible for deploying, operating, and maintaining onboarding services according to Catena-X standards. These services facilitate the registration, onboarding, and offboarding of participants within the Catena-X data space. The OSP utilizes the CSP-B to validate data (e.g. name, address, identifier of the company) related to onboarding processes and **MUST** integrate with the `partnerRegistration` API of the CSP-B. This ensures that all data adheres to Catena-X standards and maintains the integrity and trustworthiness of the data space. The OSPs **MUST** provide comprehensive technical documentation and support (first, second, and third level) to facilitate the integration of services and assist users and other stakeholders.
+
+**Relationships:**
+
+- An OSP **MUST** integrate with the CSP-B to access the required endpoints.
+- An OSP **MUST** implement an IAM synchronization with the CSP-B.
+- An OSP **MUST** be connected to a DCH.
+
+**Prerequisites:**
+
+- An OSP and its services **MUST** be certified by a CAB.
+- An OSP **MUST** accept and comply with the Catena-X regulatory framework.
+- An OSP **MUST** be registered to Catena-X data space.
+
+**Current Limitations:**
+
+- The OSP currently covers only part of the registration process in the Catena-X data space. The currently available process is depicted in figure [General Onboarding Process](./../how-data-space-operations/how-data-space-operations.md#onboarding-process).
+- Offboarding Processes Under Development: Comprehensive offboarding processes are currently in development to ensure that they are as robust as onboarding processes and will be included in future updates. Simple and manual offboarding processes are already available.
+- Until the OSP role is fully established and utilized, the connection between DCH and OSP is only partially implemented in practice. Consequently, registration and identity verification processes are currently handled by a CSP-B
+
+------
+
+### Digital Clearing House
+
+**Role:** Digital Clearing House (DCH)
+
+**Description/Responsibilities:**
+
+The DCH provides services that validate the authenticity of legal entities by ensuring that the provided data matches the data in a trusted source (e.g. in an official tax or business registry).
+
+**Relationships:**
+
+- A CSP-B **MAY** use a DCH's services to validate self-provided data from prospective participants during onboarding.
+- A CSP-B **MUST** use at least one Catena-X approved process to validate the prospective Participant's data.
+
+**Prerequisites:**
+
+- A DCH **MUST** be nominated by the Catena-X Association.
+
+**Current Limitations:**
+
+- Use of DCH services may vary by region until global standards and identifiers are fully adopted.
+
+------
+
+### Enablement Service Provider
+
+**Role:** Enablement Service Provider (ESP)
+
+**Description/Responsibilities**:
+
+An ESP is responsible for deploying, operating, and maintaining enablement services according to Catena-X standards.
+
+An ESP can operate various bundles of decentralized services that enable sovereign participation and data exchange for data providers and consumers in the Catena-X Data Space. An ESP can decide on the scope of its enablement service and whether to offer them on one or multiple of the marketplaces.
+
+In addition, ESPs can also offer non-standardized services such as automated data mapping, in which data is extracted from company systems and converted into Catena-X semantic models.
+
+**Relationships:**
+
+- An ESP **MAY** use one or more CSP-A services (e.g., semantic hub).
+- An ESP **MUST** use the services of one of the OSPs to register and onboard itself to the data space (e.g., registration service).
+
+**Prerequisites:**
+
+- An ESP and its services **MUST** be certified by a CAB.
+- An ESP **MUST** list its standalone enablement services in at least one marketplace provided by a CSP-A.
+- An ESP **MAY** bundle its enablement services with other offerings. In such cases, the enablement service **MAY** not be listed separately on the marketplace.
+- An ESP **MUST** accept and comply with the Catena-X regulatory framework during onboarding via one of the OSPs.
+- An ESP **MUST** prove compliance with TISAX Level 2.
+- An ESP **MUST** be registered to Catena-X data space.
+
+**Current Limitations:**
+
+n/a
+
+------
+
+### Business Application Provider
+
+**Role:** Business Application Provider (BAP)
+
+**Description/Responsibilities**:
+
+A BAP is responsible for deploying, operating, and maintaining business applications to Catena-X standards. Business applications enable data providers and consumers to leverage different use cases and data-driven processes to solve a specific industry problem (e.g., PCF) and create business value, by using KITs and Standards for an interoperable and trusted data exchange.
+
+A BAP can decide on the scope of its business applications and whether to offer
+them on one or multiple of the marketplaces
+
+**Relationships:**
+
+- A BAP **MAY** use one or more CSP-A services (e.g., semantic hub).
+- A BAP **MUST** use the services of one of the OSPs to register and onboard itself to the data space (e.g., registration service).
+
+**Prerequisites:**
+
+- A BAP and its services **MUST** be certified by a CAB.
+- A BAP **MUST** list its solution on a marketplace provided by a CSP-A.
+- A BAP **MUST** accept and comply with the Catena-X regulatory framework during onboarding via one of the OSPs.
+- A BAP **MUST** prove compliance with TISAX Level 2.
+- A BAP **MUST** be registered to Catena-X data space.
+
+**Current Limitations:**
+
+n/a
+
+------
+
+### Advisory Provider
+
+**Role:** Advisory Provider (AP)
+
+**Description/Responsibilities**:
+
+An AP offers advisory services in various areas, from strategy to operations to technology or business use cases, for those interested in the Catena-X data space. Providing advisory services includes topics such as onboarding guidance, business value assessment, organizational and technical enablement, but does not include the operation of technical services.
+
+An Advisory Provider can be an organization or individual that has proven their competence through a formal qualification or testing process via the [Catena-X Campus](https://catena-x.academy/de/). The qualification of an AP follows the formal [qualification procedure](./../how-data-space-governance/how-data-space-governance.md#qualification-process) led by the Catena-X Association.
+
+**Relationships:**
+
+- An AP **MAY** use one or more CSP-As if it intends to utilize specific CSP-A services such as listing an offer on a marketplace.
+- An AP **MAY** integrate and use CSP-B services to access the Core Services B as long as it is registered within the Catena-X data space.
+- An AP **MUST** use the services of one of the OSPs to register and onboard itself to the data space (e.g., registration service).
+
+**Prerequisites:**
+
+- An AP **MUST** be qualified by the Catena-X Association via the Catena-X Campus.
+- An AP **MUST** accept and comply with the Catena-X regulatory framework during onboarding via one of the OSPs.
+- An AP **MAY** be registered to the Catena-X data space.
+
+**Current Limitations:**
+
+n/a
+
+------
+
+### Attestation Provider
+
+**Role:** Attestation Provider (AtP)
+
+**Description/Responsibilities**:
+
+An Attestation Provider offers attestation services in various areas, ensuring that data, processes, or claims made by organizations are accurate, reliable, and verifiable. This is typically done through an independent review based on defined criteria or standards. By issuing an attestation, the provider takes professional responsibility for the trustworthiness of the information assessed. This builds trust among stakeholders who rely on that information.
+
+An Attestation Provider can be an organization or individual that has proven their competence through a formal qualification or testing process via the [Catena-X Campus](https://catena-x.academy/de/). The qualification of an AtP follows the formal [qualification procedure](./../how-data-space-governance/how-data-space-governance.md#qualification-process) led by the Catena-X Association.
+
+The Catena-X Association publishes a list of approved AtPs and their respective trusted domains under: [List of CX qualified Attestation Providers](https://catena-x.academy/de/catena-x-qualified-attestation-provider/)
+
+**Relationships:**
+
+- An AtP **MAY** use one or more CSP-As if it intends to utilize specific CSP-A services such as listing an offer on a marketplace.
+- An AtP **MAY** integrate and use CSP-B services to access the Core Services B as long as it is registered within the Catena-X data space.
+- An AtP **MUST** use the services of one of the OSPs to register and onboard itself to the data space (e.g., registration service).
+
+**Prerequisites:**
+
+- An AtP **MUST** be qualified by the Catena-X Association via the Catena-X Campus, which details are outlined in the respective domain specific normative document.
+- An AtP **MUST** accept and comply with the Catena-X regulatory framework during onboarding via one of the OSPs.
+- An AtP **MUST** be registered to the Catena-X data space.
+
+**Current Limitations:**
+
+- An AtP offers services that are conducted or consumed outside the Data Space and therefore do not have a direct operational role within the Data Space itself.
+
+------
+
+### Data Provider/Consumer
+
+**Role:** Data Provider and Consumer (DPC)
+
+**Description/Responsibilities**:
+
+A DPC provides, consumes, and processes data to collaborate with other data space participants to solve a specific industry problem und create business value. This includes both standardized use cases and direct collaboration.
+
+**Relationships:**
+
+- A DPC **MAY** use the services of a CSP-A (e.g., marketplace).
+- A DPC **MUST** use the services of one of the OSPs to register and onboard itself to the data space (e.g., registration service).
+- A DPC **MAY** use advisory services from a qualified AP.
+
+- A DPC **MAY** use certified enablement services from a commercial ESP (e.g., a SaaS solution). Alternatively, a DPC can certify and operate its own enablement services.
+- A DPC **MAY** use certified business applications from a commercial BAP (e.g., a SaaS
+solution). Alternatively, a DPC can certify and operate its own business application.
+
+**Prerequisites:**
+
+- A DPC **MUST** use certified enablement services or business applications. Alternatively, a DPC **MUST** certify its own enablement services and/or business applications by one of the CABs (as outlined in Chapter [Conformity Assessment](./../how-data-space-governance/how-data-space-governance.md#conformity-assessment)).
+- A DPC **MUST** accept and comply with the Catena-X regulatory framework during onboarding via one of the OSPs
+- A DPC **MUST** be registered to Catena-X data space.
+
+**Current Limitations:**
+
+n/a
+
+*In addition to the roles in the data space, there are independent roles such as the Catena-X Association, Conformity
+Assessment Bodies (CABs) or Digital Clearing Housee (DCH) to ensure  the neutral, trustworthy, and secure operation of the Catena-X data space.*
+
+------
+
+### Catena-X Association
+
+**Role:** Catena-X Association
+
+**Description/Responsibilities**:
+
+The Association is responsible for the neutral governance of the Catena-X ecosystem including the execution of nomination, standardization, qualification, and certification processes. It promotes and facilitates working groups, committees, and expert groups to discuss and align on, standards, KITs, and requirements for open-source reference implementation for the Catena-X operating system and use cases. In addition, it provides various informational resources to interested parties and Association members.
+
+**Relationships:**
+
+- The Association nominates the CSP-B and CABs.
+- The Association delegates the certification of data space participants to CABs.
+- The Association defines the Issuer of verifiable credentials.
+- The Association qualifies APs.
+- The Association promotes, sponsors, and coordinates the overlying requirements of the Eclipse Tractus-X Project with a view to standardization.
+
+**Prerequisites:**
+
+n/a
+
+**Current Limitations:**
+
+For the upcoming releases, there will be a dedicated issuer concept in place. As of now, the Association defines the Issuer (CSP-B). Further details can be found in Chapter [SSI Issuer Concept](./../how-data-space-operations/how-data-space-operations.md#implementation-of-the-self-sovereign-identity-concept). An outlook can be found in Chapter [Further Integration of SSI Technologies](./../outlook/outlook.md#further-integration-of-self-sovereign-identity).
+
+------
+
+### Conformity Assessment Body
+
+**Role:** Conformity Assessment Body (CAB)
+
+**Description/Responsibilities**:
+
+A CAB carries out the conformity assessment process, in accordance with the Catena-X Certification Framework, on behalf of the Catena-X Association. The Certification Framework consists of the certification manual and the certification catalog (derived from the ([Catena-X standards](https://catenax-ev.github.io/docs/standards/overview))). A CAB is nominated by the Catena-X Association to ensure an independent, trustworthy, and secure conformity assessment process.
+
+**A CAB is responsible for:**
+
+- creating offers for the conformity assessments.
+- carrying out the conformity assessment process for various certification objects (e.g., provider, solutions).
+- informing the Catena-X Association and the certification candidate about the certification results.
+- issuing, reissuing, and revoking certificates on behalf of the Catena-X
+Association.
+
+**Relationships:**
+
+- The CAB **MUST** carry out the conformity assessment for all affected data space
+participants and their IT solutions.
+
+**Prerequisites:**
+
+- A CAB **MUST** be nominated by the Catena-X Association and comply with the Catena-X certification framework.
+- Business model supporting adoption and offering non-discriminating access, esp. by small and medium businesses.
+
+**Current Limitations:**
+
+n/a
+
+------
+
+### Sandbox Provider
+
+**Role:** Sandbox Provider (SP)
+
+**Description/Responsibilities**:
+
+A Sandbox Provider is responsible for deploying, operating, and maintaining a Catena-X Sandbox according to Catena-X standards. A Catena-X Sandbox includes all CSP-B and OSP components required to provide a functioning Catena-X operating environment see also Chapter [What-Service Map](./../what-service-map/what-service-map.md) for more details. An SP operates the Sandbox as one bundle of services to enable coherent testing of sovereign data exchange and services across all basic data space functionalities. Please take a look at the chapter Service map for a complete description of Catena-X Sandboxes.
+
+For smooth operations, an SP **MUST** provide comprehensive technical documentation and first, second, and third-level support to facilitate integration with its services. Each SP has freedom of choice regarding their business model towards their potential customers.
+
+Given that the Catena-X brand derives much of its value through trust, Catena-X Sandboxes **MUST** only accept trusted users that went through the official Catena-X registration process via one of the OSPs, including the acceptance of the general Catena-X terms and conditions (10 golden rules, data exchange governance...). As Sandboxes are not directly linked to the Catena-X Operating Environment, a listing on the data space clearance list serve as proof for trusted users.
+
+**Relationships:**
+
+- An SP **MAY** operate independently from the CSP-B as Catena-X Sandboxes remain strictly separate from the Catena-X Operating Environment (e.g. no sync/mapping of BPNs).
+- An SP **MUST** only onboard users which are already onboarded on the productive Catena-X dataspace via an OSP or CSP-B.
+- An SP **MUST** advertise a clear migration path to the productive Catena-X Operating Environment to its users.
+- An SP **MUST** use the services of one of the OSPs to register and onboard itself to the data space (e.g., registration service).
+- An SP **MUST** accept and comply with the Catena-X regulatory framework during onboarding via one of the OSPs or CSP-B.
+- An SP offering its Sandbox to official Catena-X conformity assessment services **MUST** be nominated by the Catena-X Association.
+
+**Prerequisites and Limitations:**
+
+- Operating a Catena-X Sandbox requires specific approval from the Catena-X Association and the signing of a self-assessment.
+- An SP is responsible for upholding certification verifications and checks for compliance with the Catena-X governance framework, given that a direct connection with the CSP-B is currently infeasible. Thereby, the Catena-X Association and the CSP-B are also not responsible or liable for any SLAs provided by the SP.
+
+## Legal
+
+Copyright © 2026 Catena-X Automotive Network e.V. All rights reserved. For more information, please see [Catena-X Copyright Notice](https://catenax-ev.github.io/copyright).

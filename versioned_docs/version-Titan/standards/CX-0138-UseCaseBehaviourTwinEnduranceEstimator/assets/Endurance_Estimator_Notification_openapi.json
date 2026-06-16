@@ -1,0 +1,316 @@
+{
+  "openapi": "3.0.2",
+  "info": {
+    "title": "[BTG] Service Gateway",
+    "version": "v1"
+  },
+  "paths": {
+    "/api/v1/routine/notification": {
+      "post": {
+        "tags": [
+          "Engineering Services"
+        ],
+        "summary": "Notification API",
+        "description": "**Execution of Engineering Service via Notification**\n  \n  Notification Endpoint is used to Execute Engineering Services like Endurance Estimator of Component.\n\n**Request Schema:**\n\n **Input payload** : One or more BAMM model Load spectrum in content input payload.\n\n***Note***: *JSON Payload should be have 'header' and 'content' where we have load spectrum*\n\n**Response Schema:**\n\n  **status_codes** : Status code of send notification and response content of it.\n\n\n",
+        "operationId": "execute_engineering_service_via_notification_api_v1_routine_notification_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestNotification"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "202": {
+            "description": "Execution of Engineering Services Endurance Predictor/Health Indicator job in progress..",
+            "content": {
+              "application/json": {
+                "example": {
+                  "Message": "Accepted"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "example": {
+                  "detail": "Uploaded load collective payload missed: 'field name' are mandatory fields."
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error - Abstract information on what has gone wrong",
+            "content": {
+              "application/json": {
+                "example": {
+                  "detail": "Issue in connecting to datalake service"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Body_perform_damage_calculation_api_v1_routine_calculate_damage_post": {
+        "title": "Body_perform_damage_calculation_api_v1_routine_calculate_damage_post",
+        "type": "object",
+        "properties": {
+          "load_collective_files": {
+            "title": "Load Collective Files",
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "binary"
+            }
+          }
+        }
+      },
+      "Body_perform_endurance_estimator_api_v1_routine_calculate_endurance_estimator_post": {
+        "title": "Body_perform_endurance_estimator_api_v1_routine_calculate_endurance_estimator_post",
+        "type": "object",
+        "properties": {
+          "load_collective_file": {
+            "title": "Load Collective File",
+            "type": "string",
+            "format": "binary"
+          }
+        }
+      },
+      "Body_perform_endurance_predictor_calculation_api_v1_routine_calculate_endurance_predictor_post": {
+        "title": "Body_perform_endurance_predictor_calculation_api_v1_routine_calculate_endurance_predictor_post",
+        "type": "object",
+        "properties": {
+          "load_collective_files": {
+            "title": "Load Collective Files",
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "binary"
+            }
+          }
+        }
+      },
+      "Body_perform_health_indicator_calculation_api_v1_routine_calculate_health_indicator_post": {
+        "title": "Body_perform_health_indicator_calculation_api_v1_routine_calculate_health_indicator_post",
+        "type": "object",
+        "properties": {
+          "load_collective_files": {
+            "title": "Load Collective Files",
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "binary"
+            }
+          }
+        }
+      },
+      "HTTPValidationError": {
+        "title": "HTTPValidationError",
+        "type": "object",
+        "properties": {
+          "detail": {
+            "title": "Detail",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            }
+          }
+        }
+      },
+      "RequestNotification": {
+        "title": "RequestNotification",
+        "type": "object",
+        "properties": {
+          "header": {
+            "title": "Header",
+            "type": "object",
+            "default": {
+              "notificationID": "f8ca7d3c-xxxx-4879-a170-a24cxxxxxxxxx",
+              "senderBPN": "Sender BPN",
+              "senderAddress": "Sender Connector IP Address",
+              "recipientAddress": "https://edc-ocp0900009.apps.c7von4sy.westeurope.aroapp.io",
+              "recipientBPN": "BPNL00000003B2OM",
+              "severity": "MINOR",
+              "status": "SENT",
+              "targetDate": "2022-11-24T22:07:02.611048800Z",
+              "timeStamp": "2022-11-24T11:24:36.744320Z",
+              "classification": "RemainingUsefulLifeEstimator",
+              "respondAssetId": "enduranceEstimatorResult-receipt"
+            }
+          },
+          "content": {
+            "title": "Content",
+            "type": "object",
+            "default": {
+              "requestRefId": "f8ca7d3c-xxxx-4879-a170-a24cxxxxxxxxx",
+              "enduranceEstimatorInputs": [
+                {
+                  "userEstimatedLoading": {
+                    "vehicleStatus": {
+                      "mileage": 120500
+                    },
+                    "vehicleData": {
+                      "grossVehicleWeightKG": 1500,
+                      "powerKW": 130,
+                      "energySourceCode": "0001",
+                      "vehicleType": "Limousine",
+                      "numberOfPoweredAxles": 2
+                    },
+                    "history": [
+                      {
+                        "percentage": 26,
+                        "drivingStyle": 30,
+                        "hilliness": 10,
+                        "curviness": 20,
+                        "trailerUse": true,
+                        "cityDriving": false
+                      },
+                      {
+                        "percentage": 27,
+                        "drivingStyle": 40,
+                        "hilliness": 30,
+                        "curviness": 50,
+                        "trailerUse": true,
+                        "cityDriving": false
+                      },
+                      {
+                        "percentage": 47,
+                        "drivingStyle": 50,
+                        "hilliness": 40,
+                        "curviness": 60,
+                        "trailerUse": true,
+                        "cityDriving": true
+                      }
+                    ],
+                    "future": [
+                      {
+                        "futureScenarioId": 1,
+                        "futureScenario": [
+                          {
+                            "percentage": 30,
+                            "drivingStyle": 20,
+                            "trailerUse": false,
+                            "cityDriving": false,
+                            "hilliness": 30,
+                            "curviness": 20
+                          },
+                          {
+                            "percentage": 10,
+                            "drivingStyle": 60,
+                            "trailerUse": false,
+                            "cityDriving": false,
+                            "hilliness": 60,
+                            "curviness": 60
+                          },
+                          {
+                            "percentage": 25,
+                            "drivingStyle": 30,
+                            "trailerUse": false,
+                            "cityDriving": true,
+                            "hilliness": 10,
+                            "curviness": 50
+                          },
+                          {
+                            "percentage:35.0": null,
+                            "drivingStyle": 20,
+                            "trailerUse": false,
+                            "cityDriving": true,
+                            "hilliness": 10,
+                            "curviness": 30
+                          }
+                        ]
+                      },
+                      {
+                        "futureScenarioId": 2,
+                        "futureScenario": [
+                          {
+                            "percentage": 28,
+                            "drivingStyle": 20,
+                            "trailerUse": true,
+                            "cityDriving": false,
+                            "hilliness": 30,
+                            "curviness": 20
+                          },
+                          {
+                            "percentage": 36,
+                            "drivingStyle": 80,
+                            "trailerUse": false,
+                            "cityDriving": false,
+                            "hilliness": 80,
+                            "curviness": 60
+                          },
+                          {
+                            "percentage": 36,
+                            "drivingStyle": 40,
+                            "trailerUse": false,
+                            "cityDriving": true,
+                            "hilliness": 30,
+                            "curviness": 50
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "description": "Sample Request Notification payload."
+      },
+      "ValidationError": {
+        "title": "ValidationError",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "loc": {
+            "title": "Location",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "msg": {
+            "title": "Message",
+            "type": "string"
+          },
+          "type": {
+            "title": "Error Type",
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+@startuml Figure_2
+
+Open : The Demand and Capacity Notification was received by the Consumer and should be considered as an active event.
+Resolved : The Demand and Capacity Notification was declared as resolved by the data provider of the Notification.
+
+[*] --> Open : Data provider submitted the Demand and Capacity Notification with the status "open"
+Open --> Resolved : Data provider declared that the Demand and Capacity Notification should be closed
+Resolved --> [*]
+
+@enduml

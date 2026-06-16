@@ -1,0 +1,84 @@
+@startuml Figure_4
+title Shared Digital Twin Approach - Lookup of IC Part Type Twin
+
+autonumber
+
+box "Supplier" #LightBlue
+    participant SupplierApplication as "Application"
+    participant SupplierDTR as "dDTR"
+    participant SupplierSubmodelEndpoint as "Submodel Endpoint"
+    participant SupplierEDC as "Connector"
+end box
+
+box "Customer" #LightGreen
+    participant CustomerEDC as "Connector"
+    participant CustomerSubmodelEndpoint as "Submodel Endpoint"
+    participant CustomerDTR as "dDTR"
+    participant CustomerApplication as "Application"
+end box
+
+
+== Customer updates Submodel information (repository pattern only) ==
+    note over CustomerSubmodelEndpoint, CustomerApplication: Keeping Submodel updated only needed\nfor repository pattern
+    CustomerApplication -> CustomerSubmodelEndpoint: Update Submodel information
+    activate CustomerSubmodelEndpoint
+    return OK
+
+
+== Supplier reads (updated) Submodel from Customer ==
+
+    SupplierApplication -> SupplierEDC: Query Connector Catalog for Customer dDTR access
+    activate SupplierEDC
+
+        SupplierEDC <-> CustomerEDC: DSP communication
+        
+    return Catalog
+
+    SupplierApplication -> SupplierEDC: Negotiate Contract and init transfer
+    activate SupplierEDC
+        SupplierEDC <-> CustomerEDC: DSP communication
+    return OK
+
+    SupplierApplication -> CustomerEDC: Query DTR for IC Part Type Twin based on specific asset ids
+    activate CustomerEDC
+      CustomerEDC -> CustomerDTR: forward request based on Connector asset definitions\n(consumer proxy)
+      activate CustomerDTR
+      CustomerDTR --> CustomerEDC
+      deactivate CustomerDTR
+    return ShellDescriptor Ids
+
+    SupplierApplication -> SupplierApplication: select ShellDescriptor ID\nto get ShellDescriptor for\nIC PartType Twin
+
+    SupplierApplication -> CustomerEDC: Lookup IC Part Type Twin based on ShellDescriptor Id
+    activate CustomerEDC
+      CustomerEDC -> CustomerDTR: forward request based on Connector asset definitions\n(consumer proxy)
+      activate CustomerDTR
+      CustomerDTR --> CustomerEDC
+      deactivate CustomerDTR
+    return ShellDescriptor
+
+    SupplierApplication -> SupplierApplication: Extract DSP Endpoint and Connector Asset ID for Submodel
+
+    SupplierApplication -> SupplierEDC: Query Connector Catalog for Submodel based on Connector Asset ID
+    activate SupplierEDC
+
+        SupplierEDC <-> CustomerEDC: DSP communication
+
+    return Catalog
+
+    SupplierApplication -> SupplierEDC: Negotiate Contract for Submodel and init transfer
+    activate SupplierEDC
+        SupplierEDC <-> CustomerEDC: DSP communication
+    return OK
+
+    SupplierApplication -> CustomerEDC: Read Submodel
+    activate CustomerEDC
+      CustomerEDC -> CustomerSubmodelEndpoint: forward request based on Connector asset definitions\n(consumer proxy)
+      activate CustomerSubmodelEndpoint
+      CustomerSubmodelEndpoint --> CustomerEDC
+      deactivate CustomerSubmodelEndpoint
+    return Submodel
+
+    SupplierApplication -> SupplierApplication: Use Submodel
+
+@enduml

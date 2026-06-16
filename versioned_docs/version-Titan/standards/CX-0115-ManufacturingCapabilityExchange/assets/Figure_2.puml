@@ -1,0 +1,19 @@
+@startuml Figure_2
+autonumber
+skinparam sequenceMessageAlign center
+
+
+box "Data Provider (Manufacturer)"
+participant "Business\nApplication" as app_prov
+end box
+
+box "Data Consumer (Manufacturing Network Registry)"
+participant "Business\nApplication" as app_cons
+end box
+
+
+
+app_cons ->  app_prov: Get "Asset ID"
+note right: Manufacturing Capability Endpoint
+return Submodel
+@enduml
