@@ -5,7 +5,7 @@ tags:
   - CAT/Sandbox Service Provider
 ---
 
-# CX-0001 Participant Agent Registration v1.2.1
+# CX-0001 Participant Agent Registration v1.2.2
 
 ## 1. Introduction
 
@@ -158,7 +158,7 @@ glossary on the association homepage.
   Participant Agent service must be in accordance to [CX-0018](#cx-0018-dataspace-connectivity).
 
 - SD documents MUST be created for every Participant Agent registered by the Participants.
-  The Core Service Provider B make them available.
+  The Core Service Provider B makes them available.
 
 - The SD documents used as data source MUST be GAIA-X compliant, i.e. adhering to the
   [GAIA-X Trustframework](#gaia-x-trustframework) in the currently supported version in Catena-X. It

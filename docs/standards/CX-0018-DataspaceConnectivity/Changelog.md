@@ -4,6 +4,20 @@ title: "Changelog"
 
 All notable changes to CX-0018 will be documented in this file.
 
+## [4.2.1] - 26/03
+
+### Added
+
+- A revised list of CACs
+
+### Changed
+
+- Fixed typos
+
+### Removed
+
+- n/a
+
 ## [4.2.0] - 26/03
 
 ### Added

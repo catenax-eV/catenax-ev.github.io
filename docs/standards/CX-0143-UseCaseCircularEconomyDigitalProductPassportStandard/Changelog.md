@@ -17,7 +17,7 @@ All notable changes to CX-0143 will be documented in this file.
 
 ### Removed
 
-- Batterypass related elements (now in CX-XXXX-BatteryPassport)
+- Batterypass related elements (now in CX-0160-BatteryPassport)
 
 ## [1.3.0] - 25.12 (CX-Titan)
 

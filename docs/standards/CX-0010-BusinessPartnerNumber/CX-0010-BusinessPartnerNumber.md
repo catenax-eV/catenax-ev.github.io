@@ -5,22 +5,11 @@ tags:
   - CAT/Sandbox Service Provider
 ---
 
-# CX-0010 Business Partner Number v3.0.1
+# CX-0010 Business Partner Number v3.1.0
 
 ## FOR WHOM IS THE STANDARD DESIGNED
 
 This document is mainly targeted to technical individuals involved in issuing and maintaining business partner numbers, as well as business individuals who are involved in the compliance process of issuing and maintaining business partner numbers.
-
-## COMPARISON WITH THE PREVIOUS VERSION OF THE STANDARD
-
-| **Version** | **Publishing Date** | **Author** | **Description of Change**                                                                                                                                                                                                                                                                                           |
-| ----------- | ------------------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1.1.0       | 2022-11-30          |            | Initial version by Catena-X Association                                                                                                                                                                                                                                                                             |
-| 1.1.1       | 2023-06-03          |            | Addendum for Conformity Assessment added                                                                                                                                                                                                                                                                            |
-| 2.0.0       | 2023-09-26          |            | Included new terminology chapter; merged CX-0011 Issuing Agency                                                                                                                                                                                                                                                     |
-| 2.1.0       | 2024-12-02          |            | Adapted to new template structure and made a major overhaul of the document; documented the scope of the check characters; remove reference to ISO/IEC 15459 until it is clarified, if the BPN shall be used for unit identifiers and / or if ISO/IEC 6523 is sufficient                                            |
-| 2.2.0       | 2025-03-17          |            | Add reference and adapt wording regarding ISO/IEC 6523 registration of the BPN                                                                                                                                                                                                                                      |
-| 3.0.0       | 2025-06-01          |            | Added the new quality "legally secure" to the BPNL and added the legally secure identifiers that the BPNL refers to as a table; added detailed identifier type description; added format and identifier type category attributes to the identifier type; updated to the major version 7 of the BPN issuing service. |
 
 ## ABSTRACT
 
@@ -159,7 +148,7 @@ In general, a legal entity is a juridical person that has legal rights and dutie
 
 In data spaces, a legal entity is a type of business partner representing a legally registered organization with its official registration information, such as legal name (including legal form, if registered), legal address and a legally secure external identifier (e.g. VAT ID, TIN, HRB number, LEI).
 
-A legal entity has exactly one legal address, but it is possible to specify additional addresses that a legal entity owns. Thus, at least one address is assigned to a legal entity. A legal entity can own sites. Thus, many or no sites are assigned to a legal entity. A legal entity is uniquely identified by the BPNL.
+A legal entity has exactly one legal address, but it is possible to specify additional addresses that a legal entity owns. Thus, at least one address is assigned to a legal entity. A legal entity can own sites. If a Legal Entity is an active participant in the data space (based on data attribute: Is Participant Data, see CX-0012), it must have at least one site. A legal entity is uniquely identified by the BPNL.
 
 ##### 1.5.2.3 SITE
 
@@ -167,9 +156,9 @@ A legal entity has exactly one legal address, but it is possible to specify addi
 
 In general, a site is a delimited geographical area in which an organization conducts business.
 
-In data spaces, a site is a type of business partner representing a physical location or area owned by a legal entity, where a production plant, a warehouse, or an office building is located.
+In data spaces, a site is a type of business partner representing a physical location or area owned by a legal entity, where e.g. a production plant, a warehouse, or an office building is located.
 
-A site is owned by a legal entity. Thus, exactly one legal entity is assigned to a site. A site has exactly one main address[^3], but it is possible to specify additional addresses (such as different gates), that belong to a site. Thus, at least one address is assigned to a site. A site can only be uploaded and modified by the owner (the legal entity), because only the owner knows which addresses belong to which site. A site is uniquely identified by the BPNS.
+A site is owned by a legal entity. Thus, exactly one legal entity is assigned to a site. A site has exactly one main address, but it is possible to specify additional addresses (such as different gates), that belong to a site. Thus, at least one address is assigned to a site. A site can only be uploaded and modified by the owner or by its manager (the legal entity), because only the owner or manager knows which addresses belong to which site. If a company is an active data space participant (based on data attribute: Is Participant Data, see CX-0012) the creation of a site is mandatory. A site is uniquely identified by the BPNS.
 
 ##### 1.5.2.4 ADDRESS
 
@@ -233,7 +222,7 @@ Note that for this standard, organization part identifiers (OPIs, like BPNS and 
 
 The issuing organization **MUST** centrally issue BPNs, so that they are **globally unique** and can be used cross-application and cross-organization in an **interoperable** way in a data space. Catena-X e.V. grants a license through which an operating company can issue BPNs on behalf of the Catena-X e.V. and thus assume the role of the issuing organization.[^6]
 
-The issuing organization **MUST** issue BPNLs for capital companies (such as German GmbH, AG; British Ltd., PLC; French SARL, SA etc.). All other legal forms are **OPTIONAL** for the issuance of BPNLs and thus not regulated by this standard, such as:
+The issuing organization **MUST** issue BPNLs for capital companies (such as German GmbH, AG; British Ltd., PLC; French SARL, SA etc.) and MUST issue at least one site (BPNS) for every legal entity identified that fullfills crtieria stated in 2.4. All other legal forms are **OPTIONAL** for the issuance of BPNLs and thus not regulated by this standard, such as:
 
 - (commercial) partnerships
 - sole-proprietorships
@@ -315,6 +304,9 @@ Even if a business partner becomes inactive, the business partner and its BPN **
 There are the following relations between a legal entity, its sites, and its addresses:
 
 - Each legal entity **MUST** be associated to at least one address which is its legal address
+
+- Each legal entity MUST be associated to at least one site if it acts in the role Data Provider/Consumer or has an "Is Managed By" relationship to a legal entity acting in the role Data Provider/Consumer.
+
 - Each site **MUST** be associated to at least one address which is its main address[^3]
 
 - Each site **MUST** be associated to exactly one legal entity

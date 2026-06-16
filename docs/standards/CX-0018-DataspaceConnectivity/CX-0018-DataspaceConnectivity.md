@@ -6,7 +6,7 @@ tags:
   - CAT/Connector as a Service
 ---
 
-# CX-0018 Dataspace Connectivity v.4.2
+# CX-0018 Dataspace Connectivity v.4.2.1
 
 ## ABSTRACT
 
@@ -201,7 +201,7 @@ transfer to the `endpoint` may succeed. The `endpointType` property MUST be `Azu
 | `https://w3id.org/edc/v0.0.1/ns/folderName`  | OPTIONAL | Defines the desired folder name for blobs to be grouped (folderName/) in the destination storage account.                                  |
 | `https://w3id.org/edc/v0.0.1/ns/secret`      | REQUIRED | Defines the Json object as a Json-escaped string holding `"edctype":"dataspaceconnector:azuretoken"`,`"sas":"<sas-token>"` and `"expiration":"time-in-seconds"` properties. |
 
-A Provider MUST send a `TransferStartMessage` with an empty `dataAddress` property. Fthe provider MUST execute a transfer as specified
+A Provider MUST send a `TransferStartMessage` with an empty `dataAddress` property. The provider MUST execute a transfer as specified
 by the received request.
 
 ### 2.3 Communication with a Credential Service
@@ -237,7 +237,7 @@ of credential.
 
 - For credentials requesting the rightOperand as `active` the leftOperand is the base for the credential
 name.
-- For other policy constraints referencing a verfiable credential, the rightOperand is the base for the credential name
+- For other policy constraints referencing a verifiable credential, the rightOperand is the base for the credential name
 
 Based on the corresponding base name of the credential, the following steps have to be applied:
 
@@ -272,8 +272,8 @@ with the same Participant Agent.
 
 A Provider MUST publish all Participant Agents that should be detectable by a Consumer by specifying the participants
 version endpoint address in the DID document as specified in the [CX-0049 DID Document standard](#did-document) as
-a entry in the service sectoin of type `DataService`. The endpoint address has the format
-`https://subdomain.provider-domain.com/subpath/.well-known/dspace-version`, with `subpath` being an a arbitrary path
+an entry in the service section of type `DataService`. The endpoint address has the format
+`https://subdomain.provider-domain.com/subpath/.well-known/dspace-version`, with `subpath` being an arbitrary path
 below the Providers chosen domain.
 
 The path `https://subdomain.provider-domain.com/subpath` MUST be the path used for registration of the connector at the
