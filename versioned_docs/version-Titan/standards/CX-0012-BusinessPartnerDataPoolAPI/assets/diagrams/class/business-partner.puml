@@ -1,0 +1,34 @@
+@startuml business-partner
+
+skinparam dpi 50
+
+package "Business Partners" {
+  entity LegalEntity {
+    BPNL
+    ...
+  }
+  
+  entity Site {
+    BPNS
+    ...
+  }
+
+  entity Address {
+    BPNA
+    ...
+  }
+  
+  abstract class BusinessPartner {}
+
+  LegalEntity -u-|> BusinessPartner
+  Site -u-|> BusinessPartner
+  Address -u-|> BusinessPartner
+
+  Site "*" -u-o "1" LegalEntity : LegalEntityBPN
+  Address "1..*" -u-o "1" LegalEntity : LegalEntityBPN
+  Address "1..*" -u-o "0..1" Site: SiteBPN
+}
+
+hide methods
+hide BusinessPartner members
+@enduml

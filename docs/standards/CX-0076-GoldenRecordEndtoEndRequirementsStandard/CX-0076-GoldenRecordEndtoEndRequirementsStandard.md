@@ -3,22 +3,11 @@ tags:
   - CAT/Value Added Services
 ---
 
-# CX-0076 - Golden Record End-to-End Requirements Standard v1.5.0
+# CX-0076 - Golden Record End-to-End Requirements Standard v1.6.0
 
 ## FOR WHOM IS THE STANDARD DESIGNED
 
 See chapter 1.1 Audience & Scope
-
-## COMPARISON WITH THE PREVIOUS VERSION OF THE STANDARD
-
-| Version | Description  | Date       |
-| ------- | ------------ | ---------- |
-| 1.0.0  | Initial      | 22.03.2024 |
-| 1.1.0  | <ul><li>Adjustment of Table 2 in chapter [2.1.10 GOLDEN RECORD OUTPUT REQUIREMENTS](#2110-golden-record-output-requirements). Data field references deleted. </li><li>Street is now neither mandatory nor optional for Japan as listed in Table 2</li><li>New paragraph added at the end of chapter [2.1.2](#212-upload-criteria-and-mandatory-fields) providing more details on "own data" </li> <li> Chapter [2.1.6](#216-quality-checks-for-legal-entity-including-legal-form) has been expanded specifying expected relations and quality checks in more detail.</li><li>Chapter [2.1.11 NOTIFICATIONS](#2111-notifications) added.</li> <li>Chapter [2.1.12 CONFIDENCE LEVEL](#2112-confidence-level) added</li><li>Footnote for tax jurisdiction added in chapter [2.1.8](#218-quality-checks-for-tax-number-and-other-identifier)</li></ul> | 22.06.2024 |
-| 1.2.0  | <ul><li>Adjustment of Table 2 in chapter [2.1.10 GOLDEN RECORD OUTPUT REQUIREMENTS](#2110-golden-record-output-requirements). Adding Tax Jurisdiction Code </li> <li>Adjustment in chapter [2.1.12 CONFIDENCE LEVEL](#2112-confidence-level). Adjust text for validation interval</li> <li>District and Region is now mandatory for Romania as listed in Table 2</li></ul> | 01.08.2024 |
-| 1.3.0  | <ul><li>Adjustment of Table 2 in chapter [2.1.10 GOLDEN RECORD OUTPUT REQUIREMENTS](#2110-golden-record-output-requirements). Removed footnote for tax jurisdiction code as it is now technically implemented </li> <li>Adjustment / enhancements of footnotes references regarding new standard versions </li> <li>Adapted to new template structure</li></ul> | 02.12.2024 |
-| 1.4.0  | <ul><li> Enhancement of chapter [2.1.8 QUALITY CHECKS FOR TAX NUMBER AND OTHER IDENTIFIER](#218-quality-checks-for-tax-number-and-other-identifier) with reference to standard CX-0010 where the identifier are thoroughly described  </li> <li>Added example for calculation of confidence level and adjusted wording to provide more precision [2.1.12 CONFIDENCE LEVEL](#2112-confidence-level) </li> <li>Minor  adjustments related to standard template and updating technical references / links </li></ul> | 01.06.2025 |
-| 1.5.0  | <ul><li> Added relations between legal entities [1.5.8 RELATIONS](#158-relations)</li> <li> Adjusted wording for requirement regarding upload of BP data;  moved it from chapter [2.1.12 CONFIDENCE LEVEL](#2112-confidence-level) to chapter [2.1.2 UPLOAD CRITERIA AND MANDATORY FIELDS](#212-upload-criteria-and-mandatory-fields)  </li> <li>Extended example for calculation of confidence level [2.1.12 CONFIDENCE LEVEL](#2112-confidence-level) </li> <li>Minor  adjustments related to standard template and updating technical references / links </li></ul> | 24.08.2025 |
 
 ## ABSTRACT
 
@@ -26,7 +15,7 @@ When building business data management from disparate data sources, there are of
 
 Updating and maintaining business partner data can be a lengthy, costly, and time-consuming activity that currently has to be undertaken by each company individually.
 
-The purpose of this standard is to describe guidelines and requirements specific for the challenges of business data maintenance and defines the required quality criteria for Golden Records. These quality criteria not only serve the users of the Golden Record, but also form the basis for all Catena-X use cases.
+The purpose of this standard is to describe guidelines and requirements specific for the challenges of business partner data maintenance and defines the required quality criteria for Golden Records. These quality criteria not only serve the users of the Golden Record, but also form the basis for all Catena-X use cases.
 
 ## 1 INTRODUCTION
 
@@ -44,11 +33,11 @@ This document focuses on the outcome of the Golden Record Process. It is relevan
 
 In scope are the requirements of cleansing and enriching the business partner data records with the aim to create a Golden Record proposal.
 
-Not in scope is the way of how business partner data can be shared to create a Golden Record. Please refer to the Catena-X standard CX-0074 Business Partner Gate API v4.1.0 for more details.
+Not in scope is the way of how business partner data can be shared to create a Golden Record. Please refer to the Catena-X standard CX-0074 Business Partner Gate API v4.1.1 for more details.
 
-Not in scope is the overall Business Partner Pool with all Golden Records within Catena-X and the way of how the Golden Records can be retrieved. Please refer to the Catena-X CX-0012 Business Partner Pool API v5.1.0 standard for more details.
+Not in scope is the overall Business Partner Pool with all Golden Records within Catena-X and the way of how the Golden Records can be retrieved. Please refer to the Catena-X CX-0012 Business Partner Pool API v5.1.1 standard for more details.
 
-Not in scope is the general definition of the Business Partner L/S/A-logic. Please refer to the Catena-X standard CX-0010 Business Partner Number v3.0.0  standard for more details.
+Not in scope is the general definition of the Business Partner L/S/A-logic. Please refer to the Catena-X standard CX-0010 Business Partner Number v3.1.0  standard for more details.
 
 You can find the other standards in the standard library of Catena-X: https://catenax-ev.github.io/docs/standards/overview.
 
@@ -64,7 +53,7 @@ The establishment of various industry networks (such as Catena-X) has increased 
 
 If sections are marked as non-normative, all authoring guidelines, diagrams, examples, and notes in these sections are non-normative. Everything else in this specification is normative.
 
-The key words MAY, MUST, MUST NOT, OPTIONAL, RECOMMENDED, REQUIRED, SHOULD and SHOULD NOT in this document are to be interpreted as described in [BCP 14](https://datatracker.ietf.org/doc/html/bcp14) [[RFC2119](https://www.w3.org/TR/did-core/#bib-rfc2119 "Key words for use in RFCs to Indicate Requirement Levels")] [[RFC8174](https://www.w3.org/TR/did-core/#bib-rfc8174 "Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words")] when, and only when, they appear in all capitals, as shown here.
+The key words MAY, MUST, MUST NOT, OPTIONAL, RECOMMENDED, REQUIRED, SHOULD and SHOULD NOT in this document are to be interpreted as described in [BCP 14](https://datatracker.ietf.org/doc/html/bcp14) [[RFC2119](https://www.w3.org/TR/did-core/#bib-rfc2119 "Key words for use in RFCs to Indicate Requirement Levels")] [[RFC8174](https://www.w3.org/TR/did-core/#bib-rfc8174 "Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words")] when, and only when, they appear in all capitals, as shown here.
 
 All participants and their solutions will need to prove, that they are conform with the Catena-X standards. To validate that the standards are applied correctly, Catena-X employs Conformity Assessment Bodies (CABs).
 
@@ -88,7 +77,7 @@ In general, a Legal Entity is a juridical person that has legal rights and dutie
 
 In Catena-X, a Legal Entity is a type of business partner representing a legally registered organization with its official registration information, such as legal name (including Legal Form, if registered), legal Address and Tax Number.
 
-A Legal Entity has exactly one legal Address[^4], but it is possible to specify additional Addresses that a Legal Entity owns. Thus, at least one Address is assigned to a Legal Entity. A Legal Entity can own Sites. Thus, many or no Sites are assigned to a Legal Entity.  A Legal Entity is uniquely identified by the BPNL.
+A Legal Entity has exactly one legal Address[^4], but it is possible to specify additional Addresses that a Legal Entity owns. Thus, at least one Address is assigned to a Legal Entity. A Legal Entity can own Sites. Thus, many or no Sites are assigned to a Legal Entity. A Legal Entity is uniquely identified by the BPNL.
 
 #### 1.5.3 LEGAL FORM
 
@@ -106,13 +95,13 @@ An Address is owned by a Legal Entity. Thus, exactly one Legal Entity is assigne
 
 A BPNL represents and uniquely identifies a Legal Entity, which is defined by its legal name (including Legal Form, if registered), legal Address and Tax Number.
 
-For further details on BPNLs please see standard CX-0010 Business Partner Number v3.0.0.
+For further details on BPNLs please see standard CX-0010 Business Partner Number v3.1.0.
 
 #### 1.5.6 BPNS BUSINESS PARTNER NUMBER SITE
 
 A BPNS represents and uniquely identifies a Site, for example where a production plant, warehouse or office building is located.
 
-For further details on BPNSs please see standard CX-0010 Business Partner Number v3.0.0.
+For further details on BPNSs please see standard CX-0010 Business Partner Number v3.1.0.
 
 #### 1.5.7 BUSINESS PARTNER NUMBER ADDRESS
 
@@ -120,21 +109,21 @@ A BPNA represents and uniquely identifies an (geographical) Address, which can b
 
 It is important to note that only the BPNL must be used to uniquely identify a Legal Entity. Even in the case that the BPNA represents the legal Address of the Legal Entity, it shall not be used to uniquely identify the Legal Entity.
 
-For further details on BPNAs please see standard CX-0010 Business Partner Number v3.0.0.
+For further details on BPNAs please see standard CX-0010 Business Partner Number v3.1.0.
 
 #### 1.5.8 RELATIONS
 
 There are relations between a Legal Entity (BPNL), its Sites (BPNS), and its Addresses (BPNA).
 
-For more information, please refer to the standard CX-0010 Business Partner Number v3.0.0.
+For more information, please refer to the standard CX-0010 Business Partner Number v3.1.0.
 
 There are also relations between two Legal Entities (BPNL).
 
-For more information, please refer to the standard CX-0074 Business Partner Gate API v4.1.0.
+For more information, please refer to the standard CX-0074 Business Partner Gate API v4.1.1.
 
 #### 1.5.9 TAX NUMBER AND OTHER IDENTIFIER
 
-The data quality rules are leveraging a variety of identifiers to cross-check the correctness of Business Partner data record attributes. This includes Tax identifier issued by a legal authority like for example but not limited to EU VAT ID, as well as other commercial Business Partner identification numbers such as for example Dun&Bradstreet-Number (DUNS®), Bureau van Dijk ID (BvD), Global Location Number (GLN) and others.
+The data quality rules are leveraging a variety of identifiers to cross-check the correctness of Business Partner data record attributes. This includes Tax identifier issued by a legal authority like for example but not limited to EU VAT ID, as well as other commercial Business Partner identification numbers such as for example Dun&Bradstreet-Number (DUNS®), Bureau van Dijk ID (BvD), Global Location Number (GLN) and others.
 
 ## 2 MAIN CONTENT
 
@@ -166,9 +155,10 @@ Mandatory fields quality checks:
 - City MUST NOT be empty.
 - The External identifier, meaning the unique identifier from the uploading party, MUST NOT be empty.
 
-Please refer to the CX-0074 Business Partner Gate API v4.1.0 standard for the respective data fields.  
+Please refer to the CX-0074 Business Partner Gate API v4.1.1 standard for the respective data fields.
 
 For uploading data, a mechanism MUST be provided to flag uploaded data as "own data", representing that this data belongs to my company.
+The legal name and address data MUST be provided using Latin letters. Only characters from the Latin script as specified in ISO 8859-1 and ISO 8859-2, including letters with diacritics commonly used in Western and Central European languages, are permitted.[^9]
 
 There is certain information which can only be provided by the data owner. This applies to:
 
@@ -194,7 +184,7 @@ This MUST be possible
 a) based on already existing BPN.
 b) based on provided external Id’s in case that the uploaded BP data have no assigned BPN yet (scenario: initial upload).
 
-The service provider MUST be able to identify this relation information in both cases, process and validate it and make it then available in the CX Pool, there represented by solely BPNs.  
+The service provider MUST be able to identify this relation information in both cases, process and validate it and make it then available in the CX Pool, there represented by solely BPNs.
 
 The above mentioned requirements are applicable for relations between Legal entities (BPNL) and their assigned Sites (BPNS) and Addresses (BPNA) but do currently not apply for relations between legal entities (BPNL-BPNL).
 
@@ -228,7 +218,7 @@ The linkage answers the following question: Does the current dataset (incoming f
 
 If an uploaded record does not exist in the CX pool with an available BPN, a new BPN MUST be created and linked to the uploaded data record. Otherwise, the existing BPN MUST be used and linked to the uploaded data record.
 
-The creation of the BPN MUST be performed according to Catena-X standard CX-0010 Business Partner Number v3.0.0.
+The creation of the BPN MUST be performed according to Catena-X standard CX-0010 Business Partner Number v3.1.0.
 
 ### 2.1.6 QUALITY CHECKS FOR LEGAL ENTITY, INCLUDING LEGAL FORM
 
@@ -295,7 +285,7 @@ The following quality checks are designed to verify that the shared Tax Number o
 - The issuing body MUST be filled, to be able to correctly assign the responsible commercial register when data records are uploaded for a Legal Entity including the corresponding commercial register number.
   This quality check applies to Tax Numbers assigned to a specific commercial register or similar, such as, but not limited to, the German Handelsregisternummer.
 
-A list of identifiers for Europe is incorporated in standard CX-0010 BUSINESS PARTNER NUMBER v3.0.0. There they are defined in terms of:
+A list of identifiers for Europe is incorporated in standard CX-0010 BUSINESS PARTNER NUMBER v3.1.0. There they are defined in terms of:
 
 - Technical key
 - Name (including transliterated name and abbreviation)
@@ -309,9 +299,9 @@ A list of identifiers for Europe is incorporated in standard CX-0010 BUSINESS PA
 The following quality checks are designed to verify that the shared relations between two Legal Entities are correct. The following checks MUST therefore be carried out:
 
 - The "is managed by" relation is only created after the Core Service Provider B has verified that the Managing Legal Entity has the legal authority / power of attorney for the Managed Legal Entity. How the verification MUST be done is defined by the Catena-X association.
-- The "is alternative headquarter for" relation MUST only be created after the Core Service Provider B has verified that the two legal addresses of the Legal Entities are both correctly registered in the national registers.  
+- The "is alternative headquarter for" relation MUST only be created after the Core Service Provider B has verified that the two legal addresses of the Legal Entities are both correctly registered in the national registers.
 
-For details on the relations, see CX-0074 Business Partner Gate API v4.1.0.
+For details on the relations, see CX-0074 Business Partner Gate API v4.1.1.
 
 ### 2.1.10 GOLDEN RECORD OUTPUT REQUIREMENTS
 
@@ -319,29 +309,29 @@ The requirements described below relate to the expected outcome after the Golden
 
 Below is a list of countries for which a rule has been defined. If a rule says, "Applies to all countries", the full list in Table 1 MUST be applied. Exceptions will be specified.
 
-There is also a rule-specific list of data fields in which the result MUST be written. This will be stated in column Attribute (Data Model). For details on the data model, please see CX-0012 Business Partner Pool API v5.1.0 and CX-0074 Business Partner Gate API v4.1.0.
+There is also a rule-specific list of data fields in which the result MUST be written. This will be stated in column Attribute (Data Model). For details on the data model, please see CX-0012 Business Partner Pool API v5.1.1 and CX-0074 Business Partner Gate API v4.1.1.
 
 ***Table 1: Country List based on ISO 3166-1***
 
-| Countries |     |     |     |     |     |        |
-| --------- | --- | --- | --- | --- | --- | ------ |
-| AD        | CL  | GE  | IS  | MC  | PL  | TJ     |
-| AE        | CN  | GH  | IT  | MD  | PT  | TM     |
-| AL        | CO  | GI  | JM  | ME  | PY  | TN     |
-| AM        | CR  | GP  | JP  | MK  | QA  | TR     |
-| AR        | CU  | GR  | KE  | MT  | RO  | TT     |
-| AT        | CY  | GT  | KG  | MX  | RS  | TW     |
-| AU        | CZ  | HK  | -   | MY  | RU  | UA     |
-| AZ        | DE  | HN  | KR  | NA  | SA  | UK\*   |
-| BA        | DK  | HR  | KW  | NI  | SE  | US\*\* |
-| BE        | DZ  | HT  | KZ  | NL  | SG  | UY     |
-| BG        | EC  | HU  | LB  | NO  | SI  | UZ     |
-| BO        | EE  | ID  | LK  | NZ  | SK  | VA     |
-| BR        | EG  | IE  | LT  | PA  | SM  | VE     |
-| BY        | ES  | IL  | LU  | PE  | SN  | VN     |
-| CA        | FI  | IN  | LV  | PH  | SV  | XK     |
-| CH\*\*\*  | FR  | IR  | MA  | PK  | TH  | ZA     |
-|           |     |     |     |     |     | ZW     |
+| Countries |    |    |    |    |    |        |
+|-----------|----|----|----|----|----|--------|
+| AD        | CL | GE | IS | MC | PL | TJ     |
+| AE        | CN | GH | IT | MD | PT | TM     |
+| AL        | CO | GI | JM | ME | PY | TN     |
+| AM        | CR | GP | JP | MK | QA | TR     |
+| AR        | CU | GR | KE | MT | RO | TT     |
+| AT        | CY | GT | KG | MX | RS | TW     |
+| AU        | CZ | HK | -  | MY | RU | UA     |
+| AZ        | DE | HN | KR | NA | SA | UK\*   |
+| BA        | DK | HR | KW | NI | SE | US\*\* |
+| BE        | DZ | HT | KZ | NL | SG | UY     |
+| BG        | EC | HU | LB | NO | SI | UZ     |
+| BO        | EE | ID | LK | NZ | SK | VA     |
+| BR        | EG | IE | LT | PA | SM | VE     |
+| BY        | ES | IL | LU | PE | SN | VN     |
+| CA        | FI | IN | LV | PH | SV | XK     |
+| CH\*\*\*  | FR | IR | MA | PK | TH | ZA     |
+|           |    |    |    |    |    | ZW     |
 
 \* UK includes North Ireland, GG, JE, \*\* US includes PR, \*\*\* CH includes LI
 
@@ -353,29 +343,29 @@ The following information rules MUST apply:
 
 ***Table 2: Country specific business rules***
 
-| **Business Rule** | **Affected Country** |
-| ------------------| -------------------- |
-| Registered name (Legal Entity incl. Legal Form, if registered) MUST be set.  | **Mandatory for:** <br /> Applies to all countries as defined in Table 1. |
-| Tax Number MUST be set[^8]                                                     | **Mandatory for:** <br /> Applies to all countries as defined in Table 1. <br />**Exception,** neither mandatory nor optional for: CR, CU, IR, KW, LB, VA |
-| Tax Jurisdiction Code MUST be set                                        | **Mandatory for:** <br />BR, CA, US(PR)<br /> |
-| External identifier – number MUST be set                                     | **Mandatory for:** <br /> Applies to all countries as defined in Table 1. |
-| External identifier – number                                                 | **Optional for:** Applies to all countries as defined in Table 1. |
-| External identifier – type                                                   | **Optional for:** <br /> Applies to all countries as defined in Table 1. |
-| Country MUST be set                                                          | **Mandatory for:** <br /> Applies to all countries as defined in Table 1.<br />**Exception**, neither mandatory nor optional: CN |
+| **Business Rule**                                                            | **Affected Country**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+|------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Registered name (Legal Entity incl. Legal Form, if registered) MUST be set.  | **Mandatory for:** <br /> Applies to all countries as defined in Table 1.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| Tax Number MUST be set[^8]                                                   | **Mandatory for:** <br /> Applies to all countries as defined in Table 1. <br />**Exception,** neither mandatory nor optional for: CR, CU, IR, KW, LB, VA                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| Tax Jurisdiction Code MUST be set                                            | **Mandatory for:** <br />BR, CA, US(PR)<br />                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| External identifier – number MUST be set                                     | **Mandatory for:** <br /> Applies to all countries as defined in Table 1.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| External identifier – number                                                 | **Optional for:** Applies to all countries as defined in Table 1.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| External identifier – type                                                   | **Optional for:** <br /> Applies to all countries as defined in Table 1.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| Country MUST be set                                                          | **Mandatory for:** <br /> Applies to all countries as defined in Table 1.<br />**Exception**, neither mandatory nor optional: CN                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | Region, state MUST be set                                                    | **Mandatory for:** <br />BR, CA, CZ, IN, MX, RO, RU, US(PR)<br />**Optional for:**  <br />AD, AL, AM, AR, AT, AU, AZ, BA, BE, BG, BO, BY, CH/LI, CL, CO, CR, CU, CY, DE, DK, DZ, EC, EE, ES, FI, FR, GE, GI, GR, GT, HN, HR, HT, HU, IE, IS, IT, JM, JP, KG, KZ, LB, LT, LU, LV, MC, MD, ME, MK, MT, MY, NI, NL, NO, PA, PE, PH, PL, PT, PY, RS, SE, SI, SK, SM, SV, TH, TJ, TM, TR, TT, UA, UK/JE/GG, UY, UZ, VA, VE <br /><br /> **Neither mandatory nor optional:**<br />AE, CN, EG, GH, GP, HK, ID, IR, IL, KE, KR, KW, MA, NA, NZ, PK, QA, SA, SN, SG, ZA, LK, TW, TN, VN, XK, ZA, ZW |
-| Secondary region (county) - Sub-province MUST be set                         | **Optional for**:<br />Applies to all countries as defined in Table 1.<br />**Exception,** mandatory for: RU<br />**Exception**, neither mandatory nor optional for: <br />AE, DZ, AU, EG, GH, GP, HK, IN, ID, IR, IL, JP, KE, KR, KW, MY, MA, NA, NZ, PK, PH, QA, SA, SN, SG, ZA, LK, TW, TH, TN, AE, VN, XK, ZW |
-| Tertiary region (township) - Sub-province 2 MUST be set                      | **Optional for**:<br />Applies to all countries as defined in Table 1.<br />**Exception**, neither mandatory nor optional:<br />AE, DZ, AU, EG, GH, GP, HK, ID, IR, IL, JP, KE, KW, MY, MA, NA, NZ, PK, PH, QA, SA, SN, SG, ZA, LK, TW, TH, TN, AE, VN, XK, ZW |
-| Sub-province 3 MUST be set                                                   | **Optional for**:<br />Applies to all countries as defined in Table 1.<br />**Exception**, neither mandatory nor optional for:<br />AE, DZ, AU, EG, GH, GP, HK, ID, IR, IL, JP, KE, KW, MY, MA, NA, NZ, PK, PH, QA, SA, SN, SG, ZA, LK, TW, TH, TN, AE, VN, XK, ZW |
-| District/Sub-locality MUST be set                                            | **Mandatory for:** <br /> RO<br />**Optional for**:<br />Applies to all countries as defined in Table 1. <br />**Exception**, neither mandatory nor optional for:<br />AE, DZ, AU, GH, GP, HK, ID, IR, IL, KE, KR, KW, MY, NA, NZ, PH, QA, SN, SG, ZA, LK, AE, VN, XK, ZW |
-| Sub-locality 2 MUST be set                                                   | **Optional for:**<br />Applies to all countries as defined in Table 1.<br />**Exception,** neither mandatory nor optional for:<br />AE, DZ, AU, CN, EG, GH, GP, HK, IR, IL, JP, KE, KR, KW, MY, MA, NA, NZ, PK, PH, QA, SA, SN, SG, ZA, LK, TW, TH, TN, AE, VN, XK. ZW |
-| City MUST be set                                                             | **Mandatory for:** <br />Applies to all countries as defined in Table 1. |
-| Postal code MUST be set                                                      | **Mandatory for:** <br /> Applies to all countries as defined in Table 1.<br />**Exception**, neither mandatory nor optional for:<br /> BO, HK, JM, LB, QA, AE, ZW |
-| Street MUST be set                                                           | **Mandatory for:** <br />Applies to all countries as defined in Table 1.<br />**Exception**, neither mandatory nor optional for:<br /> QA, AE, JP |
-| House number MUST be set                                                     | **Optional for:**<br /> Applies to all countries as defined in Table 1.<br />**Exception**, neither mandatory nor optional:<br />AE, GH, GP, IR, KE, KW, LB, NA, QA, SA, SN, TW, ZW |
-| AlternativePostalAddress                                                     | **Optional for:**<br />Applies to all countries as defined in Table 1.<br />**Exception**, neither mandatory nor optional for:<br />AE, AU, CN, DZ, EG, GH, GP, HK, ID, IL, IN, IR, JP, KE, KR, KW, LB, LK, MA, MY, NA, NZ, PH, PK, QA, SA, SG, SN, TH, TN, TW, XK, ZA, ZW |
-| AlternativePostalAddress                                                     | **Optional for:**<br />Applies to all countries as defined in Table 1.<br />**Exception**, neither mandatory nor optional:<br />AE, AU, CN, DZ, EG, GH, GP, HK, ID, IL, IN, IR, JP, KE, KR, KW, LB, LK, MA, MY, NA, NZ, PH, PK, QA, SA, SG, SN, TH, TN, TW, XK, ZA, ZW |
-| Business Partner Type (Legal Entity (L), Site (S), (logistical) Address (A)) | **Mandatory for:**<br />Applies to all countries as defined in Table 1. |
-| "BPNA belongs to Legal Entity (BPNL)"                                        | **Mandatory for:**<br />Applies to all countries as defined in Table 1. |
+| Secondary region (county) - Sub-province MUST be set                         | **Optional for**:<br />Applies to all countries as defined in Table 1.<br />**Exception,** mandatory for: RU<br />**Exception**, neither mandatory nor optional for: <br />AE, DZ, AU, EG, GH, GP, HK, IN, ID, IR, IL, JP, KE, KR, KW, MY, MA, NA, NZ, PK, PH, QA, SA, SN, SG, ZA, LK, TW, TH, TN, AE, VN, XK, ZW                                                                                                                                                                                                                                                                          |
+| Tertiary region (township) - Sub-province 2 MUST be set                      | **Optional for**:<br />Applies to all countries as defined in Table 1.<br />**Exception**, neither mandatory nor optional:<br />AE, DZ, AU, EG, GH, GP, HK, ID, IR, IL, JP, KE, KW, MY, MA, NA, NZ, PK, PH, QA, SA, SN, SG, ZA, LK, TW, TH, TN, AE, VN, XK, ZW                                                                                                                                                                                                                                                                                                                             |
+| Sub-province 3 MUST be set                                                   | **Optional for**:<br />Applies to all countries as defined in Table 1.<br />**Exception**, neither mandatory nor optional for:<br />AE, DZ, AU, EG, GH, GP, HK, ID, IR, IL, JP, KE, KW, MY, MA, NA, NZ, PK, PH, QA, SA, SN, SG, ZA, LK, TW, TH, TN, AE, VN, XK, ZW                                                                                                                                                                                                                                                                                                                         |
+| District/Sub-locality MUST be set                                            | **Mandatory for:** <br /> RO<br />**Optional for**:<br />Applies to all countries as defined in Table 1. <br />**Exception**, neither mandatory nor optional for:<br />AE, DZ, AU, GH, GP, HK, ID, IR, IL, KE, KR, KW, MY, NA, NZ, PH, QA, SN, SG, ZA, LK, AE, VN, XK, ZW                                                                                                                                                                                                                                                                                                                  |
+| Sub-locality 2 MUST be set                                                   | **Optional for:**<br />Applies to all countries as defined in Table 1.<br />**Exception,** neither mandatory nor optional for:<br />AE, DZ, AU, CN, EG, GH, GP, HK, IR, IL, JP, KE, KR, KW, MY, MA, NA, NZ, PK, PH, QA, SA, SN, SG, ZA, LK, TW, TH, TN, AE, VN, XK. ZW                                                                                                                                                                                                                                                                                                                     |
+| City MUST be set                                                             | **Mandatory for:** <br />Applies to all countries as defined in Table 1.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| Postal code MUST be set                                                      | **Mandatory for:** <br /> Applies to all countries as defined in Table 1.<br />**Exception**, neither mandatory nor optional for:<br /> BO, HK, JM, LB, QA, AE, ZW                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| Street MUST be set                                                           | **Mandatory for:** <br />Applies to all countries as defined in Table 1.<br />**Exception**, neither mandatory nor optional for:<br /> QA, AE, JP                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| House number MUST be set                                                     | **Optional for:**<br /> Applies to all countries as defined in Table 1.<br />**Exception**, neither mandatory nor optional:<br />AE, GH, GP, IR, KE, KW, LB, NA, QA, SA, SN, TW, ZW                                                                                                                                                                                                                                                                                                                                                                                                        |
+| AlternativePostalAddress                                                     | **Optional for:**<br />Applies to all countries as defined in Table 1.<br />**Exception**, neither mandatory nor optional for:<br />AE, AU, CN, DZ, EG, GH, GP, HK, ID, IL, IN, IR, JP, KE, KR, KW, LB, LK, MA, MY, NA, NZ, PH, PK, QA, SA, SG, SN, TH, TN, TW, XK, ZA, ZW                                                                                                                                                                                                                                                                                                                 |
+| AlternativePostalAddress                                                     | **Optional for:**<br />Applies to all countries as defined in Table 1.<br />**Exception**, neither mandatory nor optional:<br />AE, AU, CN, DZ, EG, GH, GP, HK, ID, IL, IN, IR, JP, KE, KR, KW, LB, LK, MA, MY, NA, NZ, PH, PK, QA, SA, SG, SN, TH, TN, TW, XK, ZA, ZW                                                                                                                                                                                                                                                                                                                     |
+| Business Partner Type (Legal Entity (L), Site (S), (logistical) Address (A)) | **Mandatory for:**<br />Applies to all countries as defined in Table 1.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| "BPNA belongs to Legal Entity (BPNL)"                                        | **Mandatory for:**<br />Applies to all countries as defined in Table 1.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 
 ### 2.1.11 NOTIFICATIONS
 
@@ -395,25 +385,25 @@ A confidence level MUST be calculated and assigned to BPNLs and BPNAs to indicat
 
 The confidence level MUST be calculated based on the following quality dimensions in this ranked order from low to high:
 
-- Used by (low, e.g., value 1[^7]),
-- Checked by (mid, e.g. value 3)
-- Approved by data owner (high, e.g. value 5)
+- Used by (value 1),
+- Checked by (value 3)
+- Approved by data owner (value 5)
 
-The higher the points, the higher the confidence level.
+The higher the value, the higher the confidence level.
 
 **Used by:**
 
 To be understood as "more than one CX member" is using this Business Partner data record.
-Grant e.g., 1 point, if this record is used by two or more members.
+Grant 1 point, if this record is used by two or more members.
 
 **Checked by:**
 
-To be understood as "checked and validated by a trustworthy source (e.g. commercial registers). This applies only for BPNL and not for BPNS or BPNA. Used sources MUST be made transparent. Grant e.g., 3 points, if the data record got successfully validated.
+To be understood as "checked and validated by using official sources (e.g., commercial registers) based on legally secure identifiers (see standard CX-0010). This applies only for BPNL and not for BPNS or BPNA. Grant 3 points, if the data record got successfully validated.
 
 **Approved by data owner:**
 
 To be understood as data record was provided by data owner.
-Grant e.g., 5 points, if the data owner flag is set.
+Grant 5 points, if the data owner flag is set.
 
 Regular validations of the used by and checked by checks MUST be done on a regular basis, e.g., once every six months. Detected errors or deviations must be corrected in a timely manner. After having performed these checks a recalculation of the confidence level MUST be processed and update the corresponding Golden Record including the date of the last recalculation.
 
@@ -423,38 +413,38 @@ A BP data record was shared by a French CX member as data owner 3 months ago, va
 
 *Calculation for BPNL*
 
-| **Dimension**        | **Case example**                | **Score**       | **Description**|
-| -------------------- | ------------------------------- | --------------- |--------------- |
-| Used by              | 3 CX member companies           | 1               |The BP is shared by more than at least 2 CX members               |
-| Checked by           | French trade register           | 3               |The BP is validated by official, trustworthy sources based on legally secure identifiers (see CX-0010)               |
-| Approved by          | Data Owner (as data originator) | 5               |The BP has been shared by Data Owner               |
-| **Confidence level** |                                 | **9** (maximum) |               |
+| **Dimension**        | **Case example**                | **Score**       | **Description**                                                                           |
+|----------------------|---------------------------------|-----------------|-------------------------------------------------------------------------------------------|
+| Used by              | 3 CX member companies           | 1               | The BP is shared by more than one CX member                                               |
+| Checked by           | French trade register           | 3               | The BP is validated by official sources based on legally secure identifiers (see CX-0010) |
+| Approved by          | Data Owner (as data originator) | 5               | The BP has been shared by Data Owner                                                      |
+| **Confidence level** |                                 | **9** (maximum) |                                                                                           |
 
 *Calculation for BPNS*
 
 As there is no trustworthy source for sites only the site information of the site owner is counted.
 I.e., the score can only be 5 if a site is shared.
-For this reason, a calculation of a score for sites is obsolete and MUST not to be provisioned.
+
 The provider MUST ensure that the claiming of ownership for a site by a CX member is plausible (e.g., by checking the ownership flag).
 
 *Calculation for BPNA*
 
-| **Dimension**        | **Case example**                | **Score**       | **Description**|
-| -------------------- | ------------------------------- | --------------- |--------------- |
-| Used by              | 3 CX member companies           | 1               |The BP is shared by more than at least 2 CX members               |
-| ~~Checked by~~           | ~~French trade register~~           | ~~3~~               |Normally there is no official, trustworthy source for validating BPNA, based on legally secure identifiers.*  For this reason this dimension is not considered in calculating the score on this BP level.                |
-| Approved by          | Data Owner (as data originator) | 5               |The BP has been shared by Data Owner               |
-| **Confidence level** |                                 | **6** (maximum) |               |
+| **Dimension**        | **Case example**                | **Score**       | **Description**                                                                                                                                                                               |
+|----------------------|---------------------------------|-----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Used by              | 3 CX member companies           | 1               | The BP is shared by more than one CX member                                                                                                                                                   |
+| ~~Checked by~~       | ~~French trade register~~       | ~~3~~           | Typically, there is no official source for validating BPNA based on legally secure identifiers.*  For this reason this dimension is not considered in calculating the score on this BP level. |
+| Approved by          | Data Owner (as data originator) | 5               | The BP has been shared by Data Owner                                                                                                                                                          |
+| **Confidence level** |                                 | **6** (maximum) |                                                                                                                                                                                               |
 
-*Note:* There can be exceptions in certain countries (e.g., SIRET in France) but since this statement is currently true for the Large majority of the others the exclusion of this dimension leads to an unified and better comparable overall calculation logic.
+*Note:* While exceptions exist in certain countries (e.g., the SIRET system in France), this statement holds true for the vast majority of others. Therefore, excluding this dimension results in a unified and more comparable overall calculation logic.
 
 ### 2.2 OUT OF SCOPE
 
-This standardization document does not describe the process and functionality to achieve the required results. Each operational provider is free to define the appropriate execution logic to achieve the result as defined in this standard.  
+This standardization document does not describe the process and functionality to achieve the required results. Each operational provider is free to define the appropriate execution logic to achieve the result as defined in this standard.
 
 ### 2.3 DATA QUALITY RULE ACCESSIBILITY
 
-The quality checks as described in this standard are using the input based on the Business Partner Gate API with the respective endpoints. For further details please refer to Catena-X standard CX-0074 Business Partner Gate API v4.1.0.
+The quality checks as described in this standard are using the input based on the Business Partner Gate API with the respective endpoints. For further details please refer to Catena-X standard CX-0074 Business Partner Gate API v4.1.1.
 
 ## 3 REFERENCES
 
@@ -462,9 +452,9 @@ The quality checks as described in this standard are using the input based on th
 
 > *This section is normative*
 
-- CX–0010 Business Partner Number v3.0.0
-- CX–0012 Business Partner Pool API v5.1.0
-- CX–0074 Business Partner Gate API v4.1.0
+- CX–0010 Business Partner Number v3.1.0
+- CX–0012 Business Partner Pool API v5.1.1
+- CX–0074 Business Partner Gate API v4.1.1
 
 ### 3.2 NON-NORMATIVE REFERENCES
 
@@ -493,14 +483,14 @@ Intentionally left blank.
 
 Intentionally left blank.
 
-[^1]: For details related to the Pool API, please see standard CX-0012 Business Partner Data Pool API v5.1.0.
-[^2]: For details related to the Business Partner number and the different types, please see standard CX-0010 Business Partner Number v3.0.0.
-[^3]: For details on the data model and data fields please refer to the standard CX-0074 Business Partner Gate API standard v4.1.0.
-[^4]: Although in some cases there can be more than one legal address assigned to the same legal entity, e.g., Siemens in Germany (Berlin & Munich). This has lead to changes of the data model definitions including the relation `is alternative headquarter for. For details, please see standard CX-0074 Business Partner Gate API standard v4.1.0.
+[^1]: For details related to the Pool API, please see standard CX-0012 Business Partner Data Pool API v5.1.1.
+[^2]: For details related to the Business Partner number and the different types, please see standard CX-0010 Business Partner Number v3.1.0.
+[^3]: For details on the data model and data fields please refer to the standard CX-0074 Business Partner Gate API standard v4.1.1.
+[^4]: Although in some cases there can be more than one legal address assigned to the same legal entity, e.g., Siemens in Germany (Berlin & Munich). This has lead to changes of the data model definitions including the relation `is alternative headquarter for. For details, please see standard CX-0074 Business Partner Gate API standard v4.1.1.
 [^5]: Note that there is currently a debate that a site is a consolidation of addresses (BPNA), with all addresses being equally ranked, since a "main" address cannot always be defined at this point in time. This may lead to changes in the next update of this standard.
 [^6]: Notification is to be understood as an information (info, warning, error) to be provided to the user. It's not to be understood as a short-term notification similar to a e.g., 30 second pop up message.
-[^7]: Numbers (values) are to be seen as examples to make the calculation easier to understand.
 [^8]: This rule MUST be applied unless local law or tax regulations do not require the existence / assignment of a tax number, e.g., for associations, small businesses, educational institutions.
+[^9]: Provisioning of legal name and address data in additional scripts is planned for the next release. However, the Latin script has been and will remain the foundation for the Golden Record process, as it is a prerequisite for data validation with most external sources.
 
 ### Legal
 

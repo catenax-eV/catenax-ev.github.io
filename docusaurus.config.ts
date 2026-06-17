@@ -97,10 +97,13 @@ const config: Config = {
           sidebarPath: './sidebars.ts',
           versions: {
             current: {
-              label: 'CX-Titan (Preview)',
+              label: 'CX-Neptune (Preview)',
+            },
+            'Titan': {
+              label: 'CX-Titan (Current)'
             },
             'Saturn': {
-              label: 'CX-Saturn (Current)'
+              label: 'CX-Saturn'
             },
             'Io': {
               label: 'CX-Io',

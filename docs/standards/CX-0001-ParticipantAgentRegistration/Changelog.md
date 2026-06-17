@@ -4,7 +4,25 @@ title: "Changelog"
 
 All notable changes to CX-0001 will be documented in this file.
 
-## [1.2.1] - 2026-01-14
+## [1.2.2] - R26/03
+
+### Added
+
+- Completely revised CACs for the standard
+
+### Changed
+
+- Fixed typos
+
+### Removed
+
+n/a
+
+## [1.2.1] - R26/03
+
+### Added
+
+n/a
 
 ### Changed
 
@@ -12,15 +30,15 @@ All notable changes to CX-0001 will be documented in this file.
 - Removal of some obsolete parts in the standard
 - Minor improvements of precision of expressions
 
-### Added
-
-n/a
-
 ### Removed
 
 n/a
 
-## [1.2.0] - 2025-06-23
+## [1.2.0] - R25/09
+
+### Added
+
+n/a
 
 ### Changed
 
@@ -31,10 +49,6 @@ n/a
   registration is the remaining normative purpose of this standard
 - Changed title to reflect the correct term Particpant Agent instead of EDC
 - Changed introductionary parts in section 1 that became obsolete due to the purpose change
-
-### Added
-
-n/a
 
 ### Removed
 

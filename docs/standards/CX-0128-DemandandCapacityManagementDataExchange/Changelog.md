@@ -4,6 +4,12 @@ title: "Changelog"
 
 All notable changes to CX-0128 will be documented in this file.
 
+## [2.3.1] - CX-Neptune (Preview) (26.06)
+
+### Added
+
+- CAC added to the standard in markdown format
+
 ## [2.3.0] - CX-Titan (26.03)
 
 ### Changed

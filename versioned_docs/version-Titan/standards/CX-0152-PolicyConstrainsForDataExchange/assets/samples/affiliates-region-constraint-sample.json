@@ -1,0 +1,8 @@
+{
+  "leftOperand": "AffiliatesRegion",
+  "operator": "isAnyOf",
+  "rightOperand": [
+    "cx.region.europe:1", 
+    "cx.region.northAmerica:1"
+  ]
+}

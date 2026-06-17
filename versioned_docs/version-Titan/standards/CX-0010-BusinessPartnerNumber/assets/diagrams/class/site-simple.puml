@@ -1,0 +1,28 @@
+@startuml site-simple
+
+skinparam dpi 50
+
+package "Site and References" {
+  entity LegalEntity {}
+  
+  entity Site {
+    BPNS
+    ...
+  }
+
+  entity Address {}
+
+  class MainAddress {}
+
+  Site "*" -u-o "1" LegalEntity : LegalEntityBPN
+  Address "1..*" -d-o "0..1" Site: SiteBPN
+  
+  Site "1" -r-> "1" MainAddress : MainAddress    
+  MainAddress -u-|> Address
+}
+
+hide methods
+hide MainAddress members
+hide LegalEntity members
+hide Address members
+@enduml
