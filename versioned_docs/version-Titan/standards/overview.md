@@ -38,7 +38,7 @@ tags:
 
 :::info[Important notification]
 
-**CX-Titan** is fully compatible with **CX-Saturn**. Business Application Providers, however, now need to certify their solutions against the **CX-Saturn standards**.
+**CX-Titan** is fully compatible with **CX-Saturn**.
 :::
 
 The technical standards serve as the foundation for certification, ensuring technical compatibility and interoperability between independent implementations by providing uniform rules and requirements used for conformity assessment.

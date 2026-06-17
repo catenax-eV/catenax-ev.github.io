@@ -38,7 +38,9 @@ tags:
 
 :::info[Important notification]
 
-**CX-Titan** is fully compatible with **CX-Saturn**. Business Application Providers, however, now need to certify their solutions against the **CX-Saturn standards**.
+With the Go-Live of **CX-Neptune** (end November 2026) the older ecosystem release **CX-Jupiter** will be deprecated. All certification associated with **CX-Jupiter** based solutions will expire.
+If your solution is still running on **CX-Jupiter**, you have two valid migration options. Upgrade to **CX-Saturn** or **CX-Neptune**, when available.
+
 :::
 
 The technical standards serve as the foundation for certification, ensuring technical compatibility and interoperability between independent implementations by providing uniform rules and requirements used for conformity assessment.
