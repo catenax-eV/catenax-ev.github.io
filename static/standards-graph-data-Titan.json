@@ -11,7 +11,7 @@
         "CAT/Sandbox Service Provider"
       ],
       "path": "/standards/CX-0001-ParticipantAgentRegistration",
-      "referenceCount": 20
+      "referenceCount": 19
     },
     {
       "id": "cx0002",
@@ -26,7 +26,7 @@
         "CAT/Digital Twin"
       ],
       "path": "/standards/CX-0002-DigitalTwinsInCatenaX",
-      "referenceCount": 20
+      "referenceCount": 18
     },
     {
       "id": "cx0003",
@@ -122,7 +122,7 @@
         "CAT/Connector as a Service"
       ],
       "path": "/standards/CX-0018-DataspaceConnectivity",
-      "referenceCount": 33
+      "referenceCount": 31
     },
     {
       "id": "cx0044",
@@ -369,7 +369,7 @@
         "UC/Traceability"
       ],
       "path": "/standards/CX-0125-TraceabilityUseCase",
-      "referenceCount": 4
+      "referenceCount": 3
     },
     {
       "id": "cx0126",
@@ -381,7 +381,7 @@
         "CAT/Industry Core"
       ],
       "path": "/standards/CX-0126-IndustryCorePartType",
-      "referenceCount": 9
+      "referenceCount": 8
     },
     {
       "id": "cx0127",
@@ -393,7 +393,7 @@
         "CAT/Industry Core"
       ],
       "path": "/standards/CX-0127-IndustryCorePartInstance",
-      "referenceCount": 5
+      "referenceCount": 3
     },
     {
       "id": "cx0128",
@@ -551,7 +551,7 @@
       "category": "component",
       "tags": [],
       "path": "/standards/CX-0151-IndustryCoreBasics",
-      "referenceCount": 8
+      "referenceCount": 6
     },
     {
       "id": "cx0152",
@@ -565,7 +565,7 @@
         "CAT/Constraint"
       ],
       "path": "/standards/CX-0152-PolicyConstrainsForDataExchange",
-      "referenceCount": 23
+      "referenceCount": 21
     },
     {
       "id": "cx0153",
@@ -628,24 +628,6 @@
       "category": "component",
       "tags": [],
       "path": "/standards/CX-0159-Material-Accounting",
-      "referenceCount": 0
-    },
-    {
-      "id": "cx0160",
-      "number": "0160",
-      "title": "Battery Passport",
-      "category": "component",
-      "tags": [],
-      "path": "/standards/CX-0160-BatteryPassport",
-      "referenceCount": 0
-    },
-    {
-      "id": "cx0161",
-      "number": "0161",
-      "title": "ECU Crypto Material",
-      "category": "component",
-      "tags": [],
-      "path": "/standards/CX-0161-ECUCryptoMaterial",
       "referenceCount": 0
     }
   ],
@@ -1745,84 +1727,6 @@
     {
       "id": "cx0159-cx0152",
       "source": "cx0159",
-      "target": "cx0152",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0160-cx0002",
-      "source": "cx0160",
-      "target": "cx0002",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0160-cx0018",
-      "source": "cx0160",
-      "target": "cx0018",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0160-cx0125",
-      "source": "cx0160",
-      "target": "cx0125",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0160-cx0126",
-      "source": "cx0160",
-      "target": "cx0126",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0160-cx0127",
-      "source": "cx0160",
-      "target": "cx0127",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0160-cx0151",
-      "source": "cx0160",
-      "target": "cx0151",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0160-cx0152",
-      "source": "cx0160",
-      "target": "cx0152",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0161-cx0001",
-      "source": "cx0161",
-      "target": "cx0001",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0161-cx0002",
-      "source": "cx0161",
-      "target": "cx0002",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0161-cx0018",
-      "source": "cx0161",
-      "target": "cx0018",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0161-cx0127",
-      "source": "cx0161",
-      "target": "cx0127",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0161-cx0151",
-      "source": "cx0161",
-      "target": "cx0151",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0161-cx0152",
-      "source": "cx0161",
       "target": "cx0152",
       "type": "smoothstep"
     }
