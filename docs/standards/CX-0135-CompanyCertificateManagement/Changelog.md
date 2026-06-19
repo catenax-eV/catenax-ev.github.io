@@ -4,6 +4,30 @@ title: "Changelog"
 
 All notable changes to CX-0135 will be documented in this file.
 
+## [3.0.0] - CX- (26.09)
+
+### Added
+
+- Search API for Certificate Submodels based on CX-0002
+- Certificate accessible as Submodel based on CX-0002
+- Certificate Lifecycle (incl. State Machine)
+- Certificate Exchange State Machine
+- Migration Guide for users of previously existing Push Mechanism
+- Migration Guide for users of previously existing Pull Mechanism
+
+### Changed
+
+- Upgraded data model to version 4.0.0 (incl. update of normative statements in CX-0135)
+- Merge of Pull/Push mechanisms into one coherent mechanism
+    - Push lives on in Notifiaction events
+    - Pull changed from per-certificate asset based to API based
+- All Notifications changed to CloudMessages
+- Split of Certificate Metadata and Certificate Document (reduction of message size)
+
+### Removed
+
+- State machine reflecting previous behavior
+
 ## [2.4.0] - CX-Titan (26.03)
 
 ### Added
