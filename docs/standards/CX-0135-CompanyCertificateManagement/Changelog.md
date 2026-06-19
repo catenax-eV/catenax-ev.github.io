@@ -19,7 +19,7 @@ All notable changes to CX-0135 will be documented in this file.
 
 - Upgraded data model to version 4.0.0 (incl. update of normative statements in CX-0135)
 - Merge of Pull/Push mechanisms into one coherent mechanism
-    - Push lives on in Notifiaction events
+    - Push lives on in Notification events
     - Pull changed from per-certificate asset based to API based
 - All Notifications changed to CloudMessages
 - Split of Certificate Metadata and Certificate Document (reduction of message size)

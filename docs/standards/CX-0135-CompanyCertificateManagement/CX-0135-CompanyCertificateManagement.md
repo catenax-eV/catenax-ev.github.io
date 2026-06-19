@@ -439,15 +439,20 @@ ___
 The endpoint accepts a single CloudEvent or a batch (a JSON array) and follows the state machine defined in 
 [Section 2.1.3](#213-state-machine-certificate-exchange).
 
-**Event Type**: `org.catena-x.ccm.CertificateLifecycleStatus.v1`
+The event **MUST** be one of the following **Event Type**: 
+- `org.catena-x.ccm.CertificateLifecycleStatus.v1`
+- `org.catena-x.ccm.CertificateFulfillmentStatus.v1`
 
 The Certificate Provider **MUST** push notifications for all states from 
-[2.2.2 State Machine](#213-state-machine-certificate-exchange).
+[2.2.2 State Machine](#222-state-machine-certificate-lifecycle) as Certificate Lifecycle Status.
 An example notification history could be:
 The Certificate Provider pushes a `CREATED` notification (this would always be the case), and a few days later a 
 `MODIFIED` notification, because an error in the certificate metadata had to be corrected. A few years later the
 provider could push a `WITHDRAWN` notification, because the certificate is no longer valid. This last step is not
 mandatory, because a provider could decide to still keep the certificate available, even if it is expired.
+
+The Certificate Provider **MUST** also push notifications for all provider owned terminal states from 
+[2.1.3 State Machine](#213-state-machine-certificate-exchange) as Certificate Fulfillment Status.
 
 > [!Important]
 > **Push Mechanism explanation**
@@ -473,7 +478,8 @@ the Certificate Consumer **MUST** add the `property`:
 The Certificate Provider **MUST** check for the presence of this property when pushing the lifecycle events `CREATED` or 
 `MODIFIED` and, if the property is set, include the certificate payload in the `data` section of the CloudEvent.
 The certificate payload **MUST** be according to [Section 5](#5-certificate-data-model), with the following caveat:
-The `contentBase64` property **MUST** be included.
+The `contentBase64` property **MUST** be included. For any other lifecycle event, the Certificate Provider **MUST NOT** 
+include the certificate payload in the notification, even if the property is set.
 
 If the `dct:notification-payload` is either omitted or `"false"`, then the Certificate Provider **MUST NOT** include the 
 certificate payload in the `data` section of the CloudEvent.
