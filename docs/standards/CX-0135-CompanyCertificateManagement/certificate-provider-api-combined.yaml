@@ -5,14 +5,14 @@ info:
     HTTP API exposed by a Certificate Provider to accept certificate requests,
     report request fulfillment status, serve certificate data, accept
     acceptance status updates, and answer certificate queries, as defined in
-    CX-0135 Section 4.4.
+    CX-0135.
 
     A certificate is identified by the (`certificateId`, `version`) pair. A
     consumer-initiated request opens a Certificate Exchange; the Certificate
     Provider assigns `certificateId` and `version` when it accepts the request.
 
     All requests MUST use HTTPS (TLS 1.2 or higher). Authorization MUST adhere
-    to CX-0000 (CloudEventsFoundation) Section 4.
+    to CX-0000 (CloudEventsFoundation).
   version: 1.0.0
 
 servers:
@@ -101,8 +101,8 @@ paths:
         Polling is optional: if the Certificate Consumer exposes the Certificate
         Consumer Notification API, the Certificate Provider MAY instead push
         these fulfillment status updates to it as a
-        `org.catena-x.ccm.CertificateFulfillmentStatus.v1` event (CX-0135
-        Section 4.3.2). The push and the poll are equivalent and carry the same
+        `org.catena-x.ccm.CertificateFulfillmentStatus.v1` event (CX-0135). 
+        The push and the poll are equivalent and carry the same
         `exchangeId` and `status`.
       operationId: getCertificateRequestStatus
       parameters:
@@ -355,73 +355,44 @@ paths:
 
   /certificates/search:
     post:
-      summary: Search certificates
+      summary: Search certificates shell descriptors.
       description: |
-        Returns certificates matching the supplied criteria. Results MAY be
-        paginated; when paginated, navigation URLs are provided in the `Link`
-        response header in accordance with RFC 8288 (Web Linking). Only the
-        `next` and `prev` link relations are guaranteed; `first` and `last`
-        MAY also be returned. To retrieve a subsequent page, the client
-        re-issues a `POST` with the same request body against the URL
-        provided in the corresponding `Link` value.
+        Returns certificate shell descriptors matching the supplied search criteria. 
+        Based on CX-0002, Asset Administration Shell Registry Service Specification - Query Profile (SSP-004).
+        Not the full specification has to be supported. The schema below
+        defines the **MUST** criteria. [Everything else is optional and **MAY** be 
+        supported](https://api.swaggerhub.com/domains/Plattform_i40/Part2-API-Schemas/V3.2.0#/components/schemas/QueryResultAssetAdministrationShellDescriptor).
+        For further details about normative aspects of this API, please refer to CX-0135.
+        
+        Important: The response contains a shell descriptor href (or multiple, depending on the number of matches).
+        Every href **MUST** be an href according to CX-0002, that links to the /certificates/{id} endpoint 
+        (the submodel server) of this API, with the {id} being the certificateId of the matched certificate.
       operationId: queryCertificates
+      parameters:
+        - $ref: 'https://api.swaggerhub.com/domains/Plattform_i40/Part2-API-Schemas/V3.2.0#/components/parameters/Limit'
+        - $ref: 'https://api.swaggerhub.com/domains/Plattform_i40/Part2-API-Schemas/V3.2.0#/components/parameters/Cursor'
       requestBody:
-        required: true
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/CertificateQuery'
-            examples:
-              byType:
-                summary: Query by certificate type and validity window
-                value:
-                  certificateType: ISO9001
-                  from: "2023-01-25"
-                  to: "2026-01-24"
-                  limit: 50
       responses:
         '200':
-          description: |
-            Matching certificates. When the result set is paginated, the
-            response includes a `Link` header per RFC 8288.
-          headers:
-            Link:
-              description: |
-                Web Linking pagination header (RFC 8288). Contains URLs for
-                the `next` and/or `prev` pages. Omitted when the response is
-                not paginated.
-              schema:
-                type: string
-              example: >-
-                <https://provider.example.com/certificates/search?cursor=eyJvZmZzZXQiOjUwfQ>; rel="next",
-                <https://provider.example.com/certificates/search?cursor=eyJvZmZzZXQiOjB9>; rel="prev"
+          description: Requested Asset Administration Shell Descriptors
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/CertificateQueryResponse'
-              examples:
-                page:
-                  summary: A single page of results
-                  value:
-                    - certificateId: cert-550e8400-e29b-41d4-a716-446655440000
-                      version: 1
-                      datasetId: dataset-ccm-cert-abc123
-                      certificateType: ISO9001
-                      validFrom: "2023-01-25"
-                      validUntil: "2026-01-24"
-                      enclosedSiteBpns:
-                        - BPNS00000003AYRE
-                        - BPNA000000000001
+                $ref: 'https://api.swaggerhub.com/domains/Plattform_i40/Part2-API-Schemas/V3.2.0#/components/schemas/QueryResultAssetAdministrationShellDescriptor'
         '400':
-          $ref: '#/components/responses/BadRequest'
+          $ref: 'https://api.swaggerhub.com/domains/Plattform_i40/Part2-API-Schemas/V3.2.0#/components/responses/bad-request'
         '401':
-          $ref: '#/components/responses/Unauthorized'
+          $ref: 'https://api.swaggerhub.com/domains/Plattform_i40/Part2-API-Schemas/V3.2.0#/components/responses/unauthorized'
         '403':
-          $ref: '#/components/responses/Forbidden'
+          $ref: 'https://api.swaggerhub.com/domains/Plattform_i40/Part2-API-Schemas/V3.2.0#/components/responses/forbidden'
         '500':
-          $ref: '#/components/responses/InternalServerError'
+          $ref: 'https://api.swaggerhub.com/domains/Plattform_i40/Part2-API-Schemas/V3.2.0#/components/responses/internal-server-error'
+        default:
+          $ref: 'https://api.swaggerhub.com/domains/Plattform_i40/Part2-API-Schemas/V3.2.0#/components/responses/default'
 
 components:
   schemas:
@@ -781,136 +752,60 @@ components:
             the certificate, such as a site BPN. If omitted, the error
             applies to the certificate as a whole.
 
+    standardString:
+      type: string
+      pattern: ^(?!\$).*
+    modelStringPattern:
+      type: string
+      pattern: ^(?:\$aas#(?:idShort|id|assetInformation\.assetKind|assetInformation\.assetType|assetInformation\.globalAssetId|assetInformation\.specificAssetIds\[[0-9]*\]\.(?:name|value|externalSubjectId(?:\.(?:type|keys\[[0-9]*\]\.(?:type|value)))?)|submodels\[[0-9]*\]\.(?:type|keys\[[0-9]*\]\.(?:type|value)))|\$sm#(?:semanticId(?:\.(?:type|keys\[[0-9]*\]\.(?:type|value)))?|idShort|id)|\$sme(?:\.[A-Za-z](?:[A-Za-z0-9_-]*[A-Za-z0-9_])?(?:\[[0-9]*\])*(?:\.[A-Za-z](?:[A-Za-z0-9_-]*[A-Za-z0-9_])?(?:\[[0-9]*\])*)*)?#(?:semanticId(?:\.(?:type|keys\[[0-9]*\]\.(?:type|value)))?|idShort|value|valueType|language)|\$cd#(?:idShort|id)|\$aasdesc#(?:idShort|id|assetKind|assetType|globalAssetId|specificAssetIds\[[0-9]*\]\.(?:name|value|externalSubjectId(?:\.(?:type|keys\[[0-9]*\]\.(?:type|value)))?)|endpoints\[[0-9]*\]\.(?:interface|protocolinformation\.href)|submodelDescriptors\[[0-9]*\]\.(?:semanticId(?:\.(?:type|keys\[[0-9]*\]\.(?:type|value)))?|idShort|id|endpoints\[[0-9]*\]\.(?:interface|protocolinformation\.href)))|\$smdesc#(?:semanticId(?:\.(?:type|keys\[[0-9]*\]\.(?:type|value)))?|idShort|id|endpoints\[[0-9]*\]\.(?:interface|protocolinformation\.href)))$
+    Value:
+      type: object
+      properties:
+        $field:
+          $ref: "#/components/schemas/modelStringPattern"
+        $strVal:
+          $ref: "#/components/schemas/standardString"
+      oneOf:
+        - required:
+            - $field
+        - required:
+            - $strVal
+      additionalProperties: false
+    comparisonItems:
+      type: array
+      minItems: 2
+      maxItems: 2
+      items:
+        $ref: "#/components/schemas/Value"
+    matchExpression:
+      type: object
+      properties:
+        $eq:
+          $ref: "#/components/schemas/comparisonItems"
+      oneOf:
+        - required:
+            - $eq
+      additionalProperties: false
+    logicalExpression:
+      type: object
+      properties:
+        $match:
+          type: array
+          minItems: 1
+          items:
+            $ref: "#/components/schemas/matchExpression"
+      oneOf:
+        - required:
+            - $match
+      additionalProperties: false
     CertificateQuery:
       type: object
-      description: |
-        Request body for `POST /certificates/search`. All criteria are optional;
-        an empty query returns all accessible certificates. Criteria of different
-        kinds are combined with AND; within a single BPN list the match is
-        any-of.
       properties:
-        certificateType:
-          type: string
-          description: |
-            Opaque string identifying the certificate type to be matched
-            (for example, `ISO9001`).
-        legalEntityBpns:
-          type: array
-          description: |
-            Filter to certificates issued for these legal entities (matched
-            against `certifiedBpn`).
-          items:
-            type: string
-            pattern: "^BPNL[a-zA-Z0-9]{12}$"
-        siteBpns:
-          type: array
-          description: |
-            Filter to certificates covering these sites (matched against the
-            `enclosedSites`).
-          items:
-            type: string
-            pattern: "^BPNS[a-zA-Z0-9]{12}$"
-        addressBpns:
-          type: array
-          description: |
-            Filter to certificates covering these addresses (matched against
-            the `enclosedSites`).
-          items:
-            type: string
-            pattern: "^BPNA[a-zA-Z0-9]{12}$"
-        from:
-          type: string
-          format: date
-          description: |
-            Inclusive lower bound of the certificate validity range
-            (ISO 8601 full-date). Only certificates whose `validFrom` is on
-            or after this date are returned.
-        to:
-          type: string
-          format: date
-          description: |
-            Inclusive upper bound of the certificate validity range
-            (ISO 8601 full-date). Only certificates whose `validUntil` is on
-            or before this date are returned.
-        limit:
-          type: integer
-          minimum: 1
-          description: |
-            Maximum number of results to return in a single page. If
-            omitted, the Certificate Provider MAY apply a default limit.
-
-    CertificateQueryResponse:
-      type: object
-      description: A single result entry in a certificate query response.
+        $condition:
+          $ref: "#/components/schemas/logicalExpression"
       required:
-        - certificateId
-        - version
-        - datasetId
-        - certificateType
-        - certifiedBpn
-        - registrationNumber
-        - validFrom
-        - validUntil
-        - trustLevel
-      properties:
-        certificateId:
-          type: string
-          description: |
-            Unique identifier of the certificate, usable in
-            `GET /certificates/{id}`.
-        version:
-          type: integer
-          description: The latest version of the certificate.
-        datasetId:
-          type: string
-          description: |
-            Identifier of the DSP dataset under which the certificate is
-            exposed in the Certificate Provider's catalog, enabling the consumer
-            to locate and negotiate the certificate via the Dataspace Protocol.
-        certificateType:
-          type: string
-        certificateTypeVersion:
-          type: string
-          description: |
-            The version of the certificate type itself (e.g. `2015` for
-            ISO 9001:2015). Distinct from the certificate's `version`.
-        certifiedBpn:
-          type: string
-          description: The BPNL of the certified legal entity the certificate is issued on.
-          pattern: "^BPNL[a-zA-Z0-9]{12}$"
-        registrationNumber:
-          type: string
-          description: The certificate's registration number at the issuing body.
-        validFrom:
-          type: string
-          format: date
-        validUntil:
-          type: string
-          format: date
-        trustLevel:
-          type: string
-          description: The degree to which the certificate has been validated.
-          enum: [none, low, medium, high, trusted]
-        areaOfApplication:
-          type: string
-          description: |
-            Free-text detail of the areas or application types the certificate
-            is valid for.
-        enclosedSiteBpns:
-          type: array
-          items:
-            type: string
-        issuer:
-          $ref: '#/components/schemas/CertificateIssuer'
-        validator:
-          $ref: '#/components/schemas/CertificateValidator'
-        documents:
-          type: array
-          description: |
-            Documents associated with the returned certificate version, each
-            retrieved independently via `GET /documents/{id}`.
-          items:
-            $ref: '#/components/schemas/CertificateDocument'
+        - $condition
+      additionalProperties: false
 
     Error:
       type: object
@@ -959,7 +854,7 @@ components:
       scheme: bearer
       bearerFormat: JWT
       description: |
-        Bearer token as defined by CX-0000 Section 4 (HTTPS Binding).
+        Bearer token as defined by CX-0000.
 
 security:
   - bearerAuth: []
