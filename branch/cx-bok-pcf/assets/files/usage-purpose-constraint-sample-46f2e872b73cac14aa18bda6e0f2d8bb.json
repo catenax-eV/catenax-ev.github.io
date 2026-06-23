@@ -1,0 +1,9 @@
+{
+    "leftOperand": "UsagePurpose",
+    "operator": "isAnyOf",
+    "rightOperand": [
+        "cx.dcm.base:1",
+        "cx.bpdm.pool:1",
+        "cx.puris.base:1"    
+    ]
+}
