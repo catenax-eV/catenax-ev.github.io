@@ -7,9 +7,9 @@ info:
     acceptance status updates, and answer certificate queries, as defined in
     CX-0135.
 
-    A certificate is identified by the (`certificateId`, `version`) pair. A
+    A certificate is identified by the (`certificateId`, `revision`) pair. A
     consumer-initiated request opens a Certificate Exchange; the Certificate
-    Provider assigns `certificateId` and `version` when it accepts the request.
+    Provider assigns `certificateId` and `revision` when it accepts the request.
 
     All requests MUST use HTTPS (TLS 1.2 or higher). Authorization MUST adhere
     to CX-0000 (CloudEventsFoundation).
@@ -17,7 +17,7 @@ info:
 
 servers:
   - url: https://{base}
-    description: Certificate Provider base URL
+    description: Data Provider base URL
     variables:
       base:
         default: api.example.com
@@ -28,10 +28,10 @@ paths:
     post:
       summary: Request a certificate
       description: |
-        Invoked by a Certificate Consumer to request a certificate. A request
+        Invoked by a Data Consumer to request a certificate. A request
         opens a consumer-initiated Certificate Exchange. On acceptance the
-        Certificate Provider assigns and returns a `certificateId` and
-        `version`, enabling the consumer to poll fulfillment status and later
+        Data Provider assigns and returns a `certificateId` and
+        `revision`, enabling the consumer to poll fulfillment status and later
         retrieve the certificate.
       operationId: createCertificateRequest
       requestBody:
@@ -44,8 +44,8 @@ paths:
               byType:
                 summary: Request a certificate by type and location
                 value:
-                  certificateType: ISO9001
-                  enclosedSiteBpns:
+                  certificateType: iso9001
+                  certifiedLocations:
                     - BPNS00000003AYRE
       responses:
         '202':
@@ -93,17 +93,17 @@ paths:
     get:
       summary: Poll the fulfillment status of a request
       description: |
-        Invoked by a Certificate Consumer to poll the fulfillment status of a
+        Invoked by a Data Consumer to poll the fulfillment status of a
         previously submitted certificate request. This endpoint reports only the
         Fulfillment phase; the consumer's acceptance outcome is reported
         separately via `POST /certificate-acceptance-notifications`.
 
-        Polling is optional: if the Certificate Consumer exposes the Certificate
-        Consumer Notification API, the Certificate Provider MAY instead push
-        these fulfillment status updates to it as a
-        `org.catena-x.ccm.CertificateFulfillmentStatus.v1` event (CX-0135). 
-        The push and the poll are equivalent and carry the same
-        `exchangeId` and `status`.
+        If the Data Consumer exposes the Certificate Consumer API, the
+        Data Provider **MUST** push fulfillment status updates to it
+        as a `org.catena-x.ccm.CertificateFulfillmentStatus.v1` event for all
+        provider-owned terminal states (CX-0135 §3.2.1). This poll endpoint then
+        serves as a fallback/recovery mechanism and carries the same `exchangeId`
+        and `status` as the pushed event.
       operationId: getCertificateRequestStatus
       parameters:
         - name: id
@@ -127,21 +127,21 @@ paths:
                   value:
                     exchangeId: exch-7f3a9c12-4b8e-4d6a-9e21-0c5b2a1d8f44
                     certificateId: cert-550e8400-e29b-41d4-a716-446655440000
-                    version: 1
+                    revision: 1
                     status: ACKNOWLEDGED
                 fulfilled:
                   summary: Status FULFILLED
                   value:
                     exchangeId: exch-7f3a9c12-4b8e-4d6a-9e21-0c5b2a1d8f44
                     certificateId: cert-550e8400-e29b-41d4-a716-446655440000
-                    version: 1
+                    revision: 1
                     status: FULFILLED
                 declined:
                   summary: Status DECLINED
                   value:
                     exchangeId: exch-7f3a9c12-4b8e-4d6a-9e21-0c5b2a1d8f44
                     certificateId: cert-550e8400-e29b-41d4-a716-446655440000
-                    version: 1
+                    revision: 1
                     status: DECLINED
                     errors:
                       - message: Certificate type not offered for the requested location
@@ -162,11 +162,7 @@ paths:
         certificate is metadata only; binary documents are not included. Each
         associated document is listed by reference in the `documents` array and
         retrieved independently via `GET /documents/{id}`.
-        Returns the latest version by default; a specific version may be
-        requested with the `version` query parameter (e.g. to retrieve the exact
-        version a Certificate Exchange concerns). The provider MUST be able to
-        return any version still referenced by a non-terminal Certificate
-        Exchange.
+        Always returns the latest `revision` of the certificate.
       operationId: getCertificate
       parameters:
         - name: id
@@ -175,14 +171,6 @@ paths:
           description: The unique identifier of the certificate.
           schema:
             type: string
-        - name: version
-          in: query
-          required: false
-          description: |
-            The specific version to retrieve. If omitted, the latest version is
-            returned.
-          schema:
-            type: integer
       responses:
         '200':
           description: |
@@ -192,15 +180,17 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/CertificateMetadata'
+                $ref: 'https://raw.githubusercontent.com/eclipse-tractusx/sldt-semantic-models/refs/heads/main/io.catenax.business_partner_certificate/4.0.0/gen/BusinessPartnerCertificate-schema.json'
+        '400':
+          $ref: 'https://api.swaggerhub.com/domains/Plattform_i40/Part2-API-Schemas/V3.2.0#/components/responses/bad-request'
         '401':
-          $ref: '#/components/responses/Unauthorized'
+          $ref: 'https://api.swaggerhub.com/domains/Plattform_i40/Part2-API-Schemas/V3.2.0#/components/responses/unauthorized'
         '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
+          $ref: 'https://api.swaggerhub.com/domains/Plattform_i40/Part2-API-Schemas/V3.2.0#/components/responses/forbidden'
         '500':
-          $ref: '#/components/responses/InternalServerError'
+          $ref: 'https://api.swaggerhub.com/domains/Plattform_i40/Part2-API-Schemas/V3.2.0#/components/responses/internal-server-error'
+        default:
+          $ref: 'https://api.swaggerhub.com/domains/Plattform_i40/Part2-API-Schemas/V3.2.0#/components/responses/default'
 
   /documents/{id}:
     get:
@@ -210,9 +200,9 @@ paths:
         the document binary, served directly with the `Content-Type` set to the
         document's `mediaType` (e.g. `application/pdf`) as advertised in the
         certificate metadata.
-        A `documentId` is opaque and independent of any certificate version; the
-        same document may be referenced by multiple certificate versions, so no
-        `version` parameter is required.
+        A `documentId` is opaque and independent of any certificate revision; the
+        same document may be referenced by multiple certificate revisions, so no
+        `revision` parameter is required.
       operationId: getDocument
       parameters:
         - name: id
@@ -252,7 +242,7 @@ paths:
     post:
       summary: Submit a certificate acceptance status event
       description: |
-        Invoked by a Certificate Consumer to report the acceptance status of a
+        Invoked by a Data Consumer to report the acceptance status of a
         certificate. The status is carried in `data.status` and the Certificate
         Provider dispatches on it. The event is correlated to its Certificate
         Exchange by the `exchangeId` in `data`. Acceptance MUST reference an
@@ -406,12 +396,12 @@ components:
           type: string
           description: |
             Opaque string identifying the certificate type to be requested
-            (for example, `ISO9001`).
-        enclosedSiteBpns:
+            (for example, `iso9001`).
+        certifiedLocations:
           type: array
           description: |
-            BPNs of the sites or addresses the request applies to. If omitted,
-            the request applies to the legal entity.
+            BPNs (BPNL, BPNS, or BPNA) of the certified locations the request
+            targets. If omitted, the request applies to the legal entity.
           items:
             type: string
 
@@ -423,7 +413,7 @@ components:
       required:
         - exchangeId
         - certificateId
-        - version
+        - revision
         - status
       properties:
         exchangeId:
@@ -436,9 +426,9 @@ components:
           description: |
             Identifier assigned to the requested certificate. Used to retrieve
             the certificate via `GET /certificates/{id}`.
-        version:
+        revision:
           type: integer
-          description: Version assigned to the requested certificate.
+          description: Revision assigned to the requested certificate.
         status:
           type: string
           enum: [ACKNOWLEDGED, CERTIFICATION_REQUESTED, FULFILLED, DECLINED]
@@ -458,7 +448,7 @@ components:
       required:
         - exchangeId
         - certificateId
-        - version
+        - revision
         - status
       properties:
         exchangeId:
@@ -469,9 +459,9 @@ components:
         certificateId:
           type: string
           description: Unique identifier of the requested certificate.
-        version:
+        revision:
           type: integer
-          description: The version of the requested certificate.
+          description: The revision of the requested certificate.
         status:
           type: string
           enum: [ACKNOWLEDGED, CERTIFICATION_REQUESTED, FULFILLED, DECLINED, FAILED]
@@ -483,166 +473,6 @@ components:
             `DECLINED` or `FAILED`.
           items:
             $ref: '#/components/schemas/StatusError'
-
-    CertificateDocument:
-      type: object
-      description: |
-        A reference to a document associated with a certificate version. The
-        binary is retrieved separately via `GET /documents/{id}`.
-      required:
-        - documentId
-        - mediaType
-      properties:
-        documentId:
-          type: string
-          description: |
-            Opaque, version-independent identifier of the document, used to
-            retrieve it via `GET /documents/{id}`.
-          examples:
-            - "doc-3fa85f64-5717-4562-b3fc-2c963f66afa6"
-        language:
-          type: string
-          description: |
-            Language of the document as an ISO 639-1 two-letter code
-            (e.g. `en` for English, `de` for German). Distinguishes documents
-            that differ only by language.
-          pattern: "^[a-z]{2}$"
-          examples:
-            - "en"
-        mediaType:
-          type: string
-          description: IANA media type of the document binary.
-          examples:
-            - "application/pdf"
-            - "image/png"
-
-    EnclosedSite:
-      type: object
-      description: A site or address a certificate applies to.
-      required:
-        - bpn
-      properties:
-        bpn:
-          type: string
-          description: |
-            The Business Partner Number of the site (BPNS) or address (BPNA)
-            the certificate covers.
-          pattern: "^BPN[SA][a-zA-Z0-9]{12}$"
-        areaOfApplication:
-          type: string
-          description: |
-            Free-text detail of the areas or application types the certificate
-            is valid for at this specific location.
-
-    CertificateIssuer:
-      type: object
-      description: The authority that issued the certificate.
-      required:
-        - issuerName
-      properties:
-        issuerName:
-          type: string
-          description: The name of the issuing authority (e.g. `TÜV Süd`).
-        issuerBpn:
-          type: string
-          description: The BPNL of the issuing authority, if a Catena-X business partner.
-          pattern: "^BPNL[a-zA-Z0-9]{12}$"
-
-    CertificateValidator:
-      type: object
-      description: The party that can validate the certificate information.
-      required:
-        - validatorName
-      properties:
-        validatorName:
-          type: string
-          description: The name of the validator.
-        validatorBpn:
-          type: string
-          description: |
-            The BPNL of the validator. MAY be used as a free-text identifier
-            where a BPNL is not available.
-
-    CertificateMetadata:
-      type: object
-      description: JSON metadata accompanying a retrieved certificate.
-      required:
-        - certificateId
-        - version
-        - certificateType
-        - certifiedBpn
-        - registrationNumber
-        - validFrom
-        - validUntil
-        - trustLevel
-      properties:
-        certificateId:
-          type: string
-          description: |
-            Unique identifier of the certificate. Matches the `{id}` path
-            parameter of the request.
-        version:
-          type: integer
-          description: |
-            The version returned — the version requested via the `version` query
-            parameter, or the latest version if none was specified.
-        certificateType:
-          type: string
-          description: Opaque string identifying the certificate type (e.g. `ISO9001`).
-        certificateTypeVersion:
-          type: string
-          description: |
-            The version of the certificate type itself (e.g. `2015` for
-            ISO 9001:2015). Distinct from the certificate's `version`.
-        certifiedBpn:
-          type: string
-          description: The BPNL of the certified legal entity the certificate is issued on.
-          pattern: "^BPNL[a-zA-Z0-9]{12}$"
-        registrationNumber:
-          type: string
-          description: The certificate's registration number at the issuing body.
-        validFrom:
-          type: string
-          format: date
-          description: |
-            Inclusive start date of the certificate validity period
-            (ISO 8601 full-date, `YYYY-MM-DD`).
-        validUntil:
-          type: string
-          format: date
-          description: |
-            Inclusive end date of the certificate validity period
-            (ISO 8601 full-date, `YYYY-MM-DD`).
-        trustLevel:
-          type: string
-          description: The degree to which the certificate has been validated.
-          enum: [none, low, medium, high, trusted]
-        areaOfApplication:
-          type: string
-          description: |
-            Free-text detail of the areas or application types the certificate
-            is valid for overall. Individual locations MAY narrow this via
-            `Location.areaOfApplication`.
-        enclosedSites:
-          type: array
-          description: |
-            The sites or addresses the certificate applies to. If omitted or
-            empty, the certificate applies to the issuing legal entity as a
-            whole.
-          items:
-            $ref: '#/components/schemas/EnclosedSite'
-        issuer:
-          $ref: '#/components/schemas/CertificateIssuer'
-        validator:
-          $ref: '#/components/schemas/CertificateValidator'
-        documents:
-          type: array
-          description: |
-            Documents associated with this certificate version. Each document is
-            retrieved independently via `GET /documents/{id}`. If omitted or
-            empty, the version has no associated documents.
-          items:
-            $ref: '#/components/schemas/CertificateDocument'
 
     CertificateAcceptanceStatusEvent:
       type: object
@@ -667,11 +497,11 @@ components:
           type: string
           format: uri
           description: |
-            URI identifying the producing Certificate Consumer. Typically a
+            URI identifying the producing Data Consumer. Typically a
             BPN-scoped URN.
         subject:
           type: string
-          description: The BPN of the addressed Certificate Provider.
+          description: The BPN of the addressed Data Provider.
         id:
           type: string
           description: Unique identifier of this event instance.
@@ -843,6 +673,14 @@ components:
             $ref: '#/components/schemas/Error'
     InternalServerError:
       description: An unexpected error occurred on the server.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    NotImplemented:
+      description: |
+        The query uses a field or operator the provider does not support
+        (CX-0135 §3.3.4).
       content:
         application/json:
           schema:

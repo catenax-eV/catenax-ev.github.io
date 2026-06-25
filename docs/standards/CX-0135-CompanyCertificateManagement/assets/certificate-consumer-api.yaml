@@ -1,9 +1,9 @@
 openapi: 3.0.3
 info:
-  title: Certificate Consumer Notification API
+  title: Certificate Consumer API
   description: |
-    HTTP API exposed by a Certificate Consumer to receive notifications from
-    Certificate Providers, as defined in CX-0135.
+    HTTP API exposed by a Data Consumer to receive notifications from
+    Data Providers, as defined in CX-0135.
 
     Notifications are delivered to a single endpoint and distinguished by the
     CloudEvents `type` attribute. Two event types are defined: certificate
@@ -14,23 +14,23 @@ info:
 
     All requests MUST use HTTPS (TLS 1.2 or higher). Authorization MUST adhere
     to CX-0000 (CloudEventsFoundation).
-  version: 1.0.0
+  version: 3.0.0
 
 servers:
   - url: https://{base}
-    description: Certificate Consumer base URL
+    description: Data Consumer base URL
     variables:
       base:
         default: api.example.com
-        description: Host serving the Certificate Consumer Notification API
+        description: Host serving the Certificate Consumer API
 
 paths:
   /certificate-notifications:
     post:
       summary: Receive a certificate notification event
       description: |
-        Invoked by a Certificate Provider to deliver a notification to the
-        Certificate Consumer. Two event types are accepted, distinguished by the
+        Invoked by a Data Provider to deliver a notification to the
+        Data Consumer. Two event types are accepted, distinguished by the
         CloudEvents `type`: a certificate lifecycle status event and a
         certificate fulfillment status notification. The request body is a single
         CloudEvent or a batch (JSON array) of CloudEvents as defined in CX-0000.
@@ -41,7 +41,7 @@ paths:
         certificate request and are correlated by `exchangeId`.
         
         The notification can carry certificate payload data if certain conditions
-        on the Certificate Consumer side are met. For reference check the 
+        on the Data Consumer side are met. For reference check the 
         corresponding section of this API in the CX-0135 standard.
       operationId: postCertificateNotifications
       requestBody:
@@ -59,7 +59,7 @@ paths:
                       - $ref: '#/components/schemas/CertificateFulfillmentStatusEvent'
             examples:
               created:
-                summary: Status CREATED
+                summary: Status CREATED (baseline subject — light triage)
                 value:
                   specversion: "1.0"
                   type: org.catena-x.ccm.CertificateLifecycleStatus.v1
@@ -70,11 +70,57 @@ paths:
                   datacontenttype: application/json
                   dataschema: https://w3id.org/catenax/schemas/ccm/certificate-lifecycle-status.json
                   data:
-                    exchangeId: exch-7f3a9c12-4b8e-4d6a-9e21-0c5b2a1d8f44
-                    certificateId: cert-550e8400-e29b-41d4-a716-446655440000
                     status: CREATED
+                    exchangeId: exch-7f3a9c12-4b8e-4d6a-9e21-0c5b2a1d8f44
+                    certificate:
+                      certificateId: cert-550e8400-e29b-41d4-a716-446655440000
+                      revision: 1
+                      certificateType: iso9001
+                      validFrom: "2023-01-25"
+                      validUntil: "2026-01-24"
+              createdWithDocuments:
+                summary: Status CREATED (embedded-document subject — full record + content)
+                value:
+                  specversion: "1.0"
+                  type: org.catena-x.ccm.CertificateLifecycleStatus.v1
+                  source: urn:bpn:BPNL0000000001AB
+                  subject: BPNL0000000002CD
+                  id: e7c9a1b2-3d4e-5f6a-7b8c-9d0e1f2a3b4c
+                  time: "2025-05-04T07:00:00Z"
+                  datacontenttype: application/json
+                  dataschema: https://w3id.org/catenax/schemas/ccm/certificate-lifecycle-status.json
+                  data:
+                    status: CREATED
+                    exchangeId: exch-7f3a9c12-4b8e-4d6a-9e21-0c5b2a1d8f44
+                    certificate:
+                      certificateId: cert-550e8400-e29b-41d4-a716-446655440000
+                      revision: 1
+                      certificateType: iso9001
+                      certificateTypeVersion: "2015"
+                      registrationNumber: "12 100 4711"
+                      validFrom: "2023-01-25"
+                      validUntil: "2026-01-24"
+                      trustLevel: high
+                      areaOfApplication: Production and assembly of powertrain components
+                      certifiedLocations:
+                        - bpnl: BPNL00000001AXS
+                          bpna: BPNA00000001AXS
+                          bpns: BPNS00000001AXS
+                          locationRole: MAIN_LOCATION
+                      issuer:
+                        issuerName: TÜV Süd
+                        issuerBpn: BPNL0000000003EF
+                      validator:
+                        validatorName: TÜV Süd
+                        validatorBpn: BPNL0000000003EF
+                      documents:
+                        - documentId: doc-3fa85f64-5717-4562-b3fc-2c963f66afa6
+                          createdDate: "2023-01-25"
+                          language: en
+                          mediaType: application/pdf
+                          contentBase64: JVBERi0xLjQKJ...
               modified:
-                summary: Status MODIFIED (new version)
+                summary: Status MODIFIED (baseline subject)
                 value:
                   specversion: "1.0"
                   type: org.catena-x.ccm.CertificateLifecycleStatus.v1
@@ -85,10 +131,15 @@ paths:
                   datacontenttype: application/json
                   dataschema: https://w3id.org/catenax/schemas/ccm/certificate-lifecycle-status.json
                   data:
-                    certificateId: cert-550e8400-e29b-41d4-a716-446655440000
                     status: MODIFIED
+                    certificate:
+                      certificateId: cert-550e8400-e29b-41d4-a716-446655440000
+                      revision: 2
+                      certificateType: iso9001
+                      validFrom: "2023-01-25"
+                      validUntil: "2027-01-24"
               withdrawn:
-                summary: Status WITHDRAWN (no validity)
+                summary: Status WITHDRAWN
                 value:
                   specversion: "1.0"
                   type: org.catena-x.ccm.CertificateLifecycleStatus.v1
@@ -99,8 +150,9 @@ paths:
                   datacontenttype: application/json
                   dataschema: https://w3id.org/catenax/schemas/ccm/certificate-lifecycle-status.json
                   data:
-                    certificateId: cert-550e8400-e29b-41d4-a716-446655440000
                     status: WITHDRAWN
+                    certificate:
+                      certificateId: cert-550e8400-e29b-41d4-a716-446655440000
               batch:
                 summary: A batch of lifecycle status events
                 value:
@@ -113,9 +165,14 @@ paths:
                     datacontenttype: application/json
                     dataschema: https://w3id.org/catenax/schemas/ccm/certificate-lifecycle-status.json
                     data:
-                      exchangeId: exch-7f3a9c12-4b8e-4d6a-9e21-0c5b2a1d8f44
-                      certificateId: cert-550e8400-e29b-41d4-a716-446655440000
                       status: CREATED
+                      exchangeId: exch-7f3a9c12-4b8e-4d6a-9e21-0c5b2a1d8f44
+                      certificate:
+                        certificateId: cert-550e8400-e29b-41d4-a716-446655440000
+                        revision: 1
+                        certificateType: iso9001
+                        validFrom: "2023-01-25"
+                        validUntil: "2026-01-24"
                   - specversion: "1.0"
                     type: org.catena-x.ccm.CertificateLifecycleStatus.v1
                     source: urn:bpn:BPNL0000000001AB
@@ -125,8 +182,9 @@ paths:
                     datacontenttype: application/json
                     dataschema: https://w3id.org/catenax/schemas/ccm/certificate-lifecycle-status.json
                     data:
-                      certificateId: cert-770e8400-e29b-41d4-a716-446655449999
                       status: WITHDRAWN
+                      certificate:
+                        certificateId: cert-770e8400-e29b-41d4-a716-446655449999
               fulfillmentFulfilled:
                 summary: Fulfillment status FULFILLED
                 value:
@@ -175,7 +233,7 @@ paths:
     get:
       summary: Query the acceptance status of an exchange
       description: |
-        Invoked by a Certificate Provider to query the current acceptance
+        Invoked by a Data Provider to query the current acceptance
         status of a Certificate Exchange it opened. The `{id}` path parameter
         MUST be the `exchangeId` assigned when the exchange was opened.
       operationId: getCertificateAcceptanceStatus
@@ -259,12 +317,12 @@ components:
           type: string
           format: uri
           description: |
-            URI identifying the producing Certificate Provider. Typically a
+            URI identifying the producing Data Provider. Typically a
             BPN-scoped URN (for example, `urn:bpn:BPNL0000000001AB`).
         subject:
           type: string
           description: |
-            The BPN of the recipient (Certificate Consumer) the event is
+            The BPN of the recipient (Data Consumer) the event is
             addressed to.
         id:
           type: string
@@ -312,24 +370,36 @@ components:
             The status value. Subtypes constrain the permitted set of values.
 
     CertificateLifecycleStatus:
+      type: object
       description: |
-        Certificate lifecycle status payload, derived from `CertificateStatusBase`.
-        `exchangeId` is present when `status` is `CREATED` (the event opens the
-        exchange) and absent for `MODIFIED`/`WITHDRAWN`. `validFrom` and
-        `validUntil` are REQUIRED when `status` is `CREATED` or `MODIFIED` and MAY
-        be omitted when `status` is `WITHDRAWN`.
-      allOf:
-        - $ref: '#/components/schemas/CertificateStatusBase'
-        - type: object
-          required:
-            - status
-          properties:
-            status:
-              type: string
-              enum: [CREATED, MODIFIED, WITHDRAWN]
-              description: |
-                The lifecycle status. `CREATED` opens a Certificate Exchange;
-                `MODIFIED` and `WITHDRAWN` do not.
+        Certificate lifecycle status payload. Carries the event `status`, the
+        `exchangeId` (only on `CREATED`, which opens a provider-initiated
+        exchange), and the `certificate` record. The populated field set of
+        `certificate` depends on the Certificate Consumer API subject:
+        under `cx-taxo:CompanyCertificateManagementConsumerApi` it carries the
+        light triage subset (`certificateId`, `revision`, `certificateType`,
+        `validFrom`, `validUntil`); under
+        `cx-taxo:CompanyCertificateManagementConsumerEmbeddedDocumentApi` it
+        carries the full record plus `documents[].contentBase64`. A `WITHDRAWN`
+        event carries only `certificate.certificateId`. Per-status / per-subject
+        presence is defined in CX-0135 §3.2.1.
+      required:
+        - status
+        - certificate
+      properties:
+        status:
+          type: string
+          enum: [CREATED, MODIFIED, WITHDRAWN]
+          description: |
+            The lifecycle status. `CREATED` opens a Certificate Exchange;
+            `MODIFIED` and `WITHDRAWN` do not.
+        exchangeId:
+          type: string
+          description: |
+            Identifier of the provider-initiated Certificate Exchange opened by a
+            `CREATED` event. Present only for `CREATED`.
+        certificate:
+          $ref: 'https://raw.githubusercontent.com/eclipse-tractusx/sldt-semantic-models/refs/heads/main/io.catenax.business_partner_certificate/4.0.0/gen/BusinessPartnerCertificate-schema.json'
 
     CertificateFulfillmentStatusEvent:
       type: object
@@ -356,12 +426,12 @@ components:
           type: string
           format: uri
           description: |
-            URI identifying the producing Certificate Provider. Typically a
+            URI identifying the producing Data Provider. Typically a
             BPN-scoped URN (for example, `urn:bpn:BPNL0000000001AB`).
         subject:
           type: string
           description: |
-            The BPN of the recipient (Certificate Consumer) the event is
+            The BPN of the recipient (Data Consumer) the event is
             addressed to.
         id:
           type: string
@@ -398,9 +468,10 @@ components:
               type: string
               enum: [ACKNOWLEDGED, CERTIFICATION_REQUESTED, FULFILLED, DECLINED, FAILED]
               description: |
-                The Fulfillment status. Providers SHOULD push at least the
-                terminal outcomes (`FULFILLED`, `DECLINED`, `FAILED`);
-                intermediate states MAY also be pushed.
+                The Fulfillment status. Providers MUST push all provider-owned
+                terminal outcomes (`FULFILLED`, `DECLINED`, `FAILED`) to a
+                Consumer that exposes this API (CX-0135 §3.2.1); intermediate
+                states MAY also be pushed.
             errors:
               type: array
               description: |
@@ -479,7 +550,7 @@ components:
             $ref: '#/components/schemas/Error'
     NotFound:
       description: |
-        The referenced certificate is unknown to the Certificate Consumer.
+        The referenced certificate is unknown to the Data Consumer.
       content:
         application/json:
           schema:
@@ -491,11 +562,11 @@ components:
           schema:
             $ref: '#/components/schemas/Error'
     NotImplemented:
-        description: The requested operation is not implemented by the server.
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Error'
+      description: The requested operation is not implemented by the server.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
 
   securitySchemes:
     bearerAuth:
