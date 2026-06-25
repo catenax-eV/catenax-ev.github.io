@@ -20,7 +20,7 @@ and a wire protocol for company certificates.
 > *This section is non-normative*
 
 This specification builds upon [CX-0000](#cx-0000), [CX-0018](#cx-0018) and [CX-0002](#cx-0002) to define a Company 
-Certificate Management (CCM) wire protocol for exchanging company certificate data between Catena-X participants.
+Certificate Management (CCM) wire protocol for exchanging company certificate data between Catena-X Participants.
 
 The following company certificate business requirements are supported in this release:
 
@@ -46,16 +46,11 @@ The keywords **MAY**, **MUST**, **MUST NOT**, **OPTIONAL**, **RECOMMENDED**, **R
 NOT** in this document are to be interpreted as described in BCP 14 [RFC2119](#rfc2119) [RFC8174](#rfc8174) when, and
 only when they appear in all capitals, as shown here.
 
-- A participant **MAY** support any of the APIs (based on their need; more explicitly, a consumer role without
+- A Participant **MAY** support any of the APIs (based on their need; more explicitly, a consumer role without
   support of the Certificate Consumer API is valid):
     - Certificate Consumer API (see [Section 3.1](#31-certificate-consumer-api))
     - Certificate Provider API (see [Section 3.2](#32-certificate-provider-api))
 - Business Application Providers **MUST** support both, the Certificate Provider API and the Certificate Consumer API.
-- Based on the previous requirements, the participant **MUST** be compliant with all normative requirements defined
-  in the respective sections of this standard. Especially the state machines, APIs and data model. Even a Data Consumer
-  without a Certificate Consumer API **MUST** proof to be compliant with
-  [Section 2](#2-relevant-parts-of-the-standard-for-specific-use-cases) and [Section 4](#4-aspect-models)
-  of this standard.
 
 > **Note:** three independent version numbers appear in this standard and are **not** expected to match. The document
 > version (**v3.0.0**), the certificate aspect-model version
@@ -286,8 +281,8 @@ stateDiagram-v2
     [*] --> CREATED
     CREATED --> MODIFIED: new revision published
     MODIFIED --> MODIFIED: subsequent revision published
-    CREATED --> WITHDRAWN: provider withdraws the certificate
-    MODIFIED --> WITHDRAWN: provider withdraws the certificate
+    CREATED --> WITHDRAWN: provider withdraws the created certificate
+    MODIFIED --> WITHDRAWN: provider withdraws the modified certificate
     WITHDRAWN --> [*]
 ```
 
@@ -324,18 +319,18 @@ These transitions are communicated to Data Consumers as certificate lifecycle ev
 > *This section is normative*
 
 The API specification is separated in two parts, one for the Data Provider and one for the Data Consumer.
-A network participant is not limited to either of those roles; for example, a participant could be a Data 
+A Participant is not limited to either of those roles; for example, a Participant could be a Data 
 Consumer in one interaction and a Data Provider in another.
 
-Which APIs a participant exposes depends on its capabilities:
+Which APIs a Participant implements depends on its capabilities:
 
 | To…                                                             | Certificate Provider API ([Section 3.2](#32-certificate-provider-api)) | Certificate Consumer API ([Section 3.1](#31-certificate-consumer-api)) |
 |-----------------------------------------------------------------|------------------------------------------------------------------------|------------------------------------------------------------------------|
-| offer certificates to other participants                        | **MUST** expose                                                        | —                                                                      |
+| offer certificates to other Participants                        | **MUST** implement                                                     | —                                                                      |
 | receive lifecycle notifications and provide acceptance feedback | —                                                                      | **MAY** expose (`…ConsumerApi` OR `…ConsumerEmbeddedDocumentApi`)      |
-| act as a Business Application Provider                          | **MUST** expose                                                        | **MUST** expose                                                        |
+| act as a Business Application Provider                          | **MUST** implement                                                     | **MUST** expose                                                        |
 
-Requesting and retrieving certificates from a Data Provider requires no exposed API — a Data Consumer calls the 
+Requesting and retrieving certificates from a Data Provider requires no implemented API — a Data Consumer calls the 
 Data Provider API directly.
 
 This section introduces the certificate management notification API which is based on the following OpenAPI
@@ -344,11 +339,11 @@ specifications which **MUST** be adhered to:
 - [Certificate Provider API](assets/certificate-provider-api.yaml)
 
 The OpenAPI specification **MUST** be used as the baseline, the following subsections add additional normative
-requirements and clarifications. Each supported API **MUST** be discoverable and made be accessible
-via a [DSP Catalog](#dsp-catalog).
+requirements and clarifications. Each supported API **MUST** be discoverable and made be accessible as defined
+in [CX-0018](#cx-0018).
 
-A dataspace participant that chooses to implement an API **MUST**
-- offer an asset to expose the API for Data Consumer in the DSP catalog.
+A Participant that chooses to implement an API **MUST**
+- offer a Dataset as defined in [CX-0018](#cx-0018) to expose the API for the Data Consumer in the DSP Catalog.
 - reference the name of the certificate management API `cx-taxo:CCMAPI` for the property
   [[type]](http://purl.org/dc/terms/type).
 
@@ -360,7 +355,7 @@ Overview of possible API assets defined in this version of the standard:
 | cx-taxo:CCMAPI | cx-taxo:CompanyCertificateManagementConsumerEmbeddedDocumentApi | 4.0         | Variant of the *Certificate Consumer API* that additionally receives certificate documents embedded inline in `CREATED`/`MODIFIED` lifecycle notifications (see [Section 3.1.1](#311-certificate-lifecycle-events)). A Certificate Consumer registers either this subject or `…ConsumerApi`, not both. |
 | cx-taxo:CCMAPI | cx-taxo:CompanyCertificateManagementProviderApi                 | 4.0         | Offers *Certificate Provider API* according to [Section 3.2](#32-certificate-provider-api) for requesting certificates, retrieving certificates, providing feedback on the status of certificate requests, and searching for certificates.                                                             |
 
-There **MUST** only be one unique asset per API (subject and version) for a participant.
+There **MUST** only be one unique asset per API (subject and version) for a Participant.
 ___
 *Example*: It is possible to have these assets available next to one-another:
 
@@ -511,7 +506,7 @@ events registers its Certificate Consumer API asset under the subject
 `cx-taxo:CompanyCertificateManagementConsumerEmbeddedDocumentApi` instead of
 `cx-taxo:CompanyCertificateManagementConsumerApi` (see [Section 3.1](#31-certificate-consumer-api)). The two subjects
 describe the same endpoints; they differ only in how much of `data.certificate` is populated on `CREATED`/`MODIFIED`
-notifications. A Data Consumer **MUST** register exactly one of the two Consumer subjects in their role as participant.
+notifications. A Data Consumer **MUST** register exactly one of the two Consumer subjects in their role as Participant.
 
 When the Data Consumer's asset declares the plain `cx-taxo:CompanyCertificateManagementConsumerApi` subject, the
 Data Provider **MUST** for `CREATED`/`MODIFIED` events, populate `data.certificate` with the
@@ -699,7 +694,7 @@ is specified in [CX-0152](#cx-0152) as well.
 
 #### 3.4 Usage Policy
 
-All dataspace offers of a participant — both the APIs defined in this standard and the certificate datasets — **MUST**
+All dataspace offers of a Participant — both the APIs defined in this standard and the certificate datasets — **MUST**
 carry a usage policy following the requirements referenced in
 [Section 3.3](#33-policy-constraints-for-data-exchange). This use case introduces the following usage purpose:
 
