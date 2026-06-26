@@ -21,6 +21,7 @@ pagination_next: null
 | Cyprus | CY |
 | Czech Republic | CZ |
 | Denmark | DK |
+| Egypt | EG |
 | Estonia | EE |
 | Finland | FI |
 | France | FR |
@@ -61,6 +62,7 @@ pagination_next: null
 | United Arab Emirates | AE |
 | United Kingdom | GB |
 | United States of America | US |
+| Uruguay | UY |
 | Vietnam | VN |
 
 [^1]: This does not apply to Russian-occupied or annexed territories (Crimea, Kherson Oblast (including the Kinburn Peninsula/Mykolaiv), Donetsk, Luhansk and Zaporizhzhia).
@@ -117,7 +119,6 @@ pagination_next: null
 | Timor-Leste | TL |
 | Trinidad and Tobago | TT |
 | Tunisia | TN |
-| Uruguay | UY |
 | Vanuatu | VU |
 
 ## Legal
