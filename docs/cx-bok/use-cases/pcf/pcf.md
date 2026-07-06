@@ -3,42 +3,7 @@ title: Product Carbon Footprint
 sidebar_position: 1
 ---
 
-## Why trusted PCF data matters – and where today’s approaches fall short
-
-### Core Challenge
-
-- Supply‑chain emissions dominate automotive footprints, especially with electrification
-- Companies rely heavily on average and secondary data, limiting accuracy and actionability
-- PCF methodologies and formats differ across companies and tools, reducing comparability
-- Supplier‑specific primary data is hard to collect and reuse across tiers
-- Lack of trustworthy PCF data from suppliers as verification is time and cost intensive
-
-### What is driving urgency now
-
-- Regulatory requirements (e.g. EU Battery Regulation, CBAM) require auditable PCF data
-- Climate commitments (Paris Agreement, SBTi) extend deep into multi‑tier supply chains
-- Procurement and reporting processes increasingly depend on reliable, comparable PCFs
-- OEMs and suppliers need scalable solutions, not bilateral, tool‑specific integrations
-
-## How Catena-X enables this and fills the gaps to calculate and exchange trustworthy PCF values
-
-### Step 1: PCF Calculation
-
-Harmonized product-level PCF calculation based on the Catena-X PCF-Rulebook to ensure comparable and reusable results.
-
-### Step 2: PCF Exchange
-
-What is shared in Catena‑X is a structured PCF data set — not just one number.
-
-### Step 3: Implementation Options for PCF Exchange
-
-To exchange PCF data within the Catena‑X ecosystem, companies connect to the Catena‑X data space.
-
-### Step 4: PCF Trust and Verification
-
-To ensure verification and trust for Product Carbon Footprint (PCF) data, Together for Sustainability (TfS) and Catena-Xhave jointly developed a comprehensive verification framework.
-
-### Outlook
+The PCF Guidance Documents provide practical guidance and methodological support for the implementation of Product Carbon Footprint standards. They promote a consistent, transparent, and interoperable approach to carbon accounting and data exchange across value chains. By complementing the standards with additional explanations and best practices, they help organizations improve the quality, comparability, and reliability of PCF data.
 
 ## Further Guidance Documents for PCF
 
