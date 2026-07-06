@@ -3,9 +3,7 @@ title: ESG & Due Diligence
 sidebar_position: 1
 ---
 
-## Why trusted PCF data matters – and where today’s approaches fall short
-
-The Additional Documents for ESG & Due Diligence within Catena-X supports companies in addressing sustainability, human rights, and environmental obligations across complex supply chains. It provides practical recommendations, best practices, and standardized approaches to improve transparency, risk identification, and regulatory compliance. The guidance helps organizations align with evolving requirements such as CSDDD, LkSG, ESRS, and other relevant ESG frameworks while fostering cross-company collaboration and interoperable data exchange. By leveraging the Catena-X ecosystem, companies can reduce administrative burden, enhance due diligence processes, and strengthen responsible business conduct throughout the value chain. Based on Catena-X due diligence governance and ESG-related guidance documents. 
+The Additional documents for ESG & Due Diligence within Catena-X supports companies in addressing sustainability, human rights, and environmental obligations across complex supply chains. It provides practical recommendations, best practices, and standardized approaches to improve transparency, risk identification, and regulatory compliance. The guidance helps organizations align with evolving requirements such as CSDDD, LkSG, ESRS, and other relevant ESG frameworks while fostering cross-company collaboration and interoperable data exchange. By leveraging the Catena-X ecosystem, companies can reduce administrative burden, enhance due diligence processes, and strengthen responsible business conduct throughout the value chain. Based on Catena-X due diligence governance and ESG-related guidance documents. 
 
 ## Guidance Documents for ESG & Due Diligence
 
