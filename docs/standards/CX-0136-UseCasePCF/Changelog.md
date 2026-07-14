@@ -2,6 +2,12 @@
 
 All notable changes to **CX-0136 (Use Case PCF)** will be documented in this file.
 
+## [2.2.2] CX-Saturn (26.03)
+
+### Changed
+
+- Added various notes for clarification (informative only)
+
 ## [2.2.1] CX-Saturn (25.09)
 
 ### Added
