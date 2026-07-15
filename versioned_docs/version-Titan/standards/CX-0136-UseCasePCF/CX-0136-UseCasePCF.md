@@ -4,7 +4,7 @@ tags:
   - UC/PCF
 ---
 
-# CX-0136 Use Case PCF 2.2.1
+# CX-0136 Use Case PCF 2.2.2
 
 ## ABSTRACT
 
@@ -136,16 +136,17 @@ A formal, machine-readable semantic description (expressed with RDF/turtle) of d
 
 To participate in the CO2 use-case, the following standard MUST be fulfilled:
 
-- [Product Carbon Footprint Rulebook V4](https://catenax-ev.github.io/docs/next/rulebooks/overview)
+- [Product Carbon Footprint Rulebook V4](https://catenax-ev.github.io/docs/next/non-functional/overview)
 
 In addition, the following standards are used to support the PCF usecase. Athough they are NOT part of this specification, they are mentioned here, as APIs or other assets provided by them are used within the PCF usecase:
 
-- [CX-0001 EDC Discovery API v1.2](https://catenax-ev.github.io/docs/standards/overview)
-- [CX-0002 Digital Twins in Catena-X v2.3](https://catenax-ev.github.io/docs/standards/overview)
-- [CX-0003 SAMM Aspect Meta Model v1.2](https://catenax-ev.github.io/docs/standards/overview)
-- [CX-0018 Dataspace Connectivity v4.1](https://catenax-ev.github.io/docs/standards/overview)
-- [CX-0126 Industry Core: Part Type v2.1](https://catenax-ev.github.io/docs/standards/overview)
-- [CX-0151 Industry Core: Basics v1.0](https://catenax-ev.github.io/docs/standards/overview)
+- [CX-0001 EDC Discovery API](https://catenax-ev.github.io/docs/standards/CX-0001-ParticipantAgentRegistration)
+- [CX-0002 Digital Twins in Catena-X](https://catenax-ev.github.io/docs/standards/CX-0002-DigitalTwinsInCatenaX)
+- [CX-0003 SAMM Aspect Meta Model](https://catenax-ev.github.io/docs/standards/CX-0003-SAMMSemanticAspectMetaModel)
+- [CX-0053 Discovery Finder and BPN Discovery Service APIs](https://catenax-ev.github.io/docs/standards/CX-0053-BPNDiscoveryServiceAPIs)
+- [CX-0126 Industry Core: Part Type](https://catenax-ev.github.io/docs/standards/CX-0126-IndustryCorePartType)
+- [CX-0151 Industry Core: Basics](https://catenax-ev.github.io/docs/standards/CX-0151-IndustryCoreBasics)
+- [CX-0152 Policy Constraints For Data Exchange](https://catenax-ev.github.io/docs/standards/CX-0152-PolicyConstrainsForDataExchange)
 
 #### 2.1.2 ADDITIONAL REQUIREMENTS
 
@@ -169,6 +170,10 @@ follow the [CX-0002 Digital Twins in Catena-X](#211-list-of-standalone-standards
 Not needed for PCF as the BPN is known by the application.
 
 ##### 2.1.2.5 Registration of the Digital Twin and the PCF Submodel in the Digital Twin Registry
+
+> **Note**
+> This section describes the legacy registration process for **PCF Submodel version 7.0.0** using the `PCFExchangeEndpoint`.
+> If you are implementing the current **PCF Submodel version 9.0.0 (Synchronous PCF Data Exchange)**, do **not** use this configuration. Instead, follow the specification described in section [4.2.2.1 Submodel registration in the Digital Twin](#4221-submodel-registration-in-the-digital-twin).
 
 The PCF use case utilizes Asset Administration Shell (AAS) logic and Material Twins. Therefore Digital Twins SHOULD be registered in the decentralized Digital Twin Registry (DTR). In order to look up the twin ID, the data provider MUST register the twins with digitalTwinType=PartType, and MUST include either the ``manufacturerPartId``, the ``customerPartId``, or both, in the ``specificAssetIds``.
 
@@ -204,6 +209,7 @@ The PCF use case utilizes Asset Administration Shell (AAS) logic and Material Tw
 
 > **Note**
 > Replace "edc.data.plane" with the locally needed URL parts to do a EDC proxy call.
+> The value in the example "urn:samm:io.catenax.pcf:9.0.0#Pcf" should be replaced to "urn:samm:io.catenax.pcf:7.0.0#Pcf".
 
 ```json
 {
@@ -282,6 +288,9 @@ The EDC asset representing the PCF API v1.2.0 MUST be registered as defined belo
     }
 }
 ```
+
+> **Note**
+> The dct:type value shown in the section below contains a typographical error. The correct value is cx-taxo:PcfExchange; any occurrence of cx-taxo:PCFExchange should be interpreted as cx-taxo:PcfExchange.
 
 The following values MUST be present as EDC asset properties:
 
@@ -672,6 +681,8 @@ The API wrapper shown in the following sequences is an optional component encaps
 
 ### 5.1 EDC DISCOVERY AND DTR ACCESS
 
+> **Note**
+> The shown submodel descriptor is neither a valid submodel descriptor for a `urn:samm:io.catenax.pcf:9.0.0#Pcf` nor for a `urn:samm:io.catenax.pcf:7.0.0#Pcf` submodel. The purpose of this illustration is solely to demonstrate how to retrieve a PCF submodel descriptor from the Digital Twin Registry via a material twin.
 ![EDCDiscoveryAndDTRAccess](./assets/EDCDiscoveryanddDTRAccess.png)
 
 ### 5.2 PCF REQUEST THROUGH AN EXISTING MATERIAL TWIN WITH A CORRESPONDING PCF RESPONSE
@@ -713,6 +724,8 @@ autonumber
 ```
 
 For asynchronous data exchange (data push):
+> **Note**
+> The process shown below is only applicable to `urn:samm:io.catenax.pcf:7.0.0` submodels. For the  `urn:samm:io.catenax.pcf:9.0.0` submodels, you **SHOULD** check the Digital Twin Registry (DTR) to see if a submodel with idShort: "SynchronousPCFExchangeEndpoint" is available on the material twin. If no such submodel is available, request the PCF data as described in section [5.3 PCF Request Without an Existing Material Twin or Submodel with a Corresponding PCF Response](#53-pcf-request-without-an-existing-material-twin-or-submodel-with-a-corresponding-pcf-response).
 
 ![PCFExchangeThroughAAS](./assets/PCFRequestthroughAAS.png)
 
@@ -760,11 +773,12 @@ PCF API Flexibility
 
 Mixed Ecosystem Communication
 
-- When a PCF application according CX-0136 Use Case PCF 2.2.1 communicates with legacy systems (based on CX-0136 Use Case PCF 2.0.1), it MUST fallback gracefully to the data model version `urn:samm:io.catenax.pcf:7.0.0` and use the /productId enpoints on the PCF API.
+- When a PCF application according CX-0136 Use Case PCF 2.2.2 communicates with legacy systems (based on CX-0136 Use Case PCF 2.0.1), it MUST fallback gracefully to the data model version `urn:samm:io.catenax.pcf:7.0.0` and use the /productId enpoints on the PCF API.
 
 Digital Twins
 
-- Applications MUST attach both PCF submodel of type `io.catenax.pcf:7.0.0` and `io.catenax.pcf:9.0.0 to a Digital Twin
+- Applications MUST be technically able to attach both PCF submodels of type `io.catenax.pcf:7.0.0` and `io.catenax.pcf:9.0.0` to a Digital Twin.
+- Applications MAY attach one or both PCF submodels depending on the interoperability scenario and counterpart compatibility requirements.
 
 :::note
 
