@@ -56,7 +56,8 @@ The ecosystem release process follows a common set of principles regarding relea
 | Ecosystem Release Cycle | 2 Times / Year |
 | Catena-X Planning Cycle | 4 Times / Year |
 | Eclipse Tractus-X Planning & Release Cycle | 4 Times / Year |
-| Artefact Versioning | Calendar Versioning (e.g. 27.09) |
+| Catena-X & Eclipse Tractus-X Release Versioning | Calendar Versioning (e.g. 27.09) |
+| Artefact Versioning | Semantic Versioning (e.g. 2.3.1) |
 | Ecosystem Release Naming | Planet Names (e.g. CX-Sirius) |
 | Grace Period | 1 Year |
 | Upgrade Day for:<br/>- [Core Service Provider A](https://catenax-ev.github.io/docs/next/operating-model/who-roles-in-the-catena-x-ecosystem#core-service-provider-a)<br/>- [Core Service Provider B](https://catenax-ev.github.io/docs/next/operating-model/who-roles-in-the-catena-x-ecosystem#core-service-provider-b)<br/>- [Onboarding Service Provider](https://catenax-ev.github.io/docs/next/operating-model/who-roles-in-the-catena-x-ecosystem#onboarding-service-provider) | Synced Upgrade Day (coordinated by the Catena-X association) |
