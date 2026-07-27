@@ -20,7 +20,7 @@ Both layers have their own release processes and responsibilities. However, they
 
 This page summarizes the most important aspects of Release Management. Further details are available in the Operating Model under [How: Life Cycle Management](/docs/operating-model/how-life-cycle-management).
 
-An overview of upcoming ecosystem releases is available in the [**Timelines**](./timelines.md).
+An overview of upcoming ecosystem releases is available in the [**Timelines**](/timelines).
 
 :::
 
