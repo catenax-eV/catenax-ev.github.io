@@ -506,7 +506,7 @@ The KIT Initial PR marks the point at which KIT creators **prepare and submit an
 
 ---
 
-#### KIT final PR
+#### KIT Final PR
 
 The KIT Final PR marks the **deadline by which the finalized pull request must be submitted**. Only KITs whose final PR is available by this milestone can be **guaranteed to be included in the upcoming release**, as reviewers need sufficient time to complete their review before the release closing.
 
