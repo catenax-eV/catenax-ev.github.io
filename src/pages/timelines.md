@@ -35,7 +35,7 @@ As a major release, Neptune sets the strategic direction and introduces key arch
 
 Neptune therefore serves as the central anchor, establishing the core innovations that are gradually refined, stabilized, and extended throughout the cycle.
 
-[![Timeline for Release 26.06](@site/static/img/timelines/cx-timeline-26.06.png)](@site/static/img//timelines/cx-timeline-26.06.png)
+[![Timeline for Release 26.06](@site/static/img/timelines/cx-timeline-26.06.png)](@site/static/img/timelines/cx-timeline-26.06.png)
 *Timeline for Release 26.06*
 
 [![Timeline for Release 26.09](@site/static/img/timelines/cx-timeline-26.09.png)](@site/static/img/timelines/cx-timeline-26.09.png)
