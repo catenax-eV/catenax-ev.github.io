@@ -255,7 +255,7 @@ It strengthens the ecosystem by stabilizing innovations, improving quality, and 
 
 ---
 
-### Timeline – Phases and Milestones in Detail
+## Timeline – Phases and Milestones in Detail
 
 The following section provides a detailed description of every phase and milestone shown in the release timeline.
 The timeline is structured into three overarching sections - **Preparation**, **Standard Review & TX Development**, and **Release Closing** - and runs in parallel for **Catena-X** and **Eclipse Tractus-X**.
