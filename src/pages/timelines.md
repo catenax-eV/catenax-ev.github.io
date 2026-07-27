@@ -43,7 +43,7 @@ Neptune therefore serves as the central anchor, establishing the core innovation
 
 ---
 
-### Catena-X Proteus, incl. Eclipse Tractus-X Release 26.12 & 27.03
+### Catena-X Proteus, incl. Eclipse Tractus-X Release 27.03
 
 Following the major release CX-Neptune, CX-Proteus is directly connected to its parent release, as Proteus is one of Neptune’s moons.
 This minor release therefore represents continuity and close evolution within the established ecosystem rather than a change of direction.
@@ -68,6 +68,47 @@ For more information see the explained release phases in the chapter [Release Ma
 [![Timeline for Release 27.03](@site/static/img/timelines/cx-timeline-27.03.png)](@site/static/img/timelines/cx-timeline-27.03.png)
 *Timeline for Release 27.03*
 
+<details>
+  <summary>Release 27.03 – Phases & Milestones in detail</summary>
+
+#### Catena-X Release 27.03
+
+| Phase/Milestone     | Title                                       | Start date | End date    |
+|---------------------|---------------------------------------------|------------|-------------|
+| Milestone           | Briefing Release Planning                   | 19.10.2026 |  19.10.2026 |
+| Milestone           | Internal Planning Day                       | 21.10.2026 |  21.10.2026 |
+| Phase               | Expert Feedback                             | 21.10.2026 |  08.11.2026 |
+| Phase               | Quality Assurance Phase                     | 09.11.2026 |  10.01.2027 |
+| Milestone           | Quality Gate 1                              | 23.11.2026 |  23.11.2026 |
+| Phase               | Holidays                                    | 21.12.2026 |  03.01.2027 |
+| Milestone           | Quality Gate 2                              | 08.01.2027 |  08.01.2027 |
+| Phase               | Prep Opt-Out                                | 11.01.2027 |  17.01.2027 |
+| Phase               | Opt-Out Phase for standard candidates       | 18.01.2027 |  04.03.2027 |
+| Milestone           | Town Hall Opt-Out for standard candidates   | 27.01.2027 |  27.01.2027 |
+| Milestone           | Release Finalization                        | 04.03.2027 |  17.03.2027 |
+| Milestone           | Publish Release                             | 17.03.2027 |  17.03.2027 |
+| Milestone           | Recap Release                               | 31.03.2027 |  31.03.2027 |
+
+#### Tractus-X Release 27.03
+
+| Phase/Milestone     | Title                                       | Start date | End date    |
+|---------------------|---------------------------------------------|------------|-------------|
+| Milestone           | Open Planning                               | 11.11.2026 |  11.11.2026 |
+| Milestone           | FOSS - Opt-In/Opt-Out of the test phase     | 14.01.2027 |  14.01.2027 |
+| Milestone           | FOSS - Briefing Testing                     | 28.01.2027 |  28.01.2027 |
+| Milestone           | FOSS - Feature Freeze                       | 04.02.2027 |  04.02.2027 |
+| Milestone           | FOSS - Int Deployment                       | 04.02.2027 |  11.02.2027 |
+| Milestone           | FOSS - Kick-off Testing                     | 11.02.2027 |  11.02.2027 |
+| Phase               | FOSS - Testing                              | 11.02.2027 |  04.03.2027 |
+| Milestone           | KIT - Initial PR                            | 04.02.2027 |  04.02.2027 |
+| Milestone           | KIT - Final PR                              | 11.02.2027 |  11.02.2027 |
+| Milestone           | KIT - KIT Review                            | 04.02.2027 |  04.03.2027 |
+| Milestone           | Release Finalization                        | 04.03.2027 |  17.03.2027 |
+| Milestone           | Publish Release                             | 17.03.2027 |  17.03.2027 |
+| Milestone           | Recap Release                               | 31.03.2027 |  31.03.2027 |
+
+</details>
+
 ---
 
 ### Catena-X Sirius, incl. Eclipse Tractus-X Release 27.06 & 27.09
@@ -79,9 +120,88 @@ As with every major release, it represents an opportunity to introduce new ideas
 [![Timeline for Release 27.06](@site/static/img/timelines/cx-timeline-27.06.png)](@site/static/img/timelines/cx-timeline-27.06.png)
 *Timeline for Release 27.06*
 
+<details>
+  <summary>Release 27.06 – Phases & Milestones in detail</summary>
+
+#### Catena-X Release 27.06
+
+| Phase/Milestone     | Title                                       | Start date | End date    |
+|---------------------|---------------------------------------------|------------|-------------|
+| Milestone           | Briefing Release Planning                   | 01.02.2027 |  01.02.2027 |
+| Milestone           | Internal Planning Day                       | 03.02.2027 |  03.02.2027 |
+| Phase               | Expert Feedback                             | 03.02.2027 |  21.02.2027 |
+| Phase               | Quality Assurance Phase                     | 22.02.2027 |  11.04.2027 |
+| Milestone           | Quality Gate 1                              | 09.03.2027 |  09.03.2027 |
+| Milestone           | Quality Gate 2                              | 09.04.2027 |  09.04.2027 |
+| Phase               | Prep Opt-Out                                | 12.04.2027 |  18.04.2027 |
+| Phase               | Opt-Out Phase for standard candidates       | 19.04.2027 |  03.06.2027 |
+| Milestone           | Town Hall Opt-Out for standard candidates   | 28.04.2027 |  28.04.2027 |
+| Milestone           | Release Finalization                        | 03.06.2027 |  16.06.2027 |
+| Milestone           | Publish Release                             | 16.06.2027 |  16.06.2027 |
+| Milestone           | Recap Release                               | 30.06.2027 |  30.06.2027 |
+
+#### Tractus-X Release 27.06
+
+| Phase/Milestone     | Title                                       | Start date | End date    |
+|---------------------|---------------------------------------------|------------|-------------|
+| Milestone           | Open Planning                               | 24.02.2027 |  24.02.2027 |
+| Milestone           | FOSS - Opt-In/Opt-Out of the test phase     | 15.04.2027 |  15.04.2027 |
+| Milestone           | FOSS - Briefing Testing                     | 29.04.2027 |  29.04.2027 |
+| Milestone           | FOSS - Feature Freeze                       | 05.05.2027 |  05.05.2027 |
+| Milestone           | FOSS - Int Deployment                       | 05.05.2027 |  05.05.2027 |
+| Milestone           | FOSS - Kick-off Testing                     | 13.05.2027 |  13.05.2027 |
+| Phase               | FOSS - Testing                              | 13.05.2027 |  03.06.2027 |
+| Milestone           | KIT - Initial PR                            | 05.05.2027 |  05.05.2027 |
+| Milestone           | KIT - Final PR                              | 12.05.2027 |  12.05.2027 |
+| Milestone           | KIT - KIT Review                            | 05.05.2027 |  03.06.2027 |
+| Milestone           | Release Finalization                        | 03.06.2027 |  16.06.2027 |
+| Milestone           | Publish Release                             | 16.06.2027 |  16.06.2027 |
+| Milestone           | Recap Release                               | 30.06.2027 |  30.06.2027 |
+
+</details>
+
 [![Timeline for Release 27.09](@site/static/img/timelines/cx-timeline-27.09.png)](@site/static/img/timelines/cx-timeline-27.09.png)
 *Timeline for Release 27.09*
 
+<details>
+  <summary>Release 27.09 – Phases & Milestones in detail</summary>
+
+#### Catena-X Release 27.09
+
+| Phase/Milestone     | Title                                       | Start date | End date    |
+|---------------------|---------------------------------------------|------------|-------------|
+| Milestone           | Briefing Release Planning                   | 03.05.2027 |  03.05.2027 |
+| Milestone           | Internal Planning Day                       | 05.05.2027 |  05.05.2027 |
+| Phase               | Expert Feedback                             | 05.05.2027 |  23.05.2027 |
+| Phase               | Quality Assurance Phase                     | 24.05.2027 |  11.07.2027 |
+| Milestone           | Quality Gate 1                              | 07.06.2027 |  07.06.2027 |
+| Milestone           | Quality Gate 2                              | 09.07.2027 |  09.07.2027 |
+| Phase               | Prep Opt-Out                                | 12.07.2027 |  18.07.2027 |
+| Phase               | Opt-Out Phase for standard candidates       | 19.07.2027 |  02.09.2027 |
+| Milestone           | Town Hall Opt-Out for standard candidates   | 28.07.2027 |  28.07.2027 |
+| Milestone           | Release Finalization                        | 02.09.2027 |  15.09.2027 |
+| Milestone           | Publish Release                             | 15.09.2027 |  15.09.2027 |
+| Milestone           | Recap Release                               | 29.09.2027 |  29.09.2027 |
+
+#### Tractus-X Release 27.09
+
+| Phase/Milestone     | Title                                       | Start date | End date    |
+|---------------------|---------------------------------------------|------------|-------------|
+| Milestone           | Open Planning                               | 26.05.2027 |  26.05.2027 |
+| Milestone           | FOSS - Opt-In/Opt-Out of the test phase     | 15.07.2027 |  15.07.2027 |
+| Milestone           | FOSS - Briefing Testing                     | 29.07.2027 |  29.07.2027 |
+| Milestone           | FOSS - Feature Freeze                       | 05.08.2027 |  05.08.2027 |
+| Milestone           | FOSS - Int Deployment                       | 05.08.2027 |  12.08.2027 |
+| Milestone           | FOSS - Kick-off Testing                     | 12.08.2027 |  12.08.2027 |
+| Phase               | FOSS - Testing                              | 12.08.2027 |  02.09.2027 |
+| Milestone           | KIT - Initial PR                            | 05.08.2027 |  05.08.2027 |
+| Milestone           | KIT - Final PR                              | 12.08.2027 |  12.08.2027 |
+| Milestone           | KIT - KIT Review                            | 05.08.2027 |  02.09.2027 |
+| Milestone           | Release Finalization                        | 02.09.2027 |  15.09.2027 |
+| Milestone           | Publish Release                             | 15.09.2027 |  15.09.2027 |
+| Milestone           | Recap Release                               | 29.09.2027 |  29.09.2027 |
+
+</details>
 ---
 
 ### Catena-X Procyon, incl. Eclipse Tractus-X Release 27.12 & 28.03
@@ -92,6 +212,46 @@ It strengthens the ecosystem by stabilizing innovations, improving quality, and 
 
 [![Timeline for Release 27.12](@site/static/img/timelines/cx-timeline-27.12.png)](@site/static/img/timelines/cx-timeline-27.12.png)
 *Timeline for Release 27.12*
+
+<details>
+  <summary>Release 27.12 – Phases & Milestones in detail</summary>
+
+#### Catena-X Release 27.12
+
+| Phase/Milestone     | Title                                       | Start date | End date    |
+|---------------------|---------------------------------------------|------------|-------------|
+| Milestone           | Briefing Release Planning                   | 26.07.2027 |  26.07.2027 |
+| Milestone           | Internal Planning Day                       | 28.07.2027 |  28.07.2027 |
+| Phase               | Expert Feedback                             | 28.07.2027 |  15.08.2027 |
+| Phase               | Quality Assurance Phase                     | 16.08.2027 |  03.10.2027 |
+| Milestone           | Quality Gate 1                              | 30.08.2027 |  30.08.2027 |
+| Milestone           | Quality Gate 2                              | 01.10.2027 |  01.10.2027 |
+| Phase               | Prep Opt-Out                                | 04.10.2027 |  10.10.2027 |
+| Phase               | Opt-Out Phase for standard candidates       | 11.10.2027 |  25.11.2027 |
+| Milestone           | Town Hall Opt-Out for standard candidates   | 20.10.2027 |  20.10.2027 |
+| Milestone           | Release Finalization                        | 25.11.2027 |  08.12.2027 |
+| Milestone           | Publish Release                             | 08.12.2027 |  08.12.2027 |
+| Milestone           | Recap Release                               | 15.12.2027 |  15.12.2027 |
+
+#### Tractus-X Release 27.12
+
+| Phase/Milestone     | Title                                       | Start date | End date    |
+|---------------------|---------------------------------------------|------------|-------------|
+| Milestone           | Open Planning                               | 18.08.2027 |  18.08.2027 |
+| Milestone           | FOSS - Opt-In/Opt-Out of the test phase     | 07.10.2027 |  07.10.2027 |
+| Milestone           | FOSS - Briefing Testing                     | 21.10.2027 |  21.10.2027 |
+| Milestone           | FOSS - Feature Freeze                       | 28.10.2027 |  28.10.2027 |
+| Milestone           | FOSS - Int Deployment                       | 28.10.2027 |  04.11.2027 |
+| Milestone           | FOSS - Kick-off Testing                     | 04.11.2027 |  04.11.2027 |
+| Phase               | FOSS - Testing                              | 04.11.2027 |  25.11.2027 |
+| Milestone           | KIT - Initial PR                            | 28.10.2027 |  28.10.2027 |
+| Milestone           | KIT - Final PR                              | 04.11.2027 |  04.11.2027 |
+| Milestone           | KIT - KIT Review                            | 28.10.2027 |  25.11.2027 |
+| Milestone           | Release Finalization                        | 25.11.2027 |  08.12.2027 |
+| Milestone           | Publish Release                             | 08.12.2027 |  08.12.2027 |
+| Milestone           | Recap Release                               | 15.12.2027 |  15.12.2027 |
+
+</details>
 
 ---
 
