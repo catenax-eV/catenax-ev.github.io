@@ -1,7 +1,7 @@
 # Release Timelines
 
 Welcome to the **Release Timelines** overview page.
-Here you can always find the **most up-to-date release schedules** for **Catena-X ecosystem release**.
+Here you can always find the **most up-to-date release schedules** for **Catena-X ecosystem releases**.
 
 For a detailed explanation of the overall process and the release cycle, please refer to the [Release management](/release-management) section.
 
