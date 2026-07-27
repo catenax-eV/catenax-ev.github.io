@@ -61,7 +61,7 @@ To ensure a coordinated and high-quality release, **a dedicated submission windo
 
 This updated process provides greater flexibility for standard development while maintaining a structured and transparent validation process, ensuring that all published standards meet the expected quality and interoperability requirements of the Catena-X ecosystem.
 
-For more information see the explained release phases in the chapter [Release Management Phases](#release-management--phases).
+For more information, see the explained release phases in the chapter [Timeline – Phases and Milestones in Detail](#timeline--phases-and-milestones-in-detail).
 
 :::
 
