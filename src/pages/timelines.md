@@ -308,7 +308,7 @@ After the Internal Planning Day, **no new standards may be added** to the releas
 
 During the Expert Feedback Phase, the responsible **Expert Group** takes the lead and uses the time to collect and incorporate final feedback on the already completed standard. Key responsibilities include:
 
-- Checking all **dependencies** of the standard (It is recommended to use the [dependency graph](https://catenax-ev.github.io/standards-graph) here as well).
+- Checking all **dependencies** of the standard (it is recommended to use the [dependency graph](/standards-graph) here as well).
 - Addressing **concerns and input** from other Expert Groups and stakeholders.
 - Pushing **content changes** into the standard based on the received feedback.
 
