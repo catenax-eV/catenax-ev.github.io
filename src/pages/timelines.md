@@ -362,7 +362,7 @@ At the conclusion of Quality Gate 1, all Expert Groups are **formally notified**
 
 ---
 
-#### Quality Gate 2
+##### Quality Gate 2
 
 The second Quality Gate ("Quality Gate 2") ensures that only standard candidates that correspond to the quality expectations of Catena-X are being released. During Quality Gate 2, the **maturity of the standard is verified** and — provided a green light is given — a **technical recommendation for its release** is made to the Executive Board.
 
