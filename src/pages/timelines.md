@@ -333,7 +333,7 @@ The Standard Application Window is the overarching timeframe covering all formal
 
 #### Quality Assurance Phase
 
-The Quality Assurance Phase represents the **central review and validation stage** of the Catena-X release cycle. With the start of this phase, the standard owners formally hand over their completed standards to the **TC4S (Technical Committee for Standardization)**, which assumes coordination of the entire review process up to the final release decision.
+The Quality Assurance Phase represents the **central review and validation stage** of the Catena-X release cycle. With the start of this phase, the standard owners formally hand over their completed standards drafts to the **TC4S (Technical Committee for Standardization)**, which assumes coordination of the entire review process up to the final release decision.
 
 From this point on, all standard candidates enter a **structured review and validation process**. Feedback can still be incorporated, but only in **close alignment with TC4S and the assigned reviewing experts**.
 
