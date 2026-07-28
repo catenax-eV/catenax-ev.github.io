@@ -351,7 +351,7 @@ With the start of the Quality Assurance Phase, all findings must be resolved bef
 
 ##### Quality Gate 1
 
-**Quality Gate 1** marks the first formal checkpoint within the Quality Assurance Phase. Its purpose is to ensure that only standard candidates aligned with the **values, goals, and quality principles** of the Catena-X data ecosystem proceed further in the release process. Each standard is systematically evaluated against defined criteria, focusing on **completeness, relevance, redundancy, and conformance**.
+**Quality Gate 1** marks the first formal checkpoint within the Quality Assurance Phase. Its purpose is to ensure that only standard drafts aligned with the **values, goals, and quality requirements** of the Catena-X data ecosystem proceed further in the release process. Each standard is systematically evaluated against defined criteria, focusing on **completeness, relevance, redundancy, and conformance**.
 
 Two types of evaluation criteria apply:
 
