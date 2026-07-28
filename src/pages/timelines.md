@@ -53,7 +53,7 @@ In this sense, CX-Proteus acts as a natural extension of its major release, orbi
 :::info
 
 Starting with the **Catena-X 27.03 release**, the standards release process will follow a more flexible and continuous approach.
-As part of the introduction of this new release process with the goal of achieving **operational excellence**, the **26.12 release was skipped**. As a result, **Proteus consists of only one release part, 27.03**.
+As part of the introduction of this new release process with our commitment to further elevate **operational excellence**, the **26.12 release was skipped**. As a result, **Proteus consists of only one release part, 27.03**.
 
 Instead of aligning standard development with fixed release phases, **standards can now be developed continuously throughout the release cycle**. This allows Expert Groups and contributors to work independently of predefined development windows while fostering ongoing collaboration and iterative improvements.
 
