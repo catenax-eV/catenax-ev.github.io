@@ -60,7 +60,7 @@ The ecosystem release process follows a common set of principles regarding relea
 | Artefact Versioning | Semantic Versioning (e.g. 2.3.1) |
 | Ecosystem Release Naming | Planet Names (e.g. CX-Sirius) |
 | Grace Period | 1 Year |
-| Upgrade Day for:<br/>- [Core Service Provider A](https://catenax-ev.github.io/docs/next/operating-model/who-roles-in-the-catena-x-ecosystem#core-service-provider-a)<br/>- [Core Service Provider B](https://catenax-ev.github.io/docs/next/operating-model/who-roles-in-the-catena-x-ecosystem#core-service-provider-b)<br/>- [Onboarding Service Provider](https://catenax-ev.github.io/docs/next/operating-model/who-roles-in-the-catena-x-ecosystem#onboarding-service-provider) | Synced Upgrade Day (coordinated by the Catena-X association) |
+| Upgrade Day for:<br/>- [Core Service Provider A](/docs/next/operating-model/who-roles-in-the-catena-x-ecosystem#core-service-provider-a)<br/>- [Core Service Provider B](/docs/next/operating-model/who-roles-in-the-catena-x-ecosystem#core-service-provider-b)<br/>- [Onboarding Service Provider](/docs/next/operating-model/who-roles-in-the-catena-x-ecosystem#onboarding-service-provider) | Synced Upgrade Day (coordinated by the Catena-X association) |
 | Backward Compatibility | Commitment by the Eclipse Tractus-X Project |
 
 ## Lifecycle States
