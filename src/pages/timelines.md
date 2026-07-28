@@ -7,7 +7,7 @@ For a detailed explanation of the overall process and the release cycle, please 
 
 ## Overview of further upcoming releases
 
-The following overview provides a high-level roadmap of the planned Catena-X ecosystem releases. Each ecosystem release consists of two release cycles.
+The following overview provides a high-level roadmap of the planned Catena-X ecosystem releases. Each ecosystem release typically consists of two release parts.
 The overview illustrates the continuous evolution of the ecosystem through alternating major and minor releases, ensuring a balanced approach between innovation and consolidation.
 Each major release establishes the foundation for new developments and strategic enhancements, while the subsequent minor release focuses on refinement, stabilization, and the continuous improvement of the introduced capabilities. This predictable release cadence supports transparent planning and enables all participating stakeholders to align their activities and contributions accordingly.
 
