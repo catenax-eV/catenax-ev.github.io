@@ -300,7 +300,7 @@ Prerequisite for participation is that each standard candidate is **final and re
 
 After the Internal Planning Day, **no new standards may be added** to the release. From this point on, only feedback on already-presented standards can be incorporated. Standards that were not presented during the Internal Planning Day will **not be part of the release**.
 
-:::  
+:::
 
 ---
 
