@@ -33,7 +33,7 @@ Each ecosystem release combines:
 - Normative artefacts published by the Catena-X association, such as standards and certification requirements.
 - Corresponding technical assets provided by the Eclipse Tractus-X community, such as KITs, semantic models and reference implementations.
 
-Although both organizations manage their own release processes, the ecosystem release ensures that these artefacts are aligned and can be adopted together by ecosystem participants.
+Although the Catena-X Association and the Eclipse Tractus-X Project manage their own release processes, the ecosystem release ensures that these artefacts are aligned and can be adopted together by ecosystem participants.
 
 ### Support Dates
 
