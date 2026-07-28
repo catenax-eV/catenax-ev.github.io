@@ -339,7 +339,7 @@ From this point on, all standard drafts enter a **structured review and validati
 
 The objective of this phase is to ensure that every standard candidate is **complete, consistent, interoperable, and aligned with the quality expectations** of the Catena-X ecosystem. To achieve this, TC4S orchestrates a structured review involving the responsible committees and domain experts, each contributing their specific expertise to the evaluation.
 
-At the end of the phase, the **overarching committee formally confirms** that the standard fulfills the expectations defined by the responsible Expert Group and is ready to proceed to the next stage of the release process.
+At the end of the phase, the **overarching committee formally confirms** that the standard drafts fulfills the expectations defined by the responsible Expert Group and is ready to proceed to the next stage of the release process as standard candidates.
 
 :::info
 
