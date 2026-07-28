@@ -343,7 +343,7 @@ At the end of the phase, the **overarching committee formally confirms** that th
 
 :::info
 
-With the start of the Quality Assurance Phase, all review feedback becomes **normative**. Mandatory findings must be resolved before a standard can proceed. Standard candidates with unresolved mandatory findings are considered **not release-ready** and will be excluded from the release.
+With the start of the Quality Assurance Phase, all findings must be resolved before a standard can proceed. Standard drafts with unresolved mandatory findings can not become standard candidates and are considered as **not release-ready**, which will be excluded from the release.
 
 :::  
 
