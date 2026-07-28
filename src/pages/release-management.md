@@ -37,15 +37,15 @@ Although the Catena-X Association and the Eclipse Tractus-X Project manage their
 
 ### Support Dates
 
-[![Support Dates](@site/static/img/support-dates.jpg)](@site/static/img/support-dates.jpg)
+[![Support Dates](@site/static/img/support-dates.png)](@site/static/img/support-dates.png)
 
 | Release    | Publication Date (Normative Documentes e.g. Standards and Certification Available) | Go-Live Date (Standards Become Effective) |
-|------------|----------------------------------------------------------|-------------------------------------------|
-| CX-Jupiter | 05.08.2024                                               | 23.10.2024                                |
-| CX-Io      | 17.03.2025                                               | 10.06.2025                                |
-| CX-Saturn  | 08.09.2025                                               | 25.11.2025                                |
-| CX-Titan   | 18.03.2026                                               | 09.06.2026                                |
-| CX-Neptune | 16.09.2026                                               | TBD                                       |
+| ---------- | ---------------------------------------------------------------------------------- | ----------------------------------------- |
+| CX-Saturn  | 08.09.2025                                                                         | 25.11.2025                                |
+| CX-Titan   | 18.03.2026                                                                         | 09.06.2026                                |
+| CX-Neptune | 16.09.2026                                                                         | ~ End of November                         |
+| CX-Proteus | 17.03.2027                                                                         | ~ End of June                             |
+| CX-Sirius  | 15.09.2027                                                                         | ~ End of Novemer                          |
 
 ## Basic Release Characteristics
 
