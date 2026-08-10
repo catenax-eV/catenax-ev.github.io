@@ -46,6 +46,7 @@ pagination_next: null
 | Philippines | PH |
 | Poland | PL |
 | Portugal | PT |
+| Republic of Moldova | MD |
 | Romania | RO |
 | Serbia | RS |
 | Singapore | SG |
