@@ -46,7 +46,6 @@ pagination_next: null
 | Philippines | PH |
 | Poland | PL |
 | Portugal | PT |
-| Republic of Moldova | MD |
 | Romania | RO |
 | Serbia | RS |
 | Singapore | SG |
@@ -107,6 +106,7 @@ pagination_next: null
 | Norway | NO |
 | Oman | OM |
 | Qatar | QA |
+| Republic of Moldova | MD |
 | Rwanda | RW |
 | Saint Lucia | LC |
 | Saint Vincent and the Grenadines | VC |
