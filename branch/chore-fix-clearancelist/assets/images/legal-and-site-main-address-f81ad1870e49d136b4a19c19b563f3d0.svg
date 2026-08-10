@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="371.875px" preserveAspectRatio="none" style="width:452px;height:371px;background:#FFFFFF;" version="1.1" viewBox="0 0 452 371" width="452.0833px" zoomAndPan="magnify"><defs/><g><!--MD5=[59dd4d8cfe12a5d1555a9a8758ab0193]
+cluster Business Parter (Legal and Site Main Address)--><g id="cluster_Business Parter (Legal and Site Main Address)"><path d="M4.4271,3.125 L174.2188,3.125 A1.9531,1.9531 0 0 1 175.5208,4.4271 L179.1667,15.4215 L447.1354,15.4215 A1.3021,1.3021 0 0 1 448.4375,16.7236 L448.4375,366.9271 A1.3021,1.3021 0 0 1 447.1354,368.2292 L4.4271,368.2292 A1.3021,1.3021 0 0 1 3.125,366.9271 L3.125,4.4271 A1.3021,1.3021 0 0 1 4.4271,3.125 " style="stroke:#000000;stroke-width:0.78125;fill:none;"/><line style="stroke:#000000;stroke-width:0.78125;fill:none;" x1="3.125" x2="179.1667" y1="15.4215" y2="15.4215"/><text fill="#000000" font-family="sans-serif" font-size="7.2917" font-weight="bold" lengthAdjust="spacing" textLength="169.2708" x="5.2083" y="11.736">Business Parter (Legal and Site Main Address)</text></g><g id="elem_LegalEntity"><rect fill="#F1F1F1" height="33.7646" style="stroke:#181818;stroke-width:0.2604166666666667;" width="144.7917" x="213.5417" y="63.0208"/><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="36.4583" x="267.7083" y="71.6319">LegalEntity</text><line style="stroke:#181818;stroke-width:0.2604166666666667;" x1="214.0625" x2="357.8125" y1="74.2757" y2="74.2757"/><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="138.5417" x="216.6667" y="83.9284">LegalName = "Schaeffler Group USA INC."</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="50" x="216.6667" y="93.1">ShortName = ""</text></g><g id="elem_Address1"><rect fill="#F1F1F1" height="70.4508" style="stroke:#181818;stroke-width:0.2604166666666667;" width="100.5208" x="94.5313" y="289.5833"/><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="31.25" x="129.1667" y="298.1944">Address1</text><line style="stroke:#181818;stroke-width:0.2604166666666667;" x1="95.0521" x2="194.5313" y1="300.8382" y2="300.8382"/><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="64.5833" x="97.6563" y="310.4909">Name = "Fort Mill 1"</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="48.9583" x="97.6563" y="319.6625">Country = "US"</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="52.0833" x="97.6563" y="328.834">City = "Fort Mill"</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="72.3958" x="97.6563" y="338.0056">PostalCode = "88046"</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="94.2708" x="97.6563" y="347.1771">Street = "Springhill Farm Rd"</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="72.3958" x="97.6563" y="356.3487">HouseNumber = "308"</text></g><g id="elem_Address2"><rect fill="#F1F1F1" height="70.4508" style="stroke:#181818;stroke-width:0.2604166666666667;" width="100.5208" x="260.6771" y="178.6458"/><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="31.25" x="295.3125" y="187.2569">Address2</text><line style="stroke:#181818;stroke-width:0.2604166666666667;" x1="261.1979" x2="360.6771" y1="189.9007" y2="189.9007"/><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="64.5833" x="263.8021" y="199.5534">Name = "Fort Mill 2"</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="48.9583" x="263.8021" y="208.725">Country = "US"</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="52.0833" x="263.8021" y="217.8965">City = "Fort Mill"</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="72.3958" x="263.8021" y="227.0681">PostalCode = "88046"</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="94.2708" x="263.8021" y="236.2396">Street = "Springhill Farm Rd"</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="72.3958" x="263.8021" y="245.4112">HouseNumber = "308"</text></g><g id="elem_Site1"><rect fill="#F1F1F1" height="24.5931" style="stroke:#181818;stroke-width:0.2604166666666667;" width="154.6875" x="67.9688" y="201.5625"/><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="16.6667" x="136.9792" y="210.1735">Site1</text><line style="stroke:#181818;stroke-width:0.2604166666666667;" x1="68.4896" x2="222.1354" y1="212.8174" y2="212.8174"/><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="148.4375" x="71.0938" y="222.4701">Name = "Schaeffler Group USA INC. Fort Mill"</text></g><g id="elem_BusinessPartner"><rect fill="#F1F1F1" height="116.3086" style="stroke:#181818;stroke-width:0.2604166666666667;" width="150" x="26.5625" y="21.875"/><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="54.1667" x="74.4792" y="30.486">BusinessPartner</text><line style="stroke:#181818;stroke-width:0.2604166666666667;" x1="27.0833" x2="176.0417" y1="33.1299" y2="33.1299"/><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="143.75" x="29.6875" y="42.7826">AddressType = "LegalAndSiteMainAddress"</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="46.3542" x="29.6875" y="51.9541">NameParts = [</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="95.3125" x="29.6875" y="61.1257">"Schaeffler Group USA INC.",</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="39.5833" x="29.6875" y="70.2972">"Fort Mill 1",</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="7.2917" x="29.6875" y="79.4688">"",</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="7.2917" x="29.6875" y="88.6403">""]</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="48.9583" x="29.6875" y="97.8119">Country = "US"</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="52.0833" x="29.6875" y="106.9834">City = "Fort Mill"</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="72.3958" x="29.6875" y="116.155">PostalCode = "88046"</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="94.2708" x="29.6875" y="125.3265">Street = "Springhill Farm Rd"</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="72.3958" x="29.6875" y="134.4981">HouseNumber = "308"</text></g><!--MD5=[96986fab4dec4c1247d27bbda68ef4ba]
+link BusinessPartner to LegalEntity--><g id="link_BusinessPartner_LegalEntity"><path codeLine="46" d="M176.6875,79.9479 C187.9427,79.9479 199.5469,79.9479 210.8021,79.9479 " fill="none" id="BusinessPartner-to-LegalEntity" style="stroke:#181818;stroke-width:0.5208333333333334;"/><polygon fill="#181818" points="213.5,79.9479,208.8125,77.8646,210.8958,79.9479,208.8125,82.0313,213.5,79.9479" style="stroke:#181818;stroke-width:0.5208333333333334;"/><text fill="#000000" font-family="sans-serif" font-size="6.7708" lengthAdjust="spacing" textLength="17.7083" x="186.1979" y="76.56">BPNL</text></g><!--MD5=[82ff4865d7af99c821a8c3d8b852856b]
+link BusinessPartner to Site1--><g id="link_BusinessPartner_Site1"><path codeLine="47" d="M120.5625,138.1406 C127.901,160.4167 135.6771,184.026 140.5104,198.7083 " fill="none" id="BusinessPartner-to-Site1" style="stroke:#181818;stroke-width:0.5208333333333334;"/><polygon fill="#181818" points="141.3802,201.3438,141.8881,196.2393,140.5634,198.871,137.9317,197.5463,141.3802,201.3438" style="stroke:#181818;stroke-width:0.5208333333333334;"/><text fill="#000000" font-family="sans-serif" font-size="6.7708" lengthAdjust="spacing" textLength="18.75" x="128.6458" y="161.1954">BPNS</text></g><!--MD5=[92dc4d29b64e57672bf32c0cff69c62d]
+reverse link Address1 to BusinessPartner--><g id="link_Address1_BusinessPartner"><path codeLine="48" d="M91.9479,300.2083 C71.5521,287.9896 50.4219,270.9896 39.0625,248.9583 C20.7604,213.4635 36.3854,171.3438 56.5833,138.0938 " fill="none" id="Address1-backto-BusinessPartner" style="stroke:#181818;stroke-width:0.5208333333333334;"/><polygon fill="#181818" points="94.4323,301.6719,91.4519,297.4969,92.1888,300.3496,89.3362,301.0865,94.4323,301.6719" style="stroke:#181818;stroke-width:0.5208333333333334;"/><text fill="#000000" font-family="sans-serif" font-size="6.7708" lengthAdjust="spacing" textLength="18.75" x="39.5833" y="216.6641">BPNA</text></g><!--MD5=[af6cf9e63aa1bfd07816bd3967d9cf63]
+link LegalEntity to Address1--><g id="link_LegalEntity_Address1"><path codeLine="49" d="M305.7292,96.9948 C340.8646,128.3385 407.125,197.8646 370.3125,248.9583 C331.2188,303.2135 251.2813,318.9427 197.8542,323.1719 " fill="none" id="LegalEntity-to-Address1" style="stroke:#181818;stroke-width:0.5208333333333334;stroke-dasharray:7.0,7.0;"/><polygon fill="#181818" points="195.1719,323.3802,200.0061,325.0958,197.7683,323.1793,199.6847,320.9415,195.1719,323.3802" style="stroke:#181818;stroke-width:0.5208333333333334;"/><text fill="#000000" font-family="sans-serif" font-size="6.7708" lengthAdjust="spacing" textLength="41.1458" x="381.25" y="216.6641">LegalAddress</text></g><!--MD5=[26ffce5ac1915fbef09705709b232257]
+link Site1 to Address1--><g id="link_Site1_Address1"><path codeLine="50" d="M132.5573,226.1563 C123.4167,235.5625 111.8594,249.5885 106.7708,264.5833 C104.1667,272.2604 105.4323,279.9479 108.75,287.125 " fill="none" id="Site1-to-Address1" style="stroke:#181818;stroke-width:0.5208333333333334;stroke-dasharray:7.0,7.0;"/><polygon fill="#181818" points="109.9531,289.5365,109.7268,284.4118,108.7915,287.2057,105.9976,286.2705,109.9531,289.5365" style="stroke:#181818;stroke-width:0.5208333333333334;"/><text fill="#000000" font-family="sans-serif" font-size="6.7708" lengthAdjust="spacing" textLength="51.5625" x="107.2917" y="272.1329">SiteMainAddress</text></g><!--MD5=[b33bd315769ee9eb70b330a4b524489e]
+reverse link Site1 to Address1--><g id="link_Site1_Address1"><path codeLine="51" d="M152.7135,228.5104 C158.0885,240.4792 164.0104,258.1406 161.4583,273.9583 C160.6302,279.0885 159.3542,284.3958 157.875,289.5625 " fill="none" id="Site1-backto-Address1" style="stroke:#181818;stroke-width:0.5208333333333334;"/><polygon fill="#181818" points="151.5729,226.0469,151.6487,231.1759,152.6656,228.4107,155.4309,229.4276,151.5729,226.0469" style="stroke:#181818;stroke-width:0.5208333333333334;"/><text fill="#000000" font-family="sans-serif" font-size="6.7708" lengthAdjust="spacing" textLength="18.75" x="162.5" y="272.1329">BPNS</text></g><!--MD5=[983a2c815f6bc8b5b7bc4b4a8fbe0949]
+reverse link Site1 to Address2--><g id="link_Site1_Address2"><path codeLine="52" d="M225.4948,213.8021 C237.4063,213.8021 249.3906,213.8021 260.4635,213.8021 " fill="none" id="Site1-backto-Address2" style="stroke:#181818;stroke-width:0.5208333333333334;"/><polygon fill="#181818" points="222.7917,213.8021,227.4792,215.8854,225.3958,213.8021,227.4792,211.7188,222.7917,213.8021" style="stroke:#181818;stroke-width:0.5208333333333334;"/><text fill="#000000" font-family="sans-serif" font-size="6.7708" lengthAdjust="spacing" textLength="18.75" x="232.2917" y="210.4141">BPNS</text></g><!--MD5=[bd0785ec780e50522d64fd1bcfc14960]
+reverse link LegalEntity to Site1--><g id="link_LegalEntity_Site1"><path codeLine="53" d="M266.4896,98.8385 C237.1771,126.5208 182.5104,178.151 157.8958,201.401 " fill="none" id="LegalEntity-backto-Site1" style="stroke:#181818;stroke-width:0.5208333333333334;"/><polygon fill="#181818" points="268.5521,96.8854,263.7108,98.581,266.6557,98.6702,266.5665,101.6151,268.5521,96.8854" style="stroke:#181818;stroke-width:0.5208333333333334;"/><text fill="#000000" font-family="sans-serif" font-size="6.7708" lengthAdjust="spacing" textLength="17.7083" x="207.2917" y="161.1954">BPNL</text></g><!--MD5=[03d5354505e895d1f3924a9f22ac079c]
+@startuml legal-and-site-main-address
+
+skinparam dpi 50
+
+package "Business Parter (Legal and Site Main Address)" {
+  object LegalEntity {
+    LegalName = "Schaeffler Group USA INC."
+    ShortName = ""
+  }
+
+  object Address1 {
+    Name = "Fort Mill 1"
+    Country = "US"
+    City = "Fort Mill"
+    PostalCode = "88046"
+    Street = "Springhill Farm Rd"
+    HouseNumber = "308"
+  }
+
+  object Address2 {
+    Name = "Fort Mill 2"
+    Country = "US"
+    City = "Fort Mill"
+    PostalCode = "88046"
+    Street = "Springhill Farm Rd"
+    HouseNumber = "308"
+  }
+
+  object Site1 {
+    Name = "Schaeffler Group USA INC. Fort Mill"
+  }
+
+  object BusinessPartner {
+    AddressType = "LegalAndSiteMainAddress"
+    NameParts = [
+      "Schaeffler Group USA INC.", 
+      "Fort Mill 1", 
+      "", 
+      ""]
+    Country = "US"
+    City = "Fort Mill"
+    PostalCode = "88046"
+    Street = "Springhill Farm Rd"
+    HouseNumber = "308"
+  }
+
+  BusinessPartner -r-> LegalEntity : BPNL
+  BusinessPartner -r-> Site1 : BPNS
+  BusinessPartner -u-> Address1 : BPNA
+  LegalEntity .d.> Address1 : LegalAddress
+  Site1 .d.> Address1 : SiteMainAddress
+  Address1 -u-> Site1 : BPNS
+  Address2 -l-> Site1 : BPNS
+  Site1 -u-> LegalEntity : BPNL
+}
+
+@enduml
+
+PlantUML version 1.2022.5(Sat Apr 30 12:55:52 CEST 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: Cp1252
+Language: en
+Country: GB
+--></g></svg>
