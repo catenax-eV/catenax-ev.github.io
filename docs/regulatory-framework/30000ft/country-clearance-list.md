@@ -40,6 +40,7 @@ pagination_next: null
 | Luxembourg | LU |
 | Malaysia | MY |
 | Malta | MT |
+| Marocco | MA |
 | Mexico | MX |
 | Netherlands | NL |
 | Norway | NOK |
