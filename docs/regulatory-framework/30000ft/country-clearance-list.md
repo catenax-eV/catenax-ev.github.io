@@ -44,6 +44,7 @@ pagination_next: null
 | Mexico | MX |
 | Netherlands | NL |
 | Norway | NOK |
+| Paraguay | PY |
 | Philippines | PH |
 | Poland | PL |
 | Portugal | PT |
