@@ -39,13 +39,13 @@ Although the Catena-X Association and the Eclipse Tractus-X Project manage their
 
 [![Support Dates](@site/static/img/support-dates.png)](@site/static/img/support-dates.png)
 
-| Release    | Publication Date (Normative Documentes e.g. Standards and Certification Available) | Go-Live Date (Standards Become Effective) |
-| ---------- | ---------------------------------------------------------------------------------- | ----------------------------------------- |
-| CX-Saturn  | 08.09.2025                                                                         | 25.11.2025                                |
-| CX-Titan   | 18.03.2026                                                                         | 09.06.2026                                |
-| CX-Neptune | 16.09.2026                                                                         | ~ End of November                         |
-| CX-Proteus | 17.03.2027                                                                         | ~ End of June                             |
-| CX-Sirius  | 15.09.2027                                                                         | ~ End of Novemer                          |
+| Release    | Publication Date (Normative Documentes e.g. Standards and Certification Available) | Go-Live Date (Standards Become Effective) | Deprecation Date |
+| ---------- | ---------------------------------------------------------------------------------- | ----------------------------------------- | ---------------- |
+| CX-Saturn  | 08.09.2025                                                                         | 25.11.2025                                | ~ November 2027  |
+| CX-Titan   | 18.03.2026                                                                         | 09.06.2026                                | ~ November 2027  |
+| CX-Neptune | 16.09.2026                                                                         | 24.11.2026                                | ~ November 2028  |
+| CX-Proteus | 17.03.2027                                                                         | ~ End of June                             | ~ November 2028  |
+| CX-Sirius  | 15.09.2027                                                                         | ~ End of November                         | ~ November 2029  |
 
 ## Basic Release Characteristics
 
