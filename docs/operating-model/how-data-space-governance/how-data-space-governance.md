@@ -47,7 +47,7 @@ For clarification: All solutions that exchange data within the Catena-X data spa
 
 The *Catena-X Conformity Assessment Handbook* provides a detailed description of how Catena-X conducts conformity assessment through the Conformity Assessment Bodies. The most current version can always be found on the [Catena-X Library](https://catena-x.net/ecosystem/certification/).
 
-Prerequisite of any certification is the registration / onboarding of the participant who wants to get certified. The registration (see Chapter [Registration](./../how-data-space-operations/how-data-space-operations.md#registration)) is ideally done before any certification request or latest started with the start of the certification request.
+Participants seeking certification may undergo the certification process independently of registration and onboarding activities. When applying for a role that requires certification, the relevant certificates must be provided during onboarding (see [CX-0006 Registration and Initial Onboarding](https://catenax-ev.github.io/docs/next/standards/CX-0006-RegistrationAndInitialOnboarding)). In most cases, these certifications have already been obtained before onboarding.
 
 ### Certification framework
 
