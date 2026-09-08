@@ -11,6 +11,35 @@ As a major release, CX-Neptune sets the strategic direction and introduces key a
 
 Neptune therefore serves as the central anchor, establishing the core innovations that are gradually refined, stabilized, and extended throughout the cycle.
 
+## Catena-X Operating Model
+
+With the release of version 3.1.2 of the Operating Model, the Who and How chapters have been updated. The release introduces consolidated guidance on role prerequisites and aligns the onboarding process description with the binding standard CX-0006.
+
+### Who – Roles in the Catena-X Ecosystem
+
+- New summary table outlining the prerequisites for obtaining roles in the Catena-X dataspace, providing a single consolidated reference for all role types.
+- Updated the description of the Onboarding Service Provider (OSP) role for greater clarity and added information on the nomination for this role.
+
+### How – Data Space Operations
+
+- Revised the onboarding process section to improve clarity and to reference standard CX-0006 as the binding source.
+
+### Relevance for Operating Model Users
+
+| Audience                | Benefits                                                                    |
+|-------------------------|-----------------------------------------------------------------------------|
+| Role applicants         | Faster identification of the prerequisites for a specific ecosystem role    |
+| OSP candidates          | Clearer role definition and transparency on the nomination process          |
+| Onboarding stakeholders | Consistent process description with CX-0006 as the single binding reference |
+
+:::info
+
+All changes are documentation-related. No changes to role definitions with contractual impact and no breaking changes are included in this release.
+
+:::
+
+---
+
 ## Catena-X Standards
 
 With the CX-Neptune release, several Catena-X standards have been updated, and new standards have been introduced across multiple domains. These updates refine existing specifications, address evolving requirements, and extend the Catena-X ecosystem with new use cases and capabilities.
@@ -119,12 +148,6 @@ The PCF Rulebook is not a standard but the methodology behind the numbers: it de
 | Rulebook                                                              | Status  | Value                                                                                                                                               |
 |-----------------------------------------------------------------------|---------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
 | [CX-NFR-PCF-Rulebook](../../docs/rulebooks/CX-NFR-PCF/CX-NFR-PCF.mdx) | Updated | Makes carbon-footprint calculations more consistent between companies, so the results are easier to compare, trust and use across the supply chain. |
-
----
-
-## Catena-X Operating Model
-
-With the release of version 3.1.2, the Operating Model introduces improvements to clarity and consistency across governance, roles, lifecycle management, and service descriptions. The update mainly includes minor refinements, such as clearer terminology, alignment with normative specification language, and the removal of outdated or misleading references
 
 ---
 
