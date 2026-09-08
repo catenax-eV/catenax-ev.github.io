@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="305.7292px" preserveAspectRatio="none" style="width:252px;height:305px;background:#FFFFFF;" version="1.1" viewBox="0 0 252 305" width="252.6042px" zoomAndPan="magnify"><defs/><g><!--MD5=[5d76c9ef66a4f3872733f94f8c345c9e]
+cluster Legal Form and References--><g id="cluster_Legal Form and References"><path d="M4.4271,3.125 L105.9896,3.125 A1.9531,1.9531 0 0 1 107.2917,4.4271 L110.9375,15.4215 L247.6563,15.4215 A1.3021,1.3021 0 0 1 248.9583,16.7236 L248.9583,300.7813 A1.3021,1.3021 0 0 1 247.6563,302.0833 L4.4271,302.0833 A1.3021,1.3021 0 0 1 3.125,300.7813 L3.125,4.4271 A1.3021,1.3021 0 0 1 4.4271,3.125 " style="stroke:#000000;stroke-width:0.78125;fill:none;"/><line style="stroke:#000000;stroke-width:0.78125;fill:none;" x1="3.125" x2="110.9375" y1="15.4215" y2="15.4215"/><text fill="#000000" font-family="sans-serif" font-size="7.2917" font-weight="bold" lengthAdjust="spacing" textLength="101.0417" x="5.2083" y="11.736">Legal Form and References</text></g><!--MD5=[abbfa58912a05551ee5352e8a846a71c]
+class LegalForm--><g id="elem_LegalForm"><rect codeLine="8" fill="#F1F1F1" height="75.8626" id="LegalForm" rx="1.3021" ry="1.3021" style="stroke:#181818;stroke-width:0.2604166666666667;" width="96.875" x="49.4792" y="21.875"/><ellipse cx="77.9948" cy="30.2083" fill="#ADD1B2" rx="5.7292" ry="5.7292" style="stroke:#181818;stroke-width:0.5208333333333334;"/><path d="M77.4007,30.6234 L77.4007,31.9255 L79.6549,31.9255 L79.6549,31.4453 Q79.6549,31.1279 79.777,30.9896 Q79.9072,30.8512 80.1025,30.8512 Q80.2979,30.8512 80.4199,30.9896 Q80.542,31.1279 80.542,31.4453 L80.542,32.8125 L76.3753,32.8125 Q76.0498,32.8125 75.9115,32.6904 Q75.7813,32.5684 75.7813,32.3649 Q75.7813,32.1696 75.9196,32.0475 Q76.0579,31.9255 76.3753,31.9255 L76.5137,31.9255 L76.5137,28.4587 L76.3753,28.4587 Q76.0498,28.4587 75.9115,28.3366 Q75.7813,28.2145 75.7813,28.0111 Q75.7813,27.8158 75.9115,27.6937 Q76.0498,27.5716 76.3753,27.5716 L80.3467,27.5716 L80.3467,28.9225 Q80.3467,29.2399 80.2246,29.3783 Q80.1107,29.5085 79.9072,29.5085 Q79.7119,29.5085 79.5898,29.3783 Q79.4678,29.2399 79.4678,28.9225 L79.4678,28.4587 L77.4007,28.4587 L77.4007,29.7363 L78.1738,29.7363 Q78.1738,29.3945 78.2389,29.2969 Q78.3773,29.0853 78.6214,29.0853 Q78.8167,29.0853 78.9388,29.2236 Q79.0609,29.3538 79.0609,29.6712 L79.0609,30.6966 Q79.0609,30.9814 78.9958,31.0791 Q78.8574,31.2826 78.6214,31.2826 Q78.3773,31.2826 78.2389,31.071 Q78.1738,30.9733 78.1738,30.6234 L77.4007,30.6234 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="35.4167" x="88.6719" y="33.1919">LegalForm</text><line style="stroke:#181818;stroke-width:0.2604166666666667;" x1="50" x2="145.8333" y1="38.5417" y2="38.5417"/><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="44.2708" x="52.6042" y="48.1944">TechnicalKey</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="18.75" x="52.6042" y="57.3659">Name</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="41.1458" x="52.6042" y="66.5375">Abbreviation</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="64.5833" x="52.6042" y="75.709">TransliteratedName</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="90.625" x="52.6042" y="84.8806">TransliteratedAbbreviations</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="25" x="52.6042" y="94.0521">IsActive</text></g><!--MD5=[604575fdb45ee3504bf55618cb71a1d3]
+class Language--><g id="elem_Language"><rect codeLine="17" fill="#F1F1F1" height="57.5195" id="Language" rx="1.3021" ry="1.3021" style="stroke:#181818;stroke-width:0.2604166666666667;" width="50" x="11.4583" y="138.5417"/><ellipse cx="19.2708" cy="146.875" fill="#EB937F" rx="5.7292" ry="5.7292" style="stroke:#181818;stroke-width:0.5208333333333334;"/><path d="M18.6768,147.29 L18.6768,148.5921 L20.931,148.5921 L20.931,148.112 Q20.931,147.7946 21.0531,147.6563 Q21.1833,147.5179 21.3786,147.5179 Q21.5739,147.5179 21.696,147.6563 Q21.818,147.7946 21.818,148.112 L21.818,149.4792 L17.6514,149.4792 Q17.3258,149.4792 17.1875,149.3571 Q17.0573,149.235 17.0573,149.0316 Q17.0573,148.8363 17.1956,148.7142 Q17.334,148.5921 17.6514,148.5921 L17.7897,148.5921 L17.7897,145.1253 L17.6514,145.1253 Q17.3258,145.1253 17.1875,145.0033 Q17.0573,144.8812 17.0573,144.6777 Q17.0573,144.4824 17.1875,144.3604 Q17.3258,144.2383 17.6514,144.2383 L21.6227,144.2383 L21.6227,145.5892 Q21.6227,145.9066 21.5007,146.0449 Q21.3867,146.1751 21.1833,146.1751 Q20.988,146.1751 20.8659,146.0449 Q20.7438,145.9066 20.7438,145.5892 L20.7438,145.1253 L18.6768,145.1253 L18.6768,146.403 L19.4499,146.403 Q19.4499,146.0612 19.515,145.9635 Q19.6533,145.752 19.8975,145.752 Q20.0928,145.752 20.2148,145.8903 Q20.3369,146.0205 20.3369,146.3379 L20.3369,147.3633 Q20.3369,147.6481 20.2718,147.7458 Q20.1335,147.9492 19.8975,147.9492 Q19.6533,147.9492 19.515,147.7376 Q19.4499,147.64 19.4499,147.29 L18.6768,147.29 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="33.3333" x="26.5625" y="149.8586">Language</text><line style="stroke:#181818;stroke-width:0.2604166666666667;" x1="11.9792" x2="60.9375" y1="155.2083" y2="155.2083"/><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="9.8958" x="14.5833" y="164.861">DE</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="9.8958" x="14.5833" y="174.0326">FR</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="9.375" x="14.5833" y="183.2041">EN</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="6.25" x="14.5833" y="192.3757">...</text></g><!--MD5=[deb4e1f6eb1e3c1256fdb830f96abfbb]
+class Country--><g id="elem_Country"><rect codeLine="24" fill="#F1F1F1" height="57.5195" id="Country" rx="1.3021" ry="1.3021" style="stroke:#181818;stroke-width:0.2604166666666667;" width="42.7083" x="86.9792" y="236.4583"/><ellipse cx="94.7917" cy="244.7917" fill="#EB937F" rx="5.7292" ry="5.7292" style="stroke:#181818;stroke-width:0.5208333333333334;"/><path d="M94.1976,245.2067 L94.1976,246.5088 L96.4518,246.5088 L96.4518,246.0286 Q96.4518,245.7113 96.5739,245.5729 Q96.7041,245.4346 96.8994,245.4346 Q97.0947,245.4346 97.2168,245.5729 Q97.3389,245.7113 97.3389,246.0286 L97.3389,247.3958 L93.1722,247.3958 Q92.8467,247.3958 92.7083,247.2738 Q92.5781,247.1517 92.5781,246.9482 Q92.5781,246.7529 92.7165,246.6309 Q92.8548,246.5088 93.1722,246.5088 L93.3105,246.5088 L93.3105,243.042 L93.1722,243.042 Q92.8467,243.042 92.7083,242.9199 Q92.5781,242.7979 92.5781,242.5944 Q92.5781,242.3991 92.7083,242.277 Q92.8467,242.1549 93.1722,242.1549 L97.1436,242.1549 L97.1436,243.5059 Q97.1436,243.8232 97.0215,243.9616 Q96.9076,244.0918 96.7041,244.0918 Q96.5088,244.0918 96.3867,243.9616 Q96.2646,243.8232 96.2646,243.5059 L96.2646,243.042 L94.1976,243.042 L94.1976,244.3197 L94.9707,244.3197 Q94.9707,243.9779 95.0358,243.8802 Q95.1742,243.6686 95.4183,243.6686 Q95.6136,243.6686 95.7357,243.807 Q95.8577,243.9372 95.8577,244.2546 L95.8577,245.2799 Q95.8577,245.5648 95.7926,245.6624 Q95.6543,245.8659 95.4183,245.8659 Q95.1742,245.8659 95.0358,245.6543 Q94.9707,245.5566 94.9707,245.2067 L94.1976,245.2067 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="26.0417" x="102.0833" y="247.7753">Country</text><line style="stroke:#181818;stroke-width:0.2604166666666667;" x1="87.5" x2="129.1667" y1="253.125" y2="253.125"/><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="9.8958" x="90.1042" y="262.7777">DE</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="9.8958" x="90.1042" y="271.9493">FR</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="9.375" x="90.1042" y="281.1208">US</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="6.25" x="90.1042" y="290.2924">...</text></g><!--MD5=[2f1ca98bd76a1741b9fc77072f6445d7]
+class AdministrativeAreaLevel1--><g id="elem_AdministrativeAreaLevel1"><rect codeLine="31" fill="#F1F1F1" height="39.1764" id="AdministrativeAreaLevel1" rx="1.3021" ry="1.3021" style="stroke:#181818;stroke-width:0.2604166666666667;" width="100" x="140.625" y="147.6563"/><ellipse cx="148.4375" cy="155.9896" fill="#ADD1B2" rx="5.7292" ry="5.7292" style="stroke:#181818;stroke-width:0.5208333333333334;"/><path d="M147.8434,156.4046 L147.8434,157.7067 L150.0977,157.7067 L150.0977,157.2266 Q150.0977,156.9092 150.2197,156.7708 Q150.3499,156.6325 150.5452,156.6325 Q150.7406,156.6325 150.8626,156.7708 Q150.9847,156.9092 150.9847,157.2266 L150.9847,158.5938 L146.818,158.5938 Q146.4925,158.5938 146.3542,158.4717 Q146.224,158.3496 146.224,158.1462 Q146.224,157.9508 146.3623,157.8288 Q146.5007,157.7067 146.818,157.7067 L146.9564,157.7067 L146.9564,154.2399 L146.818,154.2399 Q146.4925,154.2399 146.3542,154.1178 Q146.224,153.9958 146.224,153.7923 Q146.224,153.597 146.3542,153.4749 Q146.4925,153.3529 146.818,153.3529 L150.7894,153.3529 L150.7894,154.7038 Q150.7894,155.0212 150.6673,155.1595 Q150.5534,155.2897 150.3499,155.2897 Q150.1546,155.2897 150.0326,155.1595 Q149.9105,155.0212 149.9105,154.7038 L149.9105,154.2399 L147.8434,154.2399 L147.8434,155.5176 L148.6165,155.5176 Q148.6165,155.1758 148.6816,155.0781 Q148.82,154.8665 149.0641,154.8665 Q149.2594,154.8665 149.3815,155.0049 Q149.5036,155.1351 149.5036,155.4525 L149.5036,156.4779 Q149.5036,156.7627 149.4385,156.8604 Q149.3001,157.0638 149.0641,157.0638 Q148.82,157.0638 148.6816,156.8522 Q148.6165,156.7546 148.6165,156.4046 L147.8434,156.4046 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="83.3333" x="155.7292" y="158.9732">AdministrativeAreaLevel1</text><line style="stroke:#181818;stroke-width:0.2604166666666667;" x1="141.1458" x2="240.1042" y1="164.3229" y2="164.3229"/><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="17.7083" x="143.75" y="173.9756">Code</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="18.75" x="143.75" y="183.1472">Name</text></g><!--MD5=[68e9f58cd8e9a5c786d0ed38d9696f5f]
+link LegalForm to Language--><g id="link_LegalForm_Language"><path codeLine="36" d="M72.4844,97.9479 C69.2031,103.125 65.9688,108.4271 63.0208,113.5417 C59.5885,119.5052 56.1354,125.974 52.9115,132.2708 " fill="none" id="LegalForm-to-Language" style="stroke:#181818;stroke-width:0.5208333333333334;"/><polygon fill="none" points="49.776,138.4948,53.0434,136.6426,52.5903,132.9143,49.323,134.7664,49.776,138.4948" style="stroke:#181818;stroke-width:0.5208333333333334;"/><text fill="#000000" font-family="sans-serif" font-size="6.7708" lengthAdjust="spacing" textLength="29.1667" x="63.5417" y="121.0912">Language</text><text fill="#000000" font-family="sans-serif" font-size="6.7708" lengthAdjust="spacing" textLength="2.6042" x="67.4156" y="108.8854">*</text><text fill="#000000" font-family="sans-serif" font-size="6.7708" lengthAdjust="spacing" textLength="11.4583" x="39.29" y="132.9772">0..1</text></g><!--MD5=[02fc110dbc9fe7ca7870360e9be6a8d2]
+link LegalForm to Country--><g id="link_LegalForm_Country"><path codeLine="37" d="M99.8385,98.1042 C101.7552,135.6615 104.6771,192.8854 106.5417,229.5 " fill="none" id="LegalForm-to-Country" style="stroke:#181818;stroke-width:0.5208333333333334;"/><polygon fill="none" points="106.8906,236.3125,108.8134,233.0862,106.5747,230.0705,104.652,233.2968,106.8906,236.3125" style="stroke:#181818;stroke-width:0.5208333333333334;"/><text fill="#000000" font-family="sans-serif" font-size="6.7708" lengthAdjust="spacing" textLength="23.4375" x="104.6875" y="170.0495">Country</text><text fill="#000000" font-family="sans-serif" font-size="6.7708" lengthAdjust="spacing" textLength="2.6042" x="97.2896" y="108.923">*</text><text fill="#000000" font-family="sans-serif" font-size="6.7708" lengthAdjust="spacing" textLength="11.4583" x="94.5134" y="230.7822">0..1</text></g><!--MD5=[b5827b9df50eef3ccb0d4946e268d728]
+link LegalForm to AdministrativeAreaLevel1--><g id="link_LegalForm_AdministrativeAreaLevel1"><path codeLine="38" d="M130.7344,98.026 C143.599,112.7708 157.9844,129.2604 169.4375,142.3854 " fill="none" id="LegalForm-to-AdministrativeAreaLevel1" style="stroke:#181818;stroke-width:0.5208333333333334;"/><polygon fill="none" points="173.9896,147.6042,173.5039,143.8799,169.8793,142.8959,170.365,146.6201,173.9896,147.6042" style="stroke:#181818;stroke-width:0.5208333333333334;"/><text fill="#000000" font-family="sans-serif" font-size="6.7708" lengthAdjust="spacing" textLength="75" x="150" y="121.0912">AdministrativeAreaLevel1</text><text fill="#000000" font-family="sans-serif" font-size="6.7708" lengthAdjust="spacing" textLength="2.6042" x="131.0356" y="108.9707">*</text><text fill="#000000" font-family="sans-serif" font-size="6.7708" lengthAdjust="spacing" textLength="11.4583" x="158.5476" y="142.0752">0..1</text></g><!--MD5=[499f017546e1a9ec3158ab0fe1faca9d]
+link AdministrativeAreaLevel1 to Country--><g id="link_AdministrativeAreaLevel1_Country"><path codeLine="39" d="M174.3646,186.849 C162.9271,200.3125 147.3802,218.6198 134.2448,234.0833 " fill="none" id="AdministrativeAreaLevel1-to-Country" style="stroke:#181818;stroke-width:0.5208333333333334;"/><polygon fill="none" points="129.7083,239.4219,133.3196,238.3899,133.7559,234.6596,130.1447,235.6915,129.7083,239.4219" style="stroke:#181818;stroke-width:0.5208333333333334;"/><text fill="#000000" font-family="sans-serif" font-size="6.7708" lengthAdjust="spacing" textLength="23.4375" x="152.0833" y="219.0079">Country</text><text fill="#000000" font-family="sans-serif" font-size="6.7708" lengthAdjust="spacing" textLength="2.6042" x="168.7419" y="197.9791">*</text><text fill="#000000" font-family="sans-serif" font-size="6.7708" lengthAdjust="spacing" textLength="11.4583" x="133.8587" y="233.5432">0..1</text></g><!--MD5=[668faf928e148bc0b286786faaeb98a5]
+@startuml legal-form
+
+skinparam dpi 50
+
+package "Legal Form and References" {
+
+' TechnicalKey should be Code
+' Abbreviation should be Abbreviations
+ entity LegalForm {
+    TechnicalKey
+    Name
+    Abbreviation
+    TransliteratedName
+    TransliteratedAbbreviations
+    IsActive
+  }
+
+  enum Language {
+    DE
+    FR
+    EN
+    ...
+  }
+
+  enum Country {
+    DE
+    FR
+    US
+    ...
+  }
+  
+  entity AdministrativeAreaLevel1 {
+    Code
+    Name
+  }
+
+  LegalForm "*" -d-o "0..1" Language : Language
+  LegalForm "*" -d-o "0..1" Country : Country
+  LegalForm "*" -d-o "0..1" AdministrativeAreaLevel1 : AdministrativeAreaLevel1
+  AdministrativeAreaLevel1 "*" -d-o "0..1" Country : Country
+}
+
+hide methods
+@enduml
+
+@startuml legal-form
+
+skinparam dpi 50
+
+package "Legal Form and References" {
+
+ entity LegalForm {
+    TechnicalKey
+    Name
+    Abbreviation
+    TransliteratedName
+    TransliteratedAbbreviations
+    IsActive
+  }
+
+  enum Language {
+    DE
+    FR
+    EN
+    ...
+  }
+
+  enum Country {
+    DE
+    FR
+    US
+    ...
+  }
+  
+  entity AdministrativeAreaLevel1 {
+    Code
+    Name
+  }
+
+  LegalForm "*" -d-o "0..1" Language : Language
+  LegalForm "*" -d-o "0..1" Country : Country
+  LegalForm "*" -d-o "0..1" AdministrativeAreaLevel1 : AdministrativeAreaLevel1
+  AdministrativeAreaLevel1 "*" -d-o "0..1" Country : Country
+}
+
+hide methods
+@enduml
+
+PlantUML version 1.2022.5(Sat Apr 30 12:55:52 CEST 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: Cp1252
+Language: en
+Country: GB
+--></g></svg>
