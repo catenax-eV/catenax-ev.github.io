@@ -58,8 +58,8 @@ pagination_next: null
 | Spain | ES |
 | Sweden | SE |
 | Switzerland | CH |
-| Turkey | TR |
 | Tunisia | TN |
+| Turkey | TR |
 | Ukraine[^1] | UA |
 | United Arab Emirates | AE |
 | United Kingdom | GB |

@@ -1,0 +1,232 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.2.8 Chrome/140.0.7339.240 Electron/38.4.0 Safari/537.36" version="28.2.8">
+  <diagram name="Catena-X Scenarios" id="catena-x-scenarios">
+    <mxGraphModel dx="1226" dy="1210" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1850" pageHeight="1002" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Data Exchange based on contracts between Data Provider and Data Consumer in the Catena-X Dataspace&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=#0070F2;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontStyle=1;fontSize=14;fontColor=#FFFFFF;" parent="1" vertex="1">
+          <mxGeometry x="15" y="12" width="1820" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="cx_hdr" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Catena-X Dataspace&lt;/font&gt;" style="text;html=1;strokeColor=#36393d;fillColor=#ffcc99;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="190" y="70" width="680" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="out_hdr" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Outside Catena-X Dataspace&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=#4A4A4A;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=12;fontColor=#FFFFFF;" parent="1" vertex="1">
+          <mxGeometry x="895" y="70" width="760" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="cx_bg" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+          <mxGeometry x="190" y="110" width="680" height="860" as="geometry" />
+        </mxCell>
+        <mxCell id="out_bg" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F2F2F2;strokeColor=#888888;strokeWidth=1;dashed=1;" parent="1" vertex="1">
+          <mxGeometry x="895" y="110" width="760" height="860" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#AAAAAA;strokeColor=none;" parent="1" vertex="1">
+          <mxGeometry x="878" y="70" width="2" height="900" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;(1.a) C negotiation resulting in an all-encompassing legally binding contract&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=#223548;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=10;fontColor=#FFFFFF;spacingLeft=8;" parent="1" vertex="1">
+          <mxGeometry x="15" y="112" width="1820" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="8axs_cPl7rTuKi5h1z66-69" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.25;entryDx=0;entryDy=0;startArrow=block;startFill=1;endArrow=block;endFill=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;jumpSize=6;strokeWidth=2;" parent="1" source="13" target="15" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="180" y="204" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="13" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Data&lt;br&gt;Provider&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0070F2;strokeColor=#00144A;strokeWidth=2;fontColor=#FFFFFF;fontSize=11;fontStyle=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="20" y="178" width="150" height="105" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Data&lt;br&gt;Consumer&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0070F2;strokeColor=#00144A;strokeWidth=2;fontColor=#FFFFFF;fontSize=11;fontStyle=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="1680" y="178" width="150" height="105" as="geometry" />
+        </mxCell>
+        <mxCell id="15" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;&lt;b&gt;RC Contract&lt;/b&gt;&lt;br&gt;Legally binding — single contract&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#647687;strokeColor=#314354;strokeWidth=3;fontColor=#ffffff;fontSize=10;align=center;" parent="1" vertex="1">
+          <mxGeometry x="383" y="177" width="295" height="108" as="geometry" />
+        </mxCell>
+        <mxCell id="18" value="— no referenced contract—" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontStyle=2;fontSize=10;fontColor=#999999;" parent="1" vertex="1">
+          <mxGeometry x="895" y="178" width="760" height="105" as="geometry" />
+        </mxCell>
+        <mxCell id="19" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#CCCCCC;strokeColor=none;" parent="1" vertex="1">
+          <mxGeometry x="15" y="312" width="1820" height="2" as="geometry" />
+        </mxCell>
+        <mxCell id="20" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;(1.b.i)  RC negotiation resulting in a legally binding contract, which supplements an external contract - RC contract provisions take precedence in the event of any conflict&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=#3D3D3D;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=10;fontColor=#FFFFFF;spacingLeft=8;" parent="1" vertex="1">
+          <mxGeometry x="15" y="314" width="1820" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="21" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Data&lt;br&gt;Provider&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0070F2;strokeColor=#00144A;strokeWidth=2;fontColor=#FFFFFF;fontSize=11;fontStyle=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="23" y="382" width="150" height="105" as="geometry" />
+        </mxCell>
+        <mxCell id="22" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Data&lt;br&gt;Consumer&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0070F2;strokeColor=#00144A;strokeWidth=2;fontColor=#FFFFFF;fontSize=11;fontStyle=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="1680" y="388" width="150" height="105" as="geometry" />
+        </mxCell>
+        <mxCell id="23" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;&lt;b&gt;RC Contract&lt;/b&gt;&lt;br&gt;Legally binding - supplements external contract&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#647687;strokeColor=#314354;strokeWidth=3;fontColor=#ffffff;fontSize=10;align=center;" parent="1" vertex="1">
+          <mxGeometry x="383" y="417" width="295" height="108" as="geometry" />
+        </mxCell>
+        <mxCell id="24" value="&lt;b&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;Referenced Contract&lt;/font&gt;&lt;/b&gt;&lt;div&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;(External Contract)&lt;br&gt;Legally binding - supplemented by RC Contract&lt;/font&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;strokeWidth=1.5;fontColor=#333333;fontSize=10;align=center;" parent="1" vertex="1">
+          <mxGeometry x="1125" y="351" width="293" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="30" value="&lt;font style=&quot;color: rgb(103, 171, 159); font-size: 16px;&quot;&gt;takes precedence over&lt;/font&gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;html=1;strokeColor=#97D077;strokeWidth=2.5;endArrow=block;fontStyle=1;fontSize=9;fontColor=#8A6A00;labelBackgroundColor=#FFFDE7;exitX=1;exitY=0.3;exitDx=0;exitDy=0;" parent="1" source="23" target="24" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1120" y="413" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="909" y="449" />
+              <mxPoint x="909" y="413" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="31" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#CCCCCC;strokeColor=none;" parent="1" vertex="1">
+          <mxGeometry x="15" y="529" width="1820" height="2" as="geometry" />
+        </mxCell>
+        <mxCell id="32" value="&lt;span style=&quot;font-size: 16px;&quot;&gt;(1.b.ii) RC negotiation resulting in a legally binding contract, which supplements an external contract - Externally concluded contract provisions take precedence in the event of any conflict&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=#3D3D3D;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=10;fontColor=#FFFFFF;spacingLeft=8;" parent="1" vertex="1">
+          <mxGeometry x="15" y="531" width="1820" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="33" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Data&lt;br&gt;Provider&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0070F2;strokeColor=#00144A;strokeWidth=2;fontColor=#FFFFFF;fontSize=11;fontStyle=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="20" y="605" width="150" height="105" as="geometry" />
+        </mxCell>
+        <mxCell id="34" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Data&lt;br&gt;Consumer&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0070F2;strokeColor=#00144A;strokeWidth=2;fontColor=#FFFFFF;fontSize=11;fontStyle=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="1680" y="605" width="150" height="105" as="geometry" />
+        </mxCell>
+        <mxCell id="35" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;&lt;b style=&quot;&quot;&gt;RC Contract&lt;/b&gt;&lt;br&gt;Legally binding - supplements external&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;strokeWidth=1.5;fontColor=#333333;fontSize=10;align=center;" parent="1" vertex="1">
+          <mxGeometry x="377" y="643" width="303" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="36" value="&lt;b&gt;&lt;font style=&quot;color: rgb(255, 255, 255); font-size: 18px;&quot;&gt;Referenced Contract&lt;/font&gt;&lt;/b&gt;&lt;div style=&quot;color: rgb(51, 51, 51);&quot;&gt;&lt;font style=&quot;color: rgb(255, 255, 255); font-size: 18px;&quot;&gt;(External Contract)&lt;br&gt;Legally binding - supplemented by RC Contract&lt;/font&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#647687;strokeColor=#314354;strokeWidth=3;fontColor=#ffffff;fontSize=10;align=center;" parent="1" vertex="1">
+          <mxGeometry x="1127.5" y="564" width="295" height="108" as="geometry" />
+        </mxCell>
+        <mxCell id="42" value="&lt;font style=&quot;color: rgb(103, 171, 159); font-size: 16px;&quot;&gt;takes precedence over&lt;/font&gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;html=1;strokeColor=#97D077;strokeWidth=2.5;endArrow=block;fontStyle=1;fontSize=9;fontColor=#8A6A00;labelBackgroundColor=#FFFDE7;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=1;entryY=0.3;entryDx=0;entryDy=0;" parent="1" source="36" target="35" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1128" y="648" />
+              <mxPoint x="896" y="648" />
+              <mxPoint x="896" y="671" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="43" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#CCCCCC;strokeColor=none;" parent="1" vertex="1">
+          <mxGeometry x="15" y="746" width="1820" height="2" as="geometry" />
+        </mxCell>
+        <mxCell id="44" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;(2)  Contract concluded OUTSIDE Catena-X — RC negotiation as Fulfilment Transaction (&quot;Erfüllungsgeschäft&quot;)&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=#4A4A4A;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=10;fontColor=#FFFFFF;spacingLeft=8;" parent="1" vertex="1">
+          <mxGeometry x="15" y="748" width="1820" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="45" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Data&lt;br&gt;Provider&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0070F2;strokeColor=#00144A;strokeWidth=2;fontColor=#FFFFFF;fontSize=11;fontStyle=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="20" y="812" width="150" height="105" as="geometry" />
+        </mxCell>
+        <mxCell id="46" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Data&lt;br&gt;Consumer&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0070F2;strokeColor=#00144A;strokeWidth=2;fontColor=#FFFFFF;fontSize=11;fontStyle=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="1680" y="812" width="150" height="105" as="geometry" />
+        </mxCell>
+        <mxCell id="48" value="&lt;b&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;Referenced Contract&lt;/font&gt;&lt;/b&gt;&lt;div style=&quot;color: rgb(51, 51, 51);&quot;&gt;&lt;font style=&quot;color: rgb(255, 255, 255); font-size: 18px;&quot;&gt;(Obligation Transaction / Verpflichtungsgeschäft)&lt;br&gt;Legally binding - single contract&lt;/font&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#647687;strokeColor=#314354;strokeWidth=3;fontColor=#ffffff;fontSize=10;align=center;" parent="1" vertex="1">
+          <mxGeometry x="1127.5" y="780" width="295" height="108" as="geometry" />
+        </mxCell>
+        <mxCell id="53" value="references" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;strokeColor=#0070F2;strokeWidth=1.5;dashed=1;endArrow=open;exitX=1;exitY=0.25;exitDx=0;exitDy=0;" parent="1" source="47" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1127" y="847" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="896" y="870" />
+              <mxPoint x="896" y="847" />
+              <mxPoint x="1128" y="847" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="54" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;Dominant / Precedent Contract&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#647687;strokeColor=#314354;strokeWidth=3;fontColor=#ffffff;fontSize=9;align=center;" parent="1" vertex="1">
+          <mxGeometry x="417" y="993" width="230" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="55" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;Subordinate Contract&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#666666;strokeWidth=1.5;fontColor=#000000;fontSize=9;align=center;" parent="1" vertex="1">
+          <mxGeometry x="662" y="993" width="210" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="56" value="&lt;font style=&quot;color: rgb(0, 0, 0); font-size: 16px;&quot;&gt;Fulfilment Transaction&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#647687;strokeWidth=1.5;dashed=1;fontColor=#0070F2;fontSize=9;align=center;" parent="1" vertex="1">
+          <mxGeometry x="887" y="993" width="210" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="57" value="" style="rounded=1;fillColor=#647687;strokeColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="1112" y="998" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="58" value="" style="rounded=1;fillColor=#F5F5F5;strokeColor=#647687;arcSize=0;" parent="1" vertex="1">
+          <mxGeometry x="1318" y="998" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="59" value="&lt;font style=&quot;color: rgb(103, 171, 159); font-size: 14px;&quot;&gt;takes precedence over&lt;/font&gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;html=1;strokeColor=#97D077;strokeWidth=2.5;endArrow=block;fontStyle=1;fontSize=9;fontColor=#8A6A00;labelBackgroundColor=#FFFDE7;" parent="1" source="57" target="58" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8axs_cPl7rTuKi5h1z66-64" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" parent="1" source="34" target="34" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="47" value="&lt;font style=&quot;color: rgb(0, 0, 0); font-size: 18px;&quot;&gt;&lt;b style=&quot;&quot;&gt;RC Negotiation&lt;/b&gt;&lt;br&gt;&lt;i style=&quot;&quot;&gt;(Fulfillment Transaction /&lt;br&gt;Erfüllungsgeschäft)&lt;/i&gt;&lt;br&gt;References the external contract&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#647687;strokeWidth=1.5;dashed=1;fontColor=#0070F2;fontSize=10;align=center;" parent="1" vertex="1">
+          <mxGeometry x="380" y="846" width="303" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="8axs_cPl7rTuKi5h1z66-66" value="&lt;font style=&quot;color: rgb(0, 0, 0); font-size: 16px;&quot;&gt;RC = Registered Connector&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;dashed=1;fontColor=#0070F2;fontSize=9;align=center;" parent="1" vertex="1">
+          <mxGeometry x="190" y="993" width="210" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="8axs_cPl7rTuKi5h1z66-70" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=block;startFill=1;endArrow=block;endFill=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;jumpSize=6;strokeWidth=2;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" parent="1" source="15" target="14" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="304" y="199" as="sourcePoint" />
+            <mxPoint x="517" y="199" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8axs_cPl7rTuKi5h1z66-71" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=block;startFill=1;endArrow=block;endFill=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;jumpSize=6;strokeWidth=2;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="678" y="474" as="sourcePoint" />
+            <mxPoint x="1680" y="474" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8axs_cPl7rTuKi5h1z66-72" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=block;startFill=1;endArrow=block;endFill=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;jumpSize=6;strokeWidth=2;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="678" y="689.91" as="sourcePoint" />
+            <mxPoint x="1680" y="689.91" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8axs_cPl7rTuKi5h1z66-73" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=block;startFill=1;endArrow=block;endFill=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;jumpSize=6;strokeWidth=2;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="681" y="900" as="sourcePoint" />
+            <mxPoint x="1683" y="900" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8axs_cPl7rTuKi5h1z66-74" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.25;entryDx=0;entryDy=0;startArrow=block;startFill=1;endArrow=block;endFill=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;jumpSize=6;strokeWidth=2;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="170" y="901" as="sourcePoint" />
+            <mxPoint x="383" y="901" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8axs_cPl7rTuKi5h1z66-76" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.25;entryDx=0;entryDy=0;startArrow=block;startFill=1;endArrow=block;endFill=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;jumpSize=6;strokeWidth=2;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="167" y="689.91" as="sourcePoint" />
+            <mxPoint x="380" y="689.91" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8axs_cPl7rTuKi5h1z66-77" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.25;entryDx=0;entryDy=0;startArrow=block;startFill=1;endArrow=block;endFill=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;jumpSize=6;strokeWidth=2;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="170" y="477" as="sourcePoint" />
+            <mxPoint x="383" y="477" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8axs_cPl7rTuKi5h1z66-84" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.25;entryDx=0;entryDy=0;startArrow=block;startFill=1;endArrow=block;endFill=1;jumpSize=6;strokeWidth=2;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="170" y="822" as="sourcePoint" />
+            <mxPoint x="1126.5" y="822" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8axs_cPl7rTuKi5h1z66-86" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.25;entryDx=0;entryDy=0;startArrow=block;startFill=1;endArrow=block;endFill=1;jumpSize=6;strokeWidth=2;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1422.5" y="826" as="sourcePoint" />
+            <mxPoint x="1682.5" y="826" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8axs_cPl7rTuKi5h1z66-87" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.25;entryDx=0;entryDy=0;startArrow=block;startFill=1;endArrow=block;endFill=1;jumpSize=6;strokeWidth=2;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1422.5" y="614" as="sourcePoint" />
+            <mxPoint x="1682.5" y="614" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8axs_cPl7rTuKi5h1z66-88" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.25;entryDx=0;entryDy=0;startArrow=block;startFill=1;endArrow=block;endFill=1;jumpSize=6;strokeWidth=2;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1420" y="397.90999999999997" as="sourcePoint" />
+            <mxPoint x="1680" y="397.90999999999997" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8axs_cPl7rTuKi5h1z66-89" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.25;entryDx=0;entryDy=0;startArrow=block;startFill=1;endArrow=block;endFill=1;jumpSize=6;strokeWidth=2;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="171" y="617.41" as="sourcePoint" />
+            <mxPoint x="1127.5" y="617.41" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8axs_cPl7rTuKi5h1z66-90" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.25;entryDx=0;entryDy=0;startArrow=block;startFill=1;endArrow=block;endFill=1;jumpSize=6;strokeWidth=2;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="170" y="394" as="sourcePoint" />
+            <mxPoint x="1126.5" y="394" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
