@@ -15,6 +15,12 @@ Neptune therefore serves as the central anchor, establishing the core innovation
 
 With the release of version 3.1.2 of the Operating Model, the Who and How chapters have been updated. The release introduces consolidated guidance on role prerequisites and aligns the onboarding process description with the binding standard CX-0006.
 
+:::info
+
+All changes are documentation-related. No changes to role definitions with contractual impact and no breaking changes are included in this release.
+
+:::
+
 ### Who – Roles in the Catena-X Ecosystem
 
 - New summary table outlining the prerequisites for obtaining roles in the Catena-X dataspace, providing a single consolidated reference for all role types.
@@ -31,12 +37,6 @@ With the release of version 3.1.2 of the Operating Model, the Who and How chapte
 | Role applicants         | Faster identification of the prerequisites for a specific ecosystem role    |
 | OSP candidates          | Clearer role definition and transparency on the nomination process          |
 | Onboarding stakeholders | Consistent process description with CX-0006 as the single binding reference |
-
-:::info
-
-All changes are documentation-related. No changes to role definitions with contractual impact and no breaking changes are included in this release.
-
-:::
 
 ---
 
