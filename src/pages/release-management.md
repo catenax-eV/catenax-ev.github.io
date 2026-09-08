@@ -39,7 +39,7 @@ Although the Catena-X Association and the Eclipse Tractus-X Project manage their
 
 [![Support Dates](@site/static/img/support-dates.png)](@site/static/img/support-dates.png)
 
-| Release    | Publication Date (Normative Documentes e.g. Standards and Certification Available) | Go-Live Date (Standards Become Effective) | Deprecation Date |
+| Release    | Publication Date (Normative Documents e.g. Standards and Certification Available) | Go-Live Date (Standards Become Effective) | Deprecation Date |
 | ---------- | ---------------------------------------------------------------------------------- | ----------------------------------------- | ---------------- |
 | CX-Saturn  | 08.09.2025                                                                         | 25.11.2025                                | ~ November 2027  |
 | CX-Titan   | 18.03.2026                                                                         | 09.06.2026                                | ~ November 2027  |
