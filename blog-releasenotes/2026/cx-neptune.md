@@ -218,6 +218,12 @@ The PCF Rulebook is not a standard but the methodology behind the numbers: it de
 |-----------------------------------------------------------------------|---------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
 | [CX-NFR-PCF-Rulebook](../../docs/rulebooks/CX-NFR-PCF/CX-NFR-PCF.mdx) | Updated | Makes carbon-footprint calculations more consistent between companies, so the results are easier to compare, trust and use across the supply chain. |
 
+### Certification
+
+| Rulebook                                                     | Status  | Value |
+|--------------------------------------------------------------|---------|-------|
+| [CX-NFR-CAF](../../docs/rulebooks/CX-NFR-CAF/CX-NFR-CAF.mdx) | Updated |       |
+
 ---
 
 ## Tractus-X reference implementations
