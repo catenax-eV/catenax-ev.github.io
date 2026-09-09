@@ -6,37 +6,101 @@ date: 2026-09-16
 tags: [release, neptune]
 ---
 
+[![CX-Neptune Release Banner](../assets/Release-Neptune.png)](../assets/Release-Neptune.png)
+
 Named after the planet Neptune, CX-Neptune symbolizes depth, stability, and the exploration of new frontiers within the Catena-X data space.
 As a major release, CX-Neptune sets the strategic direction and introduces key architectural foundations that shape the further evolution of the ecosystem.
 
-Neptune therefore serves as the central anchor, establishing the core innovations that are gradually refined, stabilized, and extended throughout the cycle.
+CX-Neptune therefore serves as the central anchor, establishing the core innovations that are gradually refined, stabilized, and extended throughout the cycle.
+
+---
+
+## CX-Neptune at a glance
+
+| Component                                                                     |                  Version                  | What changed                                                                                                                              |
+|-------------------------------------------------------------------------------|:-----------------------------------------:|-------------------------------------------------------------------------------------------------------------------------------------------|
+| [Operating Model](/docs/operating-model/why-introduction/why-introduction.md) |                   3.1.2                   | Consolidated role prerequisites and clearer OSP role                                                                                      |
+| [Regulatory Framework](/docs/regulatory-framework/governance-framework.md)    |                   3.0.4                   | Reworked Contract Modularization guidance, three new countries assessed                                                                   |
+| [Standards](/docs/standards/overview.md)                                      | 8 new <br/> 18 updated <br/> 17deprecated | New Car SBOM extensions, Supply Chain & Quality split into focused standards, network foundation simplified                               |
+| [Rulebooks](/docs/rulebooks/overview.md)                                      |                 PCF v4.1                  | Update to PCF Rulebook and Certification Framework                                                                                        |
+| [Tractus-X](https://eclipse-tractusx.github.io)                               |               26.06 & 26.09               | Referenz Implementation and KITs can be found in the [Eclipse Tractus-X release notes](https://eclipse-tractusx.github.io/blog-changelog) |
+
+:::tip Release highlights
+
+- **One protocol version only** – DSP 0.8 and DCP 0.8 are dropped, cutting implementation effort for connector and wallet providers
+- **Car SBOM family** gains a shared foundation plus two new extensions for US connected-vehicle regulation and open-source licence compliance  
+- **Traceability is retired** and replaced by focused standards for blocking notifications, special characteristics, zero-km failures and certificates of analysis
+- **Contracting made approachable** – Quick Start Guide, Clause Library and FAQ lower the entry barrier for contract modularization
+
+:::
+
+---
 
 ## Catena-X Operating Model
 
 With the release of version 3.1.2 of the Operating Model, the Who and How chapters have been updated. The release introduces consolidated guidance on role prerequisites and aligns the onboarding process description with the binding standard CX-0006.
 
+### Chapter: Who – Roles in the Catena-X Ecosystem
+
+- New summary table outlining the prerequisites for obtaining roles in the Catena-X dataspace, providing a single consolidated reference for all role types.
+- Updated the description of the Onboarding Service Provider (OSP) role for greater clarity
+- Becoming an Onboarding Service Provider now requires a nomination by the Catena-X Board in addition to certification.
+
+### Chapter: How – Data Space Operations
+
+- Streamlined the onboarding process section: the detailed process description has been consolidated in standard [CX-0006](/docs/standards/CX-0006-RegistrationAndInitialOnboarding/CX-0006-RegistrationAndInitialOnboarding.md), which is now the single binding source. This removes duplicated content and prevents contradictions between the Operating Model and the standard.  
+
+### Impact for ecosystem participants
+
+| Audience                                 | Impact                                                                                                   |  
+|------------------------------------------|----------------------------------------------------------------------------------------------------------|  
+| All role holders and applicants          | Prerequisites for every ecosystem role are now available in one consolidated table                       |  
+| Onboarding Service Provider (OSP)        | Certification alone is no longer sufficient, a nomination by the Catena-X Board is now required          |  
+
+### Further Information
+
+- Details can be found in the [changelog](/docs/operating-model/changelog)
+- To view the CX-Neptune version of the Operating Model, please refer to the [Operating Model documentation](/docs/operating-model/why-introduction/why-introduction.md) and select CX-Neptune.
+
+---
+
+## Regulatory Framework
+
+With the release of version 3.0.4 of the Regulatory Framework, the Contracting chapter and the Country Clearance List have been updated. The release introduces expanded guidance on contract modularization, including a quick start guide, contract options, precedence rules, a clause library and an FAQ, and adds three newly assessed countries to the Country Clearance List.  
+
+### Contracting: Easier access to Contract Modularization
+
+Setting up contracts in Catena-X should not require a legal deep dive. The guidance on Contract Modularization has therefore been reworked to answer the questions users actually have:
+
+- **"Where do I start?"** – A new Quick Start Guide walks first-time users through the essentials, key concepts and a suggested reading path.  
+- **"Which contract option fits my case?"** – Illustrated overviews explain the contractual scenarios and the mandatory and optional steps of contract modularization.
+- **"What happens if clauses contradict each other?"** – The contract precedence rules are now visualized and explained. A new section covers both how conflicts between an RC agreement and a referenced external contract are resolved, and how the CX-0152 JSON schema prevents mutually exclusive clauses in the first place.  
+- **"Do I have to write clauses from scratch?"** – The new Clause Library (Section 6) lists all permissions, prohibitions and obligations with their legal texts.  
+- **"What does this term mean?"** – A new Glossary defines all terms used.  
+- **"Someone must have asked this before."** – A new FAQ collects the most common questions from practice.
+
 :::info
 
-All changes are documentation-related. No changes to role definitions with contractual impact and no breaking changes are included in this release.
+The entire guidance was rewritten in simpler, consistent language.
 
 :::
 
-### Who – Roles in the Catena-X Ecosystem
+### Country Clearance List: Three new countries assessed
 
-- New summary table outlining the prerequisites for obtaining roles in the Catena-X dataspace, providing a single consolidated reference for all role types.
-- Updated the description of the Onboarding Service Provider (OSP) role for greater clarity and added information on the nomination for this role.
+Three additional countries have been evaluated and can now be considered in your data exchange planning:
 
-### How – Data Space Operations
+- **Morocco** and **Paraguay** – added to the *Allow List*  
+- **Republic of Moldova** – added to the *Conditional List*
 
-- Revised the onboarding process section to improve clarity and to reference standard CX-0006 as the binding source.
+### Impact for ecosystem participants
 
-### Relevance for Operating Model Users
+- Contracting: No changes to binding contractual content – all additions are explanatory and support the practical application of contract modularization.
+- Country Clearance List: Data exchange with partners in Morocco and Paraguay is possible without additional conditions. For the Republic of Moldova, the requirements of the Conditional List apply – please verify before exchanging data.
 
-| Audience                | Benefits                                                                    |
-|-------------------------|-----------------------------------------------------------------------------|
-| Role applicants         | Faster identification of the prerequisites for a specific ecosystem role    |
-| OSP candidates          | Clearer role definition and transparency on the nomination process          |
-| Onboarding stakeholders | Consistent process description with CX-0006 as the single binding reference |
+### Further Information
+
+- Details can be found in the [changelog](/docs/regulatory-framework/changelog.md)
+- To view the CX-Neptune version of the Regulatory Framework, please refer to the [Regulatory Framework documentation](/docs/regulatory-framework/governance-framework.md) and select CX-Neptune.
 
 ---
 
@@ -89,8 +153,8 @@ The network foundation is being simplified and better documented. Business partn
 | [CX-0010 Business Partner Number](../../docs/standards/CX-0010-BusinessPartnerNumber/CX-0010-BusinessPartnerNumber.md)                                                              | Updated    | Protects the promise that every business partner number is globally unique and stable. Rules and guidance for issuing and using site numbers (BPNS) are sharpened and aligned with CX-0012, CX-0074 and CX-0076, so service providers no longer issue them inconsistently.                                |          [Changelog](../../docs/standards/CX-0010-BusinessPartnerNumber/Changelog.md)           |
 | [CX-0012 Business Partner Data Pool API](../../docs/standards/CX-0012-BusinessPartnerDataPoolAPI/CX-0012-BusinessPartnerDataPoolAPI.md)                                             | Updated    | Makes business partner data far easier to find and understand: one generic search across legal entities, sites and addresses, plus the ability to represent ownership hierarchies, company succession and headquarter relocations. Less bilateral workaround, lower integration effort.                   |        [Changelog](../../docs/standards/CX-0012-BusinessPartnerDataPoolAPI/Changelog.md)        |
 | [CX-0018 Dataspace Connectivity](../../docs/standards/CX-0018-DataspaceConnectivity/CX-0018-DataspaceConnectivity.md)                                                               | Updated    | Only one connection protocol version needs to be supported – the old DSP 0.8 is dropped entirely. Simpler and cheaper to implement, plus additional transfer types and the groundwork for future connector features (EDC-V / Virtual Participation). Connector providers must be ready for the phase-out. |          [Changelog](../../docs/standards/CX-0018-DataspaceConnectivity/Changelog.md)           |
-| CX-0053 Discovery Finder and BPN Discovery Service APIs                                                                                                                             | Deprecated | -                                                                                                                                                                                                                                                                                                         |                                                -                                                |
-| CX-0055 Data Processing Patterns for IT System Integration                                                                                                                          | Deprecated | -                                                                                                                                                                                                                                                                                                         |                                                -                                                |
+| CX-0053 Discovery Finder and BPN Discovery Service APIs                                                                                                                             | Deprecated | You should no longer build new solutions around this standard.                                                                                                                                                                                                                                            |                                                -                                                |
+| CX-0055 Data Processing Patterns for IT System Integration                                                                                                                          | Deprecated | You should no longer build new solutions around this standard.                                                                                                                                                                                                                                            |                                                -                                                |
 | [CX-0074 Business Partner Gate API](../../docs/standards/CX-0074-BusinessPartnerGateAPI/CX-0074-BusinessPartnerGateAPI.md)                                                          | Updated    | Keeps the upload side in sync with the search side by adding the new relation types, relation qualifiers and golden record relations. Otherwise the new information simply could not be uploaded.                                                                                                         |          [Changelog](../../docs/standards/CX-0074-BusinessPartnerGateAPI/Changelog.md)          |
 | [CX-0076 Golden Record End to End Requirements Standard](../../docs/standards/CX-0076-GoldenRecordEndtoEndRequirementsStandard/CX-0076-GoldenRecordEndtoEndRequirementsStandard.md) | Updated    | Ensures the written standard matches what the live system already does: one address can now be assigned to several sites within one legal entity. This keeps business partner data quality comparable across providers.                                                                                   | [Changelog](../../docs/standards/CX-0076-GoldenRecordEndtoEndRequirementsStandard/Changelog.md) |
 | CX-0077 Data Quality Dashboard                                                                                                                                                      | Deprecated | You should no longer build new solutions around this standard.                                                                                                                                                                                                                                            |                                                -                                                |
@@ -110,17 +174,17 @@ The broad Traceability standard is replaced by focused, standalone standards for
 
 | Standard                                                                                                                                                       | Status     | Value                                                                                                                                                                                                                                                                                                      |                                         Changelog                                         |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------|------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------:|
-| CX-0059 Use Case Behaviour Twin Endurance Predictor                                                                                                            | Deprecated | You should no longer build new solutions around this standard.-                                                                                                                                                                                                                                            |                                             -                                             |
-| CX-0105 Asset Tracking Use Case                                                                                                                                | Deprecated | You should no longer build new solutions around this standard.-                                                                                                                                                                                                                                            |                                             -                                             |
-| CX-0115 Manufacturing Capability Exchange                                                                                                                      | Deprecated | You should no longer build new solutions around this standard.-                                                                                                                                                                                                                                            |                                             -                                             |
+| CX-0059 Use Case Behaviour Twin Endurance Predictor                                                                                                            | Deprecated | You should no longer build new solutions around this standard.                                                                                                                                                                                                                                             |                                             -                                             |
+| CX-0105 Asset Tracking Use Case                                                                                                                                | Deprecated | You should no longer build new solutions around this standard.                                                                                                                                                                                                                                             |                                             -                                             |
+| CX-0115 Manufacturing Capability Exchange                                                                                                                      | Deprecated | You should no longer build new solutions around this standard.                                                                                                                                                                                                                                             |                                             -                                             |
 | [CX-0123 Quality Use Case Standard](../../docs/standards/CX-0123-QualityUseCaseStandard/CX-0123-QualityUseCaseStandard.md)                                     | Updated    | Makes clear what quality solutions are actually certified for after the old Traceability standard was split up. Renamed to "Field Quality", the scope is narrowed, required data models are sharpened, the 8D model and dependencies on retired standards are removed, and warranty test data is provided. |       [Changelog](../../docs/standards/CX-0123-QualityUseCaseStandard/Changelog.md)       |
 | CX-0125 Traceability Use Case                                                                                                                                  | Deprecated | Split into standalone standards (Field Quality, Blocking Notifications, Special Characteristics, …) so companies only implement and certify what they actually need.                                                                                                                                       |                                             -                                             |
-| CX-0129 Request for Quotation Exchange                                                                                                                         | Deprecated | You should no longer build new solutions around this standard.-                                                                                                                                                                                                                                            |                                             -                                             |
-| CX-0138 Use Case Behaviour Twin Endurance Estimator                                                                                                            | Deprecated | You should no longer build new solutions around this standard.-                                                                                                                                                                                                                                            |                                             -                                             |
-| CX-0141 Use Case Behaviour Twin Health Indicator                                                                                                               | Deprecated | You should no longer build new solutions around this standard.-                                                                                                                                                                                                                                            |                                             -                                             |
+| CX-0129 Request for Quotation Exchange                                                                                                                         | Deprecated | You should no longer build new solutions around this standard.                                                                                                                                                                                                                                             |                                             -                                             |
+| CX-0138 Use Case Behaviour Twin Endurance Estimator                                                                                                            | Deprecated | You should no longer build new solutions around this standard.                                                                                                                                                                                                                                             |                                             -                                             |
+| CX-0141 Use Case Behaviour Twin Health Indicator                                                                                                               | Deprecated | You should no longer build new solutions around this standard.                                                                                                                                                                                                                                             |                                             -                                             |
+| CX-0142 Shop Floor Information Service                                                                                                                         | Deprecated | You should no longer build new solutions around this standard.                                                                                                                                                                                                                                             |                                             -                                             |
 | [CX-0146 Supply Chain Disruption Notifications](../../docs/standards/CX-0146-SupplyChainDisruptionNotifications/CX-0146-SupplyChainDisruptionNotifications.md) | Updated    | Fixes an error from the previous release where the technical specification contradicted its own examples, so implementers could not tell which one was correct. Specification and examples are now aligned – without the fix, disruption messages fail between partners.                                   | [Changelog](../../docs/standards/CX-0146-SupplyChainDisruptionNotifications/Changelog.md) |
-| CX-0150 Logistics Use Case                                                                                                                                     | Deprecated | You should no longer build new solutions around this standard.-                                                                                                                                                                                                                                            |                                             -                                             |
-| [CX-0157 Predictive Unit Real-Time Information Service (PURIS)](../../docs/standards/CX-0157-PURIS/CX-0157-PURIS.md)                                           | Updated    |                                                                                                                                                                                                                                                                                                            |               [Changelog](../../docs/standards/CX-0157-PURIS/Changelog.md)                |
+| CX-0150 Logistics Use Case                                                                                                                                     | Deprecated | You should no longer build new solutions around this standard.                                                                                                                                                                                                                                             |                                             -                                             |
 | [CX-0163 Special Characteristics](../../docs/standards/CX-0163-SpecialCharacteristics/CX-0163-SpecialCharacteristics.md)                                       | New        | Enables automated exchange of measurement values that are relevant for vehicle type approval – today still sent manually by e-mail. Provided via digital twins based on the Industry Core, with the required usage policies defined.                                                                       |       [Changelog](../../docs/standards/CX-0163-SpecialCharacteristics/Changelog.md)       |
 | [CX-0164 Blocking Notifications](../../docs/standards/CX-0164-BlockingNotifications/CX-0164-BlockingNotifications.md)                                          | New        | One common, automated way to tell partners that certain parts must not be used – today largely done by hand. Blocks can be created, updated and reversed (status "CANCELED"), with automatic feedback from the partner. Reusable across use cases and with lower integration effort.                       |       [Changelog](../../docs/standards/CX-0164-BlockingNotifications/Changelog.md)        |
 | [CX-0165 Certificate of Analysis](../../docs/standards/CX-0165-CertificateOfAnalysis/CX-0165-CertificateOfAnalysis.md)                                         | New        | Replaces millions of PDF certificates sent yearly by e-mail or EDI with machine-readable data. Saves manual typing and avoids errors; already proven in a pilot between three companies.                                                                                                                   |       [Changelog](../../docs/standards/CX-0165-CertificateOfAnalysis/Changelog.md)        |
@@ -136,6 +200,11 @@ The shared basis for part data is brought up to the current data models. Provide
 |-----------------------------------------------------------------------------------------------------------------------------------|---------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------|
 | [CX-0126 Industry Core: Part Type](../../docs/standards/CX-0126-IndustryCorePartType/CX-0126-IndustryCorePartType.md)             | Updated | Keeps data providers and data users compatible: references now point to the current data model versions (v3.0.0), and data that differs only in major version must be offered in parallel. This marks the start of proper life-cycle management in live operations, so upgrades no longer break existing connections. | [Changelog](../../docs/standards/CX-0126-IndustryCorePartType/CX-0126-IndustryCorePartType.md)         |
 | [CX-0127 Industry Core: Part Instance](../../docs/standards/CX-0127-IndustryCorePartInstance/CX-0127-IndustryCorePartInstance.md) | Updated | Same benefit as CX-0126, applied to individual parts: without the update to the current data model versions (v3.0.0) and the parallel provisioning rule, part-level data would not be consumable by CX-Neptune solutions. Note: the related certification patch is postponed.                                         | [Changelog](../../docs/standards/CX-0127-IndustryCorePartInstance/CX-0127-IndustryCorePartInstance.md) |
+
+### Further Information
+
+- Details about all Standards can be found in the [changelog](/docs/standards/changelog.md).
+- To view the CX-Neptune version of the Standards, please refer to the [Overview Page of the standards](/docs/standards/overview.md) and select CX-Neptune.
 
 ---
 
@@ -153,6 +222,23 @@ The PCF Rulebook is not a standard but the methodology behind the numbers: it de
 
 ## Tractus-X reference implementations
 
----
+The open-source reference implementations for CX-Neptune are provided by the [Eclipse Tractus-X project](https://eclipse-tractusx.github.io). They follow their own release cadence and are documented independently of this release note.
 
-## General Website improvements
+:::info
+
+Catena-X does not maintain a separate changelog for the reference implementations.
+For component versions, upgrade notes and breaking changes, please refer to the Tractus-X release documentation directly.
+
+:::
+
+### Further Information
+
+- [Tractus-X release notes](https://eclipse-tractusx.github.io/blog-changelog) – overview of the current release and the included component versions  
+- [Tractus-X repositories on GitHub](https://github.com/eclipse-tractusx) – overview of all repositories of Eclipse Tractus-X
+
+:::info
+
+Please note that a Tractus-X release contains several Referenz Implementations and KITs. Certification is always granted against the Catena-X standards, not against a specific Tractus-X version.  
+
+:::
+---
