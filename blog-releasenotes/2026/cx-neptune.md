@@ -75,7 +75,7 @@ Setting up contracts in Catena-X should not require a legal deep dive. The guida
 - **"Where do I start?"** – A new Quick Start Guide walks first-time users through the essentials, key concepts and a suggested reading path.  
 - **"Which contract option fits my case?"** – Illustrated overviews explain the contractual scenarios and the mandatory and optional steps of contract modularization.
 - **"What happens if clauses contradict each other?"** – The contract precedence rules are now visualized and explained. A new section covers both how conflicts between an RC agreement and a referenced external contract are resolved, and how the CX-0152 JSON schema prevents mutually exclusive clauses in the first place.  
-- **"Do I have to write clauses from scratch?"** – The new Clause Library (Section 6) lists all permissions, prohibitions and obligations with their legal texts.  
+- **"Do I have to write clauses from scratch?"** – The new Clause Library lists all permissions, prohibitions and obligations with their legal texts.  
 - **"What does this term mean?"** – A new Glossary defines all terms used.  
 - **"Someone must have asked this before."** – A new FAQ collects the most common questions from practice.
 
@@ -106,7 +106,7 @@ Three additional countries have been evaluated and can now be considered in your
 
 ## Catena-X Standards
 
-With the CX-Neptune release, several Catena-X standards have been updated, and new standards have been introduced across multiple domains. These updates refine existing specifications, address evolving requirements, and extend the Catena-X ecosystem with new use cases and capabilities.
+With the CX-Neptune release, several Catena-X standards have been updated, and new standards have been introduced across multiple domains. These updates refine existing standards, address evolving requirements, and extend the Catena-X ecosystem with new use cases and capabilities.
 
 :::info
 
