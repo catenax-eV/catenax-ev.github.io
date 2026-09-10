@@ -5,6 +5,17 @@ sidebar_position: 1
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [3.1.2]
+
+### Added
+
+- Who: Roles in the Catena-X ecosystem  - Added a new summary table outlining the prerequisites for obtaining roles in the Catena-X dataspace### Changed
+
+- Who: Roles in the Catena-X ecosystem
+  - Updated OSP role to clarify it and add nomination to this role.
+- How: Data Space Operations
+  - Updated onboarding process section to improve clarity and align it with the CX-0006 standard as the binding reference.
+
 ## [3.1.1]
 
 ### Added
