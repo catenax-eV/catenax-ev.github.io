@@ -13,6 +13,21 @@ As a major release, CX-Neptune sets the strategic direction and introduces key a
 
 CX-Neptune therefore serves as the central anchor, establishing the core innovations that are gradually refined, stabilized, and extended throughout the cycle.
 
+:::info Built together by the Catena-X community
+
+CX-Neptune is the result of the joint work of many companies across the automotive value chain.  
+Every standard, every rulebook chapter and every document in this release was shaped in committees, working groups and expert groups by people who contributed their time, their domain knowledge and their willingness to find common ground instead of company-specific solutions.
+A sincere thank you to all member companies and their experts who contributed to CX-Neptune: by drafting and reviewing standards, by challenging concepts, by piloting new use cases, by maintaining the operating model and regulatory framework.
+
+This collaborative effort is what turns individual requirements into interoperable standards and what makes a data space that works for the whole ecosystem, not just for a single participant.
+
+:::
+
+:::tip Want to shape the next release?  
+Contributions are open to all members. Join a committee, working group or expert group and help  
+define the standards you will work with tomorrow.  
+:::  
+
 ---
 
 ## CX-Neptune at a glance
