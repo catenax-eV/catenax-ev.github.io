@@ -242,7 +242,7 @@ For component versions, upgrade notes and breaking changes, please refer to the 
 - [Tractus-X release notes](https://eclipse-tractusx.github.io/blog-changelog) – overview of the current release and the included component versions  
 - [Tractus-X repositories on GitHub](https://github.com/eclipse-tractusx) – overview of all repositories of Eclipse Tractus-X
 
-:::info
+:::caution
 
 Please note that a Tractus-X release contains several Referenz Implementations and KITs. Certification is always granted against the Catena-X standards, not against a specific Tractus-X version.  
 
