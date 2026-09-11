@@ -156,6 +156,7 @@ Catena-X Certificates are generally issued for a defined validity period that is
 This extension is not granted automatically: The software provider must actively request the extension of validity for the specific standard from the association. The extension applies only to the specific standards that meet the "no changes or patch changes only" condition. All other standards associated with the certified product remain subject to the regular recertification process and must be re-assessed as part of the upcoming release cycle. This includes standards of the underlying technical stack: if such a standard changes in a non-patch manner, the software provider must adopt the new version, and the CAB verifies this as part of the recertification.
 
 Currently, nominated Standards outside of patch changes:
+
 - CX-0128
 
 Example: A DCM app that was certified for Jupiter has its certificate for the specific standard CX-0128 extended from “End of Jupiter” to “End of Saturn” upon request to the association. Other standards included in the application stack (such as CX-0018) to which the **no change** scenario does not apply must still be recertified by a CAB. Practically, this means the DCM app must migrate from a Jupiter-compliant EDC to at least a Saturn-compliant connector and evidence this to the CAB, otherwise the overall product certification elapses despite the extended CX-0128 certificate.
