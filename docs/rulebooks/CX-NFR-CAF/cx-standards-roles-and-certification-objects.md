@@ -58,7 +58,7 @@ Basically, the CAC is checked using various "Test procedures". For example, an i
 
 **Data Provider / Consumer**\* — Data Providers / Consumers (with and without a legacy system) provide, consume, and manipulate data to collaborate with other data ecosystem participants by means of core and data services as well as business apps. (For more information click here)
 
-In general Deep Dives to the different roles can be found [here](https://catenax-ev.github.io/docs/next/operating-model/who-roles-in-the-catena-x-ecosyste)
+In general Deep Dives to the different roles can be found [here](../../operating-model/who-roles-in-the-catena-x-ecosystem)
 
 \* Currently not within the scope of CX certification.
 

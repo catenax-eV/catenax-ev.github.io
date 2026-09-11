@@ -132,7 +132,7 @@ As certification requires a defined lead time, applicants may continue to certif
 
 ## Certificate Validity
 
-Catena-X Certificates are issued based on Catena-X Releases (e.g. CX-Neptune). The certificate thereby confirms conformity of the application and its provider against standards and normative documents as published for that release. Therby:
+Catena-X Certificates are issued based on Catena-X Releases (e.g. CX-Neptune). The certificate thereby confirms conformity of the application and its provider against standards and normative documents as published for that release. Thereby:
 
 - A certificate always names the End of the release it was issued for (e.g. End of Neptune).
 - Changes introduced by later releases (new or updated standards, new test cases) are not covered retroactively by an existing certificate.
@@ -152,11 +152,10 @@ With the publication of Release N+2, the certificate issued for Release N expire
 
 ### Extension of Certificates
 
-Catena-X Certificates are generally issued for a defined validity period that is tied to a release of the Catena-X standard (e.g. End of Saturn). If a standard has not changed at all or has only received patch changes (see Catena-X Operating Model How: [Life Cycle Management](https://catenax-ev.github.io/docs/next/operating-model/how-life-cycle-management)) since the certified product was assessed, the validity of the certificate for that specific standard can be extended to the major release following the initially certified release. The extension of validity can only happen at the end of validity of the certain standard. Additionally the association can nominate Standards that are also to be covered by this rule.
+Catena-X Certificates are generally issued for a defined validity period that is tied to a release of the Catena-X standard (e.g. End of Saturn). If a standard has not changed at all or has only received patch changes (see Catena-X Operating Model How: [Life Cycle Management](../../operating-model/how-life-cycle-management)) since the certified product was assessed, the validity of the certificate for that specific standard can be extended to the major release following the initially certified release. The extension of validity can only happen at the end of validity of the certain standard. Additionally, the association can nominate Standards that are also to be covered by this rule.
 This extension is not granted automatically: The software provider must actively request the extension of validity for the specific standard from the association. The extension applies only to the specific standards that meet the "no changes or patch changes only" condition. All other standards associated with the certified product remain subject to the regular recertification process and must be re-assessed as part of the upcoming release cycle. This includes standards of the underlying technical stack: if such a standard changes in a non-patch manner, the software provider must adopt the new version, and the CAB verifies this as part of the recertification.
 
-Cuurently nominated Standard outside of patch changes:
-
+Currently, nominated Standards outside of patch changes:
 - CX-0128
 
 Example: A DCM app that was certified for Jupiter has its certificate for the specific standard CX-0128 extended from “End of Jupiter” to “End of Saturn” upon request to the association. Other standards included in the application stack (such as CX-0018) to which the **no change** scenario does not apply must still be recertified by a CAB. Practically, this means the DCM app must migrate from a Jupiter-compliant EDC to at least a Saturn-compliant connector and evidence this to the CAB, otherwise the overall product certification elapses despite the extended CX-0128 certificate.
