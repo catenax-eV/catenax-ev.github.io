@@ -37,9 +37,9 @@ This document is the Conformity Assessment Framework (CAF). It is the normative 
 
 - Conformity Assessment Body (CAB)  
 - Catena-X Standards in the context of the framework  
-- The modular system of certification with the integration of standards  (See [The Modular System of Catena-X Certification](./04-modular-system-and-cross-cutting-requirements.md))
-- Certification catalog  (See [Certification Catalog](./05-certification-catalog.md))
-- Test procedures  (See [Test Procedures](./06-test-procedures.md))
+- The modular system of certification with the integration of standards  (See [The Modular System of Catena-X Certification](modular-system-and-cross-cutting-requirements.md))
+- Certification catalog  (See [Certification Catalog](certification-catalog.md))
+- Test procedures  (See [Test Procedures](test-procedures.md))
 - Certification process  
 - The Catena-X certificate  
 - Up-to-date status of certifications (update process)  
@@ -56,10 +56,10 @@ The CAF certification catalog is the basis and the core of the certification. Th
 - Application of the respective test procedure for a CAC  
 - Assignment of standards to certification objects
 
-See [Certification Catalog](./05-certification-catalog.md)
+See [Certification Catalog](certification-catalog.md)
 
 ### Modular System for Certification
 
 Certification in Catena-X follows a modular approach rather than strict testing catalogs. The standards to certify against are built up by the Use Case the application wants to apply and the role the applicant to assume in the Data Space. Certification - as standards - are based on Industry Core, Data Space Connectivity and Semantics.
 
-See [The Modular System of Catena-X Certification](./04-modular-system-and-cross-cutting-requirements.md)
+See [The Modular System of Catena-X Certification](modular-system-and-cross-cutting-requirements.md)

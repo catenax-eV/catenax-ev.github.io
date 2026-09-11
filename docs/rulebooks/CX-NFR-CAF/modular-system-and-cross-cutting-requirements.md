@@ -9,11 +9,11 @@ This chapter defines the modular system of Catena-X certification. It is normati
 
 ## Modular System
 
-![Modular System Overview](./assets/Modular%20System_Overview.png)
+![Modular System Overview](assets/modular-system-overview.png)
 
-![Modular System BAP](./assets/Modular%20System_BAP.png)
+![Modular System BAP](assets/modular-system-bap.png)
 
-![Modular System other](./assets/Modular%20System_other.png)
+![Modular System other](assets/modular-system-other.png)
 
 ## Principle
 
@@ -73,12 +73,12 @@ When a connector, digital twin registry or wallet is offered as a service to oth
 
 For Connector as a Service, CX-0018 and CX-0152 remain the base standards. Depending on which functions are offered, the following additional standards apply:
 
-| Function offered | Additional standard(s) |
-| --- | --- |
+| Function offered              | Additional standard(s)    |
+|-------------------------------|---------------------------|
 | Backend Integration Pattern 1 | CX-0002, CX-0003, CX-0055 |
-| Backend Integration Pattern 2 | CX-0055, CX-0084 |
-| Simple Data Exchanger | CX-0007 |
-| Data Chain | CX-0005, CX-0045 |
+| Backend Integration Pattern 2 | CX-0055, CX-0084          |
+| Simple Data Exchanger         | CX-0007                   |
+| Data Chain                    | CX-0005, CX-0045          |
 
 The Provider Base requirement applies to all Enablement Service Provider capabilities.
 

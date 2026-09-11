@@ -37,9 +37,9 @@ Upon expiration, the certificate will be removed from the CX homepage and partic
 
 In the self-assessment, the certification applicant submits a self-assessment to the CAB about the implementation of requirements.
 
-![Catena-X Self Assessment 1/2](./assets/Self-Assessment1.svg)
+![Catena-X Self Assessment 1/2](assets/self-assessment-1.svg)
 
-![Catena-X Self Assessment 2/2](./assets/Self-Assessment2.svg)
+![Catena-X Self Assessment 2/2](assets/self-assessment-2.svg)
 
 **Self-assessment of the certification applicant:**
 
@@ -57,7 +57,7 @@ In the self-assessment, the certification applicant submits a self-assessment to
 
 The requirements for the certificate provide a complete overview and traceability of certification.
 
-![Catena-X Certificate](./assets/Example-Certificate.png)
+![Catena-X Certificate](assets/example-certificate.png)
 
 **Requirements for the Catena-X certificate:**
 
@@ -77,11 +77,11 @@ Catena-X certificate includes following content:
 
 The certificate number **CATX-ABC-0000001** of the Catena-X certificate consists of and provides information on…
 
-| Part | Meaning |
-| --- | --- |
-| **CATX** | Abbreviation for the content-related connection with Catena-X |
-| **ABC** | Unique abbreviation assigned per CAB to identify a CAB commissioned by Catena-X. Outsiders cannot link any names of CABs via the abbreviation |
-| **0000001** | Sequential number for one-time certificates |
+| Part        | Meaning                                                                                                                                       |
+|-------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
+| **CATX**    | Abbreviation for the content-related connection with Catena-X                                                                                 |
+| **ABC**     | Unique abbreviation assigned per CAB to identify a CAB commissioned by Catena-X. Outsiders cannot link any names of CABs via the abbreviation |
+| **0000001** | Sequential number for one-time certificates                                                                                                   |
 
 Depending on the point in time, there will be three different identification options for certified apps and companies:
 
@@ -148,7 +148,7 @@ Because Catena-X maintains each major release during the lifetime of its success
 
 With the publication of Release N+2, the certificate issued for Release N expires and recertification becomes due.
 
-![Illustration for Validity](./assets/Certification-validity.png)
+![Illustration for Validity](assets/certification-validity.png)
 
 ### Extension of Certificates
 

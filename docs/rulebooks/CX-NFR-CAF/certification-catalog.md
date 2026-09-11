@@ -9,16 +9,16 @@ The certification catalog is the central reference document for Catena-X conform
 2. How binding is it? (MUST / SHOULD / MUST NOT / SHOULD NOT)
 3. How is it verified? (test procedure and proof of conformity)
 
-Applicants do not work with the full catalog: in preparation for certification, each applicant receives an individual list of standards with the CAC relevant to their [role and Use Case](./04-modular-system-and-cross-cutting-requirements.md#roles).  
+Applicants do not work with the full catalog: in preparation for certification, each applicant receives an individual list of standards with the CAC relevant to their [role and Use Case](modular-system-and-cross-cutting-requirements.md#roles).  
 
 ## Structure of the certification catalog
 
 The catalog is structured in three blocks — **Catalog of requirements**, **Risk** and **Test procedures** — with the following columns:
 
-| CAC – ID NO. | Standard | Standard Version | Category | Platform Capability / Use case | Standard-title | Requirement (CAC) | Must / May / Should | … | Stages 1–4 (Risk) | Inspection | … | Analytical Procedures |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| CX-0019-CAC-001 | CX-0019 | V2.0 | Semantic | Traceability | Batch | Tbd | MUST | … | 3 | ☒ | ☐ | ☐ |
-| CX-0019-CAC-002 | CX-0019 | V2.0 | Semantic | Traceability | Batch | Tbd | MUST | … | 3 | ☒ | ☐ | ☐ |
+| CAC – ID NO.    | Standard | Standard Version | Category | Platform Capability / Use case | Standard-title | Requirement (CAC) | Must / May / Should | … | Stages 1–4 (Risk) | Inspection | …  | Analytical Procedures |
+|-----------------|----------|------------------|----------|--------------------------------|----------------|-------------------|---------------------|---|-------------------|------------|----|-----------------------|
+| CX-0019-CAC-001 | CX-0019  | V2.0             | Semantic | Traceability                   | Batch          | Tbd               | MUST                | … | 3                 | ☒         | ☐ | ☐                    |
+| CX-0019-CAC-002 | CX-0019  | V2.0             | Semantic | Traceability                   | Batch          | Tbd               | MUST                | … | 3                 | ☒         | ☐ | ☐                    |
 
 In preparation for certification, the certification applicant receives an individual list of standards including the associated CAC.
 
@@ -67,16 +67,16 @@ The proof of conformity indicates which tests can be carried out to verify the i
 The test procedures are the methods used to verify the implementation of a CAC.  
 They are divided into eight different individual options:
 
-- [Inspection](./06-test-procedures.md#inspection)  
-- [Observation](./06-test-procedures.md#observation)  
-- [Self-assessment](./06-test-procedures.md#self-assessment)  
-- [Inquiry](./06-test-procedures.md#inquiry)  
-- [Confirmation](./06-test-procedures.md#confirmation)  
-- [Recalculation](./06-test-procedures.md#recalculation)  
-- [Reperformance](./06-test-procedures.md#reperformance)  
-- [Analytical Procedures](./06-test-procedures.md#analytical-procedures)
+- [Inspection](test-procedures.md#inspection)  
+- [Observation](test-procedures.md#observation)  
+- [Self-assessment](test-procedures.md#self-assessment)  
+- [Inquiry](test-procedures.md#inquiry)  
+- [Confirmation](test-procedures.md#confirmation)  
+- [Recalculation](test-procedures.md#recalculation)  
+- [Reperformance](test-procedures.md#reperformance)  
+- [Analytical Procedures](test-procedures.md#analytical-procedures)
 
 :::info  
 The details of the individual test procedures are explained in  
-[Test Procedures](./06-test-procedures.md).  
+[Test Procedures](test-procedures.md).  
 :::
