@@ -48,11 +48,13 @@ In Catena-X six roles are enabled for certification. Each role comprises the Use
 - **Data Provider & Data Consumer:** Connector, Participant Wallet
 - **Enablement Service Provider:** Connector as a Service, Digital Twin Registry as a Service, Wallet as a Service
 - **Business Application Provider:** Quality, Traceability, Behavioral Twin, PCF, Circularity, Eco Pass, ESS, Logistics, MaaS, Modular Production, DCM, PURIS, OSIM, CCM, Tariffs, Engineering, SBOM, Material Accounting
-- **Core Service Provider:**: Core Services
+- **Core Service Provider:** Core Services
 - **Onboarding Service Provider:** Onboarding Services
 - **Sandbox Service Provider:** Sandbox Services
 
-Under the current release, the Onboarding Service Provider role covers only part of the registration process within the Catena-X data space. The complete process is documented separately in the **Catena-X Operating Model**.
+:::note
+Under the current release, the Onboarding Service Provider role covers only part of the registration process within the Catena-X data space. The complete process is documented separately in the Catena-X Operating Model.
+:::
 
 ## Determination of the Certification Scope by Role
 
@@ -88,8 +90,12 @@ For a Business Application, the certification scope includes every row of the ap
 
 ## Cross-Cutting Requirements
 
-a) **Additional standards.** Standards listed under "Additional" apply conditionally based on if the standard defines is a capability the certification applicant integrated into their application
+**Additional standards.** Standards listed under "Additional" apply conditionally when the certification applicant integrates the capability defined by the standard.
 
-b) **Connectivity.** Every solution shall either be capable of using an EDC or provide an integrated EDC. Within certification the testing of the application is to be done via EDC. A fully operational Catena-X Application Stack needs to be presented to the CAB.
+:::warning
+Every solution shall either be capable of using an EDC or provide an integrated EDC. Within certification the testing of the application is to be done via EDC. A fully operational Catena-X Application Stack needs to be presented to the CAB.
+:::
 
-c) **Interoperability check.** In addition to certifying the applicable standards, Business Application Providers are recommended to complete an interoperability check with another application provider.
+:::tip
+In addition to certifying the applicable standards, Business Application Providers are recommended to complete an interoperability check with another application provider.
+:::

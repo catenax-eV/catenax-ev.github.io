@@ -5,9 +5,9 @@ title: Test Procedures
 
 ## Test procedures overview
 
-To check the CAC and thus the standards, the CAB uses the test procedures defined in the framework. Each CAC a test procedure is assigned in the catalog, which is shown and explained below.
+To check the CAC and thus the standards, the CAB uses the test procedures defined in the framework. Each CAC is assigned a test procedure in the catalog, as shown and explained below.
 
-If a CAC or a standard is not applicable, e.g., because the solution does not use the semantic model, the CAC can be outsourced by the CAB with not applicable (n/a) and a justification.
+If a CAC or a standard is not applicable, the CAC can be outsourced by the CAB with not applicable (n/a) and a justification.
 
 The eight test procedures in sequence: Inspection · Observation · Self-assessment · Inquiry · Confirmation · Recalculation · Reperformance · Analytical Procedures
 

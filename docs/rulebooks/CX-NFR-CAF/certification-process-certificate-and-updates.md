@@ -7,7 +7,7 @@ title: Certification Process, Certificate and Updates
 
 ### Certification process
 
-As part of the certification process, certification applicants are guided through five phases. The phases are the prospect, inquiry, offer, certification and award phases.
+As part of the certification process, certification applicants are guided through five phases. The phases are the prospect, inquiry, proposal, certification and award phases.
 
 Prospect phase → Inquiry phase → Proposal phase → Certification phase → Award phase
 
@@ -31,7 +31,9 @@ Return loops in the process:
 8. **Awarding of the certificate** — The CAB awards the certificate on behalf of CX. CX publishes the result on the CX homepage
 9. **Part of the Catena-X data ecosystem** — The certificate is valid for the entire duration of a release. If the certification applicant certificate has expired, a recertification must be carried out
 
+:::danger
 Upon expiration, the certificate will be removed from the CX homepage and participation in the CX data ecosystem will no longer be allowed. Thus, the renewal of the certificate is the responsibility of the certified company.
+:::
 
 ### Self-assessment and template for declaration of completeness and correctness
 
@@ -95,7 +97,7 @@ Backward compatibility is intended to determine the temporal extent of a recerti
 
 Changes in requirements, e.g., new relevant standards for the use case or new CAC lead to recertification.
 
-At the end of the transitional period the certified person will be deprived of the right to operate in the CX ecosystem.
+At the end of the transitional period the certified solution will be deprived of the right to operate in the CX ecosystem.
 
 The backward compatibility and thus the transition period can be suspended by Catena-X if necessary\*\*.
 
@@ -136,7 +138,7 @@ Catena-X Certificates are issued based on Catena-X Releases (e.g. CX-Neptune). T
 
 - A certificate always names the End of the release it was issued for (e.g. End of Neptune).
 - Changes introduced by later releases (new or updated standards, new test cases) are not covered retroactively by an existing certificate.
-- A certificate cannot be transferred to another release without a formal (re-)assessment, unless the preconditions set under [Extension of Certificates](#extension-of-certificates)
+- A certificate cannot be transferred to another release without a formal (re-)assessment, unless the preconditions set under [Extension of Certificates](#extension-of-certificates) are met.
 
 ### Validity Period
 
@@ -159,4 +161,6 @@ Currently, nominated Standards outside of patch changes:
 
 - CX-0128
 
-Example: A DCM app that was certified for Jupiter has its certificate for the specific standard CX-0128 extended from “End of Jupiter” to “End of Saturn” upon request to the association. Other standards included in the application stack (such as CX-0018) to which the **no change** scenario does not apply must still be recertified by a CAB. Practically, this means the DCM app must migrate from a Jupiter-compliant EDC to at least a Saturn-compliant connector and evidence this to the CAB, otherwise the overall product certification elapses despite the extended CX-0128 certificate.
+:::tip[Example]
+A DCM app that was certified for Jupiter has its certificate for the specific standard CX-0128 extended from "End of Jupiter" to "End of Saturn" upon request to the association. Other standards included in the application stack (such as CX-0018) to which the no change scenario does not apply must still be recertified by a CAB. Practically, this means the DCM app must migrate from a Jupiter-compliant EDC to at least a Saturn-compliant connector and evidence this to the CAB, otherwise the overall product certification elapses despite the extended CX-0128 certificate.
+:::

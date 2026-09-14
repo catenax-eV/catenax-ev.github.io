@@ -22,7 +22,9 @@ A CAB must meet certain eligibility requirements in order to be nominated as a C
 
 ## Requirements for a CAB
 
-*A company that wants to assume the role of the Conformity Assessment Body in the Catena-X ecosystem must meet the following minimum requirements and prove this to Catena-X.*
+:::info
+A company that wants to assume the role of the Conformity Assessment Body in the Catena-X ecosystem must meet the following minimum requirements and prove this to Catena-X.
+:::
 
 | Requirement                                                                                  | Explanation                                                                                                                                                                                                                                                                                                                             |
 |----------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

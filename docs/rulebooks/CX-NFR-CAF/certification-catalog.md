@@ -3,7 +3,7 @@ sidebar_position: 5
 title: Certification Catalog
 ---
 
-The certification catalog is the central reference document for Catena-X conformity assessments. It translates the Catena-X standards into auditable requirements (so-called CAC (Catena-X Assessment Criteria)) and defines how each requirement is to be tested. It answers three questions for every requirement:
+The certification catalog is the central reference document for Catena-X conformity assessments. It translates the Catena-X standards into auditable requirements (so-called CAC (Conformity Assessment Criteria)) and defines how each requirement is to be tested. It answers three questions for every requirement:
 
 1. What must be fulfilled? (requirement)
 2. How binding is it? (MUST / SHOULD / MUST NOT / SHOULD NOT)

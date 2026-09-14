@@ -23,7 +23,7 @@ The chapter on **"CAB"** explains what a CAB is, which tasks it performs in the 
 
 The following chapter **"Modular system in the context of CX Standards"** defines the modular system and provides an explanation of how to use it on the basis of examples. Below, the chapter **"Certification catalog"** shows the structure of the certification catalog and explains the individual column contents in more detail.
 
-The **"Test procedures"** are explained in detail. In addition, it is shown what an inherent test can look like and what the documents and proofs must look like according to IPE specifications.
+The **"Test procedures"** are explained in detail and in addition, it is shown what an inherent test can look like.
 
 The chapter **"Certification process"** describes the certification process from the request to the awarding of the certificate. Building on this, the certificate and its individual components are shown in the next chapter.
 
