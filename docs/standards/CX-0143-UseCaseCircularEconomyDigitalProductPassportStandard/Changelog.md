@@ -4,6 +4,18 @@ title: "Changelog"
 
 All notable changes to CX-0143 will be documented in this file.
 
+## [1.5.0] - 26.09 (CX-Saturn)
+
+### Added
+
+### Changed
+
+- CAC in new template
+
+### Removed
+
+- mpn key for BPN discovery
+
 ## [1.4.0] - 26.03 (CX-Titan)
 
 ### Added

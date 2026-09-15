@@ -1,4 +1,4 @@
-# CX-0154 Digital Master Data v.1.0.1
+# CX-0154 Digital Master Data v.1.1.0
 
 ## ABSTRACT
 
@@ -10,7 +10,7 @@ The standard is intended for data provider/consumer and Business Application Pro
 
 ## 1 INTRODUCTION
 
-The project aims to reduce data inconsistencies and manual effort in the supply chain by enabling structured exchange of 2D/3D and digital master data. It enhances efficiency in PDM and CAD systems through harmonized master data shared between OEMs and suppliers.
+The project aims to reduce data inconsistencies and manual effort in the supply chain by enabling structured exchange of digital Engineering master data (DEMD). This also includes 2D/3D related data. It enhances efficiency in PDM and CAD systems through harmonized master data shared between OEMs and suppliers.
 
 On a broader scale, the initiative supports the digitalization of the automotive industry by establishing standardized data exchange infrastructure. It fosters collaboration and transparency among supply chain partners, reduces operational risks, and leads to significant time and cost savings by eliminating manual processes. Additionally, it helps meet regulatory requirements and enables the development of new digital services based on real-time, accurate data.
 
@@ -39,12 +39,13 @@ This standard is relevant for the following audience:
 - Data Provider / Consumer
 - Business Application Provider
 
-This document focuses on Digital Master Data which is exchanged before the actual physiscal asset is created.
+This document focuses on Digital Master Data which is exchanged before the actual physical asset is created.
 
 Out-of-scope is:
 
-- The exchange of instance specific information (see [CX-0127 Industry Core PartInstance](https://catenax-ev.github.io/docs/standards/CX-0127-IndustryCorePartInstance))
-- information that is already relevant in an existing supplier OEM-relationship (see [CX-0126 Industry Core: PartType](https://catenax-ev.github.io/docs/standards/CX-0126-IndustryCorePartType))
+- The exchange of instance specific information (see [CX-0127 Industry Core PartInstance][norm])
+- Geometry specific information regarding coordinate systems and local transformations. See [CX-0156 Geometry][non-norm] for this.
+- Requirements in the Requirements Engineering phase. See [CX-0155 Requirements Engineering][non-norm] for this.
 
 ### 1.2 CONTEXT AND ARCHITECTURE FIT
 
@@ -56,7 +57,7 @@ To provide a general framework, the components, interactions, APIs, and data mod
 
 #### Components
 
-- **Master Data System**: Abstraction for systems provding master data. Depending on the implemention this could be a PDM system, a database or a standalone application
+- **Master Data System**: Abstraction for systems providing master data. Depending on the implementation this could be a PDM system, a database or a standalone application
 - **Digital Twin Registry**: Stores and manages digital twin information
 - **Submodel Service**: Handles submodel data and operations
 - **Eclipse Dataspace Connector (EDC)**: Reference implementation of a connector fulfilling the Dataspace Protocol (DSP) for data exchange between partners
@@ -106,7 +107,9 @@ flowchart LR
     style EDC stroke:#000,stroke-width:1px
 ```
 
->Note: As part of the part master data information regarding 2D and 3D models are exchanged to enable retrieval of these models from the respective source systems. The concrete transfer of 2D and 3D data is not part of this specification but is listed for completeness and differentiation (visible as a dashed list in the diagram).
+> [!Note]
+>
+> As part of the part master data information regarding 2D and 3D models are exchanged to enable retrieval of these models from the respective source systems. The concrete transfer of 2D and 3D data is not part of this specification but is listed for completeness and differentiation (visible as a dashed list in the diagram).
 
 #### APIs
 
@@ -300,24 +303,33 @@ To prove conformance with the standard a participant (consumer, provider or appl
 
 #### 2.1.1 DIGITAL TWINS AND SPECIFIC ASSET IDs
 
-The Digital Twin MUST be described as a ``PartRole``.
+The Digital Twin MUST be described as a ``PartRole`` or ``PartType```.
+
+You MUST use them as follows:
+
+- If there is already a specific CatalogPart existing to which the Master Data is attached ``PartType`` MUST be used. This should be the default case. An example is the specification of a specific gearbox configuration.
+- If the master data addressed with this standard do not address a specific catalog part but only an intended realization, the Digital Twin MUST be described as ``PartRole``. An example is the master data regarding the purpose of an intended realization (e.g. as basic data).
 
 Specific asset IDs are used to identify digital twins when looking up or searching for these digital twins. This is a required to connect the digital twins of the engineered parts to its digital twins. Mandatory specific asset IDs ensure that at least this information is available for the digital twin.
 
+In accordance with [CX-0126][norm], the following specific asset IDs MUST be used:
+
 | Key | Availability | Description | Type |
-|----------------|--------|---------------------------------------------------------------------|------|
-| manufacturerId | mandatory | The Business Partner Number (BPNL) of the manufacturer of the part. | BPNL |
-| digitalTwinType| mandatory | The digitalTwinType has to be set to ``digitalTwinType="PartRole"``. Without this filter, a search for a particular manufacturer part ID would not only return the digital twin of the engineered part, but also all digital twins of the manufacturer that are accessible, i.e., of the corresponding serial parts and catalog parts. | String |
+| --- | ------------ | ----------- | ---- |
+| `manufacturerId` | Mandatory | The Business Partner Number (BPNL) of the manufacturer of the part. | BPNL |
+| `manufacturerPartId` | Mandatory | The ID of the type/catalog part or the intended realization from the manufacturer. | String |
+| `customerPartId` | Optional | The ID of the type/catalog part from the customer. The main reason why this property is optional is that it cannot be guaranteed that every manufacturer knows the customerPartId for their parts. If known, it is recommended to always add the customerPartId for easier lookup. | String |
+| `digitalTwinType` | Mandatory | The digitalTwinType has to be set to `digitalTwinType="PartType"` or `digitalTwinType="PartRole"`. DigitalTwinType was added to allow data consumers to search for all digital twins of a particular type, e.g, only for intended realizations by using digitalTwinType="PartRole" as filter. Without this filter, a search for a particular `manufacturerPartId` would not only return the digital twin of the engineered part, but also all digital twins of the manufacturer that are accessible, i.e., of the corresponding serial parts. | String |
 
 ### 2.2 POLICY CONSTRAINTS FOR DATA EXCHANGE
 
-In alignment with our commitment to data sovereignty, a specific framework governing the utilization of data within the Catena-X use cases has been outlined.  As part of this data sovereignty framework, conventions for access policies, for usage policies and for the constraints contained in the policies have been specified in standard 'CX-0152 Policy Constraints for Data Exchange'. This standard document CX-0152 **MUST** be followed when providing services or apps for data sharing/consuming and when sharing or consuming data in the Catena-X ecosystem. What conventions are relevant for what roles named in [1.1 AUDIENCE & SCOPE](#11-audience--scope) is specified in the CX-0152 standard document as well. CX-0152 can be found in the [standard library](https://catenax-ev.github.io/docs/standards/overview).
+In alignment with our commitment to data sovereignty, a specific framework governing the utilization of data within the Catena-X use cases has been outlined.  As part of this data sovereignty framework, conventions for access policies, for usage policies and for the constraints contained in the policies have been specified in standard 'CX-0152 Policy Constraints for Data Exchange'. This standard document [CX-0152][norm] **MUST** be followed when providing services or apps for data sharing/consuming and when sharing or consuming data in the Catena-X ecosystem. What conventions are relevant for what roles named in [1.1 AUDIENCE & SCOPE](#11-audience--scope) is specified in the [CX-0152][norm] standard document as well. CX-0152 can be found in the [standard library](https://catenax-ev.github.io/docs/standards/overview).
 
 The following usage purpose **MUST** be registered for data exchange in the use case:
 
-|Type | Subject | Description | Version | Usage Purpose |
-|---| ----| ---- |----| ---|
-|cx-taxo:Engineering | cx-taxo:ReadAccessEngineering | Data consumer are allowed to use the data for <br /> • Collaborative engineering of products (e.g., 3D Designs, Simulations) <br /> • regulatory compliance use cases (e.g., material information in master data for secondar material content checks) <br />• Mock-Up and integration (e.g., collision checks in 3D) <br /> • versioning & release notifications of products (e.g., new product version that shall be used in a new product generation) <br /> • interface alignments (e.g., between interacting systems on physical, logical and functional level) <br /> They explicitly **MUST not** use the data for reverse engineering, e.g., by using material classifications for building the product themselves. | 1 | cx.enginnering:1 |
+| Type | Subject | Description | Version | Usage Purpose |
+| ---- | ------- | ----------- | ------- | ------------- |
+| cx-taxo:Engineering | cx-taxo:ReadAccessEngineering | Data consumer are allowed to use the data for <br /> • Collaborative engineering of products (e.g., 3D Designs, Simulations) <br /> • regulatory compliance use cases (e.g., material information in master data for secondary material content checks) <br />• Mock-Up and integration (e.g., collision checks in 3D) <br /> • versioning & release notifications of products (e.g., new product version that shall be used in a new product generation) <br /> • interface alignments (e.g., between interacting systems on physical, logical and functional level) <br /> They explicitly **MUST not** use the data for reverse engineering, e.g., by using material classifications for building the product themselves. | 1 | cx.enginnering:1 |
 
 <!---
 Data consumer are allowed to use the data for
@@ -348,8 +360,8 @@ The semantic model has the unique identifier:
 
 > *Note:*
 
-> - You can find the corresponding Turtle file [here](https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.masterdatamanagement/1.0.0/digitalmasterdata.ttl)
-> - You can find the corresponding files (Documentation, JSON Schema or AASX File, etc.) [here](https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.digitalmasterdata/1.0.0/gen).
+> - You can find the corresponding Turtle file in the [sldt-repo](https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.digital_engineering_master_data/1.0.0/DigitalEngineeringMasterData.ttl)
+> - You can find the corresponding files (Documentation, JSON Schema or AASX File, etc.) in the [sldt-repo](https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.digital_engineering_master_data/1.0.0/gen).
 
 #### 3.1.2 Normative Criteria
 
@@ -357,7 +369,7 @@ This model MUST be used for providing and consuming masterdata.
 
 ### 3.2 ASPECT MODEL "MessageHeaderAspect"
 
-The Catena-X Message Header containing standardized attributes for message processing across several use cases. This aspect is defined in standard [CX-0151](https://catenax-ev.github.io/docs/standards/CX-0151-IndustryCoreBasics) Industry Core: Basics.
+The Catena-X Message Header containing standardized attributes for message processing across several use cases. This aspect is defined in standard [CX-0151][norm] Industry Core: Basics.
 The aspect `MessageHeaderAspect` is used for sending notifications to Catena-X Partners.
 
 #### 3.2.1 IDENTIFIER OF SEMANTIC MODEL
@@ -368,8 +380,8 @@ The aspect `MessageHeaderAspect` is used for sending notifications to Catena-X P
 
 > *Note:*
 
-> - You can find the corresponding Turtle file [here](https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.shared.message_header/3.0.0/MessageHeaderAspect.ttl)
-> - You can find the corresponding files (Documentation, JSON Schema or AASX File, etc.) [here](https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.shared.message_header/3.0.0/gen).
+> - You can find the corresponding Turtle file in the [sldt-repo](https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.shared.message_header/3.0.0/MessageHeaderAspect.ttl)
+> - You can find the corresponding files (Documentation, JSON Schema or AASX File, etc.) in the [sldt-repo](https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.shared.message_header/3.0.0/gen).
 
 #### 3.2.2 Normative Criteria
 
@@ -381,7 +393,7 @@ This model MUST be applied for the usage of the API.
 
 ### 4.1 APIs ASSOCIATED WITH DIGITAL TWINS
 
-This standard completely and solely builds upon the standard [CX-0002](https://catenax-ev.github.io/docs/next/standards/CX-0002-DigitalTwinsInCatenaX) Digital Twins in Catena-X.
+This standard completely and solely builds upon the standard [CX-0002][norm] Digital Twins in Catena-X.
 
 #### DATA ASSET STRUCTURE
 
@@ -417,12 +429,12 @@ The Data Assets need to be registered in the EDC as follows:
 
 The data asset MUST contain the following properties with the corresponding values from the table above:
 
-- ``dct:type`` for type (as @id reference), see also CX-0018
-- ``cx-common:version`` for version, see also CX-0018
+- ``dct:type`` for type (as @id reference), see also [CX-0018][norm]
+- ``cx-common:version`` for version, see also [CX-0018][norm]
 
 ### 4.2 NOTIFICATIONS
 
-This standard completely and solely builds upon the standard [CX-0151](https://catenax-ev.github.io/docs/standards/CX-0151-IndustryCoreBasics) Industry Core: Basics.
+This standard completely and solely builds upon the standard [CX-0151][norm] Industry Core: Basics for notifications.
 
 ## 5 PROCESSES
 
@@ -500,23 +512,29 @@ All notification operations are sent via the same asset using the same contract 
 
 > *This section is normative*
 
-- CX-0001 EDC Discovery API v1.1
-- CX-0002 Digital Twins in Catena-X v2.2.0
-- CX-0003 SAMM Aspect Meta Model v1.2.0
-- CX-0010 Business Partner Number v3.0.0
-- CX-0018 Dataspace Connectivity v4.0.0
+- CX-0002 Digital Twins in Catena-X v2.4.0
+- CX-0003 SAMM Aspect Meta Model v1.3.0
+- CX-0010 Business Partner Number v3.0.1
+- CX-0018 Dataspace Connectivity v4.2.0
+- CX-0126 Industry Core: Part Type 2.1.1
 - CX-0151 Industry Core: Basics v.1.0.0
 - CX-0152 Policy Constraints for Data Exchange v1.0.0
+
+[norm]: #61-normative-references
 
 ### 6.2 NON-NORMATIVE REFERENCES
 
 > *This section is non-normative*
 
+- CX-0155 Requirements Engineering 2.0.0
+- CX-0156 Geometry 1.0.0
 - [ISO 10303-242:2022](https://www.iso.org/standard/84667.html)
 - [ISO 14306:2017](https://www.iso.org/standard/62770.html)
 - [RFC 2077](https://www.rfc-editor.org/rfc/rfc2077.html)
 - [VDA 231](https://webshop.vda.de/VDA/en/vda-231-301-022025)
 - [prostep ivip Digital Data Package (DDP) Recommendation](https://www.prostep.org/en/medialibrary/detail?ai%5Baction%5D=detail&ai%5Bcontroller%5D=Catalog&ai%5Bd_name%5D=ddp_rec&ai%5Bd_pos%5D=31)
+
+[non-norm]: #62-non-normative-references
 
 ### 6.3 REFERENCE IMPLEMENTATIONS
 

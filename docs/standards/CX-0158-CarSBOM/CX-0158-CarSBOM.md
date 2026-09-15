@@ -108,6 +108,12 @@ The semantic model has the unique identifier:
   urn:samm:io.catenax.sbom:1.0.0#
 ```
 
+and this model and version **MUST** be used for the SBOM exchange.
+
+> **Note:**
+>
+> - You can find the corresponding Turtle file [here](https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.sbom).
+
 ### 3.2 SPDX
 
 #### 3.2.1 SPDX VERSION
@@ -205,7 +211,8 @@ e.g.,
   - US Presidential Executive Orders that regularly happen on quite short notice
   - Guidance paper by the Japanese ministry of economy, trade and industry (METI) on SBOMs
   - ...
-- The companies involved in that supply chain are not competitors, and their individual compliance relationship allows for sharing the data.
+- The companies involved in that supply chain are not competitors, and their individual compliance relationship allows
+  for sharing the data.
 - ...
 
 In all available options this standard ensures—at a minimum—the anonymization of the underlying supply chain participants.
@@ -235,10 +242,16 @@ All four options, described in the next sections, are based on the same example,
 > and the SPDX dependency structure on the right side of the figure.
 > The SPDX dependency structure on the right is a subtree to the Catena-X supply chain structure.
 
-In this example, we have a window of a 3-tier supply chain with participants on Tier-n, Tier-n + 1, and Tier-n + 2 level.
-For each tier, we have one or multiple digital twins (which may or may not come from the same supply chain participant; this does not affect the mechanism).
-Some digital twins come with software information, and some do not (e.g., Tier-n+2 as one twin with a Software Information submodel, and one without).
-Submodel x and y depict arbitrary submodels that are not Software Information submodels. And the digital twin on Tier-n—while having a Software Information submodel—does not have any software dependencies itself, but depends on the two digital twins on Tier-n + 1 level, which come with Software Information submodels (remember the recursive definition from the section [5.1 Tier-n SBOM propagation](#51-tier-n-sbom-propagation)).
+In this example, there is a window of a 3-tier supply chain with participants on Tier-n, Tier-n + 1, and Tier-n + 2
+level.
+For each tier, there is one or multiple digital twins (which may or may not come from the same supply chain participant;
+this does not affect the mechanism).
+Some digital twins come with software information, and some do not (e.g., Tier-n+2 as one twin with a Software
+Information submodel, and one without).
+Submodel x and y depict arbitrary submodels that are not Software Information submodels. And the digital twin on
+Tier-n—while having a Software Information submodel—does not have any software dependencies itself, but depends on the
+two digital twins on Tier-n + 1 level, which come with Software Information submodels (remember the recursive definition
+from the section [5.1 Tier-n SBOM propagation](#51-tier-n-sbom-propagation)).
 
 ### 5.2.2 Example SPDX
 
@@ -468,68 +481,20 @@ The dtrSubmodelId that is specified in this message **MUST** equal the UID of th
 > This does **NOT** specify the digital twin registry, in which the submodel is discoverable.
 > It is still the responsibility of the data consumer to discover the digital twin registry (there might be multiple)
 
-### 5.8 Usage Policy
+### 5.8 Policy Constraints
 
-The assets included in the dataspace connector of the data provider (be it for the submodel assets or the notification API asset) **MUST** contain a usage policy that includes the Catena-X Data Exchange Governance document in the latest version.
-
-Additional more general usage policies **MAY** be included, but all the usage policies **MUST** contain the above usage purpose.
-
-*Example Usage Policy*:
-
-``` json
-{
-  "@context": [
-    "http://www.w3.org/ns/odrl.jsonld",
-    {
-      "@vocab": "https://w3id.org/edc/v0.0.1/ns/",
-      "cx-policy": "https://w3id.org/catenax/policy/"
-    }
-  ],
-  "@type": "PolicyDefinition",
-  "@id": "SBOM-usage-policy-without-contract-reference",
-  "profile": "cx-policy:profile2405",
-  "policy": {
-    "@type": "Set",
-    "permission": [
-      {
-        "action": "use",
-        "constraint": {
-          "and": [
-            {
-              "leftOperand": "cx-policy:FrameworkAgreement",
-              "operator": "eq",
-              "rightOperand": "DataExchangeGovernance:1.0"
-            }
-          ]
-        }
-      }
-    ]
-  }
-}
-```
-
-The left operand ```"leftOperand": "cx-policy:ContractReference"``` **MUST** be included only if a bilateral framework contract exists that further governs the data-exchange between the data consumer and the data provider.
-
-```json
-{
-  "leftOperand": "cx-policy:ContractReference",
-  "operator": "eq",
-  "rightOperand": "x12345"
-}
-```
+In alignment with our commitment to data sovereignty, a specific framework governing the utilization of data within the Catena-X use cases has been outlined.  As part of this data sovereignty framework, conventions for access policies, for usage policies and for the constraints contained in the policies have been specified in standard 'CX-0152 Policy Constraints for Data Exchange'. This standard document CX-0152 **MUST** be followed when providing services or apps for data sharing/consuming and when sharing or consuming data in the Catena-X ecosystem. What conventions are relevant for what roles named in [1.1 AUDIENCE & SCOPE](#11-audience--scope) is specified in the CX-0152 standard document as well. CX-0152 can be found in the [standard library](https://catenax-ev.github.io/docs/standards/overview).
 
 ## 6 REFERENCES
 
 ### 6.1 NORMATIVE REFERENCES
 
-- CX-0001 Participant Agent Registration v1.2
 - CX-0002 Digital Twins in Catena-X v2.3.0
-- CX-0003 SAMM Aspect Meta Model v1.2.0
-- CX-0010 Business Partner Number v3.0.1
 - CX-0018 Dataspace Connectivity v4.1.1
-- CX-0125 Traceability v2.2.1
 - CX-0126 Industry Core: Part Type 2.1.1
 - CX-0151 Industry Core: Basics v.1.0.0
+- CX-0152 Policy Constraints for Data Exchange
+- [io.catenax.sbom#1.0.0](https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.sbom)
 
 ### 6.2 NON-NORMATIVE REFERENCES
 

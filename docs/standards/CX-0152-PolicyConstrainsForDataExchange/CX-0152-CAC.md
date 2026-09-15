@@ -5,8 +5,8 @@
 - cxId: CX-0152
 - name: Policy Constraints for Data Exchange
 - capability: Policy
-- version: 1.1.0
-- release: CX-Neptun Preview
+- version: 1.2.0
+- release: CX-Neptune Preview
 
 ## Conformity Assessment Criteria
 

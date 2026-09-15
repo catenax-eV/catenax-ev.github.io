@@ -2,13 +2,13 @@
 
 ## General Information
 
-- cxId: CX-XXXX
+- cxId: CX-0159
 - name: Material Accounting
 - capability: Material Accounting
 - version: 1.0.0
 - release: CX-Titan
 
-### CX-XXXX-CAC-001 Digital Twin Logic
+### CX-0159-CAC-001 Digital Twin Logic
 
 - type: MUST
 - topic: Logics and Semantics
@@ -36,7 +36,7 @@ Data Provider: AAS ID (used as a digital twin ID)
 
 N/A
 
-### CX-XXXX-CAC-002 Technical Requirements and Normative Standards
+### CX-0159-CAC-002 Technical Requirements and Normative Standards
 
 - type: MUST
 - topic: Logics
@@ -64,7 +64,7 @@ N/A
 
 N/A
 
-### CX-XXXX-CAC-003 Usage Policy
+### CX-0159-CAC-003 Usage Policy
 
 - type: MUST
 - topic: Policy
@@ -92,7 +92,7 @@ N/A
 
 Policies
 
-### CX-XXXX-CAC-004 Aspect Model *VehicleInformation*
+### CX-0159-CAC-004 Aspect Model *VehicleInformation*
 
 - type: MUST
 - topic: Semantics, Logics
@@ -120,7 +120,7 @@ N/A
 
 N/A
 
-### CX-XXXX-CAC-005 Aspect Model *WasteCode*
+### CX-0159-CAC-005 Aspect Model *WasteCode*
 
 - type: MUST
 - topic: Semantics, Logics
@@ -148,7 +148,7 @@ Chapter 3.2.7 defines mandatory data attributes for specific actors as well as e
 
 N/A
 
-### CX-XXXX-CAC-006 Aspect Model *RecyclingBatch*
+### CX-0159-CAC-006 Aspect Model *RecyclingBatch*
 
 - type: MUST
 - topic: Semantics, Logics
@@ -176,7 +176,7 @@ N/A
 
 N/A
 
-### CX-XXXX-CAC-007 Aspect Model *Material*
+### CX-0159-CAC-007 Aspect Model *Material*
 
 - type: MUST
 - topic: Semantics, Logics
@@ -200,7 +200,7 @@ All paricipants MUST implement the aspect model *Material* if applicable for the
 
 Chapter 3.4.7 defines eligible values for specific data attributes which are required for conformance.
 
-### CX-XXXX-CAC-008 Aspect Model *RecyclingInformation*
+### CX-0159-CAC-008 Aspect Model *RecyclingInformation*
 
 - type: MUST
 - topic: Semantics, Logics
@@ -228,7 +228,7 @@ N/A
 
 N/A
 
-### CX-XXXX-CAC-009 Aspect Model *Composition*
+### CX-0159-CAC-009 Aspect Model *Composition*
 
 - type: MUST
 - topic: Semantics, Logics
@@ -256,7 +256,7 @@ Chapter 3.6.7 defines mandatory data attributes for specific actors as well as e
 
 N/A
 
-### CX-XXXX-CAC-010 Aspect Model *SerialPart* of CX-0127 Industry Core Part Instance
+### CX-0159-CAC-010 Aspect Model *SerialPart* of CX-0127 Industry Core Part Instance
 
 - type: MUST
 - topic: Semantics
@@ -284,7 +284,7 @@ N/A
 
 N/A
 
-### CX-XXXX-CAC-011 Aspect Model *SingleLevelBomAsBuilt* of CX-0127 Industry Core Part Instance
+### CX-0159-CAC-011 Aspect Model *SingleLevelBomAsBuilt* of CX-0127 Industry Core Part Instance
 
 - type: MUST
 - topic: Semantics

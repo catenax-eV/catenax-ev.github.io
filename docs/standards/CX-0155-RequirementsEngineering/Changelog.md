@@ -7,7 +7,19 @@ All notable changes to CX-0155 will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.1.0] CX-Titan (25.12)
+## [1.1.0] CX-Neptune (26.09)
+
+### Added
+
+- Conformity Assessment Criteria (CAC)
+- DigitalTwin Type (PartType vs. PartRole) rational
+
+### Changed
+
+- minor spelling errors
+- Terminology based on Standards
+
+## [1.0.1] CX-Titan (25.12)
 
 ### Added
 

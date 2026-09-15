@@ -1,4 +1,4 @@
-# CX-0128 - Demand and Capacity Management Data Exchange v2.3.1
+# CX-0128 - Demand and Capacity Management Data Exchange v2.3.2
 
 ## ABSTRACT
 
@@ -1134,6 +1134,9 @@ Not applicable.
 
 > *This section and all its subsections are normative*
 
+Chapter 4 describes the API endpoints.
+Within the Catena-X data space these APIs MUST only be accessible via a connector, conforming to the standard [[CX-0018](#71-normative-references)].
+
 **HEADER**
 
 When exchanging data with a DCM partner, the POST request payload MUST be structured as follows:
@@ -1164,8 +1167,6 @@ Within the RDF turtle file, you will find detailed descriptions for how to use t
 
 ### 4.1 WeekBasedMaterialDemand API
 
-Within the Catena-X data space APIs MUST only be accessible via a connector, conforming to the standard [[CX-0018](#71-normative-references)].
-
 The API MUST be registered as a data asset as defined in [Section 4.1.2.5](#4125-data-asset-structure).
 
 The API MUST be implemented as defined in [Section 4.1.2](#412-api-specification).
@@ -1178,7 +1179,7 @@ Suppliers must be able to consume and process `WeekBasedMaterialDemand`.
 
 #### 4.1.1 Preconditions and Dependencies
 
-The `WeekBasedMaterialDemand` API must be published towards the network using a data asset and contract offer, which is in line with the dataspace protocol as specified by the International Data Spaces Association (IDSA) and must conform with the Catena-X standard [[CX-0001](#71-normative-references)].
+*None*
 
 #### 4.1.2 API Specification
 
@@ -1345,8 +1346,6 @@ A whitespace or an empty cell indicates that for this specific rule that row is 
 
 ### 4.2 WeekBasedCapacityGroup API
 
-Within the Catena-X data space APIs MUST only be accessible via a connector, conforming to the standard [[CX-0018](#71-normative-references)].
-
 The API MUST be registered as a data asset as defined in [Section 4.2.2.5](#4225-data-asset-structure).
 
 The API MUST be implemented as defined in [Section 4.2.2](#422-api-specification).
@@ -1359,7 +1358,7 @@ Customers must be able to consume and process `WeekBasedCapacityGroup`
 
 #### 4.2.1 Preconditions and Dependencies
 
-The `WeekBasedCapacityGroup` API must be published towards the network using a data Asset and contract offer, which is in line with the dataspace protocol as specified by IDSA and must conform with the Catena-X standard [[CX-0001](#71-normative-references)].
+*None*
 
 #### 4.2.2 API Specification
 
@@ -1559,8 +1558,6 @@ A whitespace or an empty cell indicates that for this specific rule that row is 
 
 ### 4.3 IdBasedRequestForUpdate API
 
-Within the Catena-X data space APIs MUST only be accessible via a connector, conforming to the standard [[CX-0018](#71-normative-references)].
-
 The API MUST be registered as a data asset as defined in [Section 4.3.2.4](#4324-data-asset-structure).
 
 The API MUST be implemented as defined in [Section 4.3.2](#432-api-specification).
@@ -1578,7 +1575,7 @@ It is recommended that this functionality should not be an end-user functionalit
 
 #### 4.3.1 Preconditions and Dependencies
 
-The `IdBasedRequestForUpdate` API must be published towards the network using a data asset and contract offer, which is in line with the dataspace protocol as specified by IDSA and must conform with the Catena-X standard [[CX-0001](#71-normative-references)].
+*None*
 
 #### 4.3.2 API Specification
 
@@ -1645,8 +1642,6 @@ Payload validation only applies to the formal layer. If a payload is correctly f
 
 ### 4.4 IdBasedComment API
 
-Within the Catena-X data space APIs MUST only be accessible via a connector, conforming to the standard [[CX-0018](#71-normative-references)].
-
 The API MUST be registered as a data asset as defined in [Section 4.4.2.5](#4425-data-asset-structure).
 
 The API MUST be implemented as defined in [Section 4.4.2](#442-api-specification).
@@ -1657,7 +1652,7 @@ Customers and suppliers must be able to provide, consume and process `IdBasedCom
 
 #### 4.4.1 Preconditions and Dependencies
 
-The `IdBasedComment` API must be published towards the network using a data asset and contract offer, which is in line with the dataspace protocol as specified by IDSA and must conform with the Catena-X standard [[CX-0001](#71-normative-references)].
+*None*
 
 #### 4.4.2 API Specification
 
@@ -2471,7 +2466,6 @@ Please note, that the access policy can be created without any constraints. In t
 
 > *This section and all its subsections are normative*
 
-- [CX-0001] `v1.0.3` EDC Discovery API
 - [CX-0002] `v2.2.0` Digital Twins in Catena-X
 - [CX-0003] `v1.2.0` SAMM Aspect Meta Model
 - [CX-0010] `v2.1.0` Business Partner Number

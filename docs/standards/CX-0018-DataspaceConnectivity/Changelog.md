@@ -4,6 +4,22 @@ title: "Changelog"
 
 All notable changes to CX-0018 will be documented in this file.
 
+## [4.3.0] - 26/09
+
+### Added
+
+- n/a
+
+### Changed
+
+- Clarification concerning requirements of authorization for `Http-PULL` transfers
+- Clarification on the meaning of the `dct:type` property
+- Small formulation changes which did not change content
+
+### Removed
+
+- Backward compatibility explanations and references to DSP v0.8
+
 ## [4.2.1] - 26/03
 
 ### Added

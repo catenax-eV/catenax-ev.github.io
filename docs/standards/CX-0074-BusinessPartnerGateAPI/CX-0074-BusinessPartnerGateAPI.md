@@ -5,7 +5,7 @@ tags:
   - CAT/BPDM
 ---
 
-# CX-0074 Business Partner Gate API v4.1.1
+# CX-0074 Business Partner Gate API v4.2.0
 
 ## FOR WHOM IS THE STANDARD DESIGNED
 
@@ -52,11 +52,11 @@ The Gate API is a crucial core component for the data space, the Golden Record S
 3. Data Governance: The Gate API is the basis for a data governance framework and helps to enforce data quality standards, such as data completeness, accuracy, and consistency. It allows to compare the uploaded business partner data records against the corrected and enriched ones and provides the Sharing Member with a proposal for taking over the changes into the local MDM systems. This helps to ensure that business partner data is of high quality and can be trusted for use in various business processes.
 4. Interoperability: The Gate API provides an interoperable and standardized way of uploading and downloading business partner data, ensuring both Core Service Provider interchangeability and streamlined data accessibility for all consumers of the API.
 
-There is a reference implementation for the [Business Partner Gate API (7.1.x)](https://github.com/eclipse-tractusx/bpdm/tree/86a0a1931323d9ed0a75252bdd2ad9a6434542b7/bpdm-gate-api/src/main/kotlin/org/eclipse/tractusx/bpdm/gate/api) on GitHub. It is part of a Spring Boot Kotlin open-source software project under the hood of the Eclipse Foundation and follows the Apache 2.0 licenses.
+There is a reference implementation for the [Business Partner Gate API (7.4.x)](https://github.com/eclipse-tractusx/bpdm/tree/e686a9f147a8b21db1dca0ef0e67aef84375f415/bpdm-gate-api/src/main/kotlin/org/eclipse/tractusx/bpdm/gate/api) on GitHub. It is part of a Spring Boot Kotlin open-source software project under the hood of the Eclipse Foundation and follows the Apache 2.0 licenses.
 
-For the complete and up-to-date BPDM setup refer to the [Eclipse Tractus-X BPDM GitHub repository (7.1.x)](https://github.com/eclipse-tractusx/bpdm/blob/86a0a1931323d9ed0a75252bdd2ad9a6434542b7/README.md).
+For the complete and up-to-date BPDM setup refer to the [Eclipse Tractus-X BPDM GitHub repository (7.4.x)](https://github.com/eclipse-tractusx/bpdm/blob/e686a9f147a8b21db1dca0ef0e67aef84375f415/README.md).
 
-For an architecture overview refer to the [BPDM ARC42 documentation (7.1.x)](https://github.com/eclipse-tractusx/bpdm/tree/86a0a1931323d9ed0a75252bdd2ad9a6434542b7/docs/architecture).
+For an architecture overview refer to the [BPDM ARC42 documentation (7.4.x)](https://github.com/eclipse-tractusx/bpdm/tree/e686a9f147a8b21db1dca0ef0e67aef84375f415/docs/architecture).
 
 To use the Gate API in the BPDM use case apart from this standard, the following other standards should be considered by all participants for which this standard is relevant:
 
@@ -123,6 +123,14 @@ A business partner having assigned a legal entity, a site and one of its address
 
 ![Additional Address with Site](./assets/diagrams/object/additional-address-with-site.svg)
 
+#### 1.4.6 EXAMPLE 6
+
+A business partner as in Example 5, but where the additional address belongs to more than one site. In addition to its primary site, the address is associated with a further site (here a second plant sharing the same supplier gate), which is provided as an additional site in the output stage. Note that this is an output-only variant of the additional address combination and does not constitute a new entity combination in the table above.
+
+***Dr. Ing. h.c. F. Porsche Aktiengesellschaft, Porsche Zuffenhausen, Werk 2 (additionally Werk 5), Pforte (Lieferanten), Schwieberdinger Str. 130, 70435 Stuttgart, Deutschland***
+
+![Additional Address with Multiple Sites](./assets/diagrams/object/additional-address-with-multiple-sites.svg)
+
 ### 1.5 TERMINOLOGY
 
 > *This section is non-normative*
@@ -158,7 +166,7 @@ In general, a business partner is any entity (such as a customer, a supplier, an
 
 In data spaces, a business partner is an organization (such as an enterprise or company, university, association, etc., and not a natural person) or one of its organization parts that acts as unique partner within the supply chain - either in the role of a direct participant, or a consultant, or a non-production-material (NPM) supplier.
 
-The business partner entity in the Gate API provides a merged view on the entity combinations from the Business Partner Data Pool. In all combinations, a business partner has exactly one legal entity and one address assigned. It may additionally have a site assigned if the assigned address belongs to the site and the site is known to BPDM / has been shared by the owner. Note that for the assignment of the entities the respective BPNL, BPNS or BPNA (from the Business Partner Data Pool) are used.
+The business partner entity in the Gate API provides a merged view on the entity combinations from the Business Partner Data Pool. In all combinations, a business partner has exactly one legal entity and one address assigned. It may additionally have a site assigned if the assigned address belongs to the site and the site is known to BPDM / has been shared by the owner. In the output stage, if the assigned address belongs to more than one site, the further sites beyond the primary one are provided as additional sites (see [Additional Site](#15213-additional-site)). Note that for the assignment of the entities the respective BPNL, BPNS or BPNA (from the Business Partner Data Pool) are used.
 
 The business partner address type and the BPN assignment determine the entity combinations, on which the business partner entity provides a merged view. The combinations are visualized in the following table. All other combinations are invalid as output of the sharing process and will result in a [sharing error](#15212-sharing-state-entry):
 
@@ -183,7 +191,9 @@ These are the attributes of the business partner:
 | Updated At          | The date and time when the business partner data record has been last updated.                                              | Date / Time                                                               |
 | Legal Entity        | The legal entity, on which the business partner provides a view.                                                            | [Legal Entity Representation](#1522-legal-entity-representation)          |
 | Site                | The site, on which the business partner provides a view.                                                                    | [Site Representation](#1523-site-representation)                          |
+| Additional Sites    | The list of further sites the business partner's address belongs to, in addition to the primary site. Provided in the output only. | List of [Additional Site](#15213-additional-site)                |
 | Address             | The address, on which the business partner provides a view.                                                                 | [Address Representation](#1524-address-representation)                    |
+| Script Variants     | A list of script variants providing name and address data of the business partner rendered in alternative writing systems.                   | List of [Business Partner Script Variant](#15212-business-partner-script-variant) |
 
 A business partner can assume **one or more** of the business partner roles:
 
@@ -200,17 +210,87 @@ A business partner identifier (uniquely) identifies the business partner, such a
 | Type          | The type of the identifier.                                                                                                                                                                  | [Identifier Type](#15211-identifier-type)  |
 | Issuing Body  | The name of the official register, where the identifier is registered. For example, a Handelsregisternummer in Germany is only valid with its corresponding Registergericht and Registerart. | String                                    |
 
+###### 1.5.2.1.2 BUSINESS PARTNER SCRIPT VARIANT
+
+![Business Partner Script Variant](./assets/diagrams/class/business-partner-script-variant.svg)
+
+A business partner script variant provides name and address data of the business partner rendered in a specific writing system. This allows sharing members to supply — and receive from the enrichment process — the same data expressed in multiple scripts, such as both in a local script (e.g. Arabic, Chinese, Japanese) and in a transliterated Latin form.
+
+| **Attribute** | **Description**                                                                                                                                                               | **(Data) Type / Code List / Enumeration** |
+| ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------- |
+| Script Code   | The writing system for which this variant is provided, identified from the script code catalogue of the Business Partner Data Pool (see CX-0012 Business Partner Data Pool API). | String                                    |
+| Name Parts    | The list of name parts of the business partner rendered in the given script.                                                                                                  | List of String                            |
+| Legal Entity  | Script-specific renderings of the legal entity name fields.                                                                                                                   | Legal Entity Script Variant               |
+| Site          | Script-specific rendering of the site name.                                                                                                                                   | Site Script Variant                       |
+| Address       | Script-specific renderings of the address name and postal address string fields.                                                                                              | Address Script Variant                    |
+
+The primary attributes on the business partner (such as Name Parts and Legal Entity name) remain the canonical representation; script variants are supplementary.
+
+**Legal Entity Script Variant:**
+
+| **Attribute** | **Description**                                                           | **(Data) Type / Code List / Enumeration** |
+| ------------- | ------------------------------------------------------------------------- | ----------------------------------------- |
+| Legal Name    | The legal name of the business partner rendered in the given script.      | String                                    |
+| Short Name    | The abbreviated name of the business partner rendered in the given script. | String                                    |
+
+**Site Script Variant:**
+
+| **Attribute** | **Description**                              | **(Data) Type / Code List / Enumeration** |
+| ------------- | -------------------------------------------- | ----------------------------------------- |
+| Name          | The site name rendered in the given script.  | String                                    |
+
+**Address Script Variant:**
+
+| **Attribute**       | **Description**                                                                              | **(Data) Type / Code List / Enumeration** |
+| ------------------- | -------------------------------------------------------------------------------------------- | ----------------------------------------- |
+| Name                | The address name rendered in the given script.                                               | String                                    |
+| Physical Address    | Script-specific renderings of selected physical postal address string fields, see below.     | Physical Address Script Variant           |
+| Alternative Address | Script-specific renderings of selected alternative postal address string fields, see below.  | Alternative Address Script Variant        |
+
+**Physical Address Script Variant:**
+
+| **Attribute**                 | **Description**                                                          | **(Data) Type / Code List / Enumeration** |
+| ----------------------------- | ------------------------------------------------------------------------ | ----------------------------------------- |
+| City                          | The city name rendered in the given script.                              | String                                    |
+| District                      | The district name rendered in the given script.                          | String                                    |
+| Street Name Prefix            | The street name prefix rendered in the given script.                     | String                                    |
+| Street Additional Name Prefix | The additional street name prefix rendered in the given script.          | String                                    |
+| Street Name                   | The street name rendered in the given script.                            | String                                    |
+| Street Name Suffix            | The street name suffix rendered in the given script.                     | String                                    |
+| Street Additional Name Suffix | The additional street name suffix rendered in the given script.          | String                                    |
+| Building                      | The building identifier rendered in the given script.                    | String                                    |
+| Floor                         | The floor designation rendered in the given script.                      | String                                    |
+| Door                          | The door designation rendered in the given script.                       | String                                    |
+| Industrial Zone               | The industrial zone name rendered in the given script.                   | String                                    |
+
+**Alternative Address Script Variant:**
+
+| **Attribute**              | **Description**                                               | **(Data) Type / Code List / Enumeration** |
+| -------------------------- | ------------------------------------------------------------- | ----------------------------------------- |
+| City                       | The city name rendered in the given script.                   | String                                    |
+| Delivery Service Qualifier | The delivery service qualifier rendered in the given script.  | String                                    |
+
+###### 1.5.2.1.3 ADDITIONAL SITE
+
+An additional site is a further site the business partner's address belongs to, in addition to the primary site (see [Site Representation](#1523-site-representation)). Additional sites are provided in the output only.
+
+| **Attribute** | **Description**       | **(Data) Type / Code List / Enumeration** |
+| ------------- | --------------------- | ----------------------------------------- |
+| Site BPN      | The BPNS of the site. | String                                    |
+| Name          | The name of the site. | String                                    |
+
 ##### 1.5.2.2 LEGAL ENTITY REPRESENTATION
 
 A legal entity representation adds context information to the legal entity, on which the business partner provides a view. Additionally, it contains some of the information from the assigned legal entity.
 
-| **Attribute**    | **Description**                                                                                               | **(Data) Type / Code List / Enumeration**               |
-| ---------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------- |
-| Legal Entity BPN | The BPNL of the legal entity, on which the business partner provides a view.                                  | String                                                  |
-| Legal Name       | The name of the legal entity, on which the business partner provides a view, according to official registers. | String                                                  |
-| Short Name       | The abbreviated name of the legal entity, on which the business partner provides a view.                      | String                                                  |
-| States           | The list of (temporary) states of the legal entity.                                                           | List of [Legal Entity State](#15221-legal-entity-state) |
-| Legal Form       | The legal form of the legal entity, on which the business partner provides a view.                            | [Legal Form](#1526-legal-form)                          |
+| **Attribute**           | **Description**                                                                                                                                                                                                     | **(Data) Type / Code List / Enumeration**                                                             |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| Legal Entity BPN        | The BPNL of the legal entity, on which the business partner provides a view.                                                                                                                                        | String                                                                                                |
+| Legal Name              | The name of the legal entity, on which the business partner provides a view, according to official registers.                                                                                                       | String                                                                                                |
+| Short Name              | The abbreviated name of the legal entity, on which the business partner provides a view.                                                                                                                            | String                                                                                                |
+| States                  | The list of (temporary) states of the legal entity.                                                                                                                                                                 | List of [Legal Entity State](#15221-legal-entity-state)                                               |
+| Legal Form              | The legal form of the legal entity, on which the business partner provides a view.                                                                                                                                  | [Legal Form](#1526-legal-form)                                                                        |
+| Golden Record Relations | The complete list of Pool-level Golden Record relations involving this legal entity. Only present in the output stage. The list is refreshed whenever the associated Golden Record or any of its relations changes. | List of [Legal Entity Golden Record Relation](#15222-legal-entity-golden-record-relation)             |
 
 ###### 1.5.2.2.1 LEGAL ENTITY STATE
 
@@ -227,9 +307,25 @@ A legal entity state can be classified into **one** of the legal entity state ty
 1. `active` (value=ACTIVE): Legal entity is operating and is registered in the official registers under its legal address.
 2. `inactive` (value=INACTIVE): Legal entity is not operating, may be marked as out of business (or similar) or may not even be registered in the official registers under its legal address anymore. It still exists in the BPDM Pool for historical reasons, such as for auditing purposes.
 
+###### 1.5.2.2.2 LEGAL ENTITY GOLDEN RECORD RELATION
+
+A legal entity golden record relation is a directed Pool-level relation involving the legal entity. It is embedded in the output representation for informational purposes and reflects the current state of the Golden Record in the Pool. These relations are resolved by the golden record process and cannot be set or modified through the Gate relation endpoints.
+
+| **Attribute** | **Description**                                             | **(Data) Type / Code List / Enumeration** |
+| ------------- | ----------------------------------------------------------- | ----------------------------------------- |
+| Relation Type | One of the legal entity golden record relation types.       | Enum                                      |
+| Source BPN    | The BPNL of the source legal entity of the relation.        | String                                    |
+| Target BPN    | The BPNL of the target legal entity of the relation.        | String                                    |
+
+A legal entity golden record relation can be classified into **one** of the following relation types:
+
+1. `is alternative headquarter for` (value=IsAlternativeHeadquarterFor): see [Business Partner Relation](#1525-business-partner-relation).
+2. `is managed by` (value=IsManagedBy): see [Business Partner Relation](#1525-business-partner-relation).
+3. `is owned by` (value=IsOwnedBy): see [Business Partner Relation](#1525-business-partner-relation).
+
 ##### 1.5.2.3 SITE REPRESENTATION
 
-A legal entity representation adds context information to the site, on which the business partner provides a view. Additionally, it contains some of the information from the assigned site.
+A site representation adds context information to the site, on which the business partner provides a view. Additionally, it contains some of the information from the assigned site. This is the primary site of the business partner; if the assigned address belongs to further sites, those are provided as [additional sites](#15213-additional-site) in the output stage.
 
 | **Attribute** | **Description**                                                                                                                                               | **(Data) Type / Code List / Enumeration** |
 | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------- |
@@ -256,14 +352,15 @@ A site state can be classified into **one** of the site state types:
 
 An address representation adds context information to the address, on which the business partner provides a view. Additionally, it contains most of the information from the assigned address.
 
-| **Attribute**              | **Description**                                                                                                                                                                                                                                                                     | **(Data) Type / Code List / Enumeration**                      |
-| -------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------- |
-| Address BPN                | The BPNA of the address, on which the business partner provides a view.                                                                                                                                                                                                             | String                                                         |
-| Name                       | The name of the address, on which the business partner provides a view. This is not according to official registers but according to the name the sharing members agree on, such as the name of a gate or any other additional names that designate the address in common parlance. | String                                                         |
-| States                     | The list of (temporary) states of the address.                                                                                                                                                                                                                                      | List of [Address State](#15241-address-state)                 |
-| Type                       | One of the address types.                                                                                                                                                                                                                                                           | Enum                                                           |
-| Physical Postal Address    | The physical postal address of the address, on which the business partner provides a view, such as an office, warehouse, gate, etc.                                                                                                                                                 | [Physical Postal Address](#1527-physical-postal-address)       |
-| Alternative Postal Address | The alternative postal address of the address, on which the business partner provides a view, for example if the goods are to be picked up somewhere else.                                                                                                                          | [Alternative Postal Address](#1528-alternative-postal-address) |
+| **Attribute**              | **Description**                                                                                                                                                                                                                                                                     | **(Data) Type / Code List / Enumeration**                                                 |
+| -------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| Address BPN                | The BPNA of the address, on which the business partner provides a view.                                                                                                                                                                                                             | String                                                                                    |
+| Name                       | The name of the address, on which the business partner provides a view. This is not according to official registers but according to the name the sharing members agree on, such as the name of a gate or any other additional names that designate the address in common parlance. | String                                                                                    |
+| States                     | The list of (temporary) states of the address.                                                                                                                                                                                                                                      | List of [Address State](#15241-address-state)                                             |
+| Type                       | One of the address types.                                                                                                                                                                                                                                                           | Enum                                                                                      |
+| Physical Postal Address    | The physical postal address of the address, on which the business partner provides a view, such as an office, warehouse, gate, etc.                                                                                                                                                 | [Physical Postal Address](#1527-physical-postal-address)                                  |
+| Alternative Postal Address | The alternative postal address of the address, on which the business partner provides a view, for example if the goods are to be picked up somewhere else.                                                                                                                          | [Alternative Postal Address](#1528-alternative-postal-address)                            |
+| Golden Record Relations    | The complete list of Pool-level Golden Record relations involving this address. Only present in the output stage. The list is refreshed whenever the associated Golden Record or any of its relations changes.                                                                       | List of [Address Golden Record Relation](#15242-address-golden-record-relation)           |
 
 An address can be classified into **one** of the address types:
 
@@ -287,27 +384,56 @@ An address state can be classified into **one** of the address state types:
 1. `active` (value=ACTIVE): Legal entity or site at the address are still operating and address is still used for operational purposes, such as for delivery of goods or services.
 2. `inactive` (value=INACTIVE): Legal entity or site at the address are not operating anymore, or address is not used anymore for operational purposes. It still exists in the BPDM Pool for historical reasons, such as for auditing purposes.
 
+###### 1.5.2.4.2 ADDRESS GOLDEN RECORD RELATION
+
+An address golden record relation is a directed Pool-level relation involving the address. It is embedded in the output representation for informational purposes and reflects the current state of the Golden Record in the Pool. These relations are resolved by the golden record process and cannot be set or modified through the Gate relation endpoints.
+
+| **Attribute** | **Description**                                       | **(Data) Type / Code List / Enumeration** |
+| ------------- | ----------------------------------------------------- | ----------------------------------------- |
+| Relation Type | One of the address golden record relation types.      | Enum                                      |
+| Source BPN    | The BPNA of the source address of the relation.       | String                                    |
+| Target BPN    | The BPNA of the target address of the relation.       | String                                    |
+
+An address golden record relation can be classified into **one** of the following relation types:
+
+1. `is replaced by` (value=IsReplacedBy): see [Business Partner Relation](#1525-business-partner-relation).
+
 ##### 1.5.2.5 BUSINESS PARTNER RELATION
 
 ![Business Partner Relation](./assets/diagrams/class/business-partner-relation.svg)
 
 A business partner relation is a directed relation between two business partners with a specific type that describes the nature of the relation.
 
-| **Attribute**                       | **Description**                                                                                                                  | **(Data) Type / Code List / Enumeration** |
-| ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------- |
-| External ID                         | The identifier which uniquely identifies (in the internal system landscape of the Sharing Member) the business partner relation. | String                                    |
-| Type                                | One of the business partner relation types.                                                                                      | Enum                                      |
-| Business Partner Source External ID | The external ID of the business partner from which the relation emerges.                                                         | String                                    |
-| Business Partner Target External ID | The external ID of the business partner to which this relation goes.                                                             | String                                    |
-| Business Partner Source BPN         | The BPN of the business partner from which the relation emerges.                                                                 | String                                    |
-| Business Partner Target BPN         | The BPN of the business partner to which this relation goes.                                                                     | String                                    |
-| Created At                          | The date and time when the business partner relation data record has been created.                                               | Date / Time                               |
-| Updated At                          | The date and time when the business partner relation data record has been last updated.                                          | Date / Time                               |
+| **Attribute**                       | **Description**                                                                                                                                                                          | **(Data) Type / Code List / Enumeration**                    |
+| ----------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------ |
+| External ID                         | The identifier which uniquely identifies (in the internal system landscape of the Sharing Member) the business partner relation.                                                         | String                                                       |
+| Type                                | One of the business partner relation types.                                                                                                                                              | Enum                                                         |
+| Business Partner Source External ID | The external ID of the business partner from which the relation emerges.                                                                                                                 | String                                                       |
+| Business Partner Target External ID | The external ID of the business partner to which this relation goes.                                                                                                                     | String                                                       |
+| Business Partner Source BPN         | The BPN of the business partner from which the relation emerges.                                                                                                                         | String                                                       |
+| Business Partner Target BPN         | The BPN of the business partner to which this relation goes.                                                                                                                             | String                                                       |
+| Validity Periods                    | The list of time periods during which the relation is valid. An empty list means the relation is asserted without a time restriction.                                                    | List of [Validity Period](#15251-validity-period)            |
+| Reason Code                         | The reason for which the relation was established, selected from the Pool operator's reason code catalogue (see CX-0012). Mandatory for relations of type `IsReplacedBy`, optional otherwise. | String                                                       |
+| Created At                          | The date and time when the business partner relation data record has been created.                                                                                                       | Date / Time                                                  |
+| Updated At                          | The date and time when the business partner relation data record has been last updated.                                                                                                  | Date / Time                                                  |
 
 A business partner entity relation can be classified into **one** of the business partner relation types:
 
 1. `is alternative headquarter for` (value=IsAlternativeHeadquarterFor): The business partner source is an alternative headquarter for the business partner target (both being legal entities), where both legal addresses are registered in the official registers with equal rights, representing the same real-world legal entity. Multiple business partner sources can be the alternative headquarters for one business partner target, resulting in multiple relations at the business partner target. The business partner target cannot be a business partner source at the same time, so that it cannot be an alternative headquarter for itself and so that only one level of alternative headquarters is possible.
 2. `is managed by` (value=IsManagedBy): Legal entity, site and address data can be managed by the Managing Legal Entity (business partner target) on behalf of the Managed Legal Entity (business partner source). Multiple business partner sources can be the managed legal entities of one Managing Legal Entity (business partner target), resulting in multiple relations at the business partner target. The business partner target cannot be a business partner source at the same time, so that it cannot be the Managing Legal Entity for itself and so that only one level of managing legal entities is possible.
+3. `is owned by` (value=IsOwnedBy): The business partner source is majority-owned (more than 50 % of voting rights or shares) by the business partner target (both being legal entities). Multiple ownership links may be submitted independently; multi-level ownership chains are permitted and each link is treated as a standalone relation. The golden record process validates whether the submitted combination corresponds to two legal entities and will reject invalid combinations with a sharing error. The relation is resolved by the Pool as a BPNL-to-BPNL Golden Record relation.
+4. `is replaced by` (value=IsReplacedBy): An existing additional address of a legal entity (the business partner source) is designated as the new legal address, replacing the current legal address of the same legal entity (the business partner target).[^8] Any sharing member may assert this relation; the golden record process validates whether the replacement is correct and will reject it with a sharing error if it cannot be confirmed. When the Pool processes this relation, the replaced address transitions to address type `AdditionalAddress` (or `SiteMainAddress` if it previously held type `LegalAndSiteMainAddress`) and the replacing address transitions to `LegalAddress`; the output records of both business partners are updated accordingly. A `Reason Code` is mandatory for this relation type. The scope of this relation type is planned to extend to all business partner replacement use cases in a future version.
+
+###### 1.5.2.5.1 VALIDITY PERIOD
+
+A validity period describes a time interval during which a business partner relation is asserted to be valid.
+
+| **Attribute** | **Description**                                                                        | **(Data) Type / Code List / Enumeration** |
+| ------------- | -------------------------------------------------------------------------------------- | ----------------------------------------- |
+| Valid From    | The date from which the relation is valid.                                             | Date                                      |
+| Valid To      | The date until which the relation is valid. Absent means the relation is open-ended.   | Date                                      |
+
+A relation can carry multiple non-overlapping validity periods to represent interrupted histories, such as a managing or ownership relationship that was suspended and later resumed. An empty list of validity periods means the relation is asserted without a time restriction.
 
 ##### 1.5.2.6 LEGAL FORM
 
@@ -493,13 +619,13 @@ The Business Partner Gate API allows to upload and download business partner dat
 
 ### 2.1 PRECONDITIONS AND DEPENDENCIES
 
-To run the API, the technical components described in the [Eclipse Tractus-X BPDM GitHub repository (7.1.x)](https://github.com/eclipse-tractusx/bpdm/blob/86a0a1931323d9ed0a75252bdd2ad9a6434542b7/README.md) **SHOULD** be set up.
+To run the API, the technical components described in the [Eclipse Tractus-X BPDM GitHub repository (7.4.x)](https://github.com/eclipse-tractusx/bpdm/blob/e686a9f147a8b21db1dca0ef0e67aef84375f415/README.md) **SHOULD** be set up.
 
 ### 2.2 API SPECIFICATION
 
 #### 2.2.1 API ENDPOINT & RESOURCES
 
-The Gate API **MUST** be implemented as defined in the [Business Partner Gate OpenAPI specification (7.1.x)](assets/apis/gate-openapi.json)
+The Gate API **MUST** be implemented as defined in the [Business Partner Gate OpenAPI specification (7.4.x)](https://eclipse-tractusx.github.io/api-hub/bpdm/7.4.0/gate/gate.yaml)
 
 The resources **MUST** use the well-known HTTP request methods for CRU(D) operations:
 
@@ -597,7 +723,7 @@ An example payload for the asset:
     "@context": {
         "dct": "http://purl.org/dc/terms/",
         "cx-taxo": "https://w3id.org/catenax/taxonomy#",
-        "cx-common": "https://w3id.org/catenax/ontology/common#",
+        "cx-common": "https://w3id.org/catenax/ontology/common#"
     },
     "@type": "Asset", 
     "@id": "a8f15946-2347-47a8-a67f-846e7303fd94", 
@@ -656,7 +782,7 @@ In alignment with our commitment to data sovereignty, a specific framework gover
 - [ISO 6709:2022](https://www.iso.org/obp/ui/en/#iso:std:iso:6709:ed-3:v1:en)
 - [WGS 84 (NGA STND 0036 1.0.0)](https://nsgreg.nga.mil/doc/view?i=4085)
 - [OpenAPI specification (3.1.0)](https://github.com/OAI/OpenAPI-Specification/blob/7acdf61ed4e5c18068e2da18741318adde219c2d/versions/3.1.0.md)
-- [Business Partner Gate OpenAPI specification (7.1.x)](assets/apis/gate-openapi.json)
+- [Business Partner Gate OpenAPI specification](assets/apis/gate-openapi.json)
 - [IANA HTTP Status Code Registry (from 2022-06-08)](https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml)
 
 ### 3.2 NON-NORMATIVE REFERENCES
@@ -670,9 +796,9 @@ In alignment with our commitment to data sovereignty, a specific framework gover
 
 > *This section is non-normative*
 
-- [Business Partner Gate API (7.1.x)](https://github.com/eclipse-tractusx/bpdm/tree/86a0a1931323d9ed0a75252bdd2ad9a6434542b7/bpdm-gate-api/src/main/kotlin/org/eclipse/tractusx/bpdm/gate/api)
-- [Eclipse Tractus-X BPDM GitHub repository (7.1.x)](https://github.com/eclipse-tractusx/bpdm/blob/86a0a1931323d9ed0a75252bdd2ad9a6434542b7/README.md)
-- [BPDM ARC42 documentation (7.1.x)](https://github.com/eclipse-tractusx/bpdm/tree/86a0a1931323d9ed0a75252bdd2ad9a6434542b7/docs/architecture)
+- [Business Partner Gate API (7.4.x)](https://github.com/eclipse-tractusx/bpdm/tree/e686a9f147a8b21db1dca0ef0e67aef84375f415/bpdm-gate-api/src/main/kotlin/org/eclipse/tractusx/bpdm/gate/api)
+- [Eclipse Tractus-X BPDM GitHub repository (7.4.x)](https://github.com/eclipse-tractusx/bpdm/blob/e686a9f147a8b21db1dca0ef0e67aef84375f415/README.md)
+- [BPDM ARC42 documentation (7.4.x)](https://github.com/eclipse-tractusx/bpdm/tree/e686a9f147a8b21db1dca0ef0e67aef84375f415/docs/architecture)
 
 ## ANNEXES
 
@@ -699,6 +825,8 @@ Intentionally left blank.
 [^6]: Note that the Sharing Member assumes the roles Data Provider on upload and Data Consumer on download of business partner data, while the Core Service Provider assumes the roles Data Consumer on upload and Data Provider on download of business partner data.
 
 [^7]: Note that the definition of the data assets depends on the current implementation state of the reference implementation (Tractus-X Eclipse Dataspace Connector). Therefore the data assets represent permissions on APIs, whereas they should actually only represent APIs.
+
+[^8]: Note that the `IsReplacedBy` relation type currently supports only the headquarter address relocation use case. The scope is planned to extend to all business partner replacement scenarios across all business partner types in a future version of this standard.
 
 ## Legal
 

@@ -6,7 +6,7 @@ tags:
   - CAT/Constraint
 ---
 
-# CX-0152 Policy Constraints For Data Exchange v1.1.0
+# CX-0152 Policy Constraints For Data Exchange v1.2.0
 
 ## ABSTRACT
 
@@ -111,7 +111,7 @@ The validation for the rightOperands (`odrl:rightOperand`) of all other Constrai
 
 #### Catena-X Policy Schema
 
-To clearly identify the relevant Catena-X Policy Schema, every policy (and their subclasses) **MUST** use the ODRL ‘profile’ property with an IRI referring to the Catena-X Policy Schema as defined in [ODRL policy](https://www.w3.org/TR/odrl-model/#policy) The current version is: `https://w3id.org/catenax/2025/9/policy/`.
+To clearly identify the relevant Catena-X Policy Schema, every policy (and their subclasses) **MUST** use the ODRL ‘profile’ property with an IRI referring to the Catena-X Policy Schema as defined in [ODRL policy](https://www.w3.org/TR/odrl-model/#policy) The current version is: `https://w3id.org/catenax/2025/9/policy/schema/policy-schema.json`.
 
 ### 2.2 CONVENTIONS FOR ACCESS POLICIES
 

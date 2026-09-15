@@ -4,6 +4,15 @@ title: "Changelog"
 
 All notable changes to CX-0076 will be documented in this file.
 
+## [1.7.0] CX-Neptune (26.09)
+
+### Changed
+
+- Formating and renaming of headlines
+- Textual additions regarding relations
+- Updated references to CX-standard versions
+- Adjustment in footnote, related to multiscript support
+
 ## [1.6.0] - CX-Neptune Preview (26.06)
 
 ### Changed

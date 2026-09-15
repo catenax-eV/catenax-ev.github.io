@@ -1,4 +1,4 @@
-# CX-0157 Predictive Unit Real-Time Information Service (PURIS)
+# CX-0157 Predictive Unit Real-Time Information Service (PURIS) (1.1.0)
 
 ## ABSTRACT
 
@@ -166,14 +166,15 @@ Additional terminology used in this standard can be looked up in the glossary on
 
 The following Catena-X standards are a prerequisite for implementing this standard and therefore **MUST** be considered / implemented by the relevant parties specified in each standard.
 
-| **Number**                            | **Standard**                        | **Version** |
-| ------------------------------------- | ----------------------------------- | ----------- |
-| [[CX-0001]](#61-normative-references) | Participant Agent Registration      | 1.2.0       |
-| [[CX-0003]](#61-normative-references) | SAMM Aspect Meta Model              | 1.2.0       |
-| [[CX-0006]](#61-normative-references) | Registration and initial onboarding | 2.0.1       |
-| [[CX-0010]](#61-normative-references) | Business Partner Number (BPN)       | 3.0.1       |
-| [[CX-0018]](#61-normative-references) | Dataspace Connectivity              | 4.1.1       |
-| [[CX-0126]](#61-normative-references) | Industry Core Part Type             | 2.1.1       |
+| **Number**                            | **Standard**                         | **Version** |
+| ------------------------------------- | ------------------------------------ | ----------- |
+| [[CX-0002]](#61-normative-references) | Digital Twins in Catena-X            | 2.4.0       |
+| [[CX-0003]](#61-normative-references) | SAMM Aspect Meta Model               | 1.3.0       |
+| [[CX-0006]](#61-normative-references) | Registration and initial onboarding  | 2.1.0       |
+| [[CX-0010]](#61-normative-references) | Business Partner Number (BPN)        | 3.1.0       |
+| [[CX-0018]](#61-normative-references) | Dataspace Connectivity               | 4.2.1       |
+| [[CX-0126]](#61-normative-references) | Industry Core Part Type              | 2.1.1       |
+| [[CX-0152]](#61-normative-references) | Policy Constraings for Data Exchange | 1.1.0       |
 
 *Table 2: List of mandatory standards*
 
@@ -181,7 +182,7 @@ The usage of this standard **MAY** be complemented with the following Catena-X s
 
 | **Number**                            | **Standard**                          | **Version** |
 | ------------------------------------- | ------------------------------------- | ----------- |
-| [[CX-0146]](#61-normative-references) | Supply Chain Disruption Notifications | 2.0.1       |
+| [[CX-0146]](#61-normative-references) | Supply Chain Disruption Notifications | 3.0.0       |
 
 *Table 3: List of non-mandatory, but complementary standards*
 
@@ -212,25 +213,26 @@ The following table provides an overview
 
 > Table 4: Overview which semantic model is provided by which partner.
 
-#### 2.1.3 ADDITIONAL REQUIREMENTS
+##### VERSIONING
 
-##### CONVENTIONS FOR USE CASE POLICY IN CONTEXT DATA EXCHANGE
+The Aspect Models that are deployed as Digital Twins **MUST** be published in dcat:Dataset (http://www.w3.org/ns/dcat#) in the property that holds the full URN of the Aspect Model https://admin-shell.io/aas/3/0/HasSemantics/semanticId. Versions are explicitly contained in the URN.
 
-In alignment with our commitment to data sovereignty, a specific framework governing the utilization of data within the Catena-X use cases has been outlined. A set of specific policies on data offering and data usage level detail the conditions under which data may be accessed, shared, and used, ensuring compliance with legal standards.
+The API versions **MUST** be published in the property https://w3id.org/catenax/ontology/common#version as version X.Y in dcat:Dataset (http://www.w3.org/ns/dcat#).
 
-For a comprehensive understanding of the rights, restrictions, and obligations associated with data usage in the Catena-X ecosystem, we refer users to:
+**Note:** Data Assets differentiated only by major versions **MUST** be offered in parallel. The current standard and API versions mark the start of Life Cycle Management in Catena-X operations. Previous versions are dismissed.
 
-- the detailed ODRL policy repository [[CX-ODRL]](#62-non-normative-references). This document provides in-depth explanations of the terms and conditions applied to data access and utilization, ensuring that all engagement with our data conducted responsibly and in accordance with established guidelines.
-- the ODRL schema template. This defines how policies used for data sharing/usage should get defined. Those schemas **MUST** be followed when providing services or apps for data sharing/consuming.
+#### 2.1.3 POLICY CONSTRAINTS FOR DATA EXCHANGE
 
-###### ADDITIONAL DETAILS REGARDING ACCESS POLICIES
+In alignment with our commitment to data sovereignty, a specific framework governing the utilization of data within the Catena-X use cases has been outlined.  As part of this data sovereignty framework, conventions for access policies, for usage policies and for the constraints contained in the policies have been specified in standard 'CX-0152 Policy Constraints for Data Exchange'. This standard document CX-0152 **MUST** be followed when providing services or apps for data sharing/consuming and when sharing or consuming data in the Catena-X ecosystem. What conventions are relevant for what roles named in [1.1 AUDIENCE & SCOPE](#11-audience--scope) is specified in the CX-0152 standard document as well. CX-0152 can be found in the [standard library](https://catenax-ev.github.io/docs/standards/overview).
+
+##### ADDITIONAL DETAILS REGARDING ACCESS POLICIES
 
 A Data Provider may tie certain access authorizations ("Access Policies") to its data offers for members of Catena-X and one or several Data Consumers. By limiting access to certain Participants, Data Provider maintains control over its anti-trust obligations when sharing certain data. In particular, Data Provider may apply Access Policies to restrict access to a particular data offer for only one Participant identified by a specific business partner number.
 
 - Membership
 - BPNL
 
-###### ADDITIONAL DETAILS REGARDING USAGE POLICIES
+##### ADDITIONAL DETAILS REGARDING USAGE POLICIES
 
 In the context of data usage policies (“Usage Policies”), Participants and related services **MUST** use the following policy rules:
 
@@ -241,15 +243,7 @@ Additionally, respective usage policies **MAY** include the following policy rul
 
 - Reference Contract (“ContractReference”).
   
-Details on namespaces and ODRL policy rule values to be used for the above-mentioned types are provided via the ODRL policy repository [[CX-ODRL]](#62-non-normative-references).
-
-##### VERSIONING
-
-The Aspect Models that are deployed as Digital Twins **MUST** be published in dcat:Dataset (http://www.w3.org/ns/dcat#) in the property that holds the full URN of the Aspect Model https://admin-shell.io/aas/3/0/HasSemantics/semanticId. Versions are explicitly contained in the URN.
-
-The API versions **MUST** be published in the property https://w3id.org/catenax/ontology/common#version as version X.Y in dcat:Dataset (http://www.w3.org/ns/dcat#).
-
-**Note:** Data Assets differentiated only by major versions **MUST** be offered in parallel. The current standard and API versions mark the start of Life Cycle Management in Catena-X operations. Previous versions are dismissed.
+Details on namespaces and ODRL policy rule values to be used for the above-mentioned types are provided via the Catena-X ODRL profile [[CX-0152]](#61-normative-references).
 
 #### 2.1.4 DIGITAL TWINS AND SPECIFIC ASSET IDs
 
@@ -1526,17 +1520,16 @@ The distinction between customer and supplier locations must be made via the uni
 
 ### 6.1 NORMATIVE REFERENCES
 
-| **Number** | **Standard**                                    | **Version** |
-| ---------- | ----------------------------------------------- | ----------- |
-| [CX-0001]  | Participant Agent Registration                  | 1.2.0       |
-| [CX-0002]  | Digital Twins in Catena-X                       | 2.3.0       |
-| [CX-0003]  | SAMM Aspect Meta Model                          | 1.2.0       |
-| [CX-0006]  | Registration and initial onboarding             | 2.0.1       |
-| [CX-0010]  | Business Partner Number (BPN)                   | 3.0.1       |
-| [CX-0018]  | Dataspace Connectivity                          | 4.1.1       |
-| [CX-0053]  | Discovery Finder and BPN Discovery Service APIs | 1.1.1       |
-| [CX-0126]  | Industry Core: Part Type                        | 2.1.1       |
-| [CX-0146]  | Supply Chain Disruption Notifications           | 2.0.1       |
+| **Number** | **Standard**                          | **Version** |
+| ---------- | ------------------------------------- | ----------- |
+| [CX-0002]  | Digital Twins in Catena-X             | 2.4.0       |
+| [CX-0003]  | SAMM Aspect Meta Model                | 1.3.0       |
+| [CX-0006]  | Registration and initial onboarding   | 2.1.0       |
+| [CX-0010]  | Business Partner Number (BPN)         | 3.2.1       |
+| [CX-0018]  | Dataspace Connectivity                | 4.2.1       |
+| [CX-0126]  | Industry Core Part Type               | 2.1.1       |
+| [CX-0152]  | Policy Constraints For Data Exchange  | 1.1.0       |
+| [CX-0146]  | Supply Chain Disruption Notifications | 3.0.0       |
 
 ### 6.2 NON-NORMATIVE REFERENCES
 
@@ -1546,7 +1539,6 @@ The distinction between customer and supplier locations must be made via the uni
 | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | [CX-OMW]         | Catena-X Operating Model. Read online at [catenax-ev.github.io](https://catenax-ev.github.io/docs/next/operating-model/why-introduction)                                                                                                   |
 | [CX-REG]         | Catena-X Regulatory Framework. Read online at [catenax-ev.github.io](https://catenax-ev.github.io/docs/next/regulatory-framework/governance-framework)                                                                                     |
-| [CX-ODRL]        | Catena-X ODRL Profile repository: https://github.com/catenax-eV/cx-odrl-profile                                                                                                                                                            |
 | [RFC2119]        | Bradner, S. Key words for use in RFCs to Indicate Requirement Levels. Available online: https://datatracker.ietf.org/doc/html/rfc2119                                                                                                      |
 | [RFC8174]        | Leiba, B. Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words. Available online: https://datatracker.ietf.org/doc/html/rfc8174                                                                                                       |
 | [SMT]            | How to create a submodel template specification. Guideline. Download from: https://industrialdigitaltwin.org/wp-content/uploads/2022/12/I40-IDTA-WS-Process-How-to-write-a-SMT-FINAL-.pdf                                                  |

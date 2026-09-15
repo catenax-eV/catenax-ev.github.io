@@ -43,6 +43,17 @@ package "Legal Entity and References" {
   enum LegalEntityRelationType {
     IsAlternativeHeadquarterFor
     IsManagedBy
+    IsOwnedBy
+  }
+
+  class RelationValidityPeriod {
+    ValidFrom
+    ValidTo
+  }
+
+  entity ReasonCode {
+    TechnicalKey
+    Description
   }
 
   entity IdentifierType {
@@ -109,6 +120,8 @@ package "Legal Entity and References" {
   LegalEntityRelation "*" --o "1" LegalEntityRelationType : Type
   LegalEntityRelation "*" o--> "1" LegalEntity : LegalEntitySourceBPN
   LegalEntityRelation "*" o--> "1" LegalEntity : LegalEntityTargetBPN
+  LegalEntityRelation "1" *-d-> "1..*" RelationValidityPeriod : ValidityPeriods
+  LegalEntityRelation "*" -d-o "0..1" ReasonCode : ReasonCode
   
   ' taken out from 24.05, as not clear if this is modelled correctly
   ' LegalEntity "1" *-d-> "*" Classification : Classifications
