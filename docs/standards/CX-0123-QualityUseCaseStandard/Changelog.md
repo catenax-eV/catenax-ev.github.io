@@ -2,6 +2,24 @@
 title: "Changelog"
 ---
 
+## [4.0.0] - CX-Neptune (26.09)
+
+### Added
+
+### Changed
+
+- chapter index for references (was 7, is now 6)
+- https://purl.org to http://purl.org
+
+### Removed
+
+- backward compatibility chapter
+- references to CX-0001 as this standard is being deprecated
+- references to CX-0003
+- reference to CX-0125 as this standard is being deprecated
+- license information about aspect models
+- 8d data model
+
 ## [3.0.2] - CX-Saturn (25.09)
 
 ### Added

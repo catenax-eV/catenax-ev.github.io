@@ -16,8 +16,9 @@ package "Site and References" {
 
   Site "*" -u-o "1" LegalEntity : LegalEntityBPN
   Address "1..*" -d-o "0..1" Site: SiteBPN
-  
-  Site "1" -r-> "1" MainAddress : MainAddress    
+  Address "*" -d-o "*" Site : AdditionalSites
+
+  Site "1" -r-> "1" MainAddress : MainAddress
   MainAddress -u-|> Address
 }
 

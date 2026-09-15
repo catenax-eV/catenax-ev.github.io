@@ -4,6 +4,21 @@ title: "Changelog"
 
 All notable changes to CX-0012 will be documented in this file.
 
+## [5.2.0] - CX-Neptune (26.09)
+
+### Added
+
+- Added the generic business partner search endpoint returning a unified Generic Business Partner (Pool Search Result) across legal entities, sites and addresses.
+- Added script code and reason code metadata as read-only reference lists (GET/script-codes and GET/reason-codes).
+- Added address relations as well as validity periods and optional reason codes for business partner relations.
+- Added the "is owned by" legal entity relation type.
+- Added the additional sites attribute at the address.
+
+### Changed
+
+- Updated the API links and OpenAPI specification reference to version 7.4.
+- Clarified the "cx-taxo:ReadAccessPoolForDataSpaceParticipant" asset by explicitly listing the endpoints it contains.
+
 ## [5.1.0] - CX-Saturn (25.09)
 
 ### Added

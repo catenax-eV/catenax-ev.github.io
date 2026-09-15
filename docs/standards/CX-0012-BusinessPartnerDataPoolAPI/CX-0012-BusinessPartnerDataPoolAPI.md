@@ -5,7 +5,7 @@ tags:
   - CAT/Sandbox Service Provider
 ---
 
-# CX-0012 Business Partner Data Pool API v5.1.1
+# CX-0012 Business Partner Data Pool API v5.2.0
 
 ## FOR WHOM IS THE STANDARD DESIGNED
 
@@ -53,11 +53,11 @@ The Pool API is a crucial core component for the data space, the Golden Record S
 3. Data Governance: The Pool API is the basis for a data governance framework and helps to enforce data quality standards, such as data completeness, accuracy, and consistency. This helps to ensure that business partner data is of high quality and can be trusted for use in various business processes.
 4. Interoperability: The Pool API provides an interoperable and standardized way to access business partner data, ensuring both Core Service Provider interchangeability and streamlined data accessibility for all consumers of the API.
 
-There is a reference implementation for the [Business Partner Data Pool API (7.1.x)](https://github.com/eclipse-tractusx/bpdm/tree/86a0a1931323d9ed0a75252bdd2ad9a6434542b7/bpdm-pool-api/src/main/kotlin/org/eclipse/tractusx/bpdm/pool/api) on GitHub. It is part of a Spring Boot Kotlin open-source software project under the hood of the Eclipse Foundation and follows the Apache 2.0 licenses.
+There is a reference implementation for the [Business Partner Data Pool API (7.4.x)](https://github.com/eclipse-tractusx/bpdm/tree/e686a9f147a8b21db1dca0ef0e67aef84375f415/bpdm-pool-api/src/main/kotlin/org/eclipse/tractusx/bpdm/pool/api) on GitHub. It is part of a Spring Boot Kotlin open-source software project under the hood of the Eclipse Foundation and follows the Apache 2.0 licenses.
 
-For the complete and up-to-date BPDM setup refer to the [Eclipse Tractus-X BPDM GitHub repository (7.1.x)](https://github.com/eclipse-tractusx/bpdm/blob/86a0a1931323d9ed0a75252bdd2ad9a6434542b7/README.md).
+For the complete and up-to-date BPDM setup refer to the [Eclipse Tractus-X BPDM GitHub repository (7.4.x)](https://github.com/eclipse-tractusx/bpdm/blob/e686a9f147a8b21db1dca0ef0e67aef84375f415/README.md).
 
-For an architecture overview refer to the [BPDM ARC42 documentation (7.1.x)](https://github.com/eclipse-tractusx/bpdm/tree/86a0a1931323d9ed0a75252bdd2ad9a6434542b7/docs/architecture).
+For an architecture overview refer to the [BPDM ARC42 documentation (7.4.x)](https://github.com/eclipse-tractusx/bpdm/tree/e686a9f147a8b21db1dca0ef0e67aef84375f415/docs/architecture).
 
 To use the Pool API in the BPDM use case apart from this standard, the following other standards should be considered by all participants for which this standard is relevant:
 
@@ -167,18 +167,23 @@ A legal entity state can be classified into **one** of the legal entity state ty
 
 A legal entity relation is a directed relation between two legal entities with a specific type that describes the nature of the relation. Note that the legal entity relation is in the list of legal entity relations of the legal entity if the legal entity is either the source or the target of the relation.
 
-| **Attribute**           | **Description**                                          | **(Data) Type / Code List / Enumeration** |
-| ----------------------- | -------------------------------------------------------- | ----------------------------------------- |
-| Type                    | One of the legal entity relation types.                  | Enum                                      |
-| Legal Entity Source BPN | BPN of the legal entity from which the relation emerges. | String                                    |
-| Legal Entity Target BPN | BPN of the legal entity to which this relation goes.     | String                                    |
+| **Attribute**           | **Description**                                                                                                                    | **(Data) Type / Code List / Enumeration**                                           |
+| ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| Type                    | One of the legal entity relation types.                                                                                            | Enum                                                                                |
+| Legal Entity Source BPN | BPN of the legal entity from which the relation emerges.                                                                           | String                                                                              |
+| Legal Entity Target BPN | BPN of the legal entity to which this relation goes.                                                                               | String                                                                              |
+| Validity Periods        | The non-empty list of time intervals during which the relation holds.                                                              | List of [Relation Validity Period](#15213-relation-validity-period)                 |
+| Reason Code             | An optional technical key referencing a reason code that provides context for why the relation exists.                             | String                                                                              |
 
 A legal entity relation can be classified into **one** of the legal entity relation types:
 
 1. `is alternative headquarter for` (value=IsAlternativeHeadquarterFor): The legal entity source is an alternative headquarter for the legal entity target, where both legal addresses are registered in the official registers with equal rights, representing the same real-world legal entity. Multiple legal entity sources can be the alternative headquarters for one legal entity target, resulting in multiple relations at the legal entity target. The legal entity target cannot be a legal entity source at the same time, so that it cannot be an alternative headquarter for itself and so that only one level of alternative headquarters is possible.
 2. `is managed by` (value=IsManagedBy): Legal entity, site and address data can be managed by the managing legal entity (legal entity target) on behalf of the managed legal entity (legal entity source). Multiple legal entity sources can be the managed legal entities of one managing legal entity (legal entity target), resulting in multiple relations at the legal entity target. The legal entity target cannot be a legal entity source at the same time, so that it cannot be the managing legal entity for itself and so that only one level of managing legal entities is possible.
+3. `is owned by` (value=IsOwnedBy): The legal entity source is majority-owned by the legal entity target, for example a subsidiary owned by a parent company. Multiple legal entity sources can be majority-owned by one legal entity target, resulting in multiple relations at the legal entity target. The legal entity target cannot be a legal entity source at the same time, so that it cannot be an owner of itself and so that only one level of majority ownership is possible.
 
 NOTE: The 'is managed by' relationship has no effect to the data exchange in Catena-X Standard Release 25.09 because the managing legal entities MUST NOT offer data or consume data on behalf of managed legal entities in Catena-X Standard Release 25.09. The 'is managed by' relationship MAY only be used for the hierarchy management as described in this standard and in CX-0074 and CX-0076.
+
+NOTE: The 'is owned by' relationship has no effect to the data exchange in Catena-X Standard Release 25.09. It MAY only be used for hierarchy management as described in this standard.
 
 ##### 1.5.2.3 SITE
 
@@ -188,7 +193,7 @@ In general, a site is a delimited geographical area in which an organization con
 
 In data spaces, a site is a type of business partner representing a physical location or area owned by a legal entity, where a production plant, a warehouse, or an office building is located.
 
-A site is owned by a legal entity. Thus, exactly one legal entity is assigned to a site. A site has exactly one main address[^4], but it is possible to specify additional addresses (such as different gates), that belong to a site. Thus, at least one address is assigned to a site. A site can only be uploaded and modified by the owner (the legal entity) or by the managing legal entity for the owner of the site (see "is managed by" [Legal Entity Relation](#15223-legal-entity-relation)). This is because only the owner or its managing legal entity knows which addresses belong to which site. A site is uniquely identified by the BPNS.
+A site is owned by a legal entity. Thus, exactly one legal entity is assigned to a site. A site has exactly one main address[^4], but it is possible to specify additional addresses (such as different gates), that belong to a site. Thus, at least one address is assigned to a site. An additional address that belongs to a site may also be shared with further sites (see the additional sites of an [Address](#1524-address)). A site can only be uploaded and modified by the owner (the legal entity) or by the managing legal entity for the owner of the site (see "is managed by" [Legal Entity Relation](#15223-legal-entity-relation)). This is because only the owner or its managing legal entity knows which addresses belong to which site. A site is uniquely identified by the BPNS.
 
 | **Attribute**       | **Description**                                                                                                                                                 | **(Data) Type / Code List / Enumeration** |
 | ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------- |
@@ -224,7 +229,7 @@ In general, an address is a collection of information to describe a physical loc
 
 In data spaces, an address is a type of business partner representing the legal address of a legal entity, and/or the main address[^4] of a site, or any additional address of a legal entity or site (such as different gates).
 
-An address is owned by a legal entity. Thus, exactly one legal entity is assigned to an address. An address can belong to a site. Thus, one or no site is assigned to an address. An address is uniquely identified by the BPNA.
+An address is owned by a legal entity. Thus, exactly one legal entity is assigned to an address. An address can belong to a site. Thus, one or no site is assigned to an address as its site. In addition, an address can be associated with any number of further sites (for example when an additional address is shared by several sites). An address is uniquely identified by the BPNA.
 
 | **Attribute**              | **Description**                                                                                                                                                                                                                                                                                                                                                                                                                                                         | **(Data) Type / Code List / Enumeration**                      |
 | -------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------- |
@@ -232,11 +237,13 @@ An address is owned by a legal entity. Thus, exactly one legal entity is assigne
 | Name                       | The name of the address. This is not according to official registers but according to the name the data space agreed on, such as the name of a gate or any other additional names that designate the address in common parlance.                                                                                                                                                                                                                                        | String                                                         |
 | States                     | The list of (temporal) states of the address.                                                                                                                                                                                                                                                                                                                                                                                                                           | List of [Address State](#15242-address-state)                  |
 | Identifiers                | The list of identifiers of the address.                                                                                                                                                                                                                                                                                                                                                                                                                                 | List of [Address Identifier](#15241-address-identifier)        |
+| Relations                  | The list of directed relations of the address to any other address.                                                                                                                                                                                                                                                                                                                                                                                                     | List of [Address Relation](#15243-address-relation)            |
 | Physical Postal Address    | The physical postal address of the address, such as an office, warehouse, gate, etc.                                                                                                                                                                                                                                                                                                                                                                                    | [Physical Postal Address](#1526-physical-postal-address)       |
 | Alternative Postal Address | The alternative postal address of the address, for example if the goods are to be picked up somewhere else.                                                                                                                                                                                                                                                                                                                                                             | [Alternative Postal Address](#1527-alternative-postal-address) |
 | Legal Entity BPN           | The BPNL of the legal entity owning the address.                                                                                                                                                                                                                                                                                                                                                                                                                        | String                                                         |
 | Type                       | One of the address types.                                                                                                                                                                                                                                                                                                                                                                                                                                               | Enum                                                           |
 | Site BPN                   | The BPNS of the site the address belongs to.                                                                                                                                                                                                                                                                                                                                                                                                                            | String                                                         |
+| Additional Sites           | The list of BPNS of further sites the address is associated with, in addition to the site referenced by the Site BPN (for example when an additional address is shared by several sites).                                                                                                                                                                                                                                                                                | List of String                                                |
 | Is Participant Data        | Indicates whether the address is provided by a data space participant that either is the owner of the address or the managing legal entity for the owner of the address.                                                                                                                                                                                                                                                                                                | Boolean                                                        |
 | Created At                 | The date and time when the address data record has been created.                                                                                                                                                                                                                                                                                                                                                                                                        | Date / Time                                                    |
 | Updated At                 | The date and time when the address data record has been last updated.                                                                                                                                                                                                                                                                                                                                                                                                   | Date / Time                                                    |
@@ -271,6 +278,22 @@ An address state can be classified into **one** of the address state types:
 
 1. `active` (value=ACTIVE): Legal entity or site at the address are still operating and address is still used for operational purposes, such as for delivery of goods or services.
 2. `inactive` (value=INACTIVE): Legal entity or site at the address are not operating anymore, or address is not used anymore for operational purposes. It still exists in the BPDM Pool for historical reasons, such as for auditing purposes.
+
+##### 1.5.2.4.3 ADDRESS RELATION
+
+An address relation is a directed relation between two addresses with a specific type that describes the nature of the relation. Note that the address relation is in the list of address relations of the address if the address is either the source or the target of the relation.
+
+| **Attribute**      | **Description**                                                                                        | **(Data) Type / Code List / Enumeration**                           |
+| ------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------- |
+| Type               | One of the address relation types.                                                                     | Enum                                                                |
+| Address Source BPN | BPNA of the address from which the relation emerges.                                                   | String                                                              |
+| Address Target BPN | BPNA of the address to which this relation goes.                                                       | String                                                              |
+| Validity Periods   | The non-empty list of time intervals during which the relation holds.                                  | List of [Relation Validity Period](#15213-relation-validity-period) |
+| Reason Code        | An optional technical key referencing a reason code that provides context for why the relation exists. | String                                                              |
+
+An address relation can be classified into **one** of the address relation types:
+
+1. `is replaced by` (value=IsReplacedBy): The address source is a former legal address that has been replaced by the address target as the new legal address, due to a headquarter relocation. The address source may remain active as an additional address if the location is still in use; there is no requirement for it to become inactive as a result of this relation. Multiple address sources may be replaced by the same address target.
 
 ##### 1.5.2.5 LEGAL FORM
 
@@ -442,19 +465,121 @@ An identifier mapping entry of a specific identifier (of a specific identifier t
 | Identifier Value | The value of a specific identifier type for which the mapping was returned.                         | String                                    |
 | BPN              | The business partner number for which the mapping was returned. Can be either a BPNL, BPNS or BPNA. | String                                    |
 
+##### 1.5.2.13 RELATION VALIDITY PERIOD
+
+A relation validity period describes a single time interval during which a business partner relation holds.
+
+| **Attribute** | **Description**                                                                    | **(Data) Type / Code List / Enumeration** |
+| ------------- | ---------------------------------------------------------------------------------- | ----------------------------------------- |
+| Valid From    | The date from which the validity interval starts.                                  | Date                                      |
+| Valid To      | The date until which the validity interval ends. Open-ended if absent.             | Date                                      |
+
+##### 1.5.2.14 REASON CODE
+
+A reason code provides a short, reusable label describing why a business partner relation exists. It is part of the Pool's metadata and can be referenced optionally by any relation, regardless of relation type.
+
+| **Attribute** | **Description**                                                              | **(Data) Type / Code List / Enumeration** |
+| ------------- | ---------------------------------------------------------------------------- | ----------------------------------------- |
+| Technical Key | The technical identifier of the reason code, used as a reference in relations. | String                                  |
+| Description   | A human-readable description of the reason the relation exists.              | String                                    |
+
+The standard does not restrict which reason codes are available or mandate different sets of reason codes for different relation types. The content of the reason code catalogue is determined by the Pool implementation and exposed as a read-only reference list via the metadata controller.
+
+##### 1.5.2.13 SCRIPT CODE
+
+A script code identifies a writing system. Script codes support the script variant feature defined in CX-0074 Business Partner Data Gate API, where legal entities, sites, and addresses can carry name and address fields in multiple writing systems simultaneously. The Pool exposes the available script codes so that Gate consumers can discover which writing systems the operator supports.
+
+Script codes are provided as a read-only reference list; the actual codes used are defined by the operator and the standard does not prescribe which specific codes must be available. A subset of ISO 15924 codes (such as `Hans` for Simplified Chinese) are a natural example of what operators may choose to use.
+
+| **Attribute**  | **Description**                               | **(Data) Type / Code List / Enumeration** |
+| -------------- | --------------------------------------------- | ----------------------------------------- |
+| Technical Key  | The unique identifier for the script code (e.g. `Hans` for Simplified Chinese). | String |
+| Description    | The human-readable name of the writing system. | String |
+
+##### 1.5.2.13 GENERIC BUSINESS PARTNER (POOL SEARCH RESULT)
+
+A generic business partner is a unified, read-only view of an address together with its business partner type hierarchy, used in the Pool's generic search response. It combines the data of the legal entity that owns the address, the optional site associated with the address, and the address itself into a single result object. This allows consumers to discover business partners across all types without issuing separate requests to the typed controllers.
+
+This model is derived from the Generic Business Partner output model defined in [CX-0074 Business Partner Data Gate API](https://catenax-ev.github.io/docs/next/standards/CX-0074-BusinessPartnerGateAPI). Attributes specific to the Gate sharing process are not present in the Pool variant: `externalId`, `nameParts`, `roles`, `isOwnCompanyData`, `externalSequenceTimestamp`, `createdAt`, and `updatedAt` are excluded. The Pool adds an `isParticipantData` flag and provides separate identifier lists for the legal entity component (top-level `identifiers`) and the address component (`address.identifiers`).
+
+Each generic business partner result is address-centric: one result per unique BPNA is returned. Because an address can simultaneously be the legal address of a legal entity and the main address of a site, the address type attribute within the address component explicitly marks this combined role. All attributes in the response are classified as public data; the response must not reveal which Catena-X member originally submitted any part of the data.
+
+For additional addresses, legal entity and site attributes are inherited from the parent entities: the legal name and legal form shown in the result are those of the owning legal entity, not properties of the address itself. This means every result is a complete, fully searchable object regardless of address type.
+
+| **Attribute**       | **Description**                                                                                                                                                  | **(Data) Type / Code List / Enumeration**                              |
+| ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| Identifiers         | The list of identifiers of the legal entity, such as the German Handelsregisternummer, a VAT registration / taxpayer identification number, etc.                 | List of [Legal Entity Identifier](#15221-legal-entity-identifier)      |
+| States              | The list of states of the legal entity.                                                                                                                          | List of [Legal Entity State](#15222-legal-entity-state)                |
+| Legal Entity        | The legal entity component containing the attributes of the legal entity that owns the address.                                                                  | [Business Partner Legal Entity](#152131-business-partner-legal-entity) |
+| Site                | The site component containing the attributes of a site associated with the address: the site given in the search input, or otherwise the main (first) site the address belongs to. Absent if the address does not belong to any site. | [Business Partner Site](#152132-business-partner-site)                 |
+| Address             | The address component containing the attributes of the address.                                                                                                  | [Business Partner Address](#152133-business-partner-address)           |
+| Is Participant Data | Indicates whether the result is provided by a data space participant that either is the owner of the address or is its managing legal entity.                    | Boolean                                                                |
+
+###### 1.5.2.13.1 BUSINESS PARTNER LEGAL ENTITY
+
+The legal entity component within a generic business partner carries the attributes of the legal entity that owns the address. For additional addresses, these attributes are inherited from the parent legal entity.
+
+| **Attribute**       | **Description**                                               | **(Data) Type / Code List / Enumeration**               |
+| ------------------- | ------------------------------------------------------------- | ------------------------------------------------------- |
+| BPNL                | The BPNL of the legal entity.                                 | String                                                  |
+| Legal Name          | The name of the legal entity according to official registers. | String                                                  |
+| Short Name          | The abbreviated name of the legal entity.                     | String                                                  |
+| Legal Form          | The technical key of the legal form of the legal entity.      | String                                                  |
+| States              | The list of states of the legal entity.                       | List of [Legal Entity State](#15222-legal-entity-state) |
+| Confidence Criteria | The confidence criteria for the legal entity data.            | [Confidence Criteria](#152134-confidence-criteria)      |
+
+###### 1.5.2.13.2 BUSINESS PARTNER SITE
+
+The site component within a generic business partner carries the attributes of a site associated with the address. If a site was specified in the search input, that site is carried; otherwise the main (first) site the address belongs to is carried. It is absent if the address does not belong to any site.
+
+| **Attribute**       | **Description**                            | **(Data) Type / Code List / Enumeration**          |
+| ------------------- | ------------------------------------------ | -------------------------------------------------- |
+| BPNS                | The BPNS of the site.                      | String                                             |
+| Name                | The name of the site.                      | String                                             |
+| States              | The list of states of the site.            | List of [Site State](#15231-site-state)            |
+| Confidence Criteria | The confidence criteria for the site data. | [Confidence Criteria](#152134-confidence-criteria) |
+
+###### 1.5.2.13.3 BUSINESS PARTNER ADDRESS
+
+The address component within a generic business partner carries the attributes of the address itself, including its type, postal data, states, and identifiers.
+
+| **Attribute**              | **Description**                                                                                 | **(Data) Type / Code List / Enumeration**                      |
+| -------------------------- | ----------------------------------------------------------------------------------------------- | -------------------------------------------------------------- |
+| BPNA                       | The BPNA of the address.                                                                        | String                                                         |
+| Name                       | The name of the address.                                                                        | String                                                         |
+| Address Type               | One of the address types, indicating the role of this address within its legal entity and site. | Enum (see [Address](#1524-address))                            |
+| Physical Postal Address    | The physical postal address.                                                                    | [Physical Postal Address](#1526-physical-postal-address)       |
+| Alternative Postal Address | The alternative postal address.                                                                 | [Alternative Postal Address](#1527-alternative-postal-address) |
+| States                     | The list of states of the address.                                                              | List of [Address State](#15242-address-state)                  |
+| Identifiers                | The list of identifiers of the address, such as the Global Location Number (GLN).              | List of [Address Identifier](#15241-address-identifier)        |
+| Confidence Criteria        | The confidence criteria for the address data.                                                   | [Confidence Criteria](#152134-confidence-criteria)             |
+
+###### 1.5.2.13.4 CONFIDENCE CRITERIA
+
+Confidence criteria quantify the reliability of a Golden Record based on the data contributions and validation checks applied to it.
+
+| **Attribute**                   | **Description**                                                                                            | **(Data) Type / Code List / Enumeration** |
+| ------------------------------- | ---------------------------------------------------------------------------------------------------------- | ----------------------------------------- |
+| Shared By Owner                 | Indicates whether the data was shared by the owner of the business partner or its managing legal entity.   | Boolean                                   |
+| Checked By External Data Source | Indicates whether the data has been validated against an external data source.                             | Boolean                                   |
+| Number Of Sharing Members       | The number of data space participants that have shared data for this business partner.                     | Integer                                   |
+| Last Confidence Check At        | The date and time when the confidence of this business partner was last checked.                           | Date / Time                               |
+| Next Confidence Check At        | The date and time when the confidence of this business partner is next scheduled to be checked.            | Date / Time                               |
+| Confidence Level                | The overall confidence level of the business partner data, expressed as an integer score.                  | Integer                                   |
+
 ## 2 BUSINESS PARTNER POOL API \[NORMATIVE\]
 
 The Business Partner Data Pool API enables the access to Golden Record business partner data and provides it to other data space services and consumers. The Pool API **MUST** be implemented based on the [OpenAPI specification (3.1.0)](https://github.com/OAI/OpenAPI-Specification/blob/7acdf61ed4e5c18068e2da18741318adde219c2d/versions/3.1.0.md).
 
 ### 2.1 PRECONDITIONS AND DEPENDENCIES
 
-To run the API, the technical components described in the [Eclipse Tractus-X BPDM GitHub repository (7.1.x)](https://github.com/eclipse-tractusx/bpdm/blob/86a0a1931323d9ed0a75252bdd2ad9a6434542b7/README.md) **SHOULD** be set up.
+To run the API, the technical components described in the [Eclipse Tractus-X BPDM GitHub repository (7.4.x)](https://github.com/eclipse-tractusx/bpdm/blob/e686a9f147a8b21db1dca0ef0e67aef84375f415/README.md) **SHOULD** be set up.
 
 ### 2.2 API SPECIFICATION
 
 #### 2.2.1 API ENDPOINTS & RESOURCES
 
-The Pool API **MUST** be implemented as defined in the [Business Partner Data Pool OpenAPI specification (7.1.x)](assets/apis/pool-openapi.json).
+The Pool API **MUST** be implemented as defined in the [Business Partner Data Pool OpenAPI specification (7.4.x)](https://eclipse-tractusx.github.io/api-hub/bpdm/7.4.0/pool/pool.yaml).
 
 The resources **MUST** use the well-known HTTP request methods for CRU(D) operations:
 
@@ -471,6 +596,7 @@ The following API controllers of the OpenAPI document **MUST** be implemented:
 - Legal entity controller
 - Site controller
 - Address controller
+- Business partner controller
 - Metadata controller (code lists)
 - Changelog controller
 - BPN controller (identifier mappings)
@@ -520,7 +646,7 @@ The address controller **MUST** allow to create, update, or read business partne
 
 ##### 2.2.1.4 METADATA CONTROLLER (CODE LISTS)
 
-The metadata controller **MUST** allow to create or read legal forms, identifier types, and read administrative areas on level 1. It **MUST** have the following resources:
+The metadata controller **MUST** allow to create or read the business partner metadata. It **MUST** have the following resources:
 
 | **Metadata Controller Resources** | **Description**                                                             |
 | --------------------------------- | --------------------------------------------------------------------------- |
@@ -529,6 +655,8 @@ The metadata controller **MUST** allow to create or read legal forms, identifier
 | GET/legal-forms                   | Returns all legal forms.                                                    |
 | GET/identifier-types              | Returns all identifier types filtered by business partner type and country. |
 | GET/administrative-areas-level1   | Returns all administrative areas on level 1.                                |
+| GET/reason-codes                  | Returns all reason codes.                                                   |
+| GET/script-codes                  | Returns all available script codes.                                         |
 
 ##### 2.2.1.5 BPN CONTROLLER (IDENTIFIER MAPPINGS)
 
@@ -548,28 +676,87 @@ The changelog controller **MUST** allow to read change log entries of legal enti
 | POST/participants/changelog/search      | Returns only changelog entries of legal entities, sites and addresses, which are owned by data space participants, as of a specified timestamp, optionally filtered by a list of BPNL, BPNS and BPNA, or business partner types. |
 |                                         |                                                                                                                                                                                                                                  |
 
+##### 2.2.1.7 BUSINESS PARTNER CONTROLLER
+
+The business partner controller **MUST** allow to search for business partners regardless of their type in a single request, returning [Generic Business Partner (Pool Search Result)](#15213-generic-business-partner-pool-search-result) across legal entities, sites, and additional addresses in a unified, paginated response. It **MUST** have the following resources:
+
+| **Business Partner Controller Resources**          | **Description**                                                                                                                   |
+| -------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| POST/business-partners/search                      | Returns generic business partners matching the given search criteria.                                                             |
+
+The search request accepts the following fields. All fields are optional, subject to the validation rules below.
+
+| **Field**      | **Matching** | **Description**                                                                             |
+| -------------- | ------------ | ------------------------------------------------------------------------------------------- |
+| `legalName`    | Fuzzy        | Filter by the legal name of the legal entity.                                               |
+| `bpn`          | Exact        | Filter by a Business Partner Number (BPNL, BPNS, or BPNA).                                 |
+| `streetName`   | Fuzzy        | Filter by the street name of the physical postal address.                                   |
+| `postalCode`   | Fuzzy        | Filter by the postal code of the physical postal address.                                   |
+| `city`         | Fuzzy        | Filter by the city of the physical postal address.                                          |
+| `country`      | Exact        | Filter by the country of the physical postal address (ISO 3166-1 two-letter code).          |
+
+Fuzzy matching **MUST** apply the following normalization rules:
+
+- Character equivalences: `ü`↔`ue`, `ö`↔`oe`, `ä`↔`ae`, `ß`↔`ss`, and similar locale-aware substitutions.
+- Case-insensitive matching.
+- Collapsing of consecutive spaces, dots, or similar punctuation.
+- Wildcard placeholders: `*` matches any sequence of characters; `+` matches exactly one alphanumeric character.
+
+The scoring algorithm used to rank results by relevance is not prescribed by this standard.
+
+The implementation **MUST** enforce the following validation rules and return a 400 Bad Request response if any rule is violated:
+
+1. At least one of `bpn` or `legalName` **MUST** be provided and non-blank. Providing only address-level fields (`city`, `streetName`, `postalCode`, `country`) without `bpn` or `legalName` is invalid.
+2. The `searchResultFilter` **MUST** contain at least one value. An empty or absent filter is invalid.
+3. `bpn` and `legalName` **MUST NOT** begin with a whitespace character.
+4. If `legalName` is provided, it **MUST** contain at least 3 characters.
+
+The `searchResultFilter` parameter controls which address types appear in the response. It **MUST** contain one or more of the following values:
+
+1. `IncludeLegalEntities` (value=IncludeLegalEntities): include addresses with type `LegalAddress` or `LegalAndSiteMainAddress`.
+2. `IncludeSites` (value=IncludeSites): include addresses with type `SiteMainAddress` or `LegalAndSiteMainAddress`.
+3. `IncludeAdditionalAddresses` (value=IncludeAdditionalAddresses): include addresses with type `AdditionalAddress`.
+
+An address with type `LegalAndSiteMainAddress` **MUST** be included if either `IncludeLegalEntities` or `IncludeSites` (or both) is present in the filter.
+
+The response **MUST** return at most one result per unique BPNA and **MUST NOT** contain duplicate entries for the same BPNA. Results **MUST** be ordered by descending relevance score. The response is limited to a maximum of 100 results per page. Because each result carries the full legal entity (and optional site) context regardless of address type, all search fields apply to all result types: for example, filtering to `IncludeAdditionalAddresses` combined with a `legalName` value returns additional addresses whose parent legal entity matches that name.
+
 #### 2.2.2 AVAILABLE DATA TYPES
 
 The API **MUST** use JSON as the payload format transported via HTTP. Other formats are **OPTIONAL**.
 
 #### 2.2.3 DATA ASSET STRUCTURE
 
-The following data assets **MUST** be registered at the Core Service Provider so that the data space participant can negotiate an API usage contract based on the mentioned usage purpose with the Core Service Provider and access the Pool API (hosted by the Core Service Provider) through these assets [^5]:
+The following data asset **MUST** be registered at the Core Service Provider so that the data space participant can negotiate an API usage contract based on the mentioned usage purpose with the Core Service Provider and access the Pool API (hosted by the Core Service Provider) through this asset [^5]:
 
 | **Type**         | **Subject**                                   | **Version** | **Description** | **Usage Purpose** |
 | ---------------- | --------------------------------------------- | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------- |
-| cx-taxo:BPDMPool | cx-taxo:ReadAccessPoolForDataSpaceParticipant | 7           | Grants the data space participant read access to the Pool API. This can be used to read legal entity, site, address, legal form, identifier type and administrative area level 1 data. To that end, it also grants read access to the respective changelog and identifier mappings, as well as relational data. | cx.bpdm.pool:1    |
+| cx-taxo:BPDMPool | cx-taxo:ReadAccessPoolForDataSpaceParticipant | 7           | Grants the data space participant read access to the Pool API. The asset only contains the data space participant data endpoints and the metadata endpoints. | cx.bpdm.pool:1    |
 
-Read access for legal entities, sites and addresses **MUST** be restricted to data space participant data (see the corresponding attribute for legal entity, site and address), because the Business Partner Data Pool may also contain legal entities, sites and addresses, which are not owned by data space participants.
-
-Write resources (create and update) of the Pool API **MUST NOT** be called from outside of the data space operating environment. Consequently, data assets for them are **NOT REQUIRED**.
-
-The data asset **MUST** contain the following properties with the corresponding values from the table above:
+Each data asset **MUST** contain the following properties with the corresponding values from the table above:
 
 - [*dct:type*](http://purl.org/dc/terms/type) for type (as @id reference), see also CX-0018
 - [*dct:subject*](http://purl.org/dc/terms/subject) for subject (as @id reference)
 - [*dct:description*](http://purl.org/dc/terms/description) for description
 - [*cx-common:version*](https://w3id.org/catenax/ontology/common#version) for version, see also CX-0018
+
+Write resources (create and update) of the Pool API **MUST NOT** be called from outside of the data space operating environment. Consequently, data assets for them are **NOT REQUIRED**.
+
+There **MUST** be measures in place that prevent direct access to the Pool API from outside the internal environment of the operating company. Access from outside the internal environment of the operating company to the Pool API **MUST** only be possible via the Data Space Connector. The OAuth2 client permissions **MUST** be configured to solely allow access to the API resources defined in the corresponding asset, checking HTTP method, path, query parameters and body of the HTTP request sent to the data plane public API, which acts as a proxy for the Pool API[^6].
+
+Through the `cx-taxo:ReadAccessPoolForDataSpaceParticipant` asset, the data space participant **MUST** be granted access to exactly the following read resources of the Pool API (as defined in chapter 2.2.1):
+
+| **Controller**                   | **Resource**                            | **Description**                                                                                                         |
+|----------------------------------|-----------------------------------------|-------------------------------------------------------------------------------------------------------------------------|
+| Legal entity controller          | POST/participants/legal-entities/search | Returns legal entities by an array of BPNL, restricted to those owned by data space participants.                       |
+| Site controller                  | POST/participants/sites/search          | Returns sites by an array of BPNS and/or BPNL, restricted to those owned by data space participants.                    |
+| Address controller               | POST/participants/addresses/search      | Returns addresses by an array of BPNA and/or BPNS and/or BPNL, restricted to those owned by data space participants.    |
+| Metadata controller (code lists) | GET/legal-forms                         | Returns all legal forms.                                                                                                |
+| Metadata controller (code lists) | GET/identifier-types                    | Returns all identifier types filtered by business partner type and country.                                             |
+| Metadata controller (code lists) | GET/administrative-areas-level1         | Returns all administrative areas on level 1.                                                                            |
+| Metadata controller (code lists) | GET/reason-codes                        | Returns all reason codes.                                                                                               |
+| Metadata controller (code lists) | GET/script-codes                        | Returns all available script codes.                                                                                     |
+| Changelog controller             | POST/participants/changelog/search      | Returns changelog entries of legal entities, sites and addresses, restricted to those owned by data space participants. |
 
 An example payload for the asset:
 
@@ -578,7 +765,7 @@ An example payload for the asset:
     "@context": {
         "dct": "http://purl.org/dc/terms/",
         "cx-taxo": "https://w3id.org/catenax/taxonomy#",
-        "cx-common": "https://w3id.org/catenax/ontology/common#",
+        "cx-common": "https://w3id.org/catenax/ontology/common#"
     },
     "@type": "Asset", 
     "@id": "e94272b1-9831-458f-8986-c63c4973ea60", 
@@ -589,7 +776,7 @@ An example payload for the asset:
         "dct:subject": {
           "@id": "cx-taxo:ReadAccessPoolForDataSpaceParticipant"
         },
-        "dct:description": "Grants the data space participant read access to the Pool API. This can be used to read legal entity, site, address, legal form, identifier type and administrative area level 1 data. To that end, it also grants read access to the respective changelog entries and identifier mappings, as well as relational data.",
+        "dct:description": "Grants the data space participant read access to the Pool API. The asset only contains the data space participant data endpoints and the metadata endpoints.",
         "cx-common:version": "7"
     },
     "dataAddress": {
@@ -606,8 +793,6 @@ An example payload for the asset:
     }
 }
 ```
-
-There **MUST** be measures in place that prevent direct access to the Pool API from outside the internal environment of the operating company. Access from outside the internal environment of the operating company to the Pool API **MUST** only be possible via the Data Space Connector. The OAuth2 client permissions **MUST** be configured to solely allow access to the API resources defined in the corresponding asset, checking HTTP method, path, query parameters and body of the HTTP request sent to the data plane public API, which acts as a proxy for the Pool API[^6].
 
 #### 2.2.4 ERROR HANDLING
 
@@ -637,8 +822,9 @@ In alignment with our commitment to data sovereignty, a specific framework gover
 - [ISO 6709:2022](https://www.iso.org/obp/ui/en/#iso:std:iso:6709:ed-3:v1:en)
 - [WGS 84 (NGA STND 0036 1.0.0)](https://nsgreg.nga.mil/doc/view?i=4085)
 - [OpenAPI specification (3.1.0)](https://github.com/OAI/OpenAPI-Specification/blob/7acdf61ed4e5c18068e2da18741318adde219c2d/versions/3.1.0.md)
-- [Business Partner Data Pool OpenAPI specification (7.1.x)](assets/apis/pool-openapi.json)
+- [Business Partner Data Pool OpenAPI specification](assets/api/pool-openapi.json)
 - [IANA HTTP Status Code Registry (from 2022-06-08)](https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml)
+- [ISO 15924](https://www.iso.org/obp/ui/en/#iso:std:iso:15924:ed-2:v1:en)
 
 ### 3.2 NON-NORMATIVE REFERENCES
 
@@ -651,9 +837,9 @@ In alignment with our commitment to data sovereignty, a specific framework gover
 
 > *This section is non-normative*
 
-- [Business Partner Data Pool API (7.1.x)](https://github.com/eclipse-tractusx/bpdm/tree/86a0a1931323d9ed0a75252bdd2ad9a6434542b7/bpdm-pool-api/src/main/kotlin/org/eclipse/tractusx/bpdm/pool/api)
-- [Eclipse Tractus-X BPDM GitHub repository (7.1.x)](https://github.com/eclipse-tractusx/bpdm/blob/86a0a1931323d9ed0a75252bdd2ad9a6434542b7/README.md)
-- [BPDM ARC42 documentation (7.1.x)](https://github.com/eclipse-tractusx/bpdm/tree/86a0a1931323d9ed0a75252bdd2ad9a6434542b7/docs/architecture)
+- [Business Partner Data Pool API (7.4.x)](https://github.com/eclipse-tractusx/bpdm/tree/e686a9f147a8b21db1dca0ef0e67aef84375f415/bpdm-pool-api/src/main/kotlin/org/eclipse/tractusx/bpdm/pool/api)
+- [Eclipse Tractus-X BPDM GitHub repository (7.4.x)](https://github.com/eclipse-tractusx/bpdm/blob/e686a9f147a8b21db1dca0ef0e67aef84375f415/README.md)
+- [BPDM ARC42 documentation (7.4.x)](https://github.com/eclipse-tractusx/bpdm/tree/e686a9f147a8b21db1dca0ef0e67aef84375f415/docs/architecture)
 
 ## ANNEXES
 

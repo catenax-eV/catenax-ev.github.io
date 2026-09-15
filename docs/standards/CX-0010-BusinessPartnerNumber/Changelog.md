@@ -1,8 +1,17 @@
----
-title: "Changelog"
----
+# Changelog
 
 All notable changes to CX-0010 will be documented in this file.
+
+## [3.2.0] CX-Neptune (26.09)
+
+### Added
+
+- no duplicate within a BPNL allowed
+- added the section for validity period (line 329 - 331)
+
+### Changed
+
+- rephrased the relations for BPNA and BPNS (line 323)
 
 ## [3.1.0] - CX-Neptune Preview (26.06)
 

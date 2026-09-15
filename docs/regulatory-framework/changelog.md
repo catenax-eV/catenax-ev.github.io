@@ -6,6 +6,25 @@ sidebar_class_name: separator-top
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [3.0.4]
+
+### Added
+
+- Contracting: Guidance on Contract Modularization in Catena-X
+  - Quick Start Guide for First-Time Users
+  - Picture and explanation of contract options
+  - Picture and explanation of contract precedence rules
+  - Examples for four contract options, with explanations of how conflicting contract clauses are handled
+  - Section 6 Clause Library
+  - Section 8 Frequently Asked Questions (FAQ)
+
+### Changed
+
+- Contracting: Guidance on Contract Modularization in Catena-X
+  - Simplified wording to make the guidance easier to consume
+  - Made the text consistent in terminology
+  - Added a PDF version of the guidance
+
 ## [3.0.3] - 2026-08-10
 
 ### Added

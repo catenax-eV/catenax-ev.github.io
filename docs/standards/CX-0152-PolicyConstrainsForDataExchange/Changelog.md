@@ -4,7 +4,26 @@ title: "Changelog"
 
 All notable changes to CX-0152 will be documented in this file.
 
-## [1.1.0] - CX-Neptun Preview (26.06)
+## [1.2.0] - CX-Neptune (26.09)
+
+### Added
+
+- Added schema based validation for usage permission XOR constraint groups in `assets/policy-schema.json` (`warranty-*` and `data-usage-end-*` families) using `contains` with `maxContains`.
+- Added implementation of one new right operand for the Constraint "UsagePurpose": ECU (cx.ecu.base:1)
+
+### Changed
+
+- Updated `AccessPolicy` and `UsagePolicy` definitions in `assets/policy-schema.json` to explicit object schemas with typed `properties`.
+- Tightened policy rule cardinality in `assets/policy-schema.json`: All rules and constraints enforce exactly one rule and constraint now (`minItems: 1`, `maxItems: 1`) to ensure schema validation.
+- Corrected invalid JSON Schema keyword casing in usage obligations from `minitems`/`maxitems` to `minItems`/`maxItems`.
+- Refactored usage obligation constraint item definition in `assets/policy-schema.json` to reference the atomic constraint schema (`atomic-constraint-schemas.json#/definitions/AtomicProhibitionConstraint`).
+- Changed duration constraint `rightOperand` type from `integer` to `string` with regex `pattern` to align with DSP operand shape and avoid validation mismatches.
+
+### Removed
+
+- N/A
+
+## [1.1.0] - CX-Neptune Preview (26.06)
 
 ### Added
 

@@ -4,6 +4,12 @@ title: "Changelog"
 
 All notable changes to CX-0128 will be documented in this file.
 
+## [2.3.2] - CX-Neptune (26.09)
+
+### Removed
+
+- Removed references to deprecated CX-0001 standard
+
 ## [2.3.1] - CX-Neptune (Preview) (26.06)
 
 ### Added

@@ -18,6 +18,7 @@ package "Address and References" {
 
   Address "1..*" -u-o "1" LegalEntity : LegalEntityBPN
   Address "1..*" -u-o "0..1" Site: SiteBPN
+  Address "*" -u-o "*" Site : AdditionalSites
 
   LegalEntity "1" --> "1" LegalAddress : LegalAddress
   LegalAddress -u-|> Address

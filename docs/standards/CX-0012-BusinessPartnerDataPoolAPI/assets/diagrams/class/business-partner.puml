@@ -27,6 +27,7 @@ package "Business Partners" {
   Site "*" -u-o "1" LegalEntity : LegalEntityBPN
   Address "1..*" -u-o "1" LegalEntity : LegalEntityBPN
   Address "1..*" -u-o "0..1" Site: SiteBPN
+  Address "*" -u-o "*" Site : AdditionalSites
 }
 
 hide methods

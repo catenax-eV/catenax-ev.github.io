@@ -3,7 +3,7 @@ tags:
   - UC/ESS
 ---
 
-# CX-0144 ESS Use Case Standard 1.0.1
+# CX-0144 ESS Use Case Standard 1.0.2
 
 ## ABSTRACT
 
@@ -327,19 +327,11 @@ The Clearing Agency sets the status to closed.
 
 > *This section is normative*
 
-- CX-0001 EDC Discovery API 1.0.2
-- CX-0003 BAMM Aspect Meta Model 1.1.0
 - CX-0005 Item Relationship Service 2.0.0
-- CX-0006 Registration and initial onboarding 1.1.3
 - CX-0010 Business Partner Number 2.0.0
-- CX-0014 Employees and Technical Users 1.0.1
-- CX-0015 IAM & Access Control Paradigm 1.0.1
-- CX-0016 Company Attribute Verification 1.1.0
-- CX-0017 Company Role by the Connector 1.1.0
 - CX-0018 Eclipse Data Space Connector (EDC) 2.1.0
 - CX-0049 DID Document Schema 1.0.0
 - CX-0050 Framework Agreement Credential 1.0.0
-- CX-0053 BPN Discovery Services 1.0.1
 - CX-0067 Ontology models in Catena-X 1.0.0
 - CX-0084 Federated Queries in Data Spaces 1.0.0
 - CX-0152 Policy Constraints for Data Exchange 1.0.0

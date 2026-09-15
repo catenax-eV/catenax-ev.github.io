@@ -2,7 +2,7 @@
 
 ## General Information
 
-- cxId: CX-XXXX
+- cxId: CX-0161
 - name: ECU Crypto Material
 - capability: -
 - version: 1.0.0
@@ -10,7 +10,7 @@
 
 ## Conformity Assessment Criteria
 
-### CX-XXXX-CAC-001
+### CX-0161-CAC-001
 
 - type: MUST
 - topic: Requirements
@@ -38,7 +38,7 @@ Provide proof of conformity with CAC-003 and CAC-004.
 
 N/A
 
-### CX-XXXX-CAC-002
+### CX-0161-CAC-002
 
 - type: MUST
 - topic: Requirements
@@ -66,7 +66,7 @@ Provide proof of conformity with CAC-003 and/or CAC-004.
 
 N/A
 
-### CX-XXXX-CAC-003
+### CX-0161-CAC-003
 
 - type: SHOULD
 - topic: Requirements
@@ -94,7 +94,7 @@ Submit OpenAPI specification covering all notification API endpoints defined in 
 
 N/A
 
-### CX-XXXX-CAC-004
+### CX-0161-CAC-004
 
 - type: SHOULD
 - topic: Requirements
@@ -122,7 +122,7 @@ Demonstrate functional /feedback/receive endpoint in OpenAPI spec or live test.
 
 N/A
 
-### CX-XXXX-CAC-005
+### CX-0161-CAC-005
 
 - type: MUST
 - topic: Requirements
@@ -150,7 +150,7 @@ Provide EDC data asset registrations with valid API linkage for both Data Provid
 
 Subject: All Participants; Ref: §4.1
 
-### CX-XXXX-CAC-006
+### CX-0161-CAC-006
 
 - type: MUST
 - topic: Requirements
@@ -178,7 +178,7 @@ Demonstrate functional /feedback/receive endpoint in OpenAPI spec or live test.
 
 Subject: Business Application Provider; Ref: §1.3
 
-### CX-XXXX-CAC-007
+### CX-0161-CAC-007
 
 - type: SHOULD
 - topic: Requirements
@@ -206,7 +206,7 @@ Demonstrate functional POST /update endpoint; provide OpenAPI spec entry
 
 Subject: Data Provider; Ref: §4.2
 
-### CX-XXXX-CAC-008
+### CX-0161-CAC-008
 
 - type: SHOULD
 - topic: Requirements
@@ -234,7 +234,7 @@ Provide implementation evidence or documentation of feedback mechanism
 
 Subject: Data Consumer; Ref: §1.2.2
 
-### CX-XXXX-CAC-009
+### CX-0161-CAC-009
 
 - type: MUST
 - topic: Requirements
@@ -262,7 +262,7 @@ Provide sample notification payload with conformant MessageHeader; validate agai
 
 Subject: All Participants; Ref: §1.3
 
-### CX-XXXX-CAC-010
+### CX-0161-CAC-010
 
 - type: MUST
 - topic: Requirements
@@ -290,7 +290,7 @@ Provide valid CryptoMaterial submodel instance conforming to §3.1
 
 Subject: Data Provider; Ref: §2.1.2
 
-### CX-XXXX-CAC-011
+### CX-0161-CAC-011
 
 - type: MUST
 - topic: Requirements
@@ -318,7 +318,7 @@ Provide sample payload and validate type/format/encoding combination against the
 
 Subject: Data Provider; Ref: §3.1.2
 
-### CX-XXXX-CAC-012
+### CX-0161-CAC-012
 
 - type: MUST
 - topic: Requirements
@@ -346,7 +346,7 @@ Provide CryptoMaterial payload with at least one non-empty cryptoMaterials entry
 
 Subject: Data Provider; Ref: §3.1.3
 
-### CX-XXXX-CAC-013
+### CX-0161-CAC-013
 
 - type: MAY
 - topic: Requirements
@@ -374,7 +374,7 @@ Provide valid SoftwareInformation submodel instance only if used.
 
 Subject: Data Provider; Ref: §2.1.2
 
-### CX-XXXX-CAC-014
+### CX-0161-CAC-014
 
 - type: MUST
 - topic: Requirements
@@ -402,7 +402,7 @@ Self-declaration or CAB certification covering all listed standards and criteria
 
 Subject: All Participants; Ref: §6.1
 
-### CX-XXXX-CAC-015
+### CX-0161-CAC-015
 
 - type: MUST
 - topic: Requirements
@@ -430,7 +430,7 @@ Provide sample payload containing catenaXId, manufacturerId, and partInstanceId
 
 Subject: Data Provider; Ref: §2.1.2
 
-### CX-XXXX-CAC-016
+### CX-0161-CAC-016
 
 - type: MUST
 - topic: Requirements
@@ -458,7 +458,7 @@ Provide Digital Twin registration record showing PartInstance type per CX-0127
 
 Subject: Data Provider; Ref: §2.1.2 — applies when a Digital Twin is created
 
-### CX-XXXX-CAC-017
+### CX-0161-CAC-017
 
 - type: MUST
 - topic: Requirements
@@ -486,7 +486,7 @@ Provide Digital Twin in accordance to CX-0002.
 
 Subject: Data Provider; Ref: §4.4.1 — for pull-based access relationships
 
-### CX-XXXX-CAC-018
+### CX-0161-CAC-018
 
 - type: MUST
 - topic: Requirements
@@ -514,7 +514,7 @@ Provide EDC data asset configuration JSON matching the structure specified in §
 
 Subject: All Participants; Ref: §1.3
 
-### CX-XXXX-CAC-019
+### CX-0161-CAC-019
 
 - type: MUST
 - topic: Requirements
@@ -542,7 +542,7 @@ Provide Digital Twin registration record containing the ecuSerialNumber specific
 
 Subject: Data Provider; Ref: §2.1.3
 
-### CX-XXXX-CAC-020
+### CX-0161-CAC-020
 
 - type: MUST
 - topic: Requirements
@@ -570,7 +570,7 @@ Provide EDC connector asset configuration showing the usage policy attached to t
 
 Subject: Data Consumer; Ref: §2.1.5
 
-### CX-XXXX-CAC-021
+### CX-0161-CAC-021
 
 - type: MUST
 - topic: Requirements
@@ -598,7 +598,7 @@ Provide mapping evidence showing catenaXId equals globalAssetId of the correspon
 
 Subject: Data Provider; Ref: §2.1.3 — applies when Digital Twin is used
 
-### CX-XXXX-CAC-022
+### CX-0161-CAC-022
 
 - type: SHOULD
 - topic: Requirements
@@ -626,7 +626,7 @@ Demonstrate functional POST /receive endpoint; provide OpenAPI spec entry.
 
 Subject: Data Consumer; Ref: §4.2
 
-### CX-XXXX-CAC-023
+### CX-0161-CAC-023
 
 - type: MUST
 - topic: Requirements
@@ -654,7 +654,7 @@ Submit OpenAPI specification conforming to the standardized API definition
 
 Subject: All Participants; Ref: §4.2.3
 
-### CX-XXXX-CAC-024
+### CX-0161-CAC-024
 
 - type: MUST
 - topic: Requirements
@@ -682,7 +682,7 @@ Submit OpenAPI specification conforming to the standardized API definition
 
 Subject: All Participants; Ref: §4.2.3
 
-### CX-XXXX-CAC-025
+### CX-0161-CAC-025
 
 - type: MUST
 - topic: Requirements
