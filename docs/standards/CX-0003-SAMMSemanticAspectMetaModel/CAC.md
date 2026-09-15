@@ -65,7 +65,7 @@ For joint modelling activities with [IDTA](https://industrialdigitaltwin.org/) t
   - [ ] Analytical
   - [x] Procedures
 
-Every semantic model used in any of the Catena-X Standards **MUST** have a unique identifier conformant to the meta model identifiers definition in [SAMM](CX-0002-DigitalTwinsInCatenaX.md#2-semantic-aspect-meta-model-samm).
+Every semantic model used in any of the Catena-X Standards **MUST** have a unique identifier conformant to the meta model identifiers definition in [SAMM](../CX-0002-DigitalTwinsInCatenaX/CX-0002-DigitalTwinsInCatenaX.md#2-semantic-aspect-meta-model-samm).
 For the semantic models developed in the scope of Catena-X the unique identifier **MUST** start with either
 
 ```
@@ -100,7 +100,7 @@ status "released" **MUST** be validated without errors
 against the Semantic Aspect Meta Model.
 
 For the current version of the
-Semantic Aspect Meta Model under consideration see CX-0003, [normative references](CX-0002-DigitalTwinsInCatenaX.md#31-normative-references).
+Semantic Aspect Meta Model under consideration see CX-0003, [normative references](../CX-0002-DigitalTwinsInCatenaX/CX-0002-DigitalTwinsInCatenaX.md#31-normative-references).
 
 For the currently used version of the Validator see information in
 [Readme](https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/README.md).
@@ -143,9 +143,9 @@ The [Catena-X Governance Process for the Creation and Standardization of Semanti
   - [ ] Procedures
 
 Every aspect of a digital twin registered in a digital twin registry
-(see [CX-0002](CX-0002-DigitalTwinsInCatenaX)) accessible in the Catena-X data space **MUST** have a
+(see [CX-0002](../CX-0002-DigitalTwinsInCatenaX)) accessible in the Catena-X data space **MUST** have a
 semantic description (semantic ID) that is conformant to the unique aspect
-model ID associated to it (see chapter [Creation and Maintenance](CX-0002-DigitalTwinsInCatenaX.md#23-creation-and-maintenance)).
+model ID associated to it (see chapter [Creation and Maintenance](../CX-0002-DigitalTwinsInCatenaX/CX-0002-DigitalTwinsInCatenaX.md#23-creation-and-maintenance)).
 
 ## Legal
 

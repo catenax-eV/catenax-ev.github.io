@@ -780,7 +780,7 @@ The data provider MUST emit events for submodelSemanticId 'urn:samm:io.admin-she
 - CX-0151 Industry Core: Basics 1.1.0
 - CX-0152 Policy Constraints for Data Exchange v1.0.0
 
-[#normative-standards]: [#61-normative-references]
+[#normative-standards]: #61-normative-references
 
 ### 6.2 NON-NORMATIVE REFERENCES
 

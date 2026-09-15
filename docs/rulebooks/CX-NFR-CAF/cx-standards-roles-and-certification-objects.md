@@ -9,7 +9,7 @@ title: CX Standards, Roles and Certification Objects
 
 #### Audience & Scope (WHO)
 
-Audience & Scope describes which roles are addressed and which scope of the standards is relevant. [The roles from the Catena-X Operating Model](../../operating-model/who-roles-in-the-catena-x-ecosystem/who-roles-in-the-catena-x-ecosystem) shall apply here:
+Audience & Scope describes which roles are addressed and which scope of the standards is relevant. [The roles from the Catena-X Operating Model](../../operating-model/who-roles-in-the-catena-x-ecosystem) shall apply here:
 
 - Core Service Provider
 - Onboarding Service Providers

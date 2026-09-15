@@ -28,7 +28,7 @@
 
 #### Requirement
 
-Policies within Catena-X MUST be aligned with the example usage policy in the CX ODRL Profile and with all subsections of [2.3 Additional Requirements](./CX-0155-RequirementsEngineering.md#23-additional-requirements).
+Policies within Catena-X MUST be aligned with the example usage policy in the CX ODRL Profile and with all subsections of [2.3 Additional Requirements](../CX-0155-RequirementsEngineering/CX-0155-RequirementsEngineering.md#23-additional-requirements).
 
 #### Proof of Conformity
 

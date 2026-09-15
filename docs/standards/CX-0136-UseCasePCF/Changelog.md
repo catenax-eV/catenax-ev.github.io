@@ -20,7 +20,7 @@ All notable changes to **CX-0136 (Use Case PCF)** will be documented in this fil
 ### Changed
 
 - Restored explicit Aspect Model reference to [CX-0003 SAMM Aspect Meta Model](https://catenax-ev.github.io/docs/standards/CX-0003-SAMMSemanticAspectMetaModel).
-- Deprecated EDC Discovery API-specific wording and replaced it with generic normative wording that requires participant registration according to [CX-0001 Participant Agent Registration](../CX-0001-ParticipantAgentRegistration/CX-0001-ParticipantAgentRegistration.md), enabling standardized connector/EDC endpoint discovery.
+- Deprecated EDC Discovery API-specific wording and replaced it with generic normative wording that requires participant registration according to CX-0001 Participant Agent Registration, enabling standardized connector/EDC endpoint discovery.
 - Tightened normative wording for decentralized DTR search (`SHOULD` -> `MUST`) and clarified synchronous exchange references to [2.1.1 List of Standalone Standards](./CX-0136-UseCasePCF.md#211-list-of-standalone-standards).
 - Removed remaining references to `CX-0001 Participant Agent Registration` and aligned endpoint discovery wording to `CX-0018 Dataspace Connectivity`.
 - Removed redundant subsections on participant/endpoint registration and aligned section numbering in `2.1.2`.
