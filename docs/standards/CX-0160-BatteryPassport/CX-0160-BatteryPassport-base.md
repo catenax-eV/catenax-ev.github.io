@@ -625,7 +625,7 @@ A Data Provider may create one Data Asset per Submodel or bundle them into one -
 An example is given in the following for the case that a data asset is created for every single submodel. For more examples see the [Digital Twin KIT](https://eclipse-tractusx.github.io/docs-kits/category/digital-twin-kit).
 
 > [!Note]
-> Expressions in double curly braces {{}} must be substituted with a corresponding value.
+> Expressions in double curly braces `{{}}` must be substituted with a corresponding value.
 
 ```json
 {
