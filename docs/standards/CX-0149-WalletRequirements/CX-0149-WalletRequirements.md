@@ -5,7 +5,7 @@ tags:
   - CAT/Identity Wallet
 ---
 
-# CX-0149 Wallet Requirements v2.0.0
+# CX-0149 Wallet Requirements v2.1.0
 
 ## ABSTRACT
 
@@ -37,7 +37,7 @@ It is also relevant for anyone else wanting to host or provide a Catena-X compli
 The Catena-X dataspace uses Self-Sovereign Identity for verifying participants' identities and claims about the participants.
 Participants are identified by a Decentralized Identifier (DID) and claims about participants are issued, presented, and verified in the form of Verifiable Credentials.
 Both DIDs and Verifiable Credentials are managed through a wallet.
-During onboarding, the CSP issues both a BPN Credential and a Membership Credential to a participant, see [CX-0050](https://catenax-ev.github.io/docs/standards/CX-0050-CXSpecificCredentials).
+During onboarding, the CSP-B issues both a BPN Credential and a Membership Credential to a participant, see [CX-0050](https://catenax-ev.github.io/docs/standards/CX-0050-CXSpecificCredentials).
 
 ### 1.3 CONFORMANCE AND PROOF OF CONFORMITY
 
@@ -76,12 +76,6 @@ For details, please see the [DCP specification](https://eclipse-dataspace-dcp.gi
 The wallet MUST be associated with a Decentralized Identifier following the [DID v1.0](https://www.w3.org/TR/did-1.0/) specification and using the [did:web](https://w3c-ccg.github.io/did-method-web/) method.
 The corresponding DID document MUST be compliant with [CX-0049](https://catenax-ev.github.io/docs/standards/CX-0049-DIDDocumentSchema).
 
-#### 2.1.1 BACKWARDS COMPATIBILITY
-
-For backwards compatibility with the R24.09 Jupiter release, a wallet MUST support [DCP presentation flow v0.8.1](https://github.com/eclipse-dataspace-dcp/decentralized-claims-protocol/releases/tag/0.8.1).
-This requirement is in addition to the requirement for full DCP v1.0 support, i.e. the wallet must support both v0.8.1 and v1.0 of the DCP presentation flow.
-This backwards compatibility requirement should be dropped with the R26.09 release or when compatibility with R24.09 is no longer required.
-
 ### 2.2 OBTAINING A WALLET INSTANCE
 
 Every participant MUST have their own wallet instance.
@@ -98,9 +92,13 @@ In this case, the CSP is not required to provide a wallet instance for this part
 The participant MUST provide the CSP with the DID of the wallet instance they wish to use.
 The wallet instance used by the participant MUST be a Catena-X-compliant wallet and MUST be available before the participant initiates the onboarding process.
 
-## 3 REFERENCES
+## 3 BACKWARD COMPATIBILITY
 
-### 3.1 NORMATIVE REFERENCES
+This version is fully compatible with CX-Saturn.
+
+## 4 REFERENCES
+
+### 4.1 NORMATIVE REFERENCES
 
 <!--
     [Optional] - Links to related Catena-X or external standards that need to be
@@ -108,7 +106,7 @@ The wallet instance used by the participant MUST be a Catena-X-compliant wallet 
     met, leave it empty.
 -->
 
-### 3.2 NON-NORMATIVE REFERENCES
+### 4.2 NON-NORMATIVE REFERENCES
 
 > *This section is non-normative*
 
@@ -117,7 +115,7 @@ The wallet instance used by the participant MUST be a Catena-X-compliant wallet 
     standard but isn’t relevant for conformity assessment
 -->
 
-### 3.3 REFERENCE IMPLEMENTATIONS
+### 4.3 REFERENCE IMPLEMENTATIONS
 
 > *This section is non-normative*
 

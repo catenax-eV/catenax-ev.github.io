@@ -27,7 +27,8 @@
       "additionalProperties": false
     },
     "DataProvisioningEndDurationDaysRightOperand": {
-      "type": "integer",
+      "type": "string",
+      "pattern": "^[1-9][0-9]*$",
       "$comment": "{\"obligation\":\"The Data Provider shall make the Data available for the period specified herein in days, commencing from the second the Agreement is concluded via the Registered Connector (RC).\"}"
     }
   }

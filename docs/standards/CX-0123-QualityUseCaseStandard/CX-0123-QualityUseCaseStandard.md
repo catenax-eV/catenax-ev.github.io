@@ -5,20 +5,18 @@ tags:
   - UC/Quality
 ---
 
-# CX-0123 Quality Use Case Standard v3.0.2
+# CX-0123 Field Quality Standard v4.0.0
 
 ## ABSTRACT
 
-The Catena-X use case "Quality" provides the ability to detect
-quality issues the earliest possible to start root cause analyses and/or to enable
-an early warning feature for new quality topics. In subsequent steps, countermeasures
-can also be defined earlier and monitored. In sum, this reduces the
-number of vehicles affected by quality issues and increases the availability of the
-vehicle and built-in components.
-In its Version 3 the use case was enhanced by additional standard data models for
-warranty and 8D information.
-The Catena-X use case "Quality" is powered by Catena-X standard core components
-to share data from vehicle manufacturer(OEM) and component suppliers based on data sharing agreements and usage policies.
+The Catena-X use case "Field Quality" provides the ability to detect automotive quality issues based on data from vehicles.
+This capability enables the earliest possible detection of quality issues to start root cause analyses and/or to set up
+an early warning feature to detect new quality topics or to monitor countermeasures of recent quality issues.
+In sum, this reduces the number of vehicles affected by field quality issues. The advantage:
+
+- Decreased costs for field quality issues and for analysis of potentially bad components
+- Ability to closely monitor the launch of new components
+- Increase of vehicle end-customer satisfaction due to faster response to quality issues or even avoidance/limiting number of affected vehicle end-customer
 
 ## FOR WHOM IS THE STANDARD DESIGNED
 
@@ -28,67 +26,66 @@ to share data from vehicle manufacturer(OEM) and component suppliers based on da
 
 ## 1 INTRODUCTION
 
-The Catena-X use case "Quality" uses multiple data models to
-exchange data between vehicle manufacturer(OEM) and component supplier
-(TIER 1) and also along the supply chain between TIER N and TIER N + 1. Each of these data models can be supplied independently.
-The QualityTask data model defines the root element for Catena-X-based quality
-work. It describes the quality task and why two companies want to work
-collaboratively on a quality topic.
-Additionally, the use case provides two data models to transfer warranty claim data and the respective response between partners.
-And finally a data model for any 8D information is provided.
+The Catena-X use case "Field Quality" uses multiple data models to exchange data between vehicle manufacturer(OEM) and component supplier
+(TIER 1) or along the supply chain between TIER N and TIER N + 1 supplier.
+Depending what you would like to achieve, different data models are used in combination. The data models are created in such way that each data model covers one kind of data source.
+
+The QualityTask data model is the root element for Catena-X-based field quality
+work. It describes what should be done, the affected component and which companies work collaboratively together on a quality topic.
+Other field quality data models have a reference to the created QualityTask via a unique identifier.
 
 ### 1.1 AUDIENCE & SCOPE
 
 > *This section is non-normative*
 
-The standard is relevant for the following roles within the scope of the Use Case "Quality"
+This standard is relevant for the following roles within the scope of "Field Quality" use case:
 
-- Data Provider/Consumer
+- Data Provider/Data Consumer
 - Business Application Provider
 
 In scope:
 
 - Data sharing between vehicle manufacturer(OEM) and component supplier on TIER 1 to TIER N level
-- Earliest possible detection of potential issues with products and vehicles in usage
-- Understanding of the root cause of the detected issues to enable earliest possible counter measure implementation and monitoring the effectiveness
+- Earliest possible detection of potential field quality issues
+- Understanding the root cause of the detected quality issues to enable earliest possible counter measure implementation and monitoring the effectiveness
+- Prevention of no-trouble-found component analysis for known quality issues
+- Safe market launch of new components
 
 ### 1.2 CONTEXT AND ARCHITECTURE FIT
 
 > *This section is non-normative*
 
-For all participants of the Use Case "Quality" it is necessary to provide and consume the data in accordance to the standardized semantic data models in section [3 Aspect Models](#3-aspect-models) to ensure the defined interoperability requirement "free of choice application" to be able to use the established in-house tool set for analysis.
+For all participants of the Use Case "Field Quality" it is necessary to provide and consume the data in accordance to the standardized semantic data models in section [3 Aspect Models](#3-aspect-models) to ensure the defined interoperability requirement "free of choice application" to be able to use the established in-house tool set for analysis.
 
-Catena-X use case "Quality" data flow: Data is exported from existing back-end systems and mapped to Catena-X aspect models - see list of relevant Catena-X aspect models for use case "Quality" in section [3 Aspect Models](#3-aspect-models)
-The so generated files are transferred between different Catena-X participants using a connector conformant to [CX-0018].
+The data exchange between different Catena-X participants uses the standardized connector conformant to [CX-0018].
 
 ### 1.3 CONFORMANCE AND PROOF OF CONFORMITY
 
 > *This section is non-normative*
 
-As well as sections marked as non-normative, all authoring guidelines, diagrams, examples, and notes
-in this specification are non-normative. Everything else in this specification is normative.
+As well as sections marked as non-normative, all authoring guidelines, diagrams, examples, and notes in this specification are non-normative. Everything else in this specification is normative.
 
-The key words **MAY**, **MUST**, **MUST NOT**, **OPTIONAL**, **RECOMMENDED**, **REQUIRED**, **SHOULD**
-and **SHOULD NOT** in this document document are to be interpreted as described in BCP 14 [RFC2119] [RFC8174]
-when, and only when, they appear in all capitals, as shown here.
+The key words **MAY**, **MUST**, **MUST NOT**, **OPTIONAL**, **RECOMMENDED**, **REQUIRED**, **SHOULD** and **SHOULD NOT** in this document are to be interpreted as described in BCP 14 [RFC2119] [RFC8174] when, and only when, they appear in all capitals, as shown here.
 
 All participants and their solutions will need to prove, that they are conform with the Catena-X standards.
 To validate that the standards are applied correctly, Catena-X employs Conformity Assessment Bodies (CABs).
 
-Since this Use Case Quality Standard describes a set of standards to be fulfilled, participants MUST fulfil all mentioned standards and the respective conformity assessment criteria in addition to the specific criteria mentioned in this document.
+Please refer to: https://catena-x.net/en/catena-x-introduce-implement/certification for the process of conformity assessment and certification.
+  
+Since this document describes a set of standards to be fulfilled, all participants mentioned MUST fulfill all mentioned standards and the respective conformity assessment criteria in addition to the specific criteria mentioned in this document.
 
-The specific criteria in this document describe the usage of the central tools as well as common tools
-described in the linked standardization documents and therefore compliance **SHOULD BE** checked with the tools provided
-for these components.
+The specific criteria described in this document are describing the usage of the central tools as well as common tools described in the linked standardization documents and therefore compliance should be checked with the tools provided for these components.
 
 ### 1.4 EXAMPLES
+
+> *This section is non-normative*
 
 ### 1.5 TERMINOLOGY
 
 > *This section is non-normative*
 
-Business Partner Number (BPN)
-: A BPN is the unique identifier of a partner within Catena-x
+Business Partner Number (BPNL)
+: A BPNL is the unique identifier of a legal entity of a business partner within Catena-X
 
 Connector: Connector conformant to [CX-0018]
 
@@ -96,7 +93,7 @@ SAMM CLI tool
 : A command line tool that allows the generation of different formats from a semantic modelling ttl file.
 see `https://eclipse-esmf.github.io/esmf-developer-guide/tooling-guide/samm-cli.html`
 
-Additional terminology used in this standard can be looked up in the glossary on the association homepage.
+Additional terminology used in this standard can be looked up in the glossary on the Catena-X association homepage.
 
 ## 2 RELEVANT PARTS OF THE STANDARD FOR SPECIFIC USE CASES
 
@@ -106,76 +103,81 @@ Additional terminology used in this standard can be looked up in the glossary on
 
 #### 2.1.1 LIST OF STANDALONE STANDARDS
 
-To participate in Data Provisioning for the "Quality Use Case", the following single standards **MUST** be fulfilled by all participants
+The "Field Quality" use case does not implement standalone standards from outside Catena-X.
 
-- CX - 0018 Data Space Connectivity v3.0.0
+#### 2.1.2 Required data
 
-#### 2.1.2 DATA REQUIRED
+To transfer data properly, the following data models MUST be used by the data provider:
 
-In order to participate in the Catena-X use case "Quality" the following single standards **MUST** be fulfilled by all participants:
-
-CX - 0018 Data space Connectivity v4.1.0
-
-To transfer data properly, the following data models  **MUST** be used by the data provider:
-
-- io.catenax.quality_task v3.0.0
-- io.catenax.fleet.diagnostic_data v.3.0.0
-- io.catenax.fleet.claim_data v.3.0.0
-- io.catenax.parts_analyses v.4.0.0
-- io.catenax.manufactured_parts_quality_information v.3.0.0
-- io.catenax.fleet.vehicles v.4.0.0
-- io.catenax.quality_task_attachment v.3.0.0
-- io.catenax.early_warning_notification:1.0.0
+- io.catenax.quality_task:3.0.0
+- io.catenax.fleet.diagnostic_data:3.0.0
+- io.catenax.fleet.claim_data:3.0.0
+- io.catenax.parts_analyses:4.0.0
+- io.catenax.manufactured_parts_quality_information:3.0.0
+- io.catenax.fleet.vehicles:4.0.0
+- io.catenax.quality_task_attachment:3.0.0
 - io.catenax.failure_pattern:1.0.0
-- io.catenax.report_8d v.1.0.0
-- io.catenax.warranty_claim_request v.1.0.0
-- io.catenax.warranty_claim_request_verification v.1.0.0
+- io.catenax.early_warning_notification:1.0.0
+- io.catenax.warranty_claim_request:1.0.0
+- io.catenax.warranty_claim_request_verification:1.0.0
 
-Each data model is described in detail under chapter 3.
-
-For data transfer following scenarios are possible: vehicle manufacturer(OEM) to component manufacturer(TIER1 supplier), component manufacturer(TIER1 supplier) to vehicle manufacturer(OEM) or Tier n supplier to Tier n+1 supplier.
-
-If a Vehicle manufacturer or Supplier is sending an early warning notification, this early warning notification **MUST** be compliant with the early warning notification API described in Chapter 4 of this document.
-
-The data provider defines the data content that will be provided. The data provider **MUST** provide properties that are flagged as mandatory in the data model.
+Each data model has mandatory and optional properties. The data provider **MUST** provide the properties that are flagged as mandatory in the data model.
+Some data sets might not have all required mandatory properties - one reason could be data inconsistency. For these cases, the data provider **MUST** use "n/a" for mandatory string properties or "1970-01-01" - respective "1970-01-01T00:00:00Z" for mandatory timestamp properties.
 
 Provided data assets are defined in data sharing agreements and/or data usage policies between data provider and data consumer.
 
-A Business Application Provider **MUST** support at least 2 of the above-listed data models (minimum standard).
-A Business Application Provider **SHOULD** support the early warning notification API.
+A Business Application Provider **MUST** support following aspect models:
+
+- io.catenax.quality_task:3.0.0
+- io.catenax.fleet.diagnostic_data:3.0.0
+- io.catenax.fleet.claim_data:3.0.0
+- io.catenax.parts_analyses:4.0.0
+- io.catenax.manufactured_parts_quality_information:3.0.0
+- io.catenax.fleet.vehicles:4.0.0
+- io.catenax.quality_task_attachment:3.0.0
+
+A Business Application Provider **MAY** support following additional aspect models to provide enhanced app capabilities:
+
+- io.catenax.failure_pattern:1.0.0
+- io.catenax.early_warning_notification:1.0.0
+- io.catenax.warranty_claim_request:1.0.0
+- io.catenax.warranty_claim_request_verification:1.0.0
 
 #### 2.1.3 ADDITIONAL REQUIREMENTS
 
-##### 2.1.3.1 Transfer of data assets
+##### 2.1.3.1 Transfer of data assets/data exchange pattern
 
-The **RECOMMENDED** transfer method of data assets from data provider to data consumer depends on the used data model.
-In general, file-based data transfer or http-based data transfer are supported.
+In general, "Field Quality" uses standardized Catena-X file-baesd data exchange pattern like file-push.
+Data provider and data consumer decide, how the data exchange is organized in detail.
+See following list of recommendations:
 
-- io.catenax.quality_task v3.0.0: **RECOMMENDED** format Apache Parquet, file-based data transfer mode
-- io.catenax.fleet.claim_data v.3.0.0: **RECOMMENDED** format Apache Parquet, file-based data transfer mode
-- io.catenax.fleet.diagnostic_data v.3.0.0: **RECOMMENDED** format Apache Parquet, file-based data transfer mode
-- io.catenax.fleet.vehicles v.4.0.0: **RECOMMENDED** format Apache Parquet, file-based data transfer mode
-- io.catenax.manufactured_parts_quality_information v.3.0.0: **RECOMMENDED** format Apache Parquet, file-based data transfer mode
-- io.catenax.parts_analyses v.4.0.0: **RECOMMENDED** format Apache Parquet, file-based data transfer mode
-- io.catenax.quality_task_attachment v.3.0.0: **RECOMMENDED** format gzip, file-based data transfer mode
-- io.catenax.warranty_claim_request v.1.0.0: **RECOMMENDED** format json, http-based data transfer mode
-- io.catenax.warranty_claim_request_verification v.1.0.0: **RECOMMENDED** format json, http-based data transfer mode
-- io.catenax.report_8d v.1.0.0: **RECOMMENDED** format json, http-based data transfer mode
+- io.catenax.quality_task v3.0.0: data **SHOULD** be exchanged using Apache Parquet format with Catena-X file-based data transfer mode between data provider and data consumer, this data asset **MAY** be provided also via digital-twin-based data transfer, an app provider **MUST** support to read data from Apache Parquet format
+- io.catenax.fleet.claim_data:3.0.0: **SHOULD** be exchanged using Apache Parquet format with Catena-X file-based data transfer mode between data provider and data consumer, an app provider **MUST** support to read data from Apache Parquet format
+- io.catenax.fleet.diagnostic_data:3.0.0: **SHOULD** be exchanged using Apache Parquet format with Catena-X file-based data transfer mode between data provider and data consumer, an app provider **MUST** support to read data from Apache Parquet format
+- io.catenax.fleet.vehicles:4.0.0: **SHOULD** be exchanged using Apache Parquet format with Catena-X file-based data transfer mode between data provider and data consumer, an app provider **MUST** support to read data from Apache Parquet format
+- io.catenax.manufactured_parts_quality_information:3.0.0: **SHOULD** be exchanged using Apache Parquet format with Catena-X file-based data transfer mode between data provider and data consumer, an app provider **MUST** support to read data from Apache Parquet format
+- io.catenax.parts_analyses:4.0.0: **SHOULD** be exchanged using Apache Parquet format with Catena-X file-based data transfer mode between data provider and data consumer, an app provider **MUST** support to read data from Apache Parquet format
+- io.catenax.quality_task_attachment:3.0.0: **SHOULD** be exchanged using gzip format with Catena-X file-based data transfer mode between data provider and data consumer, an app provider **MUST** support to read data from gzip format
+- io.catenax.failure_pattern:1.0.0: **SHOULD** be exchanged using json format with Catena-X http-based data transfer mode, an app provider **MAY** support to read this data asset
+- io.catenax.early_warning_notification:1.0.0: **SHOULD** be exchanged using json format with Catena-X http-based data transfer mode, an app provider **MAY** support to read this data asset
+- io.catenax.warranty_claim_request:1.0.0: **SHOULD** be exchanged using json format with Catena-X http-based data transfer mode, an app provider **MAY** support to read this data asset
+- io.catenax.warranty_claim_request_verification:1.0.0: **SHOULD** be exchanged using json format with Catena-X http-based data transfer mode, an app provider **MAY** support to read this data asset
 
-##### 2.1.3.2 Dataset Properties for file-based data assets
+##### 2.1.3.2 Dataset Properties for file-based data transfer
 
-The following table shows a list of connector catalogue properties. As a data provider, I **MUST** provide these connector catalogue properties for file-based data assets. These properties are needed to allow a data consumer to filter for a specific data asset from the large number of data assets in the connector catalogue. In addition, these properties help to correctly use and interpret the file-based data assets on consumer side.
+The following table shows a list of connector catalogue properties. As a data provider, I **MUST** provide these connector catalogue properties for file-based data transfer. These properties are used by data consumer to filter for a specific data asset. In addition, these properties help to correctly use and interpret the file-based data assets on consumer side.
 
 |Property                                      |Value                              |Description                                    |
 |----------------------------------------------|-----------------------------------|-----------------------------------------------|
 |"@id"|"430f56d3-1234-1234-1234-abc123456789__io.catenax_fleet.claim_data__3.0.0.parquet"| Each catalogue entry needs a unique id. You can use a UUID v4 or a human readable id. **RECOMMENDED** human readable id follows the pattern `<catenaXQualityTaskId>__<SemanticModel>__<model_version>.parquet`. Separator are two underscores: `__`|
-|`"https://purl.org/dc/terms/conformsTo"`| "@id": "urn:samm:io.catenax.fleet.claim_data:3.0.0"|This property is QM-specific and a **MUST**. It holds the aspect-model-URN(without # at the end) that defines used aspect model and version.|
-|`"https://purl.org/dc/terms/format"`|"application/octet-stream;type=parquet-snappy"|This property is QM-specific and a **MUST**. It indicates the format of the data asset. Supported formats for file-based data transfer are "application/octet-stream;type=parquet-snappy", "application/octet-stream;type=gzip", "text/richtext;type=json". See `https://www.iana.org/assignments/media-types-parameters/media-types-parameters.xhtml`|
-|"dcat:qualifiedRelation"|`"{https://purl.org/dc/terms/isPartOf": {"@id": "430f56d3-1234-1234-1234-abc123456789"}}` |This is QM-specific and a **MUST**. `{"isPartOf": {"@id": "<corresponding catenaXQualityTaskId>"}}`. Allows to filter for all file-based data assets that belong to one Catena-X Quality Task ID.|
+|`"http://purl.org/dc/terms/conformsTo"`| "@id": "urn:samm:io.catenax.fleet.claim_data:3.0.0"|This property is QM-specific and a **MUST**. It holds the aspect-model-URN(without # at the end) that defines used aspect model and version.|
+|`"http://purl.org/dc/terms/format"`|"application/octet-stream;type=parquet-snappy"|This property is QM-specific and a **MUST**. It indicates the format of the data asset. Supported formats for file-based data transfer are "application/octet-stream;type=parquet-snappy", "application/octet-stream;type=gzip", "text/richtext;type=json". See `https://www.iana.org/assignments/media-types-parameters/media-types-parameters.xhtml`|
+|"dcat:qualifiedRelation"|`"{http://purl.org/dc/terms/isPartOf": {"@id": "430f56d3-1234-1234-1234-abc123456789"}}` |This is QM-specific and a **MUST**. `{"isPartOf": {"@id": "<corresponding catenaXQualityTaskId>"}}`. Allows to filter for all file-based data assets that belong to one Catena-X Quality Task ID.|
 
 ##### 2.1.3.3 Apache parquet format
 
-At least Apache parquet format in version 2.10.0 or higher **MUST** be used (see `https://parquet.apache.org/` ).
+Apache parquet format in version 2.10.0 or higher **MUST** be used (see `https://parquet.apache.org/` ).
+Apache Parquet files **MAY** be compressed using parquet snappy compression.
 
 ##### 2.1.3.4 Type mapping from Eclipse semantic modelling framework data types(samm) to Apache Parquet data types
 
@@ -186,27 +188,22 @@ The following mappings **MUST** be used when using parquet format for Catena-X u
 |boolean            |BOOLEAN: 1 bit boolean                   |
 |float              |FLOAT: IEEE 32-bit floating point values |
 |double             |DOUBLE: IEEE 64-bit floating point values|
-|int                |INT32: 32-bit signed int                |
-|long               |INT64: 64-bit signed int                |
+|int                |INT32: 32-bit signed int                 |
+|long               |INT64: 64-bit signed int                 |
 |date               |date as INT32                            |
 |timestamp          |milliseconds as INT64                    |
 |string             |BYTE_Array, strings must be UTF8 encoded |
 
+It is **RECOMMENDED** to use SAMM CLI tool to generate resulting parquet structure from semantic modelling ttl file which will ensure that the right Apache Parquet data type will be used.
+
 ##### 2.1.3.5 Flattening from hierarchical Eclipse semantic modelling framework structure(samm) to flat Apache Parquet structure
 
 Apache parquet is a tabular flat format. Catena-X semantic models are hierarchically structured. The hierarchical structure **MUST** be transferred into a flat table structure using following convention. To generate the table structure use following approach:
+It is **RECOMMENDED** to use SAMM CLI tool to generate resulting parquet structure from semantic modelling ttl file.
 
-- use SAMM CLI tool to generate a json file out of ttl file
-- use only the keys from the generated json file, and concatenate the root key with child key by using "_" as separator. Doing the same for one level done.
+How to provide data in tabular parquet structure:
 
-To fill in the values:
-
-- If one samm entity has a list of child entities, use left join to duplicate the row of the parent entity for each child
-- As json format only supports string and number type, it is a **MUST** to use above samm ttl type mapping when building tabular parquet structure.
-- If properties are not available, use null
-- In some rare cases mandatory properties might not be available on data provider side: Use in this case "n/a" for mandatory string properties. For mandatory date properties use null or 1970-01-01.
-
-Example json:
+Hierarchical json example:
 
 ```json
 {
@@ -250,6 +247,11 @@ In alignment with our commitment to data sovereignty, a specific framework gover
 
 ## 3 ASPECT MODELS
 
+Common to all data models:
+
+- Different file formats, like json, json-schema, parquet, aasx and html documentation can be generated from the turtle file (*.ttl file) and the SAMM CLI tool
+- Already generated file formats can be found in the gen subfolder of the respective model on eclipse-tractusx
+
 ### 3.1 ASPECT MODEL "QUALITY TASK"
 
 #### 3.1.1 INTRODUCTION
@@ -259,23 +261,7 @@ The "Quality Task" data model is the root element for Catena-X-based quality wor
 For data providers:
 Each "Quality Task" **MUST** have a unique qualityTaskId conformant to the semantic model.
 
-#### 3.1.2 SPECIFICATIONS ARTIFACTS
-
-This aspect model is written in SAMM 2.1.0 as a modelling language conformant to CX-0003.
-  
-Like all Catena-X data models, this model is available in a machine-readable format on GitHub repository sldt-semantic-models [https://github.com/eclipse-tractusx/sldt-semantic-models].
-
-#### 3.1.3 LICENSE
-
-This Catena-X data model is made available under
-the terms of the Creative Commons Attribution 4.0 International
-(CC-BY-4.0) license, which is available at Creative Commons.
-
-The license information is available inside the turtle file (*.ttl-file) on GitHub.
-
-In case of doubt, GitHub overwrites the information for license, copyright and author from this  document.
-
-#### 3.1.4 IDENTIFIER OF SEMANTIC MODEL
+#### 3.1.2 IDENTIFIER OF SEMANTIC MODEL
 
 This semantic model "Quality Task" has the unique identifier qualityTaskId which is a UUID v4 identifier.
 
@@ -283,11 +269,7 @@ This semantic model "Quality Task" has the unique identifier qualityTaskId which
 <urn:samm:io.catenax.quality_task:3.0.0#>
 ````
 
-#### 3.1.5 FORMATS OF SEMANTIC MODEL
-
-Different formats can be generated through the turtle file (*.ttl-file) and the SAMM CLI tool.
-
-##### 3.1.5.1 RDF TURTLE
+##### 3.1.3 RDF TURTLE
 
 The rdf turtle file is the master for generating additional file formats and serializations.
 It can be found on github repository.
@@ -295,21 +277,6 @@ It can be found on github repository.
 ```text
 [https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.quality_task/3.0.0/QualityTask.ttl]
 ```
-
-The open source command line tool of the Eclipse Semantic Modelling Framework is used for generation of other file formats like JSON Schema, aasx for Asset Administration Shell Submodel Template or HTML documentation.
-
-##### 3.1.5.2 JSON SCHEMA
-
-A JSON Schema can be generated from the RDF Turtle file. The JSON Schema defines the Value-Only payload of the Asset Administration Shell for the API operation "GetSubmodel".
-It can be found in the current version in the "gen" subfolder on the github repository.
-
-```text
-[https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.quality_task/3.0.0/gen]
-```
-
-##### 3.1.5.3 AASX
-
-An AASX file can be generated from the RDF Turtle file. The AASX file defines one of the requested artifacts for a Submodel Template Specification.
 
 ### 3.2 ASPECT MODEL "FLEET DIAGNOSTIC DATA"
 
@@ -326,23 +293,7 @@ The "Fleet Diagnostic Data" semantic data model is provided by a vehicle manufac
 
 Each "Fleet Diagnostic Data" **MUST** contain an unique sessionId and a unique anonymizedVIN conformant to the semantic model.
 
-#### 3.2.2 SPECIFICATIONS ARTIFACTS
-
-This aspect model is written in SAMM 2.1.0 as a modelling language conformant to CX-0003.
-
-Like all Catena-X data models, this model is available in a machine-readable format on GitHub repository sldt-semantic-models [https://github.com/eclipse-tractusx/sldt-semantic-models].
-
-#### 3.2.3 LICENSE
-
-This Catena-X data model is made available under
-the terms of the Creative Commons Attribution 4.0 International
-(CC-BY-4.0) license, which is available at Creative Commons.
-  
-The license information is available inside the turtle file (*.ttl-file) on GitHub.
-  
-In case of doubt, GitHub overwrites the information for license, copyright and author from this  document.
-
-#### 3.2.4 IDENTIFIER OF SEMANTIC MODEL
+#### 3.2.2 IDENTIFIER OF SEMANTIC MODEL
 
 The semantic model has the unique identifier
 
@@ -350,11 +301,7 @@ The semantic model has the unique identifier
 <urn:samm:io.catenax.fleet.diagnostic_data:3.0.0#>
 ```
 
-#### 3.2.5 FORMATS OF SEMANTIC MODEL
-
-Different formats can be generated through the turtle file (*.ttl-file) and the SAMM CLI tool.
-
-##### 3.2.5.1 RDF TURTLE
+##### 3.2.3 RDF TURTLE
 
 The rdf turtle file, an instance of the Semantic Aspect Meta Model, is the master for generating additional file formats and serializations.
 It can be found in the current version 3.0.0 on the GitHub repository.
@@ -362,21 +309,6 @@ It can be found in the current version 3.0.0 on the GitHub repository.
 ```text
 [https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.fleet.diagnostic_data/3.0.0/DiagnosticData.ttl]
 ```
-
-The open source command line tool of the Eclipse Semantic Modelling Framework  is used for generation of other file formats like JSON Schema, aasx for Asset Administration Shell Submodel Template or HTML documentation.
-
-##### 3.2.5.2 JSON SCHEMA
-
-A JSON Schema can be generated from the RDF Turtle file. The JSON Schema defines the Value-Only payload of the Asset Administration Shell for the API operation "GetSubmodel".
-It can be found in the current version in the "gen" subfolder on the GitHub repository.
-
-```text
-[https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.fleet.diagnostic_data/3.0.0/gen]
-```
-
-##### 3.2.5.3 AASX
-
-An AASX file can be generated from the RDF Turtle file. The AASX file defines one of the requested artifacts for a Submodel Template Specification.
 
 ### 3.3 ASPECT MODEL "FLEET CLAIM DATA"
 
@@ -391,23 +323,7 @@ The "Fleet Claim Data" semantic data model is provided by an vehicle manufacture
 
 Each "Fleet Claim Data" **MUST** contain an unique claimId and a unique anonymizedVIN conformant to the semantic model.
 
-#### 3.3.2 SPECIFICATIONS ARTIFACTS
-
-This aspect model is written in SAMM 2.1.0 as a modelling language conformant to CX-0003.
-
-Like all Catena-X data models, this model is available in a machine-readable format on GitHub repository sldt-semantic-models [https://github.com/eclipse-tractusx/sldt-semantic-models].
-
-#### 3.3.3 LICENSE
-
-This Catena-X data model is made available under
-the terms of the Creative Commons Attribution 4.0 International
-(CC-BY-4.0) license, which is available at Creative Commons.
-
-The license information is available inside the turtle file (*.ttl-file) on GitHub.
-
-In case of doubt, GitHub overwrites the information for license, copyright and author from this  document.
-
-#### 3.3.4 IDENTIFIER OF SEMANTIC MODEL
+#### 3.3.2 IDENTIFIER OF SEMANTIC MODEL
 
 The semantic model has the unique identifier
 
@@ -415,33 +331,14 @@ The semantic model has the unique identifier
 <urn:samm:io.catenax.fleet.claim_data:3.0.0#>
 ```
 
-#### 3.3.5 FORMATS OF SEMANTIC MODEL
-
-Different formats can be generated through the turtle file (*.ttl-file) and the SAMM CLI tool.
-
-##### 3.3.5.1 RDF TURTLE
+##### 3.3.3 RDF TURTLE
 
 The rdf turtle file, an instance of the Semantic Aspect Meta Model, is the master for generating additional file formats and serializations.
-It can be found in the current version 3.0.0 on the GitHub repository.
+It can be found in the current version on the GitHub repository.
 
 ```text
 [https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.fleet.claim_data/3.0.0/ClaimData.ttl]
 ```
-
-The open source command line tool of the Eclipse Semantic Modelling Framework  is used for generation of other file formats like JSON Schema, aasx for Asset Administration Shell Submodel Template or HTML documentation.
-
-##### 3.3.5.2 JSON SCHEMA
-
-A JSON Schema can be generated from the RDF Turtle file. The JSON Schema defines the Value-Only payload of the Asset Administration Shell for the API operation "GetSubmodel".
-It can be found in the current version in the "gen" subfolder on the GitHub repository.
-
-```text
-[https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.fleet.claim_data/3.0.0/gen]
-```
-
-##### 3.3.5.3 AASX
-
-An AASX file can be generated from the RDF Turtle file. The AASX file defines one of the requested artifacts for a Submodel Template Specification.
 
 ### 3.4 ASPECT MODEL "PARTS ANALYSES"
 
@@ -456,23 +353,7 @@ The "Parts Analyses" semantic data model is provided by a component supplier.
 
 Each dataset in "Parts Analyses" **MUST** contain a unique componentManufacturerAnalysisID and a unique anonymizedVIN conformant to the semantic model.
 
-#### 3.4.2 SPECIFICATIONS ARTIFACTS
-
-This aspect model is written in SAMM 2.1.0 as a modelling language conformant to CX-0003.
-
-Like all Catena-X data models, this model is available in a machine-readable format on GitHub repository sldt-semantic-models [https://github.com/eclipse-tractusx/sldt-semantic-models].
-
-#### 3.4.3 LICENSE
-
-This Catena-X data model is made available under
-the terms of the Creative Commons Attribution 4.0 International
-(CC-BY-4.0) license, which is available at Creative Commons.
-
-The license information is available inside the turtle file (*.ttl-file) on GitHub.
-
-In case of doubt, GitHub overwrites the information for license, copyright and author from this  document.
-
-#### 3.4.4 IDENTIFIER OF SEMANTIC MODEL
+#### 3.4.2 IDENTIFIER OF SEMANTIC MODEL
 
 The semantic model has the unique identifier
 
@@ -480,11 +361,7 @@ The semantic model has the unique identifier
 <urn:samm:io.catenax.parts_analyses:4.0.0#>
 ```
 
-#### 3.4.5 FORMATS OF SEMANTIC MODEL
-
-Different formats can be generated through the turtle file (*.ttl-file) and the SAMM CLI tool.
-
-##### 3.4.5.1 RDF TURTLE
+##### 3.4.3 RDF TURTLE
 
 The rdf turtle file, an instance of the Semantic Aspect Meta Model, is the master for generating additional file formats and serializations.
 It can be found in the current version 3.0.0 on the GitHub repository.
@@ -492,21 +369,6 @@ It can be found in the current version 3.0.0 on the GitHub repository.
 ```text
 [https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.parts_analyses/4.0.0/PartsAnalyses.ttl]
 ```
-
-The open source command line tool of the Eclipse Semantic Modelling Framework  is used for generation of other file formats like JSON Schema, aasx for Asset Administration Shell Submodel Template or HTML documentation.
-
-##### 3.4.5.2 JSON SCHEMA
-
-A JSON Schema can be generated from the RDF Turtle file. The JSON Schema defines the Value-Only payload of the Asset Administration Shell for the API operation "GetSubmodel".
-It can be found in the current version in the "gen" subfolder on the GitHub repository.
-
-```text
-[https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.parts_analyses/4.0.0/gen]
-```
-
-##### 3.4.5.3 AASX
-
-An AASX file can be generated from the RDF Turtle file. The AASX file defines one of the requested artifacts for a Submodel Template Specification.
 
 ### 3.5 ASPECT MODEL "MANUFACTURED PARTS QUALITY INFORMATION"
 
@@ -520,23 +382,7 @@ The "Manufactured Parts Quality Information" semantic data model is provided by 
 
 Each dataset in "Manufactured Parts Quality Information" **MUST** contain at least one part identifier: This can be manufacturerSerialNumber for serial parts or manufacturerPartNumber for non-serial parts.
 
-#### 3.5.2 SPECIFICATIONS ARTIFACTS
-
-This aspect model is written in SAMM 2.1.0 as a modelling language conformant to CX-0003
-
-Like all Catena-X data models, this model is available in a machine-readable format on GitHub repository sldt-semantic-models [https://github.com/eclipse-tractusx/sldt-semantic-models].
-
-#### 3.5.3 LICENSE
-
-This Catena-X data model is made available under
-the terms of the Creative Commons Attribution 4.0 International
-(CC-BY-4.0) license, which is available at Creative Commons.
-
-The license information is available inside the turtle file (*.ttl-file) on GitHub.
-
-In case of doubt, GitHub overwrites the information for license, copyright and author from this  document.
-
-#### 3.5.4 IDENTIFIER OF SEMANTIC MODEL
+#### 3.5.2 IDENTIFIER OF SEMANTIC MODEL
 
 The semantic model has the unique identifier
 
@@ -544,11 +390,7 @@ The semantic model has the unique identifier
 <urn:samm:io.catenax.manufactured_parts_quality_information:3.0.0#>
 ```
 
-#### 3.5.5 FORMATS OF SEMANTIC MODEL
-
-Different formats can be generated through the turtle file (*.ttl-file) and the SAMM CLI tool.
-
-##### 3.5.5.1 RDF TURTLE
+##### 3.5.3 RDF TURTLE
 
 The rdf turtle file, an instance of the Semantic Aspect Meta Model, is the master for generating additional file formats and serializations.
 It can be found in the current version 3.0.0 on the GitHub repository.
@@ -556,21 +398,6 @@ It can be found in the current version 3.0.0 on the GitHub repository.
 ```text
 [https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.manufactured_parts_quality_information/3.0.0/ManufacturedPartsQualityInformation.ttl]
 ```
-
-The open source command line tool of the Eclipse Semantic Modelling Framework  is used for generation of other file formats like JSON Schema, aasx for Asset Administration Shell Submodel Template or HTML documentation.
-
-##### 3.5.5.2 JSON SCHEMA
-
-A JSON Schema can be generated from the RDF Turtle file. The JSON Schema defines the Value-Only payload of the Asset Administration Shell for the API operation "GetSubmodel".
-It can be found in the current version in the "gen" subfolder on the GitHub repository.
-
-```text
-[https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.manufactured_parts_quality_information/3.0.0/gen]
-```
-
-##### 3.5.5.3 AASX
-
-An AASX file can be generated from the RDF Turtle file. The AASX file defines one of the requested artifacts for a Submodel Template Specification.
 
 ### 3.6 ASPECT MODEL "FLEET VEHICLES"
 
@@ -584,23 +411,7 @@ The "Fleet Vehicles" semantic data model is provided by an automotive manufactur
 
 Each dataset in "Fleet Vehicles" **MUST** contain an unique anonymizedVIN conformant to the semantic model.
 
-#### 3.6.2 SPECIFICATIONS ARTIFACTS
-
-This aspect model is written in SAMM 2.1.0 as a modelling language conformant to CX-0003.
-
-Like all Catena-X data models, this model is available in a machine-readable format on GitHub repository sldt-semantic-models [https://github.com/eclipse-tractusx/sldt-semantic-models].
-
-#### 3.6.3 LICENSE
-
-This Catena-X data model is made available under
-the terms of the Creative Commons Attribution 4.0 International
-(CC-BY-4.0) license, which is available at Creative Commons.
-
-The license information is available inside the turtle file (*.ttl-file) on GitHub.
-
-In case of doubt, GitHub overwrites the information for license, copyright and author from this  document.
-
-#### 3.6.4 IDENTIFIER OF SEMANTIC MODEL
+#### 3.6.2 IDENTIFIER OF SEMANTIC MODEL
 
 The semantic model has the unique identifier
 
@@ -608,33 +419,14 @@ The semantic model has the unique identifier
 <urn:samm:io.catenax.fleet.vehicles:4.0.0#>
 ```
 
-#### 3.6.5 FORMATS OF SEMANTIC MODEL
-
-Different formats can be generated through the turtle file (*.ttl-file) and the SAMM CLI tool.
-
-##### 3.6.5.1 RDF TURTLE
+##### 3.6.3 RDF TURTLE
 
 The rdf turtle file, an instance of the Semantic Aspect Meta Model, is the master for generating additional file formats and serializations.
-It can be found in the current version 2.1.0 on the GitHub repository.
+It can be found in the current version 4.0.0 on the GitHub repository.
 
 ```text
 [https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.fleet.vehicles/4.0.0/Vehicles.ttl]
 ```
-
-The open source command line tool of the Eclipse Semantic Modelling Framework  is used for generation of other file formats like JSON Schema, aasx for Asset Administration Shell Submodel Template or HTML documentation.
-
-##### 3.6.5.2 JSON SCHEMA
-
-A JSON Schema can be generated from the RDF Turtle file. The JSON Schema defines the Value-Only payload of the Asset Administration Shell for the API operation "GetSubmodel".
-It can be found in the current version in the "gen" subfolder on the GitHub repository.
-
-```text
-[https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.fleet.vehicles/4.0.0/gen]
-```
-
-##### 3.6.5.3 AASX
-
-An AASX file can be generated from the RDF Turtle file. The AASX file defines one of the requested artifacts for a Submodel Template Specification.
 
 ### 3.7 ASPECT MODEL "QUALITY TASK ATTACHMENT"
 
@@ -643,57 +435,22 @@ An AASX file can be generated from the RDF Turtle file. The AASX file defines on
 The QualityTaskAttachment data model describes a way to exchange data and files, which are not available in the existing data models, in the context of a QualityTask.
 In order to make the non-standardized data and files machine understandable, they are described using the "Quality Task Attachment" model.
 
-#### 3.7.2 SPECIFICATIONS ARTIFACTS
-
-This aspect model is written in SAMM 2.1.0 as a modelling language conformant to CX-0003.
-
-Like all Catena-X data models, this model is available in a machine-readable format on GitHub repository sldt-semantic-models [https://github.com/eclipse-tractusx/sldt-semantic-models].
-
-#### 3.7.3 LICENSE
-
-This Catena-X data model is made available under
-the terms of the Creative Commons Attribution 4.0 International
-(CC-BY-4.0) license, which is available at Creative Commons.
-
-The license information is available inside the turtle file (*.ttl-file) on GitHub.
-
-In case of doubt, GitHub overwrites the information for license, copyright and author from this  document.
-
-#### 3.7.4 IDENTIFIER OF SEMANTIC MODEL
+#### 3.7.2 IDENTIFIER OF SEMANTIC MODEL
 
 The semantic model has the unique identifier
 
 ```text
-<urn:samm:io.catenax.quality_task_attachment:2.0.0#>
+<urn:samm:io.catenax.quality_task_attachment:3.0.0#>
 ```
 
-#### 3.7.5 FORMATS OF SEMANTIC MODEL
-
-Different formats can be generated through the turtle file (*.ttl-file) and the SAMM CLI tool.
-
-##### 3.7.5.1 RDF TURTLE
+##### 3.7.3 RDF TURTLE
 
 The rdf turtle file, an instance of the Semantic Aspect Meta Model, is the master for generating additional file formats and serializations.
-It can be found in the current version 3.0.0 on the GitHub repository.
+It can be found in the current version on the GitHub repository.
 
 ```text
 [https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.quality_task_attachment/3.0.0/QualityTaskAttachment.ttl]
 ```
-
-The open source command line tool of the Eclipse Semantic Modelling Framework  is used for generation of other file formats like JSON Schema, aasx for Asset Administration Shell Submodel Template or HTML documentation.
-
-##### 3.7.5.2 JSON SCHEMA
-
-A JSON Schema can be generated from the RDF Turtle file. The JSON Schema defines the Value-Only payload of the Asset Administration Shell for the API operation "GetSubmodel".
-It can be found in the current version in the "gen" subfolder on the GitHub repository.
-
-```text
-[https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.quality_task_attachment/3.0.0/gen]
-```
-
-##### 3.7.5.3 AASX
-
-An AASX file can be generated from the RDF Turtle file. The AASX file defines one of the requested artifacts for a Submodel Template Specification.
 
 ### 3.8 ASPECT MODEL "EARLY WARNING NOTIFICATION"
 
@@ -701,23 +458,7 @@ An AASX file can be generated from the RDF Turtle file. The AASX file defines on
 
 The data model "Early Warning Notification" describes the payload of a notification used in case of an early warning. An early warning represents an anomaly that is found in the shared data. This notification is used to inform the partner company and initiate further analyses steps.
 
-#### 3.8.2 SPECIFICATIONS ARTIFACTS
-
-This aspect model is written in SAMM 2.1.0 as a modelling language conformant to CX-0003.
-
-Like all Catena-X data models, this model is available in a machine-readable format on GitHub repository sldt-semantic-models [https://github.com/eclipse-tractusx/sldt-semantic-models].
-
-#### 3.8.3 LICENSE
-
-This Catena-X data model is made available under
-the terms of the Creative Commons Attribution 4.0 International
-(CC-BY-4.0) license, which is available at Creative Commons.
-  
-The license information is available inside the turtle file (*.ttl-file) on GitHub.
-  
-In case of doubt, GitHub overwrites the information for license, copyright and author from this  document.
-
-#### 3.8.4 IDENTIFIER OF SEMANTIC MODEL
+#### 3.8.2 IDENTIFIER OF SEMANTIC MODEL
 
 The semantic model has the unique identifier
 
@@ -725,33 +466,14 @@ The semantic model has the unique identifier
 <urn:samm:io.catenax.early_warning_notification:1.0.0#>
 ```
 
-#### 3.8.5 FORMATS OF SEMANTIC MODEL
-
-Different formats can be generated through the turtle file (*.ttl-file) and the SAMM CLI tool.
-
-##### 3.8.5.1 RDF TURTLE
+##### 3.8.3 RDF TURTLE
 
 The rdf turtle file, an instance of the Semantic Aspect Meta Model, is the master for generating additional file formats and serializations.
-It can be found in the current version 1.0.0 on the GitHub repository.
+It can be found in the current version on the GitHub repository.
 
 ```text
 [https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.early_warning_notification/1.0.0/EarlyWarningNotification.ttl]
 ```
-
-The open source command line tool of the Eclipse Semantic Modelling Framework  is used for generation of other file formats like JSON Schema, aasx for Asset Administration Shell Submodel Template or HTML documentation.
-
-##### 3.8.5.2 JSON SCHEMA
-
-A JSON Schema can be generated from the RDF Turtle file. The JSON Schema defines the Value-Only payload of the Asset Administration Shell for the API operation "GetSubmodel".
-It can be found in the current version in the "gen" subfolder on the GitHub repository.
-
-```text
-[https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.early_warning_notification/1.0.0/gen]
-```
-
-##### 3.8.5.3 AASX
-
-An AASX file can be generated from the RDF Turtle file. The AASX file defines one of the requested artifacts for a Submodel Template Specification.
 
 ### 3.9 ASPECT MODEL "FAILURE PATTERN"
 
@@ -762,23 +484,7 @@ The utilisation of a failure pattern is divided into two phases. In a first step
 Data in a temporal context, such as failure codes from electronic control units, are analysed using e.g. machine learning algorithms.
 Afterwards data patterns are derived that differentiate between the occurrence and non-occurrence of an error. Failure patterns can then be used to check e.g. the effectiveness of quality measures.
 
-#### 3.9.2 SPECIFICATIONS ARTIFACTS
-
-This aspect model is written in SAMM 2.1.0 as a modelling language conformant to CX-0003.
-
-Like all Catena-X data models, this model is available in a machine-readable format on GitHub repository sldt-semantic-models [https://github.com/eclipse-tractusx/sldt-semantic-models].
-
-#### 3.9.3 LICENSE
-
-This Catena-X data model is made available under
-the terms of the Creative Commons Attribution 4.0 International
-(CC-BY-4.0) license, which is available at Creative Commons.
-
-The license information is available inside the turtle file (*.ttl-file) on GitHub.
-
-In case of doubt, GitHub overwrites the information for license, copyright and author from this  document.
-
-#### 3.9.4 IDENTIFIER OF SEMANTIC MODEL
+#### 3.9.2 IDENTIFIER OF SEMANTIC MODEL
 
 The semantic model has the unique identifier
 
@@ -786,108 +492,22 @@ The semantic model has the unique identifier
 <urn:samm:io.catenax.failure_pattern:1.0.0#>
 ```
 
-#### 3.9.5 FORMATS OF SEMANTIC MODEL
-
-Different formats can be generated through the turtle file (*.ttl-file) and the SAMM CLI tool.
-
-##### 3.9.5.1 RDF TURTLE
+##### 3.9.3 RDF TURTLE
 
 The rdf turtle file, an instance of the Semantic Aspect Meta Model, is the master for generating additional file formats and serializations.
-It can be found in the current version 1.0.0 on the GitHub repository.
+It can be found in the current version on the GitHub repository.
 
 ```text
 [https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.failure_pattern/1.0.0/FailurePattern.ttl]
 ```
 
-The open source command line tool of the Eclipse Semantic Modelling Framework  is used for generation of other file formats like JSON Schema, aasx for Asset Administration Shell Submodel Template or HTML documentation.
+### 3.10 ASPECT MODEL "Warranty Claim Request"
 
-##### 3.9.5.2 JSON SCHEMA
-
-A JSON Schema can be generated from the RDF Turtle file. The JSON Schema defines the Value-Only payload of the Asset Administration Shell for the API operation "GetSubmodel".
-It can be found in the current version in the "gen" subfolder on the GitHub repository.
-
-```text
-[https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.failure_pattern/1.0.0/gen]
-```
-
-##### 3.9.5.3 AASX
-
-An AASX file can be generated from the RDF Turtle file. The AASX file defines one of the requested artifacts for a Submodel Template Specification.
-
-## 3.10 ASPECT MODEL "Report 8D"
-
-### 3.10.1 INTRODUCTION
-
-The 8D data model offers the possibility of conducting an 8D root cause analysis report, mandatory in the automotive industry, between vehicle manufacturer and component manufacturer (supplier) or between Tier n Supplier and Tier n+1 Supplier. Due to data sovereignty, this data model can only be exchanged between two Catena-X companies. The data model enables data exchange within the framework of the Global 8D standard and the VDA-QDX standard. Although some aspects have been omitted, all mandatory aspects are present in terms of content. The buyer or customer of the part to be analysed initiates an 8D report by transmitting the relevant information about the component to be analysed to the supplier in the header of the 8D data model. This requests the 8D report from the supplier. The supplier then performs its 8D process internally and subsequently transmits the result to the customer via the same data model. Depending on the 8D status, the supplier may need to transmit the report to the customer multiple times. Any additional documents can be added to the 8D report via the Quality Attachments data model and referenced with a unique ID in the 8D model.
-
-### 3.10.2 SPECIFICATIONS ARTIFACTS
-
-This aspect model is written in SAMM 2.1.0 as a modelling language conformant to CX-0003.
-Like all Catena-X data models, this model is available in a machine-readable format on GitHub conformant to CX-0003.
-
-### 3.10.3 LICENSE
-
-This Catena-X data model is made available under
-the terms of the Creative Commons Attribution 4.0 International
-(CC-BY-4.0) license, which is available at Creative Commons.
-  
-The license information is available inside the turtle file (*.ttl-file) on GitHub.
-  
-In case of doubt, GitHub overwrites the information for license, copyright and author from this  document.
-
-### 3.10.4 IDENTIFIER OF SEMANTIC MODEL
-
-The semantic model has the unique identifier
-
-```text
-<urn:samm:io.catenax.report_8d:1.0.0#>
-```
-
-### 3.10.5 FORMATS OF SEMANTIC MODEL
-
-Different formats can be generated through the turtle file (*.ttl-file) and the SAMM CLI tool.
-
-#### 3.10.5.1 RDF TURTLE
-
-The rdf turtle file, an instance of the Semantic Aspect Meta Model, is the master for generating additional file formats and serializations. It can be found in the current version 1.0.0 on the GitHub repository.
-
-[https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.report_8d/1.0.0/report_8d.ttl]
-
-The open source command line tool of the Eclipse Semantic Modelling Framework is used for generation of other file formats like JSON Schema, aasx for Asset Administration Shell Submodel Template or HTML documentation.
-
-#### 3.10.5.2 JSON SCHEMA
-
-A JSON Schema can be generated from the RDF Turtle file. The JSON Schema defines the Value-Only payload of the Asset Administration Shell for the API operation "GetSubmodel". It can be found in the current version in the "gen" subfolder on the GitHub repository.
-
-[https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.report_8d/1.0.0/gen]
-
-#### 3.10.5.3 AASX
-
-An AASX file can be generated from the RDF Turtle file. The AASX file defines one of the requested artifacts for a Submodel Template Specification.
-
-### 3.11 ASPECT MODEL "Warranty claim Request"
-
-#### 3.11.1 INTRODUCTION
+#### 3.10.1 INTRODUCTION
 
 The Warranty Claim Request data model encompasses all relevant warranty claim information typically transmitted from a customer to a supplier. This model includes detailed data about the repair performed, the time and materials consumed, and the associated monetary values for the claim.
 
-#### 3.11.2 SPECIFICATIONS ARTIFACTS
-
-This aspect model is written in SAMM 2.1.0 as a modelling language conformant to CX-0003
-
-Like all Catena-X data models, this model is available in a machine-readable format on GitHub conformant to CX-0003.
-
-#### 3.11.3 LICENSE
-
-This Catena-X data model is made available under
-the terms of the Creative Commons Attribution 4.0 International
-(CC-BY-4.0) license, which is available at Creative Commons.
-  
-The license information is available inside the turtle file (*.ttl-file) on GitHub.
-  
-In case of doubt, GitHub overwrites the information for license, copyright and author from this  document.
-
-#### 3.11.4 IDENTIFIER OF SEMANTIC MODEL
+#### 3.10.2 IDENTIFIER OF SEMANTIC MODEL
 
 The semantic model has the unique identifier
 
@@ -895,58 +515,22 @@ The semantic model has the unique identifier
 <urn:samm:io.catenax.warranty_claim_request:1.0.0>
 ```
 
-#### 3.11.5 FORMATS OF SEMANTIC MODEL
-
-Different formats can be generated through the turtle file and the SAMM command line interface (cli).
-
-##### 3.11.5.1 RDF TURTLE
+##### 3.10.3 RDF TURTLE
 
 The rdf turtle file, an instance of the Semantic Aspect Meta Model, is the master for generating additional file formats and serializations.
-It can be found in the current version 1.0.0 on the GitHub repository.
+It can be found in the current version on the GitHub repository.
 
 ```text
 [https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.warranty_claim_request/1.0.0/WarrantyClaimRequest.ttl]
 ```
 
-The open source command line tool of the Eclipse Semantic Modelling Framework  is used for generation of other file formats like JSON Schema, aasx for Asset Administration Shell Submodel Template or HTML documentation.
+### 3.11 ASPECT MODEL "Warranty Claim Request Verification"
 
-##### 3.11.5.2 JSON SCHEMA
-
-A JSON Schema can be generated from the RDF Turtle file. The JSON Schema defines the Value-Only payload of the Asset Administration Shell for the API operation "GetSubmodel".
-It can be found in the current version in the "gen" subfolder on the GitHub repository.
-
-```text
-[https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.warranty_claim_request/1.0.0/gen]
-```
-
-##### 3.11.5.3 AASX
-
-An AASX file can be generated from the RDF Turtle file. The AASX file defines one of the requested artifacts for a Submodel Template Specification.
-
-### 3.12 ASPECT MODEL "Warranty claim Request Verification"
-
-#### 3.12.1 INTRODUCTION
+#### 3.11.1 INTRODUCTION
 
 The Warranty claim Request Verification data model is the supplier´s response to the claimant (customer). The claim verification provides information about the evaluation and accepted quota (percentage of accepted responsibility) in regards to a claim.
 
-#### 3.12.2 SPECIFICATIONS ARTIFACTS
-
-This aspect model is written in SAMM 2.1.0 as a modelling language conformant to CX-0003
-
-Like all Catena-X data models, this model is available in a machine-readable format on GitHub
-conformant to CX-0003.
-
-#### 3.12.3 LICENSE
-
-This Catena-X data model is made available under
-the terms of the Creative Commons Attribution 4.0 International
-(CC-BY-4.0) license, which is available at Creative Commons.
-  
-The license information is available inside the turtle file (*.ttl-file) on GitHub.
-  
-In case of doubt, GitHub overwrites the information for license, copyright and author from this  document.
-
-#### 3.12.4 IDENTIFIER OF SEMANTIC MODEL
+#### 3.11.2 IDENTIFIER OF SEMANTIC MODEL
 
 The semantic model has the unique identifier
 
@@ -954,33 +538,14 @@ The semantic model has the unique identifier
 <urn:samm:io.catenax.warranty_claim_request_verification:1.0.0>
 ```
 
-#### 3.12.5 FORMATS OF SEMANTIC MODEL
-
-All formats can be generated through the turtle file and the SAMM command line interface (cli).
-
-##### 3.12.5.1 RDF TURTLE
+##### 3.11.3 RDF TURTLE
 
 The rdf turtle file, an instance of the Semantic Aspect Meta Model, is the master for generating additional file formats and serializations.
-It can be found in the current version 1.0.0 on the GitHub repository.
+It can be found in the current version on the GitHub repository.
 
 ```text
-[https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.warranty_claim_request_verification/1.0.0/WarrantyClaimRequestVerificatio.ttl]
+[https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.warranty_claim_request_verification/1.0.0/WarrantyClaimRequestVerification.ttl]
 ```
-
-The open source command line tool of the Eclipse Semantic Modelling Framework  is used for generation of other file formats like JSON Schema, aasx for Asset Administration Shell Submodel Template or HTML documentation.
-
-##### 3.12.5.2 JSON SCHEMA
-
-A JSON Schema can be generated from the RDF Turtle file. The JSON Schema defines the Value-Only payload of the Asset Administration Shell for the API operation "GetSubmodel".
-It can be found in the current version in the "gen" subfolder on the GitHub repository.
-
-```text
-[https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.warranty_claim_request_verification/1.0.0/gen]
-```
-
-##### 3.12.5.3 AASX
-
-An AASX file can be generated from the RDF Turtle file. The AASX file defines one of the requested artifacts for a Submodel Template Specification.
 
 ## 4 APPLICATION PROGRAMMING INTERFACES
 
@@ -1043,7 +608,7 @@ When using the dataspace connector, the following asset **MUST** be registered. 
   "@context": {
       "cx-common": "https://w3id.org/catenax/ontology/common#",
       "cx-taxo": "https://w3id.org/catenax/taxonomy#",
-      "dct": "https://purl.org/dc/terms/"
+      "dct": "http://purl.org/dc/terms/"
   },
   "@type": "Asset",
   "@id": "earlywarningnotificationnotification-receive",
@@ -1070,7 +635,7 @@ When using an endpoint for early warning the following asset **MUST** be registe
   "@context": {
       "cx-common": "https://w3id.org/catenax/ontology/common#",
       "cx-taxo": "https://w3id.org/catenax/taxonomy#",
-      "dct": "https://purl.org/dc/terms/"
+      "dct": "http://purl.org/dc/terms/"
   },
   "@type": "Asset",
   "@id": "earlywarningnotification-update",
@@ -1159,10 +724,6 @@ To read the UML sequence diagrams correctly, some remarks below:
   administration shell (AAS) registry or by using services from the
   BPDM use case.
 
-- The resolution of the dataspace connector URL for a given BPN **SHOULD BE** done via the
-  EDC Discovery Service API \[CX-0001\]. The entry for each dataspace connector into
-  this Discovery Service is done via the Catena-X Portal.
-
 - In each UML sequence diagram the step \[01\] describes the
   publishing of the notification endpoints as described in the above
   sections.
@@ -1191,42 +752,20 @@ depicted. This is the same as updating a quality notification.
 
 ***Figure 3: Update Early Warning or Quality Investigation***
 
-## 6 Backward compatibility to previous version CX-0123 v.2.1.0
+## 6 REFERENCES
 
-To allow backward compatibility, data models from previous standard version CX-0123 v.2.1.0 are still allowed to use until the CX-Neptun release in 26.09. A certified Catena-X quality app MUST support the previous version of every data model defined in this standard:
-
-- urn:samm:io.catenax.quality_task:2.0.0
-- urn:samm:io.catenax.fleet.claim_data:2.0.0
-- urn:samm:io.catenax.fleet.diagnostic_data:2.0.0
-- urn:samm:io.catenax.fleet.vehicles:3.0.0
-- urn:samm:io.catenax.manufactured_parts_quality_information:2.1.0
-- urn:samm:io.catenax.parts_analyses:3.0.0
-- urn:samm:io.catenax.quality_task_attachment:2.0.0
-- urn:samm:io.catenax.failure_pattern:1.0.0
-
-:::note
-
-Example: If the app provides `urn:samm:io.catenax.quality_task:3.0.0`, it must also support `urn:samm:io.catenax.quality_task:2.0.0` within the current standard.
-
-:::
-
-## 7 REFERENCES
-
-### 7.1 NORMATIVE REFERENCES
+### 6.1 NORMATIVE REFERENCES
 
 > *This section is normative*
 
-- CX-0001 EDC Discovery API v1.1.0
-- CX-0003 SAMM Aspect Meta Model v1.1.0
 - CX-0018 Dataspace Connectivity v4.1.0
-- CX-0125 Traceability Use Case v2.2.0
 - CX-0152 Policy Constraints For Data Exchange v1.0.0
 
-### 7.2 NON-NORMATIVE REFERENCES
+### 6.2 NON-NORMATIVE REFERENCES
 
 Not applicable.
 
-### 7.3 REFERENCE IMPLEMENTATIONS
+### 6.3 REFERENCE IMPLEMENTATIONS
 
 Not applicable.
 

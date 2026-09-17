@@ -6,7 +6,7 @@ tags:
   - CAT/Connector as a Service
 ---
 
-# CX-0018 Dataspace Connectivity v.4.2.1
+# CX-0018 Dataspace Connectivity v.4.3.0
 
 ## ABSTRACT
 
@@ -80,9 +80,9 @@ when, they appear in all capitals, as shown here.
 | International Data Spaces Association (IDSA) | Organisation that provides standards and architecture solutions for secure, sovereign data sharing within so-called dataspaces                                                                                               | https://internationaldataspaces.org                                                               |
 | Eclipse Dataspace Working Group (EDWG)       | Eclipse Foundation Working Group that develops and maintains specifications for the data exchange within a dataspace                                                                                                         | https://dataspace.eclipse.org                                                                     |
 | Dataspace Protocol (DSP)                     | Protocol specification, designed to facilitate interoperable data sharing within a dataspace, currently governed by the EDWG                                                                                                 | https://github.com/eclipse-dataspace-protocol-base/DataspaceProtocol                              |
-| Decentralized Claims Protocol (DCP)          | Protocol specification for the exchange of verifiable credentials and presentations between a connector and a wallet as well as the issuance of such credentials by an identity provider                                     | https://github.com/eclipse-dataspace-dcp/decentralized-claims-protocol                            |
+| Decentralized Claims Protocol (DCP)          | Protocol specification for the exchange of verifiable credentials and presentations between a connector and a wallet as well as the issuance of such credentials by an Identity Provider                                     | https://github.com/eclipse-dataspace-dcp/decentralized-claims-protocol                            |
 | Connector (or formal Participant Agent)      | (Catena-X) Technical component that allows business applications to interact with each other within a dataspace                                                                                                              | https://github.com/eclipse-tractusx/tractusx-edc                                                  |
-| (Catena-X) Business Applications             | (Catena-X) Applications that enable functionality of different use cases, hosted by a data provider or consumer itself or by a business application provider                                                                 | https://eclipse-tractusx.github.io/developer                                                      |
+| (Catena-X) Business Application.             | (Catena-X) Application that enable functionality of at least one use case and is hosted by a Business Application Provider                                                                 | https://eclipse-tractusx.github.io/developer                                                      |
 | Catena-X Marketplace                         | The Marketplace inside a portal, allowing participants of the Catena-X network to search and select Catena-X Business Applications                                                                                           | https://catena-x.net/en/offers/portal-marketplace                                                 |
 | Open Data Rights Language (ODRL)             | Policy expression language that provides a flexible and interoperable information model, vocabulary, and encoding mechanisms for representing statements about the usage of content and services                             | https://www.w3.org/TR/odrl-model, https://www.w3.org/TR/odrl-vocab, https://w3c.github.io/odrl/bp |
 
@@ -118,8 +118,9 @@ as specified in the HTTPS binding of the Dataspace Protocol.
 
 #### 2.1.1 Usage of DID in the data exchange
 
-A Participant Agent MUST use the [DID](#decentralized-identifiers-did) in all protocol message properties that identify
-a Participant. This includes properties such as `participantId` in the `Catalog` response message.
+A Participant Agent MUST use the [DID](#decentralized-identifiers-did) as the Participant identifier. The DID refers to the
+DID document that holds the information needed to access the participant's [Credential Service](#23-communication-with-a-credential-service).
+This DID MUST be used in all protocol message properties that identify a Participant for both the Consumer and the Provider.
 
 ### 2.2 Transfer Type Profiles
 
@@ -130,7 +131,7 @@ support all intended use cases.
 > Despite the IRIs of the currently used identifiers for transfer types are not yet included in the DSP-context, they
 > will be used as preliminary identifiers.
 
-Providers SHOULD be able to serve data according to that signal when data transfer is requested by a consumer
+Providers SHOULD be able to serve data according to that signal when data transfer is requested by a Consumer
 via a `TransferRequestMessage`.
 
 #### 2.2.1 HttpData-PULL
@@ -150,17 +151,18 @@ The following `endpointProperties` MUST be added to the object as specified in t
 | `https://w3id.org/edc/v0.0.1/ns/endpoint`        | REQUIRED | The endpoint URL of the dataplane to access the data asset.                                                                                                   |
 | `https://w3id.org/edc/v0.0.1/ns/authorization`   | REQUIRED | The access token to access data. To be included in the `Authorization` header of an ensuing HTTP request without any additions/modifications.                 |
 | `https://w3id.org/edc/v0.0.1/ns/authType`        | OPTIONAL | Hint for the authorization scheme expected by the `endpoint`. Clients are not required to process this property.                                              |
-| `https://w3id.org/tractusx/auth/refreshEndpoint` | OPTIONAL | Endpoint to refresh the access token using the `refreshToken`. It behaves as defined in [RFC6749](#rfc-6749) section 6 using an STS-token for authentication. |
+| `https://w3id.org/tractusx/auth/refreshEndpoint` | OPTIONAL | Endpoint to refresh the access token using the `refreshToken`. It behaves as defined in [RFC6749](#rfc-6749) section 6 using an STS-Token for authentication. |
 | `https://w3id.org/tractusx/auth/refreshToken`    | OPTIONAL | The refresh token to present to the `refreshEndpoint` in conjunction with the old access token.                                                               |
 | `https://w3id.org/tractusx/auth/expiresIn`       | REQUIRED | Time to live for the access token after issuance.                                                                                                             |
 
-A Provider Participant Agent MUST ensure that the requested backend system has sufficient context from the negotiation
-to evaluate the legitimacy of the request.
+The url in the `endpoint` and the access token in the `authorization` property are the means for the Provider
+Participant Agent to furthermore control the access to the data. I.e., the endpoint SHOULD be limited to the
+relevant scope needed to fulfill the contract and the access token MUST contain necessary information, that
+allows the Business Application to make further authorization decisions concerning the request, i.e., to decide
+whether the resource requested is covered by the negotiated contract.
 
-A Consumer may then use the provided data to execute requests against the endpoint.
-
-> Despite the token, the endpoint still has the right to refuse serving a request. This may occur for instance when
-> a consumer attempts to access data which is in general available but not covered by the negotiated contract.
+Which information is necessary for authorization decisions is an implementation detail of the Business Application
+and therefore not in scope of this standard!
 
 #### 2.2.2 AmazonS3-PUSH
 
@@ -180,7 +182,7 @@ with relevant `endpointProperties` as follows:
 | `https://w3id.org/edc/v0.0.1/ns/folderName`  | OPTIONAL | Defines the desired folder name for S3 objects to be grouped (folderName/) in the destination bucket.                                      |
 | `https://w3id.org/edc/v0.0.1/ns/secret`      | REQUIRED | Defines the Json object as a Json-escaped string holding `"edctype": "dataspaceconnector:secrettoken"` `"accessKeyId":"<ACCESS_KEY_ID>"`, `"secretAccessKey": "<SECRET_ACCESS_KEY>"` and optionally for temporary access  `"sessionToken": "<SESSION_TOKEN>"` and `"expiration":"time-in-seconds"` properties. |
 
-A Provider MUST send a `TransferStartMessage` with an empty `dataAddress` property. The provider MUST execute a transfer as specified
+A Provider MUST send a `TransferStartMessage` with an empty `dataAddress` property. The Provider MUST execute a transfer as specified
 by the received request.
 
 #### 2.2.3 AzureStorage-PUSH
@@ -197,11 +199,11 @@ transfer to the `endpoint` may succeed. The `endpointType` property MUST be `Azu
 | `https://w3id.org/edc/v0.0.1/ns/type`        | REQUIRED | Defines the Asset type (AzureStorage)                                                                                                      |
 | `https://w3id.org/edc/v0.0.1/ns/account`     | REQUIRED | Defines the name of the destination Azure Storage account.                                                                                 |
 | `https://w3id.org/edc/v0.0.1/ns/container`   | REQUIRED | Defines the name of the destination Azure Storage container.                                                                               |
-| `https://w3id.org/edc/v0.0.1/ns/blobName`    | OPTIONAL | Defines the desired name of the blob in the destination storage. The data provider might ignore that, if the data source contains multiple files.|
+| `https://w3id.org/edc/v0.0.1/ns/blobName`    | OPTIONAL | Defines the desired name of the blob in the destination storage. The Data Provider might ignore that, if the data source contains multiple files.|
 | `https://w3id.org/edc/v0.0.1/ns/folderName`  | OPTIONAL | Defines the desired folder name for blobs to be grouped (folderName/) in the destination storage account.                                  |
 | `https://w3id.org/edc/v0.0.1/ns/secret`      | REQUIRED | Defines the Json object as a Json-escaped string holding `"edctype":"dataspaceconnector:azuretoken"`,`"sas":"<sas-token>"` and `"expiration":"time-in-seconds"` properties. |
 
-A Provider MUST send a `TransferStartMessage` with an empty `dataAddress` property. The provider MUST execute a transfer as specified
+A Provider MUST send a `TransferStartMessage` with an empty `dataAddress` property. The Provider MUST execute a transfer as specified
 by the received request.
 
 ### 2.3 Communication with a Credential Service
@@ -209,8 +211,10 @@ by the received request.
 This standard assumes that each Participant has been issued a set of Verifiable Credentials (VCs) according to the
 [CX-0050](#cx-specific-credentials) standard. These VCs are stored in a Credential Service.
 
-A Consumer MUST be able to retrieve an access token according to the Verifiable Presentation Protocol (VPP) that is
-part of the [Decentralized Claims Protocol (DCP)](#decentralized-claims-protocol).
+A Consumer MUST be able to retrieve an appropriately scoped STS-Token according to the requirements of the
+Verifiable Presentation Protocol (VPP) (see [Decentralized Claims Protocol (DCP)](#decentralized-claims-protocol)).
+This token MUST be included in the `Authorization` header in all DSP messages sent to the Provider
+(see [DSP](#dataspace-protocol)) and, in addition, in token refresh requests to the `refreshEndpoint` (see [HttpData-PULL](#221-httpdata-pull)).
 
 The scope of the token for requesting a `Catalog` MUST include the following credentials as defined in
 [CX-0050](#cx-specific-credentials):
@@ -219,12 +223,8 @@ The scope of the token for requesting a `Catalog` MUST include the following cre
 - BPN Credential
 - Framework Agreement Credential
 
-A Provider MUST be able to receive and securely verify an access token and derive information on a Consumer's
+A Provider MUST be able to receive and securely verify the sent STS-Token and derive information on a Consumer's
 Credential Service in order to execute the DCP VPP Request 6. This corresponds to the role of Verifier.
-
-A Consumer MUST include an appropriately scoped STS-Token in the `Authorization` header in all DSP messages sent
-to the provider (see [DSP](#dataspace-protocol)) and in addition in the `refresh` message
-(see [HttpData-PULL](#221-httpdata-pull))
 
 ### 2.4 Policy Value to Verifiable Credential Mapping
 
@@ -235,8 +235,7 @@ this, the connector MUST support the verification of Verifiable Credential as de
 The mapping between a policy constraint referencing a verifiable credential and the credential name depends on the type
 of credential.
 
-- For credentials requesting the rightOperand as `active` the leftOperand is the base for the credential
-name.
+- For credentials requesting the rightOperand as `active` the leftOperand is the base for the credential name.
 - For other policy constraints referencing a verifiable credential, the rightOperand is the base for the credential name
 
 Based on the corresponding base name of the credential, the following steps have to be applied:
@@ -257,9 +256,10 @@ Example (rightOperand to Credential):
 A Provider MUST annotate all instances `Dataset` in a `Catalog` with the following properties:
 
 - `http://purl.org/dc/terms/type` holding an object with at least an `@id` property pointing to a concept describing
-  what type of API this `Dataset` represents. Subsequent standards define the exact value this property shall hold,
-  depending on the business scenario. The set of concepts is maintained in the taxonomy `https://w3id.org/catenax/taxonomy#`
-  and MUST extend the concept `https://w3id.org/catenax/taxonomy#Asset`.
+  what type of API this `Dataset` represents, i.e., which protocol to use to interact with the `Dataset`.
+  Subsequent standards define the exact value this property shall hold, depending on the business scenario. The set of
+  concepts is maintained in the taxonomy `https://w3id.org/catenax/taxonomy#` and MUST extend the concept
+  `https://w3id.org/catenax/taxonomy#Asset`.
 - `https://w3id.org/catenax/ontology/common#version` holding a string with SemVer semantics indicating the API version of
   the API that was typed by the `http://purl.org/dc/terms/type` property. It is allowed to use version information that
   is incomplete according to SemVer. Subsequent standards define the exact value this property shall hold, depending on the
@@ -270,17 +270,16 @@ A Provider MUST annotate all instances `Dataset` in a `Catalog` with the followi
 A `Catalog` offered by a Providers Participant Agent MUST provide only `Dataset` instances that can be negotiated
 with the same Participant Agent.
 
-A Provider MUST publish all Participant Agents that should be detectable by a Consumer by specifying the participants
+A Provider MUST publish all Participant Agents that should be detectable by a Consumer by specifying the participant's
 version endpoint address in the DID document as specified in the [CX-0049 DID Document standard](#did-document) as
-an entry in the service section of type `DataService`. The endpoint address has the format
+an entry in the service section of type `DataService`. The endpoint address has to be a URL in the format
 `https://subdomain.provider-domain.com/subpath/.well-known/dspace-version`, with `subpath` being an arbitrary path
-below the Providers chosen domain.
+below the Provider's chosen domain. The described endpoint represents a resource that when called with `GET` returns
+version metadata as defined in section [Protocol Version Handling](#27-protocol-version-handling).
 
 The path `https://subdomain.provider-domain.com/subpath` MUST be the path used for registration of the connector at the
-Core Service Provider B.
-
-The content of the `dspace-version` endpoint is defined in section on
-[protocol version handling](#27-protocol-version-handling)
+Core Service Provider B, i.e. it must be the path that when extended with `/.well-known/dspace-version` the resulting
+path represents the aforementioned version metadata resource.
 
 The definition of the service reference reflects the section `Discovery of Service Endpoints` in the
 [DSP spec](#dataspace-protocol).
@@ -298,17 +297,15 @@ the section on [Exposure of version in the DSP spec](#dataspace-protocol). An ex
       "version": "2025-1",
       "path": "/2025-1",
       "binding": "HTTPS"
-    },
-    {
-      "version": "v0.8",
-      "path": "",
-      "binding": "HTTPS"
     }
   ]
 }
 ```
 
-The reference point of the given relative path segments is the base path that hosts the version metadata endpoint, i.e., in the described case `https://subdomain.provider-domain.com/subpath`. For example, from the given information, the path to access the `2025-1` version of the catalog service is `https://subdomain.provider-domain.com/subpath/2025-1/catalog` and the path for the old protocol version `v0.8` is `https://subdomain.provider-domain.com/subpath/catalog`. For convenience, a participant agent SHOULD accept for the old protocol a version string `0.8` as well.
+The reference point of the given relative path segments is the base path that hosts the version metadata endpoint,
+i.e., in the described case `https://subdomain.provider-domain.com/subpath`. For example, from the given information,
+the path to access the `2025-1` version of the catalog service is
+`https://subdomain.provider-domain.com/subpath/2025-1/catalog`.
 
 A Consumer SHOULD evaluate the protocol versions supported by the targeted Provider and SHOULD limit
 the use of protocol versions to the latest offered by the Provider.
@@ -321,20 +318,9 @@ The definition of the version management reflects the section `Exposure of versi
 
 ## 3 BACKWARD COMPATIBILITY
 
-Backward compatibility is handled by the Dataspace Protocol version used for the communication between two participant
-agents. All differences are handled by explicit versioning of the protocol. This includes changes in details that are
-not motivated by the Dataspace Protocol itself but by semantic changes attached to the protocol version update.
-
-Note: The previous version of the CX-0018 standard had a bug. The actual version used previously was DSP version `v0.8`
-which MUST be used as key for referring to the previous version in the `version metadata endpoint`.
-
-Based on this constraint, backward compatibility is handled by the mechanism specified in
-[section 2.7](#27-protocol-version-handling).
-
-A Provider using the older standard version might neither provide discovery information in the DID document, nor
-provide the `version metadata endpoint`. In such cases, the Consumer Participant Agent SHOULD assume the Providers
-Participant Agent to use the old protocol version and the centralized discovery mechanism to find the
-Participant Agents base endpoint.
+Backward compatibility addresses interactions with Participant Agents following versions 4.1.x and 4.2.x of this
+standard. As no major changes have been applied, a Participant Agent following this version of the standard
+does not introduce any new features that prevent compatibility with a Participant Agent of those older versions.
 
 ## 4 REFERENCES
 

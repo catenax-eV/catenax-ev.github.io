@@ -2,7 +2,7 @@
 
 skinparam dpi 50
 
-package "Example 'Porsche AG' with Its Legal Entity, One of Its Sites and Three Addresses" {
+package "Example 'Porsche AG' with Its Legal Entity, Two of Its Sites and Four Addresses" {
   object LegalEntity {
     LegalName = "Dr. Ing. h.c. F. Porsche Aktiengesellschaft"
     ShortName = "Porsche AG"
@@ -36,7 +36,17 @@ package "Example 'Porsche AG' with Its Legal Entity, One of Its Sites and Three 
     City = "Stuttgart"
     PostalCode = "70435"
     Street = "Porschestraße"
-    HouseNumber = "42
+    HouseNumber = "42"
+  }
+
+  object Address4 {
+    Name = "Werkseinfahrt"
+    BPNA = "BPNA000000001M4C"
+    Country = "DE"
+    City = "Stuttgart"
+    PostalCode = "70435"
+    Street = "Schwieberdinger Str."
+    HouseNumber = "100"
   }
 
   object Site1 {
@@ -44,12 +54,17 @@ package "Example 'Porsche AG' with Its Legal Entity, One of Its Sites and Three 
     BPNS = "BPNS00000003CRHK"
   }
 
+  object Site2 {
+    Name = "Porsche Zuffenhausen, Werk 5"
+    BPNS = "BPNS00000003DTJL"
+  }
+
   ' object BusinessPartner {
   '   AddressType = "AdditionalAddress"
   '   NameParts = [
-  '     "Dr. Ing. h.c. F. Porsche", 
-  '     "Aktiengesellschaft", 
-  '     "Porsche Zuffenhausen,", 
+  '     "Dr. Ing. h.c. F. Porsche",
+  '     "Aktiengesellschaft",
+  '     "Porsche Zuffenhausen,",
   '     "Werk 2, Pforte (Lieferanten)"]
   '   Country = "DE"
   '   City = "Stuttgart"
@@ -63,13 +78,17 @@ package "Example 'Porsche AG' with Its Legal Entity, One of Its Sites and Three 
   ' BusinessPartner -r-> Address2 : BPNA
   LegalEntity .d.> Address1 : LegalAddress
   Site1 .d.> Address3 : SiteMainAddress
+  Site2 .d.> Address4 : SiteMainAddress
   Address1 -u-> LegalEntity : BPNL
   Address2 -u-> Site1 : BPNS
   Address2 -u-> LegalEntity : BPNL
+  Address2 ..> Site2 : AdditionalSites
   Address3 -u-> Site1 : BPNS
   Address3 -u-> LegalEntity : BPNL
+  Address4 -u-> Site2 : BPNS
+  Address4 -u-> LegalEntity : BPNL
   Site1 -u-> LegalEntity : BPNL
+  Site2 -u-> LegalEntity : BPNL
 }
 
 @enduml
-

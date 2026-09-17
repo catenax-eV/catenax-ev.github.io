@@ -2,6 +2,17 @@
 
 All notable changes to CX-0074 will be documented in this file.
 
+## [4.2.0] CX-Neptune (26.09)
+
+### Added
+
+- Added the additional sites attribute to the business partner.
+
+### Changed
+
+- Removed the postal code, company postal code and delivery service number attributes from the address script variants.
+- Updated the OpenAPI specification reference to version 7.4.
+
 ## [4.1.0] CX-Saturn (25.09)
 
 ### Added

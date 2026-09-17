@@ -5,7 +5,7 @@ tags:
   - CAT/Sandbox Service Provider
 ---
 
-# CX-0010 Business Partner Number v3.1.0
+# CX-0010 Business Partner Number v3.2.0
 
 ## FOR WHOM IS THE STANDARD DESIGNED
 
@@ -168,7 +168,8 @@ In general, an address is a collection of information to describe a physical loc
 
 In data spaces, an address is a type of business partner representing the legal address of a legal entity, and/or the main address[^3] of a site, or any additional address of a legal entity or site (such as different gates).
 
-An address is owned by a legal entity. Thus, exactly one legal entity is assigned to an address. An address can belong to a site. Thus, one or no site is assigned to an address. An address is uniquely identified by the BPNA.
+An address is owned by a legal entity. Thus, exactly one legal entity is assigned to an address. An address can belong to a site. Thus, one or no site is assigned to an address as its site. In addition, an address can be associated with any number of further sites (for example when an additional address is shared by several sites). An address is uniquely identified by the BPNA.
+Within one legal entity (BPNL), each physical address can only exist once. There is no address (BPNA) duplicate within a BPNL allowed.
 
 ##### 1.5.2.5 IDENTIFIER TYPE
 
@@ -311,11 +312,16 @@ There are the following relations between a legal entity, its sites, and its add
 
 - Each site **MUST** be associated to exactly one legal entity
 - Each address **MUST** be associated to exactly one legal entity
-- Each address **MUST** be either associated to none or no more than one site
+- Each address **MUST** be associated to none, one, or more than one site
 
 - It **MUST** be possible to associate multiple addresses to a legal entity
 - It **MUST** be possible to associate multiple sites to a legal entity
 - It **MUST** be possible to associate multiple addresses to a site
+- It **MUST** be possible to associate multiple sites to an address
+
+- A relation **MUST** have at least one validity period.
+- Within a single validity period, `Valid From` **MUST NOT** be after `Valid To`.
+- Multiple validity periods of the same relation **MUST NOT** overlap.
 
 ### 2.5 IDENTIFIER TYPES
 

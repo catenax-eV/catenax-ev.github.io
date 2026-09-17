@@ -27,7 +27,8 @@
       "additionalProperties": false
     },
     "WarrantyDurationMonthsRightOperand": {
-      "type": "integer",
+      "type": "string",
+      "pattern": "^[1-9][0-9]*$",
       "$comment": "{\"permission\":\"The provision of the Data is subject to a warranty for material and legal defects for a period specified herein in months.\"}"
     }
   }

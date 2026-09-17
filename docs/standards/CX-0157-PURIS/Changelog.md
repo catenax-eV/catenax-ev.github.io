@@ -5,6 +5,14 @@ All notable changes to CX-0157 will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0] CX-Neptune (26.09)
+
+### Changed
+
+- bumped the requirements of the standards
+  - removed CX-0001 due to deprectation; CX-0018 provides these capabilities now
+  - replaced ODRL Profile usage by CX-0152
+
 ## [1.0.0] CX-Titan (26.03)
 
 ### Added

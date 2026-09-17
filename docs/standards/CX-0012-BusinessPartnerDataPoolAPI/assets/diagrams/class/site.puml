@@ -59,6 +59,7 @@ package "Site and References" {
 
   Site "*" -u-o "1" LegalEntity : LegalEntityBPN
   Address "1..*" -d-o "0..1" Site: SiteBPN
+  Address "*" -d-o "*" Site : AdditionalSites
   
   Site "1" *-l-> "*" SiteState : States
   SiteState "*" -d-o "1" SiteStateType : Type

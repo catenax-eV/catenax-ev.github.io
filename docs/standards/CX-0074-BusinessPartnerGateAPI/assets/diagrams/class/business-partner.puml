@@ -96,12 +96,27 @@ package "Business Partner and References" {
     ShortName
   }
 
+  class LegalEntityGoldenRecordRelation {
+    SourceBPN
+    TargetBPN
+  }
+
+  enum LegalEntityGoldenRecordRelationType {
+    IsAlternativeHeadquarterFor
+    IsManagedBy
+    IsOwnedBy
+  }
+
   entity Site {
     BPNS
     ...
   }
 
   class SiteRepresentation {
+    Name
+  }
+
+  class AdditionalSite {
     Name
   }
 
@@ -114,6 +129,15 @@ package "Business Partner and References" {
     Name
   }
 
+  class AddressGoldenRecordRelation {
+    SourceBPN
+    TargetBPN
+  }
+
+  enum AddressGoldenRecordRelationType {
+    IsReplacedBy
+  }
+
   ' not yet standardized, as not clear if operating company can correctly implement it
   ' class ConfidenceCriteria {
   '   SharedByOwner
@@ -123,8 +147,6 @@ package "Business Partner and References" {
   '   NextConfidenceCheckAt
   '   ConfidenceLevel
   ' }
-
-  class AddressRepresentation { }
 
   enum AddressType {
     LegalAddress
@@ -192,40 +214,21 @@ package "Business Partner and References" {
     Direction
   }
 
-  ' not implemented / standardized yet
-  ' class LegalEntityScriptVariant {
-  '   LegalName
-  '   ShortName
-  ' }
-  
-  ' class SiteScriptVariant {
-  '   Name
-  ' }
-
-  ' class AddressScriptVariant {
-  '   Name
-  ' }
-
-  ' class BusinessPartnerScriptVariant {
-  '   NameParts
-  ' }
-
-  ' enum ScriptCode {
-  '   Arab
-  '   Cyrl
-  '   Hans
-  '   Jpan
-  '   Latn
-  '   ...
-  ' }
+  class BusinessPartnerScriptVariant {
+    ScriptCode
+    NameParts
+    ...
+  }
 
   BusinessPartner "1" -u-> "1" LegalEntityRepresentation : LegalEntity
   BusinessPartner "1" -u-> "0..1" SiteRepresentation : Site
   BusinessPartner "1" -u-> "1" AddressRepresentation : Address
+  BusinessPartner "1" -u-> "*" AdditionalSite : AdditionalSites
 
   LegalEntityRepresentation "0..1" -u-> "1" LegalEntity : BPNL
   SiteRepresentation "0..1" -u-> "1" Site : BPNS
   AddressRepresentation "0..1" -u-> "1" Address : BPNA
+  AdditionalSite "*" -u-> "1" Site : BPNS
 
   AddressRepresentation "*" -u-o "1" AddressType : Type
   AddressRepresentation "1" -d-> "0..1" AlternativePostalAddress : AlternativePostalAddress
@@ -252,11 +255,17 @@ package "Business Partner and References" {
   LegalEntityRepresentation "1" *-u-> "*" LegalEntityState : States
   LegalEntityState "*" -u-o "1" LegalEntityStateType : Type
 
+  LegalEntityRepresentation "1" *-r-> "*" LegalEntityGoldenRecordRelation : GoldenRecordRelations
+  LegalEntityGoldenRecordRelation "*" -r-o "1" LegalEntityGoldenRecordRelationType : Type
+
   SiteRepresentation "1" *-u-> "*" SiteState : States
   SiteState "*" -u-o "1" SiteStateType : Type
 
   AddressRepresentation "1" *-u-> "*" AddressState : States
   AddressState "*" -u-o "1" AddressStateType : Type
+
+  AddressRepresentation "1" *-r-> "*" AddressGoldenRecordRelation : GoldenRecordRelations
+  AddressGoldenRecordRelation "*" -r-o "1" AddressGoldenRecordRelationType : Type
 
   BusinessPartner "1" *-d-> "*" BusinessPartnerIdentifier : Identifiers
   BusinessPartnerIdentifier "*" -d-o "1" IdentifierType : Type
@@ -269,20 +278,7 @@ package "Business Partner and References" {
   
   LegalEntityRepresentation "*" -d-o "0..1" LegalForm : LegalForm
 
-  ' not implemented / standardized yet
-  ' LegalEntityRepresentation "1" *--> "*" LegalEntityScriptVariant : ScriptVariants
-  ' LegalEntityScriptVariant "*" --o "1" ScriptCode : ScriptCode
-
-  ' SiteRepresentation "1" *--> "*" SiteScriptVariant : ScriptVariants
-  ' SiteScriptVariant "*" --o "1" ScriptCode : ScriptCode
-
-  ' AddressRepresentation "1" *--> "*" AddressScriptVariant : ScriptVariants
-  ' AddressScriptVariant "*" --o "1" ScriptCode : ScriptCode
-  ' AddressScriptVariant "1" -d-> "1" PhysicalPostalAddress : PhysicalPostalAddress
-  ' AddressScriptVariant "1" -d-> "0..1" AlternativePostalAddress : AlternativePostalAddress
-
-  ' BusinessPartner "1" *--> "*" BusinessPartnerScriptVariant : ScriptVariants
-  ' BusinessPartnerScriptVariant "*" --o "1" ScriptCode : ScriptCode
+  BusinessPartner "1" *-d-> "*" BusinessPartnerScriptVariant : ScriptVariants
 }
 
 hide methods

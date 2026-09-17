@@ -3,31 +3,14 @@ sidebar_position: 1
 ---
 # How: Data Space Operations
 
-This chapter provides an overview of the key processes and compliance requirements for onboarding to the Catena-X data space. It covers the data exchange process based on Self Sovereign Identities (SSI) for offering, exchanging, and using data. Finally, guidelines and support options for the use of connectors are described.
+This chapter provides an overview of operational key processes and compliance requirements within the Catena-X data space. It serves as a binding reference for all stakeholders involved in the application, operation, governance, and continuous evolution of these processes.
+
+The objective of this chapter is to ensure a consistent understanding and implementation of operational procedures by documenting current best practices, responsibilities, and process descriptions.
 
 ## Onboarding Process
 
-The onboarding process consists of the (i) registration process and (ii) registration approval process and can be extended by the (iii) technical integration process in accordance with the CX-0006 standard (see Figure [Onboarding Process](./how-data-space-operations.md#onboarding-process)). To join the data space, all participants must complete the registration process. To exchange data with partners, participants must also complete the technical integration process and sign the General Data Exchange Framework.
-
-![Onboarding Process](./assets/onboarding-process.png)
-*Onboarding Process*
-
-### Registration
-
-During the registration process, all participants must add their company data, select their company role(s), and submit their registration via the registration service of the CSP-B or one of the OSPs (see Chapter [Onboarding Service Provider](./../who-roles-in-the-catena-x-ecosystem/who-roles-in-the-catena-x-ecosystem.md#onboarding-service-provider)). The registration service of the OSP is integrated into the general registration service of the CSP-B, e.g. using the registration API (CX-0009) and the IAM & Access Control for Single Sign-On (SSO). Subsequently, all participants must confirm their selected company role(s) and the regulatory framework including role-specific terms and conditions via the CSP-B registration service.
-
-### Registration Approval
-
-After confirmation, a BPNL (if not yet available) and an identity wallet with the "BPNL" and "Catena-X Membership" credentials are created by the CSP-B as part of the registration approval step. Each participant can collect their proof of identity, credentials and other verifiable information (e.g., roles, rights, services) in their identity wallet. The self-descriptions (SD) of newly registered legal entities and connectors are validated by the Digital Clearing House (see Chapter [Clearing House as a trust anchor](./how-data-space-operations.md#clearing-house-as-a-trust-anchor)).
-This validation process includes the verification, signing, and issuance of credentials to the identity wallet of the [Data Provider and Consumer (DPC)](../who-roles-in-the-catena-x-ecosystem/who-roles-in-the-catena-x-ecosystem.md#data-providerconsumer), thereby providing a trusted attestation of the legal entity and its eligibility to participate in the Catena-X data space.
-
-### Technical Integration
-
-After registration, participants can start the technical integration process (e.g., create technical users, regsiter connectors) to enable technical interaction with other participants. The technical user enables a company to link their connectors to its identity wallet. The connector registration is required to ensure that a connector can be searched and discovered by other participants within the data space.
-
-### Managing Company Hierarchies
-
-After successful registration, participants can create and manage their company hierarchies. Catena-X Business Partner Data Management allows you to create and manage sites and additional addresses for your legal entities. In a future version, it will also be possible to create and manage relationships between two legal entities (e.g., subsidiaries). This is relevant, for example, for the various connector usage scenarios as described in chapter [EDC Deployment and Usage Premises](./how-data-space-operations.md#edc-deployment-and-usage-premises).
+The onboarding process enables prospective participants to join the Catena-X data space in a structured, standardized, and trust-based manner. Organizations intending to participate in the Catena-X data space in a role that requires onboarding **MUST** complete the onboarding process defined in the related standard [CX-0006 Registration and Initial Onboarding](https://catenax-ev.github.io/docs/standards/CX-0006-RegistrationAndInitialOnboarding).
+The process ensures that each participant is uniquely identifiable, successfully verified, and established as a trusted member of the data space before being authorized to engage in data transactions. It further defines the responsibilities of the involved actors and the mandatory sequence of activities required to establish participation.
 
 ## Implementation of the Self Sovereign Identity Concept
 
