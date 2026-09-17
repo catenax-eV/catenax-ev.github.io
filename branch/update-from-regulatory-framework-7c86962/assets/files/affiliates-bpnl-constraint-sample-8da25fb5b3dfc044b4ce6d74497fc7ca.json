@@ -1,0 +1,7 @@
+{
+    "leftOperand": "AffiliatesBpnl",
+    "operator": "isAnyOf",
+    "rightOperand": [
+        "BPNL012345678910"
+    ]
+}

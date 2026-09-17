@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkcatenax_ev_github_io_new=globalThis.webpackChunkcatenax_ev_github_io_new||[]).push([[81903],{1912(e){e.exports=JSON.parse('{"blogBasePath":"/branch/update-from-regulatory-framework-7c86962/blog-releasenotes","blogTitle":"Blog","authorsListPath":"/branch/update-from-regulatory-framework-7c86962/blog-releasenotes/authors"}')}}]);

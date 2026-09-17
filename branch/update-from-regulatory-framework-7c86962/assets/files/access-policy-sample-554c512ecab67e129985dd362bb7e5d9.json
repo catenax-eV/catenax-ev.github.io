@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://w3id.org/catenax/2025/9/policy/odrl.jsonld",
+    "https://w3id.org/catenax/2025/9/policy/context.jsonld"
+  ],
+  "@type": "Set", 
+  "@id": "some-id",
+  "permission": [
+    {
+      "action": "access",
+      "constraint": [
+        {
+          "and": [
+            {
+              "leftOperand": "Membership",
+              "operator": "eq", 
+              "rightOperand": "active" 
+            },
+            {
+              "leftOperand": "BusinessPartnerNumber", 
+              "operator": "isAnyOf", 
+              "rightOperand": [
+                "BPNL012345678910" 
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

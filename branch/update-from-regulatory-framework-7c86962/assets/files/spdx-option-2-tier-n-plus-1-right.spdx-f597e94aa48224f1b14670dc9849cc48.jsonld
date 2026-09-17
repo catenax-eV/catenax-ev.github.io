@@ -1,0 +1,41 @@
+{
+  "spdxVersion": "SPDX-2.2",
+  "dataLicense": "COTS-Example-2",
+  "SPDXID": "SPDXRef-DOCUMENT",
+  "name": "Example SBOM",
+  "documentNamespace": "http://spdx.org/spdxdocs/example-sbom-2.2",
+  "creationInfo": {
+    "created": "2025-07-08T00:00:00Z",
+    "creators": [
+      "Tool: SPDX-Generator"
+    ]
+  },
+  "packages": [
+    {
+      "name": "A",
+      "SPDXID": "SPDXRef-A",
+      "versionInfo": "1.0.0",
+      "downloadLocation": "http://example.com/dependency-a",
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "licenseInfoFromFiles": [
+        "MIT"
+      ],
+      "filesAnalyzed": false
+    },
+    {
+      "name": "C",
+      "SPDXID": "SPDXRef-C",
+      "versionInfo": "2.0.0",
+      "downloadLocation": "http://example.com/dependency-c",
+      "licenseConcluded": "Apache-2.0",
+      "licenseDeclared": "Apache-2.0",
+      "licenseInfoFromFiles": [
+        "Apache-2.0"
+      ],
+      "filesAnalyzed": false
+    }
+  ],
+  "relationships": [
+  ]
+}

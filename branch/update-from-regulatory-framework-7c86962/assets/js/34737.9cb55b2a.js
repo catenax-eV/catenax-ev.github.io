@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkcatenax_ev_github_io_new=globalThis.webpackChunkcatenax_ev_github_io_new||[]).push([[34737],{34737(e,a,i){i.d(a,{createPieServices:()=>_.f});var _=i(10532);i(69302)}}]);
