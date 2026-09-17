@@ -2,7 +2,7 @@
 title: CX-Neptune
 description: Details of the CX-Neptune release for Catena-X, including standards, operating model, regulatory framework, and reference implementations.
 slug: cx-neptune
-date: 2026-09-16
+date: 2026-09-18
 tags: [release, neptune]
 ---
 
