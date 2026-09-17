@@ -1,5 +1,0 @@
-{
-  "leftOperand": "JurisdictionLocation",
-  "operator": "eq",
-  "rightOperand": "Munich"
-}
