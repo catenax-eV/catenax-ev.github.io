@@ -4,7 +4,7 @@
         <title>Catena-X - Library Blog</title>
         <link>https://catena-x.net/branch/docs-release-cx-neptune/blog-releasenotes</link>
         <description>Catena-X - Library Blog</description>
-        <lastBuildDate>Wed, 16 Sep 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 18 Sep 2026 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
@@ -12,7 +12,7 @@
             <title><![CDATA[CX-Neptune]]></title>
             <link>https://catena-x.net/branch/docs-release-cx-neptune/blog-releasenotes/cx-neptune</link>
             <guid>https://catena-x.net/branch/docs-release-cx-neptune/blog-releasenotes/cx-neptune</guid>
-            <pubDate>Wed, 16 Sep 2026 00:00:00 GMT</pubDate>
+            <pubDate>Fri, 18 Sep 2026 00:00:00 GMT</pubDate>
             <description><![CDATA[Details of the CX-Neptune release for Catena-X, including standards, operating model, regulatory framework, and reference implementations.]]></description>
             <content:encoded><![CDATA[<p><a href="https://catena-x.net/branch/docs-release-cx-neptune/assets/files/Release-Neptune-796630e1a3d56af12ec2d2638122b0c5.png" target="_blank" class=""><img decoding="async" loading="lazy" alt="CX-Neptune Release Banner" src="https://catena-x.net/branch/docs-release-cx-neptune/assets/images/Release-Neptune-796630e1a3d56af12ec2d2638122b0c5.png" width="4400" height="1301" class="img_ev3q"></a></p>
 <p>Named after the planet Neptune, CX-Neptune symbolizes depth, stability, and the exploration of new frontiers within the Catena-X data space.

@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://catena-x.net/branch/docs-release-cx-neptune/blog-releasenotes</id>
     <title>Catena-X - Library Blog</title>
-    <updated>2026-09-16T00:00:00.000Z</updated>
+    <updated>2026-09-18T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://catena-x.net/branch/docs-release-cx-neptune/blog-releasenotes"/>
     <subtitle>Catena-X - Library Blog</subtitle>
@@ -11,7 +11,7 @@
         <title type="html"><![CDATA[CX-Neptune]]></title>
         <id>https://catena-x.net/branch/docs-release-cx-neptune/blog-releasenotes/cx-neptune</id>
         <link href="https://catena-x.net/branch/docs-release-cx-neptune/blog-releasenotes/cx-neptune"/>
-        <updated>2026-09-16T00:00:00.000Z</updated>
+        <updated>2026-09-18T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Details of the CX-Neptune release for Catena-X, including standards, operating model, regulatory framework, and reference implementations.]]></summary>
         <content type="html"><![CDATA[<p><a href="https://catena-x.net/branch/docs-release-cx-neptune/assets/files/Release-Neptune-796630e1a3d56af12ec2d2638122b0c5.png" target="_blank" class=""><img decoding="async" loading="lazy" alt="CX-Neptune Release Banner" src="https://catena-x.net/branch/docs-release-cx-neptune/assets/images/Release-Neptune-796630e1a3d56af12ec2d2638122b0c5.png" width="4400" height="1301" class="img_ev3q"></a></p>
 <p>Named after the planet Neptune, CX-Neptune symbolizes depth, stability, and the exploration of new frontiers within the Catena-X data space.
