@@ -235,9 +235,22 @@ The PCF Rulebook is not a standard but the methodology behind the numbers: it de
 
 ### Certification
 
-| Rulebook                                                     | Status  | Value |
-|--------------------------------------------------------------|---------|-------|
-| [CX-NFR-CAF](/docs/next/rulebooks/CX-NFR-CAF/introduction-and-framework) | Updated |       |
+The Conformity Assessment Framework is now maintained and published as Markdown in the same documentation library as the Catena-X Standards.
+The reason for the transition is consistency: the Conformity Assessment Framework is released together with the standards, so framework and standards are always aligned.
+In addition, the framework is easier to access and to read than the previous PDF.
+
+:::info Highlights
+
+- Modular system made normative, incl. role and use case lists for all six certifiable roles and the ESP function-to-standard table.
+- New Provider Base rules: TISAX Level 2 mandatory, defined alternative certifications (four categories) and a three-month compliance period.
+- Release support & certificate validity clarified: certification against the "Current" and "Maintained" release, validity for release N and N+1.
+- Extension of certificates for unchanged standards: where a standard has not changed or has only received patch changes, its validity can be extended to the following major release upon request to the association (currently nominated: CX-0128) — all other standards of the product remain subject to regular recertification.
+
+:::
+
+| Rulebook                                                                 | Status  | Value                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+|--------------------------------------------------------------------------|---------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [CX-NFR-CAF](/docs/next/rulebooks/CX-NFR-CAF/introduction-and-framework) | Updated | Released with the standards: <br/><br/> - CABs have always received the updated certification catalog and modular system — the difference is that the CAF is now published via the documentation library and updated at the same time as the standards. <br/> <br/> - Better readability and access: deep-linkable chapters, searchable content and structured tables instead of a slide-based PDF. <br/> <br/> - Clear normative status: the modular system chapter is explicitly binding — the certification scope is derived from role + use case, without room for interpretation. |
 
 ---
 
