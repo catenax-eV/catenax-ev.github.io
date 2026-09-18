@@ -103,6 +103,8 @@ To validate that the standards are applied correctly, Catena-X employs Conformit
 
 If a participant or application only implements only a selected number of use cases described in this standard, then conformity must only be demonstrated along conformity assessment criteria (CACs) that apply to the specific use case.
 
+The endpoints of the API-definition of Submodel Service Specification - Value Profile must compliant to CX-0002. In case of a deviation, CX-0002 is considered as the Source of Truth.
+
 ### 1.4 EXAMPLES
 
 > *This section is non-normative*
