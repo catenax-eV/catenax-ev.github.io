@@ -49,11 +49,11 @@ Certifications at Catena-X can be obtained for different types of services or so
 
 The following figures detail the standards applicable to each of the six roles and matching modules.
 
-![Modular System: Use Cases](./assets/images/modular-system-overview.svg)
+![Modular System: Use Cases](./assets/images/modular-system-overview.png)
 
-![Modular System: Data Space Roles](./assets/images/modular-system-bap.svg)
+![Modular System: Data Space Roles](./assets/images/modular-system-bap.png)
 
-![Modular System: Data Space Roles](./assets/images/modular-system-overview.svg)
+![Modular System: Data Space Roles](./assets/images/modular-system-overview.png)
 
 ## Legal
 
