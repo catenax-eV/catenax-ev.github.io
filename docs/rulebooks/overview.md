@@ -23,7 +23,7 @@ tags:
 
 | Conformity Assessment Framework Handbook | |
 |:---:|:---:|
-| [![CX-NFR-CAF.png](./assets/images/CX-NFR-CAF.png)](./CX-NFR-CAF/introduction-and-framework.md) | |
+| [![CX-NFR-CAF.png](./assets/images/CX-NFR-CAF.png)](./CX-NFR-CAF/introduction-and-framework) | |
 
 ## Legal
 
