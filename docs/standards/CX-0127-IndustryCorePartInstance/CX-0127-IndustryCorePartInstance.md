@@ -61,7 +61,7 @@ Please refer to: https://catena-x.net/en/catena-x-introduce-implement/certificat
 
 The specific criteria described in this document are describing the usage of the central tools as well as common tools described in the linked standardization documents and therefore compliance should be checked with the tools provided for these components.
 
-The versions of the standardization documents valid for this standard are mentioned in sections where the [standalone standards](#211-list-of-standalone-standards), [normative references](#61-normative-references) and [non-normative references](#62-non-normative-references) are listed. The valid versions are not specifically mentioned in the body text.
+The versions of the standardization documents valid for this standard are mentioned in sections where the [standalone standards](#211-list-of-standalone-standards), [normative references](#71-normative-references) and [non-normative references](#72-non-normative-references) are listed. The valid versions are not specifically mentioned in the body text.
 
 **Disclaimer: The operating model released by the Catena-X association will define the roadmap, content and scope for the certification process. This will include the roles, certification and further assessment procedures as well as the rollout phases.*
 
@@ -268,7 +268,7 @@ For the changelog of the aspect model, [see here](https://github.com/eclipse-tra
 
 #### 3.1.2 SPECIFICATIONS ARTIFACTS
 
-The modeling of the semantic model specified in this document was done in accordance to the "semantic driven workflow" to create a submodel template specification [SMT](#62-non-normative-references).
+The modeling of the semantic model specified in this document was done in accordance to the "semantic driven workflow" to create a submodel template specification [SMT](#72-non-normative-references).
 
 #### 3.1.3 LICENSE
 
@@ -312,7 +312,7 @@ payload of the Asset Administration Shell for the API operation "GetSubmodel".
 ##### 3.1.5.3 AASX
 
 An AASX file can be generated from the RDF Turtle file. The AASX file defines one of the requested
-artifacts for a Submodel Template Specification conformant to \[[SMT](#62-non-normative-references)].
+artifacts for a Submodel Template Specification conformant to \[[SMT](#72-non-normative-references)].
 
 #### 3.1.6 EXAMPLE DATA
 
@@ -432,7 +432,7 @@ For the changelog of the aspect model, [see here](https://github.com/eclipse-tra
 
 #### 3.2.2 SPECIFICATIONS ARTIFACTS
 
-The modeling of the semantic model specified in this document was done in accordance to the "semantic driven workflow" to create a submodel template specification [SMT](#62-non-normative-references).
+The modeling of the semantic model specified in this document was done in accordance to the "semantic driven workflow" to create a submodel template specification [SMT](#72-non-normative-references).
 
 The aspect model is written in SAMM 2.1.0 as a modeling language conformant to CX-0003 as input for the semantic driven workflow.
 
@@ -479,7 +479,7 @@ payload of the Asset Administration Shell for the API operation "GetSubmodel".
 ##### 3.2.5.3 AASX
 
 An AASX file can be generated from the RDF Turtle file. The AASX file defines one of the requested
-artifacts for a Submodel Template Specification conformant to \[[SMT](#62-non-normative-references)].
+artifacts for a Submodel Template Specification conformant to \[[SMT](#72-non-normative-references)].
 
 #### 3.2.6 EXAMPLE DATA
 
@@ -538,7 +538,7 @@ For the changelog of the aspect model, [see here](https://github.com/eclipse-tra
 
 #### 3.3.2 SPECIFICATIONS ARTIFACTS
 
-The modeling of the semantic model specified in this document was done in accordance to the "semantic driven workflow" to create a submodel template specification [SMT](#62-non-normative-references).
+The modeling of the semantic model specified in this document was done in accordance to the "semantic driven workflow" to create a submodel template specification [SMT](#72-non-normative-references).
 
 The aspect model is written in SAMM 2.1.0 as a modeling language conformant to CX-0003 as input for the semantic driven workflow.
 
@@ -588,7 +588,7 @@ payload of the Asset Administration Shell for the API operation "GetSubmodel".
 ##### 3.3.5.3 AASX
 
 An AASX file can be generated from the RDF Turtle file. The AASX file defines one of the requested
-artifacts for a Submodel Template Specification conformant to \[[SMT](#62-non-normative-references)].
+artifacts for a Submodel Template Specification conformant to \[[SMT](#72-non-normative-references)].
 
 #### 3.3.6 EXAMPLE DATA
 
@@ -653,7 +653,7 @@ For the changelog of the aspect model, [see here](https://github.com/eclipse-tra
 
 #### 3.4.2 SPECIFICATIONS ARTIFACTS
 
-The modeling of the semantic model specified in this document was done in accordance to the "semantic driven workflow" to create a submodel template specification [SMT](#62-non-normative-references).
+The modeling of the semantic model specified in this document was done in accordance to the "semantic driven workflow" to create a submodel template specification [SMT](#72-non-normative-references).
 
 The aspect model SingleLevelBomAsBuilt is written in SAMM 2.1.0 as a modeling language conformant to CX-0003
 as input for the semantic driven workflow.
@@ -704,7 +704,7 @@ payload of the Asset Administration Shell for the API operation "GetSubmodel".
 ##### 3.4.5.3 AASX
 
 An AASX file can be generated from the RDF Turtle file. The AASX file defines one of the requested
-artifacts for a Submodel Template Specification conformant to \[[SMT](#62-non-normative-references)].
+artifacts for a Submodel Template Specification conformant to \[[SMT](#72-non-normative-references)].
 
 #### 3.4.6 EXAMPLE DATA
 
@@ -776,7 +776,7 @@ For the changelog of the aspect model, [see here](https://github.com/eclipse-tra
 
 #### 3.5.2 SPECIFICATIONS ARTIFACTS
 
-The modeling of the semantic model specified in this document was done in accordance to the "semantic driven workflow" to create a submodel template specification [SMT](#62-non-normative-references).
+The modeling of the semantic model specified in this document was done in accordance to the "semantic driven workflow" to create a submodel template specification [SMT](#72-non-normative-references).
 
 The aspect model SingleLevelUsageAsBuilt is written in SAMM 2.1.0 as a modeling language conformant to CX-0003
 as input for the semantic driven workflow.
@@ -827,7 +827,7 @@ payload of the Asset Administration Shell for the API operation "GetSubmodel".
 ##### 3.5.5.3 AASX
 
 An AASX file can be generated from the RDF Turtle file. The AASX file defines one of the requested
-artifacts for a Submodel Template Specification conformant to \[[SMT](#62-non-normative-references)].
+artifacts for a Submodel Template Specification conformant to \[[SMT](#72-non-normative-references)].
 
 #### 3.5.6 EXAMPLE DATA
 
@@ -984,10 +984,34 @@ The API version described in this standard document **MUST** be published in the
 > *This section is normative*
   
 There is no prcoess defintion in this standard version available.
+
+## 6 BACKWARD COMPATIBILITY
+
+> *This section is normative*
+
+The previous version of CX-0127 Industry Core PartInstance requires the following aspect model versions:
+
+- `urn:samm:io.catenax.serial_part:3.0.0#SerialPart`
+- `urn:samm:io.catenax.batch:3.0.0#Batch`
+- `urn:samm:io.catenax.just_in_sequence_part:3.0.0#JustInSequencePart`
+- `urn:samm:io.catenax.single_level_bom_as_built:3.0.0#SingleLevelBomAsBuilt`
+- `urn:samm:io.catenax.single_level_usage_as_built:3.0.0#SingleLevelUsageAsBuilt`
+
+The new release updates these models to:
+
+- `urn:samm:io.catenax.industry_core.serial_part:4.0.0#SerialPart`
+- `urn:samm:io.catenax.industry_core.batch:4.0.0#Batch`
+- `urn:samm:io.catenax.industry_core.just_in_sequence_part:4.0.0#JustInSequencePart`
+- `urn:samm:io.catenax.industry_core.single_level_bom_as_built:4.0.0#SingleLevelBomAsBuilt`
+- `urn:samm:io.catenax.industry_core.single_level_usage_as_built:4.0.0#SingleLevelUsageAsBuilt`
+
+Applications developed under the new release **MUST** provide the capability to interpret both the previous and the current aspect model versions in order to remain interoperable with applications based on earlier releases and to ensure seamless data exchange across the ecosystem.
+
+Applications **MUST** be able to attach, publish, retrieve, and interpret submodels conforming to any of the aspect model versions listed above.
+
+## 7 REFERENCES
   
-## 6 REFERENCES
-  
-### 6.1 NORMATIVE REFERENCES
+### 7.1 NORMATIVE REFERENCES
   
 > *This section is normative*
 
@@ -996,7 +1020,7 @@ There is no prcoess defintion in this standard version available.
 - CX-0045 Aspect Model Data Chain Template
 - CX-0152 Policy Constraints For Data Exchange
 
-### 6.2 NON-NORMATIVE REFERENCES
+### 7.2 NON-NORMATIVE REFERENCES
 
 > *This section is non-normative*
 
@@ -1010,7 +1034,7 @@ Download from: [https://industrialdigitaltwin.org/wp-content/uploads/2022/12/I40
 
 [^3]: https://github.com/eclipse-esmf/esmf-sdk
 
-### 6.3 REFERENCE IMPLEMENTATIONS
+### 7.3 REFERENCE IMPLEMENTATIONS
 
 > *This section is non-normative*
 
