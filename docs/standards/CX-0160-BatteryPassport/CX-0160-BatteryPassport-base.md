@@ -3,7 +3,7 @@
 :::warning
 
 Use Case 2 (CX-0160-2) of this standard will be a added through a **fast-track process** to be included in the CX-Neptune release.
-These exceptions will be released together with the  *CX-Neptune Go-Live** of all other standards on **24 of November 2026**.
+These exceptions will be released together with the  **CX-Neptune Go-Live** of all other standards on **24 of November 2026**.
 
 **Therefore, this version of the standard is not eligible for certification yet**
 
