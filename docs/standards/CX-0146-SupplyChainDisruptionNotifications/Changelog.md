@@ -4,6 +4,18 @@ title: "Changelog"
 
 All notable changes to CX-0146 will be documented in this file.
 
+## [3.0.0] - 2026-09-16
+
+### Fixed
+
+- changed purl context from https to http to reflect correct scheme in example of [4.1.3 DATA ASSET STRUCTURE](./CX-0146-SupplyChainDisruptionNotifications.md#413-data-asset-structure).
+- ensure that the scheme and examples don't use a property `demandAndCapacityNotification` in object `content`. A mistake has been made in version 2.0.0 removing it in the examples but not in the schema. As the schema is more leading, this is considered a major instead of a bugfix change.
+- Added [Chapter 4.1.3.1](./CX-0146-SupplyChainDisruptionNotifications.md#4131-backward-compatibility) for backward compatibility and keep both open api schemes
+
+## Changed
+
+- bumped versions of referenced standards with cross-checks
+
 ## [2.0.0] - 2025-06-24
 
 ### Added

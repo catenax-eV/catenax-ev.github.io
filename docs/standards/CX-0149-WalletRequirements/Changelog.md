@@ -4,6 +4,12 @@ title: "Changelog"
 
 All notable changes to CX-0149 will be documented in this file.
 
+## [2.1.0] - R26.09 (CX-Neptune)
+
+### Removed
+
+- removed backward-compatibility requirements to DCP 0.8
+
 ## [2.0.0] - R25.09 (CX-Saturn)
 
 ### Added

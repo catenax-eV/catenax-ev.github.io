@@ -8,6 +8,15 @@ tags:
 
 # CX-0009 CX Registration API v2.0.0
 
+:::warning
+
+The following standard was reviewed and identified as not ready for release. Therefore this standard was allowed to apply the required changes through a **fast-track process** to be included in the CX-Neptune release.
+These exceptions will be released together with the  **CX-Neptune Go-Live** of all other standards on **24 of November 2026**.
+
+**Therefore, this version of the standard is not eligible for certification yet**
+
+:::
+
 ## CAMPARISON TO THE LAST VERSION
 
 | Version | Change by    | Change Details                                                                                                                                                                  |

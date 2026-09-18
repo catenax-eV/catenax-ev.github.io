@@ -4,7 +4,15 @@ title: "Changelog"
 
 All notable changes to CX-0154 will be documented in this file.
 
-## [1.1.0] - CX-Saturn (25.12)
+## [1.1.0] - CX-Neptune (26.09)
+
+### Added
+
+- CACs added
+- PartRole including rational added
+- Link to CX-0156 and CX-0155 established
+
+## [1.0.1] - CX-Saturn (25.12)
 
 ### Added
 

@@ -4,7 +4,7 @@ tags:
   - CAT/Industry Core
 ---
 
-# CX-0127 Industry Core: Part Instance 2.0.2
+# CX-0127 Industry Core: Part Instance 3.0.0
 
 ## ABSTRACT
 
@@ -13,28 +13,6 @@ This standard describes the "Industry Core: Part Instance". It sets the foundati
 ## FOR WHOM IS THE STANDARD DESIGNED
 
 This standard is designed for everybody who wants to register, describe and use digital twins on part instance level.
-
-## COMPARISON WITH THE PREVIOUS VERSION OF THE STANDARD
-
-- New versions of aspect models in [Section 3](#3-aspect-models)
-  - SerialPart 3.0.0 (see link to changelog in section of the aspect model)
-  - Batch 3.0.0 (see link to changelog in section of the aspect model)
-  - JustInSequencePart 3.0.0 (see link to changelog in section of the aspect model)
-  - SingleLevelBomAsBuilt 3.0.0 (see link to changelog in section of the aspect model)
-- Newly standardized aspect models in [Section 3](#3-aspect-models)
-  - SingleLevelUsageAsBuilt 3.0.0 (see link to changelog in section of the aspect model)
-- Aspect model JustInSequencePart now **MUST** be provided when creating a digital twin for a Just-In-Seuqence-Part (was optional before) in [Section 2.1.2](#212-data-required)
-- Changes in specificAssetIds of Digital Twins in [Section 2.1.4](#214-digital-twins-and-specific-asset-ids)
-  - Removed assetLifeCyclePhase
-  - DigitalTwinType is now mandatory (before it was optional)
-  - Added intrinsicId specifically for Digital Twins for serialized parts, batches and just-in-sequence-parts
-  - Removed partInstanceId from Digital Twins for batches and just-in-sequence-parts
-- Added Unique ID Push Notification API in [Section 4.1](#41-unique-id-push-notification-api) as content of industry core
-- New paragraph "Conventions for Use Case Policy in context data exchange" in [Section 2.1.3](#213-additional-requirements)
-- Added notes for versioning in [Section 2.1.3](#213-additional-requirements)
-- Deleted "Every certified business application relying on aspects models of this standard **MUST** be able to consume data conformant to the semantic models specified in this document." from [Section 3](#3-aspect-models)
-
-Note: This release (**24.05.**) contains **breaking changes**!
 
 ## 1 INTRODUCTION
 
@@ -83,7 +61,7 @@ Please refer to: https://catena-x.net/en/catena-x-introduce-implement/certificat
 
 The specific criteria described in this document are describing the usage of the central tools as well as common tools described in the linked standardization documents and therefore compliance should be checked with the tools provided for these components.
 
-The versions of the standardization documents valid for this standard are mentioned in sections where the [standalone standards](#211-list-of-standalone-standards), [normative references](#61-normative-references) and [non-normative references](#62-non-normative-references) are listed. The valid versions are not specifically mentioned in the body text.
+The versions of the standardization documents valid for this standard are mentioned in sections where the [standalone standards](#211-list-of-standalone-standards), [normative references](#71-normative-references) and [non-normative references](#72-non-normative-references) are listed. The valid versions are not specifically mentioned in the body text.
 
 **Disclaimer: The operating model released by the Catena-X association will define the roadmap, content and scope for the certification process. This will include the roles, certification and further assessment procedures as well as the rollout phases.*
 
@@ -147,8 +125,8 @@ Additional terminology used in this standard can be looked up in the glossary on
 
 To participate in Data Provisioning for the "Industry Core: Part Instance", the following single standards **MUST** be fulfilled by all participants for which the standard is relevant:
 
-- CX-0002 Digital Twins in Catena-X 2.2.0
-- CX-0018 Dataspace Connectivity 3.0.0
+- CX-0002 Digital Twins in Catena-X
+- CX-0018 Dataspace Connectivity
 
 #### 2.1.2 DATA REQUIRED
 
@@ -284,18 +262,13 @@ More specific, the model links local identifiers like manufacturerPartId, custom
 This allows decoupling of the network identifiers from the actual business process.
 By accessing this aspect you can link a physical part to its representation within Catena-X.
 
-Note: The Aspect model SerialPart **v3.0.0** is **mandatory**. Versions higher than that are **optional**, but might become mandatory in future releases of this standard.
+Note: The Aspect model SerialPart **v4.0.0** is **mandatory**. Versions higher than that are **optional**, but might become mandatory in future releases of this standard.
 
-For the changelog of the aspect model, [see here](https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.serial_part/RELEASE_NOTES.md).
+For the changelog of the aspect model, [see here](https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.industry_core.serial_part/RELEASE_NOTES.md).
 
 #### 3.1.2 SPECIFICATIONS ARTIFACTS
 
-The modeling of the semantic model specified in this document was done in accordance to the "semantic driven workflow" to create a submodel template specification [SMT](#62-non-normative-references).
-
-The aspect model is written in SAMM 2.1.0 as a modeling language conformant to CX-0003 as input for the semantic driven workflow.
-
-Like all Catena-X data models, this model is available in a machine-readable format on GitHub
-conformant to CX-0003.
+The modeling of the semantic model specified in this document was done in accordance to the "semantic driven workflow" to create a submodel template specification [SMT](#72-non-normative-references).
 
 #### 3.1.3 LICENSE
 
@@ -316,7 +289,7 @@ The semantic model has the unique identifier
 SerialPart **v3.0.0** (mandatory)
 
 ```text
-urn:samm:io.catenax.serial_part:3.0.0#SerialPart 
+urn:samm:io.catenax.industry_core.serial_part:4.0.0#SerialPart 
 ```
 
 #### 3.1.5 FORMATS OF SEMANTIC MODEL
@@ -325,9 +298,9 @@ urn:samm:io.catenax.serial_part:3.0.0#SerialPart
 
 The rdf turtle file, an instance of the Semantic Aspect Meta Model, is the master for generating additional file formats and serializations.  These can be viewed by following links:
 
-SerialPart **v3.0.0** (mandatory)
+SerialPart **v4.0.0** (mandatory)
 
-https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.serial_part/3.0.0/SerialPart.ttl
+https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.industry_core.serial_part/4.0.0/SerialPart.ttl
 
 The open source command line tool of the Eclipse Semantic Modeling Framework[^3] is used for generation of other file formats like for example a JSON Schema, aasx for Asset Administration Shell Submodel Template or a HTML documentation.
 
@@ -339,63 +312,48 @@ payload of the Asset Administration Shell for the API operation "GetSubmodel".
 ##### 3.1.5.3 AASX
 
 An AASX file can be generated from the RDF Turtle file. The AASX file defines one of the requested
-artifacts for a Submodel Template Specification conformant to \[[SMT](#62-non-normative-references)].
+artifacts for a Submodel Template Specification conformant to \[[SMT](#72-non-normative-references)].
 
 #### 3.1.6 EXAMPLE DATA
 
-Example JSON payload: Submodel **"SerialPart" v3.0.0 for a vehicle**
+Example JSON payload: Submodel **"SerialPart" v4.0.0 for a vehicle**
 
 ```json
 {
   "localIdentifiers": [
     {
-      "key": "manufacturerId",
-      "value": "BPNL7588787849VQ"
-    },
-    {
-      "key": "manufacturerPartId",
-      "value": "95657362-83"
-    },
-    {
-      "key": "partInstanceId",
-      "value": "OEM-A-F8LM95T92WJ9KNDD3HA5P"
-    },
-    {
-      "key": "van",
-      "value": "OEM-A-F8LM95T92WJ9KNDD3HA5P"
+      "value": "BID12345678",
+      "key": "manufacturerId"
     }
   ],
   "manufacturingInformation": {
-    "date": "2022-02-04T14:48:54",
     "country": "DEU",
     "sites": [
       {
-        "catenaXsiteId": "BPNS1234567890ZZ",
+        "siteId": "BPNSvuLuqMETyae1",
         "function": "production"
       }
-    ]
+    ],
+    "productionDate": "2025-09-26"
   },
-  "catenaXId": "urn:uuid:580d3adf-1981-44a0-a214-13d6ceed9379",
+  "globalAssetId": "51cc2e02-50e2-0C7A-7666-eFC4Da10B88E",
   "partTypeInformation": {
-    "manufacturerPartId": "95657362-83",
-    "nameAtManufacturer": "Vehicle Model A",
     "partClassification": [
       {
-        "classificationStandard": "GIN 20510-21513",
-        "classificationID": "1004712",
-        "classificationDescription": "Generic standard for classification of parts in the automotive industry."
-      },
-      {
-        "classificationStandard": "OEM Part Classification 1022-102",
-        "classificationID": "Electric vehicle",
-        "classificationDescription": "OEM standard for classification of parts."
+        "standard": "GIN 20510-21513",
+        "description": "Generic standard for classification of parts in the automotive industry.",
+        "id": "1004712"
       }
     ],
+    "customerPartId": "PRT-12345",
+    "manufacturerPartId": "123-0.740-3434-A",
+    "nameAtManufacturer": "Mirror left",
+    "nameAtCustomer": "side element A"
   }
 }
 ```
 
-Example JSON payload: Submodel **"SerialPart" v3.0.0 for a Serialized Part (Non-Vehicle)**
+Example JSON payload: Submodel **"SerialPart" v4.0.0 for a Serialized Part (Non-Vehicle)**
 
 ```json
 {
@@ -468,13 +426,13 @@ business process.
 By accessing this aspect you can link a physical batch of parts to its
 representation within in Catena-X.
 
-Note: The Aspect model Batch **v3.0.0** is **mandatory**. Versions higher than that are **optional**, but might become mandatory in future releases of this standard.
+Note: The Aspect model Batch **v4.0.0** is **mandatory**. Versions higher than that are **optional**, but might become mandatory in future releases of this standard.
 
-For the changelog of the aspect model, [see here](https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.batch/RELEASE_NOTES.md).
+For the changelog of the aspect model, [see here](https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.industry_core.batch/RELEASE_NOTES.md).
 
 #### 3.2.2 SPECIFICATIONS ARTIFACTS
 
-The modeling of the semantic model specified in this document was done in accordance to the "semantic driven workflow" to create a submodel template specification [SMT](#62-non-normative-references).
+The modeling of the semantic model specified in this document was done in accordance to the "semantic driven workflow" to create a submodel template specification [SMT](#72-non-normative-references).
 
 The aspect model is written in SAMM 2.1.0 as a modeling language conformant to CX-0003 as input for the semantic driven workflow.
 
@@ -496,10 +454,10 @@ github overwrites the information in this specification document.
 #### 3.2.4 IDENTIFIER OF SEMANTIC MODEL
 
 The semantic model has the unique identifier
-Batch **v3.0.0** (mandatory)
+Batch **v4.0.0** (mandatory)
 
 ```text
-urn:samm:io.catenax.batch:3.0.0#Batch
+urn:samm:io.catenax.industry_core.batch:4.0.0#Batch
 ```
 
 #### 3.2.5 FORMATS OF SEMANTIC MODEL
@@ -511,7 +469,7 @@ the master for generating additional file formats and serializations. These can 
 
 Batch **v3.0.0** (mandatory)
 
-https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.batch/3.0.0/Batch.ttl
+https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.industry_core.batch/4.0.0/Batch.ttl
 
 ##### 3.2.5.2 JSON SCHEMA
 
@@ -521,50 +479,41 @@ payload of the Asset Administration Shell for the API operation "GetSubmodel".
 ##### 3.2.5.3 AASX
 
 An AASX file can be generated from the RDF Turtle file. The AASX file defines one of the requested
-artifacts for a Submodel Template Specification conformant to \[[SMT](#62-non-normative-references)].
+artifacts for a Submodel Template Specification conformant to \[[SMT](#72-non-normative-references)].
 
 #### 3.2.6 EXAMPLE DATA
 
-Example JSON payload: Submodel **"Batch" v3.0.0**
+Example JSON payload: Submodel **"Batch" v4.0.0**
 
 ```json
 {
   "localIdentifiers": [
     {
       "value": "BID12345678",
-      "key": "batchId"
-    },
-    {
-      "value": "123-0.740-3434-A",
-      "key": "manufacturerPartId"
-    },
+      "key": "manufacturerId"
+    }
   ],
   "manufacturingInformation": {
-    "date": "2022-02-04T14:48:54",
-    "country": "HUR",
+    "country": "DEU",
     "sites": [
       {
-        "catenaXsiteId": "BPNS1234567890ZZ",
+        "siteId": "BPNSg5SFSjyDuN1u",
         "function": "production"
       }
-    ]
+    ],
+    "productionDate": "2025-09-26"
   },
-  "catenaXId": "urn:uuid:580d3adf-1981-44a0-a214-13d6ceed9379",
+  "globalAssetId": "urn:uuid:db1f5AC3-BeED-a598-e5f2-eac49dE4D5FD",
   "partTypeInformation": {
     "partClassification": [
       {
-        "classificationStandard": "GIN 20510-21513",
-        "classificationID": "1004714",
-        "classificationDescription": "Generic standard for classification of parts in the automotive industry."
-      },
-      {
-        "classificationStandard": "OEM Part Classification 1022-102",
-        "classificationID": "Two-component adhesive",
-        "classificationDescription": "OEM standard for classification of parts."
+        "standard": "GIN 20510-21513",
+        "description": "Generic standard for classification of parts in the automotive industry.",
+        "id": "1004712"
       }
     ],
     "manufacturerPartId": "123-0.740-3434-A",
-    "nameAtManufacturer": "PA66-GF30"
+    "nameAtManufacturer": "Mirror left"
   }
 }
 ```
@@ -583,13 +532,13 @@ representation within in Catena-X.
 
 For just-in-sequence-parts with an existing serial number, the aspect model SerialPart is applied, not JustInSequencePart.
 
-Note: The Aspect model JustInSequencePart **v3.0.0** is **mandatory**. Versions higher than that are **optional**, but might become mandatory in future releases of this standard.
+Note: The Aspect model JustInSequencePart **4.0.0** is **mandatory**. Versions higher than that are **optional**, but might become mandatory in future releases of this standard.
 
-For the changelog of the aspect model, [see here](https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.just_in_sequence_part/RELEASE_NOTES.md).
+For the changelog of the aspect model, [see here](https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.industry_core.just_in_sequence_part/RELEASE_NOTES.md).
 
 #### 3.3.2 SPECIFICATIONS ARTIFACTS
 
-The modeling of the semantic model specified in this document was done in accordance to the "semantic driven workflow" to create a submodel template specification [SMT](#62-non-normative-references).
+The modeling of the semantic model specified in this document was done in accordance to the "semantic driven workflow" to create a submodel template specification [SMT](#72-non-normative-references).
 
 The aspect model is written in SAMM 2.1.0 as a modeling language conformant to CX-0003 as input for the semantic driven workflow.
 
@@ -612,10 +561,10 @@ github overwrites the information in this specification document.
 
 The semantic model has the unique identifier
 
-JustInSequencePart **v3.0.0** (mandatory)
+JustInSequencePart **v4.0.0** (mandatory)
 
 ```text
-urn:samm:io.catenax.just_in_sequence_part:3.0.0#JustInSequencePart
+urn:samm:io.catenax.industry_core.just_in_sequence_part:4.0.0#JustInSequencePart
 ```
 
 #### 3.3.5 FORMATS OF SEMANTIC MODEL
@@ -625,9 +574,9 @@ urn:samm:io.catenax.just_in_sequence_part:3.0.0#JustInSequencePart
 The rdf turtle file, an instance of the Semantic Aspect Meta Model, is
 the master for generating additional file formats and serializations. These can be viewed by following links:
 
-JustInSequencePart **v3.0.0** (mandatory)
+JustInSequencePart **v4.0.0** (mandatory)
 
-https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.just_in_sequence_part/3.0.0/JustInSequencePart.ttl
+https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.industry_core.just_in_sequence_part/4.0.0/JustInSequencePart.ttl
 
 The open source command line tool of the Eclipse Semantic Modeling Framework[^3] is used for generation of other file formats like for example a JSON Schema, aasx for Asset Administration Shell Submodel Template or a HTML documentation.
 
@@ -639,66 +588,43 @@ payload of the Asset Administration Shell for the API operation "GetSubmodel".
 ##### 3.3.5.3 AASX
 
 An AASX file can be generated from the RDF Turtle file. The AASX file defines one of the requested
-artifacts for a Submodel Template Specification conformant to \[[SMT](#62-non-normative-references)].
+artifacts for a Submodel Template Specification conformant to \[[SMT](#72-non-normative-references)].
 
 #### 3.3.6 EXAMPLE DATA
 
-Example JSON payload: Submodel **"JustInSequencePart" v3.0.0**
+Example JSON payload: Submodel **"JustInSequencePart" v4.0.0**
 
 ```json
 {
   "localIdentifiers": [
     {
-      "key": "manufacturerId",
-      "value": "BPNL7588787849VQ"
-    },
-    {
-      "key": "jisNumber",
-      "value": "894651684"
-    },
-    {
-      "key": "parentOrderNumber",
-      "value": "OEM-A-F8LM95T92WJ9KNDD3HA5P"
-    },
-    {
-      "key": "manufacturerPartId",
-      "value": "84816168424"
-    },
-    {
-      "key": "nameAtManufacturer",
-      "value": "Black Leather Front Row Seat for Vehicle Model B"
-    },
-    {
-      "key": "jisCallDate",
-      "value": "2022-01-24T09:13:34"
+      "value": "BID12345678",
+      "key": "manufacturerId"
     }
   ],
   "manufacturingInformation": {
-    "date": "2022-02-04T14:48:54",
     "country": "DEU",
     "sites": [
       {
-        "catenaXsiteId": "BPNS1234567890ZZ",
+        "siteId": "BPNSDElMlXgvOyzs",
         "function": "production"
       }
-    ]
+    ],
+    "productionDate": "2025-09-26"
   },
-  "catenaXId": "urn:uuid:580d3adf-1981-44a0-a214-13d6ceed9379",
+  "globalAssetId": "urn:uuid:1a347bAe-28FD-9C18-aF1E-733cEbFA646D",
   "partTypeInformation": {
     "partClassification": [
       {
-        "classificationStandard": "GIN 20510-21513",
-        "classificationID": "1004715",
-        "classificationDescription": "Generic standard for classification of parts in the automotive industry."
-      },
-      {
-        "classificationStandard": "OEM Part Classification 1022-102",
-        "classificationID": "Front row seat",
-        "classificationDescription": "OEM standard for classification of parts."
+        "standard": "GIN 20510-21513",
+        "description": "Generic standard for classification of parts in the automotive industry.",
+        "id": "1004712"
       }
     ],
-    "manufacturerPartId": "84816168424",
-    "nameAtManufacturer": "Black Leather Front Row Seat for Vehicle Model B",
+    "manufacturerPartId": "123-0.740-3434-A",
+    "customerPartId": "PRT-12345",
+    "nameAtManufacturer": "Mirror left",
+    "nameAtCustomer": "side element A"
   }
 }
 ```
@@ -723,11 +649,11 @@ This model was modelled conform to the Catena-X standard CX-0045 Aspect Model Da
 
 Note: The Aspect model SingleLevelBomAsBuilt **v3.0.0** is **mandatory**. Versions higher than that are **optional**, but might become mandatory in future releases of this standard.
 
-For the changelog of the aspect model, [see here](https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.single_level_bom_as_built/RELEASE_NOTES.md).
+For the changelog of the aspect model, [see here](https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.industry_core.single_level_bom_as_built/RELEASE_NOTES.md).
 
 #### 3.4.2 SPECIFICATIONS ARTIFACTS
 
-The modeling of the semantic model specified in this document was done in accordance to the "semantic driven workflow" to create a submodel template specification [SMT](#62-non-normative-references).
+The modeling of the semantic model specified in this document was done in accordance to the "semantic driven workflow" to create a submodel template specification [SMT](#72-non-normative-references).
 
 The aspect model SingleLevelBomAsBuilt is written in SAMM 2.1.0 as a modeling language conformant to CX-0003
 as input for the semantic driven workflow.
@@ -751,10 +677,10 @@ github overwrites the information in this specification document.
 
 The semantic model has the unique identifier
 
-SingleLevelBomAsBuilt **v3.0.0** (mandatory)
+SingleLevelBomAsBuilt **v4.0.0** (mandatory)
 
 ```text
-urn:samm:io.catenax.single_level_bom_as_built:3.0.0#SingleLevelBomAsBuilt
+urn:samm:io.catenax.industry_core.single_level_bom_as_built:4.0.0#SingleLevelBomAsBuilt
 ```
 
 #### 3.4.5 FORMATS OF SEMANTIC MODEL
@@ -764,9 +690,9 @@ urn:samm:io.catenax.single_level_bom_as_built:3.0.0#SingleLevelBomAsBuilt
 The rdf turtle file, an instance of the Semantic Aspect Meta Model, is
 the master for generating additional file formats and serializations. These can be viewed by following links:
 
-SingleLevelBomAsBuilt **v3.0.0** (mandatory)
+SingleLevelBomAsBuilt **v4.0.0** (mandatory)
 
-https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.single_level_bom_as_built/3.0.0/SingleLevelBomAsBuilt.ttl
+https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.industry_core.single_level_bom_as_built/4.0.0/SingleLevelBomAsBuilt.ttl
 
 The open source command line tool of the Eclipse Semantic Modeling Framework[^3] is used for generation of other file formats like for example a JSON Schema, aasx for Asset Administration Shell Submodel Template or a HTML documentation.
 
@@ -778,39 +704,39 @@ payload of the Asset Administration Shell for the API operation "GetSubmodel".
 ##### 3.4.5.3 AASX
 
 An AASX file can be generated from the RDF Turtle file. The AASX file defines one of the requested
-artifacts for a Submodel Template Specification conformant to \[[SMT](#62-non-normative-references)].
+artifacts for a Submodel Template Specification conformant to \[[SMT](#72-non-normative-references)].
 
 #### 3.4.6 EXAMPLE DATA
 
-Example JSON payload: Submodel **"SingleLevelBomAsBuilt" v3.0.0 for a SerialPart**
+Example JSON payload: Submodel **"SingleLevelBomAsBuilt" v4.0.0 for a SerialPart**
 
 ```json
 {
-  "catenaXId": "urn:uuid:580d3adf-1981-44a0-a214-13d6ceed9379",
   "childItems": [
     {
-      "catenaXId": "urn:uuid:d60b99b0-f269-42f5-94d0-64fe0946ed04",
       "quantity": {
-        "value": 1.0,
+        "value": 20,
         "unit": "unit:piece"
       },
       "hasAlternatives": false,
-      "createdOn": "2022-02-03",
+      "globalAssetId": "1EF23f56-2D03-E1FC-2B6c-B86b12b44CA0",
+      "createdOn": "2022-02-03T14:48:54.709Z",
       "businessPartner": "BPNL50096894aNXY",
       "lastModifiedOn": "2022-02-03T14:48:54.709Z"
     }
-  ]
+  ],
+  "globalAssetId": "AA7C0A2E-3C04-1f90-FCfd-1db9deDeCCCD"
 }
 ```
 
-Example JSON payload: Submodel **"SingleLevelBomAsBuilt" v3.0.0 for a Batch**
+Example JSON payload: Submodel **"SingleLevelBomAsBuilt" v4.0.0 for a Batch**
 
 ```json
 {
   "catenaXId": "urn:uuid:580d3adf-1981-44a0-a214-13d6ceed9379",
   "childItems": [
     {
-      "catenaXId": "urn:uuid:d60b99b0-f269-42f5-94d0-64fe0946ed04",
+      "globalAssetId": "urn:uuid:d60b99b0-f269-42f5-94d0-64fe0946ed04",
       "quantity": {
         "value": 5.0,
         "unit": "unit:kilogram"
@@ -844,13 +770,13 @@ only the customer.
 
 This model was modelled conform to the Catena-X standard CX-0045 Aspect Model Data Chain Template.
 
-Note: The Aspect model SingleLevelUsageAsBuilt **v3.0.0** is **mandatory**. Versions higher than that are **optional**, but might become mandatory in future releases of this standard.
+Note: The Aspect model SingleLevelUsageAsBuilt **v4.0.0** is **mandatory**. Versions higher than that are **optional**, but might become mandatory in future releases of this standard.
 
-For the changelog of the aspect model, [see here](https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.single_level_usage_as_built/RELEASE_NOTES.md).
+For the changelog of the aspect model, [see here](https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.industry_core.single_level_usage_as_built/RELEASE_NOTES.md).
 
 #### 3.5.2 SPECIFICATIONS ARTIFACTS
 
-The modeling of the semantic model specified in this document was done in accordance to the "semantic driven workflow" to create a submodel template specification [SMT](#62-non-normative-references).
+The modeling of the semantic model specified in this document was done in accordance to the "semantic driven workflow" to create a submodel template specification [SMT](#72-non-normative-references).
 
 The aspect model SingleLevelUsageAsBuilt is written in SAMM 2.1.0 as a modeling language conformant to CX-0003
 as input for the semantic driven workflow.
@@ -874,10 +800,10 @@ github overwrites the information in this specification document.
 
 The semantic model has the unique identifier
 
-SingleLevelUsageAsBuilt **v3.0.0** (mandatory)
+SingleLevelUsageAsBuilt **v4.0.0** (mandatory)
 
 ```text
-urn:samm:io.catenax.single_level_usage_as_built:3.0.0#SingleLevelUsageAsBuilt
+urn:samm:io.catenax.industry_core.single_level_usage_as_built:4.0.0#SingleLevelUsageAsBuilt
 ```
 
 #### 3.5.5 FORMATS OF SEMANTIC MODEL
@@ -887,9 +813,9 @@ urn:samm:io.catenax.single_level_usage_as_built:3.0.0#SingleLevelUsageAsBuilt
 The rdf turtle file, an instance of the Semantic Aspect Meta Model, is
 the master for generating additional file formats and serializations. These can be viewed by following links:
 
-SingleLevelUsageAsBuilt **v3.0.0** (mandatory)
+SingleLevelUsageAsBuilt **v4.0.0** (mandatory)
 
-https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.single_level_usage_as_built/3.0.0/SingleLevelUsageAsBuilt.ttl
+https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.industry_core.single_level_usage_as_built/4.0.0/SingleLevelUsageAsBuilt.ttl
 
 The open source command line tool of the Eclipse Semantic Modeling Framework[^3] is used for generation of other file formats like for example a JSON Schema, aasx for Asset Administration Shell Submodel Template or a HTML documentation.
 
@@ -901,42 +827,42 @@ payload of the Asset Administration Shell for the API operation "GetSubmodel".
 ##### 3.5.5.3 AASX
 
 An AASX file can be generated from the RDF Turtle file. The AASX file defines one of the requested
-artifacts for a Submodel Template Specification conformant to \[[SMT](#62-non-normative-references)].
+artifacts for a Submodel Template Specification conformant to \[[SMT](#72-non-normative-references)].
 
 #### 3.5.6 EXAMPLE DATA
 
-Example JSON payload: Submodel **"SingleLevelUsageAsBuilt" v3.0.0 for a SerialPart**
+Example JSON payload: Submodel **"SingleLevelUsageAsBuilt" v4.0.0 for a SerialPart**
 
 ```json
 {
-  "catenaXId": "urn:uuid:580d3adf-1981-44a0-a214-13d6ceed9379",
   "parentItems": [
     {
-      "catenaXId": "urn:uuid:055c1128-0375-47c8-98de-7cf802c3241d",
       "isOnlyPotentialParent": false,
       "quantity": {
-        "value": 1.0,
+        "value": 20,
         "unit": "unit:piece"
       },
-      "createdOn": "2022-02-03",
+      "globalAssetId": "96b45FFC-6a9d-bDF5-E0c0-7bEaa77f5611",
       "businessPartner": "BPNL50096894aNXY",
+      "createdOn": "2022-02-03T14:48:54.709Z",
       "lastModifiedOn": "2022-02-03T14:48:54.709Z"
     }
   ],
   "customers": [
     "BPNL50096894aNXY"
-  ]
+  ],
+  "globalAssetId": "urn:uuid:783Add8e-2fEc-8cED-5c96-d74d1490BDD6"
 }
 ```
 
-Example JSON payload: Submodel **"SingleLevelUsageAsBuilt" v3.0.0 for a Batch**
+Example JSON payload: Submodel **"SingleLevelUsageAsBuilt" v4.0.0 for a Batch**
 
 ```json
 {
   "catenaXId": "urn:uuid:580d3adf-1981-44a0-a214-13d6ceed9379",
   "parentItems": [
     {
-      "catenaXId": "urn:uuid:055c1128-0375-47c8-98de-7cf802c3241d",
+      "globalAssetId": "urn:uuid:055c1128-0375-47c8-98de-7cf802c3241d",
       "isOnlyPotentialParent": false,
       "quantity": {
         "value": 25.0,
@@ -1058,22 +984,43 @@ The API version described in this standard document **MUST** be published in the
 > *This section is normative*
   
 There is no prcoess defintion in this standard version available.
+
+## 6 BACKWARD COMPATIBILITY
+
+> *This section is normative*
+
+The previous version of CX-0127 Industry Core PartInstance requires the following aspect model versions:
+
+- `urn:samm:io.catenax.serial_part:3.0.0#SerialPart`
+- `urn:samm:io.catenax.batch:3.0.0#Batch`
+- `urn:samm:io.catenax.just_in_sequence_part:3.0.0#JustInSequencePart`
+- `urn:samm:io.catenax.single_level_bom_as_built:3.0.0#SingleLevelBomAsBuilt`
+- `urn:samm:io.catenax.single_level_usage_as_built:3.0.0#SingleLevelUsageAsBuilt`
+
+The new release updates these models to:
+
+- `urn:samm:io.catenax.industry_core.serial_part:4.0.0#SerialPart`
+- `urn:samm:io.catenax.industry_core.batch:4.0.0#Batch`
+- `urn:samm:io.catenax.industry_core.just_in_sequence_part:4.0.0#JustInSequencePart`
+- `urn:samm:io.catenax.industry_core.single_level_bom_as_built:4.0.0#SingleLevelBomAsBuilt`
+- `urn:samm:io.catenax.industry_core.single_level_usage_as_built:4.0.0#SingleLevelUsageAsBuilt`
+
+Applications developed under the new release **MUST** provide the capability to interpret both the previous and the current aspect model versions in order to remain interoperable with applications based on earlier releases and to ensure seamless data exchange across the ecosystem.
+
+Applications **MUST** be able to attach, publish, retrieve, and interpret submodels conforming to any of the aspect model versions listed above.
+
+## 7 REFERENCES
   
-## 6 REFERENCES
-  
-### 6.1 NORMATIVE REFERENCES
+### 7.1 NORMATIVE REFERENCES
   
 > *This section is normative*
 
-- CX-0001 EDC DISCOVERY API 1.0.2
-- CX-0002 Digital Twins in Catena–X 2.2.0
-- CX-0003 SAMM Aspect Meta Model 1.1.0
-- CX–0018 Dataspace Connectivity 3.0.0
-- CX-0045 Aspect Model Data Chain Template 1.3.0
-- CX-0053 BPN Discovery Services 1.1.0
-- CX-0152 Policy Constraints For Data Exchange v1.0.0
+- CX-0002 Digital Twins in Catena–X
+- CX–0018 Dataspace Connectivity
+- CX-0045 Aspect Model Data Chain Template
+- CX-0152 Policy Constraints For Data Exchange
 
-### 6.2 NON-NORMATIVE REFERENCES
+### 7.2 NON-NORMATIVE REFERENCES
 
 > *This section is non-normative*
 
@@ -1087,7 +1034,7 @@ Download from: [https://industrialdigitaltwin.org/wp-content/uploads/2022/12/I40
 
 [^3]: https://github.com/eclipse-esmf/esmf-sdk
 
-### 6.3 REFERENCE IMPLEMENTATIONS
+### 7.3 REFERENCE IMPLEMENTATIONS
 
 > *This section is non-normative*
 

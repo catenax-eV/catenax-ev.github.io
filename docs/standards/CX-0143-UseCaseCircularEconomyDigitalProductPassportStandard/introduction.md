@@ -5,7 +5,7 @@ tags:
   - UC/Ecopass
 ---
 
-# CX-0143 Use Case Circular Economy - Digital Product Passport v1.4.0
+# CX-0143 Use Case Circular Economy - Digital Product Passport v1.5.0
 
 ## ABSTRACT
 
@@ -16,7 +16,7 @@ This standard focuses on the digital product passport use case. This includes re
 - application developer / provider supporting the provisioning and consuming of passport data.
 
 Specific passports that shall be mentioned is the transmission passport, which is a first realization of a  product passport in Catena-X.
-The Battery Passport which was formerly part of this standard as well is addressed in the Standard CX-XXXX Battery Passport.
+The Battery Passport which was formerly part of this standard as well is addressed in the Standard CX-0160 Battery Passport.
 
 In this document, keywords for registering and searching digital twins and their passports submodels are defined.
 

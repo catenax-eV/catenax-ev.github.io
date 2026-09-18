@@ -5,7 +5,7 @@
 - cxId: CX-0128
 - name: Demand and Capacity Management Data Exchange
 - capability: Demand and Capacity
-- version: 2.3.1
+- version: 2.3.2
 - release: CX-Saturn
 
 ## Conformity Assessment Criteria

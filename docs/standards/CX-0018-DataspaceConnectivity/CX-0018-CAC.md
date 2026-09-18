@@ -332,8 +332,8 @@ Protocol Version Handling
 
 Call the version metadata endpoint of a connector under test
 
-Check that entries for the current protocol version 2025-1 and for the compatibility version 0.8 exist, ensure, that
-when resolving the complete path, the corresponding DSP defined endpoints are available below the created path.
+Check that an entry for the current protocol version 2025-1 exists; ensure that when resolving the complete path,
+the corresponding DSP-defined endpoints are available below the created path.
 
 #### Additional Information
 

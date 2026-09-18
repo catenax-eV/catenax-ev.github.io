@@ -1,0 +1,49 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.2.8 Chrome/140.0.7339.240 Electron/38.4.0 Safari/537.36" version="28.2.8">
+  <diagram name="Catena-X Data Exchange" id="catena-x-data-exchange">
+    <mxGraphModel dx="1018" dy="687" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1900" pageHeight="920" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="root" value="&lt;b&gt;Contract-Based Data Exchange&lt;/b&gt;&lt;br&gt;Every data exchange between a &lt;b&gt;Data Provider&lt;/b&gt; and a &lt;b&gt;Data Consumer&lt;/b&gt; is based on a contract." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0070F2;strokeColor=#00144A;fontColor=#FFFFFF;fontSize=12;align=center;" parent="1" vertex="1">
+          <mxGeometry x="575" y="100" width="700" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="s1" value="&lt;b&gt;(1) Legally binding contract concluded via&lt;br&gt;Registered Connector (RC) negotiation&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4CB1FF;strokeColor=#0070F2;fontColor=#000000;fontSize=12;align=center;" parent="1" vertex="1">
+          <mxGeometry x="526" y="248" width="272" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="s2" value="&lt;b&gt;(2) Legally binding contract already concluded outside the Catena-X data space&lt;/b&gt;&lt;br&gt;The RC negotiation serves as fulfilment transaction (&quot;Erfüllungsgeschäft&quot;) — the contract is referenced as basis for data transfer via the Catena-X data space. The contract concluded outside Catena-X must be valid for the Legal Entities (BPNLs) of the Data Provider and the Data Consumer performing the RC negotiation." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4CB1FF;strokeColor=#0070F2;fontColor=#000000;fontSize=11;align=center;" parent="1" vertex="1">
+          <mxGeometry x="1118" y="248" width="295" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="s1a" value="&lt;b&gt;(1.a) All-encompassing RC contract&lt;/b&gt;&lt;br&gt;The contract concluded via RC is all-encompassing and does not refer to any further contractual conditions." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1F4FF;strokeColor=#0070F2;fontColor=#000000;fontSize=10;align=center;" parent="1" vertex="1">
+          <mxGeometry x="348" y="422" width="227" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="s1b" value="&lt;b&gt;(1.b) RC supplements an external contract&lt;/b&gt;&lt;br&gt;The contract concluded via RC supplements a contract concluded outside the Catena-X data space." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1F4FF;strokeColor=#0070F2;fontColor=#000000;fontSize=10;align=center;" parent="1" vertex="1">
+          <mxGeometry x="696" y="422" width="219" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="s1bi" value="&lt;b&gt;(1.b.i) RC provisions take precedence&lt;/b&gt;&lt;br&gt;In the event of any conflict, the provisions agreed via RC negotiation shall take precedence over the provisions of the referenced contract concluded outside the Catena-X data space." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EAECEE;strokeColor=#0070F2;fontColor=#000000;fontSize=10;align=center;" parent="1" vertex="1">
+          <mxGeometry x="450" y="632" width="310" height="125" as="geometry" />
+        </mxCell>
+        <mxCell id="s1bii" value="&lt;b&gt;(1.b.ii) Framework agreement takes precedence&lt;/b&gt;&lt;br&gt;In the event of any conflict, the provisions of the referenced contract concluded outside the Catena-X data space shall take precedence over the provisions agreed via RC negotiation." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EAECEE;strokeColor=#0070F2;fontColor=#000000;fontSize=10;align=center;" parent="1" vertex="1">
+          <mxGeometry x="805" y="632" width="310" height="125" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;strokeColor=#0070F2;strokeWidth=2;" parent="1" source="root" target="s1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;strokeColor=#0070F2;strokeWidth=2;" parent="1" source="root" target="s2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;strokeColor=#0070F2;strokeWidth=1.5;" parent="1" source="s1" target="s1a" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;strokeColor=#0070F2;strokeWidth=1.5;" parent="1" source="s1" target="s1b" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;strokeColor=#0070F2;strokeWidth=1.5;" parent="1" source="s1b" target="s1bi" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;strokeColor=#0070F2;strokeWidth=1.5;" parent="1" source="s1b" target="s1bii" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

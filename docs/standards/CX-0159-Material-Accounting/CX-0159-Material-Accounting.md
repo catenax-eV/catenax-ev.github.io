@@ -1,4 +1,4 @@
-# CX-0159 Material Accounting v.1.0.0
+# CX-0159 Material Accounting v.1.0.1
 
 ## ABSTRACT
 
@@ -1155,7 +1155,6 @@ From a functional perspective, this approach enables a seamless and uncomplicate
 
 | Number                                                                                                   | Standard                                | Version     |
 |----------------------------------------------------------------------------------------------------------|-----------------------------------------|-------------|
-| [[CX-0001](https://catenax-ev.github.io/docs/next/standards/CX-0001-ParticipantAgentRegistration)]       | EDC Discovery API                       | 1.2         |
 | [[CX-0002](https://catenax-ev.github.io/docs/next/standards/CX-0002-DigitalTwinsInCatenaX)]              | Digital Twins in Catena-X               | 2.3.0       |
 | [[CX-0003](https://catenax-ev.github.io/docs/next/standards/CX-0003-SAMMSemanticAspectMetaModel)]        | SAMM Aspect Meta Model                  | 1.2.0       |
 | [[CX-0018](https://catenax-ev.github.io/docs/standards/CX-0018-DataspaceConnectivity)]                   | Dataspace Connectivity                  | 4.1.1       |

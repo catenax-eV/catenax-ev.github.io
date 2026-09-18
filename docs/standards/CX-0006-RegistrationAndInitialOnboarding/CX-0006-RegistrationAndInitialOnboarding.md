@@ -6,6 +6,15 @@ tags:
 ---
 # CX-0006 Registration and Initial Onboarding V2.1.0
 
+:::warning
+
+The following standard was reviewed and identified as not ready for release. Therefore this standard was allowed to apply the required changes through a **fast-track process** to be included in the CX-Neptune release.
+These exceptions will be released together with the  **CX-Neptune Go-Live** of all other standards on **24 of November 2026**.
+
+**Therefore, this version of the standard is not eligible for certification yet**
+
+:::
+
 ## Abstract
 
 This standard describes the onboarding process a company must go through in order to become a member of the Catena-X dataspace and gain access to dataspace services.
@@ -109,7 +118,7 @@ After successful validation, the CSP-B **MUST** ensure that a BPNL referring to 
 
 > *This section is normative*
 
-The CSP-B **MUST** verify the identity of the prospective participant through an identity proofing process as defined in CX-NFT-IdP Identity Proofing.
+The CSP-B **MUST** verify the identity of the prospective participant through an identity proofing process as defined in CX-XXXX Identity Proofing.
 
 ### 2.5 Participant wallet creation
 
@@ -134,7 +143,7 @@ The issuance of the Membership Credential from the CSP-B to the prospective part
 - [CX-0010 Business Partner Number](https://catenax-ev.github.io/docs/standards/CX-0010-BusinessPartnerNumber)
 - [CX-0050 Catena-X Specific Credentials](https://catenax-ev.github.io/docs/standards/CX-0050-CXSpecificCredentials)
 - [CX-0149 Wallet Requirements](https://catenax-ev.github.io/docs/standards/CX-0149-WalletRequirements)
-- [CX-NFR-IdP Identity Proofing](https://catenax-ev.github.io/docs/rulebooks/CX-NFR-IdP)
+- CX-XXXX: Identity Proofing
 
 ### Non-normative
 

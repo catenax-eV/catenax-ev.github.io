@@ -27,39 +27,44 @@
       ]
     },
     "AccessPolicy": {
-      "permission": {
-        "type": "array",
-        "items": {
-          "allOf": [
-            {
-              "$ref": "https://w3id.org/dspace/2025/1/negotiation/contract-schema.json#/definitions/Rule"
-            },
-            {
-              "properties": {
-                "action": {
-                  "type": "string",
-                  "const": "access"
-                },
-                "constraint": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/definitions/AccessPermissionConstraint"
+      "type": "object",
+      "properties": {
+        "permission": {
+          "type": "array",
+          "items": {
+            "allOf": [
+              {
+                "$ref": "https://w3id.org/dspace/2025/1/negotiation/contract-schema.json#/definitions/Rule"
+              },
+              {
+                "properties": {
+                  "action": {
+                    "type": "string",
+                    "const": "access"
                   },
-                  "uniqueItems": true
+                  "constraint": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/definitions/AccessPermissionConstraint"
+                    },
+                    "minItems": 1,
+                    "maxItems": 1
+                  }
                 }
               }
-            }
-          ]
+            ]
+          },
+          "minItems": 1,
+          "maxItems": 1
         },
-        "minItems": 0
-      },
-      "prohibition": {
-        "type": "array",
-        "maxItems": 0
-      },
-      "obligation": {
-        "type": "array",
-        "maxItems": 0
+        "prohibition": {
+          "type": "array",
+          "maxItems": 0
+        },
+        "obligation": {
+          "type": "array",
+          "maxItems": 0
+        }
       }
     },
     "AccessPermissionConstraint": {
@@ -78,6 +83,8 @@
       "properties": {
         "and": {
           "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
           "items": {
             "$ref": "#/definitions/AccessPermissionConstraint"
           }
@@ -88,101 +95,101 @@
       ]
     },
     "UsagePolicy": {
-      "permission": {
-        "type": "array",
-        "items": {
-          "allOf": [
-            {
-              "$ref": "https://w3id.org/dspace/2025/1/negotiation/contract-schema.json#/definitions/Rule"
-            },
-            {
-              "properties": {
-                "action": {
-                  "type": "string",
-                  "const": "use"
-                },
-                "constraint": {
-                  "type": "array",
-                  "minItems": 2,
-                  "items": {
-                    "$ref": "#/definitions/UsagePermissionConstraint"
-                  },
-                  "uniqueItems": true
-                }
+      "type": "object",
+      "properties": {
+        "permission": {
+          "type": "array",
+          "items": {
+            "allOf": [
+              {
+                "$ref": "https://w3id.org/dspace/2025/1/negotiation/contract-schema.json#/definitions/Rule"
               },
-              "required": [
-                "constraint"
-              ]
-            }
-          ]
-        },
-        "minItems": 1
-      },
-      "prohibition": {
-        "type": "array",
-        "items": {
-          "allOf": [
-            {
-              "$ref": "https://w3id.org/dspace/2025/1/negotiation/contract-schema.json#/definitions/Rule"
-            },
-            {
-              "properties": {
-                "action": {
-                  "type": "string",
-                  "const": "use"
-                },
-                "constraint": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/definitions/UsageProhibitionConstraint"
+              {
+                "properties": {
+                  "action": {
+                    "type": "string",
+                    "const": "use"
                   },
-                  "uniqueItems": true
-                }
-              },
-              "required": [
-                "constraint"
-              ]
-            }
-          ]
-        },
-        "minItems": 1
-      },
-      "obligation": {
-        "type": "array",
-        "items": {
-          "allOf": [
-            {
-              "$ref": "https://w3id.org/dspace/2025/1/negotiation/contract-schema.json#/definitions/Rule"
-            },
-            {
-              "properties": {
-                "action": {
-                  "type": "string",
-                  "const": "use"
-                },
-                "constraint": {
-                  "type": "array",
-                  "minitems": 1,
-                  "maxitems": 1,
-                  "items": {
-                    "anyOf": [
-                      {
-                        "$ref": "https://w3id.org/catenax/2025/9/policy/data-provisioning-end-duration-days-constraint-schema.json"
-                      },
-                      {
-                        "$ref": "https://w3id.org/catenax/2025/9/policy/data-provisioning-end-date-constraint-schema.json"
-                      }
-                    ]
+                  "constraint": {
+                    "type": "array",
+                    "minItems": 1,
+                    "maxItems": 1,
+                    "items": {
+                      "$ref": "#/definitions/UsagePermissionConstraint"
+                    }
                   }
-                }
-              },
-              "required": [
-                "constraint"
-              ]
-            }
-          ]
+                },
+                "required": [
+                  "constraint"
+                ]
+              }
+            ]
+          },
+          "minItems": 1,
+          "maxItems": 1
         },
-        "minItems": 1
+        "prohibition": {
+          "type": "array",
+          "items": {
+            "allOf": [
+              {
+                "$ref": "https://w3id.org/dspace/2025/1/negotiation/contract-schema.json#/definitions/Rule"
+              },
+              {
+                "properties": {
+                  "action": {
+                    "type": "string",
+                    "const": "use"
+                  },
+                  "constraint": {
+                    "type": "array",
+                    "minItems": 1,
+                    "maxItems": 1,
+                    "items": {
+                      "$ref": "#/definitions/UsageProhibitionConstraint"
+                    }
+                  }
+                },
+                "required": [
+                  "constraint"
+                ]
+              }
+            ]
+          },
+          "minItems": 1,
+          "maxItems": 1
+        },
+        "obligation": {
+          "type": "array",
+          "items": {
+            "allOf": [
+              {
+                "$ref": "https://w3id.org/dspace/2025/1/negotiation/contract-schema.json#/definitions/Rule"
+              },
+              {
+                "properties": {
+                  "action": {
+                    "type": "string",
+                    "const": "use"
+                  },
+                  "constraint": {
+                    "type": "array",
+                    "minItems": 1,
+                    "maxItems": 1,
+                    "items": {
+                      "$ref": "https://w3id.org/catenax/2025/9/policy/schema/atomic-constraint-schemas.json#/definitions/AtomicObligationConstraint"
+                    }
+                  }
+                },
+                "required": [
+                  "constraint"
+                ]
+              }
+            ]
+          },
+          "minItems": 1,
+          "maxItems": 1
+        }
       },
       "anyOf": [
         {
@@ -218,9 +225,46 @@
       "properties": {
         "and": {
           "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
           "items": {
             "$ref": "#/definitions/UsagePermissionConstraint"
-          }
+          },
+          "allOf": [
+            {
+              "description": "Rule 1: Maximum ONE Warranty constraint allowed",
+              "contains": {
+                "anyOf": [
+                  {
+                    "$ref": "https://w3id.org/catenax/2025/9/policy/warranty-duration-constraint-schema.json"
+                  },
+                  {
+                    "$ref": "https://w3id.org/catenax/2025/9/policy/warranty-definition-constraint-schema.json"
+                  }
+                ]
+              },
+              "maxContains": 1,
+              "minContains": 0
+            },
+            {
+              "description": "Rule 2: Maximum ONE Data Usage End constraint allowed",
+              "contains": {
+                "anyOf": [
+                  {
+                    "$ref": "https://w3id.org/catenax/2025/9/policy/data-usage-end-duration-days-constraint-schema.json"
+                  },
+                  {
+                    "$ref": "https://w3id.org/catenax/2025/9/policy/data-usage-end-date-constraint-schema.json"
+                  },
+                  {
+                    "$ref": "https://w3id.org/catenax/2025/9/policy/data-usage-end-definition-constraint-schema.json"
+                  }
+                ]
+              },
+              "maxContains": 1,
+              "minContains": 0
+            }
+          ]
         }
       },
       "required": [
