@@ -1,5 +1,14 @@
 # CX-0160 Battery Passport Data Management Base v.1.1.0
 
+:::warning
+
+Use Case 2 (CX-0160-2) of this standard will be a added through a **fast-track process** to be included in the CX-Neptune release.
+These exceptions will be released together with the  *CX-Neptune Go-Live** of all other standards on **24 of November 2026**.
+
+**Therefore, this version of the standard is not eligible for certification yet**
+
+:::
+
 ## ABSTRACT
 
 The CX-0160 Battery Passport Data Management Base Standard defines the common foundation for the representation, identification, and exchange of battery-related information across the automotive battery value chain within the Catena-X ecosystem.

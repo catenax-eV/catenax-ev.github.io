@@ -6,6 +6,15 @@ tags:
 ---
 # CX-0006 Registration and Initial Onboarding V2.1.0
 
+:::warning
+
+The following standard was reviewed and identified as not ready for release. Therefore this standard was allowed to apply the required changes through a **fast-track process** to be included in the CX-Neptune release.
+These exceptions will be released together with the  *CX-Neptune Go-Live** of all other standards on **24 of November 2026**.
+
+**Therefore, this version of the standard is not eligible for certification yet**
+
+:::
+
 ## Abstract
 
 This standard describes the onboarding process a company must go through in order to become a member of the Catena-X dataspace and gain access to dataspace services.
