@@ -1,19 +1,6 @@
 {
   "nodes": [
     {
-      "id": "cx0001",
-      "number": "0001",
-      "title": "Participant Agent Registration",
-      "category": "component",
-      "tags": [
-        "CAT/Portal",
-        "CAT/Core Service Provider",
-        "CAT/Sandbox Service Provider"
-      ],
-      "path": "/standards/CX-0001-ParticipantAgentRegistration",
-      "referenceCount": 20
-    },
-    {
       "id": "cx0002",
       "number": "0002",
       "title": "Digital Twins in Catena-X",
@@ -26,7 +13,7 @@
         "CAT/Digital Twin"
       ],
       "path": "/standards/CX-0002-DigitalTwinsInCatenaX",
-      "referenceCount": 20
+      "referenceCount": 17
     },
     {
       "id": "cx0003",
@@ -37,7 +24,7 @@
         "CAT/Semantic"
       ],
       "path": "/standards/CX-0003-SAMMSemanticAspectMetaModel",
-      "referenceCount": 22
+      "referenceCount": 7
     },
     {
       "id": "cx0005",
@@ -59,7 +46,7 @@
         "CAT/Onboarding Service Provider"
       ],
       "path": "/standards/CX-0006-RegistrationAndInitialOnboarding",
-      "referenceCount": 6
+      "referenceCount": 2
     },
     {
       "id": "cx0007",
@@ -95,7 +82,7 @@
         "CAT/Sandbox Service Provider"
       ],
       "path": "/standards/CX-0010-BusinessPartnerNumber",
-      "referenceCount": 15
+      "referenceCount": 10
     },
     {
       "id": "cx0012",
@@ -108,7 +95,7 @@
         "CAT/Sandbox Service Provider"
       ],
       "path": "/standards/CX-0012-BusinessPartnerDataPoolAPI",
-      "referenceCount": 2
+      "referenceCount": 1
     },
     {
       "id": "cx0018",
@@ -122,7 +109,7 @@
         "CAT/Connector as a Service"
       ],
       "path": "/standards/CX-0018-DataspaceConnectivity",
-      "referenceCount": 33
+      "referenceCount": 24
     },
     {
       "id": "cx0044",
@@ -140,7 +127,7 @@
       "category": "component",
       "tags": [],
       "path": "/standards/CX-0045-AspectModelDataChainTemplate",
-      "referenceCount": 3
+      "referenceCount": 2
     },
     {
       "id": "cx0049",
@@ -153,19 +140,7 @@
         "CAT/Identity Wallet"
       ],
       "path": "/standards/CX-0049-DIDDocumentSchema",
-      "referenceCount": 2
-    },
-    {
-      "id": "cx0053",
-      "number": "0053",
-      "title": "Discovery Finder and BPN Discovery Service APIs",
-      "category": "component",
-      "tags": [
-        "CAT/Portal",
-        "CAT/Core Service Provider"
-      ],
-      "path": "/standards/CX-0053-BPNDiscoveryServiceAPIs",
-      "referenceCount": 5
+      "referenceCount": 3
     },
     {
       "id": "cx0054",
@@ -180,34 +155,13 @@
       "referenceCount": 0
     },
     {
-      "id": "cx0055",
-      "number": "0055",
-      "title": "Data Processing Patterns for IT System Integration",
-      "category": "component",
-      "tags": [],
-      "path": "/standards/CX-0055-DataProcessingPatternsforITSystemIntegration",
-      "referenceCount": 0
-    },
-    {
-      "id": "cx0059",
-      "number": "0059",
-      "title": "Use Case Behaviour Twin Endurance Predictor",
-      "category": "usecase",
-      "tags": [
-        "CAT/Business Application Provider",
-        "UC/Behavioral Twin"
-      ],
-      "path": "/standards/CX-0059-UseCaseBehaviourTwinEndurancePredictor",
-      "referenceCount": 0
-    },
-    {
       "id": "cx0067",
       "number": "0067",
       "title": "Ontology Models to realize federated query in Catena-X",
       "category": "component",
       "tags": [],
       "path": "/standards/CX-0067-OntologyModelsToRealizeFederatedQueryInCatenaX",
-      "referenceCount": 5
+      "referenceCount": 2
     },
     {
       "id": "cx0074",
@@ -234,50 +188,6 @@
       "referenceCount": 0
     },
     {
-      "id": "cx0077",
-      "number": "0077",
-      "title": "Data Quality Dashboard",
-      "category": "component",
-      "tags": [
-        "CAT/Value Added Services"
-      ],
-      "path": "/standards/CX-0077-DataQualityDashboard",
-      "referenceCount": 0
-    },
-    {
-      "id": "cx0078",
-      "number": "0078",
-      "title": "Bank Data Verification Dashboard",
-      "category": "component",
-      "tags": [
-        "CAT/Value Added Services"
-      ],
-      "path": "/standards/CX-0078-BankDataVerificationDashboard",
-      "referenceCount": 0
-    },
-    {
-      "id": "cx0079",
-      "number": "0079",
-      "title": "Natural Person Screening Dashboard",
-      "category": "component",
-      "tags": [
-        "CAT/Value Added Services"
-      ],
-      "path": "/standards/CX-0079-NaturalPersonScreeningDashboard",
-      "referenceCount": 0
-    },
-    {
-      "id": "cx0080",
-      "number": "0080",
-      "title": "BPDM Fraud Prevention Service",
-      "category": "component",
-      "tags": [
-        "CAT/Value Added Services"
-      ],
-      "path": "/standards/CX-0080-BPDMFraudPreventionService",
-      "referenceCount": 0
-    },
-    {
       "id": "cx0081",
       "number": "0081",
       "title": "Country Risk API",
@@ -297,42 +207,7 @@
         "CAT/Semantic"
       ],
       "path": "/standards/CX-0084-FederatedQueriesInDataSpaces",
-      "referenceCount": 5
-    },
-    {
-      "id": "cx0105",
-      "number": "0105",
-      "title": "Asset Tracking Use Case",
-      "category": "usecase",
-      "tags": [
-        "CAT/Business Application Provider",
-        "UC/Circularity"
-      ],
-      "path": "/standards/CX-0105-AssetTrackingUseCase",
-      "referenceCount": 1
-    },
-    {
-      "id": "cx0115",
-      "number": "0115",
-      "title": "Manufacturing Capability Exchange 1.0.1",
-      "category": "usecase",
-      "tags": [
-        "CAT/Business Application Provider",
-        "UC/MaaS"
-      ],
-      "path": "/standards/CX-0115-ManufacturingCapabilityExchange",
-      "referenceCount": 1
-    },
-    {
-      "id": "cx0116",
-      "number": "0116",
-      "title": "Sanction Party Watchlist Dashboard",
-      "category": "component",
-      "tags": [
-        "CAT/Value Added Services"
-      ],
-      "path": "/standards/CX-0116-SanctionWatchlistDashboard",
-      "referenceCount": 0
+      "referenceCount": 2
     },
     {
       "id": "cx0117",
@@ -349,7 +224,7 @@
     {
       "id": "cx0123",
       "number": "0123",
-      "title": "Quality Use Case Standard",
+      "title": "Field Quality Standard",
       "category": "usecase",
       "tags": [
         "CAT/Data Provider & Consumer",
@@ -360,33 +235,21 @@
       "referenceCount": 0
     },
     {
-      "id": "cx0125",
-      "number": "0125",
-      "title": "Traceability Use Case",
-      "category": "usecase",
-      "tags": [
-        "CAT/Business Application Provider",
-        "UC/Traceability"
-      ],
-      "path": "/standards/CX-0125-TraceabilityUseCase",
-      "referenceCount": 4
-    },
-    {
       "id": "cx0126",
       "number": "0126",
-      "title": "Industry Core: Part Type 2.1.1",
+      "title": "Industry Core: Part Type 3.0.0",
       "category": "component",
       "tags": [
         "CAT/Semantic",
         "CAT/Industry Core"
       ],
       "path": "/standards/CX-0126-IndustryCorePartType",
-      "referenceCount": 9
+      "referenceCount": 10
     },
     {
       "id": "cx0127",
       "number": "0127",
-      "title": "Industry Core: Part Instance 2.0.2",
+      "title": "Industry Core: Part Instance 3.0.0",
       "category": "component",
       "tags": [
         "CAT/Semantic",
@@ -405,18 +268,6 @@
       "referenceCount": 0
     },
     {
-      "id": "cx0129",
-      "number": "0129",
-      "title": "Request for Quotation Exchange",
-      "category": "usecase",
-      "tags": [
-        "CAT/Business Application Provider",
-        "UC/MaaS"
-      ],
-      "path": "/standards/CX-0129-RequestforQuotationExchange",
-      "referenceCount": 0
-    },
-    {
       "id": "cx0131",
       "number": "0131",
       "title": "Circularity Core",
@@ -426,18 +277,6 @@
         "UC/Quality"
       ],
       "path": "/standards/CX-0131-CircularityCore",
-      "referenceCount": 0
-    },
-    {
-      "id": "cx0133",
-      "number": "0133",
-      "title": "Online Control and Simulation 2.0.1",
-      "category": "usecase",
-      "tags": [
-        "CAT/Business Application Provider",
-        "UC/OSIM"
-      ],
-      "path": "/standards/CX-0133-OnlineControlandSimulation",
       "referenceCount": 0
     },
     {
@@ -454,7 +293,7 @@
     {
       "id": "cx0136",
       "number": "0136",
-      "title": "Use Case PCF 2.2.1",
+      "title": "Use Case PCF 3.0.0",
       "category": "usecase",
       "tags": [
         "CAT/Business Application Provider",
@@ -464,45 +303,9 @@
       "referenceCount": 0
     },
     {
-      "id": "cx0138",
-      "number": "0138",
-      "title": "Use Case Behaviour Twin Endurance Estimator",
-      "category": "usecase",
-      "tags": [
-        "CAT/Business Application Provider",
-        "UC/Behavioral Twin"
-      ],
-      "path": "/standards/CX-0138-UseCaseBehaviourTwinEnduranceEstimator",
-      "referenceCount": 0
-    },
-    {
-      "id": "cx0141",
-      "number": "0141",
-      "title": "Use Case Behaviour Twin Health Indicator",
-      "category": "usecase",
-      "tags": [
-        "CAT/Business Application Provider",
-        "UC/Behavioral Twin"
-      ],
-      "path": "/standards/CX-0141-HealthIndicatorUseCase",
-      "referenceCount": 0
-    },
-    {
-      "id": "cx0142",
-      "number": "0142",
-      "title": "Shop Floor Information Service",
-      "category": "usecase",
-      "tags": [
-        "CAT/Business Application Provider",
-        "UC/Modular Production"
-      ],
-      "path": "/standards/CX-0142-ShopFloorInformationService",
-      "referenceCount": 1
-    },
-    {
       "id": "cx0144",
       "number": "0144",
-      "title": "ESS Use Case Standard 1.0.1",
+      "title": "ESS Use Case Standard 1.0.2",
       "category": "usecase",
       "tags": [
         "UC/ESS"
@@ -513,7 +316,7 @@
     {
       "id": "cx0146",
       "number": "0146",
-      "title": "Supply Chain Disruption Notifications 2.0.1",
+      "title": "Supply Chain Disruption Notifications 3.0.0",
       "category": "component",
       "tags": [],
       "path": "/standards/CX-0146-SupplyChainDisruptionNotifications",
@@ -533,25 +336,13 @@
       "referenceCount": 2
     },
     {
-      "id": "cx0150",
-      "number": "0150",
-      "title": "Logistics Use Case",
-      "category": "usecase",
-      "tags": [
-        "CAT/Business Application Provider",
-        "UC/Logistics"
-      ],
-      "path": "/standards/CX-0150-UseCaseLogistics",
-      "referenceCount": 0
-    },
-    {
       "id": "cx0151",
       "number": "0151",
       "title": "Industry Core: Basics",
       "category": "component",
       "tags": [],
       "path": "/standards/CX-0151-IndustryCoreBasics",
-      "referenceCount": 8
+      "referenceCount": 10
     },
     {
       "id": "cx0152",
@@ -565,7 +356,7 @@
         "CAT/Constraint"
       ],
       "path": "/standards/CX-0152-PolicyConstrainsForDataExchange",
-      "referenceCount": 23
+      "referenceCount": 20
     },
     {
       "id": "cx0153",
@@ -606,7 +397,7 @@
     {
       "id": "cx0157",
       "number": "0157",
-      "title": "Predictive Unit Real-Time Information Service (PURIS)",
+      "title": "Predictive Unit Real-Time Information Service (PURIS) (1.1.0)",
       "category": "component",
       "tags": [],
       "path": "/standards/CX-0157-PURIS",
@@ -631,15 +422,6 @@
       "referenceCount": 0
     },
     {
-      "id": "cx0160",
-      "number": "0160",
-      "title": "Battery Passport",
-      "category": "component",
-      "tags": [],
-      "path": "/standards/CX-0160-BatteryPassport",
-      "referenceCount": 0
-    },
-    {
       "id": "cx0161",
       "number": "0161",
       "title": "ECU Crypto Material",
@@ -647,27 +429,67 @@
       "tags": [],
       "path": "/standards/CX-0161-ECUCryptoMaterial",
       "referenceCount": 0
+    },
+    {
+      "id": "cx0162",
+      "number": "0162",
+      "title": "eSDScom",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0162-eSDScom",
+      "referenceCount": 0
+    },
+    {
+      "id": "cx0163",
+      "number": "0163",
+      "title": "Special Characteristics",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0163-SpecialCharacteristics",
+      "referenceCount": 0
+    },
+    {
+      "id": "cx0164",
+      "number": "0164",
+      "title": "Blocking Notifications",
+      "category": "component",
+      "tags": [
+        "CAT/Data Provider & Consumer",
+        "CAT/Block",
+        "CAT/Quality Management"
+      ],
+      "path": "/standards/CX-0164-BlockingNotifications",
+      "referenceCount": 0
+    },
+    {
+      "id": "cx0165",
+      "number": "0165",
+      "title": "Certificate of Analysis",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0165-CertificateOfAnalysis",
+      "referenceCount": 0
+    },
+    {
+      "id": "cx0166",
+      "number": "0166",
+      "title": "Zero Km Failure",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0166-ZeroKmFailure",
+      "referenceCount": 0
+    },
+    {
+      "id": "cx0167",
+      "number": "0167",
+      "title": "BPN-DID Resolution",
+      "category": "component",
+      "tags": [],
+      "path": "/standards/CX-0167-BpnDidResolution",
+      "referenceCount": 0
     }
   ],
   "edges": [
-    {
-      "id": "cx0001-cx0006",
-      "source": "cx0001",
-      "target": "cx0006",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0001-cx0010",
-      "source": "cx0001",
-      "target": "cx0010",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0001-cx0018",
-      "source": "cx0001",
-      "target": "cx0018",
-      "type": "smoothstep"
-    },
     {
       "id": "cx0003-cx0002",
       "source": "cx0003",
@@ -684,12 +506,6 @@
       "id": "cx0005-cx0018",
       "source": "cx0005",
       "target": "cx0018",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0005-cx0125",
-      "source": "cx0005",
-      "target": "cx0125",
       "type": "smoothstep"
     },
     {
@@ -741,84 +557,6 @@
       "type": "smoothstep"
     },
     {
-      "id": "cx0053-cx0010",
-      "source": "cx0053",
-      "target": "cx0010",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0055-cx0001",
-      "source": "cx0055",
-      "target": "cx0001",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0055-cx0002",
-      "source": "cx0055",
-      "target": "cx0002",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0055-cx0003",
-      "source": "cx0055",
-      "target": "cx0003",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0055-cx0012",
-      "source": "cx0055",
-      "target": "cx0012",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0055-cx0018",
-      "source": "cx0055",
-      "target": "cx0018",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0055-cx0053",
-      "source": "cx0055",
-      "target": "cx0053",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0055-cx0067",
-      "source": "cx0055",
-      "target": "cx0067",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0055-cx0084",
-      "source": "cx0055",
-      "target": "cx0084",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0059-cx0018",
-      "source": "cx0059",
-      "target": "cx0018",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0059-cx0067",
-      "source": "cx0059",
-      "target": "cx0067",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0059-cx0084",
-      "source": "cx0059",
-      "target": "cx0084",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0059-cx0152",
-      "source": "cx0059",
-      "target": "cx0152",
-      "type": "smoothstep"
-    },
-    {
       "id": "cx0067-cx0084",
       "source": "cx0067",
       "target": "cx0084",
@@ -843,12 +581,6 @@
       "type": "smoothstep"
     },
     {
-      "id": "cx0079-cx0018",
-      "source": "cx0079",
-      "target": "cx0018",
-      "type": "smoothstep"
-    },
-    {
       "id": "cx0084-cx0018",
       "source": "cx0084",
       "target": "cx0018",
@@ -861,93 +593,9 @@
       "type": "smoothstep"
     },
     {
-      "id": "cx0105-cx0002",
-      "source": "cx0105",
-      "target": "cx0002",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0105-cx0018",
-      "source": "cx0105",
-      "target": "cx0018",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0105-cx0045",
-      "source": "cx0105",
-      "target": "cx0045",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0115-cx0001",
-      "source": "cx0115",
-      "target": "cx0001",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0115-cx0002",
-      "source": "cx0115",
-      "target": "cx0002",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0115-cx0003",
-      "source": "cx0115",
-      "target": "cx0003",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0115-cx0006",
-      "source": "cx0115",
-      "target": "cx0006",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0115-cx0010",
-      "source": "cx0115",
-      "target": "cx0010",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0115-cx0018",
-      "source": "cx0115",
-      "target": "cx0018",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0115-cx0152",
-      "source": "cx0115",
-      "target": "cx0152",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0116-cx0010",
-      "source": "cx0116",
-      "target": "cx0010",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0123-cx0001",
-      "source": "cx0123",
-      "target": "cx0001",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0123-cx0003",
-      "source": "cx0123",
-      "target": "cx0003",
-      "type": "smoothstep"
-    },
-    {
       "id": "cx0123-cx0018",
       "source": "cx0123",
       "target": "cx0018",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0123-cx0125",
-      "source": "cx0123",
-      "target": "cx0125",
       "type": "smoothstep"
     },
     {
@@ -957,57 +605,9 @@
       "type": "smoothstep"
     },
     {
-      "id": "cx0125-cx0001",
-      "source": "cx0125",
-      "target": "cx0001",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0125-cx0002",
-      "source": "cx0125",
-      "target": "cx0002",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0125-cx0003",
-      "source": "cx0125",
-      "target": "cx0003",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0125-cx0018",
-      "source": "cx0125",
-      "target": "cx0018",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0125-cx0127",
-      "source": "cx0125",
-      "target": "cx0127",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0125-cx0152",
-      "source": "cx0125",
-      "target": "cx0152",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0126-cx0001",
-      "source": "cx0126",
-      "target": "cx0001",
-      "type": "smoothstep"
-    },
-    {
       "id": "cx0126-cx0002",
       "source": "cx0126",
       "target": "cx0002",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0126-cx0003",
-      "source": "cx0126",
-      "target": "cx0003",
       "type": "smoothstep"
     },
     {
@@ -1023,33 +623,15 @@
       "type": "smoothstep"
     },
     {
-      "id": "cx0126-cx0053",
-      "source": "cx0126",
-      "target": "cx0053",
-      "type": "smoothstep"
-    },
-    {
       "id": "cx0126-cx0152",
       "source": "cx0126",
       "target": "cx0152",
       "type": "smoothstep"
     },
     {
-      "id": "cx0127-cx0001",
-      "source": "cx0127",
-      "target": "cx0001",
-      "type": "smoothstep"
-    },
-    {
       "id": "cx0127-cx0002",
       "source": "cx0127",
       "target": "cx0002",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0127-cx0003",
-      "source": "cx0127",
-      "target": "cx0003",
       "type": "smoothstep"
     },
     {
@@ -1065,21 +647,9 @@
       "type": "smoothstep"
     },
     {
-      "id": "cx0127-cx0053",
-      "source": "cx0127",
-      "target": "cx0053",
-      "type": "smoothstep"
-    },
-    {
       "id": "cx0127-cx0152",
       "source": "cx0127",
       "target": "cx0152",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0128-cx0001",
-      "source": "cx0128",
-      "target": "cx0001",
       "type": "smoothstep"
     },
     {
@@ -1125,78 +695,6 @@
       "type": "smoothstep"
     },
     {
-      "id": "cx0129-cx0001",
-      "source": "cx0129",
-      "target": "cx0001",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0129-cx0003",
-      "source": "cx0129",
-      "target": "cx0003",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0129-cx0006",
-      "source": "cx0129",
-      "target": "cx0006",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0129-cx0010",
-      "source": "cx0129",
-      "target": "cx0010",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0129-cx0018",
-      "source": "cx0129",
-      "target": "cx0018",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0129-cx0115",
-      "source": "cx0129",
-      "target": "cx0115",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0129-cx0142",
-      "source": "cx0129",
-      "target": "cx0142",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0129-cx0152",
-      "source": "cx0129",
-      "target": "cx0152",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0133-cx0001",
-      "source": "cx0133",
-      "target": "cx0001",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0133-cx0003",
-      "source": "cx0133",
-      "target": "cx0003",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0133-cx0018",
-      "source": "cx0133",
-      "target": "cx0018",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0133-cx0152",
-      "source": "cx0133",
-      "target": "cx0152",
-      "type": "smoothstep"
-    },
-    {
       "id": "cx0135-cx0018",
       "source": "cx0135",
       "target": "cx0018",
@@ -1215,99 +713,9 @@
       "type": "smoothstep"
     },
     {
-      "id": "cx0138-cx0018",
-      "source": "cx0138",
-      "target": "cx0018",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0138-cx0003",
-      "source": "cx0138",
-      "target": "cx0003",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0138-cx0152",
-      "source": "cx0138",
-      "target": "cx0152",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0141-cx0018",
-      "source": "cx0141",
-      "target": "cx0018",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0141-cx0067",
-      "source": "cx0141",
-      "target": "cx0067",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0141-cx0084",
-      "source": "cx0141",
-      "target": "cx0084",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0141-cx0152",
-      "source": "cx0141",
-      "target": "cx0152",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0142-cx0001",
-      "source": "cx0142",
-      "target": "cx0001",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0142-cx0003",
-      "source": "cx0142",
-      "target": "cx0003",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0142-cx0010",
-      "source": "cx0142",
-      "target": "cx0010",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0142-cx0018",
-      "source": "cx0142",
-      "target": "cx0018",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0142-cx0152",
-      "source": "cx0142",
-      "target": "cx0152",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0144-cx0001",
-      "source": "cx0144",
-      "target": "cx0001",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0144-cx0003",
-      "source": "cx0144",
-      "target": "cx0003",
-      "type": "smoothstep"
-    },
-    {
       "id": "cx0144-cx0005",
       "source": "cx0144",
       "target": "cx0005",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0144-cx0006",
-      "source": "cx0144",
-      "target": "cx0006",
       "type": "smoothstep"
     },
     {
@@ -1329,12 +737,6 @@
       "type": "smoothstep"
     },
     {
-      "id": "cx0144-cx0053",
-      "source": "cx0144",
-      "target": "cx0053",
-      "type": "smoothstep"
-    },
-    {
       "id": "cx0144-cx0067",
       "source": "cx0144",
       "target": "cx0067",
@@ -1353,33 +755,9 @@
       "type": "smoothstep"
     },
     {
-      "id": "cx0146-cx0001",
-      "source": "cx0146",
-      "target": "cx0001",
-      "type": "smoothstep"
-    },
-    {
       "id": "cx0146-cx0002",
       "source": "cx0146",
       "target": "cx0002",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0146-cx0003",
-      "source": "cx0146",
-      "target": "cx0003",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0146-cx0006",
-      "source": "cx0146",
-      "target": "cx0006",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0146-cx0010",
-      "source": "cx0146",
-      "target": "cx0010",
       "type": "smoothstep"
     },
     {
@@ -1403,54 +781,6 @@
     {
       "id": "cx0146-cx0152",
       "source": "cx0146",
-      "target": "cx0152",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0150-cx0001",
-      "source": "cx0150",
-      "target": "cx0001",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0150-cx0002",
-      "source": "cx0150",
-      "target": "cx0002",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0150-cx0003",
-      "source": "cx0150",
-      "target": "cx0003",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0150-cx0018",
-      "source": "cx0150",
-      "target": "cx0018",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0150-cx0105",
-      "source": "cx0150",
-      "target": "cx0105",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0150-cx0126",
-      "source": "cx0150",
-      "target": "cx0126",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0150-cx0127",
-      "source": "cx0150",
-      "target": "cx0127",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0150-cx0152",
-      "source": "cx0150",
       "target": "cx0152",
       "type": "smoothstep"
     },
@@ -1485,12 +815,6 @@
       "type": "smoothstep"
     },
     {
-      "id": "cx0154-cx0001",
-      "source": "cx0154",
-      "target": "cx0001",
-      "type": "smoothstep"
-    },
-    {
       "id": "cx0154-cx0002",
       "source": "cx0154",
       "target": "cx0002",
@@ -1515,6 +839,12 @@
       "type": "smoothstep"
     },
     {
+      "id": "cx0154-cx0126",
+      "source": "cx0154",
+      "target": "cx0126",
+      "type": "smoothstep"
+    },
+    {
       "id": "cx0154-cx0151",
       "source": "cx0154",
       "target": "cx0151",
@@ -1527,21 +857,9 @@
       "type": "smoothstep"
     },
     {
-      "id": "cx0155-cx0001",
-      "source": "cx0155",
-      "target": "cx0001",
-      "type": "smoothstep"
-    },
-    {
       "id": "cx0155-cx0002",
       "source": "cx0155",
       "target": "cx0002",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0155-cx0003",
-      "source": "cx0155",
-      "target": "cx0003",
       "type": "smoothstep"
     },
     {
@@ -1566,12 +884,6 @@
       "id": "cx0155-cx0152",
       "source": "cx0155",
       "target": "cx0152",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0156-cx0001",
-      "source": "cx0156",
-      "target": "cx0001",
       "type": "smoothstep"
     },
     {
@@ -1611,12 +923,6 @@
       "type": "smoothstep"
     },
     {
-      "id": "cx0157-cx0001",
-      "source": "cx0157",
-      "target": "cx0001",
-      "type": "smoothstep"
-    },
-    {
       "id": "cx0157-cx0002",
       "source": "cx0157",
       "target": "cx0002",
@@ -1647,15 +953,15 @@
       "type": "smoothstep"
     },
     {
-      "id": "cx0157-cx0053",
-      "source": "cx0157",
-      "target": "cx0053",
-      "type": "smoothstep"
-    },
-    {
       "id": "cx0157-cx0126",
       "source": "cx0157",
       "target": "cx0126",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0157-cx0152",
+      "source": "cx0157",
+      "target": "cx0152",
       "type": "smoothstep"
     },
     {
@@ -1665,39 +971,15 @@
       "type": "smoothstep"
     },
     {
-      "id": "cx0158-cx0001",
-      "source": "cx0158",
-      "target": "cx0001",
-      "type": "smoothstep"
-    },
-    {
       "id": "cx0158-cx0002",
       "source": "cx0158",
       "target": "cx0002",
       "type": "smoothstep"
     },
     {
-      "id": "cx0158-cx0003",
-      "source": "cx0158",
-      "target": "cx0003",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0158-cx0010",
-      "source": "cx0158",
-      "target": "cx0010",
-      "type": "smoothstep"
-    },
-    {
       "id": "cx0158-cx0018",
       "source": "cx0158",
       "target": "cx0018",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0158-cx0125",
-      "source": "cx0158",
-      "target": "cx0125",
       "type": "smoothstep"
     },
     {
@@ -1713,9 +995,9 @@
       "type": "smoothstep"
     },
     {
-      "id": "cx0159-cx0001",
-      "source": "cx0159",
-      "target": "cx0001",
+      "id": "cx0158-cx0152",
+      "source": "cx0158",
+      "target": "cx0152",
       "type": "smoothstep"
     },
     {
@@ -1749,54 +1031,6 @@
       "type": "smoothstep"
     },
     {
-      "id": "cx0160-cx0002",
-      "source": "cx0160",
-      "target": "cx0002",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0160-cx0018",
-      "source": "cx0160",
-      "target": "cx0018",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0160-cx0125",
-      "source": "cx0160",
-      "target": "cx0125",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0160-cx0126",
-      "source": "cx0160",
-      "target": "cx0126",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0160-cx0127",
-      "source": "cx0160",
-      "target": "cx0127",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0160-cx0151",
-      "source": "cx0160",
-      "target": "cx0151",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0160-cx0152",
-      "source": "cx0160",
-      "target": "cx0152",
-      "type": "smoothstep"
-    },
-    {
-      "id": "cx0161-cx0001",
-      "source": "cx0161",
-      "target": "cx0001",
-      "type": "smoothstep"
-    },
-    {
       "id": "cx0161-cx0002",
       "source": "cx0161",
       "target": "cx0002",
@@ -1824,6 +1058,162 @@
       "id": "cx0161-cx0152",
       "source": "cx0161",
       "target": "cx0152",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0162-cx0002",
+      "source": "cx0162",
+      "target": "cx0002",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0162-cx0010",
+      "source": "cx0162",
+      "target": "cx0010",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0162-cx0018",
+      "source": "cx0162",
+      "target": "cx0018",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0162-cx0126",
+      "source": "cx0162",
+      "target": "cx0126",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0162-cx0151",
+      "source": "cx0162",
+      "target": "cx0151",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0162-cx0152",
+      "source": "cx0162",
+      "target": "cx0152",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0163-cx0010",
+      "source": "cx0163",
+      "target": "cx0010",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0163-cx0018",
+      "source": "cx0163",
+      "target": "cx0018",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0163-cx0127",
+      "source": "cx0163",
+      "target": "cx0127",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0163-cx0151",
+      "source": "cx0163",
+      "target": "cx0151",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0163-cx0152",
+      "source": "cx0163",
+      "target": "cx0152",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0164-cx0018",
+      "source": "cx0164",
+      "target": "cx0018",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0164-cx0151",
+      "source": "cx0164",
+      "target": "cx0151",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0164-cx0152",
+      "source": "cx0164",
+      "target": "cx0152",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0165-cx0002",
+      "source": "cx0165",
+      "target": "cx0002",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0165-cx0018",
+      "source": "cx0165",
+      "target": "cx0018",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0165-cx0127",
+      "source": "cx0165",
+      "target": "cx0127",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0165-cx0152",
+      "source": "cx0165",
+      "target": "cx0152",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0166-cx0002",
+      "source": "cx0166",
+      "target": "cx0002",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0166-cx0018",
+      "source": "cx0166",
+      "target": "cx0018",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0166-cx0126",
+      "source": "cx0166",
+      "target": "cx0126",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0166-cx0127",
+      "source": "cx0166",
+      "target": "cx0127",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0166-cx0152",
+      "source": "cx0166",
+      "target": "cx0152",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0167-cx0006",
+      "source": "cx0167",
+      "target": "cx0006",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0167-cx0010",
+      "source": "cx0167",
+      "target": "cx0010",
+      "type": "smoothstep"
+    },
+    {
+      "id": "cx0167-cx0049",
+      "source": "cx0167",
+      "target": "cx0049",
       "type": "smoothstep"
     }
   ]
