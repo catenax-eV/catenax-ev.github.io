@@ -1,5 +1,0 @@
-{
-    "leftOperand": "VersionChanges",
-    "operator": "eq",
-    "rightOperand":"cx.versionChanges.minor:1"
-}
