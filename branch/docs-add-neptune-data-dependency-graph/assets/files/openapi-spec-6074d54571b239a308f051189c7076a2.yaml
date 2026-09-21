@@ -1,0 +1,505 @@
+openapi: 3.1.0
+info:
+  title: Company Certificate Notification API
+  description: APIs for requesting and accepting company certificates. Note that the Certificate Provider APIs and the Certificate Consumer APIs are available via different EDC assets.
+  version: 1.0.0
+tags:
+  - name: Certificate Provider
+    description: API endpoints offered by the Certificate Provider
+  - name: Certificate Consumer
+    description: API endpoints offered by the Certificate Consumer
+
+components:
+  schemas:
+    Header:
+      description: Characteristic describing the common shared aspect Message Header
+      required:
+      - context
+      - messageId
+      - receiverBpn
+      - senderBpn
+      - sentDateTime
+      - version
+      type: object
+      properties:
+        messageId:
+          pattern: "^(?:urn:uuid:)?[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+          type: string
+          description: A UUIDv4 to uniquely identify a message
+          examples:
+            - urn:uuid:e4da568b-8cf1-4f5f-a96a-cf26265b2c72
+            - e4da568b-8cf1-4f5f-a96a-cf26265b2c72
+        context:
+          type: string
+          description: The context defines the type of company certificate message
+          examples:
+            - CompanyCertificateManagement-CCMAPI-Request:1.0.0
+          enum:
+          - CompanyCertificateManagement-CCMAPI-Request:1.0.0
+          - CompanyCertificateManagement-CCMAPI-Push:1.0.0
+          - CompanyCertificateManagement-CCMAPI-Status:1.0.0
+          - CompanyCertificateManagement-CCMAPI-Available:1.0.0
+        sentDateTime:
+          type: string
+          description: Time zone aware timestamp holding the date and the time the
+            message was sent by the sending party. The value MUST be formatted according
+            to the ISO 8601 standard
+          format: date-time
+          examples:
+            - 2024-10-07T10:15:00Z
+        senderBpn:
+          pattern: "^BPNL[a-zA-Z0-9]{12}$"
+          type: string
+          description: The Business Partner Number of the sending party
+          examples:
+            - BPNL0000000001AB
+        receiverBpn:
+          pattern: "^BPNL[a-zA-Z0-9]{12}$"
+          type: string
+          description: The Business Partner Number of the receiving party
+          examples:
+            - BPNL0000000002CD
+        relatedMessageId:
+          pattern: "^(?:urn:uuid:)?[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+          type: string
+          description: Unique ID identifying a message somehow related to the current
+            one
+          examples:
+            - urn:uuid:e4da568b-8cf1-4f5f-a96a-cf26265b2c72
+            - e4da568b-8cf1-4f5f-a96a-cf26265b2c72
+        version:
+          pattern: "^(0|[1-9][0-9]*).(0|[1-9][0-9]*).(0|[1-9][0-9]*)(-(0|[1-9A-Za-z-][0-9A-Za-z-]*)(.[0-9A-Za-z-]+)*)?([0-9A-Za-z-]+(.[0-9A-Za-z-]+)*)?$"
+          type: string
+          description: The unique identifier of the aspect model defining the structure
+            and the semantics of the message's header
+          examples:
+            - 3.1.0
+
+    FeedbackUrlHeader:
+      allOf:
+        - $ref: '#/components/schemas/Header'
+        - type: object
+          properties:
+            senderFeedbackUrl:
+              type: string
+              description: URL of the EDC DSP endpoint to send feedback to
+              examples:
+                - https://domain.tld/path/to/edc/api/v1/dsp
+
+    CertificateRequest:
+      type: object
+      required:
+        - header
+        - content
+      properties:
+        header:
+          $ref: '#/components/schemas/Header'
+        content:
+          type: object
+          required:
+            - certifiedBpn
+            - certificateType
+          properties:
+            certifiedBpn:
+              type: string
+              description: The BPNL of the legal entity for which the requested certificate has been issued
+              pattern: "^BPNL[a-zA-Z0-9]{12}$"
+              examples:
+                - "BPNL0000000002CD"
+            certificateType:
+              type: string
+              description: The type of certificate the certificate consumer requests
+              examples:
+                - "iso9001"
+            locationBpns:
+              type: array
+              description: The BPNs of the site or address locations for which the certificate consumer requests the certificate
+              items:
+                $ref: '#/components/schemas/BpnLocation'
+
+    CertificateRequestFinishedResponse:
+      type: object
+      required:
+        - header
+        - content
+      properties:
+        header:
+          $ref: '#/components/schemas/Header'
+        content:
+          oneOf:
+            - $ref: '#/components/schemas/CertificateRequestCompletedResponseContent'
+            - $ref: '#/components/schemas/CertificateRequestRejectedResponseContent'
+          discriminator:
+            propertyName: requestStatus
+
+    CertificateRequestInProgressResponse:
+      type: object
+      required:
+        - header
+        - content
+      properties:
+        header:
+          $ref: '#/components/schemas/Header'
+        content:
+          type: object
+          required:
+            - requestStatus
+          properties:
+            requestStatus:
+              type: string
+              description: The processing status in which the certificate request process is currently in
+              const: "IN_PROGRESS"
+
+    CertificateRequestCompletedResponseContent:
+      type: object
+      required:
+        - requestStatus
+        - documentId
+      properties:
+        requestStatus:
+          type: string
+          description: The processing status in which the certificate request process is currently in
+          const: "COMPLETED"
+        documentId:
+          type: string
+          pattern: uuid
+          description: The UUID of the asset under which the certificate is available
+
+    CertificateRequestRejectedResponseContent:
+      type: object
+      required:
+        - requestStatus
+        - requestErrors
+      properties:
+        requestStatus:
+          type: string
+          description: The processing status in which the certificate request process is currently in
+          const: "REJECTED"
+        requestErrors:
+          type: array
+          description: Listing all reasons why the requested certificate can not be provided
+          items:
+            $ref: '#/components/schemas/Error'
+        locationErrors:
+          type: array
+          description: Optional detailed reasons for the rejection for each location
+          items:
+            $ref: '#/components/schemas/LocationErrorCollection'
+
+    BpnLocation:
+      type: string
+      description: The BPNA or BPNS of either an address or site location
+      pattern: "^BPN[AS][a-zA-Z0-9]{12}$"
+      examples:
+        - "BPNA000000000001"
+        - "BPNS000000000002"
+
+    CertificatePush:
+      type: object
+      required:
+        - header
+        - content
+      properties:
+        header:
+          $ref: '#/components/schemas/FeedbackUrlHeader'
+        content:
+          $ref: 'https://raw.githubusercontent.com/eclipse-tractusx/sldt-semantic-models/refs/heads/main/io.catenax.business_partner_certificate/3.1.0/gen/BusinessPartnerCertificate-schema.json'
+
+    Error:
+      type: object
+      required:
+        - message
+      properties:
+        message:
+          type: string
+          description: Text detailing the error that occured
+          examples:
+            - "We do not process certificates on Sunday"
+            - "Can not provide certicate for requested locations"
+
+    LocationErrorCollection:
+      type: object
+      properties:
+        bpn:
+          $ref: '#/components/schemas/BpnLocation'
+        locationErrors:
+          type: array
+          items:
+            $ref: '#/components/schemas/LocationError'
+
+    LocationError:
+      type: object
+      properties:
+        message:
+          type: string
+          examples:
+            - Site BPNS000000000003 is unknown
+
+    CertificateStatus:
+      type: object
+      required:
+        - header
+        - content
+      properties:
+        header:
+          $ref: '#/components/schemas/FeedbackUrlHeader'
+        content:
+          type: object
+          required:
+            - documentId
+            - certificateStatus
+            - locationBpns
+          properties:
+            documentId:
+              type: string
+              format: uuid
+            certificateStatus:
+              type: string
+              enum: [ACCEPTED, REJECTED, RECEIVED]
+            certificateErrors:
+              type: array
+              items:
+                $ref: '#/components/schemas/Error'
+            locationBpns:
+              type: array
+              items:
+                $ref: '#/components/schemas/BpnLocation'
+            locationErrors:
+              type: array
+              items:
+                $ref: '#/components/schemas/LocationErrorCollection'
+
+    CertificateAvailable:
+      type: object
+      required:
+        - header
+        - content
+      properties:
+        header:
+          $ref: '#/components/schemas/FeedbackUrlHeader'
+        content:
+          type: object
+          required:
+            - documentId
+            - certificateType
+          properties:
+            documentId:
+              type: string
+              format: uuid
+            certificateType:
+              type: string
+              description: "Type of the certificate as defined on the document, valid types are registered at BPN metadatacontroller"
+            locationBpns:
+              type: array
+              items:
+                $ref: '#/components/schemas/BpnLocation'
+
+  examples:
+    CertificateRequestCompleted:
+      summary: A response for a successfully completed certificate request process
+      value:
+        header:
+          messagedId: "urn:uuid:3b4edc05-e214-47a1-b0c2-1d831cdd9ba9"
+          context: "CompanyCertificateManagement-CCMAPI-Request:1.0.0"
+          sentDateTime: "2024-10-07T10:15:00Z"
+          senderBpn: "BPNL0000000001AB"
+          receiverBpn: "BPNL0000000002CD"
+          relatedMessageId: "urn:uuid:e4da568b-8cf1-4f5f-a96a-cf26265b2c72"
+          version: "3.1.0"
+        content:
+          requestStatus: "COMPLETED"
+          documentId: "3b4edc05-e214-47a1-b0c2-1d831cdd9ba"
+
+    CertificateRequestRejected:
+      summary: A response for a rejected certificate request process
+      value:
+        header:
+          messagedId: "urn:uuid:3b4edc05-e214-47a1-b0c2-1d831cdd9ba9"
+          context: "CompanyCertificateManagement-CCMAPI-Request:1.0.0"
+          sentDateTime: "2024-10-07T10:15:00Z"
+          senderBpn: "BPNL0000000001AB"
+          receiverBpn: "BPNL0000000002CD"
+          relatedMessageId: "urn:uuid:e4da568b-8cf1-4f5f-a96a-cf26265b2c72"
+          version: "3.1.0"
+        content:
+          requestStatus: "REJECTED"
+          requestErrors:
+            - message: "We do not process certificates on Sunday"
+            - message: "Can not provide certicate for requested locations"
+          locationErrors:
+            - bpn: "BPNS000000000003"
+              locationErrors:
+                - message: "Site BPNS000000000003 is unknown"
+
+    CertificateReceivedStatus:
+      summary: Consumer received certificate
+      value:
+        header:
+          messagedId: "urn:uuid:3b4edc05-e214-47a1-b0c2-1d831cdd9ba9"
+          context: "CompanyCertificateManagement-CCMAPI-Status:1.0.0"
+          sentDateTime: "2024-10-07T10:15:00Z"
+          senderBpn: "BPNL0000000001AB"
+          receiverBpn: "BPNL0000000002CD"
+          relatedMessageId: "urn:uuid:e4da568b-8cf1-4f5f-a96a-cf26265b2c72"
+          version: "3.1.0"
+          senderFeedbackUrl: "https://domain.tld/path/to/edc/api/v1/dsp"
+        content:
+          documentId: "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+          certificateStatus: "RECEIVED"
+          locationBpns:
+            - "BPNS000000000003"
+
+    CertificateAcceptedStatus:
+      summary: Consumer accepts received certificate
+      value:
+        header:
+          messagedId: "urn:uuid:3b4edc05-e214-47a1-b0c2-1d831cdd9ba9"
+          context: "CompanyCertificateManagement-CCMAPI-Status:1.0.0"
+          sentDateTime: "2024-10-07T10:15:00Z"
+          senderBpn: "BPNL0000000001AB"
+          receiverBpn: "BPNL0000000002CD"
+          relatedMessageId: "urn:uuid:e4da568b-8cf1-4f5f-a96a-cf26265b2c72"
+          version: "3.1.0"
+          senderFeedbackUrl: "https://domain.tld/path/to/edc/api/v1/dsp"
+        content:
+          documentId: "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+          certificateStatus: "ACCEPTED"
+          locationBpns:
+            - "BPNS000000000003"
+
+    CertificateRejectedStatus:
+      summary: Consumer rejected received certificate
+      value:
+        header:
+          messagedId: "urn:uuid:3b4edc05-e214-47a1-b0c2-1d831cdd9ba9"
+          context: "CompanyCertificateManagement-CCMAPI-Status:1.0.0"
+          sentDateTime: "2024-10-07T10:15:00Z"
+          senderBpn: "BPNL0000000001AB"
+          receiverBpn: "BPNL0000000002CD"
+          relatedMessageId: "urn:uuid:e4da568b-8cf1-4f5f-a96a-cf26265b2c72"
+          version: "3.1.0"
+          senderFeedbackUrl: "https://domain.tld/path/to/edc/api/v1/dsp"
+        content:
+          documentId: "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+          certificateStatus: "REJECTED"
+          locationBpns:
+            - "BPNS000000000003"
+          certificateErrors:
+            - message: "We do not process certificates on Sunday"
+            - message: "Can not provide certicate for requested locations"
+          locationErrors:
+            - bpn: "BPNS000000000003"
+              locationErrors:
+                - message: "Site BPNS000000000003 is unknown"
+
+    CertificateAvailable:
+      summary: Provider notifies consumer that a certificate is available
+      value:
+        header:
+          messagedId: "urn:uuid:3b4edc05-e214-47a1-b0c2-1d831cdd9ba9"
+          context: "CompanyCertificateManagement-CCMAPI-Available:1.0.0"
+          sentDateTime: "2024-10-07T10:15:00Z"
+          senderBpn: "BPNL0000000001AB"
+          receiverBpn: "BPNL0000000002CD"
+          relatedMessageId: "urn:uuid:e4da568b-8cf1-4f5f-a96a-cf26265b2c72"
+          version: "3.1.0"
+          senderFeedbackUrl: "https://domain.tld/path/to/edc/api/v1/dsp"
+        content:
+          documentId: "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+          certificateType: "iso9001"
+          locationBpns:
+            - "BPNS000000000003"
+
+paths:
+  /companycertificate/request:
+    post:
+      summary: Certificate consumer requests a specific certificate from certificate provider
+      tags:
+        - Certificate Provider
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CertificateRequest'
+      responses:
+        '202':
+          description: Certificate request in processing
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CertificateRequestInProgressResponse'
+        '200':
+          description: Certificate request finished processing
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CertificateRequestFinishedResponse'
+              examples:
+                Completed:
+                  $ref: '#/components/examples/CertificateRequestCompleted'
+                Rejected:
+                  $ref: '#/components/examples/CertificateRequestRejected'
+        '400':
+          description: Request malformed and can not be processed
+        '500':
+          description: Internal server error
+
+  /companycertificate/push:
+    post:
+      summary: Certificate provider sends a certificate to the certificate consumer
+      tags:
+        - Certificate Consumer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CertificatePush'
+      responses:
+        '200':
+          description: Notification processed successfully
+        '500':
+          description: Internal server error
+
+  /companycertificate/status:
+    post:
+      summary: Certificate consumer sends feedback on the status of a consumed certificate to the certificate provider
+      tags:
+        - Certificate Provider
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CertificateStatus'
+            examples:
+              Received:
+                $ref: '#/components/examples/CertificateReceivedStatus'
+              Accepted:
+                $ref: '#/components/examples/CertificateAcceptedStatus'
+              Rejected:
+                $ref: '#/components/examples/CertificateRejectedStatus'
+      responses:
+        '200':
+          description: Status updated successfully
+        '500':
+          description: Internal server error
+
+  /companycertificate/available:
+    post:
+      summary: Certificate provider notifies the certificate consumer that a certificate is available
+      tags:
+        - Certificate Consumer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CertificateAvailable'
+            examples:
+              CertificateAvailable:
+                $ref: '#/components/examples/CertificateAvailable'
+      responses:
+        '200':
+          description: Notification processed successfully

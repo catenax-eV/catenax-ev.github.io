@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="358.3333px" preserveAspectRatio="none" style="width:337px;height:358px;background:#FFFFFF;" version="1.1" viewBox="0 0 337 358" width="337.5px" zoomAndPan="magnify"><defs/><g><!--MD5=[d83005f75f6c923452b27bd89234024a]
+cluster Legal Entity and References--><g id="cluster_Legal Entity and References"><path d="M4.4271,3.125 L107.5521,3.125 A1.9531,1.9531 0 0 1 108.8542,4.4271 L112.5,15.4215 L332.5521,15.4215 A1.3021,1.3021 0 0 1 333.8542,16.7236 L333.8542,353.3854 A1.3021,1.3021 0 0 1 332.5521,354.6875 L4.4271,354.6875 A1.3021,1.3021 0 0 1 3.125,353.3854 L3.125,4.4271 A1.3021,1.3021 0 0 1 4.4271,3.125 " style="stroke:#000000;stroke-width:0.78125;fill:none;"/><line style="stroke:#000000;stroke-width:0.78125;fill:none;" x1="3.125" x2="112.5" y1="15.4215" y2="15.4215"/><text fill="#000000" font-family="sans-serif" font-size="7.2917" font-weight="bold" lengthAdjust="spacing" textLength="102.6042" x="5.2083" y="11.736">Legal Entity and References</text></g><!--MD5=[e50f24c143873ab5352ff9f9e3841676]
+class LegalEntity--><g id="elem_LegalEntity"><rect codeLine="5" fill="#F1F1F1" height="75.8626" id="LegalEntity" rx="1.3021" ry="1.3021" style="stroke:#181818;stroke-width:0.2604166666666667;" width="81.7708" x="121.0938" y="101.5625"/><ellipse cx="141.7969" cy="109.8958" fill="#ADD1B2" rx="5.7292" ry="5.7292" style="stroke:#181818;stroke-width:0.5208333333333334;"/><path d="M141.2028,110.3109 L141.2028,111.613 L143.457,111.613 L143.457,111.1328 Q143.457,110.8154 143.5791,110.6771 Q143.7093,110.5387 143.9046,110.5387 Q144.0999,110.5387 144.222,110.6771 Q144.3441,110.8154 144.3441,111.1328 L144.3441,112.5 L140.1774,112.5 Q139.8519,112.5 139.7135,112.3779 Q139.5833,112.2559 139.5833,112.0524 Q139.5833,111.8571 139.7217,111.735 Q139.86,111.613 140.1774,111.613 L140.3158,111.613 L140.3158,108.1462 L140.1774,108.1462 Q139.8519,108.1462 139.7135,108.0241 Q139.5833,107.902 139.5833,107.6986 Q139.5833,107.5033 139.7135,107.3812 Q139.8519,107.2591 140.1774,107.2591 L144.1488,107.2591 L144.1488,108.61 Q144.1488,108.9274 144.0267,109.0658 Q143.9128,109.196 143.7093,109.196 Q143.514,109.196 143.3919,109.0658 Q143.2699,108.9274 143.2699,108.61 L143.2699,108.1462 L141.2028,108.1462 L141.2028,109.4238 L141.9759,109.4238 Q141.9759,109.082 142.041,108.9844 Q142.1794,108.7728 142.4235,108.7728 Q142.6188,108.7728 142.7409,108.9111 Q142.863,109.0413 142.863,109.3587 L142.863,110.3841 Q142.863,110.6689 142.7979,110.7666 Q142.6595,110.9701 142.4235,110.9701 Q142.1794,110.9701 142.041,110.7585 Q141.9759,110.6608 141.9759,110.3109 L141.2028,110.3109 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="36.4583" x="151.9531" y="112.8794">LegalEntity</text><line style="stroke:#181818;stroke-width:0.2604166666666667;" x1="121.6146" x2="202.3438" y1="118.2292" y2="118.2292"/><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="18.2292" x="124.2188" y="127.8819">BPNL</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="36.9792" x="124.2188" y="137.0534">LegalName</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="36.4583" x="124.2188" y="146.225">ShortName</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="75.5208" x="124.2188" y="155.3965">IsCatenaXMemberData</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="33.3333" x="124.2188" y="164.5681">CreatedAt</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="30.2083" x="124.2188" y="173.7396">UpdateAt</text></g><!--MD5=[7eeb4b838a05227218a56e467b2beb72]
+class Site--><g id="elem_Site"><rect codeLine="14" fill="#F1F1F1" height="39.1764" id="Site" rx="1.3021" ry="1.3021" style="stroke:#181818;stroke-width:0.2604166666666667;" width="29.1667" x="147.3958" y="21.875"/><ellipse cx="155.2083" cy="30.2083" fill="#ADD1B2" rx="5.7292" ry="5.7292" style="stroke:#181818;stroke-width:0.5208333333333334;"/><path d="M154.6143,30.6234 L154.6143,31.9255 L156.8685,31.9255 L156.8685,31.4453 Q156.8685,31.1279 156.9906,30.9896 Q157.1208,30.8512 157.3161,30.8512 Q157.5114,30.8512 157.6335,30.9896 Q157.7555,31.1279 157.7555,31.4453 L157.7555,32.8125 L153.5889,32.8125 Q153.2633,32.8125 153.125,32.6904 Q152.9948,32.5684 152.9948,32.3649 Q152.9948,32.1696 153.1331,32.0475 Q153.2715,31.9255 153.5889,31.9255 L153.7272,31.9255 L153.7272,28.4587 L153.5889,28.4587 Q153.2633,28.4587 153.125,28.3366 Q152.9948,28.2145 152.9948,28.0111 Q152.9948,27.8158 153.125,27.6937 Q153.2633,27.5716 153.5889,27.5716 L157.5602,27.5716 L157.5602,28.9225 Q157.5602,29.2399 157.4382,29.3783 Q157.3242,29.5085 157.1208,29.5085 Q156.9255,29.5085 156.8034,29.3783 Q156.6813,29.2399 156.6813,28.9225 L156.6813,28.4587 L154.6143,28.4587 L154.6143,29.7363 L155.3874,29.7363 Q155.3874,29.3945 155.4525,29.2969 Q155.5908,29.0853 155.835,29.0853 Q156.0303,29.0853 156.1523,29.2236 Q156.2744,29.3538 156.2744,29.6712 L156.2744,30.6966 Q156.2744,30.9814 156.2093,31.0791 Q156.071,31.2826 155.835,31.2826 Q155.5908,31.2826 155.4525,31.071 Q155.3874,30.9733 155.3874,30.6234 L154.6143,30.6234 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="12.5" x="162.5" y="33.1919">Site</text><line style="stroke:#181818;stroke-width:0.2604166666666667;" x1="147.9167" x2="176.0417" y1="38.5417" y2="38.5417"/><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="18.75" x="150.5208" y="48.1944">BPNS</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="6.25" x="150.5208" y="57.3659">...</text></g><!--MD5=[0f39e4cb6f03951afbf6d14bd2505654]
+class Address--><g id="elem_Address"><rect codeLine="19" fill="#F1F1F1" height="39.1764" id="Address" rx="1.3021" ry="1.3021" style="stroke:#181818;stroke-width:0.2604166666666667;" width="43.75" x="242.1875" y="21.875"/><ellipse cx="250" cy="30.2083" fill="#ADD1B2" rx="5.7292" ry="5.7292" style="stroke:#181818;stroke-width:0.5208333333333334;"/><path d="M249.4059,30.6234 L249.4059,31.9255 L251.6602,31.9255 L251.6602,31.4453 Q251.6602,31.1279 251.7822,30.9896 Q251.9124,30.8512 252.1077,30.8512 Q252.3031,30.8512 252.4251,30.9896 Q252.5472,31.1279 252.5472,31.4453 L252.5472,32.8125 L248.3805,32.8125 Q248.055,32.8125 247.9167,32.6904 Q247.7865,32.5684 247.7865,32.3649 Q247.7865,32.1696 247.9248,32.0475 Q248.0632,31.9255 248.3805,31.9255 L248.5189,31.9255 L248.5189,28.4587 L248.3805,28.4587 Q248.055,28.4587 247.9167,28.3366 Q247.7865,28.2145 247.7865,28.0111 Q247.7865,27.8158 247.9167,27.6937 Q248.055,27.5716 248.3805,27.5716 L252.3519,27.5716 L252.3519,28.9225 Q252.3519,29.2399 252.2298,29.3783 Q252.1159,29.5085 251.9124,29.5085 Q251.7171,29.5085 251.5951,29.3783 Q251.473,29.2399 251.473,28.9225 L251.473,28.4587 L249.4059,28.4587 L249.4059,29.7363 L250.179,29.7363 Q250.179,29.3945 250.2441,29.2969 Q250.3825,29.0853 250.6266,29.0853 Q250.8219,29.0853 250.944,29.2236 Q251.0661,29.3538 251.0661,29.6712 L251.0661,30.6966 Q251.0661,30.9814 251.001,31.0791 Q250.8626,31.2826 250.6266,31.2826 Q250.3825,31.2826 250.2441,31.071 Q250.179,30.9733 250.179,30.6234 L249.4059,30.6234 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="27.0833" x="257.2917" y="33.1919">Address</text><line style="stroke:#181818;stroke-width:0.2604166666666667;" x1="242.7083" x2="285.4167" y1="38.5417" y2="38.5417"/><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="18.75" x="245.3125" y="48.1944">BPNA</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="6.25" x="245.3125" y="57.3659">...</text></g><!--MD5=[6d077f04452652d23c4147471ca74c6a]
+class LegalEntityState--><g id="elem_LegalEntityState"><rect codeLine="24" fill="#F1F1F1" height="39.1764" id="LegalEntityState" rx="1.3021" ry="1.3021" style="stroke:#181818;stroke-width:0.2604166666666667;" width="70.3125" x="11.7188" y="120.0521"/><ellipse cx="19.5313" cy="128.3854" fill="#ADD1B2" rx="5.7292" ry="5.7292" style="stroke:#181818;stroke-width:0.5208333333333334;"/><path d="M20.9717,126.237 Q21.0531,126.123 21.1507,126.0661 Q21.2484,126.0091 21.3623,126.0091 Q21.5576,126.0091 21.6797,126.1475 Q21.8018,126.2777 21.8018,126.5951 L21.8018,127.3519 Q21.8018,127.6693 21.6797,127.8076 Q21.5576,127.946 21.3623,127.946 Q21.1833,127.946 21.0775,127.8402 Q20.9717,127.7425 20.9147,127.474 Q20.8903,127.2868 20.7926,127.1891 Q20.6217,126.9938 20.3044,126.8799 Q19.987,126.766 19.6615,126.766 Q19.2627,126.766 18.929,126.9368 Q18.6035,127.1077 18.3431,127.4984 Q18.0908,127.889 18.0908,128.4261 L18.0908,128.9958 Q18.0908,129.6387 18.5547,130.07 Q19.0186,130.4932 19.8486,130.4932 Q20.3369,130.4932 20.6787,130.363 Q20.8822,130.2816 21.1019,130.0537 Q21.2402,129.9154 21.3135,129.8747 Q21.3949,129.834 21.5007,129.834 Q21.6715,129.834 21.8018,129.9723 Q21.9401,130.1025 21.9401,130.2816 Q21.9401,130.4606 21.7611,130.6722 Q21.5007,130.9733 21.0856,131.1442 Q20.5241,131.3802 19.8486,131.3802 Q19.0592,131.3802 18.4326,131.0547 Q17.9199,130.7943 17.5618,130.2409 Q17.2038,129.6794 17.2038,129.012 L17.2038,128.4098 Q17.2038,127.7181 17.5212,127.124 Q17.8467,126.5218 18.4163,126.2044 Q18.986,125.8789 19.6289,125.8789 Q20.0114,125.8789 20.3451,125.9684 Q20.6868,126.0498 20.9717,126.237 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="53.6458" x="26.8229" y="131.369">LegalEntityState</text><line style="stroke:#181818;stroke-width:0.2604166666666667;" x1="12.2396" x2="81.5104" y1="136.7188" y2="136.7188"/><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="33.3333" x="14.8438" y="146.3715">ValidFrom</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="25" x="14.8438" y="155.543">ValidTo</text></g><!--MD5=[b8356a631b38637eadd8875cba2d8515]
+class LegalEntityStateType--><g id="elem_LegalEntityStateType"><rect codeLine="29" fill="#F1F1F1" height="39.1764" id="LegalEntityStateType" rx="1.3021" ry="1.3021" style="stroke:#181818;stroke-width:0.2604166666666667;" width="86.9792" x="11.7188" y="218.2292"/><ellipse cx="19.5313" cy="226.5625" fill="#EB937F" rx="5.7292" ry="5.7292" style="stroke:#181818;stroke-width:0.5208333333333334;"/><path d="M18.9372,226.9775 L18.9372,228.2796 L21.1914,228.2796 L21.1914,227.7995 Q21.1914,227.4821 21.3135,227.3438 Q21.4437,227.2054 21.639,227.2054 Q21.8343,227.2054 21.9564,227.3438 Q22.0785,227.4821 22.0785,227.7995 L22.0785,229.1667 L17.9118,229.1667 Q17.5863,229.1667 17.4479,229.0446 Q17.3177,228.9225 17.3177,228.7191 Q17.3177,228.5238 17.4561,228.4017 Q17.5944,228.2796 17.9118,228.2796 L18.0501,228.2796 L18.0501,224.8128 L17.9118,224.8128 Q17.5863,224.8128 17.4479,224.6908 Q17.3177,224.5687 17.3177,224.3652 Q17.3177,224.1699 17.4479,224.0479 Q17.5863,223.9258 17.9118,223.9258 L21.8831,223.9258 L21.8831,225.2767 Q21.8831,225.5941 21.7611,225.7324 Q21.6471,225.8626 21.4437,225.8626 Q21.2484,225.8626 21.1263,225.7324 Q21.0042,225.5941 21.0042,225.2767 L21.0042,224.8128 L18.9372,224.8128 L18.9372,226.0905 L19.7103,226.0905 Q19.7103,225.7487 19.7754,225.651 Q19.9137,225.4395 20.1579,225.4395 Q20.3532,225.4395 20.4753,225.5778 Q20.5973,225.708 20.5973,226.0254 L20.5973,227.0508 Q20.5973,227.3356 20.5322,227.4333 Q20.3939,227.6367 20.1579,227.6367 Q19.9137,227.6367 19.7754,227.4251 Q19.7103,227.3275 19.7103,226.9775 L18.9372,226.9775 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="70.3125" x="26.8229" y="229.5461">LegalEntityStateType</text><line style="stroke:#181818;stroke-width:0.2604166666666667;" x1="12.2396" x2="98.1771" y1="234.8958" y2="234.8958"/><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="19.7917" x="14.8438" y="244.5485">Active</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="25" x="14.8438" y="253.7201">Inactive</text></g><!--MD5=[88bf8b396752b291d9e1f0421c9bcc73]
+class LegalEntityIdentifier--><g id="elem_LegalEntityIdentifier"><rect codeLine="34" fill="#F1F1F1" height="39.1764" id="LegalEntityIdentifier" rx="1.3021" ry="1.3021" style="stroke:#181818;stroke-width:0.2604166666666667;" width="81.25" x="196.875" y="218.2292"/><ellipse cx="204.6875" cy="226.5625" fill="#ADD1B2" rx="5.7292" ry="5.7292" style="stroke:#181818;stroke-width:0.5208333333333334;"/><path d="M206.1279,224.4141 Q206.2093,224.3001 206.307,224.2432 Q206.4046,224.1862 206.5186,224.1862 Q206.7139,224.1862 206.8359,224.3245 Q206.958,224.4548 206.958,224.7721 L206.958,225.529 Q206.958,225.8464 206.8359,225.9847 Q206.7139,226.123 206.5186,226.123 Q206.3395,226.123 206.2337,226.0173 Q206.1279,225.9196 206.071,225.651 Q206.0465,225.4639 205.9489,225.3662 Q205.778,225.1709 205.4606,225.057 Q205.1432,224.943 204.8177,224.943 Q204.4189,224.943 204.0853,225.1139 Q203.7598,225.2848 203.4993,225.6755 Q203.2471,226.0661 203.2471,226.6032 L203.2471,227.1729 Q203.2471,227.8158 203.7109,228.2471 Q204.1748,228.6702 205.0049,228.6702 Q205.4932,228.6702 205.835,228.54 Q206.0384,228.4587 206.2581,228.2308 Q206.3965,228.0924 206.4697,228.0518 Q206.5511,228.0111 206.6569,228.0111 Q206.8278,228.0111 206.958,228.1494 Q207.0964,228.2796 207.0964,228.4587 Q207.0964,228.6377 206.9173,228.8493 Q206.6569,229.1504 206.2419,229.3213 Q205.6803,229.5573 205.0049,229.5573 Q204.2155,229.5573 203.5889,229.2318 Q203.0762,228.9714 202.7181,228.418 Q202.36,227.8564 202.36,227.1891 L202.36,226.5869 Q202.36,225.8952 202.6774,225.3011 Q203.0029,224.6989 203.5726,224.3815 Q204.1423,224.056 204.7852,224.056 Q205.1676,224.056 205.5013,224.1455 Q205.8431,224.2269 206.1279,224.4141 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="64.5833" x="211.9792" y="229.5461">LegalEntityIdentifier</text><line style="stroke:#181818;stroke-width:0.2604166666666667;" x1="197.3958" x2="277.6042" y1="234.8958" y2="234.8958"/><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="18.75" x="200" y="244.5485">Value</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="39.5833" x="200" y="253.7201">IssuingBody</text></g><!--MD5=[a6da717249a907f03f0e92554f6403c2]
+class IdentifierType--><g id="elem_IdentifierType"><rect codeLine="39" fill="#F1F1F1" height="48.348" id="IdentifierType" rx="1.3021" ry="1.3021" style="stroke:#181818;stroke-width:0.2604166666666667;" width="61.4583" x="206.7708" y="297.9167"/><ellipse cx="214.5833" cy="306.25" fill="#ADD1B2" rx="5.7292" ry="5.7292" style="stroke:#181818;stroke-width:0.5208333333333334;"/><path d="M213.9893,306.665 L213.9893,307.9671 L216.2435,307.9671 L216.2435,307.487 Q216.2435,307.1696 216.3656,307.0313 Q216.4958,306.8929 216.6911,306.8929 Q216.8864,306.8929 217.0085,307.0313 Q217.1305,307.1696 217.1305,307.487 L217.1305,308.8542 L212.9639,308.8542 Q212.6383,308.8542 212.5,308.7321 Q212.3698,308.61 212.3698,308.4066 Q212.3698,308.2113 212.5081,308.0892 Q212.6465,307.9671 212.9639,307.9671 L213.1022,307.9671 L213.1022,304.5003 L212.9639,304.5003 Q212.6383,304.5003 212.5,304.3783 Q212.3698,304.2562 212.3698,304.0527 Q212.3698,303.8574 212.5,303.7354 Q212.6383,303.6133 212.9639,303.6133 L216.9352,303.6133 L216.9352,304.9642 Q216.9352,305.2816 216.8132,305.4199 Q216.6992,305.5501 216.4958,305.5501 Q216.3005,305.5501 216.1784,305.4199 Q216.0563,305.2816 216.0563,304.9642 L216.0563,304.5003 L213.9893,304.5003 L213.9893,305.778 L214.7624,305.778 Q214.7624,305.4362 214.8275,305.3385 Q214.9658,305.127 215.21,305.127 Q215.4053,305.127 215.5273,305.2653 Q215.6494,305.3955 215.6494,305.7129 L215.6494,306.7383 Q215.6494,307.0231 215.5843,307.1208 Q215.446,307.3242 215.21,307.3242 Q214.9658,307.3242 214.8275,307.1126 Q214.7624,307.015 214.7624,306.665 L213.9893,306.665 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="44.7917" x="221.875" y="309.2336">IdentifierType</text><line style="stroke:#181818;stroke-width:0.2604166666666667;" x1="207.2917" x2="267.7083" y1="314.5833" y2="314.5833"/><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="44.2708" x="209.8958" y="324.236">TechnicalKey</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="18.75" x="209.8958" y="333.4076">Name</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="6.25" x="209.8958" y="342.5791">...</text></g><!--MD5=[abbfa58912a05551ee5352e8a846a71c]
+class LegalForm--><g id="elem_LegalForm"><rect codeLine="58" fill="#F1F1F1" height="39.1764" id="LegalForm" rx="1.3021" ry="1.3021" style="stroke:#181818;stroke-width:0.2604166666666667;" width="52.0833" x="126.5625" y="218.2292"/><ellipse cx="134.375" cy="226.5625" fill="#ADD1B2" rx="5.7292" ry="5.7292" style="stroke:#181818;stroke-width:0.5208333333333334;"/><path d="M133.7809,226.9775 L133.7809,228.2796 L136.0352,228.2796 L136.0352,227.7995 Q136.0352,227.4821 136.1572,227.3438 Q136.2874,227.2054 136.4827,227.2054 Q136.6781,227.2054 136.8001,227.3438 Q136.9222,227.4821 136.9222,227.7995 L136.9222,229.1667 L132.7555,229.1667 Q132.43,229.1667 132.2917,229.0446 Q132.1615,228.9225 132.1615,228.7191 Q132.1615,228.5238 132.2998,228.4017 Q132.4382,228.2796 132.7555,228.2796 L132.8939,228.2796 L132.8939,224.8128 L132.7555,224.8128 Q132.43,224.8128 132.2917,224.6908 Q132.1615,224.5687 132.1615,224.3652 Q132.1615,224.1699 132.2917,224.0479 Q132.43,223.9258 132.7555,223.9258 L136.7269,223.9258 L136.7269,225.2767 Q136.7269,225.5941 136.6048,225.7324 Q136.4909,225.8626 136.2874,225.8626 Q136.0921,225.8626 135.9701,225.7324 Q135.848,225.5941 135.848,225.2767 L135.848,224.8128 L133.7809,224.8128 L133.7809,226.0905 L134.554,226.0905 Q134.554,225.7487 134.6191,225.651 Q134.7575,225.4395 135.0016,225.4395 Q135.1969,225.4395 135.319,225.5778 Q135.4411,225.708 135.4411,226.0254 L135.4411,227.0508 Q135.4411,227.3356 135.376,227.4333 Q135.2376,227.6367 135.0016,227.6367 Q134.7575,227.6367 134.6191,227.4251 Q134.554,227.3275 134.554,226.9775 L133.7809,226.9775 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="35.4167" x="141.6667" y="229.5461">LegalForm</text><line style="stroke:#181818;stroke-width:0.2604166666666667;" x1="127.0833" x2="178.125" y1="234.8958" y2="234.8958"/><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="44.2708" x="129.6875" y="244.5485">TechnicalKey</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="6.25" x="129.6875" y="253.7201">...</text></g><!--MD5=[8ea1c6e284da3f70072a23652f28b26a]
+class LegalAddress--><g id="elem_LegalAddress"><rect codeLine="63" fill="#F1F1F1" height="16.6667" id="LegalAddress" rx="1.3021" ry="1.3021" style="stroke:#181818;stroke-width:0.2604166666666667;" width="61.9792" x="263.2813" y="131.25"/><ellipse cx="271.0938" cy="139.5833" fill="#ADD1B2" rx="5.7292" ry="5.7292" style="stroke:#181818;stroke-width:0.5208333333333334;"/><path d="M272.5342,137.4349 Q272.6156,137.321 272.7132,137.264 Q272.8109,137.207 272.9248,137.207 Q273.1201,137.207 273.2422,137.3454 Q273.3643,137.4756 273.3643,137.793 L273.3643,138.5498 Q273.3643,138.8672 273.2422,139.0055 Q273.1201,139.1439 272.9248,139.1439 Q272.7458,139.1439 272.64,139.0381 Q272.5342,138.9404 272.4772,138.6719 Q272.4528,138.4847 272.3551,138.387 Q272.1842,138.1917 271.8669,138.0778 Q271.5495,137.9639 271.224,137.9639 Q270.8252,137.9639 270.4915,138.1348 Q270.166,138.3057 269.9056,138.6963 Q269.6533,139.0869 269.6533,139.624 L269.6533,140.1937 Q269.6533,140.8366 270.1172,141.2679 Q270.5811,141.6911 271.4111,141.6911 Q271.8994,141.6911 272.2412,141.5609 Q272.4447,141.4795 272.6644,141.2516 Q272.8027,141.1133 272.876,141.0726 Q272.9574,141.0319 273.0632,141.0319 Q273.234,141.0319 273.3643,141.1702 Q273.5026,141.3005 273.5026,141.4795 Q273.5026,141.6585 273.3236,141.8701 Q273.0632,142.1712 272.6481,142.3421 Q272.0866,142.5781 271.4111,142.5781 Q270.6217,142.5781 269.9951,142.2526 Q269.4824,141.9922 269.1243,141.4388 Q268.7663,140.8773 268.7663,140.21 L268.7663,139.6077 Q268.7663,138.916 269.0837,138.3219 Q269.4092,137.7197 269.9788,137.4023 Q270.5485,137.0768 271.1914,137.0768 Q271.5739,137.0768 271.9076,137.1663 Q272.2493,137.2477 272.5342,137.4349 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="45.3125" x="278.3854" y="142.5669">LegalAddress</text></g><!--MD5=[a15292bc9c3b4e8c30f0ca1d32cd2244]
+link Address to LegalEntity--><g id="link_Address_LegalEntity"><path codeLine="90" d="M243.8958,61.1198 C233.1771,71.3177 219.5521,84.2813 206.5052,96.6979 " fill="none" id="Address-to-LegalEntity" style="stroke:#181818;stroke-width:0.5208333333333334;"/><polygon fill="none" points="201.5365,101.4219,205.2365,100.7771,206.0644,97.1138,202.3644,97.7585,201.5365,101.4219" style="stroke:#181818;stroke-width:0.5208333333333334;"/><text fill="#000000" font-family="sans-serif" font-size="6.7708" lengthAdjust="spacing" textLength="47.9167" x="225.5208" y="84.112">LegalEntityBPN</text><text fill="#000000" font-family="sans-serif" font-size="6.7708" lengthAdjust="spacing" textLength="10.4167" x="229.1178" y="72.2589">1..*</text><text fill="#000000" font-family="sans-serif" font-size="6.7708" lengthAdjust="spacing" textLength="3.6458" x="201.6051" y="95.9684">1</text></g><!--MD5=[f6f2902c6b87ed68d14e05276eed9ea1]
+link Site to LegalEntity--><g id="link_Site_LegalEntity"><path codeLine="91" d="M161.9792,61.1198 C161.9792,70.7292 161.9792,82.8021 161.9792,94.5573 " fill="none" id="Site-to-LegalEntity" style="stroke:#181818;stroke-width:0.5208333333333334;"/><polygon fill="none" points="161.9792,101.4219,164.0625,98.2969,161.9792,95.1719,159.8958,98.2969,161.9792,101.4219" style="stroke:#181818;stroke-width:0.5208333333333334;"/><text fill="#000000" font-family="sans-serif" font-size="6.7708" lengthAdjust="spacing" textLength="47.9167" x="162.5" y="84.112">LegalEntityBPN</text><text fill="#000000" font-family="sans-serif" font-size="6.7708" lengthAdjust="spacing" textLength="2.6042" x="159.1512" y="72.2589">*</text><text fill="#000000" font-family="sans-serif" font-size="6.7708" lengthAdjust="spacing" textLength="3.6458" x="158.1539" y="95.9684">1</text></g><!--MD5=[6a58de43a839bb1868969c5940c796bf]
+link LegalEntityState to LegalEntity--><g id="link_LegalEntityState_LegalEntity"><path codeLine="93" d="M88.9531,139.5833 C97.1146,139.5833 114.7292,139.5833 114.7292,139.5833 " fill="none" id="LegalEntityState-LegalEntity" style="stroke:#181818;stroke-width:0.5208333333333334;"/><polygon fill="#181818" points="120.9792,139.5833,117.8542,137.5,114.7292,139.5833,117.8542,141.6667,120.9792,139.5833" style="stroke:#181818;stroke-width:0.5208333333333334;"/><polygon fill="#181818" points="82.0365,139.5833,86.724,141.6667,84.6406,139.5833,86.724,137.5,82.0365,139.5833" style="stroke:#181818;stroke-width:0.5208333333333334;"/><line style="stroke:#181818;stroke-width:0.5208333333333334;" x1="84.6406" x2="88.8073" y1="139.5833" y2="139.5833"/><text fill="#000000" font-family="sans-serif" font-size="6.7708" lengthAdjust="spacing" textLength="19.7917" x="91.6667" y="136.1954">States</text><text fill="#000000" font-family="sans-serif" font-size="6.7708" lengthAdjust="spacing" textLength="2.6042" x="86.2526" y="137.8009">*</text><text fill="#000000" font-family="sans-serif" font-size="6.7708" lengthAdjust="spacing" textLength="3.6458" x="113.2518" y="137.8988">1</text></g><!--MD5=[d0c3672222d6c2a908d9b69946ed3fb0]
+link LegalEntityState to LegalEntityStateType--><g id="link_LegalEntityState_LegalEntityStateType"><path codeLine="94" d="M48.5208,159.2969 C49.7917,174.1302 51.5677,194.8177 52.9688,211.1563 " fill="none" id="LegalEntityState-to-LegalEntityStateType" style="stroke:#181818;stroke-width:0.5208333333333334;"/><polygon fill="none" points="53.5677,218.0885,55.3756,214.7965,53.0322,211.8615,51.2243,215.1535,53.5677,218.0885" style="stroke:#181818;stroke-width:0.5208333333333334;"/><text fill="#000000" font-family="sans-serif" font-size="6.7708" lengthAdjust="spacing" textLength="14.5833" x="52.0833" y="200.7787">Type</text><text fill="#000000" font-family="sans-serif" font-size="6.7708" lengthAdjust="spacing" textLength="2.6042" x="45.9757" y="170.4359">*</text><text fill="#000000" font-family="sans-serif" font-size="6.7708" lengthAdjust="spacing" textLength="3.6458" x="49.3049" y="212.5438">1</text></g><!--MD5=[a3da5df7b545f39e1d0eeee7d8c24162]
+link LegalEntity to LegalEntityIdentifier--><g id="link_LegalEntity_LegalEntityIdentifier"><path codeLine="96" d="M195.0123,182.5964 C195.0123,182.5964 211.4167,203.6927 218.4219,212.6979 " fill="none" id="LegalEntity-LegalEntityIdentifier" style="stroke:#181818;stroke-width:0.5208333333333334;"/><polygon fill="#181818" points="222.6198,218.1042,221.384,213.1256,221.02,216.0493,218.0963,215.6853,222.6198,218.1042" style="stroke:#181818;stroke-width:0.5208333333333334;"/><line style="stroke:#181818;stroke-width:0.5208333333333334;" x1="221.02" x2="218.4635" y1="216.0493" y2="212.7578"/><polygon fill="#181818" points="191.1771,177.6615,191.4497,181.4073,195.0123,182.5964,194.7397,178.8505,191.1771,177.6615" style="stroke:#181818;stroke-width:0.5208333333333334;"/><text fill="#000000" font-family="sans-serif" font-size="6.7708" lengthAdjust="spacing" textLength="28.6458" x="208.8542" y="200.7787">Identifiers</text><text fill="#000000" font-family="sans-serif" font-size="6.7708" lengthAdjust="spacing" textLength="3.6458" x="190.0549" y="188.6013">1</text><text fill="#000000" font-family="sans-serif" font-size="6.7708" lengthAdjust="spacing" textLength="2.6042" x="217.1332" y="212.5622">*</text></g><!--MD5=[03f29f450851da43105f604eb3f96749]
+link LegalEntityIdentifier to IdentifierType--><g id="link_LegalEntityIdentifier_IdentifierType"><path codeLine="97" d="M237.5,257.401 C237.5,267.349 237.5,279.75 237.5,290.9948 " fill="none" id="LegalEntityIdentifier-to-IdentifierType" style="stroke:#181818;stroke-width:0.5208333333333334;"/><polygon fill="none" points="237.5,297.8177,239.5833,294.6927,237.5,291.5677,235.4167,294.6927,237.5,297.8177" style="stroke:#181818;stroke-width:0.5208333333333334;"/><text fill="#000000" font-family="sans-serif" font-size="6.7708" lengthAdjust="spacing" textLength="14.5833" x="238.0208" y="280.4662">Type</text><text fill="#000000" font-family="sans-serif" font-size="6.7708" lengthAdjust="spacing" textLength="2.6042" x="234.672" y="268.5276">*</text><text fill="#000000" font-family="sans-serif" font-size="6.7708" lengthAdjust="spacing" textLength="3.6458" x="233.5864" y="292.3495">1</text></g><!--MD5=[6cf58693bf93e43e49f87b7e69c133a0]
+link LegalEntity to LegalForm--><g id="link_LegalEntity_LegalForm"><path codeLine="103" d="M158.3542,177.6615 C157.2708,188.8958 156.1042,200.9583 155.1094,211.2708 " fill="none" id="LegalEntity-to-LegalForm" style="stroke:#181818;stroke-width:0.5208333333333334;"/><polygon fill="none" points="154.4531,218.1042,156.8259,215.1929,155.0512,211.8828,152.6784,214.7941,154.4531,218.1042" style="stroke:#181818;stroke-width:0.5208333333333334;"/><text fill="#000000" font-family="sans-serif" font-size="6.7708" lengthAdjust="spacing" textLength="31.7708" x="156.7708" y="200.7787">LegalForm</text><text fill="#000000" font-family="sans-serif" font-size="6.7708" lengthAdjust="spacing" textLength="2.6042" x="155.2958" y="188.6013">*</text><text fill="#000000" font-family="sans-serif" font-size="6.7708" lengthAdjust="spacing" textLength="11.4583" x="142.3036" y="212.5622">0..1</text></g><!--MD5=[aec822756c2d0220dfc0b84f804ea39f]
+link LegalEntity to LegalAddress--><g id="link_LegalEntity_LegalAddress"><path codeLine="105" d="M202.9323,139.5833 C221.3698,139.5833 242.8802,139.5833 260.3958,139.5833 " fill="none" id="LegalEntity-to-LegalAddress" style="stroke:#181818;stroke-width:0.5208333333333334;"/><polygon fill="#181818" points="263.1719,139.5833,258.4844,137.5,260.5677,139.5833,258.4844,141.6667,263.1719,139.5833" style="stroke:#181818;stroke-width:0.5208333333333334;"/><text fill="#000000" font-family="sans-serif" font-size="6.7708" lengthAdjust="spacing" textLength="41.1458" x="212.5" y="136.1954">LegalAddress</text><text fill="#000000" font-family="sans-serif" font-size="6.7708" lengthAdjust="spacing" textLength="3.6458" x="207.0094" y="137.8988">1</text><text fill="#000000" font-family="sans-serif" font-size="6.7708" lengthAdjust="spacing" textLength="3.6458" x="255.5137" y="137.7821">1</text></g><!--MD5=[76d5bc540cc206429460adf03920e9af]
+reverse link Address to LegalAddress--><g id="link_Address_LegalAddress"><path codeLine="106" d="M286.1302,70.026 C287.25,72.1719 288.25,74.3594 289.0625,76.5625 C295.9375,95.151 295.6667,118.8958 294.9375,131.0729 " fill="none" id="Address-backto-LegalAddress" style="stroke:#181818;stroke-width:0.5208333333333334;"/><polygon fill="none" points="282.9375,71.7917,280.6042,61.0052,289.1563,67.9844,282.9375,71.7917" style="stroke:#181818;stroke-width:0.5208333333333334;"/></g><!--MD5=[e230612f2202cd4782b5c4575488e225]
+@startuml legal-entity
+
+skinparam dpi 50
+
+package "Legal Entity and References" {
+  entity LegalEntity {
+    BPNL
+    LegalName
+    ShortName
+    IsCatenaXMemberData
+    CreatedAt
+    UpdateAt
+  }
+
+  entity Site {
+      BPNS
+      ...
+  }
+
+  entity Address {
+      BPNA
+      ...
+  }
+
+  class LegalEntityState {
+    ValidFrom
+    ValidTo
+  }
+
+  enum LegalEntityStateType {
+    Active
+    Inactive
+  }
+
+  class LegalEntityIdentifier {
+    Value
+    IssuingBody
+  }
+
+  entity IdentifierType {
+    TechnicalKey
+    Name
+    ...
+  }
+
+  ' taken out from 24.05, as not clear if this is modelled correctly
+  ' class Classification {
+  '   Value
+  '   Code
+  ' }
+
+  ' enum ClassificationType {
+  '   NACE
+  '   NAF
+  '   NAICS
+  '   SIC
+  ' }
+
+  entity LegalForm {
+    TechnicalKey
+    ...
+  }
+
+  class LegalAddress {}
+
+  ' not standardized yet
+  ' class ConfidenceCriteria {
+  '   SharedByOwner
+  '   CheckedByExternalSource
+  '   NumberOfSharingMembers
+  '   LastConfidenceCheckAt
+  '   NextConfidenceCheckAt
+  '   ConfidenceLevel
+  ' }
+
+  ' not implemented / standardized yet
+  ' class LegalEntityScriptVariant {
+  '   LegalName
+  '   ShortName
+  ' }
+
+  ' enum ScriptCode {
+  '   Arab
+  '   Cyrl
+  '   Hans
+  '   Jpan
+  '   Latn
+  '   ...
+  ' }
+
+  Address "1..*" -d-o "1" LegalEntity : LegalEntityBPN
+  Site "*" -d-o "1" LegalEntity : LegalEntityBPN
+
+  LegalEntity "1" *-l-> "*" LegalEntityState : States
+  LegalEntityState "*" -d-o "1" LegalEntityStateType : Type
+  
+  LegalEntity "1" *-d-> "*" LegalEntityIdentifier : Identifiers
+  LegalEntityIdentifier "*" -d-o "1" IdentifierType : Type
+  
+  ' taken out from 24.05, as not clear if this is modelled correctly
+  ' LegalEntity "1" *-d-> "*" Classification : Classifications
+  ' Classification "*" -d-o "1" ClassificationType : Type
+  
+  LegalEntity "*" -d-o "0..1" LegalForm : LegalForm
+
+  LegalEntity "1" -r-> "1" LegalAddress : LegalAddress
+  LegalAddress -u-|> Address
+
+  ' not standardized yet
+  ' LegalEntity "1" -u-> "1" ConfidenceCriteria : ConfidenceCriteria
+
+  ' not implemented / standardized yet
+  ' LegalEntity "1" *- -> "*" LegalEntityScriptVariant : ScriptVariants
+  ' LegalEntityScriptVariant "*" - -o "1" ScriptCode : ScriptCode
+}
+
+hide methods
+hide LegalAddress members
+@enduml
+
+@startuml legal-entity
+
+skinparam dpi 50
+
+package "Legal Entity and References" {
+  entity LegalEntity {
+    BPNL
+    LegalName
+    ShortName
+    IsCatenaXMemberData
+    CreatedAt
+    UpdateAt
+  }
+
+  entity Site {
+      BPNS
+      ...
+  }
+
+  entity Address {
+      BPNA
+      ...
+  }
+
+  class LegalEntityState {
+    ValidFrom
+    ValidTo
+  }
+
+  enum LegalEntityStateType {
+    Active
+    Inactive
+  }
+
+  class LegalEntityIdentifier {
+    Value
+    IssuingBody
+  }
+
+  entity IdentifierType {
+    TechnicalKey
+    Name
+    ...
+  }
+
+
+
+  entity LegalForm {
+    TechnicalKey
+    ...
+  }
+
+  class LegalAddress {}
+
+
+
+
+  Address "1..*" -d-o "1" LegalEntity : LegalEntityBPN
+  Site "*" -d-o "1" LegalEntity : LegalEntityBPN
+
+  LegalEntity "1" *-l-> "*" LegalEntityState : States
+  LegalEntityState "*" -d-o "1" LegalEntityStateType : Type
+  
+  LegalEntity "1" *-d-> "*" LegalEntityIdentifier : Identifiers
+  LegalEntityIdentifier "*" -d-o "1" IdentifierType : Type
+  
+  
+  LegalEntity "*" -d-o "0..1" LegalForm : LegalForm
+
+  LegalEntity "1" -r-> "1" LegalAddress : LegalAddress
+  LegalAddress -u-|> Address
+
+
+}
+
+hide methods
+hide LegalAddress members
+@enduml
+
+PlantUML version 1.2022.5(Sat Apr 30 12:55:52 CEST 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: Cp1252
+Language: en
+Country: GB
+--></g></svg>
