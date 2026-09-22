@@ -1,5 +1,0 @@
-{
-    "leftOperand": "Warranty",
-    "operator": "eq",
-    "rightOperand": "cx.warranty.none:1"
-}
