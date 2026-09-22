@@ -229,7 +229,7 @@ export default function StandardsGraph() {
         source: edge.source,
         target: edge.target,
         type: 'default',
-        animated: true,
+        animated: false,
         style: {
           stroke: edgeColor,
           strokeWidth: 3,
