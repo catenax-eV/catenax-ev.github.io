@@ -1,5 +1,0 @@
-{
-  "leftOperand": "DataUsageEndDefinition",
-  "operator": "eq",
-  "rightOperand": "cx.dataUsageEnd.unlimited:1"
-}
