@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkcatenax_ev_github_io_new=globalThis.webpackChunkcatenax_ev_github_io_new||[]).push([[6445],{6445(e,a,i){i.d(a,{createInfoServices:()=>_.v});var _=i(54614);i(4954)}}]);
