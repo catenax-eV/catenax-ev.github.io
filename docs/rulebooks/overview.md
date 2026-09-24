@@ -9,7 +9,7 @@ tags:
 
 ## Product Carbon Footprint
 
-| PCF-Rulebook v4.0 | PCF Verification and Certification Framework v2.0 |
+| PCF-Rulebook v4.1 | PCF Verification and Certification Framework v2.0 |
 |:---:|:---:|
 | [![CX-NFR-PCF-Rulebook_v.4.0.png](./assets/images/CX-NFR-PCF-Rulebook.png)](./CX-NFR-PCF/CX-NFR-PCF-Rulebook_v4.1.2.pdf) | [![CX-NFR-PCF-TFS Verification Program.png](./assets/images/CX-NFR-PCF-TFS-Verification-Program.png)](./CX-NFR-VF/CX-NFR-PCF_TFS-verification_v.2.0.pdf)  |
 
