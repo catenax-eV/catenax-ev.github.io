@@ -52,6 +52,16 @@ const FeatureList: FeatureItem[] = [
     ),
   },
   {
+    title: 'Test Suite',
+    Svg: require('@site/static/img/testsuite-icon.svg').default,
+    path: '/docs/working-model/overview',
+    description: (
+      <>
+          Test your apps against Catena-X standards with TCKs and prepare for certification in our <a href="https://test-suite.catena-x.net/">Test Suite</a>. Discover data space sandboxes in Learn & Explore environments.
+      </>
+    ),
+  },
+  {
     title: 'Feedback',
     Svg: require('@site/static/img/support-icon.svg').default,
     path: 'https://github.com/catenax-eV/catenax-ev.github.io/discussions',
