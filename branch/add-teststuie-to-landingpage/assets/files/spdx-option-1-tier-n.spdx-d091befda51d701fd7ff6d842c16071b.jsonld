@@ -1,0 +1,211 @@
+{
+  "spdxVersion": "SPDX-2.2",
+  "dataLicense": "COTS-Example-3",
+  "SPDXID": "SPDXRef-DOCUMENT",
+  "name": "Beispiel SBOM",
+  "documentNamespace": "http://spdx.org/spdxdocs/beispiel-sbom-2.2",
+  "creationInfo": {
+    "created": "2025-07-08T00:00:00Z",
+    "creators": [
+      "Tool: SPDX-Generator"
+    ]
+  },
+  "packages": [
+    {
+      "name": "Dependency X",
+      "SPDXID": "SPDXRef-DependencyX",
+      "versionInfo": "1.0.0",
+      "downloadLocation": "http://example.com/dependency-x",
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "licenseInfoFromFiles": [
+        "MIT"
+      ],
+      "filesAnalyzed": false
+    },
+    {
+      "name": "Dependency Y",
+      "SPDXID": "SPDXRef-DependencyY",
+      "versionInfo": "2.0.0",
+      "downloadLocation": "http://example.com/dependency-y",
+      "licenseConcluded": "Apache-2.0",
+      "licenseDeclared": "Apache-2.0",
+      "licenseInfoFromFiles": [
+        "Apache-2.0"
+      ],
+      "filesAnalyzed": false
+    },
+    {
+      "name": "Dependency Z",
+      "SPDXID": "SPDXRef-DependencyZ",
+      "versionInfo": "3.0.0",
+      "downloadLocation": "http://example.com/dependency-z",
+      "licenseConcluded": "GPL-3.0",
+      "licenseDeclared": "GPL-3.0",
+      "licenseInfoFromFiles": [
+        "GPL-3.0"
+      ],
+      "filesAnalyzed": false
+    },
+    {
+      "name": "xyz",
+      "SPDXID": "SPDXRef-xyz",
+      "versionInfo": "1.1.0",
+      "downloadLocation": "http://example.com/dependency-xyz",
+      "licenseConcluded": "COTS-Example-1",
+      "licenseDeclared": "COTS-Example-1",
+      "licenseInfoFromFiles": [
+        "COTS-Example-1"
+      ],
+      "filesAnalyzed": false
+    },
+    {
+      "name": "1",
+      "SPDXID": "SPDXRef-1",
+      "versionInfo": "0.1.0",
+      "downloadLocation": "http://example.com/dependency-1",
+      "licenseConcluded": "MPL-2.0",
+      "licenseDeclared": "MPL-2.0",
+      "licenseInfoFromFiles": [
+        "MPL-2.0"
+      ],
+      "filesAnalyzed": false
+    },
+    {
+      "name": "2",
+      "SPDXID": "SPDXRef-2",
+      "versionInfo": "0.2.0",
+      "downloadLocation": "http://example.com/dependency-2",
+      "licenseConcluded": "LGPL-2.1-only",
+      "licenseDeclared": "LGPL-2.1-only",
+      "licenseInfoFromFiles": [
+        "LGPL-2.1-only"
+      ],
+      "filesAnalyzed": false
+    },
+    {
+      "name": "3",
+      "SPDXID": "SPDXRef-3",
+      "versionInfo": "0.3.0",
+      "downloadLocation": "http://example.com/dependency-3",
+      "licenseConcluded": "EPL-1.0",
+      "licenseDeclared": "EPL-1.0",
+      "licenseInfoFromFiles": [
+        "EPL-1.0"
+      ],
+      "filesAnalyzed": false
+    },
+    {
+      "name": "4",
+      "SPDXID": "SPDXRef-4",
+      "versionInfo": "0.4.0",
+      "downloadLocation": "http://example.com/dependency-4",
+      "licenseConcluded": "GPL-3.0-or-later",
+      "licenseDeclared": "GPL-3.0-or-later",
+      "licenseInfoFromFiles": [
+        "GPL-3.0-or-later"
+      ],
+      "filesAnalyzed": false
+    },
+    {
+      "name": "A",
+      "SPDXID": "SPDXRef-A",
+      "versionInfo": "1.0.0",
+      "downloadLocation": "http://example.com/dependency-a",
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "licenseInfoFromFiles": [
+        "MIT"
+      ],
+      "filesAnalyzed": false
+    },
+    {
+      "name": "C",
+      "SPDXID": "SPDXRef-C",
+      "versionInfo": "2.0.0",
+      "downloadLocation": "http://example.com/dependency-c",
+      "licenseConcluded": "Apache-2.0",
+      "licenseDeclared": "Apache-2.0",
+      "licenseInfoFromFiles": [
+        "Apache-2.0"
+      ],
+      "filesAnalyzed": false
+    },
+    {
+      "name": "Anonymous Node",
+      "SPDXID": "catena-x-sbom-option-1-b9e8a0f3f8746438e6dd4959fc1fcf4370c260e3b9b0cfa22f8750361380a6ef",
+      "versionInfo": "1.1.0",
+      "downloadLocation": "http://example.com/dependency-ac",
+      "licenseConcluded": "COTS-Example-2",
+      "licenseDeclared": "COTS-Example-2",
+      "licenseInfoFromFiles": [
+        "COTS-Example-2"
+      ],
+      "filesAnalyzed": false
+    },
+    {
+      "name": "Anonymous Node",
+      "SPDXID": "catena-x-sbom-option-1-c5283b48191237d6cfd4c7fbc10fd75e7f9b55e5c413fbbbe60995048f9c24e6",
+      "versionInfo": "1.1.0",
+      "downloadLocation": "http://example.com/dependency-1234xyz",
+      "licenseConcluded": "COTS-Example-3",
+      "licenseDeclared": "COTS-Example-3",
+      "licenseInfoFromFiles": [
+        "COTS-Example-3"
+      ],
+      "filesAnalyzed": false
+    }
+  ],
+  "relationships": [
+    {
+      "spdxElementId": "SPDXRef-DependencyX",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-DependencyZ"
+    },
+    {
+      "spdxElementId": "SPDXRef-1",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-3"
+    },
+    {
+      "spdxElementId": "SPDXRef-1",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-4"
+    },
+    {
+      "spdxElementId": "SPDXRef-xyz",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-X"
+    },
+    {
+      "spdxElementId": "SPDXRef-xyz",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Y"
+    },
+    {
+      "spdxElementId": "SPDXRef-ac",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-A"
+    },
+    {
+      "spdxElementId": "SPDXRef-ac",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-C"
+    },
+    {
+      "spdxElementId": "SPDXRef-1234xyz",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-1"
+    },
+    {
+      "spdxElementId": "SPDXRef-1234xyz",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-2"
+    },
+    {
+      "spdxElementId": "SPDXRef-1234xyz",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-xyz"
+    }
+  ]
+}

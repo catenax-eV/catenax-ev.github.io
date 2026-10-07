@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkcatenax_ev_github_io_new=globalThis.webpackChunkcatenax_ev_github_io_new||[]).push([[51043],{41106(e){e.exports=JSON.parse('{"metadata":{"permalink":"/branch/add-teststuie-to-landingpage/blog-releasenotes","page":1,"postsPerPage":10,"totalPages":1,"totalCount":5,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);
