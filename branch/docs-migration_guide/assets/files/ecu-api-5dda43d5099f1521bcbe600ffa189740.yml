@@ -1,0 +1,975 @@
+openapi: 3.1.0
+jsonSchemaDialect: https://spec.openapis.org/oas/3.1/dialect/base
+info:
+  title: Crypto Material Notification API
+  version: 1.0.0
+  description: 'Notification API for the ECU Crypto Material use case in Catena-X.
+    The API uses the standardized Catena-X Message Header and a use-case-specific
+    content structure for transferring ECU-related data. The receive notification
+    supports a list of ECU items. Each ECU item contains exactly one SerialPart payload,
+    exactly one SoftwareInformation payload, and exactly one CryptoMaterial payload.
+
+    '
+  license:
+    name: Apache License v2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: https://example.com/api
+  description: Example base URL of the participant-specific endpoint
+tags:
+- name: Crypto Material Notification
+  description: Notification endpoints for Crypto Material data exchange
+paths:
+  /receive:
+    post:
+      tags:
+      - Crypto Material Notification
+      summary: Receive Crypto Material Notification
+      description: 'Receives a Catena-X notification containing one or more ECU items.
+        Each ECU item MUST contain exactly one SerialPart or JustInSequence submodel and MAY contain exactly one SoftwareInformation submodel, and exactly one CryptoMaterial submodel.
+
+        '
+      operationId: ReceiveCryptoMaterial
+      requestBody:
+        $ref: '#/components/requestBodies/CryptoMaterialReceive'
+      responses:
+        '200':
+          $ref: '#/components/responses/Successful'
+        '400':
+          $ref: '#/components/responses/Malformed'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '405':
+          $ref: '#/components/responses/MethodNotAllowed'
+        '409':
+          $ref: '#/components/responses/Duplication'
+        '422':
+          $ref: '#/components/responses/SemanticError'
+  /submodel-update:
+    post:
+      tags:
+        - Crypto Material Notification
+      description: Receives a notification when an submodel of a digital twin was updated (create, update, delete)
+      operationId: SubmodelUpdate
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SubmodelUpdateRequestBody'
+            examples:
+              submodelCreated:
+                summary: Example notification for a newly created submodel
+                value:
+                  header:
+                    messageId: urn:uuid:a1b2c3d4-e5f6-7890-abcd-ef1234567890
+                    context: EcuCryptoMaterial-CryptoMaterialNotification-SubmodelUpdate:1.0.0
+                    sentDateTime: '2026-03-17T12:00:00Z'
+                    senderBpn: BPNL000000000001
+                    receiverBpn: BPNL000000000002
+                    expectedResponseBy: '2026-03-20T12:00:00Z'
+                    version: 3.0.0
+                  content:
+                    listOfEvents:
+                    - eventType: CreateSubmodel
+                      globalAssetId: urn:uuid:d32d3b55-d222-41e9-8d19-554af53124dd
+                      submodelSemanticId: urn:samm:io.catenax.serial_part:3.0.0#SerialPart
+      responses:
+        '200':
+          $ref: '#/components/responses/Successful'
+        '400':
+          $ref: '#/components/responses/Malformed'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /feedback/receive:
+    post:
+      tags:
+      - Crypto Material Notification
+      summary: Receive Crypto Material feedback notification
+      description: Receives a Catena-X feedback notification for a previously submitted
+        Crypto Material Notification.
+      operationId: ReceiveCryptoMaterialFeedback
+      requestBody:
+        $ref: '#/components/requestBodies/CryptoMaterialFeedback'
+      responses:
+        '200':
+          $ref: '#/components/responses/Successful'
+        '400':
+          $ref: '#/components/responses/Malformed'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFoundError'
+        '405':
+          $ref: '#/components/responses/MethodNotAllowed'
+  /update/{globalAssetId}:
+    post:
+      tags:
+      - Crypto Material Notification
+      summary: Update Crypto Material Notification
+      description: 'Receives a Catena-X update notification for an existing ECU item
+        identified by its globalAssetId. Each ECU item MUST contain exactly one SoftwareInformation
+        submodel and exactly one CryptoMaterial submodel. The SerialPart/JustInSequencePart submodel
+        is not included in update notifications.
+
+        '
+      operationId: ReceiveCryptoMaterialUpdate
+      parameters:
+      - name: globalAssetId
+        in: path
+        required: true
+        description: 'The UUIDv4 (with optional urn:uuid: prefix) identifying the ECU
+          asset to update.'
+        schema:
+          $ref: '#/components/schemas/urn_samm_io.catenax.shared.uuid_2.0.0_UuidV4Trait'
+      requestBody:
+        $ref: '#/components/requestBodies/CryptoMaterialUpdate'
+      responses:
+        '200':
+          $ref: '#/components/responses/Successful'
+        '400':
+          $ref: '#/components/responses/Malformed'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFoundError'
+        '405':
+          $ref: '#/components/responses/MethodNotAllowed'
+        '409':
+          $ref: '#/components/responses/Duplication'
+        '422':
+          $ref: '#/components/responses/SemanticError'
+components:
+  requestBodies:
+    CryptoMaterialReceive:
+      required: true
+      description: 'Crypto Material receive notification using the Catena-X standard
+        message header and use-case-specific content.
+
+        '
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/CryptoMaterialReceiveNotification'
+          examples:
+            singleEcu:
+              summary: Example receive notification with one ECU item and variable
+                listOfData order
+              value:
+                header:
+                  messageId: 3b4edc05-e214-47a1-b0c2-1d831cdd9ba9
+                  context: EcuCryptoMaterial-CryptoMaterialNotification-ReceiveCryptoMaterial:1.0.0
+                  sentDateTime: '2026-03-17T10:15:00Z'
+                  senderBpn: BPNL000000000001
+                  receiverBpn: BPNL000000000002
+                  expectedResponseBy: '2026-03-20T10:15:00Z'
+                  version: 3.0.0
+                content:
+                  listOfItems:
+                  - globalAssetId: urn:uuid:f21dfa1a-cba1-eb99-172a-d8cfb3dc5d8f
+                    listOfData:
+                    - semanticId: urn:samm:io.catenax.crypto_material:1.0.0#CryptoMaterial
+                      submodel:
+                        globalAssetId: urn:uuid:f21dfa1a-cba1-eb99-172a-d8cfb3dc5d8f
+                        cryptoMaterials:
+                        - name: ecuIdentityCsr
+                          type: certificateSigningRequest
+                          value: '-----BEGIN CERTIFICATE REQUEST-----
+
+                            MIIBtzCCAT0CAQAw...
+
+                            -----END CERTIFICATE REQUEST-----'
+                          format: pkcs10
+                          encoding: rfc7468
+                        - name: theftProtectionKey
+                          type: publicKey
+                          value: '-----BEGIN PUBLIC KEY-----
+
+                            MCowBQYDK2VwAyEA...
+
+                            -----END PUBLIC KEY-----'
+                          format: subjectPublicKeyInfo
+                          encoding: rfc7468
+                    - semanticId: urn:samm:io.catenax.serial_part:3.0.0#SerialPart
+                      submodel:
+                        globalAssetId: urn:uuid:f21dfa1a-cba1-eb99-172a-d8cfb3dc5d8f
+                        localIdentifiers:
+                        - key: manufacturerId
+                          value: BPNL000000000001
+                        - key: partInstanceId
+                          value: '220115001384267902201978150063581180'
+                        - key: ecuSerialNumber
+                          value: '220115001384267902201978150063581180'
+                        manufacturingInformation:
+                          date: '2026-03-01T08:15:30Z'
+                          country: DEU
+                          sites:
+                          - catenaXsiteId: BPNS000000000001
+                            function: production
+                        partTypeInformation:
+                          manufacturerPartId: ECU-4711
+                          nameAtManufacturer: Engine Control Unit
+                    - semanticId: urn:samm:io.catenax.software_information:1.0.0#SoftwareInformation
+                      submodel:
+                        globalAssetId: urn:uuid:f21dfa1a-cba1-eb99-172a-d8cfb3dc5d8f
+                        softwareInformation:
+                        - name: Bootloader
+                          softwareId: SW-BOOT-001
+                          version: 1.0.0
+                          lastModifiedOn: '2026-02-15T11:22:33Z'
+                        - name: Application Firmware
+                          softwareId: SW-APP-002
+                          version: 4.2.1
+                          lastModifiedOn: '2026-02-28T07:45:00Z'
+    CryptoMaterialUpdate:
+      required: true
+      description: 'Crypto Material update notification using the Catena-X standard
+        message header and use-case-specific content. The SerialPart/JustInSequencePart submodel is not
+        included; each ECU item contains exactly one SoftwareInformation entry and
+        one CryptoMaterial entry.
+
+        '
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/CryptoMaterialUpdateNotification'
+            examples:
+            singlePartUpdate:
+              summary: Example update notification with one ECU item (no SerialPart)
+              value:
+                header:
+                  messageId: 7c9aef12-3b1d-42f8-a0d5-2e847bca6f01
+                  context: EcuCryptoMaterial-CryptoMaterialNotification-ReceiveCryptoMaterialUpdate:1.0.0
+                  sentDateTime: '2026-03-17T11:00:00Z'
+                  senderBpn: BPNL000000000001
+                  receiverBpn: BPNL000000000002
+                  expectedResponseBy: '2026-03-20T11:00:00Z'
+                  version: 3.0.0
+                content:
+                  listOfItems:
+                  - globalAssetId: urn:uuid:f21dfa1a-cba1-eb99-172a-d8cfb3dc5d8f
+                    listOfData:
+                    - semanticId: urn:samm:io.catenax.crypto_material:1.0.0#CryptoMaterial
+                      submodel:
+                        globalAssetId: urn:uuid:f21dfa1a-cba1-eb99-172a-d8cfb3dc5d8f
+                        cryptoMaterials:
+                        - name: ecuIdentityCsr
+                          type: certificateSigningRequest
+                          value: '-----BEGIN CERTIFICATE REQUEST-----
+
+                            MIIBtzCCAT0CAQAw...
+
+                            -----END CERTIFICATE REQUEST-----'
+                          format: pkcs10
+                          encoding: rfc7468
+                        - name: theftProtectionKey
+                          type: publicKey
+                          value: '-----BEGIN PUBLIC KEY-----
+
+                            MCowBQYDK2VwAyEA...
+
+                            -----END PUBLIC KEY-----'
+                          format: subjectPublicKeyInfo
+                          encoding: rfc7468
+                    - semanticId: urn:samm:io.catenax.software_information:1.0.0#SoftwareInformation
+                      submodel:
+                        globalAssetId: urn:uuid:f21dfa1a-cba1-eb99-172a-d8cfb3dc5d8f
+                        softwareInformation:
+                        - name: Bootloader
+                          softwareId: SW-BOOT-001
+                          version: 1.0.1
+                          lastModifiedOn: '2026-03-10T09:00:00Z'
+                        - name: Application Firmware
+                          softwareId: SW-APP-002
+                          version: 4.3.0
+                          lastModifiedOn: '2026-03-15T14:30:00Z'
+    CryptoMaterialFeedback:
+      required: true
+      description: Crypto Material feedback notification using the Catena-X standard
+        message header and feedback content.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/CryptoMaterialFeedbackNotification'
+          examples:
+            positiveFeedback:
+              summary: Example feedback notification with positive response
+              value:
+                header:
+                  messageId: urn:uuid:83738f3d-9441-4e53-bc7d-6092385d188f
+                  context: EcuCryptoMaterial-CryptoMaterialNotification-ReceiveCryptoMaterialFeedback:1.0.0
+                  sentDateTime: '2026-03-17T10:20:00Z'
+                  senderBpn: BPNL000000000002
+                  receiverBpn: BPNL000000000001
+                  expectedResponseBy: '2026-03-20T10:20:00Z'
+                  relatedMessageId: urn:uuid:3b4edc05-e214-47a1-b0c2-1d831cdd9ba9
+                  version: 3.0.0
+                content:
+                  listOfItems:
+                  - globalAssetId: urn:uuid:d32d3b55-d222-41e9-8d19-554af53124dd
+                    status: OK
+                    statusMessage: The crypto material was successfully processed.
+                    statusCode: ECU_001
+            negativeFeedback:
+              summary: Example feedback notification with validation errors
+              value:
+                header:
+                  messageId: urn:uuid:83738f3d-9441-4e53-bc7d-6092385d188f
+                  context: EcuCryptoMaterial-CryptoMaterialNotification-ReceiveCryptoMaterialFeedback:1.0.0
+                  sentDateTime: '2026-03-17T10:20:00Z'
+                  senderBpn: BPNL000000000002
+                  receiverBpn: BPNL000000000001
+                  expectedResponseBy: '2026-03-20T10:20:00Z'
+                  relatedMessageId: urn:uuid:3b4edc05-e214-47a1-b0c2-1d831cdd9ba9
+                  version: 3.0.0
+                content:
+                  listOfItems:
+                  - globalAssetId: urn:uuid:d32d3b55-d222-41e9-8d19-554af53124dd
+                    status: ERROR
+                    statusMessage: Mandatory attribute 'partInstanceId' is missing.
+                    statusCode: ECU_006
+                  - globalAssetId: urn:uuid:d32d3b55-d222-41e9-8d19-554af53124dd
+                    status: ERROR
+                    statusMessage: Format of attribute 'customKey:ecuPublicKey' is
+                      not valid.
+                    statusCode: ECU_014
+  responses:
+    Successful:
+      description: Notification was received successfully (technical acknowledgement).
+    Malformed:
+      description: Request body was malformed.
+    Unauthorized:
+      description: The requesting user or client is not authenticated.
+    Forbidden:
+      description: The requesting user or client is not authorized to access the resource.
+    MethodNotAllowed:
+      description: Method not allowed.
+    NotFoundError:
+      description: The referenced relatedMessageId does not exist.
+    Duplication:
+      description: A notification with the same messageId already exists.
+    NotFound:
+      description: The requested resource was not found. This can occur, for example, if an update notification references a globalAssetId that does not exist.
+    SemanticError:
+      description: 'The notification is syntactically correct but cannot be accepted
+        for semantic reasons, for example because an ECU is not known by the receiver.
+
+        '
+  schemas:
+    CryptoMaterialReceiveNotification:
+      type: object
+      description: Request schema to send Crypto Material Notifications.
+      properties:
+        header:
+          $ref: '#/components/schemas/urn_samm_io.catenax.shared.message_header_3.0.0_HeaderCharacteristic'
+        content:
+          $ref: '#/components/schemas/NotificationContentReceive'
+      required:
+      - header
+      - content
+    NotificationContentReceive:
+      type: object
+      description: 'Content of the Crypto Material Notification. The payload contains
+        a list of ECU items. Each ECU item has a Global Asset ID and a listOfData with
+        exactly one SerialPart entry, one SoftwareInformation entry, and one CryptoMaterial
+        entry.
+
+        '
+      properties:
+        listOfItems:
+          $ref: '#/components/schemas/EcuItemSet'
+      required:
+      - listOfItems
+    EcuItemSet:
+      type: array
+      description: List of ECU items contained in the notification.
+      minItems: 1
+      items:
+        $ref: '#/components/schemas/EcuItem'
+      maxItems: 100
+    EcuItem:
+      type: object
+      description: Single ECU item containing its Global Asset ID and the three required
+        submodels.
+      properties:
+        globalAssetId:
+          $ref: '#/components/schemas/urn_samm_io.catenax.shared.uuid_2.0.0_UuidV4Trait'
+        listOfData:
+          $ref: '#/components/schemas/EcuDataList'
+      required:
+      - globalAssetId
+      - listOfData
+    EcuDataList:
+      type: array
+      description: 'The ECU data list MUST contain exactly three entries: one SerialPart
+        entry, one SoftwareInformation entry, and one CryptoMaterial entry.
+
+        '
+      minItems: 3
+      maxItems: 3
+      items:
+        oneOf:
+        - $ref: '#/components/schemas/SerialPartData'
+        - $ref: '#/components/schemas/SoftwareInformationData'
+        - $ref: '#/components/schemas/CryptoMaterialData'
+      allOf:
+      - contains:
+          $ref: '#/components/schemas/SerialPartData'
+        minContains: 1
+        maxContains: 1
+      - contains:
+          $ref: '#/components/schemas/SoftwareInformationData'
+        minContains: 1
+        maxContains: 1
+      - contains:
+          $ref: '#/components/schemas/CryptoMaterialData'
+        minContains: 1
+        maxContains: 1
+    SerialPartData:
+      type: object
+      description: Wrapper for the SerialPart submodel.
+      properties:
+        semanticId:
+          type: string
+          enum:
+          - urn:samm:io.catenax.serial_part:3.0.0#SerialPart
+        submodel:
+          $ref: '#/components/schemas/SerialPartSubmodel'
+      required:
+      - semanticId
+      - submodel
+    SoftwareInformationData:
+      type: object
+      description: Wrapper for the SoftwareInformation submodel.
+      properties:
+        semanticId:
+          type: string
+          enum:
+          - urn:samm:io.catenax.software_information:1.0.0#SoftwareInformation
+        submodel:
+          $ref: '#/components/schemas/SoftwareInformationSubmodel'
+      required:
+      - semanticId
+      - submodel
+    CryptoMaterialData:
+      type: object
+      description: Wrapper for the CryptoMaterial submodel.
+      properties:
+        semanticId:
+          type: string
+          enum:
+          - urn:samm:io.catenax.crypto_material:1.0.0#CryptoMaterial
+        submodel:
+          $ref: '#/components/schemas/CryptoMaterialSubmodel'
+      required:
+      - semanticId
+      - submodel
+    urn_samm_io.catenax.shared.message_header_3.0.0_HeaderCharacteristic:
+      type: object
+      description: Characteristic describing the common shared Catena-X Message Header.
+      x-samm-aspect-model-urn: urn:samm:io.catenax.shared.message_header:3.0.0#MessageHeaderAspect
+      properties:
+        messageId:
+          description: 'Unique ID identifying the message. The purpose of the ID is
+            to uniquely identify a single message, therefore it MUST not be reused.
+
+            '
+          $ref: '#/components/schemas/urn_samm_io.catenax.shared.uuid_2.0.0_UuidV4Trait'
+        context:
+          $ref: '#/components/schemas/urn_samm_io.catenax.shared.message_header_3.0.0_ContextCharacteristic'
+        sentDateTime:
+          description: 'Time zone aware timestamp holding the date and time the message
+            was sent by the sending party. The value MUST be formatted according to
+            ISO 8601.
+
+            '
+          $ref: '#/components/schemas/urn_samm_org.eclipse.esmf.samm_characteristic_2.1.0_Timestamp'
+        senderBpn:
+          description: 'The Business Partner Number of the sending party. The value
+            MUST be a valid BPNL. BPNA and BPNS are not allowed.
+
+            '
+          $ref: '#/components/schemas/urn_samm_io.catenax.shared.business_partner_number_2.0.0_BpnlTrait'
+        receiverBpn:
+          description: 'The Business Partner Number of the receiving party. The value
+            MUST be a valid BPNL. BPNA and BPNS are not allowed.
+
+            '
+          $ref: '#/components/schemas/urn_samm_io.catenax.shared.business_partner_number_2.0.0_BpnlTrait'
+        expectedResponseBy:
+          description: 'Time zone aware timestamp holding the date and time by which
+            the sending party expects a response from the receiving party. The value
+            MUST be formatted according to ISO 8601.
+
+            '
+          $ref: '#/components/schemas/urn_samm_org.eclipse.esmf.samm_characteristic_2.1.0_Timestamp'
+        relatedMessageId:
+          description: Unique ID identifying a message somehow related to the current
+            one.
+          $ref: '#/components/schemas/urn_samm_io.catenax.shared.uuid_2.0.0_UuidV4Trait'
+        version:
+          description: 'Version of the Catena-X Message Header aspect model.
+
+            '
+          $ref: '#/components/schemas/urn_samm_io.catenax.shared.message_header_3.0.0_SemanticVersioningTrait'
+      required:
+      - messageId
+      - context
+      - sentDateTime
+      - senderBpn
+      - receiverBpn
+      - version
+    urn_samm_io.catenax.shared.uuid_2.0.0_UuidV4Trait:
+      type: string
+      description: 'UUIDv4 with optional "urn:uuid:" prefix.
+
+        '
+      pattern: (^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$)|(^urn:uuid:[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$)
+    urn_samm_io.catenax.shared.message_header_3.0.0_ContextCharacteristic:
+      type: string
+      description: 'Information about the context the message should be considered
+        in. If the content is not directly described by a Catena-X aspect model URN,
+        the value MUST follow the pattern <domain>-<subdomain>-<object>:<major version>.
+
+        '
+      examples:
+      - CryptoMaterial-DataPushNotification:1.0.0
+      - IndustryCore-DigitalTwinEvent-SubmodelUpdate:3.0.0
+    urn_samm_org.eclipse.esmf.samm_characteristic_2.1.0_Timestamp:
+      type: string
+      description: Date-time string with optional timezone.
+      format: date-time
+      examples:
+      - '2026-03-17T10:15:00Z'
+    urn_samm_io.catenax.shared.business_partner_number_2.0.0_BpnlTrait:
+      type: string
+      description: 'The provided regular expression ensures that the BPNL is composed
+        of the prefix "BPNL" followed by 12 alphanumeric characters.
+
+        '
+      pattern: ^BPNL[a-zA-Z0-9]{12}$
+      examples:
+      - BPNL0000005AMPL3
+    urn_samm_io.catenax.shared.message_header_3.0.0_SemanticVersioningTrait:
+      type: string
+      description: Constraint for defining a semantic version.
+      pattern: ^(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)(-(0|[1-9A-Za-z-][0-9A-Za-z-]*)(\.[0-9A-Za-z-]+)*)?([0-9A-Za-z-]+(\.[0-9A-Za-z-]+)*)?$
+      examples:
+      - 3.0.0
+    SerialPartSubmodel:
+      type: object
+      description: 'Value-only serialization aligned with the Catena-X SerialPart
+        submodel.
+
+        '
+      x-samm-aspect-model-urn: urn:samm:io.catenax.serial_part:3.0.0#SerialPart
+      properties:
+        localIdentifiers:
+          $ref: '#/components/schemas/SerialPartLocalIdentifierCharacteristic'
+        manufacturingInformation:
+          $ref: '#/components/schemas/SerialPartManufacturingInformation'
+        globalAssetId:
+          $ref: '#/components/schemas/urn_samm_io.catenax.shared.uuid_2.0.0_UuidV4Trait'
+        partTypeInformation:
+          $ref: '#/components/schemas/SerialPartTypeInformation'
+      required:
+      - localIdentifiers
+      - globalAssetId
+    SerialPartLocalIdentifierCharacteristic:
+      type: array
+      description: List of local identifiers for a serialized part.
+      minItems: 1
+      uniqueItems: true
+      items:
+        $ref: '#/components/schemas/SerialPartKeyValueList'
+    SerialPartKeyValueList:
+      type: object
+      description: Key-value pair for a local identifier.
+      properties:
+        key:
+          $ref: '#/components/schemas/SerialPartKeyTrait'
+        value:
+          $ref: '#/components/schemas/SerialPartValueCharacteristic'
+      required:
+      - key
+      - value
+    SerialPartKeyTrait:
+      type: string
+      description: 'Standard key or custom key prefix used in Catena-X specific asset
+        IDs and local identifiers.
+
+        '
+      pattern: ^(manufacturerId|manufacturerPartId|customerPartId|partInstanceId|batchId|van|customKey:\w+)$
+    SerialPartValueCharacteristic:
+      type: string
+      description: Value of a local identifier.
+    SerialPartManufacturingInformation:
+      type: object
+      description: Manufacturing information of the serialized part.
+      properties:
+        date:
+          $ref: '#/components/schemas/urn_samm_org.eclipse.esmf.samm_characteristic_2.1.0_Timestamp'
+        country:
+          type: string
+          description: Country code of manufacture.
+          pattern: ^[A-Z]{3}$
+          examples:
+          - DEU
+        sites:
+          type: array
+          items:
+            $ref: '#/components/schemas/SerialPartSite'
+      required:
+      - date
+      - country
+    SerialPartSite:
+      type: object
+      description: Manufacturing or related site.
+      properties:
+        catenaXsiteId:
+          type: string
+          description: Catena-X site identifier.
+          pattern: ^BPNS[a-zA-Z0-9]{12}$
+        function:
+          type: string
+          description: Role of the site.
+          examples:
+          - production
+      required:
+      - catenaXsiteId
+      - function
+    SerialPartTypeInformation:
+      type: object
+      description: Type-related information of the serialized part.
+      properties:
+        manufacturerPartId:
+          type: string
+          description: Manufacturer part identifier.
+        nameAtManufacturer:
+          type: string
+          description: Human-readable name of the part at the manufacturer.
+        partClassification:
+          type: array
+          items:
+            $ref: '#/components/schemas/PartClassification'
+      required:
+      - manufacturerPartId
+      - nameAtManufacturer
+    PartClassification:
+      type: object
+      description: Part classification entry.
+      properties:
+        classificationStandard:
+          type: string
+        classificationID:
+          type: string
+        classificationDescription:
+          type: string
+      required:
+      - classificationStandard
+      - classificationID
+    SoftwareInformationSubmodel:
+      type: object
+      description: 'Value-only serialization aligned with the published Catena-X SoftwareInformation
+        example for version 1.0.0.
+
+        '
+      properties:
+        globalAssetId:
+          $ref: '#/components/schemas/urn_samm_io.catenax.shared.uuid_2.0.0_UuidV4Trait'
+        softwareInformation:
+          type: array
+          description: List of software components implemented or flashed in the ECU.
+          minItems: 1
+          items:
+            $ref: '#/components/schemas/SoftwareComponent'
+      required:
+      - globalAssetId
+      - softwareInformation
+      x-samm-aspect-model-urn: urn:samm:io.catenax.software_information:1.0.0#SoftwareInformation
+    SoftwareComponent:
+      type: object
+      description: Single software component entry.
+      properties:
+        name:
+          type: string
+          description: Name of the software component.
+        softwareId:
+          type: string
+          description: Unique identifier of the software component.
+        version:
+          type: string
+          description: Version of the software component.
+        lastModifiedOn:
+          $ref: '#/components/schemas/urn_samm_org.eclipse.esmf.samm_characteristic_2.1.0_Timestamp'
+      required:
+      - name
+      - softwareId
+      - version
+      - lastModifiedOn
+    CryptoMaterialSubmodel:
+      type: object
+      description: Value-only serialization of the CryptoMaterial submodel.
+      properties:
+        globalAssetId:
+          $ref: '#/components/schemas/urn_samm_io.catenax.shared.uuid_2.0.0_UuidV4Trait'
+        cryptoMaterials:
+          type: array
+          description: 'List containing one or more cryptographic objects that make
+            up the cryptographic material associated with an ECU.
+
+            '
+          minItems: 1
+          items:
+            $ref: '#/components/schemas/CryptoMaterialEntry'
+      required:
+      - globalAssetId
+      - cryptoMaterials
+      x-samm-aspect-model-urn: urn:samm:io.catenax.crypto_material:1.0.0#CryptoMaterial
+    CryptoMaterialEntry:
+      type: object
+      description: Single cryptographic object belonging to the ECU.
+      properties:
+        name:
+          type: string
+          description: Name assigned to the cryptographic object.
+        type:
+          $ref: '#/components/schemas/CryptoMaterialType'
+        value:
+          type: string
+          description: Textual representation of the cryptographic object value.
+        format:
+          $ref: '#/components/schemas/CryptoMaterialFormat'
+        encoding:
+          $ref: '#/components/schemas/CryptoMaterialEncoding'
+      required:
+      - name
+      - type
+      - value
+      - format
+      - encoding
+    CryptoMaterialType:
+      type: string
+      description: Type of cryptographic object.
+      enum:
+      - certificate
+      - certificateSigningRequest
+      - privateKey
+      - publicKey
+      - secretData
+      - symmetricKey
+    CryptoMaterialFormat:
+      type: string
+      description: Format used for the cryptographic object value.
+      enum:
+      - pkcs1
+      - pkcs8
+      - pkcs10
+      - raw
+      - subjectPublicKeyInfo
+      - x509v3
+    CryptoMaterialEncoding:
+      type: string
+      description: Encoding used for the textual representation of the object value.
+      enum:
+      - base64
+      - hex
+      - rfc7468
+    CryptoMaterialFeedbackNotification:
+      type: object
+      description: Request schema for Crypto Material feedback notifications.
+      properties:
+        header:
+          $ref: '#/components/schemas/urn_samm_io.catenax.shared.message_header_3.0.0_HeaderCharacteristic'
+        content:
+          $ref: '#/components/schemas/NotificationContentFeedback'
+      required:
+      - header
+      - content
+    NotificationContentFeedback:
+      type: object
+      description: Feedback content containing one or more processing results for
+        ECU items.
+      properties:
+        listOfItems:
+          $ref: '#/components/schemas/FeedbackItemSet'
+      required:
+      - listOfItems
+    FeedbackItemSet:
+      type: array
+      description: List of individual feedback messages for ECU items.
+      minItems: 1
+      maxItems: 100
+      items:
+        $ref: '#/components/schemas/FeedbackItem'
+    FeedbackItem:
+      type: object
+      description: Processing result for a single ECU item. If multiple validation
+        errors exist for one ECU, separate entries may be returned for the same globalAssetId.
+      properties:
+        globalAssetId:
+          $ref: '#/components/schemas/urn_samm_io.catenax.shared.uuid_2.0.0_UuidV4Trait'
+        status:
+          $ref: '#/components/schemas/FeedbackStatus'
+        statusMessage:
+          type: string
+          description: Details about the processing result or validation error.
+        statusCode:
+          type: string
+          description: Detailed feedback or error code.
+      required:
+      - globalAssetId
+      - status
+      - statusMessage
+      - statusCode
+    FeedbackStatus:
+      type: string
+      description: Processing status of a single ECU item.
+      enum:
+      - OK
+      - ERROR
+    SpecificAssetId:
+      type: object
+      description: Specific asset identifier key-value pair.
+      properties:
+        key:
+          $ref: '#/components/schemas/SpecificAssetIdKeyTrait'
+        value:
+          type: string
+          description: Value of the specific asset identifier.
+      required:
+      - key
+      - value
+    SpecificAssetIdKeyTrait:
+      type: string
+      description: Supported specific asset identifier keys for the SerialPart entry.
+      enum:
+      - customKey:ecuSerialNumber
+    CryptoMaterialUpdateNotification:
+      type: object
+      description: Request schema to send Crypto Material update notifications.
+        The SerialPart/JustInSequencePart submodel is not included in update notifications.
+      properties:
+        header:
+          $ref: '#/components/schemas/urn_samm_io.catenax.shared.message_header_3.0.0_HeaderCharacteristic'
+        content:
+          $ref: '#/components/schemas/NotificationContentUpdate'
+      required:
+      - header
+      - content
+    NotificationContentUpdate:
+      type: object
+      description: 'Content of the Crypto Material update notification. Each ECU
+        item has a Global Asset ID and a listOfData with exactly one SoftwareInformation
+        entry and one CryptoMaterial entry. No SerialPart entry is included.
+
+        '
+      properties:
+        listOfItems:
+          $ref: '#/components/schemas/EcuUpdateItemSet'
+      required:
+      - listOfItems
+    EcuUpdateItemSet:
+      type: array
+      description: List of ECU items contained in the update notification.
+      minItems: 1
+      maxItems: 100
+      items:
+        $ref: '#/components/schemas/EcuUpdateItem'
+    EcuUpdateItem:
+      type: object
+      description: Single ECU item for an update notification containing its Global Asset
+        ID and the two required submodels (no SerialPart).
+      properties:
+        globalAssetId:
+          $ref: '#/components/schemas/urn_samm_io.catenax.shared.uuid_2.0.0_UuidV4Trait'
+        listOfData:
+          $ref: '#/components/schemas/EcuUpdateDataList'
+      required:
+      - globalAssetId
+      - listOfData
+    EcuUpdateDataList:
+      type: array
+      description: 'The ECU update data list MUST contain exactly two entries: one
+        SoftwareInformation entry and one CryptoMaterial entry. SerialPart is excluded
+        from update notifications.
+
+        '
+      minItems: 2
+      maxItems: 2
+      items:
+        oneOf:
+        - $ref: '#/components/schemas/SoftwareInformationData'
+        - $ref: '#/components/schemas/CryptoMaterialData'
+      allOf:
+      - contains:
+          $ref: '#/components/schemas/SoftwareInformationData'
+        minContains: 1
+        maxContains: 1
+      - contains:
+          $ref: '#/components/schemas/CryptoMaterialData'
+        minContains: 1
+        maxContains: 1
+    SubmodelUpdateRequestBody:
+      required:
+        - header
+        - content
+      type: object
+      properties:
+        header:
+          $ref: '#/components/schemas/NotificationHeader'
+        content:
+          $ref: '#/components/schemas/SubmodelUpdatePayload'
+    NotificationHeader:
+      $ref: "#/components/schemas/urn_samm_io.catenax.shared.message_header_3.0.0_HeaderCharacteristic"
+    SubmodelUpdatePayload:
+      type: object
+      required:
+        - listOfEvents
+      properties:
+        information:
+          type: string
+          maxLength: 1000
+          example: "List of events about the creation, update, or deletion of submodels of digital twins."
+        listOfEvents:
+          type: array
+          items:
+            oneOf:
+              - $ref: "#/components/schemas/SubmodelEvent"
+    SubmodelEvent:
+      allOf:
+        - type: object
+          required:
+            - eventType
+          properties:
+            eventType:
+              type: string
+              maxLength: 2048
+              example: "CreateSubmodel"
+              description: CreateSubmodel, UpdateSubmodel, or DeleteSubmodel.
+        - $ref: "#/components/schemas/GlobalAssetIdItem"
+        - type: object
+          required:
+            - submodelSemanticId
+          properties:
+            submodelSemanticId:
+              type: string
+              maxLength: 2048
+              example: "urn:samm:io.catenax.serial_part:3.0.0#SerialPart"
+              description: semantic ID of the submodel that was updated
+    GlobalAssetIdItem:
+      type: object
+      required:
+        - globalAssetId
+      properties:
+        globalAssetId:
+          $ref: "#/components/schemas/GlobalAssetId"
+    GlobalAssetId:
+      type: string
+      example: "urn:uuid:d32d3b55-d222-41e9-8d19-554af53124dd"
+      description: Global Asset ID for a part instance, e.g., a serial part or a batch.
