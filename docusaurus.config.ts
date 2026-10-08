@@ -13,7 +13,7 @@ const glossaryRoutePath = `${baseUrl.replace(/\/?$/, '/')}glossary`;
 
 const config: Config = {
   title: 'Catena-X - Library',
-  tagline: 'If you are interested in joining the Catena-X ecosystem, you need to prove compliance. Right here you will find the complete normative documentation for everything you need for doing so.',
+  tagline: 'Your reference for the standards, governance and rules that connect the Catena-X ecosystem. Everything you need to prove compliance — in one place.',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
