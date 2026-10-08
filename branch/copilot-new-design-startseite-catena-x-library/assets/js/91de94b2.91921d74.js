@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkcatenax_ev_github_io_new=globalThis.webpackChunkcatenax_ev_github_io_new||[]).push([[77875],{67353(e){e.exports=JSON.parse('{"metadata":{"permalink":"/branch/copilot-new-design-startseite-catena-x-library/blog-releasenotes","page":1,"postsPerPage":10,"totalPages":1,"totalCount":5,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);
