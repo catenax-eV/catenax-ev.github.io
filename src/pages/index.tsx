@@ -206,6 +206,42 @@ const PATHS: PathItem[] = [
   },
 ];
 
+/** Entry point and section anchors of the migration guide release note. */
+const MIGRATION_GUIDE = '/blog-releasenotes/migration-guide-cx-jupiter-to-cx-saturn-and-cx-neptune';
+
+const MIGRATION_STEPS: PathStep[] = [
+  {label: 'CX-Jupiter deprecation impact', to: `${MIGRATION_GUIDE}#3-cx-jupiter-deprecation-impact`},
+  {
+    label: 'CX-Jupiter to CX-Saturn',
+    to: `${MIGRATION_GUIDE}#5-migration-guide--cx-jupiter-to-cx-saturn`,
+  },
+  {
+    label: 'CX-Saturn to CX-Neptune',
+    to: `${MIGRATION_GUIDE}#6-migration-guide--cx-saturn-to-cx-neptune`,
+  },
+];
+
+/**
+ * Appends the migration path, whose target release is the upcoming preview
+ * version rather than a hard-coded release name.
+ */
+function usePaths(): PathItem[] {
+  const previewVersion = useVersions(DOCS_PLUGIN_ID).find(
+    (version) => version.name === PREVIEW_VERSION_NAME,
+  );
+
+  return [
+    ...PATHS,
+    {
+      title: 'I want to migrate',
+      intro: previewVersion
+        ? `Move an existing implementation to ${releaseName(previewVersion)}.`
+        : 'Move an existing implementation to the upcoming release.',
+      steps: MIGRATION_STEPS,
+    },
+  ];
+}
+
 /* -- (5) Releases --------------------------------------------------------- */
 
 type ReleaseItem = {
@@ -384,6 +420,8 @@ function Areas(): ReactNode {
 }
 
 function Paths(): ReactNode {
+  const paths = usePaths();
+
   return (
     <section className={clsx(styles.section, styles.sectionMuted)}>
       <div className="container">
@@ -395,7 +433,7 @@ function Paths(): ReactNode {
         </header>
 
         <div className={styles.pathGrid}>
-          {PATHS.map((path) => (
+          {paths.map((path) => (
             <div className={styles.path} key={path.title}>
               <Heading as="h3" className={styles.pathTitle}>
                 {path.title}
@@ -499,7 +537,27 @@ function GraphTeaser(): ReactNode {
               </span>
             </Link>
           </div>
-          <div className={styles.graphVisual} aria-hidden="true" />
+          <div className={styles.graphVisual} aria-hidden="true">
+            <svg className={styles.graphSvg} viewBox="0 0 300 200" role="presentation">
+              <g className={styles.graphEdges}>
+                <path d="M60 48 118 108" />
+                <path d="M168 34 118 108" />
+                <path d="M168 34 248 72" />
+                <path d="M248 72 212 132" />
+                <path d="M118 108 212 132" />
+                <path d="M118 108 58 160" />
+                <path d="M212 132 166 176" />
+                <path d="M58 160 166 176" />
+              </g>
+              <circle className={styles.graphNodeLime} cx="60" cy="48" r="6" />
+              <circle className={styles.graphNodeOrange} cx="168" cy="34" r="6" />
+              <circle className={styles.graphNodeLime} cx="248" cy="72" r="6" />
+              <circle className={styles.graphNodeOrange} cx="118" cy="108" r="7" />
+              <circle className={styles.graphNodeOrange} cx="212" cy="132" r="6" />
+              <circle className={styles.graphNodeMuted} cx="58" cy="160" r="5" />
+              <circle className={styles.graphNodeMuted} cx="166" cy="176" r="5" />
+            </svg>
+          </div>
         </div>
       </div>
     </section>

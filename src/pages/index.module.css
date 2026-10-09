@@ -440,8 +440,8 @@
 
 .pathGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
-  gap: 2.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 2rem;
 }
 
 .path {
@@ -628,14 +628,37 @@
 /* Abstract node/edge pattern — decorative only, no asset required. */
 .graphVisual {
   min-height: 13rem;
+  display: flex;
+  padding: 1.25rem;
   border-radius: var(--cx-radius-lg);
   border: 1px solid rgba(255, 255, 255, 0.12);
-  background-image: radial-gradient(circle at 20% 30%, var(--cx-orange) 0 5px, transparent 6px),
-    radial-gradient(circle at 70% 20%, var(--cx-lime) 0 5px, transparent 6px),
-    radial-gradient(circle at 45% 60%, var(--cx-orange) 0 5px, transparent 6px),
-    radial-gradient(circle at 82% 72%, var(--cx-lime) 0 5px, transparent 6px),
-    radial-gradient(circle at 25% 82%, rgba(255, 255, 255, 0.6) 0 4px, transparent 5px),
-    linear-gradient(115deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0));
+  background-image: linear-gradient(115deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0));
+}
+
+.graphSvg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+/* Edges are drawn before the nodes so the circles cover the line ends. */
+.graphEdges path {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.32);
+  stroke-width: 1.25;
+  stroke-linecap: round;
+}
+
+.graphNodeOrange {
+  fill: var(--cx-orange);
+}
+
+.graphNodeLime {
+  fill: var(--cx-lime);
+}
+
+.graphNodeMuted {
+  fill: rgba(255, 255, 255, 0.6);
 }
 
 @media (max-width: 996px) {
