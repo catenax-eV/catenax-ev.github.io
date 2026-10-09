@@ -1,8 +1,10 @@
-import type {ComponentType, ReactNode, SVGProps} from 'react';
+import type {ComponentType, ReactNode, RefObject, SVGProps} from 'react';
+import {useEffect, useRef} from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
+import SearchBar from '@theme/SearchBar';
 import {
   useLatestVersion,
   useVersions,
@@ -127,9 +129,13 @@ function useStats(): Stat[] {
 
 type AreaItem = {
   title: string;
-  Svg: SvgComponent;
+  /** Either a vector icon (inlined as a component) or a raster icon source. */
+  Svg?: SvgComponent;
+  img?: string;
   to: string;
   description: string;
+  /** Overrides the default "Learn more" call to action. */
+  cta?: string;
 };
 
 const AREAS: AreaItem[] = [
@@ -160,6 +166,21 @@ const AREAS: AreaItem[] = [
     to: '/docs/working-model/overview',
     description:
       'Values, principles and organizational processes behind our software and standard artefacts — from idea to release.',
+  },
+  {
+    title: 'Test Suite',
+    Svg: require('@site/static/img/testsuite-icon.svg').default,
+    to: 'https://test-suite.catena-x.net/',
+    description:
+      'Test your apps against Catena-X standards with TCKs and prepare for certification in our Test Suite. Discover data space sandboxes in Learn & Explore environments.',
+  },
+  {
+    title: 'Eclipse Tractus-X KITs',
+    img: require('@site/static/img/kits.png').default,
+    to: 'https://eclipse-tractusx.github.io/Kits',
+    cta: 'Explore the KITs',
+    description:
+      'Discover how Catena-X standards are implemented with practical guidance, reference implementations and reusable building blocks.',
   },
 ];
 
@@ -292,9 +313,32 @@ const ECOSYSTEM: EcosystemItem[] = [
 
 /* ========================================================================== */
 
+/** Placeholder of the hero search input, which the search theme hard-codes. */
+const HERO_SEARCH_PLACEHOLDER = 'Find standards, rulebooks or guidelines…';
+
+/**
+ * The hero embeds the site's own search bar so the results behave exactly as
+ * in the navbar. Its placeholder is not configurable per instance, so it is
+ * set on the rendered input instead; without JavaScript the generic "Search"
+ * placeholder remains, which is still correct.
+ */
+function useHeroSearchPlaceholder(): RefObject<HTMLDivElement | null> {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const input = containerRef.current?.querySelector('input');
+    if (input) {
+      input.placeholder = HERO_SEARCH_PLACEHOLDER;
+    }
+  }, []);
+
+  return containerRef;
+}
+
 function Hero(): ReactNode {
   const latestVersion = useLatestVersion(DOCS_PLUGIN_ID);
   const quickLinks = useQuickLinks();
+  const searchRef = useHeroSearchPlaceholder();
 
   return (
     <section className={styles.hero}>
@@ -322,23 +366,9 @@ function Hero(): ReactNode {
           </Link>
         </div>
 
-        <Link className={styles.heroSearch} to="/search">
-          <svg
-            className={styles.heroSearchIcon}
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            aria-hidden="true">
-            <circle cx="11" cy="11" r="7" />
-            <line x1="16.5" y1="16.5" x2="21" y2="21" />
-          </svg>
-          <span className={styles.heroSearchLabel}>Find standards, rulebooks or guidelines…</span>
-          <span className={styles.heroSearchHint}>Search the library</span>
-        </Link>
+        <div className={styles.heroSearch} ref={searchRef}>
+          <SearchBar />
+        </div>
 
         <ul className={styles.quickLinks}>
           {quickLinks.map((item) => (
@@ -390,26 +420,30 @@ function Areas(): ReactNode {
         <header className={styles.sectionHeader}>
           <p className={styles.sectionEyebrow}>Explore the library</p>
           <Heading as="h2" className={styles.sectionTitle}>
-            Four areas, one normative documentation
+            Six areas, one connected ecosystem
           </Heading>
           <p className={styles.sectionLead}>
-            The complete normative documentation of Catena-X, grouped into the four areas that
-            define how the ecosystem works.
+            The complete normative documentation of Catena-X — plus the test environments and
+            reference implementations that help you put it into practice.
           </p>
         </header>
 
         <div className={styles.areaGrid}>
-          {AREAS.map(({title, Svg, to, description}) => (
+          {AREAS.map(({title, Svg, img, to, description, cta}) => (
             <Link className={styles.areaCard} to={to} key={title}>
               <span className={styles.areaIcon}>
-                <Svg role="presentation" aria-hidden="true" />
+                {Svg ? (
+                  <Svg role="presentation" aria-hidden="true" />
+                ) : (
+                  <img className={styles.areaIconImage} src={img} alt="" aria-hidden="true" />
+                )}
               </span>
               <Heading as="h3" className={styles.areaTitle}>
                 {title}
               </Heading>
               <p className={styles.areaText}>{description}</p>
               <span className={styles.areaLink}>
-                Learn more <span aria-hidden="true">→</span>
+                {cta ?? 'Learn more'} <span aria-hidden="true">→</span>
               </span>
             </Link>
           ))}

@@ -192,43 +192,43 @@
 
 /* Search entry point ------------------------------------------------------ */
 
+/* The hero reuses the site's real search bar (`@theme/SearchBar`), so the
+   results dropdown behaves exactly as in the navbar. Only the proportions are
+   scaled up to hero size here. */
 .heroSearch {
-  display: flex;
-  align-items: center;
-  gap: 0.85rem;
   width: 100%;
   max-width: 56rem;
-  padding: 1.1rem 1.5rem;
+  /* Consumed by the search theme to size its results dropdown. */
+  --search-local-modal-width: 100%;
+}
+
+.heroSearch :global(.navbar__search) {
+  width: 100%;
+  margin-left: 0;
+}
+
+.heroSearch :global(.navbar__search-input) {
+  width: 100%;
+  height: auto;
+  padding: 1.1rem 3.5rem 1.1rem 3.25rem;
+  border: none;
   border-radius: var(--cx-radius-md);
-  background: var(--cx-surface);
-  color: var(--cx-text-muted);
+  background-color: var(--cx-surface);
+  background-size: 1.25rem 1.25rem;
+  background-position: 1.25rem center;
   box-shadow: var(--cx-shadow-lg);
-  text-decoration: none;
-  transition: transform var(--cx-duration) var(--cx-ease),
-    box-shadow var(--cx-duration) var(--cx-ease);
-}
-
-.heroSearch:hover {
-  transform: translateY(-2px);
-  text-decoration: none;
-  color: var(--cx-text-muted);
-}
-
-.heroSearchIcon {
-  flex: none;
-  color: var(--cx-grey-400);
-}
-
-.heroSearchLabel {
-  flex: 1;
   font-size: 1rem;
 }
 
-.heroSearchHint {
-  flex: none;
-  font-size: 0.85rem;
-  color: var(--cx-orange-800);
-  font-weight: 600;
+.heroSearch :global(.navbar__search-input):focus {
+  outline: none;
+  box-shadow: var(--cx-shadow-lg), var(--cx-ring);
+}
+
+/* The navbar search already advertises the keyboard shortcut; repeating the
+   hint here would point at the wrong input. */
+.heroSearch kbd {
+  display: none;
 }
 
 /* Quick links ------------------------------------------------------------- */
@@ -408,6 +408,22 @@
 .areaIcon svg {
   width: 2rem;
   height: 2rem;
+}
+
+/* Only affects icons drawn with `currentColor`; icons with their own fills are
+   unaffected. */
+.areaIcon {
+  color: var(--cx-orange-800);
+}
+
+[data-theme='dark'] .areaIcon {
+  color: var(--cx-orange-300);
+}
+
+.areaIconImage {
+  width: 2.25rem;
+  height: 2.25rem;
+  object-fit: contain;
 }
 
 .areaTitle {
@@ -719,7 +735,6 @@
 @media (prefers-reduced-motion: reduce) {
   .ctaPrimary:hover,
   .ctaOutline:hover,
-  .heroSearch:hover,
   .areaCard:hover,
   .ecosystemCard:hover,
   .releaseItem:hover,
