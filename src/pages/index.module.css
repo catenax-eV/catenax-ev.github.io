@@ -562,13 +562,8 @@
 }
 
 .releaseName {
-  font-weight: 700;
-}
-
-.releaseDate {
   flex: 1;
-  font-size: 0.9rem;
-  color: var(--cx-text-muted);
+  font-weight: 700;
 }
 
 .releaseBadge {
@@ -581,6 +576,13 @@
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: var(--cx-text-muted);
+}
+
+.releaseNotesLink {
+  display: inline-block;
+  margin-top: 1.25rem;
+  font-weight: 600;
+  font-size: 0.92rem;
 }
 
 /* ==========================================================================

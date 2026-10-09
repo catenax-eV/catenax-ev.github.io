@@ -3,13 +3,83 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
+import {
+  useLatestVersion,
+  useVersions,
+  type GlobalVersion,
+} from '@docusaurus/plugin-content-docs/client';
 
 import styles from './index.module.css';
 
 type SvgComponent = ComponentType<SVGProps<SVGSVGElement>>;
 
-const CURRENT_RELEASE = 'CX-Titan';
-const PREVIEW_RELEASE = 'CX-Neptune';
+/* ==========================================================================
+   Release data derived from the Docusaurus docs plugin
+
+   Nothing about releases is hard-coded here: the version list, which release
+   is current and which one is the preview all come from the docs plugin's
+   global data, i.e. from `versions.json` plus the `versions` labels in
+   `docusaurus.config.ts`. Adding or renaming a release automatically updates
+   the landing page.
+   ========================================================================== */
+
+const DOCS_PLUGIN_ID = 'default';
+
+/** Docusaurus' unreleased ("next") version is always named `current`. */
+const PREVIEW_VERSION_NAME = 'current';
+
+/**
+ * Version labels carry a human-readable status suffix (for example
+ * "CX-Titan (Current)"). The suffix is rendered as a separate badge, so it is
+ * stripped from the release name itself.
+ */
+function releaseName(version: GlobalVersion): string {
+  return version.label.replace(/\s*\([^)]*\)\s*$/, '').trim();
+}
+
+function releaseStatus(version: GlobalVersion): string {
+  if (version.name === PREVIEW_VERSION_NAME) {
+    return 'Preview';
+  }
+  return version.isLast ? 'Current' : 'Previous';
+}
+
+/**
+ * A version's `path` is only the base path of that version and has no route of
+ * its own, so the entry point is the version's main document instead.
+ */
+function releaseLink(version: GlobalVersion): string | undefined {
+  return version.docs.find((doc) => doc.id === version.mainDocId)?.path;
+}
+
+/** Resolves a doc ID to its route within a version. */
+function docLink(version: GlobalVersion, docId: string): string | undefined {
+  return version.docs.find((doc) => doc.id === docId)?.path;
+}
+
+/**
+ * Counts the top-level documents of a docs area in a given version.
+ *
+ * Standards and rulebooks are either a single file (`standards/CX-0001-Foo`)
+ * or a folder of several documents (`standards/CX-0143-Bar/introduction`).
+ * Counting the distinct first path segment therefore yields the number of
+ * standards/rulebooks rather than the number of pages.
+ */
+function countArea(version: GlobalVersion, area: string, prefix: string): number {
+  const segments = new Set<string>();
+
+  version.docs.forEach((doc) => {
+    if (doc.unlisted) {
+      return;
+    }
+    const [docArea, entry] = doc.id.split('/');
+    if (docArea === area && entry?.startsWith(prefix)) {
+      segments.add(entry);
+    }
+  });
+
+  return segments.size;
+}
 
 /* -- (1) Hero: quick links ------------------------------------------------ */
 
@@ -19,11 +89,17 @@ type QuickLink = {
 };
 
 const QUICK_LINKS: QuickLink[] = [
-  {label: 'Rulebooks', to: '/docs/next/rulebooks/overview/'},
   {label: 'Dependency Graph', to: '/standards-graph'},
   {label: 'Release Timelines', to: '/timelines'},
   {label: 'Glossary', to: '/glossary'},
 ];
+
+/** Prepends the rulebooks of the current release to the static quick links. */
+function useQuickLinks(): QuickLink[] {
+  const rulebooks = docLink(useLatestVersion(DOCS_PLUGIN_ID), 'rulebooks/overview');
+
+  return rulebooks ? [{label: 'Rulebooks', to: rulebooks}, ...QUICK_LINKS] : QUICK_LINKS;
+}
 
 /* -- (2) Key figures ------------------------------------------------------ */
 
@@ -32,12 +108,20 @@ type Stat = {
   label: string;
 };
 
-const STATS: Stat[] = [
-  {value: '100+', label: 'Technical standards'},
-  {value: '5', label: 'Rulebooks'},
-  {value: CURRENT_RELEASE, label: 'Current release'},
-  {value: '2 / year', label: 'Release cadence'},
-];
+function useStats(): Stat[] {
+  const latestVersion = useLatestVersion(DOCS_PLUGIN_ID);
+
+  const stats: Stat[] = [
+    {value: `${countArea(latestVersion, 'standards', 'CX-')}`, label: 'Technical standards'},
+    {value: `${countArea(latestVersion, 'rulebooks', 'CX-NFR-')}`, label: 'Rulebooks'},
+    {value: releaseName(latestVersion), label: 'Current release'},
+    {value: '2 / year', label: 'Release cadence'},
+  ];
+
+  // An area that does not exist in the current release would otherwise be
+  // advertised as "0".
+  return stats.filter((stat) => stat.value !== '0');
+}
 
 /* -- (3) Explore the library ---------------------------------------------- */
 
@@ -126,31 +210,20 @@ const PATHS: PathItem[] = [
 
 type ReleaseItem = {
   title: string;
-  date: string;
-  note: string;
+  status: string;
   to: string;
 };
 
-const RELEASES: ReleaseItem[] = [
-  {
-    title: 'CX-Neptune',
-    date: '18 September 2026',
-    note: 'Preview',
-    to: '/blog-releasenotes/cx-neptune',
-  },
-  {
-    title: 'CX-Titan',
-    date: '18 March 2026',
-    note: 'Current',
-    to: '/blog-releasenotes/cx-titan',
-  },
-  {
-    title: 'CX-Saturn',
-    date: '2025',
-    note: 'Previous',
-    to: '/blog-releasenotes/cx-saturn',
-  },
-];
+/**
+ * The release list mirrors the versions configured for the docs plugin, newest
+ * first, and links to the documentation of each release.
+ */
+function useReleases(): ReleaseItem[] {
+  return useVersions(DOCS_PLUGIN_ID).flatMap((version) => {
+    const to = releaseLink(version);
+    return to ? [{title: releaseName(version), status: releaseStatus(version), to}] : [];
+  });
+}
 
 /* -- (7) Ecosystem -------------------------------------------------------- */
 
@@ -184,6 +257,9 @@ const ECOSYSTEM: EcosystemItem[] = [
 /* ========================================================================== */
 
 function Hero(): ReactNode {
+  const latestVersion = useLatestVersion(DOCS_PLUGIN_ID);
+  const quickLinks = useQuickLinks();
+
   return (
     <section className={styles.hero}>
       <div className={clsx('container', styles.heroInner)}>
@@ -229,7 +305,7 @@ function Hero(): ReactNode {
         </Link>
 
         <ul className={styles.quickLinks}>
-          {QUICK_LINKS.map((item) => (
+          {quickLinks.map((item) => (
             <li key={item.to}>
               <Link className={styles.quickLink} to={item.to}>
                 {item.label}
@@ -241,7 +317,9 @@ function Hero(): ReactNode {
         <div className={styles.heroMeta}>
           <span>
             Standards release ·{' '}
-            <strong className={styles.heroMetaAccent}>{CURRENT_RELEASE} / Current</strong>
+            <strong className={styles.heroMetaAccent}>
+              {releaseName(latestVersion)} / {releaseStatus(latestVersion)}
+            </strong>
           </span>
           <Link className={styles.heroMetaLink} to="/blog-releasenotes">
             Browse releases &amp; preview <span aria-hidden="true">→</span>
@@ -253,10 +331,12 @@ function Hero(): ReactNode {
 }
 
 function Stats(): ReactNode {
+  const stats = useStats();
+
   return (
     <section className={styles.statsBand} aria-label="Catena-X Library in numbers">
       <div className={clsx('container', styles.statsGrid)}>
-        {STATS.map((stat) => (
+        {stats.map((stat) => (
           <div className={styles.stat} key={stat.label}>
             <span className={styles.statValue}>{stat.value}</span>
             <span className={styles.statLabel}>{stat.label}</span>
@@ -337,6 +417,12 @@ function Paths(): ReactNode {
 }
 
 function Releases(): ReactNode {
+  const releases = useReleases();
+  const latestVersion = useLatestVersion(DOCS_PLUGIN_ID);
+  const previewVersion = useVersions(DOCS_PLUGIN_ID).find(
+    (version) => version.name === PREVIEW_VERSION_NAME,
+  );
+
   return (
     <section className={styles.section}>
       <div className={clsx('container', styles.releaseLayout)}>
@@ -347,8 +433,13 @@ function Releases(): ReactNode {
           </Heading>
           <p className={styles.sectionLead}>
             Every area of the library is versioned alongside the Catena-X release train.{' '}
-            <strong>{CURRENT_RELEASE}</strong> is the current release, <strong>{PREVIEW_RELEASE}</strong>{' '}
-            is available as a preview. Older releases stay available for reference.
+            <strong>{releaseName(latestVersion)}</strong> is the current release
+            {previewVersion && (
+              <>
+                , <strong>{releaseName(previewVersion)}</strong> is available as a preview
+              </>
+            )}
+            . Older releases stay available for reference.
           </p>
           <div className={styles.releaseActions}>
             <Link className={styles.ctaPrimary} to="/release-management">
@@ -363,23 +454,30 @@ function Releases(): ReactNode {
           </div>
         </div>
 
-        <ul className={styles.releaseList}>
-          {RELEASES.map((release) => (
-            <li key={release.to}>
-              <Link className={styles.releaseItem} to={release.to}>
-                <span className={styles.releaseName}>{release.title}</span>
-                <span className={styles.releaseDate}>{release.date}</span>
-                <span className={styles.releaseBadge}>{release.note}</span>
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <div>
+          <ul className={styles.releaseList}>
+            {releases.map((release) => (
+              <li key={release.to}>
+                <Link className={styles.releaseItem} to={release.to}>
+                  <span className={styles.releaseName}>{release.title}</span>
+                  <span className={styles.releaseBadge}>{release.status}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <Link className={styles.releaseNotesLink} to="/blog-releasenotes">
+            Read the release notes <span aria-hidden="true">→</span>
+          </Link>
+        </div>
       </div>
     </section>
   );
 }
 
 function GraphTeaser(): ReactNode {
+  const latestVersion = useLatestVersion(DOCS_PLUGIN_ID);
+  const standardsCount = countArea(latestVersion, 'standards', 'CX-');
+
   return (
     <section className={styles.section}>
       <div className="container">
@@ -390,8 +488,9 @@ function GraphTeaser(): ReactNode {
               See how the standards depend on each other
             </Heading>
             <p className={styles.graphText}>
-              The interactive dependency graph visualises how more than a hundred Catena-X standards
-              reference and build on one another — per release.
+              The interactive dependency graph visualises how the {standardsCount} Catena-X
+              standards of {releaseName(latestVersion)} reference and build on one another — per
+              release.
             </p>
             <Link className={styles.ctaPrimary} to="/standards-graph">
               Open the dependency graph
