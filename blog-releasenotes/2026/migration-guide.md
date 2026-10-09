@@ -138,16 +138,16 @@ The key implication for Service Providers: **the Go-Live of CX-Neptune is the po
 | Milestone                                            | Timing                                                       |
 |------------------------------------------------------|--------------------------------------------------------------|
 | CX-Saturn published and productive (active release)  | Available today                                              |
-| CX-Neptune publication<sup>1</sup>                   | 18th of September                                            |
-| CX-Neptune industrialization phase<sup>2</sup>       | approx. 3 months following publication                       |
-| CX-Neptune Go-Live<sup>3</sup>                       | **24th of November – CX-Jupiter deprecated as of this date** |
+| CX-Neptune publication 1                             | 18th of September                                            |
+| CX-Neptune industrialization phase 2                 | approx. 3 months following publication                       |
+| CX-Neptune Go-Live 3                                 | **24th of November – CX-Jupiter deprecated as of this date** |
 | End of CX-Saturn validity (end of maintained status) | approx. 1 year after CX-Neptune Go-Live                      |
 
-<sup>1</sup> With Publication, the standards of a release are final and certifiable; the release is not yet the active release.
+1 With Publication, the standards of a release are final and certifiable; the release is not yet the active release.
 
-<sup>2</sup> The industrialization phase is the window between Publication and Go-Live. Its purpose is to prepare the ecosystem operationally for the new release.
+2 The industrialization phase is the window between Publication and Go-Live. Its purpose is to prepare the ecosystem operationally for the new release.
 
-<sup>3</sup> With Go-Live the release is switched live: it becomes the new active release, and its standards are binding for operation within the Catena-X data space from that point onwards.
+3 With Go-Live the release is switched live: it becomes the new active release, and its standards are binding for operation within the Catena-X data space from that point onwards.
 
 ### 2.2 CX-Saturn
 
@@ -919,25 +919,25 @@ A dedicated Migration Guide from CX-Jupiter directly to CX-Neptune is not publis
 
 ### 6.1 Scope of CX-Neptune
 
-| Role / component / use case                                                              | Migration activity                                                           | Section |
-|:-----------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------|:--------|
-| Connector                                                                                | Yes – limited; strategic decision on EDC-V                                   | [6.2.1](#621-connector)   |
-| Wallet                                                                                   | No material changes                                                          | [6.2.2](#622-wallet)   |
-| Digital Twin Registry                                                                    | Yes – version upgrade only                                                   | [6.2.3](#523-digital-twin-registry)   |
-| BPDM (Core Service)                                                                      | Yes – data-affecting, no re-conformance                                      | [6.3.1](#531-bpdm)   |
-| Onboarding Service                                                                       | Optional – existing process remains supported                                | [6.4](#64-onboarding-service-provider)     |
-| All Business Applications (cross-cutting)                                                | Yes – mandatory prerequisite                                                 | [6.5.1](#651-cross-cutting-impact-applicable-to-all-business-applications)   |
-| Quality                                                                                  | Yes – see Blocking Notification                                              | [6.5.2](#652-quality)   |
-| Product Carbon Footprint                                                                 | Yes – corrective                                                             | [6.5.3](#653-product-carbon-footprint)   |
-| Digital Product Passport                                                                 | Yes – battery passport content relocated                                     | [6.5.4](#654-digital-product-passport)   |
-| Supply Chain Disruption Notification                                                     | Yes – corrected API schema                                                   | [6.5.5](#655-supply-chain-disruption-notification)   |
-| Traceability (Blocking Notification, Regulatory Component Code, Special Characteristics) | Yes – extraction into standalone standards                                   | [6.5.6](#656-traceability)   |
-| Predictive Unit Real-Time Information Service (PURIS)                                    | Yes – aspect model versions                                                  | [6.5.7](#)   |
-| Car SBOM                                                                                 | Yes – restructuring, no breaking changes                                     | [6.5.8]()   |
-| Battery Passport Data Management Base                                                    | Yes – new standalone standard                                                | [6.5.9]()   |
-| Engineering (DEMD, Requirements Engineering, Geometry)                                   | New use case Geometry – optional adoption                                    | [6.5.10]()  |
-| Value Added Services                                                                     | Yes – VAS standards deprecated                                               | [6.6]()     |
-| Use cases not listed above                                                               | No use-case-specific changes – only the cross-cutting changes in 6.5.1 apply | –       |
+| Role / component / use case                                                              | Migration activity                                                           | Section                                                                                                |
+|:-----------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------|
+| Connector                                                                                | Yes – limited; strategic decision on EDC-V                                   | [6.2.1](#621-connector)                                                                                |
+| Wallet                                                                                   | No material changes                                                          | [6.2.2](#622-wallet)                                                                                   |
+| Digital Twin Registry                                                                    | Yes – version upgrade only                                                   | [6.2.3](#523-digital-twin-registry)                                                                    |
+| BPDM (Core Service)                                                                      | Yes – data-affecting, no re-conformance                                      | [6.3.1](#531-bpdm)                                                                                     |
+| Onboarding Service                                                                       | Optional – existing process remains supported                                | [6.4](#64-onboarding-service-provider)                                                                 |
+| All Business Applications (cross-cutting)                                                | Yes – mandatory prerequisite                                                 | [6.5.1](#651-cross-cutting-impact-applicable-to-all-business-applications)                             |
+| Quality                                                                                  | Yes – see Blocking Notification                                              | [6.5.2](#652-quality)                                                                                  |
+| Product Carbon Footprint                                                                 | Yes – corrective                                                             | [6.5.3](#653-product-carbon-footprint)                                                                 |
+| Digital Product Passport                                                                 | Yes – battery passport content relocated                                     | [6.5.4](#654-digital-product-passport)                                                                 |
+| Supply Chain Disruption Notification                                                     | Yes – corrected API schema                                                   | [6.5.5](#655-supply-chain-disruption-notification)                                                     |
+| Traceability (Blocking Notification, Regulatory Component Code, Special Characteristics) | Yes – extraction into standalone standards                                   | [6.5.6](#656-traceability)                                                                             |
+| Predictive Unit Real-Time Information Service (PURIS)                                    | Yes – aspect model versions                                                  | [6.5.7](#657-predictive-unit-real-time-information-service-puris)                                      |
+| Car SBOM                                                                                 | Yes – restructuring, no breaking changes                                     | [6.5.8](#658-car-sbom)                                                                                 |
+| Battery Passport Data Management Base                                                    | Yes – new standalone standard                                                | [6.5.9](#659-battery-passport-data-management-base)                                                    |
+| Engineering (DEMD, Requirements Engineering, Geometry)                                   | New use case Geometry – optional adoption                                    | [6.5.10](#6510-engineering-digital-engineering-master-data-demd-requirements-engineering-and-geometry) |
+| Value Added Services                                                                     | Yes – VAS standards deprecated                                               | [6.6](#66-value-added-service)                                                                         |
+| Use cases not listed above                                                               | No use-case-specific changes – only the cross-cutting changes in 6.5.1 apply | –                                                                                                      |
 
 ---
 
