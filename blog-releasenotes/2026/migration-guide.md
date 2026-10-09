@@ -197,7 +197,7 @@ CX-Neptune is the recommended migration path for Service Providers who:
 
 #### Benefits
 
-- **Immediate access to the latest capabilities**: CX-Neptune introduces new and updated standards (e.g. [CX-0152 Policy Constraints](../../docs/standards/CX-0152-PolicyConstrainsForDataExchange/CX-0152-PolicyConstrainsForDataExchange.md), [CX-0158 Car SBOM](../../docs/standards/CX-0158-CarSBOM/CX-0158-CarSBOM.md), [CX-0160 Battery Passport](../../docs/standards/CX-0160-BatteryPassport/CX-0160-BatteryPassport-base.md), [CX-0161 ECU Crypto Material](../../docs/standards/CX-0161-ECUCryptoMaterial/CX-0161-ECUCryptoMaterial.md)) that enable new business models and enhanced use case support.
+- **Immediate access to the latest capabilities**: CX-Neptune introduces new and updated standards (e.g. [CX-0152 Policy Constraints](/docs/next/standards/CX-0152-PolicyConstrainsForDataExchange), [CX-0158 Car SBOM](/docs/next/standards/CX-0158-CarSBOM), [CX-0160 Battery Passport](/docs/next/standards/CX-0160-BatteryPassport/CX-0160-BatteryPassport-base), [CX-0161 ECU Crypto Material](/docs/next/standards/CX-0161-ECUCryptoMaterial)) that enable new business models and enhanced use case support.
 - **Longest lifecycle validity**: As the newest active major release, CX-Neptune provides the longest supported lifecycle, maximizing the return on migration and certification investments.
 - **Strategic alignment**: Migrating directly to CX-Neptune ensures alignment with the future direction of the Catena-X ecosystem and the evolving requirements of OEMs, suppliers, and regulators.
 - **Single migration effort**: Providers avoid performing two consecutive migrations and recertifications, reducing overall effort, cost, and organizational disruption.
@@ -307,7 +307,7 @@ release of the Catena-X standards (e.g. End of CX-Saturn). With the deprecation 
 
 ### 4.1 Extension of validity for unchanged standards
 
-Where a standard has not changed at all or has only received patch changes since the certified product was assessed, the validity of the certificate for that specific standard can be extended to the major release following the initially certified release. The classification of changes follows the Catena-X Operating Model, section [How: Life Cycle Management](../../docs/operating-model/how-life-cycle-management/how-life-cycle-management.md).
+Where a standard has not changed at all or has only received patch changes since the certified product was assessed, the validity of the certificate for that specific standard can be extended to the major release following the initially certified release. The classification of changes follows the Catena-X Operating Model, section [How: Life Cycle Management](/docs/next/operating-model/how-life-cycle-management).
 
 The following conditions apply:
 
@@ -370,7 +370,7 @@ Providers migrating to CX-Saturn should additionally review [Chapter 6](#6-migra
 | Business Partner Company Certificate Management       | Yes                                                                          | [5.5.5](#555-business-partner-company-certificate-management)                               |
 | Supply Chain Disruption Notification                  | Yes – implement CX-Neptune schema directly                                   | [5.5.6](#556-supply-chain-disruption-notification)                                          |
 | Predictive Unit Real-Time Information Service (PURIS) | Yes                                                                          | [5.5.7](#557-predictive-unit-real-time-information-service-puris)                           |
-| Engineering (DEMD, Requirements Engineering)          | New use cases – optional adoption                                            | [5.5.8](#558-engineering-digital-engineering-master-data-demd-and-requirements-engineering) |
+| Engineering (D, Requirements Engineering)          | New use cases – optional adoption                                            | [5.5.8](#558-engineering-digital-engineering-master-data-d-and-requirements-engineering) |
 | Value Added Services                                  | Yes – review of certification scope                                          | [5.6](#56-value-added-service)                                                              |
 | Use cases not listed above                            | No use-case-specific changes – only the cross-cutting changes in 5.5.1 apply | –                                                                                           |
 
@@ -441,9 +441,10 @@ Without changing the patterns as described above, your business application will
 
 ##### 5.2.1.6 Relevant Standards
 
-- [CX-0001 (Participant Agent Registration) in version 1.2](../../versioned_docs/version-Saturn/standards/CX-0001-ParticipantAgentRegistration/CX-0001-ParticipantAgentRegistration.md)  
-- [CX-0018 (Dataspace Connectivity) in version 4.1 or CX-0018 Dataspace Connectivity v4.2](../../versioned_docs/version-Titan/standards/CX-0018-DataspaceConnectivity/CX-0018-DataspaceConnectivity.md)  
-- [CX-0152 (Policy Constraints for Data Exchange) in version 1.0](../../versioned_docs/version-Saturn/standards/CX-0152-PolicyConstrainsForDataExchange/CX-0152-PolicyConstrainsForDataExchange.md)
+- [CX-0001 (Participant Agent Registration) in version 1.2](/docs/Saturn/standards/CX-0001-ParticipantAgentRegistration)
+- [CX-0001 (Participant Agent Registration) in version 1.2](/docs/Saturn/standards/CX-0001-ParticipantAgentRegistration)  
+- [CX-0018 (Dataspace Connectivity) in version 4.1 or CX-0018 Dataspace Connectivity v4.2](/docs/standards/CX-0018-DataspaceConnectivity)  
+- [CX-0152 (Policy Constraints for Data Exchange) in version 1.0](/docs/Saturn/standards/CX-0152-PolicyConstrainsForDataExchange)
 
 :::warning[Note]
 
@@ -473,9 +474,9 @@ Kindly ensure any Technical User / API Client provided to your customer (who is 
 
 ##### 5.2.2.5 Relevant Standards
 
-- [CX-0149 (Wallet Requirements)](../../versioned_docs/version-Saturn/standards/CX-0149-WalletRequirements/CX-0149-WalletRequirements.md)
-- [CX-0049 (DID Document)](../../versioned_docs/version-Saturn/standards/CX-0049-DIDDocumentSchema/CX-0049-DIDDocumentSchema.md)
-- [CX-0050 (Catena-X-specific verifiable credentials)](../../versioned_docs/version-Saturn/standards/CX-0050-CXSpecificCredentials/CX-0050-CXSpecificCredentials.md)
+- [CX-0149 (Wallet Requirements)](/docs/Saturn/standards/CX-0149-WalletRequirements)
+- [CX-0049 (DID Document)](/docs/Saturn/standards/CX-0049-DIDDocumentSchema)
+- [CX-0050 (Catena-X-specific verifiable credentials)](/docs/Saturn/standards/CX-0050-CXSpecificCredentials)
 
 ---
 
@@ -507,7 +508,7 @@ Twin Registry providers should update the registry version to Catena-X Saturn re
 
 ##### 5.2.3.5Relevant Standards
 
-- [CX-0002 (Digital Twins in Catena-X)](../../versioned_docs/version-Saturn/standards/CX-0002-DigitalTwinsInCatenaX/CX-0002-DigitalTwinsInCatenaX.md)
+- [CX-0002 (Digital Twins in Catena-X)](/docs/Saturn/standards/CX-0002-DigitalTwinsInCatenaX)
 
 ### 5.3 Core Service
 
@@ -550,10 +551,10 @@ With CX-Saturn, BPDM is upgraded to **version 7.0**, introducing multiple **brea
 
 #### 5.3.1.5 Relevant Standards
 
-- [CX-0010 (Business Partner Number)](../../versioned_docs/version-Saturn/standards/CX-0010-BusinessPartnerNumber/CX-0010-BusinessPartnerNumber.md)
-- [CX-0012 (Business Partner Data Pool)](../../versioned_docs/version-Saturn/standards/CX-0012-BusinessPartnerDataPoolAPI/CX-0012-BusinessPartnerDataPoolAPI.md)
-- [CX-0074 (Business Partner Gate API)](../../versioned_docs/version-Saturn/standards/CX-0074-BusinessPartnerGateAPI/CX-0074-BusinessPartnerGateAPI.md)
-- [CX-0076 (Golden Record End-to-End Requirements Standard)](../../versioned_docs/version-Saturn/standards/CX-0076-GoldenRecordEndtoEndRequirementsStandard/CX-0076-GoldenRecordEndtoEndRequirementsStandard.md)
+- [CX-0010 (Business Partner Number)](/docs/Saturn/standards/CX-0010-BusinessPartnerNumber)
+- [CX-0012 (Business Partner Data Pool)](/docs/Saturn/standards/CX-0012-BusinessPartnerDataPoolAPI)
+- [CX-0074 (Business Partner Gate API)](/docs/Saturn/standards/CX-0074-BusinessPartnerGateAPI)
+- [CX-0076 (Golden Record End-to-End Requirements Standard)](/docs/Saturn/standards/CX-0076-GoldenRecordEndtoEndRequirementsStandard)
 
 ---
 
@@ -636,8 +637,8 @@ The migration to CX-Saturn for quality applications is straightforward. No break
 
 #### 5.5.2.5 Relevant Standards
 
-- [CX-0123 (Quality Use Case Standard)](../../versioned_docs/version-Saturn/standards/CX-0123-QualityUseCaseStandard/CX-0123-QualityUseCaseStandard.md)
-- [CX-0125 (Traceability Use Case)](../../versioned_docs/version-Saturn/standards/CX-0125-TraceabilityUseCase/CX-0125-TraceabilityUseCase.md)
+- [CX-0123 (Quality Use Case Standard)](/docs/Saturn/standards/CX-0123-QualityUseCaseStandard)
+- [CX-0125 (Traceability Use Case)](/docs/Saturn/standards/CX-0125-TraceabilityUseCase)
 
 ---
 
@@ -673,7 +674,7 @@ CX-Saturn represents a **major evolution of the PCF use case**, with the data mo
 
 ##### 5.5.3.5 Relevant Standards
 
-- [CX-0136 (Use Case PCF)](../../versioned_docs/version-Saturn/standards/CX-0136-UseCasePCF/CX-0136-UseCasePCF.md)
+- [CX-0136 (Use Case PCF)](/docs/Saturn/standards/CX-0136-UseCasePCF)
 
 ---
 
@@ -694,10 +695,10 @@ Data models have been adapted:
   - new attribute added: `specVersion`  
 - `urn:samm:io.catenax.battery.battery_pass:6.1.0`  
   - new attribute added: `specVersion`
-  - [see Release Notes](https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.battery.battery_pass/RELEASE_NOTES.md)
+  - [see Release Notes](https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.battery.battery_pass/RELEASE_NOTES)
 - `urn:samm:io.catenax.transmission.transmission_pass:3.1.0`  
   - new attribute added: `specVersion`
-  - [see Release Notes)](https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.transmission.transmission_pass/RELEASE_NOTES.md)
+  - [see Release Notes)](https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.transmission.transmission_pass/RELEASE_NOTES)
 
 ##### 5.5.4.3 Why it matters for DPP Application Providers
 
@@ -711,7 +712,7 @@ These data model changes have been made to allow backward compatibility with the
 
 ##### 5.5.4.5 Relevant Standards
 
-- [CX-0143 (Use Case Circular Economy – Digital Product Passport Standard)](../../versioned_docs/version-Saturn/standards/CX-0143-UseCaseCircularEconomyDigitalProductPassportStandard/introduction.md)
+- [CX-0143 (Use Case Circular Economy – Digital Product Passport Standard)](/docs/Saturn/standards/CX-0143-UseCaseCircularEconomyDigitalProductPassportStandard/introduction)
 
 ---
 
@@ -745,7 +746,7 @@ BPCCM Application Providers should:
 
 #### 5.5.5.5 Relevant Standards
 
-- [CX-0135 (Business Partner Company Certificate Management)](../../versioned_docs/version-Saturn/standards/CX-0135-CompanyCertificateManagement/CX-0135-CompanyCertificateManagement.md)
+- [CX-0135 (Business Partner Company Certificate Management)](/docs/Saturn/standards/CX-0135-CompanyCertificateManagement)
 
 ---
 
@@ -799,10 +800,10 @@ If implemented, update the connector discovery flow (refer to [section 5.2.1.4](
 
 #### 5.5.6.5 Relevant Standards
 
-- [CX-0018 (Dataspace Connectivity) in version 4.1](../../versioned_docs/version-Saturn/standards/CX-0018-DataspaceConnectivity/CX-0018-DataspaceConnectivity.md) or [CX-0018 Dataspace Connectivity v4.2](../../versioned_docs/version-Titan/standards/CX-0018-DataspaceConnectivity/CX-0018-DataspaceConnectivity.md)
-- [CX-0146 (Supply Chain Disruption Notifications) in version 1.0.0](../../versioned_docs/version-Jupiter/standards/CX-0146-SupplyChainDisruptionNotifications/CX-0146-SupplyChainDisruptionNotifications.md) and [CX-0146 Supply Chain Disruption Notifications 2.0.0](../../versioned_docs/version-Saturn/standards/CX-0146-SupplyChainDisruptionNotifications/CX-0146-SupplyChainDisruptionNotifications.md)
-- [CX-0151 (Industry Core Basics) in version 1.0.0](../../versioned_docs/version-Saturn/standards/CX-0151-IndustryCoreBasics/CX-0151-IndustryCoreBasics.md)
-- [CX-0152 (Policy Constraints for Data Exchange) in version 1.0](../../versioned_docs/version-Saturn/standards/CX-0152-PolicyConstrainsForDataExchange/CX-0152-PolicyConstrainsForDataExchange.md)
+- [CX-0018 (Dataspace Connectivity) in version 4.1](/docs/Saturn/standards/CX-0018-DataspaceConnectivity) or [CX-0018 Dataspace Connectivity v4.2](/docs/standards/CX-0018-DataspaceConnectivity)
+- [CX-0146 (Supply Chain Disruption Notifications) in version 1.0.0](/docs/Jupiter/standards/CX-0146-SupplyChainDisruptionNotifications) and [CX-0146 Supply Chain Disruption Notifications 2.0.0](/docs/Saturn/standards/CX-0146-SupplyChainDisruptionNotifications)
+- [CX-0151 (Industry Core Basics) in version 1.0.0](/docs/Saturn/standards/CX-0151-IndustryCoreBasics)
+- [CX-0152 (Policy Constraints for Data Exchange) in version 1.0](/docs/Saturn/standards/CX-0152-PolicyConstrainsForDataExchange)
 
 ---
 
@@ -840,16 +841,16 @@ We propose to consider the following actions for **Digital Twin related topics**
 
 #### 5.5.7.5 Relevant Standards
 
-- [CX-0002 (Digital Twins in Catena-X) in version 2.3.0](../../versioned_docs/version-Saturn/standards/CX-0002-DigitalTwinsInCatenaX/CX-0002-DigitalTwinsInCatenaX.md) or [CX-0002 Digital Twins in Catena-X v2.2.0](../../versioned_docs/version-Io/standards/CX-0002-DigitalTwinsInCatenaX/CX-0002-DigitalTwinsInCatenaX.md)  
-- [CX-0018 (Dataspace Connectivity) in version 4.1](../../versioned_docs/version-Saturn/standards/CX-0018-DataspaceConnectivity/CX-0018-DataspaceConnectivity.md) or [CX-0018 Dataspace Connectivity v.4.2](../../versioned_docs/version-Jupiter/standards/CX-0018-DataspaceConnectivity/CX-0018-DataspaceConnectivity.md)  
-- [CX-0126 (Industry Core: Part Type) in version 2.1.1 (patch of IO release)](../../versioned_docs/version-Saturn/standards/CX-0126-IndustryCorePartType/CX-0126-IndustryCorePartType.md)
-- [CX-0152 (Policy Constraints for Data Exchange) in version 1.0](../../versioned_docs/version-Saturn/standards/CX-0152-PolicyConstrainsForDataExchange/CX-0152-PolicyConstrainsForDataExchange.md)
-- [CX-0157 (Predictive Unit Real-Time Information Service (PURIS)) in version 1.0](../../versioned_docs/version-Titan/standards/CX-0157-PURIS/CX-0157-PURIS.md) or the following standards from before merging them  
-  - [CX-0122 (Item Stock Exchange) in version 2.0.0](../../versioned_docs/version-Io/standards/CX-0122-ItemStockExchange/CX-0122-ItemStockExchange.md)
-  - [CX-0118 (Delivery Information Exchange) in version 2.0.0](../../versioned_docs/version-Io/standards/CX-0118-ActualDeliveryInformationExchange/CX-0118-ActualDeliveryInformationExchange.md)
-  - [CX-0120 (Short-Term Material Demand Exchange) in version 2.0.0](../../versioned_docs/version-Io/standards/CX-0120-ShortTermMaterialDemandExchange/CX-0120-ShortTermMaterialDemandExchange.md)
-  - [CX-0121 (Planned Production Output Exchange) in version 1.0.0](../../versioned_docs/version-Io/standards/CX-0121-PlannedProductionOutputExchange/CX-0121-PlannedProductionOutputExchange.md)
-  - [CX-0145 (Days of Supply Exchange) in version 1.0.0](../../versioned_docs/version-Io/standards/CX-0145-DaysofsupplyExchange/CX-0145-DaysofsupplyExchange.md)
+- [CX-0002 (Digital Twins in Catena-X) in version 2.3.0](/docs/Saturn/standards/CX-0002-DigitalTwinsInCatenaX) or [CX-0002 Digital Twins in Catena-X v2.2.0](/docs/Io/standards/CX-0002-DigitalTwinsInCatenaX)  
+- [CX-0018 (Dataspace Connectivity) in version 4.1](/docs/Saturn/standards/CX-0018-DataspaceConnectivity) or [CX-0018 Dataspace Connectivity v.4.2](/docs/Jupiter/standards/CX-0018-DataspaceConnectivity)  
+- [CX-0126 (Industry Core: Part Type) in version 2.1.1 (patch of IO release)](/docs/Saturn/standards/CX-0126-IndustryCorePartType)
+- [CX-0152 (Policy Constraints for Data Exchange) in version 1.0](/docs/Saturn/standards/CX-0152-PolicyConstrainsForDataExchange)
+- [CX-0157 (Predictive Unit Real-Time Information Service (PURIS)) in version 1.0](/docs/standards/CX-0157-PURIS) or the following standards from before merging them  
+  - [CX-0122 (Item Stock Exchange) in version 2.0.0](/docs/Io/standards/CX-0122-ItemStockExchange)
+  - [CX-0118 (Delivery Information Exchange) in version 2.0.0](/docs/Io/standards/CX-0118-ActualDeliveryInformationExchange)
+  - [CX-0120 (Short-Term Material Demand Exchange) in version 2.0.0](/docs/Io/standards/CX-0120-ShortTermMaterialDemandExchange)
+  - [CX-0121 (Planned Production Output Exchange) in version 1.0.0](/docs/Io/standards/CX-0121-PlannedProductionOutputExchange)
+  - [CX-0145 (Days of Supply Exchange) in version 1.0.0](/docs/Io/standards/CX-0145-DaysofsupplyExchange)
 
 :::warning[Remember]
 
@@ -859,7 +860,7 @@ All references to standards in this section refer to the versions mentioned abov
 
 ---
 
-### 5.5.8 Engineering: Digital Engineering Master Data (DEMD) and Requirements Engineering
+### 5.5.8 Engineering: Digital Engineering Master Data (D) and Requirements Engineering
 
 #### 5.5.8.1 Summary for Engineering Application Providers
 
@@ -879,8 +880,8 @@ The application provider have to implement the new data models and APIs in accor
 
 #### 5.5.8.5 Relevant Standards
 
-- [CX-0154 (Digital Master Data)](../../versioned_docs/version-Saturn/standards/CX-0154-MasterDataManagement/CX-0154-MasterDataManagement.md)  
-- [CX-0155 (Requirements Engineering)](../../versioned_docs/version-Saturn/standards/CX-0155-RequirementsEngineering/CX-0155-RequirementsEngineering.md)
+- [CX-0154 (Digital Master Data)](/docs/Saturn/standards/CX-0154-MasterDataManagement)  
+- [CX-0155 (Requirements Engineering)](/docs/Saturn/standards/CX-0155-RequirementsEngineering)
 
 ---
 
@@ -935,7 +936,7 @@ A dedicated Migration Guide from CX-Jupiter directly to CX-Neptune is not publis
 | Predictive Unit Real-Time Information Service (PURIS)                                    | Yes – aspect model versions                                                  | [6.5.7](#657-predictive-unit-real-time-information-service-puris)                                      |
 | Car SBOM                                                                                 | Yes – restructuring, no breaking changes                                     | [6.5.8](#658-car-sbom)                                                                                 |
 | Battery Passport Data Management Base                                                    | Yes – new standalone standard                                                | [6.5.9](#659-battery-passport-data-management-base)                                                    |
-| Engineering (DEMD, Requirements Engineering, Geometry)                                   | New use case Geometry – optional adoption                                    | [6.5.10](#6510-engineering-digital-engineering-master-data-demd-requirements-engineering-and-geometry) |
+| Engineering (D, Requirements Engineering, Geometry)                                   | New use case Geometry – optional adoption                                    | [6.5.10](#6510-engineering-digital-engineering-master-data-d-requirements-engineering-and-geometry) |
 | Value Added Services                                                                     | Yes – VAS standards deprecated                                               | [6.6](#66-value-added-service)                                                                         |
 | Use cases not listed above                                                               | No use-case-specific changes – only the cross-cutting changes in 6.5.1 apply | –                                                                                                      |
 
@@ -988,7 +989,7 @@ A decision to be taken is, whether there is a strategy towards EDC-V support whi
 ##### 6.2.1.6 Relevant Standards
 
 - CX-0001 (Participant Agent Registration) – in deprecation state  
-- [CX-0018 (Dataspace Connectivity) – version 4.3](../../docs/standards/CX-0018-DataspaceConnectivity/CX-0018-DataspaceConnectivity.md)
+- [CX-0018 (Dataspace Connectivity) – version 4.3](/docs/next/standards/CX-0018-DataspaceConnectivity)
 - CX-0152 (Policy Constraints For Data Exchange) – version 1.2
 
 ---
@@ -1013,9 +1014,9 @@ There are no material changes to the Wallet, DID, or DID Document or Credential 
 
 ##### 6.2.2.5 Relevant Standards
 
-- [CX-0049 (DID Document)](../../docs/standards/CX-0049-DIDDocumentSchema/CX-0049-DIDDocumentSchema.md)
-- [CX-0050 (Catena-X-specific verifiable credentials)](../../docs/standards/CX-0050-CXSpecificCredentials/CX-0050-CatenaXSpecificVerifiableCredentials.md)
-- [CX-0149 (Wallet Requirements)](../../docs/standards/CX-0149-WalletRequirements/CX-0149-WalletRequirements.md)
+- [CX-0049 (DID Document)](/docs/next/standards/CX-0049-DIDDocumentSchema)
+- [CX-0050 (Catena-X-specific verifiable credentials)](/docs/next/standards/CX-0050-CXSpecificCredentials/CX-0050-CatenaXSpecificVerifiableCredentials)
+- [CX-0149 (Wallet Requirements)](/docs/next/standards/CX-0149-WalletRequirements)
 
 ---
 
@@ -1039,9 +1040,9 @@ Twin Registry providers should update the registry version to Catena-X Neptune r
 
 ##### 6.2.3.5 Relevant Standards
 
-- [CX-0002 (Digital Twins in Catena-X)](../../docs/standards/CX-0002-DigitalTwinsInCatenaX/CX-0002-DigitalTwinsInCatenaX.md)
-- [CX-0151 (Industry Core: Basics)](../../docs/standards/CX-0151-IndustryCoreBasics/CX-0151-IndustryCoreBasics.md)
-- [CX-0152 (Policy Constraints For Data Exchange)](../../docs/standards/CX-0152-PolicyConstrainsForDataExchange/CX-0152-PolicyConstrainsForDataExchange.md)
+- [CX-0002 (Digital Twins in Catena-X)](/docs/next/standards/CX-0002-DigitalTwinsInCatenaX)
+- [CX-0151 (Industry Core: Basics)](/docs/next/standards/CX-0151-IndustryCoreBasics)
+- [CX-0152 (Policy Constraints For Data Exchange)](/docs/next/standards/CX-0152-PolicyConstrainsForDataExchange)
 
 ---
 
@@ -1087,10 +1088,10 @@ With CX-Neptune, the BPDM standard family enters a **refinement phase**, buildin
 
 ##### 6.3.1.5 Relevant Standards
 
-- [CX-0010 (Business Partner Number)](../../docs/standards/CX-0010-BusinessPartnerNumber/CX-0010-BusinessPartnerNumber.md)
-- [CX-0012 (Business Partner Data Pool)](../../docs/standards/CX-0012-BusinessPartnerDataPoolAPI/CX-0012-BusinessPartnerDataPoolAPI.md)
-- [CX-0074 (Business Partner Gate API)](../../docs/standards/CX-0074-BusinessPartnerGateAPI/CX-0074-BusinessPartnerGateAPI.md)
-- [CX-0076 (Golden Record End-to-End Requirements Standard)](../../docs/standards/CX-0076-GoldenRecordEndtoEndRequirementsStandard/CX-0076-GoldenRecordEndtoEndRequirementsStandard.md)
+- [CX-0010 (Business Partner Number)](/docs/next/standards/CX-0010-BusinessPartnerNumber)
+- [CX-0012 (Business Partner Data Pool)](/docs/next/standards/CX-0012-BusinessPartnerDataPoolAPI)
+- [CX-0074 (Business Partner Gate API)](/docs/next/standards/CX-0074-BusinessPartnerGateAPI)
+- [CX-0076 (Golden Record End-to-End Requirements Standard)](/docs/next/standards/CX-0076-GoldenRecordEndtoEndRequirementsStandard)
 
 ---
 
@@ -1155,11 +1156,11 @@ As the Aspect Model changes are not compatible-by-design with their predecessor,
 
 ##### 6.5.1.3 Relevant Standards
 
-- [CX-0002 (Digital Twins)](../../docs/standards/CX-0002-DigitalTwinsInCatenaX/CX-0002-DigitalTwinsInCatenaX.md)
-- [CX-0018 (Dataspace Connectivity)](../../docs/standards/CX-0018-DataspaceConnectivity/CX-0018-DataspaceConnectivity.md)
+- [CX-0002 (Digital Twins)](/docs/next/standards/CX-0002-DigitalTwinsInCatenaX)
+- [CX-0018 (Dataspace Connectivity)](/docs/next/standards/CX-0018-DataspaceConnectivity)
 - CX-0053 (Discovery Finder and BPN Discovery Service APIs) – deprecated with CX-Neptune  
-- [CX-0151 (Industry Core: Basics)](../../docs/standards/CX-0151-IndustryCoreBasics/CX-0151-IndustryCoreBasics.md)
-- [CX-0152 (Policy Constraints)](../../docs/standards/CX-0152-PolicyConstrainsForDataExchange/CX-0152-PolicyConstrainsForDataExchange.md)
+- [CX-0151 (Industry Core: Basics)](/docs/next/standards/CX-0151-IndustryCoreBasics)
+- [CX-0152 (Policy Constraints)](/docs/next/standards/CX-0152-PolicyConstrainsForDataExchange)
 
 ---
 
@@ -1171,9 +1172,9 @@ With CX-Neptune, the Quality use case is **extended by a dedicated Blocking Noti
 
 ##### 6.5.2.2 Relevant Standards
 
-- [CX-0123 (Field Quality Standard)](../../docs/standards/CX-0123-QualityUseCaseStandard/CX-0123-QualityUseCaseStandard.md)  
+- [CX-0123 (Field Quality Standard)](/docs/next/standards/CX-0123-QualityUseCaseStandard)  
 - CX-0125 (Traceability Use Case) – deprecated  
-- [CX-0164 (Blocking Notification – newly extracted from CX-0125)](../../docs/standards/CX-0164-BlockingNotifications/CX-0164-BlockingNotifications.md)
+- [CX-0164 (Blocking Notification – newly extracted from CX-0125)](/docs/next/standards/CX-0164-BlockingNotifications)
 
 ---
 
@@ -1206,7 +1207,7 @@ This release mainly covers corrections and simplifications.
 
 ##### 6.5.3.5 Relevant Standards
 
-- [CX-0136 (Use Case PCF)](../../docs/standards/CX-0136-UseCasePCF/CX-0136-UseCasePCF.md)
+- [CX-0136 (Use Case PCF)](/docs/next/standards/CX-0136-UseCasePCF)
 
 ---
 
@@ -1230,8 +1231,8 @@ If mpn is used for BPN searches, it MUST be parsed correctly for the handling of
 
 ##### 6.5.4.5 Relevant Standards
 
-- [CX-0143 (Use Case Circular Economy – Digital Product Passport Standard)](../../docs/standards/CX-0143-UseCaseCircularEconomyDigitalProductPassportStandard/introduction.md)
-- [CX-0160 (Battery Passport) – for providers previously handling battery passport data via CX-0143](../../docs/standards/CX-0160-BatteryPassport/CX-0160-BatteryPassport-base.md)
+- [CX-0143 (Use Case Circular Economy – Digital Product Passport Standard)](/docs/next/standards/CX-0143-UseCaseCircularEconomyDigitalProductPassportStandard/introduction)
+- [CX-0160 (Battery Passport) – for providers previously handling battery passport data via CX-0143](/docs/next/standards/CX-0160-BatteryPassport/CX-0160-BatteryPassport-base)
 
 ---
 
@@ -1276,10 +1277,10 @@ Regarding connectors and policies, no immediate action is required. Please evalu
 ##### 6.5.5.5 Relevant Standards
 
 - CX-0001 (Participant Agent Registration) – in deprecation state  
-- [CX-0018 (Dataspace Connectivity) – version 4.3](../../docs/standards/CX-0018-DataspaceConnectivity/CX-0018-DataspaceConnectivity.md)
-- [CX-0146 (Supply Chain Disruption Notifications) – version 3.0.0](../../docs/standards/CX-0146-SupplyChainDisruptionNotifications/CX-0146-SupplyChainDisruptionNotifications.md)
-- [CX-0151 (Industry Core Basics) – version 1.1.0](../../docs/standards/CX-0151-IndustryCoreBasics/CX-0151-IndustryCoreBasics.md)
-- [CX-0152 (Policy Constraints For Data Exchange) – version 1.2.0](../../docs/standards/CX-0152-PolicyConstrainsForDataExchange/CX-0152-PolicyConstrainsForDataExchange.md)
+- [CX-0018 (Dataspace Connectivity) – version 4.3](/docs/next/standards/CX-0018-DataspaceConnectivity)
+- [CX-0146 (Supply Chain Disruption Notifications) – version 3.0.0](/docs/next/standards/CX-0146-SupplyChainDisruptionNotifications)
+- [CX-0151 (Industry Core Basics) – version 1.1.0](/docs/next/standards/CX-0151-IndustryCoreBasics)
+- [CX-0152 (Policy Constraints For Data Exchange) – version 1.2.0](/docs/next/standards/CX-0152-PolicyConstrainsForDataExchange)
 
 ---
 
@@ -1334,7 +1335,7 @@ Application Providers should:
 
 ###### 6.5.6.1.5 Relevant Standards
 
-- [CX-0164 Blocking Notification v1.0.0](../../docs/standards/CX-0164-BlockingNotifications/CX-0164-BlockingNotifications.md)
+- [CX-0164 Blocking Notification v1.0.0](/docs/next/standards/CX-0164-BlockingNotifications)
 
 ---
 
@@ -1375,7 +1376,7 @@ Application Providers should:
 
 ###### 6.5.6.2.5 Relevant Standards
 
-- [CX-0163 Special Characteristics v1.0.0](../../docs/standards/CX-0163-SpecialCharacteristics/CX-0163-SpecialCharacteristics.md)
+- [CX-0163 Special Characteristics v1.0.0](/docs/next/standards/CX-0163-SpecialCharacteristics)
 
 ---
 
@@ -1427,11 +1428,11 @@ To implement the matrix in a backward compatible fashion, proceed as follows:
 ##### 6.5.7.5 Relevant Standards
 
 - CX-0001 (Participant Agent Registration) – in deprecation state  
-- [CX-0002 (Digital Twins in Catena-X) – version 2.4.0](../../docs/standards/CX-0002-DigitalTwinsInCatenaX/CX-0002-DigitalTwinsInCatenaX.md)  
-- [CX-0018 (Dataspace Connectivity) – version 4.3](../../docs/standards/CX-0018-DataspaceConnectivity/CX-0018-DataspaceConnectivity.md)
-- [CX-0126 (Industry Core: Part Type 2.1.1) – version 2.1.1](../../docs/standards/CX-0126-IndustryCorePartType/CX-0126-IndustryCorePartType.md)
-- [CX-0157 (Predictive Unit Real-Time Information Service (PURIS)) – version 1.1.0](../../docs/standards/CX-0157-PURIS/CX-0157-PURIS.md)
-- [CX-0152 (Policy Constraints For Data Exchange) – version 1.2.0](../../docs/standards/CX-0152-PolicyConstrainsForDataExchange/CX-0152-PolicyConstrainsForDataExchange.md)
+- [CX-0002 (Digital Twins in Catena-X) – version 2.4.0](/docs/next/standards/CX-0002-DigitalTwinsInCatenaX)  
+- [CX-0018 (Dataspace Connectivity) – version 4.3](/docs/next/standards/CX-0018-DataspaceConnectivity)
+- [CX-0126 (Industry Core: Part Type 2.1.1) – version 2.1.1](/docs/next/standards/CX-0126-IndustryCorePartType)
+- [CX-0157 (Predictive Unit Real-Time Information Service (PURIS)) – version 1.1.0](/docs/next/standards/CX-0157-PURIS)
+- [CX-0152 (Policy Constraints For Data Exchange) – version 1.2.0](/docs/next/standards/CX-0152-PolicyConstrainsForDataExchange)
 
 ---
 
@@ -1464,10 +1465,10 @@ The changes foster usability by providing a unique source of truth through refac
 ##### 6.5.8.5 Relevant Standards
 
 - Standards removed from the references because deprecated or irrelevant: CX-0001, CX-0003, CX-0010, CX-0125  
-- [CX-0152 Policy Constraints For Data Exchange (new reference)](../../docs/standards/CX-0152-PolicyConstrainsForDataExchange/CX-0152-PolicyConstrainsForDataExchange.md)
-- [CX-0158 Car SBOM (changed)](../../docs/standards/CX-0158-CarSBOM/CX-0158-CarSBOM.md)
-- [CX-0158-1 Car SBOM for ICTS Connected Vehicles (new)](../../docs/standards/CX-0158-1-CarSBOM-ICTS/CX-0158-1-CarSBOM-ICTS.md)
-- [CX-0158-2 Car SBOM for FOSS Compliance (new)](../../docs/standards/CX-0158-2-CarSBOM-FOSS-Compliance/CX-0158-2-CarSBOM-FOSS-Compliance.md)
+- [CX-0152 Policy Constraints For Data Exchange (new reference)](/docs/next/standards/CX-0152-PolicyConstrainsForDataExchange)
+- [CX-0158 Car SBOM (changed)](/docs/next/standards/CX-0158-CarSBOM)
+- [CX-0158-1 Car SBOM for ICTS Connected Vehicles (new)](/docs/next/standards/CX-0158-1-CarSBOM-ICTS)
+- [CX-0158-2 Car SBOM for FOSS Compliance (new)](/docs/next/standards/CX-0158-2-CarSBOM-FOSS-Compliance)
 
 ---
 
@@ -1491,14 +1492,14 @@ Implement the data models and APIs according to the standards CACs.
 
 ##### 6.5.9.5 Relevant Standards
 
-- [CX-0143 (Use Case Circular Economy – Digital Product Passport)](../../docs/standards/CX-0143-UseCaseCircularEconomyDigitalProductPassportStandard/introduction.md)
-- [CX-0160 Battery Passport Data Management Base](../../docs/standards/CX-0160-BatteryPassport/CX-0160-BatteryPassport-base.md)
-- [CX-0160-1 Battery Passport Data Management: Provisioning of near-complete battery passport data](../../docs/standards/CX-0160-BatteryPassport/CX-0160-BatteryPassport-uc1.md)
-- [CX-0160-3 Battery Passport Data Management: Complete exchange of DPPs to service providers](../../docs/standards/CX-0160-BatteryPassport/CX-0160-BatteryPassport-uc3.md)
+- [CX-0143 (Use Case Circular Economy – Digital Product Passport)](/docs/next/standards/CX-0143-UseCaseCircularEconomyDigitalProductPassportStandard/introduction)
+- [CX-0160 Battery Passport Data Management Base](/docs/next/standards/CX-0160-BatteryPassport/CX-0160-BatteryPassport-base)
+- [CX-0160-1 Battery Passport Data Management: Provisioning of near-complete battery passport data](/docs/next/standards/CX-0160-BatteryPassport/CX-0160-BatteryPassport-uc1)
+- [CX-0160-3 Battery Passport Data Management: Complete exchange of DPPs to service providers](/docs/next/standards/CX-0160-BatteryPassport/CX-0160-BatteryPassport-uc3)
 
 ---
 
-#### 6.5.10 Engineering: Digital Engineering Master Data (DEMD), Requirements Engineering and Geometry
+#### 6.5.10 Engineering: Digital Engineering Master Data (D), Requirements Engineering and Geometry
 
 ##### 6.5.10.1 Summary for Engineering Application Providers
 
@@ -1518,9 +1519,9 @@ For Geometry, the providers need to implement the new requirements in accordance
 
 ##### 6.5.10.5 Relevant Standards
 
-- [CX-0154 (Digital Master Data)](../../docs/standards/CX-0154-MasterDataManagement/CX-0154-MasterDataManagement.md)
-- [CX-0155 (Requirements Engineering)](../../docs/standards/CX-0155-RequirementsEngineering/CX-0155-RequirementsEngineering.md)
-- [CX-0156 (Geometry)](../../docs/standards/CX-0156-Geometry/CX-0156-Geometry.md)
+- [CX-0154 (Digital Master Data)](/docs/next/standards/CX-0154-MasterDataManagement)
+- [CX-0155 (Requirements Engineering)](/docs/next/standards/CX-0155-RequirementsEngineering)
+- [CX-0156 (Geometry)](/docs/next/standards/CX-0156-Geometry)
 
 ---
 
