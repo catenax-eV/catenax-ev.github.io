@@ -89,6 +89,7 @@
   /* -- Rhythm ------------------------------------------------------------ */
   --cx-section-y: clamp(3rem, 8vw, 6rem);
   --cx-content-max: 1240px;
+  --cx-content-wide: 1400px;
 
   /* -- Motion ------------------------------------------------------------ */
   --cx-ease: cubic-bezier(0.22, 1, 0.36, 1);
@@ -307,8 +308,23 @@ h4 {
 
 .navbar {
   border-bottom: 1px solid var(--cx-border);
-  backdrop-filter: saturate(180%) blur(12px);
-  -webkit-backdrop-filter: saturate(180%) blur(12px);
+}
+
+/* `backdrop-filter` turns the navbar into the containing block for fixed
+   descendants, which would trap the mobile sidebar inside the navbar's own
+   box. The sidebar only exists below this width, so the blur is limited to
+   the desktop navbar. */
+@media (min-width: 997px) {
+  .navbar {
+    backdrop-filter: saturate(180%) blur(12px);
+    -webkit-backdrop-filter: saturate(180%) blur(12px);
+  }
+}
+
+/* The navbar background is semi-transparent by design; the mobile sidebar
+   covers the page and must stay opaque. */
+.navbar-sidebar {
+  background-color: var(--cx-surface);
 }
 
 .navbar__title {
@@ -602,21 +618,28 @@ div[class^='codeBlockContainer'] {
    9. Blog / release notes
    ========================================================================== */
 
+/* Release notes are published in full (no truncation marker), so every entry
+   in the list is a long article. Wrapping those in cards made the list read
+   as a few oversized boxes and did not match the individual post pages, so
+   entries are separated by a rule instead. */
 .blog-list-page article,
 .blog-tags-post-list-page article {
-  background: var(--cx-surface);
-  border: 1px solid var(--cx-border);
-  border-radius: var(--cx-radius-lg);
-  box-shadow: var(--cx-shadow-sm);
-  padding: 1.5rem 1.75rem;
-  margin-bottom: 1.5rem;
-  transition: transform var(--cx-duration) var(--cx-ease),
-    box-shadow var(--cx-duration) var(--cx-ease);
+  padding-bottom: 2.5rem;
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid var(--cx-border);
 }
 
-.blog-list-page article:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--cx-shadow-md);
+.blog-list-page article:last-of-type,
+.blog-tags-post-list-page article:last-of-type {
+  border-bottom: none;
+}
+
+/* Release notes contain wide tables and code samples, so they get more room
+   than the default blog layout allows. `blog-wrapper` sits on <html>, so the
+   selector is scoped to the blog layout container to leave the footer and
+   other containers untouched. */
+.blog-wrapper .main-wrapper > .container {
+  max-width: var(--cx-content-wide);
 }
 
 /* ==========================================================================
@@ -679,8 +702,7 @@ div[class^='codeBlockContainer'] {
   }
 
   .button:hover,
-  .pagination-nav__link:hover,
-  .blog-list-page article:hover {
+  .pagination-nav__link:hover {
     transform: none;
   }
 }
