@@ -1,44 +1,382 @@
 /**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
+ * Catena-X Library — global theme.
+ *
+ * The redesign is driven by a token layer: Infima variables are remapped onto
+ * the Catena-X brand palette and a set of `--cx-*` tokens is layered on top.
+ * Every sub page (docs, blog, glossary, standards graph) inherits from here,
+ * so no theme component has to be swizzled.
  */
 
-/* You can override the default Infima variables here. */
+/* ==========================================================================
+   1. Design tokens
+   ========================================================================== */
+
 :root {
-  --ifm-color-primary: #ffa600;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
-  --ifm-code-font-size: 95%;
+  /* -- Brand: orange (primary) ------------------------------------------ */
+  --cx-orange: #ffa600;
+  --cx-orange-50: #fff7e6;
+  --cx-orange-100: #ffecc2;
+  --cx-orange-200: #ffdb8f;
+  --cx-orange-300: #ffcb5c;
+  --cx-orange-400: #ffb733;
+  --cx-orange-500: #ffa600;
+  --cx-orange-600: #d98c00;
+  --cx-orange-700: #b37200;
+  --cx-orange-800: #8a5a00;
+  --cx-orange-900: #613f00;
+
+  /* -- Brand: lime (secondary accent) ----------------------------------- */
+  --cx-lime: #b3cb2d;
+  --cx-lime-50: #f6f9e7;
+  --cx-lime-100: #e9f0c3;
+  --cx-lime-200: #d7e492;
+  --cx-lime-300: #c5d862;
+  --cx-lime-400: #b3cb2d;
+  --cx-lime-500: #9cb222;
+  --cx-lime-600: #7f921c;
+  --cx-lime-700: #627116;
+  --cx-lime-800: #4a5511;
+  --cx-lime-900: #333b0c;
+
+  /* -- Neutrals: cool blue-grey ----------------------------------------- */
+  --cx-navy-950: #0b1420;
+  --cx-navy-900: #121c2b;
+  --cx-navy-800: #1b2736;
+  --cx-navy-700: #26344a;
+  --cx-navy-600: #3a4a63;
+  --cx-grey-500: #5b6b82;
+  --cx-grey-400: #8294ab;
+  --cx-grey-300: #b3c0d0;
+  --cx-grey-200: #d6dde6;
+  --cx-grey-100: #e8edf2;
+  --cx-grey-50: #f6f8fa;
+
+  /* -- Surfaces & borders ----------------------------------------------- */
+  --cx-surface: #ffffff;
+  --cx-surface-muted: var(--cx-grey-50);
+  --cx-surface-sunken: var(--cx-grey-100);
+  --cx-surface-inverse: var(--cx-navy-900);
+  --cx-border: var(--cx-grey-200);
+  --cx-border-strong: var(--cx-grey-300);
+  --cx-text: var(--cx-navy-950);
+  --cx-text-muted: var(--cx-grey-500);
+  --cx-text-inverse: #ffffff;
+  --cx-text-inverse-muted: var(--cx-grey-300);
+
+  /* -- Elevation --------------------------------------------------------- */
+  --cx-shadow-sm: 0 1px 2px rgba(11, 20, 32, 0.06), 0 1px 3px rgba(11, 20, 32, 0.08);
+  --cx-shadow-md: 0 4px 10px rgba(11, 20, 32, 0.07), 0 12px 24px rgba(11, 20, 32, 0.07);
+  --cx-shadow-lg: 0 10px 20px rgba(11, 20, 32, 0.08), 0 24px 48px rgba(11, 20, 32, 0.12);
+  --cx-ring: 0 0 0 3px rgba(255, 166, 0, 0.35);
+
+  /* -- Gradients --------------------------------------------------------- */
+  --cx-gradient-brand: linear-gradient(90deg, var(--cx-orange) 0%, var(--cx-lime) 100%);
+  --cx-gradient-brand-diagonal: linear-gradient(135deg, var(--cx-orange) 0%, var(--cx-lime) 100%);
+  --cx-gradient-hero: radial-gradient(
+      900px 420px at 78% 18%,
+      rgba(255, 166, 0, 0.16) 0%,
+      rgba(255, 166, 0, 0) 70%
+    ),
+    radial-gradient(760px 420px at 12% 92%, rgba(179, 203, 45, 0.14) 0%, rgba(179, 203, 45, 0) 72%),
+    linear-gradient(160deg, var(--cx-navy-900) 0%, var(--cx-navy-950) 55%, #0a1824 100%);
+
+  /* -- Shape ------------------------------------------------------------- */
+  --cx-radius-sm: 8px;
+  --cx-radius-md: 12px;
+  --cx-radius-lg: 16px;
+  --cx-radius-xl: 24px;
+
+  /* -- Rhythm ------------------------------------------------------------ */
+  --cx-section-y: clamp(3rem, 8vw, 6rem);
+  --cx-content-max: 1240px;
+  --cx-content-wide: 1400px;
+
+  /* -- Motion ------------------------------------------------------------ */
+  --cx-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --cx-duration-fast: 120ms;
+  --cx-duration: 220ms;
+
+  /* ---------------------------------------------------------------------
+     Infima remapping.
+     `--ifm-color-primary` doubles as Infima's link colour. Pure #FFA600 only
+     reaches ~1.9:1 against white, so the *text* primary is the darkened
+     #8A5A00 (7.0:1) while the vivid orange stays available as `--cx-orange`
+     for accents and filled surfaces.
+     --------------------------------------------------------------------- */
+  --ifm-color-primary: #8a5a00;
+  --ifm-color-primary-dark: #7c5100;
+  --ifm-color-primary-darker: #754c00;
+  --ifm-color-primary-darkest: #613f00;
+  --ifm-color-primary-light: #a06800;
+  --ifm-color-primary-lighter: #b37200;
+  --ifm-color-primary-lightest: #d98c00;
+
+  --ifm-link-color: var(--cx-orange-800);
+  --ifm-link-hover-color: var(--cx-orange-900);
+
+  --ifm-background-color: var(--cx-surface);
+  --ifm-background-surface-color: var(--cx-surface);
+  --ifm-font-color-base: var(--cx-text);
+  --ifm-heading-color: var(--cx-navy-950);
+
+  /* System-font grotesk stack: no external CDN request and no font files to
+     ship, which keeps the GitHub Pages deployment free of third-party calls.
+     A locally installed Inter is picked up when available. */
+  --ifm-font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+  --ifm-font-family-monospace: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas,
+    'Liberation Mono', monospace;
+
+  --ifm-font-size-base: 17px;
+  --ifm-line-height-base: 1.7;
+  --ifm-heading-font-weight: 700;
+  --ifm-heading-line-height: 1.2;
+
+  --ifm-h1-font-size: clamp(2rem, 1.4rem + 2.2vw, 2.9rem);
+  --ifm-h2-font-size: clamp(1.6rem, 1.25rem + 1.4vw, 2.1rem);
+  --ifm-h3-font-size: clamp(1.25rem, 1.1rem + 0.7vw, 1.5rem);
+  --ifm-h4-font-size: 1.15rem;
+
+  --ifm-global-radius: var(--cx-radius-md);
+  --ifm-button-border-radius: var(--cx-radius-sm);
+  --ifm-card-border-radius: var(--cx-radius-lg);
+  --ifm-code-font-size: 90%;
+  --ifm-code-border-radius: 6px;
+  --ifm-code-background: var(--cx-grey-100);
+  --ifm-pre-background: var(--cx-navy-950);
+  --ifm-container-width-xl: var(--cx-content-max);
+
+  --ifm-navbar-height: 4rem;
+  --ifm-navbar-background-color: rgba(255, 255, 255, 0.82);
+  --ifm-navbar-shadow: none;
+  --ifm-navbar-link-color: var(--cx-navy-800);
+  --ifm-navbar-link-hover-color: var(--cx-navy-950);
+
+  --ifm-footer-background-color: var(--cx-navy-950);
+  --ifm-footer-color: var(--cx-text-inverse-muted);
+  --ifm-footer-link-color: var(--cx-grey-300);
+  --ifm-footer-link-hover-color: var(--cx-orange-300);
+  --ifm-footer-title-color: #ffffff;
+
+  --ifm-toc-border-color: var(--cx-border);
+  --ifm-table-border-color: var(--cx-border);
+  --ifm-table-stripe-background: var(--cx-surface-muted);
+  --ifm-blockquote-color: var(--cx-text-muted);
+  --ifm-blockquote-border-color: var(--cx-orange-300);
+
+  --ifm-transition-fast: var(--cx-duration-fast);
+  --ifm-transition-slow: var(--cx-duration);
+
+  --docusaurus-highlighted-code-line-bg: rgba(255, 166, 0, 0.18);
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #b3cb2d;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
+  --cx-surface: #0d1117;
+  --cx-surface-muted: #141c25;
+  --cx-surface-sunken: #0a0f15;
+  --cx-surface-inverse: #060b11;
+  --cx-border: #223044;
+  --cx-border-strong: #2f4059;
+  --cx-text: #e9eef4;
+  --cx-text-muted: #9aabbf;
+
+  --cx-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --cx-shadow-md: 0 4px 10px rgba(0, 0, 0, 0.42), 0 12px 24px rgba(0, 0, 0, 0.36);
+  --cx-shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.45), 0 24px 48px rgba(0, 0, 0, 0.5);
+  --cx-ring: 0 0 0 3px rgba(179, 203, 45, 0.35);
+
+  --cx-gradient-hero: radial-gradient(
+      900px 420px at 78% 18%,
+      rgba(255, 166, 0, 0.14) 0%,
+      rgba(255, 166, 0, 0) 70%
+    ),
+    radial-gradient(760px 420px at 12% 92%, rgba(179, 203, 45, 0.12) 0%, rgba(179, 203, 45, 0) 72%),
+    linear-gradient(160deg, #101b27 0%, #0b1118 60%, #080d13 100%);
+
+  /* Lime stays the established dark-mode primary — it clears 7:1 on navy. */
+  --ifm-color-primary: #c3d84f;
+  --ifm-color-primary-dark: #b3cb2d;
+  --ifm-color-primary-darker: #9cb222;
+  --ifm-color-primary-darkest: #7f921c;
+  --ifm-color-primary-light: #d0e072;
+  --ifm-color-primary-lighter: #d7e492;
+  --ifm-color-primary-lightest: #e9f0c3;
+
+  --ifm-link-color: var(--cx-lime-300);
+  --ifm-link-hover-color: var(--cx-lime-200);
+
+  --ifm-background-color: var(--cx-surface);
+  --ifm-background-surface-color: var(--cx-surface-muted);
+  --ifm-font-color-base: var(--cx-text);
+  --ifm-heading-color: #f3f6fa;
+
+  --ifm-navbar-background-color: rgba(13, 17, 23, 0.82);
+  --ifm-navbar-link-color: var(--cx-grey-200);
+  --ifm-navbar-link-hover-color: #ffffff;
+
+  --ifm-footer-background-color: #060b11;
+
+  --ifm-code-background: rgba(255, 255, 255, 0.08);
+  --ifm-pre-background: #060b11;
+  --ifm-table-stripe-background: rgba(255, 255, 255, 0.03);
+
+  --docusaurus-highlighted-code-line-bg: rgba(179, 203, 45, 0.18);
+}
+
+/* ==========================================================================
+   2. Base typography
+   ========================================================================== */
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2 {
+  letter-spacing: -0.02em;
+}
+
+h3,
+h4 {
+  letter-spacing: -0.01em;
+}
+
+/* Focus is made explicit, because several surfaces below change their
+   background colour and would otherwise swallow the default outline. */
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline: 2px solid var(--cx-orange-600);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+[data-theme='dark'] :where(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline-color: var(--cx-lime-300);
 }
 
 .docusaurus-highlight-code-line {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: var(--docusaurus-highlighted-code-line-bg);
   display: block;
   margin: 0 calc(-1 * var(--ifm-pre-padding));
   padding: 0 var(--ifm-pre-padding);
 }
 
-[data-theme='dark'] .docusaurus-highlight-code-line {
-  background-color: rgba(0, 0, 0, 0.3);
+/* ==========================================================================
+   3. Buttons
+   ========================================================================== */
+
+.button {
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  border-radius: var(--cx-radius-sm);
+  transition: transform var(--cx-duration) var(--cx-ease),
+    box-shadow var(--cx-duration) var(--cx-ease), background-color var(--cx-duration) var(--cx-ease),
+    color var(--cx-duration) var(--cx-ease), border-color var(--cx-duration) var(--cx-ease);
 }
 
-/* Header Icons */
+.button:hover {
+  transform: translateY(-1px);
+}
+
+.button--primary {
+  --ifm-button-background-color: var(--cx-orange);
+  --ifm-button-border-color: var(--cx-orange);
+  --ifm-button-color: var(--cx-navy-950);
+}
+
+.button--primary:hover {
+  --ifm-button-background-color: var(--cx-orange-400);
+  --ifm-button-border-color: var(--cx-orange-400);
+  color: var(--cx-navy-950);
+}
+
+.button--secondary {
+  --ifm-button-background-color: var(--cx-surface);
+  --ifm-button-border-color: var(--cx-border-strong);
+  --ifm-button-color: var(--cx-text);
+  box-shadow: var(--cx-shadow-sm);
+}
+
+.button--secondary:hover {
+  --ifm-button-background-color: var(--cx-surface-muted);
+  color: var(--cx-text);
+}
+
+/* ==========================================================================
+   4. Navbar
+   ========================================================================== */
+
+.navbar {
+  border-bottom: 1px solid var(--cx-border);
+}
+
+/* `backdrop-filter` turns the navbar into the containing block for fixed
+   descendants, which would trap the mobile sidebar inside the navbar's own
+   box. The sidebar only exists below this width, so the blur is limited to
+   the desktop navbar. */
+@media (min-width: 997px) {
+  .navbar {
+    backdrop-filter: saturate(180%) blur(12px);
+    -webkit-backdrop-filter: saturate(180%) blur(12px);
+  }
+}
+
+/* The navbar background is semi-transparent by design; the mobile sidebar
+   covers the page and must stay opaque. */
+.navbar-sidebar {
+  background-color: var(--cx-surface);
+}
+
+.navbar__title {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.navbar__link {
+  font-weight: 500;
+}
+
+.navbar__link--active {
+  position: relative;
+  color: var(--ifm-navbar-link-hover-color);
+}
+
+.navbar__link--active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--cx-gradient-brand);
+}
+
+/* Dropdown labels render a caret via ::after, so the underline must not be
+   applied there — it would replace the caret. */
+.navbar__item.dropdown .navbar__link--active::after {
+  content: none;
+}
+
+.dropdown__menu {
+  border-radius: var(--cx-radius-md);
+  border: 1px solid var(--cx-border);
+  box-shadow: var(--cx-shadow-md);
+  padding: 0.4rem;
+}
+
+.dropdown__link {
+  border-radius: var(--cx-radius-sm);
+  font-weight: 500;
+}
+
+.dropdown__link--active,
+.dropdown__link:hover {
+  background: var(--cx-surface-muted);
+  color: var(--ifm-font-color-base);
+}
+
+/* Header icons ------------------------------------------------------------ */
 
 .header-github-link::before {
   content: '';
@@ -46,6 +384,10 @@
   height: 24px;
   display: flex;
   background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOTgiIGhlaWdodD0iOTYiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik00OC44NTQgMEMyMS44MzkgMCAwIDIyIDAgNDkuMjE3YzAgMjEuNzU2IDEzLjk5MyA0MC4xNzIgMzMuNDA1IDQ2LjY5IDIuNDI3LjQ5IDMuMzE2LTEuMDU5IDMuMzE2LTIuMzYyIDAtMS4xNDEtLjA4LTUuMDUyLS4wOC05LjEyNy0xMy41OSAyLjkzNC0xNi40Mi01Ljg2Ny0xNi40Mi01Ljg2Ny0yLjE4NC01LjcwNC01LjQyLTcuMTctNS40Mi03LjE3LTQuNDQ4LTMuMDE1LjMyNC0zLjAxNS4zMjQtMy4wMTUgNC45MzQuMzI2IDcuNTIzIDUuMDUyIDcuNTIzIDUuMDUyIDQuMzY3IDcuNDk2IDExLjQwNCA1LjM3OCAxNC4yMzUgNC4wNzQuNDA0LTMuMTc4IDEuNjk5LTUuMzc4IDMuMDc0LTYuNi0xMC44MzktMS4xNDEtMjIuMjQzLTUuMzc4LTIyLjI0My0yNC4yODMgMC01LjM3OCAxLjk0LTkuNzc4IDUuMDE0LTEzLjItLjQ4NS0xLjIyMi0yLjE4NC02LjI3NS40ODYtMTMuMDM4IDAgMCA0LjEyNS0xLjMwNCAxMy40MjYgNS4wNTJhNDYuOTcgNDYuOTcgMCAwIDEgMTIuMjE0LTEuNjNjNC4xMjUgMCA4LjMzLjU3MSAxMi4yMTMgMS42MyA5LjMwMi02LjM1NiAxMy40MjctNS4wNTIgMTMuNDI3LTUuMDUyIDIuNjcgNi43NjMuOTcgMTEuODE2LjQ4NSAxMy4wMzggMy4xNTUgMy40MjIgNS4wMTUgNy44MjIgNS4wMTUgMTMuMiAwIDE4LjkwNS0xMS40MDQgMjMuMDYtMjIuMzI0IDI0LjI4MyAxLjc4IDEuNTQ4IDMuMzE2IDQuNDgxIDMuMzE2IDkuMTI2IDAgNi42LS4wOCAxMS44OTctLjA4IDEzLjUyNiAwIDEuMzA0Ljg5IDIuODUzIDMuMzE2IDIuMzY0IDE5LjQxMi02LjUyIDMzLjQwNS0yNC45MzUgMzMuNDA1LTQ2LjY5MUM5Ny43MDcgMjIgNzUuNzg4IDAgNDguODU0IDB6IiBmaWxsPSIjMjQyOTJmIi8+PC9zdmc+") 0 0/contain;
+}
+
+[data-theme='dark'] .header-github-link::before {
+  filter: invert(1) brightness(1.6);
 }
 
 .header-catena-link::before {
@@ -64,31 +406,303 @@
   background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAyIiBoZWlnaHQ9Ijk0IiB2aWV3Qm94PSIwIDAgMTAyIDk0IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNMjUuNDYyNyA4MC4wNDU4QzIzLjg5ODcgODEuNDI1OCAyMS45MDI1IDgyLjEwNjUgMTkuODE0MiA4MS45Nzc3QzE3LjczNTEgODEuODQ4OSAxNS44MzA4IDgwLjkxMDYgMTQuNDYwMSA3OS4zNDY3QzExLjYxNzUgNzYuMTE3NyAxMS45MzAyIDcxLjE4NjggMTUuMTU5MyA2OC4zNDQxTDMwLjg4MTEgNTQuNDk4OUwzOS42NDgyIDQ2Ljc4MDZMNTEuNDQxOSAzNi4zOTQ0TDQyLjY3NDkgMjguNjc2TDMwLjg4MTEgMzkuMDYyMkwyMi4xMTQgNDYuNzgwNkw3LjQ5NjEgNTkuNjUwNkMtMC41MjU4MzggNjYuNzE1OCAtMS4yOTg1OSA3OC45Nzg3IDUuNzU3NCA4Ny4wMDA2QzkuMTc5NiA5MC44ODI4IDEzLjkwODEgOTMuMjAxMSAxOS4wNjkgOTMuNTMyM0MxOS40OTIyIDkzLjU1OTkgMTkuOTA2MiA5My41NjkxIDIwLjMyMDIgOTMuNTY5MUMyNS4wMzAzIDkzLjU2OTEgMjkuNTI4OCA5MS44NzY0IDMzLjA5ODIgODguNzMwMUw1MS40MjM1IDcyLjU5NDNMNDIuNjU2NSA2NC44NzU5TDI1LjQ0NDMgODAuMDM2NkwyNS40NjI3IDgwLjA0NThaIiBmaWxsPSIjRkFBMDIzIi8+CjxwYXRoIGQ9Ik05Ni41NDYgNi41NzAzMUM4OS40ODA4IC0xLjQ1MTYyIDc3LjIxNzkgLTIuMjI0MzcgNjkuMTk1OSA0LjgzMTYyTDUwLjg3MDYgMjAuOTY3NUw1OS42Mzc3IDI4LjY4NThMNzYuODQ5OSAxMy41MjUxQzc4LjI4NSAxMi4yNjQ4IDgwLjA5NzMgMTEuNTg0IDgxLjk5MjQgMTEuNTg0QzgyLjE1OCAxMS41ODQgODIuMzIzNiAxMS41ODQgODIuNDk4NCAxMS42MDI0Qzg0LjU3NzQgMTEuNzMxMiA4Ni40ODE3IDEyLjY2OTYgODcuODUyNSAxNC4yMzM1QzkwLjY5NTEgMTcuNDYyNSA5MC4zODIzIDIyLjM5MzQgODcuMTUzMyAyNS4yMzZMNzEuNDMxNCAzOS4wODEyTDYyLjY2NDMgNDYuNzk5Nkw1MC44NzA2IDU3LjE4NThMNTkuNjM3NyA2NC45MDQxTDcxLjQzMTQgNTQuNTE3OUw4MC4xOTg1IDQ2Ljc5OTZMOTQuODE2NSAzMy45Mjk1QzEwMi44MzggMjYuODY0MyAxMDMuNjExIDE0LjYwMTQgOTYuNTU1MiA2LjU3OTUxTDk2LjU0NiA2LjU3MDMxWiIgZmlsbD0iI0ZBQTAyMyIvPgo8cGF0aCBkPSJNOTQuNzUyNyA1OS42MDUxTDgwLjEzNDcgNDYuNzM1MUw3MS4zNjc3IDU0LjQ1MzRMODcuMDg5NSA2OC4yOTg2QzkwLjMxODYgNzEuMTQxMyA5MC42MzEzIDc2LjA3MjIgODcuNzg4NyA3OS4zMDEyQzg0Ljk0NjEgODIuNTIxIDgwLjAxNTIgODIuODQzIDc2Ljc4NjEgODAuMDAwNEw1OS41NzM5IDY0LjgzOTZMNTAuODA2OSA1Ny4xMjEzTDMwLjU4NjQgMzkuMzIwM0wyMS44MTkzIDQ3LjAzODdMNDIuMDQ5IDY0LjgzOTZMNTAuODE2MSA3Mi41NThMNjkuMTQxNCA4OC42OTM5QzcyLjgyMTIgOTEuOTMyMSA3Ny4zODQxIDkzLjUyMzYgODEuOTM3OCA5My41MjM2Qzg3LjMxMDMgOTMuNTIzNiA5Mi42NjQ0IDkxLjMwNjUgOTYuNDkxNCA4Ni45NjQ0QzEwMy41NTcgNzguOTQyNCAxMDIuNzc1IDY2LjY3OTUgOTQuNzUyNyA1OS42MTQzVjU5LjYwNTFaIiBmaWxsPSIjQUZDNzJEIi8+CjxwYXRoIGQ9Ik01OS42NDc1IDI4LjY4NTdMNTAuODgwNCAyMC45Njc0TDMyLjU1NTEgNC44NDA2OUMyOC42NzI5IDEuNDE4NDkgMjMuNjk2IC0wLjI4MzQwOSAxOC41MjU5IDAuMDM4NTcyNEMxMy4zNjUgMC4zNjk3NTMgOC42MzY0OCAyLjY4ODAyIDUuMjE0MjggNi41NzAxOUMxLjcxODQ4IDEwLjUzNTIgMC4wMTY1Nzc1IDE1LjY1MDEgMC40Mzk3NTMgMjAuOTMwNkMwLjg0NDUzIDI2LjA1NDcgMy4zNzQzOCAzMC43NzQgNy4yMjg5NiAzNC4xNjg2TDIxLjgyODUgNDcuMDM4NkwzMC41OTU2IDM5LjMyMDNMMTQuNzgxNyAyNS4zODMxQzExLjQ5NzUgMjIuNDk0NSAxMS4wNTU5IDE3LjMzMzYgMTQuMDA5IDE0LjExMzhDMTUuMzc5NyAxMi42MjM0IDE3LjIzOCAxMS43MzExIDE5LjI2MTkgMTEuNjAyM0MyMS4zNDA5IDExLjQ3MzUgMjMuMzQ2NCAxMi4xNTQzIDI0LjkxMDMgMTMuNTM0Mkw0Mi4xMjI1IDI4LjY5NDlMNTAuODg5NiAzNi40MTMzTDYyLjY4MzMgNDYuNzk5NUw3MS40NTA0IDM5LjA4MTFMNTkuNjU2NyAyOC42OTQ5TDU5LjY0NzUgMjguNjg1N1oiIGZpbGw9IiNBRkM3MkQiLz4KPC9zdmc+Cg==") 0 0/contain;
 }
 
-.featureSvg_cxPB {
-  height: 108px !important;
-  width: 108px !important;
-  background-color: #FFF;
-  padding: 8px;
-  border-radius: 8px;
-}
-
-.separator-top{
-  border-top: 1px solid #CCC;
-}
-
-.separator-bottom{
-  border-bottom: 1px solid #CCC;
-}
-
 .navbar-dependency-graph-link::after {
   content: 'DRAFT';
-  background: #f97316;
-  color: #fff;
+  background: var(--cx-orange);
+  color: var(--cx-navy-950);
   font-size: 0.55rem;
   font-weight: 700;
   padding: 1px 5px;
-  border-radius: 5px;
+  border-radius: 999px;
   vertical-align: middle;
   letter-spacing: 0.3px;
   margin-left: 6px;
+}
+
+/* ==========================================================================
+   5. Search (@easyops-cn/docusaurus-search-local)
+   ========================================================================== */
+
+.navbar__search-input {
+  border-radius: 999px;
+  border: 1px solid var(--cx-border);
+  background-color: var(--cx-surface-muted);
+  transition: box-shadow var(--cx-duration) var(--cx-ease),
+    border-color var(--cx-duration) var(--cx-ease);
+}
+
+.navbar__search-input:focus {
+  outline: none;
+  border-color: var(--cx-orange);
+  box-shadow: var(--cx-ring);
+}
+
+/* ==========================================================================
+   6. Docs sidebar & table of contents
+   ========================================================================== */
+
+.theme-doc-sidebar-container {
+  border-right: 1px solid var(--cx-border) !important;
+}
+
+.menu {
+  font-size: 0.92rem;
+  padding: 1rem 0.75rem !important;
+}
+
+.menu__link {
+  border-radius: var(--cx-radius-sm);
+  line-height: 1.4;
+  padding: 0.4rem 0.6rem;
+  transition: background-color var(--cx-duration-fast) var(--cx-ease),
+    color var(--cx-duration-fast) var(--cx-ease);
+}
+
+.menu__link:hover {
+  background: var(--cx-surface-muted);
+}
+
+.menu__link--active:not(.menu__link--sublist) {
+  position: relative;
+  background: var(--cx-orange-50);
+  color: var(--cx-orange-800);
+  font-weight: 600;
+}
+
+.menu__link--active:not(.menu__link--sublist)::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.35rem;
+  bottom: 0.35rem;
+  width: 3px;
+  border-radius: 3px;
+  background: var(--cx-orange);
+}
+
+[data-theme='dark'] .menu__link--active:not(.menu__link--sublist) {
+  background: rgba(179, 203, 45, 0.12);
+  color: var(--cx-lime-200);
+}
+
+[data-theme='dark'] .menu__link--active:not(.menu__link--sublist)::before {
+  background: var(--cx-lime);
+}
+
+.menu__list-item-collapsible > .menu__link--sublist {
+  font-weight: 600;
+}
+
+.table-of-contents {
+  font-size: 0.85rem;
+  border-left-color: var(--cx-border);
+}
+
+.table-of-contents__link--active {
+  font-weight: 600;
+  position: relative;
+}
+
+.table-of-contents__link--active::before {
+  content: '';
+  position: absolute;
+  left: -1.05rem;
+  top: 0.15rem;
+  bottom: 0.15rem;
+  width: 2px;
+  border-radius: 2px;
+  background: var(--cx-orange);
+}
+
+[data-theme='dark'] .table-of-contents__link--active::before {
+  background: var(--cx-lime);
+}
+
+/* ==========================================================================
+   7. Markdown content
+   ========================================================================== */
+
+.markdown h2 {
+  margin-top: 2.75rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--cx-border);
+}
+
+.markdown > h2:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+
+.markdown blockquote {
+  border-left-width: 3px;
+  border-radius: 0 var(--cx-radius-sm) var(--cx-radius-sm) 0;
+  background: var(--cx-surface-muted);
+  padding: 0.85rem 1.1rem;
+}
+
+.theme-admonition {
+  border: 1px solid var(--cx-border);
+  border-left-width: 4px;
+  border-radius: var(--cx-radius-md);
+  box-shadow: none;
+}
+
+.markdown table {
+  display: table;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid var(--cx-border);
+  border-radius: var(--cx-radius-md);
+  overflow: hidden;
+}
+
+.markdown table thead tr {
+  background: var(--cx-surface-muted);
+}
+
+.markdown table th {
+  font-weight: 600;
+  text-align: left;
+}
+
+.markdown table th,
+.markdown table td {
+  border: 0;
+  border-bottom: 1px solid var(--cx-border);
+}
+
+.markdown table tr:last-child td {
+  border-bottom: 0;
+}
+
+.markdown img {
+  border-radius: var(--cx-radius-md);
+}
+
+div[class^='codeBlockContainer'] {
+  border-radius: var(--cx-radius-md);
+  box-shadow: var(--cx-shadow-sm);
+}
+
+/* ==========================================================================
+   8. Breadcrumbs, pagination, cards
+   ========================================================================== */
+
+.breadcrumbs__link {
+  border-radius: var(--cx-radius-sm);
+}
+
+.pagination-nav__link {
+  border: 1px solid var(--cx-border);
+  border-radius: var(--cx-radius-md);
+  box-shadow: var(--cx-shadow-sm);
+  transition: transform var(--cx-duration) var(--cx-ease),
+    box-shadow var(--cx-duration) var(--cx-ease), border-color var(--cx-duration) var(--cx-ease);
+}
+
+.pagination-nav__link:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--cx-shadow-md);
+  border-color: var(--cx-border-strong);
+}
+
+.card {
+  border: 1px solid var(--cx-border);
+  border-radius: var(--cx-radius-lg);
+  box-shadow: var(--cx-shadow-sm);
+}
+
+/* ==========================================================================
+   9. Blog / release notes
+   ========================================================================== */
+
+/* Release notes are published in full (no truncation marker), so every entry
+   in the list is a long article. Wrapping those in cards made the list read
+   as a few oversized boxes and did not match the individual post pages, so
+   entries are separated by a rule instead. */
+.blog-list-page article,
+.blog-tags-post-list-page article {
+  padding-bottom: 2.5rem;
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid var(--cx-border);
+}
+
+.blog-list-page article:last-of-type,
+.blog-tags-post-list-page article:last-of-type {
+  border-bottom: none;
+}
+
+/* Release notes contain wide tables and code samples, so they get more room
+   than the default blog layout allows. `blog-wrapper` sits on <html>, so the
+   selector is scoped to the blog layout container to leave the footer and
+   other containers untouched. */
+.blog-wrapper .main-wrapper > .container {
+  max-width: var(--cx-content-wide);
+}
+
+/* ==========================================================================
+   10. Footer
+   ========================================================================== */
+
+.footer--dark {
+  position: relative;
+  --ifm-footer-background-color: var(--cx-navy-950);
+}
+
+.footer--dark::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 3px;
+  background: var(--cx-gradient-brand);
+}
+
+.footer__title {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ifm-footer-title-color);
+}
+
+.footer__link-item {
+  transition: color var(--cx-duration-fast) var(--cx-ease);
+}
+
+.footer__copyright {
+  font-size: 0.85rem;
+  color: var(--cx-grey-400);
+}
+
+/* ==========================================================================
+   11. Utilities kept from the previous theme
+   ========================================================================== */
+
+.separator-top {
+  border-top: 1px solid var(--cx-border);
+}
+
+.separator-bottom {
+  border-bottom: 1px solid var(--cx-border);
+}
+
+/* ==========================================================================
+   12. Motion preferences
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .button:hover,
+  .pagination-nav__link:hover {
+    transform: none;
+  }
 }
