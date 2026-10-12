@@ -5,8 +5,8 @@ import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import SearchBar from '@theme/SearchBar';
+import ThemedImage from '@theme/ThemedImage';
 import {useBaseUrlUtils} from '@docusaurus/useBaseUrl';
-import {useColorMode} from '@docusaurus/theme-common';
 import {
   useLatestVersion,
   useVersions,
@@ -31,10 +31,6 @@ const DOCS_PLUGIN_ID = 'default';
 
 /** Docusaurus' unreleased ("next") version is always named `current`. */
 const PREVIEW_VERSION_NAME = 'current';
-
-const {colorMode} = useColorMode();
-
-const isDarkMode = colorMode === 'dark';
 
 /**
  * Version labels carry a human-readable status suffix (for example
@@ -148,12 +144,20 @@ function useStats(): Stat[] {
   return stats.filter((stat) => stat.value !== '0');
 }
 
-type ImageColor = {
-  white: string,
-  black: string
-}
-
 /* -- (3) Explore the library ---------------------------------------------- */
+
+/**
+ * A raster icon, optionally with a second variant for dark mode.
+ *
+ * Both are paths below `static/`. Name them after the colour scheme they are
+ * meant for, not after their own ink: `light` is the artwork shown on a light
+ * card (so usually the dark-inked file).
+ */
+type AreaIcon = {
+  light: string;
+  /** Omit when a single file reads well on both backgrounds. */
+  dark?: string;
+};
 
 type AreaItem = {
   title: string;
@@ -169,7 +173,7 @@ type AreaItem = {
    * embedded base64 bitmap always exceeds.
    */
   Svg?: SvgComponent;
-  img?: ImageColor;
+  img?: AreaIcon;
   to: string;
   description: string;
   /** Overrides the default "Learn more" call to action. */
@@ -207,14 +211,15 @@ const AREAS: AreaItem[] = [
   },
   {
     title: 'Catena-X Test Suite',
-    img: {white:'/img/testsuite-icon.png', black:'/img/testsuite-icon-black.png'},
+    // The default icon is drawn in white, so it disappears on a light card.
+    img: {light: '/img/testsuite-icon-black.png', dark: '/img/testsuite-icon.png'},
     to: 'https://test-suite.catena-x.net/',
     description:
       'Test your apps against Catena-X standards with TCKs and prepare for certification in our Catena-X Test Suite. Discover data space sandboxes in Learn & Explore environments.',
   },
   {
     title: 'Eclipse Tractus-X KITs',
-    img: {white:'/img/kits.svg', black:'/img/kits.svg'},
+    img: {light: '/img/kits.svg'},
     to: 'https://eclipse-tractusx.github.io/Kits',
     cta: 'Explore the KITs',
     description:
@@ -474,24 +479,21 @@ function Areas(): ReactNode {
           {AREAS.map(({title, Svg, img, to, description, cta}) => (
             <Link className={styles.areaCard} to={to} key={title}>
               <span className={styles.areaIcon}>
-              {Svg ? (
-                <Svg role="presentation" aria-hidden="true" />
-              ) : (
-                <img
-                  className={styles.areaIconImage}
-                  src={
-                    img
-                      ? withBaseUrl(
-                          colorMode === 'dark'
-                            ? img.white
-                            : img.black
-                        )
-                      : undefined
-                  }
-                  alt=""
-                  aria-hidden="true"
-                />
-              )}
+                {Svg ? (
+                  <Svg role="presentation" aria-hidden="true" />
+                ) : (
+                  img && (
+                    <ThemedImage
+                      className={styles.areaIconImage}
+                      sources={{
+                        light: withBaseUrl(img.light),
+                        dark: withBaseUrl(img.dark ?? img.light),
+                      }}
+                      alt=""
+                      aria-hidden="true"
+                    />
+                  )
+                )}
               </span>
               <Heading as="h3" className={styles.areaTitle}>
                 {title}
