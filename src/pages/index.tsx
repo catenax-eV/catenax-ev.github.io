@@ -169,14 +169,14 @@ const AREAS: AreaItem[] = [
   },
   {
     title: 'Test Suite',
-    Svg: require('@site/static/img/testsuite-icon.svg').default,
+    Svg: require('@site/static/img/testsuite-icon.png').default,
     to: 'https://test-suite.catena-x.net/',
     description:
       'Test your apps against Catena-X standards with TCKs and prepare for certification in our Test Suite. Discover data space sandboxes in Learn & Explore environments.',
   },
   {
     title: 'Eclipse Tractus-X KITs',
-    img: require('@site/static/img/kits.png').default,
+    img: require('@site/static/img/kits.svg').default,
     to: 'https://eclipse-tractusx.github.io/Kits',
     cta: 'Explore the KITs',
     description:
