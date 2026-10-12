@@ -91,17 +91,34 @@ type QuickLink = {
   to: string;
 };
 
-const QUICK_LINKS: QuickLink[] = [
+/** A quick link points either at a fixed route or at a doc of a release. */
+type QuickLinkSource = {label: string} & ({to: string} | {docId: string});
+
+/**
+ * The order walks the reader through the library: the two normative pillars
+ * first, then the tools that put them in context (how standards relate, when
+ * they ship), then verification, with the glossary last as a general lookup.
+ */
+const QUICK_LINKS: QuickLinkSource[] = [
+  {label: 'Standards', docId: 'standards/overview'},
+  {label: 'Rulebooks', docId: 'rulebooks/overview'},
   {label: 'Dependency Graph', to: '/standards-graph'},
   {label: 'Release Timelines', to: '/timelines'},
+  {label: 'Test Suite', to: 'https://test-suite.catena-x.net/'},
   {label: 'Glossary', to: '/glossary'},
 ];
 
-/** Prepends the rulebooks of the current release to the static quick links. */
+/** Resolves the quick links against the current release, keeping their order. */
 function useQuickLinks(): QuickLink[] {
-  const rulebooks = docLink(useLatestVersion(DOCS_PLUGIN_ID), 'rulebooks/overview');
+  const latestVersion = useLatestVersion(DOCS_PLUGIN_ID);
 
-  return rulebooks ? [{label: 'Rulebooks', to: rulebooks}, ...QUICK_LINKS] : QUICK_LINKS;
+  return QUICK_LINKS.flatMap((item) => {
+    const to = 'to' in item ? item.to : docLink(latestVersion, item.docId);
+
+    // An area missing from the current release is dropped rather than rendered
+    // as a dead link.
+    return to ? [{label: item.label, to}] : [];
+  });
 }
 
 /* -- (2) Key figures ------------------------------------------------------ */
