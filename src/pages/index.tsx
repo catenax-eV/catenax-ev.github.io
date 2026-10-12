@@ -6,6 +6,7 @@ import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import SearchBar from '@theme/SearchBar';
 import {useBaseUrlUtils} from '@docusaurus/useBaseUrl';
+import {useColorMode} from '@docusaurus/theme-common';
 import {
   useLatestVersion,
   useVersions,
@@ -30,6 +31,10 @@ const DOCS_PLUGIN_ID = 'default';
 
 /** Docusaurus' unreleased ("next") version is always named `current`. */
 const PREVIEW_VERSION_NAME = 'current';
+
+const {colorMode} = useColorMode();
+
+const isDarkMode = colorMode === 'dark';
 
 /**
  * Version labels carry a human-readable status suffix (for example
@@ -143,6 +148,11 @@ function useStats(): Stat[] {
   return stats.filter((stat) => stat.value !== '0');
 }
 
+type ImageColor = {
+  white: string,
+  black: string
+}
+
 /* -- (3) Explore the library ---------------------------------------------- */
 
 type AreaItem = {
@@ -159,7 +169,7 @@ type AreaItem = {
    * embedded base64 bitmap always exceeds.
    */
   Svg?: SvgComponent;
-  img?: string;
+  img?: ImageColor;
   to: string;
   description: string;
   /** Overrides the default "Learn more" call to action. */
@@ -196,15 +206,15 @@ const AREAS: AreaItem[] = [
       'Values, principles and organizational processes behind our software and standard artefacts — from idea to release.',
   },
   {
-    title: 'Test Suite',
-    img: '/img/testsuite-icon.png',
+    title: 'Catena-X Test Suite',
+    img: {white:'/img/testsuite-icon.png', black:'/img/testsuite-icon-black.png'},
     to: 'https://test-suite.catena-x.net/',
     description:
-      'Test your apps against Catena-X standards with TCKs and prepare for certification in our Test Suite. Discover data space sandboxes in Learn & Explore environments.',
+      'Test your apps against Catena-X standards with TCKs and prepare for certification in our Catena-X Test Suite. Discover data space sandboxes in Learn & Explore environments.',
   },
   {
     title: 'Eclipse Tractus-X KITs',
-    img: '/img/kits.svg',
+    img: {white:'/img/kits.svg', black:'/img/kits.svg'},
     to: 'https://eclipse-tractusx.github.io/Kits',
     cta: 'Explore the KITs',
     description:
@@ -464,16 +474,24 @@ function Areas(): ReactNode {
           {AREAS.map(({title, Svg, img, to, description, cta}) => (
             <Link className={styles.areaCard} to={to} key={title}>
               <span className={styles.areaIcon}>
-                {Svg ? (
-                  <Svg role="presentation" aria-hidden="true" />
-                ) : (
-                  <img
-                    className={styles.areaIconImage}
-                    src={img ? withBaseUrl(img) : undefined}
-                    alt=""
-                    aria-hidden="true"
-                  />
-                )}
+              {Svg ? (
+                <Svg role="presentation" aria-hidden="true" />
+              ) : (
+                <img
+                  className={styles.areaIconImage}
+                  src={
+                    img
+                      ? withBaseUrl(
+                          colorMode === 'dark'
+                            ? img.white
+                            : img.black
+                        )
+                      : undefined
+                  }
+                  alt=""
+                  aria-hidden="true"
+                />
+              )}
               </span>
               <Heading as="h3" className={styles.areaTitle}>
                 {title}
