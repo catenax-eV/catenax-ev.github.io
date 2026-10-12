@@ -5,6 +5,7 @@ import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import SearchBar from '@theme/SearchBar';
+import {useBaseUrlUtils} from '@docusaurus/useBaseUrl';
 import {
   useLatestVersion,
   useVersions,
@@ -129,7 +130,17 @@ function useStats(): Stat[] {
 
 type AreaItem = {
   title: string;
-  /** Either a vector icon (inlined as a component) or a raster icon source. */
+  /**
+   * Icons come in two flavours. `Svg` inlines a true vector icon as a React
+   * component, so it can inherit `currentColor` from the surrounding card.
+   *
+   * `img` is a path below `static/`, rendered as a plain `<img>`. Use it for
+   * any artwork that is really a bitmap -- including bitmaps wrapped in an SVG
+   * container. Such files must *not* be `require()`d: Docusaurus pipes every
+   * `.svg` imported from a `.tsx` through SVGR, whose SVGO parser rejects
+   * attributes longer than 64 kB ("Max buffer length exceeded"), which an
+   * embedded base64 bitmap always exceeds.
+   */
   Svg?: SvgComponent;
   img?: string;
   to: string;
@@ -169,14 +180,14 @@ const AREAS: AreaItem[] = [
   },
   {
     title: 'Test Suite',
-    Svg: require('@site/static/img/testsuite-icon.png').default,
+    img: '/img/testsuite-icon.png',
     to: 'https://test-suite.catena-x.net/',
     description:
       'Test your apps against Catena-X standards with TCKs and prepare for certification in our Test Suite. Discover data space sandboxes in Learn & Explore environments.',
   },
   {
     title: 'Eclipse Tractus-X KITs',
-    img: require('@site/static/img/kits.svg').default,
+    img: '/img/kits.svg',
     to: 'https://eclipse-tractusx.github.io/Kits',
     cta: 'Explore the KITs',
     description:
@@ -414,6 +425,10 @@ function Stats(): ReactNode {
 }
 
 function Areas(): ReactNode {
+  // `img` entries are paths below `static/`, so they need the site's baseUrl
+  // prepended. Resolve the helper once rather than calling a hook per item.
+  const {withBaseUrl} = useBaseUrlUtils();
+
   return (
     <section className={styles.section}>
       <div className="container">
@@ -435,7 +450,12 @@ function Areas(): ReactNode {
                 {Svg ? (
                   <Svg role="presentation" aria-hidden="true" />
                 ) : (
-                  <img className={styles.areaIconImage} src={img} alt="" aria-hidden="true" />
+                  <img
+                    className={styles.areaIconImage}
+                    src={img ? withBaseUrl(img) : undefined}
+                    alt=""
+                    aria-hidden="true"
+                  />
                 )}
               </span>
               <Heading as="h3" className={styles.areaTitle}>
