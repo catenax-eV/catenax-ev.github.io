@@ -35,8 +35,6 @@ This Guide is the result of a joint, cross-company effort. It demonstrates the c
 
 **Our sincere thanks go to every person and organisations who contributed**
 
----
-
 ## Disclaimer & Change Notice
 
 This Migration Guide has been prepared within the Catena-X Automotive Network e.V. by the responsible Expert Groups and Committees, in collaboration with Catena-X Release Management.
@@ -48,8 +46,6 @@ This Guide is consequently maintained as a living document. Content may be corre
 In the event of any discrepancy between this Guide and the official Catena-X Standards, Conformity Assessment Criteria, or the applicable Operating Model, the normative documents prevail. This Guide provides guidance and does not replace the binding standard documents.
 
 Service Providers are encouraged to verify that they are working with the latest published version of this Guide before initiating migration or certification activities.
-
----
 
 ## 1. Introduction
 
@@ -110,8 +106,6 @@ For further information on the Catena-X Release Management approach and lifecycl
 
 - https://catenax-ev.github.io/release-management  
 - https://catenax-ev.github.io/docs/next/operating-model/how-life-cycle-management
-
----
 
 ## 2. Migration paths overview
 
@@ -244,8 +238,6 @@ For providers who have not yet begun their migration, a direct transition to CX-
 
 Regardless of the chosen path, Service Providers are encouraged to initiate their migration planning at an early stage and to leverage the available Catena X Release Management resources, guidance materials, and support channels to ensure a smooth and successful transition.
 
----
-
 ## 3. CX-Jupiter deprecation impact
 
 With the **Go-Live of CX-Neptune**, **CX-Jupiter will be officially deprecated**. This marks the formal end of the CX-Jupiter lifecycle within the Catena-X ecosystem and has direct operational and compliance consequences for all affected Service Providers ([see Figure 1](#figure-1-release-lifecycle-at-the-go-live-of-cx-neptune) in [Chapter 2.1](#21-release-timeline-at-a-glance)).
@@ -299,8 +291,6 @@ In addition to the deprecation of the CX-Jupiter release, individual standards r
 
 The deprecation of CX-Jupiter is a necessary step to preserve the integrity, security, and interoperability of the Catena-X ecosystem. Timely migration ensures that Service Providers continue to deliver trusted, compliant, and interoperable solutions to their customers and partners.
 
----
-
 ## 4 Certification and certificate validity
 
 release of the Catena-X standards (e.g. End of CX-Saturn). With the deprecation of a release, certificates bound to that release lose their validity (see Chapter [3.1](#31-direct-consequences)).
@@ -337,8 +327,6 @@ Other standards in the application stack – such as CX-0018 (Dataspace Connecti
 1. Determine the **full set of standards** in scope of your product certification, including the underlying technical stack.
 2. **Request the extension of validity for** the qualifying standards from the association in due time before the end of their validity period.
 3. Plan **recertification** for all remaining standards as part of the migration to the selected target release.
-
----
 
 ## 5. Migration guide – CX-Jupiter to CX-Saturn
 
@@ -379,8 +367,6 @@ Providers migrating to CX-Saturn should additionally review [Chapter 6](#6-migra
 Use cases that are not listed above have not changed between CX-Jupiter and CX-Saturn beyond the cross-cutting changes described in [section 5.5.1.](#551-cross-cutting-impact-applicable-to-all-business-applications). No use-case-specific migration activity is required for them.
 
 :::
-
----
 
 ### 5.2 Enablement Service
 
@@ -452,8 +438,6 @@ All references to standards in this section refer to the versions mentioned abov
 
 :::
 
----
-
 #### 5.2.2 (Bring Your Own) Wallet
 
 ##### 5.2.2.1 Summary for Bring Your Own Wallet Providers
@@ -477,8 +461,6 @@ Kindly ensure any Technical User / API Client provided to your customer (who is 
 - [CX-0149 (Wallet Requirements)](/docs/Saturn/standards/CX-0149-WalletRequirements)
 - [CX-0049 (DID Document)](/docs/Saturn/standards/CX-0049-DIDDocumentSchema)
 - [CX-0050 (Catena-X-specific verifiable credentials)](/docs/Saturn/standards/CX-0050-CXSpecificCredentials)
-
----
 
 #### 5.2.3 Digital Twin Registry
 
@@ -556,8 +538,6 @@ With CX-Saturn, BPDM is upgraded to **version 7.0**, introducing multiple **brea
 - [CX-0074 (Business Partner Gate API)](/docs/Saturn/standards/CX-0074-BusinessPartnerGateAPI)
 - [CX-0076 (Golden Record End-to-End Requirements Standard)](/docs/Saturn/standards/CX-0076-GoldenRecordEndtoEndRequirementsStandard)
 
----
-
 ### 5.4 Onboarding Service Provider
 
 With the introduction of CX-Saturn, no changes have been introduced for neither the onboarding process nor the respective APIs.
@@ -586,8 +566,6 @@ Regardless of the specific use case, **all Business Application Providers** are 
 - Existing **integrations with the Digital Twin Registry must be updated** due to the breaking API changes  
 - Discovery flows must be **re-tested end-to-end** after the transition to BDRS  
 - **Policy definitions and asset registrations** must be reviewed and aligned with CX-0152 and CX-0151
-
----
 
 #### 5.5.2 Quality
 
@@ -640,8 +618,6 @@ The migration to CX-Saturn for quality applications is straightforward. No break
 - [CX-0123 (Quality Use Case Standard)](/docs/Saturn/standards/CX-0123-QualityUseCaseStandard)
 - [CX-0125 (Traceability Use Case)](/docs/Saturn/standards/CX-0125-TraceabilityUseCase)
 
----
-
 #### 5.5.3 Product Carbon Footprint
 
 ##### 5.5.3.1 Summary for PCF Application Providers
@@ -675,8 +651,6 @@ CX-Saturn represents a **major evolution of the PCF use case**, with the data mo
 ##### 5.5.3.5 Relevant Standards
 
 - [CX-0136 (Use Case PCF)](/docs/Saturn/standards/CX-0136-UseCasePCF)
-
----
 
 #### 5.5.4 Digital Product Passport
 
@@ -714,8 +688,6 @@ These data model changes have been made to allow backward compatibility with the
 
 - [CX-0143 (Use Case Circular Economy – Digital Product Passport Standard)](/docs/Saturn/standards/CX-0143-UseCaseCircularEconomyDigitalProductPassportStandard/introduction)
 
----
-
 #### 5.5.5 Business Partner Company Certificate Management
 
 #### 5.5.5.1 Summary for BPCCM Application Providers
@@ -747,8 +719,6 @@ BPCCM Application Providers should:
 #### 5.5.5.5 Relevant Standards
 
 - [CX-0135 (Business Partner Company Certificate Management)](/docs/Saturn/standards/CX-0135-CompanyCertificateManagement)
-
----
 
 #### 5.5.6 Supply Chain Disruption Notification
 
@@ -805,8 +775,6 @@ If implemented, update the connector discovery flow (refer to [section 5.2.1.4](
 - [CX-0151 (Industry Core Basics) in version 1.0.0](/docs/Saturn/standards/CX-0151-IndustryCoreBasics)
 - [CX-0152 (Policy Constraints for Data Exchange) in version 1.0](/docs/Saturn/standards/CX-0152-PolicyConstrainsForDataExchange)
 
----
-
 ### 5.5.7 Predictive Unit Real-Time Information Service (PURIS)
 
 #### 5.5.7.1 Summary for PURIS Application Providers
@@ -858,8 +826,6 @@ All references to standards in this section refer to the versions mentioned abov
 
 :::
 
----
-
 ### 5.5.8 Engineering: Digital Engineering Master Data (D) and Requirements Engineering
 
 #### 5.5.8.1 Summary for Engineering Application Providers
@@ -883,8 +849,6 @@ The application provider have to implement the new data models and APIs in accor
 - [CX-0154 (Digital Master Data)](/docs/Saturn/standards/CX-0154-MasterDataManagement)  
 - [CX-0155 (Requirements Engineering)](/docs/Saturn/standards/CX-0155-RequirementsEngineering)
 
----
-
 ## 5.6 Value added service
 
 This section addresses the impact of the transition on **Value Added Service Providers**, i.e. providers offering optional, non-core solutions extending the Catena-X ecosystem.
@@ -903,8 +867,6 @@ With CX-Saturn, no Value Added Service standards were introduced, modified or de
 - **Data space exclusion** for solutions relying on removed components  
 - **New market opportunities** through the introduction of CX-Neptune-specific standards (Car SBOM, Battery Passport, Material Accounting, ECU Crypto Material)  
 - **Customer relationships** may require proactive communication regarding certification transitions
-
----
 
 ## 6 Migration guide – CX-Saturn to CX-Neptune
 
@@ -939,8 +901,6 @@ A dedicated Migration Guide from CX-Jupiter directly to CX-Neptune is not publis
 | Engineering (D, Requirements Engineering, Geometry)                                   | New use case Geometry – optional adoption                                    | [6.5.10](#6510-engineering-digital-engineering-master-data-d-requirements-engineering-and-geometry) |
 | Value Added Services                                                                     | Yes – VAS standards deprecated                                               | [6.6](#66-value-added-service)                                                                         |
 | Use cases not listed above                                                               | No use-case-specific changes – only the cross-cutting changes in 6.5.1 apply | –                                                                                                      |
-
----
 
 ### 6.2 Enablement Service
 
@@ -992,8 +952,6 @@ A decision to be taken is, whether there is a strategy towards EDC-V support whi
 - [CX-0018 (Dataspace Connectivity) – version 4.3](/docs/next/standards/CX-0018-DataspaceConnectivity)
 - CX-0152 (Policy Constraints For Data Exchange) – version 1.2
 
----
-
 #### 6.2.2 Wallet
 
 ##### 6.2.2.1 Summary for Wallet Providers
@@ -1018,8 +976,6 @@ There are no material changes to the Wallet, DID, or DID Document or Credential 
 - [CX-0050 (Catena-X-specific verifiable credentials)](/docs/next/standards/CX-0050-CXSpecificCredentials/CX-0050-CatenaXSpecificVerifiableCredentials)
 - [CX-0149 (Wallet Requirements)](/docs/next/standards/CX-0149-WalletRequirements)
 
----
-
 #### 6.2.3 Digital Twin Registry
 
 ##### 6.2.3.1 Summary for Twin Registry Providers
@@ -1043,8 +999,6 @@ Twin Registry providers should update the registry version to Catena-X Neptune r
 - [CX-0002 (Digital Twins in Catena-X)](/docs/next/standards/CX-0002-DigitalTwinsInCatenaX)
 - [CX-0151 (Industry Core: Basics)](/docs/next/standards/CX-0151-IndustryCoreBasics)
 - [CX-0152 (Policy Constraints For Data Exchange)](/docs/next/standards/CX-0152-PolicyConstrainsForDataExchange)
-
----
 
 ### 6.3 Core Service
 
@@ -1093,8 +1047,6 @@ With CX-Neptune, the BPDM standard family enters a **refinement phase**, buildin
 - [CX-0074 (Business Partner Gate API)](/docs/next/standards/CX-0074-BusinessPartnerGateAPI)
 - [CX-0076 (Golden Record End-to-End Requirements Standard)](/docs/next/standards/CX-0076-GoldenRecordEndtoEndRequirementsStandard)
 
----
-
 ### 6.4 Onboarding Service Provider
 
 #### 6.4.1 Onboarding service
@@ -1104,8 +1056,6 @@ With CX-Neptune, the BPDM standard family enters a **refinement phase**, buildin
 Scaling Catena-X to a large number of participants is one of the core focus areas for Catena-X. To reach scale, new onboarding service providers like Cloud Service Providers or Managed Service Providers shall be included to further drive participant adoption across different regions and tier sizes. Integrating those Onboarding Service Providers into the Catena-X ecosystem will require adjustments both to the onboarding process itself as well as the onboarding API. The new process and APIs will provide fewer interactions between prospective participants and the Core Service Provider B (Cofinity-X).
 
 However, for any already established OSP that is already integrated to the CSP-B and is satisfied with the existing process, no immediate changes are required as the existing CX-Saturn process and API is still supported.
-
----
 
 ### 6.5 Business Application
 
@@ -1162,8 +1112,6 @@ As the Aspect Model changes are not compatible-by-design with their predecessor,
 - [CX-0151 (Industry Core: Basics)](/docs/next/standards/CX-0151-IndustryCoreBasics)
 - [CX-0152 (Policy Constraints)](/docs/next/standards/CX-0152-PolicyConstrainsForDataExchange)
 
----
-
 #### 6.5.2 Quality
 
 ##### 6.5.2.1 Summary for Quality Application Providers
@@ -1175,8 +1123,6 @@ With CX-Neptune, the Quality use case is **extended by a dedicated Blocking Noti
 - [CX-0123 (Field Quality Standard)](/docs/next/standards/CX-0123-QualityUseCaseStandard)  
 - CX-0125 (Traceability Use Case) – deprecated  
 - [CX-0164 (Blocking Notification – newly extracted from CX-0125)](/docs/next/standards/CX-0164-BlockingNotifications)
-
----
 
 #### 6.5.3 Product Carbon Footprint
 
@@ -1209,8 +1155,6 @@ This release mainly covers corrections and simplifications.
 
 - [CX-0136 (Use Case PCF)](/docs/next/standards/CX-0136-UseCasePCF)
 
----
-
 #### 6.5.4 Digital product passport
 
 ##### 6.5.4.1 Summary for DPP Application Providers
@@ -1233,8 +1177,6 @@ If mpn is used for BPN searches, it MUST be parsed correctly for the handling of
 
 - [CX-0143 (Use Case Circular Economy – Digital Product Passport Standard)](/docs/next/standards/CX-0143-UseCaseCircularEconomyDigitalProductPassportStandard/introduction)
 - [CX-0160 (Battery Passport) – for providers previously handling battery passport data via CX-0143](/docs/next/standards/CX-0160-BatteryPassport/CX-0160-BatteryPassport-base)
-
----
 
 #### 6.5.5 Supply Chain Disruption Notification
 
@@ -1281,8 +1223,6 @@ Regarding connectors and policies, no immediate action is required. Please evalu
 - [CX-0146 (Supply Chain Disruption Notifications) – version 3.0.0](/docs/next/standards/CX-0146-SupplyChainDisruptionNotifications)
 - [CX-0151 (Industry Core Basics) – version 1.1.0](/docs/next/standards/CX-0151-IndustryCoreBasics)
 - [CX-0152 (Policy Constraints For Data Exchange) – version 1.2.0](/docs/next/standards/CX-0152-PolicyConstrainsForDataExchange)
-
----
 
 #### 6.5.6 Traceability
 
@@ -1337,8 +1277,6 @@ Application Providers should:
 
 - [CX-0164 Blocking Notification v1.0.0](/docs/next/standards/CX-0164-BlockingNotifications)
 
----
-
 ##### 6.5.6.2 Special Characteristics
 
 ###### 6.5.6.2.1 Summary for Special Characteristics
@@ -1377,8 +1315,6 @@ Application Providers should:
 ###### 6.5.6.2.5 Relevant Standards
 
 - [CX-0163 Special Characteristics v1.0.0](/docs/next/standards/CX-0163-SpecialCharacteristics)
-
----
 
 #### 6.5.7 Predictive Unit Real-Time Information Service (PURIS)
 
@@ -1434,8 +1370,6 @@ To implement the matrix in a backward compatible fashion, proceed as follows:
 - [CX-0157 (Predictive Unit Real-Time Information Service (PURIS)) – version 1.1.0](/docs/next/standards/CX-0157-PURIS)
 - [CX-0152 (Policy Constraints For Data Exchange) – version 1.2.0](/docs/next/standards/CX-0152-PolicyConstrainsForDataExchange)
 
----
-
 #### 6.5.8 Car SBOM
 
 ##### 6.5.8.1 Summary for Car SBOM Application Providers
@@ -1470,8 +1404,6 @@ The changes foster usability by providing a unique source of truth through refac
 - [CX-0158-1 Car SBOM for ICTS Connected Vehicles (new)](/docs/next/standards/CX-0158-1-CarSBOM-ICTS)
 - [CX-0158-2 Car SBOM for FOSS Compliance (new)](/docs/next/standards/CX-0158-2-CarSBOM-FOSS-Compliance)
 
----
-
 #### 6.5.9 Battery Passport Data Management Base
 
 ##### 6.5.9.1 Summary for Battery Passport Data Management Base Application Providers
@@ -1497,8 +1429,6 @@ Implement the data models and APIs according to the standards CACs.
 - [CX-0160-1 Battery Passport Data Management: Provisioning of near-complete battery passport data](/docs/next/standards/CX-0160-BatteryPassport/CX-0160-BatteryPassport-uc1)
 - [CX-0160-3 Battery Passport Data Management: Complete exchange of DPPs to service providers](/docs/next/standards/CX-0160-BatteryPassport/CX-0160-BatteryPassport-uc3)
 
----
-
 #### 6.5.10 Engineering: Digital Engineering Master Data (D), Requirements Engineering and Geometry
 
 ##### 6.5.10.1 Summary for Engineering Application Providers
@@ -1522,8 +1452,6 @@ For Geometry, the providers need to implement the new requirements in accordance
 - [CX-0154 (Digital Master Data)](/docs/next/standards/CX-0154-MasterDataManagement)
 - [CX-0155 (Requirements Engineering)](/docs/next/standards/CX-0155-RequirementsEngineering)
 - [CX-0156 (Geometry)](/docs/next/standards/CX-0156-Geometry)
-
----
 
 ### 6.6 Value added service
 
