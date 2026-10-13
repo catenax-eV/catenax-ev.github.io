@@ -186,7 +186,7 @@ const AREAS: AreaItem[] = [
     Svg: require('@site/static/img/standards-icon.svg').default,
     to: '/docs/standards/overview',
     description:
-      'Uniform rules and requirements that make independent implementations interoperable — and the basis for every conformity assessment.',
+      'Uniform rules and requirements that make independent implementations interoperable - and the basis for every conformity assessment.',
   },
   {
     title: 'Regulatory Framework',
@@ -207,7 +207,7 @@ const AREAS: AreaItem[] = [
     Svg: require('@site/static/img/working-model-icon.svg').default,
     to: '/docs/working-model/overview',
     description:
-      'Values, principles and organizational processes behind our software and standard artefacts — from idea to release.',
+      'Values, principles and organizational processes behind our software and standard artefacts - from idea to release.',
   },
   {
     title: 'Catena-X Test Suite',
@@ -394,7 +394,7 @@ function Hero(): ReactNode {
         </Heading>
         <p className={styles.heroSubtitle}>
           Your reference for the standards, governance and rules that connect the Catena-X
-          ecosystem. Everything you need to prove compliance — in one place.
+          ecosystem. Everything you need to prove compliance - in one place.
         </p>
 
         <div className={styles.heroActions}>
@@ -470,7 +470,7 @@ function Areas(): ReactNode {
             Six areas, one connected ecosystem
           </Heading>
           <p className={styles.sectionLead}>
-            The complete normative documentation of Catena-X — plus the test environments and
+            The complete normative documentation of Catena-X - plus the test environments and
             reference implementations that help you put it into practice.
           </p>
         </header>
@@ -618,7 +618,7 @@ function GraphTeaser(): ReactNode {
             </Heading>
             <p className={styles.graphText}>
               The interactive dependency graph visualises how the {standardsCount} Catena-X
-              standards of {releaseName(latestVersion)} reference and build on one another — per
+              standards of {releaseName(latestVersion)} reference and build on one another - per
               release.
             </p>
             <Link className={styles.ctaPrimary} to="/standards-graph">
@@ -696,7 +696,7 @@ function Feedback(): ReactNode {
             We value your feedback
           </Heading>
           <p className={styles.feedbackText}>
-            Missing something, found an error or have an idea? Let us know — it helps us make the
+            Missing something, found an error or have an idea? Let us know - it helps us make the
             library better for everyone.
           </p>
         </div>
