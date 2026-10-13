@@ -1,0 +1,35 @@
+openapi: 3.1.0
+info:
+  title: BDRS Directory API
+  description: REST API documentation for the dataspace-relevant BDRS API.
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+  version: 1.0.0
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+
+security:
+  - bearerAuth: []
+
+paths:
+  /bpn-directory:
+    get:
+      summary: Retrieve BPN-L/DID mapping entries
+      description: Returns for each registered legal entity participating in the dataspace the mapping from their BPN-L to the DID used in the dataspace.
+      responses:
+        '200':
+          description: Gzipped binary stream containing mapping entries. The object contains BPN-Ls as keys and DIDs as values
+          content:
+            application/gzip:
+              schema:
+                type: object
+                format: binary
+                example:
+                  "BPNL4711": "did:web:example.com"
+        '401':
+          description: Either no authentication information is provided or the provided VP is not accepted.

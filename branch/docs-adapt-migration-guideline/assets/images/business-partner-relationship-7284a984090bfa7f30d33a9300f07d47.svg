@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="189.5833px" preserveAspectRatio="none" style="width:248px;height:189px;background:#FFFFFF;" version="1.1" viewBox="0 0 248 189" width="248.4375px" zoomAndPan="magnify"><defs/><g><!--MD5=[cc1fe57cca98a70f0e68a36b0f9235d2]
+cluster Business Partner Relationship and References--><g id="cluster_Business Partner Relationship and References"><path d="M4.4271,3.125 L176.3021,3.125 A1.9531,1.9531 0 0 1 177.6042,4.4271 L181.25,15.4215 L243.4896,15.4215 A1.3021,1.3021 0 0 1 244.7917,16.7236 L244.7917,184.6354 A1.3021,1.3021 0 0 1 243.4896,185.9375 L4.4271,185.9375 A1.3021,1.3021 0 0 1 3.125,184.6354 L3.125,4.4271 A1.3021,1.3021 0 0 1 4.4271,3.125 " style="stroke:#000000;stroke-width:0.78125;fill:none;"/><line style="stroke:#000000;stroke-width:0.78125;fill:none;" x1="3.125" x2="181.25" y1="15.4215" y2="15.4215"/><text fill="#000000" font-family="sans-serif" font-size="7.2917" font-weight="bold" lengthAdjust="spacing" textLength="171.3542" x="5.2083" y="11.736">Business Partner Relationship and References</text></g><!--MD5=[c637aa948e80933875c54e7f5e23ee1d]
+class BusinessPartner--><g id="elem_BusinessPartner"><rect codeLine="5" fill="#F1F1F1" height="66.6911" id="BusinessPartner" rx="1.3021" ry="1.3021" style="stroke:#181818;stroke-width:0.2604166666666667;" width="72.9167" x="11.4583" y="21.875"/><ellipse cx="20.2083" cy="30.2083" fill="#ADD1B2" rx="5.7292" ry="5.7292" style="stroke:#181818;stroke-width:0.5208333333333334;"/><path d="M19.6143,30.6234 L19.6143,31.9255 L21.8685,31.9255 L21.8685,31.4453 Q21.8685,31.1279 21.9906,30.9896 Q22.1208,30.8512 22.3161,30.8512 Q22.5114,30.8512 22.6335,30.9896 Q22.7555,31.1279 22.7555,31.4453 L22.7555,32.8125 L18.5889,32.8125 Q18.2633,32.8125 18.125,32.6904 Q17.9948,32.5684 17.9948,32.3649 Q17.9948,32.1696 18.1331,32.0475 Q18.2715,31.9255 18.5889,31.9255 L18.7272,31.9255 L18.7272,28.4587 L18.5889,28.4587 Q18.2633,28.4587 18.125,28.3366 Q17.9948,28.2145 17.9948,28.0111 Q17.9948,27.8158 18.125,27.6937 Q18.2633,27.5716 18.5889,27.5716 L22.5602,27.5716 L22.5602,28.9225 Q22.5602,29.2399 22.4382,29.3783 Q22.3242,29.5085 22.1208,29.5085 Q21.9255,29.5085 21.8034,29.3783 Q21.6813,29.2399 21.6813,28.9225 L21.6813,28.4587 L19.6143,28.4587 L19.6143,29.7363 L20.3874,29.7363 Q20.3874,29.3945 20.4525,29.2969 Q20.5908,29.0853 20.835,29.0853 Q21.0303,29.0853 21.1523,29.2236 Q21.2744,29.3538 21.2744,29.6712 L21.2744,30.6966 Q21.2744,30.9814 21.2093,31.0791 Q21.071,31.2826 20.835,31.2826 Q20.5908,31.2826 20.4525,31.071 Q20.3874,30.9733 20.3874,30.6234 L19.6143,30.6234 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="54.1667" x="27.7083" y="33.1919">BusinessPartner</text><line style="stroke:#181818;stroke-width:0.2604166666666667;" x1="11.9792" x2="83.8542" y1="38.5417" y2="38.5417"/><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="33.3333" x="14.5833" y="48.1944">ExternalID</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="35.9375" x="14.5833" y="57.3659">NameParts</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="66.6667" x="14.5833" y="66.5375">IsOwnCompanyData</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="33.3333" x="14.5833" y="75.709">CreatedAt</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="30.2083" x="14.5833" y="84.8806">UpdateAt</text></g><!--MD5=[1953524a98d12e5f91a6bd17d714c07f]
+class BusinessPartnerRelationship--><g id="elem_BusinessPartnerRelationship"><rect codeLine="13" fill="#F1F1F1" height="48.348" id="BusinessPartnerRelationship" rx="1.3021" ry="1.3021" style="stroke:#181818;stroke-width:0.2604166666666667;" width="111.4583" x="125" y="30.9896"/><ellipse cx="132.8125" cy="39.3229" fill="#ADD1B2" rx="5.7292" ry="5.7292" style="stroke:#181818;stroke-width:0.5208333333333334;"/><path d="M132.2184,39.738 L132.2184,41.04 L134.4727,41.04 L134.4727,40.5599 Q134.4727,40.2425 134.5947,40.1042 Q134.7249,39.9658 134.9202,39.9658 Q135.1156,39.9658 135.2376,40.1042 Q135.3597,40.2425 135.3597,40.5599 L135.3597,41.9271 L131.193,41.9271 Q130.8675,41.9271 130.7292,41.805 Q130.599,41.6829 130.599,41.4795 Q130.599,41.2842 130.7373,41.1621 Q130.8757,41.04 131.193,41.04 L131.3314,41.04 L131.3314,37.5732 L131.193,37.5732 Q130.8675,37.5732 130.7292,37.4512 Q130.599,37.3291 130.599,37.1257 Q130.599,36.9303 130.7292,36.8083 Q130.8675,36.6862 131.193,36.6862 L135.1644,36.6862 L135.1644,38.0371 Q135.1644,38.3545 135.0423,38.4928 Q134.9284,38.623 134.7249,38.623 Q134.5296,38.623 134.4076,38.4928 Q134.2855,38.3545 134.2855,38.0371 L134.2855,37.5732 L132.2184,37.5732 L132.2184,38.8509 L132.9915,38.8509 Q132.9915,38.5091 133.0566,38.4115 Q133.195,38.1999 133.4391,38.1999 Q133.6344,38.1999 133.7565,38.3382 Q133.8786,38.4684 133.8786,38.7858 L133.8786,39.8112 Q133.8786,40.096 133.8135,40.1937 Q133.6751,40.3971 133.4391,40.3971 Q133.195,40.3971 133.0566,40.1855 Q132.9915,40.0879 132.9915,39.738 L132.2184,39.738 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="94.7917" x="140.1042" y="42.3065">BusinessPartnerRelationship</text><line style="stroke:#181818;stroke-width:0.2604166666666667;" x1="125.5208" x2="235.9375" y1="47.6563" y2="47.6563"/><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="33.3333" x="128.125" y="57.309">ExternalID</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="33.3333" x="128.125" y="66.4805">CreatedAt</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="30.2083" x="128.125" y="75.6521">UpdateAt</text></g><!--MD5=[3441e6d45de97983b0ef2de63ac3bfdb]
+class BusinessPartnerRelationshipType--><g id="elem_BusinessPartnerRelationshipType"><rect codeLine="21" fill="#F1F1F1" height="48.348" id="BusinessPartnerRelationshipType" rx="1.3021" ry="1.3021" style="stroke:#181818;stroke-width:0.2604166666666667;" width="128.125" x="108.3333" y="129.1667"/><ellipse cx="116.1458" cy="137.5" fill="#EB937F" rx="5.7292" ry="5.7292" style="stroke:#181818;stroke-width:0.5208333333333334;"/><path d="M115.5518,137.915 L115.5518,139.2171 L117.806,139.2171 L117.806,138.737 Q117.806,138.4196 117.9281,138.2813 Q118.0583,138.1429 118.2536,138.1429 Q118.4489,138.1429 118.571,138.2813 Q118.693,138.4196 118.693,138.737 L118.693,140.1042 L114.5264,140.1042 Q114.2008,140.1042 114.0625,139.9821 Q113.9323,139.86 113.9323,139.6566 Q113.9323,139.4613 114.0706,139.3392 Q114.209,139.2171 114.5264,139.2171 L114.6647,139.2171 L114.6647,135.7503 L114.5264,135.7503 Q114.2008,135.7503 114.0625,135.6283 Q113.9323,135.5062 113.9323,135.3027 Q113.9323,135.1074 114.0625,134.9854 Q114.2008,134.8633 114.5264,134.8633 L118.4977,134.8633 L118.4977,136.2142 Q118.4977,136.5316 118.3757,136.6699 Q118.2617,136.8001 118.0583,136.8001 Q117.863,136.8001 117.7409,136.6699 Q117.6188,136.5316 117.6188,136.2142 L117.6188,135.7503 L115.5518,135.7503 L115.5518,137.028 L116.3249,137.028 Q116.3249,136.6862 116.39,136.5885 Q116.5283,136.377 116.7725,136.377 Q116.9678,136.377 117.0898,136.5153 Q117.2119,136.6455 117.2119,136.9629 L117.2119,137.9883 Q117.2119,138.2731 117.1468,138.3708 Q117.0085,138.5742 116.7725,138.5742 Q116.5283,138.5742 116.39,138.3626 Q116.3249,138.265 116.3249,137.915 L115.5518,137.915 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="111.4583" x="123.4375" y="140.4836">BusinessPartnerRelationshipType</text><line style="stroke:#181818;stroke-width:0.2604166666666667;" x1="108.8542" x2="235.9375" y1="145.8333" y2="145.8333"/><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="87.5" x="111.4583" y="155.486">IsRegisteredAlternativeFor</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="44.2708" x="111.4583" y="164.6576">IsManagedBy</text><text fill="#000000" font-family="sans-serif" font-size="7.2917" lengthAdjust="spacing" textLength="44.7917" x="111.4583" y="173.8291">IsReplacedBy</text></g><!--MD5=[8d320d1a6f298a5ca1a42ac6c02b74d2]
+reverse link BusinessPartner to BusinessPartnerRelationship--><g id="link_BusinessPartner_BusinessPartnerRelationship"><path codeLine="27" d="M87.349,65.0885 C89.8594,65.5052 92.3542,65.8646 94.7917,66.1458 C104.5052,67.2656 114.8229,67.1094 124.8177,66.2552 " fill="none" id="BusinessPartner-backto-BusinessPartnerRelationship" style="stroke:#181818;stroke-width:0.5208333333333334;"/><polygon fill="#181818" points="84.625,64.6094,88.8862,67.4651,87.1907,65.0556,89.6001,63.36,84.625,64.6094" style="stroke:#181818;stroke-width:0.5208333333333334;"/><text fill="#000000" font-family="sans-serif" font-size="6.7708" lengthAdjust="spacing" textLength="18.75" x="95.3125" y="64.3204">Target</text><text fill="#000000" font-family="sans-serif" font-size="6.7708" lengthAdjust="spacing" textLength="3.6458" x="88.5985" y="63.8527">1</text><text fill="#000000" font-family="sans-serif" font-size="6.7708" lengthAdjust="spacing" textLength="2.6042" x="118.1907" y="65.4439">*</text></g><!--MD5=[8d320d1a6f298a5ca1a42ac6c02b74d2]
+reverse link BusinessPartner to BusinessPartnerRelationship--><g id="link_BusinessPartner_BusinessPartnerRelationship"><path codeLine="28" d="M87.0521,55.2083 C98.9115,55.2083 112.1771,55.2083 124.9063,55.2083 " fill="none" id="BusinessPartner-backto-BusinessPartnerRelationship-1" style="stroke:#181818;stroke-width:0.5208333333333334;"/><polygon fill="#181818" points="84.3854,55.2083,89.0729,57.2917,86.9896,55.2083,89.0729,53.125,84.3854,55.2083" style="stroke:#181818;stroke-width:0.5208333333333334;"/><text fill="#000000" font-family="sans-serif" font-size="6.7708" lengthAdjust="spacing" textLength="21.3542" x="94.0104" y="51.8204">Source</text><text fill="#000000" font-family="sans-serif" font-size="6.7708" lengthAdjust="spacing" textLength="3.6458" x="88.5736" y="53.4567">1</text><text fill="#000000" font-family="sans-serif" font-size="6.7708" lengthAdjust="spacing" textLength="2.6042" x="118.2855" y="53.6203">*</text></g><!--MD5=[6b371a153771764468057e4f0e20a2af]
+link BusinessPartnerRelationship to BusinessPartnerRelationshipType--><g id="link_BusinessPartnerRelationship_BusinessPartnerRelationshipType"><path codeLine="29" d="M178.6927,79.4896 C177.474,93.6615 175.9271,111.6823 174.6719,126.3177 " fill="none" id="BusinessPartnerRelationship-to-BusinessPartnerRelationshipType" style="stroke:#181818;stroke-width:0.5208333333333334;"/><polygon fill="#181818" points="174.4427,129.0104,176.9198,124.5186,174.6657,126.4158,172.7685,124.1617,174.4427,129.0104" style="stroke:#181818;stroke-width:0.5208333333333334;"/><text fill="#000000" font-family="sans-serif" font-size="6.7708" lengthAdjust="spacing" textLength="14.5833" x="177.0833" y="111.7162">Type</text><text fill="#000000" font-family="sans-serif" font-size="6.7708" lengthAdjust="spacing" textLength="2.6042" x="175.6191" y="90.5379">*</text><text fill="#000000" font-family="sans-serif" font-size="6.7708" lengthAdjust="spacing" textLength="3.6458" x="170.8298" y="123.5338">1</text></g><!--MD5=[c7db0f8f02095848a2a6ddbd8323ecc2]
+@startuml business-partner-relationship
+
+skinparam dpi 50
+
+package "Business Partner Relationship and References" {
+  entity BusinessPartner {
+    ExternalID
+    NameParts
+    IsOwnCompanyData
+    CreatedAt
+    UpdateAt
+  }
+
+  entity BusinessPartnerRelationship {
+    ExternalID
+    CreatedAt
+    UpdateAt
+    'ValidFrom
+    'ValidTo
+  }
+
+  enum BusinessPartnerRelationshipType {
+    IsRegisteredAlternativeFor
+    IsManagedBy
+    IsReplacedBy
+  }
+
+  BusinessPartnerRelationship "*" -l-> "1" BusinessPartner : Target
+  BusinessPartnerRelationship "*" -l-> "1" BusinessPartner : Source
+  BusinessPartnerRelationship "*" -d-> "1" BusinessPartnerRelationshipType : Type
+  
+}
+
+hide methods
+hide BusinessPartnerRelationship methods
+@enduml
+
+@startuml business-partner-relationship
+
+skinparam dpi 50
+
+package "Business Partner Relationship and References" {
+  entity BusinessPartner {
+    ExternalID
+    NameParts
+    IsOwnCompanyData
+    CreatedAt
+    UpdateAt
+  }
+
+  entity BusinessPartnerRelationship {
+    ExternalID
+    CreatedAt
+    UpdateAt
+  }
+
+  enum BusinessPartnerRelationshipType {
+    IsRegisteredAlternativeFor
+    IsManagedBy
+    IsReplacedBy
+  }
+
+  BusinessPartnerRelationship "*" -l-> "1" BusinessPartner : Target
+  BusinessPartnerRelationship "*" -l-> "1" BusinessPartner : Source
+  BusinessPartnerRelationship "*" -d-> "1" BusinessPartnerRelationshipType : Type
+  
+}
+
+hide methods
+hide BusinessPartnerRelationship methods
+@enduml
+
+PlantUML version 1.2022.5(Sat Apr 30 12:55:52 CEST 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: Cp1252
+Language: en
+Country: GB
+--></g></svg>

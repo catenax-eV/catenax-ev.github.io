@@ -1,0 +1,72 @@
+{
+  "@context": [
+    "https://w3id.org/catenax/2025/9/policy/odrl.jsonld",
+    "https://w3id.org/catenax/2025/9/policy/context.jsonld"
+  ],
+  "@type": "Set",
+  "@id": "some-id",
+  "permission": [
+    {
+      "action": "use",
+      "constraint": [
+        {
+          "and": [
+        {
+          "leftOperand": "FrameworkAgreement",
+          "operator": "eq", 
+          "rightOperand": "DataExchangeGovernance:1.0"
+        },
+        {
+          "leftOperand": "UsagePurpose",
+          "operator": "isAnyOf",
+          "rightOperand": [
+            "cx.core.digitalTwinRegistry:1",
+            "cx.pcf.base:1"
+          ]
+        },
+        {
+          "leftOperand": "DataUsageEndDefinition",
+          "operator": "eq",
+          "rightOperand": "cx.dataUsageEnd.unlimited"
+        }
+        ]
+       }
+      ]
+     }
+   ],
+  "prohibition": [
+    {
+      "action": "use",
+      "constraint": [
+        {
+          "and": [
+        {
+          "leftOperand": "UsageRestriction",
+          "operator": "isAllOf",
+          "rightOperand": [
+            "cx.thirdParty.forbidden:1",
+            "cx.manipulation.forbidden:1"
+          ]
+        }
+        ]
+        }
+      ]
+    }
+  ],
+  "obligation": [
+    {
+      "action": "use",
+      "constraint": [
+        {
+          "and": [
+        {
+          "leftOperand": "DataProvisioningEndDate",
+          "operator": "eq",
+          "rightOperand": "2023-10-04T12:30:00Z"
+        }
+      ]
+      }
+    ]
+    }
+  ]
+}

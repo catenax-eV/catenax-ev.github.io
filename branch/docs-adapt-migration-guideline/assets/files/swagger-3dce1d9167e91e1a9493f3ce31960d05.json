@@ -1,0 +1,3914 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Org.Eclipse.TractusX.Portal.Backend.Apps.Service",
+    "version": "v2"
+  },
+  "paths": {
+    "/api/apps/AppChange/{appId}/role/activeapp": {
+      "post": {
+        "tags": [
+          "AppChange"
+        ],
+        "summary": "dd role and role description for Active App (Authorization required - Roles: edit_apps)",
+        "description": "Example: POST: /api/apps/appchange/{appId}/role/activeapp",
+        "parameters": [
+          {
+            "name": "appId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/AppUserRole"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "created role and role description successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AppRoleData"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "If sub claim is empty/invalid or user does not exist, or any other parameters are invalid.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "App does not exist.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "User not associated with provider company.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "App provider company not set.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          },
+          "401": {
+            "description": "The User is unauthorized"
+          }
+        }
+      }
+    },
+    "/api/apps/AppReleaseProcess/updateapp/{appId}": {
+      "put": {
+        "tags": [
+          "AppReleaseProcess"
+        ],
+        "summary": "Add app details to a newly created owned app under the app release/publishing process. (Authorization required - Roles: app_management)",
+        "description": "Example: PUT: /api/apps/appreleaseprocess/updateapp/74BA5AEF-1CC7-495F-ABAA-CF87840FA6E2",
+        "parameters": [
+          {
+            "name": "appId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AppEditableDetail"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "App was successfully updated."
+          },
+          "400": {
+            "description": "If sub claim is empty/invalid or user does not exist, or any other parameters are invalid.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "App does not exist.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "User does not have edit permission.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "App is in incorrect state.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          },
+          "401": {
+            "description": "The User is unauthorized"
+          }
+        }
+      }
+    },
+    "/api/apps/AppReleaseProcess/updateappdoc/{appId}/documentType/{documentTypeId}/documents": {
+      "put": {
+        "tags": [
+          "AppReleaseProcess"
+        ],
+        "summary": "Upload document for active apps in the marketplace for given appId for same company as user (Authorization required - Roles: app_management)",
+        "description": "Example: PUT: /api/apps/appreleaseprocess/updateappdoc/{appId}/documentType/{documentTypeId}/documents",
+        "parameters": [
+          {
+            "name": "appId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "documentTypeId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/DocumentTypeId"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "document": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "ContentType": {
+                  "style": "form"
+                },
+                "ContentDisposition": {
+                  "style": "form"
+                },
+                "Headers": {
+                  "style": "form"
+                },
+                "Length": {
+                  "style": "form"
+                },
+                "Name": {
+                  "style": "form"
+                },
+                "FileName": {
+                  "style": "form"
+                }
+              }
+            },
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "document": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "ContentType": {
+                  "style": "form"
+                },
+                "ContentDisposition": {
+                  "style": "form"
+                },
+                "Headers": {
+                  "style": "form"
+                },
+                "Length": {
+                  "style": "form"
+                },
+                "Name": {
+                  "style": "form"
+                },
+                "FileName": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Successfully uploaded the document",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NoContentResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "If sub claim is empty/invalid or user does not exist, or any other parameters are invalid.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "App does not exist.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "The user is not assigned with the app.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Offer is in incorrect state.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Only PDF files are supported.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          },
+          "401": {
+            "description": "The User is unauthorized"
+          }
+        }
+      }
+    },
+    "/api/apps/AppReleaseProcess/{appId}/role": {
+      "post": {
+        "tags": [
+          "AppReleaseProcess"
+        ],
+        "summary": "Add role and role description for App (Authorization required - Roles: edit_apps)",
+        "description": "Example: POST: /api/apps/appreleaseprocess/{appId}/role",
+        "parameters": [
+          {
+            "name": "appId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/AppUserRole"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "created role and role description successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AppRoleData"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "If sub claim is empty/invalid or user does not exist, or any other parameters are invalid.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "App does not exist.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "User not associated with provider company",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          },
+          "401": {
+            "description": "The User is unauthorized"
+          }
+        }
+      }
+    },
+    "/api/apps/AppReleaseProcess/agreementData": {
+      "get": {
+        "tags": [
+          "AppReleaseProcess"
+        ],
+        "summary": "Return Agreement Data for offer_type_id App (Authorization required - Roles: edit_apps)",
+        "description": "Example: GET: /api/apps/appreleaseprocess/agreementData",
+        "responses": {
+          "200": {
+            "description": "Returns the Cpllection of agreement data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AgreementDocumentData"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          },
+          "401": {
+            "description": "The User is unauthorized"
+          }
+        }
+      }
+    },
+    "/api/apps/AppReleaseProcess/consent/{appId}": {
+      "get": {
+        "tags": [
+          "AppReleaseProcess"
+        ],
+        "summary": "Gets the agreement consent status for the given app id (Authorization required - Roles: edit_apps)",
+        "description": "Example: GET: /api/apps/appreleaseprocess/consent/{appId}",
+        "parameters": [
+          {
+            "name": "appId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns the Offer Agreement Consent data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OfferAgreementConsent"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "App does not exist.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "User not associated with offer.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          },
+          "401": {
+            "description": "The User is unauthorized"
+          }
+        }
+      }
+    },
+    "/api/apps/AppReleaseProcess/consent/{appId}/agreementConsents": {
+      "post": {
+        "tags": [
+          "AppReleaseProcess"
+        ],
+        "summary": "Update or Insert Consent (Authorization required - Roles: edit_apps)",
+        "description": "Example: POST: /api/apps/appreleaseprocess/consent/{appId}/agreementConsents",
+        "parameters": [
+          {
+            "name": "appId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OfferAgreementConsent"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successfully submitted consent to agreements",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ConsentStatusData"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "App does not exist.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Either the user was not found or the user is not assignable to the given application.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "App Id is incorrect.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          },
+          "401": {
+            "description": "The User is unauthorized"
+          }
+        }
+      }
+    },
+    "/api/apps/AppReleaseProcess/{appId}/appStatus": {
+      "get": {
+        "tags": [
+          "AppReleaseProcess"
+        ],
+        "summary": "Return app detail with status (Authorization required - Roles: app_management)",
+        "description": "Example: GET: /api/apps/appreleaseprocess/{appId}/appStatus",
+        "parameters": [
+          {
+            "name": "appId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Return the Offer and status data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AppProviderResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "App does not exist.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "User not associated with provider company.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          },
+          "401": {
+            "description": "The User is unauthorized"
+          }
+        }
+      }
+    },
+    "/api/apps/AppReleaseProcess/{appId}/role/{roleId}": {
+      "delete": {
+        "tags": [
+          "AppReleaseProcess"
+        ],
+        "summary": "Removes a role from persistence layer by appId and roleId. (Authorization required - Roles: edit_apps)",
+        "description": "Example: DELETE: /api/apps/appreleaseprocess/{appId}/role/{roleId}",
+        "parameters": [
+          {
+            "name": "appId",
+            "in": "path",
+            "description": "ID of the app to be deleted.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "example": "5636F9B9-C3DE-4BA5-8027-00D17A2FECFB"
+          },
+          {
+            "name": "roleId",
+            "in": "path",
+            "description": "ID of the role to be deleted.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "example": "5636F9B9-C3DE-4BA5-8027-00D17A2FECFB"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Empty response on success.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IActionResult"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Record not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Input is incorrect",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "User is not associated with provider company",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          },
+          "401": {
+            "description": "The User is unauthorized"
+          }
+        }
+      }
+    },
+    "/api/apps/AppReleaseProcess/ownCompany/salesManager": {
+      "get": {
+        "tags": [
+          "AppReleaseProcess"
+        ],
+        "summary": "Get All Users with Role of Sales Manager (Authorization required - Roles: add_apps)",
+        "description": "Example: GET: /api/apps/appreleaseprocess/ownCompany/salesManager",
+        "responses": {
+          "200": {
+            "description": "Return the Users with Role of Sales Manager.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CompanyUserNameData"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          },
+          "401": {
+            "description": "The User is unauthorized"
+          }
+        }
+      }
+    },
+    "/api/apps/AppReleaseProcess/createapp": {
+      "post": {
+        "tags": [
+          "AppReleaseProcess"
+        ],
+        "summary": "Creates an app according to request model (Authorization required - Roles: add_apps)",
+        "description": "Example: POST: /api/apps/appreleaseprocess/createapp",
+        "requestBody": {
+          "description": "Request model for app creation.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AppRequestModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Returns created app's ID.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Language Code or Use Case or CompanyId is incorrect",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "User is not associated with provider company.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          },
+          "401": {
+            "description": "The User is unauthorized"
+          }
+        }
+      }
+    },
+    "/api/apps/AppReleaseProcess/{appId}": {
+      "put": {
+        "tags": [
+          "AppReleaseProcess"
+        ],
+        "summary": "Updates an app according to request model (Authorization required - Roles: edit_apps)",
+        "description": "Example: PUT: /api/apps/appreleaseprocess/15507472-dfdc-4885-b165-8d4a8970a3e2",
+        "parameters": [
+          {
+            "name": "appId",
+            "in": "path",
+            "description": "Id of the app to update",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "example": "15507472-dfdc-4885-b165-8d4a8970a3e2"
+          }
+        ],
+        "requestBody": {
+          "description": "Request model for app creation.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AppRequestModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Language Code or Use Case or CompanyId is incorrect",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "App does not exist",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "User don't have permission to change the app.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Offer is in inCorrect State.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Returns created app's ID."
+          },
+          "500": {
+            "description": "Internal Server Error"
+          },
+          "401": {
+            "description": "The User is unauthorized"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "AppReleaseProcess"
+        ],
+        "summary": "Delete App by Id (Authorization required - Roles: edit_apps)",
+        "description": "Example: DELETE: /api/apps/appreleaseprocess/{appId}",
+        "parameters": [
+          {
+            "name": "appId",
+            "in": "path",
+            "description": "ID of the app to be deleted.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "example": "5636F9B9-C3DE-4BA5-8027-00D17A2FECFB"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Empty response on success.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IActionResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Input is incorrect.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "User is not associated with provider company.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Record not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          },
+          "401": {
+            "description": "The User is unauthorized"
+          }
+        }
+      }
+    },
+    "/api/apps/AppReleaseProcess/inReview": {
+      "get": {
+        "tags": [
+          "AppReleaseProcess"
+        ],
+        "summary": "Retrieves all in review status apps in the marketplace . (Authorization required - Roles: approve_app_release,decline_app_release)",
+        "description": "Example: GET: /api/apps/appreleaseprocess/inReview",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "description": "page index start from 0",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 0
+            }
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "description": "size to get number of records",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 15
+            }
+          },
+          {
+            "name": "sorting",
+            "in": "query",
+            "description": "sort by",
+            "schema": {
+              "$ref": "#/components/schemas/OfferSorting"
+            }
+          },
+          {
+            "name": "offerStatusIdFilter",
+            "in": "query",
+            "description": "Filter by offerStatusId",
+            "schema": {
+              "$ref": "#/components/schemas/OfferStatusIdFilter"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns the list of all in review status marketplace apps.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InReviewAppDataResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          },
+          "401": {
+            "description": "The User is unauthorized"
+          }
+        }
+      }
+    },
+    "/api/apps/AppReleaseProcess/{appId}/submit": {
+      "put": {
+        "tags": [
+          "AppReleaseProcess"
+        ],
+        "summary": "Submit an app for release (Authorization required - Roles: add_apps)",
+        "description": "Example: PUT: /api/apps/appreleaseprocess/D3B1ECA2-6148-4008-9E6C-C1C2AEA5C645/submit",
+        "parameters": [
+          {
+            "name": "appId",
+            "in": "path",
+            "description": "ID of the app.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "example": "D3B1ECA2-6148-4008-9E6C-C1C2AEA5C645"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "The app was successfully submitted for release."
+          },
+          "400": {
+            "description": "Either the sub claim is empty/invalid, user does not exist or the subscription might not have the correct status or the companyID is incorrect.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "App does not exist.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "User not associated with company",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          },
+          "401": {
+            "description": "The User is unauthorized"
+          }
+        }
+      }
+    },
+    "/api/apps/AppReleaseProcess/{appId}/approveApp": {
+      "put": {
+        "tags": [
+          "AppReleaseProcess"
+        ],
+        "summary": "Approve App to change status from IN_REVIEW to Active and create notification (Authorization required - Roles: approve_app_release)",
+        "description": "Example: PUT: /api/apps/appreleaseprocess/D3B1ECA2-6148-4008-9E6C-C1C2AEA5C645/approveApp",
+        "parameters": [
+          {
+            "name": "appId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "The app was successfully submitted to Active State."
+          },
+          "404": {
+            "description": "App does not exist.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "App is in InCorrect Status",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "The User is unauthorized"
+          }
+        }
+      }
+    },
+    "/api/apps/AppReleaseProcess/privacyPolicies": {
+      "get": {
+        "tags": [
+          "AppReleaseProcess"
+        ],
+        "summary": "Retrieve Privacy Policies (Authorization required - Roles: add_apps)",
+        "description": "Example: GET: /api/apps/appreleaseprocess/privacyPolicies",
+        "responses": {
+          "200": {
+            "description": "Return the privacy policies",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PrivacyPolicyData"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          },
+          "401": {
+            "description": "The User is unauthorized"
+          }
+        }
+      }
+    },
+    "/api/apps/AppReleaseProcess/{appId}/declineApp": {
+      "put": {
+        "tags": [
+          "AppReleaseProcess"
+        ],
+        "summary": "Declines the app request (Authorization required - Roles: decline_app_release)",
+        "description": "Example: PUT: /api/apps/appreleaseprocess/D3B1ECA2-6148-4008-9E6C-C1C2AEA5C645/declineApp",
+        "parameters": [
+          {
+            "name": "appId",
+            "in": "path",
+            "description": "Id of the app that should be declined",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "example": "D3B1ECA2-6148-4008-9E6C-C1C2AEA5C645"
+          }
+        ],
+        "requestBody": {
+          "description": "the data of the decline request",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OfferDeclineRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "NoContent."
+          },
+          "400": {
+            "description": "If sub claim is empty/invalid or user does not exist.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "If app does not exists.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "User does not have permission to change the app",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Offer is in incorrect state",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "The User is unauthorized"
+          }
+        }
+      }
+    },
+    "/api/apps/AppReleaseProcess/inReview/{appId}": {
+      "get": {
+        "tags": [
+          "AppReleaseProcess"
+        ],
+        "summary": "Gets InReview app details for an app referenced by id. (Authorization required - Roles: approve_app_release,decline_app_release)",
+        "description": "Example: GET: /api/apps/appreleaseprocess/inReview/D3B1ECA2-6148-4008-9E6C-C1C2AEA5C645",
+        "parameters": [
+          {
+            "name": "appId",
+            "in": "path",
+            "description": "ID of the app to retrieve.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "example": "D3B1ECA2-6148-4008-9E6C-C1C2AEA5C645"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns the requested app details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InReviewAppDetails"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "If sub claim is empty/invalid.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "App not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          },
+          "401": {
+            "description": "The User is unauthorized"
+          }
+        }
+      }
+    },
+    "/api/apps/AppReleaseProcess/documents/{documentId}": {
+      "delete": {
+        "tags": [
+          "AppReleaseProcess"
+        ],
+        "summary": "Delete Document Assigned to Offer (Authorization required - Roles: edit_apps)",
+        "description": "Example: DELETE: /api/apps/appreleaseprocess/documents/{documentId}",
+        "parameters": [
+          {
+            "name": "documentId",
+            "in": "path",
+            "description": "ID of the document to be deleted.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Empty response on success.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IActionResult"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Record not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "User is not allowed to delete the document",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Document or App is in InCorrect Status",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "parameters are invalid.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          },
+          "401": {
+            "description": "The User is unauthorized"
+          }
+        }
+      }
+    },
+    "/api/Apps/active": {
+      "get": {
+        "tags": [
+          "Apps"
+        ],
+        "summary": "Retrieves all active apps in the marketplace. (Authorization required - Roles: view_apps)",
+        "description": "Example: GET: /api/apps/active",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "query",
+            "description": "Optional two character language specifier for the app description. Will be empty if not provided.",
+            "schema": {
+              "type": "string"
+            },
+            "example": "en"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns the list of all active marketplace apps.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AppData"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          },
+          "401": {
+            "description": "The User is unauthorized"
+          }
+        }
+      }
+    },
+    "/api/Apps/business": {
+      "get": {
+        "tags": [
+          "Apps"
+        ],
+        "summary": "Get all apps that currently logged in user has been assigned roles in. (Authorization required - Roles: view_apps)",
+        "description": "Example: GET: /api/apps/business",
+        "responses": {
+          "200": {
+            "description": "Returns the list of the user's business apps.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BusinessAppData"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          },
+          "401": {
+            "description": "The User is unauthorized"
+          }
+        }
+      }
+    },
+    "/api/Apps/{appId}": {
+      "get": {
+        "tags": [
+          "Apps"
+        ],
+        "summary": "Retrieves app details for an app referenced by id. (Authorization required - Roles: view_apps)",
+        "description": "Example: GET: /api/apps/D3B1ECA2-6148-4008-9E6C-C1C2AEA5C645",
+        "operationId": "GetAppDetailsByIdAsync",
+        "parameters": [
+          {
+            "name": "appId",
+            "in": "path",
+            "description": "ID of the app to retrieve.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "example": "D3B1ECA2-6148-4008-9E6C-C1C2AEA5C645"
+          },
+          {
+            "name": "lang",
+            "in": "query",
+            "description": "Optional two character language specifier for the app description. Will be empty if not provided.",
+            "schema": {
+              "type": "string"
+            },
+            "example": "en"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns the requested app details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AppDetailResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "App not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          },
+          "401": {
+            "description": "The User is unauthorized"
+          }
+        }
+      }
+    },
+    "/api/Apps": {
+      "post": {
+        "tags": [
+          "Apps"
+        ],
+        "summary": "Creates an app according to input model. (Authorization required - Roles: add_apps)",
+        "description": "Example: POST: /api/apps",
+        "requestBody": {
+          "description": "Input model for app creation.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AppInputModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Returns created app's ID.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          },
+          "401": {
+            "description": "The User is unauthorized"
+          }
+        }
+      }
+    },
+    "/api/Apps/favourites": {
+      "get": {
+        "tags": [
+          "Apps"
+        ],
+        "summary": "Retrieves IDs of all favourite apps of the current user (by sub claim). (Authorization required - Roles: view_apps)",
+        "description": "Example: GET: /api/apps/favourites",
+        "responses": {
+          "200": {
+            "description": "Returns the list of favourite apps of current user.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "format": "uuid"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "If sub claim is empty/invalid."
+          },
+          "500": {
+            "description": "Internal Server Error"
+          },
+          "401": {
+            "description": "The User is unauthorized"
+          }
+        }
+      }
+    },
+    "/api/Apps/{appId}/favourite": {
+      "post": {
+        "tags": [
+          "Apps"
+        ],
+        "summary": "Adds an app to current user's favourites. (Authorization required - Roles: view_apps)",
+        "description": "Example: POST: /api/apps/D3B1ECA2-6148-4008-9E6C-C1C2AEA5C645/favourite",
+        "parameters": [
+          {
+            "name": "appId",
+            "in": "path",
+            "description": "ID of the app to add to user favourites.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "example": "D3B1ECA2-6148-4008-9E6C-C1C2AEA5C645"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Favourite app was successfully added to user."
+          },
+          "400": {
+            "description": "If sub claim is empty/invalid or user does not exist.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          },
+          "401": {
+            "description": "The User is unauthorized"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Apps"
+        ],
+        "summary": "Removes an app from current user's favourites. (Authorization required - Roles: view_apps)",
+        "description": "Example: DELETE: /api/apps/D3B1ECA2-6148-4008-9E6C-C1C2AEA5C645/favourite",
+        "parameters": [
+          {
+            "name": "appId",
+            "in": "path",
+            "description": "ID of the app to remove from user favourites.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "example": "D3B1ECA2-6148-4008-9E6C-C1C2AEA5C645"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Favourite app was successfully removed from user."
+          },
+          "400": {
+            "description": "If sub claim is empty/invalid or user does not exist.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          },
+          "401": {
+            "description": "The User is unauthorized"
+          }
+        }
+      }
+    },
+    "/api/Apps/subscribed/subscription-status": {
+      "get": {
+        "tags": [
+          "Apps"
+        ],
+        "summary": "Retrieves subscription statuses of subscribed apps of the currently logged in user's company. (Authorization required - Roles: view_subscription)",
+        "description": "Example: GET: /api/apps/subscribed/subscription-status",
+        "responses": {
+          "200": {
+            "description": "Returns list of applicable app subscription statuses.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/GuidOfferSubscriptionStatusIdValueTuple"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          },
+          "401": {
+            "description": "The User is unauthorized"
+          }
+        }
+      }
+    },
+    "/api/Apps/provided/subscription-status": {
+      "get": {
+        "tags": [
+          "Apps"
+        ],
+        "summary": "Retrieves subscription statuses of provided apps of the currently logged in user's company. (Authorization required - Roles: view_app_subscription)",
+        "description": "Example: GET: /api/apps/provided/subscription-status",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 0
+            }
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 15
+            }
+          },
+          {
+            "name": "sorting",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/SubscriptionStatusSorting"
+            }
+          },
+          {
+            "name": "statusId",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/OfferSubscriptionStatusId"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns list of applicable app subscription statuses.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OfferCompanySubscriptionStatusDataResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          },
+          "401": {
+            "description": "The User is unauthorized"
+          }
+        }
+      }
+    },
+    "/api/Apps/{appId}/subscribe": {
+      "post": {
+        "tags": [
+          "Apps"
+        ],
+        "summary": "Adds an app to current user's company's subscriptions. (Authorization required - Roles: subscribe_apps)",
+        "description": "Example: POST: /api/apps/D3B1ECA2-6148-4008-9E6C-C1C2AEA5C645/subscribe",
+        "parameters": [
+          {
+            "name": "appId",
+            "in": "path",
+            "description": "ID of the app to subscribe to.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "example": "D3B1ECA2-6148-4008-9E6C-C1C2AEA5C645"
+          }
+        ],
+        "requestBody": {
+          "description": "The agreement consent data",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/OfferAgreementConsentData"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "App was successfully subscribed to."
+          },
+          "400": {
+            "description": "If sub claim is empty/invalid or user does not exist.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "If appId does not exist.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "The User is unauthorized"
+          }
+        }
+      }
+    },
+    "/api/Apps/appAgreementData/{appId}": {
+      "get": {
+        "tags": [
+          "Apps"
+        ],
+        "summary": "Gets all agreements (Authorization required - Roles: subscribe_apps)",
+        "description": "Example: GET: /api/apps/appAgreementData/D3B1ECA2-6148-4008-9E6C-C1C2AEA5C645",
+        "parameters": [
+          {
+            "name": "appId",
+            "in": "path",
+            "description": "Id for the app consent to retrieve.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "example": "D3B1ECA2-6148-4008-9E6C-C1C2AEA5C645"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns the app agreement data.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AgreementData"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          },
+          "401": {
+            "description": "The User is unauthorized"
+          }
+        }
+      }
+    },
+    "/api/Apps/{appId}/subscription/company/{companyId}/activate": {
+      "put": {
+        "tags": [
+          "Apps"
+        ],
+        "summary": "Activates a pending app subscription for an app provided by the current user's company. (Authorization required - Roles: activate_subscription)",
+        "description": "Example: PUT: /api/apps/D3B1ECA2-6148-4008-9E6C-C1C2AEA5C645/supscription/company/74BA5AEF-1CC7-495F-ABAA-CF87840FA6E2/activate",
+        "parameters": [
+          {
+            "name": "appId",
+            "in": "path",
+            "description": "ID of the app to activate subscription for.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "example": "D3B1ECA2-6148-4008-9E6C-C1C2AEA5C645"
+          },
+          {
+            "name": "companyId",
+            "in": "path",
+            "description": "ID of the company to activate subscription for.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "example": "74BA5AEF-1CC7-495F-ABAA-CF87840FA6E2"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "App subscription was successfully activated."
+          },
+          "400": {
+            "description": "If sub claim is empty/invalid or user does not exist, or any other parameters are invalid.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "App does not exist.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "App Name not set.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "The User is unauthorized"
+          }
+        }
+      }
+    },
+    "/api/Apps/{appId}/unsubscribe": {
+      "put": {
+        "tags": [
+          "Apps"
+        ],
+        "summary": "Unsubscribes an app from the current user's company's subscriptions. (Authorization required - Roles: unsubscribe_apps)",
+        "description": "Example: PUT: /api/apps/D3B1ECA2-6148-4008-9E6C-C1C2AEA5C645/unsubscribe",
+        "parameters": [
+          {
+            "name": "appId",
+            "in": "path",
+            "description": "ID of the app to unsubscribe from.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "example": "D3B1ECA2-6148-4008-9E6C-C1C2AEA5C645"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "The app was successfully unsubscribed from."
+          },
+          "400": {
+            "description": "Either the sub claim is empty/invalid, user does not exist or the subscription might not have the correct status or the companyID is incorrect.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "App does not exist.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          },
+          "401": {
+            "description": "The User is unauthorized"
+          }
+        }
+      }
+    },
+    "/api/Apps/provided": {
+      "get": {
+        "tags": [
+          "Apps"
+        ],
+        "summary": "Get all company owned apps. (Authorization required - Roles: app_management)",
+        "description": "Example: GET: /api/apps/provided",
+        "responses": {
+          "200": {
+            "description": "Returns list of apps provided by the user assigned company.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AllOfferData"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          },
+          "401": {
+            "description": "The User is unauthorized"
+          }
+        }
+      }
+    },
+    "/api/Apps/autoSetup": {
+      "post": {
+        "tags": [
+          "Apps"
+        ],
+        "summary": "Auto setup the app (Authorization required - Roles: activate_subscription)",
+        "description": "Example: POST: /api/apps/autoSetup",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OfferAutoSetupData"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Returns the app agreement data.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OfferAutoSetupResponseData"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Offer Subscription is pending or not the providing company.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Offer Subscription not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          },
+          "401": {
+            "description": "The User is unauthorized"
+          }
+        }
+      }
+    },
+    "/api/Apps/{appId}/deactivateApp": {
+      "put": {
+        "tags": [
+          "Apps"
+        ],
+        "summary": "Deactivate the OfferStatus By appId (Authorization required - Roles: edit_apps)",
+        "description": "Example: PUT: /api/apps/3c77a395-a7e7-40f2-a519-ac16498e0a79/deactivateApp",
+        "parameters": [
+          {
+            "name": "appId",
+            "in": "path",
+            "description": "Id of the app that should be deactive",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "example": "3c77a395-a7e7-40f2-a519-ac16498e0a79"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "The App Successfully Deactivated"
+          },
+          "400": {
+            "description": "invalid or user does not exist.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "If app does not exists.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Missing Permission",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Offer is in incorrect state",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          },
+          "401": {
+            "description": "The User is unauthorized"
+          }
+        }
+      }
+    },
+    "/api/Apps/{appId}/appDocuments/{documentId}": {
+      "get": {
+        "tags": [
+          "Apps"
+        ],
+        "summary": "Retrieve Document Content for document type \"App Lead Image\" and \"App Image\" by ID (Authorization required - Roles: view_documents)",
+        "description": "Example: GET: /api/apps/{appId}/appDocuments/{documentId}",
+        "parameters": [
+          {
+            "name": "appId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "documentId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns the document Content",
+            "content": {
+              "image/jpeg": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              },
+              "image/png": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              },
+              "image/gif": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              },
+              "image/svg+xml": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              },
+              "image/tiff": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              },
+              "application/pdf": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Document / App id not found or document type not supported.",
+            "content": {
+              "image/jpeg": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "image/png": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "image/gif": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "image/svg+xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "image/tiff": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "application/pdf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "document not found.",
+            "content": {
+              "image/jpeg": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "image/png": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "image/gif": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "image/svg+xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "image/tiff": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "application/pdf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "UnSupported Media Type.",
+            "content": {
+              "image/jpeg": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "image/png": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "image/gif": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "image/svg+xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "image/tiff": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "application/pdf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          },
+          "401": {
+            "description": "The User is unauthorized"
+          }
+        }
+      }
+    },
+    "/api/Apps/{appId}/appupdate/description": {
+      "get": {
+        "tags": [
+          "Apps"
+        ],
+        "summary": "Get description of the app by Id. (Authorization required - Roles: edit_apps)",
+        "description": "Example: Get: /api/apps/092bdae3-a044-4314-94f4-85c65a09e31b/appupdate/description",
+        "parameters": [
+          {
+            "name": "appId",
+            "in": "path",
+            "description": "Id for the app description to retrieve.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "example": "092bdae3-a044-4314-94f4-85c65a09e31b"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "returns list of app descriptions",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LocalizedDescription"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          },
+          "401": {
+            "description": "The User is unauthorized"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Apps"
+        ],
+        "summary": "Create or Update description of the app by Id. (Authorization required - Roles: edit_apps)",
+        "description": "Example: Put: /api/apps/092bdae3-a044-4314-94f4-85c65a09e31b/appupdate/description",
+        "parameters": [
+          {
+            "name": "appId",
+            "in": "path",
+            "description": "Id for the app description to create or update.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "example": "092bdae3-a044-4314-94f4-85c65a09e31b"
+          }
+        ],
+        "requestBody": {
+          "description": "app description data to create or update.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/LocalizedDescription"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "The app description succesFully created or updated",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NoContentResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          },
+          "401": {
+            "description": "The User is unauthorized"
+          }
+        }
+      }
+    },
+    "/api/Apps/{appId}/appLeadImage": {
+      "post": {
+        "tags": [
+          "Apps"
+        ],
+        "summary": "Create offerassigned AppLeadImage document for active apps for given appId for same company as user (Authorization required - Roles: edit_apps)",
+        "description": "Example: POST: /api/apps/{appId}/appLeadImage",
+        "parameters": [
+          {
+            "name": "appId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "document": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "ContentType": {
+                  "style": "form"
+                },
+                "ContentDisposition": {
+                  "style": "form"
+                },
+                "Headers": {
+                  "style": "form"
+                },
+                "Length": {
+                  "style": "form"
+                },
+                "Name": {
+                  "style": "form"
+                },
+                "FileName": {
+                  "style": "form"
+                }
+              }
+            },
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "document": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "ContentType": {
+                  "style": "form"
+                },
+                "ContentDisposition": {
+                  "style": "form"
+                },
+                "Headers": {
+                  "style": "form"
+                },
+                "Length": {
+                  "style": "form"
+                },
+                "Name": {
+                  "style": "form"
+                },
+                "FileName": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Successfully uploaded the document",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NoContentResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "If sub claim is empty/invalid or user does not exist, or any other parameters are invalid.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "The user is not assigned with the app.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Only PNG and JPEG files are supported.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          },
+          "401": {
+            "description": "The User is unauthorized"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AgreementConsentStatus": {
+        "type": "object",
+        "properties": {
+          "agreementId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "consentStatus": {
+            "$ref": "#/components/schemas/ConsentStatusId"
+          }
+        },
+        "additionalProperties": false
+      },
+      "AgreementData": {
+        "type": "object",
+        "properties": {
+          "agreementId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "AgreementDocumentData": {
+        "type": "object",
+        "properties": {
+          "agreementId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "documentId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "AllOfferData": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "leadPictureId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "provider": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "$ref": "#/components/schemas/OfferStatusId"
+          },
+          "lastChanged": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "AppData": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Id of the App.",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the app.",
+            "nullable": true
+          },
+          "shortDescription": {
+            "type": "string",
+            "description": "Short description.",
+            "nullable": true
+          },
+          "provider": {
+            "type": "string",
+            "description": "Provider.",
+            "nullable": true
+          },
+          "price": {
+            "type": "string",
+            "description": "Price.",
+            "nullable": true
+          },
+          "leadPictureId": {
+            "type": "string",
+            "description": "Lead pircture Id.",
+            "format": "uuid"
+          },
+          "useCases": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The apps use cases.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "View model of an application's base data."
+      },
+      "AppDetailResponse": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "ID of the app.",
+            "format": "uuid"
+          },
+          "title": {
+            "type": "string",
+            "description": "Title or name of the app.",
+            "nullable": true
+          },
+          "leadPictureId": {
+            "type": "string",
+            "description": "Uri to app's lead picture.",
+            "format": "uuid"
+          },
+          "images": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "List of Images to app's secondary pictures.",
+            "nullable": true
+          },
+          "providerUri": {
+            "type": "string",
+            "description": "Uri to provider's marketing presence.",
+            "nullable": true
+          },
+          "provider": {
+            "type": "string",
+            "description": "Provider of the app.",
+            "nullable": true
+          },
+          "contactEmail": {
+            "type": "string",
+            "description": "Email address of the app's primary contact.",
+            "nullable": true
+          },
+          "contactNumber": {
+            "type": "string",
+            "description": "Phone number of the app's primary contact.",
+            "nullable": true
+          },
+          "useCases": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AppUseCaseData"
+            },
+            "description": "Names of the app's use cases.",
+            "nullable": true
+          },
+          "longDescription": {
+            "type": "string",
+            "description": "Long description of the app.",
+            "nullable": true
+          },
+          "price": {
+            "type": "string",
+            "description": "Pricing information of the app.",
+            "nullable": true
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Tags assigned to application.",
+            "nullable": true
+          },
+          "isSubscribed": {
+            "$ref": "#/components/schemas/OfferSubscriptionStatusId"
+          },
+          "languages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Languages that the app is available in.",
+            "nullable": true
+          },
+          "documents": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/DocumentData"
+              }
+            },
+            "description": "documents assigned to offer",
+            "nullable": true
+          },
+          "privacyPolicies": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PrivacyPolicyId"
+            },
+            "description": "Privacy Policies assigned to offer",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "View model of an application's detailed data."
+      },
+      "AppEditableDetail": {
+        "type": "object",
+        "properties": {
+          "descriptions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LocalizedDescription"
+            },
+            "description": "",
+            "nullable": true
+          },
+          "providerUri": {
+            "type": "string",
+            "description": "",
+            "nullable": true
+          },
+          "contactEmail": {
+            "type": "string",
+            "description": "",
+            "nullable": true
+          },
+          "contactNumber": {
+            "type": "string",
+            "description": "",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Model for updating an app."
+      },
+      "AppInputModel": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "Title or name of the app.",
+            "nullable": true
+          },
+          "provider": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "Provider of the app.",
+            "nullable": true
+          },
+          "providerUri": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "Uri to provider's marketing presence.",
+            "nullable": true
+          },
+          "appUri": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "Uri for app access.",
+            "nullable": true
+          },
+          "leadPictureUri": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "Uri to app's lead picture.",
+            "nullable": true
+          },
+          "contactEmail": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "Email address of the app's primary contact.",
+            "nullable": true
+          },
+          "contactNumber": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "Phone number of the app's primary contact.",
+            "nullable": true
+          },
+          "providerCompanyId": {
+            "type": "string",
+            "description": "ID of the app's providing company.",
+            "format": "uuid",
+            "nullable": true
+          },
+          "salesManagerId": {
+            "type": "string",
+            "description": "ID of the app's sales manager.",
+            "format": "uuid",
+            "nullable": true
+          },
+          "useCaseIds": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "IDs of app's use cases.",
+            "nullable": true
+          },
+          "descriptions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LocalizedDescription"
+            },
+            "description": "Descriptions of the app in different languages.",
+            "nullable": true
+          },
+          "supportedLanguageCodes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Two character language codes for the app's supported languages.",
+            "nullable": true
+          },
+          "price": {
+            "type": "string",
+            "description": "Pricing information of the app.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Model for requesting creation of an application."
+      },
+      "AppProviderResponse": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "description": "title of the offer",
+            "nullable": true
+          },
+          "provider": {
+            "type": "string",
+            "description": "provider name",
+            "nullable": true
+          },
+          "leadPictureId": {
+            "type": "string",
+            "description": "id of the lead picture",
+            "format": "uuid"
+          },
+          "providerName": {
+            "type": "string",
+            "description": "provider name",
+            "nullable": true
+          },
+          "useCase": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AppUseCaseData"
+            },
+            "description": "list of use cases",
+            "nullable": true
+          },
+          "descriptions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LocalizedDescription"
+            },
+            "description": "the offer descriptions",
+            "nullable": true
+          },
+          "agreements": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OfferAgreement"
+            },
+            "description": "the assigned agreements",
+            "nullable": true
+          },
+          "supportedLanguageCodes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "the supported language codes",
+            "nullable": true
+          },
+          "price": {
+            "type": "string",
+            "description": "the app price",
+            "nullable": true
+          },
+          "images": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "list of the images",
+            "nullable": true
+          },
+          "providerUri": {
+            "type": "string",
+            "description": "the provider uri",
+            "nullable": true
+          },
+          "contactEmail": {
+            "type": "string",
+            "description": "contact email",
+            "nullable": true
+          },
+          "contactNumber": {
+            "type": "string",
+            "description": "contact number",
+            "nullable": true
+          },
+          "documents": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/DocumentData"
+              }
+            },
+            "description": "list of linked documents",
+            "nullable": true
+          },
+          "salesManagerId": {
+            "type": "string",
+            "description": "id of the salesmanager",
+            "format": "uuid",
+            "nullable": true
+          },
+          "privacyPolicies": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PrivacyPolicyId"
+            },
+            "description": "the privacy policies",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Response for the app creation"
+      },
+      "AppRequestModel": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "description": "Title",
+            "nullable": true
+          },
+          "provider": {
+            "type": "string",
+            "description": "Provider",
+            "nullable": true
+          },
+          "salesManagerId": {
+            "type": "string",
+            "description": "SalesManagerId",
+            "format": "uuid",
+            "nullable": true
+          },
+          "useCaseIds": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "UseCaseIds",
+            "nullable": true
+          },
+          "descriptions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LocalizedDescription"
+            },
+            "description": "Descriptions",
+            "nullable": true
+          },
+          "supportedLanguageCodes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "SupportedLanguageCodes",
+            "nullable": true
+          },
+          "price": {
+            "type": "string",
+            "description": "Price",
+            "nullable": true
+          },
+          "privacyPolicies": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PrivacyPolicyId"
+            },
+            "description": "Price",
+            "nullable": true
+          },
+          "providerUri": {
+            "type": "string",
+            "description": "Price",
+            "nullable": true
+          },
+          "contactEmail": {
+            "type": "string",
+            "description": "Price",
+            "nullable": true
+          },
+          "contactNumber": {
+            "type": "string",
+            "description": "Price",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Request Model for App Creation."
+      },
+      "AppRoleData": {
+        "type": "object",
+        "properties": {
+          "roleId": {
+            "type": "string",
+            "description": "",
+            "format": "uuid"
+          },
+          "roleName": {
+            "type": "string",
+            "description": "",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Model for Role Data"
+      },
+      "AppUseCaseData": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "label": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "AppUserRole": {
+        "type": "object",
+        "properties": {
+          "role": {
+            "type": "string",
+            "description": "",
+            "nullable": true
+          },
+          "descriptions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AppUserRoleDescription"
+            },
+            "description": "",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Model for Input Role"
+      },
+      "AppUserRoleDescription": {
+        "type": "object",
+        "properties": {
+          "languageCode": {
+            "type": "string",
+            "description": "",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "description": "",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Model for Role Description"
+      },
+      "BusinessAppData": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "uri": {
+            "type": "string",
+            "nullable": true
+          },
+          "leadPictureId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "provider": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ClientInfoData": {
+        "type": "object",
+        "properties": {
+          "clientId": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CompanySubscriptionStatusData": {
+        "type": "object",
+        "properties": {
+          "companyId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "companyName": {
+            "type": "string",
+            "nullable": true
+          },
+          "subscriptionId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "offerSubscriptionStatus": {
+            "$ref": "#/components/schemas/OfferSubscriptionStatusId"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CompanyUserNameData": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "firstName": {
+            "type": "string",
+            "nullable": true
+          },
+          "lastName": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ConsentStatusData": {
+        "type": "object",
+        "properties": {
+          "agreementId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "consentStatus": {
+            "$ref": "#/components/schemas/ConsentStatusId"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ConsentStatusId": {
+        "enum": [
+          "ACTIVE",
+          "INACTIVE"
+        ],
+        "type": "string"
+      },
+      "DocumentData": {
+        "type": "object",
+        "properties": {
+          "documentId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "documentName": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DocumentTypeId": {
+        "enum": [
+          "CX_FRAME_CONTRACT",
+          "COMMERCIAL_REGISTER_EXTRACT",
+          "APP_CONTRACT",
+          "CONFORMITY_APPROVAL_REGISTRATION",
+          "ADDITIONAL_DETAILS",
+          "APP_LEADIMAGE",
+          "APP_IMAGE",
+          "SELF_DESCRIPTION",
+          "APP_TECHNICAL_INFORMATION",
+          "CONFORMITY_APPROVAL_CONNECTOR",
+          "CONFORMITY_APPROVAL_BUSINESS_APPS",
+          "CONFORMITY_APPROVAL_SERVICES",
+          "SERVICE_LEADIMAGE"
+        ],
+        "type": "string"
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "errors": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "GuidOfferSubscriptionStatusIdValueTuple": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "IActionResult": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "InReviewAppData": {
+        "type": "object",
+        "properties": {
+          "appId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "provider": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "$ref": "#/components/schemas/OfferStatusId"
+          }
+        },
+        "additionalProperties": false
+      },
+      "InReviewAppDataResponse": {
+        "type": "object",
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/Metadata"
+          },
+          "content": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/InReviewAppData"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "InReviewAppDetails": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "ID of the app.",
+            "format": "uuid"
+          },
+          "title": {
+            "type": "string",
+            "description": "Title or name of the app.",
+            "nullable": true
+          },
+          "leadPictureId": {
+            "type": "string",
+            "description": "Uri to app's lead picture.",
+            "format": "uuid"
+          },
+          "images": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "List of Images to app's secondary pictures.",
+            "nullable": true
+          },
+          "provider": {
+            "type": "string",
+            "description": "Provider of the app.",
+            "nullable": true
+          },
+          "useCases": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Names of the app's use cases.",
+            "nullable": true
+          },
+          "description": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LocalizedDescription"
+            },
+            "description": "description of the app.",
+            "nullable": true
+          },
+          "documents": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/DocumentData"
+              }
+            },
+            "description": "documents assigned to offer",
+            "nullable": true
+          },
+          "roles": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Roles assigned to offer",
+            "nullable": true
+          },
+          "languages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Languages that the app is available in.",
+            "nullable": true
+          },
+          "providerUri": {
+            "type": "string",
+            "description": "Uri to provider's marketing presence.",
+            "nullable": true
+          },
+          "contactEmail": {
+            "type": "string",
+            "description": "Email address of the app's primary contact.",
+            "nullable": true
+          },
+          "contactNumber": {
+            "type": "string",
+            "description": "Phone number of the app's primary contact.",
+            "nullable": true
+          },
+          "price": {
+            "type": "string",
+            "description": "Pricing information of the app.",
+            "nullable": true
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Tags assigned to application.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "View model of an application's detailed data."
+      },
+      "LocalizedDescription": {
+        "type": "object",
+        "properties": {
+          "languageCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "longDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "shortDescription": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Metadata": {
+        "type": "object",
+        "properties": {
+          "totalElements": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalPages": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "page": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "contentSize": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "NoContentResult": {
+        "type": "object",
+        "properties": {
+          "statusCode": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "OfferAgreement": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "consentStatus": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "OfferAgreementConsent": {
+        "type": "object",
+        "properties": {
+          "agreements": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AgreementConsentStatus"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "OfferAgreementConsentData": {
+        "type": "object",
+        "properties": {
+          "agreementId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "consentStatusId": {
+            "$ref": "#/components/schemas/ConsentStatusId"
+          }
+        },
+        "additionalProperties": false
+      },
+      "OfferAutoSetupData": {
+        "type": "object",
+        "properties": {
+          "requestId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "offerUrl": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "OfferAutoSetupResponseData": {
+        "type": "object",
+        "properties": {
+          "technicalUserInfo": {
+            "$ref": "#/components/schemas/TechnicalUserInfoData"
+          },
+          "clientInfo": {
+            "$ref": "#/components/schemas/ClientInfoData"
+          }
+        },
+        "additionalProperties": false
+      },
+      "OfferCompanySubscriptionStatusData": {
+        "type": "object",
+        "properties": {
+          "offerId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "serviceName": {
+            "type": "string",
+            "nullable": true
+          },
+          "companySubscriptionStatuses": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CompanySubscriptionStatusData"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "OfferCompanySubscriptionStatusDataResponse": {
+        "type": "object",
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/Metadata"
+          },
+          "content": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OfferCompanySubscriptionStatusData"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "OfferDeclineRequest": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "OfferSorting": {
+        "enum": [
+          "DateAsc",
+          "DateDesc",
+          "NameAsc",
+          "NameDesc"
+        ],
+        "type": "string"
+      },
+      "OfferStatusId": {
+        "enum": [
+          "CREATED",
+          "IN_REVIEW",
+          "ACTIVE",
+          "INACTIVE"
+        ],
+        "type": "string"
+      },
+      "OfferStatusIdFilter": {
+        "enum": [
+          "InReview",
+          "All"
+        ],
+        "type": "string",
+        "description": "Filters the OfferStatusId information"
+      },
+      "OfferSubscriptionStatusId": {
+        "enum": [
+          "PENDING",
+          "ACTIVE",
+          "INACTIVE"
+        ],
+        "type": "string"
+      },
+      "PrivacyPolicyData": {
+        "type": "object",
+        "properties": {
+          "privacyPolicies": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PrivacyPolicyId"
+            },
+            "description": "Privacy Policy.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "model of Privacy Policy data."
+      },
+      "PrivacyPolicyId": {
+        "enum": [
+          "COMPANY_DATA",
+          "USER_DATA",
+          "LOCATION",
+          "BROWSER_HISTORY",
+          "NONE"
+        ],
+        "type": "string"
+      },
+      "SubscriptionStatusSorting": {
+        "enum": [
+          "CompanyNameAsc",
+          "CompanyNameDesc",
+          "OfferIdAsc",
+          "OfferIdDesc"
+        ],
+        "type": "string"
+      },
+      "TechnicalUserInfoData": {
+        "type": "object",
+        "properties": {
+          "technicalUserId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "technicalUserSecret": {
+            "type": "string",
+            "nullable": true
+          },
+          "technicalClientId": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "apiKey",
+        "description": "JWT Authorization header using the Bearer scheme. \r\n\r\n Enter 'Bearer' [space] and then your token in the text input below.\r\n\r\nExample: \"Bearer 12345abcdef\"",
+        "name": "Authorization",
+        "in": "header"
+      }
+    }
+  },
+  "security": [
+    {
+      "Bearer": [ ]
+    }
+  ]
+}
