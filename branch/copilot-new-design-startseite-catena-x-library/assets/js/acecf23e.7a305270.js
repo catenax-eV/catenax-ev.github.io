@@ -1,1 +1,0 @@
-"use strict";(globalThis.webpackChunkcatenax_ev_github_io_new=globalThis.webpackChunkcatenax_ev_github_io_new||[]).push([[81903],{1912(e){e.exports=JSON.parse('{"blogBasePath":"/branch/copilot-new-design-startseite-catena-x-library/blog-releasenotes","blogTitle":"Blog","authorsListPath":"/branch/copilot-new-design-startseite-catena-x-library/blog-releasenotes/authors"}')}}]);
