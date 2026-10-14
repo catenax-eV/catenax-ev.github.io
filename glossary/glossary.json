@@ -8,6 +8,12 @@
       "relatedTerms": ["REST", "GraphQL"]
     },
     {
+      "term": "Onboarding Service Provider",
+      "abbreviation": "OSP",
+      "definition": "[Operating Model](https://catenax-ev.github.io/docs/next/operating-model/who-roles-in-the-catena-x-ecosystem#onboarding-service-provider)",
+      "relatedTerms": ["REST", "GraphQL"]
+    },
+    {
       "term": "REST",
       "abbreviation": "Representational State Transfer",
       "definition": "An architectural style for designing networked applications.",
