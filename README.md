@@ -17,6 +17,13 @@ If there are any issues with wrong/outdated links, the github action will fail. 
 
 `npm run build`
 
+### Dependency security overrides
+
+`package.json` overrides pin patched transitive dependencies where upstream ranges
+still select vulnerable versions: `js-yaml` in `markdownlint-cli`, `qs`,
+`serialize-javascript`, and `uuid` in `sockjs`. Recheck these overrides when updating
+their parent packages and remove them once upstream ranges include the fixes.
+
 ## How to use the documentation repository
 
 > TBD
