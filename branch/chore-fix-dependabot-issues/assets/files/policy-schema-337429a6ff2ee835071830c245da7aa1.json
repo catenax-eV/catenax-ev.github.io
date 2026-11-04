@@ -1,0 +1,256 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "title": "CatenaXPolicySchema",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "#/definitions/CatenaXPolicy"
+    }
+  ],
+  "$id": "https://w3id.org/catenax/2025/9/policy/schema/policy-schema.json",
+  "definitions": {
+    "CatenaXPolicy": {
+      "allOf": [
+        {
+          "$ref": "https://w3id.org/dspace/2025/1/negotiation/contract-schema.json#/definitions/PolicyClass"
+        },
+        {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/AccessPolicy"
+            },
+            {
+              "$ref": "#/definitions/UsagePolicy"
+            }
+          ]
+        }
+      ]
+    },
+    "AccessPolicy": {
+      "permission": {
+        "type": "array",
+        "items": {
+          "allOf": [
+            {
+              "$ref": "https://w3id.org/dspace/2025/1/negotiation/contract-schema.json#/definitions/Rule"
+            },
+            {
+              "properties": {
+                "action": {
+                  "type": "string",
+                  "const": "access"
+                },
+                "constraint": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/AccessPermissionConstraint"
+                  },
+                  "uniqueItems": true
+                }
+              }
+            }
+          ]
+        },
+        "minItems": 0
+      },
+      "prohibition": {
+        "type": "array",
+        "maxItems": 0
+      },
+      "obligation": {
+        "type": "array",
+        "maxItems": 0
+      }
+    },
+    "AccessPermissionConstraint": {
+      "type": "object",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/AccessPermissionLogicalConstraint"
+        },
+        {
+          "$ref": "https://w3id.org/catenax/2025/9/policy/schema/atomic-constraint-schemas.json#/definitions/AtomicAccessPermissionConstraint"
+        }
+      ]
+    },
+    "AccessPermissionLogicalConstraint": {
+      "type": "object",
+      "properties": {
+        "and": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/AccessPermissionConstraint"
+          }
+        }
+      },
+      "required": [
+        "and"
+      ]
+    },
+    "UsagePolicy": {
+      "permission": {
+        "type": "array",
+        "items": {
+          "allOf": [
+            {
+              "$ref": "https://w3id.org/dspace/2025/1/negotiation/contract-schema.json#/definitions/Rule"
+            },
+            {
+              "properties": {
+                "action": {
+                  "type": "string",
+                  "const": "use"
+                },
+                "constraint": {
+                  "type": "array",
+                  "minItems": 2,
+                  "items": {
+                    "$ref": "#/definitions/UsagePermissionConstraint"
+                  },
+                  "uniqueItems": true
+                }
+              },
+              "required": [
+                "constraint"
+              ]
+            }
+          ]
+        },
+        "minItems": 1
+      },
+      "prohibition": {
+        "type": "array",
+        "items": {
+          "allOf": [
+            {
+              "$ref": "https://w3id.org/dspace/2025/1/negotiation/contract-schema.json#/definitions/Rule"
+            },
+            {
+              "properties": {
+                "action": {
+                  "type": "string",
+                  "const": "use"
+                },
+                "constraint": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/UsageProhibitionConstraint"
+                  },
+                  "uniqueItems": true
+                }
+              },
+              "required": [
+                "constraint"
+              ]
+            }
+          ]
+        },
+        "minItems": 1
+      },
+      "obligation": {
+        "type": "array",
+        "items": {
+          "allOf": [
+            {
+              "$ref": "https://w3id.org/dspace/2025/1/negotiation/contract-schema.json#/definitions/Rule"
+            },
+            {
+              "properties": {
+                "action": {
+                  "type": "string",
+                  "const": "use"
+                },
+                "constraint": {
+                  "type": "array",
+                  "minitems": 1,
+                  "maxitems": 1,
+                  "items": {
+                    "anyOf": [
+                      {
+                        "$ref": "https://w3id.org/catenax/2025/9/policy/data-provisioning-end-duration-days-constraint-schema.json"
+                      },
+                      {
+                        "$ref": "https://w3id.org/catenax/2025/9/policy/data-provisioning-end-date-constraint-schema.json"
+                      }
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "constraint"
+              ]
+            }
+          ]
+        },
+        "minItems": 1
+      },
+      "anyOf": [
+        {
+          "required": [
+            "permission"
+          ]
+        },
+        {
+          "required": [
+            "prohibition"
+          ]
+        },
+        {
+          "required": [
+            "obligation"
+          ]
+        }
+      ]
+    },
+    "UsagePermissionConstraint": {
+      "type": "object",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/UsagePermissionLogicalConstraint"
+        },
+        {
+          "$ref": "https://w3id.org/catenax/2025/9/policy/schema/atomic-constraint-schemas.json#/definitions/AtomicUsagePermissionConstraint"
+        }
+      ]
+    },
+    "UsagePermissionLogicalConstraint": {
+      "type": "object",
+      "properties": {
+        "and": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/UsagePermissionConstraint"
+          }
+        }
+      },
+      "required": [
+        "and"
+      ]
+    },
+    "UsageProhibitionConstraint": {
+      "type": "object",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/UsageProhibitionLogicalConstraint"
+        },
+        {
+          "$ref": "https://w3id.org/catenax/2025/9/policy/schema/atomic-constraint-schemas.json#/definitions/AtomicProhibitionConstraint"
+        }
+      ]
+    },
+    "UsageProhibitionLogicalConstraint": {
+      "type": "object",
+      "properties": {
+        "and": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/UsageProhibitionConstraint"
+          }
+        }
+      },
+      "required": [
+        "and"
+      ]
+    }
+  }
+}
