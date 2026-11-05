@@ -1,1 +1,0 @@
-"use strict";(globalThis.webpackChunkcatenax_ev_github_io_new=globalThis.webpackChunkcatenax_ev_github_io_new||[]).push([[37632],{37632(e,a,i){i.d(a,{createWardleyServices:()=>_.J});var _=i(9427);i(4954)}}]);
