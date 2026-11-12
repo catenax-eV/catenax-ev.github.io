@@ -7,7 +7,7 @@ tags:
 
 :::warning
 
-The CX-Neptune version of CX-0135 is scheduled for publication together with the CX-Proteus release on 27 March 2027. Until then, the version displayed here remains the CX-Saturn version and cannot be used for certification against CX-Neptune.
+The CX-Neptune version of CX-0135 is scheduled for publication together with the CX-Proteus release on 17 March 2027. Until then, the version displayed here remains the CX-Saturn version and cannot be used for certification against CX-Neptune.
 
 **Consequently, any certification against CX-0135 version 2.4.0 will result in a CX-Saturn certificate.**
 
