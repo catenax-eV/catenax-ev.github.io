@@ -1,5 +1,0 @@
-{
-  "leftOperand": "DataProvisioningEndDurationDays",
-  "operator": "eq",
-  "rightOperand": 2
-}
