@@ -1,0 +1,5 @@
+{
+  "leftOperand": "ExclusiveUsage",
+  "operator": "eq",
+  "rightOperand": "cx.exclusiveUsage.dataConsumer:1"
+}

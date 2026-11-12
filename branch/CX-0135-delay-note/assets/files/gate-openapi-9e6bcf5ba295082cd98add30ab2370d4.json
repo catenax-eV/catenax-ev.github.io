@@ -1,0 +1,3967 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+        "title": "Business Partner Data Management Gate",
+        "description": "A gate for a member to share business partner data with CatenaX",
+        "version": "7.1.0-SNAPSHOT"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:8081",
+            "description": "Generated server url"
+        }
+    ],
+    "security": [
+        {
+            "open_id_scheme": []
+        },
+        {
+            "bearer_scheme": []
+        }
+    ],
+    "paths": {
+        "/v7/input/relations": {
+            "put": {
+                "tags": [
+                    "relation-controller"
+                ],
+                "summary": "Update a business partner input relation",
+                "description": "Update an existing business partner relation on the input stage. By using a request parameter it is also possible to create a relation if the relation with the given external identifier does not exist. ",
+                "operationId": "put",
+                "parameters": [
+                    {
+                        "name": "createIfNotExist",
+                        "in": "query",
+                        "description": "If true a business partner relation will be created even if a relation could not be found under the given external identifier.",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean",
+                            "description": "If true a business partner relation will be created even if a relation could not be found under the given external identifier."
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/RelationPutRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "The given business partner relation has been updated.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RelationPutResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "On wrong or insufficient user provided data like references to non-existent business partners or relations that violate the relation constraints. ",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GateErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v6/input/business-partners": {
+            "put": {
+                "tags": [
+                    "business-partner-controller"
+                ],
+                "summary": "Create or update business partner with given external ID",
+                "description": "Create or update generic business partner. Updates instead of creating a new business partner if an already existing external ID is used. The same external ID may not occur more than once in a single request. For a single request, the maximum number of business partners in the request is limited to 100 entries.",
+                "operationId": "upsertBusinessPartnersInput",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/components/schemas/BusinessPartnerInputRequest"
+                                }
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Business partner were successfully updated or created",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/BusinessPartnerInputDto"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "On malformed legal entity request"
+                    }
+                }
+            }
+        },
+        "/v7/input/business-partners": {
+            "put": {
+                "tags": [
+                    "business-partner-controller"
+                ],
+                "summary": "Create or update business partner with given external ID",
+                "description": "Create or update generic business partner. Updates instead of creating a new business partner if an already existing external ID is used. The same external ID may not occur more than once in a single request. For a single request, the maximum number of business partners in the request is limited to 100 entries.",
+                "operationId": "upsertBusinessPartnersInput_1",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/components/schemas/BusinessPartnerInputRequest"
+                                }
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Business partner were successfully updated or created",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/BusinessPartnerInputDto"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "On malformed legal entity request"
+                    }
+                }
+            }
+        },
+        "/v6/input/business-partner-relations": {
+            "get": {
+                "tags": [
+                    "relation-controller"
+                ],
+                "summary": "Find business partner input relations",
+                "description": "Find paginated list of business partner relations from the input stage. There are various filter criteria available. All filters are 'AND' filters.",
+                "operationId": "get",
+                "parameters": [
+                    {
+                        "name": "externalIds",
+                        "in": "query",
+                        "description": "Only show relations with the given external identifiers",
+                        "required": false,
+                        "schema": {
+                            "type": "array",
+                            "description": "Only show relations with the given external identifiers",
+                            "items": {
+                                "type": "string",
+                                "description": "Only show relations with the given external identifiers"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relationType",
+                        "in": "query",
+                        "description": "Only show relations of the given type",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "description": "Only show relations of the given type",
+                            "enum": [
+                                "IsManagedBy",
+                                "IsAlternativeHeadquarterFor"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "businessPartnerSourceExternalIds",
+                        "in": "query",
+                        "description": "Only show relations which have the given business partners as sources",
+                        "required": false,
+                        "schema": {
+                            "type": "array",
+                            "description": "Only show relations which have the given business partners as sources",
+                            "items": {
+                                "type": "string",
+                                "description": "Only show relations which have the given business partners as sources"
+                            }
+                        }
+                    },
+                    {
+                        "name": "businessPartnerTargetExternalIds",
+                        "in": "query",
+                        "description": "Only show relations which have the given business partners as targets",
+                        "required": false,
+                        "schema": {
+                            "type": "array",
+                            "description": "Only show relations which have the given business partners as targets",
+                            "items": {
+                                "type": "string",
+                                "description": "Only show relations which have the given business partners as targets"
+                            }
+                        }
+                    },
+                    {
+                        "name": "updatedAtFrom",
+                        "in": "query",
+                        "description": "Only show relations which have been modified after the given time stamp",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "format": "date-time",
+                            "description": "Only show relations which have been modified after the given time stamp"
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "Number of page to get results from",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "minimum": 0
+                        }
+                    },
+                    {
+                        "name": "size",
+                        "in": "query",
+                        "description": "Size of each page",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "maximum": 100,
+                            "minimum": 0
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A paginated list of business partner relations for the input stage",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PageDtoRelationDto"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "relation-controller"
+                ],
+                "summary": "Update a business partner input relation",
+                "description": "Update an existing business partner relation on the input stage. By using a request parameter it is also possible to create a relation if the relation with the given external identifier does not exist. ",
+                "operationId": "put_1",
+                "parameters": [
+                    {
+                        "name": "createIfNotExist",
+                        "in": "query",
+                        "description": "If true a business partner relation will be created even if a relation could not be found under the given external identifier.",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean",
+                            "description": "If true a business partner relation will be created even if a relation could not be found under the given external identifier."
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/RelationPutEntry"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "The given business partner relation has been updated.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RelationDto"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "On wrong or insufficient user provided data like references to non-existent business partners or relations that violate the relation constraints. ",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GateErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "relation-controller"
+                ],
+                "summary": "Create a new business partner input relation",
+                "description": "Create a new relation between two business partner entries on the input stage. The external identifier is optional and a new one will be automatically created if not given. A given external identifier has to be unique.",
+                "operationId": "post",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/RelationPostRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "201": {
+                        "description": "The created business partner input relation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RelationDto"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "If the business partner could not be created based on wrong or insufficient data provided such as non-existent business partners or violated relation constraints. ",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GateErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "409": {
+                        "description": "If a relation with the given external identifier already exists",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GateErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "relation-controller"
+                ],
+                "summary": "Delete an existing business partner relation",
+                "description": "Delete a relation between two business partners on the input stage.",
+                "operationId": "delete",
+                "parameters": [
+                    {
+                        "name": "externalId",
+                        "in": "query",
+                        "description": "The external identifier of the business partner relation to delete",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "description": "The external identifier of the business partner relation to delete"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The specified relation has been deleted."
+                    },
+                    "400": {
+                        "description": "On specifying a relation that does not exist. ",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GateErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v7/output/relations/search": {
+            "post": {
+                "tags": [
+                    "relation-controller"
+                ],
+                "summary": "Find business partner output relations",
+                "description": "Find paginated list of business partner relations from the output stage. There are various filter criteria available. All filters are 'AND' filters.",
+                "operationId": "postSearch",
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "Number of page to get results from",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "minimum": 0
+                        }
+                    },
+                    {
+                        "name": "size",
+                        "in": "query",
+                        "description": "Size of each page",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "maximum": 100,
+                            "minimum": 0
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/RelationOutputSearchRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "A paginated list of business partner relations for the input stage",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PageDtoRelationOutputDto"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v7/output/relations/changelog/search": {
+            "post": {
+                "tags": [
+                    "relation-changelog-controller"
+                ],
+                "summary": "Returns changelog entries for changes to business partner relations in the output stage",
+                "description": "Returns business partner relation changelog entries as of a specified timestamp from the output stage, optionally filtered by timestamp and an array of external IDs.",
+                "operationId": "getOutputChangelog",
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "Number of page to get results from",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "minimum": 0
+                        }
+                    },
+                    {
+                        "name": "size",
+                        "in": "query",
+                        "description": "Size of each page",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "maximum": 100,
+                            "minimum": 0
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ChangelogSearchRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "The changelog entries for the specified parameters",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PageChangeLogDtoChangelogGateDto"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "On malformed pagination request"
+                    }
+                }
+            }
+        },
+        "/v7/output/business-partners/search": {
+            "post": {
+                "tags": [
+                    "business-partner-controller"
+                ],
+                "summary": "Search business partners by an array of external IDs from the output stage",
+                "description": "Get page of business partners output data filtered by a collection of external IDs. An empty external ID list will return a paginated list of all business partners.",
+                "operationId": "getBusinessPartnersOutput",
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "Number of page to get results from",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "minimum": 0
+                        }
+                    },
+                    {
+                        "name": "size",
+                        "in": "query",
+                        "description": "Size of each page",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "maximum": 100,
+                            "minimum": 0
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "The requested page of business partners",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PageDtoBusinessPartnerOutputDto"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "On malformed pagination request"
+                    }
+                }
+            }
+        },
+        "/v6/output/changelog/search": {
+            "post": {
+                "tags": [
+                    "changelog-controller"
+                ],
+                "summary": "Returns changelog entries for changes to the business partner output stage",
+                "description": "Returns changelog entries as of a specified timestamp from the output stage, optionally filtered by timestamp, an array of external IDs and a business partner type.",
+                "operationId": "getOutputChangelog_1",
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "Number of page to get results from",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "minimum": 0
+                        }
+                    },
+                    {
+                        "name": "size",
+                        "in": "query",
+                        "description": "Size of each page",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "maximum": 100,
+                            "minimum": 0
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ChangelogSearchRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "The changelog entries for the specified parameters",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PageChangeLogDtoChangelogGateDto"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "On malformed pagination request"
+                    }
+                }
+            }
+        },
+        "/v7/output/business-partners/changelog/search": {
+            "post": {
+                "tags": [
+                    "changelog-controller"
+                ],
+                "summary": "Returns changelog entries for changes to the business partner output stage",
+                "description": "Returns changelog entries as of a specified timestamp from the output stage, optionally filtered by timestamp, an array of external IDs and a business partner type.",
+                "operationId": "getOutputChangelog_2",
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "Number of page to get results from",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "minimum": 0
+                        }
+                    },
+                    {
+                        "name": "size",
+                        "in": "query",
+                        "description": "Size of each page",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "maximum": 100,
+                            "minimum": 0
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ChangelogSearchRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "The changelog entries for the specified parameters",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PageChangeLogDtoChangelogGateDto"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "On malformed pagination request"
+                    }
+                }
+            }
+        },
+        "/v7/input/relations/search": {
+            "post": {
+                "tags": [
+                    "relation-controller"
+                ],
+                "summary": "Find business partner input relations",
+                "description": "Find paginated list of business partner relations from the input stage. There are various filter criteria available. All filters are 'AND' filters.",
+                "operationId": "postSearch_1",
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "Number of page to get results from",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "minimum": 0
+                        }
+                    },
+                    {
+                        "name": "size",
+                        "in": "query",
+                        "description": "Size of each page",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "maximum": 100,
+                            "minimum": 0
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/RelationSearchRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "A paginated list of business partner relations for the input stage",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PageDtoRelationDto"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v7/input/relations/changelog/search": {
+            "post": {
+                "tags": [
+                    "relation-changelog-controller"
+                ],
+                "summary": "Returns changelog entries for changes to business partner relations in the input stage",
+                "description": "Returns business partner relation changelog entries as of a specified timestamp from the input stage, optionally filtered by timestamp and an array of external IDs.",
+                "operationId": "getInputChangelog",
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "Number of page to get results from",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "minimum": 0
+                        }
+                    },
+                    {
+                        "name": "size",
+                        "in": "query",
+                        "description": "Size of each page",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "maximum": 100,
+                            "minimum": 0
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ChangelogSearchRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "The changelog entries for the specified parameters",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PageChangeLogDtoChangelogGateDto"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "On malformed pagination request"
+                    }
+                }
+            }
+        },
+        "/v7/input/business-partners/changelog/search": {
+            "post": {
+                "tags": [
+                    "changelog-controller"
+                ],
+                "summary": "Returns changelog entries for changes to the business partner input stage",
+                "description": "Returns changelog entries as of a specified timestamp from the input stage, optionally filtered by timestamp, an array of external IDs and a business partner type.",
+                "operationId": "getInputChangelog_1",
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "Number of page to get results from",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "minimum": 0
+                        }
+                    },
+                    {
+                        "name": "size",
+                        "in": "query",
+                        "description": "Size of each page",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "maximum": 100,
+                            "minimum": 0
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ChangelogSearchRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "The changelog entries for the specified parameters",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PageChangeLogDtoChangelogGateDto"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "On malformed pagination request"
+                    }
+                }
+            }
+        },
+        "/v6/input/changelog/search": {
+            "post": {
+                "tags": [
+                    "changelog-controller"
+                ],
+                "summary": "Returns changelog entries for changes to the business partner input stage",
+                "description": "Returns changelog entries as of a specified timestamp from the input stage, optionally filtered by timestamp, an array of external IDs and a business partner type.",
+                "operationId": "getInputChangelog_2",
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "Number of page to get results from",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "minimum": 0
+                        }
+                    },
+                    {
+                        "name": "size",
+                        "in": "query",
+                        "description": "Size of each page",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "maximum": 100,
+                            "minimum": 0
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ChangelogSearchRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "The changelog entries for the specified parameters",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PageChangeLogDtoChangelogGateDto"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "On malformed pagination request"
+                    }
+                }
+            }
+        },
+        "/v7/business-partners/sharing-state/ready": {
+            "post": {
+                "tags": [
+                    "sharing-state-controller"
+                ],
+                "summary": "Sets the given business partners into ready to be shared state",
+                "description": "The business partners to set the ready state for are identified by their external-id. Only business partners in an initial or error state can be set to ready. If any given business partner could not be set into ready state for any reason (for example, it has not been found or it is in the wrong state) the whole request fails (all or nothing approach).",
+                "operationId": "postSharingStateReady",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PostSharingStateReadyRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "204": {
+                        "description": "All business partners put in ready to be shared state"
+                    },
+                    "400": {
+                        "description": "Business partners can't be put into ready state (e.g. external-ID not found, wrong sharing state)"
+                    }
+                }
+            }
+        },
+        "/v6/sharing-state/ready": {
+            "post": {
+                "tags": [
+                    "sharing-state-controller"
+                ],
+                "summary": "Sets the given business partners into ready to be shared state",
+                "description": "The business partners to set the ready state for are identified by their external-id. Only business partners in an initial or error state can be set to ready. If any given business partner could not be set into ready state for any reason (for example, it has not been found or it is in the wrong state) the whole request fails (all or nothing approach).",
+                "operationId": "postSharingStateReady_1",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PostSharingStateReadyRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "204": {
+                        "description": "All business partners put in ready to be shared state"
+                    },
+                    "400": {
+                        "description": "Business partners can't be put into ready state (e.g. external-ID not found, wrong sharing state)"
+                    }
+                }
+            }
+        },
+        "/v6/output/business-partners/search": {
+            "post": {
+                "tags": [
+                    "business-partner-controller"
+                ],
+                "summary": "Search business partners by an array of external IDs from the output stage",
+                "description": "Get page of business partners output data filtered by a collection of external IDs. An empty external ID list will return a paginated list of all business partners.",
+                "operationId": "getBusinessPartnersOutput_1",
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "Number of page to get results from",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "minimum": 0
+                        }
+                    },
+                    {
+                        "name": "size",
+                        "in": "query",
+                        "description": "Size of each page",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "maximum": 100,
+                            "minimum": 0
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "The requested page of business partners",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PageDtoBusinessPartnerOutputDto"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "On malformed pagination request"
+                    }
+                }
+            }
+        },
+        "/v6/input/partner-upload-process": {
+            "post": {
+                "tags": [
+                    "partner-upload-controller"
+                ],
+                "summary": "Create or update business partners from uploaded CSV file",
+                "description": "Create or update generic business partners. Updates instead of creating a new business partner if an already existing external ID is used. The same external ID may not occur more than once in a requested file. ",
+                "operationId": "uploadPartnerCsvFile",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "file": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    }
+                                },
+                                "required": [
+                                    "file"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Business partners were successfully updated or created",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/BusinessPartnerInputDto"
+                                    }
+                                }
+                            },
+                            "multipart/form-data": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/BusinessPartnerInputDto"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "On malformed Business partner upload request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GateErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v7/input/partner-upload-process": {
+            "post": {
+                "tags": [
+                    "partner-upload-controller"
+                ],
+                "summary": "Create or update business partners from uploaded CSV file",
+                "description": "Create or update generic business partners. Updates instead of creating a new business partner if an already existing external ID is used. The same external ID may not occur more than once in a requested file. ",
+                "operationId": "uploadPartnerCsvFile_1",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "file": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    }
+                                },
+                                "required": [
+                                    "file"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Business partners were successfully updated or created",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/BusinessPartnerInputDto"
+                                    }
+                                }
+                            },
+                            "multipart/form-data": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/BusinessPartnerInputDto"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "On malformed Business partner upload request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GateErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v6/input/business-partners/search": {
+            "post": {
+                "tags": [
+                    "business-partner-controller"
+                ],
+                "summary": "Search business partner by external ID. An empty external ID list returns a paginated list of all business partners.",
+                "description": "Get page of business partners filtered by a collection of external IDs.",
+                "operationId": "getBusinessPartnersInput",
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "Number of page to get results from",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "minimum": 0
+                        }
+                    },
+                    {
+                        "name": "size",
+                        "in": "query",
+                        "description": "Size of each page",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "maximum": 100,
+                            "minimum": 0
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "The requested page of busines partners",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PageDtoBusinessPartnerInputDto"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "On malformed pagination request"
+                    }
+                }
+            }
+        },
+        "/v7/input/business-partners/search": {
+            "post": {
+                "tags": [
+                    "business-partner-controller"
+                ],
+                "summary": "Search business partner by external ID. An empty external ID list returns a paginated list of all business partners.",
+                "description": "Get page of business partners filtered by a collection of external IDs.",
+                "operationId": "getBusinessPartnersInput_1",
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "Number of page to get results from",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "minimum": 0
+                        }
+                    },
+                    {
+                        "name": "size",
+                        "in": "query",
+                        "description": "Size of each page",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "maximum": 100,
+                            "minimum": 0
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "The requested page of busines partners",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PageDtoBusinessPartnerInputDto"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "On malformed pagination request"
+                    }
+                }
+            }
+        },
+        "/v7/relations/sharing-state": {
+            "get": {
+                "tags": [
+                    "sharing-state-controller"
+                ],
+                "summary": "Returns sharing states of shared business partner relations which can be optionally filtered",
+                "operationId": "get_1",
+                "parameters": [
+                    {
+                        "name": "externalIds",
+                        "in": "query",
+                        "description": "Only show sharing states of given external IDs",
+                        "required": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "sharingStateTypes",
+                        "in": "query",
+                        "description": "Only show sharing states of given types",
+                        "required": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "Ready",
+                                    "Pending",
+                                    "Error",
+                                    "Success"
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "name": "updatedAfter",
+                        "in": "query",
+                        "description": "Only show sharing states updated after given time",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "format": "date-time"
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "Number of page to get results from",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "minimum": 0
+                        }
+                    },
+                    {
+                        "name": "size",
+                        "in": "query",
+                        "description": "Size of each page",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "maximum": 100,
+                            "minimum": 0
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Page of sharing states",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PageDtoRelationSharingStateDto"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v7/business-partners/sharing-state": {
+            "get": {
+                "tags": [
+                    "sharing-state-controller"
+                ],
+                "summary": "Returns sharing states of business partners, optionally filtered by a business partner type and an array of external IDs",
+                "operationId": "getSharingStates",
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "Number of page to get results from",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "minimum": 0
+                        }
+                    },
+                    {
+                        "name": "size",
+                        "in": "query",
+                        "description": "Size of each page",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "maximum": 100,
+                            "minimum": 0
+                        }
+                    },
+                    {
+                        "name": "externalIds",
+                        "in": "query",
+                        "description": "External IDs",
+                        "required": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "sharingStateTypes",
+                        "in": "query",
+                        "description": "Only show sharing states of given types",
+                        "required": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "Pending",
+                                    "Success",
+                                    "Error",
+                                    "Initial",
+                                    "Ready"
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "name": "updatedAfter",
+                        "in": "query",
+                        "description": "Only show sharing states updated after given time",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "format": "date-time"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Page of sharing states",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PageDtoSharingStateDto"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v6/stats/{stage}/address-types": {
+            "get": {
+                "tags": [
+                    "stats-controller"
+                ],
+                "operationId": "countAddressTypes",
+                "parameters": [
+                    {
+                        "name": "stage",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "Input",
+                                "Output"
+                            ]
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/StatsAddressTypesResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v7/stats/{stage}/address-types": {
+            "get": {
+                "tags": [
+                    "stats-controller"
+                ],
+                "operationId": "countAddressTypes_1",
+                "parameters": [
+                    {
+                        "name": "stage",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "Input",
+                                "Output"
+                            ]
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/StatsAddressTypesResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v7/stats/stages": {
+            "get": {
+                "tags": [
+                    "stats-controller"
+                ],
+                "operationId": "countPartnersPerStage",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/StatsStagesResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v6/stats/stages": {
+            "get": {
+                "tags": [
+                    "stats-controller"
+                ],
+                "operationId": "countPartnersPerStage_1",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/StatsStagesResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v6/stats/sharing-states": {
+            "get": {
+                "tags": [
+                    "stats-controller"
+                ],
+                "operationId": "countPartnersBySharingState",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/StatsSharingStatesResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v7/stats/sharing-states": {
+            "get": {
+                "tags": [
+                    "stats-controller"
+                ],
+                "operationId": "countPartnersBySharingState_1",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/StatsSharingStatesResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v6/stats/confidence-criteria": {
+            "get": {
+                "tags": [
+                    "stats-controller"
+                ],
+                "operationId": "getConfidenceCriteriaStats",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/StatsConfidenceCriteriaResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v7/stats/confidence-criteria": {
+            "get": {
+                "tags": [
+                    "stats-controller"
+                ],
+                "operationId": "getConfidenceCriteriaStats_1",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/StatsConfidenceCriteriaResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v6/sharing-state": {
+            "get": {
+                "tags": [
+                    "sharing-state-controller"
+                ],
+                "summary": "Returns sharing states of business partners, optionally filtered by a business partner type and an array of external IDs",
+                "operationId": "getSharingStates_1",
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "Number of page to get results from",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "minimum": 0
+                        }
+                    },
+                    {
+                        "name": "size",
+                        "in": "query",
+                        "description": "Size of each page",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "maximum": 100,
+                            "minimum": 0
+                        }
+                    },
+                    {
+                        "name": "externalIds",
+                        "in": "query",
+                        "description": "External IDs",
+                        "required": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Page of sharing states",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PageDtoSharingStateDto"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v6/input/partner-upload-template": {
+            "get": {
+                "tags": [
+                    "partner-upload-controller"
+                ],
+                "summary": "Get CSV template with headers in file",
+                "description": "Create empty CSV file template including headers.Generated CSV file can later be used for uploading business partner data.",
+                "operationId": "getPartnerCsvTemplate",
+                "responses": {
+                    "200": {
+                        "description": "CSV file template generated successfully",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string",
+                                    "format": "binary"
+                                }
+                            },
+                            "multipart/form-data": {
+                                "schema": {
+                                    "type": "string",
+                                    "format": "binary"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v7/input/partner-upload-template": {
+            "get": {
+                "tags": [
+                    "partner-upload-controller"
+                ],
+                "summary": "Get CSV template with headers in file",
+                "description": "Create empty CSV file template including headers.Generated CSV file can later be used for uploading business partner data.",
+                "operationId": "getPartnerCsvTemplate_1",
+                "responses": {
+                    "200": {
+                        "description": "CSV file template generated successfully",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string",
+                                    "format": "binary"
+                                }
+                            },
+                            "multipart/form-data": {
+                                "schema": {
+                                    "type": "string",
+                                    "format": "binary"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "AddressComponentOutputDto": {
+                "type": "object",
+                "description": "Address properties of business partner output data",
+                "properties": {
+                    "addressBpn": {
+                        "type": "string",
+                        "description": "The BPNA of the address, on which the business partner provides a view."
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "The name of the address, on which the business partner provides a view. This is not according to official registers but according to the name the sharing members agree on, such as the name of a gate or any other additional names that designate the address in common parlance."
+                    },
+                    "addressType": {
+                        "type": "string",
+                        "description": "One of the address types: Legal Address, Site Main Address, Legal and Site Main Address, Additional Address. ",
+                        "enum": [
+                            "LegalAndSiteMainAddress",
+                            "LegalAddress",
+                            "SiteMainAddress",
+                            "AdditionalAddress"
+                        ]
+                    },
+                    "physicalPostalAddress": {
+                        "$ref": "#/components/schemas/PhysicalPostalAddressDto",
+                        "description": "The physical postal address of the address, on which the business partner provides a view, such as an office, warehouse, gate, etc."
+                    },
+                    "alternativePostalAddress": {
+                        "$ref": "#/components/schemas/AlternativePostalAddressDto",
+                        "description": "The alternative postal address of the address, on which the business partner provides a view, for example if the goods are to be picked up somewhere else."
+                    },
+                    "confidenceCriteria": {
+                        "$ref": "#/components/schemas/ConfidenceCriteriaDto"
+                    },
+                    "states": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/BusinessPartnerStateDto"
+                        }
+                    }
+                },
+                "required": [
+                    "addressBpn",
+                    "bpnA",
+                    "confidenceCriteria",
+                    "physicalPostalAddress",
+                    "states"
+                ]
+            },
+            "AddressRepresentationInputDto": {
+                "type": "object",
+                "properties": {
+                    "addressBpn": {
+                        "type": "string",
+                        "description": "The BPNA of the address, on which the business partner provides a view."
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "The name of the address, on which the business partner provides a view. This is not according to official registers but according to the name the sharing members agree on, such as the name of a gate or any other additional names that designate the address in common parlance."
+                    },
+                    "addressType": {
+                        "type": "string",
+                        "description": "One of the address types: Legal Address, Site Main Address, Legal and Site Main Address, Additional Address. ",
+                        "enum": [
+                            "LegalAndSiteMainAddress",
+                            "LegalAddress",
+                            "SiteMainAddress",
+                            "AdditionalAddress"
+                        ]
+                    },
+                    "physicalPostalAddress": {
+                        "$ref": "#/components/schemas/PhysicalPostalAddressDto",
+                        "description": "The physical postal address of the address, on which the business partner provides a view, such as an office, warehouse, gate, etc."
+                    },
+                    "alternativePostalAddress": {
+                        "$ref": "#/components/schemas/AlternativePostalAddressDto",
+                        "description": "The alternative postal address of the address, on which the business partner provides a view, for example if the goods are to be picked up somewhere else."
+                    },
+                    "states": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/BusinessPartnerStateDto"
+                        }
+                    }
+                },
+                "required": [
+                    "physicalPostalAddress",
+                    "states"
+                ]
+            },
+            "AlternativePostalAddressDto": {
+                "type": "object",
+                "description": "An alternative postal address describes an alternative way of delivery for example if the goods are to be picked up somewhere else.",
+                "properties": {
+                    "geographicCoordinates": {
+                        "$ref": "#/components/schemas/GeoCoordinateDto"
+                    },
+                    "country": {
+                        "type": "string",
+                        "description": "The 2-digit country code of the physical postal address according to ISO 3166-1.",
+                        "enum": [
+                            "UNDEFINED",
+                            "AC",
+                            "AD",
+                            "AE",
+                            "AF",
+                            "AG",
+                            "AI",
+                            "AL",
+                            "AM",
+                            "AN",
+                            "AO",
+                            "AQ",
+                            "AR",
+                            "AS",
+                            "AT",
+                            "AU",
+                            "AW",
+                            "AX",
+                            "AZ",
+                            "BA",
+                            "BB",
+                            "BD",
+                            "BE",
+                            "BF",
+                            "BG",
+                            "BH",
+                            "BI",
+                            "BJ",
+                            "BL",
+                            "BM",
+                            "BN",
+                            "BO",
+                            "BQ",
+                            "BR",
+                            "BS",
+                            "BT",
+                            "BU",
+                            "BV",
+                            "BW",
+                            "BY",
+                            "BZ",
+                            "CA",
+                            "CC",
+                            "CD",
+                            "CF",
+                            "CG",
+                            "CH",
+                            "CI",
+                            "CK",
+                            "CL",
+                            "CM",
+                            "CN",
+                            "CO",
+                            "CP",
+                            "CR",
+                            "CS",
+                            "CU",
+                            "CV",
+                            "CW",
+                            "CX",
+                            "CY",
+                            "CZ",
+                            "DE",
+                            "DG",
+                            "DJ",
+                            "DK",
+                            "DM",
+                            "DO",
+                            "DZ",
+                            "EA",
+                            "EC",
+                            "EE",
+                            "EG",
+                            "EH",
+                            "ER",
+                            "ES",
+                            "ET",
+                            "EU",
+                            "EZ",
+                            "FI",
+                            "FJ",
+                            "FK",
+                            "FM",
+                            "FO",
+                            "FR",
+                            "FX",
+                            "GA",
+                            "GB",
+                            "GD",
+                            "GE",
+                            "GF",
+                            "GG",
+                            "GH",
+                            "GI",
+                            "GL",
+                            "GM",
+                            "GN",
+                            "GP",
+                            "GQ",
+                            "GR",
+                            "GS",
+                            "GT",
+                            "GU",
+                            "GW",
+                            "GY",
+                            "HK",
+                            "HM",
+                            "HN",
+                            "HR",
+                            "HT",
+                            "HU",
+                            "IC",
+                            "ID",
+                            "IE",
+                            "IL",
+                            "IM",
+                            "IN",
+                            "IO",
+                            "IQ",
+                            "IR",
+                            "IS",
+                            "IT",
+                            "JE",
+                            "JM",
+                            "JO",
+                            "JP",
+                            "KE",
+                            "KG",
+                            "KH",
+                            "KI",
+                            "KM",
+                            "KN",
+                            "KP",
+                            "KR",
+                            "KW",
+                            "KY",
+                            "KZ",
+                            "LA",
+                            "LB",
+                            "LC",
+                            "LI",
+                            "LK",
+                            "LR",
+                            "LS",
+                            "LT",
+                            "LU",
+                            "LV",
+                            "LY",
+                            "MA",
+                            "MC",
+                            "MD",
+                            "ME",
+                            "MF",
+                            "MG",
+                            "MH",
+                            "MK",
+                            "ML",
+                            "MM",
+                            "MN",
+                            "MO",
+                            "MP",
+                            "MQ",
+                            "MR",
+                            "MS",
+                            "MT",
+                            "MU",
+                            "MV",
+                            "MW",
+                            "MX",
+                            "MY",
+                            "MZ",
+                            "NA",
+                            "NC",
+                            "NE",
+                            "NF",
+                            "NG",
+                            "NI",
+                            "NL",
+                            "NO",
+                            "NP",
+                            "NR",
+                            "NT",
+                            "NU",
+                            "NZ",
+                            "OM",
+                            "PA",
+                            "PE",
+                            "PF",
+                            "PG",
+                            "PH",
+                            "PK",
+                            "PL",
+                            "PM",
+                            "PN",
+                            "PR",
+                            "PS",
+                            "PT",
+                            "PW",
+                            "PY",
+                            "QA",
+                            "RE",
+                            "RO",
+                            "RS",
+                            "RU",
+                            "RW",
+                            "SA",
+                            "SB",
+                            "SC",
+                            "SD",
+                            "SE",
+                            "SF",
+                            "SG",
+                            "SH",
+                            "SI",
+                            "SJ",
+                            "SK",
+                            "SL",
+                            "SM",
+                            "SN",
+                            "SO",
+                            "SR",
+                            "SS",
+                            "ST",
+                            "SU",
+                            "SV",
+                            "SX",
+                            "SY",
+                            "SZ",
+                            "TA",
+                            "TC",
+                            "TD",
+                            "TF",
+                            "TG",
+                            "TH",
+                            "TJ",
+                            "TK",
+                            "TL",
+                            "TM",
+                            "TN",
+                            "TO",
+                            "TP",
+                            "TR",
+                            "TT",
+                            "TV",
+                            "TW",
+                            "TZ",
+                            "UA",
+                            "UG",
+                            "UK",
+                            "UM",
+                            "US",
+                            "UY",
+                            "UZ",
+                            "VA",
+                            "VC",
+                            "VE",
+                            "VG",
+                            "VI",
+                            "VN",
+                            "VU",
+                            "WF",
+                            "WS",
+                            "XI",
+                            "XU",
+                            "XK",
+                            "YE",
+                            "YT",
+                            "YU",
+                            "ZA",
+                            "ZM",
+                            "ZR",
+                            "ZW"
+                        ]
+                    },
+                    "administrativeAreaLevel1": {
+                        "type": "string",
+                        "description": "The 2-digit country subdivision code according to ISO 3166-2, such as a region within a country."
+                    },
+                    "postalCode": {
+                        "type": "string",
+                        "description": "The alphanumeric identifier (sometimes including spaces or punctuation) of the physical postal address for the purpose of sorting mail, synonyms:postcode, post code, PIN or ZIP code."
+                    },
+                    "city": {
+                        "type": "string",
+                        "description": "The name of the city of the physical postal address, synonyms: town, village, municipality."
+                    },
+                    "deliveryServiceType": {
+                        "type": "string",
+                        "description": "One of the alternative postal address types: P.O. box, private bag, boite postale.",
+                        "enum": [
+                            "PO_BOX",
+                            "PRIVATE_BAG",
+                            "BOITE_POSTALE"
+                        ]
+                    },
+                    "deliveryServiceQualifier": {
+                        "type": "string",
+                        "description": "The qualifier uniquely identifying the delivery service endpoint of the alternative postal address in conjunction with the delivery service number. In some countries for example, entering a P.O. box number, postal code and city is not sufficient to uniquely identify a P.O. box, because the same P.O. box number is assigned multiple times in some cities."
+                    },
+                    "deliveryServiceNumber": {
+                        "type": "string",
+                        "description": "The number indicating the delivery service endpoint of the alternative postal address to which the delivery is to be delivered, such as a P.O. box number or a private bag number."
+                    }
+                }
+            },
+            "BusinessPartnerIdentifierDto": {
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "description": "The type of the identifier."
+                    },
+                    "value": {
+                        "type": "string",
+                        "description": "The value of the identifier like “DE123465789."
+                    },
+                    "issuingBody": {
+                        "type": "string",
+                        "description": "The name of the official register, where the identifier is registered. For example, a Handelsregisternummer in Germany is only valid with its corresponding Registergericht and Registerart."
+                    }
+                }
+            },
+            "BusinessPartnerInputDto": {
+                "type": "object",
+                "description": "Generic business partner with external id",
+                "properties": {
+                    "externalId": {
+                        "type": "string",
+                        "description": "The identifier which uniquely identifies (in the internal system landscape of the sharing member) the business partner."
+                    },
+                    "nameParts": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "identifiers": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/BusinessPartnerIdentifierDto"
+                        }
+                    },
+                    "states": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/BusinessPartnerStateDto"
+                        }
+                    },
+                    "roles": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "enum": [
+                                "SUPPLIER",
+                                "CUSTOMER",
+                                "ONE_TIME_SUPPLIER",
+                                "ONE_TIME_CUSTOMER"
+                            ]
+                        }
+                    },
+                    "isOwnCompanyData": {
+                        "type": "boolean",
+                        "description": "Indicates whether the sharing member claims (in the initial upload) the business partner to belong to the company data of the sharing member."
+                    },
+                    "legalEntity": {
+                        "$ref": "#/components/schemas/LegalEntityRepresentationInputDto",
+                        "description": "The legal entity, on which the business partner provides a view."
+                    },
+                    "site": {
+                        "$ref": "#/components/schemas/SiteRepresentationInputDto",
+                        "description": "The site, on which the business partner provides a view."
+                    },
+                    "address": {
+                        "$ref": "#/components/schemas/AddressRepresentationInputDto",
+                        "description": "The address, on which the business partner provides a view. "
+                    },
+                    "externalSequenceTimestamp": {
+                        "type": "string",
+                        "format": "date-time",
+                        "description": "The timestamp indicates the last time point of change from the user side"
+                    },
+                    "createdAt": {
+                        "type": "string",
+                        "format": "date-time",
+                        "description": "The date when the data record has been created."
+                    },
+                    "updatedAt": {
+                        "type": "string",
+                        "format": "date-time",
+                        "description": "The date when the data record has been last updated."
+                    }
+                },
+                "required": [
+                    "address",
+                    "bpnA",
+                    "bpnL",
+                    "createdAt",
+                    "externalId",
+                    "identifiers",
+                    "isOwnCompanyData",
+                    "legalEntity",
+                    "nameParts",
+                    "postalAddress",
+                    "roles",
+                    "site",
+                    "states",
+                    "updatedAt"
+                ]
+            },
+            "BusinessPartnerInputRequest": {
+                "type": "object",
+                "description": "Generic business partner with external id",
+                "properties": {
+                    "externalId": {
+                        "type": "string",
+                        "description": "The identifier which uniquely identifies (in the internal system landscape of the sharing member) the business partner."
+                    },
+                    "nameParts": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "identifiers": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/BusinessPartnerIdentifierDto"
+                        }
+                    },
+                    "states": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/BusinessPartnerStateDto"
+                        }
+                    },
+                    "roles": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "enum": [
+                                "SUPPLIER",
+                                "CUSTOMER",
+                                "ONE_TIME_SUPPLIER",
+                                "ONE_TIME_CUSTOMER"
+                            ]
+                        }
+                    },
+                    "isOwnCompanyData": {
+                        "type": "boolean",
+                        "description": "Indicates whether the sharing member claims (in the initial upload) the business partner to belong to the company data of the sharing member."
+                    },
+                    "legalEntity": {
+                        "$ref": "#/components/schemas/LegalEntityRepresentationInputDto",
+                        "description": "The legal entity, on which the business partner provides a view."
+                    },
+                    "site": {
+                        "$ref": "#/components/schemas/SiteRepresentationInputDto",
+                        "description": "The site, on which the business partner provides a view."
+                    },
+                    "address": {
+                        "$ref": "#/components/schemas/AddressRepresentationInputDto",
+                        "description": "The address, on which the business partner provides a view. "
+                    },
+                    "externalSequenceTimestamp": {
+                        "type": "string",
+                        "format": "date-time",
+                        "description": "The timestamp indicates the last time point of change from the user side"
+                    }
+                },
+                "required": [
+                    "address",
+                    "externalId",
+                    "identifiers",
+                    "isOwnCompanyData",
+                    "legalEntity",
+                    "nameParts",
+                    "roles",
+                    "site",
+                    "states"
+                ]
+            },
+            "BusinessPartnerOutputDto": {
+                "type": "object",
+                "description": "Generic business partner output with external id",
+                "properties": {
+                    "externalId": {
+                        "type": "string",
+                        "description": "The identifier which uniquely identifies (in the internal system landscape of the sharing member) the business partner."
+                    },
+                    "nameParts": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "identifiers": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/BusinessPartnerIdentifierDto"
+                        }
+                    },
+                    "states": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/BusinessPartnerStateDto"
+                        }
+                    },
+                    "roles": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "enum": [
+                                "SUPPLIER",
+                                "CUSTOMER",
+                                "ONE_TIME_SUPPLIER",
+                                "ONE_TIME_CUSTOMER"
+                            ]
+                        }
+                    },
+                    "isOwnCompanyData": {
+                        "type": "boolean",
+                        "description": "Indicates whether the sharing member claims (in the initial upload) the business partner to belong to the company data of the sharing member."
+                    },
+                    "legalEntity": {
+                        "$ref": "#/components/schemas/LegalEntityRepresentationOutputDto",
+                        "description": "The legal entity, on which the business partner provides a view."
+                    },
+                    "site": {
+                        "$ref": "#/components/schemas/SiteRepresentationOutputDto",
+                        "description": "The site, on which the business partner provides a view."
+                    },
+                    "address": {
+                        "$ref": "#/components/schemas/AddressComponentOutputDto",
+                        "description": "The address, on which the business partner provides a view. "
+                    },
+                    "externalSequenceTimestamp": {
+                        "type": "string",
+                        "format": "date-time",
+                        "description": "The timestamp indicates the last time point of change from the user side"
+                    },
+                    "createdAt": {
+                        "type": "string",
+                        "format": "date-time",
+                        "description": "The date when the data record has been created."
+                    },
+                    "updatedAt": {
+                        "type": "string",
+                        "format": "date-time",
+                        "description": "The date when the data record has been last updated."
+                    }
+                },
+                "required": [
+                    "address",
+                    "createdAt",
+                    "externalId",
+                    "identifiers",
+                    "isOwnCompanyData",
+                    "legalEntity",
+                    "nameParts",
+                    "roles",
+                    "states",
+                    "updatedAt"
+                ]
+            },
+            "BusinessPartnerStateDto": {
+                "type": "object",
+                "properties": {
+                    "validFrom": {
+                        "type": "string",
+                        "format": "date-time",
+                        "description": "Date since when the status is/was valid."
+                    },
+                    "validTo": {
+                        "type": "string",
+                        "format": "date-time",
+                        "description": "Date until the status was valid, if applicable."
+                    },
+                    "type": {
+                        "type": "string",
+                        "description": "The type of this specified status.",
+                        "enum": [
+                            "ACTIVE",
+                            "INACTIVE"
+                        ]
+                    }
+                }
+            },
+            "ChangelogGateDto": {
+                "type": "object",
+                "description": "An entry of the changelog, which is created each time a business partner is modified and contains data about the change. The actual new state of the business partner is not included.",
+                "properties": {
+                    "externalId": {
+                        "type": "string",
+                        "description": "The external identifier of the business partner for which the changelog entry was created."
+                    },
+                    "timestamp": {
+                        "type": "string",
+                        "format": "date-time",
+                        "description": "The date and time when the changelog entry was created."
+                    },
+                    "changelogType": {
+                        "type": "string",
+                        "description": "One of the actions for which the changelog entry was created: create, update.",
+                        "enum": [
+                            "CREATE",
+                            "UPDATE"
+                        ]
+                    }
+                },
+                "required": [
+                    "changelogType",
+                    "externalId",
+                    "timestamp"
+                ]
+            },
+            "ChangelogSearchRequest": {
+                "type": "object",
+                "properties": {
+                    "timestampAfter": {
+                        "type": "string",
+                        "format": "date-time",
+                        "description": "Only changelog entries created after this time. Ignored if empty.",
+                        "example": "2023-03-20T10:23:28.194Z"
+                    },
+                    "externalIds": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "uniqueItems": true
+                    }
+                }
+            },
+            "ConfidenceCriteriaDto": {
+                "type": "object",
+                "properties": {
+                    "sharedByOwner": {
+                        "type": "boolean"
+                    },
+                    "checkedByExternalDataSource": {
+                        "type": "boolean"
+                    },
+                    "numberOfSharingMembers": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "lastConfidenceCheckAt": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "nextConfidenceCheckAt": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "confidenceLevel": {
+                        "type": "integer",
+                        "format": "int32"
+                    }
+                },
+                "required": [
+                    "checkedByExternalDataSource",
+                    "confidenceLevel",
+                    "lastConfidenceCheckAt",
+                    "nextConfidenceCheckAt",
+                    "numberOfSharingMembers",
+                    "sharedByOwner"
+                ]
+            },
+            "ErrorInfoChangeLogOutputError": {
+                "type": "object",
+                "description": "Holds information about failures",
+                "properties": {
+                    "errorCode": {
+                        "type": "string",
+                        "description": "Error code identifying the error",
+                        "enum": [
+                            "ExternalIdNotFound"
+                        ]
+                    },
+                    "message": {
+                        "type": "string",
+                        "description": "Error message that explains the error"
+                    },
+                    "entityKey": {
+                        "type": "string",
+                        "description": "Key (externalId) of the entity that failed"
+                    }
+                },
+                "required": [
+                    "errorCode",
+                    "message"
+                ],
+                "title": "ErrorInfo"
+            },
+            "GateErrorResponse": {
+                "type": "object",
+                "description": "Error response for invalid partner upload",
+                "properties": {
+                    "timestamp": {
+                        "type": "string",
+                        "format": "date-time",
+                        "description": "Timestamp of the error occurrence"
+                    },
+                    "status": {
+                        "type": "string",
+                        "description": "HTTP status of the error response",
+                        "enum": [
+                            "100 CONTINUE",
+                            "101 SWITCHING_PROTOCOLS",
+                            "102 PROCESSING",
+                            "103 EARLY_HINTS",
+                            "103 CHECKPOINT",
+                            "200 OK",
+                            "201 CREATED",
+                            "202 ACCEPTED",
+                            "203 NON_AUTHORITATIVE_INFORMATION",
+                            "204 NO_CONTENT",
+                            "205 RESET_CONTENT",
+                            "206 PARTIAL_CONTENT",
+                            "207 MULTI_STATUS",
+                            "208 ALREADY_REPORTED",
+                            "226 IM_USED",
+                            "300 MULTIPLE_CHOICES",
+                            "301 MOVED_PERMANENTLY",
+                            "302 FOUND",
+                            "302 MOVED_TEMPORARILY",
+                            "303 SEE_OTHER",
+                            "304 NOT_MODIFIED",
+                            "305 USE_PROXY",
+                            "307 TEMPORARY_REDIRECT",
+                            "308 PERMANENT_REDIRECT",
+                            "400 BAD_REQUEST",
+                            "401 UNAUTHORIZED",
+                            "402 PAYMENT_REQUIRED",
+                            "403 FORBIDDEN",
+                            "404 NOT_FOUND",
+                            "405 METHOD_NOT_ALLOWED",
+                            "406 NOT_ACCEPTABLE",
+                            "407 PROXY_AUTHENTICATION_REQUIRED",
+                            "408 REQUEST_TIMEOUT",
+                            "409 CONFLICT",
+                            "410 GONE",
+                            "411 LENGTH_REQUIRED",
+                            "412 PRECONDITION_FAILED",
+                            "413 PAYLOAD_TOO_LARGE",
+                            "413 REQUEST_ENTITY_TOO_LARGE",
+                            "414 URI_TOO_LONG",
+                            "414 REQUEST_URI_TOO_LONG",
+                            "415 UNSUPPORTED_MEDIA_TYPE",
+                            "416 REQUESTED_RANGE_NOT_SATISFIABLE",
+                            "417 EXPECTATION_FAILED",
+                            "418 I_AM_A_TEAPOT",
+                            "419 INSUFFICIENT_SPACE_ON_RESOURCE",
+                            "420 METHOD_FAILURE",
+                            "421 DESTINATION_LOCKED",
+                            "422 UNPROCESSABLE_ENTITY",
+                            "423 LOCKED",
+                            "424 FAILED_DEPENDENCY",
+                            "425 TOO_EARLY",
+                            "426 UPGRADE_REQUIRED",
+                            "428 PRECONDITION_REQUIRED",
+                            "429 TOO_MANY_REQUESTS",
+                            "431 REQUEST_HEADER_FIELDS_TOO_LARGE",
+                            "451 UNAVAILABLE_FOR_LEGAL_REASONS",
+                            "500 INTERNAL_SERVER_ERROR",
+                            "501 NOT_IMPLEMENTED",
+                            "502 BAD_GATEWAY",
+                            "503 SERVICE_UNAVAILABLE",
+                            "504 GATEWAY_TIMEOUT",
+                            "505 HTTP_VERSION_NOT_SUPPORTED",
+                            "506 VARIANT_ALSO_NEGOTIATES",
+                            "507 INSUFFICIENT_STORAGE",
+                            "508 LOOP_DETECTED",
+                            "509 BANDWIDTH_LIMIT_EXCEEDED",
+                            "510 NOT_EXTENDED",
+                            "511 NETWORK_AUTHENTICATION_REQUIRED"
+                        ]
+                    },
+                    "error": {
+                        "type": "array",
+                        "description": "List of error messages",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "path": {
+                        "type": "string",
+                        "description": "Request path where the error occurred"
+                    }
+                },
+                "required": [
+                    "error",
+                    "path",
+                    "status",
+                    "timestamp"
+                ]
+            },
+            "GeoCoordinateDto": {
+                "type": "object",
+                "description": "The exact location of the physical postal address in latitude, longitude, and altitude.",
+                "properties": {
+                    "longitude": {
+                        "type": "number",
+                        "format": "double",
+                        "description": "Longitude coordinate"
+                    },
+                    "latitude": {
+                        "type": "number",
+                        "format": "double",
+                        "description": "Latitude coordinate"
+                    },
+                    "altitude": {
+                        "type": "number",
+                        "format": "double",
+                        "description": "Altitude, if applicable"
+                    }
+                },
+                "required": [
+                    "latitude",
+                    "longitude"
+                ]
+            },
+            "LegalEntityRepresentationInputDto": {
+                "type": "object",
+                "properties": {
+                    "legalEntityBpn": {
+                        "type": "string",
+                        "description": "The BPNL of the legal entity, on which the business partner provides a view."
+                    },
+                    "legalName": {
+                        "type": "string",
+                        "description": "The name of the legal entity, on which the business partner provides a view, according to official registers."
+                    },
+                    "shortName": {
+                        "type": "string",
+                        "description": "The abbreviated name of the legal entity, on which the business partner provides a view."
+                    },
+                    "legalForm": {
+                        "type": "string",
+                        "description": "The legal form of the legal entity, on which the business partner provides a view."
+                    },
+                    "states": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/BusinessPartnerStateDto"
+                        }
+                    }
+                },
+                "required": [
+                    "states"
+                ]
+            },
+            "LegalEntityRepresentationOutputDto": {
+                "type": "object",
+                "description": "Legal Entity properties of business partner output data",
+                "properties": {
+                    "legalEntityBpn": {
+                        "type": "string",
+                        "description": "The BPNL of the legal entity, on which the business partner provides a view."
+                    },
+                    "legalName": {
+                        "type": "string",
+                        "description": "The name of the legal entity, on which the business partner provides a view, according to official registers."
+                    },
+                    "shortName": {
+                        "type": "string",
+                        "description": "The abbreviated name of the legal entity, on which the business partner provides a view."
+                    },
+                    "legalForm": {
+                        "type": "string",
+                        "description": "The legal form of the legal entity, on which the business partner provides a view."
+                    },
+                    "confidenceCriteria": {
+                        "$ref": "#/components/schemas/ConfidenceCriteriaDto"
+                    },
+                    "states": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/BusinessPartnerStateDto"
+                        }
+                    }
+                },
+                "required": [
+                    "bpnL",
+                    "confidenceCriteria",
+                    "legalEntityBpn",
+                    "states"
+                ]
+            },
+            "PageChangeLogDtoChangelogGateDto": {
+                "type": "object",
+                "description": "Paginated collection of results",
+                "properties": {
+                    "totalElements": {
+                        "type": "integer",
+                        "format": "int64",
+                        "description": "Total number of all results in all pages"
+                    },
+                    "totalPages": {
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Total number pages"
+                    },
+                    "page": {
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Current page number"
+                    },
+                    "contentSize": {
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Number of results in the page"
+                    },
+                    "content": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/ChangelogGateDto"
+                        }
+                    },
+                    "invalidEntries": {
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Number of entries in the page that have been omitted due to being invalid (error)"
+                    },
+                    "errors": {
+                        "type": "array",
+                        "description": "Infos about the entries with errors",
+                        "items": {
+                            "$ref": "#/components/schemas/ErrorInfoChangeLogOutputError"
+                        }
+                    }
+                },
+                "required": [
+                    "content",
+                    "contentSize",
+                    "errors",
+                    "invalidEntries",
+                    "page",
+                    "totalElements",
+                    "totalPages"
+                ]
+            },
+            "PageDtoBusinessPartnerInputDto": {
+                "type": "object",
+                "description": "Paginated collection of results",
+                "properties": {
+                    "totalElements": {
+                        "type": "integer",
+                        "format": "int64",
+                        "description": "Total number of all results in all pages"
+                    },
+                    "totalPages": {
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Total number pages"
+                    },
+                    "page": {
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Current page number"
+                    },
+                    "contentSize": {
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Number of results in the page"
+                    },
+                    "content": {
+                        "type": "array",
+                        "description": "Collection of results in the page",
+                        "items": {
+                            "$ref": "#/components/schemas/BusinessPartnerInputDto"
+                        }
+                    }
+                },
+                "required": [
+                    "content",
+                    "contentSize",
+                    "page",
+                    "totalElements",
+                    "totalPages"
+                ]
+            },
+            "PageDtoBusinessPartnerOutputDto": {
+                "type": "object",
+                "description": "Paginated collection of results",
+                "properties": {
+                    "totalElements": {
+                        "type": "integer",
+                        "format": "int64",
+                        "description": "Total number of all results in all pages"
+                    },
+                    "totalPages": {
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Total number pages"
+                    },
+                    "page": {
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Current page number"
+                    },
+                    "contentSize": {
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Number of results in the page"
+                    },
+                    "content": {
+                        "type": "array",
+                        "description": "Collection of results in the page",
+                        "items": {
+                            "$ref": "#/components/schemas/BusinessPartnerOutputDto"
+                        }
+                    }
+                },
+                "required": [
+                    "content",
+                    "contentSize",
+                    "page",
+                    "totalElements",
+                    "totalPages"
+                ]
+            },
+            "PageDtoRelationDto": {
+                "type": "object",
+                "description": "Paginated collection of results",
+                "properties": {
+                    "totalElements": {
+                        "type": "integer",
+                        "format": "int64",
+                        "description": "Total number of all results in all pages"
+                    },
+                    "totalPages": {
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Total number pages"
+                    },
+                    "page": {
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Current page number"
+                    },
+                    "contentSize": {
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Number of results in the page"
+                    },
+                    "content": {
+                        "type": "array",
+                        "description": "Collection of results in the page",
+                        "items": {
+                            "$ref": "#/components/schemas/RelationDto"
+                        }
+                    }
+                },
+                "required": [
+                    "content",
+                    "contentSize",
+                    "page",
+                    "totalElements",
+                    "totalPages"
+                ]
+            },
+            "PageDtoRelationOutputDto": {
+                "type": "object",
+                "description": "Paginated collection of results",
+                "properties": {
+                    "totalElements": {
+                        "type": "integer",
+                        "format": "int64",
+                        "description": "Total number of all results in all pages"
+                    },
+                    "totalPages": {
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Total number pages"
+                    },
+                    "page": {
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Current page number"
+                    },
+                    "contentSize": {
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Number of results in the page"
+                    },
+                    "content": {
+                        "type": "array",
+                        "description": "Collection of results in the page",
+                        "items": {
+                            "$ref": "#/components/schemas/RelationOutputDto"
+                        }
+                    }
+                },
+                "required": [
+                    "content",
+                    "contentSize",
+                    "page",
+                    "totalElements",
+                    "totalPages"
+                ]
+            },
+            "PageDtoRelationSharingStateDto": {
+                "type": "object",
+                "description": "Paginated collection of results",
+                "properties": {
+                    "totalElements": {
+                        "type": "integer",
+                        "format": "int64",
+                        "description": "Total number of all results in all pages"
+                    },
+                    "totalPages": {
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Total number pages"
+                    },
+                    "page": {
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Current page number"
+                    },
+                    "contentSize": {
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Number of results in the page"
+                    },
+                    "content": {
+                        "type": "array",
+                        "description": "Collection of results in the page",
+                        "items": {
+                            "$ref": "#/components/schemas/RelationSharingStateDto"
+                        }
+                    }
+                },
+                "required": [
+                    "content",
+                    "contentSize",
+                    "page",
+                    "totalElements",
+                    "totalPages"
+                ]
+            },
+            "PageDtoSharingStateDto": {
+                "type": "object",
+                "description": "Paginated collection of results",
+                "properties": {
+                    "totalElements": {
+                        "type": "integer",
+                        "format": "int64",
+                        "description": "Total number of all results in all pages"
+                    },
+                    "totalPages": {
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Total number pages"
+                    },
+                    "page": {
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Current page number"
+                    },
+                    "contentSize": {
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "Number of results in the page"
+                    },
+                    "content": {
+                        "type": "array",
+                        "description": "Collection of results in the page",
+                        "items": {
+                            "$ref": "#/components/schemas/SharingStateDto"
+                        }
+                    }
+                },
+                "required": [
+                    "content",
+                    "contentSize",
+                    "page",
+                    "totalElements",
+                    "totalPages"
+                ]
+            },
+            "PhysicalPostalAddressDto": {
+                "type": "object",
+                "description": "A physical postal address describes the physical location of an office, warehouse, gate, etc.",
+                "properties": {
+                    "geographicCoordinates": {
+                        "$ref": "#/components/schemas/GeoCoordinateDto"
+                    },
+                    "country": {
+                        "type": "string",
+                        "description": "The 2-digit country code of the physical postal address according to ISO 3166-1.",
+                        "enum": [
+                            "UNDEFINED",
+                            "AC",
+                            "AD",
+                            "AE",
+                            "AF",
+                            "AG",
+                            "AI",
+                            "AL",
+                            "AM",
+                            "AN",
+                            "AO",
+                            "AQ",
+                            "AR",
+                            "AS",
+                            "AT",
+                            "AU",
+                            "AW",
+                            "AX",
+                            "AZ",
+                            "BA",
+                            "BB",
+                            "BD",
+                            "BE",
+                            "BF",
+                            "BG",
+                            "BH",
+                            "BI",
+                            "BJ",
+                            "BL",
+                            "BM",
+                            "BN",
+                            "BO",
+                            "BQ",
+                            "BR",
+                            "BS",
+                            "BT",
+                            "BU",
+                            "BV",
+                            "BW",
+                            "BY",
+                            "BZ",
+                            "CA",
+                            "CC",
+                            "CD",
+                            "CF",
+                            "CG",
+                            "CH",
+                            "CI",
+                            "CK",
+                            "CL",
+                            "CM",
+                            "CN",
+                            "CO",
+                            "CP",
+                            "CR",
+                            "CS",
+                            "CU",
+                            "CV",
+                            "CW",
+                            "CX",
+                            "CY",
+                            "CZ",
+                            "DE",
+                            "DG",
+                            "DJ",
+                            "DK",
+                            "DM",
+                            "DO",
+                            "DZ",
+                            "EA",
+                            "EC",
+                            "EE",
+                            "EG",
+                            "EH",
+                            "ER",
+                            "ES",
+                            "ET",
+                            "EU",
+                            "EZ",
+                            "FI",
+                            "FJ",
+                            "FK",
+                            "FM",
+                            "FO",
+                            "FR",
+                            "FX",
+                            "GA",
+                            "GB",
+                            "GD",
+                            "GE",
+                            "GF",
+                            "GG",
+                            "GH",
+                            "GI",
+                            "GL",
+                            "GM",
+                            "GN",
+                            "GP",
+                            "GQ",
+                            "GR",
+                            "GS",
+                            "GT",
+                            "GU",
+                            "GW",
+                            "GY",
+                            "HK",
+                            "HM",
+                            "HN",
+                            "HR",
+                            "HT",
+                            "HU",
+                            "IC",
+                            "ID",
+                            "IE",
+                            "IL",
+                            "IM",
+                            "IN",
+                            "IO",
+                            "IQ",
+                            "IR",
+                            "IS",
+                            "IT",
+                            "JE",
+                            "JM",
+                            "JO",
+                            "JP",
+                            "KE",
+                            "KG",
+                            "KH",
+                            "KI",
+                            "KM",
+                            "KN",
+                            "KP",
+                            "KR",
+                            "KW",
+                            "KY",
+                            "KZ",
+                            "LA",
+                            "LB",
+                            "LC",
+                            "LI",
+                            "LK",
+                            "LR",
+                            "LS",
+                            "LT",
+                            "LU",
+                            "LV",
+                            "LY",
+                            "MA",
+                            "MC",
+                            "MD",
+                            "ME",
+                            "MF",
+                            "MG",
+                            "MH",
+                            "MK",
+                            "ML",
+                            "MM",
+                            "MN",
+                            "MO",
+                            "MP",
+                            "MQ",
+                            "MR",
+                            "MS",
+                            "MT",
+                            "MU",
+                            "MV",
+                            "MW",
+                            "MX",
+                            "MY",
+                            "MZ",
+                            "NA",
+                            "NC",
+                            "NE",
+                            "NF",
+                            "NG",
+                            "NI",
+                            "NL",
+                            "NO",
+                            "NP",
+                            "NR",
+                            "NT",
+                            "NU",
+                            "NZ",
+                            "OM",
+                            "PA",
+                            "PE",
+                            "PF",
+                            "PG",
+                            "PH",
+                            "PK",
+                            "PL",
+                            "PM",
+                            "PN",
+                            "PR",
+                            "PS",
+                            "PT",
+                            "PW",
+                            "PY",
+                            "QA",
+                            "RE",
+                            "RO",
+                            "RS",
+                            "RU",
+                            "RW",
+                            "SA",
+                            "SB",
+                            "SC",
+                            "SD",
+                            "SE",
+                            "SF",
+                            "SG",
+                            "SH",
+                            "SI",
+                            "SJ",
+                            "SK",
+                            "SL",
+                            "SM",
+                            "SN",
+                            "SO",
+                            "SR",
+                            "SS",
+                            "ST",
+                            "SU",
+                            "SV",
+                            "SX",
+                            "SY",
+                            "SZ",
+                            "TA",
+                            "TC",
+                            "TD",
+                            "TF",
+                            "TG",
+                            "TH",
+                            "TJ",
+                            "TK",
+                            "TL",
+                            "TM",
+                            "TN",
+                            "TO",
+                            "TP",
+                            "TR",
+                            "TT",
+                            "TV",
+                            "TW",
+                            "TZ",
+                            "UA",
+                            "UG",
+                            "UK",
+                            "UM",
+                            "US",
+                            "UY",
+                            "UZ",
+                            "VA",
+                            "VC",
+                            "VE",
+                            "VG",
+                            "VI",
+                            "VN",
+                            "VU",
+                            "WF",
+                            "WS",
+                            "XI",
+                            "XU",
+                            "XK",
+                            "YE",
+                            "YT",
+                            "YU",
+                            "ZA",
+                            "ZM",
+                            "ZR",
+                            "ZW"
+                        ]
+                    },
+                    "administrativeAreaLevel1": {
+                        "type": "string",
+                        "description": "The 2-digit country subdivision code according to ISO 3166-2, such as a region within a country."
+                    },
+                    "administrativeAreaLevel2": {
+                        "type": "string",
+                        "description": "The name of the locally regulated secondary country subdivision of the physical postal address, such as county within a country."
+                    },
+                    "administrativeAreaLevel3": {
+                        "type": "string",
+                        "description": "The name of the locally regulated tertiary country subdivision of the physical address, such as townships within a country."
+                    },
+                    "postalCode": {
+                        "type": "string",
+                        "description": "The alphanumeric identifier (sometimes including spaces or punctuation) of the physical postal address for the purpose of sorting mail, synonyms:postcode, post code, PIN or ZIP code."
+                    },
+                    "city": {
+                        "type": "string",
+                        "description": "The name of the city of the physical postal address, synonyms: town, village, municipality."
+                    },
+                    "district": {
+                        "type": "string",
+                        "description": "The name of the district of the physical postal address which divides the city in several smaller areas."
+                    },
+                    "street": {
+                        "$ref": "#/components/schemas/StreetDto"
+                    },
+                    "companyPostalCode": {
+                        "type": "string",
+                        "description": "The company postal code of the physical postal address, which is sometimes required for large companies."
+                    },
+                    "industrialZone": {
+                        "type": "string",
+                        "description": "The industrial zone of the physical postal address, designating an area for industrial development, synonym: industrial area."
+                    },
+                    "building": {
+                        "type": "string",
+                        "description": "The alphanumeric identifier of the building addressed by the physical postal address."
+                    },
+                    "floor": {
+                        "type": "string",
+                        "description": "The number of a floor in the building addressed by the physical postal address, synonym: level."
+                    },
+                    "door": {
+                        "type": "string",
+                        "description": "The number of a door in the building on the respective floor addressed by the physical postal address, synonyms: room, suite."
+                    },
+                    "taxJurisdictionCode": {
+                        "type": "string",
+                        "description": "Tax jurisdiction codes are used to identify the specific jurisdiction(s) that a company belong to, particularly in bureaucratic processes such as tax returns and IRS forms."
+                    }
+                }
+            },
+            "PostSharingStateReadyRequest": {
+                "type": "object",
+                "description": "Request for setting business partners into ready to be shared to golden record state",
+                "properties": {
+                    "externalIds": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "required": [
+                    "externalIds"
+                ]
+            },
+            "RelationDto": {
+                "type": "object",
+                "description": "A relation from one business partner (the source) to another business partner (the target). ",
+                "properties": {
+                    "externalId": {
+                        "type": "string",
+                        "description": "The identifier with which to reference this relation"
+                    },
+                    "relationType": {
+                        "type": "string",
+                        "description": "The type of relation between the business partners",
+                        "enum": [
+                            "IsManagedBy",
+                            "IsAlternativeHeadquarterFor"
+                        ]
+                    },
+                    "businessPartnerSourceExternalId": {
+                        "type": "string",
+                        "description": "The business partner from which the relation emerges (the source)"
+                    },
+                    "businessPartnerTargetExternalId": {
+                        "type": "string",
+                        "description": "The business partner to which this relation goes (the target)"
+                    },
+                    "updatedAt": {
+                        "type": "string",
+                        "format": "date-time",
+                        "description": "The time when this relation was last modified"
+                    },
+                    "createdAt": {
+                        "type": "string",
+                        "format": "date-time",
+                        "description": "The time when this relation was created"
+                    }
+                },
+                "required": [
+                    "businessPartnerSourceExternalId",
+                    "businessPartnerTargetExternalId",
+                    "createdAt",
+                    "externalId",
+                    "relationType",
+                    "updatedAt"
+                ]
+            },
+            "RelationOutputDto": {
+                "type": "object",
+                "properties": {
+                    "externalId": {
+                        "type": "string"
+                    },
+                    "relationType": {
+                        "type": "string",
+                        "enum": [
+                            "IsAlternativeHeadquarterFor",
+                            "IsManagedBy"
+                        ]
+                    },
+                    "sourceBpnL": {
+                        "type": "string"
+                    },
+                    "targetBpnL": {
+                        "type": "string"
+                    },
+                    "updatedAt": {
+                        "type": "string",
+                        "format": "date-time"
+                    }
+                },
+                "required": [
+                    "externalId",
+                    "relationType",
+                    "sourceBpnL",
+                    "targetBpnL",
+                    "updatedAt"
+                ]
+            },
+            "RelationOutputSearchRequest": {
+                "type": "object",
+                "description": "Request payload containing search parameters for business partner output relations",
+                "properties": {
+                    "externalIds": {
+                        "type": "array",
+                        "description": "Only show relations with the given external identifiers",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "relationType": {
+                        "type": "string",
+                        "description": "Only show relations of the given type",
+                        "enum": [
+                            "IsAlternativeHeadquarterFor",
+                            "IsManagedBy"
+                        ]
+                    },
+                    "sourceBpnLs": {
+                        "type": "array",
+                        "description": "Only show relations which have the given business partners as sources",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "targetBpnLs": {
+                        "type": "array",
+                        "description": "Only show relations which have the given business partners as targets",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "updatedAtFrom": {
+                        "type": "string",
+                        "format": "date-time",
+                        "description": "Only show relations which have been modified after the given time stamp"
+                    }
+                }
+            },
+            "RelationPostRequest": {
+                "type": "object",
+                "description": "A request to create a new relation between two business partners",
+                "properties": {
+                    "externalId": {
+                        "type": "string",
+                        "description": "The identifier under which the relation will be referenced. If not given a unique identifier will be automatically assigned by the system. A given external identifier needs be unique."
+                    },
+                    "relationType": {
+                        "type": "string",
+                        "description": "The type of relation that should be created",
+                        "enum": [
+                            "IsManagedBy",
+                            "IsAlternativeHeadquarterFor"
+                        ]
+                    },
+                    "businessPartnerSourceExternalId": {
+                        "type": "string",
+                        "description": "The external identifier of the business partner from which the relation should emerge (the source)"
+                    },
+                    "businessPartnerTargetExternalId": {
+                        "type": "string",
+                        "description": "The external identifier of the business partner to which the relation should point (the target)"
+                    }
+                },
+                "required": [
+                    "businessPartnerSourceExternalId",
+                    "businessPartnerTargetExternalId",
+                    "relationType"
+                ]
+            },
+            "RelationPutEntry": {
+                "type": "object",
+                "description": "A request to update the content of the given business partner relation",
+                "properties": {
+                    "externalId": {
+                        "type": "string",
+                        "description": "The external identifier of the business partner relation to update"
+                    },
+                    "relationType": {
+                        "type": "string",
+                        "description": "The type the relation should be",
+                        "enum": [
+                            "IsManagedBy",
+                            "IsAlternativeHeadquarterFor"
+                        ]
+                    },
+                    "businessPartnerSourceExternalId": {
+                        "type": "string",
+                        "description": "The external identifier of the business partner from which the relation should emerge (the source)"
+                    },
+                    "businessPartnerTargetExternalId": {
+                        "type": "string",
+                        "description": "The external identifier of the business partner to which the relation should point (the target)"
+                    }
+                },
+                "required": [
+                    "businessPartnerSourceExternalId",
+                    "businessPartnerTargetExternalId",
+                    "externalId",
+                    "relationType"
+                ]
+            },
+            "RelationPutRequest": {
+                "type": "object",
+                "description": "A request to upsert the contents of the given relations",
+                "properties": {
+                    "relations": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/RelationPutEntry"
+                        }
+                    }
+                },
+                "required": [
+                    "relations"
+                ]
+            },
+            "RelationPutResponse": {
+                "type": "object",
+                "properties": {
+                    "upsertedRelations": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/RelationDto"
+                        }
+                    }
+                },
+                "required": [
+                    "upsertedRelations"
+                ]
+            },
+            "RelationSearchRequest": {
+                "type": "object",
+                "description": "Request payload containing search parameters for business partner relations",
+                "properties": {
+                    "externalIds": {
+                        "type": "array",
+                        "description": "Only show relations with the given external identifiers",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "relationType": {
+                        "type": "string",
+                        "description": "Only show relations of the given type",
+                        "enum": [
+                            "IsManagedBy",
+                            "IsAlternativeHeadquarterFor"
+                        ]
+                    },
+                    "businessPartnerSourceExternalIds": {
+                        "type": "array",
+                        "description": "Only show relations which have the given business partners as sources",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "businessPartnerTargetExternalIds": {
+                        "type": "array",
+                        "description": "Only show relations which have the given business partners as targets",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "updatedAtFrom": {
+                        "type": "string",
+                        "format": "date-time",
+                        "description": "Only show relations which have been modified after the given time stamp"
+                    }
+                }
+            },
+            "RelationSharingStateDto": {
+                "type": "object",
+                "properties": {
+                    "externalId": {
+                        "type": "string",
+                        "description": "The external identifier of the business partner for which the sharing state entry was created."
+                    },
+                    "sharingStateType": {
+                        "type": "string",
+                        "description": "One of the sharing state types of the current sharing state.",
+                        "enum": [
+                            "Ready",
+                            "Pending",
+                            "Error",
+                            "Success"
+                        ]
+                    },
+                    "sharingErrorCode": {
+                        "type": "string",
+                        "description": "One of the sharing error codes in case the current sharing state type is \"error\". \n* `SharingProcessError`: A general error occurred during the sharing process.\n* `SharingTimeout`: The processing took to long to complete.\n",
+                        "enum": [
+                            "SharingProcessError",
+                            "SharingTimeout"
+                        ]
+                    },
+                    "sharingErrorMessage": {
+                        "type": "string",
+                        "description": "The error message in case the current sharing state type is \"error\"."
+                    },
+                    "taskId": {
+                        "type": "string",
+                        "description": "When the sharing state last changed."
+                    },
+                    "updatedAt": {
+                        "type": "string",
+                        "format": "date-time",
+                        "description": "The orchestrator task identifier that was created"
+                    }
+                },
+                "required": [
+                    "externalId",
+                    "sharingStateType",
+                    "updatedAt"
+                ]
+            },
+            "SharingStateDto": {
+                "type": "object",
+                "description": "A sharing state entry shows the progress in the sharing process and is updated each time the progress for a business partner changes. The business partner is identified by a combination of external ID and business partner type.\n",
+                "properties": {
+                    "externalId": {
+                        "type": "string",
+                        "description": "The external identifier of the business partner for which the sharing state entry was created."
+                    },
+                    "sharingStateType": {
+                        "type": "string",
+                        "description": "One of the sharing state types of the current sharing state.",
+                        "enum": [
+                            "Pending",
+                            "Success",
+                            "Error",
+                            "Initial",
+                            "Ready"
+                        ]
+                    },
+                    "sharingErrorCode": {
+                        "type": "string",
+                        "description": "One of the sharing error codes in case the current sharing state type is \"error\". \n* `NaturalPersonError`: The provided record contains natural person information.\n* `BpnErrorNotFound`: The provided record can not be matched to a legal entity or an address.\n* `BpnErrorTooManyOptions`: The provided record can not link to a clear legal entity.\n* `MandatoryFieldValidationFailed`: The provided record does not fulfill mandatory validation rules.\n* `BlacklistCountryPresent`: The provided record is part of a country that is not allowed to be processed by the GR process (example: Brazil).\n* `UnknownSpecialCharacters`: The provided record contains unallowed special characters.",
+                        "enum": [
+                            "SharingProcessError",
+                            "SharingTimeout",
+                            "BpnNotInPool",
+                            "MissingTaskID",
+                            "NaturalPersonError",
+                            "BpnErrorNotFound",
+                            "BpnErrorTooManyOptions",
+                            "MandatoryFieldValidationFailed",
+                            "BlacklistCountryPresent",
+                            "UnknownSpecialCharacters"
+                        ]
+                    },
+                    "sharingErrorMessage": {
+                        "type": "string",
+                        "description": "The error message in case the current sharing state type is \"error\"."
+                    },
+                    "sharingProcessStarted": {
+                        "type": "string",
+                        "format": "date-time",
+                        "description": "The date and time when the sharing process was started."
+                    },
+                    "taskId": {
+                        "type": "string",
+                        "description": "The orchestrator task identifier that was created"
+                    },
+                    "updatedAt": {
+                        "type": "string",
+                        "format": "date-time",
+                        "description": "The time when the sharing state has been last updated"
+                    }
+                },
+                "required": [
+                    "externalId",
+                    "sharingStateType",
+                    "updatedAt"
+                ]
+            },
+            "SiteRepresentationInputDto": {
+                "type": "object",
+                "properties": {
+                    "siteBpn": {
+                        "type": "string",
+                        "description": "The BPNS of the site, on which the business partner provides a view."
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "The name of the site, on which the business partner provides a view. This is not according to official registers but according to the name the owner chooses."
+                    },
+                    "states": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/BusinessPartnerStateDto"
+                        }
+                    }
+                },
+                "required": [
+                    "states"
+                ]
+            },
+            "SiteRepresentationOutputDto": {
+                "type": "object",
+                "description": "Site properties of business partner output data",
+                "properties": {
+                    "siteBpn": {
+                        "type": "string",
+                        "description": "The BPNS of the site, on which the business partner provides a view."
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "The name of the site, on which the business partner provides a view. This is not according to official registers but according to the name the owner chooses."
+                    },
+                    "confidenceCriteria": {
+                        "$ref": "#/components/schemas/ConfidenceCriteriaDto"
+                    },
+                    "states": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/BusinessPartnerStateDto"
+                        }
+                    }
+                },
+                "required": [
+                    "confidenceCriteria",
+                    "siteBpn",
+                    "states"
+                ]
+            },
+            "StatsAddressTypesResponse": {
+                "type": "object",
+                "properties": {
+                    "legalAndSiteTotal": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "legalTotal": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "siteTotal": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "additionalTotal": {
+                        "type": "integer",
+                        "format": "int32"
+                    }
+                },
+                "required": [
+                    "additionalTotal",
+                    "legalAndSiteTotal",
+                    "legalTotal",
+                    "siteTotal"
+                ]
+            },
+            "StatsConfidenceCriteriaResponse": {
+                "type": "object",
+                "properties": {
+                    "numberOfBusinessPartnersAverage": {
+                        "type": "number",
+                        "format": "float"
+                    },
+                    "uniqueTotal": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "sharedByOwnerTotal": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "checkedByExternalDataSourceTotal": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "confidenceLevelAverage": {
+                        "type": "number",
+                        "format": "float"
+                    }
+                },
+                "required": [
+                    "checkedByExternalDataSourceTotal",
+                    "confidenceLevelAverage",
+                    "numberOfBusinessPartnersAverage",
+                    "sharedByOwnerTotal",
+                    "uniqueTotal"
+                ]
+            },
+            "StatsSharingStatesResponse": {
+                "type": "object",
+                "properties": {
+                    "initialTotal": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "readyTotal": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "pendingTotal": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "successTotal": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "errorTotal": {
+                        "type": "integer",
+                        "format": "int32"
+                    }
+                },
+                "required": [
+                    "errorTotal",
+                    "initialTotal",
+                    "pendingTotal",
+                    "readyTotal",
+                    "successTotal"
+                ]
+            },
+            "StatsStagesResponse": {
+                "type": "object",
+                "properties": {
+                    "inputTotal": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "outputTotal": {
+                        "type": "integer",
+                        "format": "int32"
+                    }
+                },
+                "required": [
+                    "inputTotal",
+                    "outputTotal"
+                ]
+            },
+            "StreetDto": {
+                "type": "object",
+                "description": "The street of the physical postal address, synonyms: road, avenue, lane, boulevard, highway",
+                "properties": {
+                    "namePrefix": {
+                        "type": "string",
+                        "description": "The street related information, which is usually printed before the official street name on an address label."
+                    },
+                    "additionalNamePrefix": {
+                        "type": "string",
+                        "description": "The additional street related information, which is usually printed before the official street name on an address label."
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "The name of the street."
+                    },
+                    "nameSuffix": {
+                        "type": "string",
+                        "description": "The street related information, which is usually printed after the official street name on an address label."
+                    },
+                    "additionalNameSuffix": {
+                        "type": "string",
+                        "description": "The additional street related information, which is usually printed after the official street name on an address label."
+                    },
+                    "houseNumber": {
+                        "type": "string",
+                        "description": "The number representing the exact location of a building within the street."
+                    },
+                    "houseNumberSupplement": {
+                        "type": "string"
+                    },
+                    "milestone": {
+                        "type": "string",
+                        "description": "The number representing the exact location of an addressed object within a street without house numbers, such as within long roads."
+                    },
+                    "direction": {
+                        "type": "string",
+                        "description": "The cardinal direction describing where the exit to the location of the addressed object on large highways / motorways is located, such as Highway 101 South."
+                    }
+                }
+            }
+        },
+        "securitySchemes": {
+            "open_id_scheme": {
+                "type": "oauth2",
+                "flows": {
+                    "clientCredentials": {
+                        "tokenUrl": "http://localhost:8180/realms/CX-Central/protocol/openid-connect/token",
+                        "scopes": {}
+                    },
+                    "authorizationCode": {
+                        "authorizationUrl": "http://localhost:8180/realms/CX-Central/protocol/openid-connect/auth",
+                        "tokenUrl": "http://localhost:8180/realms/CX-Central/protocol/openid-connect/token",
+                        "refreshUrl": "http://localhost:8180/realms/CX-Central/protocol/openid-connect/token",
+                        "scopes": {}
+                    }
+                }
+            },
+            "bearer_scheme": {
+                "type": "http",
+                "scheme": "bearer",
+                "bearerFormat": "JWT"
+            }
+        }
+    }
+}

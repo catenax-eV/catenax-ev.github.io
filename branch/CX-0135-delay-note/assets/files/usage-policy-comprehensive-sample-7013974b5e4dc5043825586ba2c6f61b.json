@@ -1,0 +1,158 @@
+{
+  "@context": [
+    "https://w3id.org/catenax/2025/9/policy/odrl.jsonld",
+    "https://w3id.org/catenax/2025/9/policy/context.jsonld"
+  ],
+  "@type": "Set",
+  "@id": "some-usage-policy-id",
+  "permission": [
+    {
+      "action": "use", 
+      "constraint": [
+        {
+          "and": [ 
+        {
+          "leftOperand": "FrameworkAgreement", 
+          "operator": "eq", 
+          "rightOperand": "DataExchangeGovernance:1.0" 
+        }, 
+        {
+          "leftOperand": "ContractReference",
+          "operator": "isAllOf",
+          "rightOperand": [
+              "ContractID250620197", "AGB9832", "ContractConstraint_Warranty", "ContractConstraint_DataQuality"
+         ]
+        },
+        {
+          "leftOperand": "Precedence",
+          "operator": "eq",
+          "rightOperand": "cx.precedence.contractReference:1"
+        },
+        {
+          "leftOperand": "VersionChanges",
+          "operator": "eq",
+          "rightOperand": "cx.versionChanges.minor:1"
+        },
+        {
+          "leftOperand": "DataFrequency",
+          "operator": "eq",
+          "rightOperand": "cx.dataFrequency.unlimited:1"
+        },
+        {
+          "leftOperand": "ExclusiveUsage",
+          "operator": "eq",
+          "rightOperand": "cx.exclusiveUsage.dataConsumer:1"
+        },
+        {
+          "leftOperand": "UsagePurpose",
+          "operator": "isAnyOf",
+          "rightOperand": [
+            "cx.core.digitalTwinRegistry:1",
+            "cx.pcf.base:1",
+            "cx.circular.dpp:1",
+            "PublishDataOnCompanyWebPage",
+            "ModifyAndAmendData"
+          ]
+        },
+        {
+          "leftOperand": "AffiliatesRegion",
+          "operator": "isAnyOf",
+          "rightOperand": [
+            "cx.region.europe:1",
+            "cx.region.northAmerica:1"
+          ]
+        },
+        {
+          "leftOperand": "AffiliatesBpnl",
+          "operator": "isAnyOf",
+          "rightOperand": [
+            "BPNL489012567123",
+            "BPNL567123489012"
+          ]
+        },
+        {
+          "leftOperand": "DataUsageEndDefinition",
+          "operator": "eq",
+          "rightOperand": "cx.dataUsageEnd.unlimited:1"
+        },
+        {
+          "leftOperand": "Warranty",
+          "operator": "eq",
+          "rightOperand": "cx.warranty.contractReference:1"
+        },
+        {
+          "leftOperand": "WarrantyDurationMonths",
+          "operator": "eq",
+          "rightOperand": "6"
+        },
+        {
+          "leftOperand": "Liability",
+          "operator": "eq",
+          "rightOperand": "cx.grossNegligence:1"
+        },
+        {
+          "leftOperand": "ConfidentialInformationMeasures",
+          "operator": "eq",
+          "rightOperand": "cx.confidentiality.measures:1"
+        },
+        {
+          "leftOperand": "ConfidentialInformationSharing",
+          "operator": "isAnyOf",
+          "rightOperand": [
+            "cx.sharing.affiliates:1"
+          ]
+        },
+        {
+          "leftOperand": "JurisdictionLocationReference",
+          "operator": "eq",
+          "rightOperand": "cx.location.contractReference:1"
+        }
+        ]
+       }
+      ]
+     }
+   ],
+  "prohibition": [
+    {
+      "action": "use",
+      "constraint": [
+        {
+          "and": [
+        {
+          "leftOperand": "UsageRestriction",
+          "operator": "isAllOf",
+          "rightOperand": [
+              "ExtraordinaryAnalyticsForbiddenRightOperand", 
+              "DataProviderRemovalForbiddenRightOperand"
+         ]
+        },
+        {
+          "leftOperand": "AffiliatesRegion",
+          "operator": "isAnyOf",
+          "rightOperand": [
+            "cx.region.southAmerica:1",
+            "cx.region.asia:1"
+          ]
+        }
+        ]
+        }
+      ]
+    }
+  ],
+  "obligation": [
+    {
+      "action": "use",
+      "constraint": [
+        {
+          "and": [
+        {
+          "leftOperand": "DataProvisioningEndDate",
+          "operator": "eq",
+          "rightOperand": "2027-12-15T12:00:00Z"
+        }
+      ]
+      }
+    ]
+    }
+  ]
+}

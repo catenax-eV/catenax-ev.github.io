@@ -1,0 +1,5 @@
+{
+    "leftOperand": "WarrantyDefinition",
+    "operator": "eq",
+    "rightOperand": "cx.warranty.contractEndDate:1"
+}
