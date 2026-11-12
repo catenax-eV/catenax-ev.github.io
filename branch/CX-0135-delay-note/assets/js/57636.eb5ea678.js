@@ -1,1 +1,0 @@
-"use strict";(globalThis.webpackChunkcatenax_ev_github_io_new=globalThis.webpackChunkcatenax_ev_github_io_new||[]).push([[57636],{57636(e,a,i){i.d(a,{createCynefinServices:()=>n.t});var n=i(93279);i(4954)}}]);
