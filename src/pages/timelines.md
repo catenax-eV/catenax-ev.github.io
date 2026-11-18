@@ -292,7 +292,7 @@ Objectives of the meeting:
 - **Collaborative discussion**, in which other groups ask questions and flag where goals touch theirs.
 
 :::info
-Every committee and expert group must create **at least one roadmap item** before the meeting. A roadmap item is a **shared goal, not a standard**. It does not have to ship anything but tracks the broader goal a group works on towards an ecosystem release. Groups without a roadmap item will be asked whether they are still working towards a broader goal and are still needed in their current form. **TC4S and TC4M are exempt**, as they run the same process every release.
+Every committee and expert group must create **at least one Roadmap Item** before the meeting. A Roadmap Item is a **shared goal, not a standard**. It does not have to ship anything but tracks the broader goal a group works on towards an ecosystem release. Groups without a Roadmap Item will be asked whether they are still working towards a broader goal and are still needed in their current form. **TC4S and TC4M are exempt**, as they run the same process every release.
 :::
 
 :::note
