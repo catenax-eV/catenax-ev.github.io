@@ -268,7 +268,7 @@ Participation is **mandatory for all committees and expert groups**.
 
 :::tip[Cadence within an ecosystem release]
 
-Roadmap items are set once per ecosystem release and their status is checked midway:
+Roadmap Items are set once per ecosystem release and their status is checked midway:
 
 - **First half of the ecosystem release:** Roadmap Item Proposal, in which goals are presented and set.
 - **Second half of the ecosystem release (e.g., XX.09):** [Roadmap Item Review](#roadmap-item-review), a status check
