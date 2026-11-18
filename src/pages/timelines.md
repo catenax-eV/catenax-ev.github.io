@@ -296,7 +296,7 @@ Every committee and expert group must create **at least one Roadmap Item** befor
 :::
 
 :::note
-The meeting covers **only roadmap items and their goals**. Sub-issues, standards and single tasks are not part of this session.
+The meeting covers **only Roadmap Items and their goals**. Sub-issues, standards and single tasks are not part of this session.
 :::
 
 ---
