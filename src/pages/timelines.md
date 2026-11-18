@@ -307,7 +307,7 @@ The Roadmap Item Review is a dedicated **meeting** held in the **second half of 
 
 Objectives of the meeting:
 
-- Checking the **status of the roadmap items** and goals set in the first half of the ecosystem release.
+- Checking the **status of the Roadmap Items** and goals set in the first half of the ecosystem release.
 - Maintaining **transparency** on the progress of each committee and expert group midway through the ecosystem release.
 
 ---
