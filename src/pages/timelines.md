@@ -262,7 +262,7 @@ During this phase, Expert Groups and Committees **present their completed standa
 
 #### Roadmap Item Proposal
 
-The Roadmap Item Proposal is a dedicated **meeting** held in the **first half of each ecosystem release** (e.g., XX.06 or XX.12). While the Internal Planning Day focuses on standards, the Roadmap Item Proposal makes the **goals behind them** visible. These are the roadmap items each committee and expert group works towards for the ecosystem release.
+The Roadmap Item Proposal is a dedicated **meeting** held in the **first half of each ecosystem release** (e.g., XX.06 or XX.12). While the Internal Planning Day focuses on standards, the Roadmap Item Proposal makes the **goals behind them** visible. These are the Roadmap Items each committee and expert group works towards for the ecosystem release.
 
 Participation is **mandatory for all committees and expert groups**.
 
