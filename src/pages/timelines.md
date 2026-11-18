@@ -285,7 +285,7 @@ Objectives of the meeting:
 **Content of the meeting:**
 
 - **Walkthrough of the Release Roadmap Board** on GitHub, item by item.
-- **Presentation of each roadmap item** by the responsible committee or expert group along three questions:
+- **Presentation of each Roadmap Item** by the responsible committee or expert group along three questions:
   - **What is the goal?** The outcome the group works towards.
   - **Why does it matter?** The value it brings to the ecosystem.
   - **Who drives it?** The trigger, and why it matters now.
