@@ -100,6 +100,10 @@ function beforeSend(type, payload) {
     ...payload,
     url: sanitizeUrl(payload.url),
     referrer: originOnly(payload.referrer),
+    // Page titles are never sent: the search page puts the search term into its title
+    // ('Search results for "..."'), which can also linger briefly after navigating
+    // away. The sanitized path identifies the page.
+    title: '',
   };
 }
 
@@ -145,19 +149,68 @@ function track(eventName) {
 //
 // The local search plugin offers no hook for its results, so the outcome is read from
 // the autocomplete dropdown: its results have role="option", and its "See all results"
-// link carries the query the results belong to. A search is recorded once the visitor
-// stopped typing, and right away when a result is opened, at most once per query.
-// Searches on the /search page are counted as page views of /search only.
+// link carries the query the results belong to.
+//
+// - The dropdown keeps showing the previous outcome while a new search runs. It is
+//   therefore only read once it was redrawn after the last keystroke (observed with a
+//   MutationObserver). The plugin drops responses of older searches, so the first
+//   redraw after a keystroke always belongs to the current text, including "No
+//   results".
+// - Every keystroke allows one new record, recording uses it up. A search is recorded
+//   once the visitor stopped typing, or right away when a result is opened. This needs
+//   no comparison with earlier texts, so clearing the field with the plugin's "x"
+//   button (which does not fire an input event) and searching for the same text again
+//   counts as a new search.
+// - Searches on the /search page are counted as page views of /search only.
 
 let searchTimer;
-let lastTrackedQuery = null;
+// A keystroke happened that was not recorded yet.
+let searchPending = false;
+// The dropdown was redrawn since the last keystroke.
+let dropdownRedrawn = false;
+const observedContainers = new WeakSet();
 
 function normalizeQuery(query) {
   return typeof query === 'string' ? query.trim() : '';
 }
 
+function resetSearchTracking() {
+  clearTimeout(searchTimer);
+  searchPending = false;
+  dropdownRedrawn = false;
+}
+
+function scheduleSearchRecord(input) {
+  clearTimeout(searchTimer);
+  if (hasConsent()) {
+    searchTimer = setTimeout(() => recordSearch(input), SEARCH_DEBOUNCE_MS);
+  }
+}
+
+// Watches the dropdown of a search bar for redraws. The dropdown is created lazily by
+// the plugin, so the whole search bar container is observed and only changes inside
+// the listbox count.
+function observeDropdown(input) {
+  const container = input.closest(SEARCH_CONTAINER_SELECTOR);
+  if (!container || observedContainers.has(container)) {
+    return;
+  }
+  observedContainers.add(container);
+  new MutationObserver((mutations) => {
+    const inListbox = mutations.some(
+      (mutation) => mutation.target instanceof Element && mutation.target.closest('[role="listbox"]'),
+    );
+    if (inListbox && searchPending) {
+      dropdownRedrawn = true;
+      // The search may take longer than the debounce (for example while the index is
+      // loaded), so wait again from its result.
+      scheduleSearchRecord(container.querySelector(SEARCH_INPUT_SELECTOR));
+    }
+  }).observe(container, { childList: true, subtree: true });
+}
+
 // Returns "search", "search-no-results", or null if the dropdown does not show the
-// outcome of the current text yet.
+// outcome of the current text.
 function readSearchOutcome(input) {
   const container = input.closest(SEARCH_CONTAINER_SELECTOR);
   const listbox = container?.querySelector('[role="listbox"]');
@@ -170,7 +223,7 @@ function readSearchOutcome(input) {
     // The plugin only renders its "No results" template once the search returned.
     return listbox.textContent.trim() ? 'search-no-results' : null;
   }
-  // Results of an older text can still be shown while a newer search runs.
+  // Second check besides the redraw: the results must belong to the current text.
   const footerLink = listbox.querySelector('a[href*="/search?"], a[href*="/search/?"]');
   if (footerLink) {
     const shownQuery = normalizeQuery(new URL(footerLink.href).searchParams.get('q'));
@@ -183,30 +236,34 @@ function readSearchOutcome(input) {
 
 function recordSearch(input) {
   clearTimeout(searchTimer);
-  const query = normalizeQuery(input?.value);
-  if (!hasConsent() || !input || query.length < MIN_SEARCH_LENGTH || query === lastTrackedQuery) {
+  if (
+    !hasConsent() ||
+    !input ||
+    !searchPending ||
+    !dropdownRedrawn ||
+    normalizeQuery(input.value).length < MIN_SEARCH_LENGTH
+  ) {
     return;
   }
   const outcome = readSearchOutcome(input);
   if (outcome) {
-    lastTrackedQuery = query;
+    searchPending = false;
     track(outcome);
   }
 }
 
+// Runs in the capture phase, before the search bar handles the keystroke: for a text
+// it searched before, the plugin redraws the dropdown synchronously from its cache, and
+// that redraw must count for this keystroke.
 function onInput(event) {
   const input = event.target;
   if (!(input instanceof HTMLInputElement) || !input.matches(SEARCH_INPUT_SELECTOR)) {
     return;
   }
-  clearTimeout(searchTimer);
-  if (normalizeQuery(input.value) === '') {
-    // A cleared field starts a new search, even with the same text as before.
-    lastTrackedQuery = null;
-  }
-  if (hasConsent()) {
-    searchTimer = setTimeout(() => recordSearch(input), SEARCH_DEBOUNCE_MS);
-  }
+  observeDropdown(input);
+  searchPending = true;
+  dropdownRedrawn = false;
+  scheduleSearchRecord(input);
 }
 
 // Opening a result (click, or Enter in the search field) or "See all results" ends the
@@ -233,8 +290,7 @@ function onSearchSelect(event) {
 // ---------------------------------------------------------------------------
 
 function onConsentChanged() {
-  clearTimeout(searchTimer);
-  lastTrackedQuery = null;
+  resetSearchTracking();
   if (hasConsent()) {
     loadUmami();
   }
@@ -245,7 +301,7 @@ if (isActive) {
     loadUmami();
   }
   document.addEventListener(CONSENT_CHANGE_EVENT, onConsentChanged);
-  document.addEventListener('input', onInput);
+  document.addEventListener('input', onInput, true);
   document.addEventListener('click', onSearchSelect, true);
   document.addEventListener('keydown', onSearchSelect, true);
 }

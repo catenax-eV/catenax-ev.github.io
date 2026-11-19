@@ -25,7 +25,7 @@ documentation work. They are reported in aggregate only; no individual visitor i
 | Consent can be withdrawn at any time | "Cookie settings" in the footer opens the banner again |
 | The banner links to the privacy policy | Link to the [Catena-X privacy policy](https://catena-x.net/privacy-policy/), also linked in the footer |
 | Privacy-friendly analytics tool | [Umami Cloud](https://umami.is) (`cloud.umami.is`): sets no cookies and does not store IP addresses |
-| No personal information is transmitted to the analytics platform | Query strings and fragments are removed from URLs, paths that are not a page of the site are sent as `/404`, referrers are reduced to their origin, search terms are never sent (see below) |
+| No personal information is transmitted to the analytics platform | Query strings and fragments are removed from URLs, paths that are not a page of the site are sent as `/404`, referrers are reduced to their origin, page titles and search terms are never sent (see below) |
 | No third-party requests before consent | The banner is part of the site; no external script or stylesheet is loaded for it |
 
 ## How it works
@@ -35,7 +35,7 @@ flowchart TD
     VISIT["Visitor opens a page"] --> BANNER["Catena-X cookie consent banner"]
     BANNER -- "Deny or no decision" --> NONE["Umami is not loaded, nothing is sent"]
     BANNER -- "Allow" --> LOAD["Umami script is loaded"]
-    LOAD --> HOOK["before-send hook:<br/>consent still given?<br/>strip query and fragment from URL<br/>unknown paths become /404<br/>keep only the referrer's origin"]
+    LOAD --> HOOK["before-send hook:<br/>consent still given?<br/>strip query and fragment from URL<br/>unknown paths become /404<br/>keep only the referrer's origin<br/>drop the page title"]
     HOOK -- "consent withdrawn" --> DROP["Event dropped"]
     HOOK -- "ok" --> UMAMI[("Umami Cloud")]
 ```
@@ -53,13 +53,16 @@ flowchart TD
    cookie again and drops the event if consent was withdrawn. It also removes the query string and fragment from the
    page URL and reduces the referrer to its origin, for example `https://www.google.com`. Paths that are not a page of
    the site (checked against the Docusaurus routes) are sent as `/404`: such paths are typed or linked by someone else
-   and may contain anything, for example an e-mail address.
+   and may contain anything, for example an e-mail address. Page titles are not sent: the search page puts the search
+   term into its title (`Search results for "..."`), and that title can still be set for a moment after navigating
+   away. The path identifies the page.
 4. **Search outcome.** The site uses the local search plugin (`@easyops-cn/docusaurus-search-local`), which has no
    hook for its results. The analytics module therefore reads the outcome from the search dropdown in the navbar:
    once the visitor stopped typing for 1.5 seconds, or right away when a result or "See all results" is opened, it
    records `search` if results are shown for the current text and `search-no-results` if the dropdown shows
-   "No results". Each text is recorded at most once until the field is cleared. Results that still belong to an
-   older text are not counted.
+   "No results". The dropdown keeps showing the previous outcome while a new search runs, so it is only read once it
+   was redrawn after the last keystroke. Every keystroke allows one new record, so a search is recorded once, and
+   searching for the same text again after clearing the field counts as a new search.
 5. **Only on the production site.** Umami only sends data from `catenax-ev.github.io` (`data-domains`). Branch
    previews, which are deployed under `/branch/<name>/`, do not load Umami at all. Local development (`npm start`) is
    never tracked.
@@ -72,7 +75,6 @@ Only after the visitor allowed it:
 | Data | Example | Used for |
 |---|---|---|
 | Page views, including client-side navigation; unknown paths as `/404` | `/docs/standards/overview` | Most visited pages |
-| Page title | `Overview \| Catena-X - Library` | Readable page names in reports |
 | Origin of the referrer | `https://www.google.com` | Where visitors come from |
 | Search outcome: event `search` (results found) or `search-no-results` | `search-no-results` | How often the search finds nothing |
 | Information Umami derives from the request | Country, browser, operating system, device type, screen size, language | Aggregated reports |
@@ -89,6 +91,7 @@ pages, exit pages and time on page are calculated from the page views.
   recorded. Searches on the `/search` page count as a page view of `/search` only.
 - No query strings or fragments of page URLs (for example `?q=...` or `#token=...`), and no paths that are not a
   page of the site (for example `/jane.doe@example.com`, sent as `/404`).
+- No page titles. The search page has the search term in its title.
 - No full referrer URLs, only their origin.
 - No clicks, scrolling, form input or other interactions.
 - No user accounts, names, e-mail addresses or other personal information.
