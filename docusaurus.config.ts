@@ -204,6 +204,12 @@ const config: Config = {
         },
         {
           type: "docSidebar",
+          sidebarId: "sidebar_cx_bok",
+          position: "left",
+          label: "Body of Knowledge",
+        },
+        {
+          type: "docSidebar",
           sidebarId: "sidebar_op_model",
           position: "left",
           label: "Operating Model",
