@@ -28,21 +28,6 @@ Each phase contributes to transparency, alignment, and coordinated delivery acro
 
 ---
 
-### Catena-X Neptune, incl. Eclipse Tractus-X Release 26.06 & 26.09
-
-Named after the planet Neptune, CX-Neptune symbolizes depth, stability, and the exploration of new frontiers within the Catena-X data space.
-As a major release, Neptune sets the strategic direction and introduces key architectural foundations that shape the further evolution of the ecosystem.
-
-Neptune therefore serves as the central anchor, establishing the core innovations that are gradually refined, stabilized, and extended throughout the cycle.
-
-[![Timeline for Release 26.06](@site/static/img/timelines/cx-timeline-26.06.png)](@site/static/img/timelines/cx-timeline-26.06.png)
-*Timeline for Release 26.06*
-
-[![Timeline for Release 26.09](@site/static/img/timelines/cx-timeline-26.09.png)](@site/static/img/timelines/cx-timeline-26.09.png)
-*Timeline for Release 26.09*
-
----
-
 ### Catena-X Proteus, incl. Eclipse Tractus-X Release 27.03
 
 Following the major release CX-Neptune, CX-Proteus is directly connected to its parent release, as Proteus is one of Neptune’s moons.
@@ -127,8 +112,9 @@ As with every major release, it represents an opportunity to introduce new ideas
 
 | Phase/Milestone     | Title                                       | Start date | End date    |
 |---------------------|---------------------------------------------|------------|-------------|
+| Milestone           | Roadmap Item Proposal                       | 13.01.2027 |  13.01.2027 |
 | Milestone           | Briefing Release Planning                   | 01.02.2027 |  01.02.2027 |
-| Milestone           | Internal Planning Day                       | 03.02.2027 |  03.02.2027 |
+| Milestone           | Internal Standard Planning Day              | 03.02.2027 |  03.02.2027 |
 | Phase               | Expert Feedback                             | 03.02.2027 |  21.02.2027 |
 | Phase               | Quality Assurance Phase                     | 22.02.2027 |  11.04.2027 |
 | Milestone           | Quality Gate 1                              | 09.03.2027 |  09.03.2027 |
@@ -170,8 +156,9 @@ As with every major release, it represents an opportunity to introduce new ideas
 
 | Phase/Milestone     | Title                                       | Start date | End date    |
 |---------------------|---------------------------------------------|------------|-------------|
+| Milestone           | Roadmap Item Review                         | 07.04.2027 |  07.04.2027 |
 | Milestone           | Briefing Release Planning                   | 03.05.2027 |  03.05.2027 |
-| Milestone           | Internal Planning Day                       | 05.05.2027 |  05.05.2027 |
+| Milestone           | Internal Standard Planning Day              | 05.05.2027 |  05.05.2027 |
 | Phase               | Expert Feedback                             | 05.05.2027 |  23.05.2027 |
 | Phase               | Quality Assurance Phase                     | 24.05.2027 |  11.07.2027 |
 | Milestone           | Quality Gate 1                              | 07.06.2027 |  07.06.2027 |
@@ -220,8 +207,9 @@ It strengthens the ecosystem by stabilizing innovations, improving quality, and 
 
 | Phase/Milestone     | Title                                       | Start date | End date    |
 |---------------------|---------------------------------------------|------------|-------------|
+| Milestone           | Roadmap Item Proposal                       | 30.06.2027 |  30.06.2027 |
 | Milestone           | Briefing Release Planning                   | 26.07.2027 |  26.07.2027 |
-| Milestone           | Internal Planning Day                       | 28.07.2027 |  28.07.2027 |
+| Milestone           | Internal Standard Planning Day              | 28.07.2027 |  28.07.2027 |
 | Phase               | Expert Feedback                             | 28.07.2027 |  15.08.2027 |
 | Phase               | Quality Assurance Phase                     | 16.08.2027 |  03.10.2027 |
 | Milestone           | Quality Gate 1                              | 30.08.2027 |  30.08.2027 |
@@ -269,6 +257,58 @@ The timeline is structured into three overarching sections - **Preparation**, **
 The Preparation section covers the activities that take place **after the standard has already been fully written** by the responsible Expert Group or Committee. It comprises the **Briefing Release Planning**, the **Internal Planning Day**, and the **Expert Feedback Phase**.
 
 During this phase, Expert Groups and Committees **present their completed standards or work** to the wider community and collect **final feedback** before the formal review process begins. The Preparation section therefore ensures that all standard candidates are aligned, transparent, and ready to enter the Standard Review process.
+
+---
+
+#### Roadmap Item Proposal
+
+The Roadmap Item Proposal is a dedicated **meeting** held in the **first half of each ecosystem release** (e.g., XX.06 or XX.12). While the Internal Planning Day focuses on standards, the Roadmap Item Proposal makes the **goals behind them** visible. These are the Roadmap Items each committee and expert group works towards for the ecosystem release.
+
+Participation is **mandatory for all committees and expert groups**.
+
+:::tip[Cadence within an ecosystem release]
+
+Roadmap Items are set once per ecosystem release and their status is checked midway:
+
+- **First half of the ecosystem release:** Roadmap Item Proposal, in which goals are presented and set.
+- **Second half of the ecosystem release (e.g., XX.09):** [Roadmap Item Review](#roadmap-item-review), a status check
+
+:::
+
+Objectives of the meeting:
+
+- Creating **transparency** on the goals each committee and expert group is working towards.
+- **Identifying overlaps and dependencies early**, while there is still time to react
+- **Connecting groups** with overlapping goals so they can agree on how to work together.
+- **Committing** each committee to its goals for the ecosystem release.
+
+**Content of the meeting:**
+
+- **Walkthrough of the Release Roadmap Board** on GitHub, item by item.
+- **Presentation of each Roadmap Item** by the responsible committee or expert group along three questions:
+  - **What is the goal?** The outcome the group works towards.
+  - **Why does it matter?** The value it brings to the ecosystem.
+  - **Who drives it?** The trigger, and why it matters now.
+- **Collaborative discussion**, in which other groups ask questions and flag where goals touch theirs.
+
+:::info
+Every committee and expert group must create **at least one Roadmap Item** before the meeting. A Roadmap Item is a **shared goal, not a standard**. It does not have to ship anything but tracks the broader goal a group works on towards an ecosystem release. Groups without a Roadmap Item will be asked whether they are still working towards a broader goal and are still needed in their current form. **TC4S and TC4M are exempt**, as they run the same process every release.
+:::
+
+:::note
+The meeting covers **only Roadmap Items and their goals**. Sub-issues, standards and single tasks are not part of this session.
+:::
+
+---
+
+#### Roadmap Item Review
+
+The Roadmap Item Review is a dedicated **meeting** held in the **second half of each ecosystem release** (e.g., XX.03 or XX.09). It serves as a **status check** of the roadmap items presented in the [Roadmap Item Proposal](#roadmap-item-proposal) during the first half of the same ecosystem release.
+
+Objectives of the meeting:
+
+- Checking the **status of the Roadmap Items** and goals set in the first half of the ecosystem release.
+- Maintaining **transparency** on the progress of each committee and expert group midway through the ecosystem release.
 
 ---
 
