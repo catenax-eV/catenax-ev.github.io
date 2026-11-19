@@ -25,7 +25,7 @@ documentation work. They are reported in aggregate only; no individual visitor i
 | Consent can be withdrawn at any time | "Cookie settings" in the footer opens the banner again |
 | The banner links to the privacy policy | Link to the [Catena-X privacy policy](https://catena-x.net/privacy-policy/), also linked in the footer |
 | Privacy-friendly analytics tool | [Umami Cloud](https://umami.is) (`cloud.umami.is`): sets no cookies and does not store IP addresses |
-| No personal information is transmitted to the analytics platform | Query strings and fragments are removed from URLs, paths that are not a page of the site are sent as `/404`, referrers are reduced to their origin, page titles and search terms are never sent (see below) |
+| Send as little as possible and store no personal information | Umami does not store IP addresses and sets no cookies. Query strings and fragments are removed from URLs, paths that are not a page of the site are sent as `/404`, referrers are reduced to their origin, page titles and search terms are never sent (see below) |
 | No third-party requests before consent | The banner is part of the site; no external script or stylesheet is loaded for it |
 
 ## How it works
@@ -79,7 +79,8 @@ Only after the visitor allowed it:
 | Search outcome: event `search` (results found) or `search-no-results` | `search-no-results` | How often the search finds nothing |
 | Information Umami derives from the request | Country, browser, operating system, device type, screen size, language | Aggregated reports |
 
-Umami derives visits and sessions from a salted hash, without cookies and without storing the IP address. Entry
+Umami derives visits and sessions from a salted hash, without cookies. It uses the IP address of the request to
+look up the country, but does not store it. Entry
 pages, exit pages and time on page are calculated from the page views.
 
 ## What is not tracked
@@ -94,7 +95,7 @@ pages, exit pages and time on page are calculated from the page views.
 - No page titles. The search page has the search term in its title.
 - No full referrer URLs, only their origin.
 - No clicks, scrolling, form input or other interactions.
-- No user accounts, names, e-mail addresses or other personal information.
+- No user accounts, names or e-mail addresses.
 - No branch previews and no local builds.
 
 ## Configuration

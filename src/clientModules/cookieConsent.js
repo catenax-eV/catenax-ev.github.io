@@ -28,9 +28,10 @@ function createBanner() {
   element.setAttribute('aria-label', 'Cookie consent');
   element.innerHTML = `
     <p class="cx-cookie-consent__text" id="${BANNER_ID}-text">
-      We would like to use privacy-friendly analytics to understand which pages are
-      used and improve this site. No cookies are set for this, and no personal data or
-      search terms are collected. Your choice is stored in a cookie for 90 days.
+      Catena-X pages use privacy-friendly analytics (Umami) to understand how the site
+      is used, but only if you allow it. Umami sets no cookies and does not store IP
+      addresses; search terms are never sent. Your choice is saved in a cookie for 90
+      days.
       <a class="cx-cookie-consent__link" target="_blank" rel="noopener noreferrer"></a>
     </p>
     <div class="cx-cookie-consent__actions">
@@ -40,7 +41,7 @@ function createBanner() {
   `;
   const link = element.querySelector('.cx-cookie-consent__link');
   link.href = consentConfig.privacyPolicyUrl;
-  link.textContent = 'Privacy policy';
+  link.textContent = 'Privacy Policy';
   element.addEventListener('click', onBannerClick);
   return element;
 }
