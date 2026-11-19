@@ -290,10 +290,13 @@ h4 {
   color: var(--cx-navy-950);
 }
 
-.button--secondary {
+/* Same specificity as Infima's `.button.button--secondary`, which hard-codes a dark
+   grey text colour and made the label unreadable in dark mode. */
+.button.button--secondary {
   --ifm-button-background-color: var(--cx-surface);
   --ifm-button-border-color: var(--cx-border-strong);
   --ifm-button-color: var(--cx-text);
+  color: var(--cx-text);
   box-shadow: var(--cx-shadow-sm);
 }
 
@@ -705,4 +708,61 @@ div[class^='codeBlockContainer'] {
   .pagination-nav__link:hover {
     transform: none;
   }
+}
+
+/* ==========================================================================
+   Cookie consent banner (src/clientModules/cookieConsent.js)
+   ========================================================================== */
+
+.cx-cookie-consent {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  left: 1rem;
+  z-index: calc(var(--ifm-z-index-fixed) + 10);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 1rem 1.25rem;
+  color: var(--ifm-font-color-base);
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--cx-border-strong);
+  border-radius: var(--cx-radius-md);
+  box-shadow: var(--cx-shadow-lg);
+}
+
+.cx-cookie-consent__text {
+  flex: 1 1 28rem;
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.cx-cookie-consent__link {
+  text-decoration: underline;
+}
+
+.cx-cookie-consent__actions {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 0.5rem;
+}
+
+/* "Cookie settings" in the footer looks like the other footer links. */
+.footer__link-item.cx-manage-cookies {
+  padding: 0;
+  font: inherit;
+  color: var(--ifm-footer-link-color);
+  cursor: pointer;
+  background: none;
+  border: 0;
+}
+
+.footer__link-item.cx-manage-cookies:hover {
+  color: var(--ifm-footer-link-hover-color);
+  text-decoration: underline;
 }
