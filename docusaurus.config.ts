@@ -11,6 +11,19 @@ const baseUrl = process.env.BASE_URL ?? '/';
 // ("/glossary") and branch deployments ("/branch/<branch>/glossary").
 const glossaryRoutePath = `${baseUrl.replace(/\/?$/, '/')}glossary`;
 
+// Usage analytics with Umami, see ANALYTICS.md and src/clientModules/analytics.js.
+// Nothing is collected before the visitor clicked "Allow" in the cookie consent banner
+// (src/clientModules/cookieConsent.js). The website id is public (it is part of every
+// tracked page anyway). Leave UMAMI_WEBSITE_ID empty to build without analytics and
+// without the banner.
+const umamiWebsiteId = process.env.UMAMI_WEBSITE_ID ?? '78991a15-003f-46f3-a153-b0f0cdac5038';
+const umamiScriptUrl = process.env.UMAMI_SCRIPT_URL || 'https://cloud.umami.is/script.js';
+// Host the site is served from. Umami only sends data from this host, so local builds
+// are never tracked.
+const analyticsHost = process.env.ANALYTICS_HOST || 'catenax-ev.github.io';
+const privacyPolicyUrl = 'https://catena-x.net/privacy-policy/';
+const consentRequired = Boolean(umamiWebsiteId);
+
 const config: Config = {
   title: 'Catena-X - Library',
   tagline: 'Your reference for the standards, governance and rules that connect the Catena-X ecosystem. Everything you need to prove compliance — in one place.',
@@ -28,6 +41,25 @@ const config: Config = {
   projectName: 'catenax-ev.github.io', // Usually your repo name.
 
   trailingSlash: false,
+
+  clientModules: [
+    require.resolve('./src/clientModules/cookieConsent.js'),
+    require.resolve('./src/clientModules/analytics.js'),
+  ],
+
+  customFields: {
+    cookieConsent: {
+      enabled: consentRequired,
+      privacyPolicyUrl,
+    },
+    analytics: {
+      // Branch previews are deployed under /branch/<name>/ and are never tracked.
+      enabled: consentRequired && baseUrl === '/',
+      umamiWebsiteId,
+      umamiScriptUrl,
+      domains: analyticsHost,
+    },
+  },
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
@@ -296,6 +328,17 @@ const config: Config = {
               label: "Legal Notice",
               href: "/copyright",
             },
+            {
+              label: "Privacy Policy",
+              href: privacyPolicyUrl,
+            },
+            ...(consentRequired
+              ? [
+                  {
+                    html: '<button type="button" class="footer__link-item cx-manage-cookies">Cookie settings</button>',
+                  },
+                ]
+              : []),
           ],
         },
       ],
