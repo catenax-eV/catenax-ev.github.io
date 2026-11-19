@@ -290,10 +290,13 @@ h4 {
   color: var(--cx-navy-950);
 }
 
-.button--secondary {
+/* Same specificity as Infima's `.button.button--secondary`, which hard-codes a dark
+   grey text colour and made the label unreadable in dark mode. */
+.button.button--secondary {
   --ifm-button-background-color: var(--cx-surface);
   --ifm-button-border-color: var(--cx-border-strong);
   --ifm-button-color: var(--cx-text);
+  color: var(--cx-text);
   box-shadow: var(--cx-shadow-sm);
 }
 
