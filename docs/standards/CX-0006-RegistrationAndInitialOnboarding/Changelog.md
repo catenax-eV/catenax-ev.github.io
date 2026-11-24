@@ -2,6 +2,21 @@
 
 All notable changes to CX-0006 will be documented in this file.
 
+## [2.2.0] CX-Neptune (26.09)
+
+### Added
+
+- Onboarding process graphic illustrating the registration flow
+- "OSP 2.0" flow that allows the OSP to collect all relevant data required for the registration flow. An additional interaction between prospective participant and CSP-B (via the portal) is no longer required.
+
+### Changed
+
+- Initial registration and data collection descriptions
+
+### Removed
+
+- Reduced terminology table for terms described elsewhere
+
 ## [2.1.0] CX-Titan (26.03)
 
 ### Added

@@ -1,4 +1,4 @@
-# CX-0146 Supply Chain Disruption Notifications 3.0.0
+# CX-0146 Supply Chain Disruption Notifications 3.0.1
 
 ## ABSTRACT
 
@@ -488,7 +488,7 @@ An example Data Asset definition is given below.
         "@vocab": "https://w3id.org/edc/v0.0.1/ns/",
         "cx-taxo": "https://w3id.org/catenax/taxonomy#",
         "cx-common": "https://w3id.org/catenax/ontology/common#",
-        "dct": "https://purl.org/dc/terms/"
+        "dct": "http://purl.org/dc/terms/"
     },
     "@id": "{{DEMAND_AND_CAPACITY_NOTIFICATION_API_ASSET_ID}}",
     "properties": {

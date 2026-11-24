@@ -2,6 +2,12 @@
 
 All notable changes to CX-NFR-IdP Identity Proofing will be documented in this file.
 
+## [1.1.0] CX-Neptune (26.09)
+
+### Added
+
+- identity proving through the Chinese Unified Social Credit Identifier (USCI)
+
 ## [1.0.0] CX-Titan (26.03)
 
 ### Added

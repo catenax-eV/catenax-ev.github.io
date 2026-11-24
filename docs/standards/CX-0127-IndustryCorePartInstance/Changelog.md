@@ -4,7 +4,13 @@ title: "Changelog"
 
 All notable changes to CX-0127 will be documented in this file.
 
-## [3.0.0] - CX-Saturn (26.09)
+## [3.0.1] - CX-Neptune (26.09)
+
+### Changed
+
+- https://purl.org to http://purl.org
+
+## [3.0.0] - CX-Neptune (26.09)
 
 ### Added
 

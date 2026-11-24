@@ -5,19 +5,19 @@ tags:
   - CAT/Quality Management
 ---
 
-# CX-0164 Blocking Notifications v1.0.0
+# CX-0164 Blocking Notifications v1.0.1
 
 ## ABSTRACT
 
-This standard defines the exchange of block notifications between supply chain partners within the Catena-X dataspace. The blocking process enables suppliers to notify their customers about non-conforming parts that must be segregated or quarantined to prevent their use in the production process.
+This standard defines the exchange of Blocking Notifications between supply chain partners within the Catena-X dataspace. The blocking process enables suppliers to notify their customers about non-conforming parts that must be segregated or quarantined to prevent their use in the production process.
 
-Block Notifications were previously specified as part of CX-0125 Traceability Standard. With the decomposition of CX-0125 into standalone standards, the Block Notification becomes an independent, self-contained standard.
+Blocking Notifications were previously specified as part of CX-0125 Traceability Standard. With the decomposition of CX-0125 into standalone standards, the Blocking Notification becomes an independent, self-contained standard.
 Version 1.0.0 of CX-0164 introduces a Create / Update / Remove operation model plus an asynchronous Feedback channel. The "Read" of CRUD is intentionally omitted (the use case is push-only), and deletion is modelled as a reversible **Remove** that sets the affected parts to block status CANCELED rather than hard-deleting them. The API is compliant with CX-0151 Industry Core: Basics v1.0.0.
 CX-0164 is a standalone standard and no longer requires CX-0125.
 
 ## FOR WHOM IS THE STANDARD DESIGNED
 
-This standard is relevant for Business Application Providers, Data Providers, and Data Consumers who need to exchange block notifications for quality management purposes.
+This standard is relevant for Business Application Providers, Data Providers, and Data Consumers who need to exchange Blocking Notifications for quality management purposes.
 
 ## 1 INTRODUCTION
 
@@ -29,17 +29,17 @@ This standard is relevant for Business Application Providers, Data Providers, an
 
 This standard is relevant for the following roles:
 
-- **Data Provider**: Suppliers (or service providers acting on their behalf) sending block notifications to their customers
-- **Data Consumer**: Customers receiving block notifications from their suppliers
-- **Business Application Provider**: Providers of block-notification applications implementing the Block Notification API
+- **Data Provider**: Suppliers (or service providers acting on their behalf) sending Blocking Notifications to their customers
+- **Data Consumer**: Customers receiving Blocking Notifications from their suppliers
+- **Business Application Provider**: Providers of block-notification applications implementing the Blocking Notification API
 - **Conformity Assessment Body**: Organizations certifying implementations against this standard
 
 #### SCOPE
 
 This document covers:
 
-- The Block Notification API with Create, Update and Remove operations and Feedback
-- Data models for block notifications including part-level block information
+- The Blocking Notification API with Create, Update and Remove operations and Feedback
+- Data models for Blocking Notifications including part-level block information
 - The problem reference correlation model (`manufacturerProblemId` / `customerProblemId`)
 - Connector asset structure compliant with CX-0151
 - Process flows for blocking, updating, cancelling and feedback
@@ -50,9 +50,9 @@ This document covers:
 
 The block process is a time-critical quality management process in the automotive industry. When a defect is identified, either by the supplier (self-disclosure) or by the customer (complaint), the supplier must delimit the affected parts and communicate this delimitation ("blacklist") to the customer as fast as possible, so the customer can sort out parts at goods receipt, block them on the shopfloor, or trigger downstream measures for parts already built into products.
 
-Today this is frequently handled via Excel lists sent by e-mail or uploaded to customer portals, which is slow, error-prone and lacks reliable versioning. The Block Notification replaces this with a standardized, machine-readable exchange via the Catena-X dataspace.
+Today this is frequently handled via Excel lists sent by e-mail or uploaded to customer portals, which is slow, error-prone and lacks reliable versioning. The Blocking Notification replaces this with a standardized, machine-readable exchange via the Catena-X dataspace.
 
-The Block Notification API enables:
+The Blocking Notification API enables:
 
 1. **Suppliers** to send block information to customers about defective parts
 2. **Customers** to identify and block affected parts in their systems (e.g., at assembly lines or in logistics)
@@ -73,13 +73,13 @@ As well as sections marked as non-normative, all authoring guidelines, diagrams,
 
 The key words **MAY**, **MUST**, **MUST NOT**, **OPTIONAL**, **RECOMMENDED**, **REQUIRED**, **SHOULD** and **SHOULD NOT** in this document are to be interpreted as described in BCP 14 RFC2119, RFC8174 when, and only when, they appear in all capitals, as shown here.
 
-All participants and their solutions MUST implement and adhere to this standard to be certified for the Block Notifications use case.
+All participants and their solutions MUST implement and adhere to this standard to be certified for the Blocking Notifications use case.
 
 ### 1.4 EXAMPLES
 
 > *This section is non-normative*
 
-#### Example: Create Block Notification
+#### Example: Create Blocking Notification
 
 > In this example `customerProblemId` is empty. The customer returns the generated reference via the Feedback message below; after that, every Update and Remove MUST carry **both** identifiers.
 
@@ -230,7 +230,7 @@ All participants and their solutions MUST implement and adhere to this standard 
 }
 ```
 
-> Omitting `parts` cancels the **entire** block notification instead of individual parts.
+> Omitting `parts` cancels the **entire** Blocking Notification instead of individual parts.
 
 ### 1.5 TERMINOLOGY
 
@@ -238,7 +238,7 @@ All participants and their solutions MUST implement and adhere to this standard 
 
 | Term | Description |
 |------|-------------|
-| Block Notification | A notification sent from a supplier to a customer indicating that certain parts should be blocked/quarantined due to quality issues |
+| Blocking Notification | A notification sent from a supplier to a customer indicating that certain parts should be blocked/quarantined due to quality issues |
 | Manufacturer Problem ID | Unique identifier assigned by the supplier's quality management system to track the blocking problem on their side. Format example: `SUP-2026-GB-0451` |
 | Customer Problem ID | Unique identifier assigned by the customer's quality management system to track the blocking problem on their side. Format example: `SN-26-DP3-BC5` |
 | Problem ID Correlation | The persisted link between `manufacturerProblemId` and `customerProblemId`, enabling cross-partner problem tracking and reliable update handling |
@@ -249,7 +249,7 @@ All participants and their solutions MUST implement and adhere to this standard 
 
 ## 2 RELEVANT PARTS OF THE STANDARD FOR SPECIFIC USE CASES
 
-### 2.1 BLOCK NOTIFICATIONS
+### 2.1 Blocking Notifications
 
 #### 2.1.1 LIST OF STANDALONE STANDARDS
 
@@ -272,7 +272,7 @@ Optional Standards (RECOMMENDED for enhanced functionality):
 
 Problem Reference Concept
 
-Every Block Notification carries up to two problem references:
+Every Blocking Notification carries up to two problem references:
 
 | Attribute | Created by | Meaning |
 |-------|------------|-------------|
@@ -281,7 +281,7 @@ Every Block Notification carries up to two problem references:
 
 Rules:
 
-1. The supplier MUST generate a `manufacturerProblemId` when creating a Block Notification and MUST reuse it in all subsequent Update and Remove operations for the same problem.
+1. The supplier MUST generate a `manufacturerProblemId` when creating a Blocking Notification and MUST reuse it in all subsequent Update and Remove operations for the same problem.
 2. If a customer-side reference is already known to the supplier, the supplier MUST provide it as `customerProblemId` in the Create operation.
 3. If no customer-side reference exists yet, the supplier MUST send the Create operation with an empty (or omitted) `customerProblemId`. The customer SHOULD create a corresponding quality process automatically and MUST return the generated `customerProblemId` to the supplier via a Feedback operation with `feedbackType: CUSTOMER_PROBLEM_ID_CREATED`.
 4. Once the supplier has received the `customerProblemId`, all subsequent Update and Remove operations for this problem MUST contain both `manufacturerProblemId` and `customerProblemId`. This prevents the customer from creating duplicate quality processes.
@@ -326,7 +326,7 @@ The Remove operation **cancels** parts — it sets the affected parts to block s
 | `manufacturerProblemId` | **MANDATORY** | Identifies the notification |
 | `customerProblemId` | **MANDATORY** once known | Customer-side problem reference |
 | `cancellationReason` | **MANDATORY** | Justification for audit trail |
-| `parts` | **OPTIONAL** | Catena-X IDs of the parts to cancel. If omitted, the **entire** block notification is cancelled |
+| `parts` | **OPTIONAL** | Catena-X IDs of the parts to cancel. If omitted, the **entire** Blocking Notification is cancelled |
 
 ##### Technical Acknowledgement vs. Business Feedback
 
@@ -348,11 +348,11 @@ Two response channels are distinguished and MUST NOT be mixed:
 
 #### 2.1.4 DIGITAL TWINS AND SPECIFIC ASSET IDs
 
-Every part referenced in a block notification MUST be identified by its Catena-X ID (`catenaXId`). The `catenaXId` is a globally unique UUID valid in the Catena-X dataspace; **it is mandatory and exists independently of whether a Digital Twin has been provisioned for the part.** Providing a `catenaXId` therefore does NOT require the partner to have rolled out Digital Twins.
+Every part referenced in a Blocking Notification MUST be identified by its Catena-X ID (`catenaXId`). The `catenaXId` is a globally unique UUID valid in the Catena-X dataspace; **it is mandatory and exists independently of whether a Digital Twin has been provisioned for the part.** Providing a `catenaXId` therefore does NOT require the partner to have rolled out Digital Twins.
 
 Integration with Digital Twins (OPTIONAL):
 
-- If parts have Digital Twins registered per CX-0002, the `catenaXId` used in the block notification SHOULD match the Digital Twin ID
+- If parts have Digital Twins registered per CX-0002, the `catenaXId` used in the Blocking Notification SHOULD match the Digital Twin ID
 - Receivers MAY use the Digital Twin Registry to resolve additional part information
 - The Digital Twin MAY contain traceability-relevant submodels as defined in CX-0127
 
@@ -363,7 +363,7 @@ When Digital Twins are not available:
 
 #### 2.1.5 MESSAGE CHUNKING FOR LARGE NOTIFICATIONS
 
-A single block notification can describe a very large blocking list (e.g. a blacklist with many thousands of serialized parts). Data pipelines in the dataspace enforce a maximum message size, so a large list MUST be split into several smaller messages that share the same `manufacturerProblemId`.
+A single Blocking Notification can describe a very large blocking list (e.g. a blacklist with many thousands of serialized parts). Data pipelines in the dataspace enforce a maximum message size, so a large list MUST be split into several smaller messages that share the same `manufacturerProblemId`.
 
 The chunking sequence is **Create-then-Update**:
 
@@ -374,22 +374,34 @@ Only the first message of a problem is a Create; all subsequent chunk messages a
 
 > The maximum parts per message is driven by the agreed pipeline message-size limit, not by a fixed count. Partners SHOULD agree the limit out of band; senders SHOULD chunk proactively rather than rely on rejection.
 
+#### 2.1.6 POLICY CONSTRAINTS FOR DATA EXCHANGE
+
+In alignment with our commitment to data sovereignty, a specific framework governing the utilization of data within the Catena-X use cases has been outlined. As part of this data sovereignty framework, conventions for access policies, for usage policies and for the constraints contained in the policies have been specified in standard 'CX-0152 Policy Constraints for Data Exchange'. This standard document CX-0152 **MUST** be followed when providing services or apps for data sharing/consuming and when sharing or consuming data in the Catena-X ecosystem. What conventions are relevant for what roles named in [1.1 AUDIENCE & SCOPE](#11-audience--scope) is specified in the CX-0152 standard document as well. CX-0152 can be found in the [standard library](https://catenax-ev.github.io/docs/standards/overview).
+
+#### 2.1.7 Usage Policy
+
+All offers included in the EDC of a dataspace participant **MUST** contain a usage policy following the requirements referenced in paragraph 2.1.5. The use-case introduces the following usage purpose:
+
+- **cx.blocknotification.base:1** The legal meaning is named in CX-0152.
+
+Additional more general usage policies MAY be included, but all the usage policies MUST contain the above mentioned usage purpose as shown below.
+
 ## 3 ASPECT MODELS
 
-### 3.1 ASPECT MODEL "BlockNotification"
+### 3.1 ASPECT MODEL "BlockingNotification"
 
 #### 3.1.1 INTRODUCTION
 
-The Block Notification aspect model defines the data structure for exchanging block information between supply chain partners. It consists of a header (MessageHeaderAspect v3.0.0) and content-specific schemas for each operation.
+The Blocking Notification aspect model defines the data structure for exchanging block information between supply chain partners. It consists of a header (MessageHeaderAspect v3.0.0) and content-specific schemas for each operation.
 
 #### 3.1.2 SPECIFICATIONS ARTIFACTS
 
-The Block Notification API uses the following aspect models and schemas:
+The Blocking Notification API uses the following aspect models and schemas:
 
 | Schema | Description |
 |--------|-------------|
-| `BlockNotificationCreate` | Request schema for creating a new block notification |
-| `BlockNotificationUpdate` | Request schema for updating a block notification (`partsToAdd` / `partsToUpdate` + master-data fields) |
+| `BlockNotificationCreate` | Request schema for creating a new Blocking Notification |
+| `BlockNotificationUpdate` | Request schema for updating a Blocking Notification (`partsToAdd` / `partsToUpdate` + master-data fields) |
 | `BlockNotificationRemove` | Request schema for the Remove operation (cancel parts or the whole notification) |
 | `BlockNotificationFeedback` | Request schema for sending feedback on a notification |
 
@@ -427,11 +439,11 @@ All timestamps MUST be formatted per ISO 8601 with timezone designator. All BPNs
 
 ## 4 APPLICATION PROGRAMMING INTERFACES
 
-### 4.1 BLOCK NOTIFICATION API
+### 4.1 Blocking Notification API
 
 #### 4.1.1 PRECONDITIONS AND DEPENDENCIES
 
-Before implementing the Block Notification API:
+Before implementing the Blocking Notification API:
 
 1. Both parties MUST be registered participants in the Catena-X dataspace
 2. A CX-0018 compliant connector MUST be deployed
@@ -440,7 +452,7 @@ Before implementing the Block Notification API:
 
 #### 4.1.2 API SPECIFICATION
 
-The Block Notification API defines four operations:
+The Blocking Notification API defines four operations:
 
 | Operation | Method | Context | Direction |
 |-----------|--------|---------|-----------|
@@ -455,7 +467,7 @@ All operations MUST use HTTP POST method only, as per CX-0151 requirements.
 
 | Business intent | Operation | Endpoint | Where in the payload |
 |-----------------|-----------|----------|----------------------|
-| Open a new block notification | Create | `/create` | `blockInformations` |
+| Open a new Blocking Notification | Create | `/create` | `blockInformations` |
 | Add further part(s) to an existing notification | Update | `/update` | `partsToAdd` |
 | Change a part's attributes / containment data | Update | `/update` | `partsToUpdate` |
 | Change notification master data (description, criticality, contact, usage decision) | Update | `/update` | master-data fields |
@@ -465,7 +477,7 @@ All operations MUST use HTTP POST method only, as per CX-0151 requirements.
 
 ##### Create Operation
 
-Creates a new block notification with associated block information.
+Creates a new Blocking Notification with associated block information.
 
 - **Direction**: Supplier → Customer
 - **Required Fields**: `manufacturerProblemId`, `problemDescription`, `criticality`, `blockInformations`
@@ -473,7 +485,7 @@ Creates a new block notification with associated block information.
 
 ##### Update Operation
 
-Updates an existing block notification. Parts are added via `partsToAdd` and changed via `partsToUpdate`:
+Updates an existing Blocking Notification. Parts are added via `partsToAdd` and changed via `partsToUpdate`:
 
 - **`partsToAdd`**: parts to add to the block list. Each item carries the full block information from the Create operation (identification by `catenaXId` is mandatory). Added parts are implicitly ACTIVE.
 - **`partsToUpdate`**: parts whose attributes / containment data change. `catenaXId` is mandatory; the provided block information fully replaces the stored values (no merge). Block status is **not** changed here — use the Remove operation to cancel a part.
@@ -485,7 +497,7 @@ Master-data fields (`problemDescription`, `criticality`, `proposedUsageDecision`
 
 ##### Remove Operation
 
-Cancels parts of a block notification by setting them to block status **CANCELED** ("released / free for production"); removal is always a reversible cancellation, never a hard delete. The `parts` array lists the Catena-X IDs to cancel; if it is omitted, the **entire** notification is cancelled. A `cancellationReason` MUST be provided for the audit trail.
+Cancels parts of a Blocking Notification by setting them to block status **CANCELED** ("released / free for production"); removal is always a reversible cancellation, never a hard delete. The `parts` array lists the Catena-X IDs to cancel; if it is omitted, the **entire** notification is cancelled. A `cancellationReason` MUST be provided for the audit trail.
 
 - **Direction**: Supplier → Customer
 - **Required Fields**: `manufacturerProblemId`, `cancellationReason` (and `customerProblemId` once known)
@@ -498,7 +510,7 @@ The OpenAPI specification is available at: [block-notification-api-v1.0.0.yaml](
 
 #### 4.1.3 EDC DATA ASSET STRUCTURE
 
-Per CX-0151, exactly **one** connector asset MUST be defined for the Block Notification API:
+Per CX-0151, exactly **one** connector asset MUST be defined for the Blocking Notification API:
 
 ```json
 {
@@ -545,8 +557,8 @@ The technical acknowledgement carries no business semantics. Business outcomes (
 
 | Actor | Role | Description |
 |-------|------|-------------|
-| Supplier | Sender | Initiates block notifications; sends Create, Update, Remove operations |
-| Customer | Receiver | Receives block notifications; blocks affected parts; sends Feedback |
+| Supplier | Sender | Initiates Blocking Notifications; sends Create, Update, Remove operations |
+| Customer | Receiver | Receives Blocking Notifications; blocks affected parts; sends Feedback |
 
 #### 5.1.2 PROCESS REPRESENTATION
 

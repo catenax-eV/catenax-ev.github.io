@@ -4,6 +4,10 @@ title: "Changelog"
 
 All notable changes to CX-0154 will be documented in this file.
 
+## [1.1.1] - CX-Neptune (26.09)
+
+- Fixed identifier of the usage purpose (in 2.2)
+
 ## [1.1.0] - CX-Neptune (26.09)
 
 ### Added

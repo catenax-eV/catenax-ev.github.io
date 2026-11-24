@@ -4,7 +4,13 @@ title: "Changelog"
 
 All notable changes to CX-0146 will be documented in this file.
 
-## [3.0.0] - 2026-09-16
+## [3.0.1] - CX-Neptune (26.09)
+
+### Fixed
+
+- changed purl context from https to http in the example.
+
+## [3.0.0] - CX-Neptune (26.09)
 
 ### Fixed
 
@@ -16,7 +22,13 @@ All notable changes to CX-0146 will be documented in this file.
 
 - bumped versions of referenced standards with cross-checks
 
-## [2.0.0] - 2025-06-24
+## [2.0.1] - CX-Saturn (25.09)
+
+### Changed
+
+- policy conventions replaced by reference to CX-0152
+
+## [2.0.0] - CX-Saturn (25.09)
 
 ### Added
 
@@ -50,7 +62,13 @@ Further:
 
 - inserted validations 5, 6, 7 in section 4.1.5
 
-## [1.0.0] - 2024-04-15
+## [1.0.1] - R24.12
+
+### Removed
+
+- unused `"method": "POST"` in asset definition
+
+## [1.0.0] - R24.05
 
 ### Added
 

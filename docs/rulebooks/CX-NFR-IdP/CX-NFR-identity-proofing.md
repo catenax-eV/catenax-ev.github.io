@@ -1,4 +1,4 @@
-# CX-NFR-IdP Identity Proofing v.1.0.0
+# CX-NFR-IdP Identity Proofing v.1.1.0
 
 ## Abstract
 
@@ -96,6 +96,15 @@ Examples are correcting obvious typos (streett → street), replacing characters
 
 The process is considered successful when the Gaia-X Compliance Service has returned a self-description of the provided data, as defined in the [Gaia-X Trust Framework v22.10](https://docs.gaia-x.eu/policy-rules-committee/trust-framework/22.10/#gaia-x-self-description) or higher.
 
+### 2.2 Unified Social Credit Identifier
+
+> *This section is normative*
+
+A prospective participant's identity may be verified through their Unified Social Credit Identifier (USCI) as defined in [GB 32100-2015](#31-normative-references).
+
+The prospective participant **MUST** provide their USCI.
+The CSP-B **MUST** resolve the provided USCI through an official registry, such as [NECIPS](#31-normative-references), and verify that the data provided by the prospective participant matches the data in the registry.
+
 ## 3 References
 
 ### 3.1 Normative references
@@ -103,6 +112,8 @@ The process is considered successful when the Gaia-X Compliance Service has retu
 - [CX-0006](https://catenax-ev.github.io/docs/standards/CX-0006-RegistrationAndInitialOnboarding)
 - [Gaia-X Trust Framework v22.10](https://docs.gaia-x.eu/policy-rules-committee/trust-framework/22.10/participant/).
 - [Gaia-X Architecture Document v23.10](https://docs.gaia-x.eu/technical-committee/architecture-document/23.10/gx_services/)
+- GB 32100-2015, Coding rules for the unified social credit identifier for legal entities and other organizations (法人和其他组织统一社会信用代码编码规则), Standardization Administration of China / State Administration for Market Regulation, 2015.
+- [NECIPS, National Enterprise Credit Information Publicity System (国家企业信用信息公示系统)](https://www.gsxt.gov.cn)
 
 ## Legal
 

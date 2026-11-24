@@ -1,13 +1,8 @@
-# CX-0067 Ontology Models to realize federated query in Catena-X v1.1.0
+# CX-0067 Ontology Models to realize federated query in Catena-X v1.1.1
 
 ## ABSTRACT
 
 This standard gives fundamental guidelines for the creation of ontology models to be used in Catena-X. It provides the semantic foundation for the so-called Knowledge Agent Approach that utilizes semantic web technologies for federated queries in data spaces (see Catena-X standard CX-0084).
-
-## COMPARISON WITH THE PREVIOUS VERSION OF THE STANDARD
-
-- New subchapters [Digital Twin and Ontologies](#digital-twin-and-ontologies), [Taxonomy](#taxonomy), [Asset Content Description](#asset-content-description), [Modeling of the Functions](#modeling-of-the-functions) have been added.
-- Text, images and code snippets have been modified to make them easier to understand.
 
 ## 1. INTRODUCTION
 
@@ -141,7 +136,7 @@ A digital twin is a digital object in a defined digital platform, such as the We
 A taxonomy is a collection of terms and their meaning. The terms are structured in a hierarchical form, whereby the relationships become broader and narrower. Taxonomies can be seen as a dictionary that ensures the correct use of terms. Ontologies use the terms to describe a domain. Domain ontologies can grow very quickly and become confusing. Therefore, it is not recommended to define classes for all types of a domain in an ontology. Instead of defining new subclasses, the instances can be typed using terms from the taxonomy. For this purpose, a Catena-X taxonomy is created with SKOS, which can be extended based on the classes of the core ontology. For example, the class Vehicle in the Vehicle Ontology describes vehicles. A small car is a special type of vehicle for which there it is not necessary to create a separate class. Instead, the term can be included in the taxonomy and the instances can be specified from there.
 
 ```
-@prefix dct: <https://purl.org/dc/terms/> .
+@prefix dct: <http://purl.org/dc/terms/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix cx-core: <https://w3id.org/catenax/ontology/core#> .

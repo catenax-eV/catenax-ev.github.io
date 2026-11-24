@@ -3,7 +3,7 @@ tags:
   - CAT/Value Added Services
 ---
 
-# CX-0081 Country Risk API v1.2.1
+# CX-0081 Country Risk API v1.2.2
 
 ## ABSTRACT
 
@@ -18,14 +18,6 @@ You can find the [Gate Standard as CX - 0074 Business Partner Gate API](https://
 ## FOR WHOM IS THE STANDARD DESIGNED
 
 This document is mainly targeted to technical individuals involved in integrating and developing against this API, as well as business individuals who are involved in the compliance process of this API.
-
-## COMPARISON WITH THE PREVIOUS VERSION OF THE STANDARD
-
-| Version | Description                                                                                                                                                                                                                  | Date       | Author                                                        |
-|---------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------| ------------------------------------------------------------- |
-| V1.0.0  | Initial release                                                                                                                                                                                                              | 06.10.2023 | Enzio Lincke, Fábio Mota, Alexander Keppler, Korbinian Hutter |
-| V1.1.0  | Update regarding generic endpoint of the Gate and the Tractus-X EDC. Affected chapters are [1.2.1.4 The Generic Endpoint](#1214-the-generic-endpoint) & [2.2.3 EDC DATA ASSET STRUCTURE](#223-data-asset-structure) | 22.03.2024 | Fábio Mota, Alexander Keppler                                 |
-| V1.2.0  | Update on data asset and added new context for Country Risk. Added new section for Additional Requirements. Affected chapters are [2.2.3 DATA ASSET STRUCTURE](#223-data-asset-structure) & [2.2.5 POLICY CONSTRAINTS FOR DATA EXCHANGE](#225-policy-constraints-for-data-exchange)                         | 20.06.2024 |        Fábio Mota, Alexander Keppler                                                       |
 
 ## 1 INTRODUCTION
 
@@ -327,7 +319,7 @@ Example data asset:
 ```json
 {
     "@context": {
-        "dct": "https://purl.org/dc/terms/",
+        "dct": "http://purl.org/dc/terms/",
         "cx-taxo": "https://w3id.org/catenax/taxonomy#",
         "cx-common": "https://w3id.org/catenax/ontology/common#",
     },

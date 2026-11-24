@@ -163,9 +163,9 @@ The model is for assets on Instance level.
 
 #### 3.1.2 SPECIFICATION ARTIFACTS
 
-- DPP Metadata IDTA-02099-1 (v1.0.x) - Submodel Template Specification as [.pdf](https://github.com/admin-shell-io/submodel-templates/blob/main/published/Digital%20Battery%20Passport/1_Digital%20Nameplate/1/0/IDTA%2002035-1_DBP-Part-1_Digital%20Nameplate.pdf) or [html](https://industrialdigitaltwin.io/idta-submodel-templates/IDTA-02099/1.0/index.html)
-- [DPP Metadata IDTA-02099-1 (v1.0.x)- Submodel Template (.aasx)](https://github.com/admin-shell-io/submodel-templates/blob/main/published/Digital%20Battery%20Passport/1_Digital%20Nameplate/1/0/IDTA%2002035-1_DBP-Part-1_Digital%20Nameplate.aasx)
-- [DPP Metadata IDTA-02099-1 (v1.0.x) - Aspect Model (.ttl)](https://github.com/admin-shell-io/smt-semantic-models/blob/V1.1/io.admin-shell.idta.batterypass.digital_nameplate/1.0.0/BatteryNameplate.ttl)
+- DPP Metadata IDTA-02099-1 (v1.0.x) - Submodel Template Specification as [.pdf](https://github.com/admin-shell-io/submodel-templates/blob/main/published/Digital%20Product%20Passport/Digital%20Product%20Passport%20Part-1/1/0/1/IDTA%2002099-1_Template%20Digital%20Product%20Passport%20-%20Part%201.pdf) or [html](https://industrialdigitaltwin.io/idta-submodel-templates/IDTA-02099-1/1.0.1/index.html)
+- [DPP Metadata IDTA-02099-1 (v1.0.x)- Submodel Template (.aasx)](https://github.com/admin-shell-io/submodel-templates/blob/main/published/Digital%20Product%20Passport/Digital%20Product%20Passport%20Part-1/1/0/1/IDTA%2002099-1_Template%20Digital%20Product%20Passport%20-%20Part%201.aasx)
+- [DPP Metadata IDTA-02099-1 (v1.0.x) - Aspect Model (.ttl)](https://github.com/admin-shell-io/smt-semantic-models/blob/main/io.admin-shell.idta.dpp.dpp_metadata/1.0.0/DppMetadata.ttl)
 
 #### 3.1.3 IDENTIFIER OF SEMANTIC MODEL
 
