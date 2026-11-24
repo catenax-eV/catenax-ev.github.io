@@ -1,0 +1,68 @@
+@startuml additional-address-with-site
+
+skinparam dpi 50
+
+package "Business Parter (Additional Address) w/ Site" {
+  object LegalEntity {
+    LegalName = "Dr. Ing. h.c. F. Porsche Aktiengesellschaft"
+    ShortName = "Porsche AG"
+  }
+
+  object Address1 {
+    Name = ""
+    Country = "DE"
+    City = "Stuttgart"
+    PostalCode = "70435"
+    Street = "Porscheplatz"
+    HouseNumber = "1"
+  }
+
+  object Address2 {
+    Name = "Pforte (Lieferanten)"
+    Country = "DE"
+    City = "Stuttgart"
+    PostalCode = "70435"
+    Street = "Schwieberdinger Str."
+    HouseNumber = "130"
+  }
+
+  object Address3 {
+    Name = "Hauptpforte"
+    Country = "DE"
+    City = "Stuttgart"
+    PostalCode = "70435"
+    Street = "Porschestraße"
+    HouseNumber = "42
+  }
+
+  object Site1 {
+    Name = "Porsche Zuffenhausen, Werk 2"
+  }
+
+  object BusinessPartner {
+    AddressType = "AdditionalAddress"
+    NameParts = [
+      "Dr. Ing. h.c. F. Porsche", 
+      "Aktiengesellschaft", 
+      "Porsche Zuffenhausen,", 
+      "Werk 2, Pforte (Lieferanten)"]
+    Country = "DE"
+    City = "Stuttgart"
+    PostalCode = "70435"
+    Street = "Schwieberdinger Str."
+    HouseNumber = "130"
+  }
+
+  BusinessPartner -r-> LegalEntity : BPNL
+  BusinessPartner -r-> Site1 : BPNS
+  BusinessPartner -r-> Address2 : BPNA
+  LegalEntity .d.> Address1 : LegalAddress
+  Site1 .d.> Address3 : SiteMainAddress
+  Address1 -u-> LegalEntity : BPNL
+  Address2 -u-> Site1 : BPNS
+  Address3 -u-> Site1 : BPNS
+  Site1 -u-> LegalEntity : BPNL
+}
+
+@enduml
+

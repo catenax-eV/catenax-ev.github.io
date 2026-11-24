@@ -6,40 +6,19 @@ tags:
   - CAT/Onboarding Service Provider
 ---
 
-# CX-0009 CX Registration API v2.0.0
-
-:::warning
-
-The following standard was reviewed and identified as not ready for release. Therefore this standard was allowed to apply the required changes through a **fast-track process** to be included in the CX-Neptune release.
-These exceptions will be released together with the  **CX-Neptune Go-Live** of all other standards on **24 of November 2026**.
-
-**Therefore, this version of the standard is not eligible for certification yet**
-
-:::
-
-## CAMPARISON TO THE LAST VERSION
-
-| Version | Change by    | Change Details                                                                                                                                                                  |
-|---------|--------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 2.0.0   | Julia Jeroch | Update of the endpoint details which MUST/SHOULD get followed by the Core Service Provider and/or Onboarding service provider. Endpoint path as well as request/response body.  |
+# CX-0009 CX Registration API v2.1.0
 
 ## ABSTRACT
 
-To become a participant of Catena-X, each applicant must go through a
-registration process. Registration is a mandatory requirement for all
-further activities within the Catena-X network. The registration
-process, along with other services, provide the foundation of trust for
-the Catena-X network.
-
-The Registration & Administration Service describes the endpoints that are needed for
-the registration process.
+This standard defines the Registration API for the Catena-X network. It specifies the endpoints that
+a Core Service Provider B must implement to enable prospective participants to register.
 
 ## 1. Introduction
 
-To become a participant of Catena-X, each applicant must go through a
+To become a participant of Catena-X, each prospective participant must go through a
 registration process. Registration is a mandatory requirement for all
 further activities within the Catena-X network. The registration
-process, along with other services, provide the foundation of trust for
+process, along with other services, provides the foundation of trust for
 the Catena-X network.
 
 ### 1.1 Audience & Scope
@@ -48,8 +27,8 @@ the Catena-X network.
 
 This standard is relevant for the following roles:
 
-- Core Service Provider
-- Onboarding Service Provider (for reference)
+- Core Service Provider B
+- Onboarding Service Provider
 
 ### 1.2 Context
 
@@ -57,16 +36,44 @@ This standard is relevant for the following roles:
 
 The registration API is used as part of the registration process.
 
-### 1.3 Architecture Overview
+### 1.3 Interactions
 
 > *This section is non-normative*
 
-A core service provider operates among other things a registration
-frontend through which a registering company can enter its data. In the
-future, the registration service may be accessed remotely, for example
-by onboarding service provider, so the API needs to be standardized.
+A Core Service Provider B operates a registration API through which a registering company can enter
+its data. The registration service may be accessed by an Onboarding Service Provider, on behalf of
+a registering company.
 
-![CX-0009-architecture-overview1.jpg](./assets/CX-0009-architecture-overview1.jpg)
+```mermaid
+sequenceDiagram
+    participant NewCompany as Prospective Participant
+    participant OSP as Onboarding Service Provider
+    participant CSP-B as Core Service Provider B
+
+    Note over NewCompany,CSP-B: Register callback endpoint to receive status updates
+    OSP->>CSP-B: POST /api/administration/registrationstatus/callback
+
+    Note over NewCompany,CSP-B: Registration and data collection (CX-0006)
+    OSP->>CSP-B: POST /api/administration/osp/v2/participant-registration
+
+    CSP-B->>OSP: POST {ospCallbackUrl} with status SUBMITTED
+
+    opt data collection
+    NewCompany->>CSP-B: input via portal
+    end
+
+    CSP-B->>CSP-B: Verify company data
+
+    Note over OSP,CSP-B: Steps 2-5 (CX-0006)
+
+    CSP-B->>CSP-B: Process registration via CSP-B internal API
+
+    alt registration was successful
+    CSP-B->>OSP: POST {ospCallbackUrl} with status CONFIRMED
+    else registration was not successful
+    CSP-B->>OSP: POST {ospCallbackUrl} with status DECLINED
+    end
+```
 
 ### 1.4 Conformance
 
@@ -74,25 +81,25 @@ As well as sections marked as non-normative, all authoring guidelines,
 diagrams, examples, and notes in this specification are non-normative.
 Everything else in this specification is normative.
 
-The key words MAY, MUST, MUST NOT, OPTIONAL, RECOMMENDED, REQUIRED,
-SHOULD and SHOULD NOT in this document are to be interpreted as
-described in [BCP
-14](https://datatracker.ietf.org/doc/html/bcp14) \[[RFC2119](https://www.w3.org/TR/did-core/#bib-rfc2119)\]
-\[[RFC8174](https://www.w3.org/TR/did-core/#bib-rfc8174)\] when, and
+The keywords MAY, MUST, MUST NOT, OPTIONAL, RECOMMENDED, REQUIRED, SHOULD and SHOULD NOT
+in this document are to be interpreted as described in
+[BCP 14](https://datatracker.ietf.org/doc/html/bcp14)
+[[RFC2119](https://www.w3.org/TR/did-core/#bib-rfc2119)\]
+[[RFC8174](https://www.w3.org/TR/did-core/#bib-rfc8174)\] when, and
 only when, they appear in all capitals, as shown here.
 
 ### 1.5 Proof of conformity
 
 > *This section is non-normative*
 
-All participants and their solutions will need to proof, that they are
-conform with the Catena-X standards. To validate that the standards are
+All participants and their solutions must prove that they conform to the
+Catena-X standards. To validate that the standards are
 applied correctly, Catena-X employs Conformity Assessment Bodies (CABs).
 
-Core service providers implementing their own registration solution MUST
-proof their conformity by providing:
+Core Service Provider B implementations of their own registration solution MUST
+prove their conformity by providing:
 
-- An openAPI specification of the endpoints described
+- OpenAPI specifications for the CSP-B endpoints and the OSP callback endpoint they implement
 
 ### 1.6 Terminology
 
@@ -108,634 +115,503 @@ glossary on the association homepage.
 
 ## 2. Catena-X Registration API
 
+> *This section is normative*
+
+A Core Service Provider B **MUST** implement the following endpoints. The API business logic,
+content, and structure are required; the root path can differ. Details of the respective MUST
+and SHOULD statements are described below.
+
 ### 2.1 Preconditions and dependencies
 
 The registration API is exposed to the Internet.
 
-### 2.2 API Specification
+The `<base>` notation indicates the base URL for an endpoint. For example, if the base URL is
+`api.example.com`, the URL
+`https://<base>/api/administration/registration/network/partnerregistration`
+will map to
+`https://api.example.com/api/administration/registration/network/partnerregistration`.
 
-### 2.2.1 API-Endpoints - Core Service Provider
+#### 2.1.1 Available Data Types
 
-The Core Service Provider MUST implement the following endpoints -- in focus
-are the API business logic / content and structure, the path name might change / be
-different but the business logic behind as well as the attributes must
-be followed. Details to the respective MUST and SHOULD statements may be found below.
+All Registration API control-plane request and response messages **MUST** use the
+`application/json` media type. This excludes binary uploads to a storage-provider presigned URL.
 
->> Note functional description and standard definition of the CSP role are defined inside the standard CX-0006-RegistrationAndInitialOnboarding.
+*The examples in this document are non-normative. The provided OpenAPI documents are normative
+machine-readable representations and MUST remain aligned with this specification.*
 
-#### 2.2.1.1 Enter / verify company data
+#### 2.1.2 API resources & endpoints
 
-**Endpoint:** `/api/registration/legalEntityAddress/{bpn}`
+The HTTP endpoints introduced in this standard **MUST** implement authentication and authorization.
 
-**Method:** `GET`
+#### 2.1.3 Error Handling
 
-**Description & Information:**  
-Please note - this endpoint is currently only Core Service Provider relevant. The Core Service Provider **MUST** be able to pre-fill the company address data if the requester company has a BPN. The endpoint path **MUST NOT** be followed as long as all validations and processes are implemente
+HTTP standard response codes **MUST** be used.
 
-**Request body**
+### 2.2 Core Service Provider B
 
-```json
-n/a
+The CSP-B-hosted endpoints in this section are defined in the [Registration API OpenAPI specification](./assets/registration-api.yaml).
+
+#### 2.2.1 Initiate registration
+
+A Core Service Provider B **MUST** provide this endpoint to initiate a registration process.
+**This legacy endpoint is retained for backward compatibility. New OSP integrations SHOULD use the participant registration endpoint defined in [Section 2.2.2](#222-initiate-participant-registration-by-osp)**
+**Endpoint:** `POST https://<base>/api/administration/registration/network/partnerregistration`
+
+**Required Role:** `configure_partner_registration`
+
+| Field               | Type                                                   | Mandatory | Description                                                                                     |
+| ------------------- | ------------------------------------------------------ | --------- | ----------------------------------------------------------------------------------------------- |
+| `externalId`        | string                                                 | Mandatory | Unique identifier within the Onboarding Service Provider                                        |
+| `name`              | string                                                 | Mandatory | Company name                                                                                    |
+| `city`              | string                                                 | Mandatory | City of the company address                                                                     |
+| `streetName`        | string                                                 | Mandatory | Street name of the company address                                                              |
+| `countryAlpha2Code` | string                                                 | Mandatory | ISO 3166-1 alpha-2 country code (e.g. `DE`)                                                     |
+| `region`            | string                                                 | Mandatory | Region / state                                                                                  |
+| `companyRoles`      | array of [`CompanyRoleId`](#companyroleid)             | Mandatory | Roles the company will take on                                                                  |
+| `uniqueIds`         | array of [`CompanyUniqueIdData`](#companyuniqueiddata) | Mandatory | Company unique identifiers                                                                      |
+| `userDetails`       | array of [`UserDetailData`](#userdetaildata)           | Mandatory | Initial user(s) to be created for the company                                                   |
+| `bpn`               | string                                                 | Optional  | If the prospective participant already has a Business Partner Number, the OSP provides it here. |
+| `shortName`         | string                                                 | Optional  | Company short name                                                                              |
+| `streetNumber`      | string                                                 | Optional  | Street number                                                                                   |
+| `streetAdditional`  | string                                                 | Optional  | Additional street info                                                                          |
+| `zipCode`           | string                                                 | Optional  | Postal / ZIP code                                                                               |
+
+<details>
+<summary>Example Request</summary>
+
+```json title="partnerRegistrationData.json"
+{
+  "externalId": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+  "name": "Example GmbH",
+  "city": "Munich",
+  "streetName": "Main street",
+  "streetNumber": "42",
+  "streetAdditional": null,
+  "zipCode": "80331",
+  "region": "BY",
+  "countryAlpha2Code": "DE",
+  "bpn": "BPNL000000055EPN",
+  "shortName": "ExGmbH",
+  "uniqueIds": [
+    {
+      "type": "COMMERCIAL_REG_NUMBER",
+      "value": "HRB 123456"
+    }
+  ],
+  "userDetails": [
+    {
+      "identityProviderId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+      "providerId": "ext-user-001",
+      "username": "jane.doe",
+      "firstName": "Jane",
+      "lastName": "Doe",
+      "email": "jane.doe@example.com"
+    }
+  ],
+  "companyRoles": ["ACTIVE_PARTICIPANT"]
+}
 ```
 
-**Response body**
+</details>
 
-```json
+**Response Body**
+
+n/a
+
+**Response Codes**
+
+| HTTP Status | Description                             |
+| ----------- | --------------------------------------- |
+| `200`       | Registration successfully initiated     |
+| `401`       | Unauthorized - missing or invalid token |
+| `500`       | Internal Server Error                   |
+
+---
+
+#### 2.2.2 Initiate participant registration by OSP
+
+A Core Service Provider B **MUST** provide this endpoint to initiate a registration process for a participant invited by the OSP. The role of the invited company is excluded from the onboarding request because it is implied to be Data Provider and Data Consumer only.
+
+**Endpoint:** `POST https://<base>/api/administration/osp/v2/participant-registration`
+
+**Required Role:** `configure_partner_registration`
+
+| Field               | Type                                                   | Mandatory | Description                                                                                                                                  |
+| ------------------- | ------------------------------------------------------ | --------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| `externalId`        | string                                                 | Mandatory | Unique identifier within the Onboarding Service Provider                                                                                     |
+| `name`              | string                                                 | Mandatory | Company name                                                                                                                                 |
+| `city`              | string                                                 | Mandatory | City of the company address                                                                                                                  |
+| `streetName`        | string                                                 | Mandatory | Street name of the company address                                                                                                           |
+| `countryAlpha2Code` | string                                                 | Mandatory | ISO 3166-1 alpha-2 country code (e.g. `DE`)                                                                                                  |
+| `region`            | string                                                 | Optional  | Region / state                                                                                                                               |
+| `uniqueIds`         | array of [`CompanyUniqueIdData`](#companyuniqueiddata) | Mandatory | Company unique identifiers                                                                                                                   |
+| `userDetails`       | array of [`UserDetailData`](#userdetaildata)           | Mandatory | Initial user(s) to be created for the company                                                                                                |
+| `shortName`         | string                                                 | Optional  | Company short name                                                                                                                           |
+| `streetNumber`      | string                                                 | Optional | Street number                                                                                                                                |
+| `streetAdditional`  | string                                                 | Optional  | Additional street info                                                                                                                       |
+| `siteDetail`        | [`SiteDetailData`](#sitedetaildata)                    | Mandatory | Data required to create a BPNS as specified in [CX-0010][cx-0010]                                                                            |
+| `zipCode`           | string                                                 | Mandatory | Postal / ZIP code                                                                                                                            |
+| `did`               | string                                                 | Optional  | Decentralized Identifier used to receive the Verifiable Credentials during the onboarding process, when required by the CSP-B configuration. |
+| `consents`          | array of [`Consent`](#consent)                         | Mandatory | Array of consent the OSP has collected from the customer. MUST include all three required kinds.                                             |
+
+<details>
+<summary>Example Request</summary>
+
+```json title="participantRegistrationData.json"
 {
-  "version": {
-    "characterSet": {
-      "technicalKey": "string",
-      "name": "string"
+  "externalId": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+  "name": "Example GmbH",
+  "city": "Munich",
+  "streetName": "Main street",
+  "countryAlpha2Code": "DE",
+  "region": "BY",
+  "uniqueIds": [
+    {
+      "type": "COMMERCIAL_REG_NUMBER",
+      "value": "HRB 123456"
+    }
+  ],
+  "userDetails": [
+    {
+      "identityProviderId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+      "providerId": "ext-user-001",
+      "username": "jane.doe",
+      "firstName": "Jane",
+      "lastName": "Doe",
+      "email": "jane.doe@example.com"
+    }
+  ],
+  "shortName": "ExGmbH",
+  "streetNumber": "42",
+  "streetAdditional": null,
+  "siteDetail": {
+    "name": "Main Plant Munich",
+    "city": "Munich",
+    "streetName": "Factory road",
+    "countryAlpha2Code": "DE",
+    "region": "BY",
+    "streetNumber": "7",
+    "zipCode": "80331"
+  },
+  "zipCode": "80331",
+  "did": "did:web:teaching-especially-rodent.ngrok-free.app",
+  "consents": [
+    {
+      "kind": "CX_DATA_EXCHANGE_GOVERNANCE",
+      "fileIds": []
     },
-    "language": {
-      "technicalKey": "string",
-      "name": "string"
-    }
-  },
-  "careOf": "string",
-  "contexts": [
-    "string"
-  ],
-  "country": {
-    "technicalKey": "string",
-    "name": "string"
-  },
-  "administrativeAreas": [
     {
-      "value": "string",
-      "shortName": "string",
-      "fipsCode": "string",
-      "type": {
-        "technicalKey": "string",
-        "name": "string"
-      },
-      "language": {
-        "technicalKey": "string",
-        "name": "string"
-      }
-    }
-  ],
-  "postCodes": [
+      "kind": "CX_OPERATING_MODEL",
+      "fileIds": []
+    },
     {
-      "value": "string",
-      "type": {
-        "technicalKey": "string",
-        "name": "string"
-      }
-    }
-  ],
-  "localities": [
-    {
-      "value": "string",
-      "shortName": "string",
-      "type": {
-        "technicalKey": "string",
-        "name": "string"
-      },
-      "language": {
-        "technicalKey": "string",
-        "name": "string"
-      }
-    }
-  ],
-  "thoroughfares": [
-    {
-      "value": "string",
-      "name": "string",
-      "shortName": "string",
-      "number": "string",
-      "direction": "string",
-      "type": {
-        "technicalKey": "string",
-        "name": "string"
-      },
-      "language": {
-        "technicalKey": "string",
-        "name": "string"
-      }
-    }
-  ],
-  "premises": [
-    {
-      "value": "string",
-      "shortName": "string",
-      "number": "string",
-      "type": {
-        "technicalKey": "string",
-        "name": "string"
-      },
-      "language": {
-        "technicalKey": "string",
-        "name": "string"
-      }
-    }
-  ],
-  "postalDeliveryPoints": [
-    {
-      "value": "string",
-      "shortName": "string",
-      "number": "string",
-      "type": {
-        "technicalKey": "string",
-        "name": "string"
-      },
-      "language": {
-        "technicalKey": "string",
-        "name": "string"
-      }
-    }
-  ],
-  "geographicCoordinates": {
-    "longitude": 0,
-    "latitude": 0,
-    "altitude": 0
-  },
-  "types": [
-    {
-      "technicalKey": "string",
-      "name": "string"
+      "kind": "CX_TEN_GOLDEN_RULES",
+      "fileIds": []
     }
   ]
 }
 ```
 
----
+</details>
 
-**Endpoint:** `/api/registration/application/{applicationId}/companyDetailsWithAddress`
+**Response Body**
 
-**Method:** `GET`
-
-**Description & Information:**  
-The Core Service Provider **MUST** provide the GET /\{applicationId\}/companyDetailsWithAddress endpoint for a standardized way to receive the registration party data.
-
-**Request body**
-
-```json
-n/a content inside the path
-```
-
-**Response body**
-
-```json
-{
-  "name": "string",
-  "city": "string",
-  "streetName": "string",
-  "countryAlpha2Code": "string",
-  "bpn": "string",
-  "shortName": "string",
-  "region": "string",
-  "streetAdditional": "string",
-  "streetNumber": "string",
-  "zipCode": "string",
-  "uniqueIds": [
-    {
-      "type": "COMMERCIAL_REG_NUMBER",
-      "value": "string"
-    }
-  ],
-  "companyId": "3fa85f64-5717-4562-b3fc-2c963f66afa6"
-}
-```
-
----
-
-**Endpoint:** `/api/registration/company/country/{alpha2Code}/uniqueidentifiers`
-
-**Method:** `GET`
-
-**Description & Information:**  
-The Core Service Provider **CAN** offer a GET /uniqueidentifiers endpoint to provide supported unique identifier based on the company lega address country alpha2Code.
-
-**Request body**
-
-```json
-n/a content inside the path
-```
-
-**Response body**
-
-```json
-[
-  {
-    "id": 0,
-    "label": "COMMERCIAL_REG_NUMBER"
-  }
-]
-```
-
----
-
-**Endpoint:** `/api/registration/application/{applicationId}/companyDetailsWithAddress`
-
-**Method:** `POST`
-
-**Description & Information:**  
-The Core Service Provider **MUST** provide the POST /\{applicationId\}/companyDetailsWithAddress endpoint for a standardized way to store/post the registration party data.
-
-**Request body**
-
-```json
-{
-  "name": "string",
-  "city": "string",
-  "streetName": "string",
-  "countryAlpha2Code": "string",
-  "bpn": "string",
-  "shortName": "string",
-  "region": "string",
-  "streetAdditional": "string",
-  "streetNumber": "string",
-  "zipCode": "string",
-  "uniqueIds": [
-    {
-      "type": "COMMERCIAL_REG_NUMBER",
-      "value": "string"
-    }
-  ],
-  "companyId": "3fa85f64-5717-4562-b3fc-2c963f66afa6"
-}
-```
-
-**Response body**
-
-```json
-success/error
-```
-
-#### 2.2.1.2 Company roles and consent
-
-**Endpoint:** `/api/registration/company/companyRoles`
-
-**Method:** `GET`
-
-**Description & Information:**  
-The Core Service Provider **MUST** implement the GET /companyRoles endpoint.
-
-**Request body**
-
-```json
-n/a content inside the path
-```
-
-**Response body**
-
-```json
-[
-  {
-    "companyRole": "string",
-    "roleDescription": "string"
-  }
-]
-```
-
----
-
-**Endpoint:** `/api/registration/companyRoleAgreementData`
-
-**Method:** `GET`
-
-**Description & Information:**  
-The Core Service Provider **MUST** implement the GET /companyRoleAgreementData endpoint.
-
-**Request body**
-
-```json
-n/a content inside the path
-```
-
-**Response body**
-
-```json
-{
-  "companyRoles": [
-    {
-      "companyRole": "ACTIVE_PARTICIPANT",
-      "descriptions": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
-      },
-      "agreementIds": [
-        "3fa85f64-5717-4562-b3fc-2c963f66afa6"
-      ]
-    }
-  ],
-  "agreements": [
-    {
-      "agreementId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-      "name": "string",
-      "agreementLink": "string",
-      "documentId": "3fa85f64-5717-4562-b3fc-2c963f66afa6"
-    }
-  ]
-}
-```
-
----
-
-**Endpoint:** `/api/registration/application/{applicationId}/companyRoleAgreementConsents`
-
-**Method:** `POST`
-
-**Description & Information:**  
-The Core Service Provider **MUST** implement the GET /companyRoleAgreementConsents endpoint.
-
-**Request body**
-
-```json
-{
-  "companyRoles": [
-    "ACTIVE_PARTICIPANT"
-  ],
-  "agreements": [
-    {
-      "agreementId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-      "consentStatus": "ACTIVE"
-    }
-  ]
-}
-```
-
-**Response body**
-
-```json
-success/error
-```
-
-#### 2.2.1.3 Registration relevant documents
-
-**Endpoint:** `/api/registration/application/{applicationId}/documentType/{documentTypeId}/documents`
-
-**Method:** `GET`
-
-**Description & Information:**  
-The Core Service Provider **SHOULD** implement the GET /\{documentTypeId\}/documents endpoint.
-
----
-
-**Endpoint:** `/api/registration/application/{applicationId}/documentType/{documentTypeId}/documents`
-
-**Method:** `POST`
-
-**Description & Information:**  
-The Core Service Provider **SHOULD** implement the POST /\{documentTypeId\}/documents endpoint. Depending on the Core Service Provider implemented registration process authentication methods, the document endpoint might change within the endpoint path or business logic.
-
----
-
-**Endpoint:** `/api/registration/documents/{documentId}`
-
-**Method:** `DELETE`
-
-**Description & Information:**  
-The Core Service Provider **SHOULD** implement the DELETE /\{documentTypeId\}/documents endpoint to enable the onboarding customer to delete own previous uploaded document again. Important are audit relevant processes. The Core Service Provider **MUST** ensure that audit guidelines are not violated.
-
----
-
-**Endpoint:** `/api/registration/documents/{documentId}`
-
-**Method:** `GET`
-
-**Description & Information:**  
-The Core Service Provider **MUST** support to display the user company loaded documents. The endpoint path might change but the Core Service Provider **MUST** ensure that validations are implemeneted (e.g. the company user can not access uploaded documents of a second registration company)
-
-#### 2.2.1.4 Verify and submit registration
-
-**Endpoint:** `/api/registration/application/{applicationID}/registrationData`
-
-**Method:** `GET`
-
-**Description & Information:**  
-The Core Service Provider **MUST** support a GET /\{applicationID\}/registrationData endpooint with the reference implemented properties/attributes. This ensures that the company registrationData can be viewed in a standardized model.
-
-**Request body**
-
-```json
-{
-  "companyId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-  "name": "string",
-  "bpn": "string",
-  "shortName": "string",
-  "city": "string",
-  "region": "string",
-  "streetAdditional": "string",
-  "streetName": "string",
-  "streetNumber": "string",
-  "zipCode": "string",
-  "countryAlpha2Code": "string",
-  "companyRoles": [
-    "ACTIVE_PARTICIPANT"
-  ],
-  "agreements": [
-    {
-      "agreementId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-      "consentStatus": "ACTIVE"
-    }
-  ],
-  "documents": [
-    {
-      "documentName": "string"
-    }
-  ],
-  "uniqueIds": [
-    {
-      "type": "COMMERCIAL_REG_NUMBER",
-      "value": "string"
-    }
-  ]
-}
-```
-
-**Response body**
-
-```json
-success/error
-```
-
----
-
-**Endpoint:** `/api/registration/application/{applicationID}/submitregistration`
-
-**Method:** `POST`
-
-**Description & Information:**  
-...
-
-**Request body**
-
-```json
 n/a
+
+**Response Codes**
+
+| HTTP Status | Description                                                                          |
+| ----------- | ------------------------------------------------------------------------------------ |
+| `201`       | Registration request successfully created                                            |
+| `401`       | Unauthorized - missing or invalid token                                              |
+| `409`       | Conflict - a registration request already exists with this `externalId` for this OSP |
+| `500`       | Internal Server Error                                                                |
+
+---
+
+#### 2.2.3 File Upload Endpoint
+
+If files, such as documents, are required to process a registration request and are provided to the CSP-B by an OSP, the CSP-B **MUST** provide this endpoint.
+Otherwise, the CSP-B **MAY** provide this endpoint.
+All files **MUST** be successfully uploaded before the registration request is submitted.
+
+**Endpoint:** `POST https://<base>/api/administration/osp/v2/participant-registration/fileupload`
+
+**Required Role:** `configure_partner_registration`
+
+**Request Body** — `FileUploadRequest`
+
+| Field         | Type   | Mandatory | Description                                                                                         |
+| ------------- | ------ | --------- | --------------------------------------------------------------------------------------------------- |
+| `fileName`    | string | Mandatory | Name of the file the OSP intends to upload                                                          |
+| `externalId`  | string | Mandatory | To correlate this file with the registration request                                                |
+| `contentType` | string | Mandatory | [RFC 2046](https://www.rfc-editor.org/rfc/rfc2046) media type of the file the OSP intends to upload |
+
+**Response Body**
+
+| Field                | Type   | Mandatory | Description                                                                                 |
+| -------------------- | ------ | --------- | ------------------------------------------------------------------------------------------- |
+| `fileId`             | string | Mandatory | Unique ID assigned to this file                                                             |
+| `presignedUploadUrl` | string | Mandatory | URL to which the OSP **MUST** send an HTTP `PUT` request containing the binary file content |
+| `expiresAt`          | string | Optional  | Date and time until which the `presignedUploadUrl` is valid                                 |
+
+The exact HTTP headers required for the `PUT` request are specific to the storage provider. The CSP-B **MUST** provide these headers separately to parties that intend to integrate with its storage provider.
+
+The `presignedUploadUrl` expires after a limited time. If the upload fails because the URL has expired, the OSP **MAY** call this endpoint again to obtain a new presigned URL and retry the upload.
+
+**Response Codes**
+
+| HTTP Status | Description                               |
+| ----------- | ----------------------------------------- |
+| `200`       | File ID and presigned upload URL returned |
+| `400`       | Bad Request - invalid input               |
+| `401`       | Unauthorized - missing or invalid token   |
+| `500`       | Internal Server Error                     |
+
+#### 2.2.4 Callback Configuration Endpoint
+
+A Core Service Provider B **MUST** provide an endpoint to configure and view the Onboarding Service Provider's callback URL.
+
+**Endpoint:** `POST https://<base>/api/administration/registrationstatus/callback`
+
+**Required Role:** `configure_partner_registration`
+
+Sets or updates the callback URL of the Onboarding Service Provider.
+
+**Request Body** — `OnboardingServiceProviderCallbackConfigurationRequest`
+
+| Field          | Type   | Mandatory | Description                                                   |
+| -------------- | ------ | --------- | ------------------------------------------------------------- |
+| `callbackUrl`  | string | Mandatory | URL to receive registration status callbacks                  |
+| `authUrl`      | string | Mandatory | OAuth token endpoint URL for authenticating callback requests |
+| `clientId`     | string | Mandatory | OAuth client ID                                               |
+| `clientSecret` | string | Mandatory | OAuth client secret                                           |
+
+<details>
+<summary>Example Request</summary>
+
+```json title="callbackRequest.json"
+{
+  "callbackUrl": "https://osp.example.com/callbacks/catenax-registration",
+  "authUrl": "https://osp.example.com/oauth/token",
+  "clientId": "osp-client-id",
+  "clientSecret": "s3cr3t"
+}
 ```
 
-**Response body**
+</details>
 
-```json
-success/error
+**Response Body**
+
+n/a
+
+**Response Codes**
+
+| HTTP Status | Description                             |
+| ----------- | --------------------------------------- |
+| `204`       | Callback URL successfully configured    |
+| `400`       | Bad Request - invalid input             |
+| `401`       | Unauthorized - missing or invalid token |
+| `500`       | Internal Server Error                   |
+
+#### 2.2.5 Callback Detail Retrieval Endpoint
+
+**Endpoint:** `GET https://<base>/api/administration/registrationstatus/callback`
+
+Retrieves the currently configured callback URL of the Onboarding Service Provider.
+
+**Request Body**
+
+n/a
+
+**Response Body** — `OnboardingServiceProviderCallbackConfigurationResponse`
+
+| Field         | Type   | Mandatory | Description                                                   |
+| ------------- | ------ | --------- | ------------------------------------------------------------- |
+| `callbackUrl` | string | Mandatory | URL to receive registration status callbacks                  |
+| `authUrl`     | string | Mandatory | OAuth token endpoint URL for authenticating callback requests |
+| `clientId`    | string | Mandatory | OAuth client ID                                               |
+
+<details>
+<summary>Example Response</summary>
+
+```json title="callbackResponse.json"
+{
+  "callbackUrl": "https://osp.example.com/callbacks/catenax-registration",
+  "authUrl": "https://osp.example.com/oauth/token",
+  "clientId": "osp-client-id"
+}
 ```
 
-#### 2.2.1.5 Registration Application Verification
+</details>
 
-Auto Workflow as per the process description: https://github.com/eclipse-tractusx/portal-assets/blob/main/developer/01.%20Onboarding/03.%20Registration%20Approval/03.%20Registration%20Approval%20Process.md
+**Response Codes**
 
-- POST
-    /api/administration/registration/application/\{applicationId\}/approve
-    Please note - this endpoint is currently only Core Service Provider relevant. The Core Service Provider **MUST** be able to approve (with message, backend business logic and email information) a registration request. The endpoint path **MUST NOT** be followed as long as all validations and processes are implemented.
+| HTTP Status | Description                                        |
+| ----------- | -------------------------------------------------- |
+| `200`       | Returns the configured callback data except secret |
+| `400`       | Bad Request - invalid input                        |
+| `401`       | Unauthorized - missing or invalid token            |
+| `500`       | Internal Server Error                              |
 
-- POST
-    /api/administration/registration/application/\{applicationId\}/decline
-    Please note - this endpoint is currently only Core Service Provider relevant. The Core Service Provider **MUST** be able to decline (with message and email information) a registration request. The endpoint path **MUST NOT** be followed as long as all validations and processes are implemented.
+### 2.3 Onboarding Service Provider
 
-- POST /api/administration/registration/application/clearinghouse
-    Please note - this endpoint is currently only Core Service Provider relevant. The Core Service Provider **MUST** be able to trigger the CH trust anchor. The endpoint path **MUST NOT** be followed, but the endpoint business logic and request body must be followed to allow a standardized interface with the GXCH.
+#### 2.3.1 Send registration status updates
 
-- POST /api/administration/registration/application/\{applicationId\}/retrigger-clearinghouse  
-    Please note - this endpoint is currently only Core Service Provider relevant. The Core Service Provider **MUST** be able to retrigger/overwrite the CH decision if necessary. The endpoint path **MUST NOT** be followed, but the endpoint business logic must be followed to allow a standardized interface with the GXCH.
+An Onboarding Service Provider **MUST** provide a callback endpoint to receive registration status
+updates from the Core Service Provider B. The OSP-hosted callback is defined in the
+[OSP Registration Callback API](./assets/osp-registration-callback-api.yaml).
 
-- POST /api/administration/registration/application/\{applicationId\}/trigger-identity-wallet
+**Endpoint:** `POST {callbackUrl}`
 
-- POST /api/administration/registration/application/\{applicationId\}/trigger-bpn
+| Field                 | Type                                                                                                                         | Mandatory | Description                                                                                  |
+| --------------------  | ---------------------------------------------------------------------------------------------------------------------------- | --------- | -------------------------------------------------------------------------------------------- |
+| `externalId`          | string                                                                                                                       | Mandatory | Identifier originally provided in the `partnerRegistration` or `participant-registration` request |
+| `applicationStatus`   | oneOf([`RegistrationStatus`](#registrationstatus), [`OSPParticipantRegistrationStatus`](#ospparticipantregistrationstatus))            | Mandatory | Registration status; the allowed enum depends on the registration flow                       |
+| `message`             | string                                                                                                                       | Optional  | Additional information, e.g. reason for rejection                                            |
+| `bpnl`                | string                                                                                                                       | Mandatory | As specified in [CX-0010][cx-0010].                                                          |
+| `bpna`                | string                                                                                                                       | Optional  | As specified in [CX-0010][cx-0010].                                                          |
+| `bpns`                | string                                                                                                                       | Optional  | As specified in [CX-0010][cx-0010].                                                          |
 
-- POST /api/administration/registration/application/clearinghouse/selfDescription
-    Please note - this endpoint is currently only Core Service Provider relevant. The Core Service Provider **MUST** support the endpoint - path can change but endpoint structure must be followed
+[cx-0010]: ../CX-0010-BusinessPartnerNumber/CX-0010-BusinessPartnerNumber.md
 
-**Request body**
+All callback payloads **MUST** conform to `OspRegistrationCallbackData`. For registrations submitted through [Initiate registration](#221-initiate-registration), `applicationStatus` **MUST** use the legacy [`RegistrationStatus`](#registrationstatus) values. For registrations submitted through [Initiate participant registration by OSP](#222-initiate-participant-registration-by-osp), `applicationStatus` **MUST** use [`OSPParticipantRegistrationStatus`](#ospparticipantregistrationstatus).
 
-```json
-    {
-        "externalId": "uuid",
-        "status": "Confirm",
-        "message": "string",
-        "selfDescriptionDocument": "string"
-    }
+<details>
+<summary>Example Request</summary>
+
+```json title="ospCallbackData.json"
+{
+  "externalId": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+  "applicationStatus": "CONFIRMED",
+  "message": null,
+  "bpnl": "BPNL000000055EPN"
+}
 ```
 
-#### 2.2.2 PartnerNetwork enablement
+</details>
 
-- CSP **MUST** provide OSPs a submit partnerRegistration endpoint POST /api/administration/registration/Network/partnerRegistration/submit
-    Onboarding Service provider. The endpoint path might be different; but the endpoint structure and business logic needs to follow the standard defined below.
+**Response Body**
 
-**Request body/Submit body**
+n/a
 
-```json
-    {
-        "externalId": "id - unique per OSP",
-        "name": "string",
-        "bpn": "string",
-        "city": "string",
-        "streetName": "string",
-        "countryAlpha2Code": "string",
-        "region": "string",
-        "streetNumber": "string",
-        "zipCode": "string",
-        "uniqueIds": [
-        {
-            "type": "COMMERCIAL_REG_NUMBER",
-            "value": "string"
-        }
-        ],
-        "userDetails": [
-        {
-            "identityProviderId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-            "providerId": "string",
-            "username": "string",
-            "firstName": "string",
-            "lastName": "string",
-            "email": "string"
-        }
-        ],
-        "companyRoles": [
-        "ACTIVE_PARTICIPANT"
-        ]
-    }
-```
+**Response Codes**
 
-- CSP **MUST** provide OSPs a endpoint to configure and view the OSP owned callback URL GET & POST /api/administration/RegistrationStatus/callback
+| HTTP Status | Description                             |
+| ----------- | --------------------------------------- |
+| `200`       | Callback successfully received          |
+| `401`       | Unauthorized - missing or invalid token |
+| `500`       | Internal Server Error                   |
 
-**Body**
+## 3. Lower Level Type Definitions
 
-```json
-    {
-        "callbackUrl": "string",
-        "authUrl": "string",
-        "clientId": "string",
-        "clientSecret": "string"
-    }
-```
+### Consent
 
-#### 2.2.2.1 API-Endpoints - Onboarding Service Provider
+| Field     | Type                          | Mandatory | Description                                                                |
+| --------- | ----------------------------- | --------- | -------------------------------------------------------------------------- |
+| `kind`    | [`ConsentKind`](#consentkind) | Mandatory | Kind of consent                                                            |
+| `fileIds` | array of string               | Optional  | Files associated with this consent. MUST be provided if `kind` is `OTHER`. |
 
-The Onboarding Service Provider MUST implement the following endpoints -- in focus
-are the API business logic / content and structure, the path name might change / be
-different but the business logic behind as well as the attributes must
-be applied/followed. Details to the respective MUST and SHOULD statements may be found below.
+### ConsentKind
 
->> Note functional details and collaboration between OSP and CSP can get found inside the standard CX-0006-RegistrationAndInitialOnboarding.
+Allowed values: `CX_OPERATING_MODEL`, `CX_TEN_GOLDEN_RULES`, `CX_DATA_EXCHANGE_GOVERNANCE`, `OTHER`
 
-- Submit partnerRegistration
-    Onboarding Service provider MUST be able to submit 3rd party registration to the CSP provided endpoint POST /api/administration/registration/Network/partnerRegistration
+Indicates the content of the consent, i.e. what is being consented to.
 
-**Request body/Submit body**
+| Value                         | Definition                                                                                                                                            |
+| ----------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `CX_OPERATING_MODEL`          | Indicates consent to the [Catena-X Operating Model](https://catenax-ev.github.io/docs/operating-model/why-introduction)                               |
+| `CX_TEN_GOLDEN_RULES`         | Indicates consent to the [Catena-X Ten Golden Rules](https://catenax-ev.github.io/docs/regulatory-framework/30000ft/ten-golden-rules)                 |
+| `CX_DATA_EXCHANGE_GOVERNANCE` | Indicates consent to the [Catena-X Data Exchange Governance](https://catenax-ev.github.io/docs/regulatory-framework/20000ft/data-exchange-governance) |
+| `OTHER`                       | Indicates other unspecified consent.                                                                                                                  |
 
-```json
-    {
-        "externalId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-        "name": "string",
-        "bpn": "string",
-        "city": "string",
-        "streetName": "string",
-        "countryAlpha2Code": "string",
-        "region": "string",
-        "streetNumber": "string",
-        "zipCode": "string",
-        "uniqueIds": [
-        {
-            "type": "COMMERCIAL_REG_NUMBER",
-            "value": "string"
-        }
-        ],
-        "userDetails": [
-        {
-            "identityProviderId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-            "providerId": "string",
-            "username": "string",
-            "firstName": "string",
-            "lastName": "string",
-            "email": "string"
-        }
-        ],
-        "companyRoles": [
-        "ACTIVE_PARTICIPANT"
-        ]
-    }
-```
+### CompanyRoleId
 
-#### 2.2.3 Available Data Types
+Allowed values: `ACTIVE_PARTICIPANT`, `APP_PROVIDER`, `SERVICE_PROVIDER`, `OPERATOR`, `ONBOARDING_SERVICE_PROVIDER`
 
-The registration API MUST use JSON as the payload transported via HTTP.
+### CompanyUniqueIdData
 
-#### 2.2.4 API resources & endpoints
+| Field   | Type                                        | Mandatory | Description          |
+| ------- | ------------------------------------------- | --------- | -------------------- |
+| `type`  | [`UniqueIdentifierId`](#uniqueidentifierid) | Mandatory | Identifier type      |
+| `value` | string                                      | Mandatory | The identifier value |
 
-The HTTP endpoints introduced in this standard MUST implement
-authentication and authorization.
+### OSPParticipantRegistrationStatus
 
-#### 2.2.5 Error Handling
+| Value       | Definition                      |
+| ----------- | ------------------------------- |
+| `SUBMITTED` | Entry state                     |
+| `CONFIRMED` | Successful onboarding confirmed |
+| `DECLINED`  | Onboarding failed               |
 
-HTTP standard response codes MUST be used.
+Legal transitions:
 
-##### 2.2.5.1 Error Messages & Explanation
+- SUBMITTED -> CONFIRMED
+- SUBMITTED -> DECLINED
 
-The following http response codes MUST be defined for HTTP POST
-endpoint:
+Entry states:
 
-|     Code    |     Description                                       |
-|-------------|-------------------------------------------------------|
-|     201     |     Registration message was received successfully    |
-|     400     |     Request body was malformed                        |
-|     401     |     Not authorized                                    |
-|     403     |     Forbidden                                         |
-|     405     |     Method not allowed                                |
-|     409     |     Error                                             |
+- SUBMITTED
+
+Terminal states:
+
+- CONFIRMED
+- DECLINED
+
+### RegistrationStatus
+
+| Value         | Definition  |
+| ------------- | ----------- |
+| `CREATED`     | entry state |
+| `INVITE_USER` |             |
+| `SUBMITTED`   |             |
+| `CONFIRMED`   |             |
+| `DECLINED`    |             |
+
+Legal transitions:
+
+- CREATED -> INVITE_USER
+- INVITE_USER -> SUBMITTED
+- SUBMITTED -> CONFIRMED
+- Any non-terminal state -> DECLINED
+
+Entry states:
+
+- CREATED
+
+Terminal states:
+
+- CONFIRMED
+- DECLINED
+
+### UniqueIdentifierId
+
+Allowed values: `COMMERCIAL_REG_NUMBER`, `VAT_ID`, `LEI_CODE`, `VIES`, `EORI`
+
+### UserDetailData
+
+| Field                | Type   | Mandatory | Description                                                                                              |
+| -------------------- | ------ | --------- | -------------------------------------------------------------------------------------------------------- |
+| `identityProviderId` | uuid   | Optional  | Portal ID of the identity provider, if not provided takes the first/default IdP of the OSP configuration |
+| `providerId`         | string | Mandatory | ID of the user in the external identity provider                                                         |
+| `username`           | string | Optional  | Username                                                                                                 |
+| `firstName`          | string | Mandatory | First name                                                                                               |
+| `lastName`           | string | Mandatory | Last name                                                                                                |
+| `email`              | string | Mandatory | Email address                                                                                            |
+
+### SiteDetailData
+
+| Field                | Type   | Mandatory | Description                                                     |
+| -------------------- | ------ | --------- | --------------------------------------------------------------- |
+| `name`               | string | Mandatory | Site name                                                       |
+| `city`               | string | Mandatory | City of the site address                                        |
+| `streetName`         | string | Mandatory | Street name of the company address                              |
+| `countryAlpha2Code`  | string | Mandatory | ISO 3166-1 alpha-2 country code (e.g. `DE`)                     |
+| `region`             | string | Optional  | Region / state                                                  |
+| `streetNumber`       | string | Optional  | Street number                                                   |
+| `zipCode`            | string | Mandatory | Postal / ZIP code                                               |
 
 ## Legal
 
-Copyright © 2026 Catena-X Automotive Network e.V. All rights reserved. For more information, please see [Catena-X Copyright Notice](https://catenax-ev.github.io/copyright).
+Copyright © 2026 Catena-X Automotive Network e.V. All rights reserved. For more information, please
+see [Catena-X Copyright Notice](https://catenax-ev.github.io/copyright).

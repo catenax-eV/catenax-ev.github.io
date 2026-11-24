@@ -1,13 +1,4 @@
-# CX-0160 Battery Passport Data Management Base v.1.1.0
-
-:::warning
-
-Use Case 2 (CX-0160-2) of this standard will be a added through a **fast-track process** to be included in the CX-Neptune release.
-These exceptions will be released together with the  **CX-Neptune Go-Live** of all other standards on **24 of November 2026**.
-
-**Therefore, this version of the standard is not eligible for certification yet**
-
-:::
+# CX-0160 Battery Passport Data Management Base v.1.2.0
 
 ## ABSTRACT
 
@@ -102,8 +93,6 @@ All participants and their solutions will need to prove, that they are conform w
 To validate that the standards are applied correctly, Catena-X employs Conformity Assessment Bodies (CABs).
 
 If a participant or application only implements only a selected number of use cases described in this standard, then conformity must only be demonstrated along conformity assessment criteria (CACs) that apply to the specific use case.
-
-The endpoints of the API-definition of Submodel Service Specification - Value Profile must compliant to CX-0002. In case of a deviation, CX-0002 is considered as the Source of Truth.
 
 ### 1.4 EXAMPLES
 
@@ -236,18 +225,18 @@ The response contains the complete AAS descriptor with the `BatteryNameplate` su
 
 ##### 1.4.1.3 RETRIEVE SUBMODEL DATA
 
-This section describes how to retrieve the submodel data using the endpoint information provided by shell descriptor.
+This section describes how to retrieve the submodel data using the endpoint information provided by shell descriptor (for additional details see CX-0002).
 
 The ``subprotocolBody`` contains the data asset ID (``id``) and the data providers's control plane endpoint (``dspEndpoint``).
 The data consumer must use this information to negotiate a contract for the data asset and then retrieves the data via the data plane.
 
-If the endpoint ``interface`` is ``SUBMODEL-VALUE-3.1`` or ``SUBMODEL-VALUE-3.2``, the path suffix ``/$value`` **MUST** be appended to the ``href``
+If the endpoint ``interface`` is ``SUBMODEL-3.0``  or ``SUBMODEL-3.1`` or ``SUBMODEL-3.2``, the path suffix ``/submodel/$value`` **MUST** be appended to the ``href``
 
 ```
 GET https://edc.data.plane/batteries/urn%3Auuid%3Aa1b2c3d4-e5f6-7890-abcd-ef1234567890/submodels/urn%3Auuid%3A11111111-2222-3333-4444-555555555555/submodel/$value
 ```
 
-If the endpoint ``interface`` is ``SUBMODEL-3.0`` or ``SUBMODEL-3.1`` or ``SUBMODEL-3.2``:
+If the endpoint ``interface`` is  ``SUBMODEL-VALUE-3.1`` or ``SUBMODEL-VALUE-3.2`` the endpoint can be used as is:
 
 ```
 GET https://edc.data.plane/batteries/urn%3Auuid%3Aa1b2c3d4-e5f6-7890-abcd-ef1234567890/submodels/urn%3Auuid%3A11111111-2222-3333-4444-555555555555
@@ -352,7 +341,7 @@ The joint Catena-X - IDTA Battery Passport consists of the following 7 parts (``
 The Submodel Template (SMT) Specifications and Aspect Models are hosted by the IDTA Github repository "admin-shell-io".
 Some models are either derived from existing models or reuse parts of other models.
 
-For all models, version 1.0.0 or any later minor version or patch based on this major version MAY be used.
+For all models, the version specified in the corresponding "Identifier of Semantic Model" section is the minimum; any later minor version based on the same major version MAY be used. Bugfix version MUST be used.
 
 See DIN DKE SPEC 99100 for the information level of the different attributes.
 
@@ -536,7 +525,7 @@ Typically, this model is on Type level.
 The semantic model "Technical Data" has the unique identifier.
 
 ```text
-urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.1#TechnicalData
+urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.2#TechnicalData
 ```
 
 Data providers MUST use this identifier to clearly define the semantics of the data they are transferring.

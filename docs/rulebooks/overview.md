@@ -23,8 +23,8 @@ tags:
 
 | Conformity Assessment Framework Handbook | |
 |:---:|:---:|
-| [![CX-NFR-CAF.png](./assets/images/CX-NFR-CAF.png)](./CX-NFR-CAF/introduction-and-framework) | |
+| [![CX-NFR-CAF.png](./assets/images/CX-NFR-CAF.png)](./CX-NFR-CAF/introduction-and-framework.md) | |
 
 ## Legal
 
-Copyright © 2025 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).
+Copyright © 2026 Catena-X Automotive Network e.V. All rights reserved. For more information, please visit [here](/copyright).

@@ -51,7 +51,7 @@ The following figures detail the standards applicable to each of the six roles a
 
 ![Modular System: Data Space Roles](./assets/images/modular-system-bap.svg)
 
-![Modular System: Data Space Roles](./assets/images/modular-system-overview.svg)
+![Modular System: Data Space Roles](./assets/images/modular-system-other-roles.svg)
 
 ## Legal
 

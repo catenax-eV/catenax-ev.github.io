@@ -1,6 +1,5 @@
 {
-    "label": "Identity Proofing",
-    "position": 4,
-    "collapsible": true,
-    "collapsed": true
+  "label": "Identity Proofing",
+  "position": 5,
+  "link": { "type": "doc", "id": "CX-NFR-identity-proofing" }
 }

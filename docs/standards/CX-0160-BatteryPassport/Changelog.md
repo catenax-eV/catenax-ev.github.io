@@ -7,6 +7,24 @@ All notable changes to CX-0160 will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.1] – CX-Neptune (26.09)
+
+- Align semantic identifiers of aspect models with the published models in UC 2
+
+### Added
+
+- Initially introduced UC2 with its data model
+
+## [1.2.0] – CX-Neptune (26.09)
+
+### Added
+
+- Initially introduced UC2 with its data model
+
+## [1.1.1] – CX-Neptune (26.09)
+
+- Aligned the description on the usage of `SUBMODEL-VALUE-3.X` Interface with CX-0002.
+
 ## [1.1.0] – CX-Neptune (26.09)
 
 ### Added

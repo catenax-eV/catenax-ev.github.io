@@ -3,7 +3,7 @@ tags:
   - CAT/Semantic
 ---
 
-# CX-0084 Federated Queries in Data Spaces v1.2.0
+# CX-0084 Federated Queries in Data Spaces v1.2.1
 
 ## ABSTRACT
 
@@ -15,12 +15,6 @@ The standard is relevant for the following roles:
 
 - data & service provider/consumer
 - business application provider
-
-## COMPARISON WITH THE PREVIOUS VERSION OF THE STANDARD
-
-- External links have been changed to improve readability.
-- The [examples](#16-examples) have been updated to reflect recent developments. In addition, the Asset Content Description subsection has been added.
-- Code snippets and text updates in [Agent-Related EDC Assets](#agent-related-edc-assets)
 
 ## 1 INTRODUCTION
 
@@ -1027,7 +1021,7 @@ Please note that due to technical reasons, a valid definition needs to carry red
         "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
         "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
         "sh": "http://www.w3.org/ns/shacl#",
-        "dct": "https://purl.org/dc/terms/"
+        "dct": "http://purl.org/dc/terms/"
     },
     "@type": "Asset",
     "@id": "cx-taxo:GraphAsset?supplier=BehaviourTwinRUL", 
@@ -1121,7 +1115,7 @@ define this correspondence in the following, we assume the following prefix abbr
 | edc       | https://w3id.org/edc/v0.0.1/ns/                    | EDC annotations                |
 | rdf       | http://www.w3.org/1999/02/22-rdf-syntax-ns#        | RDF type annotations           |
 | rdfs      | http://www.w3.org/2000/01/rdf-schema#              | RDF schema annotations         |
-| dct       | https://purl.org/dc/terms/#                        | Dublin Core annotations        |
+| dct       | http://purl.org/dc/terms/#                        | Dublin Core annotations        |
 | owl       | http://www.w3.org/2002/07/owl#                     | OWL model annotations          |
 | xsd       | http://www.w3.org/2001/XMLSchema#                  | XML schema annotations         |
 | json      | https://json-schema.org/draft/2020-12/schema#      | JSON schema annotations        |
@@ -1183,7 +1177,7 @@ The following is an example of a Skill Asset.
         "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
         "cx-taxo": "https://w3id.org/catenax/taxonomy#",
         "cx-common": "https://w3id.org/catenax/ontology/common#",
-        "dct": "https://purl.org/dc/terms/",
+        "dct": "http://purl.org/dc/terms/",
         "sh": "http://www.w3.org/ns/shacl#"
     },
     "properties": {

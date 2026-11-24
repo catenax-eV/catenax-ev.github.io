@@ -80,7 +80,7 @@ The specific criteria defined in this document are describing the usage of the c
 
 The proof of conformity for a single semantic model is done according to the general rules for proving the conformity of data provided to a semantic model or the ability to consume the corresponding data.
 
-In terms of conformity, the `SpecialCharacteristicMeasurement` submodel **MUST** be provided as an Asset Administration Shell submodel and **MUST** be discoverable and retrievable via the digital twin mechanisms defined in CX-0002 and CX-0127. The data asset and contract offer structure registered in the Tractus-X EDC or any other **CX-0018** compliant connector **MUST** correspond to the submodel data asset structure described in section 4 and follow the Industry Core conventions.
+In terms of conformity, the `SpecialCharacteristicsMeasurement` submodel **MUST** be provided as an Asset Administration Shell submodel and **MUST** be discoverable and retrievable via the digital twin mechanisms defined in CX-0002 and CX-0127. The data asset and contract offer structure registered in the Tractus-X EDC or any other **CX-0018** compliant connector **MUST** correspond to the submodel data asset structure described in section 4 and follow the Industry Core conventions.
 
 The versions of the standardization documents valid for this standard are mentioned in sections where the standalone standards, normative references and non-normative references are listed. The valid versions are not specifically mentioned in the body text.
 
@@ -107,7 +107,7 @@ Examples for data models: See according subsection 3 Aspect Models.
 | **Digital Twin (DT):** | A digital representation of an asset. Please see for detailed explanation CX-0002 Digital Twins in Catena-X and CX-0151 Industry Core: Basics. |
 | **DSP** | Dataspace Protocol for secure, sovereign data exchange, as defined in CX-0018. |
 | **Measurement Point** | A specific location, condition, or instance where a characteristic is measured. |
-| **Measurement Type** | Classification of measurement: simple (quantitative), functional (performance-based), or qualitative (non-numeric). |
+| **Measurement Type** | Classification of measurement:<br /><br />• **Quantitative:** A characteristic is represented by a numerical measurement value with a unit, e.g. diameter = 10.02 mm or temperature = 85 °C.<br />• **Qualitative:** A characteristic is described by a descriptive property or category, e.g. color = “blue” or surface = “matte”.<br />• **Attributive:** A characteristic is assessed by assigning it to discrete, usually inspection-relevant classes, e.g. “OK/not OK”, “present/not present”, or defect class A/B/C. |
 | **Measurement Unit** | The standardized unit in which a characteristic value is expressed (e.g., millimetre, hectopascal, degreeCelsius), following the SAMM / UNECE common unit catalog. |
 | **Part Instance:** | A part instance is a physically produced instance (e.g. serialized part, batch, just-in-sequence-part) of a part type. |
 | **Serialized part:** | Instance of a part, where the particular instance can be uniquely identified by means of a serial number, a similar identifier (e.g. VAN) or a combination of multiple identifiers (e.g. combination of manufacturer, date and number). |
@@ -144,13 +144,10 @@ If the data transfer or processing fails, the data consumer generates a Feedback
 
 To participate in the Special Characteristics use case, the following standards **MUST** be fulfilled:
 
-- **CX-0010**: Business Partner Number 3.0.1
-- **CX-0018**: Dataspace Connectivity 4.2
-- **CX-0127**: Industry Core: Part Instance 3.0.0
-- **CX-0151**: Industry Core: Basics 1.1.0
-- **CX-0152**: Policy Constraints for Data Exchange 1.0.0
-
-> Note: Please verify the exact CX-0010 and CX-0151 versions against the current Catena-X standard library before release.
+- **CX-0018**: Dataspace Connectivity
+- **CX-0127**: Industry Core: Part Instance
+- **CX-0151**: Industry Core: Basics
+- **CX-0152**: Policy Constraints for Data Exchange
 
 #### 2.1.3 DATA REQUIRED
 
@@ -158,7 +155,7 @@ To participate in the Special Characteristics use case, the following standards 
 
 A digital twin **MUST** be created for serialized part or batch of materials produced by the manufacturer. The digital twin **MUST** be provisioned via an Asset Administration Shell as per CX-0002 and registered in a decentral Digital Twin Registry of the data provider (or the decentral Digital Twin Registry host of the manufacturer) as described in CX-0002 and CX-0127.
 
-The `SpecialCharacteristicMeasurement` submodel **MUST** be provided on this digital twin as an AAS submodel and **MUST** be registered as a submodel descriptor in the decentral Digital Twin Registry so it is discoverable and retrievable according to the Industry Core process (CX-0151, CX-0127). The manufacturer Business Partner Number (`manufacturerBpn`) in the submodel is used to enable cross-referencing; it accepts a BPNL, BPNS or BPNA via the shared Business Partner Number aspect model.
+The `SpecialCharacteristicsMeasurement` submodel **MUST** be provided on this digital twin as an AAS submodel and **MUST** be registered as a submodel descriptor in the decentral Digital Twin Registry so it is discoverable and retrievable according to the Industry Core process (CX-0151, CX-0127). The manufacturer Business Partner Number (`manufacturerBpn`) in the submodel is used to enable cross-referencing; it accepts a BPNL, BPNS or BPNA via the shared Business Partner Number aspect model.
 
 The Dataspace Protocol (DSP) as described in CX-0018 **MUST** be followed for the data exchange.
 
@@ -173,7 +170,7 @@ The Data Provider **SHOULD** signal that a digital twin or a specific submodel h
 Upon receipt of such a signal, the Data Consumer **SHOULD** perform the following steps:
 
 - Resolve the Digital Twin: Use the `globalAssetId` provided to locate the asset in the Data Provider's decentral Digital Twin Registry.
-- Retrieve Submodels: Establish a contract via DSP and pull the Special Characteristics submodel data through the Data Provider's EDC or any CX-0018 compatible connector, using the AAS Submodel API operation `GetSubmodel`.
+- Retrieve Submodels: Establish a contract via DSP and pull the Special Characteristics submodel data through the Data Provider's Connector or any CX-0018 compatible connector, using the AAS Submodel API operation `GetSubmodel`.
 
 #### 2.1.4 ADDITIONAL REQUIREMENTS
 
@@ -190,11 +187,11 @@ In alignment with our commitment to data sovereignty, a specific framework gover
 
 #### 2.1.6 Usage Policy
 
-All offers included in the EDC of a dataspace participant **MUST** contain a usage policy following the requirements referenced in paragraph 2.1.5. The use-case introduces the following usage purpose:
+All offers included in the connector of a dataspace participant **MUST** contain a usage policy following the requirements referenced in paragraph 2.1.5. The use-case introduces the following usage purpose:
 
-- **cx.sc.base:1:** The legal meaning is named in CX-0152 (see [standard library](https://catenax-ev.github.io/docs/standards/overview)).
+- **cx.specchar.base:1** The legal meaning is named in CX-0152.
 
-Additional more general usage policies MAY be included, but all the usage policies MUST contain the above mentioned usage purpose as shown below.
+Additional contract constraints as named in CX-0152 MAY be included into the usage policy as well, however, the usage policy MUST at least contain the above mentioned usage purpose.
 
 #### 2.1.7 Versioning
 
@@ -204,7 +201,7 @@ The submodel asset version **MUST** be published in the property https://w3id.or
 
 Note: Data Assets differentiated only by major version **MUST** be offered in parallel. The current standard and aspect model versions mark the start of Life Cycle Management in Catena-X operations. Previous versions are dismissed.
 
-## 3 ASPECT MODEL "Special Characteristics" - SpecialCharacteristicMeasurement
+## 3 ASPECT MODEL "Special Characteristics" - SpecialCharacteristicsMeasurement
 
 > *This section is normative*
 
@@ -234,9 +231,7 @@ Like all Catena-X data models, this model is available in a machine-readable for
 
 The semantic model has the unique identifier:
 
-**URN**: `urn:samm:io.catenax.special_characteristic_measurement:3.0.0#SpecialCharacteristicMeasurement`
-
-> Note: The namespace was aligned to the (singular) aspect name `SpecialCharacteristicMeasurement`.
+**URN**: `urn:samm:io.catenax.special_characteristics.measurement:3.0.0#SpecialCharacteristicsMeasurement`
 
 ### 3.3 FORMATS OF SEMANTIC MODEL
 
@@ -244,7 +239,7 @@ The semantic model has the unique identifier:
 
 The rdf turtle file, an instance of the Semantic Aspect Meta Model, is the master for generating additional file formats and serializations.
 
-SpecialCharacteristicMeasurement v3.0.0
+SpecialCharacteristicsMeasurement v3.0.0
 
 [https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.special_characteristics.measurement/3.0.0]
 
@@ -265,85 +260,70 @@ The manufacturer Business Partner Number (`manufacturerBpn`) is the one delibera
 
 ### 3.5 EXAMPLES
 
-Example JSON Payload: Submodel "SpecialCharacteristicMeasurement" for a **simple measurement**.
+Example JSON Payload: Submodel "SpecialCharacteristicsMeasurement:3.0.0" for a **quantitative measurement**.
 
 ```json
 {
-  "localIdentifiers": [
-    {
-      "value": "SN12345678",
-      "key": "partInstanceId"
-    }
-  ],
-  "customerPartId": "PRT-12345",
+  "manufacturerBpn" : "BPNL000000000000",
   "revisionIndex": "01",
-  "manufacturerBpn": "BPNL000000000000",
-  "measurementType": "simpleMeasurement",
-  "characteristicId": "S1",
+  "measurementType": "quantitativeMeasurement",
+  "characteristicId": "specialCharacteristic_01",
   "results": [
     {
-      "identifier": "measurementPoint23",
-      "description": "This text gives you context to the related measurement to help to put it into the necessary context.",
-      "unit": "unit:hectopascal",
+      "identifier": "measurementPoint1",
+      "description": "This text gives you context to the related measurement to help to put it into context.",
+      "unit": " unit:millimetre ",
       "value": "12.09",
-      "measurementTimestamp": "2024-12-16T11:46:57.767+01:00"
+      "attachmentUrl" : "https://www.example.com/test_image_measurementObject_01.jpg",
+      "measurementTimestamp": "2025-03-25T09:20:00.66372+14:00"
     }
   ]
 }
 ```
 
-Example JSON Payload: Submodel "SpecialCharacteristicMeasurement" for a **functional measurement**.
+Example JSON Payload: Submodel "SpecialCharacteristicsMeasurement" for a **qualitative measurement**.
 
 ```json
 {
-  "localIdentifiers": [
-    {
-      "value": "SN12345678",
-      "key": "partInstanceId"
-    }
-  ],
-  "customerPartId": "PRT-12345",
+  "manufacturerBpn" : "BPNL000000000000",
   "revisionIndex": "01",
-  "manufacturerBpn": "BPNL000000000000",
-  "measurementType": "functionalMeasurement",
-  "characteristicId": "S1",
-  "results": [
-    {
-      "identifier": "measurementPoint23",
-      "description": "This text gives you context to the related measurement to help to put it into the necessary context.",
-      "value": "true",
-      "measurementTimestamp": "2024-12-16T11:46:57.767+01:00"
-    }
-  ]
-}
-```
-
-Example JSON Payload: Submodel "SpecialCharacteristicMeasurement" for a **qualitative measurement**.
-
-```json
-{
-  "localIdentifiers": [
-    {
-      "value": "SN12345678",
-      "key": "partInstanceId"
-    }
-  ],
-  "customerPartId": "PRT-12345",
-  "revisionIndex": "01",
-  "manufacturerBpn": "BPNL000000000000",
   "measurementType": "qualitativeMeasurement",
-  "characteristicId": "S1",
+  "characteristicId": "specialCharacteristic_02",
   "results": [
     {
-      "identifier": "measurementPoint23",
-      "description": "This text gives you context to the related measurement to help to put it into the necessary context.",
-      "attachmentUrl": "https://www.example.com/test_image_measurementPoint23.jpg",
-      "value": "5.0",
-      "measurementTimestamp": "2024-12-16T11:46:57.767+01:00"
+      "identifier": " measurementPoint2",
+      "description":"This text gives you context to the related measurement to help to put it into context.",
+      "value": "ABC123DEF456",
+      "attachmentUrl" : "https://www.example.com/test_image_measurementObject_01.jpg",
+      "measurementTimestamp": "2025-03-25T09:20:00.66372+14:00"
     }
   ]
 }
 ```
+
+> Note: If the `measurementType` equals `qualitativeMeasurement`, the `unit` attribute shall be omitted from the payload.
+
+Example JSON Payload: Submodel "SpecialCharacteristicsMeasurement" for a **attributive measurement**.
+
+```json
+{
+  "manufacturerBpn" : "BPNL000000000000",
+  "revisionIndex": "01",
+  "measurementType": "attributiveMeasurement",
+  "characteristicId": "specialCharacteristic_03",
+  "results": [
+    {
+      "identifier": " measurementPoint3",
+      "description":" This text gives you context to the related measurement to help to put it into context.",
+      "value": "true",
+      "attachmentUrl" : "https://www.example.com/test_image_measurementObject_01.jpg",
+      "measurementTimestamp": "2025-03-25T09:20:00.66372+14:00"
+    }
+  ]
+}
+```
+
+> Note: If the `measurementType` equals `attributiveMeasurement`, the `unit` attribute shall be omitted from the payload.
 
 ## 4 DATA PROVISIONING VIA DIGITAL TWINS
 
@@ -353,7 +333,7 @@ The Special Characteristics measurement data **MUST NOT** be exposed through a u
 
 ### 4.1 SUBMODEL PROVISIONING AND RETRIEVAL
 
-- The `SpecialCharacteristicMeasurement` submodel **MUST** be registered as a submodel descriptor on the digital twin in the decentral Digital Twin Registry, carrying the aspect model `semanticId` (see section 3.3).
+- The `SpecialCharacteristicsMeasurement` submodel **MUST** be registered as a submodel descriptor on the digital twin in the decentral Digital Twin Registry, carrying the aspect model `semanticId` (see section 3.3).
 - The submodel data **MUST** be retrievable via the AAS Submodel API operation `GetSubmodel` (Value-Only serialization), exposed behind a CX-0018 compliant connector.
 - A Data Consumer discovers the twin and submodel via the decentral Digital Twin Registry, negotiates a contract via DSP, and pulls the submodel data. No data is pushed to a consumer endpoint.
 - All endpoints **MUST** use HTTPS with TLS 1.2 or higher.
@@ -378,9 +358,9 @@ When using Tractus-X EDC or other CX-0018 compliant connectors, the Special Char
     "dct:type": {
       "@id": "cx-taxo:Submodel"
     },
-    "cx-common:version": "1.0",
+    "cx-common:version": "3.0",
     "aas-semantics:semanticId": {
-      "@id": "urn:samm:io.catenax.special_characteristic_measurement:1.0.0#SpecialCharacteristicMeasurement"
+      "@id": "urn:samm:io.catenax.special_characteristics.measurement:3.0.0#SpecialCharacteristicsMeasurement"
     }
   },
   "dataAddress": {
@@ -403,17 +383,14 @@ The submodel asset version **MUST** be published in the property `https://w3id.o
 
 ### 5.1 NORMATIVE REFERENCES
 
-| Reference | Title | Version |
-|-----------|-------|---------|
-| CX-0010 | Business Partner Number | 3.0.1 |
-| CX-0018 | Dataspace Connectivity | 4.2 |
-| CX-0127 | Industry Core: Part Instance | 3.0.0 |
-| CX-0151 | Industry Core: Basics | 1.1.0 |
-| CX-0152 | Policy Constraints for Data Exchange | 1.0.0 |
-| RFC2119 | Key words for use in RFCs | - |
-| RFC8174 | Ambiguity of Case in RFC Keywords | - |
-
-> Note: Confirm the exact current versions of CX-0010 and CX-0151 against the Catena-X standard library before release.
+| Reference | Title |
+|-----------|-------|
+| CX-0018 | Dataspace Connectivity |
+| CX-0127 | Industry Core: Part Instance |
+| CX-0151 | Industry Core: Basics |
+| CX-0152 | Policy Constraints for Data Exchange |
+| RFC2119 | Key words for use in RFCs |
+| RFC8174 | Ambiguity of Case in RFC Keywords |
 
 ### 5.2 NON-NORMATIVE REFERENCES
 

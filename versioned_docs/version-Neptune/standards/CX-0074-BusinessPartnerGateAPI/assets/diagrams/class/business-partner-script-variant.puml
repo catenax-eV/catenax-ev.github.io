@@ -1,0 +1,56 @@
+@startuml business-partner-script-variant
+
+skinparam dpi 50
+
+package "Business Partner Script Variant" {
+  class BusinessPartnerScriptVariant {
+    ScriptCode
+    NameParts
+  }
+
+  class LegalEntityScriptVariant {
+    LegalName
+    ShortName
+  }
+
+  class SiteScriptVariant {
+    Name
+  }
+
+  class AddressScriptVariant {
+    Name
+  }
+
+  class PhysicalAddressScriptVariant {
+    PostalCode
+    City
+    District
+    StreetNamePrefix
+    StreetAdditionalNamePrefix
+    StreetName
+    StreetNameSuffix
+    StreetAdditionalNameSuffix
+    Building
+    Floor
+    Door
+    CompanyPostalCode
+    IndustrialZone
+  }
+
+  class AlternativeAddressScriptVariant {
+    PostalCode
+    City
+    DeliveryServiceQualifier
+    DeliveryServiceNumber
+  }
+
+  BusinessPartnerScriptVariant "1" -r-> "1" LegalEntityScriptVariant : LegalEntity
+  BusinessPartnerScriptVariant "1" -d-> "1" SiteScriptVariant : Site
+  BusinessPartnerScriptVariant "1" -l-> "1" AddressScriptVariant : Address
+
+  AddressScriptVariant "1" -d-> "1" PhysicalAddressScriptVariant : PhysicalAddress
+  AddressScriptVariant "1" -d-> "0..1" AlternativeAddressScriptVariant : AlternativeAddress
+}
+
+hide methods
+@enduml

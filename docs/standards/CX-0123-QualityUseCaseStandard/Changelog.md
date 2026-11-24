@@ -2,6 +2,8 @@
 title: "Changelog"
 ---
 
+All notable changes to CX-0123 Field Quality Standard will be documented in this file.
+
 ## [4.0.0] - CX-Neptune (26.09)
 
 ### Added

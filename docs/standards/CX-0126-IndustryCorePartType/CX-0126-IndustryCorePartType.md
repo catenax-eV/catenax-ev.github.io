@@ -4,7 +4,7 @@ tags:
   - CAT/Industry Core
 ---
 
-# CX-0126 Industry Core: Part Type 3.0.0
+# CX-0126 Industry Core: Part Type 3.0.1
 
 ## ABSTRACT
 
@@ -521,7 +521,7 @@ The following properties must be set for this asset:
     "edc": "https://w3id.org/edc/v0.0.1/ns/",
     "cx-common": "https://w3id.org/catenax/ontology/common#",
     "cx-taxo": "https://w3id.org/catenax/taxonomy#",
-    "dct": "https://purl.org/dc/terms/"
+    "dct": "http://purl.org/dc/terms/"
   },
   "@id": "{{ _.assetId }}",
   "properties": {

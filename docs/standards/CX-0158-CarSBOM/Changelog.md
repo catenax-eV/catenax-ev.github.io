@@ -4,6 +4,10 @@ title: "Changelog"
 
 All notable changes to CX-0158 will be documented in this file.
 
+## [1.1.1] - R26.09 (CX-Neptune)
+
+- Added missing policy constraints section.
+
 ## [1.1.0] - R26.09 (CX-Neptune)
 
 ### Added

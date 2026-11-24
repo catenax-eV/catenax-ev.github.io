@@ -1,6 +1,5 @@
 {
-    "label": "PCF Rulebook",
-    "position": 5,
-    "collapsible": true,
-    "collapsed": true
+  "label": "PCF Rulebook",
+  "position": 2,
+  "link": { "type": "doc", "id": "pcf-rulebook" }
 }

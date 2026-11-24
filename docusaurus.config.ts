@@ -129,21 +129,16 @@ const config: Config = {
           sidebarPath: './sidebars.ts',
           versions: {
             current: {
-              label: 'CX-Neptune (Preview)',
+              label: 'CX-Proteus (Preview)',
+            },
+            'Neptune': {
+              label: 'CX-Neptune (Current)'
             },
             'Titan': {
-              label: 'CX-Titan (Current)'
+              label: 'CX-Titan'
             },
             'Saturn': {
               label: 'CX-Saturn'
-            },
-            'Io': {
-              label: 'CX-Io',
-              banner: 'unmaintained'
-            },
-            'Jupiter': {
-              label: 'CX-Jupiter',
-              banner: 'unmaintained'
             }
           },
         },

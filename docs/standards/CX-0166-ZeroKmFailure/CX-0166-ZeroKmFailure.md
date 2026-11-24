@@ -253,6 +253,18 @@ In addition to `digitalTwinType`, at minimum, the following `specificAssetIds` k
 | ManufacturerQualityTaskNumber | Optional | Internal creator case number | String |
 | CustomerProblemID | Optional | Internal customer case number | String |
 
+#### 2.1.5 Policy Constraints
+
+In alignment with our commitment to data sovereignty, a specific framework governing the utilization of data within the Catena-X use cases has been outlined. As part of this data sovereignty framework, conventions for access policies, for usage policies and for the constraints contained in the policies have been specified in standard 'CX-0152 Policy Constraints for Data Exchange'. This standard document CX-0152 **MUST** be followed when providing services or apps for data sharing/consuming and when sharing or consuming data in the Catena-X ecosystem. What conventions are relevant for what roles named in [1.1 AUDIENCE & SCOPE](#11-audience--scope) is specified in the CX-0152 standard document as well. CX-0152 can be found in the [standard library](https://catenax-ev.github.io/docs/standards/overview).
+
+#### 2.1.6 Usage Policy
+
+All offers included in the connector of a dataspace participant **MUST** contain a usage policy following the requirements referenced in paragraph 2.1.5. The use-case introduces the following usage purpose:
+
+- **cx.zerokmfailure.base:1** The legal meaning is named in CX-0152.
+
+Additional contract constraints as named in CX-0152 MAY be included into the usage policy as well, however, the usage policy MUST at least contain the above mentioned usage purpose.
+
 ## 3 ASPECT MODELS
 
 > *This section is normative*
