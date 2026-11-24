@@ -771,7 +771,7 @@ If implemented, update the connector discovery flow (refer to [section 5.2.1.4](
 #### 5.5.6.5 Relevant Standards
 
 - [CX-0018 (Dataspace Connectivity) in version 4.1](/docs/Saturn/standards/CX-0018-DataspaceConnectivity) or [CX-0018 Dataspace Connectivity v4.2](/docs/standards/CX-0018-DataspaceConnectivity)
-- [CX-0146 (Supply Chain Disruption Notifications) in version 1.0.0](/docs/Jupiter/standards/CX-0146-SupplyChainDisruptionNotifications) and [CX-0146 Supply Chain Disruption Notifications 2.0.0](/docs/Saturn/standards/CX-0146-SupplyChainDisruptionNotifications)
+- [CX-0146 (Supply Chain Disruption Notifications) in version 1.0.0](https://catenax-ev.github.io/docs/Jupiter/standards/CX-0146-SupplyChainDisruptionNotifications) and [CX-0146 Supply Chain Disruption Notifications 2.0.0](/docs/Saturn/standards/CX-0146-SupplyChainDisruptionNotifications)
 - [CX-0151 (Industry Core Basics) in version 1.0.0](/docs/Saturn/standards/CX-0151-IndustryCoreBasics)
 - [CX-0152 (Policy Constraints for Data Exchange) in version 1.0](/docs/Saturn/standards/CX-0152-PolicyConstrainsForDataExchange)
 
@@ -809,16 +809,16 @@ We propose to consider the following actions for **Digital Twin related topics**
 
 #### 5.5.7.5 Relevant Standards
 
-- [CX-0002 (Digital Twins in Catena-X) in version 2.3.0](/docs/Saturn/standards/CX-0002-DigitalTwinsInCatenaX) or [CX-0002 Digital Twins in Catena-X v2.2.0](/docs/Io/standards/CX-0002-DigitalTwinsInCatenaX)  
-- [CX-0018 (Dataspace Connectivity) in version 4.1](/docs/Saturn/standards/CX-0018-DataspaceConnectivity) or [CX-0018 Dataspace Connectivity v.4.2](/docs/Jupiter/standards/CX-0018-DataspaceConnectivity)  
+- [CX-0002 (Digital Twins in Catena-X) in version 2.3.0](/docs/Saturn/standards/CX-0002-DigitalTwinsInCatenaX) or [CX-0002 Digital Twins in Catena-X v2.2.0](https://catenax-ev.github.io/docs/Io/standards/CX-0002-DigitalTwinsInCatenaX)  
+- [CX-0018 (Dataspace Connectivity) in version 4.1](/docs/Saturn/standards/CX-0018-DataspaceConnectivity) or [CX-0018 Dataspace Connectivity v.4.2](https://catenax-ev.github.io/docs/Jupiter/standards/CX-0018-DataspaceConnectivity)  
 - [CX-0126 (Industry Core: Part Type) in version 2.1.1 (patch of IO release)](/docs/Saturn/standards/CX-0126-IndustryCorePartType)
 - [CX-0152 (Policy Constraints for Data Exchange) in version 1.0](/docs/Saturn/standards/CX-0152-PolicyConstrainsForDataExchange)
 - [CX-0157 (Predictive Unit Real-Time Information Service (PURIS)) in version 1.0](/docs/standards/CX-0157-PURIS) or the following standards from before merging them  
-  - [CX-0122 (Item Stock Exchange) in version 2.0.0](/docs/Io/standards/CX-0122-ItemStockExchange)
-  - [CX-0118 (Delivery Information Exchange) in version 2.0.0](/docs/Io/standards/CX-0118-ActualDeliveryInformationExchange)
-  - [CX-0120 (Short-Term Material Demand Exchange) in version 2.0.0](/docs/Io/standards/CX-0120-ShortTermMaterialDemandExchange)
-  - [CX-0121 (Planned Production Output Exchange) in version 1.0.0](/docs/Io/standards/CX-0121-PlannedProductionOutputExchange)
-  - [CX-0145 (Days of Supply Exchange) in version 1.0.0](/docs/Io/standards/CX-0145-DaysofsupplyExchange)
+  - [CX-0122 (Item Stock Exchange) in version 2.0.0](https://catenax-ev.github.io/docs/Io/standards/CX-0122-ItemStockExchange)
+  - [CX-0118 (Delivery Information Exchange) in version 2.0.0](https://catenax-ev.github.io/docs/Io/standards/CX-0118-ActualDeliveryInformationExchange)
+  - [CX-0120 (Short-Term Material Demand Exchange) in version 2.0.0](https://catenax-ev.github.io/docs/Io/standards/CX-0120-ShortTermMaterialDemandExchange)
+  - [CX-0121 (Planned Production Output Exchange) in version 1.0.0](https://catenax-ev.github.io/docs/Io/standards/CX-0121-PlannedProductionOutputExchange)
+  - [CX-0145 (Days of Supply Exchange) in version 1.0.0](https://catenax-ev.github.io/docs/Io/standards/CX-0145-DaysofsupplyExchange)
 
 :::warning[Remember]
 

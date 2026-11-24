@@ -136,14 +136,6 @@ const config: Config = {
             },
             'Saturn': {
               label: 'CX-Saturn'
-            },
-            'Io': {
-              label: 'CX-Io',
-              banner: 'unmaintained'
-            },
-            'Jupiter': {
-              label: 'CX-Jupiter',
-              banner: 'unmaintained'
             }
           },
         },
