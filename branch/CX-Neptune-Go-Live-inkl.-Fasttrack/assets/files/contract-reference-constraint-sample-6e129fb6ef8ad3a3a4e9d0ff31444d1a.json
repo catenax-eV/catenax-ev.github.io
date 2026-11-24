@@ -1,7 +1,0 @@
-{
-    "leftOperand": "ContractReference",
-    "operator": "isAllOf",
-    "rightOperand": [
-        "ContractID250620197"
-    ]
-}
