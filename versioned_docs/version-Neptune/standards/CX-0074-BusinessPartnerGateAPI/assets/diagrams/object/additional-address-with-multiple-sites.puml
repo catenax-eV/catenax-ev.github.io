@@ -1,0 +1,85 @@
+@startuml additional-address-with-multiple-sites
+
+skinparam dpi 50
+
+package "Business Parter (Additional Address) w/ Multiple Sites" {
+  object LegalEntity {
+    LegalName = "Dr. Ing. h.c. F. Porsche Aktiengesellschaft"
+    ShortName = "Porsche AG"
+  }
+
+  object Address1 {
+    Name = ""
+    Country = "DE"
+    City = "Stuttgart"
+    PostalCode = "70435"
+    Street = "Porscheplatz"
+    HouseNumber = "1"
+  }
+
+  object Address2 {
+    Name = "Pforte (Lieferanten)"
+    Country = "DE"
+    City = "Stuttgart"
+    PostalCode = "70435"
+    Street = "Schwieberdinger Str."
+    HouseNumber = "130"
+  }
+
+  object Address3 {
+    Name = "Hauptpforte"
+    Country = "DE"
+    City = "Stuttgart"
+    PostalCode = "70435"
+    Street = "Porschestraße"
+    HouseNumber = "42"
+  }
+
+  object Address4 {
+    Name = "Werkseinfahrt"
+    Country = "DE"
+    City = "Stuttgart"
+    PostalCode = "70435"
+    Street = "Schwieberdinger Str."
+    HouseNumber = "100"
+  }
+
+  object Site1 {
+    Name = "Porsche Zuffenhausen, Werk 2"
+  }
+
+  object Site2 {
+    Name = "Porsche Zuffenhausen, Werk 5"
+  }
+
+  object BusinessPartner {
+    AddressType = "AdditionalAddress"
+    NameParts = [
+      "Dr. Ing. h.c. F. Porsche",
+      "Aktiengesellschaft",
+      "Porsche Zuffenhausen,",
+      "Werk 2, Pforte (Lieferanten)"]
+    Country = "DE"
+    City = "Stuttgart"
+    PostalCode = "70435"
+    Street = "Schwieberdinger Str."
+    HouseNumber = "130"
+  }
+
+  BusinessPartner -r-> LegalEntity : BPNL
+  BusinessPartner -r-> Site1 : BPNS
+  BusinessPartner ..> Site2 : AdditionalSites
+  BusinessPartner -r-> Address2 : BPNA
+  LegalEntity .d.> Address1 : LegalAddress
+  Site1 .d.> Address3 : SiteMainAddress
+  Site2 .d.> Address4 : SiteMainAddress
+  Address1 -u-> LegalEntity : BPNL
+  Address2 -u-> Site1 : BPNS
+  Address2 ..> Site2 : AdditionalSites
+  Address3 -u-> Site1 : BPNS
+  Address4 -u-> Site2 : BPNS
+  Site1 -u-> LegalEntity : BPNL
+  Site2 -u-> LegalEntity : BPNL
+}
+
+@enduml

@@ -1,0 +1,38 @@
+@startuml business-partner-relation
+
+skinparam dpi 50
+
+package "Business Partner Relation and References" {
+  entity BusinessPartner {
+    ExternalID
+    ...
+  }
+
+  entity BusinessPartnerRelation {
+    ExternalID
+    ReasonCode
+    CreatedAt
+    UpdatedAt
+  }
+
+  class ValidityPeriod {
+    ValidFrom
+    ValidTo
+  }
+
+  enum BusinessPartnerRelationType {
+    IsAlternativeHeadquarterFor
+    IsManagedBy
+    IsOwnedBy
+    IsReplacedBy
+  }
+
+  BusinessPartnerRelation "*" -l-> "1" BusinessPartner : BusinessPartnerSourceExternalID
+  BusinessPartnerRelation "*" -l-> "1" BusinessPartner : BusinessPartnerTargetExternalID
+  BusinessPartnerRelation "*" -d-o "1" BusinessPartnerRelationType : Type
+  BusinessPartnerRelation "1" *-d-> "*" ValidityPeriod : ValidityPeriods
+}
+
+hide methods
+hide BusinessPartnerRelation methods
+@enduml

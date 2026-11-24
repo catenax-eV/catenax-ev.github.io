@@ -1,0 +1,34 @@
+---
+title: "Changelog"
+---
+
+All notable changes to CX-0154 will be documented in this file.
+
+## [1.1.1] - CX-Neptune (26.09)
+
+- Fixed identifier of the usage purpose (in 2.2)
+
+## [1.1.0] - CX-Neptune (26.09)
+
+### Added
+
+- CACs added
+- PartRole including rational added
+- Link to CX-0156 and CX-0155 established
+
+## [1.0.1] - CX-Saturn (25.12)
+
+### Added
+
+- Usage Purpose (in 2.2)
+- Data asset structure (in 4.1)
+
+## [1.0.0] - CX-Saturn (25.09)
+
+### Added
+
+- Initial version of Digital Master Data Management Standard
+
+## Legal
+
+Copyright © 2026 Catena-X Automotive Network e.V. All rights reserved. For more information, please see [Catena-X Copyright Notice](https://catenax-ev.github.io/copyright).

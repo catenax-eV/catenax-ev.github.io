@@ -1,0 +1,61 @@
+
+@startuml identifier-type
+
+skinparam dpi 50
+
+package "Identifier Type and References" {
+
+  class LegalEntityIdentifier {
+    Value
+    IssuingBody
+  }
+
+  class AddressIdentifier{
+    Value
+  }
+
+  entity IdentifierType {
+    TechnicalKey
+    Name
+    Abbreviation
+    TransliteratedName
+    TransliteratedAbbreviation
+    Format
+  }
+
+  enum BusinessPartnerType {
+    LegalEntity
+    Address
+  }
+
+  enum IdentifierTypeCategory {
+    VAT
+    TIN
+    NBR
+    IBR
+    OTH
+  }
+
+  class IdentifierTypeDetail {
+    Mandatory
+  }
+
+  enum Country {
+    DE
+    FR
+    US
+    ...
+  }
+
+  IdentifierType "*" -d-o "1" BusinessPartnerType : BusinessPartnerType
+  IdentifierType "*" -o "*" IdentifierTypeCategory : IdentifierTypeCategory
+
+  LegalEntityIdentifier "*" -d-o "1" IdentifierType : Type
+  AddressIdentifier "*" -d-o "1" IdentifierType : Type
+
+  IdentifierType "1" *-d-> "*" IdentifierTypeDetail : Details
+  IdentifierTypeDetail "*" -r-o "1" Country : Country
+}
+
+hide methods
+@enduml

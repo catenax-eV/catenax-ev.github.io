@@ -1,0 +1,17 @@
+@startuml Figure_1
+autonumber
+skinparam sequenceMessageAlign center
+
+box "Data Consumer"
+participant "Business\nApplication" as app_cons
+end box
+
+box "Data Provider"
+participant "Business\nApplication" as app_prov
+end box
+
+
+app_cons <-  app_prov: Send DemandAndCapacityNotification
+return Accepted
+
+@enduml
