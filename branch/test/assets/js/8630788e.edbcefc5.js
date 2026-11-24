@@ -1,1 +1,0 @@
-"use strict";(globalThis.webpackChunkcatenax_ev_github_io_new=globalThis.webpackChunkcatenax_ev_github_io_new||[]).push([[27112],{16184(a){a.exports=JSON.parse('{"name":"docusaurus-plugin-glossary","id":"default"}')}}]);
