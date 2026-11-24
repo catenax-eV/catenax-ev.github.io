@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-title: Overview of Release phases a processes
+title: Overview of Release phases and processes
 ---
 
 A Catena-X release is built upon roadmap items, which serve as the overarching framework for all association efforts to advance the data space in a specific area. These roadmap items are further refined by narrowing their scope, aiming to create actionable tasks. They may be broken down into the following categories:
