@@ -1,7 +1,0 @@
-{
-  "leftOperand": "BusinessPartnerGroup",
-  "operator": "isAnyOf",
-  "rightOperand": [
-    "ecu-suppliers"
-  ]
-}
