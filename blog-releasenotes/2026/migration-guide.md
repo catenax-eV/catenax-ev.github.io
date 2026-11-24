@@ -105,7 +105,7 @@ As standards, reference implementations, and release timelines continue to evolv
 For further information on the Catena-X Release Management approach and lifecycle policies, please refer to:
 
 - https://catenax-ev.github.io/release-management  
-- https://catenax-ev.github.io/docs/Neptune/operating-model/how-life-cycle-management
+- https://catenax-ev.github.io/docs/operating-model/how-life-cycle-management
 
 ## 2. Migration paths overview
 
@@ -297,7 +297,7 @@ release of the Catena-X standards (e.g. End of CX-Saturn). With the deprecation 
 
 ### 4.1 Extension of validity for unchanged standards
 
-Where a standard has not changed at all or has only received patch changes since the certified product was assessed, the validity of the certificate for that specific standard can be extended to the major release following the initially certified release. The classification of changes follows the Catena-X Operating Model, section [How: Life Cycle Management](/docs/Neptune/operating-model/how-life-cycle-management).
+Where a standard has not changed at all or has only received patch changes since the certified product was assessed, the validity of the certificate for that specific standard can be extended to the major release following the initially certified release. The classification of changes follows the Catena-X Operating Model, section [How: Life Cycle Management](/docs/operating-model/how-life-cycle-management).
 
 The following conditions apply:
 
