@@ -142,7 +142,7 @@ The issuance of the Membership Credential from the CSP-B to the prospective part
 - [CX-0010 Business Partner Number](../CX-0010-BusinessPartnerNumber/CX-0010-BusinessPartnerNumber.md)
 - [CX-0050 Catena-X Specific Credentials](../CX-0050-CXSpecificCredentials/CX-0050-CatenaXSpecificVerifiableCredentials.md)
 - [CX-0149 Wallet Requirements](../CX-0149-WalletRequirements/CX-0149-WalletRequirements.md)
-- [CX-NFR-IdP](../../rulebooks/CX-NFR-IdP)
+- [CX-NFR-IdP](../../rulebooks/CX-NFR-IdP/CX-NFR-identity-proofing.md)
 
 ### 3.3 REFERENCE IMPLEMENTATIONS
 
