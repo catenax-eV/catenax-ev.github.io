@@ -1,0 +1,103 @@
+openapi: 3.2.0
+info:
+  title: CX-0009 OSP Registration Callback API
+  version: 2.1.0
+  description: >
+    Callback API implemented by the Onboarding Service Provider (OSP). The Core
+    Service Provider B invokes the configured callback URL to report registration
+    status updates.
+tags:
+  - name: Onboarding Service Provider
+    description: Endpoint to be implemented by the Onboarding Service Provider.
+servers:
+  - url: "{callbackUrl}"
+    description: The callback URL configured by the OSP through the CSP-B Registration API.
+    variables:
+      callbackUrl:
+        default: https://osp.example.com/callbacks/catenax-registration
+      authUrl:
+        default: https://osp.example.com/oauth/token
+paths:
+  /:
+    post:
+      tags:
+        - Onboarding Service Provider
+      summary: Receives registration status updates from the Core Service Provider B.
+      description: >
+        The payload schema is determined by the registration endpoint used to
+        create the registration. The Core Service Provider B MUST obtain a
+        bearer access token from the OSP-configured authUrl using the configured
+        clientId and clientSecret, then include it in the Authorization header.
+      security:
+        - OspCallbackOAuth:
+            - callback
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OspRegistrationCallbackData"
+            example:
+              externalId: "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+              applicationStatus: "CONFIRMED"
+              message: null
+              bpnl: "BPNL000000055EPN"
+      responses:
+        "200":
+          description: Callback successfully received.
+        "401":
+          description: The Core Service Provider B is unauthorized.
+        "500":
+          description: Internal Server Error.
+components:
+  securitySchemes:
+    OspCallbackOAuth:
+      type: oauth2
+      description: >
+        OAuth 2.0 client-credentials flow. The token URL is the authUrl supplied
+        in the callback configuration, and the client credentials are the
+        configured clientId and clientSecret. The resulting access token MUST
+        be sent as a bearer token.
+      flows:
+        clientCredentials:
+          tokenUrl: "{authUrl}"
+  schemas:
+    OspRegistrationCallbackData:
+      type: object
+      properties:
+        externalId:
+          type: string
+          description: Identifier originally provided in the registration request.
+        applicationStatus:
+          description: Current registration status.
+          anyOf:
+            - $ref: "#/components/schemas/RegistrationStatus"
+            - $ref: "#/components/schemas/OSPParticipantRegistrationStatus"
+        message:
+          type: string
+          nullable: true
+          description: Optional details, for example the reason for rejection or decline.
+        bpnl:
+          type: string
+        bpna:
+          type: string
+        bpns:
+          type: string
+      required:
+        - externalId
+        - applicationStatus
+        - bpnl
+    OSPParticipantRegistrationStatus:
+      type: string
+      enum:
+        - SUBMITTED
+        - CONFIRMED
+        - DECLINED
+    RegistrationStatus:
+      type: string
+      enum:
+        - CREATED
+        - INVITE_USER
+        - SUBMITTED
+        - CONFIRMED
+        - DECLINED
